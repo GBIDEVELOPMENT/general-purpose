@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T085108Z-inside-hourly-post272-concurrency",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T08:52:50Z",
+  "started_at": "2026-09-29T08:51:08Z",
+  "initial_repo_state": {
+    "main_sha": "8980f6c2a26b7fdec6bf475c8f8e13761ecbb845",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #10 merged at 08:50:25Z, less than a minute before inspection; PRs #8 and #9 also merged within the preceding ten minutes."
+  },
+  "concurrent_lanes": [
+    {
+      "lane": "post-270 structural audits",
+      "evidence": "PRs #8-#10 merged between 08:41Z and 08:50Z, culminating in Experiment 272."
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "Canonical research files were being updated by a rapid structural-experiment sequence through less than a minute before inspection.",
+  "decision": "deferred",
+  "decision_reason": "Fresh mainline research activity remained inside the concurrency window; no open PR required reconciliation and no orphan warranted immediate rescue.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "research/post267-gauge-recursion-frontier",
+      "rescue/post267-recursion-reconciled",
+      "research/q4-gauge-physical-simplicity",
+      "research/frame-balance-partition-audit",
+      "research/frame-weight-three-parent"
+    ],
+    "rescued": [],
+    "note": "Visible historical branches correspond to merged or superseded PR work; post267 was superseded by merged PR #7."
+  },
+  "work": {
+    "summary": "Refreshed state, confirmed no open PRs, reviewed PR #8-#10 and branch inventory, and left INSIDE untouched because Experiment 272 had just merged.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "deferred_concurrency",
+  "blocker": "Fresh canonical research changes through PR #10 were inside the concurrency window.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next regular run: refresh main, continue from the post-272 research queue once settled, and reassess non-main branches for genuinely unrepresented work."
+}
