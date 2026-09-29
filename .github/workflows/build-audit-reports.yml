@@ -1,0 +1,29 @@
+name: Build automation audit reports
+
+on:
+  push:
+    paths:
+      - 'audit/**/*.json'
+      - 'scripts/build_reports.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python scripts/build_reports.py
+      - name: Commit generated reports
+        run: |
+          git config user.name "chat-scheduler-audit"
+          git config user.email "actions@users.noreply.github.com"
+          git add reports/automation-runs.csv reports/automation-summary.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update automation audit reports"
+          git push
