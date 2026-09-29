@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T134902Z-inside-hourly-pr37-ci-retry",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T13:52:50Z",
+  "started_at": "2026-09-29T13:49:02Z",
+  "finished_at": "2026-09-29T13:53:30Z",
+  "initial_repo_state": {
+    "main_sha": "83f6a03f09b2d497050e5d14d311d4a125e45f4c",
+    "open_prs": [
+      37
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Main last advanced via PR #36 at 13:18:36Z. PR #37 was created at 13:32:31Z and last updated at 13:33:55Z; its head commit is 11c925d4ba2186faffa5cceb911cc6635b805660. No project activity fell inside the preceding 10-minute gate at inspection time."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 37,
+      "branch": "research/q4-label-symmetry-audit-2026-09-29",
+      "scope": "Experiment 296 Q4 physical-codebook label-symmetry audit",
+      "state": "idle beyond concurrency gate"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The sole open lane was idle beyond 10 minutes and directly owns the current Q4 symmetry follow-on. No competing active lane required a separate branch.",
+  "decision": "worked",
+  "decision_reason": "Since the prior run, PRs #31-#36 were merged, advancing main through Experiments 292-305, refreshed presentation/evidence artifacts, and the evidence-gated external-consumer audit. PR #37 is the only remaining open work. Its verification run failed before executing any steps with no runner assignment, so the highest-value safe action was to retry only the failed workflow jobs rather than create another research lane.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "older named research/docs branches in the branch inventory"
+    ],
+    "rescued": [],
+    "note": "No branch was established as valuable unrepresented orphan work; PR #37 states the ancestry-diverged named results it checked are already represented in canonical main."
+  },
+  "work": {
+    "summary": "Refreshed main, open PRs, branches, recent commits, PR #37 metadata/commits/comments/reviews, workflow state, and canonical docs/queue context. Confirmed PR #37 is mergeable and based directly on current main. Its Verify machine run 36575857904 failed with job 109431164995 having no steps and no assigned runner, matching the known Actions scheduling/startup failure mode. Re-ran only the failed jobs. No repository files, branches, PR metadata, or commits were modified.",
+    "branch": "research/q4-label-symmetry-audit-2026-09-29",
+    "prs_touched": [
+      37
+    ],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": [
+      36575857904
+    ],
+    "observed_runs": [
+      {
+        "run_id": 36575857904,
+        "name": "Verify machine",
+        "previous_conclusion": "failure",
+        "action": "rerun failed jobs"
+      }
+    ]
+  },
+  "outcome": "waiting_on_ci",
+  "blocker": "PR #37 should not be merged until its retried verification produces a real result; the previous failure occurred before any workflow step executed.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next regular run, refresh state. If PR #37 verification is green and the lane remains settled, reconcile/merge it as appropriate before starting another experiment. If the runner fails before steps again, treat that as infrastructure evidence rather than an assertion failure and avoid churn."
+}
