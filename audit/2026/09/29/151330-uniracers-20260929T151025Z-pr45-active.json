@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T151025Z-uniracers-hourly-pr45-active",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T15:15:00Z",
+  "started_at": "2026-09-29T15:10:25Z",
+  "finished_at": "2026-09-29T15:13:30Z",
+  "initial_repo_state": {
+    "main_sha": "fe2556f1da623a20fab36f17b5fb58724eded89f",
+    "open_prs": [
+      45,
+      44,
+      43,
+      40,
+      35
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced at 14:59:58Z via PR #46 (HD asset/audio restoration toolchain plan). PR #45 then merged current main into its WLA-DX island branch at 15:03:08Z and its full toolchain/check suite completed green by 15:04:08Z, placing that lane inside the preceding 10-minute activity gate."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 45,
+      "branch": "chatgpt/island-wla-dx-2026-09-29",
+      "scope": "P0-C pruned WLA-DX 65816 assembler/linker island; actively synchronized with main and green"
+    },
+    {
+      "pr": 44,
+      "branch": "chatgpt/audio-upload-path-2026-09-29",
+      "scope": "CPU-to-APU upload-path tracing and audio-port analysis"
+    },
+    {
+      "pr": 43,
+      "branch": "chatgpt/analyzer-recon-closeout-2026-09-29",
+      "scope": "Analyzer reconnaissance closeout and durable manifest evidence"
+    },
+    {
+      "pr": 40,
+      "branch": "chatgpt/island-beetle-bsnes-2026-09-29",
+      "scope": "P0-B Beetle/bsnes libretro source islanding"
+    },
+    {
+      "pr": 35,
+      "branch": "chatgpt/ui-atlas-tier1-completion-2026-09-29",
+      "scope": "Tier 1 UI atlas evidence completion"
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The immediately active #45 lane touches shared toolchain manifests, bootstrap workflow, WORK-QUEUE and toolchain-plan authorities. The other high-value canonical fronts are already represented by #44, #43, #40 and #35. Merging/reconciling #43 now would also change shared WORK-QUEUE state underneath recently synchronized #45, so no new or reconciliation write was sufficiently independent during the gate.",
+  "decision": "deferred",
+  "decision_reason": "Recent active ownership on PR #45 was clear and all other obvious high-value workstreams were already represented by existing PRs. Starting another lane or merging overlapping shared-plan changes would add coordination risk.",
+  "orphaned_work": {
+    "candidates_inspected": [],
+    "rescued": [],
+    "note": "Branch inventory was inspected, but no unrepresented idle branch was established as a safe, coherent rescue candidate before the active-lane gate decision."
+  },
+  "work": {
+    "summary": "Refreshed main and inspected all five open PRs, their scopes, recent commits, changed files, reviews/comments and head checks. Confirmed #45 is clean and fully green after synchronizing PR #46 into its branch. #44 and #43 are clean and idle; #40 and #35 remain draft lanes with green observed checks. No Uniracers writes were made.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": [],
+    "observed": "PR #45 head checks all completed successfully; PR #40 observed toolchain checks green; PR #35 native build-smoke and unit checks green; #43 unit check green; #44 unit checks green."
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "PR #45 had synchronized with main and completed checks within the preceding 10 minutes, while remaining plan-defined high-value lanes were already occupied.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "At the next regular activation, refresh state. If #45 is idle beyond the gate, reconcile/merge ready compatible lanes in dependency-safe order rather than opening another branch; otherwise continue only a clearly disjoint plan-defined lane."
+}
