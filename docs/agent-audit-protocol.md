@@ -41,3 +41,9 @@ Controlled outcomes:
 Keep descriptions factual and compact. Do not inflate progress. Do not edit historical records to make later outcomes look cleaner. Logging must not cause project interference, branch churn, or retries of otherwise completed project work.
 
 The audit repository is not a coordination lock. Project-repo concurrency checks remain authoritative.
+
+## Concurrency-gate exception
+
+A project-repository concurrency gate forbids writes to the assigned project repository only. The required append-only creation of a new audit JSON file in `gamesbyian/chat-scheduler` is an explicit administrative exception and should still be performed when project work is deferred.
+
+Before writing, verify that the audit target path does not already exist. If a create-file write is blocked or fails, re-read this protocol, confirm that the attempted action is only creation of a new immutable audit record in this repository, and retry exactly once using a fresh unique filename if needed. If that second attempt fails, report the audit-write failure and stop; never risk project work to repair logging.
