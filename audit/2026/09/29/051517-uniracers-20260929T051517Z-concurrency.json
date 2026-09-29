@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T051517Z-uniracers-hourly-concurrency",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T05:15:00Z",
+  "started_at": "2026-09-29T05:15:17Z",
+  "finished_at": "2026-09-29T05:16:00Z",
+  "initial_repo_state": {
+    "main_sha": "da52272493ac47bb70dcadc7860e9dba943275d5",
+    "open_prs": [
+      7,
+      8
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #8 (chatgpt/third-party-tool-audit-2026-09-28) was created at 05:14:36Z and updated at 05:15:22Z, inside the 10-minute safety window. PR #7 remains open/draft."
+  },
+  "decision": "deferred",
+  "decision_reason": "Concurrency gate fired on newly active PR #8. No writes were made to UR-Recomp and orphan-branch rescue was not attempted while active ownership was evident.",
+  "work": null,
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Another agent is actively updating PR #8.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Recheck repository activity on the next scheduled activation; if idle, inspect PRs and orphan branches before continuing canonical work."
+}
