@@ -1,11 +1,12 @@
 # Automation audit summary
 
-Total recorded activations: **5**
+Total recorded activations: **6**
 
 ## Outcomes
 
 - concurrency_blocked: 4
 - progress: 1
+- error: 1
 
 ## By project
 
@@ -15,4 +16,5 @@ Total recorded activations: **5**
 ### Uniracers
 - concurrency_blocked: 2
 - progress: 1
+- error: 1
 
