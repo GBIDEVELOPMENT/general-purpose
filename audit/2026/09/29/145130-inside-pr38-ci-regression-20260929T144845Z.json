@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T144845Z-inside-hourly-pr38-ci-regression",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T14:52:50Z",
+  "started_at": "2026-09-29T14:48:45Z",
+  "finished_at": "2026-09-29T14:51:30Z",
+  "initial_repo_state": {
+    "main_sha": "443950c6a3c81e65e0e054fa89380461974bb2df",
+    "open_prs": [
+      38
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #37 merged to main at 14:26:31Z. PR #38 was created from that main and its head 376e18e0 triggered Verify machine run 36585412138 at about 14:48Z during inspection."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 38,
+      "branch": "research/discord-master-provenance-revisit-2026-09-29",
+      "scope": "Experiment 297 historical Discord 108/9 provenance, archival method archaeology, carrier-premise reclassification, and associated canonical docs/data/CI wiring",
+      "likely_files": [
+        "data/discord-community-master-108.json",
+        "docs/discord-community-provenance.md",
+        "docs/current-state.md",
+        "docs/experiment-ledger.md",
+        "docs/human-solve-reconstruction.md",
+        "docs/research-queue.md",
+        "docs/theorem-graph.md",
+        "scripts/audit_discord_master.py",
+        ".github/workflows/verify.yml"
+      ]
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "PR #38's archival/provenance lane is clearly scoped. Its CI exposed a pre-existing mainline regression in scripts/audit_q4_polarity_gauge.py: Experiment 270 imports A/C/D/FI from that module, but those names are defined only inside main(). A separate one-file hotfix branch from main would not touch PR #38's changed files and would restore baseline verification.",
+  "decision": "worked",
+  "decision_reason": "Inspected current main/open PR/workflow state, diagnosed PR #38's failure as a pre-existing mainline Q4 audit export regression, and attempted a minimal independent hotfix. Branch creation succeeded, but the file update was blocked by connector safety, so no code commit or PR could be produced.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "research/derive-input-pos3-weaker-parent",
+      "human/raw-blind-worksheet",
+      "research/archival-manufacturing-evidence",
+      "research/q4-gauge-physical-simplicity"
+    ],
+    "rescued": [],
+    "note": "No newly actionable orphan was established. Prior weaker-input-POS3 work is already represented by merged later work; historical research branches remain superseded/represented. An empty hotfix branch created in this run points exactly at main and contains no orphaned work."
+  },
+  "work": {
+    "summary": "PR #37 is now merged. PR #38 is the sole open lane and adds Experiment 297 provenance/archival work. Verify machine run 36585412138 reached step 34 then failed with ImportError: cannot import name 'A' from audit_q4_polarity_gauge. Inspection confirmed main defines A, C, D and FI only inside main(), while audit_q4_gauge_physical_simplicity.py imports them at module scope. Created fix/q4-gauge-exports-2026-09-29 from current main and attempted to promote those four constants to module scope. The update_file write was blocked by connector safety; the branch remains identical to main.",
+    "branch": "fix/q4-gauge-exports-2026-09-29",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": [],
+    "observed_runs": [
+      {
+        "run_id": 36585412138,
+        "name": "Verify machine",
+        "conclusion": "failure",
+        "failed_step": "Audit Q4 gauge physical simplicity",
+        "cause": "ImportError for module-scope gauge constants A/C/D/FI"
+      }
+    ]
+  },
+  "outcome": "error",
+  "blocker": "GitHub connector safety blocked the minimal one-file mainline CI regression fix after the independent hotfix branch was created.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next regular run, refresh first. If the Q4 export regression remains unfixed and no conflicting owner has taken it, continue fix/q4-gauge-exports-2026-09-29 by moving A/C/D/FI to module scope in scripts/audit_q4_polarity_gauge.py, validate the affected audits, and open a narrow hotfix PR. Do not modify active PR #38 directly."
+}
