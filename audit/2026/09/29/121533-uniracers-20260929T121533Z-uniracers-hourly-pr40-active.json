@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T121533Z-uniracers-hourly-pr40-active",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T12:15:00Z",
+  "started_at": "2026-09-29T12:15:33Z",
+  "finished_at": "2026-09-29T12:20:00Z",
+  "initial_repo_state": {
+    "main_sha": "187371f01d9456698e530b972c174597c05f5685",
+    "open_prs": [
+      40,
+      36,
+      35
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main had merged P0-B Flips CLI at 11:40Z. PR #40 is the current Beetle/bsnes P0-B tranche, 9 commits ahead and 0 behind main with a large vendored source tree and toolchain/workflow changes. Exact recent-update metadata for its head was not reliably available, so its ownership/activity was treated as active under the ambiguity rule. PR #35 and #36 are older independent UI-atlas and external-evidence lanes, both substantially diverged from current main."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 40,
+      "branch": "chatgpt/island-beetle-bsnes-2026-09-29",
+      "scope": "P0-B Beetle/bsnes libretro vendoring, provenance, offline bootstrap and independent-reference CI"
+    },
+    {
+      "pr": 36,
+      "branch": "chatgpt/external-evidence-intake-2026-09-29",
+      "scope": "external-evidence intake and patch archaeology"
+    },
+    {
+      "pr": 35,
+      "branch": "chatgpt/ui-atlas-tier1-completion-2026-09-29",
+      "scope": "Tier 1 UI atlas evidence and native UI smoke"
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The canonical Priority 0 queue names Beetle/bsnes as the next unlanded direct-vendor target, and PR #40 already owns that exact highest-priority lane. PR #35/#36 establish independent lanes, but starting another P0 or research lane would add coordination surface while the canonical next step is already in flight.",
+  "decision": "deferred",
+  "decision_reason": "Existing PR #40 owns the canonical highest-priority next tranche and its exact recent activity could not be verified, so it was conservatively treated as active. No clearly superior, plan-defined independent work justified a fourth concurrent lane.",
+  "orphaned_work": {
+    "candidates_inspected": [],
+    "rescued": [],
+    "note": "Branch inventory was reviewed. No unrepresented coherent orphan was established strongly enough to touch without duplicating the three open lanes or already merged island tranches."
+  },
+  "work": {
+    "summary": "Refreshed main, open PRs, branch inventory, recent commits, current P0 work queue and island plan; compared all three open PR branches against main. Left the project repository untouched.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Canonical P0-B Beetle/bsnes work is already owned by PR #40 and ambiguous recent head activity must be treated as active.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next regular run: refresh PR #40 and merge/reconcile it only if its ownership has settled and required checks are satisfied; otherwise continue respecting #35/#36 and choose only a genuinely independent plan-defined lane."
+}
