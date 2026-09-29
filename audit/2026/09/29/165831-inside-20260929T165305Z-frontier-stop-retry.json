@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T165305Z-inside-hourly-frontier-stop",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T16:52:50Z",
+  "started_at": "2026-09-29T16:53:05Z",
+  "finished_at": "2026-09-29T16:58:30Z",
+  "initial_repo_state": {
+    "main_sha": "27b80b7bacb72f5b7f99b711c63874661bd968a7",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Main last changed at 2026-09-29T15:56:01Z when PR #48 merged Experiment 314, nearly an hour before this run. No open PRs were present and no project activity fell within the preceding 10-minute gate."
+  },
+  "concurrent_lanes": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No active concurrent lane or open PR was detected. The canonical queue closes the tested global-bijection, local-selector-permutation, local-translation, and selector-controlled shear families and forbids unconstrained broadening without an independent structural clue.",
+  "decision": "stopped",
+  "decision_reason": "The canonical Priority-5 stopping rule is currently satisfied through Experiment 314. No independent clue licensed another compact adversarial grammar, and a bounded external search for the outstanding historical Discord assembly attachment produced no relevant recoverable source.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "fix/q4-gauge-exports-2026-09-29",
+      "chatgpt/discord-anonymize-authors-2026-09-29",
+      "chatgpt/discord-one-shot-archive-2026-09-29",
+      "research/discord-3x3-provenance-2026-09-29",
+      "research/discord-master-provenance-revisit-2026-09-29"
+    ],
+    "rescued": [],
+    "note": "The Q4 fix and provenance branches are fully behind main. The divergent Discord archive-tool branches are represented by historical PRs #44 and #40."
+  },
+  "work": {
+    "summary": "Refreshed main/open-PR/branch/workflow state, read canonical state/queue/ledger/spec through Experiment 314, checked likely orphan branches against main and historical PR representation, and performed a bounded search for the outstanding Discord attachment. No new evidence was recovered and no project files or refs were changed.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "no_safe_work",
+  "blocker": "No independently motivated compact next experiment or newly recovered archival artifact; the plan says not to broaden to arbitrary per-cell/state-dependent functions without an external structural clue.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh for newly landed work or evidence. If none exists, retain the Experiment-314 mechanical stopping point and pursue only evidence-gated archival/external-consumer opportunities."
+}
