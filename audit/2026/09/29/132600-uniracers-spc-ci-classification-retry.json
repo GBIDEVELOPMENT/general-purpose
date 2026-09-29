@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T131916Z-uniracers-hourly-spc-ci-classification",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T13:15:00Z",
+  "started_at": "2026-09-29T13:19:16Z",
+  "finished_at": "2026-09-29T13:26:00Z",
+  "initial_repo_state": {
+    "main_sha": "5ad078c4b9fa33bb913d00bda388f2740dc5696b",
+    "open_prs": [
+      42,
+      40,
+      35
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Latest observed PR activity was PR #42 at 13:07:20Z and its failing audit job completed at 13:07:32Z, more than 10 minutes before project modification was attempted. Main last advanced at 12:50:39Z via PR #41."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 42,
+      "branch": "chatgpt/spc-audio-archaeology-2026-09-29",
+      "scope": "SPC corpus acquisition and analysis; idle beyond the 10-minute gate at intervention time"
+    },
+    {
+      "pr": 40,
+      "branch": "chatgpt/island-beetle-bsnes-2026-09-29",
+      "scope": "P0-B Beetle/bsnes libretro islanding"
+    },
+    {
+      "pr": 35,
+      "branch": "chatgpt/ui-atlas-tier1-completion-2026-09-29",
+      "scope": "Tier 1 UI atlas evidence"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The three open PRs have explicit disjoint ownership. PR #42 had been idle for more than 10 minutes and had a deterministic CI failure confined to its own newly imported SPC archive, so continuing that existing lane was safe without touching #40 or #35.",
+  "decision": "worked",
+  "decision_reason": "Inspected current state and diagnosed PR #42's failing Imported reference audit. The failure is deterministic: references/imported/audio/uniracers/Uniracers-EMU-zophar.zip is not classified in references/imported/MANIFEST.json. Attempted the minimal manifest-only repair on the existing PR branch, but the GitHub write was blocked by connector safety.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "chatgpt/external-re-practice-archaeology-2026-09-29",
+      "chatgpt/ui-atlas-evidence-harvest-2026-09-29",
+      "chatgpt/harvest-rerun-evidence-2026-09-29",
+      "chatgpt/record-2008-reference-negative-2026-09-29"
+    ],
+    "rescued": [],
+    "note": "The first two are fully behind main. The latter two diverge but are represented by prior PR/evidence work, including PR #22 for harvest-rerun evidence, so no orphan rescue was justified."
+  },
+  "work": {
+    "summary": "Refreshed main, open PRs, branches, reviews/comments, and PR-head workflow status. Diagnosed PR #42 Imported reference audit failure from job logs. Verified the imported ZIP is 491821 bytes with git blob SHA-1 7e4f60c679891845223f6b2d813d03a74aa2e48d and generated analysis records SHA-256 85a3f00cfe46cddd18caa714374ef54da6835f0d293557ce499de352b8d4fdb0. Attempted to add the archive to references/imported/MANIFEST.json as analyzed reference evidence; write was blocked.",
+    "branch": "chatgpt/spc-audio-archaeology-2026-09-29",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": [],
+    "observed_runs": [
+      {
+        "run_id": 36572830619,
+        "name": "Imported reference audit",
+        "conclusion": "failure"
+      },
+      {
+        "run_id": 36572830477,
+        "name": "Project tooling unit tests",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 36563799315,
+        "name": "Toolchain bootstrap regression",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 36562322573,
+        "name": "Project tooling unit tests",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "outcome": "error",
+  "blocker": "GitHub connector safety blocked the minimal manifest update on PR #42's existing branch.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next regular run, refresh state. If PR #42 remains idle and the failure is still present, add the SPC ZIP classification to references/imported/MANIFEST.json using the verified size/blob/SHA-256, rerun normal PR CI through the commit, and continue the existing SPC lane without disturbing #40 or #35."
+}
