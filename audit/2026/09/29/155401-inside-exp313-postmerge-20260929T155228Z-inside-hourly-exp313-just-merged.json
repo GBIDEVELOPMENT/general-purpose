@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T155228Z-inside-hourly-exp313-just-merged",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T15:52:50Z",
+  "started_at": "2026-09-29T15:52:28Z",
+  "finished_at": "2026-09-29T15:54:00Z",
+  "initial_repo_state": {
+    "main_sha": "36de55c96ff467c53ab47a2721d8eba9a6cb0aba",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #47 merged at 15:51:37Z, less than one minute before inspection. It landed Experiment 313 after PR #46 had reconciled Experiments 306-312 at 15:41:04Z. No open PRs remained at inspection time."
+  },
+  "concurrent_lanes": [
+    {
+      "branch": "research/local-2d-translation-reuse-exp313-2026-09-29",
+      "pr": 47,
+      "scope": "Experiment 313 reused local 2D translation closure; merged to main immediately before inspection."
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The active research lane had just merged and updated shared canonical queue/state/spec/ledger and CI surfaces. With no open PR to delimit the agent's next scope and no plan-defined independent lane established during the sub-minute post-merge window, starting new work would risk racing the same agent's continuation.",
+  "decision": "deferred",
+  "decision_reason": "Recent activity was extremely fresh: PR #47 merged less than a minute before inspection and changed the canonical research frontier. No open PRs remained, so there was no safe ownership boundary for parallel continuation.",
+  "orphaned_work": {
+    "candidates_inspected": [],
+    "rescued": [],
+    "note": "Branch inventory was inspected. No orphan was modified or rescued during the active post-merge window; several historical branches remain but were not treated as orphan candidates without establishing current divergence and supersession state."
+  },
+  "work": {
+    "summary": "Refreshed main, open PRs, recent commits, branches, and workflow activity. Confirmed PR #46 merged Experiments 306-312 and PR #47 then merged Experiment 313. Deferred project writes because #47 landed less than a minute before inspection and no independent ownership boundary was established.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Experiment 313 merged immediately before inspection; the other agent may still be continuing from the newly updated canonical frontier.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "At the next regular run, refresh main and establish whether the Experiment 313 lane has gone idle or opened a successor PR; then continue the highest-priority independent canonical workstream or reconcile any new PRs. No ad-hoc retry was created because this scheduled runtime forbids creating another automation."
+}
