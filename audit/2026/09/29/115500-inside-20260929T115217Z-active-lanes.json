@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T115217Z-inside-hourly-active-lanes",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T11:52:50Z",
+  "started_at": "2026-09-29T11:52:17Z",
+  "finished_at": "2026-09-29T11:55:00Z",
+  "initial_repo_state": {
+    "main_sha": "e19b20dc2f30f2a9f760661ba20a9017d01463a6",
+    "open_prs": [
+      31,
+      32,
+      33,
+      34
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #34 updated at 11:52:27Z during inspection; PR #32 updated at 11:43:17Z and PR #33 at 11:43:10Z. Main remained at Experiment 291."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 34,
+      "branch": "research/single-cell-recursion-defects",
+      "scope": "Experiments 296-297 adversarial single-cell recursion-defect lane; deliberately isolated from PR #31 and #32."
+    },
+    {
+      "pr": 32,
+      "branch": "research/weaken-q4-shared-polarity",
+      "scope": "Experiments 292/294/295 Q4 premise reduction, theorem/spec handoff; draft."
+    },
+    {
+      "pr": 33,
+      "branch": "docs/deck-and-evidence-update-plan-2026-09-29",
+      "scope": "Documentation-only deck/evidence-pack refresh plan; explicitly avoids research-state files."
+    },
+    {
+      "pr": 31,
+      "branch": "research/recover-weaker-input-pos3",
+      "scope": "Experiment 293 weaker primary/input-POS3 derivation; older lane, no recent update inside gate."
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "Multiple intentionally separated lanes already exist, but three were updated within roughly the preceding 10 minutes and PR #34 was updated during inspection. No additional high-value lane was established that justified adding coordination pressure.",
+  "decision": "deferred",
+  "decision_reason": "Recent active ownership across PRs #34, #32 and #33 made a fifth lane unnecessary; existing work already covers the current adversarial, Q4, evidence-pack, and weaker-input research fronts.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "research/derive-input-pos3-weaker-parent"
+    ],
+    "rescued": [],
+    "note": "The earlier weaker-input-POS3 orphan is now substantively represented/recovered by PR #31 as Experiment 293, so no rescue was warranted."
+  },
+  "work": {
+    "summary": "Refreshed main and inspected open PRs, recent commits, branches and PR-associated workflow activity. Identified four existing lanes and deferred project writes because three were recently active and already cover distinct plan-aligned fronts.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": [],
+    "note": "PR #34 has two completed failing runs; PRs #31-#33 also have completed failures. Existing PR descriptions characterize the recurring verify failures as opaque runner/startup failures with no assertion-backed defect. No reruns were started."
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Three open lanes were updated inside the concurrency window, including PR #34 during inspection.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next regular run: refresh all four PRs, prefer reconciliation/merge of settled compatible lanes over opening another lane, and only rescue unrepresented branches if they remain genuinely unique and idle."
+}
