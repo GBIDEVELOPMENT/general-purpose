@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T111022Z-uniracers-hourly-pr34-pr35-active",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T11:15:00Z",
+  "started_at": "2026-09-29T11:10:22Z",
+  "finished_at": "2026-09-29T11:12:30Z",
+  "initial_repo_state": {
+    "main_sha": "b770c369a2ff1129de6b72795a87ea884b9490d5",
+    "open_prs": [
+      34,
+      35
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #34 updated 11:09:01Z and PR #35 updated 11:10:34Z, both inside the concurrency window."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 34,
+      "branch": "chatgpt/island-snes2asm-closeout-2026-09-29",
+      "scope": "P0-B snes2asm/PyYAML island closeout"
+    },
+    {
+      "pr": 35,
+      "branch": "chatgpt/ui-atlas-tier1-completion-2026-09-29",
+      "scope": "Tier 1 UI atlas evidence completion"
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "Both clearly independent high-value plan lanes were already actively owned; no safe third high-value lane was established.",
+  "decision": "deferred",
+  "decision_reason": "Left two freshly active, productive lanes untouched rather than manufacture a third overlapping lane.",
+  "orphaned_work": {
+    "candidates_inspected": [],
+    "rescued": [],
+    "note": "Branch inventory inspected; no orphan was established strongly enough for safe rescue."
+  },
+  "work": {
+    "summary": "Inspected current repository, recent PRs, commits and branches; no project writes.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "PR #34 and PR #35 were both updated inside the 10-minute gate.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next regular run: refresh PR #34/#35 and main, then reconcile or continue settled lanes and reassess orphan branches."
+}
