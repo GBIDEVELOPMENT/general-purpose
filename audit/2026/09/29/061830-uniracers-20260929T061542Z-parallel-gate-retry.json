@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T061542Z-uniracers-hourly-parallel-gate-b",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T06:15:00Z",
+  "started_at": "2026-09-29T06:15:42Z",
+  "finished_at": "2026-09-29T06:18:30Z",
+  "initial_repo_state": {
+    "main_sha": "380a34376d4156729a474465100ce3a7403f08c3",
+    "open_prs": [
+      8,
+      9
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #8 was active through 06:15 UTC; PR #9 had been quiet since 06:06 UTC and explicitly isolates its race/course work from PR #8 tooling work."
+  },
+  "decision": "worked",
+  "decision_reason": "PR #9 was a documented independent lane, so its failing unit run was diagnosed without touching active PR #8.",
+  "work": {
+    "summary": "Diagnosed PR #9 unit failure: zero_fraction is rounded to six decimals (0.003906) while the test uses unittest's default seven-place comparison against 4/1024. Intended fix: compare at six places. Project-repo write was blocked by connector safety.",
+    "branch": "chatgpt/post-merge-main-plan-2026-09-28",
+    "prs_touched": [
+      9
+    ],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub connector safety blocked the isolated PR #9 write while PR #8 had fresh activity.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Once writes are accepted, apply the six-place precision assertion on PR #9, verify unit CI, then continue its race-finish/course-format lane."
+}
