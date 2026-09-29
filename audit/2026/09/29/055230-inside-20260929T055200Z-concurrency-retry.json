@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T055200Z-inside-hourly-concurrency-retry",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T05:52:00Z",
+  "started_at": "2026-09-29T05:52:00Z",
+  "finished_at": "2026-09-29T05:52:30Z",
+  "initial_repo_state": {
+    "main_sha": null,
+    "open_prs": [
+      3
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #3 was pushed at 2026-09-29T05:51:38Z and its verification workflow started seconds later, placing the INSIDE repository inside the 10-minute concurrency window."
+  },
+  "decision": "deferred",
+  "decision_reason": "The INSIDE concurrency safety gate fired because PR #3 had just been updated and verification had begun. No writes were made to the INSIDE project repository.",
+  "work": null,
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Another agent appeared actively engaged on PR #3.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Recheck after the INSIDE repository has been idle long enough; do not interfere with PR #3 while active."
+}
