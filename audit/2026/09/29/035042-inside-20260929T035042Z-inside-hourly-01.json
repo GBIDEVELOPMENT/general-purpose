@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T035042Z-inside-hourly-01",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T03:52:50Z",
+  "started_at": "2026-09-29T03:50:42Z",
+  "finished_at": "2026-09-29T03:51:30Z",
+  "initial_repo_state": {
+    "main_sha": "e16d9ced0f0bb40e55680f4f9b00df4f119c4542",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main received commit e16d9ced at 03:50:28Z (Archive research files 070-076), about 14 seconds before inspection; Verify machine run 36518938379 started at 03:50:43Z and was in progress."
+  },
+  "decision": "deferred",
+  "decision_reason": "Concurrency safety gate triggered by ongoing mainline archival work and a freshly started verification workflow. No project files, branches, PRs, commits, or workflows were modified.",
+  "work": null,
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Another agent is actively archiving research files on main.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "At the next permitted activation, recheck concurrency and continue from the latest canonical repository state once activity has been idle long enough."
+}
