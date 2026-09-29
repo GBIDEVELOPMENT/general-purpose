@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T161155Z-uniracers-hourly-symbol-adapter-drift",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T16:15:00Z",
+  "started_at": "2026-09-29T16:11:55Z",
+  "finished_at": "2026-09-29T16:16:30Z",
+  "initial_repo_state": {
+    "main_sha": "6048305b1bb3a9c89c312620fe20b68c3c4013bd",
+    "open_prs": [
+      48,
+      47,
+      40,
+      35
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Main merged PR #45 (WLA-DX) at 15:57:45Z. PR #40's latest observed update was 16:01:19Z and its latest workflow completed 16:01:09Z, just outside the preceding 10-minute gate at run start. PRs #47/#48 were older audio lanes; #35 was older UI-atlas work."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 48,
+      "branch": "chatgpt/audio-source-table-2026-09-29",
+      "scope": "ROM-side audio source pointer/table tracing"
+    },
+    {
+      "pr": 47,
+      "branch": "chatgpt/audio-selector-map-2026-09-29",
+      "scope": "audio selector/uploader caller mapping"
+    },
+    {
+      "pr": 40,
+      "branch": "chatgpt/island-beetle-bsnes-2026-09-29",
+      "scope": "P0-B Beetle/bsnes libretro islanding"
+    },
+    {
+      "pr": 35,
+      "branch": "chatgpt/ui-atlas-tier1-completion-2026-09-29",
+      "scope": "Tier-1 UI atlas evidence"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The discovered mainline symbol-adapter drift is a narrow generated-output repair caused by merged PR #44 and is independent of the audio experiments, UI atlas, and Beetle source lane. No active lane owned analysis/generated/snes2asm-symbols.yml or the missing bank-02 da65 adapter.",
+  "decision": "worked",
+  "decision_reason": "Inspection found a deterministic mainline CI regression after recent merges: merged PR #44 added APU_StreamTransfer to canonical symbols.json and regenerated Mesen/Ghidra adapters, but omitted snes2asm and da65 generated adapters. Main's Toolchain bootstrap regression therefore fails at export_symbol_adapters.py --check. A dedicated repair branch was created and a minimal generated-output update was attempted, but the GitHub write was blocked by connector safety.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "chatgpt/analyzer-recon-closeout-2026-09-29",
+      "chatgpt/asset-restoration-audio-toolchain-plan-2026-09-29",
+      "chatgpt/island-wla-dx-2026-09-29",
+      "chatgpt/audio-upload-path-2026-09-29",
+      "chatgpt/spc-audio-archaeology-2026-09-29",
+      "chatgpt/harvest-rerun-evidence-2026-09-29",
+      "chatgpt/record-2008-reference-negative-2026-09-29"
+    ],
+    "rescued": [],
+    "note": "No branch was established as a valuable idle orphan requiring rescue during this run; recent merged branches are represented by main and historical evidence branches were already represented by prior work."
+  },
+  "work": {
+    "summary": "Refreshed main/open PRs/branches and canonical queue/plan; inspected recent workflow activity. Confirmed PR #45 is merged and WLA-DX is now canonical. Diagnosed main run 36594179232 contract failure as stale symbol adapters: symbols.json gained APU_StreamTransfer at 02:8298 in merged PR #44, while snes2asm-symbols.yml still lacks it and no da65-symbols-bank-02.info exists. Mesen and Ghidra adapters already contain the symbol. Created a dedicated branch from current main and attempted the minimal regeneration-equivalent update; the write was blocked before any file commit.",
+    "branch": "chatgpt/fix-symbol-adapter-drift-2026-09-29",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": [],
+    "intended_files": [
+      "analysis/generated/snes2asm-symbols.yml",
+      "analysis/generated/da65-symbols-bank-02.info"
+    ]
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": [],
+    "observed_runs": [
+      {
+        "run_id": 36594179232,
+        "name": "Toolchain bootstrap regression",
+        "branch": "main",
+        "conclusion": "failure",
+        "failure_step": "Check symbol adapter outputs"
+      },
+      {
+        "run_id": 36594409855,
+        "name": "Toolchain bootstrap regression",
+        "branch": "chatgpt/island-beetle-bsnes-2026-09-29",
+        "conclusion": "failure",
+        "failure_steps": [
+          "Validate repository-island manifest",
+          "build-smoke (wla-dx)"
+        ]
+      },
+      {
+        "run_id": 36594409860,
+        "name": "independent libretro reference route",
+        "branch": "chatgpt/island-beetle-bsnes-2026-09-29",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "outcome": "error",
+  "blocker": "GitHub connector safety blocked the file update on the dedicated symbol-adapter repair branch.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next regular run, refresh first. If not already repaired, regenerate symbol adapters from current analysis/generated/symbols.json so snes2asm gains APU_StreamTransfer at LoROM offset 0x10298 and da65 gains bank-02 label APU_StreamTransfer at $8298; run/check the symbol adapter contract. Separately, leave PR #40 ownership intact and let its owner reconcile its WLA-DX/manifest failures against merged main."
+}
