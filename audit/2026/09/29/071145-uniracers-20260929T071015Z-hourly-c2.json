@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T071015Z-uniracers-hourly-c2",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T07:10:15Z",
+  "started_at": "2026-09-29T07:10:15Z",
+  "finished_at": "2026-09-29T07:11:45Z",
+  "initial_repo_state": {
+    "main_sha": "fde59518e8509a9e2b0fd6b401ca47505d5da9c8",
+    "open_prs": [
+      14,
+      11
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Fresh project activity was present at the start of the run. PR #14 (HD visual-reference/upscaling toolchain) had been opened at 07:08:39Z, and PR #11 (UI state map) received commit 20a2f0064a042c7054a267b49de07f027d18b869 at 07:10:31Z with a unit-test workflow that completed failure at 07:10:39Z. Repository pushed_at was 07:10:32Z."
+  },
+  "decision": "deferred",
+  "decision_reason": "Multiple active lanes were being updated inside the concurrency window, including PR #11 during this inspection. Their scopes are identifiable but fresh enough that starting another branch immediately would add coordination risk; no project writes were made.",
+  "work": {
+    "summary": "Refreshed repository state and inspected open PRs, branches, recent commits, and workflow activity. Confirmed PR #14 is the HD visual-reference/upscaling lane. Confirmed PR #11 UI-state-map lane was actively pushed during this run and its tooling-unit-tests workflow failed immediately. No orphan rescue or project write was attempted while these lanes were fresh.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Fresh concurrent pushes/workflow activity, especially PR #11 updated during the run.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next regular run, re-evaluate PR #11 and #14 after their activity settles; diagnose the PR #11 unit failure if still unresolved, inspect orphan branches against open PR coverage, and choose an independent plan-defined lane only if ownership boundaries are clear."
+}
