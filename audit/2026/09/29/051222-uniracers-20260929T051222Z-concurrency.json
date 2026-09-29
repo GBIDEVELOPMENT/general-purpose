@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T051222Z-uniracers-hourly-concurrency",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T05:12:22.207343Z",
+  "started_at": "2026-09-29T05:12:22.207343Z",
+  "finished_at": "2026-09-29T05:12:45.749453Z",
+  "initial_repo_state": {
+    "main_sha": "da52272493ac47bb70dcadc7860e9dba943275d5",
+    "open_prs": [
+      7
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #7 branch commit 3e10486d6b47717951e356ac9886184f97e21839 was created at 2026-09-29T05:11:27Z, less than two minutes before this activation."
+  },
+  "decision": "deferred",
+  "decision_reason": "The 10-minute concurrency safety gate fired because PR #7 had just received a new commit. No Uniracers repository changes or orphan-branch rescue actions were attempted.",
+  "work": null,
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Another agent was actively updating PR #7.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Recheck on the next eligible run or retry after the repository has been idle long enough; preserve the active agent's work."
+}
