@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T125100Z-inside-hourly-r3-cooldown-r5b",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T12:52:50Z",
+  "started_at": "2026-09-30T12:51:00Z",
+  "finished_at": "2026-09-30T12:55:30Z",
+  "initial_repo_state": {
+    "main_sha": "a63bf49054742d53e2d9bb097a467d98fa782a36",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No recent project activity detected. Main remains at Experiment 317; research/reset-r3-tail-selector-replay-2026-09-30 remains exactly 2 commits ahead and 0 behind main with no PR."
+  },
+  "decision": "stopped",
+  "decision_reason": "Blocked-action cooldown applies because relevant R3 branch/main state has not changed since prior safety-blocked writes. No non-duplicative project mutation was justified.",
+  "work": {
+    "summary": "Refreshed open PRs, recent commits and branches; compared the R3 orphan with main. No project mutation attempted.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "no_safe_work",
+  "blocker": "The highest-value continuation remains the unchanged R3 orphan whose rescue/persistence write path was previously safety-blocked.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On material state change, rescue the two-commit R3 branch and persist the Experiment 319 negative result; otherwise seek independent evidence licensing a new spatial construction."
+}
