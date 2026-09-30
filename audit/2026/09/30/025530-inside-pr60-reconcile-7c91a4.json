@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T025350Z-inside-hourly-pr60-reconcile",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T02:52:50Z",
+  "started_at": "2026-09-30T02:53:50Z",
+  "finished_at": "2026-09-30T02:55:30Z",
+  "initial_repo_state": {
+    "main_sha": "d63200d222d03ca4f02eb5dfb9e895cb351c2fe0",
+    "open_prs": [
+      55,
+      56,
+      57,
+      58,
+      60,
+      61
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced at 02:27Z by merge of PR #59 (frozen sticker predictions/holdout harness). PR #57 was pushed at 02:52Z on external-evidence acquisition; PR #61 updated at 02:49Z on A-I background-tile master reconstruction. PR #60 had been idle since 02:24Z."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 57,
+      "branch": "chatgpt/external-evidence-harvester-2026-09-29",
+      "scope": "external-evidence acquisition, media/comment mining, and archival handoff",
+      "status": "active inside 10-minute gate"
+    },
+    {
+      "pr": 61,
+      "branch": "chatgpt/background-tile-masters-2026-09-29",
+      "scope": "reproducible A-I background tile master reconstruction",
+      "status": "active inside 10-minute gate"
+    },
+    {
+      "pr": 60,
+      "branch": "docs/community-glossary-2026-09-29",
+      "scope": "provenance-sensitive community vocabulary glossary",
+      "status": "idle >10m; mergeable; independent docs-only lane"
+    },
+    {
+      "pr": 58,
+      "branch": "chatgpt/discord-archaeology-reconcile-2026-09-29",
+      "scope": "Discord archaeology/Experiment 316 reconciliation",
+      "status": "idle mergeable lane"
+    },
+    {
+      "pr": 56,
+      "branch": "research/external-corpus-intake-2026-09-29",
+      "scope": "external corpus archival intake",
+      "status": "idle mergeable lane"
+    },
+    {
+      "pr": 55,
+      "branch": "chatgpt/discord-export-archaeology-2026-09-29",
+      "scope": "older Discord archaeology",
+      "status": "conflicted/superseded by reconciliation lane"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "Active #57 and #61 have clearly separated acquisition and image-reconstruction ownership. Idle #60 changes only docs/community-glossary.md and is independent of both active lanes, so reconciliation was safe without touching their branches or artifacts.",
+  "decision": "worked",
+  "decision_reason": "Preferred reconciliation of existing independent PR #60 over creating another lane. Its cover-audit check is green; its repository-wide verify failure is the known pre-existing machine verification problem. A guarded squash merge was attempted.",
+  "orphaned_work": {
+    "candidates_inspected": [],
+    "rescued": [],
+    "note": "Recent substantive work is represented by open PRs or merged main work; no clear unsuperseded idle orphan required rescue."
+  },
+  "work": {
+    "summary": "Refreshed main and open work. Confirmed PR #59 merged to main, while #57 and #61 are actively owned. Inspected independent idle PR #60, confirmed it adds only docs/community-glossary.md, is mergeable, and has green cover-audit. Attempted a head-SHA-guarded squash merge of #60; GitHub safety checks blocked the merge before mutation.",
+    "branch": "docs/community-glossary-2026-09-29",
+    "prs_touched": [
+      60
+    ],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety checks blocked the guarded squash merge of independent PR #60; active PRs #57 and #61 were left untouched.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "At the next activation, preserve #57/#61 ownership while active. If #60 remains idle and mergeable, retry/reconcile it; then prefer settled existing lanes (#58, #56) over new work."
+}
