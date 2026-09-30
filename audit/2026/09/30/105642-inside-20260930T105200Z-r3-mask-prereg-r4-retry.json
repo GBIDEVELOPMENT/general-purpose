@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T105200Z-inside-hourly-r3-mask-prereg-r4",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T10:52:50Z",
+  "started_at": "2026-09-30T10:52:00Z",
+  "finished_at": "2026-09-30T10:55:30Z",
+  "initial_repo_state": {
+    "main_sha": "a63bf49054742d53e2d9bb097a467d98fa782a36",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No activity inside the preceding 10-minute gate. Main remains at Experiment 317. research/reset-r3-tail-selector-replay-2026-09-30 is two commits ahead of main at 17525d7 and idle since 09:50:10Z, with no open PR."
+  },
+  "concurrent_lanes": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No active lane existed inside the gate. The existing two-commit R3 branch was the canonical continuation and avoided gratuitous parallel work.",
+  "decision": "worked",
+  "decision_reason": "Continued the existing R3 line read-only by pre-registering the proposed fixed-mask family against the independently solved A-I geometry before inspecting foreground outputs.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "research/reset-r3-tail-selector-replay-2026-09-30"
+    ],
+    "rescued": [],
+    "note": "The branch is coherent and two commits ahead of main. Prior PR creation was safety-blocked; unchanged state triggered cooldown, so that identical PR mutation was not retried."
+  },
+  "work": {
+    "summary": "Audited the third Experiment-318 selector family before extraction. The solved IAB/CDE/FGH 3x3 background geometry independently licenses horizontal and vertical three-way line selectors, exactly the row/chunk and column/rail families already tested. It does not uniquely specify a further three-mask family: alternatives require an extra convention. Therefore do not sweep fixed masks absent a new independent cue. Attempted to preserve this as Experiment 319 documentation on the existing R3 branch; the write was safety-blocked. No equivalent mutation was retried.",
+    "branch": "research/reset-r3-tail-selector-replay-2026-09-30",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "intended_unpersisted_change": {
+    "path": "docs/experiment-319-background-geometry-mask-preregistration.md",
+    "conclusion": "No third fixed-mask family is independently licensed by the solved A-I geometry; row and column are the two parameter-free three-way line selectors. Reopen only if an independent cue specifies a mask construction."
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "GitHub safety checks blocked the documentation write to the existing R3 branch.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "When relevant repository state changes, preserve the Experiment 319 negative preregistration result and surface the two-commit R3 branch without repeating unchanged blocked mutations. Then move R3 to another historically demonstrated operation with independently supplied parameters."
+}
