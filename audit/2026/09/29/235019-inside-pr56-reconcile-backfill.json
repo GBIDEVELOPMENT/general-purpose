@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T235019Z-inside-hourly-pr56-reconcile",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T23:52:50Z",
+  "started_at": "2026-09-29T23:50:19Z",
+  "finished_at": "2026-09-29T23:54:00Z",
+  "initial_repo_state": {
+    "main_sha": "7d13d30a56b4aa1d6598dddd6511779db6c2e375",
+    "open_prs": [
+      55,
+      56,
+      57
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No INSIDE repository activity in the preceding roughly 10 minutes. PR #57 last updated 23:16Z, #55 23:14Z, and #56 23:05Z."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 55,
+      "branch": "chatgpt/discord-export-archaeology-2026-09-29",
+      "scope": "Discord export archaeology, historical provenance, and 534brn byte forensics",
+      "status": "idle >10m; dirty against main"
+    },
+    {
+      "pr": 56,
+      "branch": "research/external-corpus-intake-2026-09-29",
+      "scope": "external corpus intake, preserved Terminal 41 assets, provenance manifests, and binary-asset fetch tooling",
+      "status": "idle >10m; mergeable; Verify machine failure matches pre-existing main failure"
+    },
+    {
+      "pr": 57,
+      "branch": "chatgpt/external-evidence-harvester-2026-09-29",
+      "scope": "reusable external-evidence acquisition tooling and public smoke harvests",
+      "status": "idle >10m; mergeable; dedicated validate/smoke checks green; Verify machine failure matches pre-existing main failure"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "All three previously active external-evidence lanes were idle beyond the concurrency gate. Reconciliation was preferable to starting another overlapping evidence lane.",
+  "decision": "worked",
+  "decision_reason": "PR #56 was the most mature reconciliation candidate: non-draft, mergeable, coherent external-corpus intake, with its only Verify machine failure already present on main. A guarded squash merge was attempted rather than creating new work.",
+  "orphaned_work": {
+    "candidates_inspected": [],
+    "rescued": [],
+    "note": "No recent unrepresented coherent branch was identified as requiring rescue during this pass."
+  },
+  "work": {
+    "summary": "Refreshed main, PRs, branch/workflow state, reviews/comments, changed-file scopes, and the canonical research queue. Confirmed #55/#56/#57 are idle. Dedicated #57 acquisition validation and public/social smoke harvests are green; #56/#57 Verify machine failures reproduce the existing main failure. PR #56 is mergeable and was selected for reconciliation before #57 because #57 overlaps its preserved saf_dat_col asset. A head-SHA-guarded squash merge of #56 was blocked by GitHub safety checks, so the project repository was left unchanged.",
+    "branch": "research/external-corpus-intake-2026-09-29",
+    "prs_touched": [
+      56
+    ],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety checks blocked the guarded merge of PR #56 despite clean mergeability; no project mutation was made.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next regular pass, refresh concurrency state. If still idle, reconcile #56 first, then update/reconcile #57 against main and resolve its intentional overlap with the canonical saf_dat_col asset; handle #55's dirty state only after the corpus/tooling lanes settle."
+}
