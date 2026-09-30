@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T185039Z-inside-hourly-r4-cooldown-7",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T18:52:50Z",
+  "started_at": "2026-09-30T18:50:39Z",
+  "finished_at": "2026-09-30T18:54:00Z",
+  "initial_repo_state": {
+    "main_sha": "a63bf49054742d53e2d9bb097a467d98fa782a36",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No substantive commit, PR, or workflow activity occurred in the preceding 10-minute gate. Main remains Experiment 317; R3 is 2 commits ahead/0 behind and R4 is identical to main."
+  },
+  "concurrent_lanes": [
+    {
+      "branch": "research/reset-r3-tail-selector-replay-2026-09-30",
+      "pr": null,
+      "scope": "R3 tail-selector spatial replay / Experiment 318",
+      "status": "idle orphan, 2 commits ahead/0 behind"
+    },
+    {
+      "branch": "research/reset-r4-g5-g6-circularity-audit-2026-09-30",
+      "pr": null,
+      "scope": "R4 G5/G6 circularity audit",
+      "status": "empty branch identical to main; prior write safety-blocked"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No active lane was detected inside the gate, but canonical continuation belongs on existing R4; another branch would be gratuitous.",
+  "decision": "stopped",
+  "decision_reason": "No relevant state changed since the prior safety-blocked R4 write, so blocked-action cooldown forbids retrying the identical mutation. No distinct independent higher-value mutation was justified.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "research/reset-r3-tail-selector-replay-2026-09-30",
+      "research/reset-r4-g5-g6-circularity-audit-2026-09-30"
+    ],
+    "rescued": [],
+    "note": "R3 remains coherent and preserved; R4 remains empty."
+  },
+  "work": {
+    "summary": "Refreshed repository state and compared R3/R4 against main. Confirmed no substantive change and made no project mutation under cooldown.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "no_safe_work",
+  "blocker": "R4 persistence and R3 rescue are unchanged since their immediately preceding safety blocks.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Retry persistence only after relevant state changes; otherwise continue read-only archaeology for an independently parameterized G5/G6 rival."
+}
