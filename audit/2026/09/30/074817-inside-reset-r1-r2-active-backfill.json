@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T074817Z-inside-hourly-reset-r1-r2-active",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T07:52:50Z",
+  "started_at": "2026-09-30T07:48:17Z",
+  "finished_at": "2026-09-30T07:50:30Z",
+  "initial_repo_state": {
+    "main_sha": "fb4a70fde16f919fa3aa04b9988a70e906e506cf",
+    "open_prs": [
+      64
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced through merged PR #61 and commit fb4a70f establishing the epistemic reset. PR #64 opened at 07:48:25Z; head 836237e was committed at 07:48:10Z and fresh PR workflows were queued."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 64,
+      "branch": "research/reset-r1-ordering-acorn-lineage-2026-09-30",
+      "scope": "Epistemic-reset R1 historical ordering/acorn lineage plus initial R2 sticker-native boundary-channel inventory",
+      "status": "active inside gate"
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The canonical reset makes R1-R6 the priority frontier. PR #64 actively modifies R1/R2, the research queue and reset evidence; remaining R3-R6 work consumes those outputs or shares the same decision surface.",
+  "decision": "deferred",
+  "decision_reason": "Left active PR #64 untouched; no genuinely independent plan-prioritized lane was safer or higher value.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "recent non-main branch inventory"
+    ],
+    "rescued": [],
+    "note": "No recent idle unsuperseded branch without PR representation qualified for rescue."
+  },
+  "work": null,
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "PR #64 was actively advancing the canonical reset frontier with fresh workflows.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh PR #64 and main next activation; if settled, reconcile it first, then continue the reset queue from its recorded R2 tests."
+}
