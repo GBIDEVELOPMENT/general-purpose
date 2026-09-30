@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T231639Z-uniracers-hourly-pr52-merge-retry",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T23:15:00Z",
+  "started_at": "2026-09-29T23:16:39Z",
+  "finished_at": "2026-09-29T23:20:00Z",
+  "initial_repo_state": {
+    "main_sha": "0707410dc67d0438ec382a03b5573eee1c6b79e2",
+    "open_prs": [
+      52,
+      53,
+      54
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No project activity in the preceding roughly 10 minutes. PR #53 last updated 21:14:49Z and PR #54 21:15:51Z; their latest checks completed green. PR #52 has been idle since 20:45Z."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 53,
+      "branch": "chatgpt/oam-seam-regression-2026-09-29",
+      "scope": "deterministic active-display OAM / two-player regression path",
+      "status": "draft; idle >10m; latest tooling/toolchain checks green"
+    },
+    {
+      "pr": 54,
+      "branch": "chatgpt/four-rom-differential-2026-09-29",
+      "scope": "four-ROM non-RNC lineage archaeology",
+      "status": "draft; idle >10m; latest lineage and tooling checks green"
+    },
+    {
+      "pr": 52,
+      "branch": "chatgpt/beetle-offline-promotion-2026-09-29",
+      "scope": "Beetle/bsnes offline promotion gate",
+      "status": "non-draft; cleanly mergeable; two latest bootstrap regressions green"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "All open lanes were idle beyond the concurrency window. PR #52 is an older independent infrastructure tranche; #53 and #54 own distinct research lanes.",
+  "decision": "worked",
+  "decision_reason": "PR #52 remained the highest-value reconciliation target: non-draft, cleanly mergeable, validated, and idle. Retried its guarded merge rather than creating another lane.",
+  "orphaned_work": {
+    "candidates_inspected": [],
+    "rescued": [],
+    "note": "No recent unrepresented coherent branch was identified as requiring rescue during this pass."
+  },
+  "work": {
+    "summary": "Refreshed main, open PRs, recent branches/activity and GHA. Confirmed #53/#54 are idle draft lanes with green latest checks and #52 remains cleanly mergeable with green Beetle offline-bootstrap validation. Retried a head-SHA-guarded merge of #52; GitHub safety checks blocked the merge, leaving the project repository unchanged.",
+    "branch": "chatgpt/beetle-offline-promotion-2026-09-29",
+    "prs_touched": [
+      52
+    ],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety checks blocked the guarded merge of PR #52 despite clean mergeability and green validation.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next regular pass, refresh concurrency state and retry/reconcile PR #52 if still safe. Preserve draft ownership of #53 and #54 unless their agents have settled and reconciliation is warranted."
+}
