@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T091355Z-uniracers-hourly-pr75-reconcile-r6",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T09:15:00Z",
+  "started_at": "2026-09-30T09:13:55Z",
+  "finished_at": "2026-09-30T09:18:30Z",
+  "initial_repo_state": {
+    "main_sha": "31d4f5037224da55d16a0435e4e774686c42c53f",
+    "open_prs": [
+      75
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No project activity inside the preceding 10-minute gate. Main remained at merged PR #74; PR #75 head e7fc1a39 was idle since 07:52Z with all five latest head workflows green."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 75,
+      "branch": "chatgpt/snes9x-island-closure-2026-09-30",
+      "scope": "P0-D measured Snes9x source/build island and offline bootstrap",
+      "status": "idle beyond gate; merge candidate"
+    },
+    {
+      "branch": "chatgpt/native-active-oam-model-2026-09-30",
+      "scope": "general active-display OAM cursor model plus unit coverage",
+      "status": "idle orphan; previous rescue write safety-blocked"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No lane was active inside the gate. PR #75 and the OAM orphan are independent; the orphan rescue was intentionally not retried because relevant state had not changed since the preceding safety block.",
+  "decision": "worked",
+  "decision_reason": "Reconciliation was preferable to starting new work. Verified PR #75's final head workflows were all green and attempted a head-SHA-guarded merge; GitHub safety blocked the mutation. Honored cooldown for the unchanged orphan rescue.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "chatgpt/native-active-oam-model-2026-09-30"
+    ],
+    "rescued": [],
+    "note": "The branch remains two coherent commits ahead of main and valuable, but its previous draft-PR rescue was safety-blocked and no relevant state changed, so cooldown prohibited repeating that mutation."
+  },
+  "work": {
+    "summary": "Refreshed main and open PR state, checked concurrency and workflow state, confirmed PR #75's latest head had five successful workflows, preserved the unchanged OAM orphan under blocked-action cooldown, and attempted a guarded merge of #75. The merge was safety-blocked before mutation.",
+    "branch": "chatgpt/snes9x-island-closure-2026-09-30",
+    "prs_touched": [
+      75
+    ],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "GitHub safety checks blocked the guarded merge of PR #75; no project mutation occurred.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next activation, retry #75 only if relevant merge/head/base/CI state changed; otherwise choose another plan-defined lane or read-only work. Rescue the native-active-oam orphan only after relevant state changes or via a later safe recovery pass."
+}
