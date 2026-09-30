@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T085403Z-inside-r3-tail-selector-replay-r1",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T08:52:50Z",
+  "started_at": "2026-09-30T08:54:03Z",
+  "finished_at": "2026-09-30T08:59:00Z",
+  "initial_repo_state": {
+    "main_sha": "a63bf49054742d53e2d9bb097a467d98fa782a36",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Main had advanced since the previous run through R1/R2 and Experiment 317; latest push was 07:51:57Z, over an hour before this activation. No open PRs or activity inside the 10-minute gate."
+  },
+  "concurrent_lanes": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No active lane was present inside the concurrency gate. R1/R2 and Experiment 317 were already on main, and the canonical queue explicitly named R3 operation replay as the next independent reset work package.",
+  "decision": "worked",
+  "decision_reason": "Continued the epistemic reset with the cheapest R3 replay of the newly established one-of-three tail mark, without importing incumbent-machine assumptions.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "research/reset-r1-ordering-acorn-lineage-2026-09-30",
+      "research/reset-r2-tail-metadata-tests-2026-09-30",
+      "other recent non-main branches"
+    ],
+    "rescued": [],
+    "note": "The reset R1/R2 branch work was already represented on main via equivalent/squashed commits; no unsuperseded idle orphan required rescue."
+  },
+  "work": {
+    "summary": "Added an observation-only executable replay comparing two simplest spatial meanings of the Experiment 317 tail selector: consecutive body row/chunk versus 3x3 body column. Enumerates all 36 tail completions; row mode exposes 18-22 observed selected cells and column mode 18-21. Forced B/E/F/H/I outputs differ materially for E/F/H/I, so both are genuinely distinct but current evidence supplies no independent criterion selecting one. Documentation write and subsequent PR-opening preservation attempt were safety-blocked; executable commit remains safely on branch.",
+    "branch": "research/reset-r3-tail-selector-replay-2026-09-30",
+    "prs_touched": [],
+    "commits": [
+      "a433dcd20cec5106ef0b46417f792f10d972a98f"
+    ],
+    "files_changed": [
+      "scripts/replay_tail_selector_spatial.py"
+    ]
+  },
+  "intended_followup_documentation": "Record as Experiment 318: both row/chunk and column/rail readings survive observation-only evidence; do not choose by downstream appearance. Forced outputs row B/E/F/H/I = //-, /--, ?/-, ?-/, /-/; column = //-, ///, ///, --/, ??/. Next R3 replay should test a fixed mask tied to independently solved A-I background geometry or another independently supplied selector/key.",
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "GitHub safety checks blocked the follow-up documentation write and the one permitted alternate preservation attempt to open a PR. The substantive executable commit succeeded and is preserved on the branch.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next activation, first determine whether the branch commit has acquired PR representation or been superseded. If still orphaned and safely idle with materially changed write state, rescue it into a PR and add the Experiment 318 documentation; otherwise continue the reset queue without duplicating it."
+}
