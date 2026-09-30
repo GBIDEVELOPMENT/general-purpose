@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T041229Z-uniracers-canoe-oam-parallel-r5",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T04:15:00Z",
+  "started_at": "2026-09-30T04:12:29Z",
+  "finished_at": "2026-09-30T04:17:00Z",
+  "initial_repo_state": {
+    "main_sha": "956e16c3b683e474f86652633f610631cbe2c293",
+    "open_prs": [
+      68,
+      66
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #68 was actively advancing the SNESRecomp analyzer Cargo closure through 04:12Z with fresh queued checks; PR #66 had updated at 04:08Z on the independent Sayans translation control-byte lane. Main had just merged #64, #65 and #67 around 03:58-04:01Z."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 68,
+      "branch": "chatgpt/snesrecomp-c4-analyzer-cargo-2026-09-29",
+      "scope": "Priority-0 SNESRecomp analyzer Cargo closure and zero-network audit",
+      "status": "active inside 10-minute gate"
+    },
+    {
+      "pr": 66,
+      "branch": "chatgpt/sayans-control-bytes-2026-09-29",
+      "scope": "Sayans translation control-byte vocabulary",
+      "status": "updated inside 10-minute gate"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "Canonical WORK-QUEUE keeps emulator-compatibility seams independent from Priority-0 islandization and translation archaeology. Canoe OAM hook disassembly is explicitly open, uses a distinct evidence note, and does not touch active #68/#66 files or decisions.",
+  "decision": "worked",
+  "decision_reason": "Selected the plan-defined Canoe active-display OAM hook disassembly as a genuinely independent high-value lane after verifying no existing open PR represented it.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "recent branch inventory"
+    ],
+    "rescued": [],
+    "note": "No clearly idle, unsuperseded, unrepresented branch was identified as requiring rescue before starting the independent lane."
+  },
+  "work": {
+    "summary": "Refreshed main/open PRs/workflows and canonical plans. Created branch chatgpt/canoe-oam-hook-disassembly-2026-09-29 from current main. Decoded the preserved Canoe IPS executable payload: hook 0x01534C JSLs to $BFFF00; hook 0x015714 JSLs to $BFFF36; handler 1 transforms $7E20A2/$7E20A3 and OAMDATA with a $55 compatibility path; handler 2 installs HDMA descriptors backed by $7FFFE0/$7FFFF0, including a channel-1 70 55 55 70 55 55 00 table. Attempted to preserve the analysis as references/notes/canoe-oam-patch-disassembly.md, but the GitHub file-create operation was blocked by safety checks, so the branch remains empty and no project file/commit was created.",
+    "branch": "chatgpt/canoe-oam-hook-disassembly-2026-09-29",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety checks blocked creation of the Canoe OAM disassembly note after the independent branch itself was created.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next safe pass, preserve the decoded Canoe hook analysis on the existing branch if still idle and unowned, then compare the workaround semantically with Snes9x/MAME/jgenesis. Leave active #68/#66 ownership untouched."
+}
