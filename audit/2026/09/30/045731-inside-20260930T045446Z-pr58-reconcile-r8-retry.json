@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T045446Z-inside-hourly-pr58-reconcile-r8",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T04:52:50Z",
+  "started_at": "2026-09-30T04:54:46Z",
+  "finished_at": "2026-09-30T04:57:30Z",
+  "initial_repo_state": {
+    "main_sha": "d34377e23750ff7d42b84022c69ccd589e0e67f5",
+    "open_prs": [
+      55,
+      56,
+      57,
+      58,
+      61
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #57 pushed commit 95a7a6930d005ae259090030f3efd4f7faf5a895 at 04:53:49Z with fresh acquisition smoke workflows in progress; PR #61 updated at 04:51:10Z on background-tile reconstruction. Main remained at d34377e after merged community-vocabulary guidance."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 57,
+      "branch": "chatgpt/external-evidence-harvester-2026-09-29",
+      "scope": "external-evidence acquisition and targeted probe classification",
+      "status": "active inside gate; fresh push and workflows"
+    },
+    {
+      "pr": 61,
+      "branch": "chatgpt/background-tile-masters-2026-09-29",
+      "scope": "consensus A-I background-tile reconstruction",
+      "status": "active inside gate"
+    },
+    {
+      "pr": 58,
+      "branch": "chatgpt/discord-archaeology-reconcile-2026-09-29",
+      "scope": "Discord archaeology and Experiment 316 reconciliation",
+      "status": "idle >10m; mergeable but unstable"
+    },
+    {
+      "pr": 56,
+      "branch": "research/external-corpus-intake-2026-09-29",
+      "scope": "external archive/provenance corpus",
+      "status": "settled older lane"
+    },
+    {
+      "pr": 55,
+      "branch": "chatgpt/discord-export-archaeology-2026-09-29",
+      "scope": "older Discord archaeology",
+      "status": "conflicted/superseded for reconciliation by #58"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "Active #57 and #61 have clear acquisition and image-reconstruction ownership. Idle #58 is a separate reconciliation lane whose guarded merge would not touch or rebase either active branch.",
+  "decision": "worked",
+  "decision_reason": "Preferred reconciliation of the existing idle #58 lane over starting new work; attempted a head-SHA-guarded squash merge while leaving active #57/#61 untouched.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "recent non-main branch inventory"
+    ],
+    "rescued": [],
+    "note": "No clear idle, unsuperseded, PR-less coherent branch warranted rescue."
+  },
+  "work": {
+    "summary": "Refreshed main and inspected open PRs, recent branches/commits, workflow activity, reviews/comments and recent pushes. Confirmed #57 and #61 are active and left them untouched. PR #58 remained idle and mergeable; a guarded squash merge was attempted and blocked by GitHub safety checks before any repository mutation.",
+    "branch": "chatgpt/discord-archaeology-reconcile-2026-09-29",
+    "prs_touched": [
+      58
+    ],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety checks blocked the guarded squash merge of PR #58; no INSIDE repository mutation occurred.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Preserve active #57/#61 ownership. When settled, reconcile their acquisition/reconstruction results; retry #58 only if still independently safe, then retire superseded #55 when appropriate and reconcile #56 with the acquisition lane."
+}
