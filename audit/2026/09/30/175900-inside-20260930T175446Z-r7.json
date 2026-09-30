@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T175446Z-inside-hourly-r4-g5g6-audit-r7",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T17:52:50Z",
+  "started_at": "2026-09-30T17:54:46Z",
+  "finished_at": "2026-09-30T17:59:00Z",
+  "initial_repo_state": {
+    "main_sha": "a63bf49054742d53e2d9bb097a467d98fa782a36",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No activity in the preceding 10-minute gate. Main remained at Experiment 317. R3 remained a coherent orphan 2 commits ahead/0 behind; R4 branch remained identical to main and empty."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": null,
+      "branch": "research/reset-r3-tail-selector-replay-2026-09-30",
+      "scope": "R3 tail-selector replay / Experiment 318",
+      "status": "idle orphan, 2 commits ahead/0 behind; prior PR rescue safety-blocked"
+    },
+    {
+      "pr": null,
+      "branch": "research/reset-r4-g5-g6-circularity-audit-2026-09-30",
+      "scope": "R4 G5/G6 circularity audit",
+      "status": "empty branch identical to main; prior documentation write safety-blocked"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No active agent was detected. Canonical reset plan supports R4 independently, while R3 was left untouched under blocked-action cooldown.",
+  "decision": "worked",
+  "decision_reason": "Performed a bounded R4 assumption audit and prepared a materially specific Experiment 319 record rather than retrying the unchanged R3 rescue mutation.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "research/reset-r3-tail-selector-replay-2026-09-30",
+      "research/reset-r4-g5-g6-circularity-audit-2026-09-30"
+    ],
+    "rescued": [],
+    "note": "R3 remains valuable and coherent but its unchanged PR-rescue mutation is on cooldown. R4 is an empty branch created in the prior run; no new empty branch was created."
+  },
+  "work": {
+    "summary": "Refreshed repository state and canonical reset rules. Reconfirmed G5/G6 as the cleanest circularity-risk premises. Tightened Experiment 319 into an admissibility rule: rival operations may be instantiated only when every non-obvious parameter is independently fixed by direct sticker/background structure, pre-incumbent historical sticker operations, demonstrated neighboring-ARG mechanics plus a sticker-supplied parameter, or a prospective physical holdout. Current corpus supplies no concrete rival; result is 'premise exposed, rival family not yet instantiated'. Prepared docs/experiment-319-g5-g6-circularity-audit.md, but the create-file mutation was safety-blocked.",
+    "branch": "research/reset-r4-g5-g6-circularity-audit-2026-09-30",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "GitHub safety blocked the prepared Experiment 319 documentation write. No equivalent alternate project mutation was attempted.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Persist Experiment 319 only after relevant write state changes; meanwhile mine already-recovered historical and neighboring-ARG evidence specifically for the first independently parameterized operation that can replace G5 or G6. Do not widen into arbitrary recursive-map enumeration."
+}
