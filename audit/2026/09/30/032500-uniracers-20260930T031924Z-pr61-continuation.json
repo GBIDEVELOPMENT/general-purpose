@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T031924Z-uniracers-hourly-pr61-continuation",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T03:15:00Z",
+  "started_at": "2026-09-30T03:19:24Z",
+  "finished_at": "2026-09-30T03:25:00Z",
+  "initial_repo_state": {
+    "main_sha": "e399cc90aae467d37427755aaec245330c81035b",
+    "open_prs": [
+      61,
+      62
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #62 cc65/da65 reduced-closure work was actively pushing and launching workflows inside the concurrency window. PR #61 bottom-border/missing-effects work had been idle since 02:53Z and was current with main."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 62,
+      "branch": "chatgpt/cc65-da65-closure-eval-2026-09-29",
+      "scope": "P0-C reduced cc65/da65 island closure evaluation and vendoring",
+      "status": "active inside gate with queued/in-progress workflows"
+    },
+    {
+      "pr": 61,
+      "branch": "chatgpt/bottom-border-seam-2026-09-29",
+      "scope": "historical bottom-border/missing-effects presentation compatibility seam",
+      "status": "idle >10m; independent of PR #62; current with main"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "PR #62 owns third_party/cc65, toolchain and island-plan files. PR #61 owns presentation geometry tooling, generated survey evidence, notes and a dedicated cross-core workflow, so continuation did not overlap the active lane.",
+  "decision": "worked",
+  "decision_reason": "Continued the existing idle, plan-defined PR #61 rather than creating a new branch. Inspected its completed survey and failed cross-core run, identified that the failure was the Beetle teardown abort fixed by now-merged PR #55, and attempted a narrow diagnostic/workflow continuation.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "recent non-main branch inventory"
+    ],
+    "rescued": [],
+    "note": "No clear unsuperseded idle branch lacking PR representation required rescue; current substantive work is represented by #61/#62 or merged main."
+  },
+  "work": {
+    "summary": "Refreshed main and inspected open PRs, branches, recent commits and workflows. Main now includes merged SRAM/Beetle PR #55. Active #62 was left untouched. PR #61's canonical Snes9x survey already rules out 239-line overscan and shows a live 224-line bottom edge. Its cross-core run 36661801359 failed only when Beetle aborted during teardown before assertions; that failure predates the merged Beetle teardown fix. Attempted to harden #61's workflow so core logs survive nonzero exits and to checkpoint this interpretation in the PR description, but both GitHub writes were blocked by safety checks. No project mutation occurred.",
+    "branch": "chatgpt/bottom-border-seam-2026-09-29",
+    "prs_touched": [
+      61
+    ],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety checks blocked both the intended PR #61 workflow update and PR-description checkpoint. PR #62 remained untouched.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "After #62 settles or on the next regular run, preserve its ownership. For #61, trigger or naturally induce a current-head cross-core run using the merged Beetle teardown fix; if green, record the independent 256x224/live-bottom-edge result and decide whether the historical bottom-border symptom is closed as a coarse-geometry negative while keeping 'missing effects' separate."
+}
