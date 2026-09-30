@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T204823Z-inside-hourly-post49-cleanup",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T20:52:50Z",
+  "started_at": "2026-09-29T20:48:23Z",
+  "finished_at": "2026-09-29T20:55:00Z",
+  "initial_repo_state": {
+    "main_sha": "0dc17ca7ad4513b99b2db2883132982fb65a6e0a",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced at 20:43Z with the Q4 export repair and at 20:46Z with the former PR #49 Discord archaeology integration. Both were already on main; no open PR or distinct active branch lane remained."
+  },
+  "concurrent_lanes": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "Recent activity consisted of completed integrations already on main. No open active lane existed; cleanup of the temporary cover-source workflow was isolated from canonical research files.",
+  "decision": "worked",
+  "decision_reason": "Previous blocked Q4 repair and Discord archaeology were now completed on main. The only clear housekeeping continuation was removal of the explicitly temporary cover-source audit workflow added by the archival integration.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "fix/q4-gauge-exports-2026-09-29",
+      "chatgpt/discord-export-archaeology-2026-09-29",
+      "other recent Discord/research branches"
+    ],
+    "rescued": [],
+    "note": "The Q4 repair and Discord archaeology are now represented on main; no unsuperseded orphan requiring rescue was identified."
+  },
+  "work": {
+    "summary": "Refreshed main and confirmed the Q4 module-scope export fix and Discord-export archaeology are integrated. Canonical queue remains at the evidence-gated Priority-5 stop with archival/external-consumer work allowed only when independently motivated. Attempted to retire .github/workflows/temporary-cover-source-audit.yml, but both normal deletion and lower-level Git-tree deletion were blocked by safety checks, leaving the repository unchanged.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety checks blocked removal of the explicitly temporary cover-source audit workflow.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next safe pass, remove .github/workflows/temporary-cover-source-audit.yml if tooling permits. Otherwise leave canonical research at the evidence-gated stop and pursue only independently licensed archival/external-consumer evidence."
+}
