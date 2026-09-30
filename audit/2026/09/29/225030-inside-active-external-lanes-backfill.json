@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "run_id": "20260929T225030Z-inside-hourly-active-external-lanes",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-29T22:52:50Z",
+  "started_at": "2026-09-29T22:50:30Z",
+  "finished_at": "2026-09-29T22:51:30Z",
+  "initial_repo_state": {
+    "main_sha": "7d13d30a56b4aa1d6598dddd6511779db6c2e375",
+    "open_prs": [
+      55,
+      56,
+      57
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #57 was created at 22:50Z; PR #56 updated at 22:44Z; PR #55 owns the complementary Discord-export archaeology lane."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 55,
+      "branch": "chatgpt/discord-export-archaeology-2026-09-29",
+      "scope": "Discord-export archaeology and 534brn byte forensics",
+      "status": "open"
+    },
+    {
+      "pr": 56,
+      "branch": "research/external-corpus-intake-2026-09-29",
+      "scope": "external corpus intake and provenance manifests",
+      "status": "active inside gate"
+    },
+    {
+      "pr": 57,
+      "branch": "chatgpt/external-evidence-harvester-2026-09-29",
+      "scope": "external-evidence acquisition tooling",
+      "status": "created inside gate"
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The high-value evidence frontier is already partitioned among three freshly active coordinated PRs; a fourth lane risks duplication or shared evidence decisions.",
+  "decision": "deferred",
+  "decision_reason": "Active ownership is clear across #55/#56/#57 and no additional plan-defined independent high-value lane was established.",
+  "orphaned_work": {
+    "candidates_inspected": [],
+    "rescued": [],
+    "note": "No orphan rescue attempted while coordinated live lanes cover the evidence frontier."
+  },
+  "work": null,
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Three coordinated external-evidence lanes are actively changing the current research frontier.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "At the next regular activation, repeat concurrency analysis and prefer reconciliation/merge of #55/#56/#57 once settled."
+}
