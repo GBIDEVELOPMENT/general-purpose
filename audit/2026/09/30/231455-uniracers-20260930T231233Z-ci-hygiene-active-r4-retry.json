@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T231233Z-uniracers-ci-hygiene-active-r4",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T23:15:00Z",
+  "started_at": "2026-09-30T23:12:33Z",
+  "finished_at": "2026-09-30T23:14:55Z",
+  "initial_repo_state": {
+    "main_sha": "dbc36016b9886603649eae1fa1d0be85a11df49d",
+    "open_prs": [
+      90,
+      92
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced repeatedly inside the concurrency gate through CI trigger-hygiene commits at 23:08:39Z and 23:11:11Z; push workflows were still running during inspection."
+  },
+  "concurrent_lanes": [
+    {
+      "branch": "main / recent CI-hygiene lanes",
+      "pr": null,
+      "scope": "Actions trigger isolation, superseded-run cancellation, one-shot/regr CI separation",
+      "status": "actively landing on main; workflows in progress"
+    },
+    {
+      "branch": "chatgpt/2014-race-oracle-native-v5-2026-09-30",
+      "pr": 90,
+      "scope": "exact 2014 race-oracle replay through native",
+      "status": "open, stale against current main, non-mergeable"
+    },
+    {
+      "branch": "chatgpt/offline-core-smoke-v2-2026-09-30",
+      "pr": 92,
+      "scope": "Priority-0 outbound-network-disabled core build proof",
+      "status": "open, stale against current main, non-mergeable"
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "Active CI-hygiene work modifies workflow surfaces directly affecting #92 and repository-wide validation; #90 is also stale against rapidly advancing main.",
+  "decision": "deferred",
+  "decision_reason": "Main and workflow topology were changing inside the gate, with workflows still running. Reconciling stale #90/#92 now would risk conflict and churn.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "recent non-main branch inventory"
+    ],
+    "rescued": [],
+    "note": "No orphan rescue during active main/workflow churn; older candidates need a quiet-window supersession diff."
+  },
+  "work": {
+    "summary": "Read-only refresh found #83 merged; Nitrodon preservation/mining (#93/#94) and quarantined widescreen bonus work (#95) landed; CI hygiene then advanced main to dbc36016. Open PRs are #90/#92, both stale/non-mergeable. Current CI work is reducing inappropriate workflow fan-out. No project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Main/workflow topology actively changed inside the gate; multiple push workflows remained in progress.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "After CI hygiene settles, reconcile #92 first because its offline proof depends directly on workflow topology; then reassess #90 and its substantive replay gate. Inspect orphan branches in a quiet window."
+}
