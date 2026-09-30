@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T094940Z-inside-r3-exp318-doc-rescue-r4",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T09:52:50Z",
+  "started_at": "2026-09-30T09:49:40Z",
+  "finished_at": "2026-09-30T09:54:00Z",
+  "initial_repo_state": {
+    "main_sha": "a63bf49054742d53e2d9bb097a467d98fa782a36",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Main remained at a63bf49 (Experiment 317) with no open PRs and no project activity inside the preceding 10-minute gate. The prior R3 branch research/reset-r3-tail-selector-replay-2026-09-30 was one commit ahead of main and idle, with no PR."
+  },
+  "concurrent_lanes": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No active concurrent lane existed. Continuing the existing unsuperseded R3 branch avoided gratuitous parallel work and preserved the canonical reset sequence.",
+  "decision": "worked",
+  "decision_reason": "Continued and documented the existing observation-only R3 tail-selector replay rather than creating a new branch. The branch was an orphan candidate from the prior safety-blocked PR attempt, exactly based on current main and coherent with the reset queue.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "research/reset-r3-tail-selector-replay-2026-09-30"
+    ],
+    "rescued": [
+      "research/reset-r3-tail-selector-replay-2026-09-30"
+    ],
+    "note": "Branch contained a433dcd adding scripts/replay_tail_selector_spatial.py. Continued it with Experiment 318 documentation; PR creation was attempted only after the branch materially changed, but GitHub safety blocked the PR write."
+  },
+  "work": {
+    "summary": "Verified Experiment 317 remains canonical and R3 is the next bounded lane. Inspected the orphaned R3 replay diff and script. Added Experiment 318 documentation recording that both row/chunk and column/rail meanings survive all 36 physical tail completions, with row exposing 18-22 observed cells and column 18-21; neither is independently selected. Documented the next bounded test as predeclared fixed masks motivated by solved A-I background geometry. Attempted to surface the now-two-commit branch as a PR; safety checks blocked that write, and no equivalent mutation was retried.",
+    "branch": "research/reset-r3-tail-selector-replay-2026-09-30",
+    "prs_touched": [],
+    "commits": [
+      "17525d744760edc2664a28b06debcb0fd9dd1cde"
+    ],
+    "files_changed": [
+      "docs/experiment-318-tail-selector-spatial-replay.md"
+    ]
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "GitHub safety checks blocked opening a PR for the rescued R3 branch after the new documentation commit.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next activation, refresh main and inspect whether the R3 branch has been surfaced or changed. Because the PR write was safety-blocked, do not retry an identical PR mutation unless relevant branch/base state changed. Continue the bounded fixed-mask test only if it can be defined from independent A-I geometry without output-driven mask search."
+}
