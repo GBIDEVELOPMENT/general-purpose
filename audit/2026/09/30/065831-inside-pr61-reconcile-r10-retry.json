@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T065226Z-inside-hourly-pr61-reconcile-r10",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-09-30T06:52:50Z",
+  "started_at": "2026-09-30T06:52:26Z",
+  "finished_at": "2026-09-30T06:58:30Z",
+  "initial_repo_state": {
+    "main_sha": "b852f1f537f6c305cb54a21e710992d27d83eb38",
+    "open_prs": [
+      61
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No project activity was observed inside the preceding 10-minute gate. Main had most recently advanced at 06:08:51Z via PR #62; PR #61 last updated at 04:51:10Z."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 61,
+      "branch": "chatgpt/background-tile-masters-2026-09-29",
+      "scope": "reproducible A-I physical-photo consensus master reconstruction",
+      "status": "idle beyond gate; sole open PR"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No lane was active inside the concurrency gate. Existing PR #61 was the canonical continuation target, so no gratuitous parallel branch was needed.",
+  "decision": "worked",
+  "decision_reason": "Inspected the sole remaining PR and its failed checks, compared it to current main, and attempted to update its description with the now-clear reconciliation and QA path. The write was blocked by safety checks before mutation.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "recent non-main branch inventory"
+    ],
+    "rescued": [],
+    "note": "Recently rescued Jan-2022 provenance work is merged as PR #62; acquisition/archive work is merged as #56/#57. No clear idle unsuperseded orphan required rescue."
+  },
+  "work": {
+    "summary": "Refreshed main and open PR state. Confirmed #56, #57 and #62 are merged and PR #61 is the sole open lane. PR #61 is mergeable but diverged 32 ahead / 331 behind current main. Its cover audit is green; candidate-build fails specifically at the fail-closed review-candidate step, while repository Verify-machine fails separately at Q4 gauge physical simplicity. Attempted to update PR #61 description to record that it should reconcile current main, rerun against the richer merged corpus, inspect QA/contact-sheet outputs, and fix source/geometry rules rather than weakening thresholds. Safety checks blocked the metadata write; no project mutation occurred.",
+    "branch": "chatgpt/background-tile-masters-2026-09-29",
+    "prs_touched": [
+      61
+    ],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety checks blocked the attempted PR #61 description update. The branch also needs reconciliation with current main before its fail-closed candidate build can be meaningfully re-evaluated.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Reconcile current main into PR #61 without discarding its 32-commit reconstruction work, rerun the fail-closed candidate build against the merged acquisition corpus, inspect per-tile QA/provenance/contact-sheet output, and fix registration/crop/mask or provenance-visible exclusions. Do not hand-paint masters or lower acceptance thresholds merely to turn CI green."
+}
