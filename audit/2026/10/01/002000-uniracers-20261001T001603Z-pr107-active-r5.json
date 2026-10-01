@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T001603Z-uniracers-pr107-active-r5",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T00:15:00Z",
+  "started_at": "2026-10-01T00:16:03Z",
+  "finished_at": "2026-10-01T00:20:00Z",
+  "initial_repo_state": {
+    "main_sha": "1b9b747d256000a0b6e96e1c007bc600baa81ff2",
+    "open_prs": [
+      107
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced at 00:06:41Z via PR #108 (value-of-information discipline). PR #107 was pushed at 00:11:20Z/updated 00:11:33Z and its targeted historical replay workflow remained in progress during inspection."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 107,
+      "branch": "chatgpt/localize-2014-first-divergence-2026-09-30",
+      "scope": "Priority-0 localization of the first 2014 native/reference replay divergence and a bounded +5-frame input/timeline A/B",
+      "status": "active inside the 10-minute gate; workflow in progress"
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The canonical queue now explicitly prioritizes first causal divergence before semantic-core work. PR #107 owns that exact critical-path discriminator, and its result determines whether the next action is replay/frame-semantics repair or first-write/instruction tracing. Starting another P0 branch would duplicate or depend on the active lane.",
+  "decision": "deferred",
+  "decision_reason": "PR #107 was actively running the cheapest plan-defined discriminator and had been updated about five minutes before inspection. No independent task outranked waiting for that information without manufacturing lower-value work.",
+  "orphaned_work": {
+    "candidates_inspected": [],
+    "rescued": [],
+    "note": "Recent branch inventory was inspected at a high level, but no orphan rescue was attempted while the sole critical-path PR was active; older compatibility/tooling branches are lower priority under the newly merged plan."
+  },
+  "work": {
+    "summary": "Read-only refresh established that P0 infrastructure proof is complete on main and priorities were explicitly realigned around fidelity/decompilation. PR #107 has localized the first sampled semantic mismatch to frame 437 and found a strong +5-frame phase signature: native at reference+5 matches 35/36 semantic states over reference frames 420-455. Its current bounded A/B shifts only the native historical input stream by +5 and samples event+5; success would prioritize replay/frame semantics, failure would justify escalation to first-write/instruction tracing.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "PR #107 was updated inside the concurrency window and its targeted +5-frame discriminator workflow was still in progress.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next regular run, harvest PR #107's +5-frame A/B. If it restores the route, prioritize replay/frame-semantics correction; if it fails, escalate to first differing write/instruction tracing and map the responsible executed routine into the comparative code atlas."
+}
