@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "run_id": "backfill-cooldown-r8-20261001-110403",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T09:51:29Z",
+  "started_at": "2026-10-01T09:51:29Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "af850f6c9d160cddae983a97ceed5b0da5317a4b",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Repository quiet; recent workflows green."
+  },
+  "concurrent_lanes_detected": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No concurrent lane was detected, but blocked-action cooldown prohibited retrying the unchanged PR mutation.",
+  "decision": "worked",
+  "decision_reason": "Performed bounded external acquisition archaeology while respecting cooldown on the previously blocked PR creation.",
+  "orphaned_branch_candidates": [
+    {
+      "branch": "research/post359-fourth-cover-display-audit-2026-10-01",
+      "status": "preserved",
+      "reason": "Coherent prior result remained safely preserved; identical PR creation was not retried because relevant state had not changed."
+    }
+  ],
+  "work": {
+    "summary": "External owner archaeology found an apparent December 2020 Reddit sale lead, then cross-checking showed it was already canonical as U32; no duplicate acquisition entry was added.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "Fourth-cover branch PR creation remained under blocked-action cooldown.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Pursue genuinely new physical/acquisition evidence, or rescue the fourth-cover branch after a material repository-state change.",
+  "backfill_note": "Immutable recovery record created after the original audit write failed twice."
+}
