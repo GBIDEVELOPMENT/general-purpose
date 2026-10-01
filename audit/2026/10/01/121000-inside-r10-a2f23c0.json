@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "run_id": "inside-r10-20261001-a2f23c0",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T12:10:00Z",
+  "started_at": "2026-10-01T12:10:00Z",
+  "finished_at": null,
+  "timestamp_note": "Scheduled/start time is approximate because the activation did not expose an authoritative run timestamp.",
+  "initial_repo_state": {
+    "main_sha": "a2f23c03632ac8ba359ef69ea4dd67272b65c6e2",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No repository change since the preceding run; PR #108 remains the latest merged work."
+  },
+  "concurrent_lanes_detected": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No new active lane was detected. The prior fourth-cover PR mutation remained under cooldown because main/head state had not materially changed since the preceding attempt.",
+  "decision": "stopped",
+  "decision_reason": "No substantive repository state change since the previous run, and retrying the unchanged safety-blocked fourth-cover PR creation was prohibited by cooldown. Printer fixtures were inspected read-only; no new result justified a branch or mutation.",
+  "orphaned_branch_candidates": [
+    {
+      "branch": "research/post359-fourth-cover-display-audit-2026-10-01",
+      "status": "preserved",
+      "reason": "Coherent one-commit result remains outside a PR; unchanged blocked-action state means no identical PR retry this run."
+    }
+  ],
+  "work": {
+    "summary": "Refreshed main/open PR state, inspected the merged printer-reference fixtures and canonical queue/current-state read-only, and confirmed no new plan-aligned result or safe mutation beyond already-completed work.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "no_safe_work",
+  "blocker": "Blocked-action cooldown on the unchanged orphan PR rescue; no new evidence or repo state justified additional project work.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On a material state change, rescue the preserved fourth-cover branch if still unsuperseded. Otherwise use genuinely new physical/external evidence or historically grounded printer controls; do not reopen blind closed-corpus widening."
+}
