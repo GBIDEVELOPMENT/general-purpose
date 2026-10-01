@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T110400Z-inside-pr108-orphan-rescue-r9",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T11:04:00Z",
+  "started_at": "2026-10-01T11:04:00Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "a2f23c03632ac8ba359ef69ea4dd67272b65c6e2",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #108 merged after #107, adding PC/PS4 and Xbox printer reference fixtures and linking them into the mechanics corpus. No open PRs remained."
+  },
+  "concurrent_lanes_detected": [
+    {
+      "lane": "printer-reference fixtures / historical printer controls",
+      "branch": "chatgpt/printer-reference-fixtures-2026-10-01",
+      "status": "merged to main as PR #108"
+    }
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The preserved fourth-cover audit is independent of the merged printer-fixture and game-code acquisition lanes and requires no shared-file edits.",
+  "decision": "worked",
+  "decision_reason": "Main materially changed since the earlier blocked PR attempt. The idle fourth-cover branch remained coherent, unsuperseded, and unrepresented by an open PR, so orphan rescue was appropriate.",
+  "orphaned_branch_candidates": [
+    {
+      "branch": "research/post359-fourth-cover-display-audit-2026-10-01",
+      "status": "rescue_attempted_but_blocked",
+      "reason": "One coherent documentation commit, idle over 10 minutes and not superseded."
+    },
+    {
+      "branch": "chatgpt/printer-reference-fixtures-2026-10-01",
+      "status": "not_orphaned",
+      "reason": "Work is represented on main by merged PR #108."
+    }
+  ],
+  "work": {
+    "summary": "Inspected main, PRs, recent commits, branches, workflow state, canonical docs and orphan candidates. Attempted to open a draft PR for the preserved fourth-cover audit; the mutation was safety-blocked. No equivalent alternate mutation was attempted; the branch remains preserved.",
+    "branch": "research/post359-fourth-cover-display-audit-2026-10-01",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "Draft PR creation for the orphan-rescue branch was safety-blocked; branch contents remain preserved.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Re-evaluate the preserved fourth-cover branch after another material state change. Use the newly acquired printer corpora as historical controls; pursue controlled managed-assembly extraction only with exact build provenance and legitimate binaries."
+}
