@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "run_id": "inside-orphan-rescue-20261001-1405-r3b",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T14:00:00Z",
+  "started_at": "2026-10-01T14:04:00Z",
+  "finished_at": "2026-10-01T14:05:00Z",
+  "initial_repo_state": {
+    "main_sha": "a2f23c03632ac8ba359ef69ea4dd67272b65c6e2",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No project activity in the preceding ten-minute window; latest main verification runs were successful."
+  },
+  "concurrent_lanes_detected": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No recent concurrent lane detected.",
+  "decision": "worked",
+  "decision_reason": "Reconciled orphan state and made one justified rescue attempt for the clean printer-control branch.",
+  "orphaned_branch_candidates": [
+    {
+      "branch": "research/printer-control-symbol-role-audit-2026-10-01",
+      "status": "preserved",
+      "comparison": "ahead 1, behind 0"
+    },
+    {
+      "branch": "research/post359-fourth-cover-display-audit-2026-10-01",
+      "status": "preserved",
+      "comparison": "ahead 1, behind 2"
+    }
+  ],
+  "work": {
+    "summary": "Refreshed project state, inspected canonical plan, compared known orphan branches, and attempted to open a draft PR for the printer-control audit. Safety checks blocked the PR creation; branch content remained intact. No alternate project mutation attempted.",
+    "branch": "research/printer-control-symbol-role-audit-2026-10-01",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "Draft PR creation was safety-blocked.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Keep both orphan branches intact; retry printer-control PR exposure only after material state change, otherwise pursue new independent evidence.",
+  "backfill_note": "Immutable recovery record created after the original audit write failed twice."
+}
