@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T195447Z-inside-concurrency-r6-active-7f3a",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "outcome": "concurrency_blocked",
+  "work": {
+    "summary": "Experiment 323/324 had just landed; canonical reset lane active, so no mutation."
+  },
+  "next_step": "Refresh after lane quiets; continue intended-solve discriminator using information plausibly available to contemporary pooled solvers.",
+  "note": "Backfilled from the preserved failed-submit record in chat; no project repository was touched."
+}
