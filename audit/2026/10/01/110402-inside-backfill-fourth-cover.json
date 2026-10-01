@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "run_id": "backfill-fourth-cover-20261001-110402",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T08:00:00Z",
+  "started_at": "2026-10-01T08:00:00Z",
+  "finished_at": null,
+  "timestamp_note": "Exact original scheduled/start timestamp was unavailable during audit-only recovery; 08:00Z is an explicitly approximate placement between the adjacent 06:48Z and 09:51Z recorded runs.",
+  "initial_repo_state": {
+    "main_sha": "af850f6c",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No concurrency blocker was reported; main had advanced with two completed-sale acquisition leads."
+  },
+  "concurrent_lanes_detected": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No active conflicting lane was detected; bounded fourth-cover historical archaeology was independent and plan-aligned.",
+  "decision": "worked",
+  "decision_reason": "The remaining cover-specific question was bounded and could test whether the fourth display supplied genuinely new external evidence.",
+  "orphaned_branch_candidates": [],
+  "work": {
+    "summary": "Audited the fourth progress/battery-like Collector's Edition cover display. No defensible independent historical identification was found; Terminal41's reported 98% status was insufficient to tie the visual specifically to the cover. Preserved the negative result on a branch; PR creation was safety-blocked.",
+    "branch": "research/post359-fourth-cover-display-audit-2026-10-01",
+    "prs_touched": [],
+    "commits": [
+      "26bda1df"
+    ],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "PR creation for the preserved branch was safety-blocked.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Rescue the preserved branch into a PR after material repository-state change; prioritize new physical/acquisition evidence over further cover hypothesis widening.",
+  "backfill_note": "Immutable recovery record created after the original audit write failed twice."
+}
