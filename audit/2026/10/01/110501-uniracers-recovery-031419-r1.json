@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T031419Z-uniracers-europe-edge-active-r5",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T03:00:00Z",
+  "started_at": "2026-10-01T03:14:19Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "29b86ad7df7d0f965c2c54ff42fd19f97db10058",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Europe-edge comparative-semantic work landed on main seconds before inspection; current P0 comparative-semantic surface was actively owned."
+  },
+  "concurrent_lanes_detected": [
+    "P0 comparative-semantic Europe-edge lane"
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "No independent high-value lane was selected without risking gratuitous overlap with the freshly active semantic-edge work.",
+  "decision": "deferred",
+  "decision_reason": "Fresh active ownership of the current P0 comparative-semantic surface made a new adjacent branch redundant and unsafe.",
+  "orphaned_branch_candidates": [],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Read-only inspection confirmed Europe HUD at 81:C59C and corrected checkpoint/finish correspondence to dispatch-confirmed 81:8050; no project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Concurrent semantic-edge lane active inside the safety window.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh after the semantic-edge lane settles and choose the next bounded discriminator tied to a fidelity, course, physics, or rendering question rather than broad whole-ROM decompilation.",
+  "audit_recovery_note": "Historical immutable audit record reconstructed and backfilled after the original audit write failed."
+}
