@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T234852Z-inside-exp344-exp270-reconcile",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "outcome": "concurrency_blocked",
+  "work": {
+    "summary": "Experiments 344 and corrected 270 landed inside the concurrency window; no mutation made."
+  },
+  "next_step": "Run the preregistered replicated perimeter-feature audit once the lane is quiet.",
+  "note": "Backfilled from the preserved failed-submit record in chat; no project repository was touched."
+}
