@@ -1,12 +1,12 @@
 # Automation audit summary
 
-Total recorded activations: **105**
+Total recorded activations: **106**
 
 ## Outcomes
 
 - concurrency_blocked: 35
 - error: 30
-- progress: 22
+- progress: 23
 - no_safe_work: 13
 - deferred_concurrency: 2
 - waiting_on_ci: 2
@@ -16,8 +16,8 @@ Total recorded activations: **105**
 
 ### INSIDE
 - error: 15
+- progress: 14
 - concurrency_blocked: 13
-- progress: 13
 - no_safe_work: 6
 - deferred_concurrency: 1
 - waiting_on_ci: 1
