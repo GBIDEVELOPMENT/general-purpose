@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "run_id": "inside-cooldown-readonly-20261001-1305-r2",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T13:00:00Z",
+  "started_at": "2026-10-01T13:04:00Z",
+  "finished_at": "2026-10-01T13:05:00Z",
+  "initial_repo_state": {
+    "main_sha": "a2f23c03632ac8ba359ef69ea4dd67272b65c6e2",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No commits or PR updates after merged PR #108 at 12:02:32Z."
+  },
+  "concurrent_lanes_detected": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No recent concurrent activity detected.",
+  "decision": "worked",
+  "decision_reason": "Blocked-action cooldown prohibited retrying the unchanged printer-audit PR mutation, so performed useful read-only orphan/state reconciliation.",
+  "orphaned_branch_candidates": [
+    {
+      "branch": "research/printer-control-symbol-role-audit-2026-10-01",
+      "status": "preserved",
+      "comparison": "ahead 1, behind 0",
+      "reason": "One unsuperseded documentation commit; previous PR exposure was safety-blocked and relevant state had not changed."
+    },
+    {
+      "branch": "research/post359-fourth-cover-display-audit-2026-10-01",
+      "status": "preserved",
+      "comparison": "ahead 1, behind 2",
+      "reason": "One unsuperseded documentation commit; left untouched under prior safety-block/cooldown history."
+    }
+  ],
+  "work": {
+    "summary": "Refreshed project state and reconciled both known orphan branches against current main. No project mutation attempted under cooldown.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "Blocked-action cooldown: previous printer-control PR creation was safety-blocked and neither main nor branch head had changed.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "After material repository-state change, expose the printer-control branch as a PR first; preserve the fourth-cover branch separately. Otherwise continue bounded read-only/new-evidence work.",
+  "backfill_note": "Immutable recovery record created after the original audit write failed twice."
+}
