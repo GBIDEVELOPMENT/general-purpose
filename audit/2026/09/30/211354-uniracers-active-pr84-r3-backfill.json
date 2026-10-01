@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T211354Z-uniracers-active-pr84-r3",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "outcome": "concurrency_blocked",
+  "work": {
+    "summary": "PR #84 received fresh commits/workflows; #83/#85 occupied independent high-value lanes."
+  },
+  "next_step": "Refresh #83-#85; reconcile compatible work when quiet and green.",
+  "note": "Backfilled from the preserved failed-submit record in chat; no project repository was touched."
+}
