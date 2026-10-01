@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T061521Z-uniracers-r6-active-lanes-a91c7f",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T06:15:00Z",
+  "started_at": "2026-10-01T06:15:21Z",
+  "finished_at": "2026-10-01T06:19:00Z",
+  "initial_repo_state": {
+    "main_sha": "c7277f384e413292420053b526a26a7beca491a7",
+    "open_prs": [
+      138,
+      139
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #139 pushed b43d9f3 at 06:14:33Z and launched fresh workflows; PR #138 was updated at 06:08:45Z. A short-lived multiplayer writer-trace branch also exists and is explicitly described by #139 as active attribution work."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 138,
+      "branch": "chatgpt/pal-subregion-survivor-refinement-2026-09-30",
+      "scope": "comparative ROM/decomp structure recovery; currently bank-81 object/collision dispatcher and broader structural census",
+      "recent": true
+    },
+    {
+      "pr": 139,
+      "branch": "chatgpt/multiplayer-fidelity-2026-09-30",
+      "scope": "multiplayer fidelity, ordinary 2P, Mesen/Beetle parity, leftward-motion divergence localization",
+      "recent": true
+    },
+    {
+      "pr": null,
+      "branch": "chatgpt/multiplayer-writer-trace-2026-09-30",
+      "scope": "short-lived native writer attribution around multiplayer frames 1528-1533, explicitly coordinated from PR #139",
+      "recent": true
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "Canonical P0 queue names comparative ROM/decomp and multiplayer fidelity as the two intentional parallel lanes. Both are active inside the 10-minute window, and the only obvious adjacent high-value work overlaps one of them.",
+  "decision": "deferred",
+  "decision_reason": "Two canonical independent P0 lanes are actively owned, with #139 pushed less than a minute before inspection and its trace side-branch in flight. A third branch would duplicate or depend on active work.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "chatgpt/multiplayer-writer-trace-2026-09-30"
+    ],
+    "rescued": [],
+    "note": "Not orphaned: PR #139 explicitly identifies this as a short-lived active trace branch."
+  },
+  "work": {
+    "summary": "Refreshed main, open PRs, branches, workflow activity, and canonical WORK-QUEUE. PR #138 has expanded structural recovery to a 2,115-byte racer corridor plus a bank-81 object/collision dispatcher island. PR #139 has durable ordinary-2P fixtures and narrowed the active movement seam to leftward X-speed divergence at frame 1532; latest commit adds a Beetle scheduler-phase oracle and removes a false inRace gate. No project mutation made.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Both canonical P0 parallel lanes are actively owned; PR #139 has an in-progress VS regression from its 06:14:33Z push.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh #138/#139 after activity settles. Merge/reconcile only when safe and green; then continue whichever canonical P0 lane remains unowned, preserving #139's leftward-motion divergence and #138's structural-recovery boundaries."
+}
