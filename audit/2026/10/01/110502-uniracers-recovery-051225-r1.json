@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T051225Z-uniracers-pr138-pr139-active-r6",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T05:00:00Z",
+  "started_at": "2026-10-01T05:12:25Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "c7277f384e413292420053b526a26a7beca491a7",
+    "open_prs": [
+      138,
+      139
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #138 comparative-ROM lane and PR #139 multiplayer-fidelity lane were both updated inside the concurrency window."
+  },
+  "concurrent_lanes_detected": [
+    "PR #138 comparative-ROM/decomp lane",
+    "PR #139 multiplayer-fidelity lane"
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The two canonical high-value independent lanes were already actively occupied; a third branch would have manufactured overlapping work.",
+  "decision": "deferred",
+  "decision_reason": "Both plan-supported independent P0 lanes were active and recently updated; no safe third lane was warranted.",
+  "orphaned_branch_candidates": [],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Read-only inspection found #138 had closed structural-alignment gaps and localized Europe WRAM displacement families; #139 was advancing ordinary two-player fidelity. No project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Both canonical independent lanes active inside the concurrency window.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh #138/#139, reconcile or merge each once quiet and green, then continue from the resulting canonical queue rather than opening a third overlapping lane.",
+  "audit_recovery_note": "Historical immutable audit record reconstructed and backfilled after the original audit write failed."
+}
