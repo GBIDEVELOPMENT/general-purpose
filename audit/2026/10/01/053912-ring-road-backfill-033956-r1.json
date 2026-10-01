@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "run_id": "ring-road-20261001-033956-backfill-r1",
+  "project": "Ring Road",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T03:35:00Z",
+  "started_at": "2026-10-01T03:39:56.787487Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "63f1930e881fa113cc71ff82eeb243fa97070d0a",
+    "open_prs": [
+      48
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #48 render/recessed-orientation-markers had been opened seconds before inspection and was actively continuing Phase 5; its CI was green and it was mergeable."
+  },
+  "concurrent_lanes_detected": [
+    {
+      "pr": 48,
+      "branch": "render/recessed-orientation-markers",
+      "scope": "Phase 5 renderer work replacing flat orientation dots with recessed/dimple treatment in RingBoard.tsx, app.css, and the canonical renderer plan."
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The next canonical gate was interactive desktop/narrow-viewport visual review and depended directly on the freshly landed and in-flight renderer work; no comparably valuable independent lane was available.",
+  "decision": "deferred",
+  "decision_reason": "Active PR #48 owned the renderer lane and the next high-value canonical review depended on that work. No safe independent work of comparable value was available.",
+  "orphaned_branch_candidates_inspected": true,
+  "orphaned_branch_candidates_rescued": [],
+  "orphaned_branch_summary": "Older non-main branches were represented by landed or superseded work; no coherent unsuperseded orphan required rescue.",
+  "work": {
+    "summary": "Read-only concurrency, plan, PR, branch, and CI assessment. Left active PR #48 untouched.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Active ownership of the renderer lane; the next canonical visual-review gate depended on that lane.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "When PR #48 is quiet, reconcile/merge it if still green, then perform the canonical interactive desktop/narrow-viewport review and fix concrete renderer/UI defects before broader Phase 7 polish.",
+  "audit_recovery_note": "Backfilled after both audit-create attempts in the original activation were safety-blocked."
+}
