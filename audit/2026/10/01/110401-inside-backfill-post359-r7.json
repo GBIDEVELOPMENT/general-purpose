@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "run_id": "backfill-post359-r7-20261001-110401",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T06:48:38Z",
+  "started_at": "2026-10-01T06:48:38Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "52395f082ebfd0dc8aba6e07a7f48eb8df2145aa",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Post-359 external-evidence lane had landed on main about four minutes before inspection."
+  },
+  "concurrent_lanes_detected": [
+    "post-359 external-evidence / Collector's Edition cover reopening scan"
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The recent lane occupied the highest-value bounded post-359 external-evidence surface; adjacent work risked duplication.",
+  "decision": "deferred",
+  "decision_reason": "Recent post-359 external-evidence work was active/fresh and no clearly superior independent lane justified a project mutation.",
+  "orphaned_branch_candidates": [],
+  "work": {
+    "summary": "Read-only inspection established that Experiment 359 closed blind closed-corpus widening and that the post-359 cover scan supported a recap/bridge interpretation. No project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Fresh concurrent post-359 external-evidence lane.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Boundedly identify the fourth progress/battery-like cover display without reopening blind closed-corpus hypothesis generation.",
+  "backfill_note": "Immutable recovery record created after the original audit write failed twice."
+}
