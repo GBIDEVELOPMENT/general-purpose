@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "run_id": "inside-hourly-a2f23c0-cooldown-20261001",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T13:04:00Z",
+  "started_at": "2026-10-01T13:04:00Z",
+  "finished_at": null,
+  "timestamp_note": "Audit-only timestamp is approximate because an authoritative activation clock was not available in the repository phase.",
+  "initial_repo_state": {
+    "main_sha": "a2f23c03632ac8ba359ef69ea4dd67272b65c6e2",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No changes since the preceding run: main still ends at merged PR #108; no open PRs. Previously merged game-code and printer-fixture branches remain represented on main."
+  },
+  "concurrent_lanes_detected": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No active conflicting lane was detected. However, the only outstanding orphan rescue is the fourth-cover branch whose PR creation was safety-blocked in the immediately preceding run, and main/head state has not materially changed.",
+  "decision": "stopped",
+  "decision_reason": "Blocked-action cooldown prohibits retrying the unchanged fourth-cover PR mutation. Canonical reset state remains at Experiment 359's stopping boundary, and no new evidence or independent high-value commit-ready task appeared since the prior run.",
+  "orphaned_branch_candidates": [
+    {
+      "branch": "research/post359-fourth-cover-display-audit-2026-10-01",
+      "status": "preserved_unrescued",
+      "comparison": "1 commit ahead / 2 behind main; adds docs/post-359-fourth-cover-display-audit-2026-10-01.md",
+      "reason": "Coherent and unsuperseded, but identical PR creation was safety-blocked on the previous run and relevant state has not changed."
+    }
+  ],
+  "work": {
+    "summary": "Refreshed repository state, inspected open PRs, recent commits, branches, canonical current-state/research queue, game-code source notes, orphan comparisons, and workflow association for main. No project mutation performed.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "no_safe_work",
+  "blocker": "Blocked-action cooldown on the preserved fourth-cover branch; no new evidence or plan-defined commit-ready lane since the preceding run.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next regular run, first check for new physical/acquisition evidence, game-code extraction inputs, or printer-control findings. Rescue the fourth-cover branch only after material state change permits a fresh PR attempt."
+}
