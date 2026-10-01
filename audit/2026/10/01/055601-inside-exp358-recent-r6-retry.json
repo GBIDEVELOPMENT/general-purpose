@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T055208Z-inside-exp358-recent-r6",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T05:52:08Z",
+  "started_at": "2026-10-01T05:52:08Z",
+  "finished_at": "2026-10-01T05:56:00Z",
+  "initial_repo_state": {
+    "main_sha": "fede08874108ab4de1f83780a22ff5e0ddb205a3",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #103 / Experiment 358 merged at 05:45:37Z, inside the 10-minute gate; Experiments 356 and 357 had also just merged."
+  },
+  "decision": "deferred",
+  "decision_reason": "Recent Experiment 358 activity owns the highest-value R4 seam; no clearly independent higher-value lane justified parallel mutation.",
+  "work": {
+    "summary": "Refreshed main, PRs, branches, workflows, and canonical docs. Main advanced through Experiments 356-358. G6 still concentrates uncertainty in whether the selector should be reused at all; G7 remains a generic information-preservation prior; Experiment 358 repaired and reran stale G6 regression checks. Old Experiment 353 branch is superseded by main's integrated 353-358 state.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Experiment 358 merged about seven minutes before inspection on the active R4 frontier.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh R4 after Experiment 358; if quiet, continue the highest-information attack on the unsupported decision to reuse the selector while preserving repaired regression checks."
+}
