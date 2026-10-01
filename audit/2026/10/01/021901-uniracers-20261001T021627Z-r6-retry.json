@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T021627Z-uniracers-course-materialization-r6",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T02:15:00Z",
+  "started_at": "2026-10-01T02:16:27Z",
+  "finished_at": "2026-10-01T02:19:00Z",
+  "initial_repo_state": {
+    "main_sha": "fed08d5189581337bff1a61b24aca6cea2beae20",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #120 merged at 02:12:36Z, about four minutes before inspection, following PR #119 at 02:06:36Z and a rapid semantic-propagation sequence (#114-#120)."
+  },
+  "concurrent_lanes": [
+    {
+      "branch": "chatgpt/course-resource-list-propagation-2026-09-30",
+      "pr": 120,
+      "scope": "course tail resource-list decoding and runtime A000/C000 materialization; next planned step is back-mapping Dragster checkpoint/finish object cells through six resources",
+      "status": "merged inside the 10-minute concurrency window"
+    }
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The freshest active lane just changed the canonical course-format model and its documented next discriminator is the natural continuation. Other recent semantic-propagation work also touched shared WORK-QUEUE/SYMBOLS/RESEARCH-LEDGER surfaces; spawning another lane now would add coordination risk without higher information value.",
+  "decision": "deferred",
+  "decision_reason": "Main changed materially inside the concurrency window and the highest-value next course-format task directly continues the just-merged #120 lane. No independent task clearly dominated waiting for that lane to settle.",
+  "orphaned_work": {
+    "candidates_inspected": [
+      "chatgpt/localize-2014-first-divergence-2026-09-30"
+    ],
+    "rescued": [],
+    "note": "Previously identified replay-localization work remains intentionally superseded by merged #111; recent chatgpt branches correspond to merged PRs or current completed lanes."
+  },
+  "work": {
+    "summary": "Refreshed main and recent PR/commit/branch activity. Since the previous run, #111-#120 landed a major semantic-decompilation sweep: analyzer gaps/core placeholders closed; deterministic Dragster finish semantics certified; recovered-source semantics propagated; AI-assisted RE practices codified; and #120 established decoded tail resource IDs feeding runtime A000/C000 planes. No project mutation was made because #120 merged about four minutes before inspection and owns the immediate high-value continuation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Recent #120 merge is inside the concurrency gate and its immediate continuation touches the same course-format/research surfaces.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "After the lane is quiet, map Dragster's six resource IDs to cumulative C000 spans, locate runtime object code 0x14 cells, correlate them with known checkpoint/finish coordinates, and trace those cells backward into the decoded RNC/resource structures. Preserve the bounded semantic-propagation and value-of-information rules."
+}
