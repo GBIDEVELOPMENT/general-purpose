@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T1136Z-uniracers-pr138-active-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T11:00:00Z",
+  "started_at": "2026-10-01T11:36:00Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "c7277f384e413292420053b526a26a7beca491a7",
+    "open_prs": [
+      138,
+      139,
+      140,
+      141,
+      142
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #138 was updated at 11:36:20Z and its head aedbb71 was current; #139 last updated 11:10:58Z, #142 11:19:08Z, #140/#141 around 06:4xZ. PR #139 currently has failing ordinary-2P and toolchain-bootstrap workflow runs; #138 tooling unit tests are green."
+  },
+  "concurrent_lanes_detected": [
+    "PR #138 comparative multi-ROM × multi-analyzer structural-atlas lane, actively pushed inside the 10-minute window",
+    "PR #139 multiplayer-fidelity lane, quiet beyond 10 minutes but currently red on ordinary-2P and toolchain-bootstrap regressions",
+    "PR #142 SRAM medal-progression lane, formalized and quiet beyond 10 minutes"
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "Canonical P0 item 9 is actively owned by #138; the parallel fidelity lane #139 is already represented and red; #142 occupies the bounded SRAM lane. Quiet #140/#141/#142 touch semantic/canonical documentation that may overlap the actively moving #138 authority surfaces, so reconciliation during the fresh push was not justified.",
+  "decision": "deferred",
+  "decision_reason": "A fresh #138 push at inspection time made reconciliation or a new semantic lane unnecessarily collision-prone, while the other high-value lanes are already represented. No safe independent commit-ready task was identified.",
+  "orphaned_branch_candidates_inspected": [
+    "chatgpt/multiplayer-writer-trace-2026-09-30 and other historical chatgpt branches were surfaced; no branch was rescued because active/current work is represented by open PRs and older branches overlap or appear superseded."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Read-only refresh and concurrency review. Confirmed main unchanged; #138 active and green on its latest tooling run; #139 mergeable but red on ordinary-2P and toolchain-bootstrap workflows; #140/#141 quiet and mergeable; #142 now formally represented and mergeable. No UR-Recomp mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "PR #138 received a fresh push inside the concurrency window; no clearly safer independent lane warranted another branch or reconciliation mutation.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "retry_state": "A single 10-minute retry was requested, but automation creation was unavailable in this activation.",
+  "next_step": "On the next activation, refresh #138 first. If it has been idle at least 5 minutes, reassess reconciliation of quiet clean PRs and the #139 red checks before starting new work."
+}
