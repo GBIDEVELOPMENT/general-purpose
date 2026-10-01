@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "run_id": "20260930T225109Z-inside-exp339-reconcile-r6",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "outcome": "progress",
+  "work": {
+    "summary": "Diagnosed PR #81 as 34 commits behind main with only two unique files; clean current-main reconstruction was prepared but write-blocked."
+  },
+  "next_step": "Reconstruct Experiment 339 from current main with its two unchanged files, require dedicated audit and full verifier green, then supersede #81.",
+  "note": "Backfilled from the preserved failed-submit record in chat; no project repository was touched."
+}
