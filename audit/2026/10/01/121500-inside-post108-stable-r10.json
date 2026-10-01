@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "run_id": "inside-hourly-20261001-post108-stable-r10",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T12:15:00Z",
+  "started_at": "2026-10-01T12:15:00Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "a2f23c03632ac8ba359ef69ea4dd67272b65c6e2",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No project activity newer than merged PR #108 at 2026-10-01T12:02:32Z was found during inspection."
+  },
+  "concurrent_lanes_detected": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No activity in the approximately preceding 10 minutes was detected.",
+  "decision": "stopped",
+  "decision_reason": "No material state change since the immediately preceding run. The preserved fourth-cover branch remains one commit ahead and two behind main, but its PR-creation mutation was safety-blocked in the preceding run and no relevant state changed; cooldown therefore prohibits retrying it. Starting another blind closed-corpus experiment would violate the Experiment 359 boundary.",
+  "orphaned_branch_candidates": [
+    {
+      "branch": "research/post359-fourth-cover-display-audit-2026-10-01",
+      "status": "preserved_not_retried",
+      "reason": "One coherent documentation commit remains ahead of main; PR creation was blocked in the preceding run and head/base/intended patch have not materially changed."
+    }
+  ],
+  "work": {
+    "summary": "Refreshed main/open PR state, recent commits, branches, workflows, recent merged PRs, game-code source documentation, and the preserved fourth-cover branch comparison. No project mutation performed.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "no_safe_work",
+  "blocker": "Blocked-action cooldown on the only coherent orphan rescue; no new evidence trigger justifies reopening closed-corpus hypothesis generation.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On a later run, proceed if repository state materially changes, new physical/external evidence appears, or a plan-defined independent lane emerges. Rescue the fourth-cover branch only after the prior safety block's relevant state changes."
+}
