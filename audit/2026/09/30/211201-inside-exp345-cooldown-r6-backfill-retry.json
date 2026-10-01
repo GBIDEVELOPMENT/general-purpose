@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T025319Z-inside-exp345-cooldown-r6",
+  "project": "INSIDE",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T02:52:50Z",
+  "started_at": "2026-10-01T02:53:19Z",
+  "finished_at": "2026-10-01T02:56:00Z",
+  "outcome": "progress",
+  "blocker": "Blocked-action cooldown: Experiment 345 PR creation was safety-blocked in the preceding run, with no material state change.",
+  "next_step": "Refresh on a later run. If relevant state materially changes, open a PR for the existing Experiment 345 preregistration branch without modifying the frozen design; run the preregistered analysis only after formal preservation.",
+  "note": "Full payload was preserved in chat at the time of failure; this immutable backfill records the failed run identity and key outcome."
+}
