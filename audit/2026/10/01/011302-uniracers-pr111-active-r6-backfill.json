@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T011302Z-uniracers-pr111-active-r6",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "outcome": "concurrency_blocked",
+  "work": {
+    "summary": "PR #111 was actively created/updated and owned the historical replay/decompilation critical path."
+  },
+  "next_step": "Refresh #111; if quiet and green, reconcile/merge, then continue semantic-anchor or dispatcher-handler work.",
+  "note": "Backfilled from the preserved failed-submit record in chat; no project repository was touched."
+}
