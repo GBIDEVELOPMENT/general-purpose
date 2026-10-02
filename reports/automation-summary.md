@@ -1,11 +1,11 @@
 # Automation audit summary
 
-Total recorded activations: **120**
+Total recorded activations: **121**
 
 ## Outcomes
 
 - concurrency_blocked: 37
-- progress: 32
+- progress: 33
 - error: 30
 - no_safe_work: 16
 - deferred_concurrency: 2
@@ -28,7 +28,7 @@ Total recorded activations: **120**
 
 ### Uniracers
 - concurrency_blocked: 23
-- progress: 16
+- progress: 17
 - error: 15
 - no_safe_work: 7
 - deferred_concurrency: 1
