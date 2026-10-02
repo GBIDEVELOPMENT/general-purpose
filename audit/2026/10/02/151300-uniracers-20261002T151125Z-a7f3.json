@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T151125Z-uniracers-cooldown-r11-a7f3",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T15:15:00Z",
+  "started_at": "2026-10-02T15:11:25Z",
+  "finished_at": "2026-10-02T15:13:00Z",
+  "initial_repo_state": {
+    "main_sha": "ef0932eaaaee7cc6882f4de830a36910cb1ca813",
+    "open_prs": [
+      213,
+      216,
+      217
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No UR-Recomp commits, PR updates, pushes, or PR-head workflow activity were found in the preceding roughly 10 minutes. Main and PR heads remain unchanged from the prior run."
+  },
+  "concurrent_lanes_detected": [
+    "#213 gameplay-authored progression save/load acceptance (draft; historical acceptance evidence still pending)",
+    "#216 racer staging-consumer audit (green, mergeable, unchanged)",
+    "#217 +8 presentation-sequence closure (green, mergeable, unchanged)"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No fresh ownership was detected, but the obvious #216/#217 reconciliation mutations are identical to previously safety-blocked attempts and remain on cooldown. Canonical Widescreen work places the $03xx widened-strip scheduling experiment after #217 reconciliation.",
+  "decision": "deferred",
+  "decision_reason": "Did not retry unchanged safety-blocked #216/#217 merges. Avoided starting downstream Widescreen work ahead of unreconciled #217, and #213 remains evidence-gated.",
+  "orphaned_branch_candidates_inspected": [
+    "Recent named branches are represented by open PRs or superseded by merged work; no idle coherent unrepresented branch warranted rescue."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Refreshed main, open PRs, recent commits/branches, canonical plan/queue/semantic-sufficiency docs, and PR-head workflow status. #216 and #217 remain green and unchanged; #213 has only general tooling CI on its current head and its required historical acceptance evidence remains pending. No UR-Recomp mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "no_safe_work",
+  "blocker": "Blocked-action cooldown on unchanged #216/#217 merge mutations; downstream widened-strip scheduling should follow #217 reconciliation; #213 remains evidence-gated.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On a later run, retry #216/#217 reconciliation only after relevant state materially changes. Otherwise continue a genuinely independent plan-defined discriminator; recheck #213 for retained historical acceptance evidence without babysitting Actions."
+}
