@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T021418Z-uniracers-three-semantic-lanes-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T02:15:00Z",
+  "started_at": "2026-10-02T02:14:18Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "d61cda3ffff6f1f1bab26e4d0aff5eaad1c13da6",
+    "open_prs": [
+      184,
+      185,
+      186
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced through #183; #184 was pushed through 02:13Z; #185 and #186 had successful fresh probe/tooling runs within the preceding ten minutes."
+  },
+  "concurrent_lanes_detected": [
+    "#184 presentation course contract",
+    "#185 object activation timeline",
+    "#186 racer asset round trip"
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The three freshly active PRs occupy the independent highest-value semantic-sufficiency lanes in the new canonical plan.",
+  "decision": "deferred",
+  "decision_reason": "No non-duplicative fourth P0 lane justified mutation while all three priority lanes had fresh ownership.",
+  "orphaned_branch_candidates": [
+    "No newly idle coherent unrepresented recent branch qualified for rescue."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Read-only refresh of main, PRs, branches, workflows, PROJECT-PLAN, WORK-QUEUE and SEMANTIC-SUFFICIENCY. No project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "All three current highest-value independent lanes have fresh active ownership.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh #184/#185/#186 and main next run; reconcile completed quiet work first or take only a newly independent plan-defined lane."
+}
