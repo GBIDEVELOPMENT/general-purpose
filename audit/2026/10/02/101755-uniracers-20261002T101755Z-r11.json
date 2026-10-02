@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T101755Z-uniracers-cooldown-r11",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T10:15:00Z",
+  "started_at": "2026-10-02T10:17:55Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "ef0932eaaaee7cc6882f4de830a36910cb1ca813",
+    "open_prs": [
+      213,
+      216,
+      217
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No material project change since the preceding run. Main and #216/#217 heads are unchanged; #213 remains draft with historical gameplay-authored acceptance evidence pending."
+  },
+  "concurrent_lanes_detected": [
+    "#213 gameplay-authored progression save/load acceptance (draft; evidence pending)",
+    "#216 racer staging-consumer audit (green/mergeable; unchanged)",
+    "#217 +8 presentation-sequence closure (green/mergeable; unchanged)"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No fresh ownership detected, but the obvious #216/#217 merge mutations are unchanged from the immediately preceding safety-blocked attempts and remain under blocked-action cooldown. Downstream Widescreen strip scheduling should follow #217 reconciliation.",
+  "decision": "deferred",
+  "decision_reason": "Did not retry unchanged safety-blocked #216/#217 merges and did not manufacture downstream work ahead of their reconciliation.",
+  "orphaned_branch_candidates_inspected": [
+    "No newly idle coherent unrepresented branch was identified; recent named work is represented or superseded."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Refreshed recent PR state and confirmed no material change from the prior activation. No UR-Recomp mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "no_safe_work",
+  "blocker": "Blocked-action cooldown on unchanged #216/#217 merge mutations; #213 remains evidence-gated.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Retry #216/#217 reconciliation only after relevant state changes; otherwise continue a genuinely independent plan-defined/read-only lane and recheck #213 evidence opportunistically."
+}
