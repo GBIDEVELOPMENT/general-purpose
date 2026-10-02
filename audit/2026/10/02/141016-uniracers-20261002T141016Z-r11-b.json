@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T141016Z-uniracers-r11",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T14:15:00Z",
+  "started_at": "2026-10-02T14:10:16Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "ef0932eaaaee7cc6882f4de830a36910cb1ca813",
+    "open_prs": [213, 216, 217],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No material project activity in the preceding ~10 minutes. Main and PR heads #216/#217 remain unchanged from the previous run; #213 remains draft and awaiting historical gameplay-authored progression acceptance evidence."
+  },
+  "concurrent_lanes_detected": [
+    "#213 gameplay-authored progression save/load acceptance (draft; evidence pending)",
+    "#216 racer staging-consumer audit (green, mergeable, quiet)",
+    "#217 +8 presentation-sequence closure (green, mergeable, quiet)"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No fresh ownership was detected, but the obvious #216/#217 reconciliation mutations are unchanged from prior GitHub-safety-blocked merge attempts and remain under blocked-action cooldown. The canonical next Widescreen strip-scheduling experiment follows reconciliation of #217.",
+  "decision": "deferred",
+  "decision_reason": "Did not retry unchanged safety-blocked merges for #216/#217 and did not start downstream Widescreen work ahead of unreconciled #217. #213 remains evidence-gated.",
+  "orphaned_branch_candidates_inspected": [
+    "Recent named branches were represented by open PRs or superseded by merged work; no coherent idle unrepresented branch warranted rescue."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Refreshed main/open PRs, recent commits/branches, canonical plan documents, PR metadata/reviews, and head workflow status. #216 and #217 remain green/mergeable and unchanged; #213 remains draft. No project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "no_safe_work",
+  "blocker": "Blocked-action cooldown on unchanged #216/#217 merge mutations; downstream Widescreen work should follow #217 reconciliation; #213 still awaits authentic historical progression evidence.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next run, reconcile #216/#217 only if relevant state materially changes; otherwise continue read-only work or take a genuinely independent plan-defined lane. Recheck #213 evidence opportunistically."
+}
