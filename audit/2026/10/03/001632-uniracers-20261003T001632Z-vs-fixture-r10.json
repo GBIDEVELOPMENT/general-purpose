@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "run_id": "20261003T001632Z-uniracers-vs-fixture-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-03T00:15:00Z",
+  "started_at": "2026-10-03T00:16:32Z",
+  "finished_at": "2026-10-03T00:21:00Z",
+  "initial_repo_state": {
+    "main_sha": "242fc957aeba1eedc2db4ec2ed86f7fb839d2102",
+    "open_prs": [
+      228
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #228 native +8 Widescreen hook was pushed at 00:16:40Z and owns the runtime-hook/workflow/canonical-doc lane. Main had advanced through #242 scene-policy classification, #243 third-pass inference audit, #239/#241 racer native presentation work, and #235 restart acceptance."
+  },
+  "concurrent_lanes_detected": [
+    "#228 native +8 Widescreen preparation hook, actively pushed during inspection"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The VS fixture-catalog task is confined to analysis/data/fixture-corpus.json and existing frozen VS scripts; it does not touch #228 runtime hook code, workflows, tests, or canonical Widescreen docs.",
+  "decision": "worked",
+  "decision_reason": "With #228 actively owned, selected the independent next discriminator already named by analysis/widescreen-policy.yml: establish the retained VS fixture basis needed for event-relative Widescreen policy validation.",
+  "orphaned_branch_candidates": [
+    "chatgpt/widescreen-scene-policy-recovery-2026-10-02 is superseded by merged PR #242.",
+    "chatgpt/widescreen-native-seeded-roots-2026-10-02 is represented by active #228.",
+    "chatgpt/unused-audio-song1-counterfactual-2026-10-02 remains unrelated to the shipping critical path and was left untouched."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Confirmed tools/widescreen_probe.py is already implemented despite a stale unchecked queue item, so did not duplicate it. Located the existing frozen VS route in tests/input/vs-first-race-observe.script plus vs-first-race.input and bounded its role: it can locate the VS race/presentation interval, but its absolute wait checkpoints are insufficient for promotion of the provisional VS mixed policy. Prepared a fixture-corpus entry explicitly recording that boundary. Initial branch creation attempt failed because a shortened SHA was supplied; retry with the full main SHA reached the intended write but GitHub safety blocked it. No project mutation was persisted.",
+    "branch": "chatgpt/vs-widescreen-fixture-catalog-2026-10-02",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "intended_patch": {
+    "path": "analysis/data/fixture-corpus.json",
+    "fixture_id": "vs-first-race-observe",
+    "conclusion": "Existing frozen VS route is a Widescreen policy seed only; semantic/event-relative anchoring remains required before widened-vs-control equality can promote vs-mode from provisional."
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "GitHub safety blocked the first valid project write after the concrete fixture-corpus patch was prepared. Per mutation cooldown rules, no equivalent write mechanism was attempted.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Preserve #228 ownership. On the next safe activation, persist the VS fixture-corpus entry if still absent, then derive the smallest semantic/event-relative VS anchor from the frozen route and use it for the policy discriminator rather than creating a new replay language."
+}
