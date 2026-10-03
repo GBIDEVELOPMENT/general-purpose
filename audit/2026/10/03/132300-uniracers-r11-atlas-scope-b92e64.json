@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "run_id": "20261003T131526Z-uniracers-r11-atlas-scope-retry",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-03T13:15:00Z",
+  "started_at": "2026-10-03T13:15:26Z",
+  "finished_at": "2026-10-03T13:23:00Z",
+  "initial_repo_state": {
+    "main_sha": "a176b45be82229145d804e11f6051f647734abf6",
+    "open_prs": [
+      303,
+      302
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Main remained at a176b45b; #302 and #303 were cooled with no ownership activity in the preceding roughly 10 minutes."
+  },
+  "concurrent_lanes_detected": [
+    "#302 canonical display geometry review, cooled",
+    "#303 first-family Remastered racer visual-language baseline, cooled"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The atlas fixture-scope repair is disjoint from the cooled lanes and uses the existing current-main branch.",
+  "decision": "worked",
+  "decision_reason": "Quiet-repo forward-progress rule applied; the previously diagnosed native-smoke atlas ownership defect was revalidated and its narrow repair attempted.",
+  "orphaned_branch_candidates": [
+    "chatgpt/native-ui-atlas-fixture-scope-r2-2026-10-03 remains the prepared landing branch."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Refreshed project state and canonical docs. Revalidated that native smoke globally applies strict atlas validation without running two-player-first-race. Attempted repeatable --exclude-source-fixture support plus exclusion of only that fixture; GitHub safety blocked the first project write and no equivalent route was attempted.",
+    "branch": "chatgpt/native-ui-atlas-fixture-scope-r2-2026-10-03",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety blocked the first project-repository mutation.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Land the prepared fixture-scope repair when mutation safety permits, then validate native strict atlas while retaining ordinary-2P strictness in its owning workflow."
+}
