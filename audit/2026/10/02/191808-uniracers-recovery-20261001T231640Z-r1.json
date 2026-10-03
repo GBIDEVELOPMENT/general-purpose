@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T231640Z-uniracers-active-four-lanes-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T23:15:00Z",
+  "started_at": "2026-10-01T23:16:40Z",
+  "initial_repo_state": {
+    "main_sha": "64d3d6e99906b96313f3d9fa1e8af4d0a12be9db",
+    "open_prs": [
+      145,
+      147,
+      153,
+      154
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main merged #149-#152 since the prior run. #153 and #154 were pushed during inspection; #145 and #147 were also updated within the preceding few minutes."
+  },
+  "concurrent_lanes_detected": [
+    "#145 multiplayer fidelity",
+    "#147 bounded execution-coverage trial",
+    "#153 twelfth race-timer structural island",
+    "#154 multiplayer camera/viewport observability"
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "All four current high-value lanes had fresh ownership, including active pushes and CI.",
+  "decision": "deferred",
+  "decision_reason": "Avoided adding a fifth concurrent lane while all current plan lanes were freshly owned.",
+  "orphaned_branch_candidates": [
+    "No recent unrepresented idle branch presented a clear rescue case."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Read-only refresh found main 64d3d6e9 and open PRs #145/#147/#153/#154. Structural islands eight through eleven had merged since the prior run. No project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Four high-value lanes had fresh active ownership.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh on the next regular activation and reconcile completed quiet work or take only a clearly independent plan lane.",
+  "audit_recovery_note": "Recovered from failed audit submission in chat; original project run is unchanged."
+}
