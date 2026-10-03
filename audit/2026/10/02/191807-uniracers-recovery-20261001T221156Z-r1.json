@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "run_id": "20261001T221156Z-uniracers-active-three-lanes-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-01T22:15:00Z",
+  "started_at": "2026-10-01T22:11:56Z",
+  "initial_repo_state": {
+    "main_sha": "2462246c5bcb6a229e9a6703ca3517595ed58a71",
+    "open_prs": [
+      145,
+      147,
+      149
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced through queue reconciliation and completed sixth/seventh structural-island work. PR #145 and #149 were pushed during inspection; #147 was updated within the preceding five minutes."
+  },
+  "concurrent_lanes_detected": [
+    "PR #145 frame-1532 speed/phase discriminator active in multiplayer fixtures/workflow.",
+    "PR #149 eighth stunt-finalizer structural island active in structural/generated evidence.",
+    "PR #147 bounded execution-coverage trial recently active."
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "The three current high-value independent lanes all had fresh ownership, so a fourth lane would add avoidable overlap.",
+  "decision": "deferred",
+  "decision_reason": "Left all freshly owned lanes untouched.",
+  "orphaned_branch_candidates": [],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Read-only refresh found main 2462246c and open PRs #145/#147/#149, all recently active. No project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Three independent high-value lanes have fresh active ownership.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh on the next regular activation and reconcile completed quiet work or take only a clearly independent lane. No 10-minute retry was created because scheduled-run policy forbids creating another automation.",
+  "audit_recovery_note": "Recovered from failed audit submission in chat; original project run is unchanged."
+}
