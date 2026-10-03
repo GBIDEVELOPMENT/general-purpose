@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "run_id": "20261003T031859Z-uniracers-vs-rescue-r9",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-03T03:15:00Z",
+  "started_at": "2026-10-03T03:18:59Z",
+  "finished_at": "2026-10-03T03:23:30Z",
+  "initial_repo_state": {
+    "main_sha": "4105ecd5207523db438472421f12268a653e50dd",
+    "open_prs": [
+      268,
+      260
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main had just merged #267. Draft #268 racer-HD adjacent-state work and #260 +16 course-backed strip materializer both had fresh pushes/CI inside roughly ten minutes; each had a recent failing acceptance workflow under active iteration."
+  },
+  "concurrent_lanes_detected": [
+    "#268 repeated adjacent racer-HD semantic state and temporal coverage",
+    "#260 +16 Widescreen course/resource-backed random-access strip materializer"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The stranded VS fixture-catalog commit touches only analysis/data/fixture-corpus.json, disjoint from #268 racer-HD files and #260 Widescreen runtime/materializer implementation.",
+  "decision": "deferred",
+  "decision_reason": "Verified the idle VS fixture-catalog branch still contains a unique one-file commit not independently absorbed by main and attempted the prescribed orphan rescue as a draft PR. GitHub safety blocked PR creation. No equivalent write mechanism was attempted, and the two shipping lanes had fresh ownership/CI.",
+  "orphaned_branch_candidates": [
+    "chatgpt/vs-fixture-catalog-event-boundary-2026-10-02: 1 commit ahead / 97 behind main; unique commit 54f3c77; analysis/data/fixture-corpus.json only; idle >2 hours.",
+    "chatgpt/widescreen-scene-policy-recovery-2026-10-02: 1 commit ahead / 107 behind main; preserved but not retried because its prior PR-creation mutation has repeatedly been safety-blocked.",
+    "chatgpt/modern-pause-controller-nav-2026-10-03: divergent branch last updated ~21 minutes before inspection; broad overlap with recently merged #267 and therefore not safe for blind rescue."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Refreshed main, PRs, branches, workflows and canonical planning docs. Confirmed #267 merged, #268 and #260 are actively owned, and the VS fixture catalog remains unique. Main lacks the explicit vs-first-race-observe.script / vs-first-race.input catalog entries present on commit 54f3c77. Attempted a draft PR preserving that branch in place; safety blocked the mutation.",
+    "branch": "chatgpt/vs-fixture-catalog-event-boundary-2026-10-02",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Draft PR creation for the independent VS orphan was safety-blocked; #268 and #260 remained freshly active, so their failing CI was left to current owners.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "When repository ownership cools, rescue commit 54f3c77 via a draft PR if it remains unique and compatible. Otherwise continue the highest-value disjoint canonical task. Do not interfere with #268/#260 while they are actively iterating."
+}
