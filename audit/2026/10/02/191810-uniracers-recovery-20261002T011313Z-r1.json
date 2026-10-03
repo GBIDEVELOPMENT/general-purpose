@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T011313Z-uniracers-live-176-frontier-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T01:15:00Z",
+  "started_at": "2026-10-02T01:13:13Z",
+  "initial_repo_state": {
+    "main_sha": "45d507442f3b21683d748a0046310c31abba892c",
+    "open_prs": [
+      163,
+      170,
+      176
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main just merged #177; #176 was actively pushed/tested; #163 had ordinary-2P CI in progress; an unrepresented frontier-refresh branch had just been pushed with workflow in progress."
+  },
+  "concurrent_lanes_detected": [
+    "#176 E7A5 structural island active",
+    "#163 multiplayer evidence CI active",
+    "unrepresented frontier-refresh branch actively owned"
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "Fresh ownership covered the structural/frontier authority surfaces and multiplayer evidence; the unrepresented branch was not orphan-rescue eligible.",
+  "decision": "deferred",
+  "decision_reason": "No safe high-value additional lane justified concurrent mutation.",
+  "orphaned_branch_candidates": [
+    "frontier-refresh-after-e580 inspected but actively pushed with workflow running, so not rescued"
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Read-only refresh; no UR-Recomp mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Fresh active ownership on structural/frontier work plus multiplayer CI.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh next regular activation; rescue the frontier branch only if idle >=10 minutes with no active workflow and still unrepresented.",
+  "audit_recovery_note": "Recovered from failed audit submission in chat; original project run is unchanged."
+}
