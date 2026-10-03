@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T031305Z-uniracers-three-semantic-lanes-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T03:15:00Z",
+  "started_at": "2026-10-02T03:13:05Z",
+  "initial_repo_state": {
+    "main_sha": "80c2b1295f0addce0ea20d25495cbfb6bc519966",
+    "open_prs": [
+      190,
+      191,
+      192
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced through #184, #186, #188, and #189. Open PRs #190, #191, and #192 occupy the current Widescreen, progression, and renderer-causality lanes."
+  },
+  "concurrent_lanes_detected": [
+    "#190 Widescreen tiny-margin probe",
+    "#191 medal progression acceptance",
+    "#192 preparation-to-PPU emission closure"
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "Three independent high-value canonical lanes are already in flight.",
+  "decision": "deferred",
+  "decision_reason": "Avoided duplicating or getting ahead of the three active semantic-sufficiency discriminators.",
+  "orphaned_branch_candidates": [],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Read-only refresh. Main is 80c2b129. #190 is 14 commits ahead/1 behind; #191 is 13 ahead; #192 is 8 ahead. Their file scopes are distinct and coherent. No project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Three canonical high-value lanes are already in flight.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh #190/#191/#192 next run; reconcile completed quiet work and use their evidence to select the next semantic-sufficiency task.",
+  "audit_recovery_note": "Recovered from failed audit submission in chat; original project run is unchanged."
+}
