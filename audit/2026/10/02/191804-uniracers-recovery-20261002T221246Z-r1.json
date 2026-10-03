@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T221246Z-uniracers-native-seeded-roots-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T22:15:00Z",
+  "started_at": "2026-10-02T22:12:46Z",
+  "finished_at": "2026-10-02T22:18:30Z",
+  "initial_repo_state": {
+    "main_sha": "7b2fcd122bde85d7cc694ff49808a72c9f4e9f3d",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "PR #226 merged at 21:56:26Z and its mainline tooling workflow completed successfully; no project activity remained inside the roughly 10-minute ownership window at inspection time. All listed branches except unused-audio-song1 were fully behind main."
+  },
+  "concurrent_lanes_detected": [],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "No open PRs or fresh ownership remained. The canonical queue names graduation of the accepted +8 preparation mechanism into a maintainable runtime hook as the highest-priority task.",
+  "decision": "worked",
+  "decision_reason": "PR #226 established that the accepted $81:A597/$81:A59E seam is absent from the default generated AOT closure. Inspection of the pinned SNESRecomp framework confirmed recomp/symbols.toml with emit=true is the supported promotion surface, so the run advanced the prerequisite by preserving an idempotent root-seeding tool.",
+  "orphaned_branch_candidates": [
+    "chatgpt/unused-audio-song1-counterfactual-2026-10-02 remains 1 commit ahead / 60 behind main and was left untouched because it is unrelated to the current shipping critical path.",
+    "racer-raster-composition, widescreen-plus8-native-hook, widescreen-strip-scheduling-plus8, and unused-audio-counterfactual branches are fully contained by main."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Created chatgpt/widescreen-native-seeded-roots-2026-10-02 from current main. A direct workflow update to scaffold without generation, seed A597/A59E as emit=true roots, regenerate, and require the anchors was safety-blocked. The one permitted distinct fallback succeeded: added tools/seed_native_widescreen_prep_roots.py, an idempotent helper that promotes the accepted wrapper/helper seam through SNESRecomp's supported symbols.toml mechanism while explicitly keeping the roots presentation-only.",
+    "branch": "chatgpt/widescreen-native-seeded-roots-2026-10-02",
+    "prs_touched": [],
+    "commits": [
+      "2d3d0bdb201e0a24fc292cf442cc54b5d5efe11f"
+    ],
+    "files_changed": [
+      "tools/seed_native_widescreen_prep_roots.py"
+    ]
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "The intended workflow wiring was safety-blocked. The root-seeding helper is committed, but CI has not yet regenerated the native project with those roots or proven that all four A597/A59A/A59D/A59E anchors appear.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Wire tools/seed_native_widescreen_prep_roots.py into widescreen-native-hook.yml: scaffold with --no-generate, seed recomp/symbols.toml, run tools/regen.sh, then make inspect_native_widescreen_prep_anchor.py's all-required-anchor contract mandatory. If green, inspect emitted C and implement the smallest regeneration-safe presentation-only +8 hook before testing +16/+24.",
+  "audit_recovery_note": "Recovered from failed audit submission in chat; original project run is unchanged."
+}
