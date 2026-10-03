@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T211242Z-uniracers-scene-policy-rescue-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T21:15:00Z",
+  "started_at": "2026-10-02T21:12:42Z",
+  "finished_at": "2026-10-02T21:14:30Z",
+  "initial_repo_state": {
+    "main_sha": "691ed5d0042f7742628510b7410588d56e4a8d6a",
+    "open_prs": [
+      219,
+      224,
+      225
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced by merging #213 progression acceptance, #218 racer raster extraction, and #220 three-tier graphics strategy. #219 +8 strip scheduling, #224 racer raster composition, and #225 TCRF reconciliation were all updated within roughly three minutes of inspection."
+  },
+  "concurrent_lanes_detected": [
+    "#219 +8 Widescreen strip scheduling: active workflow/analyzer/instrumentation lane",
+    "#224 racer raster cache composition: active draft graphics lane",
+    "#225 TCRF unused-content ROM reconciliation: active analyzer/runtime-evidence lane"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The previously stranded scene-policy branch changes only analysis/widescreen-policy.yml. #219 currently changes only Widescreen strip-scheduling workflows/analyzers/instrumentation; #224 and #225 are disjoint graphics/TCRF lanes.",
+  "decision": "deferred",
+  "decision_reason": "Attempted to rescue the prior committed scene-policy work by opening a draft PR with an explicit concurrency boundary. GitHub safety blocked PR creation. No equivalent write mechanism was attempted; all other high-value current lanes had fresh ownership.",
+  "orphaned_branch_candidates": [
+    "chatgpt/widescreen-scene-policy-2026-10-02: one unique commit 288604b, 95 commits behind current main, no PR; coherent and file-disjoint from active #219."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Refreshed main and active PR/workflow state; confirmed #213, #218, and #220 merged. Verified the stranded scene-policy commit remains a single-file change and does not overlap #219's active file set. Attempted to open a rescue PR; safety blocked the mutation. Existing commit remains intact.",
+    "branch": "chatgpt/widescreen-scene-policy-2026-10-02",
+    "prs_touched": [],
+    "commits": [
+      "288604bae86c3aaa9c9e49b990229fd45ae86913"
+    ],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "GitHub safety blocked rescue PR creation; remaining current high-value lanes #219/#224/#225 had fresh active ownership.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "When #219/#224/#225 ownership cools, retry opening the scene-policy rescue PR only if its file remains disjoint and current. Otherwise take the next canonical independent task; do not recreate the already-preserved policy commit.",
+  "audit_recovery_note": "Recovered from failed audit submission in chat; original project run is unchanged."
+}
