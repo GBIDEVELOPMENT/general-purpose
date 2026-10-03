@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T201620Z-uniracers-scene-policy-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T20:15:00Z",
+  "started_at": "2026-10-02T20:16:20Z",
+  "initial_repo_state": {
+    "main_sha": "5057aee89f58b6fcc0ee091f5f76fe24f741279f",
+    "open_prs": [
+      213,
+      218,
+      219,
+      220
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main received direct TCRF unused-content intake commits at 20:11-20:12Z. Open PRs were older than the ~10-minute active-ownership window: #213 progression acceptance, #218 racer raster extraction, #219 +8 strip scheduling, and #220 three-tier graphics strategy."
+  },
+  "concurrent_lanes_detected": [
+    "Fresh mainline TCRF unused-content reference intake",
+    "#213 gameplay-authored progression save/load acceptance",
+    "#218 reproducible racer raster extraction",
+    "#219 +8 Widescreen strip scheduling",
+    "#220 three-tier graphics strategy"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The scene-policy evidence lane changes only analysis/widescreen-policy.yml and does not touch the fresh TCRF intake or the active PRs' implementation/evidence surfaces.",
+  "decision": "worked",
+  "decision_reason": "A previously created empty scene-policy branch represented a concrete independent Phase F task. The retained evidence was sufficient to classify initial scene policies with explicit evidence status and bound the next VS discriminator.",
+  "orphaned_branch_candidates": [
+    "chatgpt/widescreen-scene-policy-2026-10-02 was 0 commits ahead and 2 behind main before work; it was the prior run's intentionally created but unwritten branch, so it was continued rather than abandoned."
+  ],
+  "orphaned_work_rescued": [
+    "Continued chatgpt/widescreen-scene-policy-2026-10-02 with a concrete policy commit."
+  ],
+  "work": {
+    "summary": "Updated analysis/widescreen-policy.yml from an all-unresolved seed to an evidence-status scene matrix. Marked representative 1P and ordinary 2P as evidence-backed mixed policies; title/frontend and results as provisional fixed-center; VS as provisional mixed. Added the bounded semantic/event-relative VS discriminator and explicit success/stop conditions. PR creation was safety-blocked after the commit succeeded.",
+    "branch": "chatgpt/widescreen-scene-policy-2026-10-02",
+    "prs_touched": [],
+    "commits": [
+      "288604bae86c3aaa9c9e49b990229fd45ae86913"
+    ],
+    "files_changed": [
+      "analysis/widescreen-policy.yml"
+    ]
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "GitHub safety blocked opening a PR for the committed scene-policy branch. No equivalent alternate PR-creation mechanism was attempted.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On a later activation, open a PR for chatgpt/widescreen-scene-policy-2026-10-02 if repository state permits, then retain the dedicated semantic/event-relative VS Widescreen fixture to promote or reject the provisional VS mixed policy.",
+  "audit_recovery_note": "Recovered from failed audit submission in chat; original project run is unchanged."
+}
