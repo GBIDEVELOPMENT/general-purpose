@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T001125Z-uniracers-active-pr163-pr164-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T00:15:00Z",
+  "started_at": "2026-10-02T00:11:25Z",
+  "initial_repo_state": {
+    "main_sha": "effbca7c8e4b832cc66d4cda7f931bbdd4c11615",
+    "open_prs": [
+      163,
+      164
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced through #161 and #162. PR #164 updated at 00:10:02Z and #163 at 00:10:51Z with fresh CI; main post-merge workflows were also active."
+  },
+  "concurrent_lanes_detected": [
+    "PR #163 ordinary 2P HUD atlas capture and visual evidence promotion.",
+    "PR #164 comparative structural frontier prioritizer."
+  ],
+  "parallel_work_safe": false,
+  "parallel_work_reason": "Both current high-value lanes had fresh ownership inside the concurrency window and fresh CI, while main had just advanced.",
+  "decision": "deferred",
+  "decision_reason": "Left freshly owned #163/#164 untouched rather than opening a third lane.",
+  "orphaned_branch_candidates": [
+    "No idle recent clearly coherent unrepresented branch was identified as a safe rescue target."
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Read-only refresh found main effbca7c after #161/#162 and open PRs #163/#164, both freshly active. No project mutation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Both high-value lanes had fresh active ownership and CI.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Refresh main and #163/#164 next run; reconcile quiet green work or take only a clearly independent plan task.",
+  "audit_recovery_note": "Recovered from failed audit submission in chat; original project run is unchanged."
+}
