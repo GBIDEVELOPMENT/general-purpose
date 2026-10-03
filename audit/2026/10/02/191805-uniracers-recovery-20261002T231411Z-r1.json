@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "run_id": "20261002T231411Z-uniracers-scene-policy-recovery-r10",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-02T23:15:00Z",
+  "started_at": "2026-10-02T23:14:11Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "c6dc0408b74a7dcc7b9f8afd8eba5e0a4e113ce9",
+    "open_prs": [
+      239,
+      235,
+      228
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced through native racer replacement selector and WRAM bridge work. PR #228 +8 native runtime hook had a fresh push/workflow inside the 10-minute window; #239 racer live-WRAM acceptance was about 10 minutes old; #235 restart acceptance was older but recently updated."
+  },
+  "concurrent_lanes_detected": [
+    "#228 native +8 Widescreen preparation hook, fresh active ownership",
+    "#239 native racer presentation selection from live WRAM",
+    "#235 native race restart snapshot acceptance"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "The lost scene-policy classification is a machine-readable policy-only surface in analysis/widescreen-policy.yml and is file- and experiment-disjoint from #228 runtime-hook code, #239 racer acceptance, and #235 restart acceptance.",
+  "decision": "worked",
+  "decision_reason": "The prior scene-policy result was no longer reachable: main still contained the untouched seed policy and the old commit was not searchable. Reconstructed and preserved the bounded classification on a fresh branch without touching active lanes.",
+  "orphaned_branch_candidates": [
+    "Prior chatgpt/widescreen-scene-policy-2026-10-02 result was no longer present in branch listing/search and main retained the seed policy; treated as lost work requiring recovery.",
+    "chatgpt/widescreen-native-seeded-roots-2026-10-02 remains represented by later active +8 runtime-hook work and was not touched."
+  ],
+  "orphaned_work_rescued": [
+    "Recovered scene-policy classification onto chatgpt/widescreen-scene-policy-recovery-2026-10-02 at commit 604cefd8c3794f08bf7d8a3bebff4411fab7bc5d."
+  ],
+  "work": {
+    "summary": "Reconstructed analysis/widescreen-policy.yml as an evidence-tracked scene matrix: 1P and ordinary 2P evidence-backed mixed; title/frontend and results provisional fixed-center; VS provisional mixed. Added a bounded event-relative VS discriminator and explicit promotion/split conditions. Draft PR creation was safety-blocked, so the committed branch was left intact.",
+    "branch": "chatgpt/widescreen-scene-policy-recovery-2026-10-02",
+    "prs_touched": [],
+    "commits": [
+      "604cefd8c3794f08bf7d8a3bebff4411fab7bc5d"
+    ],
+    "files_changed": [
+      "analysis/widescreen-policy.yml"
+    ]
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "GitHub safety blocked opening the draft PR after the recovery commit succeeded; no equivalent publication mechanism was attempted.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "When active ownership cools, open a draft PR for the preserved scene-policy recovery if it remains disjoint/current. Continue #228 only through its owning lane; after the +8 hook is cleaned up, probe +16/+24 as the canonical Widescreen next step.",
+  "audit_recovery_note": "Recovered from failed audit submission in chat; original project run is unchanged."
+}
