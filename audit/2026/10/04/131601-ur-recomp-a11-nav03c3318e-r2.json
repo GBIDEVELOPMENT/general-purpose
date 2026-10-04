@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "run_id": "a11-nav-03c3318e-r2",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-04T13:10:45Z",
+  "started_at": "2026-10-04T13:10:45Z",
+  "finished_at": "2026-10-04T13:16:00Z",
+  "initial_repo_state": {
+    "main_sha": "fdffcd3bab3546c9a48bd86dde3b1af26b119118",
+    "open_prs": [404, 403],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No open-PR activity inside the roughly 10-minute ownership window; main remained at fdffcd3b."
+  },
+  "decision": "worked",
+  "decision_reason": "A coherent un-PR'd branch from the preceding activation was safe to advance. Draft PR creation was safety-blocked and cooled; a distinct substantive branch update then succeeded.",
+  "concurrent_lanes": [
+    {"lane": "PR #404 CI/runtime repair", "status": "stale/diverged; untouched"},
+    {"lane": "PR #403 Lua bridge patch", "status": "stale/diverged; untouched"}
+  ],
+  "safety_judgment": "No recent ownership signal was observed. Blocked PR publication was not retried. The branch update was a distinct mutation on an inactive existing branch.",
+  "candidate_lanes": [
+    {"lane": "Publish pause controller navigation contract", "outcome": "blocked", "detail": "Draft PR creation was safety-blocked and placed on cooldown."},
+    {"lane": "Advance pause controller navigation contract", "outcome": "progress", "detail": "Audited live keyboard/gamepad handlers and revised the contract to record existing behavior and narrow the remaining semantic-action, Left/Right, and input-ownership work."}
+  ],
+  "orphan_handling": "The pause-controller branch was one commit ahead and un-PR'd from the previous activation; it was preserved and materially advanced rather than duplicated.",
+  "work": {
+    "summary": "Source-backed audit showed most controller navigation already exists. Updated the contract to narrow the next implementation to semantic host actions, Left/Right option adjustment, and explicit input ownership/unlatching tests.",
+    "branch": "chatgpt/pause-controller-navigation-contract-2026-10-04",
+    "prs_touched": [],
+    "commits": ["03c3318e770ee7691034462004da888484c0cf04"],
+    "files_changed": ["docs/PAUSE-CONTROLLER-NAVIGATION.md"]
+  },
+  "gha": {"checked": false, "waited_for_runs": false, "runs_started": []},
+  "outcome": "progress",
+  "blocker": "Draft PR creation was safety-blocked; durable branch work remains recoverable.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Publish the branch when safe, or implement the bounded semantic host-navigation seam and Left/Right behavior with guest-input leakage/unlatching acceptance."
+}
