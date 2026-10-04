@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "run_id": "ur-20261004-201620-a11-b72d",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-04T20:15:00Z",
+  "started_at": "2026-10-04T20:16:20Z",
+  "finished_at": "2026-10-04T20:23:00Z",
+  "initial_repo_state": {
+    "main_sha": "7c182df1779ea5b98b96762a49bbcc910f91bff5",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main advanced during inspection with transcript archive and production-diary commits; PR #407 had recently merged the historical Lua generated-framework patch."
+  },
+  "decision": "worked",
+  "decision_reason": "Inspected fresh state and pursued independent bounded diagnosis while avoiding the recently active diary/archive lane.",
+  "concurrent_lanes": [
+    {
+      "scope": "production diary / transcript archive",
+      "judgment": "active within 10 minutes; avoided"
+    },
+    {
+      "scope": "historical 2008 replay",
+      "judgment": "post-merge failing run available for diagnosis"
+    }
+  ],
+  "safety_judgment": "Avoided recent diary/archive ownership. Historical replay issue creation was safety-blocked and cooled immediately; no equivalent write was retried.",
+  "candidates": [
+    {
+      "lane": "historical 2008 replay",
+      "outcome": "diagnosed_then_write_blocked",
+      "detail": "Run 37230501808 proves native build, Lua bridge startup and 3480-frame replay. Reference checkpoints are constant and implausible at frames 900-3480, causing active-race validation failure."
+    },
+    {
+      "lane": "Windows x64 smoke orphan",
+      "outcome": "superseded",
+      "detail": "ccr-windows-smoke uses SDL2 and is 1 ahead/42 behind; main already has canonical SDL3 Windows smoke with recent successful runs."
+    },
+    {
+      "lane": "Switch S0 portability",
+      "outcome": "investigated_no_mutation",
+      "detail": "Gate S0 remains compile-only devkitPro/libnx/SDL2 NRO feasibility; no safe commit-ready change established this activation."
+    }
+  ],
+  "orphan_handling": "Windows SDL2 orphan is superseded. Controller-navigation branch was not touched because recent blocked mutations and the previous no-progress activation require a different workstream.",
+  "work": {
+    "summary": "No project mutation landed. Diagnosed historical replay reference reconstruction after Lua bridge closure and confirmed old Windows SDL2 orphan is superseded.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": [],
+    "runs_inspected": [
+      37230501808,
+      37230454378,
+      37230371645
+    ]
+  },
+  "outcome": "error",
+  "blocker": "Durable issue creation for the historical replay diagnosis was safety-blocked; recent main activity constrained overlapping scopes.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "When outside cooldown, repair historical snesref reference checkpoint reconstruction rather than weakening active-race acceptance; otherwise choose another canonical workstream."
+}
