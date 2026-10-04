@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "run_id": "ur11-20261004-181304-r1",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-04T18:13:04Z",
+  "started_at": "2026-10-04T18:13:04Z",
+  "finished_at": "2026-10-04T18:19:00Z",
+  "initial_repo_state": {
+    "main_sha": "fdffcd3bab3546c9a48bd86dde3b1af26b119118",
+    "open_prs": [
+      404,
+      403
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Main unchanged since 2026-10-04T09:22:00Z; no project activity in the preceding 10 minutes."
+  },
+  "decision": "worked",
+  "decision_reason": "Quiet repository required active forward-progress attempts.",
+  "concurrent_lanes": {
+    "controller_navigation": "No competing recent ownership; branch 6 ahead/0 behind main.",
+    "open_prs": "PRs #403/#404 stale and untouched."
+  },
+  "safety_judgment": "Blocked mutations were cooled immediately; no equivalent retry mechanisms were used.",
+  "candidates": [
+    {
+      "lane": "pause semantic navigation adapter implementation",
+      "outcome": "blocked",
+      "detail": "Creating native/product/modern_pause_navigation.cpp was safety-blocked."
+    },
+    {
+      "lane": "Modern profile-management bounded vertical slice",
+      "outcome": "blocked",
+      "detail": "Creating a new plan-aligned issue was independently safety-blocked."
+    },
+    {
+      "lane": "orphan rescue",
+      "outcome": "no_rescuable_work",
+      "detail": "Fast-navigation and deterministic-capture branches are zero ahead; rematch is identical to main."
+    }
+  ],
+  "orphan_handling": "No coherent unique orphan work found.",
+  "work": {
+    "summary": "Two independent durable mutations attempted and blocked; orphan inspection found no rescuable work.",
+    "branch": "chatgpt/pause-controller-navigation-contract-2026-10-04",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Project-repository safety checks blocked two independent writes; third candidate had no unique work.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Begin next activation on a different canonical workstream unless repository state materially changes."
+}
