@@ -1,12 +1,12 @@
 # Automation audit summary
 
-Total recorded activations: **155**
+Total recorded activations: **156**
 
 ## Outcomes
 
 - concurrency_blocked: 45
 - progress: 44
-- error: 38
+- error: 39
 - no_safe_work: 23
 - deferred_concurrency: 2
 - waiting_on_ci: 2
@@ -36,5 +36,5 @@ Total recorded activations: **155**
 
 ### gamesbyian/UR-Recomp
 - progress: 2
-- error: 1
+- error: 2
 
