@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "run_id": "ur-recomp-a11-55bee566",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-04T17:15:00Z",
+  "started_at": "2026-10-04T17:16:42Z",
+  "finished_at": "2026-10-04T17:22:30Z",
+  "initial_repo_state": {
+    "main_sha": "fdffcd3bab3546c9a48bd86dde3b1af26b119118",
+    "open_prs": [
+      404,
+      403
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Main remained at the SDL3 merge from 09:22Z; no project activity in the preceding 10 minutes was found. Existing controller-navigation branch was unowned and ahead of main."
+  },
+  "decision": "worked",
+  "decision_reason": "Quiet repository required forward progress; continued the unowned controller-navigation lane. Direct host wiring was safety-blocked, so the blocked mutation was cooled and work moved to a separate adapter file.",
+  "concurrent_lanes": [],
+  "safety_judgment": "No recent ownership overlap detected. Did not touch stale PRs or active hot Widescreen/SDL3 surfaces.",
+  "candidate_lanes": [
+    {
+      "lane": "Wire semantic navigation in uniracers_modern_host.cpp",
+      "outcome": "safety_blocked",
+      "detail": "Full host-file update was blocked; exact/equivalent host mutation was not retried."
+    },
+    {
+      "lane": "Add platform-independent pause navigation adapter",
+      "outcome": "progress",
+      "detail": "Created modern_pause_navigation.h and committed the adapter contract."
+    },
+    {
+      "lane": "Implement adapter in modern_pause_navigation.cpp",
+      "outcome": "safety_blocked",
+      "detail": "Creation was blocked and not retried."
+    }
+  ],
+  "orphan_handling": "Inspected recent chatgpt branches; no new coherent orphan requiring rescue was selected.",
+  "work": {
+    "summary": "Added a durable semantic adapter contract translating platform-independent host navigation into the existing pause command vocabulary while explicitly leaving horizontal adjustment outside the pause-root mapping.",
+    "branch": "chatgpt/pause-controller-navigation-contract-2026-10-04",
+    "prs_touched": [],
+    "commits": [
+      "55bee56605437d33bae28966ccc106a444a3a170"
+    ],
+    "files_changed": [
+      "native/product/modern_pause_navigation.h"
+    ]
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "Safety checks blocked the direct host wiring update and the separate adapter implementation file.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Complete the adapter implementation in a later activation if cooldown permits, add focused native tests, then wire keyboard/gamepad bindings through the semantic adapter and prove pause-owned input isolation/unlatching."
+}
