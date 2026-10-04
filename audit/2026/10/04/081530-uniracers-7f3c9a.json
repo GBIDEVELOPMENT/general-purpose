@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "run_id": "20261004T081054Z-ur-macos-ps5-7f3c9a",
+  "project": "Uniracers",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-04T08:15:00Z",
+  "started_at": "2026-10-04T08:10:54Z",
+  "finished_at": "2026-10-04T08:15:30Z",
+  "initial_repo_state": {
+    "main_sha": "238895592ea1235c1dacc666bd50d06ed61eb669",
+    "open_prs": [
+      404,
+      403,
+      380
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main last advanced at 07:40Z; PR #404 was created at 07:59Z. Active CI/runtime/Widescreen surfaces were left untouched."
+  },
+  "concurrent_lanes_detected": [
+    "#404 CI soundness and Widescreen runtime",
+    "#403 historical replay Lua bridge",
+    "#380 SDL3/Windows portability"
+  ],
+  "parallel_work_safe": true,
+  "parallel_work_reason": "Selected macOS feasibility and PS5 feasibility planning do not overlap the active CI/Widescreen/runtime implementation files.",
+  "decision": "worked",
+  "decision_reason": "Attempted two materially independent portability tasks outside active ownership, then inspected recent orphan branches. Both project mutations were safety-blocked before content could land.",
+  "candidate_lanes": [
+    {
+      "lane": "macOS host feasibility contract",
+      "outcome": "blocked",
+      "detail": "Created a fresh current-main branch and prepared an implementation-ready current-macOS/High-Sierra gate contract; first file creation was safety-blocked, so no equivalent write was attempted."
+    },
+    {
+      "lane": "PS5 public-homebrew feasibility gate",
+      "outcome": "blocked",
+      "detail": "Prepared a bounded issue limited to public/community tooling and project-authored code; issue creation was independently safety-blocked."
+    },
+    {
+      "lane": "orphan inspection",
+      "outcome": "no_rescue_needed",
+      "detail": "RetroArch, Switch S0, and fast-navigation branches are zero commits ahead of their merge bases; the newly created macOS branch is also zero commits ahead. No coherent orphan work was available to preserve."
+    }
+  ],
+  "orphaned_branch_candidates": [
+    "chatgpt/retroarch-deterministic-capture-contract-2026-10-04",
+    "chatgpt/switch-s0-compile-probe-2026-10-03",
+    "chatgpt/fast-navigation-product-contract-2026-10-04",
+    "chatgpt/macos-host-feasibility-contract-2026-10-04-r2"
+  ],
+  "orphaned_work_rescued": [],
+  "work": {
+    "summary": "Protected active CI/Widescreen/runtime lanes. Attempted a bounded macOS portability contract and a separate PS5 public-tooling feasibility gate; both mutations were safety-blocked. Confirmed sampled recent orphan branches contain no unique commits requiring rescue.",
+    "branch": "chatgpt/macos-host-feasibility-contract-2026-10-04-r2",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Independent project writes for the macOS contract and PS5 feasibility issue were safety-blocked; the third candidate had no coherent unique orphan work.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Do not retry the unchanged macOS contract write or PS5 issue next activation unless relevant state changes. Reassess cooled PRs and choose a different plan-defined implementation/experiment lane."
+}
