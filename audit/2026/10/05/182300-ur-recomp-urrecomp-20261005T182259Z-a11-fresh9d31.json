@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261005T182259Z-a11-fresh9d31",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-05T18:18:59Z",
+  "started_at": "2026-10-05T18:18:59Z",
+  "finished_at": "2026-10-05T18:23:00Z",
+  "initial_repo_state": {
+    "main_sha": "4d606ed9aafa6eb9b7c8ccbcbdf4f97ef503adfa",
+    "open_prs": [
+      487,
+      488,
+      489
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Main unchanged since 06:53Z; PR updates >4h old."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 487,
+      "scope": "Modern Continue Tour",
+      "recent": false
+    },
+    {
+      "pr": 488,
+      "scope": "PB/split timing",
+      "recent": false
+    },
+    {
+      "pr": 489,
+      "scope": "fast navigation",
+      "recent": false
+    }
+  ],
+  "safety_judgment": "Quiet repo; active Modern hot surfaces avoided; recent cooldowns honored.",
+  "decision": "worked",
+  "decision_reason": "Quiet-repo rule required active work; three distinct lanes were evaluated.",
+  "candidates": [
+    {
+      "lane": "atomic host product-state persistence",
+      "outcome": "safety_blocked",
+      "detail": "Confirmed in-place truncating save versus atomic profile-store save; prepared parity patch; write blocked."
+    },
+    {
+      "lane": "startup diagnostics preservation",
+      "outcome": "safety_blocked",
+      "detail": "No duplicate found; tracking issue creation for coherent orphan blocked."
+    },
+    {
+      "lane": "Windows release packaging",
+      "outcome": "investigated",
+      "detail": "Windows smoke builds Release x64/SDL3 but retains no consumer package; package branches have no unique commits."
+    }
+  ],
+  "orphan_handling": {
+    "startup_diagnostics": "Preserved coherent one-commit orphan; no publication retry.",
+    "release_package": "No unique commits."
+  },
+  "work": {
+    "summary": "No project mutation succeeded. New concrete findings retained: host product-state save is non-atomic; Windows x64 smoke produces but does not package the consumer executable.",
+    "branch": "chatgpt/atomic-host-product-store-2026-10-05",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Project writes were safety-blocked.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Choose another uncooldown commit-ready Windows x64 lane; when writes are available, implement atomic host product-state replacement or consumer package artifact generation."
+}
