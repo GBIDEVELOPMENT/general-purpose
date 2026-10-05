@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261005T141814Z-a11-c7f29b1e",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-05T14:15:00Z",
+  "started_at": "2026-10-05T14:18:14Z",
+  "finished_at": "2026-10-05T14:19:00Z",
+  "initial_repo_state": {
+    "main_sha": "4d606ed9aafa6eb9b7c8ccbcbdf4f97ef503adfa",
+    "open_prs": [
+      487,
+      488,
+      489
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #487 updated at 14:12:29Z, inside the roughly ten-minute ownership window; PRs #488/#489 also had recent updates around 14:02Z. Main itself remained at the #486 merge."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 487,
+      "scope": "Modern profile-safe Continue Tour route",
+      "judgment": "active inside safety window; untouched"
+    },
+    {
+      "pr": 488,
+      "scope": "authoritative live PB/split timing presentation",
+      "judgment": "recent overlapping Modern host lane; untouched"
+    },
+    {
+      "pr": 489,
+      "scope": "fast rematch / Repeat Practice / Recent Course navigation",
+      "judgment": "recent overlapping Modern host lane; untouched"
+    }
+  ],
+  "safety_judgment": "Avoided the active Modern host/navigation/progression surfaces. The existing startup-diagnostics branch is independent and exactly one commit ahead of main, changing only docs/WINDOWS-STARTUP-DIAGNOSTICS.md.",
+  "decision": "worked",
+  "decision_reason": "Advanced the independent Windows release/startup-diagnostics lane by verifying its retained commit against current main and attempting to publish it as a PR. PR creation was safety-blocked, so that exact mutation was cooled immediately.",
+  "candidates_attempted": [
+    {
+      "lane": "Windows startup diagnostics contract publication",
+      "outcome": "blocked",
+      "detail": "Verified chatgpt/windows-startup-diagnostics-contract-2026-10-05 is 1 ahead/0 behind main with one 82-line contract file. Attempted PR creation; safety check blocked it. No equivalent PR mutation retried."
+    },
+    {
+      "lane": "Windows startup implementation reconnaissance",
+      "outcome": "investigated",
+      "detail": "Searched default-branch startup/SDL/ROM/save-root surfaces and inspected repository/native/product layout to identify a future implementation seam without touching active Modern host files. Search indexing did not expose a reliable startup entry point, so no speculative code mutation was made."
+    }
+  ],
+  "orphan_handling": "The retained startup-diagnostics branch is coherent, current (1 ahead/0 behind), and already preserved by its commit. It remains un-PR'd solely because PR creation was blocked. No rewrite/rebase/delete was attempted.",
+  "work": {
+    "summary": "Verified the durable startup-diagnostics contract remains cleanly based on current main and attempted to publish it. The PR mutation was blocked; active PR lanes were respected.",
+    "branch": "chatgpt/windows-startup-diagnostics-contract-2026-10-05",
+    "prs_touched": [],
+    "commits": [
+      "1d1866df5ead08e31a2a378527076554effa91eb"
+    ],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "GitHub safety checks blocked creation of the PR for the already-committed independent startup-diagnostics branch.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On a later activation, if repository state materially changes enough to justify retrying publication, open the retained startup-diagnostics branch as a PR. Otherwise begin with a different Windows-x64 lane and avoid PRs #487-#489 while actively owned."
+}
