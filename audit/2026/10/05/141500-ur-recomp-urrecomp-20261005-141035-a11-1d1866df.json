@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261005-141035-a11-1d1866df",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-05T14:10:35Z",
+  "started_at": "2026-10-05T14:10:35Z",
+  "finished_at": "2026-10-05T14:15:00Z",
+  "initial_repo_state": {
+    "main_sha": "4d606ed9aafa6eb9b7c8ccbcbdf4f97ef503adfa",
+    "open_prs": [
+      487,
+      488,
+      489
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Repository remained quiet beyond the concurrency window; open PRs #487-#489 were stale and their overlapping runtime surfaces were avoided."
+  },
+  "concurrent_lanes": [
+    {
+      "prs": [
+        487
+      ],
+      "scope": "Modern Continue Tour/profile progression"
+    },
+    {
+      "prs": [
+        488
+      ],
+      "scope": "live PB/split timing presentation"
+    },
+    {
+      "prs": [
+        489
+      ],
+      "scope": "fast rematch/Quick Practice/Recent Course navigation"
+    }
+  ],
+  "safety_judgment": "Selected an independent Windows startup/error-reporting acceptance surface outside the stale PR runtime hot files. Did not retry recently cooled packaging, localization, audio, rebinding, or stale-PR cleanup mutations.",
+  "decision": "worked",
+  "decision_reason": "Quiet-repo rule required durable forward progress; the canonical Windows release lane explicitly names clean startup/save-location/error-reporting acceptance and no existing open issue/PR represented a startup-diagnostics contract.",
+  "candidates_attempted": [
+    {
+      "lane": "close obsolete Phase 0-1 issue #1",
+      "outcome": "blocked",
+      "detail": "Issue close mutation was safety-blocked and immediately cooled; no equivalent retry attempted."
+    },
+    {
+      "lane": "Windows startup diagnostics/error-reporting acceptance",
+      "outcome": "progress",
+      "detail": "Created an implementation-ready host/bootstrap diagnostics contract and committed it on an isolated branch."
+    },
+    {
+      "lane": "open PR for startup diagnostics contract",
+      "outcome": "blocked",
+      "detail": "PR creation was safety-blocked after the commit; the committed branch remains durable and recoverable."
+    }
+  ],
+  "orphan_handling": {
+    "inspected": true,
+    "result": "No coherent unsuperseded orphan was selected for rescue; sampled recent historical branches in preceding runs were zero-ahead or superseded."
+  },
+  "work": {
+    "summary": "Defined stable Windows startup error codes, ownership/privacy boundaries, diagnostic-log behavior, fresh-process failure acceptance, and an implementation seam for the release path.",
+    "branch": "chatgpt/windows-startup-diagnostics-contract-2026-10-05",
+    "prs_touched": [],
+    "commits": [
+      "1d1866df5ead08e31a2a378527076554effa91eb"
+    ],
+    "files_changed": [
+      "docs/WINDOWS-STARTUP-DIAGNOSTICS.md"
+    ]
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "PR creation for the committed diagnostics branch was safety-blocked; the project commit itself succeeded.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "When safe, open/reconcile the committed startup-diagnostics branch, then implement the smallest real bootstrap error-code path and fresh-process acceptance without overlapping active Modern runtime lanes."
+}
