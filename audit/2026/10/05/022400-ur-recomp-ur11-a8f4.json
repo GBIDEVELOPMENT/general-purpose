@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "run_id": "ur11-20261005-021942-a8f4",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-05T02:15:00Z",
+  "started_at": "2026-10-05T02:19:42Z",
+  "finished_at": "2026-10-05T02:24:00Z",
+  "initial_repo_state": {
+    "main_sha": "d4684ea410938a103b6fb71394fe10c7f0fe356c",
+    "open_prs": [],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main moved repeatedly inside the preceding 10 minutes: PR #461 Widescreen information-exposure tooling merged at 02:17Z, PR #444 completed-run browser/replay merged at 02:16Z, and PR #459 Racer-HD acceptance fix merged at 02:09Z."
+  },
+  "concurrent_lanes": [
+    "Widescreen information-exposure/object-margin classification just merged through #461",
+    "Completed-run browser/replay just merged through #444",
+    "Racer-HD acceptance repair merged through #459"
+  ],
+  "safety_judgment": "Avoided files and workstreams touched inside the 10-minute ownership window. Prior agent-context branch was checked and found superseded on main by commit 9a864720.",
+  "decision": "deferred",
+  "decision_reason": "Repository was actively changing in the principal Widescreen and completed-run lanes. The independent Phase-4 active-display OAM classification task was verified absent from issues, but issue creation was safety-blocked; equivalent persistence was cooled. No safe commit-ready implementation could be established without colliding with live work.",
+  "candidates_attempted": [
+    {
+      "lane": "agent-context list granularity",
+      "outcome": "superseded",
+      "detail": "Branch chatgpt/fix-agent-context-list-granularity-2026-10-04 is 1 ahead/64 behind; main already contains equivalent fix 9a86472039648db16bf4e6f2573e3ff7bd89c5b7."
+    },
+    {
+      "lane": "Phase-4 active-display OAM 1P/ordinary-2P classification",
+      "outcome": "mutation_blocked",
+      "detail": "Verified canonical work-queue gap and no existing issue; attempted a bounded issue defining deterministic positive/negative classification and retained evidence. Issue creation was safety-blocked and cooled."
+    },
+    {
+      "lane": "orphan rescue",
+      "outcome": "none",
+      "detail": "ccr-9b54f8cf-hpk163 is 0 ahead/611 behind; ccr-windows-smoke is 1 ahead/644 behind and contains obsolete Windows smoke work. No coherent safe orphan required preservation."
+    }
+  ],
+  "orphan_handling": "No orphan rescued. The prior agent-context branch is superseded; ccr-windows-smoke is obsolete; ccr-9b54f8cf-hpk163 has no unique commits.",
+  "work": {
+    "summary": "Inspection and candidate evaluation only; no UR-Recomp mutation landed.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "Recent repository activity occupied the highest-value current lanes, and the independent OAM-classification issue mutation was safety-blocked.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next activation, refresh main and ownership. If the repository is quiet, begin from a different plan-defined lane unless the OAM-classification mutation state has materially changed; do not resurrect the superseded agent-context branch."
+}
