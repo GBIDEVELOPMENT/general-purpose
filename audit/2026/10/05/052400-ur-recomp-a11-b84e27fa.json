@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "run_id": "a11-b84e27fa",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-05T05:15:00Z",
+  "started_at": "2026-10-05T05:18:20Z",
+  "finished_at": null,
+  "initial_repo_state": {
+    "main_sha": "b967da1917b05982a9fb99db3ae4ed0e710dcd1f",
+    "open_prs": [
+      477,
+      476
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #465 merged at 05:17:51Z after recent Quick Practice merges; #477 internal-render-scale and #476 Racer-HD documentation were active."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "internal render scale",
+      "pr": 477,
+      "judgment": "active; untouched"
+    },
+    {
+      "scope": "Racer-HD palette-equivalence docs",
+      "pr": 476,
+      "judgment": "active; untouched"
+    },
+    {
+      "scope": "Modern profile/racer flow",
+      "pr": 465,
+      "judgment": "merged inside concurrency window; related runtime files avoided"
+    }
+  ],
+  "safety_judgment": "Independent lanes only. Each blocked mutation was cooled immediately; no equivalent write route was retried.",
+  "decision": "worked",
+  "decision_reason": "Active repository still had independent plan-defined candidates; three distinct lanes were evaluated.",
+  "candidate_lanes": [
+    {
+      "lane": "High Sierra feasibility",
+      "outcome": "mutation_blocked",
+      "detail": "Bounded issue creation was safety-blocked. Historical macOS feasibility branch later proved zero commits ahead and 779 behind main, so no rescue."
+    },
+    {
+      "lane": "Modern semantic-sufficiency reconciliation",
+      "outcome": "mutation_blocked",
+      "detail": "Scoreboard is stale versus merged profile/resume/completed-run/output/View work. Isolated branch created and focused patch prepared; first file write was safety-blocked and cooled. Branch remains empty."
+    },
+    {
+      "lane": "orphan rescue",
+      "outcome": "no_rescue",
+      "detail": "No coherent unsuperseded orphan established as safe to preserve."
+    }
+  ],
+  "orphan_handling": "No rescue; sampled macOS branch has zero unique commits.",
+  "work": {
+    "summary": "No durable project mutation landed; semantic reconciliation branch remains empty after blocked first write.",
+    "branch": "chatgpt/reconcile-modern-semantic-sufficiency-2026-10-04b",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Independent High Sierra issue creation and semantic-scoreboard file update were safety-blocked; third orphan lane had no safe coherent delta.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Start next activation on a different workstream unless state materially changes; do not retry blocked High Sierra or semantic mutations through alternate mechanisms."
+}
