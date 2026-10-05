@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261005-031509-a11-r9k4",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-05T03:15:00Z",
+  "started_at": "2026-10-05T03:15:09Z",
+  "finished_at": "2026-10-05T03:20:00Z",
+  "initial_repo_state": {
+    "main_sha": "2986198550201cd65e3bd514792d0192681a0d3a",
+    "open_prs": [
+      466,
+      464,
+      465
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #466 updated within ~6 minutes; PR #464 within ~10 minutes; PR #465 within ~17 minutes. Modern onboarding/profile and Racer-HD lanes were treated as actively owned."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 466,
+      "scope": "Modern first-run help and Quick Practice",
+      "judgment": "active ownership; untouched"
+    },
+    {
+      "pr": 465,
+      "scope": "Modern racer/profile selection",
+      "judgment": "recent and overlapping Modern host files; untouched"
+    },
+    {
+      "pr": 464,
+      "scope": "next Racer-HD motion family",
+      "judgment": "at concurrency boundary and recently active; untouched"
+    }
+  ],
+  "safety_judgment": "Avoided all three open PR scopes and shared Modern host/Racer-HD files. Selected independent Phase 8 bsnes-hd diagnostic planning lane.",
+  "decision": "worked",
+  "decision_reason": "Attempted a plan-defined independent Widescreen reconnaissance task after verifying no existing issue or commit represented bsnes-hd diagnostic/preset work; the mutation was safety-blocked and immediately cooled.",
+  "candidates": [
+    {
+      "lane": "Phase 8 bsnes-hd deterministic diagnostic/preset matrix",
+      "outcome": "mutation_blocked",
+      "detail": "Prepared bounded issue with deterministic replay, orthogonal BG/sprite/window/PAR preset matrix, retained hashes and explicit stop condition. Issue creation was safety-blocked; no equivalent write route retried."
+    },
+    {
+      "lane": "Active PR continuation",
+      "outcome": "deferred_concurrency",
+      "detail": "PRs #466/#465/#464 had recent ownership and touched hot product/art surfaces, so no mutation was attempted."
+    },
+    {
+      "lane": "Orphan/residual Widescreen branch rescue",
+      "outcome": "no_safe_rescue_selected",
+      "detail": "Branch search found older Widescreen branches, but no coherent unrepresented orphan was established safely enough to mutate during the active-repo window."
+    }
+  ],
+  "orphan_handling": "Inspected Widescreen-named non-main branches; did not rewrite, rebase, delete, merge, or preserve any branch without a verified coherent unsuperseded delta.",
+  "work": {
+    "summary": "No project mutation landed. Independently scoped the remaining Phase 8 bsnes-hd diagnostic prerequisite; persistence was safety-blocked and cooled.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "concurrency_blocked",
+  "blocker": "The independent issue-creation mutation was safety-blocked while all obvious high-value implementation lanes were under recent active ownership.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next activation, refresh state and choose a different independent canonical lane unless the bsnes-hd persistence state materially changes; do not collide with active Modern or Racer-HD work."
+}
