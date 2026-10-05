@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "run_id": "a11-101217x",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-05T10:12:17Z",
+  "started_at": "2026-10-05T10:12:17Z",
+  "finished_at": "2026-10-05T10:20:00Z",
+  "initial_repo_state": {
+    "main_sha": "4d606ed9aafa6eb9b7c8ccbcbdf4f97ef503adfa",
+    "open_prs": [
+      487,
+      488,
+      489
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No main commit since 06:53Z; open PR heads last updated around 07:10-07:13Z and were stale for this activation."
+  },
+  "decision": "worked",
+  "decision_reason": "Quiet repository required active forward progress. Three independent Windows-x64 candidates were attempted after confirming no matching open issue and avoiding stale PR hot surfaces.",
+  "concurrent_lanes": [
+    {
+      "pr": 487,
+      "scope": "Continue Tour"
+    },
+    {
+      "pr": 488,
+      "scope": "live PB/split timing"
+    },
+    {
+      "pr": 489,
+      "scope": "fast repeat/recent course navigation"
+    }
+  ],
+  "safety_judgment": "All open PRs were stale beyond 30 minutes, but their overlapping host/docs surfaces were avoided. New work targeted release staging, rebinding task definition, and audio acceptance.",
+  "candidates": [
+    {
+      "lane": "Windows x64 release packaging",
+      "outcome": "blocked",
+      "detail": "Created branch chatgpt/windows-x64-release-package-2026-10-05 from current main after preparing deterministic package-staging content; first file creation was safety-blocked and cooled."
+    },
+    {
+      "lane": "Semantic control rebinding",
+      "outcome": "blocked",
+      "detail": "Verified no matching issue; issue creation was safety-blocked and cooled."
+    },
+    {
+      "lane": "Deterministic native audio-content acceptance",
+      "outcome": "blocked",
+      "detail": "Verified no matching issue; issue creation was safety-blocked and cooled."
+    },
+    {
+      "lane": "Orphan rescue",
+      "outcome": "none",
+      "detail": "Compared sampled recent non-main branches; sampled Codex and rescue branches were 0 commits ahead of main, so no coherent orphan required preservation."
+    }
+  ],
+  "orphan_handling": "Sampled recent candidate branches were fully represented on main; no rescue mutation made.",
+  "work": {
+    "summary": "Attempted three independent plan-aligned Windows x64 lanes. Branch creation succeeded for release packaging, but all substantive project mutations were safety-blocked. No durable project progress landed.",
+    "branch": "chatgpt/windows-x64-release-package-2026-10-05",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Safety checks blocked the first substantive file write and both independent issue-creation mutations.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Begin next activation on a different plan-defined lane unless repository state materially changes; do not retry release packaging, rebinding issue creation, or audio acceptance issue creation while they remain within the repeated-block cooldown."
+}
