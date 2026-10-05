@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261005-201907-lmp-3aab7f",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-05T20:19:07Z",
+  "started_at": "2026-10-05T20:19:07Z",
+  "finished_at": "2026-10-05T20:24:00Z",
+  "initial_repo_state": {
+    "main_sha": "4d606ed9aafa6eb9b7c8ccbcbdf4f97ef503adfa",
+    "open_prs": [
+      487,
+      488,
+      489,
+      490,
+      491,
+      492,
+      493,
+      495,
+      496
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #496 updated at 20:08:53Z, just outside the roughly ten-minute ownership window at inspection; #490-#496 represent recently active progression, packaging and controls lanes. Main itself remained unchanged."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 496,
+      "scope": "typed Modern challenge-generation snapshot adapter",
+      "judgment": "recent; avoided"
+    },
+    {
+      "pr": 495,
+      "scope": "framework-authoritative controls rebind model",
+      "judgment": "recent; avoided"
+    },
+    {
+      "pr": 493,
+      "scope": "Windows x64 portable consumer package",
+      "judgment": "CI still queued; avoided"
+    },
+    {
+      "prs": [
+        487,
+        488,
+        489,
+        490,
+        491,
+        492
+      ],
+      "scope": "Modern continuation/timing/navigation/challenge-tier stack",
+      "judgment": "existing ownership/hotspots; avoided"
+    }
+  ],
+  "safety_judgment": "Selected a separate local-multiplayer planning surface with no shared hot-file mutation. Branch was created only with commit-ready content. PR creation was safety-blocked and not retried.",
+  "decision": "worked",
+  "decision_reason": "A distinct Windows x64 baseline gap remained outside recent active lanes; persisted an implementation-ready local multiplayer setup contract as a substantive commit.",
+  "candidates": [
+    {
+      "lane": "local multiplayer setup contract",
+      "outcome": "progress",
+      "detail": "Created branch and committed a concrete host/device ownership, fail-closed, implementation-slice and fresh-process acceptance contract."
+    },
+    {
+      "lane": "publish local multiplayer contract PR",
+      "outcome": "safety_blocked",
+      "detail": "PR creation blocked by safety checks; exact mutation cooled for the activation."
+    },
+    {
+      "lane": "merge/package reconciliation",
+      "outcome": "deferred",
+      "detail": "PR #493 Windows workflow still had queued jobs; no CI babysitting or premature merge."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "No orphan mutation performed; prior startup-diagnostics orphan left untouched under cooldown and active recent branches were not disturbed."
+  },
+  "work": {
+    "summary": "Defined the remaining Modern fast local multiplayer setup boundary, preserving stock 2P authority while specifying host-only P1/P2 device assignment, hot-plug behavior, fail-closed launch rules, a pure model first slice, reuse of existing Restart/rematch authority, and Windows fresh-process acceptance.",
+    "branch": "chatgpt/local-multiplayer-setup-contract-2026-10-05",
+    "prs_touched": [],
+    "commits": [
+      "3aab7fb6e1de8f416dfefd3a2766b917d35a9092"
+    ],
+    "files_changed": [
+      "docs/LOCAL-MULTIPLAYER-SETUP.md"
+    ]
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": "PR publication for the new branch was safety-blocked; the commit remains durable and recoverable.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On a later activation, preserve/publish the local-multiplayer branch when safe, or implement its pure LocalMultiplayerSetupState model if the branch remains unowned; continue avoiding active challenge-tier, controls and packaging hotspots."
+}
