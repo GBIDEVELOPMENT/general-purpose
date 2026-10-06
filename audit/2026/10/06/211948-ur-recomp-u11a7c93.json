@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "run_id": "u11a7c93",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-06T21:15:00Z",
+  "started_at": "2026-10-06T21:19:48Z",
+  "finished_at": "2026-10-06T21:24:00Z",
+  "initial_repo_state": {
+    "main_sha": "424474c64393a617473915a0cd4c9e4f7f45e0c0",
+    "open_prs": [
+      561
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #561 had fresh CI/check activity at 21:14-21:18Z; its local-multiplayer/controller presentation scope was treated as actively owned and left untouched."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #561 local multiplayer/controller presentation",
+      "safety_judgment": "active inside 10-minute window; avoided"
+    }
+  ],
+  "safety_judgment": "Worked only on independent product-policy lanes. Each blocked mutation was cooled immediately; no equivalent mutation mechanism was retried.",
+  "decision": "worked",
+  "decision_reason": "Attempted three materially distinct plan-defined Windows x64 lanes outside active PR #561; all repository mutations were safety-blocked.",
+  "candidates": [
+    {
+      "lane": "Accessibility presentation contract",
+      "outcome": "safety_blocked",
+      "detail": "Verified no matching open issue/code result, created branch chatgpt/accessibility-presentation-contract-2026-10-06, then the first commit-ready docs/ACCESSIBILITY-PRESENTATION.md creation was blocked. Branch remains empty."
+    },
+    {
+      "lane": "Modern Local Tournament contract",
+      "outcome": "safety_blocked",
+      "detail": "Verified no matching open issue; issue creation bounding host-owned round-robin/standings policy was blocked and cooled."
+    },
+    {
+      "lane": "Localization-ready host text authority",
+      "outcome": "safety_blocked",
+      "detail": "Verified no matching open issue; issue creation bounding a host-only string-ID/English-catalog architecture was blocked and cooled."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "No orphan mutation attempted. Previously cooled local-multiplayer rematch publication was not retried."
+  },
+  "work": {
+    "summary": "No durable UR-Recomp mutation succeeded.",
+    "branch": "chatgpt/accessibility-presentation-contract-2026-10-06",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "OpenAI safety checks blocked all three independent UR-Recomp mutations.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next activation should begin on a different uncooldown Windows x64 lane unless repository state materially changes; continue to avoid any lane with activity inside the safety window."
+}
