@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261006-161526-b72m",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-06T16:15:26Z",
+  "started_at": "2026-10-06T16:15:26Z",
+  "finished_at": "2026-10-06T16:25:00Z",
+  "initial_repo_state": {
+    "main_sha": "c3647b40138b80f5fdd6a73ab1c773efb4e858df",
+    "open_prs": [],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No open PRs; latest main mutation was ~44 minutes old. Windows native smoke 37488278330 was failed."
+  },
+  "decision": "worked",
+  "decision_reason": "Quiet-repo run attempted three distinct lanes and diagnosed the current Windows smoke regression.",
+  "candidates": [
+    {
+      "lane": "local multiplayer orphan preservation",
+      "outcome": "safety_blocked"
+    },
+    {
+      "lane": "Modern COOL NAME contract",
+      "outcome": "safety_blocked"
+    },
+    {
+      "lane": "Windows invalid-ROM startup diagnostic acceptance",
+      "outcome": "partial",
+      "detail": "Smoke invokes launcher, which catches corrupt ROM before native UR-STARTUP-ROM-INVALID. Fix branch created; workflow mutation blocked."
+    }
+  ],
+  "work": {
+    "summary": "Precise smoke diagnosis retained only in audit; no UR-Recomp commit landed.",
+    "branch": "chatgpt/fix-invalid-rom-diagnostic-acceptance-2026-10-06",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": [],
+    "inspected_run": 37488278330
+  },
+  "outcome": "error",
+  "blocker": "Safety checks blocked three durable project mutations.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Avoid blocked mutations unless state changes. Minimal diagnostic fix is to invoke packaged UniracersSNESRecomp.exe directly with the corrupted ROM so native UR-STARTUP-ROM-INVALID is exercised."
+}
