@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261006-141040-p8k4",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-06T14:10:40Z",
+  "started_at": "2026-10-06T14:10:40Z",
+  "finished_at": "2026-10-06T14:18:00Z",
+  "initial_repo_state": {
+    "main_sha": "08b61fe9ac901ce76f5448929a9740f0774cbf20",
+    "open_prs": [
+      537
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No UR-Recomp activity inside the preceding ~10 minutes; main's latest commit was the presentation-polish boundary note from 13:13Z. PR #537 was diagnostic-only and inactive since 11:26Z."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 537,
+      "scope": "temporary Windows package-contract failure diagnosis",
+      "safety_judgment": "Inactive well beyond 30 minutes; inspected only after two independent presentation mutations were blocked."
+    }
+  ],
+  "safety_judgment": "Repository was quiet. Avoided recently safety-blocked lanes from the prior activations. Each blocked mutation was cooled immediately; no equivalent write route was retried.",
+  "decision": "worked",
+  "decision_reason": "Quiet-repository activation attempted three materially distinct plan-aligned candidates. All three project mutations were independently safety-blocked, so no durable UR-Recomp write was possible.",
+  "candidates": [
+    {
+      "lane": "presentation overlay logical-anchor acceptance contract",
+      "outcome": "safety_blocked",
+      "detail": "Created branch chatgpt/presentation-overlay-anchor-contract-2026-10-06 from current main only after preparing concrete header/test content. First commit-ready file creation was blocked; equivalent anchor-contract writes were cooled."
+    },
+    {
+      "lane": "presentation density seam evidence",
+      "outcome": "safety_blocked",
+      "detail": "Inspection established that presentation_scale admits 1..4 while system_overlay receives only scaled width/height, with no density/logical-dimension parameter. Attempt to persist this new finding in the existing presentation-polish note was blocked."
+    },
+    {
+      "lane": "stale PR #537 package verify diagnosis",
+      "outcome": "safety_blocked",
+      "detail": "Run 37456423830 narrows the failure to test_assemble_windows_package.py lines 348-349: archive creation and byte-determinism pass, then verify-archive fails. Attempt to persist that narrowing as a PR comment was blocked."
+    }
+  ],
+  "orphan_handling": {
+    "inspected": [
+      "chatgpt/post-run-detail-model-2026-10-05",
+      "chatgpt/local-multiplayer-device-adapter-2026-10-05",
+      "chatgpt/racer-hd-0139-2026-10-06"
+    ],
+    "result": "post-run-detail-model is fully behind main with zero unique commits; device-adapter and racer-HD candidates did not present coherent unique orphan work requiring rescue."
+  },
+  "work": {
+    "summary": "No durable project mutation succeeded. New technical findings were isolated for overlay-density authority and PR #537's verify-archive failure, but their persistence writes were safety-blocked.",
+    "branch": "chatgpt/presentation-overlay-anchor-contract-2026-10-06",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "OpenAI safety checks independently blocked three distinct project mutations: commit-ready overlay contract files, presentation seam evidence persistence, and a diagnostic PR comment.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Do not retry these blocked mutations next activation unless repository state materially changes. Start on a different uncooldown Windows-x64 plan lane; if #537 changes materially, use its new state rather than repeating this diagnostic."
+}
