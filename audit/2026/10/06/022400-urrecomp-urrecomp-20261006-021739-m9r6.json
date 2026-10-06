@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261006-021739-m9r6",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-06T02:17:39Z",
+  "started_at": "2026-10-06T02:17:39Z",
+  "finished_at": "2026-10-06T02:24:00Z",
+  "initial_repo_state": {
+    "main_sha": "4625f013f6e90f6759e73cd8591637424b6c8a1d",
+    "open_prs": [
+      520,
+      521,
+      522,
+      523
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PRs #520-#523 all updated inside the preceding 10 minutes; main last advanced at 01:45Z."
+  },
+  "concurrent_lanes": [
+    {
+      "pr": 520,
+      "scope": "PAL/NTSC regional title visible consumer",
+      "recent": true
+    },
+    {
+      "pr": 521,
+      "scope": "Windows startup video/audio diagnostics",
+      "recent": true
+    },
+    {
+      "pr": 522,
+      "scope": "Modern Resume/Restart Tour profile flow",
+      "recent": true
+    },
+    {
+      "pr": 523,
+      "scope": "measurement-selected Racer HD 0439 expansion",
+      "recent": true
+    }
+  ],
+  "safety_judgment": "Avoided all four actively owned PR surfaces and recent cooldown lanes; attempted three independent unowned plan-defined tasks.",
+  "decision": "worked",
+  "decision_reason": "Three materially distinct safe candidate mutations were attempted; each was independently safety-blocked.",
+  "candidates": [
+    {
+      "lane": "Jumpover fall-through expert-edge fixture",
+      "outcome": "safety_blocked",
+      "detail": "No duplicate issue found; bounded deterministic-fixture issue creation blocked."
+    },
+    {
+      "lane": "local multiplayer SDL3 device-event adapter",
+      "outcome": "safety_blocked",
+      "detail": "Follow-up issue for wiring merged LocalMultiplayerSetupState to physical device events blocked."
+    },
+    {
+      "lane": "Walker–Ping Pong second-loop skip fixture",
+      "outcome": "safety_blocked",
+      "detail": "Bounded canonical measurement/regression issue creation blocked."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "No orphan mutated; active ownership and cooldowns respected."
+  },
+  "work": {
+    "summary": "No UR-Recomp mutation succeeded after three distinct candidates.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "OpenAI safety checks blocked all three independent project mutations.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Begin next activation on a different uncooldown lane unless repository state materially changes; do not retry these exact mutations within the two-run cooldown."
+}
