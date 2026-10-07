@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-161657-r11-3blocked",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T16:16:57Z",
+  "started_at": "2026-10-07T16:16:57Z",
+  "finished_at": "2026-10-07T16:22:30Z",
+  "initial_repo_state": {
+    "main_sha": "29cbc78fad4ca72e4d05beec23d53cbc9b9e5ee1",
+    "open_prs": [685, 678, 668, 642],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #685 Racer HD P2 0578/0EC3 was active inside the preceding 10 minutes and was avoided. Other open lanes remained owned and were not modified."
+  },
+  "concurrent_lanes": [
+    {"scope":"PR #685 Racer HD P2 0578/0EC3","safety_judgment":"active inside 10-minute window; avoided"},
+    {"scope":"PR #668 controller glyphs","safety_judgment":"owned open lane; avoided"},
+    {"scope":"PR #642 ordinary-2P match capture","safety_judgment":"owned open lane; avoided"}
+  ],
+  "safety_judgment": "Worked only in independent documentation/product-model lanes. Each safety-blocked mutation and equivalent mechanisms were immediately cooled.",
+  "decision": "worked",
+  "decision_reason": "Attempted three materially distinct safe candidates after refreshing current project state; all three project mutations were independently safety-blocked.",
+  "candidates": [
+    {
+      "lane": "Advance stale draft PR #678 results-navigation contract",
+      "outcome": "safety_blocked",
+      "detail": "PR remained mergeable, docs-only, comment/review-free and inactive for about an hour. Mark-ready mutation was blocked and cooled."
+    },
+    {
+      "lane": "Modern Local Tournament session contract",
+      "outcome": "safety_blocked",
+      "detail": "Verified no existing repository work represented the proposed pure host-owned tournament model. Created branch chatgpt/local-tournament-session-contract-2026-10-07-r2 only after content was commit-ready; first actual file mutation was blocked. A local JavaScript quoting error occurred before the mutation attempt and changed no repository content."
+    },
+    {
+      "lane": "Jumpover fall-through regression orphan rescue",
+      "outcome": "safety_blocked",
+      "detail": "Verified no PR represented the coherent docs-only branch; it was one commit ahead and 47 behind current main. Draft PR creation was blocked and cooled."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "Jumpover regression branch remains coherent but unpublished after blocked PR creation. The newly created Local Tournament branch is empty because its first file mutation was blocked and does not count as progress."
+  },
+  "work": {
+    "summary": "No durable UR-Recomp content mutation succeeded after three independent candidates.",
+    "branch": "chatgpt/local-tournament-session-contract-2026-10-07-r2",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Safety checks independently blocked mark-ready on PR #678, Local Tournament contract file creation, and Jumpover draft PR creation.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next activation should begin on a different Windows x64 lane unless repository state materially changes; do not retry these cooled mutations solely because time passed."
+}
