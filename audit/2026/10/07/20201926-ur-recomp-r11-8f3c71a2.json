@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-r11-20261007-201926-8f3c71a2",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T20:19:26Z",
+  "started_at": "2026-10-07T20:19:26Z",
+  "finished_at": "2026-10-07T20:27:00Z",
+  "initial_repo_state": {
+    "main_sha": "d33cd27e2061c68ddccca6ef51a736c9bc932a62",
+    "open_prs": [
+      710,
+      698
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main and PR activity were recent. PR #710 updated at 20:18Z and PR #698 at 20:09Z; both active surfaces were left untouched."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #710 ordinary-2P native capture acceptance",
+      "safety_judgment": "active inside ownership window; avoided"
+    },
+    {
+      "scope": "PR #698 Modern results navigation runtime",
+      "safety_judgment": "recently active; avoided"
+    }
+  ],
+  "safety_judgment": "Selected only independent or orphan-preservation candidates. No blocked mutation was retried through an equivalent mechanism.",
+  "decision": "worked",
+  "decision_reason": "Inspected current main, open PRs, recent commits/branches and canonical plan documents. Three independent durable mutations were attempted outside active ownership; all were safety-blocked.",
+  "candidates": [
+    {
+      "lane": "Jumpover fall-through regression orphan rescue",
+      "outcome": "safety_blocked",
+      "detail": "Verified r2 remains one unique documentation commit ahead, 117 behind main, with no PR. Draft PR creation was blocked and cooled."
+    },
+    {
+      "lane": "Expert playtest package-identity binding",
+      "outcome": "safety_blocked",
+      "detail": "Attempted a bounded release-evidence issue reusing existing playtest validator and package SHA-256 authority; issue creation was blocked and cooled."
+    },
+    {
+      "lane": "Regional transition-signature bounded experiment",
+      "outcome": "safety_blocked",
+      "detail": "Attempted a bounded issue to classify the first NA/Europe transition divergence without reopening PAL timing or generic archaeology; issue creation was blocked and cooled."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "Jumpover r2 was verified coherent and unrepresented by a PR; preservation attempt was blocked. Other sampled historical branches were either empty/behind or broad and potentially superseded, so were left untouched."
+  },
+  "work": {
+    "summary": "No durable UR-Recomp mutation succeeded.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Three independent project mutations were blocked by safety checks.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On the next activation, avoid these cooled mutations unless repository state materially changes; prefer a different independent Windows x64 lane while respecting active PR ownership."
+}
