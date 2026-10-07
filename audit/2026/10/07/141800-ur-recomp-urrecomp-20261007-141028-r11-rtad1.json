@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-141028-r11-rtad1",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T14:10:28Z",
+  "started_at": "2026-10-07T14:10:28Z",
+  "finished_at": "2026-10-07T14:18:00Z",
+  "initial_repo_state": {
+    "main_sha": "4667d45b009bd62394e7ec2e897adbd5e7334518",
+    "open_prs": [669,668,664,642],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Latest observed project activity was around 11:41Z, well outside the 10-minute ownership window; open Records, controller-glyph, 2P join and match-capture scopes were avoided."
+  },
+  "concurrent_lanes": [
+    {"scope":"PR #669 multiplayer Records browser integration","safety_judgment":"open owned lane; avoided"},
+    {"scope":"PR #668 controller physical-button glyphs","safety_judgment":"open owned lane; avoided"},
+    {"scope":"PR #664 2P join named seats/native acceptance","safety_judgment":"open owned lane; avoided"},
+    {"scope":"PR #642 ordinary-2P match capture","safety_judgment":"open owned lane; avoided"}
+  ],
+  "safety_judgment": "Repository was quiet. Began on a new uncooldown readability lane, then switched immediately to two materially distinct lanes after each blocked mutation. No equivalent write mechanism was retried.",
+  "decision": "worked",
+  "decision_reason": "Three independent plan-defined durable mutations were attempted outside open owned scopes; all three were safety-blocked.",
+  "candidates": [
+    {"lane":"Readable Text live-adoption contract","outcome":"safety_blocked","detail":"Created chatgpt/readable-text-adoption-contract-2026-10-07-r1 from current main only after preparing a concrete contract. First file write for docs/READABLE-TEXT-ADOPTION.md was blocked; branch is empty and does not count as progress. Technical finding: the 12-row Controls surface is not a valid first Large-text consumer without explicit pagination/reflow, so first adoption should use a bounded informational panel."},
+    {"lane":"Regional transition-signature divergence classification","outcome":"safety_blocked","detail":"Bounded follow-up to the newly merged retail transition-motion comparator; issue creation was independently blocked and cooled."},
+    {"lane":"Expert-playtest packaged-build preflight","outcome":"safety_blocked","detail":"Bounded release preflight reusing the existing report validator and package SHA-256 identity; issue creation was independently blocked and cooled."}
+  ],
+  "orphan_handling": {
+    "summary": "Recent branch census was inspected. Previously blocked results-navigation and Jumpover publication mutations were not retried because recent audit history placed them on cooldown."
+  },
+  "work": {
+    "summary": "No durable UR-Recomp content mutation succeeded. One empty branch was created only after commit-ready readable-text contract content existed; its first file write was blocked.",
+    "branch": "chatgpt/readable-text-adoption-contract-2026-10-07-r1",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {"checked":true,"waited_for_runs":false,"runs_started":[]},
+  "outcome": "error",
+  "blocker": "Safety checks blocked all three independent project mutations.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next activation should avoid these three cooled mutations unless repository state materially changes; prefer a different uncooldown Windows x64 implementation/test/evidence lane."
+}
