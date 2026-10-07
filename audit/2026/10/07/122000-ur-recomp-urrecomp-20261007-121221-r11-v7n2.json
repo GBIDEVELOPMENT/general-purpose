@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-121221-r11-v7n2",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T12:12:21Z",
+  "started_at": "2026-10-07T12:12:21Z",
+  "finished_at": "2026-10-07T12:20:00Z",
+  "initial_repo_state": {
+    "main_sha": "4667d45b009bd62394e7ec2e897adbd5e7334518",
+    "open_prs": [
+      669,
+      668
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Latest observed main/PR activity was about 31 minutes old; repository qualified as quiet."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #669 Records multiplayer match history",
+      "safety_judgment": "left untouched"
+    },
+    {
+      "scope": "PR #668 controller physical glyph hints",
+      "safety_judgment": "left untouched"
+    }
+  ],
+  "safety_judgment": "Three materially distinct mutations were attempted; each blocked mutation was cooled immediately.",
+  "decision": "worked",
+  "decision_reason": "Inspected current plans and repository activity, then attempted three independent durable mutations; all were safety-blocked.",
+  "candidates": [
+    {
+      "lane": "Jumpover fall-through regression draft PR",
+      "outcome": "safety_blocked",
+      "detail": "Coherent branch was 1 ahead/36 behind main and docs-only; PR creation blocked."
+    },
+    {
+      "lane": "Close completed Quick Practice rematch issue #535",
+      "outcome": "safety_blocked",
+      "detail": "Canonical queue says Rematch/Repeat Practice is integrated; closure blocked."
+    },
+    {
+      "lane": "Close completed bring-up issue #1",
+      "outcome": "safety_blocked",
+      "detail": "Historical Phase 0-1 baseline closure blocked."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "Jumpover branch remains preserved and untouched after blocked publication."
+  },
+  "work": {
+    "summary": "No durable project mutation succeeded.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Safety checks blocked all three project mutations.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Start next activation on a different uncooldown plan-defined lane unless repository state materially changes."
+}
