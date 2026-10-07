@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-081300-r11-j4k8",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T08:13:00Z",
+  "started_at": "2026-10-07T08:13:00Z",
+  "finished_at": "2026-10-07T08:21:00Z",
+  "initial_repo_state": {
+    "main_sha": "513923535a0dcd1ecbefb8040abfafc8a8638b86",
+    "open_prs": [
+      633,
+      628,
+      616
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main and PR #633 were active inside the safety window; PR #628 was also recently active. Their Records/multiplayer and Racer-HD surfaces were avoided."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #633 ordinary-2P production capture",
+      "safety_judgment": "active; avoided"
+    },
+    {
+      "scope": "PR #628 Racer HD 03F9",
+      "safety_judgment": "recent; avoided"
+    },
+    {
+      "scope": "PR #616 vibration/haptics",
+      "safety_judgment": "stale but overlapping recently changed host surfaces; avoided"
+    }
+  ],
+  "safety_judgment": "Started on a different workstream from the previous activation. Each blocked mutation was cooled immediately; three materially distinct candidates were attempted.",
+  "decision": "worked",
+  "decision_reason": "Three independent plan-defined mutations outside active ownership were attempted; all were safety-blocked.",
+  "candidates": [
+    {
+      "lane": "Jumpover fall-through deterministic regression contract",
+      "outcome": "safety_blocked",
+      "detail": "Created a fresh branch only after commit-ready content was prepared; first file creation was blocked, so the empty branch does not count as progress."
+    },
+    {
+      "lane": "Walker–Ping Pong second-loop skip fixture",
+      "outcome": "safety_blocked",
+      "detail": "Independent bounded issue creation was blocked and cooled."
+    },
+    {
+      "lane": "Modern Local Tournament pure session model",
+      "outcome": "safety_blocked",
+      "detail": "Independent model-only task, explicitly avoiding active 2P capture integration files; issue creation was blocked and cooled."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "No orphan rescue mutation attempted. The newly created Jumpover branch is empty because its first intended commit was blocked and is not counted as progress."
+  },
+  "work": {
+    "summary": "No durable UR-Recomp content mutation succeeded after three independent candidates.",
+    "branch": "chatgpt/jumpover-fallthrough-regression-2026-10-07",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Safety checks blocked all three independent project mutations.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next activation should start on a different uncooldown Windows x64 lane unless repository state materially changes; do not retry these blocked mutations without such a change."
+}
