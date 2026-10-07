@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-2313-r11-jumpover722-b",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T23:13:31Z",
+  "started_at": "2026-10-07T23:13:31Z",
+  "finished_at": "2026-10-07T23:16:10Z",
+  "initial_repo_state": {
+    "main_sha": "61ee29e57003930bcc070acd4dc50cb85ccbf019",
+    "open_prs": [
+      721
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #721 updated at 23:12Z inside the ownership window; avoided."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #721 CI wall-clock optimization",
+      "safety_judgment": "Active inside the ownership window; avoided."
+    }
+  ],
+  "safety_judgment": "Avoided active CI work. Two independent issue mutations were blocked and cooled; then preserved an eligible coherent orphan without rewriting history.",
+  "decision": "worked",
+  "decision_reason": "Durable progress: preserved the Jumpover fall-through regression orphan as draft PR #722.",
+  "candidates": [
+    {
+      "lane": "Typed Modern root live integration",
+      "outcome": "safety_blocked",
+      "detail": "Issue creation blocked and cooled."
+    },
+    {
+      "lane": "Readable-text first live consumer",
+      "outcome": "safety_blocked",
+      "detail": "Issue creation independently blocked and cooled."
+    },
+    {
+      "lane": "Jumpover fall-through orphan preservation",
+      "outcome": "progress",
+      "detail": "Verified one unique documentation commit, 173 behind main, no representing PR; opened draft PR #722."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "Preserved chatgpt/jumpover-fallthrough-regression-2026-10-07-r2 as draft PR #722; no rebase, rewrite, force-push or merge."
+  },
+  "work": {
+    "summary": "Opened draft PR #722 for the deterministic Jumpover fall-through regression contract.",
+    "branch": "chatgpt/jumpover-fallthrough-regression-2026-10-07-r2",
+    "prs_touched": [
+      722
+    ],
+    "commits": [
+      "e670ada9477afe84002d4fe9627440561a31497b"
+    ],
+    "files_changed": [
+      "docs/JUMPOVER-FALLTHROUGH-REGRESSION.md"
+    ]
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": null,
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Reconcile PR #722 onto current main when safe and implement the deterministic Jumpover collision regression, or choose another independent Windows x64 lane."
+}
