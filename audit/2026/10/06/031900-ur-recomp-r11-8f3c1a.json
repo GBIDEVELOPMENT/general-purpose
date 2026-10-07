@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-r11-8f3c1a",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T03:16:17Z",
+  "started_at": "2026-10-07T03:16:17Z",
+  "finished_at": "2026-10-07T03:19:00Z",
+  "initial_repo_state": {
+    "main_sha": "bfa0bece2c6da4c4cccd9fb0e7c43b46f6dc9f09",
+    "open_prs": [
+      563
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #563 CI-hardening branch updated at 03:10:13Z, inside the 10-minute safety window; its workflow/CI surfaces were avoided."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #563 CI architecture/native smoke/UI evidence",
+      "safety_judgment": "active inside safety window; untouched"
+    }
+  ],
+  "safety_judgment": "Avoided active PR #563 and recent blocked lanes. Attempted three materially distinct plan-defined mutations outside its scope; each was independently safety-blocked and immediately cooled.",
+  "decision": "worked",
+  "decision_reason": "Three independent forward-progress candidates were attempted after inspection; all project mutations were blocked by safety checks.",
+  "candidates": [
+    {
+      "lane": "2x-safe Modern overlay implementation slice",
+      "outcome": "safety_blocked",
+      "detail": "Issue creation to implement the newly merged presentation-density contract on one isolated overlay was blocked."
+    },
+    {
+      "lane": "Windows clean-machine portable ZIP release acceptance",
+      "outcome": "safety_blocked",
+      "detail": "Independent packaging/release acceptance issue creation was blocked."
+    },
+    {
+      "lane": "Stock-course editable interchange round trip",
+      "outcome": "safety_blocked",
+      "detail": "Independent course-tooling round-trip issue creation was blocked."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "No orphan mutation attempted; recently blocked malformed-SRAM publication was left on cooldown."
+  },
+  "work": {
+    "summary": "No durable UR-Recomp mutation succeeded this activation.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "OpenAI safety checks blocked all three independent UR-Recomp mutations.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next activation should start from a different uncooldown plan-defined lane unless repository state materially changes; continue to avoid PR #563 while actively owned."
+}
