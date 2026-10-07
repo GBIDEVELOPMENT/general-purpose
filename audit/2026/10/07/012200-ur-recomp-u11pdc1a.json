@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "u11pdc1a",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T01:18:53Z",
+  "started_at": "2026-10-07T01:18:53Z",
+  "finished_at": "2026-10-07T01:22:00Z",
+  "initial_repo_state": {
+    "main_sha": "424474c64393a617473915a0cd4c9e4f7f45e0c0",
+    "open_prs": [561],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No main commit landed inside the initial 10-minute safety window. PR #561 remained an owned local-multiplayer/controller-presentation lane and was left untouched."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #561 local multiplayer/controller presentation and CI parity",
+      "safety_judgment": "treated as separately owned; no files or mutations touched"
+    }
+  ],
+  "safety_judgment": "Selected the independent Presentation-polish lane from WORK-QUEUE.md. Avoided PR #561 and recently blocked attract/audio/custom-course, malformed-SRAM, Records, Racer-HD, accessibility and hot-plug mutations.",
+  "decision": "worked",
+  "decision_reason": "The first independent plan-defined candidate produced durable progress, so the multi-lane fallback rule did not require additional candidate attempts.",
+  "candidates": [
+    {
+      "lane": "High-density Modern overlay composition contract",
+      "outcome": "progress",
+      "detail": "Bound the open Presentation-polish gap into explicit guest-logical, presentation-surface and output/window coordinate spaces; specified fail-closed density ownership, sampling policy, 1x/2x deterministic acceptance, machine-readable geometry evidence and Authentic/guest-state invariants."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "Inspected chatgpt/malformed-sram-containment-2026-10-06: it remains one coherent commit ahead of main. Its publication had been recently safety-blocked, so it was not retried. No rewrite, rebase, deletion or merge was attempted."
+  },
+  "work": {
+    "summary": "Created a bounded Windows x64 presentation-density contract and opened PR #562.",
+    "branch": "chatgpt/presentation-density-contract-2026-10-06",
+    "prs_touched": [562],
+    "commits": ["654b510226c631af97d0c7064088957bba8ecec1"],
+    "files_changed": ["docs/PRESENTATION-DENSITY-CONTRACT.md"]
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": null,
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "If PR #562 remains unowned, implement the first shared logical-to-presentation transform or deterministic geometry acceptance harness described by the contract; otherwise choose another independent Windows x64 lane."
+}
