@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-101040-r11-rnav",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T10:10:40Z",
+  "started_at": "2026-10-07T10:10:40Z",
+  "finished_at": "2026-10-07T10:18:40Z",
+  "initial_repo_state": {
+    "main_sha": "2acce04f7978aa5ab66b3e214dd2b10c27aa9da5",
+    "open_prs": [640, 633],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Latest main merge was PR #641 at 09:45:22Z. Open PR #640 owns measured Racer HD P2 0579/0EC4 and PR #633 owns ordinary-2P paired run capture; both scopes were avoided."
+  },
+  "concurrent_lanes": [
+    {"scope": "PR #640 measured Racer HD P2 0579/0EC4", "safety_judgment": "separate active/open lane; avoided"},
+    {"scope": "PR #633 ordinary-2P paired run capture", "safety_judgment": "separate multiplayer/Records authority; avoided"}
+  ],
+  "safety_judgment": "Selected the independent fast-navigation results surface. It does not touch Racer-HD or ordinary-2P Records authority and reuses already established progression/routing contracts.",
+  "decision": "worked",
+  "decision_reason": "The canonical queue still had a concrete player-visible fast-navigation gap: Track Select/Tour Select results integration. A bounded authority/acceptance contract was committed on a fresh branch. PR creation was safety-blocked and not retried by an equivalent mechanism.",
+  "candidates": [
+    {"lane": "Modern results Track Select/Tour Select integration contract", "outcome": "progress", "detail": "Committed a bounded contract defining authority reuse, fail-closed routing, Next Event admission, Quick Practice isolation, presentation-density requirements and native acceptance."}
+  ],
+  "orphan_handling": {"summary": "No orphan rescue mutation was attempted; existing active/open lanes were kept separate."},
+  "work": {
+    "summary": "Added docs/MODERN-RESULTS-NAVIGATION.md as a bounded implementation contract for remaining Modern results navigation.",
+    "branch": "chatgpt/results-navigation-contract-2026-10-07",
+    "prs_touched": [],
+    "commits": ["a21b1f25502d0c950df96c46cc52ee54f1711b9a"],
+    "files_changed": ["docs/MODERN-RESULTS-NAVIGATION.md"]
+  },
+  "gha": {"checked": false, "waited_for_runs": false, "runs_started": []},
+  "outcome": "progress",
+  "blocker": "Opening a pull request for the committed branch was safety-blocked; the commit itself is durable and recoverable.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "On a later activation, if repository state permits, preserve the committed results-navigation branch with a PR or implement the first thin production slice without overlapping active ownership."
+}
