@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-131538-r11-k8p4",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T13:15:38Z",
+  "started_at": "2026-10-07T13:15:38Z",
+  "finished_at": "2026-10-07T13:25:00Z",
+  "initial_repo_state": {
+    "main_sha": "4667d45b009bd62394e7ec2e897adbd5e7334518",
+    "open_prs": [
+      668,
+      669,
+      664,
+      642
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "Latest observed project commits were around 11:41Z, well outside the 10-minute ownership window; open PR scopes were nevertheless avoided."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #668 controller physical-button glyphs",
+      "safety_judgment": "open owned lane; avoided"
+    },
+    {
+      "scope": "PR #669 multiplayer Records browser integration",
+      "safety_judgment": "open owned lane; avoided"
+    },
+    {
+      "scope": "PR #664 2P join named seats/native acceptance",
+      "safety_judgment": "open owned lane; avoided"
+    },
+    {
+      "scope": "PR #642 ordinary-2P match-pair capture",
+      "safety_judgment": "open owned lane; avoided"
+    }
+  ],
+  "safety_judgment": "Repository was quiet, so three independent plan-defined mutations were attempted outside open owned scopes. Each blocked mutation and equivalent mechanism was cooled immediately.",
+  "decision": "worked",
+  "decision_reason": "Quiet-repository activation required forward progress. Three materially distinct candidates were attempted; all project mutations were safety-blocked.",
+  "candidates": [
+    {
+      "lane": "preserve results-navigation orphan by opening a PR",
+      "outcome": "safety_blocked",
+      "detail": "Branch remains coherent at one unique documentation commit; PR creation was blocked and cooled."
+    },
+    {
+      "lane": "display-treatment backend integration contract",
+      "outcome": "safety_blocked",
+      "detail": "Created a branch from current main after preparing a bounded backend ownership contract; first file creation was blocked, leaving the branch empty."
+    },
+    {
+      "lane": "typed Modern root player-visible integration",
+      "outcome": "safety_blocked",
+      "detail": "Bounded issue creation for a thin existing-authority integration was independently blocked."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "chatgpt/results-navigation-contract-2026-10-07 remains preserved with one unique commit; publication attempt was blocked. No rewrite/rebase/delete performed."
+  },
+  "work": {
+    "summary": "No durable UR-Recomp content mutation succeeded after three independent candidates. An empty display-treatment branch was created only after content was commit-ready, but its first write was blocked and does not count as progress.",
+    "branch": "chatgpt/display-treatment-backend-contract-2026-10-07",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Safety checks blocked PR creation for the preserved results-navigation work, the first file write for the display-treatment contract, and issue creation for Modern-root integration.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Next activation should avoid these cooled mutations unless repository state materially changes; prefer another uncooldown Windows x64 implementation/test/evidence lane."
+}
