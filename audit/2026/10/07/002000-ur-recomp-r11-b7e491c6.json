@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-001050-r11-b7e491c6",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T00:10:50Z",
+  "started_at": "2026-10-07T00:10:50Z",
+  "finished_at": "2026-10-07T00:20:00Z",
+  "initial_repo_state": {
+    "main_sha": "424474c64393a617473915a0cd4c9e4f7f45e0c0",
+    "open_prs": [
+      561
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "PR #561 updated at 2026-10-07T00:03:56Z inside the initial safety window; its local-multiplayer/controller-presentation scope was avoided."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #561 local multiplayer/controller presentation",
+      "safety_judgment": "active inside 10 minutes; avoided"
+    }
+  ],
+  "safety_judgment": "Avoided active PR #561 and prior-two-activation cooldown lanes. Each newly blocked mutation was cooled immediately without an equivalent retry.",
+  "decision": "worked",
+  "decision_reason": "Attempted three materially distinct plan-defined lanes outside active ownership; all three project mutations were independently safety-blocked.",
+  "candidates": [
+    {
+      "lane": "Modern recorded-run attract/showcase",
+      "outcome": "safety_blocked",
+      "detail": "No existing implementation/PR found; fresh branch created from current main, then first commit-ready showcase contract file mutation blocked."
+    },
+    {
+      "lane": "Windows audio presentation modernization",
+      "outcome": "safety_blocked",
+      "detail": "Bounded post-mix ownership/seam investigation issue creation blocked."
+    },
+    {
+      "lane": "Local custom-course pack admission",
+      "outcome": "safety_blocked",
+      "detail": "Bounded fail-closed metadata/provenance admission issue creation blocked."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "No orphan rescue mutation attempted; previously blocked malformed-SRAM publication was not retried."
+  },
+  "work": {
+    "summary": "No durable UR-Recomp content mutation succeeded. The fresh showcase branch is empty and does not count as progress.",
+    "branch": "chatgpt/modern-attract-showcase-contract-2026-10-06",
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": true,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "OpenAI safety checks blocked all three independent project mutations.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Use a different uncooldown Windows x64 lane next activation unless repository state materially changes."
+}
