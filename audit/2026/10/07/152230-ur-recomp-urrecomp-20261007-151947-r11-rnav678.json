@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-151947-r11-rnav678",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T15:19:47Z",
+  "started_at": "2026-10-07T15:19:47Z",
+  "finished_at": "2026-10-07T15:22:30Z",
+  "initial_repo_state": {
+    "main_sha": "4667d45b009bd62394e7ec2e897adbd5e7334518",
+    "open_prs": [
+      668,
+      669,
+      664,
+      642
+    ],
+    "recent_activity_detected": false,
+    "recent_activity_summary": "No clear sub-10-minute ownership signal was returned for the open PR set during inspection; existing controller-glyph, multiplayer Records, 2P join and ordinary-2P capture lanes were treated as owned and left untouched."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "PR #668 controller glyphs",
+      "safety_judgment": "owned open lane; avoided"
+    },
+    {
+      "scope": "PR #669 multiplayer Records browsing",
+      "safety_judgment": "owned open lane; avoided"
+    },
+    {
+      "scope": "PR #664 2P join",
+      "safety_judgment": "owned open lane; avoided"
+    },
+    {
+      "scope": "PR #642 ordinary-2P match capture",
+      "safety_judgment": "owned open lane; avoided"
+    }
+  ],
+  "safety_judgment": "Selected a coherent docs-only orphan outside active product write surfaces. It was one commit ahead and 68 behind main, with only docs/MODERN-RESULTS-NAVIGATION.md changed, so preserving it as a draft PR did not require rewriting or rebasing the branch.",
+  "decision": "worked",
+  "decision_reason": "Rescued coherent previously committed results-navigation work by opening a draft PR after verifying no existing PR represented that branch and its file scope remained isolated.",
+  "candidates": [
+    {
+      "lane": "Results-navigation orphan rescue",
+      "outcome": "progress",
+      "detail": "Opened draft PR #678 for chatgpt/results-navigation-contract-2026-10-07; branch remains unchanged and recoverable."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "Preserved chatgpt/results-navigation-contract-2026-10-07 by opening draft PR #678. No rebase, force-push, merge, or branch rewrite was performed."
+  },
+  "work": {
+    "summary": "Opened draft PR #678 to preserve the existing Modern results-navigation authority contract. The contract covers Track Select / Tour Select and uniquely derivable Next Event while reusing existing progression and routing authorities.",
+    "branch": "chatgpt/results-navigation-contract-2026-10-07",
+    "prs_touched": [
+      678
+    ],
+    "commits": [
+      "a21b1f25502d0c950df96c46cc52ee54f1711b9a"
+    ],
+    "files_changed": [
+      "docs/MODERN-RESULTS-NAVIGATION.md"
+    ]
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "progress",
+  "blocker": null,
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "Let PR #678 be reviewed/reconciled normally; next activation should choose another independent Windows x64 lane unless repository state makes this PR materially actionable."
+}
