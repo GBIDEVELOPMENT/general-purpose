@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-111631-r11-jump2",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T11:16:31Z",
+  "started_at": "2026-10-07T11:16:31Z",
+  "finished_at": "2026-10-07T11:23:00Z",
+  "initial_repo_state": {"main_sha":"bf42771dc75026abd5d6c273cf6b7790f9d5b0ea","open_prs":[662,661,660,642,657,651],"recent_activity_detected":true,"recent_activity_summary":"Main merged display-treatment capability policy at 11:15:18Z; fresh display-treatment, 2P join, overlay-fit, Records/multiplayer and Racer-HD surfaces were avoided."},
+  "concurrent_lanes": [
+    {"scope":"fresh main display-treatment capability policy","safety_judgment":"inside 10-minute window; avoided"},
+    {"scope":"PR #662 2P join disconnect acceptance","safety_judgment":"recent; avoided"},
+    {"scope":"PR #661 overlay text fit","safety_judgment":"recent; avoided"},
+    {"scope":"PRs #660/#642/#657 Records and multiplayer","safety_judgment":"open active ownership; avoided"},
+    {"scope":"PR #651 Racer HD","safety_judgment":"open separate lane; avoided"}
+  ],
+  "safety_judgment":"The previous results-navigation branch remains one unique commit ahead but its PR-publication mutation was blocked in the immediately preceding activation, so it was not retried. Selected an older cooled fidelity-regression lane with disjoint files.",
+  "decision":"worked",
+  "decision_reason":"A bounded Jumpover fall-through regression contract was committed on a fresh branch without touching active Windows product lanes. Draft PR creation for this new branch was safety-blocked and immediately cooled.",
+  "candidates":[
+    {"lane":"results-navigation orphan preservation","outcome":"cooldown_skipped","detail":"Branch chatgpt/results-navigation-contract-2026-10-07 is 1 ahead/32 behind main; prior activation's blocked PR creation was not retried."},
+    {"lane":"Jumpover fall-through deterministic regression contract","outcome":"progress","detail":"Committed four-case direction-matched control/fall-through contract with event-relative admission and explicit stop rule."}
+  ],
+  "orphan_handling":{"summary":"The prior results-navigation commit remains durable and untouched; no equivalent publication retry was attempted while on cooldown."},
+  "work":{"summary":"Added docs/JUMPOVER-FALLTHROUGH-REGRESSION.md defining a finite four-case fidelity regression and durable evidence requirements.","branch":"chatgpt/jumpover-fallthrough-regression-2026-10-07-r2","prs_touched":[],"commits":["e670ada9477afe84002d4fe9627440561a31497b"],"files_changed":["docs/JUMPOVER-FALLTHROUGH-REGRESSION.md"]},
+  "gha":{"checked":true,"waited_for_runs":false,"runs_started":[]},
+  "outcome":"progress",
+  "blocker":"Draft PR creation for the completed Jumpover branch was safety-blocked; the commit itself is durable and recoverable.",
+  "retry_scheduled":false,
+  "retry_after_minutes":null,
+  "next_step":"On a later activation, preserve the Jumpover branch with a PR if publication is no longer on cooldown, or implement its smallest deterministic capture/checker after confirming no active owner."
+}
