@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "run_id": "urrecomp-20261007-181411-r11-x7q4",
+  "project": "gamesbyian/UR-Recomp",
+  "trigger": "hourly",
+  "scheduled_at": "2026-10-07T18:14:11Z",
+  "started_at": "2026-10-07T18:14:11Z",
+  "finished_at": "2026-10-07T18:24:00Z",
+  "initial_repo_state": {
+    "main_sha": "f4a503d6fccfdba7c9129a36d7602acf87f56d34",
+    "open_prs": [
+      668,
+      685
+    ],
+    "recent_activity_detected": true,
+    "recent_activity_summary": "Main moved at 18:09-18:13Z via results-navigation, canonical-plan reconciliation, and rescued ordinary-2P capture merges. Those fresh surfaces were avoided."
+  },
+  "concurrent_lanes": [
+    {
+      "scope": "fresh main plan/results-navigation/2P capture merges",
+      "safety_judgment": "inside 10-minute window; avoided"
+    },
+    {
+      "scope": "PR #668 controller glyphs",
+      "safety_judgment": "existing owned lane; not modified"
+    }
+  ],
+  "safety_judgment": "Selected only stale or independent files. Each blocked mutation was immediately cooled and no equivalent write mechanism was attempted.",
+  "decision": "worked",
+  "decision_reason": "Inspected current main, open PRs, recent commits, canonical plans and reviews; attempted three materially distinct durable advances. All three project mutations were safety-blocked.",
+  "candidates": [
+    {
+      "lane": "PR #685 Racer HD P2 0578/0EC3 sampler parity",
+      "outcome": "safety_blocked",
+      "detail": "Corrected prior diagnosis: established P2 0579 remains 30 in both samplers; the new 0578 candidate is mismatched, Python radius 30 versus C++ radius 28. Prepared exact Python 30->28 parity repair; update was blocked."
+    },
+    {
+      "lane": "Native profile save-root smoke timeout",
+      "outcome": "safety_blocked",
+      "detail": "Verified current main still uses 12s hang guards for both launches in the profile save-root acceptance despite two observed timeout failures documented on #668. Prepared isolated 60s guard change on a fresh branch; mutation was blocked."
+    },
+    {
+      "lane": "Simultaneous local multiplayer racer selection",
+      "outcome": "safety_blocked",
+      "detail": "Canonical queue names simultaneous host-owned racer selection as the next fast-local-multiplayer step. Prepared a bounded authority/fail-closed/acceptance contract on an independent documentation branch; mutation was blocked."
+    }
+  ],
+  "orphan_handling": {
+    "summary": "No orphan was rewritten, rebased, deleted or merged. Freshly merged #678/#688 work was treated as active and avoided."
+  },
+  "work": {
+    "summary": "No durable UR-Recomp mutation succeeded. New technical finding: PR #685's authored 0578 sampler differs between Python (ellipse vertical radius 30) and C++ (28); prior suspicion that 0579 itself changed was disproven.",
+    "branch": null,
+    "prs_touched": [],
+    "commits": [],
+    "files_changed": []
+  },
+  "gha": {
+    "checked": false,
+    "waited_for_runs": false,
+    "runs_started": []
+  },
+  "outcome": "error",
+  "blocker": "Three distinct project mutations were blocked by safety checks.",
+  "retry_scheduled": false,
+  "retry_after_minutes": null,
+  "next_step": "After relevant state changes, reconcile PR #685 by making the Python 0578 authored sampler match the C++ radius 28, then run its bounded unit/Racer-HD acceptance; otherwise take a different unowned Windows x64 lane."
+}
