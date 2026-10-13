@@ -1,5 +1,5 @@
 import unittest
-from scripts.collect_public_tweets import parse_timeline, compact, ID
+from scripts.collect_public_tweets import parse_timeline, compact, ID, timestamp_from_id
 
 
 class NitterParserTests(unittest.TestCase):
@@ -40,6 +40,7 @@ class NitterParserTests(unittest.TestCase):
 
     def test_utils(self):
         self.assertEqual(compact("  a  b\nc "), "a b c")
+        self.assertTrue(timestamp_from_id("190452476032466944").startswith("2012-04-12"))
         self.assertEqual(ID.search("/user/status/1456789012345678901?foo=bar").group(1),
                          "1456789012345678901")
 
