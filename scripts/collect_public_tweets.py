@@ -23,11 +23,17 @@ MIRRORS = ["https://nitter.net", "https://xcancel.com",
            "https://nitter.cf"]
 ID = re.compile(r"/status(?:es)?/(\d{10,22})(?:[/?#]|$)", re.I)
 HANDLE = re.compile(r"^[A-Za-z0-9_]{1,15}$")
-COLUMNS = ["id", "author", "text", "date", "url", "is_reply", "is_repost", "source"]
+COLUMNS = ["id", "author", "text", "date", "date_source", "url", "is_reply", "is_repost", "source"]
 
 
 def compact(text):
     return re.sub(r"\s+", " ", text).strip()
+
+
+def timestamp_from_id(tweet_id):
+    """Twitter Snowflake UTC timestamp in milliseconds; does not require API."""
+    milliseconds = (int(tweet_id) >> 22) + 1288834974657
+    return datetime.fromtimestamp(milliseconds / 1000, timezone.utc).isoformat()
 
 
 class NitterTimeline(HTMLParser):
@@ -239,6 +245,12 @@ def run(args):
             collected[item["id"]] = item
         time.sleep(args.delay)
 
+    for item in collected.values():
+        if item.get("date"):
+            item["date_source"] = "source"
+        else:
+            item["date"] = timestamp_from_id(item["id"])
+            item["date_source"] = "snowflake"
     items = sorted(collected.values(), key=lambda i: int(i["id"]))
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
