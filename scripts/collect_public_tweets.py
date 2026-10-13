@@ -252,6 +252,18 @@ def run(args):
             item["date"] = timestamp_from_id(item["id"])
             item["date_source"] = "snowflake"
     items = sorted(collected.values(), key=lambda i: int(i["id"]))
+    # Independent spot checks: mirror results are not silently called API-verified.
+    spot_checks = []
+    if items:
+        sample_indices = sorted(set(round((len(items) - 1) * fraction / 6)
+                                    for fraction in range(7)))
+        for index in sample_indices:
+            candidate = items[index]
+            direct = fetch_fx(args.user, candidate["id"], args.timeout, errors)
+            spot_checks.append({"id": candidate["id"], "direct_api_available": bool(direct),
+                                "text_matches": compact(direct["text"]) == compact(candidate["text"])
+                                if direct else None})
+            time.sleep(args.delay)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     with (out / "tweets.jsonl").open("w", encoding="utf-8") as file:
@@ -269,6 +281,7 @@ def run(args):
         "reposts": sum(i["is_repost"] for i in items),
         "by_source": dict(Counter(i["source"] for i in items)),
         "attempt_counts": counts, "errors": errors,
+        "independent_spot_checks": spot_checks,
         "complete": False,
         "warning": "Incomplete anonymous recovery; zero results never proves no tweets."
     }
