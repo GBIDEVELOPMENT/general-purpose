@@ -1,0 +1,52 @@
+name: Recover public tweets (anonymous)
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/collect_public_tweets.py'
+      - 'scripts/test_public_tweets.py'
+      - '.github/workflows/collect-public-tweets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-tweets-ianmakesjokes
+  cancel-in-progress: true
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test parsers offline
+        run: python -m unittest scripts.test_public_tweets -v
+      - name: Collect public posts without login
+        run: |
+          python scripts/collect_public_tweets.py \
+            --user ianmakesjokes \
+            --out tweet-recovery \
+            --max-pages 30 \
+            --timeout 10 \
+            --delay 0.5
+      - name: Post capture summary
+        if: always()
+        run: |
+          if test -f tweet-recovery/summary.md; then
+            cat tweet-recovery/summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Collector did not produce a report.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload data and provider diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ianmakesjokes-public-tweets
+          path: tweet-recovery/
+          if-no-files-found: warn
+          retention-days: 30

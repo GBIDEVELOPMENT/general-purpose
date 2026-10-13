@@ -13,3 +13,9 @@ This private repository is the audit trail for recurring ChatGPT project-agent r
 - The audit log is observational. Logging must never interfere with project work.
 
 See `docs/agent-audit-protocol.md` for the required run procedure and controlled vocabularies.
+
+## One-off public tweet recovery
+
+For the separate account-free @ianmakesjokes collector and its evidence-producing
+GitHub Actions workflow, see [public tweet recovery](docs/public-tweet-recovery.md).
+This utility does not change the recurring-agent audit ledger.
