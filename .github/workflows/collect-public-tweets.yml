@@ -31,7 +31,7 @@ jobs:
           python scripts/collect_public_tweets.py \
             --user ianmakesjokes \
             --out tweet-recovery \
-            --max-pages 6 \
+            --max-pages 30 \
             --timeout 10 \
             --delay 0.5
       - name: Post capture summary
