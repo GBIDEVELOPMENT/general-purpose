@@ -4,6 +4,8 @@ on:
     paths:
       - 'presence/build.py'
       - 'presence/test_build.py'
+      - 'presence/travel.py'
+      - 'presence/test_travel.py'
       - '.github/workflows/global-presence.yml'
   workflow_dispatch:
 permissions:
@@ -17,9 +19,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install openpyxl==3.1.5
+      - run: pip install openpyxl==3.1.5 pycountry==24.6.1
       - run: python -m unittest discover -s presence -p 'test_*.py' -v
       - run: python presence/build.py
+      - run: python presence/travel.py
       - uses: actions/upload-artifact@v4
         with:
           name: global-presence-2024
