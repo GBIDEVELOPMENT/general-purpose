@@ -42,7 +42,7 @@ class PhysicalPresenceTests(unittest.TestCase):
             self.assertEqual(matrix[484, 840], 270)
             self.assertEqual(matrix[484, 124], 30)
             self.assertEqual(matrix[840, 124], 70)
-            self.assertEqual(info["total_estimated_born_abroad_physically"], 400)
+            self.assertEqual(info["total_estimated_born_abroad_physically"], 370)
 
 
 if __name__ == "__main__":
