@@ -35,7 +35,7 @@ def fetch_csv(url):
 def series_2024(url):
     rows = fetch_csv(url)
     first = rows[0]
-    columns = [k for k in first if k not in ("Entity", "Code", "Year")]
+    columns = [k for k in first if k not in ("Entity", "Code", "Year") and "region" not in k.lower()]
     if len(columns) != 1:
         raise ValueError(f"Ambiguous OWID value field for {url}: {columns}")
     field = columns[0]
