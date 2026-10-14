@@ -32,25 +32,34 @@ def fetch_csv(url):
     return rows
 
 
-def series_2024(url):
+def series_2024(url, oldest_allowed=2020):
+    """Newest positive observation in [oldest_allowed, 2024] for each ISO country.
+
+    UN Tourism reporting is incomplete in 2024; OWID's long-run population
+    series itself ends at 2023. Preserve vintage per country, never suggest
+    all chosen values are actual 2024 measurements.
+    """
     rows = fetch_csv(url)
     first = rows[0]
     columns = [k for k in first if k not in ("Entity", "Code", "Year") and "region" not in k.lower()]
     if len(columns) != 1:
         raise ValueError(f"Ambiguous OWID value field for {url}: {columns}")
     field = columns[0]
-    values = {}
+    values, vintages = {}, {}
     for r in rows:
-        if r.get("Year") != "2024" or not r.get("Code"):
+        code = r.get("Code", "")
+        if len(code) != 3 or not code.isalpha():
             continue
-        code = r["Code"]
         try:
+            yr = int(r["Year"])
             v = float(r[field])
-            if len(code) == 3 and v > 0 and math.isfinite(v):
-                values[code] = v
         except (TypeError, ValueError):
             continue
-    return values
+        if (not oldest_allowed <= yr <= 2024 or not v > 0 or
+                not math.isfinite(v) or yr < vintages.get(code, 0)):
+            continue
+        values[code], vintages[code] = v, yr
+    return values, vintages
 
 
 def haversine(a, b):
@@ -97,8 +106,10 @@ def build(residents_dir, output):
             d = pycountry.countries.get(numeric=f'{int(r["destination_m49"]):03d}')
             if o is not None and d is not None:
                 diaspora[o.alpha_3, d.alpha_3] = float(r["residents"])
-    arrivals = series_2024(ARRIVALS)
-    populations = series_2024(POPULATION)
+    arrivals, arrival_years = series_2024(ARRIVALS, oldest_allowed=2022)
+    populations, population_years = series_2024(POPULATION, oldest_allowed=2020)
+    if len(populations) < 150 or len(arrivals) < 80:
+        raise ValueError(f'Insufficient OWID coverage: {len(populations)} populations, {len(arrivals)} arrivals')
     coordinates = {}
     for r in fetch_csv(COORDS):
         if len(r["country"]) != 2:
@@ -109,22 +120,22 @@ def build(residents_dir, output):
     codes = sorted(named)
     with (output / "origin_population_2024.csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["iso3", "m49", "country", "2024_population"])
-        w.writerows((c, named[c][0], named[c][1], round(populations.get(c, 0))) for c in codes)
+        w.writerow(["iso3", "m49", "country", "2024_population", "source_observation_year"])
+        w.writerows((c, named[c][0], named[c][1], round(populations.get(c, 0)), population_years.get(c, "")) for c in codes)
     allocation = {}
     dest_status = {}
     total_annual = 0.0
     for dest in codes:
         annual = arrivals.get(dest)
         if annual is None:
-            dest_status[dest] = "no_2024_destination_arrivals"
+            dest_status[dest] = "no_2022_to_2024_destination_arrivals"
             continue
         weights = origin_weights(codes, dest, populations, coordinates, diaspora)
         weight_sum = sum(weights.values())
         if not weight_sum:
             dest_status[dest] = "no_origin_population_weights"
             continue
-        dest_status[dest] = "imputed_from_destination_arrivals"
+        dest_status[dest] = "imputed_from_destination_arrivals_" + str(arrival_years[dest])
         total_annual += annual
         for orig, weight in weights.items():
             allocation[orig, dest] = annual * weight / weight_sum * CENTRAL_NIGHTS / DAYS_IN_YEAR
@@ -145,21 +156,23 @@ def build(residents_dir, output):
                                  dest_status.get(dest, "missing")])
     with (output / "destination_visitor_marginals.csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["destination", "iso3", "2024_overnight_arrivals", "model_avg_daily_visitors", "basis"])
+        w.writerow(["destination", "iso3", "annual_overnight_arrivals", "source_observation_year", "model_avg_daily_visitors", "basis"])
         for d in codes:
             annual = arrivals.get(d)
-            w.writerow([named[d][1], d, round(annual) if annual else "",
+            w.writerow([named[d][1], d, round(annual) if annual else "", arrival_years.get(d, ""),
                         round(sum(v for (o, dest), v in allocation.items() if dest == d)),
                         dest_status.get(d, "missing")])
     info = {
-        "scope": "2024 average-day inbound overnight visits, countries with UN Tourism 2024 destination arrivals",
+        "scope": "Average-day visits around 2024, destinations using latest UN Tourism 2022-2024 arrivals",
         "origin_method": "UNMEASURED: country population^0.7 * geographic decay * diaspora affinity",
         "origin_definition": "country of usual residence proxy, NOT country of birth",
         "source_arrivals": ARRIVALS,
         "source_population": POPULATION,
         "source_coordinates": COORDS,
-        "available_destination_arrivals": sum(s == "imputed_from_destination_arrivals" for s in dest_status.values()),
-        "destinations_without_arrivals": sum(s != "imputed_from_destination_arrivals" for s in dest_status.values()),
+        "available_destination_arrivals": sum(s.startswith("imputed_from_destination_arrivals_") for s in dest_status.values()),
+        "destinations_without_arrivals": sum(not s.startswith("imputed_from_destination_arrivals_") for s in dest_status.values()),
+        "arrival_source_years": {str(y): sum(1 for dest in codes if dest_status[dest] == "imputed_from_destination_arrivals_" + str(y)) for y in [2022, 2023, 2024]},
+        "population_source_years": {str(y): sum(1 for dest in codes if population_years.get(dest) == y) for y in range(2020, 2025)},
         "annual_arrivals_covered": round(total_annual),
         "average_day_visitors_covered": round(sum(allocation.values())),
         "reference_year": 2024, "year_days": DAYS_IN_YEAR,
