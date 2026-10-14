@@ -104,9 +104,13 @@ def build(residents_dir, output):
         if len(r["country"]) != 2:
             continue
         country = pycountry.countries.get(alpha_2=r["country"])
-        if country is not None:
+        if country is not None and r["latitude"] and r["longitude"]:
             coordinates[country.alpha_3] = float(r["latitude"]), float(r["longitude"])
     codes = sorted(named)
+    with (output / "origin_population_2024.csv").open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["iso3", "m49", "country", "2024_population"])
+        w.writerows((c, named[c][0], named[c][1], round(populations.get(c, 0))) for c in codes)
     allocation = {}
     dest_status = {}
     total_annual = 0.0
