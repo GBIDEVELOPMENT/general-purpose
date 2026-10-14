@@ -1,0 +1,16 @@
+{
+  "reference_date": "2024-07-01",
+  "UN_worldwide_residents_outside_origin": 304021813,
+  "countries_and_areas": 235,
+  "off_diagonal_country_pairs": 54990,
+  "explicit_UN_country_pair_cells": 9348,
+  "assigned_country_pair_residents": 281956199,
+  "unassigned_to_named_country_pairs": 22065614,
+  "sum_UN_immigrant_marginals": 304021813,
+  "sum_UN_emigrant_marginals": 281956199,
+  "rows_parsed": 28030,
+  "source": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2024_ims_stock_by_sex_destination_and_origin.xlsx",
+  "source_sha256": "0e10179d05186041a65cf5c6200943b2231701f9c1fd33cbbe21d23b8ea47316",
+  "definition": "2024 immigrant resident stock, primarily birthplace; citizenship otherwise.",
+  "warning": "Missing country pairs treated as numeric zero, flagged as assumptions; no visitors model and no unassigned-origin redistribution."
+}
