@@ -1,13 +1,16 @@
 {
-  "scope": "Average-day visits around 2024, destinations using latest UN Tourism 2022-2024 arrivals",
+  "scope": "Average-day visits around 2024, using 2022-24 UN Tourism observations or earlier baseline",
   "origin_method": "UNMEASURED: country population^0.7 * geographic decay * diaspora affinity",
   "origin_definition": "country of usual residence proxy, NOT country of birth",
   "source_arrivals": "https://ourworldindata.org/grapher/international-tourist-trips.csv",
   "source_population": "https://ourworldindata.org/grapher/population.csv",
   "source_coordinates": "https://raw.githubusercontent.com/tigi/2026-migrant-stock/main/countries.csv",
-  "available_destination_arrivals": 139,
-  "destinations_without_arrivals": 95,
+  "available_destination_arrivals": 183,
+  "destinations_without_arrivals": 51,
   "arrival_source_years": {
+    "2019": 43,
+    "2020": 0,
+    "2021": 1,
     "2022": 70,
     "2023": 2,
     "2024": 67
@@ -19,8 +22,8 @@
     "2023": 234,
     "2024": 0
   },
-  "annual_arrivals_covered": 1023098912,
-  "average_day_visitors_covered": 13417691,
+  "annual_arrivals_covered": 1294144512,
+  "average_day_visitors_covered": 16972387,
   "reference_year": 2024,
   "year_days": 366,
   "nights_per_trip_model": 4.8,
