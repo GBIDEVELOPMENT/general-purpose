@@ -55,10 +55,12 @@ def series_2024(url, oldest_allowed=2020):
             v = float(r[field])
         except (TypeError, ValueError):
             continue
-        if (not oldest_allowed <= yr <= 2024 or not v > 0 or
-                not math.isfinite(v) or yr < vintages.get(code, 0)):
+        if not oldest_allowed <= yr <= 2024 or not v > 0 or not math.isfinite(v):
             continue
-        values[code], vintages[code] = v, yr
+        def priority(year):
+            return (year >= 2022, year == 2019, year)
+        if code not in vintages or priority(yr) >= priority(vintages[code]):
+            values[code], vintages[code] = v, yr
     return values, vintages
 
 
@@ -106,7 +108,7 @@ def build(residents_dir, output):
             d = pycountry.countries.get(numeric=f'{int(r["destination_m49"]):03d}')
             if o is not None and d is not None:
                 diaspora[o.alpha_3, d.alpha_3] = float(r["residents"])
-    arrivals, arrival_years = series_2024(ARRIVALS, oldest_allowed=2022)
+    arrivals, arrival_years = series_2024(ARRIVALS, oldest_allowed=2019)
     populations, population_years = series_2024(POPULATION, oldest_allowed=2020)
     if len(populations) < 150 or len(arrivals) < 80:
         raise ValueError(f'Insufficient OWID coverage: {len(populations)} populations, {len(arrivals)} arrivals')
@@ -128,7 +130,7 @@ def build(residents_dir, output):
     for dest in codes:
         annual = arrivals.get(dest)
         if annual is None:
-            dest_status[dest] = "no_2022_to_2024_destination_arrivals"
+            dest_status[dest] = "no_2019_to_2024_destination_arrivals"
             continue
         weights = origin_weights(codes, dest, populations, coordinates, diaspora)
         weight_sum = sum(weights.values())
@@ -163,7 +165,7 @@ def build(residents_dir, output):
                         round(sum(v for (o, dest), v in allocation.items() if dest == d)),
                         dest_status.get(d, "missing")])
     info = {
-        "scope": "Average-day visits around 2024, destinations using latest UN Tourism 2022-2024 arrivals",
+        "scope": "Average-day visits around 2024, using 2022-24 UN Tourism observations or earlier baseline",
         "origin_method": "UNMEASURED: country population^0.7 * geographic decay * diaspora affinity",
         "origin_definition": "country of usual residence proxy, NOT country of birth",
         "source_arrivals": ARRIVALS,
@@ -171,7 +173,7 @@ def build(residents_dir, output):
         "source_coordinates": COORDS,
         "available_destination_arrivals": sum(s.startswith("imputed_from_destination_arrivals_") for s in dest_status.values()),
         "destinations_without_arrivals": sum(not s.startswith("imputed_from_destination_arrivals_") for s in dest_status.values()),
-        "arrival_source_years": {str(y): sum(1 for dest in codes if dest_status[dest] == "imputed_from_destination_arrivals_" + str(y)) for y in [2022, 2023, 2024]},
+        "arrival_source_years": {str(y): sum(1 for dest in codes if dest_status[dest] == "imputed_from_destination_arrivals_" + str(y)) for y in range(2019, 2025)},
         "population_source_years": {str(y): sum(1 for dest in codes if population_years.get(dest) == y) for y in range(2020, 2025)},
         "annual_arrivals_covered": round(total_annual),
         "average_day_visitors_covered": round(sum(allocation.values())),
