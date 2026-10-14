@@ -1,0 +1,12 @@
+{
+  "reference": "average day of 2024",
+  "birthplace_destination_directed_pairs": 54990,
+  "physical_known_birth_outside_birth_country": 297694823,
+  "physical_unknown_birth_outside_origin": 22065614,
+  "total_estimated_born_abroad_physically": 319760437,
+  "UN_resident_stock_base": 304021813,
+  "visitors_moving_across_borders_on_average_day_in_covered_destinations": 16971738,
+  "UN_country_pairs_without_explicit_source_observation": 45642,
+  "method": "subtract travel by host-country residents, add visitors by estimated birth origin; birth proportions inferred from UN resident stocks and OWID 2024 population.",
+  "warning": "Experimental model. Tourist origin is inferred from destination tourist volumes using population, great-circle distance, diaspora. Not a census of persons at the moment. 3/10-night scenarios do not measure uncertainty in origin allocation."
+}
