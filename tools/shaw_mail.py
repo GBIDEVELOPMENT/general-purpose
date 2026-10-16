@@ -4,6 +4,7 @@ import argparse
 import email
 from email.header import decode_header, make_header
 from email.message import EmailMessage
+from email.utils import parseaddr
 import imaplib
 import json
 import os
@@ -105,10 +106,18 @@ def compose(draft):
     to = draft.get("to")
     subject = draft.get("subject")
     body = draft.get("body")
-    if not isinstance(to, list) or not to or not all(isinstance(x, str) and "@" in x and "\n" not in x and "\r" not in x for x in to):
+    if not isinstance(to, list) or not to:
         raise ValueError("Draft requires a nonempty list of recipient addresses")
+    for recipient in to:
+        if not isinstance(recipient, str) or any(ch in recipient for ch in "\r\n\t,;<>"):
+            raise ValueError("Recipients must be individual plain email addresses")
+        display, parsed = parseaddr(recipient)
+        if display or parsed != recipient or parsed.count("@") != 1:
+            raise ValueError("Invalid recipient email address")
     if not isinstance(subject, str) or not isinstance(body, str):
         raise ValueError("Draft requires string subject and body")
+    if "\r" in subject or "\n" in subject:
+        raise ValueError("Subject cannot contain line breaks")
     recipients = set(x.strip().lower() for x in to)
     allowed = set(x.strip().lower() for x in os.environ.get("SHAW_ALLOWED_RECIPIENTS", "").split(",") if x.strip())
     if allowed and not recipients.issubset(allowed):
