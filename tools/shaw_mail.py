@@ -21,6 +21,18 @@ MAX_LIMIT = 100
 DEFAULT_ACCOUNT = "ian.wallace@shaw.ca"
 
 
+def imap_tls_context():
+    """Shaw offers strong ECDHE, but otherwise selects weak finite-field DHE.
+
+    Retain system certificate verification and hostname validation, require
+    TLS >= 1.2, and refuse unsafe finite-field DHE and anonymous ciphers.
+    """
+    context = ssl.create_default_context()
+    context.minimum_version = ssl.TLSVersion.TLSv1_2
+    context.set_ciphers("ECDHE:!DHE:!aNULL:!eNULL")
+    return context
+
+
 def credentials():
     address = os.environ.get("SHAW_EMAIL", DEFAULT_ACCOUNT).strip()
     password = os.environ.get("SHAW_PASSWORD", "")
@@ -66,7 +78,7 @@ def message_summary(uid, raw, include_body=False):
 
 def fetch(args):
     _, user, password = credentials()
-    with imaplib.IMAP4_SSL(IMAP_HOST, 993, ssl_context=ssl.create_default_context(), timeout=30) as conn:
+    with imaplib.IMAP4_SSL(IMAP_HOST, 993, ssl_context=imap_tls_context(), timeout=30) as conn:
         conn.login(user, password)
         if args.command == "folders":
             status, folders = conn.list()
