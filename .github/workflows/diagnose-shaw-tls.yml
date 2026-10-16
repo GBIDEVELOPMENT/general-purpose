@@ -1,0 +1,45 @@
+name: Diagnose Shaw IMAP TLS (no secrets)
+
+on:
+  push:
+    branches: [diagnostics/shaw-imap-tls]
+    paths:
+      - '.github/workflows/diagnose-shaw-tls.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certificate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Safe TLS certificate diagnostics (no authentication)
+        shell: bash
+        run: |
+          python - <<'PY'
+          import imaplib, ssl, socket, sys, datetime
+          host = 'imap.shaw.ca'
+          print('Python', sys.version.split()[0], 'OpenSSL', ssl.OPENSSL_VERSION)
+          print('CA verify paths:', ssl.get_default_verify_paths())
+          for version in (None, ssl.TLSVersion.TLSv1_2):
+              ctx = ssl.create_default_context()
+              if version:
+                  ctx.minimum_version = version
+                  ctx.maximum_version = version
+              print('TLS test', version or 'default')
+              try:
+                  with imaplib.IMAP4_SSL(host, 993, ssl_context=ctx, timeout=12) as client:
+                      print('Connection established, TLS:', client.sock.version())
+              except ssl.SSLCertVerificationError as exc:
+                  print('Certificate validation:', exc.verify_code, exc.verify_message)
+              except ssl.SSLError as exc:
+                  print('SSL error:', type(exc).__name__, exc.reason, str(exc)[:300])
+              except (OSError, imaplib.IMAP4.error) as exc:
+                  print('Connection error:', type(exc).__name__, str(exc)[:300])
+          PY
+      - name: Independent OpenSSL certificate validation
+        shell: bash
+        run: |
+          timeout 18 bash -c 'openssl s_client -connect imap.shaw.ca:993 -servername imap.shaw.ca -verify_return_error -brief < /dev/null' 2>&1 | head -50 || true
