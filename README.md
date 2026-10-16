@@ -22,4 +22,4 @@ This utility does not change the recurring-agent audit ledger.
 
 ## Shaw email integration (opt-in)
 
-This repository also contains a separate [Shaw IMAP/SMTP command-line client](docs/shaw-mail-bridge.md) for read-only mailbox and folder access and explicitly approved outgoing messages. The client is **not connected to ChatGPT yet** and no workflow consumes a mailbox password. Offline safety tests run without secrets.
+This repository also contains a separate [Shaw IMAP/SMTP command-line client](docs/shaw-mail-bridge.md) for read-only mailbox and folder access and explicitly approved outgoing messages. The client is accompanied by an **experimental encrypted GitHub Actions command bridge** using private issue #6. It can be exercised with a credential-free ping. Do not add the real mailbox secret until the privileged-workflow trust risk described in the guide is addressed. Offline safety tests run without secrets.

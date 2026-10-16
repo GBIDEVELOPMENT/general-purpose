@@ -1,0 +1,41 @@
+name: Encrypted Shaw mail gateway
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+
+# Only one live session; send operations cannot race each other.
+concurrency:
+  group: shaw-mail-gateway
+  cancel-in-progress: false
+
+jobs:
+  mailbox:
+    if: >-
+      github.event.issue.number == 6 &&
+      github.event.comment.user.login == 'gamesbyian' &&
+      startsWith(github.event.comment.body, 'SHAWMAIL2 {"version":2,"kind":"start"}')
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Checkout trusted default branch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned encryption dependency
+        run: python -m pip install 'cryptography==46.0.4'
+      - name: Handle one encrypted command
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHAW_PASSWORD: ${{ secrets.SHAW_PASSWORD }}
+          SHAW_EMAIL: ian.wallace@shaw.ca
+        run: python tools/shaw_mail_gateway.py
