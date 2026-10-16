@@ -210,13 +210,27 @@ def send(args):
     if os.environ.get("SHAW_ALLOW_SEND") != "yes":
         raise ValueError("Sending disabled: set SHAW_ALLOW_SEND=yes after approving this exact draft")
     _, user, password = credentials()
-    with smtplib.SMTP(SMTP_HOST, 587, timeout=30) as smtp:
+    smtp = None
+    try:
+        smtp = smtplib.SMTP(SMTP_HOST, 587, timeout=30)
         smtp.ehlo()
-        smtp.starttls(context=ssl.create_default_context())
+        smtp.starttls(context=imap_tls_context())
         smtp.ehlo()
         smtp.login(user, password)
-        smtp.send_message(msg)
-    print("Sent to approved recipients")
+        # Once DATA is accepted, a failed QUIT must not turn a successful
+        # submission into an apparent failure that invites duplicate sends.
+        refused = smtp.send_message(msg)
+    finally:
+        if smtp is not None:
+            smtp.close()
+    result = {
+        "submitted": True,
+        "attempted_recipients": len(draft["to"]),
+        "accepted_recipients": len(draft["to"]) - len(refused),
+        "rejected_recipients": len(refused),
+    }
+    print(json.dumps(result))
+    return result
 
 
 def main():
