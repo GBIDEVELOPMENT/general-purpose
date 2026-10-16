@@ -1,11 +1,10 @@
-"""Versioned encrypted envelopes for a GitHub comment mail gateway.
+"""Short-lived end-to-end encrypted messages over GitHub comments.
 
-Only the public enrollment bundle and opaque ciphertext should leave the local
-agent/privileged runner. Authentication of GitHub actors remains the runner's job.
-Requires cryptography >= 43.
+A single Actions job holds the X25519 server key in memory until the session
+ends; no private encryption key, password derivative or plaintext mail is
+written to GitHub. Requires cryptography >= 43.
 """
 import base64
-import hashlib
 import json
 import os
 import time
@@ -21,19 +20,19 @@ from cryptography.hazmat.primitives.serialization import (
     Encoding, PrivateFormat, PublicFormat, NoEncryption,
 )
 
-VERSION = 1
-MAX_ENVELOPE = 48000
-CONTEXT = b"chat-scheduler-shaw-mail-v1"
-REQUEST_TTL = 900  # stale send requests must never execute
+VERSION = 2
+CONTEXT = b"chat-scheduler-shaw-mail-ephemeral-v2"
+REQUEST_TTL = 300
+MAX_CIPHER = 48000
 
 
 def b64(data):
     return base64.b64encode(data).decode("ascii")
 
 
-def unb64(value, limit=MAX_ENVELOPE):
-    if not isinstance(value, str) or len(value) > limit:
-        raise ValueError("Invalid encoded field")
+def unb64(value, max_chars=MAX_CIPHER):
+    if not isinstance(value, str) or len(value) > max_chars:
+        raise ValueError("Invalid encoded value")
     return base64.b64decode(value, validate=True)
 
 
@@ -45,115 +44,82 @@ def public_bytes(key):
     return key.public_key().public_bytes(Encoding.Raw, PublicFormat.Raw)
 
 
-def encryption_key(private, peer_public, direction):
+def derive(private, peer_public, direction):
     peer = X25519PublicKey.from_public_bytes(unb64(peer_public, 128))
-    secret = private.exchange(peer)
-    return HKDF(
-        algorithm=hashes.SHA256(), length=32, salt=None,
-        info=CONTEXT + b":" + direction.encode("ascii"),
-    ).derive(secret)
+    shared = private.exchange(peer)
+    return HKDF(algorithm=hashes.SHA256(), length=32, salt=None,
+                info=CONTEXT + direction.encode("ascii")).derive(shared)
 
 
-def encrypt(private, peer_public, direction, payload):
-    raw = json.dumps(payload, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
-    if len(raw) > 32000:
+def seal(private, peer_public, direction, value):
+    plaintext = json.dumps(value, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    if len(plaintext) > 30000:
         raise ValueError("Payload too large")
     nonce = os.urandom(12)
-    cipher = ChaCha20Poly1305(encryption_key(private, peer_public, direction))
-    return b64(nonce + cipher.encrypt(nonce, raw, CONTEXT + direction.encode("ascii")))
-
-
-def decrypt(private, peer_public, direction, ciphertext):
-    data = unb64(ciphertext)
-    if len(data) < 29:
-        raise ValueError("Ciphertext truncated")
-    cipher = ChaCha20Poly1305(encryption_key(private, peer_public, direction))
-    plain = cipher.decrypt(data[:12], data[12:], CONTEXT + direction.encode("ascii"))
-    if len(plain) > 32000:
-        raise ValueError("Decrypted payload too large")
-    return json.loads(plain)
-
-
-def derive_wrapping_key(password, salt):
-    if not isinstance(password, str) or not password:
-        raise ValueError("Missing mail password")
-    return hashlib.scrypt(password.encode("utf-8"), salt=salt, n=2**14,
-                          r=8, p=1, dklen=32, maxmem=64 * 1024 * 1024)
-
-
-def enroll(password):
-    """Executed only on a trusted Actions runner. Return *public* enrollment."""
-    server = X25519PrivateKey.generate()
-    salt, nonce = os.urandom(16), os.urandom(12)
-    key = derive_wrapping_key(password, salt)
-    sealed = ChaCha20Poly1305(key).encrypt(nonce, private_bytes(server), CONTEXT)
-    return {
-        "version": VERSION,
-        "server_public": b64(public_bytes(server)),
-        "salt": b64(salt),
-        "wrapped_private": b64(nonce + sealed),
-    }
-
-
-def recover_server(password, enrollment):
-    if enrollment.get("version") != VERSION:
-        raise ValueError("Unsupported enrollment")
-    raw = unb64(enrollment["wrapped_private"], 512)
-    salt = unb64(enrollment["salt"], 48)
-    if len(salt) != 16 or len(raw) != 60:
-        raise ValueError("Invalid enrollment data")
-    secret = ChaCha20Poly1305(derive_wrapping_key(password, salt)).decrypt(
-        raw[:12], raw[12:], CONTEXT
+    ciphertext = ChaCha20Poly1305(derive(private, peer_public, direction)).encrypt(
+        nonce, plaintext, CONTEXT + direction.encode("ascii")
     )
-    private = X25519PrivateKey.from_private_bytes(secret)
-    if b64(public_bytes(private)) != enrollment["server_public"]:
-        raise ValueError("Enrollment public key mismatch")
-    return private
+    return b64(nonce + ciphertext)
 
 
-def client_request(enrollment, operation, request_id=None, timestamp=None):
-    """Run in ChatGPT's isolated execution environment; keep key bytes private."""
+def open_seal(private, peer_public, direction, value):
+    raw = unb64(value)
+    if len(raw) < 29:
+        raise ValueError("Truncated ciphertext")
+    plaintext = ChaCha20Poly1305(derive(private, peer_public, direction)).decrypt(
+        raw[:12], raw[12:], CONTEXT + direction.encode("ascii")
+    )
+    if len(plaintext) > 30000:
+        raise ValueError("Oversized plaintext")
+    return json.loads(plaintext)
+
+
+def server_session():
+    """Only the GitHub Actions worker receives the private key."""
+    key = X25519PrivateKey.generate()
+    session = uuid.uuid4().hex
+    return key, {"version": VERSION, "kind": "ready", "session": session,
+                 "server_public": b64(public_bytes(key))}
+
+
+def client_command(ready, operation):
+    if ready.get("version") != VERSION or ready.get("kind") != "ready":
+        raise ValueError("Unexpected handshake")
     client = X25519PrivateKey.generate()
-    payload = {
-        "id": request_id or uuid.uuid4().hex,
-        "timestamp": int(time.time()) if timestamp is None else int(timestamp),
-        "operation": operation,
-    }
-    envelope = {
-        "version": VERSION,
-        "kind": "execute",
-        "enrollment": enrollment,
-        "client_public": b64(public_bytes(client)),
-        "ciphertext": encrypt(client, enrollment["server_public"], "request", payload),
-    }
-    return envelope, private_bytes(client)
+    request_id = uuid.uuid4().hex
+    body = {"id": request_id, "timestamp": int(time.time()), "operation": operation}
+    message = {"version": VERSION, "kind": "command", "session": ready["session"],
+               "client_public": b64(public_bytes(client)),
+               "ciphertext": seal(client, ready["server_public"], "request", body)}
+    return message, private_bytes(client), request_id
 
 
-def server_request(password, envelope):
-    if envelope.get("version") != VERSION or envelope.get("kind") != "execute":
-        raise ValueError("Unsupported request envelope")
-    server = recover_server(password, envelope["enrollment"])
-    request = decrypt(server, envelope["client_public"], "request", envelope["ciphertext"])
-    if not isinstance(request, dict) or not isinstance(request.get("operation"), dict):
-        raise ValueError("Malformed command")
-    request_id = request.get("id")
-    ts = request.get("timestamp")
-    if not isinstance(request_id, str) or len(request_id) != 32 or not all(c in "0123456789abcdef" for c in request_id):
-        raise ValueError("Invalid request identifier")
-    if type(ts) is not int or abs(int(time.time()) - ts) > REQUEST_TTL:
-        raise ValueError("Stale or future request")
-    return server, request
+def server_command(private, message, expected_session):
+    if message.get("version") != VERSION or message.get("kind") != "command":
+        raise ValueError("Unsupported protocol")
+    if message.get("session") != expected_session:
+        raise ValueError("Wrong session")
+    body = open_seal(private, message["client_public"], "request", message["ciphertext"])
+    if not isinstance(body, dict) or not isinstance(body.get("operation"), dict):
+        raise ValueError("Malformed operation")
+    request_id, timestamp = body.get("id"), body.get("timestamp")
+    if not isinstance(request_id, str) or len(request_id) != 32:
+        raise ValueError("Malformed request ID")
+    if type(timestamp) is not int or abs(int(time.time()) - timestamp) > REQUEST_TTL:
+        raise ValueError("Stale command")
+    return body
 
 
-def server_response(server, client_public, request_id, result):
-    return {
-        "version": VERSION, "kind": "result", "id": request_id,
-        "ciphertext": encrypt(server, client_public, "response", result),
-    }
+def server_response(private, ready, command, request_id, result):
+    return {"version": VERSION, "kind": "result", "session": ready["session"],
+            "id": request_id, "ciphertext": seal(private, command["client_public"],
+                                                   "response", result)}
 
 
-def client_response(private_raw, enrollment, reply, expected_id):
-    if reply.get("version") != VERSION or reply.get("kind") != "result" or reply.get("id") != expected_id:
-        raise ValueError("Unexpected response")
+def client_response(private_raw, ready, result, expected_id):
+    if result.get("version") != VERSION or result.get("kind") != "result":
+        raise ValueError("Unexpected result")
+    if result.get("session") != ready["session"] or result.get("id") != expected_id:
+        raise ValueError("Wrong session or request ID")
     client = X25519PrivateKey.from_private_bytes(private_raw)
-    return decrypt(client, enrollment["server_public"], "response", reply["ciphertext"])
+    return open_seal(client, ready["server_public"], "response", result["ciphertext"])
