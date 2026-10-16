@@ -70,7 +70,7 @@ def fetch(args):
             if args.command == "search":
                 if "\r" in args.query or "\n" in args.query:
                     raise ValueError("Invalid search query")
-                criterion = ["TEXT", args.query]
+                criterion = ["TEXT", '"' + args.query.replace("\\\\", "\\\\\\\\").replace('"', '\\\\"') + '"']
             else:
                 criterion = ["ALL"]
             status, data = conn.uid("SEARCH", None, *criterion)
