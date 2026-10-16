@@ -58,7 +58,7 @@ def fetch(args):
     _, user, password = credentials()
     with imaplib.IMAP4_SSL(IMAP_HOST, 993, ssl_context=ssl.create_default_context(), timeout=30) as conn:
         conn.login(user, password)
-        status, _ = conn.select("INBOX", readonly=True)
+        status, _ = conn.select(args.folder, readonly=True)
         if status != "OK":
             raise RuntimeError("Could not select INBOX")
         if args.command == "read":
@@ -132,13 +132,16 @@ def send(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     subs = parser.add_subparsers(dest="command", required=True)
-    inbox = subs.add_parser("inbox", help="List recent INBOX messages")
+    inbox = subs.add_parser("inbox", help="List recent messages")
+    inbox.add_argument("--folder", default="INBOX")
     inbox.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
     search = subs.add_parser("search", help="Search server-side message text")
     search.add_argument("--query", required=True)
+    search.add_argument("--folder", default="INBOX")
     search.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
     read = subs.add_parser("read", help="Read one message by IMAP UID")
     read.add_argument("--uid", required=True)
+    read.add_argument("--folder", default="INBOX")
     submit = subs.add_parser("send", help="Preview a JSON draft, or send after explicit approval")
     submit.add_argument("--draft", required=True)
     submit.add_argument("--confirm", action="store_true")
