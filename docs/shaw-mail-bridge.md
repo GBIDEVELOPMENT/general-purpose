@@ -1,6 +1,6 @@
 # Shaw mail integration: status and usage
 
-> **Live status, October 16, 2026:** Encrypted GitHub Actions gateway, Shaw IMAP authentication, discovery of 11 folders, three-message header-only listing, and a literal server-side search returning three matched UIDs are **live verified**. A single full-message `read` request returned a sizeable encrypted response, but its MIME data has not yet been accepted through independent plaintext inspection. SMTP is **not live verified for authentication or sending**: an Azure runner got `554` pre-authentication rejection citing Spamhaus; a no-secret GitHub macOS runner negotiated verified TLS and advertised AUTH, but the first credentialed macOS check disconnected at initial `EHLO` before AUTH. The two separate gateway lanes and source pin are merged/tested. No email has been sent. The user authorized mailbox diagnostics and supplied the secret in GitHub Actions.
+> **Live status, October 16, 2026:** Encrypted GitHub transport, authenticated Shaw IMAP, 11-folder enumeration, INBOX headers, server-side search and **six successfully decrypted header records from the actual `Sent` folder** are verified. The reusable local encrypted client is merged in #20. One authorized test send to the user's designated Gmail address was attempted via Shaw SMTP; the runner returned `SMTPServerDisconnected`, no SMTP acceptance was confirmed, and the distinctive test subject was absent from Gmail search including Spam/Trash. **Do not automatically retry that test.** Public ActiveSync HTTPS OPTIONS is reachable with verified ECDHE, but authenticated OPTIONS returned HTTP 403 for the local-part username and 401 for the documented domain-qualified identity. No ActiveSync sending was attempted. No reliable outbound Shaw delivery route has been established. Treat sending as disabled/unverified; no new user secret or manual setup is requested.
 
 The private chat-scheduler repository contains an offline-testable, **opt-in** IMAP/SMTP client for the existing Shaw account `ian.wallace@shaw.ca`. It is separate from recurring agent-audit records.
 
@@ -11,7 +11,7 @@ Rogers documents IMAP at `imap.shaw.ca:993` (TLS) and SMTP at `mail.shaw.ca:587`
 - https://www.rogers.com/support/internet/shaw-email-service-details-and-settings
 - https://www.rogers.com/support/internet/shaw-email/which-email-setup-method-is-right-for-me
 
-Live IMAP authentication and searches succeeded. SMTP message transmission has NOT been run.
+Live IMAP authentication and searches succeeded. A single controlled SMTP delivery attempt returned a transport-disconnect error; delivery was not confirmed.
 
 ## CLI commands
 
@@ -272,3 +272,46 @@ selected* `{"name":"activesync","identity":"domain"}` probe that uses
 `shaw.ca\\username` in Basic authentication. No automatic retry or
 credential guessing is implemented. If this second documented format is
 rejected, stop and regard the HTTPS send route as unavailable for now.
+
+
+## End-of-session acceptance and stopping point (2026-10-16)
+
+| Operation | Live result |
+| --- | --- |
+| Encrypted gateway handshake and ping | Verified |
+| Shaw IMAP LOGIN and folder discovery | Verified |
+| Header-only INBOX listing | Verified |
+| Header-only `Sent` listing | Verified, six headers decrypted in a private local runtime |
+| Literal IMAP SEARCH | Verified |
+| Full message MIME read | Encrypted reply received, detailed MIME acceptance not independently completed |
+| Shaw SMTP send to designated Gmail address | Attempted once, returned `SMTPServerDisconnected`; no delivery detected |
+| SMTP IP reputation | Azure egress rejected by Shaw with 554 cloudfilter/Spamhaus |
+| GitHub macOS SMTP | Public TLS handshake worked; credential-bearing sessions failed before confirmed delivery |
+| Exchange ActiveSync on `wm.shaw.ca` | Public HTTPS OPTIONS: 401 Basic; credentialed local username: 403; domain-qualified username: 401 |
+| ActiveSync SendMail | Not implemented or attempted; no advertised capabilities after login |
+| Gmail destination verification | Search, including Spam/Trash, found no copy of unique test message |
+
+The user authorized the one SMTP delivery test exclusively to
+`ianmakesjokes@gmail.com`. The unique subject included a `7be4d2` test
+identifier. A metadata-only `send_claim` was posted before SMTP, so a lost
+transport reply could theoretically leave ambiguous delivery. The Gmail search
+was negative. Do **not** send the same test again automatically.
+
+The ActiveSync probe made exactly one authenticated request for each of the
+two documented username formats, and all HTTPS connections required
+certificate/hostname validation and ECDHE. Both authenticated formats failed
+to reveal protocols or SendMail support. Do not add speculative APIs,
+credentials retries, IP rotation, or reduced TLS verification.
+
+The next meaningful sending step requires a **stable, provider-approved
+outbound transport** or documented account-specific ActiveSync authorization.
+A third-party outbound mail API generally cannot send authenticated
+`@shaw.ca` mail without provider cooperation or suitable verified-sender
+authorization. If the user later configures an approved transport, re-test
+once with a fresh unique identifier, explicitly limited recipient, and
+destination-inbox verification.
+
+All code and test evidence is in this private repository: #20–#24,
+`tools/shaw_gateway_client.py`, `tools/shaw_activesync.py`, the pinned
+gateway workflow, and issue #5. Private mailbox bodies, passwords and local
+private encryption keys were not saved to GitHub.
