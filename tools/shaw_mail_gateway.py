@@ -31,7 +31,10 @@ MAX_MAIL_LIMIT = 15
 def parse_comment(body):
     if not isinstance(body, str) or not body.startswith(PREFIX) or len(body) > 52000:
         return None
-    value = json.loads(body[len(PREFIX):])
+    try:
+        value = json.loads(body[len(PREFIX):])
+    except (json.JSONDecodeError, TypeError, ValueError):
+        return None
     return value if isinstance(value, dict) and value.get("version") == 2 else None
 
 
