@@ -64,7 +64,7 @@ class MailTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             mail.compose(draft)
         draft["to"] = ["safe@example.org"]
-        draft["subject"] = "Hi\\nBcc: attacker@example.org"
+        draft["subject"] = "Hi\nBcc: attacker@example.org"
         with self.assertRaises(ValueError):
             mail.compose(draft)
 
