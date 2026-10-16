@@ -7,7 +7,7 @@ on:
       - 'tests/test_shaw_mail.py'
       - '.github/workflows/test-shaw-mail.yml'
   push:
-    branches: [main]
+    branches: [main, feat/shaw-mail-cli]
     paths:
       - 'tools/shaw_*.py'
       - 'tests/test_shaw_mail.py'
