@@ -79,3 +79,24 @@ GitHub's environment secrets can limit access to jobs that reference an environm
 References: https://docs.github.com/en/actions/concepts/security/secrets and https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments
 
 The encrypted no-secret ping test completed successfully on October 16, 2026. The **live mail login remains untested**, and a successful ping is not equivalent to authorization to supply a personal mailbox password.
+
+
+## October 16, 2026: IMAP TLS compatibility diagnosis
+
+An encrypted `folders` request reached the real Shaw server from GitHub Actions
+but failed with `SSLError`. A separate credential-free runner probe established
+the exact error: `DH_KEY_TOO_SMALL` when using OpenSSL 3 defaults. The server
+also successfully negotiated `TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384`, with
+full certificate verification enabled, when restricted to ECDHE cipher suites.
+
+The IMAP client now explicitly sets `minimum_version=TLSv1_2` and
+`set_ciphers("ECDHE:!DHE:!aNULL:!eNULL")`. This **does not disable TLS
+certificate verification, hostname checking, or lower the OpenSSL security
+level**. Avoid workarounds using `CERT_NONE`, `check_hostname=False`, or
+`@SECLEVEL=1`.
+
+The privileged mail workflow is pinned to a fixed source commit. Updating the
+client alone does not alter the credential-bearing runtime. After merging
+the client fix and successful CI, update the trusted checkout SHA in
+`.github/workflows/shaw-mail-gateway.yml` and its regression test in a
+separate reviewed PR, then retest `folders` over the encrypted bridge.
