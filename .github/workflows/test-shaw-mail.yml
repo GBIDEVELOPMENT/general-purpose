@@ -1,0 +1,32 @@
+name: Shaw mail offline tests
+
+on:
+  pull_request:
+    paths:
+      - 'tools/shaw_*.py'
+      - 'tests/test_shaw_mail.py'
+      - '.github/workflows/test-shaw-mail.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/shaw_*.py'
+      - 'tests/test_shaw_mail.py'
+      - '.github/workflows/test-shaw-mail.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile mail client and helper
+        run: python -m py_compile tools/shaw_mail.py tools/shaw_imap_codec.py
+      - name: Run isolated offline tests
+        run: python -m unittest discover -s tests -p test_shaw_mail.py -v
