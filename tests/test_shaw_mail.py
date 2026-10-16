@@ -4,6 +4,7 @@ import io
 import json
 import os
 import sys
+import ssl
 import tempfile
 import unittest
 from pathlib import Path
@@ -40,6 +41,15 @@ class CodecTests(unittest.TestCase):
 
 
 class MailTests(unittest.TestCase):
+    def test_shaw_imap_tls_requires_validated_ecdhe(self):
+        ctx = mail.imap_tls_context()
+        self.assertEqual(ctx.verify_mode, ssl.CERT_REQUIRED)
+        self.assertTrue(ctx.check_hostname)
+        self.assertGreaterEqual(ctx.minimum_version, ssl.TLSVersion.TLSv1_2)
+        names = [item["name"] for item in ctx.get_ciphers()]
+        self.assertTrue(any(name.startswith("ECDHE-") for name in names))
+        self.assertFalse(any(name.startswith("DHE-") for name in names))
+
     @patch.dict(os.environ, FAKE_ENV)
     def test_login_name(self):
         self.assertEqual(mail.credentials()[1], "unit-test")
