@@ -77,6 +77,60 @@ def scrub_for_reply(value):
     return value
 
 
+
+def bounded_read_reply(items):
+    """Retain text from a MIME read without silently clipping long bodies.
+
+    Protocol v2 caps a response at 30 KB of UTF-8 plaintext. Reserve a strict
+    body budget and report the original byte size of every part. Give earlier
+    parts priority (usually text/plain), but preserve HTML when it fits.
+    """
+    results = []
+    for source in items[:1]:
+        item = {key: str(source.get(key, ""))[:512] for key in
+                ("uid", "from", "to", "subject", "date", "message_id")}
+        remaining = 18000
+        parts = source.get("body_parts") or []
+        out_parts = []
+        for part in parts[:8]:
+            original = part.get("text", "")
+            if not isinstance(original, str):
+                original = str(original)
+            raw = original.encode("utf-8")
+            allowance = min(12000, remaining)
+            clipped = raw[:allowance].decode("utf-8", errors="ignore")
+            used = len(clipped.encode("utf-8"))
+            remaining -= used
+            out_parts.append({
+                "content_type": str(part.get("content_type", ""))[:100],
+                "text": clipped,
+                "original_bytes": len(raw),
+                "returned_bytes": used,
+                "truncated": used < len(raw),
+            })
+        item["body_parts"] = out_parts
+        item["omitted_body_parts"] = max(0, len(parts) - len(out_parts))
+        item["body_truncated"] = bool(item["omitted_body_parts"]) or any(
+            part["truncated"] for part in out_parts
+        )
+        item["attachments"] = [
+            {
+                "filename": str(att.get("filename", ""))[:300],
+                "content_type": str(att.get("content_type", ""))[:100],
+                "size_bytes": att.get("size_bytes", 0),
+            }
+            for att in (source.get("attachments") or [])[:12]
+        ]
+        item["omitted_attachments"] = max(
+            0, len(source.get("attachments") or []) - len(item["attachments"])
+        )
+        results.append(item)
+    if len(json.dumps({"ok": True, "data": results},
+                      ensure_ascii=False).encode("utf-8")) > 28000:
+        raise ValueError("Read response exceeds encrypted protocol budget")
+    return results
+
+
 def validate_operation(operation):
     name = operation.get("name")
     if name not in ("ping", "diagnose", "activesync", "folders", "inbox", "search", "read", "send"):
@@ -155,7 +209,8 @@ def operate(operation, token, ready, request_id):
     buffer = io.StringIO()
     with contextlib.redirect_stdout(buffer):
         mail.fetch(args)
-    value = scrub_for_reply(json.loads(buffer.getvalue()))
+    parsed = json.loads(buffer.getvalue())
+    value = bounded_read_reply(parsed) if name == "read" else scrub_for_reply(parsed)
     return {"ok": True, "data": value}
 
 

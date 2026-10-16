@@ -283,7 +283,7 @@ rejected, stop and regard the HTTPS send route as unavailable for now.
 | Header-only INBOX listing | Verified |
 | Header-only `Sent` listing | Verified, six headers decrypted in a private local runtime |
 | Literal IMAP SEARCH | Verified |
-| Full message MIME read | Encrypted reply received, detailed MIME acceptance not independently completed |
+| Full message MIME read | Verified live in Sent: plain-text and HTML body parts both decrypted with non-empty content |
 | Shaw SMTP send to designated Gmail address | Attempted once, returned `SMTPServerDisconnected`; no delivery detected |
 | SMTP IP reputation | Azure egress rejected by Shaw with 554 cloudfilter/Spamhaus |
 | GitHub macOS SMTP | Public TLS handshake worked; credential-bearing sessions failed before confirmed delivery |
@@ -315,3 +315,35 @@ All code and test evidence is in this private repository: #20–#24,
 `tools/shaw_gateway_client.py`, `tools/shaw_activesync.py`, the pinned
 gateway workflow, and issue #5. Private mailbox bodies, passwords and local
 private encryption keys were not saved to GitHub.
+
+
+## October 16, 2026 full-message read acceptance
+
+A fresh encrypted live read of `Sent` UID `285721`, subject
+`Uniracers, old files?`, succeeded. The decrypted response contained
+two distinct MIME body parts: a non-empty `text/plain` body (1,273
+characters) and a non-empty `text/html` body (1,796 characters).
+The gateway used `BODY.PEEK[]` with `readonly=True`; it did not
+send, modify or mark the email read. No body contents or password
+were placed in GitHub comments, commits, Actions logs or this document.
+
+The verification also exposed a **silent truncation defect** in the
+preexisting `scrub_for_reply` helper, which clipped every string
+(including each body part) to 4,000 characters without indicating it.
+Now the `read` response uses a separate UTF-8-byte-budgeted pathway:
+- Up to 18,000 UTF-8 bytes of combined readable MIME text across
+  at most eight body parts, with no more than 12,000 bytes in any
+  one part. Earlier parts receive priority (usually `text/plain`).
+- Each part reports `original_bytes`, `returned_bytes`,
+  and `truncated`; the message reports `body_truncated` and
+  `omitted_body_parts`. Twelve attachment metadata entries are returned,
+  with `omitted_attachments` indicating any extras.
+- Short messages retain their complete text and HTML contents.
+  The encrypted wire protocol's 30-KB plaintext limit still applies.
+  A client must not call a response a complete message when
+  `body_truncated` is true. Full unbounded streaming is not implemented.
+- A regression test checks multibyte UTF-8 truncation boundaries and
+  another verifies a complete mock Sent MIME read with no logs.
+
+Sending is **not involved** in this work, and prior SMTP/IP constraints
+are unchanged.
