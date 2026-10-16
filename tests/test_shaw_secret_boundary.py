@@ -18,6 +18,13 @@ class SecretBoundaryTests(unittest.TestCase):
                 self.assertEqual(workflow, GATEWAY, f"Secret referenced by {workflow}")
         self.assertIn("secrets.SHAW_PASSWORD", GATEWAY.read_text(encoding="utf-8"))
 
+    def test_smtp_lane_selects_macos_runner(self):
+        text = GATEWAY.read_text(encoding="utf-8")
+        self.assertIn("start_smtp", text)
+        self.assertIn("macos-latest", text)
+        self.assertIn("ubuntu-latest", text)
+        self.assertIn("github.event.comment.user.login == 'gamesbyian'", text)
+
     def test_pinned_gateway_runtime_source(self):
         text = GATEWAY.read_text(encoding="utf-8")
         self.assertIn("ref: d881280e15984afc6eb01902f3847fca6cf0b4c3", text)
