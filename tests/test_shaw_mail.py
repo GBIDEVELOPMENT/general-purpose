@@ -162,6 +162,31 @@ class MailTests(unittest.TestCase):
         self.assertIn(b'"Sent Items"', conn.select.call_args.args)
         self.assertIn("HEADER.FIELDS", str(conn.uid.call_args))
 
+    @patch.dict(os.environ, {**FAKE_ENV, "SHAW_ALLOW_SEND": "yes"})
+    def test_smtp_submission_counts_partial_acceptance_without_quit(self):
+        draft = {
+            "to": ["one@example.org", "two@example.org"],
+            "subject": "Test", "body": "Test"
+        }
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "draft.json"
+            path.write_text(json.dumps(draft), encoding="utf-8")
+            with patch.object(mail.smtplib, "SMTP") as smtp_ctor, \
+                 contextlib.redirect_stdout(io.StringIO()):
+                smtp = smtp_ctor.return_value
+                smtp.send_message.return_value = {"two@example.org": (550, b"rejected")}
+                result = mail.send(SimpleNamespace(draft=str(path), confirm=True))
+                self.assertEqual(result, {
+                    "submitted": True,
+                    "attempted_recipients": 2,
+                    "accepted_recipients": 1,
+                    "rejected_recipients": 1,
+                })
+                smtp.quit.assert_not_called()
+                smtp.close.assert_called_once()
+                smtp.starttls.assert_called_once()
+                self.assertTrue(smtp.starttls.call_args.kwargs["context"].check_hostname)
+
     @patch.dict(os.environ, FAKE_ENV, clear=True)
     def test_send_requires_allow_send(self):
         draft = {"to": ["friend@example.com"], "subject": "Test", "body": "Hello"}
