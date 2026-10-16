@@ -100,3 +100,20 @@ client alone does not alter the credential-bearing runtime. After merging
 the client fix and successful CI, update the trusted checkout SHA in
 `.github/workflows/shaw-mail-gateway.yml` and its regression test in a
 separate reviewed PR, then retest `folders` over the encrypted bridge.
+
+
+## Authentication-only diagnostic
+
+An updated gateway supports the encrypted `diagnose` operation. It checks
+IMAP `LOGIN` and SMTP `AUTH` independently, while **neither selecting/reading
+mailboxes nor sending messages**. Returned status codes are limited to
+`authentication_accepted`, `authentication_rejected`, `tls_error`,
+`tls_or_protocol_error`, and `network_error`. No server authentication
+responses or account passwords are included.
+
+If SMTP accepts authentication but IMAP rejects it, verify that Shaw
+Webmail uses Classic mode and that external client access is permitted.
+If both reject it, verify the `SHAW_PASSWORD` secret contains the actual
+mailbox password (not necessarily a separate provider account password).
+Avoid repeated automated login retries or account lockouts. The diagnostic
+is opt-in and remains password-free in CI.

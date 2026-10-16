@@ -76,6 +76,41 @@ def message_summary(uid, raw, include_body=False):
     return item
 
 
+
+def auth_diagnostics():
+    """Authenticate to IMAP and SMTP without reading or sending any messages.
+
+    No server exception strings, usernames, or credentials enter the result.
+    """
+    _, user, password = credentials()
+    outcomes = {}
+    try:
+        with imaplib.IMAP4_SSL(IMAP_HOST, 993, ssl_context=imap_tls_context(), timeout=20) as connection:
+            connection.login(user, password)
+        outcomes["imap"] = "authentication_accepted"
+    except imaplib.IMAP4.error:
+        outcomes["imap"] = "authentication_rejected"
+    except ssl.SSLError:
+        outcomes["imap"] = "tls_error"
+    except OSError:
+        outcomes["imap"] = "network_error"
+
+    try:
+        with smtplib.SMTP(SMTP_HOST, 587, timeout=20) as connection:
+            connection.ehlo()
+            connection.starttls(context=imap_tls_context())
+            connection.ehlo()
+            connection.login(user, password)
+        outcomes["smtp"] = "authentication_accepted"
+    except smtplib.SMTPAuthenticationError:
+        outcomes["smtp"] = "authentication_rejected"
+    except (smtplib.SMTPException, ssl.SSLError):
+        outcomes["smtp"] = "tls_or_protocol_error"
+    except OSError:
+        outcomes["smtp"] = "network_error"
+    return outcomes
+
+
 def fetch(args):
     _, user, password = credentials()
     with imaplib.IMAP4_SSL(IMAP_HOST, 993, ssl_context=imap_tls_context(), timeout=30) as conn:

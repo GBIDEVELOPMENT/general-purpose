@@ -51,6 +51,24 @@ class MailTests(unittest.TestCase):
         self.assertFalse(any(name.startswith("DHE-") for name in names))
 
     @patch.dict(os.environ, FAKE_ENV)
+    def test_read_free_send_free_authentication_diagnostics(self):
+        with patch.object(mail.imaplib, "IMAP4_SSL") as imap_ctor, \
+             patch.object(mail.smtplib, "SMTP") as smtp_ctor:
+            imap = imap_ctor.return_value.__enter__.return_value
+            smtp = smtp_ctor.return_value.__enter__.return_value
+            imap.login.side_effect = mail.imaplib.IMAP4.error("No authentication")
+            status = mail.auth_diagnostics()
+            self.assertEqual(status, {
+                "imap": "authentication_rejected",
+                "smtp": "authentication_accepted"
+            })
+            imap.select.assert_not_called()
+            imap.uid.assert_not_called()
+            smtp.send_message.assert_not_called()
+            smtp.starttls.assert_called_once()
+            smtp.login.assert_called_once()
+
+    @patch.dict(os.environ, FAKE_ENV)
     def test_login_name(self):
         self.assertEqual(mail.credentials()[1], "unit-test")
 
