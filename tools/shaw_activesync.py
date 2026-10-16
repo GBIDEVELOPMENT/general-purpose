@@ -26,10 +26,18 @@ def safe_header(value, allowed):
     return "".join(ch for ch in (value or "") if ch in allowed)[:600]
 
 
-def discover():
-    """Return sanitized EAS support, or exact HTTP status if not accepted."""
+def discover(identity="local"):
+    """Return sanitized EAS support, or exact HTTP status if not accepted.
+
+    Shaw documents a username and separate domain shaw.ca. A single explicit
+    domain-qualified probe can distinguish IIS identity formatting from denial.
+    It is never automatically retried with different credentials.
+    """
+    if identity not in ("local", "domain"):
+        raise ValueError("Unsupported ActiveSync username format")
     _, username, password = credentials()
-    encoded = base64.b64encode((username + ":" + password).encode("utf-8")).decode("ascii")
+    login_name = username if identity == "local" else "shaw.ca\\\\{}".format(username)
+    encoded = base64.b64encode((login_name + ":" + password).encode("utf-8")).decode("ascii")
     context = imap_tls_context()
     request = Request(
         EAS_URL,

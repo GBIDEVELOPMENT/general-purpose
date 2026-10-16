@@ -259,3 +259,16 @@ SendMail protocol, stop and do not guess at APIs or weaken security.
 References:
 - https://www.rogers.com/support/internet/shaw-email/use-internet-services-with-microsoft-products
 - https://learn.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-ascmd/172db9ec-350f-4bb1-94b1-0526f976ed5e
+
+
+## ActiveSync credential-format discriminator
+
+The first *authenticated* encrypted OPTIONS probe to
+`wm.shaw.ca/Microsoft-Server-ActiveSync` with the local-part username returned
+HTTP 403 (rather than the anonymous HTTP 401). It did not advertise
+`SendMail`, and **no message was sent**. Rogers documents the EAS username and
+domain as separate fields, so the client now permits a *single explicitly
+selected* `{"name":"activesync","identity":"domain"}` probe that uses
+`shaw.ca\\username` in Basic authentication. No automatic retry or
+credential guessing is implemented. If this second documented format is
+rejected, stop and regard the HTTPS send route as unavailable for now.

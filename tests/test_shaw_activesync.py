@@ -57,6 +57,23 @@ class ActiveSyncTests(unittest.TestCase):
             self.assertFalse(out["auth_accepted"])
             self.assertNotIn("secret", str(out).lower())
 
+    @patch.dict(os.environ, {"SHAW_EMAIL": "test@shaw.ca", "SHAW_PASSWORD": "not-a-real-secret"})
+    def test_domain_qualified_username_is_explicit_and_single_attempt(self):
+        resp = MagicMock()
+        resp.status = 403
+        resp.headers = {}
+        resp.__enter__.return_value = resp
+        with patch.object(eas, "build_opener") as opener:
+            opener.return_value.open.return_value = resp
+            result = eas.discover("domain")
+            self.assertEqual(result["http_status"], 403)
+            self.assertEqual(opener.return_value.open.call_count, 1)
+            request = opener.return_value.open.call_args.args[0]
+            supplied = base64.b64decode(request.get_header("Authorization").split(" ", 1)[1])
+            self.assertEqual(supplied, b"shaw.ca\\\\test:not-a-real-secret")
+        with self.assertRaises(ValueError):
+            eas.discover("unknown")
+
     def test_metadata_is_sanitized(self):
         self.assertEqual(eas.safe_header("SendMail\npassword", frozenset("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")), "SendMailpassword")
 
