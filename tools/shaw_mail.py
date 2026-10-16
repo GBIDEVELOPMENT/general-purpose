@@ -17,10 +17,11 @@ IMAP_HOST = "imap.shaw.ca"
 SMTP_HOST = "mail.shaw.ca"
 DEFAULT_LIMIT = 20
 MAX_LIMIT = 100
+DEFAULT_ACCOUNT = "ian.wallace@shaw.ca"
 
 
 def credentials():
-    address = os.environ.get("SHAW_EMAIL", "").strip()
+    address = os.environ.get("SHAW_EMAIL", DEFAULT_ACCOUNT).strip()
     password = os.environ.get("SHAW_PASSWORD", "")
     if not address.lower().endswith("@shaw.ca") or not password:
         raise ValueError("Set SHAW_EMAIL (full @shaw.ca address) and SHAW_PASSWORD securely")
