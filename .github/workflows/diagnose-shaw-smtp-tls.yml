@@ -1,0 +1,56 @@
+name: Shaw SMTP TLS probes (no secrets, no email)
+on:
+  push:
+    branches: [diagnostics/smtp-tls-no-secrets-20261016]
+    paths:
+      - .github/workflows/diagnose-shaw-smtp-tls.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Probe SMTP greeting, STARTTLS and TLS only
+        shell: bash
+        run: |
+          python - <<'PY'
+          import smtplib, ssl
+          host = "mail.shaw.ca"
+          for name, ciphers in (("default", None), ("ECDHE", "ECDHE:!DHE:!aNULL:!eNULL")):
+              phase = "connect"
+              try:
+                  ctx = ssl.create_default_context()
+                  ctx.minimum_version = ssl.TLSVersion.TLSv1_2
+                  if ciphers:
+                      ctx.set_ciphers(ciphers)
+                  with smtplib.SMTP(host, 587, timeout=12) as s:
+                      phase = "EHLO"
+                      code, _ = s.ehlo()
+                      print(name, "EHLO", code, "extensions", sorted(s.esmtp_features))
+                      if not s.has_extn("starttls"):
+                          print(name, "STARTTLS_NOT_ADVERTISED")
+                          continue
+                      phase = "STARTTLS"
+                      code, _ = s.starttls(context=ctx)
+                      print(name, "STARTTLS_OK", code, "tls", s.sock.version(), "cipher", s.sock.cipher()[0])
+                      phase = "post-STARTTLS EHLO"
+                      code, _ = s.ehlo()
+                      print(name, "POST_TLS_EHLO", code, "auth_methods", s.esmtp_features.get("auth", "(none)"))
+              except ssl.SSLCertVerificationError as e:
+                  print(name, phase, "CERTIFICATE_ERROR", e.verify_code, e.verify_message)
+              except ssl.SSLError as e:
+                  print(name, phase, "SSL_ERROR", getattr(e, "reason", None))
+              except smtplib.SMTPException as e:
+                  print(name, phase, "SMTP_ERROR", type(e).__name__)
+              except OSError as e:
+                  print(name, phase, "NETWORK_ERROR", type(e).__name__)
+          try:
+              ctx=ssl.create_default_context()
+              ctx.minimum_version=ssl.TLSVersion.TLSv1_2
+              with smtplib.SMTP_SSL(host,465,timeout=6,context=ctx) as s:
+                  print("implicit465 TLS",s.sock.version(),"cipher",s.sock.cipher()[0])
+          except (ssl.SSLError,OSError,smtplib.SMTPException) as e:
+              print("implicit465",type(e).__name__,getattr(e,"reason",""))
+          PY
