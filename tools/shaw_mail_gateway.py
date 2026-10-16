@@ -18,6 +18,7 @@ from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import shaw_mail as mail
+import shaw_activesync as active_sync
 import shaw_mail_protocol as crypto
 
 PREFIX = "SHAWMAIL2 "
@@ -78,7 +79,7 @@ def scrub_for_reply(value):
 
 def validate_operation(operation):
     name = operation.get("name")
-    if name not in ("ping", "diagnose", "folders", "inbox", "search", "read", "send"):
+    if name not in ("ping", "diagnose", "activesync", "folders", "inbox", "search", "read", "send"):
         raise ValueError("Unknown operation")
     if name in ("inbox", "search", "read"):
         folder = operation.get("folder", "INBOX")
@@ -123,6 +124,8 @@ def operate(operation, token, ready, request_id):
         return {"ok": False, "error": "mail_secret_not_configured"}
     if name == "diagnose":
         return {"ok": True, "data": mail.auth_diagnostics()}
+    if name == "activesync":
+        return {"ok": True, "data": active_sync.discover()}
     if name == "send":
         draft = operation["draft"]
         # This claim precedes SMTP: an ambiguous outcome must not be silently retried.
@@ -174,7 +177,7 @@ def validate_lane(start_kind, operation):
         if name not in ("ping", "folders", "inbox", "search", "read"):
             raise ValueError("Operation not permitted on read lane")
     elif start_kind == "start_smtp":
-        if name not in ("ping", "diagnose", "send"):
+        if name not in ("ping", "diagnose", "activesync", "send"):
             raise ValueError("Operation not permitted on SMTP lane")
     else:
         raise ValueError("Unknown lane")
