@@ -15,7 +15,13 @@ jobs:
         shell: bash
         run: |
           python - <<'PY'
-          import urllib.request, urllib.error, ssl, urllib.parse
+          import urllib.request, urllib.error, ssl, urllib.parse, socket
+          for host in ("wm.shaw.ca", "webmail.shaw.ca"):
+              try:
+                  answers=socket.getaddrinfo(host,443,type=socket.SOCK_STREAM)
+                  print("DNS",host,"addresses",len(set(x[4][0] for x in answers)))
+              except socket.gaierror as exc:
+                  print("DNS",host,"error",exc.errno)
           ctx = ssl.create_default_context()
           endpoints=[
               "https://wm.shaw.ca/Microsoft-Server-ActiveSync",
