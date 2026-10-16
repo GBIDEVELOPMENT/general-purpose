@@ -131,3 +131,23 @@ is opt-in and remains password-free in CI.
 Official references:
 - https://www.rogers.com/support/internet/shaw-email/changing-your-shaw-email-password
 - https://www.rogers.com/support/internet/shaw-email/which-email-setup-method-is-right-for-me
+
+## SMTP discovery, October 16, 2026
+
+A no-secret GitHub-hosted network probe confirmed `mail.shaw.ca:587`
+responds to EHLO, advertises STARTTLS and both PLAIN/LOGIN authentication,
+and negotiates a certificate-validated TLS 1.2 ECDHE-RSA-AES256-GCM-SHA384
+cipher under both default and ECDHE-only settings. Port 465 timed out
+from the runner; keep 587.
+
+The earlier `tls_or_protocol_error` result was too broad to distinguish
+authentication errors from SMTP protocol errors during or after login.
+Python `smtplib.SMTP`'s context manager sends QUIT on exit, which can
+raise even when AUTH succeeded. The revised login diagnostic uses `close()`
+without QUIT, returning only a safe SMTP response *code*, failure stage
+and exception category, never the server response text or password.
+This diagnostic does **not send mail**. The production send operation
+must remain gated behind a separate user instruction, regardless of
+the diagnostic result.
+
+Official Shaw settings: https://www.rogers.com/support/internet/shaw-email-service-details-and-settings
