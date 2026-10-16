@@ -38,6 +38,23 @@ jobs:
                   print('SSL error:', type(exc).__name__, exc.reason, str(exc)[:300])
               except (OSError, imaplib.IMAP4.error) as exc:
                   print('Connection error:', type(exc).__name__, str(exc)[:300])
+          for profile, cipher_string in [
+              ("ECDHE-only", "ECDHE:!DHE:!aNULL:!eNULL"),
+              ("No finite-field DHE", "DEFAULT:!DHE:!aNULL:!eNULL"),
+              ("RSA key exchange", "AES128-GCM-SHA256:!DHE:!aNULL:!eNULL"),
+          ]:
+              ctx = ssl.create_default_context()
+              ctx.minimum_version = ssl.TLSVersion.TLSv1_2
+              ctx.set_ciphers(cipher_string)
+              try:
+                  with imaplib.IMAP4_SSL(host, 993, ssl_context=ctx, timeout=12) as client:
+                      print(profile, 'CONNECTED', client.sock.version(), client.sock.cipher())
+              except ssl.SSLCertVerificationError as exc:
+                  print(profile, 'CERT_ERROR', exc.verify_code, exc.verify_message)
+              except ssl.SSLError as exc:
+                  print(profile, 'SSL_ERROR', exc.reason)
+              except (OSError, imaplib.IMAP4.error) as exc:
+                  print(profile, 'CONNECTION_ERROR', type(exc).__name__, str(exc)[:150])
           PY
       - name: Independent OpenSSL certificate validation
         shell: bash
