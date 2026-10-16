@@ -75,7 +75,7 @@ def scrub_for_reply(value):
 
 def validate_operation(operation):
     name = operation.get("name")
-    if name not in ("ping", "folders", "inbox", "search", "read", "send"):
+    if name not in ("ping", "diagnose", "folders", "inbox", "search", "read", "send"):
         raise ValueError("Unknown operation")
     if name in ("inbox", "search", "read"):
         folder = operation.get("folder", "INBOX")
@@ -118,6 +118,8 @@ def operate(operation, token, ready, request_id):
         ]}
     if not os.environ.get("SHAW_PASSWORD"):
         return {"ok": False, "error": "mail_secret_not_configured"}
+    if name == "diagnose":
+        return {"ok": True, "data": mail.auth_diagnostics()}
     if name == "send":
         draft = operation["draft"]
         # This claim precedes SMTP: an ambiguous outcome must not be silently retried.
