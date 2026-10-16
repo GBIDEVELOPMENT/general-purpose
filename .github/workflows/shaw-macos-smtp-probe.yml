@@ -1,0 +1,42 @@
+name: Shaw SMTP from macOS egress (no secrets)
+on:
+  push:
+    branches: [diagnostics/shaw-smtp-macos-egress]
+    paths:
+      - '.github/workflows/shaw-macos-smtp-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: macos-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe SMTP greeting and verified STARTTLS without authentication
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import socket, smtplib, ssl
+          host='mail.shaw.ca'
+          smtp=None
+          try:
+              smtp=smtplib.SMTP(host,587,timeout=12)
+              print('greeting_accepted: yes')
+              code,_=smtp.ehlo()
+              print('ehlo_code:',code,'starttls:',smtp.has_extn('starttls'))
+              if smtp.has_extn('starttls'):
+                  ctx=ssl.create_default_context()
+                  ctx.minimum_version=ssl.TLSVersion.TLSv1_2
+                  ctx.set_ciphers('ECDHE:!DHE:!aNULL:!eNULL')
+                  smtp.starttls(context=ctx)
+                  print('tls_version:',smtp.sock.version(),'cipher:',smtp.sock.cipher()[0])
+                  code,_=smtp.ehlo()
+                  print('post_tls_ehlo:',code,'auth_advertised:',smtp.has_extn('auth'))
+          except smtplib.SMTPConnectError as e:
+              reason=e.smtp_error.decode('utf-8',errors='replace') if isinstance(e.smtp_error,bytes) else str(e.smtp_error)
+              print('greeting_refused:',e.smtp_code,'reason:',reason[:250])
+          except (smtplib.SMTPException,OSError,ssl.SSLError) as e:
+              print('transport_error:',type(e).__name__)
+          finally:
+              if smtp is not None: smtp.close()
+          PY
