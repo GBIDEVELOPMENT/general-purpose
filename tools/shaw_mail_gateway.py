@@ -95,6 +95,8 @@ def validate_operation(operation):
         q = operation.get("query")
         if not isinstance(q, str) or not 1 <= len(q) <= 2000:
             raise ValueError("Invalid search query")
+    if name == "activesync" and operation.get("identity", "local") not in ("local", "domain"):
+        raise ValueError("Unrecognized ActiveSync identity format")
     if name == "read":
         uid = operation.get("uid")
         if not isinstance(uid, str) or not uid.isascii() or not uid.isdecimal() or int(uid) <= 0:
@@ -125,7 +127,7 @@ def operate(operation, token, ready, request_id):
     if name == "diagnose":
         return {"ok": True, "data": mail.auth_diagnostics()}
     if name == "activesync":
-        return {"ok": True, "data": active_sync.discover()}
+        return {"ok": True, "data": active_sync.discover(operation.get("identity", "local"))}
     if name == "send":
         draft = operation["draft"]
         # This claim precedes SMTP: an ambiguous outcome must not be silently retried.
