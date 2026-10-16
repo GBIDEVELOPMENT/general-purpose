@@ -1,6 +1,6 @@
 # Shaw mail integration: status and usage
 
-> **Live status, October 16, 2026:** Shaw IMAP now authenticates, folder enumeration has succeeded, and a three-message, header-only INBOX check succeeded through the encrypted gateway. SMTP is **not** yet accepted for account login or sending. The Linux (Azure) runner received `554 Connection Rejected` from Shaw's cloudfilter gateway, identifying a Spamhaus listing for the runner IP. An independent no-password macOS runner, hosted in GitHub's macOS cloud, was accepted with certificate-verified TLS 1.2/ECDHE and AUTH advertised. This change adds a separate macOS SMTP lane for a subsequent authentication-only test. No email has been sent. The user explicitly authorized these mailbox diagnostic tests.
+> **Live status, October 16, 2026:** Encrypted GitHub Actions gateway, Shaw IMAP authentication, discovery of 11 folders, three-message header-only listing, and a literal server-side search returning three matched UIDs are **live verified**. A single full-message `read` request returned a sizeable encrypted response, but its MIME data has not yet been accepted through independent plaintext inspection. SMTP is **not live verified for authentication or sending**: an Azure runner got `554` pre-authentication rejection citing Spamhaus; a no-secret GitHub macOS runner negotiated verified TLS and advertised AUTH, but the first credentialed macOS check disconnected at initial `EHLO` before AUTH. The two separate gateway lanes and source pin are merged/tested. No email has been sent. The user authorized mailbox diagnostics and supplied the secret in GitHub Actions.
 
 The private chat-scheduler repository contains an offline-testable, **opt-in** IMAP/SMTP client for the existing Shaw account `ian.wallace@shaw.ca`. It is separate from recurring agent-audit records.
 
@@ -11,7 +11,7 @@ Rogers documents IMAP at `imap.shaw.ca:993` (TLS) and SMTP at `mail.shaw.ca:587`
 - https://www.rogers.com/support/internet/shaw-email-service-details-and-settings
 - https://www.rogers.com/support/internet/shaw-email/which-email-setup-method-is-right-for-me
 
-No live mail authentication or transmission has been run.
+Live IMAP authentication and searches succeeded. SMTP message transmission has NOT been run.
 
 ## CLI commands
 
@@ -80,7 +80,7 @@ GitHub's environment secrets can limit access to jobs that reference an environm
 
 References: https://docs.github.com/en/actions/concepts/security/secrets and https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments
 
-The encrypted no-secret ping test completed successfully on October 16, 2026. The **live mail login has been tested and rejected by both IMAP and SMTP**, and a successful ping is not equivalent to authorization to supply a personal mailbox password.
+The encrypted no-secret ping succeeded on October 16, 2026. Initial password attempts rejected authentication for both protocols, but after the user updated the secret, **IMAP authentication succeeded**. SMTP AUTH has not been reached successfully due to pre-authentication network rejection or disconnection.
 
 
 ## October 16, 2026: IMAP TLS compatibility diagnosis
@@ -121,7 +121,7 @@ Avoid repeated automated login retries or account lockouts. The diagnostic
 is opt-in and remains password-free in CI.
 
 
-## Current recovery instructions (2026-10-16)
+## Superseded initial password-recovery instructions (2026-10-16)
 
 1. Confirm `https://webmail.shaw.ca` accepts the **email account password** for `ian.wallace@shaw.ca`. Rogers documents that MyRogers (Shaw) account credentials may be different.
 2. From a desktop browser, in Webmail Classic mode, enable **Preferences > Access from Other Mail Client**. Rogers says this cannot be configured from mobile devices.
@@ -179,3 +179,16 @@ Linux runner failure (no credentials): Shaw's SMTP server rejected one Azure
 runner with status `554` and a Spamhaus IP-blocklisting policy. This is about
 the sending network, not the user's Shaw password or message content.
 No IP-rotation retry loop is implemented.
+
+
+## Subsequent live acceptance and outbound blocker (October 16, 2026)
+
+- Both Linux and macOS encrypted gateway lanes are implemented and protected by an exact source SHA. Offline tests passed on the integrated change.
+- A Linux encrypted `search` of `INBOX` with a generic ASCII query succeeded and returned three UIDs. Those headers were decrypted only in isolated execution; no message content was copied into GitHub issues or logs.
+- A single live `read` operation returned an encrypted result. The response was not fully decrypted/inspected for MIME acceptance in this run; do not overclaim that full-body parsing has been independently verified.
+- An authenticated SMTP diagnostic through macOS returned `smtp_protocol_error` with exception category `SMTPServerDisconnected` at phase `ehlo`. SMTP AUTH was not reached; no outbound message was sent. A prior Linux diagnostic returned server status `554` before AUTH, explicitly identifying an Azure runner IP in a Spamhaus policy rejection.
+- A no-credential GET of `https://webmail.shaw.ca/` succeeded, while `/service/soap/`, `/service/soap`, and `/zimbra/` returned HTTP 404. There is no evidence of a usable standard Zimbra SOAP send endpoint, so do not build a Webmail fallback by assuming that API exists.
+- No automatic runner/IP retry rotation is implemented. Prefer a stable, permitted, authenticated outgoing transport if future user-directed sending is needed. Any real send requires a fresh, explicit instruction for recipients/content and must not be used as a diagnostic without one.
+- The credential resides only in GitHub Actions `SHAW_PASSWORD`. Keep source pin and repository-writing risks in view.
+
+Evidence and follow-through: issue #5, PRs #15–#18, and secret-free diagnostic workflows on `diagnostics/shaw-smtp-greeting-554`, `diagnostics/shaw-smtp-macos-egress`, `diagnostics/shaw-webmail-https-discovery`.
