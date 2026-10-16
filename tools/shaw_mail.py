@@ -58,6 +58,12 @@ def fetch(args):
     _, user, password = credentials()
     with imaplib.IMAP4_SSL(IMAP_HOST, 993, ssl_context=ssl.create_default_context(), timeout=30) as conn:
         conn.login(user, password)
+        if args.command == "folders":
+            status, folders = conn.list()
+            if status != "OK":
+                raise RuntimeError("Could not enumerate folders")
+            print(json.dumps([x.decode("ascii", errors="replace") for x in (folders or []) if x], indent=2))
+            return
         status, _ = conn.select(args.folder, readonly=True)
         if status != "OK":
             raise RuntimeError("Could not select INBOX")
@@ -132,6 +138,7 @@ def send(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     subs = parser.add_subparsers(dest="command", required=True)
+    subs.add_parser("folders", help="List IMAP folders")
     inbox = subs.add_parser("inbox", help="List recent messages")
     inbox.add_argument("--folder", default="INBOX")
     inbox.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
