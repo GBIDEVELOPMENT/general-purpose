@@ -53,6 +53,13 @@ def message_summary(uid, raw, include_body=False):
             bodies.append({"content_type": part.get_content_type(),
                            "text": payload.decode(charset, errors="replace")[:50000]})
         item["body_parts"] = bodies
+        item["attachments"] = [
+            {"filename": decode(part.get_filename() or ""),
+             "content_type": part.get_content_type(),
+             "size_bytes": len(part.get_payload(decode=True) or b"")}
+            for part in msg.walk()
+            if part.get_content_disposition() == "attachment"
+        ]
     return item
 
 
