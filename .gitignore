@@ -1,0 +1,10 @@
+# Never commit mailbox exports, credentials, or local drafts.
+.env
+.env.*
+!.env.example
+mail-data/
+mail-drafts/
+*.eml
+*.mbox
+__pycache__/
+*.pyc
