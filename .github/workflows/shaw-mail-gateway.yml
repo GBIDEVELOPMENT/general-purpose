@@ -27,7 +27,7 @@ jobs:
         with:
           # Pin the audited mail gateway and its imported modules to the merged source.
           # Routine commits to main cannot silently replace credential-bearing code.
-          ref: 55f08f718695ebe489ff28ee0d6a2f1e9230ba57
+          ref: bf7ba25edab17765ee7b8805704bc8a43cd894c5
           persist-credentials: false
       - name: Set up Python
         uses: actions/setup-python@v5
