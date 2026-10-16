@@ -55,7 +55,7 @@ class MailTests(unittest.TestCase):
         with patch.object(mail.imaplib, "IMAP4_SSL") as imap_ctor, \
              patch.object(mail.smtplib, "SMTP") as smtp_ctor:
             imap = imap_ctor.return_value.__enter__.return_value
-            smtp = smtp_ctor.return_value.__enter__.return_value
+            smtp = smtp_ctor.return_value
             imap.login.side_effect = mail.imaplib.IMAP4.error("No authentication")
             status = mail.auth_diagnostics()
             self.assertEqual(status, {
@@ -67,6 +67,32 @@ class MailTests(unittest.TestCase):
             smtp.send_message.assert_not_called()
             smtp.starttls.assert_called_once()
             smtp.login.assert_called_once()
+            smtp.close.assert_called_once()
+            smtp.quit.assert_not_called()
+
+    @patch.dict(os.environ, FAKE_ENV)
+    def test_smtp_response_code_is_safe_and_phase_specific(self):
+        with patch.object(mail.imaplib, "IMAP4_SSL"), \
+             patch.object(mail.smtplib, "SMTP") as smtp_ctor:
+            smtp = smtp_ctor.return_value
+            smtp.login.side_effect = mail.smtplib.SMTPResponseException(530, b"possible secrets in response")
+            result = mail.auth_diagnostics()
+            self.assertEqual(result["smtp"], "smtp_response_error")
+            self.assertEqual(result["smtp_code"], 530)
+            self.assertEqual(result["smtp_phase"], "authenticate")
+            self.assertNotIn("possible secrets", str(result))
+            smtp.sendmail.assert_not_called()
+            smtp.send_message.assert_not_called()
+
+    @patch.dict(os.environ, FAKE_ENV)
+    def test_diagnose_success_does_not_require_quit(self):
+        with patch.object(mail.imaplib, "IMAP4_SSL"), \
+             patch.object(mail.smtplib, "SMTP") as smtp_ctor:
+            smtp = smtp_ctor.return_value
+            smtp.quit.side_effect = mail.smtplib.SMTPServerDisconnected("QUIT rejected")
+            outcome = mail.auth_diagnostics()
+            self.assertEqual(outcome["smtp"], "authentication_accepted")
+            smtp.quit.assert_not_called()
 
     @patch.dict(os.environ, FAKE_ENV)
     def test_login_name(self):

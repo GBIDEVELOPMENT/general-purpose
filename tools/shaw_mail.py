@@ -95,19 +95,41 @@ def auth_diagnostics():
     except OSError:
         outcomes["imap"] = "network_error"
 
+    # Do not use "with SMTP" here: its implicit QUIT can fail *after*
+    # authentication succeeded and misreport the result.
+    smtp = None
+    phase = "connect"
     try:
-        with smtplib.SMTP(SMTP_HOST, 587, timeout=20) as connection:
-            connection.ehlo()
-            connection.starttls(context=imap_tls_context())
-            connection.ehlo()
-            connection.login(user, password)
+        smtp = smtplib.SMTP(SMTP_HOST, 587, timeout=20)
+        phase = "ehlo"
+        smtp.ehlo()
+        phase = "starttls"
+        smtp.starttls(context=imap_tls_context())
+        phase = "ehlo_after_tls"
+        smtp.ehlo()
+        phase = "authenticate"
+        smtp.login(user, password)
         outcomes["smtp"] = "authentication_accepted"
-    except smtplib.SMTPAuthenticationError:
+    except smtplib.SMTPAuthenticationError as exc:
         outcomes["smtp"] = "authentication_rejected"
-    except (smtplib.SMTPException, ssl.SSLError):
-        outcomes["smtp"] = "tls_or_protocol_error"
+        outcomes["smtp_code"] = int(exc.smtp_code)
+    except smtplib.SMTPResponseException as exc:
+        outcomes["smtp"] = "smtp_response_error"
+        outcomes["smtp_code"] = int(exc.smtp_code)
+        outcomes["smtp_phase"] = phase
+    except smtplib.SMTPException as exc:
+        outcomes["smtp"] = "smtp_protocol_error"
+        outcomes["smtp_error_type"] = type(exc).__name__
+        outcomes["smtp_phase"] = phase
+    except ssl.SSLError:
+        outcomes["smtp"] = "tls_error"
+        outcomes["smtp_phase"] = phase
     except OSError:
         outcomes["smtp"] = "network_error"
+        outcomes["smtp_phase"] = phase
+    finally:
+        if smtp is not None:
+            smtp.close()
     return outcomes
 
 
