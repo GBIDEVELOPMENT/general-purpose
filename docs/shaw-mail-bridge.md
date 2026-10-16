@@ -232,3 +232,30 @@ On October 16, 2026, an encrypted `inbox` request against the actual `Sent`
 folder successfully decrypted six message headers, demonstrating that folder
 selection and header-only reads work beyond the main inbox. No message bodies
 were needed for this verification.
+
+## HTTPS ActiveSync discovery (2026-10-16)
+
+Rogers officially documents `wm.shaw.ca` as the secure Exchange ActiveSync
+server for existing Shaw email accounts. A credential-free GitHub Actions probe
+using certificate-validated ECDHE negotiated HTTPS to
+`https://wm.shaw.ca/Microsoft-Server-ActiveSync`; the server returned HTTP
+`401` with Basic authentication enabled. No mail or account credentials
+were accessed by that public probe. Unlike the similarly named path at
+`webmail.shaw.ca`, this endpoint exists.
+
+ActiveSync has a standardized `SendMail` operation (Microsoft MS-ASCMD),
+including MIME-based messages under protocol versions 2.5–12.1. Unlike SMTP,
+these requests traverse HTTPS port 443. The new `activesync` operation is
+restricted to the encrypted `start_smtp` gateway lane. It performs a single
+authenticated `OPTIONS` handshake and reports **only** HTTP status, listed
+protocol versions and whether the server advertises `SendMail`.
+
+The code enforces certificate and hostname verification, TLS >= 1.2,
+strong ECDHE suites and **no HTTP redirects**, so an Authorization header
+cannot be forwarded to another service. It does **not** implement or execute
+SendMail. If OPTIONS does not authenticate or does not advertise an eligible
+SendMail protocol, stop and do not guess at APIs or weaken security.
+
+References:
+- https://www.rogers.com/support/internet/shaw-email/use-internet-services-with-microsoft-products
+- https://learn.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-ascmd/172db9ec-350f-4bb1-94b1-0526f976ed5e
