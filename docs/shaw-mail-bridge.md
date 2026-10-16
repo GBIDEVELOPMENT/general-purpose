@@ -1,6 +1,6 @@
 # Shaw mail integration: status and usage
 
-The private chat-scheduler repository contains an offline-testable, **opt-in** IMAP/SMTP client for the existing Shaw account `ian.wallace@shaw.ca`. It is separate from recurring agent-audit records.
+> **Live status, October 16, 2026:** The user has configured the `SHAW_PASSWORD` Actions secret and accepted the documented repository-writing risk. The encrypted GitHub bridge works. A live TLS compatibility problem was fixed using validated ECDHE. A later authentication-only check returned `authentication_rejected` for **both IMAP and SMTP**. No folders/messages have been retrieved and no email has been sent. **Do not keep retrying** until the password/Classic-mode settings have been verified or updated. The password must be the Shaw **email/Webmail** password, which Rogers says can differ from MyRogers (Shaw) credentials. Follow the instructions below and see issue #5.\n\nThe private chat-scheduler repository contains an offline-testable, **opt-in** IMAP/SMTP client for the existing Shaw account `ian.wallace@shaw.ca`. It is separate from recurring agent-audit records.
 
 ## Verified provider configuration
 
@@ -53,7 +53,7 @@ Private data, credentials, search terms and drafts MUST NOT be included in the u
 
 ### IMPORTANT: remaining trust boundary
 
-**Do not add SHA_PASSWORD yet merely because the Action runs.** GitHub Actions checks out code from main. Anyone who can alter this repo's privileged workflow or its imported mail/crypto modules can modify it to read and exfiltrate the mailbox secret. The existing GitHub integration has write access, so agents who can modify this repository could bypass code-level safeguards. We could not confirm that protected workflow ownership or a required reviewer has been configured, and GitHub rulesets were unavailable on this private repository via the present connection. A dedicated protected deployment would be stronger.
+**The user has now entered SHA_PASSWORD after accepting this risk.** GitHub Actions checks out code from main. Anyone who can alter this repo's privileged workflow or its imported mail/crypto modules can modify it to read and exfiltrate the mailbox secret. The existing GitHub integration has write access, so agents who can modify this repository could bypass code-level safeguards. We could not confirm that protected workflow ownership or a required reviewer has been configured, and GitHub rulesets were unavailable on this private repository via the present connection. A dedicated protected deployment would be stronger.
 
 The bridge is not a native ChatGPT plugin. ChatGPT can drive it using available GitHub issue-comment operations plus an isolated cryptography runtime, but each operation requires an ephemeral handshake and may be limited by Actions startup/timeout. It does not run in the background or give any always-on mail access.
 
@@ -78,7 +78,7 @@ GitHub's environment secrets can limit access to jobs that reference an environm
 
 References: https://docs.github.com/en/actions/concepts/security/secrets and https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments
 
-The encrypted no-secret ping test completed successfully on October 16, 2026. The **live mail login remains untested**, and a successful ping is not equivalent to authorization to supply a personal mailbox password.
+The encrypted no-secret ping test completed successfully on October 16, 2026. The **live mail login has been tested and rejected by both IMAP and SMTP**, and a successful ping is not equivalent to authorization to supply a personal mailbox password.
 
 
 ## October 16, 2026: IMAP TLS compatibility diagnosis
@@ -117,3 +117,15 @@ If both reject it, verify the `SHAW_PASSWORD` secret contains the actual
 mailbox password (not necessarily a separate provider account password).
 Avoid repeated automated login retries or account lockouts. The diagnostic
 is opt-in and remains password-free in CI.
+
+
+## Current recovery instructions (2026-10-16)
+
+1. Confirm `https://webmail.shaw.ca` accepts the **email account password** for `ian.wallace@shaw.ca`. Rogers documents that MyRogers (Shaw) account credentials may be different.
+2. From a desktop browser, in Webmail Classic mode, enable **Preferences > Access from Other Mail Client**. Rogers says this cannot be configured from mobile devices.
+3. If Webmail authentication fails, reset the **email address password** (not the MyRogers login password) using the MyRogers (Shaw) portal. Enter the corrected mailbox password in GitHub Actions `SHAW_PASSWORD` secret, replacing the previous value. Never paste it into issue comments or chat.
+4. Once the user reports those changes, perform one encrypted `diagnose` operation or `folders` request. If successful, do a small `inbox` header-only read, and only send if the user gives an explicit new instruction with recipients and content.
+
+Official references:
+- https://www.rogers.com/support/internet/shaw-email/changing-your-shaw-email-password
+- https://www.rogers.com/support/internet/shaw-email/which-email-setup-method-is-right-for-me
