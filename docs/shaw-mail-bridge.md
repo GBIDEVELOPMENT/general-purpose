@@ -1,6 +1,6 @@
 # Shaw mail integration: status and usage
 
-> **Live status, October 16, 2026:** The user has configured the `SHAW_PASSWORD` Actions secret and accepted the documented repository-writing risk. The encrypted GitHub bridge works. A live TLS compatibility problem was fixed using validated ECDHE. A later authentication-only check returned `authentication_rejected` for **both IMAP and SMTP**. No folders/messages have been retrieved and no email has been sent. **Do not keep retrying** until the password/Classic-mode settings have been verified or updated. The password must be the Shaw **email/Webmail** password, which Rogers says can differ from MyRogers (Shaw) credentials. Follow the instructions below and see issue #5.
+> **Live status, October 16, 2026:** Shaw IMAP now authenticates, folder enumeration has succeeded, and a three-message, header-only INBOX check succeeded through the encrypted gateway. SMTP is **not** yet accepted for account login or sending. The Linux (Azure) runner received `554 Connection Rejected` from Shaw's cloudfilter gateway, identifying a Spamhaus listing for the runner IP. An independent no-password macOS runner, hosted in GitHub's macOS cloud, was accepted with certificate-verified TLS 1.2/ECDHE and AUTH advertised. This change adds a separate macOS SMTP lane for a subsequent authentication-only test. No email has been sent. The user explicitly authorized these mailbox diagnostic tests.
 
 The private chat-scheduler repository contains an offline-testable, **opt-in** IMAP/SMTP client for the existing Shaw account `ian.wallace@shaw.ca`. It is separate from recurring agent-audit records.
 
@@ -151,3 +151,31 @@ must remain gated behind a separate user instruction, regardless of
 the diagnostic result.
 
 Official Shaw settings: https://www.rogers.com/support/internet/shaw-email-service-details-and-settings
+
+
+## SMTP runner separation and delivery safeguards, October 16, 2026
+
+The GitHub issue #6 gateway supports two exact, owner-authored start requests:
+
+- `SHAWMAIL2 {"version":2,"kind":"start"}`: Linux Ubuntu, restricted to `ping`, `folders`, `inbox`, `search`, and `read`. It **cannot send**.
+- `SHAWMAIL2 {"version":2,"kind":"start_smtp"}`: GitHub macOS cloud, restricted to `ping`, `diagnose`, and `send`. It **cannot read mailbox data**.
+
+These request kinds are unencrypted metadata that reveal only the lane. All operation parameters, credentials and responses remain encrypted, with the same ephemeral X25519 handshake as before. A GitHub macOS runner consumes more Actions minutes than a Linux runner, so it is used only for SMTP-related operations.
+
+A no-password diagnostic from GitHub's macOS cloud connected to
+`mail.shaw.ca:587`, received EHLO status 250, successfully completed STARTTLS
+with certificate verification and `ECDHE-RSA-AES256-GCM-SHA384`, and saw
+SMTP AUTH advertised. **SMTP login and delivery are not yet live-verified.**
+
+`mail.send` and the encrypted response now distinguish complete from partial
+recipient acceptance, recording counts of submitted, accepted and rejected
+recipients. The code closes the SMTP transport without risking a spurious error
+from the implicit QUIT command *after* successful acceptance. Sending still
+requires an explicit new user instruction naming recipients and content.
+If delivery acknowledgement is lost after the operation starts, **do not
+automatically retry**, as an email may already have been accepted.
+
+Linux runner failure (no credentials): Shaw's SMTP server rejected one Azure
+runner with status `554` and a Spamhaus IP-blocklisting policy. This is about
+the sending network, not the user's Shaw password or message content.
+No IP-rotation retry loop is implemented.

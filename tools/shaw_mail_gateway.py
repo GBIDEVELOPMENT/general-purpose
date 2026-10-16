@@ -31,7 +31,10 @@ MAX_MAIL_LIMIT = 15
 def parse_comment(body):
     if not isinstance(body, str) or not body.startswith(PREFIX) or len(body) > 52000:
         return None
-    value = json.loads(body[len(PREFIX):])
+    try:
+        value = json.loads(body[len(PREFIX):])
+    except (json.JSONDecodeError, TypeError, ValueError):
+        return None
     return value if isinstance(value, dict) and value.get("version") == 2 else None
 
 
@@ -133,13 +136,13 @@ def operate(operation, token, ready, request_id):
             os.environ["SHAW_ALLOW_SEND"] = "yes"
             try:
                 with contextlib.redirect_stdout(io.StringIO()):
-                    mail.send(SimpleNamespace(draft=str(path), confirm=True))
+                    submission = mail.send(SimpleNamespace(draft=str(path), confirm=True))
             finally:
                 if old is None:
                     os.environ.pop("SHAW_ALLOW_SEND", None)
                 else:
                     os.environ["SHAW_ALLOW_SEND"] = old
-        return {"ok": True, "sent": True}
+        return {"ok": True, **submission}
 
     args = SimpleNamespace(command=name, folder=operation.get("folder", "INBOX"),
                            limit=operation.get("limit", 10),
@@ -157,7 +160,25 @@ def eligible(event):
         return False
     if comment.get("user", {}).get("login") != OWNER:
         return False
-    return parse_comment(comment.get("body")) == {"version": 2, "kind": "start"}
+    return parse_comment(comment.get("body")) in (
+        {"version": 2, "kind": "start"},
+        {"version": 2, "kind": "start_smtp"},
+    )
+
+
+
+def validate_lane(start_kind, operation):
+    """The Linux read lane cannot send; the macOS lane cannot read mailbox data."""
+    name = validate_operation(operation)
+    if start_kind == "start":
+        if name not in ("ping", "folders", "inbox", "search", "read"):
+            raise ValueError("Operation not permitted on read lane")
+    elif start_kind == "start_smtp":
+        if name not in ("ping", "diagnose", "send"):
+            raise ValueError("Operation not permitted on SMTP lane")
+    else:
+        raise ValueError("Unknown lane")
+    return name
 
 
 def run(event, token):
@@ -166,6 +187,7 @@ def run(event, token):
     if event.get("repository", {}).get("full_name") != REPOSITORY:
         return False
     started_comment = event["comment"]
+    start_kind = parse_comment(started_comment["body"])["kind"]
     private, ready = crypto.server_session()
     ready["reply_to"] = started_comment["id"]
     post_comment(token, ready)
@@ -192,6 +214,7 @@ def run(event, token):
             try:
                 body = crypto.server_command(private, command, ready["session"])
                 request_id = body["id"]
+                validate_lane(start_kind, body["operation"])
                 result = operate(body["operation"], token, ready, request_id)
             except Exception as exc:
                 # Server errors, message contents and credentials are not logged.
