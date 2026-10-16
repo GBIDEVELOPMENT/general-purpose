@@ -1,0 +1,44 @@
+name: Shaw SMTP greeting classification (no secrets)
+on:
+  push:
+    branches: [diagnostics/shaw-smtp-greeting-554]
+    paths:
+      - .github/workflows/shaw-smtp-greeting-classify.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Inspect server greeting, without authenticating or sending
+        shell: bash
+        run: |
+          python - <<'PY'
+          import socket, smtplib, ssl
+          host = "mail.shaw.ca"
+          addresses=sorted(set(address[4][0] for address in socket.getaddrinfo(host,587,type=socket.SOCK_STREAM)))
+          print("Resolved address count:",len(addresses))
+          smtp=None
+          try:
+              smtp=smtplib.SMTP(host,587,timeout=10)
+              print("Greeting: 220 (accepted)")
+              status,_=smtp.ehlo()
+              print("EHLO code:",status,"STARTTLS advertised:",smtp.has_extn("starttls"))
+              if smtp.has_extn("starttls"):
+                  ctx=ssl.create_default_context()
+                  ctx.minimum_version=ssl.TLSVersion.TLSv1_2
+                  smtp.starttls(context=ctx)
+                  print("Verified TLS:",smtp.sock.version(),"cipher:",smtp.sock.cipher()[0])
+          except smtplib.SMTPConnectError as e:
+              reason=e.smtp_error.decode("utf-8",errors="replace") if isinstance(e.smtp_error,bytes) else str(e.smtp_error)
+              print("GREET_REJECTED",int(e.smtp_code),"reason:",reason[:300].replace("\n"," "))
+          except smtplib.SMTPResponseException as e:
+              print("SMTP_RESPONSE_CODE",int(e.smtp_code))
+          except (OSError,ssl.SSLError,smtplib.SMTPException) as e:
+              print("OTHER_CONNECTION_ERROR",type(e).__name__)
+          finally:
+              if smtp is not None:
+                  smtp.close()
+          PY
