@@ -199,7 +199,7 @@ class RunnerTests(unittest.TestCase):
              "attachments": []}
         ]
         with patch.dict(os.environ, {"SHAW_PASSWORD": "test-only"}), \
-             patch.object(gateway.mail, "fetch") as fetched, \\
+             patch.object(gateway.mail, "fetch") as fetched, \
              contextlib.redirect_stdout(io.StringIO()) as output:
             fetched.side_effect = lambda args: print(json.dumps(original))
             result = gateway.operate(
