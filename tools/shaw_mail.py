@@ -64,7 +64,7 @@ def message_summary(uid, raw, include_body=False):
             payload = part.get_payload(decode=True) or b""
             charset = part.get_content_charset() or "utf-8"
             bodies.append({"content_type": part.get_content_type(),
-                           "text": payload.decode(charset, errors="replace")[:50000]})
+                           "text": payload.decode(charset, errors="replace")})
         item["body_parts"] = bodies
         item["attachments"] = [
             {"filename": decode(part.get_filename() or ""),
