@@ -86,6 +86,18 @@ class RunnerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             gateway.validate_lane("start", {"name": "diagnose"})
 
+    def test_activesync_probe_is_smtp_lane_only(self):
+        self.assertEqual(gateway.validate_lane("start_smtp", {"name": "activesync"}), "activesync")
+        with self.assertRaises(ValueError):
+            gateway.validate_lane("start", {"name": "activesync"})
+        with patch.dict(os.environ, {"SHAW_PASSWORD": "dummy"}), \
+             patch.object(gateway.active_sync, "discover", return_value={
+                 "http_status": 200, "supports_sendmail": True
+             }) as discover:
+            result = gateway.operate({"name": "activesync"}, "token", {"session": "stub"}, "a"*32)
+            self.assertTrue(result["data"]["supports_sendmail"])
+            discover.assert_called_once()
+
     def test_smtp_start_restricts_actor_and_exact_body(self):
         self.event["comment"]["body"] = 'SHAWMAIL2 {"version":2,"kind":"start_smtp"}'
         self.assertTrue(gateway.eligible(self.event))
