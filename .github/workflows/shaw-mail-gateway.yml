@@ -18,8 +18,14 @@ jobs:
     if: >-
       github.event.issue.number == 6 &&
       github.event.comment.user.login == 'gamesbyian' &&
-      startsWith(github.event.comment.body, 'SHAWMAIL2 {"version":2,"kind":"start"}')
-    runs-on: ubuntu-latest
+      (
+        startsWith(github.event.comment.body, 'SHAWMAIL2 {"version":2,"kind":"start"}') ||
+        startsWith(github.event.comment.body, 'SHAWMAIL2 {"version":2,"kind":"start_smtp"}')
+      )
+    # macOS uses GitHub's macOS cloud rather than Azure; Shaw blocks some
+    # Azure GitHub runner IPs with a Spamhaus pre-authentication SMTP 554.
+    # Ordinary IMAP requests stay on the cheaper Linux runner.
+    runs-on: ${{ startsWith(github.event.comment.body, 'SHAWMAIL2 {"version":2,"kind":"start_smtp"}') && 'macos-latest' || 'ubuntu-latest' }}
     timeout-minutes: 4
     steps:
       - name: Checkout trusted default branch
