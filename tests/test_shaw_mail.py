@@ -59,6 +59,28 @@ class MailTests(unittest.TestCase):
         self.assertEqual(mail.compose(draft)["Subject"], "Hi")
 
     @patch.dict(os.environ, FAKE_ENV)
+    def test_header_injection_is_rejected(self):
+        draft = {"to": ["safe@example.org, attacker@example.org"], "subject": "Hi", "body": "Hello"}
+        with self.assertRaises(ValueError):
+            mail.compose(draft)
+        draft["to"] = ["safe@example.org"]
+        draft["subject"] = "Hi\\nBcc: attacker@example.org"
+        with self.assertRaises(ValueError):
+            mail.compose(draft)
+
+    @patch.dict(os.environ, FAKE_ENV)
+    def test_attachment_metadata_only(self):
+        from email.message import EmailMessage
+        msg = EmailMessage()
+        msg["From"] = "friend@example.org"
+        msg["Subject"] = "Report"
+        msg.set_content("Text")
+        msg.add_attachment(b"binary", maintype="application", subtype="octet-stream", filename="report.bin")
+        result = mail.message_summary(b"42", msg.as_bytes(), True)
+        self.assertEqual(result["attachments"][0]["filename"], "report.bin")
+        self.assertEqual(result["attachments"][0]["size_bytes"], 6)
+
+    @patch.dict(os.environ, FAKE_ENV)
     def test_folder_discovery_is_read_only(self):
         conn = MagicMock()
         conn.list.return_value = ("OK", [b'(\\HasNoChildren) "/" "Sent Items"'])
