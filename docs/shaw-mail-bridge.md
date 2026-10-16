@@ -158,7 +158,7 @@ Official Shaw settings: https://www.rogers.com/support/internet/shaw-email-servi
 The GitHub issue #6 gateway supports two exact, owner-authored start requests:
 
 - `SHAWMAIL2 {"version":2,"kind":"start"}`: Linux Ubuntu, restricted to `ping`, `folders`, `inbox`, `search`, and `read`. It **cannot send**.
-- `SHAWMAIL2 {"version":2,"kind":"start_smtp"}`: GitHub macOS cloud, restricted to `ping`, `diagnose`, and `send`. It **cannot read mailbox data**.
+- `SHAWMAIL2 {"version":2,"kind":"start_smtp"}`: GitHub macOS cloud, restricted to `ping`, `diagnose`, `activesync` and user-authorized `send`. It **cannot read mailbox data**.
 
 These request kinds are unencrypted metadata that reveal only the lane. All operation parameters, credentials and responses remain encrypted, with the same ephemeral X25519 handshake as before. A GitHub macOS runner consumes more Actions minutes than a Linux runner, so it is used only for SMTP-related operations.
 
