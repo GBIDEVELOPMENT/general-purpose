@@ -71,6 +71,29 @@ class RunnerTests(unittest.TestCase):
         self.event["comment"]["user"]["login"] = "attacker"
         self.assertFalse(gateway.eligible(self.event))
 
+    def test_separate_mail_lanes(self):
+        self.assertEqual(gateway.validate_lane("start", {"name": "inbox", "folder": "INBOX"}), "inbox")
+        self.assertEqual(gateway.validate_lane("start_smtp", {"name": "diagnose"}), "diagnose")
+        valid_draft = {
+            "name": "send", "confirm": True,
+            "draft": {"to": ["test@example.org"], "subject": "Safe", "body": "Sample"}
+        }
+        self.assertEqual(gateway.validate_lane("start_smtp", valid_draft), "send")
+        with self.assertRaises(ValueError):
+            gateway.validate_lane("start", valid_draft)
+        with self.assertRaises(ValueError):
+            gateway.validate_lane("start_smtp", {"name": "read", "uid": "1"})
+        with self.assertRaises(ValueError):
+            gateway.validate_lane("start", {"name": "diagnose"})
+
+    def test_smtp_start_restricts_actor_and_exact_body(self):
+        self.event["comment"]["body"] = 'SHAWMAIL2 {"version":2,"kind":"start_smtp"}'
+        self.assertTrue(gateway.eligible(self.event))
+        self.event["comment"]["body"] += ' extra'
+        self.assertFalse(gateway.eligible(self.event))
+        self.event["comment"]["user"]["login"] = "attacker"
+        self.assertFalse(gateway.eligible(self.event))
+
     def test_full_issue_roundtrip_ping(self):
         handshake, command_info, result = {}, {}, []
         def poster(_token, value):
