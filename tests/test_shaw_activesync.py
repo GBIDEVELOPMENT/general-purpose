@@ -23,7 +23,8 @@ class ActiveSyncTests(unittest.TestCase):
             "MS-ASProtocolCommands": "Sync,SendMail,Ping",
         }
         with patch.object(eas, "build_opener") as opener:
-            opener.return_value.open.return_value.__enter__.return_value = resp
+            opener.return_value.open.return_value = resp
+            resp.__enter__.return_value = resp
             result = eas.discover()
             self.assertTrue(result["auth_accepted"])
             self.assertTrue(result["supports_sendmail"])
