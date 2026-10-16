@@ -23,6 +23,8 @@ jobs:
               except socket.gaierror as exc:
                   print("DNS",host,"error",exc.errno)
           ctx = ssl.create_default_context()
+          ctx.minimum_version=ssl.TLSVersion.TLSv1_2
+          ctx.set_ciphers("ECDHE:!DHE:!aNULL:!eNULL")
           endpoints=[
               "https://wm.shaw.ca/Microsoft-Server-ActiveSync",
               "https://wm.shaw.ca/",
@@ -53,6 +55,10 @@ jobs:
                                 "auth_schemes",schemes[:5],
                                 "redirect_hostname",urllib.parse.urlsplit(loc).hostname if loc else "")
                   except Exception as exc:
+                      reason=getattr(exc,"reason",exc)
                       print(urllib.parse.urlsplit(url).hostname,method,
-                            "error",type(exc).__name__)
+                            "error",type(exc).__name__,
+                            "reason_type",type(reason).__name__,
+                            "ssl_reason",getattr(reason,"reason",None),
+                            "verify_code",getattr(reason,"verify_code",None))
           PY
