@@ -15,7 +15,7 @@ Live IMAP authentication and searches succeeded. SMTP message transmission has N
 
 ## CLI commands
 
-Python 3.10+, no external libraries. The account address has a repository-level default; it can be overridden with `SHAW_EMAIL`. The password is **never** in the repository. In a trusted runtime the password must be injected using a secret manager (for a future GitHub Actions integration, its secret name would be `SHAW_PASSWORD`).
+Python 3.10+, no external libraries. The account address has a repository-level default; it can be overridden with `SHAW_EMAIL`. The password is **never** in the repository. The trusted GitHub Actions workflow currently receives the configured `SHAW_PASSWORD` secret, which is never committed as source code.
 
 ```sh
 python tools/shaw_mail.py folders
