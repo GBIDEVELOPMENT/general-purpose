@@ -133,13 +133,13 @@ def operate(operation, token, ready, request_id):
             os.environ["SHAW_ALLOW_SEND"] = "yes"
             try:
                 with contextlib.redirect_stdout(io.StringIO()):
-                    mail.send(SimpleNamespace(draft=str(path), confirm=True))
+                    submission = mail.send(SimpleNamespace(draft=str(path), confirm=True))
             finally:
                 if old is None:
                     os.environ.pop("SHAW_ALLOW_SEND", None)
                 else:
                     os.environ["SHAW_ALLOW_SEND"] = old
-        return {"ok": True, "sent": True}
+        return {"ok": True, **submission}
 
     args = SimpleNamespace(command=name, folder=operation.get("folder", "INBOX"),
                            limit=operation.get("limit", 10),
