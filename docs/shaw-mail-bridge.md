@@ -192,3 +192,43 @@ No IP-rotation retry loop is implemented.
 - The credential resides only in GitHub Actions `SHAW_PASSWORD`. Keep source pin and repository-writing risks in view.
 
 Evidence and follow-through: issue #5, PRs #15–#18, and secret-free diagnostic workflows on `diagnostics/shaw-smtp-greeting-554`, `diagnostics/shaw-smtp-macos-egress`, `diagnostics/shaw-webmail-https-discovery`.
+
+## Local encrypted request helper
+
+`tools/shaw_gateway_client.py` makes future mailbox tasks easier without
+granting GitHub Actions direct access to the local session private key.
+It uses only the existing `shaw_mail_protocol.py` and the already-pinned
+cryptography library. It does not have GitHub API credentials and **does not
+read the Shaw mailbox by itself**.
+
+An authorized operator using the existing GitHub connector:
+
+1. Posts the exact `SHAWMAIL2` start comment in private issue #6.
+2. Saves the matching bot `ready` JSON locally as `ready.json`.
+3. Constructs a single intended operation in a private local `operation.json`
+   file, for instance `{"name":"inbox","folder":"Sent","limit":5}`.
+4. Runs `python tools/shaw_gateway_client.py prepare --ready-file ready.json
+   --operation-file operation.json --state-file /tmp/shaw-private-state.json`.
+   This prints only encrypted command metadata and stores the ephemeral private
+   key with `0600` permissions. Send operations require an additional
+   `--authorize-send-to` argument matching the exact one allowed recipient.
+5. Posts that encrypted command to issue #6, obtains the bot result, and saves
+   the result JSON as `reply.json`. Run
+   `python tools/shaw_gateway_client.py complete --reply-file reply.json
+   --state-file /tmp/shaw-private-state.json` in the trusted local runtime.
+   It decrypts the response locally and removes the private state file after
+   successful authentication and decryption.
+
+**Do not commit** any of these local `*.json` operation/response/state files,
+pipe decrypted mailbox data to GitHub logs, or reuse private state for a new
+session. The read-only `start` lane cannot send. Only `start_smtp` permits
+a separately authorized send. Sending can be ambiguous if the SMTP server
+closes unexpectedly; consult the destination inbox before even considering
+a repeat.
+
+### Live acceptance update
+
+On October 16, 2026, an encrypted `inbox` request against the actual `Sent`
+folder successfully decrypted six message headers, demonstrating that folder
+selection and header-only reads work beyond the main inbox. No message bodies
+were needed for this verification.
