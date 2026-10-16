@@ -68,3 +68,14 @@ To use this from a future authorized chat session: create a fresh in-memory clie
 5. Test \`folders\`, then harmless \`inbox\`, then \`read\`; do not send a test email without direct user instruction.
 
 For architectural/security follow-through see issue #5.
+
+
+## GitHub Actions secret-scope risk
+
+GitHub documents that a **repository-level Actions secret is accessible to every workflow in that repository**, not just the workflow referencing it today. This matters because chat-scheduler contains other automations and is writable by other project agents. The mail gateway now pins its runtime checkout to audited source commit `12a8c032a5cd9e00a805c1bfb5f5a6f5f9a38601`, limiting accidental imported-code changes. **That pin cannot prevent a writer from editing the workflow itself or introducing another secret-consuming workflow.**
+
+GitHub's environment secrets can limit access to jobs that reference an environment, but the environment and rulesets APIs were unavailable for this private repository with the current account/integration. Environment-scoped secrets alone also cannot defend against an authorized writer who can change the workflow to request that environment. The strongest boundary is a dedicated protected credential service or repository whose privileged code is inaccessible to other coding agents.
+
+References: https://docs.github.com/en/actions/concepts/security/secrets and https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments
+
+The encrypted no-secret ping test completed successfully on October 16, 2026. The **live mail login remains untested**, and a successful ping is not equivalent to authorization to supply a personal mailbox password.
