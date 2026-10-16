@@ -20,6 +20,8 @@ Its sensitive surfaces are:
 - `tools/shaw_imap_codec.py`
 - `tools/shaw_mail_protocol.py`
 - `tools/shaw_mail_gateway.py`
+- `tools/shaw_gateway_client.py` (local private-key helper)
+- `tools/shaw_activesync.py` (bounded HTTPS capability probes)
 - GitHub issue #6 (encrypted exchange) and issue #5 (implementation roadmap)
 - Actions secret `SHAW_PASSWORD` if/when it is eventually configured
 
@@ -46,3 +48,19 @@ outbound email.
 These instructions reduce accidental cross-project interference. They are not
 cryptographic access controls and do not replace protected GitHub workflow
 ownership.
+
+
+## Latest Shaw integration acceptance (October 16, 2026)
+
+- Read-only encrypted IMAP access, including six decrypted Sent-folder
+  headers, has passed a live test.
+- One user-authorized SMTP test to the designated Gmail destination returned
+  SMTPServerDisconnected. No delivery was detected in Gmail. **Never repeat
+  that specific test automatically** even if its acknowledgement was lost.
+- Documented HTTPS ActiveSync OPTIONS is reachable but failed authentication
+  (403 local username; 401 domain-qualified). No ActiveSync sending exists.
+- No additional SMTP or ActiveSync retries without a materially new supported
+  authentication or trusted-network premise. Never attempt to evade a
+  provider's IP reputation policy by cycling runner IP addresses.
+- Use docs/shaw-mail-bridge.md as the current technical authority. Keep only
+  encrypted payloads in GitHub comments, not plaintext messages.
