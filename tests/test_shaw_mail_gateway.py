@@ -98,6 +98,21 @@ class RunnerTests(unittest.TestCase):
             self.assertTrue(result["data"]["supports_sendmail"])
             discover.assert_called_once()
 
+    def test_domain_eas_probe_is_explicit_and_sanitized(self):
+        with self.assertRaises(ValueError):
+            gateway.validate_operation({"name":"activesync","identity":"other"})
+        self.assertEqual(gateway.validate_lane("start_smtp", {
+            "name":"activesync","identity":"domain"
+        }), "activesync")
+        with patch.dict(os.environ, {"SHAW_PASSWORD":"dummy"}), \
+             patch.object(gateway.active_sync, "discover", return_value={
+                 "http_status":403, "auth_accepted":False
+             }) as probe:
+            outcome = gateway.operate({"name":"activesync","identity":"domain"},
+                                      "token",{"session":"stub"},"a"*32)
+            self.assertEqual(outcome["data"]["http_status"],403)
+            probe.assert_called_once_with("domain")
+
     def test_smtp_start_restricts_actor_and_exact_body(self):
         self.event["comment"]["body"] = 'SHAWMAIL2 {"version":2,"kind":"start_smtp"}'
         self.assertTrue(gateway.eligible(self.event))
