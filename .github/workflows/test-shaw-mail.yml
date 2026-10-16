@@ -5,6 +5,7 @@ on:
     paths:
       - 'tools/shaw_*.py'
       - 'tests/test_shaw_mail_gateway.py'
+      - 'tests/test_shaw_secret_boundary.py'
       - 'tests/test_shaw_mail.py'
       - '.github/workflows/test-shaw-mail.yml'
       - '.github/workflows/shaw-mail-gateway.yml'
@@ -33,4 +34,4 @@ jobs:
       - name: Compile mail client, helper and gateway
         run: python -m py_compile tools/shaw_mail.py tools/shaw_imap_codec.py tools/shaw_mail_protocol.py tools/shaw_mail_gateway.py
       - name: Run isolated offline tests
-        run: python -m unittest discover -s tests -p 'test_shaw_mail*.py' -v
+        run: python -m unittest discover -s tests -p 'test_shaw_*.py' -v
