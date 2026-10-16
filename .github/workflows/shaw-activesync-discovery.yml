@@ -1,0 +1,52 @@
+name: Probe documented Shaw ActiveSync HTTPS (no secrets)
+on:
+  push:
+    branches: [research/shaw-activesync-https-20261016]
+    paths: ['.github/workflows/shaw-activesync-discovery.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: OPTIONS capability discovery with no account credentials
+        shell: bash
+        run: |
+          python - <<'PY'
+          import urllib.request, urllib.error, ssl, urllib.parse
+          ctx = ssl.create_default_context()
+          endpoints=[
+              "https://wm.shaw.ca/Microsoft-Server-ActiveSync",
+              "https://wm.shaw.ca/",
+              "https://webmail.shaw.ca/Microsoft-Server-ActiveSync"
+          ]
+          for url in endpoints:
+              for method in ("OPTIONS", "HEAD"):
+                  req=urllib.request.Request(url,method=method,headers={
+                      "User-Agent":"ChatScheduler-Discovery/1.0"
+                  })
+                  try:
+                      try:
+                          response=urllib.request.urlopen(req,timeout=10,context=ctx)
+                      except urllib.error.HTTPError as exc:
+                          response=exc
+                      with response:
+                          headers=response.headers
+                          auth=headers.get("WWW-Authenticate","")
+                          schemes=sorted(set(p.split()[0] for p in auth.split(",") if p.strip() and " " in p))
+                          loc=headers.get("Location","")
+                          print(urllib.parse.urlsplit(url).netloc,
+                                urllib.parse.urlsplit(url).path,method,
+                                "status",response.status,
+                                "server",headers.get("Server","")[:80],
+                                "protocol_versions",headers.get("MS-ASProtocolVersions","")[:180],
+                                "commands",headers.get("MS-ASProtocolCommands","")[:500],
+                                "auth_present",bool(auth),
+                                "auth_schemes",schemes[:5],
+                                "redirect_hostname",urllib.parse.urlsplit(loc).hostname if loc else "")
+                  except Exception as exc:
+                      print(urllib.parse.urlsplit(url).hostname,method,
+                            "error",type(exc).__name__)
+          PY
