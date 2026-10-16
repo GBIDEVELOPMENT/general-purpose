@@ -1,0 +1,41 @@
+name: Shaw Webmail HTTPS discovery (no credentials)
+on:
+  push:
+    branches: [diagnostics/shaw-webmail-https-discovery]
+    paths: ['.github/workflows/diagnose-shaw-webmail.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Check Webmail HTTP interface paths without login
+        shell: bash
+        run: |
+          python - <<'PY'
+          import re, ssl, urllib.request, urllib.error
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  return None
+          opener=urllib.request.build_opener(
+              NoRedirect, urllib.request.HTTPSHandler(context=ssl.create_default_context()))
+          for path in ("/", "/service/soap/", "/service/soap", "/zimbra/"):
+              try:
+                  req=urllib.request.Request("https://webmail.shaw.ca"+path,
+                      headers={"User-Agent":"Mozilla/5.0 Shaw integration diagnostic"})
+                  try:
+                      res=opener.open(req,timeout=12)
+                  except urllib.error.HTTPError as e:
+                      res=e
+                  data=res.read(32000).decode("utf-8","replace")
+                  marks=[term for term in ("Zimbra", "zimbra", "soap", "SOAP", "Shaw Email",
+                      "oauth", "login", "Sign in") if term in data]
+                  print(path,"status",res.status,"type",res.headers.get("Content-Type","")[:70],
+                      "zimbra_markers",marks,"bytes_sampled",len(data))
+                  loc=res.headers.get("Location","")
+                  if loc: print(path,"redirect_host_only",urllib.request.urlparse(loc).netloc)
+              except Exception as e:
+                  print(path,"connection_error",type(e).__name__)
+          PY
