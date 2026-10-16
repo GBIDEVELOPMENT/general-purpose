@@ -19,3 +19,7 @@ See `docs/agent-audit-protocol.md` for the required run procedure and controlled
 For the separate account-free @ianmakesjokes collector and its evidence-producing
 GitHub Actions workflow, see [public tweet recovery](docs/public-tweet-recovery.md).
 This utility does not change the recurring-agent audit ledger.
+
+## Shaw email integration (opt-in)
+
+This repository also contains a separate [Shaw IMAP/SMTP command-line client](docs/shaw-mail-bridge.md) for read-only mailbox and folder access and explicitly approved outgoing messages. The client is **not connected to ChatGPT yet** and no workflow consumes a mailbox password. Offline safety tests run without secrets.
