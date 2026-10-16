@@ -168,6 +168,51 @@ class RunnerTests(unittest.TestCase):
                 "mail_secret_not_configured"
             )
 
+    def test_long_sent_message_reports_precise_truncation(self):
+        source = {
+            "uid": "285721", "from": "a@example.com", "to": "b@example.com",
+            "subject": "Long Unicode mail", "date": "2026-10-16",
+            "message_id": "<example>",
+            "body_parts": [
+                {"content_type": "text/plain", "text": "é" * 12000},
+                {"content_type": "text/html", "text": "<p>" + "H" * 30000 + "</p>"},
+            ],
+            "attachments": [],
+        }
+        result = gateway.bounded_read_reply([source])[0]
+        self.assertTrue(result["body_truncated"])
+        self.assertEqual(result["body_parts"][0]["original_bytes"], 24000)
+        self.assertEqual(result["body_parts"][0]["returned_bytes"], 12000)
+        self.assertEqual(result["body_parts"][1]["returned_bytes"], 6000)
+        self.assertTrue(all(part["truncated"] for part in result["body_parts"]))
+        self.assertLess(len(json.dumps({"ok": True, "data": [result]},
+                                       ensure_ascii=False).encode("utf-8")), 30000)
+
+    def test_short_sent_message_is_complete_and_readonly(self):
+        original = [
+            {"uid": "37", "from": "me@shaw.ca", "to": "friend@example.com",
+             "subject": "Hello", "date": "Friday", "message_id": "<1>",
+             "body_parts": [
+                 {"content_type": "text/plain", "text": "Fully preserved text"},
+                 {"content_type": "text/html", "text": "<p>Fully preserved text</p>"},
+             ],
+             "attachments": []}
+        ]
+        with patch.dict(os.environ, {"SHAW_PASSWORD": "test-only"}), \
+             patch.object(gateway.mail, "fetch") as fetched, \\
+             contextlib.redirect_stdout(io.StringIO()) as output:
+            fetched.side_effect = lambda args: print(json.dumps(original))
+            result = gateway.operate(
+                {"name": "read", "folder": "Sent", "uid": "37"},
+                "token", {"session": "dummy"}, "e"*32
+            )
+        self.assertTrue(result["ok"])
+        self.assertFalse(result["data"][0]["body_truncated"])
+        self.assertEqual(result["data"][0]["body_parts"][0]["text"], "Fully preserved text")
+        self.assertEqual(result["data"][0]["body_parts"][1]["text"], "<p>Fully preserved text</p>")
+        self.assertEqual(output.getvalue(), "")
+        self.assertEqual(fetched.call_args.args[0].folder, "Sent")
+
     def test_no_plaintext_mail_from_mock(self):
         with patch.dict(os.environ, {"SHAW_PASSWORD": "test-password"}), \
              patch.object(gateway.mail, "fetch") as fetch:
