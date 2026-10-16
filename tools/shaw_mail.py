@@ -11,6 +11,7 @@ import smtplib
 import ssl
 import sys
 from pathlib import Path
+from shaw_imap_codec import encode_mailbox, parse_folder_row, quoted, search_arguments
 
 IMAP_HOST = "imap.shaw.ca"
 SMTP_HOST = "mail.shaw.ca"
@@ -62,21 +63,18 @@ def fetch(args):
             status, folders = conn.list()
             if status != "OK":
                 raise RuntimeError("Could not enumerate folders")
-            print(json.dumps([x.decode("ascii", errors="replace") for x in (folders or []) if x], indent=2))
+            print(json.dumps([parse_folder_row(x) for x in (folders or []) if x], indent=2, ensure_ascii=False))
             return
-        status, _ = conn.select(args.folder, readonly=True)
+        status, _ = conn.select(quoted(encode_mailbox(args.folder)), readonly=True)
         if status != "OK":
-            raise RuntimeError("Could not select INBOX")
+            raise RuntimeError("Could not select requested folder")
         if args.command == "read":
             if not args.uid.isascii() or not args.uid.isdecimal() or int(args.uid) <= 0:
                 raise ValueError("UID must be a positive integer")
             uids = [args.uid.encode("ascii")]
         else:
-            # Search is performed server-side. Never interpolate arbitrary IMAP syntax.
             if args.command == "search":
-                if "\r" in args.query or "\n" in args.query:
-                    raise ValueError("Invalid search query")
-                criterion = ["TEXT", '"' + args.query.replace("\\\\", "\\\\\\\\").replace('"', '\\\\"') + '"']
+                criterion = search_arguments(args.query)
             else:
                 criterion = ["ALL"]
             status, data = conn.uid("SEARCH", None, *criterion)
@@ -85,7 +83,7 @@ def fetch(args):
             uids = (data[0] or b"").split()[-args.limit:][::-1]
         items = []
         for uid in uids:
-            status, data = conn.uid("FETCH", uid, "(BODY.PEEK[])")
+            status, data = conn.uid("FETCH", uid, "(BODY.PEEK[])" if args.command == "read" else "(BODY.PEEK[HEADER.FIELDS (FROM TO SUBJECT DATE MESSAGE-ID)])")
             if status != "OK":
                 raise RuntimeError("Fetch failed")
             raw = next((part[1] for part in data if isinstance(part, tuple)), None)
