@@ -1,6 +1,8 @@
 # Shaw mail integration: status and usage
 
-> **Live status, October 16, 2026:** The user has configured the `SHAW_PASSWORD` Actions secret and accepted the documented repository-writing risk. The encrypted GitHub bridge works. A live TLS compatibility problem was fixed using validated ECDHE. A later authentication-only check returned `authentication_rejected` for **both IMAP and SMTP**. No folders/messages have been retrieved and no email has been sent. **Do not keep retrying** until the password/Classic-mode settings have been verified or updated. The password must be the Shaw **email/Webmail** password, which Rogers says can differ from MyRogers (Shaw) credentials. Follow the instructions below and see issue #5.\n\nThe private chat-scheduler repository contains an offline-testable, **opt-in** IMAP/SMTP client for the existing Shaw account `ian.wallace@shaw.ca`. It is separate from recurring agent-audit records.
+> **Live status, October 16, 2026:** The user has configured the `SHAW_PASSWORD` Actions secret and accepted the documented repository-writing risk. The encrypted GitHub bridge works. A live TLS compatibility problem was fixed using validated ECDHE. A later authentication-only check returned `authentication_rejected` for **both IMAP and SMTP**. No folders/messages have been retrieved and no email has been sent. **Do not keep retrying** until the password/Classic-mode settings have been verified or updated. The password must be the Shaw **email/Webmail** password, which Rogers says can differ from MyRogers (Shaw) credentials. Follow the instructions below and see issue #5.
+
+The private chat-scheduler repository contains an offline-testable, **opt-in** IMAP/SMTP client for the existing Shaw account `ian.wallace@shaw.ca`. It is separate from recurring agent-audit records.
 
 ## Verified provider configuration
 
