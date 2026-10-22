@@ -9,8 +9,10 @@ Waltz is a friendly, beautiful, open-source, local-first wallpaper manager that 
 2. **70-HUMAN-WORKFLOWS.md:** seventy first-person requests with nested conditions and peculiar but reasonable preferences.
 3. **WORKFLOW-DESIGN-RESPONSE.md:** exact technical accommodations, UX grammar, conflict rules, delivery and roadmap.
 4. **PRODUCT-SPECIFICATION.md:** complete foundational technical/product proposal plus override addendum.
-5. **PITCH-DECK-OUTLINE.md:** visual system and outline of the original/updated pitch.
-6. **ASSET-INVENTORY.md:** produced binary files and their verified publication status.
+5. **WORKFLOW-COVERAGE-MATRIX.md:** every W01–W70 need mapped to specific engineering and UX accommodations.
+6. **PITCH-DECK-OUTLINE.md:** visual system and slide outline.
+7. **design/**: editable tokens, rainbow flow and 16 self-contained vector screen sketches (simplified, not the original screenshot pixels).
+8. **ASSET-INVENTORY.md:** produced high-fidelity binary files and their verified publication status.
 
 **Product standard:** easy usage requires no Rules editor; complex scenarios use progressive disclosure. Import selected cloud-backed photos via native Android Photo Picker; imported images are verified and stored offline. The user sees “every five minutes while in use” with truthful eligible/last-applied state rather than a fake guarantee during Doze.
 
