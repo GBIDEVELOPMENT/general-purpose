@@ -1,23 +1,23 @@
 # Glimpse design assets: publication and provenance plan
 
-**Audit 2026-10-22.** Current location: `Waltz/` in `gamesbyian/general-purpose`, brand **Glimpse**. This is a file-publication checklist, **not evidence of a completed binary upload**. The current conversation container holds the exact files below and has verified their SHA-256 digests against [ASSET-INVENTORY.md](ASSET-INVENTORY.md). Repository GitHub connector is text/inline-content only; no container-to-GitHub binary transport is available here. The container's ordinary git network DNS is unavailable. Do not assert that a file is uploaded until the GitHub blob is checked.
+**Audit 2026-10-22.** Current location: `Glimpse/` in `gamesbyian/general-purpose`, brand **Glimpse**. This is a file-publication checklist, **not evidence of a completed binary upload**. The current conversation container holds the exact files below and has verified their SHA-256 digests against [ASSET-INVENTORY.md](ASSET-INVENTORY.md). Repository GitHub connector is text/inline-content only; no container-to-GitHub binary transport is available here. The container's ordinary git network DNS is unavailable. Do not assert that a file is uploaded until the GitHub blob is checked.
 
 ## Newest reference package, in publishing priority
 
 | Priority | Upload target | Source artifact | SHA-256 | Why |
 |---|---|---|---|---|
-| P0 | `Waltz/artifacts/Glimpse_v4_Editable_Source_Archive.zip` | `/mnt/data/Glimpse_v4_Editable_Source_Archive.zip` | `3fe31b1560c32ffef671dbc0698d7956c0617358395f16a248223df1a1e99641` | **Best complete handoff**: includes pitch/PDF, hero art, reel renders, screen PNGs, and the original deck-generation Python source |
-| COMPLETE | `Waltz/artifacts/glimpse_tactile_wallpaper_identity_board.png` | `/mnt/data/glimpse_tactile_wallpaper_identity_board.png` | `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705` | Most vivid selected tactile paper / large-window reference; **concept accepted as direction, not every precise visual pixel approved** |
-| P0 | `Waltz/artifacts/Glimpse_v4_Continuous_Reel_Pitch_Deck.pptx` | `/mnt/data/Glimpse_v4_Continuous_Reel_Pitch_Deck.pptx` | `d1e27a58d04067717fefc62a107859caa1f992c47b0f8e323fda3110e28a0dd2` | Editable presentation |
-| P1 | `Waltz/artifacts/Glimpse_v4_Continuous_Reel_Pitch_Deck.pdf` | `/mnt/data/Glimpse_v4_Continuous_Reel_Pitch_Deck.pdf` | `0414b95672e9d18e9cac344eb5107da53c3f6ebe37896cd9270081c1d52da9d7` | Reviewable exact deck |
-| P1 | `Waltz/artifacts/Glimpse_v4_Reel_Design_Section.pdf` | `/mnt/data/Glimpse_v4_Reel_Design_Section.pdf` | `30e35eeefac4637de3a3beaa4a1706fd9ecbad028553637d1439a568c00448f5` | Concise review reference |
-| P1 | `Waltz/artifacts/Glimpse_Reel_Identity_Exploration.pdf` | `/mnt/data/Glimpse_Reel_Identity_Exploration.pdf` | `cd4fcf148f48f72fe409973e9fc71458db8e594519d9088162882f0d4ea9c3af` | Historical 16-page exploration, includes superseded smaller-window alternatives |
+| P0 | `Glimpse/artifacts/Glimpse_v4_Editable_Source_Archive.zip` | `/mnt/data/Glimpse_v4_Editable_Source_Archive.zip` | `3fe31b1560c32ffef671dbc0698d7956c0617358395f16a248223df1a1e99641` | **Best complete handoff**: includes pitch/PDF, hero art, reel renders, screen PNGs, and the original deck-generation Python source |
+| COMPLETE | `Glimpse/artifacts/glimpse_tactile_wallpaper_identity_board.png` | `/mnt/data/glimpse_tactile_wallpaper_identity_board.png` | `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705` | Most vivid selected tactile paper / large-window reference; **concept accepted as direction, not every precise visual pixel approved** |
+| P0 | `Glimpse/artifacts/Glimpse_v4_Continuous_Reel_Pitch_Deck.pptx` | `/mnt/data/Glimpse_v4_Continuous_Reel_Pitch_Deck.pptx` | `d1e27a58d04067717fefc62a107859caa1f992c47b0f8e323fda3110e28a0dd2` | Editable presentation |
+| P1 | `Glimpse/artifacts/Glimpse_v4_Continuous_Reel_Pitch_Deck.pdf` | `/mnt/data/Glimpse_v4_Continuous_Reel_Pitch_Deck.pdf` | `0414b95672e9d18e9cac344eb5107da53c3f6ebe37896cd9270081c1d52da9d7` | Reviewable exact deck |
+| P1 | `Glimpse/artifacts/Glimpse_v4_Reel_Design_Section.pdf` | `/mnt/data/Glimpse_v4_Reel_Design_Section.pdf` | `30e35eeefac4637de3a3beaa4a1706fd9ecbad028553637d1439a568c00448f5` | Concise review reference |
+| P1 | `Glimpse/artifacts/Glimpse_Reel_Identity_Exploration.pdf` | `/mnt/data/Glimpse_Reel_Identity_Exploration.pdf` | `cd4fcf148f48f72fe409973e9fc71458db8e594519d9088162882f0d4ea9c3af` | Historical 16-page exploration, includes superseded smaller-window alternatives |
 
 The source ZIP has these files under `source/`: `build_v4.py`, six `art*.jpg` photo assets, `screen-home.png`, `screen-browse.png`, `screen-collection.png`, `screen-grid.png`, `reel-five-wide-windows.png`, `reel-next-frame.png`, `reel-last-frame.png`, `reel-monochrome.png`, `reel-virtualization-sequence.png`, `contact.png`. These are **source/design assets**, not proof of a native-running application. The original `build_v4.py` has `/mnt/data` absolute working paths and needs path normalization plus licensed font/photo fixture decisions before it is truly a reproducible build script.
 
 ### Previous-generation artifacts
 
-Keep the Waltz v2 specification, 34-slide deck, v3 native architecture deck, 16-screen mockup archive and their original references under `Waltz/artifacts/history/` **only if needed for provenance**. They are historical; do not make an agent load all of them automatically or mistake outdated UI screens for current Glimpse acceptance. Existing [issue #28](https://github.com/gamesbyian/general-purpose/issues/28) tracks previously blocked publication.
+Keep the Waltz v2 specification, 34-slide deck, v3 native architecture deck, 16-screen mockup archive and their original references under `Glimpse/artifacts/history/` **only if needed for provenance**. They are historical; do not make an agent load all of them automatically or mistake outdated UI screens for current Glimpse acceptance. Existing [issue #28](https://github.com/gamesbyian/general-purpose/issues/28) tracks previously blocked publication.
 
 ### Presently published, confirmed in GitHub
 
@@ -59,3 +59,7 @@ Library upload operations all returned **succeeded**. This removes the ephemeral
 ## Repository asset verification (2026-10-22)
 
 The **tactile Glimpse visual board PNG is now verified in GitHub** at [Waltz/artifacts/glimpse_tactile_wallpaper_identity_board.png](artifacts/glimpse_tactile_wallpaper_identity_board.png): Git blob SHA-1 `0a53b73ef54fe54815f9ff63bce521dbeef91fd2`, size **2,066,345 bytes**, exactly matching the local original (local `git hash-object` reproduced that SHA; SHA-256 `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705`). This supersedes earlier remarks calling **all** Glimpse binaries uncommitted. **Do not** duplicate-upload this PNG. Remaining deck PPTX/PDF, reel section PDF, original exploration PDF and 37.6 MB editable source ZIP still need separate GitHub verification. The board is an expressive **reference direction**, not blanket approval of all its depicted controls.
+
+### Renamed path notice (2026-10-22)
+
+All current project files, including the already-published comparison review PDF and reproducible source ZIP, moved from `Waltz/` to `Glimpse/` with their Git blob IDs unchanged. [Compact comparison PDF](artifacts/Glimpse_Reel_Layout_Comparison_Review.pdf) and [reproducible source ZIP](artifacts/Glimpse_Reel_Comparison_Reproducible_Source.zip) are **complete GitHub uploads**, distinct from the larger older 57-slide v4 deck and 37 MB editable archive still pending. References that begin `Waltz/` in historical issue comments are superseded by this path.
