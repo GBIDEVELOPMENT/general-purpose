@@ -22,3 +22,6 @@ No third-party API policy bypass, unverified image license, Photos scraping, inv
 - [Screenshot quick import + Google Lens handoff](SCREENSHOT-AND-LENS-FEATURES.md): first-class Share/Paste → rotate/crop → save → Use Now/Add Next/Just Save workflow, plus privacy-preserving per-image Lens sharing and failure/compatibility tests S071-01–S072-04. This is additive to the original 70 scenarios.
 
 - **Universal sharing (F073):** any image or selected batch can be shared via Android Sharesheet to compatible chat apps, email, ChatGPT, Drive, or editors; save copies via system document providers; dedicated Lens remains a contextual shortcut. See [SCREENSHOT-AND-LENS-FEATURES.md](SCREENSHOT-AND-LENS-FEATURES.md#requirement-f073-universal-outbound-image-sharing-and-editing-supersedes-lens-only-action-design).
+
+## Native Android engineering direction (2026-10-21)
+- **[NATIVE-ANDROID-ARCHITECTURE.md](NATIVE-ANDROID-ARCHITECTURE.md):** authoritative proposed Kotlin/Compose/Room/Hilt/Navigation 3 architecture, Android 17 SDK baseline, scheduler truthfulness, typed deterministic rules, reliable outbox + image pipeline, Glance widgets, strict security/privacy, sideload APK signing, developer-verification planning, release gates and ordered engineering backlog. This is a specification; no application code or signed APK exists yet.
