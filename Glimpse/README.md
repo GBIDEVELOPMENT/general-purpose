@@ -70,5 +70,5 @@ The [73-scenario feature completeness audit](GLIMPSE-FEATURE-SPEC-COMPLETENESS-A
 ## Current reel comparison and production diary
 
 - [Controlled A/B/C/D reel layout comparison and verdict](GLIMPSE-REEL-LAYOUT-COMPARISON-2026-10-22.md), with [compact review PDF](artifacts/Glimpse_Reel_Layout_Comparison_Review.pdf), [reproducible ZIP](artifacts/Glimpse_Reel_Comparison_Reproducible_Source.zip) and [six editable SVGs and fixed photo fixtures](design/reel-comparison/).
-- [Conversation record and design diary](production-diary/2026-10-22-conversation-record.md) stores every recoverable user instruction verbatim and the explicitly labeled assistant deliverable summary. The platform does **not expose a complete raw message transcript** to these tools; missing verbatim assistant passages are not invented.
+- [Conversation record and design diary](production-diary/2026-10-22-conversation-record.md) preserves available user-message wording (with formatting normalized) plus explicitly labeled, nonverbatim assistant delivery summaries. The platform does **not expose a complete raw message transcript** to these tools; missing verbatim assistant passages are not invented.
 - Renamed project directory from `Waltz/` to **`Glimpse/`** in one Git tree commit, retaining all content and binary blobs.
