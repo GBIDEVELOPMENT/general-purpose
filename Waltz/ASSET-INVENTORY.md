@@ -51,3 +51,7 @@ The GitHub connector currently supports creating UTF-8 source files and Git blob
 ## Canonical upload manifest (2026-10-22)
 
 The local file size/hash inventory above was independently verified from the actual files in this conversation. The [dedicated asset publication plan](GLIMPSE-ASSET-PUBLICATION-PLAN.md) now owns **publication priority, target paths, approval/evidence caveats, source archive member inventory and upload verification**, including why the large editable ZIP is a higher-value handoff than individual legacy PDF copies. Binary publication is still **pending**, and [issue #28](https://github.com/gamesbyian/general-purpose/issues/28) remains open.
+
+## Repository asset verification (2026-10-22)
+
+The **tactile Glimpse visual board PNG is now verified in GitHub** at [Waltz/artifacts/glimpse_tactile_wallpaper_identity_board.png](artifacts/glimpse_tactile_wallpaper_identity_board.png): Git blob SHA-1 `0a53b73ef54fe54815f9ff63bce521dbeef91fd2`, size **2,066,345 bytes**, exactly matching the local original (local `git hash-object` reproduced that SHA; SHA-256 `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705`). This supersedes earlier remarks calling **all** Glimpse binaries uncommitted. **Do not** duplicate-upload this PNG. Remaining deck PPTX/PDF, reel section PDF, original exploration PDF and 37.6 MB editable source ZIP still need separate GitHub verification. The board is an expressive **reference direction**, not blanket approval of all its depicted controls.
