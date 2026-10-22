@@ -7,7 +7,7 @@
 | Priority | Upload target | Source artifact | SHA-256 | Why |
 |---|---|---|---|---|
 | P0 | `Waltz/artifacts/Glimpse_v4_Editable_Source_Archive.zip` | `/mnt/data/Glimpse_v4_Editable_Source_Archive.zip` | `3fe31b1560c32ffef671dbc0698d7956c0617358395f16a248223df1a1e99641` | **Best complete handoff**: includes pitch/PDF, hero art, reel renders, screen PNGs, and the original deck-generation Python source |
-| P0 | `Waltz/artifacts/glimpse_tactile_wallpaper_identity_board.png` | `/mnt/data/glimpse_tactile_wallpaper_identity_board.png` | `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705` | Most vivid selected tactile paper / large-window reference; **concept accepted as direction, not every precise visual pixel approved** |
+| COMPLETE | `Waltz/artifacts/glimpse_tactile_wallpaper_identity_board.png` | `/mnt/data/glimpse_tactile_wallpaper_identity_board.png` | `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705` | Most vivid selected tactile paper / large-window reference; **concept accepted as direction, not every precise visual pixel approved** |
 | P0 | `Waltz/artifacts/Glimpse_v4_Continuous_Reel_Pitch_Deck.pptx` | `/mnt/data/Glimpse_v4_Continuous_Reel_Pitch_Deck.pptx` | `d1e27a58d04067717fefc62a107859caa1f992c47b0f8e323fda3110e28a0dd2` | Editable presentation |
 | P1 | `Waltz/artifacts/Glimpse_v4_Continuous_Reel_Pitch_Deck.pdf` | `/mnt/data/Glimpse_v4_Continuous_Reel_Pitch_Deck.pdf` | `0414b95672e9d18e9cac344eb5107da53c3f6ebe37896cd9270081c1d52da9d7` | Reviewable exact deck |
 | P1 | `Waltz/artifacts/Glimpse_v4_Reel_Design_Section.pdf` | `/mnt/data/Glimpse_v4_Reel_Design_Section.pdf` | `30e35eeefac4637de3a3beaa4a1706fd9ecbad028553637d1439a568c00448f5` | Concise review reference |
@@ -37,7 +37,7 @@ The SVGs are **smaller editable schematic originals**, not replicas of the photo
 
 ## Explicit blockers
 
-- **Binary copy to GitHub is not yet supported by the available tool pathway in this chat.** Local files exist and are verifiable, but GitHub text connector does not accept a container file path, and standard container network DNS for github.com fails.
+- **For remaining binaries:** a container-to-GitHub binary transport is not verified in this session. The tactile board PNG has already been independently Git-blob verified, so don't generalize this blocker to every file. Other local files exist and have checksums, but text connector does not accept an arbitrary container file path, and ordinary container git DNS has failed previously.
 - **Visual authority:** user's paper-reel preference and larger-window request are approved direction. Every raster asset is **provisional until explicitly selected as a canonical reference** for implementation.
 - **Font and photo licensing:** review rights before making original stock/prompt imagery or exact licensed fonts distributable source fixtures.
 
