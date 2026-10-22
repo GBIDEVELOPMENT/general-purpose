@@ -1,4 +1,4 @@
-# Waltz artifact inventory and publication status
+# Glimpse artifact inventory and publication status
 
 This GitHub repo contains the canonical **textual** specification, 70 user workflows, quickstart test plan, architecture/UX analysis, and pitch-deck navigation. The full **binary presentation and visual mockups were produced and updated in the conversation workspace, but have not been published into this GitHub directory**. Do not claim otherwise.
 
@@ -54,4 +54,8 @@ The local file size/hash inventory above was independently verified from the act
 
 ## Repository asset verification (2026-10-22)
 
-The **tactile Glimpse visual board PNG is now verified in GitHub** at [Waltz/artifacts/glimpse_tactile_wallpaper_identity_board.png](artifacts/glimpse_tactile_wallpaper_identity_board.png): Git blob SHA-1 `0a53b73ef54fe54815f9ff63bce521dbeef91fd2`, size **2,066,345 bytes**, exactly matching the local original (local `git hash-object` reproduced that SHA; SHA-256 `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705`). This supersedes earlier remarks calling **all** Glimpse binaries uncommitted. **Do not** duplicate-upload this PNG. Remaining deck PPTX/PDF, reel section PDF, original exploration PDF and 37.6 MB editable source ZIP still need separate GitHub verification. The board is an expressive **reference direction**, not blanket approval of all its depicted controls.
+The **tactile Glimpse visual board PNG is now verified in GitHub** at [Glimpse/artifacts/glimpse_tactile_wallpaper_identity_board.png](artifacts/glimpse_tactile_wallpaper_identity_board.png): Git blob SHA-1 `0a53b73ef54fe54815f9ff63bce521dbeef91fd2`, size **2,066,345 bytes**, exactly matching the local original (local `git hash-object` reproduced that SHA; SHA-256 `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705`). This supersedes earlier remarks calling **all** Glimpse binaries uncommitted. **Do not** duplicate-upload this PNG. Remaining deck PPTX/PDF, reel section PDF, original exploration PDF and 37.6 MB editable source ZIP still need separate GitHub verification. The board is an expressive **reference direction**, not blanket approval of all its depicted controls.
+
+### Additional published comparison assets (2026-10-22)
+
+In `Glimpse/artifacts/`, the *compact 8-page reel comparison review PDF* and *reproducible Python/fixture source ZIP* are verified real GitHub binary blobs. All six editable SVG visual variants and photo fixtures are in `Glimpse/design/reel-comparison/`. The older v4 57-slide deck and full 37 MB editable archive are **different artifacts** and remain pending per the publication plan. The directory was atomically renamed from Waltz to Glimpse, preserving existing Git object identities.
