@@ -42,3 +42,16 @@ The SVGs are **smaller editable schematic originals**, not replicas of the photo
 - **Font and photo licensing:** review rights before making original stock/prompt imagery or exact licensed fonts distributable source fixtures.
 
 **Do not close issue #28** until the bytes actually exist in the repository or a persistent linked Release asset.
+
+## 2026-10-22 preservation improvement: durable ChatGPT Library copies
+
+The six newest Glimpse binaries have also been uploaded successfully into the user's persistent **ChatGPT Library folder `/Glimpse/`**, not merely left in an originating chat's temporary file links:
+
+- `Glimpse_v4_Editable_Source_Archive.zip`
+- `Glimpse_v4_Continuous_Reel_Pitch_Deck.pptx`
+- `Glimpse_v4_Continuous_Reel_Pitch_Deck.pdf`
+- `glimpse_tactile_wallpaper_identity_board.png`
+- `Glimpse_v4_Reel_Design_Section.pdf`
+- `Glimpse_Reel_Identity_Exploration.pdf`
+
+Library upload operations all returned **succeeded**. This removes the ephemeral-conversation-file dependency and makes source material recoverable from ChatGPT Library in future sessions. **It does not grant GitHub agents access to those binary bytes**. Issue #28 remains blocked until the contents actually reach GitHub. Do not represent Library entries as repository blobs or GitHub release assets.
