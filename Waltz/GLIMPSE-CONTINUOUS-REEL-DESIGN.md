@@ -145,3 +145,6 @@ Recently created conversation binaries:
 - Android performance: https://developer.android.com/topic/performance
 
 **Document priorities:** native system and privacy contracts continue unchanged. This is Glimpse’s new *interface design direction*, not an exception to Android scheduling limitations or source-image rights.
+
+## Rendering and animation authority (2026-10-22)
+Read [GLIMPSE-MOTION-RENDERING-ARCHITECTURE.md](GLIMPSE-MOTION-RENDERING-ARCHITECTURE.md) for the first-class native motion system and performance acceptance. Use cached geometry, bounded image textures, Compose Canvas/drawWithCache and selectively retained graphicsLayer draw transforms; `Animatable` preserves drag interruption and physics continuity, with a real-asset-ID domain anchor separate from transient angle state. No 120 Hz performance promise before physical-device traces. The reel must not be a looping GIF or independent global animation timer.
