@@ -35,7 +35,7 @@ No third-party API policy bypass, unverified image license, Photos scraping, inv
 
 ## Glimpse identity and continuous reel (2026-10-22)
 
-**Current product name: Glimpse.** Waltz was the working title. We are retaining the `Waltz/` source-of-truth document path temporarily to preserve prior links and project history; do not interpret the folder name as the current branding.
+**Current product name: Glimpse.** Waltz was the working title. The original `Waltz/` directory has been renamed to `Glimpse/` on 2026-10-22; historical documents may still use the former product name, but all current files reside under `Glimpse/`.
 
 The user's selected direction is a tactile **paper reel with five large image windows**, visually extending beyond its viewport to suggest a continuous succession of photographs. The reel is a virtualized browse surface, not a claim of infinite source content. Collection browsing and WallpaperManager changes remain distinct. A conventional **View all** grid is always available.
 
@@ -61,8 +61,14 @@ The **Glimpse v4 Continuous Reel** deck contains 57 slides: a Glimpse-branded co
 - [Machine-readable screen and action contract](GLIMPSE-SCREEN-CONTRACT.json)
 - [Asset publication manifest, verified hashes and blockers](GLIMPSE-ASSET-PUBLICATION-PLAN.md)
 
-**No Android code, project scaffold, APK or executable UI was created by this planning update.** The newest Glimpse deck/board/source ZIP remain available as originating conversation files, not verified GitHub binary assets.
+**No Android code, project scaffold, APK or executable UI was created by this planning update.** The tactile board, controlled comparison review PDF, source ZIP, editable SVGs and test photographs are verified GitHub assets. The **older 57-slide v4 deck binaries and original 37 MB archive** have a separate outstanding publication queue.
 
 ## 2026-10-22 end-to-end specification and reel critique
 
 The [73-scenario feature completeness audit](GLIMPSE-FEATURE-SPEC-COMPLETENESS-AUDIT.md), [cross-feature technical and behavior contracts](GLIMPSE-TECHNICAL-BEHAVIOR-CONTRACTS.md), [purpose-led critical reel audit](GLIMPSE-REEL-UX-CRITICAL-AUDIT.md), and [full UI surface census](GLIMPSE-UI-SURFACE-CENSUS.md) are the latest non-building specification review. These **supplement and clarify** the old product requirements, not imply native implementation or approval of dual reels. The [v4 deck](PITCH-DECK-OUTLINE.md) depicts **provisional** screens; the user's approved direction is paper material, large image apertures and meaningful cropped-reel selection, not every label/position in the raster mockups.
+
+## Current reel comparison and production diary
+
+- [Controlled A/B/C/D reel layout comparison and verdict](GLIMPSE-REEL-LAYOUT-COMPARISON-2026-10-22.md), with [compact review PDF](artifacts/Glimpse_Reel_Layout_Comparison_Review.pdf), [reproducible ZIP](artifacts/Glimpse_Reel_Comparison_Reproducible_Source.zip) and [six editable SVGs and fixed photo fixtures](design/reel-comparison/).
+- [Conversation record and design diary](production-diary/2026-10-22-conversation-record.md) stores every recoverable user instruction verbatim and the explicitly labeled assistant deliverable summary. The platform does **not expose a complete raw message transcript** to these tools; missing verbatim assistant passages are not invented.
+- Renamed project directory from `Waltz/` to **`Glimpse/`** in one Git tree commit, retaining all content and binary blobs.
