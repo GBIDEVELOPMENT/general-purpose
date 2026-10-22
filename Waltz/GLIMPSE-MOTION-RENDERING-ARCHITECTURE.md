@@ -131,3 +131,7 @@ The first prototype should run a **repeatable 100-next/100-back and 60-second dr
 - Internal precedents: https://github.com/gamesbyian/Ring-Road/blob/main/docs/painted-physical-device-acceptance.md ; https://github.com/gamesbyian/wallgen/blob/main/docs/ui-reference/README.md
 
 **No motion benchmark has yet been executed for Glimpse.** These are explicit implementation and test commitments, not results.
+
+## Human interpretation of motion (2026-10-22)
+
+Follow [GLIMPSE-HUMAN-EXPECTATIONS-WALKTHROUGHS.md](GLIMPSE-HUMAN-EXPECTATIONS-WALKTHROUGHS.md) for cognitive checks from the cross-project [issue #29](https://github.com/gamesbyian/general-purpose/issues/29). Every drag, velocity-release, interrupted settle, hidden-slot rebinding and delayed photo decode must give the human an intelligible answer to “Which photograph is selected?” and “Did my actual wallpaper change?” The response is tested first as an expectation, then as a real native state transition. **Motion fidelity** and **mental-model accuracy** are separate release gates; a smooth 120 Hz reel that falsely implies successful wallpaper application has failed UX acceptance. Reduced-motion mode must convey identical state and choices without animation.
