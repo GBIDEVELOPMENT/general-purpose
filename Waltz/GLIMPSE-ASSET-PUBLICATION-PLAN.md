@@ -55,3 +55,7 @@ The six newest Glimpse binaries have also been uploaded successfully into the us
 - `Glimpse_Reel_Identity_Exploration.pdf`
 
 Library upload operations all returned **succeeded**. This removes the ephemeral-conversation-file dependency and makes source material recoverable from ChatGPT Library in future sessions. **It does not grant GitHub agents access to those binary bytes**. Issue #28 remains blocked until the contents actually reach GitHub. Do not represent Library entries as repository blobs or GitHub release assets.
+
+## Repository asset verification (2026-10-22)
+
+The **tactile Glimpse visual board PNG is now verified in GitHub** at [Waltz/artifacts/glimpse_tactile_wallpaper_identity_board.png](artifacts/glimpse_tactile_wallpaper_identity_board.png): Git blob SHA-1 `0a53b73ef54fe54815f9ff63bce521dbeef91fd2`, size **2,066,345 bytes**, exactly matching the local original (local `git hash-object` reproduced that SHA; SHA-256 `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705`). This supersedes earlier remarks calling **all** Glimpse binaries uncommitted. **Do not** duplicate-upload this PNG. Remaining deck PPTX/PDF, reel section PDF, original exploration PDF and 37.6 MB editable source ZIP still need separate GitHub verification. The board is an expressive **reference direction**, not blanket approval of all its depicted controls.
