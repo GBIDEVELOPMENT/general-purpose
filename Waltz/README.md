@@ -52,3 +52,12 @@ The **Glimpse v4 Continuous Reel** deck contains 57 slides: a Glimpse-branded co
 ## Human-centered agent design (2026-10-22)
 
 - [Glimpse human-expectations and cognitive walkthroughs](GLIMPSE-HUMAN-EXPECTATIONS-WALKTHROUGHS.md) translates the merged ROYGBIV IA and creative-composition research ([handoff #29](https://github.com/gamesbyian/general-purpose/issues/29)) into Glimpse-specific first-click/feedback checks for reel browsing, Rainbow import, screenshots, external sharing and automation. Agent theories are not presented as observed user findings; small owner-device studies remain explicitly pending.
+
+## Start here: active Glimpse decisions (2026-10-22)
+
+**[GLIMPSE-CURRENT-DECISIONS.md](GLIMPSE-CURRENT-DECISIONS.md)** is the short current authority; this README and earlier Waltz appendices preserve project history. New preparation-only materials:
+- [Visual fidelity and semantic acceptance plan](GLIMPSE-REFERENCE-ACCEPTANCE-PLAN.md)
+- [Machine-readable screen and action contract](GLIMPSE-SCREEN-CONTRACT.json)
+- [Asset publication manifest, verified hashes and blockers](GLIMPSE-ASSET-PUBLICATION-PLAN.md)
+
+**No Android code, project scaffold, APK or executable UI was created by this planning update.** The newest Glimpse deck/board/source ZIP remain available as originating conversation files, not verified GitHub binary assets.
