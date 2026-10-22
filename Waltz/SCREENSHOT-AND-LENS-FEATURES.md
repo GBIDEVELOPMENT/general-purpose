@@ -76,3 +76,49 @@ F071 screenshot share/import/edit = P0 (first release); editor non-destructive r
 - https://developer.android.com/develop/ui/compose/sharing/send
 - https://support.google.com/googleplay/android-developer/answer/14115180
 - https://www.google.com/mobile/goggles/index.html
+
+
+## Requirement F073: Universal outbound image sharing and editing (supersedes Lens-only action design)
+
+**Human need:** “If I find something in my collection, I want to send it to a friend in a chat, drop it into ChatGPT, attach it to an email, save a copy to Google Drive, search it with Google Lens or Google Images, or open it in my favourite editor, without hunting down the original file.”
+
+**Primary interaction**: Image detail -> prominent **Share** action (also current wallpaper, collection multi-select, and full-screen viewer). Android Sharesheet is the default, not Waltz's own hardcoded destination grid. OS-provided direct-share targets, app suggestions, device-to-device channels and installed apps remain available as Android exposes them. An optional **Edit in…** action uses the standard compatible-handler flow rather than presuming an editor API. Dedicated shortcuts for frequent targets are optional conveniences that must degrade to standard Share when unsupported.
+
+### Output chooser and semantics
+- Default **Original** (best quality, intact pixels); option **Wallpaper version** (crop, rotation, colour edits baked into exported image); optionally **Current rendered wallpaper** where legally and technically available, explicitly distinguished from source and user edits.
+- Choice is remembered per action *only* with clear reversible preference; always indicate what will be shared. Do not accidentally send a full screenshot with private notification/status bar content if the user thought they were sending a crop: show a preview and clear Original/Crop label before dispatch.
+- For common one-tap Share, start Android Sharesheet after preparing a safe temporary URI. For advanced formats/quality or multiple-image batch, show a lightweight preparatory sheet; keep one-image sharing fast.
+- Multi-select -> **Share N images** using ACTION_SEND_MULTIPLE with ClipData and streams. Count and total estimated payload shown; warn about receiver limits; chunk or request fewer images rather than silently dropping items.
+
+### Platform contracts
+- ACTION_SEND for one file, ACTION_SEND_MULTIPLE for batches with MIME image/png, image/jpeg or image/* as appropriate; content:// URI from FileProvider or hardened app-owned ContentProvider; FLAG_GRANT_READ_URI_PERMISSION plus appropriate ClipData. Never expose file:// paths, database identifiers, internal folder structure or unnecessary metadata.
+- ACTION_CHOOSER via Intent.createChooser; chooser/app package visibility is intentionally limited on modern Android. Avoid QUERY_ALL_PACKAGES, accessibility overlays, hidden target components and screen-scraping.
+- **Google Drive**: display as Android Sharesheet target if installed and capable; alternatively use SAF ACTION_CREATE_DOCUMENT as platform-native **Save copy to…** for arbitrary document providers, including a supported Drive document provider. Never claim direct account synchronization.
+- **Chat, email, ChatGPT**: participate as compatible installed Android share targets when they advertise image receiving. Waltz cannot guarantee any particular application or chat supports an image-share intent on a given version; never fabricate such integrations.
+- **Editing apps**: use ACTION_SEND and/or ACTION_EDIT where handler capabilities support them; share a copied original or flattened wallpaper version. Most third-party editors will not return an edit or overwrite Waltz's image. Offer explicit **Import edited result** (Share back to Waltz or picker) and link the result as a new variant instead of promising round-trip persistence.
+- **Google Lens / Google Images**: use supported external share/chooser flows where a capable handler is available. There is no assumed stable public Lens or reverse Google Images upload API; browser fallback to Google Images does not automatically upload the image. Explain this limitation without advertising an impossible one-tap guarantee.
+- **Link sharing**: Waltz hosts no images, therefore **Copy link** is available only for a valid externally sourced image URL, never generated for a local-only asset.
+- **Metadata/privacy**: optional “Remove location and camera metadata” defaults on for sharing edited/cached renderings; original-file sharing warns if sensitive EXIF is present and allows a sanitized export. Do not promise EXIF removal from the untouched raw original. All external sharing requires a user gesture, no background egress.
+- **Reliability**: staged sharing URI stays valid long enough for slow receivers, including when Waltz backgrounds; TTL-based cleanup occurs after safe grace period rather than immediately in onActivityResult. The share receiver must be able to read content in a separate process. Catch failures without losing image/scroll state. Scoped grants, content security tests, and cache quotas required.
+
+### UX placements
+- Image detail primary **Share**; secondary **Open in editor**, **Search with Lens** (capability-aware), **Save copy to…**.
+- Collection grid long-press selection: batch Share; current-wallpaper card: Share / Edit / Explore image.
+- Every outbound action leaves collection membership, rotation order, current wallpaper, history and crop recipe unchanged; round-trip editing must explicitly create a new version.
+
+### Acceptance tests
+S073-01 Share local screenshot to at least two installed independent handlers; decoder receives valid URI, no broad storage permission.
+S073-02 Share both unedited original and transformed wallpaper crop, verify actual pixel difference and preview label.
+S073-03 Share to a capable mail app (attachment), messaging app and compatible ChatGPT app when installed; gracefully fallback to chooser when target unavailable.
+S073-04 Save copy using ACTION_CREATE_DOCUMENT to local and Drive-capable SAF providers if installed.
+S073-05 Edit in an external editor, return to Waltz and import edited result as a new linked variant; no overwrite of original.
+S073-06 Share 1, 10 and 100 items; receiver size/URI limits reported; image count correct; no clipboard/file path leak.
+S073-07 Source with EXIF GPS data: offer sanitized copy; validate exported file has no GPS tags.
+S073-08 App/background process killed after chooser launches: recipient retains read access during transfer; cleanup eventually reclaims staging files.
+S073-09 TalkBack, large text and keyboard navigation can reach Share, choose original/crop, and safely cancel.
+S073-10 Missing Lens/ChatGPT/Drive handlers, denied recipient access, revoked source and malformed image produce truthful recovery without modifying wallpaper state.
+
+### Scope and roadmap
+P0: generic per-image share, original/crop, all Android-compatible destinations, cache/grant safety, batch-share basics, SAF save copy.
+P1: dedicated actions and capability-aware Lens/edit shortcuts, returned-edit variant associations, configurable metadata scrubbing and smarter batch-limit handling.
+This requirement is an explicit extension of F072: “Search with Lens” is a contextual specialization of generic Share, never the sole means to export an image.
