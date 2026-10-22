@@ -31,3 +31,17 @@ No third-party API policy bypass, unverified image license, Photos scraping, inv
 - [Native architecture and APK delivery blueprint](NATIVE-ANDROID-ARCHITECTURE.md) is the core technical decision document.
 - [Pitch-deck outline](PITCH-DECK-OUTLINE.md#v3-native-architecture-pitch-deck-revision-2026-10-22) now describes the 42-slide v3 proposal, retaining 16 screen designs and adding eight Android-native engineering slides.
 - The binary v3 PPTX/PDF were generated and visually inspected in the conversation environment. They are **not yet uploaded to this GitHub repository**; see conversation downloads and the existing binary-publication gap.
+
+## Glimpse identity and continuous reel (2026-10-22)
+
+**Current product name: Glimpse.** Waltz was the working title. We are retaining the `Waltz/` source-of-truth document path temporarily to preserve prior links and project history; do not interpret the folder name as the current branding.
+
+The user's selected direction is a tactile **paper reel with five large image windows**, visually extending beyond its viewport to suggest a continuous succession of photographs. The reel is a virtualized browse surface, not a claim of infinite source content. Collection browsing and WallpaperManager changes remain distinct. A conventional **View all** grid is always available.
+
+Read [GLIMPSE-CONTINUOUS-REEL-DESIGN.md](GLIMPSE-CONTINUOUS-REEL-DESIGN.md) for the normative UX/engineering contract and acceptance criteria.
+
+New repository-tracked original editable assets:
+- [Five-window tactile reel SVG](design/glimpse-five-window-reel.svg)
+- [Off-screen reel browser concept SVG](design/glimpse-reel-browser-concept.svg)
+
+The **Glimpse v4 Continuous Reel** deck contains 57 slides: a Glimpse-branded cover, 15 new reel/UX slides, and the 41 prior foundational slides (legacy embedded UI imagery is superseded). See [PITCH-DECK-OUTLINE.md](PITCH-DECK-OUTLINE.md) and [ASSET-INVENTORY.md](ASSET-INVENTORY.md) for precise binary publication status.
