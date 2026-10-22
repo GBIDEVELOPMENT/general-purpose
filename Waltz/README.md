@@ -25,3 +25,9 @@ No third-party API policy bypass, unverified image license, Photos scraping, inv
 
 ## Native Android engineering direction (2026-10-21)
 - **[NATIVE-ANDROID-ARCHITECTURE.md](NATIVE-ANDROID-ARCHITECTURE.md):** authoritative proposed Kotlin/Compose/Room/Hilt/Navigation 3 architecture, Android 17 SDK baseline, scheduler truthfulness, typed deterministic rules, reliable outbox + image pipeline, Glance widgets, strict security/privacy, sideload APK signing, developer-verification planning, release gates and ordered engineering backlog. This is a specification; no application code or signed APK exists yet.
+
+
+## 2026-10-22 planning refresh
+- [Native architecture and APK delivery blueprint](NATIVE-ANDROID-ARCHITECTURE.md) is the core technical decision document.
+- [Pitch-deck outline](PITCH-DECK-OUTLINE.md#v3-native-architecture-pitch-deck-revision-2026-10-22) now describes the 42-slide v3 proposal, retaining 16 screen designs and adding eight Android-native engineering slides.
+- The binary v3 PPTX/PDF were generated and visually inspected in the conversation environment. They are **not yet uploaded to this GitHub repository**; see conversation downloads and the existing binary-publication gap.
