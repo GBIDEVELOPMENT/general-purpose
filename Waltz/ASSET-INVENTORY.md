@@ -26,3 +26,24 @@ Editable presentation construction sources remain in session workspace: waltz_wo
 ## Actual graphics committed to GitHub
 
 `design/brand-tokens.json`, `design/rainbow-flow.svg` and `design/vector-previews/01_today.svg` through `16_presets.svg` are GitHub-tracked original schematic SVGs. They are smaller, editable design sketches and **do not reproduce** the exact archived PNGs or the presentation visuals.
+
+## 2026-10-22 Glimpse reel refresh: asset audit and SHA-256
+
+Current product brand **Glimpse**. The following actual files have been generated in the current conversation container and verified locally:
+
+| Binary / deliverable | Bytes | SHA-256 | GitHub status |
+|---|---:|---|---|
+| `Glimpse_v4_Continuous_Reel_Pitch_Deck.pptx` | 11,520,835 | `d1e27a58d04067717fefc62a107859caa1f992c47b0f8e323fda3110e28a0dd2` | Pending upload |
+| `Glimpse_v4_Continuous_Reel_Pitch_Deck.pdf` | 3,716,083 | `e0e76a5c649971e70ac6e2e72fc937ec86874d6cbe71dc345e081b598a949ffa` | Pending upload |
+| `Glimpse_v4_Reel_Design_Section.pdf` | 3,358,264 | `1019a74a39c79c7f0290f10baa1596e7cf100163836266a82495e5f04e9b97da` | Pending upload |
+| `Glimpse_v4_Editable_Source_Archive.zip` | 37,644,562 | `3fe31b1560c32ffef671dbc0698d7956c0617358395f16a248223df1a1e99641` | Pending upload |
+| `Glimpse_Reel_Identity_Exploration.pdf` | 4,516,220 | `cd4fcf148f48f72fe409973e9fc71458db8e594519d9088162882f0d4ea9c3af` | Pending upload |
+| `glimpse_tactile_wallpaper_identity_board.png` | 2,066,345 | `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705` | Pending upload |
+
+Verified repository-authored *editable text/vector* artifacts (GitHub):
+- [Glimpse reel visual specification](GLIMPSE-CONTINUOUS-REEL-DESIGN.md)
+- [Original five-window reel vector](design/glimpse-five-window-reel.svg)
+- [Clipped browser concept vector](design/glimpse-reel-browser-concept.svg)
+- Updated [pitch deck outline](PITCH-DECK-OUTLINE.md), [product specification](PRODUCT-SPECIFICATION.md), and [README](README.md).
+
+The GitHub connector currently supports creating UTF-8 source files and Git blobs from provided inline bytes. The locally generated binary bytes cannot be transferred directly by the currently available container-to-GitHub actions in this session. Do not replace a real upload with a misleading GitHub file link. Preserve downloads in the originating conversation and the source archive. The pending-binaries issue remains open.
