@@ -82,3 +82,6 @@ Each human-voiced requirement has an explicitly named engineering primitive and 
 - The underlying collection dependency graph is acyclic and checked on edit and restore. No wallpaper-change event may recursively trigger itself without a cooldown and explicit permission.
 - All requested Android permissions and external image rights are platform-/provider-gated; when unsupported, explain the limitation and propose the nearest safe alternative.
 - Usability protocol: first-time users must never enter the advanced Rule Studio for W01. Tests for TalkBack, extreme font scale, keyboard, reduced motion and one-tap diagnostics apply across tiers.
+
+| F071 | I just took a screenshot; I want to paste/share it, rotate/crop it, save to a collection, and decide whether it becomes my current wallpaper or joins next. | ACTION_SEND receiver and user-driven clipboard paste; durable private copy; non-destructive edit recipe; queue placement; apply-result state | Share to Waltz / Collections > Add > Paste image | P0 Share and edit, P1 clipboard variants |
+| F072 | I'm looking at a wallpaper and want to send that exact image, or its crop, to Google Lens without changing my collection. | FileProvider URI and ACTION_SEND/chooser with explicit grants; capability detection and honest fallback; zero rotation-state mutation | Image detail > Search with Google Lens | P1 |
