@@ -56,3 +56,13 @@ The sibling [GLIMPSE-SCREEN-CONTRACT.json](GLIMPSE-SCREEN-CONTRACT.json) encodes
 Normal screen/Compose changes: small set of semantic and visual checks for touched components. Reel/renderer/geometry changes: additional deterministic frame/crop and GPU interaction trace. Release candidates: full golden set, accessibility and physical handset checks. Don't run hundreds of screenshots for text-only PRs. Report pending/cancelled separately from failed.
 
 **References:** [Ring Road source-visual protocol](https://github.com/gamesbyian/Ring-Road/blob/main/docs/sparse-reference-visual-verification.md), [wallgen canonical screen contract](https://github.com/gamesbyian/wallgen/blob/main/docs/ui-reference/canonical-screen-contract.json), [wallgen CI operations](https://github.com/gamesbyian/wallgen/blob/main/docs/CI-OPERATIONS-2026-10-22.md).
+
+## 2026-10-22 added evidence classes for dual reels and the actual v4 art
+
+- `G13` Collection parent reel→child photo reel with independent IDs, cancellation on parent change, visible labels; test against conventional picker + single reel.
+- `G14` Paired Home/Lock preview with separate destination labels, apply actions and unsupported-target fallback; tablet vs narrow portrait with secondary collapsed.
+- `G15` Ordinary grid photo selection visibly marks every selected ID; “Add to rotation” has an explicit queue/target effect, with no ambiguous counts.
+- `G16` Discover source provenance and rights labels; no unlabeled imagery confused for bundled wallpaper.
+- `G17` Home decorative crescent either has a defined action with usable bounds or is unambiguously passive.
+
+All are future *proposed fixture identifiers*, **not approved reference screenshots or automated tests already executed**. The [v4 source art critique](GLIMPSE-UI-SURFACE-CENSUS.md) lists visible omissions. No new native implementation is asserted.
