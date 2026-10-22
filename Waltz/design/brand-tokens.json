@@ -1,0 +1,29 @@
+{
+  "version": "concept-2026-10",
+  "colors": {
+    "paper": "#F7F4EE",
+    "surface": "#FFFDF9",
+    "ink": "#223630",
+    "tidalTeal": "#196E6A",
+    "apricot": "#F17961",
+    "butter": "#FFD779",
+    "lavender": "#D7CAFA",
+    "focus": "#223630"
+  },
+  "typography": {
+    "android": "Inter/system fallback",
+    "minimumTargetDp": 48,
+    "textScalable": true
+  },
+  "navigation": [
+    "Today",
+    "Explore",
+    "Collections",
+    "Rules"
+  ],
+  "motion": {
+    "respectSystemReducedMotion": true,
+    "wallpaperAnimationsOptIn": true
+  },
+  "note": "Concept tokens only; validate contrast and font licensing before code."
+}
