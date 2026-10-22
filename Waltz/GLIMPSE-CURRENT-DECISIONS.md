@@ -2,6 +2,14 @@
 
 **Current as of 2026-10-22.** This is the short routing authority for pre-implementation decisions. Historical Waltz documents remain valuable evidence, **not competing current decisions**. The folder remains `Waltz/` to preserve GitHub links; brand is **Glimpse**. Do not build an app under this planning task.
 
+## 2026-10-22 two-way audit status
+
+- **Completed on paper:** [All 73 feature contracts](GLIMPSE-FEATURE-SPEC-COMPLETENESS-AUDIT.md), [technical behavior and typed command semantics](GLIMPSE-TECHNICAL-BEHAVIOR-CONTRACTS.md), [critical reel alternatives](GLIMPSE-REEL-UX-CRITICAL-AUDIT.md), [complete UI surface census](GLIMPSE-UI-SURFACE-CENSUS.md), and expanded [screen contract](GLIMPSE-SCREEN-CONTRACT.json).
+- **Confirmed direction:** paper reel with broad photographic windows, honest finite collection indexing, primary large photo reel and Grid alternative.
+- **Unapproved hypotheses:** dual collection/photo reels, dual Home/Lock reels, variant/history reels, specific asymmetric placements and screenshots that were not expressly approved. Compare with conventional controls before implementation.
+- **Outstanding empirical decisions:** human first-click and meaning tests, genuine Android capability results, device motion/size measurements, exact approved asset bundle.
+- **No app implementation performed** in this audit.
+
 ## Current priorities and precedence
 
 1. **User-approved experience:** Glimpse, warm tactile paper reel, five **large** photographic apertures, deliberately cropped off-screen, a stationary full-sized hero photo, real finite counts, and a permanent conventional Grid / View all alternative. [Visual spec](GLIMPSE-CONTINUOUS-REEL-DESIGN.md).
