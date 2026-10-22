@@ -1,6 +1,6 @@
 # Glimpse: current decisions and non-building handoff
 
-**Current as of 2026-10-22.** This is the short routing authority for pre-implementation decisions. Historical Waltz documents remain valuable evidence, **not competing current decisions**. The folder remains `Waltz/` to preserve GitHub links; brand is **Glimpse**. Do not build an app under this planning task.
+**Current as of 2026-10-22.** This is the short routing authority for pre-implementation decisions. Historical Waltz documents remain valuable evidence, **not competing current decisions**. The project folder was renamed from `Waltz/` to **`Glimpse/`** in a content-preserving Git tree commit; historical references to Waltz name remain historical only. Do not build an app under this planning task.
 
 ## 2026-10-22 two-way audit status
 
