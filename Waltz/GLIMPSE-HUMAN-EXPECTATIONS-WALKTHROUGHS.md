@@ -141,3 +141,7 @@ Research links:
 - [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/)
 - [Microsoft Human-AI Experience Toolkit](https://www.microsoft.com/en-us/haxtoolkit/), relevant when AI is actually used for recommendation, not to mislabel Glimpse's deterministic rotation engine
 - [Resnick, low floors/high ceilings/wide walls](https://www.media.mit.edu/articles/lifelong-kindergarten-how-to-learn-like-a-kid-by-the-co-creator-of-scratch/)
+
+## New release-acceptance companions (2026-10-22)
+
+Treat [GLIMPSE-SCREEN-CONTRACT.json](GLIMPSE-SCREEN-CONTRACT.json) as a proposed executable semantics inventory and [GLIMPSE-REFERENCE-ACCEPTANCE-PLAN.md](GLIMPSE-REFERENCE-ACCEPTANCE-PLAN.md) as the bounded source-vs-runtime validation procedure. Neither proves the owner has tried the app. First review the [current decisions](GLIMPSE-CURRENT-DECISIONS.md) to avoid applying historical Waltz UI labels to the active Glimpse identity.
