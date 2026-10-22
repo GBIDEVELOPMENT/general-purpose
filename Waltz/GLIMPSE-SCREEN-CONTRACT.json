@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "status": "PREIMPLEMENTATION_NOT_TESTED",
+  "brand": "Glimpse",
+  "reference": "GLIMPSE-REFERENCE-ACCEPTANCE-PLAN.md",
+  "destinations": [
+    "Home",
+    "Discover",
+    "Collections",
+    "Automation"
+  ],
+  "distinctStates": [
+    "browse.selectedImageId",
+    "wallpaper.appliedImageId",
+    "rotation.nextEligibleAt",
+    "collection.membership",
+    "export.variant"
+  ],
+  "screens": [
+    {
+      "id": "home",
+      "required": [
+        "current-wallpaper-hero",
+        "applied-status",
+        "active-collection-name",
+        "change-now",
+        "pause",
+        "share"
+      ],
+      "conditional": [
+        "next-eligible-time",
+        "reel-crescent",
+        "error-retry"
+      ],
+      "forbidden": [
+        "selected-preview-presented-as-applied",
+        "exact-background-five-minute-guarantee"
+      ]
+    },
+    {
+      "id": "collections",
+      "required": [
+        "collection-titles",
+        "true-item-counts",
+        "add-photos",
+        "enter-collection"
+      ],
+      "conditional": [
+        "paper-reel-covers",
+        "empty-collection-action"
+      ],
+      "forbidden": [
+        "faked-image-copies-to-fill-five-windows"
+      ]
+    },
+    {
+      "id": "reel",
+      "required": [
+        "hero",
+        "selected-asset-index-and-total",
+        "five-window-paper-reel-geometry",
+        "partial-offscreen-crop",
+        "next-photo",
+        "previous-photo",
+        "view-all",
+        "set-as-wallpaper"
+      ],
+      "conditional": [
+        "loaded-image-slots",
+        "placeholder-slots",
+        "last-item-indicator",
+        "browse-loop-indicator"
+      ],
+      "forbidden": [
+        "browse-rotation-applies-device-wallpaper",
+        "reel-claims-unbounded-collection",
+        "offscreen-reel-blocks-system-navigation",
+        "only-gesture-access"
+      ]
+    },
+    {
+      "id": "grid",
+      "required": [
+        "same-selected-asset-id",
+        "real-image-thumbnails",
+        "return-to-reel",
+        "share",
+        "collection-identity"
+      ],
+      "conditional": [
+        "multi-select",
+        "search",
+        "loading-placeholder"
+      ],
+      "forbidden": [
+        "reset-selection-on-switch",
+        "render-all-10000-fullres-images"
+      ]
+    },
+    {
+      "id": "quick-import",
+      "required": [
+        "source-preview",
+        "rotate",
+        "crop",
+        "target-collection",
+        "use-now",
+        "show-next",
+        "just-save"
+      ],
+      "conditional": [
+        "source-missing-fallback",
+        "import-retry",
+        "original-recipe"
+      ],
+      "forbidden": [
+        "save-silently-applies-wallpaper",
+        "destroy-original-during-crop"
+      ]
+    },
+    {
+      "id": "share",
+      "required": [
+        "share-action",
+        "original-or-crop-label",
+        "android-sharesheet-handoff"
+      ],
+      "conditional": [
+        "metadata-removal",
+        "batch-share",
+        "handler-unavailable-fallback"
+      ],
+      "forbidden": [
+        "share-changes-rotation",
+        "assume-lens-or-chatgpt-intent-always-exists"
+      ]
+    },
+    {
+      "id": "automation",
+      "required": [
+        "rotation-status",
+        "interval-policy",
+        "paused-state",
+        "human-readable-constraints"
+      ],
+      "conditional": [
+        "overrides",
+        "why-this-image",
+        "rule-editor",
+        "source-failure"
+      ],
+      "forbidden": [
+        "eligibility-displayed-as-successful-apply"
+      ]
+    }
+  ],
+  "criticalTransitions": [
+    {
+      "from": "reel.next-photo",
+      "changes": [
+        "browse.selectedImageId"
+      ],
+      "mustNotChange": [
+        "wallpaper.appliedImageId",
+        "rotation.nextEligibleAt"
+      ]
+    },
+    {
+      "from": "reel.set-as-wallpaper",
+      "changes": [
+        "wallpaper.applyIntent"
+      ],
+      "feedback": "attempted/applied/error"
+    },
+    {
+      "from": "quick-import.just-save",
+      "changes": [
+        "collection.membership"
+      ],
+      "mustNotChange": [
+        "wallpaper.appliedImageId"
+      ]
+    },
+    {
+      "from": "quick-import.show-next",
+      "changes": [
+        "collection.membership",
+        "rotation.queue"
+      ],
+      "mustNotChange": [
+        "wallpaper.appliedImageId"
+      ]
+    },
+    {
+      "from": "share.export",
+      "changes": [
+        "export.variant"
+      ],
+      "mustNotChange": [
+        "wallpaper.appliedImageId",
+        "rotation.queue"
+      ]
+    },
+    {
+      "from": "reduce-motion",
+      "changes": [
+        "presentation.motion"
+      ],
+      "mustNotChange": [
+        "browse.selectedImageId",
+        "wallpaper.appliedImageId"
+      ]
+    }
+  ],
+  "evidenceLevels": [
+    "approved-reference",
+    "runtime-observed",
+    "physical-device-observed",
+    "human-observed",
+    "agent-hypothesis"
+  ]
+}
