@@ -1,0 +1,53 @@
+{
+  "document": "Glimpse purposeful reel layout comparison",
+  "created": "2026-10-22",
+  "status": "visual mockups not app screenshots",
+  "fixtures": {
+    "art1.jpg": "6ab0cfafca534be77192041b78c763dc315fedf97cbd21cdcf9f69138129c905",
+    "art2.jpg": "26320b6f0324734ef00c1d359ab2bbeb01063048a3b4760a6d72c3caaae916ab",
+    "art3.jpg": "2b2aefbdee4a4934e6ce8476d6019cfda422a45f85ac417e29f629f863119891",
+    "art4.jpg": "9bd8d1c812c278572df94547c6e22e9e3b68c9e2ea56b9d2090d8109802ae2d4",
+    "art5.jpg": "4f728e108d60f3ac6940e26043179841f6433fdd93afddb0a929aea05c80ada2",
+    "art6.jpg": "cc6bf8f1766e8f4c3a09d3780c753b76c1ee448a847a9582cb07df4f40010346"
+  },
+  "phoneDimensions": {
+    "width": 420,
+    "height": 900,
+    "unit": "design units, not device dp"
+  },
+  "scenarios": {
+    "A_single_photo_reel": {
+      "svg": "A_single_photo_reel.svg",
+      "png": "A_single_photo_reel.png",
+      "semantic_note": "Baseline single photo reel. Six imported art fixtures; selected art1 is #3 of 6. Reel rotates to preview only; Set wallpaper is explicit."
+    },
+    "B_asymmetric_collection_photo": {
+      "svg": "B_asymmetric_collection_photo.svg",
+      "png": "B_asymmetric_collection_photo.png",
+      "semantic_note": "Nested selectors: small top-right collection reel selects CollectionId only; larger bottom-left photo reel selects ImageAssetId only. Both preview, neither applies wallpaper. Same selected photo and fixture set as A."
+    },
+    "B_compact_fallback": {
+      "svg": "B_compact_fallback.svg",
+      "png": "B_compact_fallback.png",
+      "semantic_note": "Asymmetric parent reel automatically replaced by a normal labeled collection picker when viewport height, font scale or density cannot support independent safe hit areas."
+    },
+    "C_destinations_compact": {
+      "svg": "C_destinations_compact.svg",
+      "png": "C_destinations_compact.png",
+      "semantic_note": "Home/Lock separately chosen wallpaper photos. One active large Home photo reel; Lock preview and labeled Edit Lock affordance, not a second large hidden interactive disk. Both selected previews remain separate from actual applied wallpaper."
+    },
+    "C_destinations_tabs_baseline": {
+      "svg": "C_destinations_tabs_baseline.svg",
+      "png": "C_destinations_tabs_baseline.png",
+      "semantic_note": "Conventional compact baseline for per-target Home and Lock preview: two labeled tabs, one current reel; no second decorative disk."
+    },
+    "D_destinations_wide_dual": {
+      "svg": "D_destinations_wide_dual.svg",
+      "png": "D_destinations_wide_dual.png",
+      "semantic_note": "Two photo reels side by side on wide screen. Different destinations and stable independent controls; applied outcome explicit."
+    }
+  },
+  "totalPhotos": 6,
+  "collectionCount": 3,
+  "canChangeActualWallpaperFromReel": false
+}
