@@ -1,4 +1,4 @@
-# Waltz — Android wallpaper manager design project
+# Glimpse (formerly Waltz) — native Android wallpaper manager design project
 
 **Status:** detailed product concept and engineering/UX research, not an implemented Android application. Original design files and updated presentations exist as conversation downloads; see ASSET-INVENTORY.md for publication gaps.
 
@@ -61,3 +61,7 @@ The **Glimpse v4 Continuous Reel** deck contains 57 slides: a Glimpse-branded co
 - [Asset publication manifest, verified hashes and blockers](GLIMPSE-ASSET-PUBLICATION-PLAN.md)
 
 **No Android code, project scaffold, APK or executable UI was created by this planning update.** The newest Glimpse deck/board/source ZIP remain available as originating conversation files, not verified GitHub binary assets.
+
+## 2026-10-22 end-to-end specification and reel critique
+
+The [73-scenario feature completeness audit](GLIMPSE-FEATURE-SPEC-COMPLETENESS-AUDIT.md), [cross-feature technical and behavior contracts](GLIMPSE-TECHNICAL-BEHAVIOR-CONTRACTS.md), [purpose-led critical reel audit](GLIMPSE-REEL-UX-CRITICAL-AUDIT.md), and [full UI surface census](GLIMPSE-UI-SURFACE-CENSUS.md) are the latest non-building specification review. These **supplement and clarify** the old product requirements, not imply native implementation or approval of dual reels. The [v4 deck](PITCH-DECK-OUTLINE.md) depicts **provisional** screens; the user's approved direction is paper material, large image apertures and meaningful cropped-reel selection, not every label/position in the raster mockups.
