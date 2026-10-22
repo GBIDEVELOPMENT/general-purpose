@@ -47,3 +47,7 @@ Verified repository-authored *editable text/vector* artifacts (GitHub):
 - Updated [pitch deck outline](PITCH-DECK-OUTLINE.md), [product specification](PRODUCT-SPECIFICATION.md), and [README](README.md).
 
 The GitHub connector currently supports creating UTF-8 source files and Git blobs from provided inline bytes. The locally generated binary bytes cannot be transferred directly by the currently available container-to-GitHub actions in this session. Do not replace a real upload with a misleading GitHub file link. Preserve downloads in the originating conversation and the source archive. The pending-binaries issue remains open.
+
+## Canonical upload manifest (2026-10-22)
+
+The local file size/hash inventory above was independently verified from the actual files in this conversation. The [dedicated asset publication plan](GLIMPSE-ASSET-PUBLICATION-PLAN.md) now owns **publication priority, target paths, approval/evidence caveats, source archive member inventory and upload verification**, including why the large editable ZIP is a higher-value handoff than individual legacy PDF copies. Binary publication is still **pending**, and [issue #28](https://github.com/gamesbyian/general-purpose/issues/28) remains open.
