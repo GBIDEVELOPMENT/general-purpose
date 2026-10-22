@@ -1,0 +1,74 @@
+name: Assemble verified Glimpse design assets
+
+on:
+  push:
+    paths:
+      - "Glimpse/.transfer/v4/trigger.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: glimpse-asset-transfer
+  cancel-in-progress: false
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: true
+      - name: Assemble checked archive and two normalized PDF artifacts
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, io, zipfile
+          root = Path("Glimpse/.transfer/v4")
+          out = Path("Glimpse/artifacts")
+          out.mkdir(parents=True, exist_ok=True)
+          expected = {
+            "chunk": ("Glimpse_v4_Editable_Source_Archive.zip", "3fe31b1560c32ffef671dbc0698d7956c0617358395f16a248223df1a1e99641"),
+            "deck_pdf": ("Glimpse_v4_Continuous_Reel_Pitch_Deck.pdf", "0414b95672e9d18e9cac344eb5107da53c3f6ebe37896cd9270081c1d52da9d7"),
+            "section_pdf": ("Glimpse_v4_Reel_Design_Section.pdf", "30e35eeefac4637de3a3beaa4a1706fd9ecbad028553637d1439a568c00448f5"),
+          }
+          for prefix, (name, digest) in expected.items():
+              parts = sorted(root.glob(f"{prefix}-[0-9][0-9][0-9].txt"))
+              if not parts: raise SystemExit(f"Missing chunks for {prefix}")
+              numbers = [int(p.stem.rsplit("-",1)[1]) for p in parts]
+              if numbers != list(range(len(parts))):
+                  raise SystemExit(f"Gapped chunks for {prefix}: {numbers}")
+              encoded = "".join(p.read_text(encoding="ascii") for p in parts)
+              data = base64.b64decode(encoded, validate=True)
+              got = hashlib.sha256(data).hexdigest()
+              if got != digest: raise SystemExit(f"SHA mismatch {name}: {got}")
+              (out / name).write_bytes(data)
+              print("VERIFIED", name, len(data), got)
+          archive = out / "Glimpse_v4_Editable_Source_Archive.zip"
+          with zipfile.ZipFile(archive) as z:
+              if z.testzip() is not None: raise SystemExit("Archive integrity failure")
+              pairs = {
+                  "Glimpse_v4_Continuous_Reel_Pitch_Deck.pptx": "d1e27a58d04067717fefc62a107859caa1f992c47b0f8e323fda3110e28a0dd2",
+                  "Glimpse_Reel_Identity_Exploration.pdf": "cd4fcf148f48f72fe409973e9fc71458db8e594519d9088162882f0d4ea9c3af",
+              }
+              for name, expected_sha in pairs.items():
+                  data = z.read(name)
+                  got = hashlib.sha256(data).hexdigest()
+                  if got != expected_sha: raise SystemExit(f"Nested hash mismatch: {name} {got}")
+                  (out / name).write_bytes(data)
+                  print("VERIFIED", name, len(data), got)
+          PY
+      - name: Commit verified design binaries and remove temporary chunks
+        shell: bash
+        run: |
+          git config user.name "Glimpse Asset Recovery"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Glimpse/artifacts/
+          git rm -r -q -f Glimpse/.transfer/v4/
+          git diff --cached --stat
+          git diff --cached --quiet && exit 0
+          git commit -m "Glimpse: publish five verified original v4 design binaries"
+          git push origin HEAD:main
