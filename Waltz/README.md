@@ -20,3 +20,5 @@ No third-party API policy bypass, unverified image license, Photos scraping, inv
 
 ## Additional requirements (October 21, 2026)
 - [Screenshot quick import + Google Lens handoff](SCREENSHOT-AND-LENS-FEATURES.md): first-class Share/Paste → rotate/crop → save → Use Now/Add Next/Just Save workflow, plus privacy-preserving per-image Lens sharing and failure/compatibility tests S071-01–S072-04. This is additive to the original 70 scenarios.
+
+- **Universal sharing (F073):** any image or selected batch can be shared via Android Sharesheet to compatible chat apps, email, ChatGPT, Drive, or editors; save copies via system document providers; dedicated Lens remains a contextual shortcut. See [SCREENSHOT-AND-LENS-FEATURES.md](SCREENSHOT-AND-LENS-FEATURES.md#requirement-f073-universal-outbound-image-sharing-and-editing-supersedes-lens-only-action-design).
