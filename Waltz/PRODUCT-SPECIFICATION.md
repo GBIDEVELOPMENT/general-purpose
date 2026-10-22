@@ -651,3 +651,12 @@ Treat Android outbound sharing as a baseline cross-cutting capability, never onl
 
 ## Native Android architecture decision reference (October 21, 2026)
 The detailed [native-stack and delivery blueprint](NATIVE-ANDROID-ARCHITECTURE.md) refines the high-level module and platform plans here. Kotlin, Compose, Navigation 3, Hilt, Room, DataStore, Coroutines/Flow, WorkManager, capability-gated AlarmManager, WallpaperManager, optional WallpaperService, Glance and scoped Android intents form the baseline. It also specifies crash-recoverable command/outbox operations, target 37 qualification, Android 17 widget-memory budgets, real-world five-minute schedule semantics, signed APK release engineering, and Android developer verification planning for sideloading. New architecture decisions must be recorded and proven via CI + device test, rather than silently inferred from mockups.
+
+
+## 2026-10-22 consolidated implementation and pitch-deck update
+
+The **native Android architecture** is now concretely specified by [NATIVE-ANDROID-ARCHITECTURE.md](NATIVE-ANDROID-ARCHITECTURE.md). Adopt Kotlin and Jetpack Compose/Material 3, Navigation 3, ViewModel/StateFlow, Hilt, Room, DataStore, structured coroutines, WorkManager for durable non-exact jobs, careful AlarmManager eligibility, WallpaperManager static delivery, optional visibility-aware WallpaperService.Engine, Coil previews, bounded image rendering, and Glance/native Android sharing integrations. The intent is one downloadable signed APK, minSdk29 proposed, API37 target qualification required. Release versions and compatibility must be pinned and proven before scaffold.
+
+Implementation priorities are explicitly **M0 platform proof; M1 tested rainbow alpha; M2 reliable native daily driver; M3 expressive rules and rights-checked external content; M4 optional live effects and finish**. Do not make the advanced rules engine or live graphics prerequisites for the usable first APK.
+
+The presentation has been revised to 42 slides (34 prior screens/design slides and eight native engineering slides); see [PITCH-DECK-OUTLINE.md](PITCH-DECK-OUTLINE.md). No runtime implementation is claimed. Add release gates for deterministic command execution, process-death recovery, actual success versus eligibility, accessibility, OEM wallpaper behavior, sideload package signing continuity and image source rights.
