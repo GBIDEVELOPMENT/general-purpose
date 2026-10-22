@@ -4,7 +4,7 @@
 
 ## Transcript completeness and provenance
 
-This file preserves the **verbatim user messages available to this assistant** and a chronological, **explicitly nonverbatim** account of the assistant replies and repository outcomes. It is **not a full raw ChatGPT transcript**: this session's tools cannot export the complete conversation message stream, and some earlier assistant turns and uploaded-artifact exchanges are represented only by prior-conversation summaries. Missing messages, private reasoning, unviewable UI and timestamps have **not** been invented. When a first-party ChatGPT data export becomes available, replace or supplement this record with that actual export; do not retroactively label this one complete.
+This file preserves **user-message wording as supplied in the available conversation context** (with possible whitespace/Markdown formatting normalization) and a chronological, **explicitly nonverbatim** account of the assistant replies and repository outcomes. It is **not a full raw ChatGPT transcript**: this session's tools cannot export the complete conversation message stream, and some earlier assistant turns and uploaded-artifact exchanges are represented only by prior-conversation summaries. Missing messages, private reasoning, unviewable UI and timestamps have **not** been invented. When a first-party ChatGPT data export becomes available, replace or supplement this record with that actual export; do not retroactively label this one complete.
 
 We deliberately retain the distinction between user wording, assistant summary, a finished artifact, and a GitHub-verified blob. This record is more useful than a fabricated verbatim transcript and should never be used as proof of a user's approval of an unapproved prototype.
 
