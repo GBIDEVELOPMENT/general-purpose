@@ -164,3 +164,7 @@ Purpose: ensure casual flows remain effortless while nuanced, conditional, neste
 - **F072.** “I'm looking at a wallpaper I've saved and I want to send it to Google Lens to find out what I'm looking at, then come straight back without changing anything.”
 
 Detailed contracts, platform limitations and release tests: [SCREENSHOT-AND-LENS-FEATURES.md](SCREENSHOT-AND-LENS-FEATURES.md).
+
+- **F073.** “I found a picture in my Waltz collection and I want to drop it into my chat with a friend, attach it to an email, ask ChatGPT about it, open it in my editing app, save a copy to Drive, or try Google Lens, without going hunting for the file or changing my wallpaper.”
+
+Universal Android sharing contracts and S073 test cases: [SCREENSHOT-AND-LENS-FEATURES.md](SCREENSHOT-AND-LENS-FEATURES.md).
