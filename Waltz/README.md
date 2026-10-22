@@ -45,3 +45,6 @@ New repository-tracked original editable assets:
 - [Off-screen reel browser concept SVG](design/glimpse-reel-browser-concept.svg)
 
 The **Glimpse v4 Continuous Reel** deck contains 57 slides: a Glimpse-branded cover, 15 new reel/UX slides, and the 41 prior foundational slides (legacy embedded UI imagery is superseded). See [PITCH-DECK-OUTLINE.md](PITCH-DECK-OUTLINE.md) and [ASSET-INVENTORY.md](ASSET-INVENTORY.md) for precise binary publication status.
+
+## Motion from day one (2026-10-22)
+- [Glimpse motion / rendering architecture](GLIMPSE-MOTION-RENDERING-ARCHITECTURE.md): Compose Canvas/HWUI, cached 5-window paper geometry, selective graphicsLayer transforms, bounded image prefetch, interruptible spring/drag controller, hidden-slot virtualization, native GPU profiling and real-device animation acceptance. **No Glimpse motion benchmark or implementation has yet been performed.**
