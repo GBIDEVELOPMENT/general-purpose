@@ -38,7 +38,7 @@ Current product brand **Glimpse**. The following actual files have been generate
 | `Glimpse_v4_Reel_Design_Section.pdf` | 3,383,219 | `30e35eeefac4637de3a3beaa4a1706fd9ecbad028553637d1439a568c00448f5` | Pending upload |
 | `Glimpse_v4_Editable_Source_Archive.zip` | 37,644,562 | `3fe31b1560c32ffef671dbc0698d7956c0617358395f16a248223df1a1e99641` | Pending upload |
 | `Glimpse_Reel_Identity_Exploration.pdf` | 4,516,220 | `cd4fcf148f48f72fe409973e9fc71458db8e594519d9088162882f0d4ea9c3af` | Pending upload |
-| `glimpse_tactile_wallpaper_identity_board.png` | 2,066,345 | `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705` | Pending upload |
+| `glimpse_tactile_wallpaper_identity_board.png` | 2,066,345 | `cddbb2a70913de1d2f345a6ec3a60fb4b3dfced428a0c0d3e4c334797661c705` | **Published, Git blob verified** |
 
 Verified repository-authored *editable text/vector* artifacts (GitHub):
 - [Glimpse reel visual specification](GLIMPSE-CONTINUOUS-REEL-DESIGN.md)
