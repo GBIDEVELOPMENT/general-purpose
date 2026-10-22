@@ -256,6 +256,218 @@
         "rule-settings-changed-by-photo-reel",
         "silent-apply-on-preview"
       ]
+    },
+    {
+      "id": "source-detail",
+      "required": [
+        "provider-name",
+        "source-licence-provenance",
+        "import-permission-or-eligibility",
+        "image-preview",
+        "source-website-or-credit"
+      ],
+      "conditional": [
+        "related-image-reel",
+        "provider-offline-warning",
+        "network-policy"
+      ],
+      "forbidden": [
+        "implied-verified-rights-without-evidence",
+        "unscoped-auto-download"
+      ]
+    },
+    {
+      "id": "photo-detail",
+      "required": [
+        "image-identity",
+        "source-provenance",
+        "set-wallpaper-explicit-target",
+        "share",
+        "edit",
+        "collection-membership"
+      ],
+      "conditional": [
+        "home-and-lock-crops",
+        "hide-or-restore"
+      ],
+      "forbidden": [
+        "silent-apply-on-open"
+      ]
+    },
+    {
+      "id": "quickstart",
+      "required": [
+        "named-source-collection",
+        "destination-choice",
+        "shuffle-policy",
+        "cadence-and-platform-limits",
+        "start-or-cancel"
+      ],
+      "conditional": [
+        "collection-cover",
+        "cloud-import-warning"
+      ],
+      "forbidden": [
+        "exact-five-minute-background-promise",
+        "rules-editor-mandatory"
+      ]
+    },
+    {
+      "id": "schedule-simulator",
+      "required": [
+        "simulated-label",
+        "future-context",
+        "hypothetical-outcome",
+        "explanation"
+      ],
+      "conditional": [
+        "simulated-filmstrip",
+        "source-shortfall"
+      ],
+      "forbidden": [
+        "wallpaper-apply",
+        "real-queue-consumption",
+        "simulated-outcome-declared-actual"
+      ]
+    },
+    {
+      "id": "diagnostics",
+      "required": [
+        "operation-history",
+        "target",
+        "eligible-versus-attempted-versus-applied",
+        "failure-reason",
+        "retry-or-repair"
+      ],
+      "conditional": [
+        "source-health",
+        "permission-state",
+        "redacted-report"
+      ],
+      "forbidden": [
+        "wallpaper-preview-reused-as-success-proof"
+      ]
+    },
+    {
+      "id": "widgets",
+      "required": [
+        "action-identity",
+        "actual-command-target",
+        "accessible-name"
+      ],
+      "conditional": [
+        "small-static-reel-icon",
+        "current-or-next-preview",
+        "pause"
+      ],
+      "forbidden": [
+        "gesture-wheel-required",
+        "widget-launch-silently-applies-wrong-target"
+      ]
+    },
+    {
+      "id": "quick-settings-and-shortcuts",
+      "required": [
+        "destination-scoped-action",
+        "status-state",
+        "capability-fallback"
+      ],
+      "conditional": [
+        "launch-app-for-repair"
+      ],
+      "forbidden": [
+        "ambiguous-untargeted-next",
+        "implied-persistent-service"
+      ]
+    },
+    {
+      "id": "settings",
+      "required": [
+        "motion-preferences",
+        "theme",
+        "storage",
+        "network-policy",
+        "privacy",
+        "permissions-and-capabilities",
+        "backup-entry"
+      ],
+      "conditional": [
+        "advanced-sources",
+        "local-diagnostics"
+      ],
+      "forbidden": [
+        "paper-reel-as-a-toggle-control",
+        "unnecessary-intrusive-permissions"
+      ]
+    },
+    {
+      "id": "backup-and-restore",
+      "required": [
+        "export-scope",
+        "image-inclusion-off-by-default",
+        "version",
+        "restore-preview",
+        "missing-source-remap"
+      ],
+      "conditional": [
+        "encrypted-export",
+        "wrong-passphrase-recovery"
+      ],
+      "forbidden": [
+        "default-include-all-private-photo-bytes",
+        "silent-credential-restore"
+      ]
+    },
+    {
+      "id": "onboarding",
+      "required": [
+        "add-photos-path",
+        "privacy-explanation",
+        "destination",
+        "cadence",
+        "start",
+        "skip"
+      ],
+      "conditional": [
+        "one-time-reel-demonstration"
+      ],
+      "forbidden": [
+        "mandatory-rules-editor",
+        "forced-large-initial-upload"
+      ]
+    },
+    {
+      "id": "error-empty-permission",
+      "required": [
+        "cause-or-condition",
+        "next-action",
+        "preserved-existing-content-statement"
+      ],
+      "conditional": [
+        "empty-reel-illustration",
+        "retry",
+        "picker-or-permission-route"
+      ],
+      "forbidden": [
+        "invented-photo-content",
+        "generic-success-after-OS-failure"
+      ]
+    },
+    {
+      "id": "accessibility-preferences",
+      "required": [
+        "reduced-motion",
+        "high-contrast",
+        "font-scaling-system-compliance",
+        "gesture-alternative-information"
+      ],
+      "conditional": [
+        "shortcut-help"
+      ],
+      "forbidden": [
+        "required-circular-gesture",
+        "flashing-visual-feedback-only"
+      ]
     }
   ],
   "criticalTransitions": [
@@ -417,5 +629,7 @@
       "compactFallback": "native control for value type",
       "reason": "Paper-photo windows do not communicate labels, value scales, prerequisites or reversibility well"
     }
-  ]
+  ],
+  "implementationStatus": "NONE",
+  "referenceAcceptance": "PROPOSED_NOT_APPROVED_OR_TESTED"
 }
