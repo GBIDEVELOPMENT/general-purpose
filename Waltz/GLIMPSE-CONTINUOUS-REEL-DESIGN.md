@@ -148,3 +148,7 @@ Recently created conversation binaries:
 
 ## Rendering and animation authority (2026-10-22)
 Read [GLIMPSE-MOTION-RENDERING-ARCHITECTURE.md](GLIMPSE-MOTION-RENDERING-ARCHITECTURE.md) for the first-class native motion system and performance acceptance. Use cached geometry, bounded image textures, Compose Canvas/drawWithCache and selectively retained graphicsLayer draw transforms; `Animatable` preserves drag interruption and physics continuity, with a real-asset-ID domain anchor separate from transient angle state. No 120 Hz performance promise before physical-device traces. The reel must not be a looping GIF or independent global animation timer.
+
+## Human expectations / cognitive walkthroughs (2026-10-22)
+
+See [GLIMPSE-HUMAN-EXPECTATIONS-WALKTHROUGHS.md](GLIMPSE-HUMAN-EXPECTATIONS-WALKTHROUGHS.md), adopted from [ROYGBIV research handoff issue #29](https://github.com/gamesbyian/general-purpose/issues/29). The reel must be tested as a **human expectation surface**, not just as geometry. Before the user touches it, ask what turning a window would change; inspect whether the visible count conveys a large-but-finite collection, and whether the user distinguishes **preview selection** from **setting the phone's wallpaper**. Compare the reel with Grid using identical tasks. Hypotheses are explicitly not observed user findings. Keep the existing approved paper-reel identity and semantic action labels unless evidence supports revision.
