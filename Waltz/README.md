@@ -1,18 +1,19 @@
 # Glimpse (formerly Waltz) — native Android wallpaper manager design project
 
-**Status:** detailed product concept and engineering/UX research, not an implemented Android application. Original design files and updated presentations exist as conversation downloads; see ASSET-INVENTORY.md for publication gaps.
+**Status:** detailed product concept and engineering/UX research, not an implemented Android application. The tactile paper-reel board and planning files are verified in GitHub; the full editable source ZIP and presentation binaries have a separate publication queue. See [ASSET-INVENTORY.md](ASSET-INVENTORY.md).
 
-Waltz is a friendly, beautiful, open-source, local-first wallpaper manager that changes wallpapers from the user's own collections and vetted maintained external sources. It has no Waltz-hosted image catalogue, server, cloud sync service, subscription, or mandatory account.
+Glimpse is a friendly, beautiful, open-source, local-first wallpaper manager that changes wallpapers from the user's own collections and vetted maintained external sources. It has no Glimpse-hosted image catalogue, server, cloud sync service, subscription, or mandatory account.
 
-## Read in order
-1. **RAINBOW-QUICKSTART-CONTRACT.md:** golden-path Google Photos to 5-minute shuffle, honest platform restrictions, acceptance tests A001–A015.
-2. **70-HUMAN-WORKFLOWS.md:** seventy first-person requests with nested conditions and peculiar but reasonable preferences.
-3. **WORKFLOW-DESIGN-RESPONSE.md:** exact technical accommodations, UX grammar, conflict rules, delivery and roadmap.
-4. **PRODUCT-SPECIFICATION.md:** complete foundational technical/product proposal plus override addendum.
-5. **WORKFLOW-COVERAGE-MATRIX.md:** every W01–W70 need mapped to specific engineering and UX accommodations.
-6. **PITCH-DECK-OUTLINE.md:** visual system and slide outline.
-7. **design/**: editable tokens, rainbow flow and 16 self-contained vector screen sketches (simplified, not the original screenshot pixels).
-8. **ASSET-INVENTORY.md:** produced high-fidelity binary files and their verified publication status.
+## Read in order (current authority first)
+
+1. [Current decisions](GLIMPSE-CURRENT-DECISIONS.md): approved versus proposed, source-of-truth routing, and honest technical limitations.
+2. [Spec audit decision queue](GLIMPSE-SPEC-AUDIT-DECISION-QUEUE.md): prioritized next design decisions and OS proof blockers.
+3. [Complete 73-scenario feature audit](GLIMPSE-FEATURE-SPEC-COMPLETENESS-AUDIT.md) and [technical behavior contracts](GLIMPSE-TECHNICAL-BEHAVIOR-CONTRACTS.md): requirement-to-action consequences and implementation principles.
+4. [Critical reel design audit](GLIMPSE-REEL-UX-CRITICAL-AUDIT.md), [all UI surfaces](GLIMPSE-UI-SURFACE-CENSUS.md), [screen JSON](GLIMPSE-SCREEN-CONTRACT.json): purposeful single/dual reels, visual rationale and responsive semantics.
+5. [Original Rainbows quickstart](RAINBOW-QUICKSTART-CONTRACT.md), [70 original workflows](70-HUMAN-WORKFLOWS.md) and [F071–F073 import/share](SCREENSHOT-AND-LENS-FEATURES.md): human-voiced product requirements.
+6. [Native Android architecture](NATIVE-ANDROID-ARCHITECTURE.md), [reel motion specification](GLIMPSE-MOTION-RENDERING-ARCHITECTURE.md), [visual reference acceptance](GLIMPSE-REFERENCE-ACCEPTANCE-PLAN.md): technical delivery and proof methods.
+7. [Product specification](PRODUCT-SPECIFICATION.md), [workflow response](WORKFLOW-DESIGN-RESPONSE.md), [first coverage matrix](WORKFLOW-COVERAGE-MATRIX.md), [pitch deck outline](PITCH-DECK-OUTLINE.md): valuable historical detail, with old Waltz labels/phase sequencing superseded as indicated at each file's top.
+8. [Design assets](design/) and [asset inventory](ASSET-INVENTORY.md): original SVGs, canonical board and still-pending binary publication.
 
 **Product standard:** easy usage requires no Rules editor; complex scenarios use progressive disclosure. Import selected cloud-backed photos via native Android Photo Picker; imported images are verified and stored offline. The user sees “every five minutes while in use” with truthful eligible/last-applied state rather than a fake guarantee during Doze.
 
