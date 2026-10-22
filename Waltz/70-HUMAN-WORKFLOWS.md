@@ -157,3 +157,10 @@ Purpose: ensure casual flows remain effortless while nuanced, conditional, neste
 **W69.** “My partner and I both use different Android profiles on one phone. I want Waltz to be upfront about which profile and screens it can control.”
 
 **W70.** “A wallpaper stopped changing last night. I want to see exactly which rule ran, what photo it tried, why Android or the source stopped it, and how to fix it without reading logs.”
+
+## Two additional user-suggested workflows (F071–F072; original seventy preserved)
+
+- **F071.** “I've just taken a screenshot and I want to paste or share it into Waltz, rotate it and crop out the rubbish, save it into one of my collections, and choose whether it replaces my wallpaper right now or just joins the lineup.”
+- **F072.** “I'm looking at a wallpaper I've saved and I want to send it to Google Lens to find out what I'm looking at, then come straight back without changing anything.”
+
+Detailed contracts, platform limitations and release tests: [SCREENSHOT-AND-LENS-FEATURES.md](SCREENSHOT-AND-LENS-FEATURES.md).
