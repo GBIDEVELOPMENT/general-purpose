@@ -17,3 +17,6 @@ Waltz is a friendly, beautiful, open-source, local-first wallpaper manager that 
 **Product standard:** easy usage requires no Rules editor; complex scenarios use progressive disclosure. Import selected cloud-backed photos via native Android Photo Picker; imported images are verified and stored offline. The user sees “every five minutes while in use” with truthful eligible/last-applied state rather than a fake guarantee during Doze.
 
 No third-party API policy bypass, unverified image license, Photos scraping, invasive Android permission or privileged accessibility service.
+
+## Additional requirements (October 21, 2026)
+- [Screenshot quick import + Google Lens handoff](SCREENSHOT-AND-LENS-FEATURES.md): first-class Share/Paste → rotate/crop → save → Use Now/Add Next/Just Save workflow, plus privacy-preserving per-image Lens sharing and failure/compatibility tests S071-01–S072-04. This is additive to the original 70 scenarios.
