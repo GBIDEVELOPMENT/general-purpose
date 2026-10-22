@@ -145,3 +145,7 @@ Research links:
 ## New release-acceptance companions (2026-10-22)
 
 Treat [GLIMPSE-SCREEN-CONTRACT.json](GLIMPSE-SCREEN-CONTRACT.json) as a proposed executable semantics inventory and [GLIMPSE-REFERENCE-ACCEPTANCE-PLAN.md](GLIMPSE-REFERENCE-ACCEPTANCE-PLAN.md) as the bounded source-vs-runtime validation procedure. Neither proves the owner has tried the app. First review the [current decisions](GLIMPSE-CURRENT-DECISIONS.md) to avoid applying historical Waltz UI labels to the active Glimpse identity.
+
+## 2026-10-22 two-reel meaning test
+
+Use the [purpose-led reel critique](GLIMPSE-REEL-UX-CRITICAL-AUDIT.md). Before displaying labels or explaining the concept, ask what the smaller reel controls and what the larger one controls; then have the owner change collections, choose a photo, return to applied wallpaper, set Lock only and find a known photo in Grid. Compare the same task with a labeled standard collection picker + one reel and Home/Lock tabs + one reel. Collect actual first-click predictions, wrong state assumptions and intervention needs. **Do not report agent guesses as human success rates**; avoid adding exhaustive synthetic personas.
