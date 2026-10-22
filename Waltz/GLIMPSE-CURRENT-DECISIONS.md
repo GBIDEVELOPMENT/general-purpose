@@ -10,6 +10,8 @@
 - **Outstanding empirical decisions:** human first-click and meaning tests, genuine Android capability results, device motion/size measurements, exact approved asset bundle.
 - **No app implementation performed** in this audit.
 
+**Execution/status queue:** [GLIMPSE-SPEC-AUDIT-DECISION-QUEUE.md](GLIMPSE-SPEC-AUDIT-DECISION-QUEUE.md) is the prioritized non-building plan for specification repair, dual-reel design comparisons, technical proof gates and reference upload.
+
 ## Current priorities and precedence
 
 1. **User-approved experience:** Glimpse, warm tactile paper reel, five **large** photographic apertures, deliberately cropped off-screen, a stationary full-sized hero photo, real finite counts, and a permanent conventional Grid / View all alternative. [Visual spec](GLIMPSE-CONTINUOUS-REEL-DESIGN.md).
