@@ -31,3 +31,28 @@ The original 34-slide UI/UX proposal is retained. The accompanying **Waltz_v3_Na
 42. **Vertical roadmap:** M0 platform proof → M1 useful rainbow alpha → M2 daily-driver → M3 advanced engine → M4 live effects/polish.
 
 The complete technical source authority is [NATIVE-ANDROID-ARCHITECTURE.md](NATIVE-ANDROID-ARCHITECTURE.md). Presentation remains a product/design proposal, not a tested Android implementation. The v3 binaries are conversation deliverables; do not falsely imply they are committed as GitHub assets until a binary transfer is verified.
+
+## V4: Glimpse continuous paper-reel system (2026-10-22)
+
+**Current brand: Glimpse.** New pitch deck is **57 slides**. Original Waltz-branded opening slide is overwritten with a Glimpse paper-reel identity. Slides **2–16** are a new, coherent reel UX section. Slides **17–57** retain the prior research, technical and exploratory foundations (editable labels rebranded; older screenshot pixels remain historical and are not the final visual direction).
+
+| Deck slide | New design content |
+|---|---|
+| 1 | Glimpse paper-reel cover; tagline “Something lovely, every time you look.” |
+| 2 | Oversized clipped reel, Home crescent and Grid escape across three phones |
+| 3 | Five large photographic apertures in the tactile paper form |
+| 4 | Colour reel, monochrome launcher glyph and within-app use |
+| 5 | Three-stage virtualized reel illusion; finite list, recycled windows |
+| 6 | Browse preview separate from actual wallpaper application |
+| 7 | Paper-reel collection covers with distinctive image sets |
+| 8 | Wallpaper-led Home and secondary cropped reel |
+| 9 | Reel ↔ grid transition and preserved selection |
+| 10 | New functional copy and gentle editorial brand language |
+| 11 | Accessibility, reduced motion, TalkBack and no forced wrap |
+| 12 | Responsive clipping at small portrait, large portrait and landscape/tablet |
+| 13 | Compose Canvas/Coil, stable image-ID virtualization contract |
+| 14 | Explicit decisions: finite end, large collections, preview vs wallpaper, no auto-spin |
+| 15 | Visual design recommendation and recap |
+| 16 | Historical-foundations divider before the prior 41 slides |
+
+Supporting source-of-truth: [GLIMPSE-CONTINUOUS-REEL-DESIGN.md](GLIMPSE-CONTINUOUS-REEL-DESIGN.md); [five-window reel SVG](design/glimpse-five-window-reel.svg); [browser diagram SVG](design/glimpse-reel-browser-concept.svg). The associated 57-slide PPTX, full PDF, 16-page design-section PDF, visual identity PDF and raster board are **available as conversation downloads, not yet verified GitHub blobs**. Do not mark them published without a confirmed binary upload.
