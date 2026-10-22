@@ -247,3 +247,6 @@ A11 Seven-day real-device reliability/battery matrix and maintenance work.
 A12 APK signing, reproducible release evidence, checksum, upgrade/restore rehearsal.
 
 **References should be checked at implementation time** because SDK, vendor behavior and policy continue to evolve. This document is a build blueprint, not evidence that any app code, signing pipeline or runtime test already exists.
+
+## Added UI rendering decision: Glimpse motion (2026-10-22)
+Adopt the detailed [reel renderer and animation plan](GLIMPSE-MOTION-RENDERING-ARCHITECTURE.md) as the native Compose rendering authority. Add a first-development milestone for a measured, fake-data five-wide-window paper-reel Compose component with retained/cached masks, draw-phase angular transform, interruptible drag/settle, reduced-motion semantics, a non-animation-dependent browse state reducer, and benchmark screenshots/traces on Pixel 6 Pro. Optional AGSL embellishments and wallpaper live engine follow real device performance evidence, not as prerequisites.
