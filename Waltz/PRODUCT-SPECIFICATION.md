@@ -642,3 +642,6 @@ Android touch targets: https://support.google.com/accessibility/android/answer/7
 ## Appendix B. Relationship to visual pitch deck
 
 The accompanying presentation features sixteen application mockups and original colour, icon, wallpaper-image and component proposals. All screen art is generated illustrative content. The deck is intended as a design direction and implementation brief, not an assertion that the app or source connectors have already been built.
+
+## Addendum: Screenshot quick import and Google Lens (October 21, 2026)
+Two additional approved user workflows, F071 and F072, are specified normatively in [SCREENSHOT-AND-LENS-FEATURES.md](SCREENSHOT-AND-LENS-FEATURES.md). Screenshot editing and Share-to-Waltz are P0; clipboard-paste UX and dedicated Lens targeting are contingent on platform capability. The addition specifies non-destructive rotate/crop, explicit Use Now/Add Next/Just Save queue semantics, transactional import, URI-grant handling, accessible controls, and external Google Lens sharing through supported Android intents with fallback. Its tests S071-01 through S072-04 join the release gates. Do not infer a public direct Lens SDK or automatically read clipboard in the background.
