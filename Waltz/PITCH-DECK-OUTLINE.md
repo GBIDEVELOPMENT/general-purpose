@@ -1,3 +1,5 @@
+> **VISUAL REFERENCE STATUS 2026-10-22:** Glimpse v4 is a compelling **art/interaction concept**, not a finished layout specification or screenshots of a running APK. [Actual v4 screen-art defects](GLIMPSE-UI-SURFACE-CENSUS.md) and [reel mechanism redesign candidates](GLIMPSE-REEL-UX-CRITICAL-AUDIT.md) supersede its particular unlabeled Home crescent, ambiguous “Next/Set now/Add to rotation,” missing Previous, unsafe bottom reel/control proximity and undifferentiated Discover cards. Two-reel asymmetric configurations are **hypotheses** requiring side-by-side comparison; don't amend images and represent them as user-approved. Do not produce replacement screenshots until image assets, typed screen contracts, and reference authority are selected.
+
 # Waltz product and UX pitch deck (textual navigation)
 
 The full existing deck has **30 designed slides and sixteen original portrait mockups**. An updated **34-slide PPTX/PDF** exists as a conversation artifact, adding 4 slides describing the Rainbow quickstart and seventy-workflow complexity approach. This file is a searchable companion; it is NOT a replacement for rendered visuals.
