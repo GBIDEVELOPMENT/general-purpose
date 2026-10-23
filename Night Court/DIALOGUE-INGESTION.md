@@ -158,6 +158,8 @@ python "Night Court/tools/extract_local_media.py" \
 
 Whisper's speech recognition runs on your machine. By default the command refuses model weight downloads and expects an already cached local model; the explicit `--allow-model-download` flag enables model retrieval. A capable CPU or GPU and enough local storage are needed for reasonable performance. The result receives a separate edition label; do not confuse auto-transcription with a verified closed-caption file. Speech recognition can miss music, crosstalk, names, nonverbal comedy, or invent words, so independent spot checking remains essential.
 
+**Extraction reliability:** The extractor normalizes common FFmpeg language tags (for example `eng`→`en`, `fra`/`fre`→`fr`) when matching `--language`. Folder-level `--dry-run` can inspect media even without an `SxxEyy` filename, because it makes no claim about episode assignment. Local automatic speech recognition always records `complete: false` even when the caller supplies `--complete`: model output is not independently complete by virtue of reaching the end of a recording. The ingestion workflow installs `ffmpeg` if absent in order to perform a real synthetic-container round-trip test instead of silently skipping it.
+
 Both routes reuse the same `dialogue/versions/` archive, source declarations, hash verification, query index and quality diagnostics. The original episode video or audio is **never committed** by these tools. Media must not be DRM-protected; these tools do not remove access controls or acquire third-party episode files. Synthetic four-second MKV extraction is tested by a dedicated narrow GitHub Actions workflow; no copyrighted episode is used as a fixture.
 
 
