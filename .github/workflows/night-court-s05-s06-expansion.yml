@@ -1,0 +1,28 @@
+name: Night Court S05-S06 caption expansion
+on:
+  pull_request:
+    paths:
+      - 'Night Court/research/s05-s06-additional-caption-pages.csv'
+      - 'Night Court/tools/download_additional_s05_s06.py'
+      - '.github/workflows/night-court-s05-s06-expansion.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  retrieve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check sixteen original-series mappings
+        run: python "Night Court/tools/download_additional_s05_s06.py" --output "${{ runner.temp }}/dry"
+      - name: Attempt English SRT retrieval
+        run: python "Night Court/tools/download_additional_s05_s06.py" --download --output "${{ runner.temp }}/captions"
+      - name: Preserve successful sources and retrieval report even on partial failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s05-s06-new-source-witnesses
+          path: ${{ runner.temp }}/captions/
+          retention-days: 7
+          if-no-files-found: warn
