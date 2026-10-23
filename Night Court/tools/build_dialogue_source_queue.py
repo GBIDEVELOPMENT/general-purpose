@@ -54,7 +54,9 @@ def main():
                 if c and (c["provider"],c["url"]) not in seen:
                     links.append(c)
                     seen.add((c["provider"],c["url"]))
-            held=len(source["holdings"]["caption_files"])+len(source["holdings"]["full_transcripts"])
+            held=(len(source["holdings"]["caption_files"])+len(source["holdings"]["full_transcripts"])
+                  +sum(bool(item.get("version_id") and item.get("manifest_file"))
+                       for item in source["holdings"].get("other",[])))
             level=classify(held,links)
             direct=[x for x in links if x["status"].startswith("verified_direct_")]
             row={

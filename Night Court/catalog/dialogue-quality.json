@@ -1,13 +1,14 @@
 {
-  "episodes_with_witnesses": 192,
+  "episodes_with_witnesses": 193,
   "flag_counts": {
     "overlapping_source_cues_review": 21,
     "repeated_adjacent_captions_review": 9,
-    "several_long_caption_gaps_review": 30
+    "several_long_caption_gaps_review": 30,
+    "untimed_source_requires_separate_completeness_check": 1
   },
   "independently_verified_complete_episodes": 0,
   "series": "night-court-1984",
-  "source_witnesses": 192,
+  "source_witnesses": 193,
   "warning": "Heuristic triage. Unflagged tracks are not certified complete; flagged tracks may still be complete.",
   "witness_quality": [
     {
@@ -6174,6 +6175,40 @@
       "word_count_rough": 2307
     },
     {
+      "adjacent_exact_repetitions": 1,
+      "cue_count": 347,
+      "earliest_cue_start_ms": null,
+      "edition": "Subtitle Cat S09E19 original caption page untimed",
+      "episode_id": "S09E19",
+      "epistemic_status": "heuristic_automated_source_QA_not_audiovisual_completeness",
+      "flags": [
+        "untimed_source_requires_separate_completeness_check"
+      ],
+      "format": "txt",
+      "latest_cue_end_ms": null,
+      "limits": [
+        "An SRT's final timestamp does not prove every line was captured.",
+        "Music, quiet scenes, titles, ads and cuts can legitimately create long caption gaps.",
+        "Overlapping cues are often legitimate two-speaker or sound-effect captions.",
+        "No source video was viewed; independently verified completeness remains unknown.",
+        "Word counts are an English-oriented rough metric; this is not a semantic evaluation."
+      ],
+      "max_gap_between_source_cues_ms": null,
+      "median_cue_duration_ms": null,
+      "overlapping_cue_count": 0,
+      "source_cue_out_of_order_count": 0,
+      "source_cue_union_duration_ms": null,
+      "source_cue_union_fraction_of_final_time": null,
+      "source_declared_complete": false,
+      "source_gaps_over_30_seconds": 0,
+      "source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "text_characters": 12205,
+      "timecoded": false,
+      "unique_caption_texts": 342,
+      "version_id": "subtitle-cat-s09e19-original-caption-page-untime--659beb9c50fabdd1",
+      "word_count_rough": 2348
+    },
+    {
       "adjacent_exact_repetitions": 0,
       "cue_count": 343,
       "earliest_cue_start_ms": 3660,
@@ -6270,5 +6305,5 @@
       "word_count_rough": 2231
     }
   ],
-  "witnesses_with_flags": 55
+  "witnesses_with_flags": 56
 }

@@ -1,13 +1,12 @@
 {
   "series": "night-court-1984",
   "total_episodes": 193,
-  "held_dialogue_versions": 192,
-  "episodes_with_held_dialogue": 192,
+  "held_dialogue_versions": 193,
+  "episodes_with_held_dialogue": 193,
   "episodes_with_any_claimed_complete_source": 0,
   "independently_verified_complete_episodes": 0,
   "status_counts": {
-    "no_held_dialogue": 1,
-    "partially_held_or_unknown_completeness": 192
+    "partially_held_or_unknown_completeness": 193
   },
   "quality_rule": "Source-file presence and submitter's stated completeness are never audiovisual completeness validation.",
   "rows": [
@@ -2473,13 +2472,13 @@
       "season": 9,
       "episode": 19,
       "title": "P.S. Do I Know You?",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "held_timed_caption_tracks": 0,
-      "held_plain_transcripts": 0,
+      "held_plain_transcripts": 1,
       "submitter_declared_complete_versions": 0,
       "independently_video_verified_complete": 0,
-      "status": "no_held_dialogue",
-      "version_ids": ""
+      "status": "partially_held_or_unknown_completeness",
+      "version_ids": "subtitle-cat-s09e19-original-caption-page-untime--659beb9c50fabdd1"
     },
     {
       "id": "S09E20",

@@ -4,8 +4,7 @@
   "ranking_policy": "Least episode-specific source evidence first; within tier, later seasons first.",
   "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
   "source_status_counts": {
-    "held_dialogue_needs_quality_review": 192,
-    "no_episode_dialogue_specific_locator": 1
+    "held_dialogue_needs_quality_review": 193
   },
   "by_season": {
     "S01": {
@@ -33,13 +32,10 @@
       "held_dialogue_needs_quality_review": 24
     },
     "S09": {
-      "held_dialogue_needs_quality_review": 21,
-      "no_episode_dialogue_specific_locator": 1
+      "held_dialogue_needs_quality_review": 22
     }
   },
-  "ranked_missing_episode_ids": [
-    "S09E19"
-  ],
+  "ranked_missing_episode_ids": [],
   "episodes": [
     {
       "episode_id": "S01E01",
@@ -4949,11 +4945,11 @@
       "season": 9,
       "episode": 19,
       "title": "P.S. Do I Know You?",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": []
     },
     {

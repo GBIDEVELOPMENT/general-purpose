@@ -1,0 +1,57 @@
+name: Night Court import final original-series dialogue witness
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s09e19_source_html.py'
+      - 'Night Court/tools/build_dialogue_source_queue.py'
+      - '.github/workflows/night-court-s09e19-final-import.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  final-episode:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/night-court-s09e19-final-dialogue-import'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/night-court-s09e19-final-dialogue-import
+          persist-credentials: true
+      - name: Reuse verified S09E19 source HTML from prior successful run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/s09e19"
+          gh run download 40038491460 --repo gamesbyian/general-purpose --name night-court-s09e19-original-caption-html --dir "${{ runner.temp }}/s09e19"
+      - name: Verify source SHA and preserve one untimed dialogue witness
+        run: |
+          python "Night Court/tools/import_s09e19_source_html.py" "${{ runner.temp }}/s09e19"
+          python "Night Court/tools/audit_dialogue_quality.py"
+          python "Night Court/tools/audit_dialogue_coverage.py"
+          python "Night Court/tools/compare_dialogue_versions.py"
+          python "Night Court/tools/audit_holdings.py"
+          python "Night Court/tools/build_dialogue_source_queue.py"
+          python "Night Court/tools/validate_dialogue.py"
+          python "Night Court/tools/validate.py"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("Night Court")
+          coverage=json.loads((root/"catalog/dialogue-coverage.json").read_text())
+          assert coverage["episodes_with_held_dialogue"]==193,coverage["episodes_with_held_dialogue"]
+          summary=json.loads((root/"research/s09e19-final-dialogue-acquisition.json").read_text())
+          assert summary["format"]=="untimed_text_from_source_html"
+          queue=json.loads((root/"catalog/dialogue-source-queue.json").read_text())
+          assert not queue["ranked_missing_episode_ids"],queue["ranked_missing_episode_ids"]
+          print("Accepted 193/193 held original-series episode dialogue witnesses; S09E19 untimed")
+          PY
+      - name: Commit canonical episode source and coverage indexes to research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): preserve S09E19 dialogue and confirm 193 original-series episodes held"
+            git push origin HEAD:research/night-court-s09e19-final-dialogue-import
+          fi
