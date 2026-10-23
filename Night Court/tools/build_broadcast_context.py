@@ -21,7 +21,7 @@ def overview(text,season):
     def f(key):
         m=re.search(r"(?m)^\s*\|\s*"+key+str(season)+r"\s*=\s*([\d.]+)",text)
         return float(m.group(1)) if m else None
-    return {"season":season,"season_network_rank":int(f("infoA")) if f("infoA") is not None else None,
+    return {"season":season,"season_us_series_rank":int(f("infoA")) if f("infoA") is not None else None,
             "season_household_rating":f("infoB"),
             "rank_source":"Wikipedia episode-list season-overview table; independently verify underlying ratings references"}
 
@@ -78,7 +78,7 @@ def main():
         "series":"night-court-1984","source":source_url,
         "license":"CC BY-SA 4.0, Wikipedia contributors",
         "source_revision":provenance["revision"],
-        "season_averages_meaning":"Annual/season table ranking/rating transcribed from a secondary Wikipedia season overview",
+        "season_averages_meaning":"Season-wide U.S. TV-series ranking/rating as reported by the secondary Wikipedia season overview",
         "episode_measurements_meaning":"Per-episode measurements as attributed in wiki episode rows, either household rating/share or U.S. viewers in millions",
         "no_cross_unit_comparison":True,
         "composite_handling":"Combined two-part episodes share one audience metric in source; deduplicated for descriptive season stats.",
@@ -99,11 +99,11 @@ def main():
        "Attribution: Wikipedia contributors, CC BY-SA 4.0.",
        "",
        "Season ranks and season-wide household rating (when listed):","",
-       "| Season | Network rank | Season household rating | Episode parts | Per-broadcast viewer observations |",
+       "| Season | U.S. series rank | Season household rating | Episode parts | Per-broadcast viewer observations |",
        "|---|---:|---:|---:|---:|"]
     for s in seasons:
         lines.append("| {} | {} | {} | {} | {} |".format(
-          s["season"],s["season_network_rank"],s["season_household_rating"],
+          s["season"],s["season_us_series_rank"],s["season_household_rating"],
           s["episode_parts"],s["us_viewers_millions"]["measured_broadcasts"]))
     lines+=["","The per-episode CSV/JSON preserves household rating/share and millions-of-viewers as distinct units;",
             "broadcasts spanning two episode parts are not double-counted in descriptive medians.",
