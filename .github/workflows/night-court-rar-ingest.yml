@@ -1,0 +1,76 @@
+name: Night Court import owner-provided S01 and S02 RAR subtitles
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-rar-ingestion
+    paths:
+      - Night Court/tools/import_dialogue_rar.py
+      - .github/workflows/night-court-rar-ingest.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-rar-ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install local RAR parser and decompressor
+        shell: bash
+        run: |
+          python -m pip install -q rarfile==4.2
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar
+          command -v unar
+      - name: Test all 35 source episode mappings before extraction
+        run: python "Night Court/tools/import_dialogue_rar.py" --dry-run
+      - name: Preserve owner-uploaded RAR archives and import all 35 English subtitle witnesses
+        run: python "Night Court/tools/import_dialogue_rar.py"
+      - name: Verify physical source files and checksum/episode linking
+        run: |
+          python "Night Court/tools/validate_dialogue.py"
+          python "Night Court/tools/validate.py"
+      - name: Audit cue timing, coverage, source location and version identity
+        run: |
+          python "Night Court/tools/audit_dialogue_quality.py"
+          python "Night Court/tools/compare_dialogue_versions.py"
+          python "Night Court/tools/audit_dialogue_coverage.py"
+          python "Night Court/tools/audit_holdings.py"
+          python "Night Court/tools/build_dialogue_source_queue.py"
+          python "Night Court/tools/test_dialogue_source_queue.py"
+          python "Night Court/tools/validate_knowledge.py"
+      - name: Verify expected archive outcome without printing copyrighted dialogue
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("Night Court")
+          audit=json.loads((root/"catalog/dialogue-coverage.json").read_text())
+          manifest=json.loads((root/"catalog/rar-ingestion-manifest.json").read_text())
+          assert manifest["archive_count"]==2 and manifest["witness_count"]==35
+          assert audit["episodes_with_held_dialogue"]>=35,audit["episodes_with_held_dialogue"]
+          for season,count in [(1,13),(2,22)]:
+              for episode in range(1,count+1):
+                  key=f"S{season:02d}E{episode:02d}"
+                  row=next(x for x in audit["rows"] if x["id"]==key)
+                  assert row["held_timed_caption_tracks"]>=1,(key,row)
+          for source in manifest["archives"]:
+              assert (root/source["archive_file"]).exists()
+          print("SUCCESS: 35 distinct original-series episodes have a physically held English SRT with its RAR source and provenance.")
+          PY
+      - name: Commit extracted episode source versions and move original archives into source-archives
+        shell: bash
+        run: |
+          git add -A -- "Night Court/"
+          if git diff --cached --quiet; then echo "Archive already imported"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "archive(night-court): preserve 35 owner-uploaded season 1 and 2 subtitle witnesses"
+          git push origin HEAD:research/night-court-rar-ingestion
