@@ -176,3 +176,9 @@ For up to 500 caption/transcript files at once, `tools/import_dialogue_bundle.py
 ### Latest episode-specific caption discovery
 
 The checked external Subtitle Cat inventory now contains **21 original-series episodes with 22 separately located caption page versions**, including new season-five, seven and eight examples. [Source locations and ranked gap queue](catalog/dialogue-source-queue.md) exposes a truthful status for all 193 episodes. The archive also maintains a quarantine list of two 2023-revival/misnumbered subtitle sources to prevent similarly numbered episodes from contaminating the original research corpus.
+
+## Season-three caption source verification (23 October 2026)
+
+A separately researched public [Subtitle Cat upload index](https://www.subtitlecat.com/list_page.php?from=1666800) identifies all **22** episodes of the original 1984–1992 series' third season, in a 9 May 2025 batch of English DVD-caption display pages. All 22 episode-specific page URLs were individually checked and saved in `research/season03-caption-page-locations.json`, and the corresponding episode source records were reconciled without storing the caption text itself.
+
+The latest **193-episode acquisition queue** is now **44 episodes with direct external dialogue-page links, 19 with index-only pointers, and 130 without an episode-specific locator**. Across Subtitle Cat specifically, the archive records 40 episode IDs and 41 page variants. The **full locally held episode dialogue count remains zero**. See `catalog/dialogue-source-queue.json`, `catalog/holdings-coverage.json`, and `catalog/subtitlecat-discovery.json` for distinct denominators and source statuses.
