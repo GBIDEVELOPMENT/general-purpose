@@ -1,0 +1,112 @@
+name: FTP media library organizer
+on:
+  pull_request:
+    paths:
+      - "media-organizer/**"
+      - ".github/workflows/ftp-media-organizer.yml"
+  push:
+    branches: [main]
+    paths:
+      - "media-organizer/**"
+      - ".github/workflows/ftp-media-organizer.yml"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Inventory (read-only), or apply approved changes"
+        type: choice
+        options: [inventory, apply]
+        default: inventory
+      protocol:
+        description: "FTP compatibility or encrypted FTPS"
+        type: choice
+        options: [ftp, ftps]
+        default: ftp
+permissions:
+  contents: read
+concurrency:
+  group: ftp-media-organizer-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'trusted' }}
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax and offline behavioral tests
+        run: |
+          python -m py_compile media-organizer/organize.py
+          python -m unittest discover -s media-organizer/tests -v
+  inventory:
+    if: >-
+      (github.event_name == 'push' && github.ref == 'refs/heads/main')
+      || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.mode == 'inventory')
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ${{ github.event_name == 'workflow_dispatch' && inputs.protocol || 'ftp' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validate configured credentials
+        run: test -n "$FTP_PASSWORD"
+      - name: Inventory read-only FTP directory tree
+        run: python media-organizer/organize.py --mode inventory
+      - name: Upload private audit artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ftp-media-inventory
+          path: media-organizer/output/
+          retention-days: 30
+      - name: Publish inventory to isolated private report branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp -a media-organizer/output "$RUNNER_TEMP/ftp-inventory-output"
+          rm -rf media-organizer/output
+          git fetch origin refs/heads/reports/ftp-media-inventory:refs/remotes/origin/reports/ftp-media-inventory
+          git switch -c _ftp_inventory origin/reports/ftp-media-inventory
+          mkdir -p media-organizer/output
+          cp -a "$RUNNER_TEMP/ftp-inventory-output/." media-organizer/output/
+          git add -- media-organizer/output
+          if git diff --cached --quiet; then
+            echo "Inventory report unchanged"
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "report(media): refresh FTP Downloads inventory"
+          git push origin HEAD:refs/heads/reports/ftp-media-inventory
+  apply:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.mode == 'apply'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: ftp-media-changes
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ${{ inputs.protocol }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate plan and credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$FTP_PASSWORD"
+          test -s media-organizer/approved-plan.json
+      - name: Execute only committed approved plan
+        run: python media-organizer/organize.py --mode apply --plan media-organizer/approved-plan.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ftp-media-apply-audit
+          path: media-organizer/output/
+          retention-days: 90
