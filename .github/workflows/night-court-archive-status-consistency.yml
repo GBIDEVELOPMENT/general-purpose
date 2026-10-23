@@ -1,0 +1,39 @@
+name: Night Court archive acquisition status consistency
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/reconcile_archive_status.py'
+      - 'Night Court/tools/build_dialogue_source_queue.py'
+      - 'Night Court/catalog/archive-status.json'
+      - 'Night Court/README.md'
+      - 'Night Court/DIALOGUE-CORPUS-ACQUISITION-COMPLETE.md'
+      - '.github/workflows/night-court-archive-status-consistency.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate held dialogue and source-queue integrity
+        run: |
+          python "Night Court/tools/validate_dialogue.py"
+          python "Night Court/tools/build_dialogue_source_queue.py"
+          python "Night Court/tools/reconcile_archive_status.py"
+      - name: Require reproducible current 193-episode status
+        run: |
+          git diff --exit-code -- "Night Court/catalog/archive-status.json"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("Night Court/catalog")
+          a=json.loads((p/"archive-status.json").read_text())
+          q=json.loads((p/"dialogue-source-queue.json").read_text())
+          assert (a["episodes_with_held_dialogue"],a["caption_files_stored"],
+                  a["held_episodes_with_untimed_only_dialogue"]) == (193,192,1)
+          assert not q["ranked_missing_episode_ids"]
+          assert a["sources"]["subtitle_cat_subtitle_files_held"]==157
+          assert a["independently_video_verified_complete_episodes"]==0
+          print("Archive status verified: 193/193, 192 timed, one untimed, zero AV-complete")
+          PY
