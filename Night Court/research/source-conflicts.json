@@ -1,0 +1,95 @@
+{
+  "series": "night-court-1984",
+  "as_of": "2026-10-23",
+  "discrepancies": [
+    {
+      "id": "conflict:season1-rating-revision",
+      "area": "broadcast_audience",
+      "subject": "season_1",
+      "status": "unresolved_primary_source_check_required",
+      "observations": [
+        {
+          "source": "Wikipedia currently held revision 1377931598",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+          "rank_us_series": 47,
+          "season_household_rating_points": 15.5
+        },
+        {
+          "source": "older Kiwix/Wikipedia 2024-01 mirror",
+          "url": "https://kiwix.starmango.org/content/wikipedia_en_all_maxi_2024-01/A/List_of_Night_Court_episodes",
+          "rank_us_series": 41,
+          "season_household_rating_points": 12.7
+        },
+        {
+          "source": "older Wikipedia mirror 2025-08 snapshot",
+          "url": "https://wiki.knf7.com/content/wikipedia_en_all_maxi_2025-08/List_of_Night_Court_episodes",
+          "rank_us_series": 41,
+          "season_household_rating_points": 12.7
+        }
+      ],
+      "note": "Mirror revisions are derivatives of the same crowd-edited source, not independent corroboration. Do not silently change the machine broadcast table; investigate contemporary Nielsen/TV press."
+    },
+    {
+      "id": "conflict:season-count-classic-tv",
+      "area": "episode_catalogue",
+      "subject": "series_episode_total",
+      "status": "source_internal_contradiction",
+      "observations": [
+        {
+          "source": "Classic TV Database",
+          "url": "https://www.classic-tv.com/shows/night-court",
+          "reported_seasons": 7,
+          "reported_episodes": 193
+        },
+        {
+          "source": "Wikipedia original series episode list",
+          "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+          "reported_seasons": 9,
+          "reported_episodes": 193
+        }
+      ],
+      "note": "Classic-TV list includes original show dates and 193 episodes yet erroneously says seven seasons elsewhere."
+    },
+    {
+      "id": "conflict:finale-vs-last-broadcast",
+      "area": "narrative_vs_broadcast_chronology",
+      "subject": "final_episode",
+      "status": "distinction_not_numeric_conflict",
+      "observations": [
+        {
+          "source": "Los Angeles Times finale report",
+          "url": "https://www.latimes.com/archives/la-xpm-1992-05-13-ca-1601-story.html",
+          "date": "1992-05-13",
+          "meaning": "promoted narrative finale airing"
+        },
+        {
+          "source": "Wikipedia episode list S09E22",
+          "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+          "date": "1992-05-31",
+          "meaning": "final episode broadcast"
+        }
+      ],
+      "note": "Do not collapse conclusion to story arc, last broadcast, or production order into one finale date."
+    },
+    {
+      "id": "conflict:community-rating-rankings",
+      "area": "modern_online_fandom",
+      "subject": "top_episodes",
+      "status": "different_platform_samples",
+      "observations": [
+        {
+          "source": "IMDb recent top-rated original episode index",
+          "url": "https://www.imdb.com/title/tt0086770/episodes/?topRated=DESC",
+          "top": "S04E15 A Day in the Life"
+        },
+        {
+          "source": "Episode Ninja September 2026 index",
+          "url": "https://episode.ninja/series/night-court",
+          "top": "S06E13 Clip Show (2)"
+        }
+      ],
+      "note": "These are different platform samples, dates and ranking conventions; both can reflect their own user audiences without contradiction."
+    }
+  ],
+  "policy": "Preserve source-specific reported facts, observation date, semantic unit and provenance; never blend without independent measurement documentation."
+}
