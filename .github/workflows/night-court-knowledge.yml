@@ -35,8 +35,12 @@ jobs:
         run: python "Night Court/tools/validate.py"
       - name: Collect factual TVmaze cast, crew and episode guestcast (bounded)
         run: python "Night Court/tools/collect_tvmaze_cast.py"
+      - name: Preserve previous licensed wiki revisions
+        run: python "Night Court/tools/preserve_wiki_revisions.py"
       - name: Preserve attributed CC BY-SA biographies and broadcast context
         run: python "Night Court/tools/collect_licensed_context.py"
+      - name: Retain newly downloaded context article revisions immutably
+        run: python "Night Court/tools/preserve_wiki_revisions.py"
       - name: Attempt authorized fan wiki source collection (fail closed)
         run: python "Night Court/tools/collect_licensed_fandom.py"
       - name: Build 193 licensed synopsis dossiers and retrieval indices
