@@ -29,9 +29,18 @@ class LocalMediaTests(unittest.TestCase):
         ]}
         self.assertEqual([x["index"] for x in E.select_text_tracks(data,"en")],[4])
         self.assertEqual([x["index"] for x in E.select_text_tracks(data,"fr")],[3])
+        self.assertEqual([x["index"] for x in E.select_text_tracks(data,"fra")],[3])
+        self.assertEqual(E.track_language({"tags":{"language":"fre"}}),"fr")
+        self.assertEqual(E.track_language({"tags":{"language":"SPA"}}),"es")
         self.assertEqual([x["index"] for x in E.select_text_tracks(data,"en",specific=2)],[2])
         self.assertEqual([x["index"] for x in E.select_text_tracks(data,"en",all_tracks=True)],[2,3,4])
         with self.assertRaises(ValueError):E.select_text_tracks(data,"en",specific=1)
+    def test_asr_source_attestation_never_claims_completeness(self):
+        args=SimpleNamespace(rights_basis="user_provided",confirm_rights=True,complete=True,mode="asr")
+        opts=E.options_for(args,"S01E01","local-ASR","en",Path("synthetic.mkv"))
+        self.assertFalse(opts["complete"])
+        self.assertIn("unverified",opts["notes"])
+
     def test_asr_uses_stable_srt_timing_without_fictional_speakers(self):
         segments=[SimpleNamespace(start=1.234,end=2.345,text=" Hello, synthetic judge. "),
                   SimpleNamespace(start=2.4,end=3.001,text="This is a test.") ]
