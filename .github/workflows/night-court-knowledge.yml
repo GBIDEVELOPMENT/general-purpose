@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - research/night-court-cast-indexing
+      - "research/night-court-*"
     paths:
       - "Night Court/tools/build_retrieval_index.py"
       - "Night Court/tools/collect_tvmaze_cast.py"
@@ -56,4 +56,5 @@ jobs:
             echo "Corpus unchanged"; exit 0
           fi
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): index 193 episodes and cast evidence"
-          git push origin HEAD:research/night-court-cast-indexing
+          if [ "$GITHUB_REF_NAME" = "main" ]; then echo "Read-only main workflow: create a research branch to commit updates"; exit 0; fi
+          git push origin "HEAD:$GITHUB_REF_NAME"
