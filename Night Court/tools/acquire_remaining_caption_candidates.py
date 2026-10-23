@@ -78,8 +78,10 @@ def safe_url(url, expected_suffix):
     if (parts.scheme != "https" or parts.hostname != HOST or parts.port or
             parts.username or parts.password or parts.query or parts.fragment):
         raise ValueError("non-allowlisted URL")
-    if not parts.path.startswith("/subs/1121/"):
-        raise ValueError("source is outside the verified episode page family")
+    if expected_suffix == ".html" and not parts.path.startswith("/subs/1121/"):
+        raise ValueError("candidate page is outside the mapped caption-page family")
+    if expected_suffix == ".srt" and not re.match(r"^/subs/[0-9]+/", parts.path):
+        raise ValueError("download is outside the source download directories")
     if not parts.path.lower().endswith(expected_suffix):
         raise ValueError("unexpected source extension")
     return urlunsplit((parts.scheme, parts.netloc,
