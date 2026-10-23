@@ -6,8 +6,8 @@ Links are external research leads, not held dialogue or approved copying.
 |---|---:|
 | no episode dialogue specific locator | 130 |
 | inferred link only | 0 |
-| index coverage only | 37 |
-| direct episode page found not held | 26 |
+| index coverage only | 19 |
+| direct episode page found not held | 44 |
 | held dialogue needs quality review | 0 |
 
 ## Verified episode-level external pages
@@ -28,10 +28,28 @@ Links are external research leads, not held dialogue or approved copying.
 - **S02E16 The Gypsy:** [Subtitle Cat](https://www.subtitlecat.com/subs/1080/Night%20Court%20%281984%29%20-%20S02E16%20-%20The%20Gypsy%20%28480p%20DVD%20x265%20Panda%29.eng.html)
 - **S02E20 Mac and Quon Le: Together Again:** [Forever Dreaming](https://transcripts.foreverdreaming.org/viewtopic.php?t=82714), [Subtitle Cat](https://www.subtitlecat.com/subs/1080/Night%20Court%20%281984%29%20-%20S02E20%20-%20Mac%20and%20Quon%20Le%20Together%20Again%20%28480p%20DVD%20x265%20Panda%29.eng.html)
 - **S02E22 Walk, Don't Wheel:** [Forever Dreaming](https://transcripts.foreverdreaming.org/viewtopic.php?t=82716)
-- **S03E01 Hello, Goodbye:** [Forever Dreaming](https://transcripts.foreverdreaming.org/viewtopic.php?t=82717)
+- **S03E01 Hello, Goodbye:** [Forever Dreaming](https://transcripts.foreverdreaming.org/viewtopic.php?t=82717), [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E01%20-%20Hello%2C%20Goodbye%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E02 The Hostage:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E02%20-%20The%20Hostage%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E03 Dad's First Date:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E03%20-%20Dads%20First%20Date%20(480p%20DVD%20x265%20Panda).eng.html)
 - **S03E04 Mac and Quon Le: No Reservations:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20%281984%29%20-%20S03E04%20-%20Mac%20and%20Quon%20Le%20No%20Reservations%20%28480p%20DVD%20x265%20Panda%29.eng.html)
+- **S03E05 Halloween, Too:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E05%20-%20Halloween%2C%20Too%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E06 Best of Friends:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E06%20-%20Best%20of%20Friends%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E07 Dan's Boss:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E07%20-%20Dans%20Boss%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E08 Up On the Roof:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E08%20-%20Up%20on%20the%20Roof%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E09 The Wheels of Justice (Part 1):** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E09%20-%20Wheels%20of%20Justice%20(1)%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E10 The Wheels of Justice (Part 2):** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E10%20-%20Wheels%20of%20Justice%20(2)%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E11 Walk Away, Renee:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E11%20-%20Walk%20Away%2C%20Renee%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E12 Dan's Escort:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E12%20-%20Dans%20Escort%20(480p%20DVD%20x265%20Panda).eng.html)
 - **S03E13 The Night Off:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20%281984%29%20-%20S03E13%20-%20The%20Night%20Off%20%28480p%20DVD%20x265%20Panda%29.eng.html)
+- **S03E14 Harry and Leon:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E14%20-%20Harry%20and%20Leon%20(480p%20DVD%20x265%20Panda).eng.html)
 - **S03E15 The Apartment:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20%281984%29%20-%20S03E15%20-%20The%20Apartment%20%28480p%20DVD%20x265%20Panda%29.eng.html)
+- **S03E16 Leon, We Hardly Knew Ye:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E16%20-%20Leon%2C%20We%20Hardly%20Knew%20Ye%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E17 The Mugger:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E17%20-%20The%20Mugger%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E18 Could This Be Magic?:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E18%20-%20Could%20This%20Be%20Magic%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E19 Monkey Business:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E19%20-%20Monkey%20Business%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E20 Flo's Retirement:** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E20%20-%20Flos%20Retirement%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E21 Hurricane (Part 1):** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E21%20-%20The%20Hurricane%20(1)%20(480p%20DVD%20x265%20Panda).eng.html)
+- **S03E22 Hurricane (Part 2):** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E22%20-%20The%20Hurricane%20(2)%20(480p%20DVD%20x265%20Panda).eng.html)
 - **S04E01 The Next Voice You Hear:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e01_the_next_voice_you_hear.html)
 - **S04E15 A Day in the Life:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/Night%20Court%20s04e15%20A%20Day%20in%20the%20Life.html)
 - **S05E01 Her Honor (3):** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/Night%20Court%20s05e01%20Her%20Honor%203.html)

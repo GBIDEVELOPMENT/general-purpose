@@ -4,8 +4,8 @@
   "ranking_policy": "Least episode-specific source evidence first; within tier, later seasons first.",
   "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
   "source_status_counts": {
-    "direct_episode_page_found_not_held": 26,
-    "index_coverage_only": 37,
+    "direct_episode_page_found_not_held": 44,
+    "index_coverage_only": 19,
     "no_episode_dialogue_specific_locator": 130
   },
   "by_season": {
@@ -18,8 +18,7 @@
       "index_coverage_only": 12
     },
     "S03": {
-      "direct_episode_page_found_not_held": 4,
-      "index_coverage_only": 18
+      "direct_episode_page_found_not_held": 22
     },
     "S04": {
       "direct_episode_page_found_not_held": 2,
@@ -176,24 +175,6 @@
     "S04E20",
     "S04E21",
     "S04E22",
-    "S03E02",
-    "S03E03",
-    "S03E05",
-    "S03E06",
-    "S03E07",
-    "S03E08",
-    "S03E09",
-    "S03E10",
-    "S03E11",
-    "S03E12",
-    "S03E14",
-    "S03E16",
-    "S03E17",
-    "S03E18",
-    "S03E19",
-    "S03E20",
-    "S03E21",
-    "S03E22",
     "S02E02",
     "S02E04",
     "S02E06",
@@ -220,9 +201,27 @@
     "S04E01",
     "S04E15",
     "S03E01",
+    "S03E02",
+    "S03E03",
     "S03E04",
+    "S03E05",
+    "S03E06",
+    "S03E07",
+    "S03E08",
+    "S03E09",
+    "S03E10",
+    "S03E11",
+    "S03E12",
     "S03E13",
+    "S03E14",
     "S03E15",
+    "S03E16",
+    "S03E17",
+    "S03E18",
+    "S03E19",
+    "S03E20",
+    "S03E21",
+    "S03E22",
     "S02E01",
     "S02E03",
     "S02E05",
@@ -1350,7 +1349,7 @@
       "episode": 1,
       "title": "Hello, Goodbye",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 1,
+      "direct_episode_page_locators": 2,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 1,
       "acquisition_status": "direct_episode_page_found_not_held",
@@ -1372,6 +1371,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E01%20-%20Hello%2C%20Goodbye%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1381,10 +1389,10 @@
       "episode": 2,
       "title": "The Hostage",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1403,6 +1411,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E02%20-%20The%20Hostage%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1412,10 +1429,10 @@
       "episode": 3,
       "title": "Dad's First Date",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1433,6 +1450,15 @@
           "verified": false,
           "content_imported": false,
           "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E03%20-%20Dads%20First%20Date%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
           "rights_status": "not_established"
         }
       ]
@@ -1483,10 +1509,10 @@
       "episode": 5,
       "title": "Halloween, Too",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1505,6 +1531,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E05%20-%20Halloween%2C%20Too%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1514,10 +1549,10 @@
       "episode": 6,
       "title": "Best of Friends",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1536,6 +1571,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E06%20-%20Best%20of%20Friends%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1545,10 +1589,10 @@
       "episode": 7,
       "title": "Dan's Boss",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1567,6 +1611,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E07%20-%20Dans%20Boss%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1576,10 +1629,10 @@
       "episode": 8,
       "title": "Up On the Roof",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1598,6 +1651,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E08%20-%20Up%20on%20the%20Roof%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1607,10 +1669,10 @@
       "episode": 9,
       "title": "The Wheels of Justice (Part 1)",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1629,6 +1691,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E09%20-%20Wheels%20of%20Justice%20(1)%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1638,10 +1709,10 @@
       "episode": 10,
       "title": "The Wheels of Justice (Part 2)",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1660,6 +1731,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E10%20-%20Wheels%20of%20Justice%20(2)%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1669,10 +1749,10 @@
       "episode": 11,
       "title": "Walk Away, Renee",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1691,6 +1771,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E11%20-%20Walk%20Away%2C%20Renee%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1700,10 +1789,10 @@
       "episode": 12,
       "title": "Dan's Escort",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1721,6 +1810,15 @@
           "verified": false,
           "content_imported": false,
           "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E12%20-%20Dans%20Escort%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
           "rights_status": "not_established"
         }
       ]
@@ -1771,10 +1869,10 @@
       "episode": 14,
       "title": "Harry and Leon",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1792,6 +1890,15 @@
           "verified": false,
           "content_imported": false,
           "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E14%20-%20Harry%20and%20Leon%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
           "rights_status": "not_established"
         }
       ]
@@ -1842,10 +1949,10 @@
       "episode": 16,
       "title": "Leon, We Hardly Knew Ye",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1864,6 +1971,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E16%20-%20Leon%2C%20We%20Hardly%20Knew%20Ye%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1873,10 +1989,10 @@
       "episode": 17,
       "title": "The Mugger",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1895,6 +2011,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E17%20-%20The%20Mugger%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1904,10 +2029,10 @@
       "episode": 18,
       "title": "Could This Be Magic?",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1926,6 +2051,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E18%20-%20Could%20This%20Be%20Magic%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1935,10 +2069,10 @@
       "episode": 19,
       "title": "Monkey Business",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1957,6 +2091,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E19%20-%20Monkey%20Business%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1966,10 +2109,10 @@
       "episode": 20,
       "title": "Flo's Retirement",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1988,6 +2131,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E20%20-%20Flos%20Retirement%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -1997,10 +2149,10 @@
       "episode": 21,
       "title": "Hurricane (Part 1)",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -2019,6 +2171,15 @@
           "content_imported": false,
           "source_kind": "transcript",
           "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E21%20-%20The%20Hurricane%20(1)%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
         }
       ]
     },
@@ -2028,10 +2189,10 @@
       "episode": 22,
       "title": "Hurricane (Part 2)",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "direct_episode_page_found_not_held",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -2049,6 +2210,15 @@
           "verified": false,
           "content_imported": false,
           "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E22%20-%20The%20Hurricane%20(2)%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
           "rights_status": "not_established"
         }
       ]
