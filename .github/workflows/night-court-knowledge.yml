@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "research/night-court-*"
+      - research/night-court-cast-indexing
     paths:
       - "Night Court/tools/build_retrieval_index.py"
       - "Night Court/tools/collect_tvmaze_cast.py"
