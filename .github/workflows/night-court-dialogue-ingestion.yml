@@ -8,6 +8,7 @@ on:
     paths:
       - "Night Court/tools/import_dialogue.py"
       - "Night Court/tools/validate_dialogue.py"
+      - "Night Court/tools/audit_dialogue_coverage.py"
       - "Night Court/tools/test_import_dialogue.py"
       - "Night Court/incoming/**"
       - ".github/workflows/night-court-dialogue-ingestion.yml"
@@ -33,6 +34,8 @@ jobs:
         run: python "Night Court/tools/import_dialogue.py" --inbox "Night Court/incoming"
       - name: Verify held dialogue and source checksum integrity
         run: python "Night Court/tools/validate_dialogue.py"
+      - name: Build 193-episode dialogue-only gap and completeness audit
+        run: python "Night Court/tools/audit_dialogue_coverage.py"
       - name: Rebuild 193-row holdings coverage
         run: python "Night Court/tools/audit_holdings.py"
       - name: Commit additional dialogue witness versions to research branch
