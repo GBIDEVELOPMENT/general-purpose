@@ -1,0 +1,103 @@
+name: Night Court FTP access (S60-compatible)
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: "Inventory Night Court subtitle/archive locations, or stage ONE explicitly selected source"
+        required: true
+        default: inventory
+        type: choice
+        options: [inventory, stage]
+      protocol:
+        description: "FTP matches existing S60. FTPS is preferable when the server supports it."
+        required: true
+        default: ftp
+        type: choice
+        options: [ftp, ftps]
+      inventory_root:
+        description: "Root for bounded inventory (within /downloads)"
+        required: false
+        default: /downloads
+        type: string
+      remote_file:
+        description: "Required ONLY for stage: exact /downloads/.../Night Court/... subtitle or RAR/ZIP path"
+        required: false
+        type: string
+  push:
+    branches:
+      - research/night-court-ftp-access
+    paths:
+      - "Night Court/tools/ftp_research_intake.py"
+      - "Night Court/tools/test_ftp_research_intake.py"
+      - ".github/workflows/night-court-ftp.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: night-court-ftp-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure source-inventory and staging are safe without network access
+        run: python "Night Court/tools/test_ftp_research_intake.py"
+
+  ftp:
+    if: github.event_name == 'workflow_dispatch'
+    needs: offline-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      OPERATION: ${{ inputs.operation }}
+      PROTOCOL: ${{ inputs.protocol }}
+      INVENTORY_ROOT: ${{ inputs.inventory_root }}
+      REMOTE_FILE: ${{ inputs.remote_file }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validate credentials and source operation before network access
+        shell: bash
+        run: |
+          if [ -z "$FTP_PASSWORD" ]; then
+            echo "::error::Add repository Actions secret FTP_PASSWORD to gamesbyian/general-purpose, then dispatch again."
+            exit 2
+          fi
+          if [ "$OPERATION" = "stage" ]; then
+            case "$GITHUB_REF_NAME" in
+              research/night-court-ftp-*) ;;
+              *) echo "::error::Stage operations require a research/night-court-ftp-* branch, not main"; exit 2;;
+            esac
+            if [ -z "$REMOTE_FILE" ]; then
+              echo "::error::Stage requires an explicit full remote file path"; exit 2
+            fi
+          fi
+      - name: Discover read-only Night Court FTP sources or stage one chosen file
+        shell: bash
+        run: |
+          args=(--mode "$OPERATION" --protocol "$PROTOCOL" --root "$INVENTORY_ROOT")
+          if [ "$OPERATION" = "stage" ]; then
+            args+=(--remote-file "$REMOTE_FILE")
+          fi
+          python "Night Court/tools/ftp_research_intake.py" "${args[@]}"
+      - name: Commit only explicitly staged files and their provenance to the research branch
+        if: inputs.operation == 'stage'
+        shell: bash
+        run: |
+          git add -- "Night Court/incoming/" "Night Court/research/ftp-staging-records.jsonl"
+          if git diff --cached --quiet; then
+            echo "No new staged files"; exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): stage explicitly requested FTP subtitle source"
+          git push origin "HEAD:$GITHUB_REF_NAME"
