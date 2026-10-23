@@ -1,0 +1,60 @@
+name: Night Court FTP video metadata (no downloads)
+
+on:
+  workflow_dispatch:
+    inputs:
+      protocol:
+        description: "FTP mirrors working inventory; choose FTPS if supported"
+        required: true
+        default: ftp
+        type: choice
+        options: [ftp, ftps]
+      remote_root:
+        description: "Video directory (no video files downloaded)"
+        required: true
+        default: "/downloads/Night Court TVRip S1-S9"
+        type: string
+  push:
+    branches:
+      - research/night-court-ftp-video-catalog
+    paths:
+      - "Night Court/tools/ftp_video_metadata.py"
+      - "Night Court/tools/test_ftp_video_metadata.py"
+      - ".github/workflows/night-court-ftp-video-metadata.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate path and episode detection offline
+        run: python "Night Court/tools/test_ftp_video_metadata.py"
+
+  inventory:
+    if: github.event_name == 'workflow_dispatch'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ${{ inputs.protocol }}
+      FTP_REMOTE_ROOT: ${{ inputs.remote_root }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require existing secret
+        shell: bash
+        run: |
+          if [ -z "$FTP_PASSWORD" ]; then
+            echo "::error::The FTP_PASSWORD repository secret is missing."
+            exit 2
+          fi
+      - name: List metadata for media in already-confirmed Night Court folder
+        shell: bash
+        run: |
+          python "Night Court/tools/ftp_video_metadata.py" --root "$FTP_REMOTE_ROOT" --protocol "$FTP_PROTOCOL"
