@@ -20,6 +20,7 @@ Only enter a token on a deployment whose code and origin you trust. A GitHub tok
 - **Views:** toggle compact list or gallery. Switch the scope selector between **This folder**, **Search entire repo**, and **Images in subfolders**. The search field filters names/paths within that scope.
 - **Galleries:** images and SVGs preview on demand; requests are only started near the viewport, at most three simultaneously. Large sets load in pages of 80; Show more adds files without redownloading displayed thumbnails.
 - **Inspect:** select a file for image/SVG, safe plain Markdown, source, PDF, browser-compatible audio or video preview. Previous/next controls and arrow keys navigate other files within the current results.
+- **Compare:** open a raster or SVG image and select **Pin A**. Navigate to another image and select **Compare A/B** for an annotated side-by-side preview (stacked on narrow screens). The pinned image's Blob remains in this tab's memory until unpinned, the repository changes, or the session is cleared. No files or comparisons are uploaded.
 - **Share:** use the arrow button for a folder URL or **Copy ↗** inside file previews to generate a deep link. URLs include no credential. A recipient needs their own GitHub access to private content.
 - **Disconnect:** forget token and reset private browser state using the dedicated button.
 
@@ -39,7 +40,7 @@ Expository itself does not need a backend or deployment secrets. Do not put toke
 node --test tools/expository/expository.test.cjs
 ```
 
-Uses only the Node.js test runner, with no external dependencies. A path-filtered PR workflow runs these smoke checks when Expository files change. Checks cover application JavaScript syntax, sidebar ancestry, collapsed/expanded folder rendering, cross-folder search, recursive galleries, deep-link structure, session clearing, and basic security invariants.
+Uses only the Node.js test runner, with no external dependencies. A path-filtered PR workflow runs these smoke checks when Expository files change. Checks cover application JavaScript syntax, sidebar ancestry, collapsed/expanded folder rendering, cross-folder search, recursive galleries, deep-link structure, session clearing, visual comparison boundaries, and basic security invariants.
 
 These are **not** substitutes for an optical/browser audit. Before a release, verify actual Android portrait Chrome (especially Pixel-width navigation, keyboard/screen-reader focus, and very large SVG galleries) and desktop Safari/Firefox.
 
@@ -56,9 +57,9 @@ These are **not** substitutes for an optical/browser audit. Before a release, ve
 
 Keep the generic browser clean; extensions should activate only when matching supported artifact structures.
 
-- **Glimpse:** SVG storyboard contact sheets, annotated interaction-state coverage, and adjacent-screen transitions.
-- **ROYGBIV/wallgen:** artwork gallery, PNG recipe metadata, and A/B texture/render comparisons.
-- **UR-Recomp / Ring Road:** screenshot/visual golden comparison, frame-difference inspection, and provenance links.
+- **Glimpse:** the generic visual A/B viewer already supports SVG storyboards; a future adapter could add contact sheets, annotated interaction-state coverage, and adjacent-screen transitions.
+- **ROYGBIV/wallgen:** use generic visual A/B for artwork; add PNG recipe metadata and per-material comparison overlays in a future adapter.
+- **UR-Recomp / Ring Road:** use generic visual A/B for screenshots; future features include pixel-difference inspection, registration and provenance links.
 - **General-purpose:** date- and status-aware report browsing without interacting with sensitive mail/audit services.
 
 ## Project structure
