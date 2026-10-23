@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'Night Court/tools/import_downloaded_s03_s04.py'
+      - 'Night Court/tools/import_dialogue.py'
       - '.github/workflows/night-court-s03-s04-artifact-import.yml'
   workflow_dispatch:
 permissions:
