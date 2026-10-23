@@ -1,4 +1,4 @@
-# PRISM · Repository Explorer
+# Expository: Repository Explorer
 
 A mobile-first, read-only GitHub repository browser and visual artifact gallery, with restrained rainbow styling and a dark-first interface.
 
