@@ -20,7 +20,7 @@ Recommended deployment: copy only the reviewed `tools/prism/index.html` to a sep
 
 ## What works
 
-- Responsive folder navigation, gallery/list views and name filtering in the current folder.
+- Responsive recursive folder navigation (using GitHub's Trees API when available), gallery/list views and name filtering in the current folder. A truncated tree index still permits manual folder browsing.
 - Authenticated repository discovery (first 500 repositories ordered by last update) or manually entered public/private repo.
 - Default branch lookup with optional branch override; breadcrumbs and hash-based directory links.
 - Image and SVG previews, including gallery thumbnails; text and simple Markdown; PDF, browser-compatible video and audio.
@@ -32,7 +32,7 @@ Recommended deployment: copy only the reviewed `tools/prism/index.html` to a sep
 
 This is a usable **first-pass prototype**, not a fully audited release. Its Markdown reader intentionally displays plain/safe content without rendering raw HTML or remote images. File rendering depends on browser codec support. GitHub's Contents API directory listing can be truncated at 1,000 files; large trees need a separate paginated/tree-backed explorer. Thumbnail generation is live and can encounter API rate limits in image-heavy folders. Very large previews are limited to 20 MB (gallery thumbnails to 8 MB). Binary/unknown file types link to GitHub. Private files never go through a third-party proxy.
 
-Priority improvements: accessible expandable recursive folder tree; lazy thumbnail loading based on visibility; search across the whole repository using a tree index; multi-select/contact sheets; side-by-side SVG comparison; tests at actual Android viewport sizes; optimistic large-repo indexing and explicit rate-limit feedback.
+Priority improvements: expand/collapse behavior for the indexed folder tree; lazy thumbnail loading based on visibility; search across the whole repository using a tree index; multi-select/contact sheets; side-by-side SVG comparison; tests at actual Android viewport sizes; optimistic large-repo indexing and explicit rate-limit feedback.
 
 ## Project-specific opportunities
 
@@ -42,3 +42,9 @@ Priority improvements: accessible expandable recursive folder tree; lazy thumbna
 - **General-purpose:** read-only audit ledger browser with date and run-type facets.
 
 All project-specific features should be optional adapters rather than assumptions built into the generic browser.
+
+## Current implementation note (October 23, 2026)
+
+The recursive Trees API index now exposes nested folders before they have been visited, while the Contents API remains the source for individual folder listings. Directory sorting puts folders first. Stale thumbnail jobs from another folder are discarded rather than painted into the active view. These changes are committed but have **not** been visually validated on an actual Android device. There is no deployed production Pages URL yet.
+
+Future authentication should investigate GitHub OAuth through a trusted authorization broker or a carefully scoped GitHub App, to avoid asking users to paste personal tokens into a static page. Never put privileged tokens in static site source or Pages Actions artifacts.
