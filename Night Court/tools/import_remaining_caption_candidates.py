@@ -16,6 +16,7 @@ def main(folder):
     if result["downloaded"]!=len(eligible) or len({x["episode_id"] for x in eligible})!=len(eligible):
         raise ValueError("Duplicate or inconsistent accession report")
     prepared = []
+    rejected = []
     for x in eligible:
         ep = x["episode_id"]
         if not re.fullmatch(r"S0[5-9]E\d{2}",ep):
@@ -33,7 +34,11 @@ def main(folder):
                            "third-party source rights not independently assessed. "
                            "Web source page: "+x["verified_page_url"])}
         # Preflight *all* inputs before mutating canonical episode files.
-        prepare(file, metadata)
+        try:
+            prepare(file, metadata)
+        except (ValueError, OSError, KeyError) as exc:
+            rejected.append({"episode_id":ep,"error":str(exc)[:240]})
+            continue
         prepared.append((file, metadata))
     for file, metadata in prepared:
         import_one(file, metadata)
@@ -42,12 +47,13 @@ def main(folder):
         "source_workflow": "night-court-unheld-caption-candidates.yml",
         "source_baseline":104, "new_sources":len(prepared),
         "held_witnesses_after_import":len(index),
+        "retrieved_but_invalid_for_import":rejected,
         "original_series_only":True,
         "third_party_retention_rights_unverified":True,
         "audiovisual_completeness_verified":False,
         "acquired_episode_ids":[item[1]["episode"] for item in prepared],
         "not_acquired":[x["episode_id"] for x in result["items"]
-                        if x["status"]!="downloaded_unreviewed"]
+                        if x["status"]!="downloaded_unreviewed"] + [x["episode_id"] for x in rejected]
     }
     (ROOT/"research"/"unheld-caption-acquisition-summary.json").write_text(
         json.dumps(accession,indent=2,ensure_ascii=False)+"\n","utf-8")
