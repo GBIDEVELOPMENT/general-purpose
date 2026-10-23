@@ -100,5 +100,18 @@ def main():
           "Always confirm the 1984 original series, not the 2023 revival.",
           "No full third-party dialogue has been mirrored by this operation.",""]
     save(ROOT/"catalog"/"dialogue-source-queue.md","\n".join(md))
+    statusfile=ROOT/"catalog"/"archive-status.json"
+    auditfile=ROOT/"catalog"/"holdings-coverage.json"
+    if statusfile.exists() and auditfile.exists():
+        status=json.loads(statusfile.read_text("utf-8"))
+        audits=json.loads(auditfile.read_text("utf-8"))
+        totals=audits["totals"]
+        status["sources"]["subtitle_cat_direct_pages_verified"]=totals["subtitlecat_any_episode_page_located"]
+        status["source_pointer_count_including_repeated_series_indexes"]=totals["source_pointers"]
+        status["source_locator_queue"]="catalog/dialogue-source-queue.json"
+        status["distinct_sources_warning"]=(
+          f'{totals["source_pointers"]} references may repeat a series catalog; '
+          "the 193 episode records contain no automatically acquired full television dialogue.")
+        save(statusfile,json.dumps(status,indent=2,ensure_ascii=False)+"\\n".replace("\\n","\n"))
     print("Dialogue source queue:",len(entries),"episodes;",counts)
 if __name__=="__main__":main()
