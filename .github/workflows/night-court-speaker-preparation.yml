@@ -6,11 +6,14 @@ on:
     branches:
       - "research/night-court-text-speaker-*"
       - "research/night-court-speaker-*"
+      - "research/night-court-scene-*"
     paths:
       - "Night Court/tools/prepare_speaker_attribution.py"
       - "Night Court/tools/test_prepare_speaker_attribution.py"
       - "Night Court/tools/reconcile_speaker_votes.py"
       - "Night Court/tools/test_reconcile_speaker_votes.py"
+      - "Night Court/tools/build_scene_participation.py"
+      - "Night Court/tools/test_scene_participation.py"
       - "Night Court/seasons/**/speaker-attribution/votes/*.jsonl"
       - "Night Court/TEXT-ONLY-SPEAKER-ATTRIBUTION.md"
       - ".github/workflows/night-court-speaker-preparation.yml"
@@ -38,6 +41,10 @@ jobs:
         run: python "Night Court/tools/test_reconcile_speaker_votes.py"
       - name: Prepare available source dialogue into bounded attribution packets
         run: python "Night Court/tools/prepare_speaker_attribution.py"
+      - name: Audit episode credits and direct address as separate scene participation signals
+        run: |
+          python "Night Court/tools/test_scene_participation.py"
+          python "Night Court/tools/build_scene_participation.py"
       - name: Reconcile any submitted speaker votes into provisional scripts
         run: python "Night Court/tools/reconcile_speaker_votes.py"
       - name: Revalidate idempotence and stable source references
