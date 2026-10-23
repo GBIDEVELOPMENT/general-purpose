@@ -30,5 +30,11 @@ def main():
     audit=json.loads((ROOT/"catalog"/"holdings-coverage.json").read_text("utf-8"))
     assert status["source_pointer_count_including_repeated_series_indexes"]==audit["totals"]["source_pointers"]
     assert status["sources"]["subtitle_cat_direct_pages_verified"]==audit["totals"]["subtitlecat_any_episode_page_located"]
+    rejected_file=ROOT/"catalog"/"rejected-dialogue-source-matches.json"
+    if rejected_file.exists():
+        rejected=json.loads(rejected_file.read_text("utf-8"))
+        urls={s["url"] for e in episodes for s in e["source_locations"]}
+        for bad in rejected["rejected"]:
+            assert bad["url"] not in urls,("Revival/mislabeled subtitle pollutes original corpus",bad["url"])
     print("VALID: 193 provenance-ranked episode source inventories, status and direct caption locators")
 if __name__=="__main__":main()

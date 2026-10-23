@@ -119,9 +119,11 @@ The supported source acquisition mechanism now includes `tools/extract_local_med
 
 ### Dialogue-source gap and acquisition matrix
 
-`tools/build_dialogue_source_queue.py` produces JSON/CSV/Markdown prioritization for all 193 episodes, with evidence ranks that distinguish individually verified source pages from season index listings and inferred URL patterns. Current coverage: 22 direct-page episodes, 38 index-only and 133 without episode-specific dialogue leads; 15 individual Subtitle Cat pages have been verified. The least-covered late seasons are the highest-value next search target. This work does not bypass sites, copy full dialogue or claim that an external page is an archived source. The queue must be regenerated whenever source references change.
+`tools/build_dialogue_source_queue.py` produces JSON/CSV/Markdown prioritization for all 193 episodes, with evidence ranks that distinguish individually verified source pages from season index listings and inferred URL patterns. Current coverage: 26 direct-page episodes, 37 index-only and 130 without episode-specific dialogue leads; 21 original-series episodes have verified Subtitle Cat pages. The least-covered late seasons are the highest-value next search target. This work does not bypass sites, copy full dialogue or claim that an external page is an archived source. The queue must be regenerated whenever source references change.
 
 
 ### Alternate transcript source concordance
 
 A bounded word-level source-witness alignment tool now compares multiple held editions of the same episode, preserving source SHA and exposing overlap, differences, likely duplicates and potential cross-episode identity collisions. Use `tools/compare_dialogue_versions.py` after every import; inspect `catalog/dialogue-variant-comparison.json` and per-episode `dialogue/variant-comparison.json` before proposing canonical dialogue. Automatic similarity is *not* enough to select a factual ground truth or attribute a joke to a performer.
+
+Further source discovery has expanded individually checked external caption pages to 21 episodes and 22 versions, including S05E01, S07E23 and S08E06. The updated queue gives 26 direct-episode-page leads, 37 index-only, and 130 episodes still lacking a specific dialogue locator. Quarantined revival matches are recorded in `catalog/rejected-dialogue-source-matches.json`. Focus next on seasons 4–9 rather than repeatedly revisiting indexed seasons 1–3.

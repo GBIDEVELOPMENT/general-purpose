@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - research/night-court-dialogue-source-queue
+      - "research/night-court-dialogue-source-*"
     paths:
       - "Night Court/tools/build_dialogue_source_queue.py"
       - "Night Court/tools/test_dialogue_source_queue.py"
@@ -41,4 +41,4 @@ jobs:
           git add -- "Night Court/"
           if git diff --cached --quiet; then echo "No source changes"; exit 0; fi
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): rebuild episode dialogue source locator gap matrix"
-          git push origin HEAD:research/night-court-dialogue-source-queue
+          git push origin "HEAD:$GITHUB_REF_NAME"
