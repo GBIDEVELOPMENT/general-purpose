@@ -100,3 +100,24 @@ python "Night Court/tools/test_reconcile_speaker_votes.py"
 The reconciler requires at least two distinctly named agents with agreement ratings at or above 0.75 before tentatively labeling an unlabeled turn. Even then, it marks the result `uncalibrated_agent_agreement`, **not** verified fact. Any speaker conflict, a single agent, low ratings or a possible self-address leaves the turn as `UNKNOWN`. Truly explicit textual speaker prefixes override suggestions and are labeled as such. Each vote's evidence pointers are checked against exact original turn IDs and the source hash; unrelated or fabricated character IDs are rejected.
 
 Only versions **with vote files** receive `speaker-proposals-reconciled.jsonl` and `script-provisional.md` for reading. With zero agent votes, no scripts are fabricated. A global `catalog/speaker-attribution-reconciliation.json` records the situation honestly. The original captions are never overwritten.
+
+
+## Implementation update: scene participation from credits and addressed names
+
+The 35 existing episode subtitle witnesses already have immutable actor/character candidate rosters from TVmaze and 15,014 caption-derived potential utterances. `tools/build_scene_participation.py` adds a **non-speaker-assigning** evidence pass that summarizes scene-by-scene which characters have textual support. It preserves the separate provenance of:
+
+1. **Show-wide cast credits:** possible series characters, not proof of appearance in a particular episode or scene.
+2. **Episode guest actor/role credits:** stronger *episode-level* possibility, still not evidence the credited character was present during a given caption interval.
+3. **Explicit caption labels:** a precisely sourced `NAME:` speaker label can identify its own turn when it uniquely matches a roster name.
+4. **Names used in direct address:** e.g., an opening `Hi, Bull` provides a hypothesis that Bull is the **listener**, specifically *not* the speaker of that utterance. A named listener may support a scene participation hypothesis without identifying the speaking character.
+5. **Unknown people:** `UNKNOWN`, `UNIDENTIFIED_GUEST`, and `OFFSCREEN_OR_CROWD` remain possible, even with a detailed cast list.
+
+Generated per-version `speaker-attribution/scene-participation-evidence.json` gives each provisional scene its source time span, turn references, characters with explicit text support, unmentioned episode guest roles, and unmentioned principal-cast candidates. `catalog/scene-participation-evidence.json` reports coverage without copying spoken lines into the global index.
+
+```sh
+python "Night Court/tools/prepare_speaker_attribution.py"
+python "Night Court/tools/build_scene_participation.py"
+python "Night Court/tools/test_scene_participation.py"
+```
+
+This is a stage for narrowing the candidate set in subsequent dialogue reasoning, **not** a new dialogue attribution system or a learned speaker model. Name mentions may be misleading, guest roles may be silent or offscreen, and camera edits cannot be recovered reliably from caption timing alone. No definitive line speaker is promoted without reliable evidence. The independent agent-vote/skeptic/reconciliation process remains the next stage.
