@@ -14,31 +14,25 @@ permissions:
 jobs:
   inspect:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Install read-only RAR listing tool
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq unar
-          lsar -version || true
-      - name: Print archive metadata only, never dialogue
+      - name: Install pure Python RAR header reader
+        run: python -m pip install -q rarfile==4.2
+      - name: Inspect RAR member names and sizes only, never dialogue
         shell: bash
         run: |
           python - <<'PY'
-          import json,glob,subprocess,hashlib,os
           from pathlib import Path
-          for name in sorted(glob.glob("Night Court/*.rar")):
-              p=Path(name)
-              data=p.read_bytes()
-              print("ARCHIVE",p.name,"size",len(data),"sha256",hashlib.sha256(data).hexdigest())
-              result=subprocess.run(["lsar","-json",str(p)],capture_output=True,text=True,timeout=40)
-              print("LSAR_EXIT",result.returncode,"STDERR",result.stderr[:500])
-              if result.returncode:continue
-              meta=json.loads(result.stdout)
-              print("TOPLEVEL_KEYS",sorted(meta.keys()))
-              members=meta.get("lsarContents",[])
-              print("MEMBER_COUNT",len(members))
-              for entry in members[:130]:
-                  print("ENTRY",json.dumps({k:entry.get(k) for k in ("XADFileName","XADFileSize","XADCompressedSize","XADIsDirectory","XADIsLink","XADFileType","XADFileCRC32")},ensure_ascii=False))
+          import hashlib,rarfile,json
+          for p in sorted(Path("Night Court").glob("*.rar")):
+              print("ARCHIVE",p.name,"size",p.stat().st_size,"sha256",hashlib.sha256(p.read_bytes()).hexdigest())
+              with rarfile.RarFile(p) as rar:
+                  listing=rar.infolist()
+                  print("MEMBER_COUNT",len(listing))
+                  for x in listing[:125]:
+                      print("ENTRY",json.dumps({"name":x.filename,"size":x.file_size,
+                          "packed_size":x.compress_size,"crc":x.CRC,
+                          "isdir":x.isdir(),"mode":x.mode,"file_redir":getattr(x,"file_redir",None)},
+                          ensure_ascii=False,default=str))
           PY
