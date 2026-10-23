@@ -4,10 +4,10 @@ Links are external research leads, not held dialogue or approved copying.
 
 | Source evidence status | Episodes |
 |---|---:|
-| no episode dialogue specific locator | 8 |
+| no episode dialogue specific locator | 3 |
 | inferred link only | 0 |
 | index coverage only | 121 |
-| direct episode page found not held | 64 |
+| direct episode page found not held | 69 |
 | held dialogue needs quality review | 0 |
 
 ## Verified episode-level external pages
@@ -73,8 +73,13 @@ Links are external research leads, not held dialogue or approved copying.
 - **S04E21 Her Honor (1):** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e21_her_honor_1.html)
 - **S04E22 Her Honor (2):** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e22_her_honor_2.html)
 - **S05E01 Her Honor (3):** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/Night%20Court%20s05e01%20Her%20Honor%203.html)
+- **S07E03 The Cop and the Lady:** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/night_court_s07e03_the_cop_and_the_lady.html)
+- **S07E04 Come Back to the Five and Dime, Stephen King, Stephen King:** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/night_court_s07e04_come_back_to_the_five_and_dime.html)
 - **S07E23 A Closer Look:** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/Night%20Court%20s07e23%20A%20Closer%20Look.html)
 - **S08E06 Crossroads (1):** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/night_court_s08e06_crossroads_1.html)
+- **S09E06 Guess Who's Listening to Dinner?:** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/night_court_s09e06_guess_who_s_listening_to_dinner.html)
+- **S09E20 Opportunity Knocks (Part 1):** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/Night%20Court%20s09e20%20Opportunity%20Knock%20Knocks%201.html)
+- **S09E21 Opportunity Knocks (Part 2):** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/night_court_s09e21_opportunity_knock_knocks_2.html)
 - **S09E22 The 1992 Boat Show:** [Subtitle Cat](https://www.subtitlecat.com/subs/1592/S09E22%20-%20The%201992%20Boat%20Show.html), [Subtitle Cat](https://www.subtitlecat.com/subs/1121/Night%20Court%20s09e22%20The%201992%20Boat%20Show.html)
 
 Consult dialogue-source-queue.csv for all 193 episodes and sortable gaps.
