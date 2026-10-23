@@ -1,11 +1,11 @@
 id,season,episode,title,licensed_wikipedia_capsule_held,fandom_wiki_article_held,full_transcripts_held,caption_files_held,review_texts_held,guestcast_api_embedded,guestcast_credited_roles,forever_dreaming_indexed,springfield_inferred_url,subtitlecat_episode_page,subtitlecat_any_episode_page_located,subtitlecat_distinct_page_links,exact_episode_source_links,series_or_season_index_references,source_pointers
-S01E01,1,1,All You Need Is Love,1,0,0,0,0,1,7,1,1,0,0,0,1,6,10
+S01E01,1,1,All You Need Is Love,1,0,0,0,0,1,7,1,1,1,1,1,2,6,11
 S01E02,1,2,Santa Goes Downtown,1,0,0,0,0,1,6,1,1,0,0,0,1,6,10
 S01E03,1,3,The Former Harry Stone,1,0,0,0,0,1,4,1,1,1,1,1,1,6,11
 S01E04,1,4,"Welcome Back, Momma",1,0,0,0,0,1,10,1,1,0,0,0,2,6,11
 S01E05,1,5,The Eye of the Beholder,1,0,0,0,0,1,5,1,1,0,1,1,0,6,11
 S01E06,1,6,Death Threat,1,0,0,0,0,1,4,1,1,0,0,0,0,6,10
-S01E07,1,7,Once in Love With Harry,1,0,0,0,0,1,4,1,1,0,0,0,0,6,10
+S01E07,1,7,Once in Love With Harry,1,0,0,0,0,1,4,1,1,1,1,1,1,6,11
 S01E08,1,8,Quadrangle of Love,1,0,0,0,0,1,3,1,1,0,0,0,0,6,10
 S01E09,1,9,Wonder Drugs,1,0,0,0,0,1,5,1,1,0,0,0,0,6,10
 S01E10,1,10,Some Like It Hot,1,0,0,0,0,1,2,1,1,0,0,0,0,6,10
@@ -23,7 +23,7 @@ S02E08,2,8,Harry and the Madam,1,0,0,0,0,1,6,1,1,0,0,0,0,6,10
 S02E09,2,9,Inside Harry Stone,1,0,0,0,0,1,7,1,1,0,0,0,0,6,10
 S02E10,2,10,The Blizzard,1,0,0,0,0,1,5,1,1,0,0,0,1,6,10
 S02E11,2,11,"Take My Wife, Please",1,0,0,0,0,1,2,1,1,0,1,1,0,6,11
-S02E12,2,12,The Birthday Visitor,1,0,0,0,0,1,5,1,1,0,0,0,1,6,10
+S02E12,2,12,The Birthday Visitor,1,0,0,0,0,1,5,1,1,1,1,1,2,6,11
 S02E13,2,13,Dan's Parents,1,0,0,0,0,1,4,1,0,0,0,0,0,6,9
 S02E14,2,14,Nuts About Harry,1,0,0,0,0,1,9,1,0,0,0,0,0,6,9
 S02E15,2,15,An Old Flame,1,0,0,0,0,1,4,1,0,0,1,1,0,6,10
@@ -78,7 +78,7 @@ S04E19,4,19,Paternity,1,0,0,0,0,1,6,0,0,0,0,0,0,6,8
 S04E20,4,20,"Here's to You, Mrs. Robinson",1,0,0,0,0,1,8,0,0,0,0,0,0,6,8
 S04E21,4,21,Her Honor (1),1,0,0,0,0,1,6,0,0,0,0,0,0,6,8
 S04E22,4,22,Her Honor (2),1,0,0,0,0,1,5,0,0,0,0,0,0,6,8
-S05E01,5,1,Her Honor (3),1,0,0,0,0,1,6,0,0,0,0,0,0,6,8
+S05E01,5,1,Her Honor (3),1,0,0,0,0,1,6,0,0,1,1,1,1,6,9
 S05E02,5,2,Her Honor (4),1,0,0,0,0,1,3,0,0,0,0,0,0,6,8
 S05E03,5,3,Death of a Bailiff,1,0,0,0,0,1,6,0,0,0,0,0,0,6,8
 S05E04,5,4,Ladies Night,1,0,0,0,0,1,4,0,0,0,0,0,0,6,8
@@ -144,14 +144,14 @@ S07E19,7,19,The Glasnost Menagerie,1,0,0,0,0,1,2,0,0,0,0,0,0,6,8
 S07E20,7,20,I Said Dance!,1,0,0,0,0,1,6,0,0,0,0,0,0,6,8
 S07E21,7,21,My Three Dads,1,0,0,0,0,1,9,0,0,0,0,0,0,6,8
 S07E22,7,22,Still Another Day in the Life,1,0,0,0,0,1,10,0,0,0,0,0,0,6,8
-S07E23,7,23,A Closer Look,1,0,0,0,0,1,9,0,0,0,0,0,0,6,8
+S07E23,7,23,A Closer Look,1,0,0,0,0,1,9,0,0,1,1,1,1,6,9
 S07E24,7,24,The Blues of the Birth,1,0,0,0,0,1,7,0,0,0,0,0,0,6,8
 S08E01,8,1,A Family Affair (1),1,0,0,0,0,1,6,0,0,0,0,0,0,6,8
 S08E02,8,2,A Family Affair (2),1,0,0,0,0,1,4,0,0,0,0,0,0,6,8
 S08E03,8,3,When Harry Met Margaret,1,0,0,0,0,1,6,0,0,0,0,0,0,6,8
 S08E04,8,4,Can't Buy Me Love,1,0,0,0,0,1,7,0,0,0,0,0,0,6,8
 S08E05,8,5,Death Takes a Halloween,1,0,0,0,0,1,6,0,0,0,0,0,0,6,8
-S08E06,8,6,Crossroads (1),1,0,0,0,0,1,7,0,0,0,0,0,0,6,8
+S08E06,8,6,Crossroads (1),1,0,0,0,0,1,7,0,0,1,1,1,1,6,9
 S08E07,8,7,Crossroads (2),1,0,0,0,0,1,8,0,0,0,0,0,0,6,8
 S08E08,8,8,Day Court,1,0,0,0,0,1,7,0,0,0,0,0,0,6,8
 S08E09,8,9,A Night Court at the Opera,1,0,0,0,0,1,7,0,0,0,0,0,0,6,8
@@ -191,4 +191,4 @@ S09E18,9,18,"To Sir With... Ah, What the Heck... Love",1,0,0,0,0,1,7,0,0,0,0,0,0
 S09E19,9,19,P.S. Do I Know You?,1,0,0,0,0,1,5,0,0,0,0,0,0,6,8
 S09E20,9,20,Opportunity Knocks (Part 1),1,0,0,0,0,1,7,0,0,0,0,0,0,6,8
 S09E21,9,21,Opportunity Knocks (Part 2),1,0,0,0,0,1,16,0,0,0,0,0,0,6,8
-S09E22,9,22,The 1992 Boat Show,1,0,0,0,0,1,3,0,0,1,1,1,1,6,9
+S09E22,9,22,The 1992 Boat Show,1,0,0,0,0,1,3,0,0,1,1,2,2,6,10
