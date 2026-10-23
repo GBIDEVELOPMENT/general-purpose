@@ -56,7 +56,7 @@ def probe(media):
 def track_language(s):
     tags=s.get("tags") or {}
     value=str(tags.get("language") or "").lower().split("-")[0]
-    return {"eng":"en","english":"en","en":"en","fra":"fr","fre":"fr","deu":"de","ger":"de","spa":"es","por":"pt","ita":"it","jpn":"ja","zho":"zh","chi":"zh","und":"und","":"und"}.get(value,value)
+    return {"eng":"en","english":"en","en":"en","fra":"fr","fre":"fr","fr":"fr","deu":"de","ger":"de","de":"de","spa":"es","es":"es","por":"pt","pt":"pt","ita":"it","it":"it","jpn":"ja","ja":"ja","zho":"zh","chi":"zh","zh":"zh","und":"und","":"und"}.get(value,value)
 
 def select_text_tracks(data, requested="en", specific=None, all_tracks=False):
     subtitles=[s for s in data["streams"] if s.get("codec_type")=="subtitle"]
@@ -66,8 +66,9 @@ def select_text_tracks(data, requested="en", specific=None, all_tracks=False):
         if not selected:raise ValueError(f"Subtitle stream {specific} absent or not text-decodable")
         return selected
     if all_tracks:return sorted(text,key=lambda x:x["index"])
-    matching=[s for s in text if track_language(s)==requested.lower()]
-    if not matching and requested.lower()=="en":
+    wanted=track_language({"tags":{"language":requested}})
+    matching=[s for s in text if track_language(s)==wanted]
+    if not matching and wanted=="en":
         matching=[s for s in text if track_language(s)=="und"]
     # Prefer stream flagged default, otherwise stable stream index.
     return sorted(matching,key=lambda x:(-int(x.get("disposition",{}).get("default",0)),x["index"]))[:1]
@@ -110,7 +111,7 @@ def options_for(args,ep,edition,language,origin):
     return {
         "episode":ep,"edition":edition,"language":language,
         "rights_basis":args.rights_basis,"confirmed":args.confirm_rights,
-        "complete":args.complete,
+        "complete":args.complete if args.mode!="asr" else False,
         "source_name":str(origin.name),
         "source_url":None,
         "notes":"Local DRM-free media; "+("faster-whisper ASR, unverified transcription"
@@ -203,7 +204,7 @@ def main():
         completed=0;problems=[]
         for media in files:
             try:
-                ep=D.episode_id(media.name)
+                ep=None if args.dry_run else D.episode_id(media.name)
                 completed+=extract_one(media,args,ep)
             except (OSError,ValueError,RuntimeError) as exc:
                 problems.append({"file":media.name,"reason":str(exc)})
