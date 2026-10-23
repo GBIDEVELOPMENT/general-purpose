@@ -131,3 +131,7 @@ Further source discovery has expanded individually checked external caption page
 ### Source locator coverage improved for Season 3
 
 A verified 2025 DVD-caption upload cluster supplies episode-specific public pages for all 22 third-season episodes, now saved as URL-only provenance. The 193-row source queue has **44 direct-page episodes**, **19 index-only**, and **130 still without an episode-specific locator**. Prioritize the latter, especially original-series seasons 4–9, rather than repeatedly researching S03. A browser-visible caption display page is not a stored transcript or a reuse license.
+
+### Later-season English caption source indexing: substantial gap reduction
+
+The June 2025 batch yielded **105 individually episode-labeled upload-index entries across seasons 5–9**, maintained as index-only leads rather than falsely verified direct caption pages. The **current source queue is 44 direct external pages, 121 episode-labeled/index-only leads, and 28 without any specific lead**, but none is an archived full television transcript. Next target is confirming direct page links and identifying the remaining S04, S07 and S09 gaps; prioritize acquisition from independently authorized input files through the existing full SRT/VTT/TXT and local ASR pipelines.
