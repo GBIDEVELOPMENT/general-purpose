@@ -167,3 +167,8 @@ Research and private-copying exceptions may be relevant to legitimate user-held 
 ### Bulk subtitle source packages
 
 For up to 500 caption/transcript files at once, `tools/import_dialogue_bundle.py` accepts a single bounded ZIP plus one original-series provenance declaration. It maps every SxxEyy file to its episode directory, preserves originals and source fingerprints, and reruns the existing dialogue-search/quality infrastructure. The private GitHub Actions upload workflow imports ZIPs automatically. [Usage and safeguards](DIALOGUE-INGESTION.md).
+
+
+### Multiple-dialogue-witness concordance
+
+`tools/compare_dialogue_versions.py` compares each episode's separately held dialogue variants without naming any of them canonical. It preserves original edition/hash provenance, reports likely duplicate wording, subset overlap and divergent transcript passages, and warns about identical long text assigned to different episodes. The global file is `catalog/dialogue-variant-comparison.json`. As with the quality ledger, its value will grow when the first complete original-series dialogue witnesses are actually imported.

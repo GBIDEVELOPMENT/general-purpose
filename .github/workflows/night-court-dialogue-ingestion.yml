@@ -10,6 +10,8 @@ on:
       - "Night Court/tools/import_dialogue.py"
       - "Night Court/tools/import_dialogue_bundle.py"
       - "Night Court/tools/test_dialogue_bundle.py"
+      - "Night Court/tools/compare_dialogue_versions.py"
+      - "Night Court/tools/test_dialogue_versions.py"
       - "Night Court/tools/validate_dialogue.py"
       - "Night Court/tools/audit_dialogue_coverage.py"
       - "Night Court/tools/test_import_dialogue.py"
@@ -42,6 +44,8 @@ jobs:
         run: python "Night Court/tools/test_extract_local_media.py"
       - name: Run source quality and search synthetic tests
         run: python "Night Court/tools/test_dialogue_quality_search.py"
+      - name: Test source witness comparison without choosing a canonical transcript
+        run: python "Night Court/tools/test_dialogue_versions.py"
       - name: Run synthetic multi-episode ZIP safety and ingestion tests
         run: python "Night Court/tools/test_dialogue_bundle.py"
       - name: Import source-identified ZIP packages with explicit metadata
@@ -54,6 +58,8 @@ jobs:
         run: python "Night Court/tools/search_dialogue.py" --source capsules --limit 2 "court"
       - name: Verify held dialogue and source checksum integrity
         run: python "Night Court/tools/validate_dialogue.py"
+      - name: Compare held dialogue editions, detect duplications and anomalies
+        run: python "Night Court/tools/compare_dialogue_versions.py"
       - name: Build 193-episode dialogue-only gap and completeness audit
         run: python "Night Court/tools/audit_dialogue_coverage.py"
       - name: Rebuild 193-row holdings coverage

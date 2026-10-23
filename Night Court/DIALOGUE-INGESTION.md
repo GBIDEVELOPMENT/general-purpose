@@ -197,3 +197,16 @@ python "Night Court/tools/audit_dialogue_quality.py"
 ```
 
 A safe preflight (only lists episode identities, no ingest) is available with `--dry-run`. Use `--inbox "Night Court/incoming"` for multiple ZIPs, with each ZIP's corresponding `.meta.json` sidecar. Uploaded ZIPs remain in the private incoming directory until you intentionally remove them; the original individual files are also preserved under each episode's version directory. Keep archives under 90 MB each. The workflow doesn't acquire, redistribute, transcribe or scrape TV episodes by itself.
+
+
+## Reconcile alternate dialogue versions without selecting a canonical text
+
+`tools/compare_dialogue_versions.py` reads only **physically held** caption and transcript witnesses. When an episode has two or more sources, it picks the version with the most tokenized text as a **comparison anchor, not a canonical transcript**, and aligns every other version against it. It reports normalized exact duplicates, near-equal wording, likely excerpt/subset overlap and substantial differences.
+
+```sh
+python "Night Court/tools/compare_dialogue_versions.py"
+```
+
+Outputs include `catalog/dialogue-variant-comparison.json` and an episode-specific `dialogue/variant-comparison.json` for episodes with multiple held sources. Every comparison preserves each source version ID, source SHA, word count, limited word differences and explicit caveats. When identical long normalized content appears assigned to two different episode IDs, a cross-episode misidentification flag is raised.
+
+Audio captions, inserted sound effects and character labels can affect wording comparison; the alignment removes basic markup and brackets for approximate matching only. Full original sources remain untouched. For performance, comparisons use at most the first 15,000 normalized words per witness. No comparison score alone certifies accuracy, edition alignment, or completeness.
