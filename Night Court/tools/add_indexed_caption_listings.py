@@ -35,8 +35,8 @@ def main():
         parsed=urlparse(item["index_url"])
         qs=parse_qs(parsed.query)
         if (parsed.scheme!="https" or parsed.hostname!="www.subtitlecat.com" or
-            parsed.path!="/list_page.php" or qs.get("from",[])!=[str(qs.get("from",[""])[0])] or
-            qs.get("from",[""])[0] not in ALLOWED_FROM):
+            parsed.path!="/list_page.php" or len(qs.get("from",[]))!=1 or
+            qs["from"][0] not in ALLOWED_FROM):
             raise ValueError("Unapproved index source: "+item["index_url"])
         if item.get("status")!="episode_label_observed_in_public_2025_upload_index":
             raise ValueError("Unverified index-listing status")
