@@ -4,9 +4,9 @@
   "ranking_policy": "Least episode-specific source evidence first; within tier, later seasons first.",
   "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
   "source_status_counts": {
-    "direct_episode_page_found_not_held": 44,
+    "direct_episode_page_found_not_held": 64,
     "index_coverage_only": 121,
-    "no_episode_dialogue_specific_locator": 28
+    "no_episode_dialogue_specific_locator": 8
   },
   "by_season": {
     "S01": {
@@ -21,8 +21,7 @@
       "direct_episode_page_found_not_held": 22
     },
     "S04": {
-      "direct_episode_page_found_not_held": 2,
-      "no_episode_dialogue_specific_locator": 20
+      "direct_episode_page_found_not_held": 22
     },
     "S05": {
       "direct_episode_page_found_not_held": 1,
@@ -55,26 +54,6 @@
     "S09E21",
     "S07E03",
     "S07E04",
-    "S04E02",
-    "S04E03",
-    "S04E04",
-    "S04E05",
-    "S04E06",
-    "S04E07",
-    "S04E08",
-    "S04E09",
-    "S04E10",
-    "S04E11",
-    "S04E12",
-    "S04E13",
-    "S04E14",
-    "S04E16",
-    "S04E17",
-    "S04E18",
-    "S04E19",
-    "S04E20",
-    "S04E21",
-    "S04E22",
     "S09E01",
     "S09E02",
     "S09E03",
@@ -201,7 +180,27 @@
     "S07E23",
     "S05E01",
     "S04E01",
+    "S04E02",
+    "S04E03",
+    "S04E04",
+    "S04E05",
+    "S04E06",
+    "S04E07",
+    "S04E08",
+    "S04E09",
+    "S04E10",
+    "S04E11",
+    "S04E12",
+    "S04E13",
+    "S04E14",
     "S04E15",
+    "S04E16",
+    "S04E17",
+    "S04E18",
+    "S04E19",
+    "S04E20",
+    "S04E21",
+    "S04E22",
     "S03E01",
     "S03E02",
     "S03E03",
@@ -2253,161 +2252,27 @@
       "episode": 2,
       "title": "Giving Thanks",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e02_giving_thanks.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S04E03",
       "season": 4,
       "episode": 3,
       "title": "Author, Author",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E04",
-      "season": 4,
-      "episode": 4,
-      "title": "Halloween II: The Return of Leon",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E05",
-      "season": 4,
-      "episode": 5,
-      "title": "Dan's Operation (1)",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E06",
-      "season": 4,
-      "episode": 6,
-      "title": "Dan's Operation (2)",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E07",
-      "season": 4,
-      "episode": 7,
-      "title": "The New Judge",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E08",
-      "season": 4,
-      "episode": 8,
-      "title": "Contempt of Courting",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E09",
-      "season": 4,
-      "episode": 9,
-      "title": "Earthquake",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E10",
-      "season": 4,
-      "episode": 10,
-      "title": "Prince of a Guy",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E11",
-      "season": 4,
-      "episode": 11,
-      "title": "New Year's Leave",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E12",
-      "season": 4,
-      "episode": 12,
-      "title": "Murder",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E13",
-      "season": 4,
-      "episode": 13,
-      "title": "Baby Talk",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E14",
-      "season": 4,
-      "episode": 14,
-      "title": "The Modest Proposal",
-      "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
-      "index_only_transcript_refs": 0,
-      "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
-    },
-    {
-      "episode_id": "S04E15",
-      "season": 4,
-      "episode": 15,
-      "title": "A Day in the Life",
       "held_dialogue_versions": 0,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
@@ -2416,7 +2281,280 @@
       "source_locations": [
         {
           "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e03_author_author.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E04",
+      "season": 4,
+      "episode": 4,
+      "title": "Halloween II: The Return of Leon",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e04_halloween_ii_the_return_of_leon.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E05",
+      "season": 4,
+      "episode": 5,
+      "title": "Dan's Operation (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e05_dan_s_operation_1.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E06",
+      "season": 4,
+      "episode": 6,
+      "title": "Dan's Operation (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e06_dan_s_operation_2.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E07",
+      "season": 4,
+      "episode": 7,
+      "title": "The New Judge",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e07_the_new_judge.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E08",
+      "season": 4,
+      "episode": 8,
+      "title": "Contempt of Courting",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e08_contempt_of_courting.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E09",
+      "season": 4,
+      "episode": 9,
+      "title": "Earthquake",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e09_earthquake.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E10",
+      "season": 4,
+      "episode": 10,
+      "title": "Prince of a Guy",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e10_prince_of_a_guy.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E11",
+      "season": 4,
+      "episode": 11,
+      "title": "New Year's Leave",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e11_new_year_s_leave.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E12",
+      "season": 4,
+      "episode": 12,
+      "title": "Murder",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e12_murder.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E13",
+      "season": 4,
+      "episode": 13,
+      "title": "Baby Talk",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e13_baby_talk.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E14",
+      "season": 4,
+      "episode": 14,
+      "title": "The Modest Proposal",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e14_the_modest_proposal.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E15",
+      "season": 4,
+      "episode": 15,
+      "title": "A Day in the Life",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 2,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
           "url": "https://www.subtitlecat.com/subs/1120/Night%20Court%20s04e15%20A%20Day%20in%20the%20Life.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e15_a_day_in_the_life.html",
           "status": "verified_direct_caption_display_page",
           "verified": true,
           "content_imported": false,
@@ -2431,11 +2569,21 @@
       "episode": 16,
       "title": "Rabid",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e16_rabid.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S04E17",
@@ -2443,11 +2591,21 @@
       "episode": 17,
       "title": "Christine's Friend",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e17_christine_s_friend.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S04E18",
@@ -2455,11 +2613,21 @@
       "episode": 18,
       "title": "Caught Red Handed",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e18_caught_red_handed.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S04E19",
@@ -2467,11 +2635,21 @@
       "episode": 19,
       "title": "Paternity",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e19_paternity.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S04E20",
@@ -2479,11 +2657,21 @@
       "episode": 20,
       "title": "Here's to You, Mrs. Robinson",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e20_here_s_to_you_mrs._robinson.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S04E21",
@@ -2491,11 +2679,21 @@
       "episode": 21,
       "title": "Her Honor (1)",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e21_her_honor_1.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S04E22",
@@ -2503,11 +2701,21 @@
       "episode": 22,
       "title": "Her Honor (2)",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e22_her_honor_2.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S05E01",
