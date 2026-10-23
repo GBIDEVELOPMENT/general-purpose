@@ -1,0 +1,41 @@
+name: Night Court caption-enabled viewing evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-last3-caption-viewing
+    paths:
+      - "Night Court/research/three-remaining-cc-streaming-options.json"
+      - "Night Court/tools/add_streaming_cc_fallbacks.py"
+      - ".github/workflows/night-court-streaming-cc-fallbacks.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify original 193-episode corpus
+        run: python "Night Court/tools/validate.py"
+      - name: Record rights-distinct per-episode CC streaming listings
+        run: python "Night Court/tools/add_streaming_cc_fallbacks.py"
+      - name: Regenerate source holdings and dialogue-source queue
+        run: |
+          python "Night Court/tools/audit_holdings.py"
+          python "Night Court/tools/build_dialogue_source_queue.py"
+      - name: Verify no streaming CC pages were promoted as transcript files
+        run: |
+          python "Night Court/tools/test_dialogue_source_queue.py"
+          python "Night Court/tools/validate_knowledge.py"
+          python "Night Court/tools/add_streaming_cc_fallbacks.py"
+      - name: Commit strictly metadata-only source references
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then echo "Nothing changed"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): record three caption-enabled streaming episode references"
+          git push origin HEAD:research/night-court-last3-caption-viewing

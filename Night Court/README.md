@@ -202,3 +202,10 @@ After rebuilding `catalog/dialogue-source-queue.json`, **64/193** episodes have 
 Five more independently opened external caption-display pages have been mapped to S07E03, S07E04, S09E06, S09E20 and S09E21. A source-specific title variant calls the finale `Opportunity Knock Knocks`, while the catalogue records `Opportunity Knocks`; aliases are not conflated with different episodes.
 
 The updated 193-episode acquisition queue now shows **69 direct episode pages**, **121 episodes indexed at a series/season source**, and **3 without a specific dialogue locator**: S09E08, S09E17 and S09E19. These counts measure research pointers, not locally saved scripts or subtitle files. `research/s07-s09-remaining-direct-pages.json` records source URLs and evidence without copying the protected dialogue.
+
+
+### Caption-enabled licensed-provider viewing for the final three missing dialogue leads
+
+The only three episodes not yet linked to an external downloadable transcript/caption-display page or an episode-specific caption-upload index are S09E08, S09E17 and S09E19. Each now has an **episode-specific Apple TV listing explicitly advertising English (US) CC**, catalogued as `episode_streaming_catalog` instead of a transcript locator. Their source metadata, platform regions and reported runtimes appear in `catalog/streaming-cc-fallbacks.json`.
+
+These publisher listings may require access, purchases or regional availability. They do **not** deliver an exported SRT, confirm a source-video match, or authorize copying protected captions. The acquisition queue continues to report **69 direct third-party caption/transcript pages, 121 index-only leads and 3 episodes with no exported-dialogue source**, while the streaming-CC supplement covers those three for future audiovisual research.
