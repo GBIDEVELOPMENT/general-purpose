@@ -31,7 +31,7 @@ function boot() {
  const pos=source.indexOf('const match=location.hash.slice(1)');
  assert.ok(pos>0, 'page-load bootstrap located');
  const isolated='return '+source.slice(0,pos).trimStart()+
-  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus,filterSort,typeOf,sourceViewer,toggleBookmark,cancelContentScan,jsonViewer,imageViewer,storyEvent,renderStory,stopStory};\n})();';
+  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus,filterSort,typeOf,sourceViewer,toggleBookmark,cancelContentScan,jsonViewer,imageViewer,storyEvent,renderStory,stopStory,calculatePixelDiff};\n})();';
  const app=new Function('document','history','location','localStorage','Option',isolated)(
    document,history,location,localStorage,function Option(name,value){return {name,value}}
  );
@@ -212,4 +212,17 @@ test('Story Mode builds dated, source-linked events without inventing undated ch
  app.state.storyData.filter='release';app.renderStory();
  assert.equal(get('storyView').children.find(x=>x.className==='story-stream').children.filter(x=>x.className==='story-event').length,1);
  app.stopStory();assert.equal(app.state.storyOpen,false);
+});
+
+test('pixel difference marks modified pixels and preserves unchanged luminance',()=>{
+ const {app}=boot();
+ const a=new Uint8ClampedArray([20,20,20,255,0,100,0,255,255,255,255,255]);
+ const b=new Uint8ClampedArray([20,20,20,255,100,0,0,255,255,255,255,255]);
+ const result=app.calculatePixelDiff(a,b);
+ assert.equal(result.total,3);
+ assert.equal(result.changed,1);
+ assert.equal(result.pixels[4],255,'changed pixel marked bright magenta');
+ assert.equal(result.pixels[5],74);
+ assert.equal(result.pixels[0],13,'unchanged rendered in gray');
+ assert.throws(()=>app.calculatePixelDiff(a,b.subarray(0,8)),/equal dimensions/);
 });
