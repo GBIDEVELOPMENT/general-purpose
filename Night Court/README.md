@@ -162,3 +162,8 @@ Research and private-copying exceptions may be relevant to legitimate user-held 
 ### Dialogue source acquisition priority matrix
 
 `catalog/dialogue-source-queue.json`, CSV and Markdown now classify all 193 original episodes by direct dialogue link, index-only lead, unverified pattern or no episode-level lead. They rank episodes needing independent collection and preserve actual source URLs without misrepresenting linked pages as downloaded transcript text. S01E03 and S04E15 added as individually inspected Subtitle Cat pages (15 caption-page episodes total). Run `tools/build_dialogue_source_queue.py` after source inventories change; it also reconciles `catalog/archive-status.json` against the actual holdings audit.
+
+
+### Bulk subtitle source packages
+
+For up to 500 caption/transcript files at once, `tools/import_dialogue_bundle.py` accepts a single bounded ZIP plus one original-series provenance declaration. It maps every SxxEyy file to its episode directory, preserves originals and source fingerprints, and reruns the existing dialogue-search/quality infrastructure. The private GitHub Actions upload workflow imports ZIPs automatically. [Usage and safeguards](DIALOGUE-INGESTION.md).
