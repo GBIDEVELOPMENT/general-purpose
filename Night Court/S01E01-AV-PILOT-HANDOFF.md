@@ -30,6 +30,14 @@ python3 "Night Court/tools/run_s01e01_vocal_pilot.py" \
 
 Example source file/path is illustrative. Source identity checks are owner assertions and filenames, **not** AV verification. Output lives outside the Git checkout unless a separate, deliberately reviewed import path is approved.
 
+## Actual owner-hosted source processing workflow (next manual action)
+
+The successful owner-dispatched FTP scan was fully reconciled and committed in PR #88: all 193 video filenames match canonical IDs, although their actual audiovisual contents remain unverified. This lane adds `Night Court/tools/pilot_ftp_video_acoustics.py` and a **manual-dispatch** workflow `.github/workflows/night-court-s01e01-real-audio.yml`. It is strictly limited to the exact 183,386,112-byte S01E01 AVI from that inventory. It downloads the one selected AVI transiently to an ephemeral GitHub Actions runner, computes its SHA, extracts at most 30 seconds of audio with FFmpeg, runs the existing local acoustic baseline, then **uploads only a small JSON evidence artifact**. Original media and derived WAV bytes are not uploaded or committed. All work uses the pre-existing repository `FTP_PASSWORD` secret, without redistributing credentials to other repos.
+
+The workflow must be triggered deliberately from the default branch after its CI and merge, with `protocol=ftp` (the verified service compatibility mode), `start_seconds=60`, `duration_seconds=15`. FTPS is preferable if separately verified. It is **not** being represented as already dispatched or having analysed the actual episode. Remote material is not downloaded during the PR's offline CI tests.
+
+This limited proof gets us real source-derived **mix-level RMS/peak/activity** and media stream metadata; it does not yet run Whisper, eGeMAPS, diarization, subtitle synchronization, visual observation or script reconstruction. After the manual run completes, review its artifact's hash, duration and stream information before accepting the episode's source cut.
+
 ## QA/acceptance ledger
 
 | Gate | Result |
