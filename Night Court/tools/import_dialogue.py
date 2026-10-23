@@ -37,8 +37,7 @@ MAX_FILE_BYTES = 20_000_000
 MAX_CUES = 15_000
 
 def serialise(obj):
-    return json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"
-"
+    return json.dumps(obj,indent=2,ensure_ascii=False,sort_keys=True)+"\n"
 
 def write_once(path:Path,content:bytes):
     path.parent.mkdir(parents=True,exist_ok=True)
@@ -117,16 +116,10 @@ def to_text(raw):
 
 def parse_timed(text,typ):
     if typ=="vtt":
-        if not text.lstrip("\ufeff \r
-").startswith("WEBVTT"):
+        if not text.lstrip("\ufeff \r\n").startswith("WEBVTT"):
             raise ValueError("VTT input lacks WEBVTT header")
-    text=text.replace("\r
-","
-").replace("\r","
-").lstrip("\ufeff")
-    blocks=re.split(r"
-\s*
-",text)
+    text=text.replace("\r\n","\n").replace("\r","\n").lstrip("\ufeff")
+    blocks=re.split(r"\n\s*\n",text)
     entries=[]
     for block in blocks:
         lines=block.splitlines()
@@ -137,8 +130,6 @@ def parse_timed(text,typ):
         pos=next((i for i,line in enumerate(lines[:3]) if "-->" in line),None)
         if pos is None:
             if typ=="srt":
-                # Some externally generated SRTs separate otherwise valid cues
-                # with a standalone double dash. Preserve originals unchanged.
                 if all(line.strip() in ("--", "") for line in lines):
                     continue
                 raise ValueError("SRT contains a non-caption block: "+repr(first[:70]))
@@ -147,8 +138,7 @@ def parse_timed(text,typ):
         end_time=rest.strip().split()[0]
         beginning,ending=ms(start_time),ms(end_time)
         if ending<beginning:raise ValueError("Cue end precedes start")
-        payload="
-".join(lines[pos+1:]).strip()
+        payload="\n".join(lines[pos+1:]).strip()
         if not payload:continue
         entries.append({"cue":len(entries)+1,"start_ms":beginning,
                         "end_ms":ending,"text":payload,"kind":"source_caption"})
@@ -157,13 +147,8 @@ def parse_timed(text,typ):
     return entries
 
 def parse_plain(text):
-    text=text.replace("\r
-","
-").replace("\r","
-").strip()
-    blocks=[b.strip() for b in re.split(r"
-\s*
-",text) if b.strip()]
+    text=text.replace("\r\n","\n").replace("\r","\n").strip()
+    blocks=[b.strip() for b in re.split(r"\n\s*\n",text) if b.strip()]
     if not blocks:raise ValueError("Empty source text")
     if len(blocks)>MAX_CUES:raise ValueError("Excessive text paragraph count")
     return [{"cue":i+1,"start_ms":None,"end_ms":None,
@@ -237,14 +222,9 @@ def import_one(file:Path,opts:dict):
     (key,edir,ep_path,original,segments,plain,manifest,raw,cues,metadata)=prepare(file,opts)
     # Write immutable original and canonical representations before attaching to episode.
     write_once(original,raw)
-    write_once(segments,("
-".join(json.dumps(c,ensure_ascii=False,sort_keys=True)
-                               for c in cues)+"
-").encode("utf-8"))
-    readtext="
-".join(c["text"].replace("
-"," ") for c in cues)+"
-"
+    write_once(segments,("\n".join(json.dumps(c,ensure_ascii=False,sort_keys=True)
+                               for c in cues)+"\n").encode("utf-8"))
+    readtext="\n".join(c["text"].replace("\n"," ") for c in cues)+"\n"
     write_once(plain,readtext.encode("utf-8"))
     write_once(manifest,serialise(metadata).encode("utf-8"))
     episode=json.loads(ep_path.read_text("utf-8"))
@@ -282,9 +262,7 @@ def rebuild_index():
             "rights_basis_declared":meta["rights_basis_declared"],
             "manifest":str(f.relative_to(ROOT))})
     write_if_changed(ROOT/"catalog"/"dialogue-index.jsonl",
-                     "
-".join(json.dumps(x,ensure_ascii=False,sort_keys=True) for x in rows)+("
-" if rows else ""))
+                     "\n".join(json.dumps(x,ensure_ascii=False,sort_keys=True) for x in rows)+("\n" if rows else ""))
     print("Indexed",len(rows),"held dialogue witnesses across",len({r["episode_id"] for r in rows}),"episodes")
     return rows
 
