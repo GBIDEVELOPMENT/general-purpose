@@ -10,13 +10,13 @@ permissions:
   contents: write
 jobs:
   import:
-    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/night-court-s05-s06-sixteen-artifact-import')
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/night-court-s05-s06-sixteen-import')
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: research/night-court-s05-s06-sixteen-artifact-import
+          ref: research/night-court-s05-s06-sixteen-import
           persist-credentials: true
       - name: Reuse successful nine-file caption artifact
         env:
@@ -41,5 +41,5 @@ jobs:
           git add -- "Night Court/"
           if ! git diff --cached --quiet; then
             git commit -m "data(night-court): preserve sixteen Season 5–6 caption tracks"
-            git push origin HEAD:research/night-court-s05-s06-sixteen-artifact-import
+            git push origin HEAD:research/night-court-s05-s06-sixteen-import
           fi
