@@ -10,15 +10,15 @@
   "episodes_with_licensed_wiki_capsules": 193,
   "primary_licensed_wiki_articles": 2,
   "full_copyrighted_transcripts_stored": 0,
-  "caption_files_stored": 35,
+  "caption_files_stored": 192,
   "sources": {
     "forever_dreaming_topics_indexed": 57,
     "springfield_script_indexed": 47,
     "subtitle_cat_direct_pages_verified": 65,
-    "subtitle_cat_subtitle_files_held": 0
+    "subtitle_cat_subtitle_files_held": 157
   },
   "production_matrix": "catalog/production-matrix.json",
-  "distinct_sources_warning": "1825 references may repeat a series catalog; the 193 episode records contain no automatically acquired full television dialogue.",
+  "distinct_sources_warning": "1825 research references include repeated series/index links and must not be added to the count of physically held dialogue witnesses. Neither online source retention nor subtitle timestamps establish audiovisual completeness or speaker identity.",
   "licensed_context_wikipedia_articles": 19,
   "guest_cast_collections_embedded": 193,
   "guest_cast_credited_role_edges": 1210,
@@ -30,11 +30,21 @@
   "subtitle_discovery_manifest": "catalog/subtitlecat-discovery.json",
   "holdings_audit": "catalog/holdings-coverage.json",
   "source_locator_queue": "catalog/dialogue-source-queue.json",
-  "episodes_with_held_dialogue": 35,
-  "dialogue_versions_stored": 35,
+  "episodes_with_held_dialogue": 193,
+  "dialogue_versions_stored": 193,
   "independently_video_verified_complete_episodes": 0,
   "source_archives_held": 2,
   "user_supplied_rar_import_manifest": "catalog/rar-ingestion-manifest.json",
   "actual_dialogue_quality_audit": "catalog/dialogue-quality.json",
-  "source_material_status": "35 physically held English SRT witnesses from two owner-uploaded RARs, one SRT each for S01E01–S02E22; completeness unverified"
+  "source_material_status": "193 original-series episode dialogue witnesses held, comprising 192 timed English SRT sources (35 from owner-supplied S01-S02 archives, 157 externally acquired) plus S09E19 source-page-derived untimed original dialogue text. All sources have provenance; none have been independently AV-verified complete.",
+  "dialogue_source_format_counts": {
+    "srt": 192,
+    "vtt": 0,
+    "txt": 1
+  },
+  "owner_supplied_original_seasons_1_2_timed_tracks": 35,
+  "third_party_source_page_timed_caption_tracks_held": 157,
+  "third_party_source_page_untimed_dialogue_witnesses_held": 1,
+  "held_episodes_with_timecoded_dialogue": 192,
+  "held_episodes_with_untimed_only_dialogue": 1
 }
