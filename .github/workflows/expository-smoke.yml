@@ -18,3 +18,13 @@ jobs:
           node-version: '22'
       - run: node --test tools/expository/expository.test.cjs
       - run: bash -n tools/expository/publish-pages.sh
+      - name: Real Chromium mobile smoke
+        run: node tools/expository/browser-smoke.cjs
+      - name: Save safe simulated mobile screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: expository-mobile-evidence
+          path: tools/expository/browser-evidence/*.png
+          if-no-files-found: ignore
+          retention-days: 7
