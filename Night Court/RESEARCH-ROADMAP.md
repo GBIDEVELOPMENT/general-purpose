@@ -94,3 +94,8 @@ An independent indexer now retains 13 individually checked Subtitle Cat links fo
 ### Historical popularity evidence now indexed
 
 Season-level national ranks and Nielsen-era ratings, plus episode metrics with units and missingness, are indexed in `catalog/broadcast-context.json`. Future analysis should verify contemporary television industry sources and contextualize scheduling and competition. Correlations with casting or narrative changes cannot establish causal effects.
+
+
+### Original-period press leads now indexed
+
+Read `research/press-evidence-brief.md` and `research/production-and-reception-claims.jsonl` before evaluating changes in the show's comedy, casting, or reception. They include creator/producer first-person statements from September 1991 and May 1992; credit and intention should not automatically become measured screen evidence. Four disagreements in `research/source-conflicts.json` require source-critical treatment. Highest-priority factual check is season-one ratings/rank discrepancy against original Nielsen and television-industry sources, followed by careful disambiguation of May 13 story finale and May 31 final scheduled episode.

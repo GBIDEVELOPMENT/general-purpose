@@ -1,0 +1,30 @@
+name: Night Court press source evidence validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-press-bibliography
+    paths:
+      - "Night Court/research/contemporary-press-bibliography.jsonl"
+      - "Night Court/research/production-and-reception-claims.jsonl"
+      - "Night Court/research/source-conflicts.json"
+      - "Night Court/research/press-evidence-brief.md"
+      - "Night Court/tools/validate_press.py"
+      - ".github/workflows/night-court-press.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate all prior episode evidence records
+        run: python "Night Court/tools/validate.py"
+      - name: Verify cast, episode notes and licensing contracts
+        run: python "Night Court/tools/validate_knowledge.py"
+      - name: Validate contemporary source bibliography and tensions
+        run: python "Night Court/tools/validate_press.py"
