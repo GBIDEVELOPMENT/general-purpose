@@ -1,0 +1,47 @@
+name: Night Court original later-season caption listing inventory
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-later-season-index-locations
+    paths:
+      - "Night Court/research/later-season-2025-caption-upload-listings.json"
+      - "Night Court/tools/add_indexed_caption_listings.py"
+      - "Night Court/tools/build_dialogue_source_queue.py"
+      - "Night Court/tools/audit_holdings.py"
+      - "Night Court/tools/test_dialogue_source_queue.py"
+      - ".github/workflows/night-court-later-season-listings.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-original-caption-index-locations
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate primary 193-episode factual archive
+        run: python "Night Court/tools/validate.py"
+      - name: Add user-researched, source-index-only episode links
+        run: python "Night Court/tools/add_indexed_caption_listings.py"
+      - name: Audit saved source bytes separately from external links
+        run: python "Night Court/tools/audit_holdings.py"
+      - name: Recompute all episode source priorities and statistics
+        run: python "Night Court/tools/build_dialogue_source_queue.py"
+      - name: Verify source truthfulness and existing knowledge
+        run: |
+          python "Night Court/tools/test_dialogue_source_queue.py"
+          python "Night Court/tools/validate_knowledge.py"
+      - name: Commit index pointers only
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): index 105 later-season caption location listings"
+          git push origin HEAD:research/night-court-later-season-index-locations
