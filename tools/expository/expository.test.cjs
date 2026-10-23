@@ -31,7 +31,7 @@ function boot() {
  const pos=source.indexOf('const match=location.hash.slice(1)');
  assert.ok(pos>0, 'page-load bootstrap located');
  const isolated='return '+source.slice(0,pos).trimStart()+
-  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession};\n})();';
+  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady};\n})();';
  const app=new Function('document','history','location','localStorage','Option',isolated)(
    document,history,location,localStorage,function Option(name,value){return {name,value}}
  );
@@ -95,4 +95,15 @@ test('security invariants avoid persistent tokens and external scripts',()=>{
  assert.ok(!/<script\s+[^>]*src=/i.test(html),'no remote script dependency');
  assert.ok(!/\beval\s*\(/.test(source),'no eval of remote file contents');
  assert.ok(html.includes('prefers-reduced-motion'));
+});
+
+test('pinned visual comparisons require two different images on the same repo and branch',()=>{
+ const {app}=boot();
+ app.state.repo='gamesbyian/Glimpse';app.state.branch='main';
+ app.state.preview={name:'B.svg',path:'design/B.svg'};app.state.currentBlob=new Blob(['B']);
+ app.state.pinned={item:{name:'A.svg',path:'design/A.svg'},blob:new Blob(['A']),repo:'gamesbyian/Glimpse',branch:'main'};
+ assert.equal(app.compareReady(),true);
+ app.state.preview={name:'A.svg',path:'design/A.svg'};assert.equal(app.compareReady(),false,'cannot compare file to itself');
+ app.state.preview={name:'notes.md',path:'design/notes.md'};assert.equal(app.compareReady(),false,'only image compare');
+ app.state.preview={name:'B.svg',path:'design/B.svg'};app.state.pinned.branch='other';assert.equal(app.compareReady(),false,'no cross-branch retained blob');
 });
