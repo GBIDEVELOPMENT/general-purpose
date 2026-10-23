@@ -1,0 +1,434 @@
+{
+  "character_to_scene_evidence_status": "participant_hypotheses_only_not_attributed_speakers",
+  "credit_roster_count": 23,
+  "episode_id": "S02E01",
+  "provisional_scene_count": 2,
+  "scenes": [
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Randee Heller",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203031",
+          "character_name": "Anita Fries",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Earl Boen",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203035",
+          "character_name": "Arnold Burger",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Sharon Barr",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203033",
+          "character_name": "Counselor",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Ernest Harada",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:964759",
+          "character_name": "Ernie Tanaka",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Jack Jozefson",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203037",
+          "character_name": "Ex-Congressman",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Hal Bokar",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203036",
+          "character_name": "Man in Japanese Restaurant",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Lu Leonard",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203038",
+          "character_name": "Mother Frances",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S02E01:C00001:1",
+      "first_start_ms": 4459,
+      "last_end_ms": 207958,
+      "last_source_turn_id": "S02E01:C00056:2",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 1,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 71,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Dinah Manoff",
+          "addressed_by_name_turn_ids": [
+            "S02E01:C00034:1",
+            "S02E01:C00040:1"
+          ],
+          "character_id": "tvmaze:1203030",
+          "character_name": "Sister Sara Williams",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S02E01:C00052:2"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Michael Tucci",
+          "addressed_by_name_turn_ids": [
+            "S02E01:C00038:1"
+          ],
+          "character_id": "tvmaze:1203034",
+          "character_name": "Mr. Pina",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 71,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Earl Boen",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203035",
+          "character_name": "Arnold Burger",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Ernest Harada",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:964759",
+          "character_name": "Ernie Tanaka",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Jack Jozefson",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203037",
+          "character_name": "Ex-Congressman",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Hal Bokar",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203036",
+          "character_name": "Man in Japanese Restaurant",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Michael Tucci",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203034",
+          "character_name": "Mr. Pina",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Dinah Manoff",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1203030",
+          "character_name": "Sister Sara Williams",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S02E01:C00057:1",
+      "first_start_ms": 254175,
+      "last_end_ms": 1394613,
+      "last_source_turn_id": "S02E01:C00365:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 2,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 356,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Harry Anderson",
+          "addressed_by_name_turn_ids": [
+            "S02E01:C00093:1",
+            "S02E01:C00210:1",
+            "S02E01:C00242:1",
+            "S02E01:C00255:1"
+          ],
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Randee Heller",
+          "addressed_by_name_turn_ids": [
+            "S02E01:C00160:1"
+          ],
+          "character_id": "tvmaze:1203031",
+          "character_name": "Anita Fries",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Sharon Barr",
+          "addressed_by_name_turn_ids": [
+            "S02E01:C00057:1"
+          ],
+          "character_id": "tvmaze:1203033",
+          "character_name": "Counselor",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S02E01:C00158:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Lu Leonard",
+          "addressed_by_name_turn_ids": [
+            "S02E01:C00290:1"
+          ],
+          "character_id": "tvmaze:1203038",
+          "character_name": "Mother Frances",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 356,
+      "uncredited_participants_must_remain_possible": true
+    }
+  ],
+  "source_caption_turns": 427,
+  "source_manifest": "seasons/S02/S02E01/dialogue/versions/s02-dvdrip-xvid-ositv-english--dfaa3f44c8ad69cb/manifest.json",
+  "source_sha256": "dfaa3f44c8ad69cba67a9ce3eb661bf13d49e164171ae315d5ba865a261f98cd",
+  "version_id": "s02-dvdrip-xvid-ositv-english--dfaa3f44c8ad69cb"
+}

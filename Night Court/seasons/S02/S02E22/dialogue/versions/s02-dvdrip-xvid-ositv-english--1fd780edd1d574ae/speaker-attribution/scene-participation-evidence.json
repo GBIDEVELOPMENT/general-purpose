@@ -1,0 +1,428 @@
+{
+  "character_to_scene_evidence_status": "participant_hypotheses_only_not_attributed_speakers",
+  "credit_roster_count": 21,
+  "episode_id": "S02E22",
+  "provisional_scene_count": 2,
+  "scenes": [
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Eddie Barth",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204781",
+          "character_name": "Blacky Buzzlick",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Andre Gower",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204785",
+          "character_name": "Brian Reader",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Amy O'Neill",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204786",
+          "character_name": "Jenny Reader",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Barbara C. Adside",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204780",
+          "character_name": "Kristen",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Annette Kurek",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204783",
+          "character_name": "Sally Reader",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marianne Muellerleile",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204784",
+          "character_name": "Screaming Woman in Courtroom",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "William Frankfather",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204782",
+          "character_name": "Tom Reader",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S02E22:C00001:1",
+      "first_start_ms": 8096,
+      "last_end_ms": 196377,
+      "last_source_turn_id": "S02E22:C00062:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 1,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 71,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00056:1",
+            "S02E22:C00059:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00028:1"
+          ],
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 71,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Amy O'Neill",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204786",
+          "character_name": "Jenny Reader",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Annette Kurek",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204783",
+          "character_name": "Sally Reader",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marianne Muellerleile",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204784",
+          "character_name": "Screaming Woman in Courtroom",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "William Frankfather",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204782",
+          "character_name": "Tom Reader",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S02E22:C00063:1",
+      "first_start_ms": 246568,
+      "last_end_ms": 1395711,
+      "last_source_turn_id": "S02E22:C00380:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 2,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 358,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Barbara C. Adside",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00167:1",
+            "S02E22:C00176:1",
+            "S02E22:C00179:1",
+            "S02E22:C00229:1",
+            "S02E22:C00260:1",
+            "S02E22:C00332:1",
+            "S02E22:C00353:1"
+          ],
+          "character_id": "tvmaze:1204780",
+          "character_name": "Kristen",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00186:1",
+            "S02E22:C00192:1",
+            "S02E22:C00223:1",
+            "S02E22:C00259:1",
+            "S02E22:C00299:1",
+            "S02E22:C00366:1"
+          ],
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00240:1",
+            "S02E22:C00269:1"
+          ],
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00097:1",
+            "S02E22:C00139:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Ellen Foley",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00218:1"
+          ],
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Eddie Barth",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00111:1"
+          ],
+          "character_id": "tvmaze:1204781",
+          "character_name": "Blacky Buzzlick",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Andre Gower",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00092:1"
+          ],
+          "character_id": "tvmaze:1204785",
+          "character_name": "Brian Reader",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "addressed_by_name_turn_ids": [
+            "S02E22:C00151:1"
+          ],
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 358,
+      "uncredited_participants_must_remain_possible": true
+    }
+  ],
+  "source_caption_turns": 429,
+  "source_manifest": "seasons/S02/S02E22/dialogue/versions/s02-dvdrip-xvid-ositv-english--1fd780edd1d574ae/manifest.json",
+  "source_sha256": "1fd780edd1d574ae5395bf6461f17cf0edcc38d48f54eda4bcbe6e8ff508a7de",
+  "version_id": "s02-dvdrip-xvid-ositv-english--1fd780edd1d574ae"
+}
