@@ -8,6 +8,7 @@ on:
     paths:
       - Night Court/tools/import_dialogue_rar.py
       - Night Court/tools/import_dialogue.py
+      - Night Court/tools/validate.py
       - Night Court/tools/test_import_dialogue.py
       - .github/workflows/night-court-rar-ingest.yml
 
