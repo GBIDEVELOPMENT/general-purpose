@@ -1,0 +1,336 @@
+{
+  "series": "night-court-1984",
+  "input_held_source_witnesses": 35,
+  "episodes_with_turns": 35,
+  "totals": {
+    "units": 14924,
+    "units_split_from_multi_dash_caption": 3858,
+    "packets": 165
+  },
+  "speaker_model": "explicit_source_labels_only_no_character_inference",
+  "conversation_boundary_model": "12s_caption_gap_heuristic_not_scene_segmentation",
+  "warnings": [
+    "A caption unit is not necessarily an uninterrupted character speech turn.",
+    "Source name prefixes may be mistaken or may denote sounds, not people.",
+    "Separate leading-dash lines are split without assigning identities.",
+    "Unknown speakers remain unknown, and speaker mentions are not identifications.",
+    "The immutable source caption text and timing stay authoritative over derived units."
+  ],
+  "versions": [
+    {
+      "episode_id": "S01E01",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "source_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cues": 336,
+      "candidate_turns": 404,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S01E02",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--5f47e8e521591659",
+      "source_sha256": "5f47e8e5215916591ad49f847c1b2502914578dc6a6af643a10137d7f41674ea",
+      "source_cues": 380,
+      "candidate_turns": 458,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S01E03",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--7bb21bd5ac0d612f",
+      "source_sha256": "7bb21bd5ac0d612fce84388953f6b5b16ae789f08c0964bd82f74135f4883a32",
+      "source_cues": 385,
+      "candidate_turns": 456,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S01E04",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--a4910f679aaa88c5",
+      "source_sha256": "a4910f679aaa88c5a1f71ab185bcc133ccd0a51eb3a831357b1f15331bf301b2",
+      "source_cues": 354,
+      "candidate_turns": 397,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S01E05",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--0cf714fe34337737",
+      "source_sha256": "0cf714fe34337737802e488f004b315f5a577476b98c6476425b1386a29fefa1",
+      "source_cues": 410,
+      "candidate_turns": 461,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S01E06",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--835d8dca053f96df",
+      "source_sha256": "835d8dca053f96df4a4dc512f451712551d72bf155f5624b75905d99734daf3d",
+      "source_cues": 377,
+      "candidate_turns": 448,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S01E07",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--d4c5387ddfbb2390",
+      "source_sha256": "d4c5387ddfbb2390765c30bdf7f6ebf0f85cf404e5d21b1cc17045be3f499616",
+      "source_cues": 366,
+      "candidate_turns": 438,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S01E08",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--365b8f9c9d598a05",
+      "source_sha256": "365b8f9c9d598a05a3ba1d5754e69b8ceba6c9f92594bdb91adfbe4521533889",
+      "source_cues": 407,
+      "candidate_turns": 491,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S01E09",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--ca833d0f1f2f7c23",
+      "source_sha256": "ca833d0f1f2f7c23e74df5ca4cfc1a2642d5aa006453cc22fc82fbd7c78d7406",
+      "source_cues": 350,
+      "candidate_turns": 415,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S01E10",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--810b0a2588ea38f5",
+      "source_sha256": "810b0a2588ea38f5cd7104cf30d22b25efb8733e9c22d1a044dc7314fb3e03ff",
+      "source_cues": 338,
+      "candidate_turns": 398,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S01E11",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--025058ea02a35789",
+      "source_sha256": "025058ea02a3578967f5c96e8512b2292b55a906fb7b5f701b6a04828add9e16",
+      "source_cues": 343,
+      "candidate_turns": 399,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 9
+    },
+    {
+      "episode_id": "S01E12",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--1b9e66fb470ecd62",
+      "source_sha256": "1b9e66fb470ecd624777a9025df6c62dc30436771ede95e8fe9ce8629638067c",
+      "source_cues": 339,
+      "candidate_turns": 410,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S01E13",
+      "version_id": "s01-internal-dvdrip-xvid-sprinter-english--ccf94dea7f655710",
+      "source_sha256": "ccf94dea7f6557109ad71cd688a67cf735bcea5e3d910302cf7bad48a30b88a4",
+      "source_cues": 423,
+      "candidate_turns": 491,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S02E01",
+      "version_id": "s02-dvdrip-xvid-ositv-english--dfaa3f44c8ad69cb",
+      "source_sha256": "dfaa3f44c8ad69cba67a9ce3eb661bf13d49e164171ae315d5ba865a261f98cd",
+      "source_cues": 365,
+      "candidate_turns": 427,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S02E02",
+      "version_id": "s02-dvdrip-xvid-ositv-english--bf07a33e60efe55c",
+      "source_sha256": "bf07a33e60efe55c3e1764568e78c50733b2f2de750f31adc96f72d256e0453e",
+      "source_cues": 395,
+      "candidate_turns": 464,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S02E03",
+      "version_id": "s02-dvdrip-xvid-ositv-english--6e32d3588aeab815",
+      "source_sha256": "6e32d3588aeab815c1c88b851a0eaf9f6f27611dfd21e280101b357a3e50f712",
+      "source_cues": 380,
+      "candidate_turns": 437,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E04",
+      "version_id": "s02-dvdrip-xvid-ositv-english--b43c9d72849944d7",
+      "source_sha256": "b43c9d72849944d765b0a5b452f3fc3607bfb2806553a43d4fc9dd35636810b1",
+      "source_cues": 403,
+      "candidate_turns": 443,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E05",
+      "version_id": "s02-dvdrip-xvid-ositv-english--7298f5a148b63988",
+      "source_sha256": "7298f5a148b63988c10ed0109d01d29e96bd4f5178812114a17736f385dda677",
+      "source_cues": 371,
+      "candidate_turns": 418,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 2
+    },
+    {
+      "episode_id": "S02E06",
+      "version_id": "s02-dvdrip-xvid-ositv-english--a25b880b652f6f7f",
+      "source_sha256": "a25b880b652f6f7f60e1b1a8593065e96a8d81c83a9f8269b2e3c5b18a1158e7",
+      "source_cues": 361,
+      "candidate_turns": 414,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E07",
+      "version_id": "s02-dvdrip-xvid-ositv-english--12ce497fef270a1b",
+      "source_sha256": "12ce497fef270a1bbc2dadc5a0542c3cc3a07938fbae7845aa17f3dbe473ea87",
+      "source_cues": 348,
+      "candidate_turns": 390,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S02E08",
+      "version_id": "s02-dvdrip-xvid-ositv-english--fbc096cb7985f06a",
+      "source_sha256": "fbc096cb7985f06aa74b2061be53ff0a5df708e5702cbbcd1c7dc9831720b46a",
+      "source_cues": 397,
+      "candidate_turns": 426,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E09",
+      "version_id": "s02-dvdrip-xvid-ositv-english--a972d4a38d5897ba",
+      "source_sha256": "a972d4a38d5897ba1059f2dfecd281765a0b120f71e9860edd7c211d60fd4803",
+      "source_cues": 399,
+      "candidate_turns": 468,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E10",
+      "version_id": "s02-dvdrip-xvid-ositv-english--e4345ff162d9b979",
+      "source_sha256": "e4345ff162d9b979e7cd0ec338f93b57a1f498b5dc7abcc1fe4bd6006a44fa83",
+      "source_cues": 340,
+      "candidate_turns": 396,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S02E11",
+      "version_id": "s02-dvdrip-xvid-ositv-english--59b793b71f3f5f44",
+      "source_sha256": "59b793b71f3f5f44aa6db406dc5f7f60763cbc451651a14aed5006847f4d2557",
+      "source_cues": 383,
+      "candidate_turns": 443,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 2
+    },
+    {
+      "episode_id": "S02E12",
+      "version_id": "s02-dvdrip-xvid-ositv-english--918c3de429b06e8d",
+      "source_sha256": "918c3de429b06e8d92e592d2236563a72d1475bb5b1f4a02c591cb7d6b8c90ee",
+      "source_cues": 371,
+      "candidate_turns": 442,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E13",
+      "version_id": "s02-dvdrip-xvid-ositv-english--4eb094b9453b460b",
+      "source_sha256": "4eb094b9453b460bb4d90b3cc94d8e50f3a98990e0e42246b398e8ea3f3ef269",
+      "source_cues": 382,
+      "candidate_turns": 427,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E14",
+      "version_id": "s02-dvdrip-xvid-ositv-english--b907c29091ac7d36",
+      "source_sha256": "b907c29091ac7d36c7a370c17f971aa077cf0f6ce66cff7e7531bfd6f9127e61",
+      "source_cues": 350,
+      "candidate_turns": 408,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S02E15",
+      "version_id": "s02-dvdrip-xvid-ositv-english--806b5603d7756bf3",
+      "source_sha256": "806b5603d7756bf35a15da89538f19ebadb671fcb9e6631b4c9280926dc68633",
+      "source_cues": 392,
+      "candidate_turns": 428,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S02E16",
+      "version_id": "s02-dvdrip-xvid-ositv-english--65f3f4ed9a36501a",
+      "source_sha256": "65f3f4ed9a36501a776a7f0a612f6c8227b7a0d3d6a5bbc220d133297fd2c27a",
+      "source_cues": 394,
+      "candidate_turns": 422,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S02E17",
+      "version_id": "s02-dvdrip-xvid-ositv-english--395fe63ae8513793",
+      "source_sha256": "395fe63ae8513793e5b693681e70df023869300e9e2c0d4bd443dace95894ba1",
+      "source_cues": 358,
+      "candidate_turns": 412,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E18",
+      "version_id": "s02-dvdrip-xvid-ositv-english--a79b75d72f25cfa0",
+      "source_sha256": "a79b75d72f25cfa0cba5eea66c528e0b99e60399dbed08e20b5c1c8aa1f18b78",
+      "source_cues": 361,
+      "candidate_turns": 391,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S02E19",
+      "version_id": "s02-dvdrip-xvid-ositv-english--33cb63c0ab8516bd",
+      "source_sha256": "33cb63c0ab8516bd08c7eac13d89cac77a91b8497907042d6bc0437ff06d6082",
+      "source_cues": 331,
+      "candidate_turns": 366,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S02E20",
+      "version_id": "s02-dvdrip-xvid-ositv-english--3ae2ec31c264c6e4",
+      "source_sha256": "3ae2ec31c264c6e451128418bb51888966826fc3d598c84f80e864ae98d202dc",
+      "source_cues": 378,
+      "candidate_turns": 418,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E21",
+      "version_id": "s02-dvdrip-xvid-ositv-english--c5d042ffdb9540eb",
+      "source_sha256": "c5d042ffdb9540ebe691aad36b127378f1600eba58040a594794d44f3477830c",
+      "source_cues": 348,
+      "candidate_turns": 390,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S02E22",
+      "version_id": "s02-dvdrip-xvid-ositv-english--1fd780edd1d574ae",
+      "source_sha256": "1fd780edd1d574ae5395bf6461f17cf0edcc38d48f54eda4bcbe6e8ff508a7de",
+      "source_cues": 380,
+      "candidate_turns": 428,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    }
+  ]
+}
