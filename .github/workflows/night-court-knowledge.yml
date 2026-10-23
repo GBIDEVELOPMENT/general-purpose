@@ -14,6 +14,7 @@ on:
       - "Night Court/tools/build_cast_graph.py"
       - "Night Court/tools/query_corpus.py"
       - "Night Court/tools/audit_holdings.py"
+      - "Night Court/tools/build_source_statements.py"
       - ".github/workflows/night-court-knowledge.yml"
 
 permissions:
@@ -40,6 +41,8 @@ jobs:
         run: python "Night Court/tools/collect_licensed_fandom.py"
       - name: Build 193 licensed synopsis dossiers and retrieval indices
         run: python "Night Court/tools/build_retrieval_index.py"
+      - name: Index source synopsis statements at character offsets
+        run: python "Night Court/tools/build_source_statements.py"
       - name: Build episodic cast-credit and production collaboration graph
         run: python "Night Court/tools/build_cast_graph.py"
       - name: Audit episode-by-episode held artifacts and source discovery gaps
