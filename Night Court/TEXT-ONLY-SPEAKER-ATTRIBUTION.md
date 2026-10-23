@@ -121,3 +121,14 @@ python "Night Court/tools/test_scene_participation.py"
 ```
 
 This is a stage for narrowing the candidate set in subsequent dialogue reasoning, **not** a new dialogue attribution system or a learned speaker model. Name mentions may be misleading, guest roles may be silent or offscreen, and camera edits cannot be recovered reliably from caption timing alone. No definitive line speaker is promoted without reliable evidence. The independent agent-vote/skeptic/reconciliation process remains the next stage.
+
+
+## Implemented caption-unit substrate (October 23, 2026)
+
+The deterministic `tools/build_caption_turns.py` now processes every one of the **35 held Season 1–2 English subtitle tracks** without any video or third-party text retrieval. It preserves source cue index, exact original source text, per-source SHA-256 and timing, and splits **only subtitle physical lines that both begin with a speaker-separation dash**. Those pieces remain **UNKNOWN** rather than falsely assigning a character. Named voice or explicit speaker-prefix labels are kept only when genuinely supplied by the source.
+
+The initial GitHub Actions run generated **14,924 candidate caption units**, including **3,858 units from multi-dash caption cues**, assembled into **165 gap-delimited provisional conversational packets**. The current tracks offered **zero unambiguous explicit speaker labels**, so **no characters were automatically assigned**. This is important: unlabeled subtitles still require global-context speaker inference, and dialogue order is not speaker identity.
+
+Every source version now has `dialogue/versions/<version>/candidate-turns.jsonl` and `conversation-packets.jsonl`; `catalog/caption-turn-coverage.json` and `catalog/caption-conversation-packets.jsonl` summarize all tracks. A 12-second gap is an administrative packet cut, **not a verified scene break**. Speaker labels, dramatic speakers, line continuity, voiceover, and double-speaker punctuation require later context-aware resolution.
+
+The corpus is now prepared for independent label-proposal agents and contradiction-aware reconciliation while preserving all original caption witnesses unchanged. This workflow makes no API calls, performs no audiovisual verification, and does not create a false canonical screenplay.
