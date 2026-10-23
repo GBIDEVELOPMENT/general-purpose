@@ -4,9 +4,9 @@ Links are external research leads, not held dialogue or approved copying.
 
 | Source evidence status | Episodes |
 |---|---:|
-| no episode dialogue specific locator | 130 |
+| no episode dialogue specific locator | 28 |
 | inferred link only | 0 |
-| index coverage only | 19 |
+| index coverage only | 121 |
 | direct episode page found not held | 44 |
 | held dialogue needs quality review | 0 |
 

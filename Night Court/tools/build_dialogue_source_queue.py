@@ -20,8 +20,12 @@ def locator(source):
     elif provider=="Springfield! Springfield!":
         status="verified_direct_script_page" if verified else "inferred_script_url_unchecked"
     elif provider=="Subtitle Cat":
-        status=("verified_direct_caption_display_page" if verified and "/subs/" in url
-                else "caption_listing_unverified")
+        if verified and "/subs/" in url:
+            status="verified_direct_caption_display_page"
+        elif verified and "/list_page.php" in url:
+            status="verified_caption_index_listing"
+        else:
+            status="caption_listing_unverified"
     else:return None
     return {"provider":provider,"url":url,"status":status,"verified":verified,
             "content_imported":bool(source.get("content_imported")),
@@ -31,7 +35,7 @@ def classify(held,links):
     values={e["status"] for e in links}
     if held:return ORDER[4]
     if any(k.startswith("verified_direct_") for k in values):return ORDER[3]
-    if "verified_transcript_index_listing" in values:return ORDER[2]
+    if "verified_transcript_index_listing" in values or "verified_caption_index_listing" in values:return ORDER[2]
     if "inferred_script_url_unchecked" in values:return ORDER[1]
     return ORDER[0]
 def save(path,value):
@@ -57,7 +61,7 @@ def main():
               "episode_id":id,"season":s,"episode":e,"title":source["title"],
               "held_dialogue_versions":held,
               "direct_episode_page_locators":len(direct),
-              "index_only_transcript_refs":sum(x["status"]=="verified_transcript_index_listing" for x in links),
+              "index_only_transcript_refs":sum(x["status"] in ("verified_transcript_index_listing","verified_caption_index_listing") for x in links),
               "unverified_pattern_urls":sum(x["status"]=="inferred_script_url_unchecked" for x in links),
               "acquisition_status":level,"source_locations":links}
             entries.append(row);seasons[s][level]+=1
