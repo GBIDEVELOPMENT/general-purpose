@@ -79,7 +79,7 @@ def safe_url(url, expected_suffix):
     if (parts.scheme != "https" or parts.hostname != HOST or parts.port or
             parts.username or parts.password or parts.query or parts.fragment):
         raise ValueError("non-allowlisted URL")
-    if expected_suffix == ".html" and not parts.path.startswith("/subs/1121/"):
+    if expected_suffix == ".html" and not re.match(r"^/subs/[0-9]+/", parts.path):
         raise ValueError("candidate page is outside the mapped caption-page family")
     if expected_suffix == ".srt" and not re.match(r"^/subs/[0-9]+/", parts.path):
         raise ValueError("download is outside the source download directories")
