@@ -142,20 +142,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e22_her_honor_2.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "note": "Original 1984 series episode-matched caption display page. URL only; no subtitle text imported; reuse rights not established.",
+      "provider": "Subtitle Cat",
       "source_index": "https://www.subtitlecat.com/list_page.php?from=1710200",
-      "verification": "public_upload_listing_and_direct_episode_page",
       "source_label": "night_court_s04e22_her_honor_2",
-      "note": "Original 1984 series episode-matched caption display page. URL only; no subtitle text imported; reuse rights not established."
+      "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e22_her_honor_2.html",
+      "verification": "public_upload_listing_and_direct_episode_page",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--a40070ece4998764/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--a40070ece4998764/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "a40070ece49987647903e3e40837fff63cd9c1907785752fa4539d95d5f8a374",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-480p-dvd-english-research-witness--a40070ece4998764"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

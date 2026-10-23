@@ -130,20 +130,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e04_halloween_ii_the_return_of_leon.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "note": "Original 1984 series episode-matched caption display page. URL only; no subtitle text imported; reuse rights not established.",
+      "provider": "Subtitle Cat",
       "source_index": "https://www.subtitlecat.com/list_page.php?from=1710150",
-      "verification": "public_upload_listing_and_direct_episode_page",
       "source_label": "night_court_s04e04_halloween_ii_the_return_of_leon",
-      "note": "Original 1984 series episode-matched caption display page. URL only; no subtitle text imported; reuse rights not established."
+      "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e04_halloween_ii_the_return_of_leon.html",
+      "verification": "public_upload_listing_and_direct_episode_page",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--e06039489987f78d/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--e06039489987f78d/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "e06039489987f78d12082798e98633559917d880d83a74e262600d8c12467299",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-480p-dvd-english-research-witness--e06039489987f78d"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

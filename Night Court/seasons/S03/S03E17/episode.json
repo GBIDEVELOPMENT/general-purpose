@@ -170,20 +170,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E17%20-%20The%20Mugger%20(480p%20DVD%20x265%20Panda).eng.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "note": "Original 1984-series English DVD caption display URL. Source bytes NOT archived. Reuse rights not established.",
+      "provider": "Subtitle Cat",
       "source_index": "https://www.subtitlecat.com/list_page.php?from=1666800",
-      "verification": "public_upload_listing_plus_individual_episode_page",
       "source_label": "Night Court (1984) - S03E17 - The Mugger (480p DVD x265 Panda).eng",
-      "note": "Original 1984-series English DVD caption display URL. Source bytes NOT archived. Reuse rights not established."
+      "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E17%20-%20The%20Mugger%20(480p%20DVD%20x265%20Panda).eng.html",
+      "verification": "public_upload_listing_plus_individual_episode_page",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--4437166bc9ecb09f/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--4437166bc9ecb09f/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "4437166bc9ecb09f934e09173f4f73270d2c1cddbe11e3c3a1c97501052de65d",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-480p-dvd-english-research-witness--4437166bc9ecb09f"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [
