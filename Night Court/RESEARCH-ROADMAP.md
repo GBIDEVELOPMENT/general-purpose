@@ -85,3 +85,7 @@ Do not confuse `--actor` guestcast matching with starring cast appearance: main-
 - A manually audited sample of 10 episodes has grounded character/event/comedies/cultural tags with explicit citations and contradicted-source examples.
 - Retrieval queries distinguish guest credits, synopsis references and appearance claims by relationship type.
 - Validations and bounded CI pass; any blocked sources are reported candidly.
+
+### Latest subtitle-discovery gate
+
+An independent indexer now retains 13 individually checked Subtitle Cat links for the original series and an episode-by-episode subtitle-location count. Its live index collection was blocked by robots; avoid repeating blocked bulk scans. Continue verified episode-specific discovery through accessible search indexes and licensed providers. Apple TV and Prime Video series listings provide additional distributor/caption leads but no stored subtitle bytes.
