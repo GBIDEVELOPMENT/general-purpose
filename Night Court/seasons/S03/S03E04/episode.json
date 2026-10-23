@@ -7,8 +7,8 @@
   "title": "Mac and Quon Le: No Reservations",
   "title_status": "source_catalogued",
   "title_aliases": [],
-  "original_air_date": null,
-  "original_air_date_status": "pending",
+  "original_air_date": "1985-10-24",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": null,
     "writers": [],
@@ -73,6 +73,14 @@
       "level": "episode_url_derived_from_verified_index",
       "verified": false,
       "content_imported": false
+    },
+    {
+      "kind": "episode_guide",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134281/night-court-3x04-mac-and-quon-le-no-reservations",
+      "level": "episode_in_index",
+      "verified": true,
+      "content_imported": false
     }
   ],
   "holdings": {
@@ -89,5 +97,6 @@
     "knowledge_file": null,
     "annotation_file": null
   },
-  "editorial_notes": []
+  "editorial_notes": [],
+  "tvmaze_episode_id": 134281
 }

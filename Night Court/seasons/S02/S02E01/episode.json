@@ -73,6 +73,14 @@
       "level": "episode_url_derived_from_verified_index",
       "verified": false,
       "content_imported": false
+    },
+    {
+      "kind": "episode_guide",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134256/night-court-2x01-the-nun",
+      "level": "episode_in_index",
+      "verified": true,
+      "content_imported": false
     }
   ],
   "holdings": {
@@ -89,5 +97,6 @@
     "knowledge_file": null,
     "annotation_file": null
   },
-  "editorial_notes": []
+  "editorial_notes": [],
+  "tvmaze_episode_id": 134256
 }

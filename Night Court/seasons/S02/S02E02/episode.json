@@ -10,8 +10,8 @@
     "Christine and Mac",
     "Christine and Mac (a.k.a. Daddy for the Defense)"
   ],
-  "original_air_date": null,
-  "original_air_date_status": "pending",
+  "original_air_date": "1984-10-04",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": null,
     "writers": [],
@@ -76,6 +76,14 @@
       "level": "episode_url_derived_from_verified_index",
       "verified": false,
       "content_imported": false
+    },
+    {
+      "kind": "episode_guide",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134257/night-court-2x02-christine-and-mac-aka-daddy-for-the-defense",
+      "level": "episode_in_index",
+      "verified": true,
+      "content_imported": false
     }
   ],
   "holdings": {
@@ -94,5 +102,6 @@
   },
   "editorial_notes": [
     "Title differs between sources. Preserve all title variants rather than selecting without provenance."
-  ]
+  ],
+  "tvmaze_episode_id": 134257
 }

@@ -6,7 +6,9 @@
   "absolute_episode_by_season_sum": 58,
   "title": "The Next Voice You Hear",
   "title_status": "source_catalogued",
-  "title_aliases": [],
+  "title_aliases": [
+    "The Next Voice You Hear..."
+  ],
   "original_air_date": "1986-10-02",
   "original_air_date_status": "verified",
   "credits": {
@@ -65,6 +67,14 @@
       "level": "episode_page",
       "verified": true,
       "content_imported": false
+    },
+    {
+      "kind": "episode_guide",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134300/night-court-4x01-the-next-voice-you-hear",
+      "level": "episode_in_index",
+      "verified": true,
+      "content_imported": false
     }
   ],
   "holdings": {
@@ -81,5 +91,6 @@
     "knowledge_file": null,
     "annotation_file": null
   },
-  "editorial_notes": []
+  "editorial_notes": [],
+  "tvmaze_episode_id": 134300
 }

@@ -7,10 +7,11 @@
   "title": "The Wheels of Justice (Part 2)",
   "title_status": "source_catalogued",
   "title_aliases": [
-    "Wheels of Justice: Part 2"
+    "Wheels of Justice: Part 2",
+    "The Wheels of Justice (2)"
   ],
-  "original_air_date": null,
-  "original_air_date_status": "pending",
+  "original_air_date": "1985-12-12",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": null,
     "writers": [],
@@ -75,6 +76,14 @@
       "level": "episode_url_derived_from_verified_index",
       "verified": false,
       "content_imported": false
+    },
+    {
+      "kind": "episode_guide",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134287/night-court-3x10-the-wheels-of-justice-2",
+      "level": "episode_in_index",
+      "verified": true,
+      "content_imported": false
     }
   ],
   "holdings": {
@@ -91,5 +100,6 @@
     "knowledge_file": null,
     "annotation_file": null
   },
-  "editorial_notes": []
+  "editorial_notes": [],
+  "tvmaze_episode_id": 134287
 }

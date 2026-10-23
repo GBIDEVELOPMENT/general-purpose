@@ -7,8 +7,8 @@
   "title": "Could This Be Magic?",
   "title_status": "source_catalogued",
   "title_aliases": [],
-  "original_air_date": null,
-  "original_air_date_status": "pending",
+  "original_air_date": "1986-02-27",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": null,
     "writers": [],
@@ -73,6 +73,14 @@
       "level": "episode_url_derived_from_verified_index",
       "verified": false,
       "content_imported": false
+    },
+    {
+      "kind": "episode_guide",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134295/night-court-3x18-could-this-be-magic",
+      "level": "episode_in_index",
+      "verified": true,
+      "content_imported": false
     }
   ],
   "holdings": {
@@ -89,5 +97,6 @@
     "knowledge_file": null,
     "annotation_file": null
   },
-  "editorial_notes": []
+  "editorial_notes": [],
+  "tvmaze_episode_id": 134295
 }

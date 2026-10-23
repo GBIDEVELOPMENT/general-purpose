@@ -7,10 +7,11 @@
   "title": "Opportunity Knocks (Part 1)",
   "title_status": "source_catalogued",
   "title_aliases": [
-    "Opportunity Knock Knocks (Part 1)"
+    "Opportunity Knock Knocks (Part 1)",
+    "Opportunity Knock Knocks (1)"
   ],
-  "original_air_date": null,
-  "original_air_date_status": "pending",
+  "original_air_date": "1992-05-13",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": null,
     "writers": [],
@@ -59,6 +60,14 @@
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
       "level": "series_catalog",
       "verified": true
+    },
+    {
+      "kind": "episode_guide",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134433/night-court-9x20-opportunity-knock-knocks-1",
+      "level": "episode_in_index",
+      "verified": true,
+      "content_imported": false
     }
   ],
   "holdings": {
@@ -75,5 +84,6 @@
     "knowledge_file": null,
     "annotation_file": null
   },
-  "editorial_notes": []
+  "editorial_notes": [],
+  "tvmaze_episode_id": 134433
 }

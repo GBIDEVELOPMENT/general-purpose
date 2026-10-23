@@ -7,8 +7,8 @@
   "title": "Take My Wife, Please",
   "title_status": "source_catalogued",
   "title_aliases": [],
-  "original_air_date": null,
-  "original_air_date_status": "pending",
+  "original_air_date": "1984-12-13",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": null,
     "writers": [],
@@ -73,6 +73,14 @@
       "level": "episode_url_derived_from_verified_index",
       "verified": false,
       "content_imported": false
+    },
+    {
+      "kind": "episode_guide",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134266/night-court-2x11-take-my-wife-please",
+      "level": "episode_in_index",
+      "verified": true,
+      "content_imported": false
     }
   ],
   "holdings": {
@@ -89,5 +97,6 @@
     "knowledge_file": null,
     "annotation_file": null
   },
-  "editorial_notes": []
+  "editorial_notes": [],
+  "tvmaze_episode_id": 134266
 }

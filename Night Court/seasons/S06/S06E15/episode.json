@@ -4,11 +4,11 @@
   "season": 6,
   "episode": 15,
   "absolute_episode_by_season_sum": 116,
-  "title": null,
-  "title_status": "pending_source_catalogue",
+  "title": "The Game Show",
+  "title_status": "tvmaze_api_factual_metadata",
   "title_aliases": [],
-  "original_air_date": null,
-  "original_air_date_status": "pending",
+  "original_air_date": "1989-02-15",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": null,
     "writers": [],
@@ -57,6 +57,14 @@
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
       "level": "series_catalog",
       "verified": true
+    },
+    {
+      "kind": "episode_guide",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134358/night-court-6x15-the-game-show",
+      "level": "episode_in_index",
+      "verified": true,
+      "content_imported": false
     }
   ],
   "holdings": {
@@ -73,5 +81,6 @@
     "knowledge_file": null,
     "annotation_file": null
   },
-  "editorial_notes": []
+  "editorial_notes": [],
+  "tvmaze_episode_id": 134358
 }
