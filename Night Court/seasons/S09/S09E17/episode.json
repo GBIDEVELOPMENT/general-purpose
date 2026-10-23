@@ -190,22 +190,32 @@
       "verified": true
     },
     {
-      "kind": "streaming_closed_caption_availability",
-      "provider": "Apple TV",
-      "url": "https://tv.apple.com/us/episode/party-girl-part-2/umc.cmc.5xgh3ov4a2c9kru8vn3n09xol?showId=umc.cmc.3v8igla11dgg4chywljv2og89",
-      "level": "episode_streaming_catalog",
-      "verified": true,
       "content_imported": false,
+      "kind": "streaming_closed_caption_availability",
       "language": "en-US",
+      "level": "episode_streaming_catalog",
+      "note": "Publisher's episode page advertises English CC. Requires supported access/region; no external subtitle display page or held caption track established.",
+      "provider": "Apple TV",
       "region": "US",
       "reported_runtime_minutes": 24,
       "rights_status": "not_license_to_download_or_redistribute",
+      "url": "https://tv.apple.com/us/episode/party-girl-part-2/umc.cmc.5xgh3ov4a2c9kru8vn3n09xol?showId=umc.cmc.3v8igla11dgg4chywljv2og89",
       "verification": "publisher_episode_listing_explicitly_advertises_en_US_CC",
-      "note": "Publisher's episode page advertises English CC. Requires supported access/region; no external subtitle display page or held caption track established."
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--e9196e3918b93efc/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--e9196e3918b93efc/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "e9196e3918b93efc06fcde301894297c1ae66a71b86fdda9b6318c048a5950df",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-online-caption-research-wit--e9196e3918b93efc"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

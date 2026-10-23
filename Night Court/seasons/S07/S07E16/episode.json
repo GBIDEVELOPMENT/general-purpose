@@ -142,20 +142,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/list_page.php?from=1710700",
-      "level": "episode_in_index",
-      "verified": true,
       "content_imported": false,
-      "verification": "episode_label_verified_in_public_upload_index_only",
-      "source_upload_date": "2025-06-22",
       "episode_id_in_listing": "S07E16",
-      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established."
+      "kind": "subtitle_index",
+      "level": "episode_in_index",
+      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established.",
+      "provider": "Subtitle Cat",
+      "source_upload_date": "2025-06-22",
+      "url": "https://www.subtitlecat.com/list_page.php?from=1710700",
+      "verification": "episode_label_verified_in_public_upload_index_only",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--de0b5b1a986043da/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--de0b5b1a986043da/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "de0b5b1a986043da8a77b83eed4df6108129e8675328d82590d7e74fd31387cc",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-online-caption-research-wit--de0b5b1a986043da"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

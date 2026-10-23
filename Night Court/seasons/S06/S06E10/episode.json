@@ -118,20 +118,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/list_page.php?from=1710700",
-      "level": "episode_in_index",
-      "verified": true,
       "content_imported": false,
-      "verification": "episode_label_verified_in_public_upload_index_only",
-      "source_upload_date": "2025-06-22",
       "episode_id_in_listing": "S06E10",
-      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established."
+      "kind": "subtitle_index",
+      "level": "episode_in_index",
+      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established.",
+      "provider": "Subtitle Cat",
+      "source_upload_date": "2025-06-22",
+      "url": "https://www.subtitlecat.com/list_page.php?from=1710700",
+      "verification": "episode_label_verified_in_public_upload_index_only",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--ee238c2f8a082792/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--ee238c2f8a082792/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "ee238c2f8a0827924967ededb6fb47d25cc5089827e6c2eee7ab29b5c42f60d0",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-online-caption-research-wit--ee238c2f8a082792"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [
