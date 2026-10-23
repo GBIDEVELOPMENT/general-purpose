@@ -99,3 +99,8 @@ Season-level national ranks and Nielsen-era ratings, plus episode metrics with u
 ### Original-period press leads now indexed
 
 Read `research/press-evidence-brief.md` and `research/production-and-reception-claims.jsonl` before evaluating changes in the show's comedy, casting, or reception. They include creator/producer first-person statements from September 1991 and May 1992; credit and intention should not automatically become measured screen evidence. Four disagreements in `research/source-conflicts.json` require source-critical treatment. Highest-priority factual check is season-one ratings/rank discrepancy against original Nielsen and television-industry sources, followed by careful disambiguation of May 13 story finale and May 31 final scheduled episode.
+
+
+### Source revision retention: implemented
+
+The 21 currently held Wikipedia article revisions are backed up immutably by numeric source revision ID with SHA-256 verification and separate license manifests. Future archival agents must run `tools/preserve_wiki_revisions.py` before and after article refresh, then `validate_knowledge.py`, retaining all prior snapshots rather than replacing them. Where content has no approved reuse basis, retain only provenance, independently authored notes and links.
