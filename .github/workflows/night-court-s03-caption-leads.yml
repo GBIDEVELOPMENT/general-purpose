@@ -1,0 +1,46 @@
+name: Night Court verified S03 caption-page locator import
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-season3-caption-leads
+    paths:
+      - "Night Court/tools/add_verified_caption_leads.py"
+      - "Night Court/research/season03-caption-page-locations.json"
+      - ".github/workflows/night-court-s03-caption-leads.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-season3-caption-leads
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original series identity and source schema
+        run: python "Night Court/tools/validate.py"
+      - name: Index 22 externally verified 1984 original caption pages
+        run: python "Night Court/tools/add_verified_caption_leads.py"
+      - name: Recompute actually held sources versus public leads
+        run: python "Night Court/tools/audit_holdings.py"
+      - name: Rebuild the truthful 193-episode acquisition queue
+        run: python "Night Court/tools/build_dialogue_source_queue.py"
+      - name: Validate source assignments, provenance and completeness claims
+        run: |
+          python "Night Court/tools/test_dialogue_source_queue.py"
+          python "Night Court/tools/validate_knowledge.py"
+      - name: Commit metadata only
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then
+            echo "All source links already indexed"; exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): map 22 S03 caption display pages"
+          git push origin HEAD:research/night-court-season3-caption-leads
