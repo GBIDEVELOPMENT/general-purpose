@@ -1,0 +1,44 @@
+name: Night Court inspect uploaded RAR source archives
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-rar-ingestion
+    paths:
+      - .github/workflows/night-court-rar-inspect.yml
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install read-only RAR listing tool
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unar
+          lsar -version || true
+      - name: Print archive metadata only, never dialogue
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json,glob,subprocess,hashlib,os
+          from pathlib import Path
+          for name in sorted(glob.glob("Night Court/*.rar")):
+              p=Path(name)
+              data=p.read_bytes()
+              print("ARCHIVE",p.name,"size",len(data),"sha256",hashlib.sha256(data).hexdigest())
+              result=subprocess.run(["lsar","-json",str(p)],capture_output=True,text=True,timeout=40)
+              print("LSAR_EXIT",result.returncode,"STDERR",result.stderr[:500])
+              if result.returncode:continue
+              meta=json.loads(result.stdout)
+              print("TOPLEVEL_KEYS",sorted(meta.keys()))
+              members=meta.get("lsarContents",[])
+              print("MEMBER_COUNT",len(members))
+              for entry in members[:130]:
+                  print("ENTRY",json.dumps({k:entry.get(k) for k in ("XADFileName","XADFileSize","XADCompressedSize","XADIsDirectory","XADIsLink","XADFileType","XADFileCRC32")},ensure_ascii=False))
+          PY
