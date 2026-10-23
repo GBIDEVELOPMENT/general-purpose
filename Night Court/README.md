@@ -8,7 +8,7 @@
 - **193/193** titles, dates, directors, writer-credit lines and production codes, reconciled from TVmaze and Wikipedia. Source-specific aliases are retained; composite broadcasts and ambiguous numbering are flagged.
 - **193/193 CC BY-SA-licensed, episode-specific encyclopedia synopsis/capsule files**: `seasons/Sxx/SxxEyy/authorized-text/wikipedia-episode-capsule.wikitext`, each with `sources/wikipedia-capsule.provenance.json`. A five-entry discrepancy between Wikipedia's 188 episode-list rows and 193 actual episode parts is explained by paired broadcasts, whose shared summaries are annotated.
 - Full MediaWiki source of **two openly licensed articles**, `research/licensed-wiki/Night-Court.wikitext` and `research/licensed-wiki/List-of-Night-Court-episodes.wikitext`, each with a Wikipedia revision permalink, attribution and license manifest.
-- **1,663 provenance-bearing episode source references**, including many repeated series-index pointers. The number is *not* an independently recovered document count.
+- **1,665 provenance-bearing episode source references**, including many repeated series-index pointers. The number is *not* an independently recovered document count.
 - Episode-level bibliography plus original analyst-created first-pass fact sheets for S01E01 and S02E10; fandom observation examples, source inventory and canonical knowledge-model design.
 
 **Not held:** full scripts, proprietary dialogue transcriptions, closed-caption or subtitle tracks, copyrighted fan reviews and articles without reuse permission. The corresponding discovery links are retained, and holdings explicitly record zero for these categories. A private repository alone does not authorize copying them. If authorized materials become available, ingest each version in the relevant episode directory with precise provenance.
@@ -111,7 +111,7 @@ Canonical scene, event, mood, joke, fandom and period-context knowledge remains 
 
 ## Subtitle location follow-up, October 23, 2026
 
-A dedicated research lane added **13 individually verified episode-specific Subtitle Cat caption-display URLs** to the record set, including examples in seasons 1, 2, 3, 4 and 9. The per-episode source records and `catalog/subtitlecat-discovery.json` preserve each URL and distinguish an externally readable caption display from a held SRT. The audited total is now **1,663 source pointers**; exactly **13 episodes** have a located Subtitle Cat page, while **0 complete subtitle files** are held in the repository.
+A dedicated research lane added **15 individually verified episode-specific Subtitle Cat caption-display URLs** to the record set, including examples in seasons 1, 2, 3, 4 and 9. The per-episode source records and `catalog/subtitlecat-discovery.json` preserve each URL and distinguish an externally readable caption display from a held SRT. The audited total is now **1,665 source pointers**; exactly **15 episodes** have a located Subtitle Cat page, while **0 complete subtitle files** are held in the repository.
 
 The site's robots policy blocked automated search/upload-index collection, so the metadata harvester saved only previously verified episode page URLs. It did not fetch subtitle text, invent search coverage, or bypass the site's access restriction.
 
@@ -158,3 +158,7 @@ Research and private-copying exceptions may be relevant to legitimate user-held 
 ### Local-source episode media to dialogue
 
 `tools/extract_local_media.py` adds a way to generate source-preserved SRT dialogue witnesses from **locally held, DRM-free episode containers**, using embedded text subtitle streams or opt-in offline faster-whisper speech recognition when captions are unavailable. It can inspect individual media, extract specific or all subtitle streams, and batch-process a folder of SxxEyy-labeled original-series videos. It requires explicit original-series and source/rights confirmation before importing, and keeps video/audio outside the repository. [Detailed commands and limitations](DIALOGUE-INGESTION.md). A separate narrow synthetic MKV workflow checks the end-to-end subtitle extraction path.
+
+### Dialogue source acquisition priority matrix
+
+`catalog/dialogue-source-queue.json`, CSV and Markdown now classify all 193 original episodes by direct dialogue link, index-only lead, unverified pattern or no episode-level lead. They rank episodes needing independent collection and preserve actual source URLs without misrepresenting linked pages as downloaded transcript text. S01E03 and S04E15 added as individually inspected Subtitle Cat pages (15 caption-page episodes total). Run `tools/build_dialogue_source_queue.py` after source inventories change; it also reconciles `catalog/archive-status.json` against the actual holdings audit.

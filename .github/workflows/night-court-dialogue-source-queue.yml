@@ -1,0 +1,44 @@
+name: Night Court dialogue location coverage and source queue
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-dialogue-source-queue
+    paths:
+      - "Night Court/tools/build_dialogue_source_queue.py"
+      - "Night Court/tools/test_dialogue_source_queue.py"
+      - "Night Court/catalog/subtitlecat-discovery.json"
+      - "Night Court/seasons/**/episode.json"
+      - ".github/workflows/night-court-dialogue-source-queue.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-dialogue-source-queue
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate 193 original episodes
+        run: python "Night Court/tools/validate.py"
+      - name: Reconcile actual holdings and direct source references
+        run: python "Night Court/tools/audit_holdings.py"
+      - name: Generate sorted episode-source acquisition ledger
+        run: python "Night Court/tools/build_dialogue_source_queue.py"
+      - name: Check 193-source ranking and recorded provenance consistency
+        run: python "Night Court/tools/test_dialogue_source_queue.py"
+      - name: Verify held dialogue index is unmodified
+        run: python "Night Court/tools/validate_dialogue.py"
+      - name: Commit only generated Night Court source records
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then echo "No source changes"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): rebuild episode dialogue source locator gap matrix"
+          git push origin HEAD:research/night-court-dialogue-source-queue

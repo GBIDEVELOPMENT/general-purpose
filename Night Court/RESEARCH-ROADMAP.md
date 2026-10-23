@@ -116,3 +116,7 @@ A *claimed* full transcript is not yet a *verified* one. Actual dialogue source 
 ### Source-to-dialogue pipeline from local episode media
 
 The supported source acquisition mechanism now includes `tools/extract_local_media.py`: inspect an authorized local media container with ffprobe, convert embedded **text** subtitle streams to SRT using ffmpeg, or explicitly opt into local offline ASR with faster-whisper. Generated tracks are versioned and attached to the original 193-episode corpus with rights and edition metadata; no video is pushed to GitHub. Image-based subtitles and CEA-608/708 streams not exposed as text remain an identified gap, along with human source/version audits and per-scene speaker assignment. See `DIALOGUE-INGESTION.md`. A real episode media source is still required to make the actual held dialogue count positive.
+
+### Dialogue-source gap and acquisition matrix
+
+`tools/build_dialogue_source_queue.py` produces JSON/CSV/Markdown prioritization for all 193 episodes, with evidence ranks that distinguish individually verified source pages from season index listings and inferred URL patterns. Current coverage: 22 direct-page episodes, 38 index-only and 133 without episode-specific dialogue leads; 15 individual Subtitle Cat pages have been verified. The least-covered late seasons are the highest-value next search target. This work does not bypass sites, copy full dialogue or claim that an external page is an archived source. The queue must be regenerated whenever source references change.
