@@ -1,0 +1,55 @@
+name: FTP media library organizer
+on:
+  pull_request:
+    paths:
+      - "media-organizer/**"
+      - ".github/workflows/ftp-media-organizer.yml"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Inventory only, or apply explicitly reviewed plan"
+        type: choice
+        options: [inventory, apply]
+        default: inventory
+      protocol:
+        description: "Connection protocol"
+        type: choice
+        options: [ftp, ftps]
+        default: ftp
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Static and syntax checks
+        run: |
+          python -m py_compile media-organizer/organize.py
+          python -m unittest discover -s media-organizer/tests -v
+  ftp:
+    if: github.event_name == 'workflow_dispatch'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: ftp-media-changes
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ${{ inputs.protocol }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate credentials
+        run: test -n "$FTP_PASSWORD"
+      - name: Inventory or apply reviewed plan
+        run: python media-organizer/organize.py --mode "${{ inputs.mode }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ftp-media-organizer-report
+          path: media-organizer/output/
+          retention-days: 30
