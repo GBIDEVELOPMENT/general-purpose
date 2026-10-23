@@ -7,6 +7,7 @@ on:
       - research/night-court-immutable-revisions
     paths:
       - "Night Court/tools/preserve_wiki_revisions.py"
+      - "Night Court/tools/validate_knowledge.py"
       - ".github/workflows/night-court-preserve-wiki.yml"
 
 permissions:
