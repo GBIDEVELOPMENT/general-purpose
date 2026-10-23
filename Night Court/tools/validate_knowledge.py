@@ -93,6 +93,24 @@ def main():
         f=json.loads(fandom.read_text("utf-8"))
         if f["status"]=="blocked_by_robots":
             assert not list((ROOT/"research"/"fandom-wiki").glob("*.wikitext"))
+    snapshots=ROOT/"catalog"/"wiki-revision-archive.json"
+    if snapshots.exists():
+        import hashlib
+        manifest=json.loads(snapshots.read_text("utf-8"))
+        assert manifest["snapshot_count"]==len(manifest["snapshots"])
+        seen=set()
+        for item in manifest["snapshots"]:
+            key=(item["source"],item["revision"])
+            assert key not in seen,key
+            seen.add(key)
+            archived=ROOT/item["snapshot_path"]
+            rights=ROOT/item["provenance_path"]
+            assert archived.exists() and rights.exists(),key
+            assert hashlib.sha256(archived.read_bytes()).hexdigest()==item["sha256"],key
+            assert item["license"]=="CC BY-SA 4.0",key
+            proof=json.loads(rights.read_text("utf-8"))
+            assert proof["source_revision"]==item["revision"],key
+            assert proof["immutable_revision"],key
     print("VALID:",len(ids),"episode dossiers;",
           sum(len(x["named_character_mentions"]) for x in records),"name-mention relationships;",
           sum(len(x["theme_lexical_cues"]) for x in records),"lexical topic flags;",
