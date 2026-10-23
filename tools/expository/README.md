@@ -17,6 +17,7 @@ Only enter a token on a deployment whose code and origin you trust. A GitHub tok
 ## Using the browser
 
 - **Folders:** open folders with breadcrumbs or the left navigation. Expand/collapse the indexed folder tree independently from navigation. On narrow screens use the menu button.
+- **Story Mode:** select **Story** in the toolbar for an on-demand GitHub-backed timeline. It combines up to 50 recent commits and 10 releases by their documented dates, with 10 undated tags in a separate group. Each event links to its actual GitHub source; the timeline does not invent explanations or claim to cover the entire project's history.
 - **Views and filters:** toggle list/gallery, sort by name/size/extension, and filter by image/code/document/data/other. Choose **This folder**, **Search entire repo** or **Images in subfolders**; the Find field filters indexed filenames and paths. A density slider adjusts the gallery tile width.
 - **Bounded full-text scan:** enter at least two characters into **Find by name**, then explicitly choose **Search contents**. This reads at most the first 120 eligible indexed text files (128 KiB each, three concurrent GitHub requests), displays up to two matching lines per file and 80 results total, and offers **Cancel scan**. This is opt-in, incomplete by design for huge repos, and not a server-side universal code search.
 - **Public bookmarks:** star public repositories for one-tap switching. Only *public* repository names are retained in browser storage, never private repository names, paths, credentials or scan results.
@@ -27,7 +28,7 @@ Only enter a token on a deployment whose code and origin you trust. A GitHub tok
 - **Share:** use the arrow button for a folder URL or **Copy ↗** inside file previews to generate a deep link. URLs include no credential. A recipient needs their own GitHub access to private content.
 - **Disconnect:** forget token and reset private browser state using the dedicated button.
 
-The interface never writes to repositories, executes fetched JavaScript, loads external preview scripts, or sends analytics.
+The interface never writes to repositories, executes fetched JavaScript, loads external preview scripts, or sends analytics. Story Mode performs three read-only requests only when explicitly opened and retains its results solely in the current browser session.
 
 ## Safe deployment
 
