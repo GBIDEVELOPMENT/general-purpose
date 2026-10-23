@@ -1,0 +1,83 @@
+# Complete-dialogue ingestion for the original Night Court (1984–1992)
+
+This is the **source-preserving local ingestion lane** for episode transcripts and timed captions. It does not fetch scripts from external websites, defeat DRM, or declare that any particular copy is legally authorized. It can process full versions the user supplies for a private research corpus, keeping each witness and its original bytes intact.
+
+## How to add a caption track from your phone via GitHub
+
+1. Open the private repository's `Night Court/incoming/` folder on the research branch `research/night-court-dialogue-ingestion`. Upload an SRT, VTT or TXT whose filename contains the original episode identifier, e.g. `S01E01.personal.dvd.en.srt`.
+2. Next to the file, upload a small UTF-8 sidecar named **exactly** `S01E01.personal.dvd.en.srt.meta.json`:
+
+```json
+{
+  "episode": "S01E01",
+  "edition": "dvd-english-v1",
+  "language": "en",
+  "rights_basis": "lawfully_obtained_research_copy",
+  "confirmed": true,
+  "complete": true,
+  "source_name": "Original DVD closed captions",
+  "source_url": null,
+  "notes": "Personal research transcript from a lawfully accessible source; no DRM bypass"
+}
+```
+
+3. GitHub Actions runs `Night Court dialogue witness ingestion` on pushes to that branch or by manually starting `workflow_dispatch`. It parses the file, preserves the exact bytes, emits searchable segment/paragraph JSONL, creates a readable transcript, updates the episode holding record and commits the result to that **research branch**. Review it and merge via PR. If you upload to `main` directly, the automatic ingestion workflow does not run.
+
+If you don't have an input file yet, the workflow and repo remain in their zero-dialogue state. The sidecar `confirmed` records the submitter's source/rights declaration, not an independent legal judgment.
+
+## Local command (works on Android Termux, desktop, Codespaces)
+
+```sh
+python "Night Court/tools/import_dialogue.py" \
+  --file "/path/to/Night.Court.S01E01.en.srt" \
+  --episode S01E01 \
+  --edition "DVD English closed captions" \
+  --language en \
+  --rights-basis lawfully_obtained_research_copy \
+  --confirm-rights \
+  --complete
+```
+
+Or with sidecar files:
+
+```sh
+python "Night Court/tools/import_dialogue.py" --inbox "Night Court/incoming"
+python "Night Court/tools/validate_dialogue.py"
+python "Night Court/tools/audit_holdings.py"
+```
+
+Optional local **generation** from video/audio legitimately available to you: audio transcription tools such as Whisper can generate SRT locally, without sending the original media to GitHub. For text subtitle streams in a DRM-free local media container, `ffmpeg -i local-recording.mkv` can list available subtitle streams, and `ffmpeg -i local-recording.mkv -map 0:s:0 -c:s srt S01E01.local.en.srt` can export compatible text subtitles. Image-based subtitle streams may require a separate transcription process; don't treat failed conversion as missing dialogue. These examples do not authorize circumvention of technical access controls or acquisition from unauthorized sources.
+
+## Per-version outputs
+
+```text
+Night Court/seasons/S01/S01E01/
+  episode.json
+  dialogue/versions/
+    dvd-english-v1--<sha256-prefix>/
+      original.srt         # byte-for-byte source witness
+      segments.jsonl       # lossless cue text and millisecond timestamps
+      readable.txt         # normalization for retrieval
+      manifest.json        # edition, rights declaration, hash, language, completeness
+Night Court/catalog/dialogue-index.jsonl
+```
+
+SRT and VTT carry millisecond timing where present; TXT is imported as paragraphs without invented timing. Cue numbering is normalized, while original source bytes remain unchanged. Speaker identification, OCR accuracy, censorship edits, dialogue omissions and edition provenance cannot be established from file format alone.
+
+Multiple source editions are preserved independently. A second version with a different hash or edition label never overwrites the first. The same version and bytes are idempotent. A same-version content collision raises an error. `declared_complete` records the submitter's statement; even a full-duration subtitle file can omit silence, lyrics, laughter or entire lines, so **episode-complete dialogue remains unverified pending audiovisual QA**.
+
+## Quality criteria for future canonical synthesis
+
+- Keep source caption cues, stage directions, sound effects, music notation, laughter and bracketed commentary distinguishable from spoken dialogue.
+- Assign each transcript a video release identity and language, with time offset, caption revision and source URL where known.
+- Measure temporal coverage against actual episode runtime before claiming completeness. Coverage cannot be inferred from an SRT's final timestamp alone.
+- Collate versions with alignment, character turn parsing, diarization and lexical differences; never flatten alternate edits.
+- Check episode/season numbering on the 1984 original, especially where same-name 2023 revival subtitle files exist. Filename alone is not proof of show identity.
+- For complete legal analyses, determine separately which copying/research/format-shifting exceptions and platform rules apply to the actual source.
+- Source byte hashes are provenance and integrity, not a claim that a subtitle supplier created all underlying dialogue.
+
+## Engineering contract
+
+The importer performs **zero network retrieval**. It supports UTF-8 (with BOM), UTF-16 and Windows-1252, caps input at 20 MB, rejects episodes outside all 193 original episode IDs, and requires an explicit rights declaration and acknowledgment. Input never becomes production code or executable instructions. A separate offline test file creates synthetic episodes and synthetic dialogue only. GitHub Actions passes `validate.py`, `test_import_dialogue.py`, `validate_dialogue.py` and `audit_holdings.py`; the user-provided actual source files are not supplied as test fixtures.
+
+This is a practical ingest lane, not a judgment about fair dealing or fair use. In Canada, Copyright Act sections 29 (research/private study) and 29.22 (conditional reproduction for private purposes) are relevant, subject to individual circumstances and no DRM circumvention. The U.S. four-factor fair-use test considers transformative research purposes and amount copied. Private storage and noncommercial intent are relevant facts, not universal exemptions.

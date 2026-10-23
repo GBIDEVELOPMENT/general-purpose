@@ -1,0 +1,50 @@
+name: Night Court dialogue witness ingestion
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "research/night-court-dialogue-*"
+    paths:
+      - "Night Court/tools/import_dialogue.py"
+      - "Night Court/tools/validate_dialogue.py"
+      - "Night Court/tools/audit_dialogue_coverage.py"
+      - "Night Court/tools/test_import_dialogue.py"
+      - "Night Court/incoming/**"
+      - ".github/workflows/night-court-dialogue-ingestion.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-dialogue-ingestion
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify original 193-episode corpus
+        run: python "Night Court/tools/validate.py"
+      - name: Run isolated synthetic ingestion tests
+        run: python "Night Court/tools/test_import_dialogue.py"
+      - name: Import only supplied source files and matching confirmed sidecars
+        run: python "Night Court/tools/import_dialogue.py" --inbox "Night Court/incoming"
+      - name: Verify held dialogue and source checksum integrity
+        run: python "Night Court/tools/validate_dialogue.py"
+      - name: Build 193-episode dialogue-only gap and completeness audit
+        run: python "Night Court/tools/audit_dialogue_coverage.py"
+      - name: Rebuild 193-row holdings coverage
+        run: python "Night Court/tools/audit_holdings.py"
+      - name: Commit additional dialogue witness versions to research branch
+        if: github.ref != 'refs/heads/main'
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then
+            echo "No new dialogue versions"; exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "archive(night-court): ingest source-attributed dialogue witnesses"
+          git push origin "HEAD:$GITHUB_REF_NAME"

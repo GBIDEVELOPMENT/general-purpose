@@ -137,3 +137,12 @@ These fields **cannot all be compared directly**: household rating points, share
 All **21 currently held licensed Wikipedia source articles** (two original-series reference articles and 19 cast/production/context articles) now also have their own immutable copies in `research/licensed-wiki/revisions/` using a canonical article/revision-ID path. Each copy has a separate attribution/license manifest and SHA-256 digest. `catalog/wiki-revision-archive.json` indexes those **21 saved revisions**, not the entire upstream edit history.
 
 Run `tools/preserve_wiki_revisions.py` both **before and after** future encyclopedia source refreshes, as now wired into the dedicated harvest and indexing workflows. Identical revision IDs with different bytes fail closed, while subsequent revisions accumulate without overwriting older held versions. This guards against upstream edits and disappearing pages beyond Git's commit history.
+
+
+## Dialogue import is now operational
+
+The repository includes a **source-preserving dialogue import pipeline** for materials supplied by the researcher: SRT, VTT and plain-text transcripts. See [DIALOGUE-INGESTION.md](DIALOGUE-INGESTION.md) for the local command, Android/GitHub upload workflow, edition/rights manifest, checksums, multiple-version handling and independent completeness QA. Import goes to `seasons/Sxx/SxxEyy/dialogue/versions/`; `catalog/dialogue-index.jsonl`, `catalog/dialogue-coverage.json` and `catalog/dialogue-coverage.csv` report genuinely held witnesses separately from external source pointers. Test fixtures are synthetic.
+
+**As of this change, no actual full scripts or caption tracks have been imported.** The tooling and GitHub Actions pipeline can preserve multiple full source witnesses once they are supplied. Each track's declared completeness is recorded, but only future audiovisual verification can establish whether it is genuinely episode-complete. No DRM circumvention or scraping is performed by the importer.
+
+Research and private-copying exceptions may be relevant to legitimate user-held sources, subject to the circumstances. The archive retains an explicit rights/source declaration without claiming to make a definitive legal finding.
