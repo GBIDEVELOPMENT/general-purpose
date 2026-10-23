@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - research/night-court-original-archive
+      - "research/night-court-*"
     paths:
       - "Night Court/tools/**"
       - ".github/workflows/night-court-harvest.yml"
@@ -42,4 +42,5 @@ jobs:
             echo "No new information"; exit 0
           fi
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): refresh metadata and licensed wiki"
-          git push origin HEAD:research/night-court-original-archive
+          if [ "$GITHUB_REF_NAME" = "main" ]; then echo "Read-only main workflow: create a research branch to commit updates"; exit 0; fi
+          git push origin "HEAD:$GITHUB_REF_NAME"
