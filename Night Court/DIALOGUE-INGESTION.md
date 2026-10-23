@@ -159,3 +159,41 @@ python "Night Court/tools/extract_local_media.py" \
 Whisper's speech recognition runs on your machine. By default the command refuses model weight downloads and expects an already cached local model; the explicit `--allow-model-download` flag enables model retrieval. A capable CPU or GPU and enough local storage are needed for reasonable performance. The result receives a separate edition label; do not confuse auto-transcription with a verified closed-caption file. Speech recognition can miss music, crosstalk, names, nonverbal comedy, or invent words, so independent spot checking remains essential.
 
 Both routes reuse the same `dialogue/versions/` archive, source declarations, hash verification, query index and quality diagnostics. The original episode video or audio is **never committed** by these tools. Media must not be DRM-protected; these tools do not remove access controls or acquire third-party episode files. Synthetic four-second MKV extraction is tested by a dedicated narrow GitHub Actions workflow; no copyrighted episode is used as a fixture.
+
+
+## Bulk-import an entire season or series from one ZIP
+
+You no longer need to upload a separate rights declaration for each individual caption file. A ZIP can contain up to **500** SRT, VTT or TXT tracks with SxxEyy somewhere in each member's filename. All members are assigned to the correct original-series episode based on the filename, preserving their source bytes, cue timing, source ZIP SHA and per-file CRC. Individual editions remain separately versioned.
+
+Upload just **two files** to the private `Night Court/incoming/` directory on a research dialogue branch:
+
+- `NightCourtOriginal-Season1.zip`, containing `S01E01.eng.srt`, `S01E02.eng.srt`, etc.
+- `NightCourtOriginal-Season1.zip.meta.json`, with one package-level source/rights declaration:
+
+```json
+{
+  "edition": "Original series DVD English captions",
+  "language": "en",
+  "rights_basis": "lawfully_obtained_research_copy",
+  "confirmed": true,
+  "complete": false,
+  "source_name": "Original Night Court season 1, privately acquired caption package",
+  "notes": "Personal research source. Individual track completeness not yet checked."
+}
+```
+
+`complete: true` is allowed when you believe the files cover full episodes, but it **never** implies independently AV-verified completeness. For language/edition exceptions, the optional `overrides` dictionary maps exact ZIP member names to `language`, `edition`, `complete` or `notes` overrides.
+
+The existing GitHub Actions importer now detects ZIPs before processing any standalone source files. It does **not** follow ZIP symlinks or archive paths, and rejects traversal paths, excessive file sizes, suspected decompression bombs and malformed original-series episode identifiers. It never executes archive content.
+
+For local import:
+
+```sh
+python "Night Court/tools/import_dialogue_bundle.py" \
+  --bundle "/path/to/NightCourtOriginal-Season1.zip" \
+  --metadata "/path/to/NightCourtOriginal-Season1.zip.meta.json"
+python "Night Court/tools/validate_dialogue.py"
+python "Night Court/tools/audit_dialogue_quality.py"
+```
+
+A safe preflight (only lists episode identities, no ingest) is available with `--dry-run`. Use `--inbox "Night Court/incoming"` for multiple ZIPs, with each ZIP's corresponding `.meta.json` sidecar. Uploaded ZIPs remain in the private incoming directory until you intentionally remove them; the original individual files are also preserved under each episode's version directory. Keep archives under 90 MB each. The workflow doesn't acquire, redistribute, transcribe or scrape TV episodes by itself.
