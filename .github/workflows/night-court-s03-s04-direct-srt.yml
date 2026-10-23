@@ -1,0 +1,35 @@
+name: Night Court S03-S04 direct SRT acquisition
+
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/download_s03_s04_direct_srt.py'
+      - 'Night Court/research/s03-s04-direct-srt-links.csv'
+      - '.github/workflows/night-court-s03-s04-direct-srt.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: night-court-s03-s04-direct-srt-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  retrieve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate the pinned original-series episode manifest
+        run: python "Night Court/tools/download_s03_s04_direct_srt.py" --output "${{ runner.temp }}/night-court-dry-run"
+      - name: Retrieve the 44 original-series English SRTs
+        run: python "Night Court/tools/download_s03_s04_direct_srt.py" --download --output "${{ runner.temp }}/night-court-srt"
+      - name: Publish source-preserving staging archive and SHA manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s03-s04-original-srt-staging
+          path: ${{ runner.temp }}/night-court-srt/
+          if-no-files-found: error
+          retention-days: 7
