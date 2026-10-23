@@ -1,0 +1,13 @@
+# Local optional vocal-analysis Python environments and heavy model/media caches
+.venv-vocal-*/
+.cache-vocal/
+model-cache/
+media-cache/
+*.wav
+*.flac
+*.opus
+*.mp3
+*.mp4
+*.mkv
+__pycache__/
+*.pyc
