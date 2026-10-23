@@ -1,0 +1,5 @@
+# Opt-in acoustic measurement environment; exact resolved versions captured by pip freeze.
+opensmile>=2.5,<3
+librosa>=0.10.2,<0.12
+soundfile>=0.12,<0.14
+numpy>=1.26,<3
