@@ -8,7 +8,7 @@
 - **193/193** titles, dates, directors, writer-credit lines and production codes, reconciled from TVmaze and Wikipedia. Source-specific aliases are retained; composite broadcasts and ambiguous numbering are flagged.
 - **193/193 CC BY-SA-licensed, episode-specific encyclopedia synopsis/capsule files**: `seasons/Sxx/SxxEyy/authorized-text/wikipedia-episode-capsule.wikitext`, each with `sources/wikipedia-capsule.provenance.json`. A five-entry discrepancy between Wikipedia's 188 episode-list rows and 193 actual episode parts is explained by paired broadcasts, whose shared summaries are annotated.
 - Full MediaWiki source of **two openly licensed articles**, `research/licensed-wiki/Night-Court.wikitext` and `research/licensed-wiki/List-of-Night-Court-episodes.wikitext`, each with a Wikipedia revision permalink, attribution and license manifest.
-- **1,665 provenance-bearing episode source references**, including many repeated series-index pointers. The number is *not* an independently recovered document count.
+- **1,672 provenance-bearing episode source references**, including many repeated series-index pointers. The number is *not* an independently recovered document count.
 - Episode-level bibliography plus original analyst-created first-pass fact sheets for S01E01 and S02E10; fandom observation examples, source inventory and canonical knowledge-model design.
 
 **Not held:** full scripts, proprietary dialogue transcriptions, closed-caption or subtitle tracks, copyrighted fan reviews and articles without reuse permission. The corresponding discovery links are retained, and holdings explicitly record zero for these categories. A private repository alone does not authorize copying them. If authorized materials become available, ingest each version in the relevant episode directory with precise provenance.
@@ -111,7 +111,7 @@ Canonical scene, event, mood, joke, fandom and period-context knowledge remains 
 
 ## Subtitle location follow-up, October 23, 2026
 
-A dedicated research lane added **15 individually verified episode-specific Subtitle Cat caption-display URLs** to the record set, including examples in seasons 1, 2, 3, 4 and 9. The per-episode source records and `catalog/subtitlecat-discovery.json` preserve each URL and distinguish an externally readable caption display from a held SRT. The audited total is now **1,665 source pointers**; exactly **15 episodes** have a located Subtitle Cat page, while **0 complete subtitle files** are held in the repository.
+A dedicated research lane added **21 individually verified episode-specific Subtitle Cat caption-display URLs** to the record set, including examples in seasons 1, 2, 3, 4 and 9. The per-episode source records and `catalog/subtitlecat-discovery.json` preserve each URL and distinguish an externally readable caption display from a held SRT. The audited total is now **1,672 source pointers**; exactly **21 episodes** have a located Subtitle Cat page, while **0 complete subtitle files** are held in the repository.
 
 The site's robots policy blocked automated search/upload-index collection, so the metadata harvester saved only previously verified episode page URLs. It did not fetch subtitle text, invent search coverage, or bypass the site's access restriction.
 
@@ -172,3 +172,7 @@ For up to 500 caption/transcript files at once, `tools/import_dialogue_bundle.py
 ### Multiple-dialogue-witness concordance
 
 `tools/compare_dialogue_versions.py` compares each episode's separately held dialogue variants without naming any of them canonical. It preserves original edition/hash provenance, reports likely duplicate wording, subset overlap and divergent transcript passages, and warns about identical long text assigned to different episodes. The global file is `catalog/dialogue-variant-comparison.json`. As with the quality ledger, its value will grow when the first complete original-series dialogue witnesses are actually imported.
+
+### Latest episode-specific caption discovery
+
+The checked external Subtitle Cat inventory now contains **21 original-series episodes with 22 separately located caption page versions**, including new season-five, seven and eight examples. [Source locations and ranked gap queue](catalog/dialogue-source-queue.md) exposes a truthful status for all 193 episodes. The archive also maintains a quarantine list of two 2023-revival/misnumbered subtitle sources to prevent similarly numbered episodes from contaminating the original research corpus.
