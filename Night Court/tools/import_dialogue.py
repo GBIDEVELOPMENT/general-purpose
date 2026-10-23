@@ -130,7 +130,7 @@ def parse_timed(text,typ):
         pos=next((i for i,line in enumerate(lines[:3]) if "-->" in line),None)
         if pos is None:
             if typ=="srt":
-                raise ValueError("SRT contains a non-caption block: "+repr(first[:70]))
+                # Some externally generated SRTs separate otherwise valid cues\n                # with a standalone double dash. Preserve originals unchanged.\n                if all(line.strip() in ("--", "") for line in lines):\n                    continue\n                raise ValueError("SRT contains a non-caption block: "+repr(first[:70]))
             continue
         start_time,rest=lines[pos].split("-->",1)
         end_time=rest.strip().split()[0]
