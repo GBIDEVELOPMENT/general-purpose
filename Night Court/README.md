@@ -2,6 +2,14 @@
 
 **Independent research archive**, inside the private `gamesbyian/general-purpose` repository. Scope excludes the 2023 revival. The purpose is durable, provenance-aware research and a future LLM-readable knowledge base about the original program, its fictional and production history, comedic conventions, cultural moment, and fandom.
 
+## Current acquisition acceptance, October 23, 2026
+
+**Dialogue source presence: 193/193 episodes, with no remaining unheld episode IDs.** The authoritative, automatically regenerated records are [dialogue coverage](catalog/dialogue-coverage.json), [dialogue source queue](catalog/dialogue-source-queue.json), [dialogue quality](catalog/dialogue-quality.json) and [archive status](catalog/archive-status.json). Historical sections below record earlier acquisition checkpoints and are *not* current coverage statements.
+
+Season-by-season held episodes: **S01 13/13, S02 22/22, S03 22/22, S04 22/22, S05 22/22, S06 22/22, S07 24/24, S08 24/24, S09 22/22.** All except S09E19 have original timed English caption sources. S09E19 holds 347 original display paragraphs (approximately 2,337 words) as **untimed text**, not an SRT and not a confirmed full script.
+
+The automated quality report has **56 witnesses with at least one heuristic review flag**, and zero independent AV-completeness certifications. Such flags may reflect legitimate overlaps or silent scenes. No cross-episode identical long-text collisions were detected. The remaining work is edition-aligned audio/video QA, overlap and cue-gap review, speaker attribution, scene boundaries and evidence-linked visual actions, not wholesale rediscovery of episode captions. See [S09E19 source acquisition](research/s09e19-final-dialogue-acquisition.json) for the sole untimed source and [the source-to-script factory plan](AV-SCRIPT-FACTORY-PLAN.md) for the next pipeline.
+
 ## Actually held (23 October 2026)
 
 - **193/193** original-series episode records: `seasons/Sxx/SxxEyy/episode.json`, spanning 9 seasons (13, 22, 22, 22, 22, 22, 24, 24, 22).
@@ -11,7 +19,7 @@
 - **1,825 provenance-bearing episode source references**, including many repeated series-index pointers. The number is *not* an independently recovered document count.
 - Episode-level bibliography plus original analyst-created first-pass fact sheets for S01E01 and S02E10; fandom observation examples, source inventory and canonical knowledge-model design.
 
-**Now held:** 35 English timed SRT subtitle witnesses supplied by the repository owner for every episode in Seasons 1–2, with original archived RARs, source checksums, episode directory holdings, cue indexes and provenance. **Not held:** verified original broadcast transcripts, original production screenplays, additional full editorial reviews or independently proven audiovisual completeness. Third-party research-source links remain separate from physically preserved source files.
+**Now held:** **193/193 original-series episodes have a versioned English dialogue witness**: 192 timecoded SRTs (35 owner-supplied for S01–S02, plus 157 acquired original-series online sources) and one source-page-derived **untimed** transcript (S09E19). Every witness has source provenance and the canonical episode dialogue index. **Not established:** independent audiovisual completeness, speaker identity, original production screenplays, or publication/reuse rights for externally hosted scripts. Original caption downloads, held dialogue witnesses, external research leads, and AV-verified complete transcripts remain distinct evidence types.
 
 ## Repository organization
 
@@ -143,7 +151,7 @@ Run `tools/preserve_wiki_revisions.py` both **before and after** future encyclop
 
 The repository includes a **source-preserving dialogue import pipeline** for materials supplied by the researcher: SRT, VTT and plain-text transcripts. See [DIALOGUE-INGESTION.md](DIALOGUE-INGESTION.md) for the local command, Android/GitHub upload workflow, edition/rights manifest, checksums, multiple-version handling and independent completeness QA. Import goes to `seasons/Sxx/SxxEyy/dialogue/versions/`; `catalog/dialogue-index.jsonl`, `catalog/dialogue-coverage.json` and `catalog/dialogue-coverage.csv` report genuinely held witnesses separately from external source pointers. Test fixtures are synthetic.
 
-**As of this change, no actual full scripts or caption tracks have been imported.** The tooling and GitHub Actions pipeline can preserve multiple full source witnesses once they are supplied. Each track's declared completeness is recorded, but only future audiovisual verification can establish whether it is genuinely episode-complete. No DRM circumvention or scraping is performed by the importer.
+**Historical checkpoint (superseded): at this earlier stage, no actual full scripts or caption tracks had yet been imported. See the current acquisition acceptance above.** The tooling and GitHub Actions pipeline can preserve multiple full source witnesses once they are supplied. Each track's declared completeness is recorded, but only future audiovisual verification can establish whether it is genuinely episode-complete. No DRM circumvention or scraping is performed by the importer.
 
 Research and private-copying exceptions may be relevant to legitimate user-held sources, subject to the circumstances. The archive retains an explicit rights/source declaration without claiming to make a definitive legal finding.
 
