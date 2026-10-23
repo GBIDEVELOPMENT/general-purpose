@@ -73,3 +73,8 @@ Twelve `research/production-and-reception-claims.jsonl` source-attributed observ
 ## Immutable backup and source-drift protection
 
 The initial 21 CC BY-SA Wikipedia sources are retained under `research/licensed-wiki/revisions/<article>/<revision_id>.wikitext`, with exact checksum, revision-specific attribution and licensing at `*.provenance.json`. Their manifest is `catalog/wiki-revision-archive.json`. Future refreshes may add a second or third revision of the same article: older snapshots must remain intact, and any same-ID byte mismatch is an error. Archives cover only revisions actually retrieved and preserved, **not** all upstream revision history. Dedicated offline preservation script and successful GitHub Actions check: `tools/preserve_wiki_revisions.py`, `.github/workflows/night-court-preserve-wiki.yml`.
+
+
+### New path for held, episode-complete dialogue
+
+`DIALOGUE-INGESTION.md` describes local and GitHub-mobile import of **user-supplied/authorized** .srt, .vtt and .txt versions. Original bytes are stored under the owning episode in `dialogue/versions/`, with a SHA-256, edition, language, source-name and source-rights declaration. Timed cue JSONL and a text view support research. A full-source claim is retained as a **claim** until independently checked against video. The `catalog/dialogue-coverage.csv` and JSON distinguish external *availability* from *held* and *AV-verified* completeness. Source text is not fetched from the web by this tool.
