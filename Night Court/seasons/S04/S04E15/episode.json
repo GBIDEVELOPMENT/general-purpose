@@ -250,31 +250,41 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1120/Night%20Court%20s04e15%20A%20Day%20in%20the%20Life.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "individually_verified_public_caption_display",
       "description": "Original 1984 S04E15 English captions",
-      "rights_status": "not_established"
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "provider": "Subtitle Cat",
+      "rights_status": "not_established",
+      "url": "https://www.subtitlecat.com/subs/1120/Night%20Court%20s04e15%20A%20Day%20in%20the%20Life.html",
+      "verification": "individually_verified_public_caption_display",
+      "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e15_a_day_in_the_life.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "note": "Original 1984 series episode-matched caption display page. URL only; no subtitle text imported; reuse rights not established.",
+      "provider": "Subtitle Cat",
       "source_index": "https://www.subtitlecat.com/list_page.php?from=1710200",
-      "verification": "public_upload_listing_and_direct_episode_page",
       "source_label": "night_court_s04e15_a_day_in_the_life",
-      "note": "Original 1984 series episode-matched caption display page. URL only; no subtitle text imported; reuse rights not established."
+      "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e15_a_day_in_the_life.html",
+      "verification": "public_upload_listing_and_direct_episode_page",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--3332d91aa089eff6/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--3332d91aa089eff6/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "3332d91aa089eff699d6004e0dcc4c8fc22b96d04cf4c2bc4ec52d51a4c9ca7b",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-480p-dvd-english-research-witness--3332d91aa089eff6"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

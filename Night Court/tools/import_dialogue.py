@@ -130,6 +130,8 @@ def parse_timed(text,typ):
         pos=next((i for i,line in enumerate(lines[:3]) if "-->" in line),None)
         if pos is None:
             if typ=="srt":
+                if all(line.strip() in ("--", "") for line in lines):
+                    continue
                 raise ValueError("SRT contains a non-caption block: "+repr(first[:70]))
             continue
         start_time,rest=lines[pos].split("-->",1)

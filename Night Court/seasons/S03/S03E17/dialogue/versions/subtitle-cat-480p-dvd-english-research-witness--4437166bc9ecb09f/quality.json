@@ -1,0 +1,34 @@
+{
+  "adjacent_exact_repetitions": 1,
+  "cue_count": 504,
+  "earliest_cue_start_ms": 1500,
+  "edition": "Subtitle Cat 480p DVD English research witness",
+  "episode_id": "S03E17",
+  "epistemic_status": "heuristic_automated_source_QA_not_audiovisual_completeness",
+  "flags": [
+    "overlapping_source_cues_review"
+  ],
+  "format": "srt",
+  "latest_cue_end_ms": 1395350,
+  "limits": [
+    "An SRT's final timestamp does not prove every line was captured.",
+    "Music, quiet scenes, titles, ads and cuts can legitimately create long caption gaps.",
+    "Overlapping cues are often legitimate two-speaker or sound-effect captions.",
+    "No source video was viewed; independently verified completeness remains unknown.",
+    "Word counts are an English-oriented rough metric; this is not a semantic evaluation."
+  ],
+  "max_gap_between_source_cues_ms": 46950,
+  "median_cue_duration_ms": 2800.0,
+  "overlapping_cue_count": 154,
+  "source_cue_out_of_order_count": 0,
+  "source_cue_union_duration_ms": 939950,
+  "source_cue_union_fraction_of_final_time": 0.6736,
+  "source_declared_complete": false,
+  "source_gaps_over_30_seconds": 1,
+  "source_sha256": "4437166bc9ecb09f934e09173f4f73270d2c1cddbe11e3c3a1c97501052de65d",
+  "text_characters": 12080,
+  "timecoded": true,
+  "unique_caption_texts": 493,
+  "version_id": "subtitle-cat-480p-dvd-english-research-witness--4437166bc9ecb09f",
+  "word_count_rough": 2288
+}
