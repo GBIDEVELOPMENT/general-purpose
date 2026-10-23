@@ -32,6 +32,18 @@ The interface never writes to repositories, executes fetched JavaScript, loads e
 
 To host Expository with GitHub Pages, create a dedicated public repository for its reviewed *static application code only*, put `index.html` at the root, and enable Pages from its own main branch. The static source may be public; private repository files are not included in that deployment. Alternatively use another trusted static hosting origin.
 
+### Guarded one-command publisher (GitHub CLI)
+
+From the private source checkout, after `gh auth login`:
+
+```sh
+bash tools/expository/publish-pages.sh gamesbyian/expository
+```
+
+The script previews the **public** target and exact exported files and requires typing `PUBLISH` interactively. It copies only the current application `index.html`, a `.nojekyll` marker and a non-sensitive publisher marker into a clean, separate public repository, then enables Pages. It never publishes the surrounding `general-purpose` tree. If the target already exists, it updates only `index.html` and refuses a repository without its explicit management marker. Review the source file before first publishing, and verify the exact GitHub target printed by the command. The script is deliberately non-automatable without a human confirmation.
+
+An existing target with restricted permissions or unconfigured Pages may require manual Settings → Pages adjustments. After successful deployment, the expected URL is `https://gamesbyian.github.io/expository/`, subject to GitHub's actual Pages configuration. **No Pages deployment has been performed by this PR.**
+
 Expository itself does not need a backend or deployment secrets. Do not put tokens in build-time variables, the HTML, Pages actions, browser localStorage, remote log collectors, or query strings.
 
 ## Testing
