@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - "research/night-court-dialogue-*"
+      - "research/night-court-local-media-*"
     paths:
       - "Night Court/tools/import_dialogue.py"
       - "Night Court/tools/validate_dialogue.py"
