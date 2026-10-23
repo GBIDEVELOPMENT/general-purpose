@@ -117,7 +117,7 @@ test('touch comparison renders wipe and side-by-side controls without network',(
  assert.equal(app.state.compareMode,true);
  assert.equal(get('previewBody').children.length,1);
  const shell=get('previewBody').children[0],toolbar=shell.children[0];
- assert.equal(toolbar.children.length,2);
+ assert.equal(toolbar.children.length,3,'side-by-side, reveal and pixel-difference modes');
  assert.equal(shell.children[1].className,'compare-wipe');
  const slider=shell.children[2];
  assert.equal(slider.type,'range');
