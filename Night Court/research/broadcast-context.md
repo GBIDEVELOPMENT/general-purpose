@@ -6,7 +6,7 @@ Attribution: Wikipedia contributors, CC BY-SA 4.0.
 
 Season ranks and season-wide household rating (when listed):
 
-| Season | Network rank | Season household rating | Episode parts | Per-broadcast viewer observations |
+| Season | U.S. series rank | Season household rating | Episode parts | Per-broadcast viewer observations |
 |---|---:|---:|---:|---:|
 | 1 | 47 | 15.5 | 13 | 0 |
 | 2 | 20 | 17.6 | 22 | 0 |

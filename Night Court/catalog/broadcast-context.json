@@ -3,7 +3,7 @@
   "source": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
   "license": "CC BY-SA 4.0, Wikipedia contributors",
   "source_revision": 1377931598,
-  "season_averages_meaning": "Annual/season table ranking/rating transcribed from a secondary Wikipedia season overview",
+  "season_averages_meaning": "Season-wide U.S. TV-series ranking/rating as reported by the secondary Wikipedia season overview",
   "episode_measurements_meaning": "Per-episode measurements as attributed in wiki episode rows, either household rating/share or U.S. viewers in millions",
   "no_cross_unit_comparison": true,
   "composite_handling": "Combined two-part episodes share one audience metric in source; deduplicated for descriptive season stats.",
@@ -17,7 +17,7 @@
   "seasons": [
     {
       "season": 1,
-      "season_network_rank": 47,
+      "season_us_series_rank": 47,
       "season_household_rating": 15.5,
       "rank_source": "Wikipedia episode-list season-overview table; independently verify underlying ratings references",
       "episode_parts": 13,
@@ -43,7 +43,7 @@
     },
     {
       "season": 2,
-      "season_network_rank": 20,
+      "season_us_series_rank": 20,
       "season_household_rating": 17.6,
       "rank_source": "Wikipedia episode-list season-overview table; independently verify underlying ratings references",
       "episode_parts": 22,
@@ -69,7 +69,7 @@
     },
     {
       "season": 3,
-      "season_network_rank": 11,
+      "season_us_series_rank": 11,
       "season_household_rating": 20.9,
       "rank_source": "Wikipedia episode-list season-overview table; independently verify underlying ratings references",
       "episode_parts": 22,
@@ -95,7 +95,7 @@
     },
     {
       "season": 4,
-      "season_network_rank": 7,
+      "season_us_series_rank": 7,
       "season_household_rating": 23.2,
       "rank_source": "Wikipedia episode-list season-overview table; independently verify underlying ratings references",
       "episode_parts": 22,
@@ -121,7 +121,7 @@
     },
     {
       "season": 5,
-      "season_network_rank": 7,
+      "season_us_series_rank": 7,
       "season_household_rating": 20.8,
       "rank_source": "Wikipedia episode-list season-overview table; independently verify underlying ratings references",
       "episode_parts": 22,
@@ -147,7 +147,7 @@
     },
     {
       "season": 6,
-      "season_network_rank": 21,
+      "season_us_series_rank": 21,
       "season_household_rating": 16.9,
       "rank_source": "Wikipedia episode-list season-overview table; independently verify underlying ratings references",
       "episode_parts": 22,
@@ -173,7 +173,7 @@
     },
     {
       "season": 7,
-      "season_network_rank": 28,
+      "season_us_series_rank": 28,
       "season_household_rating": 14.5,
       "rank_source": "Wikipedia episode-list season-overview table; independently verify underlying ratings references",
       "episode_parts": 24,
@@ -199,7 +199,7 @@
     },
     {
       "season": 8,
-      "season_network_rank": 50,
+      "season_us_series_rank": 50,
       "season_household_rating": 11.5,
       "rank_source": "Wikipedia episode-list season-overview table; independently verify underlying ratings references",
       "episode_parts": 24,
@@ -225,7 +225,7 @@
     },
     {
       "season": 9,
-      "season_network_rank": 46,
+      "season_us_series_rank": 46,
       "season_household_rating": 12.0,
       "rank_source": "Wikipedia episode-list season-overview table; independently verify underlying ratings references",
       "episode_parts": 22,
