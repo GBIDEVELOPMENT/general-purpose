@@ -1,0 +1,30 @@
+name: Night Court local-media subtitle extraction acceptance
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-local-media-*
+    paths:
+      - "Night Court/tools/extract_local_media.py"
+      - "Night Court/tools/test_extract_local_media.py"
+      - ".github/workflows/night-court-local-media-smoke.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-media-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install video/subtitle utilities for one focused acceptance test
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          ffprobe -version | head -n 1
+      - name: Extract embedded subtitles from a generated four-second MKV
+        run: python "Night Court/tools/test_extract_local_media.py" -v
+      - name: Confirm zero third-party dialogue was harvested
+        run: python "Night Court/tools/validate_dialogue.py"

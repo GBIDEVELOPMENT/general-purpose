@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - "research/night-court-dialogue-*"
+      - "research/night-court-local-media-*"
     paths:
       - "Night Court/tools/import_dialogue.py"
       - "Night Court/tools/validate_dialogue.py"
@@ -13,6 +14,8 @@ on:
       - "Night Court/tools/audit_dialogue_quality.py"
       - "Night Court/tools/search_dialogue.py"
       - "Night Court/tools/test_dialogue_quality_search.py"
+      - "Night Court/tools/extract_local_media.py"
+      - "Night Court/tools/test_extract_local_media.py"
       - "Night Court/incoming/**"
       - ".github/workflows/night-court-dialogue-ingestion.yml"
 
@@ -33,6 +36,8 @@ jobs:
         run: python "Night Court/tools/validate.py"
       - name: Run isolated synthetic ingestion tests
         run: python "Night Court/tools/test_import_dialogue.py"
+      - name: Test DRM-free local media subtitle extraction on synthetic MKV
+        run: python "Night Court/tools/test_extract_local_media.py"
       - name: Run source quality and search synthetic tests
         run: python "Night Court/tools/test_dialogue_quality_search.py"
       - name: Import only supplied source files and matching confirmed sidecars

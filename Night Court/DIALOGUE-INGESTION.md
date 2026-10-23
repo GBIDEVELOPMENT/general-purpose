@@ -108,3 +108,54 @@ python "Night Court/tools/test_dialogue_quality_search.py"
 The metrics are deliberately **diagnostics only**. Genuine episode captions can have large quiet stretches, opening credits, commercials, music, overlapping speakers or late start times. The tool never treats an unflagged track as complete, and never treats a flagged track as confirmed incomplete. `quality.json` is tied to the source SHA and immutable version manifest.
 
 The GitHub upload workflow now performs synthetic QC/search tests, regenerates reports, and smoke-tests caption/synopsis lookup on every research dialogue branch upload.
+
+
+## New: Extract transcripts directly from local episode media
+
+`tools/extract_local_media.py` makes the ingestion pipeline usable with **a local, lawfully accessible, DRM-free copy of an episode**. It reads local media containers with `ffprobe`, selects actual text subtitle streams by codec/language, converts those streams to SRT with `ffmpeg`, then feeds the resulting full timed text into the existing source-preserving importer. Source video/audio stays on your machine; only the extracted subtitle text goes to the repository when you commit the result.
+
+Inspect first, without copying anything:
+
+```sh
+python "Night Court/tools/extract_local_media.py" \
+  --media "/path/to/Night.Court.S01E01.mkv" --dry-run
+```
+
+Extract available English text subtitles into S01E01's versioned source holdings:
+
+```sh
+python "Night Court/tools/extract_local_media.py" \
+  --media "/path/to/Night.Court.S01E01.mkv" \
+  --episode S01E01 --edition "Owned DVD edition" --language en \
+  --rights-basis lawfully_obtained_research_copy \
+  --confirm-rights --confirm-original-series
+```
+
+Batch-process a folder of **original-series** episodes whose filenames include `SxxEyy` identifiers:
+
+```sh
+python "Night Court/tools/extract_local_media.py" \
+  --directory "/path/to/NightCourt1984" --edition "Owned DVD box set" \
+  --rights-basis lawfully_obtained_research_copy \
+  --confirm-rights --confirm-original-series
+```
+
+Use `--all-text-tracks` to preserve every decodable text subtitle variant as a distinct witness. By default the importer chooses a matching English stream, favoring the default stream; `--track-index N` selects an explicit `ffprobe` stream index. It deliberately rejects image-based PGS/VobSub tracks rather than pretending to parse their content. Note that some DVD closed captions are embedded as analog/digital video-caption data, not separate text streams. In those cases the text-subtitle extraction path may find nothing. This is not proof that the recording lacks captions.
+
+### Offline speech-to-text fallback
+
+For audio/video with no usable subtitle text track, there is an **opt-in** local faster-whisper route:
+
+```sh
+python -m pip install faster-whisper
+python "Night Court/tools/extract_local_media.py" \
+  --media "/path/to/Night.Court.S01E01.mkv" \
+  --episode S01E01 --mode asr --model "/local/models/faster-whisper-base" \
+  --edition "Personally generated ASR v1" \
+  --rights-basis lawfully_obtained_research_copy \
+  --confirm-rights --confirm-original-series
+```
+
+Whisper's speech recognition runs on your machine. By default the command refuses model weight downloads and expects an already cached local model; the explicit `--allow-model-download` flag enables model retrieval. A capable CPU or GPU and enough local storage are needed for reasonable performance. The result receives a separate edition label; do not confuse auto-transcription with a verified closed-caption file. Speech recognition can miss music, crosstalk, names, nonverbal comedy, or invent words, so independent spot checking remains essential.
+
+Both routes reuse the same `dialogue/versions/` archive, source declarations, hash verification, query index and quality diagnostics. The original episode video or audio is **never committed** by these tools. Media must not be DRM-protected; these tools do not remove access controls or acquire third-party episode files. Synthetic four-second MKV extraction is tested by a dedicated narrow GitHub Actions workflow; no copyrighted episode is used as a fixture.
