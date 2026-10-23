@@ -227,3 +227,7 @@ The complete multi-agent strategy, worker/skeptic contracts, model calibration a
 ## FTP integration (S60-compatible)
 
 The dedicated read-only inventory and one-file staging workflow is described in [FTP-ACCESS.md](FTP-ACCESS.md). It reuses S60's Seedhost FTP host/account configuration and requires **a separate `FTP_PASSWORD` Actions repository secret in `gamesbyian/general-purpose`**. Credentialed FTP access is manual-dispatch only. The existing 35 S01/S02 subtitle tracks are already preserved; do not download them again merely to establish FTP access.
+
+## Audiovisual script-generation plan
+
+See [AV-SCRIPT-FACTORY-PLAN.md](AV-SCRIPT-FACTORY-PLAN.md) for the proposed episode processing factory: source-faithful mono FLAC, optional Opus listening copies, sparse timestamped visual references with targeted 3–4 fps windows, ASR alignment, speaker diarization, source-backed scripts, and separate FTP/Drive storage. Existing remote TVRip root is `/downloads/Night Court TVRip S1-S9`; the existing FTP video metadata workflow still requires a manual dispatch for a real inventory. The 35 S01/S02 subtitle witnesses are already preserved and must not be reimported unnecessarily.
