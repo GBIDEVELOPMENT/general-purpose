@@ -1,0 +1,3689 @@
+{
+  "series_id": "night-court-1984",
+  "episodes_count": 193,
+  "ranking_policy": "Least episode-specific source evidence first; within tier, later seasons first.",
+  "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
+  "source_status_counts": {
+    "direct_episode_page_found_not_held": 22,
+    "index_coverage_only": 38,
+    "no_episode_dialogue_specific_locator": 133
+  },
+  "by_season": {
+    "S01": {
+      "direct_episode_page_found_not_held": 5,
+      "index_coverage_only": 8
+    },
+    "S02": {
+      "direct_episode_page_found_not_held": 10,
+      "index_coverage_only": 12
+    },
+    "S03": {
+      "direct_episode_page_found_not_held": 4,
+      "index_coverage_only": 18
+    },
+    "S04": {
+      "direct_episode_page_found_not_held": 2,
+      "no_episode_dialogue_specific_locator": 20
+    },
+    "S05": {
+      "no_episode_dialogue_specific_locator": 22
+    },
+    "S06": {
+      "no_episode_dialogue_specific_locator": 22
+    },
+    "S07": {
+      "no_episode_dialogue_specific_locator": 24
+    },
+    "S08": {
+      "no_episode_dialogue_specific_locator": 24
+    },
+    "S09": {
+      "no_episode_dialogue_specific_locator": 21,
+      "direct_episode_page_found_not_held": 1
+    }
+  },
+  "ranked_missing_episode_ids": [
+    "S09E01",
+    "S09E02",
+    "S09E03",
+    "S09E04",
+    "S09E05",
+    "S09E06",
+    "S09E07",
+    "S09E08",
+    "S09E09",
+    "S09E10",
+    "S09E11",
+    "S09E12",
+    "S09E13",
+    "S09E14",
+    "S09E15",
+    "S09E16",
+    "S09E17",
+    "S09E18",
+    "S09E19",
+    "S09E20",
+    "S09E21",
+    "S08E01",
+    "S08E02",
+    "S08E03",
+    "S08E04",
+    "S08E05",
+    "S08E06",
+    "S08E07",
+    "S08E08",
+    "S08E09",
+    "S08E10",
+    "S08E11",
+    "S08E12",
+    "S08E13",
+    "S08E14",
+    "S08E15",
+    "S08E16",
+    "S08E17",
+    "S08E18",
+    "S08E19",
+    "S08E20",
+    "S08E21",
+    "S08E22",
+    "S08E23",
+    "S08E24",
+    "S07E01",
+    "S07E02",
+    "S07E03",
+    "S07E04",
+    "S07E05",
+    "S07E06",
+    "S07E07",
+    "S07E08",
+    "S07E09",
+    "S07E10",
+    "S07E11",
+    "S07E12",
+    "S07E13",
+    "S07E14",
+    "S07E15",
+    "S07E16",
+    "S07E17",
+    "S07E18",
+    "S07E19",
+    "S07E20",
+    "S07E21",
+    "S07E22",
+    "S07E23",
+    "S07E24",
+    "S06E01",
+    "S06E02",
+    "S06E03",
+    "S06E04",
+    "S06E05",
+    "S06E06",
+    "S06E07",
+    "S06E08",
+    "S06E09",
+    "S06E10",
+    "S06E11",
+    "S06E12",
+    "S06E13",
+    "S06E14",
+    "S06E15",
+    "S06E16",
+    "S06E17",
+    "S06E18",
+    "S06E19",
+    "S06E20",
+    "S06E21",
+    "S06E22",
+    "S05E01",
+    "S05E02",
+    "S05E03",
+    "S05E04",
+    "S05E05",
+    "S05E06",
+    "S05E07",
+    "S05E08",
+    "S05E09",
+    "S05E10",
+    "S05E11",
+    "S05E12",
+    "S05E13",
+    "S05E14",
+    "S05E15",
+    "S05E16",
+    "S05E17",
+    "S05E18",
+    "S05E19",
+    "S05E20",
+    "S05E21",
+    "S05E22",
+    "S04E02",
+    "S04E03",
+    "S04E04",
+    "S04E05",
+    "S04E06",
+    "S04E07",
+    "S04E08",
+    "S04E09",
+    "S04E10",
+    "S04E11",
+    "S04E12",
+    "S04E13",
+    "S04E14",
+    "S04E16",
+    "S04E17",
+    "S04E18",
+    "S04E19",
+    "S04E20",
+    "S04E21",
+    "S04E22",
+    "S03E02",
+    "S03E03",
+    "S03E05",
+    "S03E06",
+    "S03E07",
+    "S03E08",
+    "S03E09",
+    "S03E10",
+    "S03E11",
+    "S03E12",
+    "S03E14",
+    "S03E16",
+    "S03E17",
+    "S03E18",
+    "S03E19",
+    "S03E20",
+    "S03E21",
+    "S03E22",
+    "S02E02",
+    "S02E04",
+    "S02E06",
+    "S02E07",
+    "S02E08",
+    "S02E09",
+    "S02E13",
+    "S02E14",
+    "S02E17",
+    "S02E18",
+    "S02E19",
+    "S02E21",
+    "S01E06",
+    "S01E07",
+    "S01E08",
+    "S01E09",
+    "S01E10",
+    "S01E11",
+    "S01E12",
+    "S01E13",
+    "S09E22",
+    "S04E01",
+    "S04E15",
+    "S03E01",
+    "S03E04",
+    "S03E13",
+    "S03E15",
+    "S02E01",
+    "S02E03",
+    "S02E05",
+    "S02E10",
+    "S02E11",
+    "S02E12",
+    "S02E15",
+    "S02E16",
+    "S02E20",
+    "S02E22",
+    "S01E01",
+    "S01E02",
+    "S01E03",
+    "S01E04",
+    "S01E05"
+  ],
+  "episodes": [
+    {
+      "episode_id": "S01E01",
+      "season": 1,
+      "episode": 1,
+      "title": "All You Need Is Love",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82333",
+          "status": "verified_direct_transcript_topic",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e01&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E02",
+      "season": 1,
+      "episode": 2,
+      "title": "Santa Goes Downtown",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82334",
+          "status": "verified_direct_transcript_topic",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e02&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E03",
+      "season": 1,
+      "episode": 3,
+      "title": "The Former Harry Stone",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e03&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1079/Night%20Court%20(1984)%20-%20S01E03%20-%20The%20Former%20Harry%20Stone%20(480p%20DVD%20x265%20Panda).eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E04",
+      "season": 1,
+      "episode": 4,
+      "title": "Welcome Back, Momma",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82336",
+          "status": "verified_direct_transcript_topic",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e04&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E05",
+      "season": 1,
+      "episode": 5,
+      "title": "The Eye of the Beholder",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e05&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1079/Night%20Court%20%281984%29%20-%20S01E05%20-%20The%20Eye%20of%20the%20Beholder%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E06",
+      "season": 1,
+      "episode": 6,
+      "title": "Death Threat",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e06&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E07",
+      "season": 1,
+      "episode": 7,
+      "title": "Once in Love With Harry",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e07&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E08",
+      "season": 1,
+      "episode": 8,
+      "title": "Quadrangle of Love",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e08&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E09",
+      "season": 1,
+      "episode": 9,
+      "title": "Wonder Drugs",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e09&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E10",
+      "season": 1,
+      "episode": 10,
+      "title": "Some Like It Hot",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e10&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E11",
+      "season": 1,
+      "episode": 11,
+      "title": "Harry and the Rock Star",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e11&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E12",
+      "season": 1,
+      "episode": 12,
+      "title": "Bull's Baby",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e12&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E13",
+      "season": 1,
+      "episode": 13,
+      "title": "Hi Honey, I'm Home",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e13&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E01",
+      "season": 2,
+      "episode": 1,
+      "title": "The Nun",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 2,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82346",
+          "status": "verified_direct_transcript_topic",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e01&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1080/Night%20Court%20%281984%29%20-%20S02E01%20-%20The%20Nun%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E02",
+      "season": 2,
+      "episode": 2,
+      "title": "Daddy for the Defense",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e02&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E03",
+      "season": 2,
+      "episode": 3,
+      "title": "Billie and the Cat",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e03&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1080/Night%20Court%20%281984%29%20-%20S02E03%20-%20Billie%20and%20the%20Cat%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E04",
+      "season": 2,
+      "episode": 4,
+      "title": "Pick a Number",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e04&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E05",
+      "season": 2,
+      "episode": 5,
+      "title": "The Computer Kid",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e05&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1080/Night%20Court%20%281984%29%20-%20S02E05%20-%20The%20Computer%20Kid%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E06",
+      "season": 2,
+      "episode": 6,
+      "title": "Bull Gets a Kid",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e06&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E07",
+      "season": 2,
+      "episode": 7,
+      "title": "Harry on Trial",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e07&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E08",
+      "season": 2,
+      "episode": 8,
+      "title": "Harry and the Madam",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e08&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E09",
+      "season": 2,
+      "episode": 9,
+      "title": "Inside Harry Stone",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e09&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E10",
+      "season": 2,
+      "episode": 10,
+      "title": "The Blizzard",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82355",
+          "status": "verified_direct_transcript_topic",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e10&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E11",
+      "season": 2,
+      "episode": 11,
+      "title": "Take My Wife, Please",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e11&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1080/Night%20Court%20%281984%29%20-%20S02E11%20-%20Take%20My%20Wife%2C%20Please%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E12",
+      "season": 2,
+      "episode": 12,
+      "title": "The Birthday Visitor",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82357",
+          "status": "verified_direct_transcript_topic",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e12&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E13",
+      "season": 2,
+      "episode": 13,
+      "title": "Dan's Parents",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E14",
+      "season": 2,
+      "episode": 14,
+      "title": "Nuts About Harry",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E15",
+      "season": 2,
+      "episode": 15,
+      "title": "An Old Flame",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1080/Night%20Court%20%281984%29%20-%20S02E15%20-%20An%20Old%20Flame%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E16",
+      "season": 2,
+      "episode": 16,
+      "title": "The Gypsy",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1080/Night%20Court%20%281984%29%20-%20S02E16%20-%20The%20Gypsy%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E17",
+      "season": 2,
+      "episode": 17,
+      "title": "Battling Bailiff",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E18",
+      "season": 2,
+      "episode": 18,
+      "title": "Billie's Valentine",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E19",
+      "season": 2,
+      "episode": 19,
+      "title": "Married Alive",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E20",
+      "season": 2,
+      "episode": 20,
+      "title": "Mac and Quon Le: Together Again",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 2,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82714",
+          "status": "verified_direct_transcript_topic",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1080/Night%20Court%20%281984%29%20-%20S02E20%20-%20Mac%20and%20Quon%20Le%20Together%20Again%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E21",
+      "season": 2,
+      "episode": 21,
+      "title": "World War III",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S02E22",
+      "season": 2,
+      "episode": 22,
+      "title": "Walk, Don't Wheel",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82716",
+          "status": "verified_direct_transcript_topic",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E01",
+      "season": 3,
+      "episode": 1,
+      "title": "Hello, Goodbye",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82717",
+          "status": "verified_direct_transcript_topic",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e01&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E02",
+      "season": 3,
+      "episode": 2,
+      "title": "The Hostage",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e02&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E03",
+      "season": 3,
+      "episode": 3,
+      "title": "Dad's First Date",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e03&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E04",
+      "season": 3,
+      "episode": 4,
+      "title": "Mac and Quon Le: No Reservations",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e04&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20%281984%29%20-%20S03E04%20-%20Mac%20and%20Quon%20Le%20No%20Reservations%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E05",
+      "season": 3,
+      "episode": 5,
+      "title": "Halloween, Too",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e05&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E06",
+      "season": 3,
+      "episode": 6,
+      "title": "Best of Friends",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e06&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E07",
+      "season": 3,
+      "episode": 7,
+      "title": "Dan's Boss",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e07&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E08",
+      "season": 3,
+      "episode": 8,
+      "title": "Up On the Roof",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e08&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E09",
+      "season": 3,
+      "episode": 9,
+      "title": "The Wheels of Justice (Part 1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e09&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E10",
+      "season": 3,
+      "episode": 10,
+      "title": "The Wheels of Justice (Part 2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e10&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E11",
+      "season": 3,
+      "episode": 11,
+      "title": "Walk Away, Renee",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e11&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E12",
+      "season": 3,
+      "episode": 12,
+      "title": "Dan's Escort",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e12&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E13",
+      "season": 3,
+      "episode": 13,
+      "title": "The Night Off",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e13&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20%281984%29%20-%20S03E13%20-%20The%20Night%20Off%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E14",
+      "season": 3,
+      "episode": 14,
+      "title": "Harry and Leon",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e14&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E15",
+      "season": 3,
+      "episode": 15,
+      "title": "The Apartment",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e15&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20%281984%29%20-%20S03E15%20-%20The%20Apartment%20%28480p%20DVD%20x265%20Panda%29.eng.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E16",
+      "season": 3,
+      "episode": 16,
+      "title": "Leon, We Hardly Knew Ye",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e16&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E17",
+      "season": 3,
+      "episode": 17,
+      "title": "The Mugger",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e17&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E18",
+      "season": 3,
+      "episode": 18,
+      "title": "Could This Be Magic?",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e18&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E19",
+      "season": 3,
+      "episode": 19,
+      "title": "Monkey Business",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e19&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E20",
+      "season": 3,
+      "episode": 20,
+      "title": "Flo's Retirement",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e20&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E21",
+      "season": 3,
+      "episode": 21,
+      "title": "Hurricane (Part 1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e21&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S03E22",
+      "season": 3,
+      "episode": 22,
+      "title": "Hurricane (Part 2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 1,
+      "unverified_pattern_urls": 1,
+      "acquisition_status": "index_coverage_only",
+      "source_locations": [
+        {
+          "provider": "Forever Dreaming",
+          "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
+          "status": "verified_transcript_index_listing",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        },
+        {
+          "provider": "Springfield! Springfield!",
+          "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e22&tv-show=night-court-1984",
+          "status": "inferred_script_url_unchecked",
+          "verified": false,
+          "content_imported": false,
+          "source_kind": "transcript",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E01",
+      "season": 4,
+      "episode": 1,
+      "title": "The Next Voice You Hear",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e01_the_next_voice_you_hear.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitles",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E02",
+      "season": 4,
+      "episode": 2,
+      "title": "Giving Thanks",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E03",
+      "season": 4,
+      "episode": 3,
+      "title": "Author, Author",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E04",
+      "season": 4,
+      "episode": 4,
+      "title": "Halloween II: The Return of Leon",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E05",
+      "season": 4,
+      "episode": 5,
+      "title": "Dan's Operation (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E06",
+      "season": 4,
+      "episode": 6,
+      "title": "Dan's Operation (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E07",
+      "season": 4,
+      "episode": 7,
+      "title": "The New Judge",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E08",
+      "season": 4,
+      "episode": 8,
+      "title": "Contempt of Courting",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E09",
+      "season": 4,
+      "episode": 9,
+      "title": "Earthquake",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E10",
+      "season": 4,
+      "episode": 10,
+      "title": "Prince of a Guy",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E11",
+      "season": 4,
+      "episode": 11,
+      "title": "New Year's Leave",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E12",
+      "season": 4,
+      "episode": 12,
+      "title": "Murder",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E13",
+      "season": 4,
+      "episode": 13,
+      "title": "Baby Talk",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E14",
+      "season": 4,
+      "episode": 14,
+      "title": "The Modest Proposal",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E15",
+      "season": 4,
+      "episode": 15,
+      "title": "A Day in the Life",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1120/Night%20Court%20s04e15%20A%20Day%20in%20the%20Life.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
+    },
+    {
+      "episode_id": "S04E16",
+      "season": 4,
+      "episode": 16,
+      "title": "Rabid",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E17",
+      "season": 4,
+      "episode": 17,
+      "title": "Christine's Friend",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E18",
+      "season": 4,
+      "episode": 18,
+      "title": "Caught Red Handed",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E19",
+      "season": 4,
+      "episode": 19,
+      "title": "Paternity",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E20",
+      "season": 4,
+      "episode": 20,
+      "title": "Here's to You, Mrs. Robinson",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E21",
+      "season": 4,
+      "episode": 21,
+      "title": "Her Honor (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S04E22",
+      "season": 4,
+      "episode": 22,
+      "title": "Her Honor (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E01",
+      "season": 5,
+      "episode": 1,
+      "title": "Her Honor (3)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E02",
+      "season": 5,
+      "episode": 2,
+      "title": "Her Honor (4)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E03",
+      "season": 5,
+      "episode": 3,
+      "title": "Death of a Bailiff",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E04",
+      "season": 5,
+      "episode": 4,
+      "title": "Ladies Night",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E05",
+      "season": 5,
+      "episode": 5,
+      "title": "Safe",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E06",
+      "season": 5,
+      "episode": 6,
+      "title": "Mac's Dilemma",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E07",
+      "season": 5,
+      "episode": 7,
+      "title": "Who Was That Mashed Man?",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E08",
+      "season": 5,
+      "episode": 8,
+      "title": "No Hard Feelings",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E09",
+      "season": 5,
+      "episode": 9,
+      "title": "Constitution (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E10",
+      "season": 5,
+      "episode": 10,
+      "title": "Constitution (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E11",
+      "season": 5,
+      "episode": 11,
+      "title": "Let It Snow",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E12",
+      "season": 5,
+      "episode": 12,
+      "title": "Dan, the Walking Time Bomb",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E13",
+      "season": 5,
+      "episode": 13,
+      "title": "Hit the Road, Jack",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E14",
+      "season": 5,
+      "episode": 14,
+      "title": "I'm OK, You're Catatonic/Schizophrenic",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E15",
+      "season": 5,
+      "episode": 15,
+      "title": "Chrizzi's Honor",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E16",
+      "season": 5,
+      "episode": 16,
+      "title": "Another Day in the Life",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E17",
+      "season": 5,
+      "episode": 17,
+      "title": "Heart of Stone",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E18",
+      "season": 5,
+      "episode": 18,
+      "title": "Russkie Business",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E19",
+      "season": 5,
+      "episode": 19,
+      "title": "Jung and the Restless",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E20",
+      "season": 5,
+      "episode": 20,
+      "title": "Top Judge",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E21",
+      "season": 5,
+      "episode": 21,
+      "title": "Mac's Millions",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S05E22",
+      "season": 5,
+      "episode": 22,
+      "title": "Danny Got His Gun (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E01",
+      "season": 6,
+      "episode": 1,
+      "title": "Danny Got His Gun (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E02",
+      "season": 6,
+      "episode": 2,
+      "title": "Danny Got His Gun (3)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E03",
+      "season": 6,
+      "episode": 3,
+      "title": "Fire",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E04",
+      "season": 6,
+      "episode": 4,
+      "title": "Harry and the Tramp",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E05",
+      "season": 6,
+      "episode": 5,
+      "title": "Educating Rhoda",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E06",
+      "season": 6,
+      "episode": 6,
+      "title": "The Last Temptation of Mac",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E07",
+      "season": 6,
+      "episode": 7,
+      "title": "The Law Club",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E08",
+      "season": 6,
+      "episode": 8,
+      "title": "Night Court of the Living Dead",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E09",
+      "season": 6,
+      "episode": 9,
+      "title": "The Night Court Before Christmas",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E10",
+      "season": 6,
+      "episode": 10,
+      "title": "Mental Giant",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E11",
+      "season": 6,
+      "episode": 11,
+      "title": "Rock-a-Bye Baby",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E12",
+      "season": 6,
+      "episode": 12,
+      "title": "Clip Show (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E13",
+      "season": 6,
+      "episode": 13,
+      "title": "Clip Show (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E14",
+      "season": 6,
+      "episode": 14,
+      "title": "The Trouble Is Not in Your Set",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E15",
+      "season": 6,
+      "episode": 15,
+      "title": "The Game Show",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E16",
+      "season": 6,
+      "episode": 16,
+      "title": "This Old Man",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E17",
+      "season": 6,
+      "episode": 17,
+      "title": "Strange Bedfellows",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E18",
+      "season": 6,
+      "episode": 18,
+      "title": "From Snoop to Nuts (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E19",
+      "season": 6,
+      "episode": 19,
+      "title": "From Snoop to Nuts (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E20",
+      "season": 6,
+      "episode": 20,
+      "title": "Pen Pal",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E21",
+      "season": 6,
+      "episode": 21,
+      "title": "Not My Type",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S06E22",
+      "season": 6,
+      "episode": 22,
+      "title": "Yet Another Day in the Life",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E01",
+      "season": 7,
+      "episode": 1,
+      "title": "Life with Buddy",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E02",
+      "season": 7,
+      "episode": 2,
+      "title": "If I Were a Rich Man",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E03",
+      "season": 7,
+      "episode": 3,
+      "title": "The Cop and the Lady",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E04",
+      "season": 7,
+      "episode": 4,
+      "title": "Come Back to the Five and Dime, Stephen King, Stephen King",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E05",
+      "season": 7,
+      "episode": 5,
+      "title": "Blue Suede Bull",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E06",
+      "season": 7,
+      "episode": 6,
+      "title": "For Love or Money",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E07",
+      "season": 7,
+      "episode": 7,
+      "title": "Auntie Maim",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E08",
+      "season": 7,
+      "episode": 8,
+      "title": "Attack of the Mac Snacks",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E09",
+      "season": 7,
+      "episode": 9,
+      "title": "Branded (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E10",
+      "season": 7,
+      "episode": 10,
+      "title": "Branded (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E11",
+      "season": 7,
+      "episode": 11,
+      "title": "Passion Plundered",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E12",
+      "season": 7,
+      "episode": 12,
+      "title": "Amore or Less",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E13",
+      "season": 7,
+      "episode": 13,
+      "title": "Razing Bull",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E14",
+      "season": 7,
+      "episode": 14,
+      "title": "Futureman",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E15",
+      "season": 7,
+      "episode": 15,
+      "title": "Wedding Bell Blues (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E16",
+      "season": 7,
+      "episode": 16,
+      "title": "Wedding Bell Blues (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E17",
+      "season": 7,
+      "episode": 17,
+      "title": "The Talk Show",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E18",
+      "season": 7,
+      "episode": 18,
+      "title": "Melvin and Harold",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E19",
+      "season": 7,
+      "episode": 19,
+      "title": "The Glasnost Menagerie",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E20",
+      "season": 7,
+      "episode": 20,
+      "title": "I Said Dance!",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E21",
+      "season": 7,
+      "episode": 21,
+      "title": "My Three Dads",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E22",
+      "season": 7,
+      "episode": 22,
+      "title": "Still Another Day in the Life",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E23",
+      "season": 7,
+      "episode": 23,
+      "title": "A Closer Look",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S07E24",
+      "season": 7,
+      "episode": 24,
+      "title": "The Blues of the Birth",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E01",
+      "season": 8,
+      "episode": 1,
+      "title": "A Family Affair (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E02",
+      "season": 8,
+      "episode": 2,
+      "title": "A Family Affair (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E03",
+      "season": 8,
+      "episode": 3,
+      "title": "When Harry Met Margaret",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E04",
+      "season": 8,
+      "episode": 4,
+      "title": "Can't Buy Me Love",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E05",
+      "season": 8,
+      "episode": 5,
+      "title": "Death Takes a Halloween",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E06",
+      "season": 8,
+      "episode": 6,
+      "title": "Crossroads (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E07",
+      "season": 8,
+      "episode": 7,
+      "title": "Crossroads (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E08",
+      "season": 8,
+      "episode": 8,
+      "title": "Day Court",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E09",
+      "season": 8,
+      "episode": 9,
+      "title": "A Night Court at the Opera",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E10",
+      "season": 8,
+      "episode": 10,
+      "title": "Nobody Says Rat Fink Anymore",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E11",
+      "season": 8,
+      "episode": 11,
+      "title": "Jail Bait",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E12",
+      "season": 8,
+      "episode": 12,
+      "title": "It's Just a Joke",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E13",
+      "season": 8,
+      "episode": 13,
+      "title": "Bringing Down Baby",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E14",
+      "season": 8,
+      "episode": 14,
+      "title": "Presumed Insolvent",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E15",
+      "season": 8,
+      "episode": 15,
+      "title": "Mama Was a Rollin' Stone",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E16",
+      "season": 8,
+      "episode": 16,
+      "title": "Attachments Included",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E17",
+      "season": 8,
+      "episode": 17,
+      "title": "Alone Again, Naturally",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E18",
+      "season": 8,
+      "episode": 18,
+      "title": "Hey Harry, F'Crying Out Loud-- It is a Wonderful Life ... Sorta",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E19",
+      "season": 8,
+      "episode": 19,
+      "title": "To Sleep, No More",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E20",
+      "season": 8,
+      "episode": 20,
+      "title": "With a Little Help from My Friends",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E21",
+      "season": 8,
+      "episode": 21,
+      "title": "Mac Takes a Vocation",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E22",
+      "season": 8,
+      "episode": 22,
+      "title": "Harry's Fifteen Minutes",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E23",
+      "season": 8,
+      "episode": 23,
+      "title": "Where There's a Will, There's a Tony (1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S08E24",
+      "season": 8,
+      "episode": 24,
+      "title": "Where There's a Will, There's a Tony (2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E01",
+      "season": 9,
+      "episode": 1,
+      "title": "A Guy Named Phantom (Part 1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E02",
+      "season": 9,
+      "episode": 2,
+      "title": "A Guy Named Phantom (Part 2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E03",
+      "season": 9,
+      "episode": 3,
+      "title": "My Life as a Dog Lawyer",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E04",
+      "season": 9,
+      "episode": 4,
+      "title": "Puppy Love",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E05",
+      "season": 9,
+      "episode": 5,
+      "title": "Pop Goes the Question",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E06",
+      "season": 9,
+      "episode": 6,
+      "title": "Guess Who's Listening to Dinner?",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E07",
+      "season": 9,
+      "episode": 7,
+      "title": "Looking for Mr. Shannon",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E08",
+      "season": 9,
+      "episode": 8,
+      "title": "Teacher's Pet",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E09",
+      "season": 9,
+      "episode": 9,
+      "title": "The System Works",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E10",
+      "season": 9,
+      "episode": 10,
+      "title": "Get Me to the Roof on Time",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E11",
+      "season": 9,
+      "episode": 11,
+      "title": "Santa on the Lam",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E12",
+      "season": 9,
+      "episode": 12,
+      "title": "Shave and a Haircut",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E13",
+      "season": 9,
+      "episode": 13,
+      "title": "A New York Story",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E14",
+      "season": 9,
+      "episode": 14,
+      "title": "Undressed for Success",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E15",
+      "season": 9,
+      "episode": 15,
+      "title": "Poker? I Hardly Know Her",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E16",
+      "season": 9,
+      "episode": 16,
+      "title": "Party Girl (Part 1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E17",
+      "season": 9,
+      "episode": 17,
+      "title": "Party Girl (Part 2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E18",
+      "season": 9,
+      "episode": 18,
+      "title": "To Sir With... Ah, What the Heck... Love",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E19",
+      "season": 9,
+      "episode": 19,
+      "title": "P.S. Do I Know You?",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E20",
+      "season": 9,
+      "episode": 20,
+      "title": "Opportunity Knocks (Part 1)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E21",
+      "season": 9,
+      "episode": 21,
+      "title": "Opportunity Knocks (Part 2)",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 0,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "source_locations": []
+    },
+    {
+      "episode_id": "S09E22",
+      "season": 9,
+      "episode": 22,
+      "title": "The 1992 Boat Show",
+      "held_dialogue_versions": 0,
+      "direct_episode_page_locators": 1,
+      "index_only_transcript_refs": 0,
+      "unverified_pattern_urls": 0,
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1592/S09E22%20-%20The%201992%20Boat%20Show.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitles",
+          "rights_status": "not_established"
+        }
+      ]
+    }
+  ]
+}
