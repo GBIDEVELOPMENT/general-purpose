@@ -14,8 +14,11 @@ if(!CHROME)throw Error('Chromium/Google Chrome is required for this browser smok
 const work=fs.mkdtempSync(path.join(os.tmpdir(),'expository-smoke-'));
 const screenshots=path.join(__dirname,'browser-evidence');
 fs.mkdirSync(screenshots,{recursive:true});
+console.log('Chromium binary:',CHROME);
 const browser=spawn(CHROME,['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run',
- '--disable-background-networking','--remote-allow-origins=*','--remote-debugging-port=0','--user-data-dir='+work,'--window-size=393,852','about:blank'],{stdio:'ignore'});
+ '--disable-background-networking','--remote-allow-origins=*','--remote-debugging-port=0','--user-data-dir='+work,'--window-size=393,852','about:blank'],{stdio:['ignore','pipe','pipe']});
+let browserOutput='';for(const stream of [browser.stdout,browser.stderr])stream.on('data',chunk=>{browserOutput=(browserOutput+String(chunk)).slice(-5000)});
+browser.on('error',error=>{browserOutput+='\nSpawn error: '+error.message});
 let socket,sequence=0;
 const pending=new Map(),runtimeErrors=[];
 function fail(message){throw Error(message)}
@@ -26,7 +29,7 @@ async function connect(){
   try{port=Number(fs.readFileSync(path.join(work,'DevToolsActivePort'),'utf8').split('\n')[0]);if(port)break}catch{}
   await sleep(100);
  }
- if(!port)fail('Chromium did not expose a DevTools port.');
+ if(!port)fail('Chromium did not expose a DevTools port (exit='+browser.exitCode+', signal='+browser.signalCode+'). Browser logs: '+browserOutput);
  let targets;
  for(let i=0;i<30;i++){try{targets=await(await fetch('http://127.0.0.1:'+port+'/json/list')).json();if(targets.some(x=>x.type==='page'))break}catch{}await sleep(100)}
  const target=targets?.find(x=>x.type==='page');if(!target)fail('No browser page target.');
