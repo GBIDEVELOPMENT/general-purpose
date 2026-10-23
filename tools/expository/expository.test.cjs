@@ -31,7 +31,7 @@ function boot() {
  const pos=source.indexOf('const match=location.hash.slice(1)');
  assert.ok(pos>0, 'page-load bootstrap located');
  const isolated='return '+source.slice(0,pos).trimStart()+
-  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus,filterSort,typeOf,sourceViewer,toggleBookmark,cancelContentScan,jsonViewer,imageViewer,storyEvent,renderStory,stopStory,calculatePixelDiff};\n})();';
+  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus,filterSort,typeOf,sourceViewer,toggleBookmark,cancelContentScan,jsonViewer,imageViewer,storyEvent,renderStory,stopStory,calculatePixelDiff,resolveMarkdownPath,parseDelimited,tableViewer,simpleMarkdown};\n})();';
  const app=new Function('document','history','location','localStorage','Option',isolated)(
    document,history,location,localStorage,function Option(name,value){return {name,value}}
  );
@@ -225,4 +225,28 @@ test('pixel difference marks modified pixels and preserves unchanged luminance',
  assert.equal(result.pixels[5],74);
  assert.equal(result.pixels[0],13,'unchanged rendered in gray');
  assert.throws(()=>app.calculatePixelDiff(a,b.subarray(0,8)),/equal dimensions/);
+});
+
+test('relative Markdown links stay within the repository and block unsafe schemes',()=>{
+ const {app}=boot();
+ assert.deepEqual(app.resolveMarkdownPath('../assets/pic.svg','docs/guides/intro.md'),{path:'docs/assets/pic.svg',dir:false});
+ assert.deepEqual(app.resolveMarkdownPath('/README.md','docs/guides/intro.md'),{path:'README.md',dir:false});
+ assert.equal(app.resolveMarkdownPath('../../../escape.md','docs/guides/intro.md'),null);
+ assert.equal(app.resolveMarkdownPath('javascript:alert(1)','docs/intro.md'),null);
+ assert.equal(app.resolveMarkdownPath('//evil.example/a','docs/intro.md'),null);
+ assert.ok(app.resolveMarkdownPath('https://example.com/docs','docs/intro.md').external);
+});
+test('CSV parser preserves quoted commas, CRLF, escaped quotes and inert formulas',()=>{
+ const {app}=boot();
+ const rows=app.parseDelimited('name,value,formula\r\n"One, Two","a""b",=SUM(A1)\r\n');
+ assert.deepEqual(rows,[['name','value','formula'],['One, Two','a"b','=SUM(A1)']]);
+ const table=app.tableViewer('name,value\nA,1',',');
+ assert.ok(table.children.some(x=>x.className==='data-table-wrap'));
+});
+test('Markdown renders links as safe DOM buttons rather than injected HTML',()=>{
+ const {app}=boot();
+ const doc=app.simpleMarkdown('[Readme](../README.md) <script>alert(1)</script> [danger](javascript:alert(1))',{path:'docs/start.md'});
+ const paragraph=doc.children[0];
+ assert.ok(paragraph.children.some(x=>x.className==='md-link'));
+ assert.ok(!paragraph.children.some(x=>x.tagName==='SCRIPT'));
 });
