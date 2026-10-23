@@ -135,3 +135,8 @@ A verified 2025 DVD-caption upload cluster supplies episode-specific public page
 ### Later-season English caption source indexing: substantial gap reduction
 
 The June 2025 batch yielded **105 individually episode-labeled upload-index entries across seasons 5–9**, maintained as index-only leads rather than falsely verified direct caption pages. The **current source queue is 44 direct external pages, 121 episode-labeled/index-only leads, and 28 without any specific lead**, but none is an archived full television transcript. Next target is confirming direct page links and identifying the remaining S04, S07 and S09 gaps; prioritize acquisition from independently authorized input files through the existing full SRT/VTT/TXT and local ASR pipelines.
+
+
+### S04 acquisition discovery complete; prioritize the remaining eight
+
+The entire original-series fourth season now has direct external caption-page locators without copying the protected dialogue. Next *discovery* effort should target **S07E03, S07E04, S09E06, S09E08, S09E17, S09E19, S09E20, S09E21** and independently verify actual caption/download accessibility, language, episode identity, and rights. S05–S09 otherwise have upload-index evidence for 105 episodes, but only some direct pages have been opened; index-only status must not be promoted automatically.
