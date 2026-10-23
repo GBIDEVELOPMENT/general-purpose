@@ -113,6 +113,8 @@ async function main(){
   await until("document.querySelector('#compareAction')?.textContent==='Compare A/B'",'second preview');
   await evaluate("document.querySelector('#compareAction').click()");
   await until("Boolean(document.querySelector('.compare-wipe'))",'touch reveal comparison');
+  assert.equal(await evaluate("document.querySelector('.compare-range').getBoundingClientRect().bottom<=innerHeight-8"),true,'mobile reveal control visible without scrolling');
+  assert.equal(await evaluate("Math.abs(document.querySelector('#closePreview').getBoundingClientRect().top-document.querySelector('#previewTitle').getBoundingClientRect().top)<12"),true,'modal close and title share first header row');
   await evaluate("const s=document.querySelector('.compare-range');s.value='75';s.dispatchEvent(new Event('input',{bubbles:true}))");
   assert.equal(await evaluate("document.querySelector('.compare-wipe').style.getPropertyValue('--reveal')"),'75%','slider changes wipe');
   await screenshot('expository-reveal-393.png');
