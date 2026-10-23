@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "research/night-court-*"
+      - research/night-court-original-archive
     paths:
       - "Night Court/tools/**"
       - ".github/workflows/night-court-harvest.yml"
