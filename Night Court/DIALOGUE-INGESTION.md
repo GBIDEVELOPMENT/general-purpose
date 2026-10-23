@@ -81,3 +81,30 @@ Multiple source editions are preserved independently. A second version with a di
 The importer performs **zero network retrieval**. It supports UTF-8 (with BOM), UTF-16 and Windows-1252, caps input at 20 MB, rejects episodes outside all 193 original episode IDs, and requires an explicit rights declaration and acknowledgment. Input never becomes production code or executable instructions. A separate offline test file creates synthetic episodes and synthetic dialogue only. GitHub Actions passes `validate.py`, `test_import_dialogue.py`, `validate_dialogue.py` and `audit_holdings.py`; the user-provided actual source files are not supplied as test fixtures.
 
 This is a practical ingest lane, not a judgment about fair dealing or fair use. In Canada, Copyright Act sections 29 (research/private study) and 29.22 (conditional reproduction for private purposes) are relevant, subject to individual circumstances and no DRM circumvention. The U.S. four-factor fair-use test considers transformative research purposes and amount copied. Private storage and noncommercial intent are relevant facts, not universal exemptions.
+
+
+## Search imported dialogue alongside episode synopses
+
+The `tools/search_dialogue.py` CLI searches physically stored caption/transcript cues and the separately licensed encyclopedia synopsis index without blurring their evidence status:
+
+```bash
+python "Night Court/tools/search_dialogue.py" "Harry" --source both --limit 10
+python "Night Court/tools/search_dialogue.py" "court" --source capsules --season 1
+python "Night Court/tools/search_dialogue.py" "magic" --source dialogue --episode S01E01 --json
+python "Night Court/tools/search_dialogue.py" "hello" --source dialogue --language en --timecoded
+```
+
+With no imported dialogue, `--source dialogue` returns zero hits. The default `--source both` can still return licensed synopsis matches for all 193 episodes. A zero-result search is **not** evidence that the phrase never occurred onscreen. JSON results carry episode ID, edition, language, source SHA, cue number/timestamps, exact local manifest path and optional **explicitly labeled** speaker field. Unlabeled captions do not receive guessed characters.
+
+## Import QC and gaps requiring review
+
+After import, `tools/audit_dialogue_quality.py` creates a per-version `quality.json`, plus `catalog/dialogue-quality.json` and CSV. It calculates approximate word count, timing span, source caption time union, overlaps, cue ordering, duplicated adjacent text, substantial gaps, and suspiciously short caption timelines.
+
+```bash
+python "Night Court/tools/audit_dialogue_quality.py"
+python "Night Court/tools/test_dialogue_quality_search.py"
+```
+
+The metrics are deliberately **diagnostics only**. Genuine episode captions can have large quiet stretches, opening credits, commercials, music, overlapping speakers or late start times. The tool never treats an unflagged track as complete, and never treats a flagged track as confirmed incomplete. `quality.json` is tied to the source SHA and immutable version manifest.
+
+The GitHub upload workflow now performs synthetic QC/search tests, regenerates reports, and smoke-tests caption/synopsis lookup on every research dialogue branch upload.

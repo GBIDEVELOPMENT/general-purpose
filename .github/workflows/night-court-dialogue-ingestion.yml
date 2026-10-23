@@ -10,6 +10,9 @@ on:
       - "Night Court/tools/validate_dialogue.py"
       - "Night Court/tools/audit_dialogue_coverage.py"
       - "Night Court/tools/test_import_dialogue.py"
+      - "Night Court/tools/audit_dialogue_quality.py"
+      - "Night Court/tools/search_dialogue.py"
+      - "Night Court/tools/test_dialogue_quality_search.py"
       - "Night Court/incoming/**"
       - ".github/workflows/night-court-dialogue-ingestion.yml"
 
@@ -30,8 +33,14 @@ jobs:
         run: python "Night Court/tools/validate.py"
       - name: Run isolated synthetic ingestion tests
         run: python "Night Court/tools/test_import_dialogue.py"
+      - name: Run source quality and search synthetic tests
+        run: python "Night Court/tools/test_dialogue_quality_search.py"
       - name: Import only supplied source files and matching confirmed sidecars
         run: python "Night Court/tools/import_dialogue.py" --inbox "Night Court/incoming"
+      - name: Measure suspect gaps and duplicates without assuming completeness
+        run: python "Night Court/tools/audit_dialogue_quality.py"
+      - name: Smoke test joint source search on licensed capsule summaries
+        run: python "Night Court/tools/search_dialogue.py" --source capsules --limit 2 "court"
       - name: Verify held dialogue and source checksum integrity
         run: python "Night Court/tools/validate_dialogue.py"
       - name: Build 193-episode dialogue-only gap and completeness audit

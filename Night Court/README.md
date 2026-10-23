@@ -146,3 +146,10 @@ The repository includes a **source-preserving dialogue import pipeline** for mat
 **As of this change, no actual full scripts or caption tracks have been imported.** The tooling and GitHub Actions pipeline can preserve multiple full source witnesses once they are supplied. Each track's declared completeness is recorded, but only future audiovisual verification can establish whether it is genuinely episode-complete. No DRM circumvention or scraping is performed by the importer.
 
 Research and private-copying exceptions may be relevant to legitimate user-held sources, subject to the circumstances. The archive retains an explicit rights/source declaration without claiming to make a definitive legal finding.
+
+
+### Search and source-quality diagnostics
+
+`tools/search_dialogue.py` provides source-attributed search over the *held* transcript/caption versions and the 193 licensed episode capsules. Search hits return cue timestamps, explicit speaker markers when present, edition and source checksum; a synopsis result is explicitly marked **not dialogue**. With no held dialogue, only synopsis search has results.
+
+`tools/audit_dialogue_quality.py` produces SHA-tied per-version QC and `catalog/dialogue-quality.json` / CSV, including approximate counts, cue overlaps, suspect source gaps and flags requiring audiovisual review. These metrics do not prove completeness or missing dialogue. The existing GitHub Actions import workflow tests and regenerates them on each imported batch.
