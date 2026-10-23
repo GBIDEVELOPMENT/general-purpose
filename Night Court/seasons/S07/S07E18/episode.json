@@ -10,10 +10,13 @@
   "original_air_date": "1990-02-28",
   "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
-    "director": null,
-    "writers": [],
+    "director": "Jim Drake",
+    "writers": [
+      "Bob Underwood"
+    ],
     "guest_cast": [],
-    "production_code": null
+    "production_code": "186348",
+    "writer_credit_display": "Bob Underwood"
   },
   "episode_sources": [
     {
@@ -65,6 +68,17 @@
       "level": "episode_in_index",
       "verified": true,
       "content_imported": false
+    },
+    {
+      "kind": "production_credits",
+      "provider": "Wikipedia production table",
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "level": "episode_in_index",
+      "verified": true,
+      "license": "CC BY-SA 4.0",
+      "content_imported": true,
+      "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
+      "episode_number_in_source": 141
     }
   ],
   "holdings": {
@@ -82,5 +96,13 @@
     "annotation_file": null
   },
   "editorial_notes": [],
-  "tvmaze_episode_id": 134383
+  "tvmaze_episode_id": 134383,
+  "wikipedia_production_metadata": {
+    "title_on_wikipedia": "Melvin and Harold",
+    "episode_airdate_wikitext": "{{Start date|1990|2|28}}",
+    "household_rating_and_share": null,
+    "viewers_millions": 22.4,
+    "is_combined_broadcast_entry": false,
+    "shared_entry_parts": 1
+  }
 }

@@ -6,14 +6,19 @@
   "absolute_episode_by_season_sum": 120,
   "title": "From Snoop to Nuts (2)",
   "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
+  "title_aliases": [
+    "From Snoop to Nuts (Part 2)"
+  ],
   "original_air_date": "1989-03-22",
   "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
-    "director": null,
-    "writers": [],
+    "director": "Jeff Melman",
+    "writers": [
+      "{{StoryTeleplay|s= Larry Strawther, Gary Murphy and Harry Anderson|t= Gary Murphy & Larry Strawther}}"
+    ],
     "guest_cast": [],
-    "production_code": null
+    "production_code": "186479",
+    "writer_credit_display": "{{StoryTeleplay|s= Larry Strawther, Gary Murphy and Harry Anderson|t= Gary Murphy & Larry Strawther}}"
   },
   "episode_sources": [
     {
@@ -65,6 +70,17 @@
       "level": "episode_in_index",
       "verified": true,
       "content_imported": false
+    },
+    {
+      "kind": "production_credits",
+      "provider": "Wikipedia production table",
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "level": "episode_in_index",
+      "verified": true,
+      "license": "CC BY-SA 4.0",
+      "content_imported": true,
+      "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
+      "episode_number_in_source": 120
     }
   ],
   "holdings": {
@@ -82,5 +98,13 @@
     "annotation_file": null
   },
   "editorial_notes": [],
-  "tvmaze_episode_id": 134362
+  "tvmaze_episode_id": 134362,
+  "wikipedia_production_metadata": {
+    "title_on_wikipedia": "From Snoop to Nuts (Part 2)",
+    "episode_airdate_wikitext": "{{Start date|1989|3|22}}",
+    "household_rating_and_share": null,
+    "viewers_millions": 24.4,
+    "is_combined_broadcast_entry": false,
+    "shared_entry_parts": 1
+  }
 }

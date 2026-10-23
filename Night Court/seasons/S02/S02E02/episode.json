@@ -13,10 +13,13 @@
   "original_air_date": "1984-10-04",
   "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
-    "director": null,
-    "writers": [],
+    "director": "Jeff Melman",
+    "writers": [
+      "Reinhold Weege"
+    ],
     "guest_cast": [],
-    "production_code": null
+    "production_code": "185601",
+    "writer_credit_display": "Reinhold Weege"
   },
   "episode_sources": [
     {
@@ -84,6 +87,17 @@
       "level": "episode_in_index",
       "verified": true,
       "content_imported": false
+    },
+    {
+      "kind": "production_credits",
+      "provider": "Wikipedia production table",
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "level": "episode_in_index",
+      "verified": true,
+      "license": "CC BY-SA 4.0",
+      "content_imported": true,
+      "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
+      "episode_number_in_source": 15
     }
   ],
   "holdings": {
@@ -103,5 +117,13 @@
   "editorial_notes": [
     "Title differs between sources. Preserve all title variants rather than selecting without provenance."
   ],
-  "tvmaze_episode_id": 134257
+  "tvmaze_episode_id": 134257,
+  "wikipedia_production_metadata": {
+    "title_on_wikipedia": "Daddy for the Defense",
+    "episode_airdate_wikitext": "{{Start date|1984|10|4}}",
+    "household_rating_and_share": "17.4/26",
+    "viewers_millions": null,
+    "is_combined_broadcast_entry": false,
+    "shared_entry_parts": 1
+  }
 }
