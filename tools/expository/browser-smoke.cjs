@@ -81,15 +81,17 @@ const fixtures=String.raw`
    {path:'design',type:'tree'},{path:'design/proposals',type:'tree'},
    {path:'design/proposals/a.svg',type:'blob',size:250},
    {path:'design/proposals/b.svg',type:'blob',size:250},
-   {path:'docs',type:'tree'},{path:'docs/README.md',type:'blob',size:48}
+   {path:'docs',type:'tree'},{path:'docs/README.md',type:'blob',size:48},{path:'docs/data.json',type:'blob',size:120}
   ]});
   if(p.endsWith('/contents/'))return json(dirs(['design','design'],['docs','docs']));
   if(p.endsWith('/contents/design'))return json(dirs(['proposals','design/proposals']));
-  if(p.endsWith('/contents/docs'))return json(files(['README.md','docs/README.md']));
+  if(p.endsWith('/contents/docs'))return json(files(['README.md','docs/README.md'],['data.json','docs/data.json']));
   if(p.endsWith('/contents/design/proposals'))return json(files(['a.svg','design/proposals/a.svg'],['b.svg','design/proposals/b.svg']));
   if(p.endsWith('/contents/design/proposals/a.svg'))return new Response(dataA,{status:200,headers:{'content-type':'image/svg+xml'}});
   if(p.endsWith('/contents/design/proposals/b.svg'))return new Response(dataB,{status:200,headers:{'content-type':'image/svg+xml'}});
   if(p.endsWith('/contents/docs/README.md'))return new Response('# Hello from fixture',{status:200,headers:{'content-type':'text/plain'}});
+  if(p.endsWith('/contents/docs/data.json'))return new Response(JSON.stringify({status:'ready',items:[1,2,3],active:true}),{status:200,headers:{'content-type':'application/json'}});
+  if(p.endsWith('/commits'))return json([{sha:'1111111111111111111111111111111111111111',commit:{message:'First fixture change',author:{date:'2026-10-22T12:00:00Z'}}}]);
   return new Response('Not found',{status:404});
  };
 })();
@@ -117,6 +119,15 @@ async function main(){
   await screenshot('expository-gallery-393.png');
   await evaluate("document.querySelector('#items .tile').click()");
   await until("document.querySelector('#compareAction')?.hidden===false",'first image preview');
+  assert.equal(await evaluate("Boolean(document.querySelector('.image-viewer .image-stage img'))"),true,'image inspector displayed');
+  await evaluate("document.querySelector('.image-actions button:nth-child(3)').click()");
+  assert.equal(await evaluate("document.querySelector('.image-stage img').style.width"),'125%','image zoom in');
+  await evaluate("document.querySelector('.image-actions button:nth-child(2)').click()");
+  assert.equal(await evaluate("document.querySelector('.image-stage img').style.width"),'100%','image zoom reset');
+  await evaluate("document.querySelector('#fileHistory').click()");
+  await until("document.querySelector('.history-list a')?.textContent?.includes('First fixture change')",'file history loaded');
+  await evaluate("document.querySelector('#fileHistory').click()");
+  await until("Boolean(document.querySelector('.image-viewer'))",'return from history');
   assert.equal(await evaluate("document.querySelector('#pageMain').inert"),true,'modal background inert');
   await evaluate("document.querySelector('#compareAction').click();document.querySelector('#nextPreview').click()");
   await until("document.querySelector('#compareAction')?.textContent==='Compare A/B'",'second preview');
@@ -134,8 +145,17 @@ async function main(){
   await screenshot('expository-compare-360.png');
   await evaluate("document.querySelector('#closePreview').click()");
   assert.equal(await evaluate("document.querySelector('#pageMain').inert"),false,'modal background restored');
+  await evaluate("document.querySelector('#scope').value='repo';document.querySelector('#scope').dispatchEvent(new Event('change'));document.querySelector('#filter').value='data.json';document.querySelector('#filter').dispatchEvent(new Event('input'))");
+  await until("document.querySelectorAll('#items .tile').length===1",'indexed JSON search');
+  await evaluate("document.querySelector('#items .tile').click()");
+  await until("document.querySelector('#structuredToggle')?.hidden===false",'JSON structure available');
+  await evaluate("document.querySelector('#structuredToggle').click()");
+  await until("Boolean(document.querySelector('.json-tree details'))",'JSON tree rendered');
+  assert.equal(await evaluate("document.querySelector('.json-tree summary')?.textContent"),'Root {3 keys}','safe JSON hierarchy');
+  await evaluate("document.querySelector('#closePreview').click()");
+  assert.equal(await evaluate("document.documentElement.scrollWidth<=innerWidth+2"),true,'no overflow after inspector');
   assert.equal(runtimeErrors.length,0,'browser runtime exceptions: '+runtimeErrors.join(' | '));
-  console.log('PASS: real Chromium mobile gallery, image previews, modal isolation, reveal, side-by-side, 360/393px overflow checks.');
+  console.log('PASS: real Chromium mobile gallery, sorting, bounded search, zoom, file history, JSON tree, modal isolation, reveal, side-by-side, 360/393px overflow checks.');
   console.log('Evidence: '+screenshots);
  }finally{
   try{socket?.close()}catch{}
