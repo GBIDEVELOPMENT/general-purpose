@@ -104,3 +104,10 @@ Read `research/press-evidence-brief.md` and `research/production-and-reception-c
 ### Source revision retention: implemented
 
 The 21 currently held Wikipedia article revisions are backed up immutably by numeric source revision ID with SHA-256 verification and separate license manifests. Future archival agents must run `tools/preserve_wiki_revisions.py` before and after article refresh, then `validate_knowledge.py`, retaining all prior snapshots rather than replacing them. Where content has no approved reuse basis, retain only provenance, independently authored notes and links.
+
+
+### Full-dialogue source ingestion, implemented
+
+The previously missing ingestion facility now accepts user-provided SRT, VTT and TXT dialogue witnesses via `tools/import_dialogue.py`, a GitHub-mobile-friendly `incoming/` staging directory, or a local/Termux command. Exact bytes are retained, hashes checked, cues/paragraphs normalized, editions kept separately and the 193-episode dialogue coverage matrix regenerated. See `DIALOGUE-INGESTION.md`, `catalog/dialogue-coverage.json`, `tools/validate_dialogue.py`.
+
+A *claimed* full transcript is not yet a *verified* one. Actual dialogue source acquisition remains to be done, and present repository holdings contain **zero complete television transcript tracks**. Future quality gates include comparing runtimes, sampling against source video, identifying character speakers and differentiating streaming, syndication, DVD and broadcast cuts. Avoid promoting legal interpretations or rights declarations into validated source quality statements.
