@@ -58,8 +58,8 @@ def compare(a,b):
                 "anchor_excerpt":" ".join(words_a[i:min(j,i+16)]),
                 "other_excerpt":" ".join(words_b[x:min(y,x+16)])})
     is_same=a["fingerprint"]==b["fingerprint"]
-    if is_same:status="same_normalized_words"
-    elif score is None:status="insufficient_dialogue_to_compare"
+    if score is None:status="insufficient_dialogue_to_compare"
+    elif is_same:status="same_normalized_words"
     elif score>=0.97:status="close_transcript_wording"
     elif ratio is not None and ratio>=0.92:status="substantial_overlap_with_different_lengths"
     else:status="materially_different_source_witnesses"
