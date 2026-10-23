@@ -42,12 +42,12 @@ To host Expository with GitHub Pages, create a dedicated public repository for i
 From the private source checkout, after `gh auth login`:
 
 ```sh
-bash tools/expository/publish-pages.sh gamesbyian/expository
+bash tools/expository/publish-pages.sh gamesbyian/Expository
 ```
 
 The script previews the **public** target and exact exported files and requires typing `PUBLISH` interactively. It copies only the current application `index.html`, a `.nojekyll` marker and a non-sensitive publisher marker into a clean, separate public repository, then enables Pages. It never publishes the surrounding `general-purpose` tree. If the target already exists, it updates only `index.html` and refuses a repository without its explicit management marker. Review the source file before first publishing, and verify the exact GitHub target printed by the command. The script is deliberately non-automatable without a human confirmation.
 
-An existing target with restricted permissions or unconfigured Pages may require manual Settings → Pages adjustments. After successful deployment, the expected URL is `https://gamesbyian.github.io/expository/`, subject to GitHub's actual Pages configuration. **No Pages deployment has been performed by this PR.**
+An existing target with restricted permissions or unconfigured Pages may require manual Settings → Pages adjustments. After successful deployment, the expected URL is `https://gamesbyian.github.io/Expository/`, subject to GitHub's actual Pages configuration. The reviewed standalone application is mirrored in the public `gamesbyian/Expository` repository. Public availability still depends on that repository's actual GitHub Pages configuration.
 
 Expository itself does not need a backend or deployment secrets. Do not put tokens in build-time variables, the HTML, Pages actions, browser localStorage, remote log collectors, or query strings.
 
@@ -65,18 +65,18 @@ Uses only the Node.js test runner, with no external dependencies. A path-filtere
 node tools/expository/browser-smoke.cjs
 ```
 
-Requires local Chromium or Google Chrome; no npm packages or GitHub credentials. It starts a real browser through the Chrome DevTools Protocol and substitutes deterministic **fictional SVG fixture responses** for GitHub API requests, so the test never accesses private repositories. It checks gallery rendering, responsive widths (360px and 393px), basic modal isolation, image comparisons, reveal slider interaction and above-the-fold controls. Its three screenshot outputs are stored in ignored `tools/expository/browser-evidence/`, and the path-scoped PR workflow keeps them as a private artifact for seven days.
+Requires local Chromium or Google Chrome; no npm packages or GitHub credentials. It starts a real browser through the Chrome DevTools Protocol and substitutes deterministic **fictional SVG fixture responses** for GitHub API requests, so the test never accesses private repositories. It checks gallery rendering, responsive widths (360px and 393px), basic modal isolation, image comparisons, reveal slider interaction and above-the-fold controls. Its simulated screenshots are stored in ignored `tools/expository/browser-evidence/`, and the path-scoped PR workflow keeps them as a private artifact for seven days.
 
 **QA boundary:** passing synthetic fixture browser checks proves these specific interactions, not all runtime file formats, external API/rate-limit behavior, visual correctness with the real projects, or full accessibility. Real Android Chrome and assistive-technology acceptance remain release tasks.
 
-These are **not** substitutes for an optical/browser audit. Before a release, verify actual Android portrait Chrome (especially keyboard/screen-reader focus, real authenticated private browsing, and very large SVG galleries) and desktop Safari/Firefox.
+These automated checks are **not** substitutes for an optical/browser audit. Before a release, verify actual Android portrait Chrome (especially keyboard/screen-reader focus, real authenticated private browsing, and very large SVG galleries) and desktop Safari/Firefox.
 
 See [FEATURE-ROADMAP.md](FEATURE-ROADMAP.md) for a weighted, competitor-informed implementation programme and release gates.
 
 ## Current limitations
 
 - GitHub API rate limits apply, particularly unauthenticated thumbnails. GitHub Contents API directory listings can be capped at 1,000 entries; Git Trees API can truncate very large repository indices (which makes global search incomplete). The UI labels this state. The index-error fallback limits results to the current folder.
-- JSON hierarchy is limited to 1,800 nodes and depth 9; extremely large or invalid JSON falls back to raw source. Image zoom is not yet native two-finger pinch, and the history list contains only the 20 latest commits for one file. Markdown is intentionally rendered as plain, restricted content without arbitrary HTML execution, external image loads, full GFM formatting, or remote links. Syntax colorization is intentionally basic and not a full language parser; repository content search is a manually triggered bounded scan, not a complete search engine. Issue/PR browsing and editable file operations remain out of scope.
+- JSON hierarchy is limited to 1,800 nodes and depth 9; extremely large or invalid JSON falls back to raw source. Image zoom is not yet native two-finger pinch, and the history list contains only the 20 latest commits for one file. Markdown is intentionally rendered as restricted DOM/text content without arbitrary HTML execution, external image loads, or full GFM formatting. Safe relative repository links and explicit HTTP(S) external links are supported; unsafe URL schemes are not. Syntax colorization is intentionally basic and not a full language parser; repository content search is a manually triggered bounded scan, not a complete search engine. Issue/PR browsing and editable file operations remain out of scope.
 - Binary previews above 20 MB, thumbnails above 8 MB and unsupported media/codecs are delegated to GitHub. Preview files and authentication remain in tab memory; no offline cache/PWA shell yet.
 - Repo-list discovery currently reads at most 500 of the most recently updated accessible repositories. Manual repo entry works independently.
 - Deep links require the recipient to have access to that repository. Private URLs are not public file shares.
