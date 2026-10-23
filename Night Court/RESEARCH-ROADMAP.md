@@ -145,3 +145,8 @@ The entire original-series fourth season now has direct external caption-page lo
 ### Source discovery now narrowed to three original-series episodes
 
 Only **S09E08 (Teacher's Pet), S09E17 (Party Girl (2)), and S09E19 (P.S. Do I Know You?)** currently lack a direct dialogue/caption page or an episode-specific source index. Season 4 is fully mapped and S07E03/E04 plus S09E06/E20/E21 now have verified external pages. Explore independent caption registries and authorized edition sources for the remaining three; do not invent a Subtitle Cat URL or mistake the 2023 reboot for the original. Once obtained, validate caption edition, source and completeness through the existing import/quality tools.
+
+
+### Last-three supplier-availability fallback complete
+
+Publisher-level CC availability is separately documented for the remaining original S09 episodes (S09E08/E17/E19), each with its own Apple TV link, region and reported runtime. The archive now knows where to investigate these episodes via original-series caption-enabled playback, **but still lacks an individually acquired SRT/transcript for those three and still holds zero complete episode dialogue copies**. Do not turn provider captions or a claimed source into imported evidence without actual user-provided source media or documented authorization. Next high-value work is obtaining episode sources and comparing original broadcast versus syndicated/DVD/streaming cut variations.
