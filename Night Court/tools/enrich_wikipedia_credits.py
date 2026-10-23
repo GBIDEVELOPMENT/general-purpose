@@ -25,6 +25,11 @@ def normalize(credit):
     credit=re.sub(r"<[^>]+>","",credit).replace("'''","").replace("''","")
     return credit.strip()
 
+def capsule(block):
+    """Extract the CC BY-SA encyclopedia entry prose, not television dialogue."""
+    m=re.search(r"(?ms)^\s*\|ShortSummary\s*=(.*?)(?=^\s*\|LineColor\s*=|^\s*\}\})",block)
+    return m.group(1).strip() if m else None
+
 def source_rows(text):
     matches=list(re.finditer(r"\{\{\s*Episode list\b",text,re.I))
     found={}
@@ -52,7 +57,8 @@ def source_rows(text):
                 "household_rating_and_share":re.match(r"\s*[\d.]+/[\d.]+",field(block,"Aux4") or "").group(0) if re.match(r"\s*[\d.]+/[\d.]+",field(block,"Aux4") or "") else None,
                 "viewers_millions":float(re.match(r"[\d.]+",field(block,"Viewers") or "").group()) if re.match(r"[\d.]+",field(block,"Viewers") or "") else None,
                 "is_combined_broadcast_entry":len(nums)>1,
-                "shared_entry_parts":len(nums)
+                "shared_entry_parts":len(nums),
+                "capsule_wikitext":capsule(block)
             }
     if len(found)!=193 or set(found)!=set(range(1,194)):
         missing=sorted(set(range(1,194))-set(found))
@@ -79,7 +85,7 @@ def main():
             credits["writers"]=([src["writer_credit"]] if src["writer_credit"] else [])
             credits["writer_credit_display"]=src["writer_credit"]
             credits["production_code"]=src["production_code"]
-            obj["wikipedia_production_metadata"]={k:v for k,v in src.items() if k not in ("director","writer_credit","production_code")}
+            obj["wikipedia_production_metadata"]={k:v for k,v in src.items() if k not in ("director","writer_credit","production_code","capsule_wikitext")}
             if src["title_on_wikipedia"] and src["title_on_wikipedia"]!=obj.get("title"):
                 aliases=obj.setdefault("title_aliases",[])
                 if src["title_on_wikipedia"] not in aliases:aliases.append(src["title_on_wikipedia"])
@@ -89,6 +95,35 @@ def main():
                     "license":"CC BY-SA 4.0","content_imported":True,
                     "source_file":"research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
                     "episode_number_in_source":absolute})
+            snippet=src.get("capsule_wikitext")
+            if snippet:
+                licensed=path.parent/"authorized-text"
+                licensed.mkdir(parents=True,exist_ok=True)
+                capsule_file=licensed/"wikipedia-episode-capsule.wikitext"
+                capsule_file.write_text(snippet+"\n","utf-8")
+                provenance=json.loads((ROOT/"research"/"licensed-wiki"/"List-of-Night-Court-episodes.provenance.json").read_text("utf-8"))
+                ledger=path.parent/"sources"
+                ledger.mkdir(parents=True,exist_ok=True)
+                capsule_info={
+                    "source":"Wikipedia contributors",
+                    "episode_id":key,
+                    "source_page":"List of Night Court episodes",
+                    "source_revision":provenance["revision"],
+                    "permalink":provenance["permalink"],
+                    "license":"CC BY-SA 4.0",
+                    "license_url":"https://creativecommons.org/licenses/by-sa/4.0/",
+                    "source_file":"research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
+                    "held_file":"authorized-text/wikipedia-episode-capsule.wikitext",
+                    "shared_with_other_episode":src["is_combined_broadcast_entry"],
+                    "attribution":"Wikipedia contributors, List of Night Court episodes, revision "+str(provenance["revision"]),
+                    "content_kind":"encyclopedia episode summary, not television transcript"
+                }
+                (ledger/"wikipedia-capsule.provenance.json").write_text(json.dumps(capsule_info,indent=2)+"\n","utf-8")
+                held=obj["holdings"]["recaps"]
+                if not any(x.get("source")=="Wikipedia" for x in held):
+                    held.append({"source":"Wikipedia","file":capsule_info["held_file"],
+                                 "provenance_file":"sources/wikipedia-capsule.provenance.json",
+                                 "license":"CC BY-SA 4.0"})
             path.write_text(json.dumps(obj,indent=2,ensure_ascii=False)+"\n","utf-8")
             lines.append(json.dumps({"id":key,"season":season,"episode":episode,"absolute_episode":absolute,
                 "title":obj["title"],"original_air_date":obj["original_air_date"],
