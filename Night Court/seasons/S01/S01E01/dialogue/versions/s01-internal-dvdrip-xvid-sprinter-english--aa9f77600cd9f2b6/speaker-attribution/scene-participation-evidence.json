@@ -1,0 +1,559 @@
+{
+  "character_to_scene_evidence_status": "participant_hypotheses_only_not_attributed_speakers",
+  "credit_roster_count": 21,
+  "episode_id": "S01E01",
+  "provisional_scene_count": 3,
+  "scenes": [
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Rita Taggart",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:225580",
+          "character_name": "Carla B.",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Matt Landers",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664672",
+          "character_name": "Courier",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Andrew Bloch",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664671",
+          "character_name": "Leonard 'Hacksaw' Hammond",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Peggy McCay",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664669",
+          "character_name": "Louise Kerr",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Luke Andreas",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664670",
+          "character_name": "Painter",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joseph V. Perry",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664668",
+          "character_name": "Phil Kerr",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Cal Gibson",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664673",
+          "character_name": "Shouting Man #1 in Gallery",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S01E01:C00001:1",
+      "first_start_ms": 3824,
+      "last_end_ms": 255503,
+      "last_source_turn_id": "S01E01:C00073:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 1,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 85,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "John Larroquette",
+          "addressed_by_name_turn_ids": [
+            "S01E01:C00039:1",
+            "S01E01:C00068:1"
+          ],
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 85,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Rita Taggart",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:225580",
+          "character_name": "Carla B.",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Matt Landers",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664672",
+          "character_name": "Courier",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Andrew Bloch",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664671",
+          "character_name": "Leonard 'Hacksaw' Hammond",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Luke Andreas",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664670",
+          "character_name": "Painter",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Cal Gibson",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664673",
+          "character_name": "Shouting Man #1 in Gallery",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S01E01:C00074:1",
+      "first_start_ms": 315769,
+      "last_end_ms": 1246161,
+      "last_source_turn_id": "S01E01:C00307:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 2,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 290,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "John Larroquette",
+          "addressed_by_name_turn_ids": [
+            "S01E01:C00173:1",
+            "S01E01:C00176:1",
+            "S01E01:C00296:1"
+          ],
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Peggy McCay",
+          "addressed_by_name_turn_ids": [
+            "S01E01:C00263:1",
+            "S01E01:C00268:1"
+          ],
+          "character_id": "tvmaze:664669",
+          "character_name": "Louise Kerr",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Joseph V. Perry",
+          "addressed_by_name_turn_ids": [
+            "S01E01:C00257:1",
+            "S01E01:C00273:2"
+          ],
+          "character_id": "tvmaze:664668",
+          "character_name": "Phil Kerr",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "addressed_by_name_turn_ids": [
+            "S01E01:C00173:1"
+          ],
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 290,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Rita Taggart",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:225580",
+          "character_name": "Carla B.",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Matt Landers",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664672",
+          "character_name": "Courier",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Andrew Bloch",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664671",
+          "character_name": "Leonard 'Hacksaw' Hammond",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Peggy McCay",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664669",
+          "character_name": "Louise Kerr",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Luke Andreas",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664670",
+          "character_name": "Painter",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joseph V. Perry",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664668",
+          "character_name": "Phil Kerr",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Cal Gibson",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:664673",
+          "character_name": "Shouting Man #1 in Gallery",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S01E01:C00308:1",
+      "first_start_ms": 1280065,
+      "last_end_ms": 1397981,
+      "last_source_turn_id": "S01E01:C00336:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 3,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 30,
+      "textually_signaled_possible_participants": [],
+      "turns_with_no_unique_speaker_label": 30,
+      "uncredited_participants_must_remain_possible": true
+    }
+  ],
+  "source_caption_turns": 405,
+  "source_manifest": "seasons/S01/S01E01/dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6/manifest.json",
+  "source_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "version_id": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6"
+}
