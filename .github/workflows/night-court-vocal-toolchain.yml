@@ -4,6 +4,7 @@ on:
     paths:
       - 'Night Court/tools/measure_vocal_performance.py'
       - 'Night Court/tools/test_vocal_performance.py'
+      - 'Night Court/tools/measure_vocal_prosody_optional.py'
       - 'Night Court/tools/setup_vocal_environment.sh'
       - 'Night Court/tools/vocal-requirements-*.txt'
       - 'Night Court/VOCAL-PERFORMANCE-ANALYSIS.md'
@@ -28,7 +29,7 @@ jobs:
           python-version: '3.11'
       - name: Compile and run deterministic synthetic regression
         run: |
-          python -m py_compile "Night Court/tools/measure_vocal_performance.py" "Night Court/tools/test_vocal_performance.py"
+          python -m py_compile "Night Court/tools/measure_vocal_performance.py" "Night Court/tools/test_vocal_performance.py" "Night Court/tools/measure_vocal_prosody_optional.py"
           python "Night Court/tools/test_vocal_performance.py"
   optional-acoustic-install:
     if: github.event_name == 'workflow_dispatch' && inputs.install_acoustics
