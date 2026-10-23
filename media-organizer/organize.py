@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Conservative FTP /downloads inventory and Plex-oriented rename planner."""
-import argparse, ftplib, json, os, re
+import argparse, ftplib, json, os, re, time
 from collections import deque
 from pathlib import PurePosixPath
 from pathlib import Path
@@ -24,16 +24,17 @@ def connect():
     ftp.connect(host,21); ftp.login(user,passwd)
     if protocol=="ftps": ftp.prot_p()
     return ftp
-def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7):
-    pending=deque([(ROOT,0)]); seen=set(); out=[]; failures=[]; truncated=[]
+def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7,max_seconds=420):
+    pending=deque([(ROOT,0)]); seen=set(); out=[]; failures=[]; truncated=[];started=time.monotonic()
     while pending:
         path,depth=pending.popleft()
         if path in seen: continue
-        if len(seen)>=max_dirs or len(out)>=max_files:
+        if len(seen)>=max_dirs or len(out)>=max_files or (len(seen)>0 and time.monotonic()-started>=max_seconds):
             truncated.append(path)
             truncated.extend(p for p,_ in pending if p not in seen)
             break
         seen.add(path)
+        if len(seen)%25==0:print(f"FTP_SCAN_PROGRESS directories={len(seen)} files={len(out)} elapsed_seconds={int(time.monotonic()-started)}",flush=True)
         try:
             ftp.cwd(path); rows=list(ftp.mlsd())
         except (ftplib.all_errors, OSError) as err:
