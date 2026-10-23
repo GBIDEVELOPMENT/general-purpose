@@ -89,3 +89,8 @@ Do not confuse `--actor` guestcast matching with starring cast appearance: main-
 ### Latest subtitle-discovery gate
 
 An independent indexer now retains 13 individually checked Subtitle Cat links for the original series and an episode-by-episode subtitle-location count. Its live index collection was blocked by robots; avoid repeating blocked bulk scans. Continue verified episode-specific discovery through accessible search indexes and licensed providers. Apple TV and Prime Video series listings provide additional distributor/caption leads but no stored subtitle bytes.
+
+
+### Historical popularity evidence now indexed
+
+Season-level national ranks and Nielsen-era ratings, plus episode metrics with units and missingness, are indexed in `catalog/broadcast-context.json`. Future analysis should verify contemporary television industry sources and contextualize scheduling and competition. Correlations with casting or narrative changes cannot establish causal effects.

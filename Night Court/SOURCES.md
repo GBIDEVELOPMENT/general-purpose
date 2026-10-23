@@ -56,3 +56,8 @@ Determine subtitle coverage by episode in seasons 4–9, discover additional scr
 - **All-episodes season/retailer index**: https://www.justwatch.com/ca/tv-show/night-court lists 193 original-series episodes across nine seasons and is useful for distribution/caption-source lookup, not for dialogue acquisition.
 
 **Scope risk:** A web search for "Night Court S01E01" frequently returns the 2023 revival instead of the 1984 original. A source without explicit 1984 identity or independently verified original character/cast context must not be mapped to the original-series corpus. Caption versions and alternative streaming cuts may differ from an original NBC broadcast.
+
+
+## Broadcast context evidence
+
+The revision-pinned [Wikipedia original-series episode-list source](https://en.wikipedia.org/wiki/List_of_Night_Court_episodes) includes annual U.S. series ranks, season household ratings and many episode-specific household rating/share or U.S.-viewer figures with references to contemporary press reports. `catalog/broadcast-context.json`, `catalog/broadcast-context.csv` and `research/broadcast-context.md` preserve these as separately typed data, including a five-entry composite-episode distinction. The source is a **retrospective secondary compilation** and should be crosschecked against the underlying 1980s/90s press before making definitive historical audience claims.

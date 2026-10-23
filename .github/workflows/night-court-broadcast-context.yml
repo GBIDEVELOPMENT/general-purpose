@@ -1,0 +1,34 @@
+name: Night Court broadcast measurement synthesis
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-broadcast-context
+    paths:
+      - "Night Court/tools/build_broadcast_context.py"
+      - ".github/workflows/night-court-broadcast-context.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate base corpus
+        run: python "Night Court/tools/validate.py"
+      - name: Build broadcast metric matrix and provenance
+        run: python "Night Court/tools/build_broadcast_context.py"
+      - name: Validate current evidence
+        run: python "Night Court/tools/validate_knowledge.py"
+      - name: Commit outputs to research branch only
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): derive attributed broadcast metrics"
+          if [ "$GITHUB_REF_NAME" = "main" ]; then echo "Main is read-only"; exit 0; fi
+          git push origin HEAD:research/night-court-broadcast-context

@@ -116,3 +116,10 @@ A dedicated research lane added **13 individually verified episode-specific Subt
 The site's robots policy blocked automated search/upload-index collection, so the metadata harvester saved only previously verified episode page URLs. It did not fetch subtitle text, invent search coverage, or bypass the site's access restriction.
 
 Additional **legal streaming/caption witnesses** discovered for the original are [Apple TV's original-series listing](https://tv.apple.com/ca/show/night-court/umc.cmc.3v8igla11dgg4chywljv2og89), showing English (US) CC, and [Prime Video season-one episode listings](https://www.primevideo.com/detail/0JKQMQRYLQ7AQRRSNOGZQAN1PB). These are distributor/catalogue references, not proof of any locally saved caption or separate episode synopsis text.
+
+
+## Original broadcast and reception measurements
+
+The new `catalog/broadcast-context.json` and `broadcast-context.csv` reconstruct season-level U.S. television-series rankings, annual season household ratings, episode household rating/share and later reported U.S. viewer counts from the revision-pinned Wikipedia episode list. Its `research/broadcast-context.md` gives a short human-readable overview.
+
+These fields **cannot all be compared directly**: household rating points, shares and viewers in millions have different denominators. Jointly broadcast multi-part episodes are not double-counted in the season summaries. This is historically useful audience evidence with secondary-source provenance, not a claim about why the comedy's popularity changed.
