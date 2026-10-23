@@ -1,0 +1,43 @@
+name: Night Court subtitle URL evidence discovery
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-subtitle-discovery
+    paths:
+      - "Night Court/tools/discover_subtitlecat_urls.py"
+      - "Night Court/tools/audit_holdings.py"
+      - ".github/workflows/night-court-subtitle-locations.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-subtitle-source-discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify core archive
+        run: python "Night Court/tools/validate.py"
+      - name: Index public subtitle page URLs (metadata only)
+        run: python "Night Court/tools/discover_subtitlecat_urls.py"
+      - name: Recompute actually-held source coverage
+        run: python "Night Court/tools/audit_holdings.py"
+      - name: Verify evidence integrity
+        run: python "Night Court/tools/validate_knowledge.py"
+      - name: Commit indexed URL variants only to research branch
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then
+            echo "No new links"; exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): add verified original-series subtitle page pointers"
+          if [ "$GITHUB_REF_NAME" = "main" ]; then echo "Do not mutate main directly"; exit 0; fi
+          git push origin HEAD:research/night-court-subtitle-discovery
