@@ -1,0 +1,33 @@
+name: Night Court text-only caption conversation packets
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-caption-turns
+    paths:
+      - "Night Court/tools/build_caption_turns.py"
+      - ".github/workflows/night-court-caption-turns.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify preserved dialogue source witnesses
+        run: python "Night Court/tools/validate_dialogue.py"
+      - name: Build deterministic source-anchored candidate turns and packets
+        run: python "Night Court/tools/build_caption_turns.py"
+      - name: Verify transcript sources are still immutable
+        run: python "Night Court/tools/validate_dialogue.py"
+      - name: Commit only Night Court derived dialogue annotations
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): derive source-grounded caption conversation units"
+          git push origin HEAD:research/night-court-caption-turns
