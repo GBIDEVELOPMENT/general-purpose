@@ -26,6 +26,16 @@ def main():
         entry=next(e for e in episodes if e["episode_id"]==key)
         assert any(x["provider"]=="Subtitle Cat" and x["status"]=="verified_direct_caption_display_page"
                    for x in entry["source_locations"]),key
+    # An individually named row in a shared upload index is evidence of
+    # indexing, not a confirmed direct subtitle page or held caption.
+    for key in ("S05E02","S06E04","S07E01","S08E01","S09E01"):
+        entry=next(e for e in episodes if e["episode_id"]==key)
+        assert any(x["provider"]=="Subtitle Cat" and
+            x["status"]=="verified_caption_index_listing" for x in entry["source_locations"]),key
+    for item in episodes:
+        for loc in item["source_locations"]:
+            if loc["status"]=="verified_caption_index_listing":
+                assert "/list_page.php?" in loc["url"] and not loc["content_imported"], item["episode_id"]
     status=json.loads((ROOT/"catalog"/"archive-status.json").read_text("utf-8"))
     audit=json.loads((ROOT/"catalog"/"holdings-coverage.json").read_text("utf-8"))
     assert status["source_pointer_count_including_repeated_series_indexes"]==audit["totals"]["source_pointers"]
