@@ -29,7 +29,10 @@ def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7):
     while pending:
         path,depth=pending.popleft()
         if path in seen: continue
-        if len(seen)>=max_dirs or len(out)>=max_files: raise RuntimeError("inventory bound reached; increase bounds deliberately")
+        if len(seen)>=max_dirs or len(out)>=max_files:
+            truncated.append(path)
+            truncated.extend(p for p,_ in pending if p not in seen)
+            break
         seen.add(path)
         try:
             ftp.cwd(path); rows=list(ftp.mlsd())
@@ -44,7 +47,8 @@ def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7):
                 else: truncated.append(full)
             elif kind=="file":
                 out.append({"path":full,"size":int(facts["size"]) if facts.get("size","").isdigit() else None,"modify":facts.get("modify")})
-    return {"root":ROOT,"directories":len(seen),"files":sorted(out,key=lambda x:x["path"].casefold()),"failures":failures,"truncated":truncated}
+    if len(out)>max_files:truncated.append(ROOT+"/[file-count-limit]")
+    return {"root":ROOT,"directories":len(seen),"files":sorted(out,key=lambda x:x["path"].casefold()),"failures":failures,"truncated":sorted(set(truncated))}
 def basename_clean(s):
     return re.sub(r"\s+"," ",re.sub(r"[._]+"," ",s)).strip(" -")
 def propose(inv):
@@ -53,6 +57,8 @@ def propose(inv):
     for item in files:
         old=item["path"]; path=PurePosixPath(old); ext=path.suffix.lower()
         if ext not in VIDEO|SIDE:continue
+        if item["size"] is None:
+            review.append({"path":old,"reason":"Missing source size; cannot validate rename"});continue
         stem=path.stem; m=EP.search(stem)
         if not m:
             if ext in VIDEO:
@@ -105,6 +111,14 @@ def main():
         for n in range(0,len(inv["files"]),150):
             (shards/f"files-{n//150+1:04d}.json").write_text(json.dumps(inv["files"][n:n+150],indent=2,ensure_ascii=False))
         plan=propose(inv); (out/"suggestions.json").write_text(json.dumps(plan,indent=2,ensure_ascii=False))
+        # Filename-only grouping signals, no external metadata or speculative moves.
+        groups={}
+        for move in plan["moves"]:
+            name=PurePosixPath(move["to"]).name.split(" - S",1)[0]
+            node=groups.setdefault(name,{"series":name,"suggested_episode_renames":0,"samples":[]})
+            node["suggested_episode_renames"]+=1
+            if len(node["samples"])<3:node["samples"].append(move["from"])
+        (out/"series-groups.json").write_text(json.dumps(sorted(groups.values(),key=lambda x:(-x["suggested_episode_renames"],x["series"])),indent=2,ensure_ascii=False))
         summary={"files":len(inv["files"]),"directories":inv["directories"],"rename_candidates":len(plan["moves"]),"review_queue":len(plan["review"]),"scan_errors":len(inv["failures"]),"truncated_dirs":len(inv["truncated"])}
         (out/"summary.json").write_text(json.dumps(summary,indent=2))
         print("MEDIA_INVENTORY_SUMMARY "+json.dumps(summary))
