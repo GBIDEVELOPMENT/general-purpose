@@ -12,7 +12,7 @@ from pathlib import Path
 import re
 import sys
 import time
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import urljoin, urlsplit, quote, urlunsplit
 from urllib.request import Request, urlopen
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -75,6 +75,8 @@ def main():
                 if len(set(candidates))!=1:
                     raise ValueError(f"expected one English SRT endpoint, found {len(set(candidates))}")
                 target=candidates[0]
+                parts=urlsplit(target)
+                target=urlunsplit((parts.scheme, parts.netloc, quote(parts.path, safe="/%()-._~"), parts.query, ""))
                 raw=fetch(target)
                 if not re.search(rb"\d{2}:\d{2}:\d{2}[,.]\d{3}\s*-->",raw):
                     raise ValueError("not an SRT")
