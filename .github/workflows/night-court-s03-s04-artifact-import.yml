@@ -1,0 +1,46 @@
+name: Night Court import successful S03-S04 artifact
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_downloaded_s03_s04.py'
+      - '.github/workflows/night-court-s03-s04-artifact-import.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+actions:
+  read: {}
+jobs:
+  import:
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/night-court-s03-s04-artifact-ingestion')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/night-court-s03-s04-artifact-ingestion
+          persist-credentials: true
+      - name: Download existing successful source archive without re-fetching website
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/night-court-s03-s04"
+          gh run download 40035117368 --repo gamesbyian/general-purpose --name night-court-s03-s04-original-srt-staging --dir "${{ runner.temp }}/night-court-s03-s04"
+      - name: Verify and import 44 caption witnesses
+        run: |
+          python "Night Court/tools/import_downloaded_s03_s04.py" "${{ runner.temp }}/night-court-s03-s04"
+          python "Night Court/tools/audit_dialogue_quality.py"
+          python "Night Court/tools/audit_dialogue_coverage.py"
+          python "Night Court/tools/compare_dialogue_versions.py"
+          python "Night Court/tools/audit_holdings.py"
+          python "Night Court/tools/build_dialogue_source_queue.py"
+          python "Night Court/tools/validate_dialogue.py"
+          python "Night Court/tools/validate.py"
+      - name: Commit scoped source and derived metadata to existing PR branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): import and validate 44 S03–S04 original subtitle witnesses"
+            git push origin HEAD:research/night-court-s03-s04-artifact-ingestion
+          fi
