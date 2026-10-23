@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - research/night-court-dialogue-ingestion
+      - "research/night-court-dialogue-*"
     paths:
       - "Night Court/tools/import_dialogue.py"
       - "Night Court/tools/validate_dialogue.py"
@@ -36,6 +36,7 @@ jobs:
       - name: Rebuild 193-row holdings coverage
         run: python "Night Court/tools/audit_holdings.py"
       - name: Commit additional dialogue witness versions to research branch
+        if: github.ref != 'refs/heads/main'
         shell: bash
         run: |
           git add -- "Night Court/"
@@ -43,4 +44,4 @@ jobs:
             echo "No new dialogue versions"; exit 0
           fi
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "archive(night-court): ingest source-attributed dialogue witnesses"
-          git push origin HEAD:research/night-court-dialogue-ingestion
+          git push origin "HEAD:$GITHUB_REF_NAME"
