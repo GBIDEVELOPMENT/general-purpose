@@ -31,7 +31,7 @@ function boot() {
  const pos=source.indexOf('const match=location.hash.slice(1)');
  assert.ok(pos>0, 'page-load bootstrap located');
  const isolated='return '+source.slice(0,pos).trimStart()+
-  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus,filterSort,typeOf,sourceViewer,toggleBookmark,cancelContentScan};\n})();';
+  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus,filterSort,typeOf,sourceViewer,toggleBookmark,cancelContentScan,jsonViewer,imageViewer};\n})();';
  const app=new Function('document','history','location','localStorage','Option',isolated)(
    document,history,location,localStorage,function Option(name,value){return {name,value}}
  );
@@ -186,4 +186,14 @@ test('content search cancellation is idempotent and clears transient results',()
  app.cancelContentScan();assert.equal(app.state.searchSeq,6);
  assert.equal(app.state.scanning,false);
  assert.equal(get('contentSearch').textContent,'Search contents');
+});
+
+test('JSON structural viewer uses inert DOM nodes and depth bounds',()=>{
+ const {app}=boot();
+ const data={title:'<script>alert(1)</script>',nested:{array:[1,true,null]},empty:{}};
+ const tree=app.jsonViewer(data);
+ assert.equal(tree.className,'json-tree');
+ assert.equal(tree.children[0].tagName,'DETAILS');
+ assert.equal(tree.children[0].children[0].tagName,'SUMMARY');
+ assert.equal(tree.children[0].children[0].textContent,'Root {3 keys}');
 });
