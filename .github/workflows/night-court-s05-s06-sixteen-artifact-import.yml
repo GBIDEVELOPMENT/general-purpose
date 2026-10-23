@@ -1,0 +1,45 @@
+name: Night Court import later-season caption artifact
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s05_s06_sixteen_artifact.py'
+      - '.github/workflows/night-court-s05-s06-sixteen-artifact-import.yml'
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  import:
+    if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/night-court-s05-s06-sixteen-artifact-import')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/night-court-s05-s06-sixteen-artifact-import
+          persist-credentials: true
+      - name: Reuse successful nine-file caption artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/late-captions"
+          gh run download 40036236962 --repo gamesbyian/general-purpose --name night-court-s05-s06-new-source-witnesses --dir "${{ runner.temp }}/late-captions"
+      - name: Import and regenerate corpus reports
+        run: |
+          python "Night Court/tools/import_s05_s06_sixteen_artifact.py" "${{ runner.temp }}/late-captions"
+          python "Night Court/tools/audit_dialogue_quality.py"
+          python "Night Court/tools/audit_dialogue_coverage.py"
+          python "Night Court/tools/compare_dialogue_versions.py"
+          python "Night Court/tools/audit_holdings.py"
+          python "Night Court/tools/build_dialogue_source_queue.py"
+          python "Night Court/tools/validate_dialogue.py"
+          python "Night Court/tools/validate.py"
+      - name: Commit validated episode holdings to this PR branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): preserve sixteen Season 5–6 caption tracks"
+            git push origin HEAD:research/night-court-s05-s06-sixteen-artifact-import
+          fi
