@@ -1,0 +1,24 @@
+{
+  "series_id": "night-court-1984",
+  "purpose": "Do not let original 1984 series corpus ingest similarly named 2023 reboot subtitles.",
+  "checked_on": "2026-10-23",
+  "rejected": [
+    {
+      "url": "https://www.tvsubtitles.net/subtitle-3169-3-en.html",
+      "displayed_description": "Night Court season 3 English ZIP",
+      "exclusion_reason": "Contents mention 'The Judge's Boyfriend's Dad', 'The Hole Truth' and 'Feliz Navidead', which are episodes of the 2023 revival, not original season 3 (1985–86).",
+      "wrong_series": "night-court-2023",
+      "confidence": "high",
+      "use": "Do not map to any original S03Eyy source, despite matching season numbering."
+    },
+    {
+      "url": "https://www.subtitlecat.com/subs/444/Night%20Court%20s01e05%20The%20Apartment.eng.html",
+      "displayed_description": "Night Court S01E05 The Apartment",
+      "exclusion_reason": "1984 original S01E05 is 'The Eye of the Beholder'; 'The Apartment' does not match original pilot-season episode 5.",
+      "wrong_series": "night-court-2023_or_misnumbered_source",
+      "confidence": "high",
+      "use": "Do not attach to S01E05 in original corpus without independent identity reconciliation."
+    }
+  ],
+  "policy": "Require original-series year plus known title or storyline/cast clues, not merely an SxxEyy label. Conflicts go to a quarantine ledger rather than source holdings."
+}
