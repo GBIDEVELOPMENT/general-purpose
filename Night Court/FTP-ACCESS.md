@@ -46,3 +46,14 @@ python "Night Court/tools/test_ftp_research_intake.py"
 The test uses a synthetic FTP tree, synthetic bytes and a fake account connection. It validates path boundaries, no unrequested transfers, staging deduplication and the missing-credential failure mode. It does not need an FTP account or touch a real server.
 
 **If you have installed the secret and run an inventory, provide the link to the GitHub Actions run.** Agents can then use the discovered directory and source filenames as grounded inputs for a focused research-branch transfer, without needing to know or expose the password.
+
+
+## Confirmed video root and metadata-only next step (October 23, 2026)
+
+The authenticated inventory workflow [run #40028731871](https://github.com/gamesbyian/general-purpose/actions/runs/40028731871) completed with `FTP_PASSWORD` available and found **`/downloads/Night Court TVRip S1-S9`**. It reported zero eligible SRT, VTT, TXT, ZIP or RAR files in that video-root scan; the inventory reached its 180-directory exploration bound, so this is **not proof that no subtitles exist anywhere on the account**. The owner confirms the named directory is the original nine-season TVRip collection without separate subtitles.
+
+The existing Season 1 and 2 RARs **have already been imported** from the repository into **35 season-mapped source-preserving SRT witnesses**. In `catalog/dialogue-coverage.json`, 35 episodes have locally held subtitles, 158 do not, and no version has independently verified audiovisual completeness. Do not rerun the two-RAR importer or pretend they are still waiting for extraction.
+
+New dedicated **metadata-only** workflow: [Night Court FTP video metadata](https://github.com/gamesbyian/general-purpose/actions/workflows/night-court-ftp-video-metadata.yml). Dispatch with root `/downloads/Night Court TVRip S1-S9` and `protocol=ftp` (or `ftps` if supported). It prints filenames, sizes, season/episode candidates and unmatched names from a bounded collection of Night Court-only directories. **No video bytes are transferred, the FTP account isn't modified, and no media is committed.** This can establish the available video editions and exact episode filename patterns for a future source-owner-approved offline ASR/synchronization workflow. The video-root identity is owner-supplied; an FTP file's filename alone is still not proof of screen identity.
+
+The separate local `tools/extract_local_media.py` already supports selecting embedded text subtitle streams and optional offline ASR for files legitimately accessible on the researcher's machine. GPU/CPU runtime cost, FTP transfer size and provenance checks need to be considered before attempting full nine-season ASR.
