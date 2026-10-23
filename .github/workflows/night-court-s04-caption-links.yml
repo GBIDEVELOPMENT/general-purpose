@@ -1,0 +1,51 @@
+name: Night Court Season 4 caption page evidence reconciliation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-season4-caption-links
+    paths:
+      - "Night Court/tools/add_verified_s04_caption_links.py"
+      - "Night Court/research/season04-caption-page-locations.json"
+      - ".github/workflows/night-court-s04-caption-links.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-season4-caption-links
+  cancel-in-progress: false
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check baseline corpus
+        run: python "Night Court/tools/validate.py"
+      - name: Attach and deduplicate original-series S04 caption links
+        run: python "Night Court/tools/add_verified_s04_caption_links.py"
+      - name: Independently recount physically held archive sources
+        run: python "Night Court/tools/audit_holdings.py"
+      - name: Rebuild priority acquisition queue and status
+        run: python "Night Court/tools/build_dialogue_source_queue.py"
+      - name: Check 193 assigned episodes and licensing boundaries
+        run: |
+          python "Night Court/tools/test_dialogue_source_queue.py"
+          python "Night Court/tools/validate_knowledge.py"
+      - name: Repeat to assert source-link idempotence
+        run: |
+          python "Night Court/tools/add_verified_s04_caption_links.py"
+          python "Night Court/tools/test_dialogue_source_queue.py"
+      - name: Commit source metadata to research branch only
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then
+            echo "No new source locations"
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): map all 22 original season-four caption pages"
+          git push origin HEAD:research/night-court-season4-caption-links

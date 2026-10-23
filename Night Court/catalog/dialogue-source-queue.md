@@ -4,10 +4,10 @@ Links are external research leads, not held dialogue or approved copying.
 
 | Source evidence status | Episodes |
 |---|---:|
-| no episode dialogue specific locator | 28 |
+| no episode dialogue specific locator | 8 |
 | inferred link only | 0 |
 | index coverage only | 121 |
-| direct episode page found not held | 44 |
+| direct episode page found not held | 64 |
 | held dialogue needs quality review | 0 |
 
 ## Verified episode-level external pages
@@ -51,7 +51,27 @@ Links are external research leads, not held dialogue or approved copying.
 - **S03E21 Hurricane (Part 1):** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E21%20-%20The%20Hurricane%20(1)%20(480p%20DVD%20x265%20Panda).eng.html)
 - **S03E22 Hurricane (Part 2):** [Subtitle Cat](https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E22%20-%20The%20Hurricane%20(2)%20(480p%20DVD%20x265%20Panda).eng.html)
 - **S04E01 The Next Voice You Hear:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e01_the_next_voice_you_hear.html)
-- **S04E15 A Day in the Life:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/Night%20Court%20s04e15%20A%20Day%20in%20the%20Life.html)
+- **S04E02 Giving Thanks:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e02_giving_thanks.html)
+- **S04E03 Author, Author:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e03_author_author.html)
+- **S04E04 Halloween II: The Return of Leon:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e04_halloween_ii_the_return_of_leon.html)
+- **S04E05 Dan's Operation (1):** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e05_dan_s_operation_1.html)
+- **S04E06 Dan's Operation (2):** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e06_dan_s_operation_2.html)
+- **S04E07 The New Judge:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e07_the_new_judge.html)
+- **S04E08 Contempt of Courting:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e08_contempt_of_courting.html)
+- **S04E09 Earthquake:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e09_earthquake.html)
+- **S04E10 Prince of a Guy:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e10_prince_of_a_guy.html)
+- **S04E11 New Year's Leave:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e11_new_year_s_leave.html)
+- **S04E12 Murder:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e12_murder.html)
+- **S04E13 Baby Talk:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e13_baby_talk.html)
+- **S04E14 The Modest Proposal:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e14_the_modest_proposal.html)
+- **S04E15 A Day in the Life:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/Night%20Court%20s04e15%20A%20Day%20in%20the%20Life.html), [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e15_a_day_in_the_life.html)
+- **S04E16 Rabid:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e16_rabid.html)
+- **S04E17 Christine's Friend:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e17_christine_s_friend.html)
+- **S04E18 Caught Red Handed:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e18_caught_red_handed.html)
+- **S04E19 Paternity:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e19_paternity.html)
+- **S04E20 Here's to You, Mrs. Robinson:** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e20_here_s_to_you_mrs._robinson.html)
+- **S04E21 Her Honor (1):** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e21_her_honor_1.html)
+- **S04E22 Her Honor (2):** [Subtitle Cat](https://www.subtitlecat.com/subs/1120/night_court_s04e22_her_honor_2.html)
 - **S05E01 Her Honor (3):** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/Night%20Court%20s05e01%20Her%20Honor%203.html)
 - **S07E23 A Closer Look:** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/Night%20Court%20s07e23%20A%20Closer%20Look.html)
 - **S08E06 Crossroads (1):** [Subtitle Cat](https://www.subtitlecat.com/subs/1121/night_court_s08e06_crossroads_1.html)
