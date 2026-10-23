@@ -30,6 +30,8 @@ jobs:
         run: python "Night Court/tools/discover_transcript_urls.py"
       - name: Save two licensed Wikipedia pages (attributed)
         run: python "Night Court/tools/collect_open_wiki.py"
+      - name: Extract 193 production-credit rows from licensed wiki
+        run: python "Night Court/tools/enrich_wikipedia_credits.py"
       - name: Validate enriched records
         run: python "Night Court/tools/validate.py"
       - name: Commit newly discovered information
