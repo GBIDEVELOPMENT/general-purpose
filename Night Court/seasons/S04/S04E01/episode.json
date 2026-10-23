@@ -94,7 +94,14 @@
   "holdings": {
     "full_transcripts": [],
     "caption_files": [],
-    "recaps": [],
+    "recaps": [
+      {
+        "source": "Wikipedia",
+        "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "provenance_file": "sources/wikipedia-capsule.provenance.json",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
     "reviews": [],
     "wiki_exports": [],
     "other": []
