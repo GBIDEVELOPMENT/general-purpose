@@ -1,0 +1,69 @@
+{
+  "id": "S01E10",
+  "title": "Some Like It Hot",
+  "broadcast_date": "1984-03-14",
+  "season": 1,
+  "episode": 10,
+  "plot_source_plaintext": "Russian Yakov Korolenko (Yakov Smirnoff), who is charged with selling stolen property, would rather burn down the courtroom and everyone in it than go to jail.\n\nNote: This episode marks the first appearance of Mike Finneran as courthouse handyman Art Fensterman. It also marks Karen Austin's final appearance as court clerk Lana Wagner, though she is listed in the opening credits through the end of the season.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S01/S01E10/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jay Sandrich",
+    "writer_credit": "Stuart Kreisman & Chris Cluess",
+    "production_code": "185368"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "lana-wagner",
+      "matched_terms": [
+        "Lana Wagner"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          324,
+          335
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "art-fensterman",
+      "matched_terms": [
+        "Art Fensterman"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          247,
+          261
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "court"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

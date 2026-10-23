@@ -1,0 +1,100 @@
+{
+  "id": "S08E21",
+  "title": "Mac Takes a Vocation",
+  "broadcast_date": "1991-03-20",
+  "season": 8,
+  "episode": 21,
+  "plot_source_plaintext": "Harry gets riled when a Supreme Court judge woos Mac away to serve as a vote-getting token on his staff and Dan hires a British valet in an attempt to replace Phil.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S08/S08E21/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "Fred Rubin",
+    "production_code": "186950"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          5
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          108,
+          111
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "mac-robinson",
+      "matched_terms": [
+        "Mac"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          49,
+          52
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "phil",
+      "matched_terms": [
+        "Phil"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          159,
+          163
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "court",
+        "judge"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

@@ -1,115 +1,183 @@
 {
-  "id": "S04E07",
-  "series": "night-court-1984",
-  "season": 4,
-  "episode": 7,
   "absolute_episode_by_season_sum": 64,
-  "title": "The New Judge",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1986-11-20",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Bert Felch",
+          "tvmaze_id": 997962,
+          "url": "https://www.tvmaze.com/characters/997962/night-court-bert-felch"
+        },
+        "person": {
+          "name": "Joe Regalbuto",
+          "tvmaze_id": 9467,
+          "url": "https://www.tvmaze.com/people/9467/joe-regalbuto"
+        }
+      },
+      {
+        "character": {
+          "name": "Ernie",
+          "tvmaze_id": 1206402,
+          "url": "https://www.tvmaze.com/characters/1206402/night-court-ernie"
+        },
+        "person": {
+          "name": "Dirk Blocker",
+          "tvmaze_id": 6929,
+          "url": "https://www.tvmaze.com/people/6929/dirk-blocker"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. MacNulty",
+          "tvmaze_id": 997963,
+          "url": "https://www.tvmaze.com/characters/997963/night-court-mr-macnulty"
+        },
+        "person": {
+          "name": "Patrick Cranshaw",
+          "tvmaze_id": 58298,
+          "url": "https://www.tvmaze.com/people/58298/patrick-cranshaw"
+        }
+      },
+      {
+        "character": {
+          "name": "Judge Watson",
+          "tvmaze_id": 1206401,
+          "url": "https://www.tvmaze.com/characters/1206401/night-court-judge-watson"
+        },
+        "person": {
+          "name": "Jeff Altman",
+          "tvmaze_id": 65025,
+          "url": "https://www.tvmaze.com/people/65025/jeff-altman"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. MacNulty",
+          "tvmaze_id": 1206403,
+          "url": "https://www.tvmaze.com/characters/1206403/night-court-mrs-macnulty"
+        },
+        "person": {
+          "name": "Dolores Albin",
+          "tvmaze_id": 217635,
+          "url": "https://www.tvmaze.com/people/217635/dolores-albin"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5837/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134306"
+    },
+    "production_code": "185939",
+    "writer_credit_display": "Linwood Boomer",
     "writers": [
       "Linwood Boomer"
-    ],
-    "guest_cast": [],
-    "production_code": "185939",
-    "writer_credit_display": "Linwood Boomer"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 7,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134306/night-court-4x07-the-new-judge",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 64,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 64
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S04E07",
+  "original_air_date": "1986-11-20",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 4,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The New Judge",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134306,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The New Judge",
     "episode_airdate_wikitext": "{{Start date|1986|11|20}}",
     "household_rating_and_share": "24.3/36",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The New Judge",
+    "viewers_millions": null
   }
 }

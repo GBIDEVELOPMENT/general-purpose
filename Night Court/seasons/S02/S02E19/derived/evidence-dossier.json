@@ -1,0 +1,77 @@
+{
+  "id": "S02E19",
+  "title": "Married Alive",
+  "broadcast_date": "1985-02-21",
+  "season": 2,
+  "episode": 19,
+  "plot_source_plaintext": "His friends believe the worst when Dan starts dating an awkward and plain young woman (Mimi Kennedy) who happens to be the daughter of a multimillionaire.\n\nNote: William Utay's first appearance as Phil Sanders the bum.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S02/S02E19/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Ron Osborn & Jeff Reno",
+    "production_code": "185619"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          35,
+          38
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "phil",
+      "matched_terms": [
+        "Phil"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          197,
+          201
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "family-parenthood",
+      "matched_words": [
+        "daughter"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "romantic-relationships",
+      "matched_words": [
+        "dating"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

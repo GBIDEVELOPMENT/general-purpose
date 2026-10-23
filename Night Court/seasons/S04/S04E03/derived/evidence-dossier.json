@@ -1,0 +1,73 @@
+{
+  "id": "S04E03",
+  "title": "Author, Author",
+  "broadcast_date": "1986-10-16",
+  "season": 4,
+  "episode": 3,
+  "plot_source_plaintext": "Bull tries his hand at writing a children's story for a contest, but when one of the judges personally appears to criticize how disturbing and violent it is, Bull becomes upset. Meanwhile, Dan is at the sexual mercy of a woman (Fran Drescher) diagnosed with multiple personality disorder.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S04/S04E03/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Dennis Koenig",
+    "production_code": "185933"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          189,
+          192
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          0,
+          4
+        ],
+        [
+          158,
+          162
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "family-parenthood",
+      "matched_words": [
+        "children"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

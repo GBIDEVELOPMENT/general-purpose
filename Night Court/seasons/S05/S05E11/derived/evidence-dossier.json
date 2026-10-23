@@ -1,0 +1,70 @@
+{
+  "id": "S05E11",
+  "title": "Let It Snow",
+  "broadcast_date": "1987-12-17",
+  "season": 5,
+  "episode": 11,
+  "plot_source_plaintext": "A blizzard traps everyone in the courthouse and cancels holiday plans, including a visit from Bull's mother, the skipper of a garbage scow.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S05/S05E11/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Tom Reeder",
+    "production_code": "186213"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          94,
+          98
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "family-parenthood",
+      "matched_words": [
+        "mother"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "religion-and-tradition",
+      "matched_words": [
+        "holiday"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "confinement-and-disaster",
+      "matched_words": [
+        "blizzard"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

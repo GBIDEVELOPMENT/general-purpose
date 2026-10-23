@@ -1,0 +1,84 @@
+{
+  "id": "S07E17",
+  "title": "The Talk Show",
+  "broadcast_date": "1990-02-21",
+  "season": 7,
+  "episode": 17,
+  "plot_source_plaintext": "Dan becomes the host of a Morton Downey, Jr.-esque talk show where he berates the guests and gets hurt by the audience members. Meanwhile, Mac and Quon Le's vacation to Graceland is interrupted.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S07/S07E17/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "Nancy Steen & Neil Thompson",
+    "production_code": "186345"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          3
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "mac-robinson",
+      "matched_terms": [
+        "Mac"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          139,
+          142
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "quon-le",
+      "matched_terms": [
+        "Quon Le"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          147,
+          154
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "performance-and-entertainment",
+      "matched_words": [
+        "show"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

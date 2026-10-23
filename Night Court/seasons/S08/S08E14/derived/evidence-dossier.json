@@ -1,0 +1,60 @@
+{
+  "id": "S08E14",
+  "title": "Presumed Insolvent",
+  "broadcast_date": "1991-01-23",
+  "season": 8,
+  "episode": 14,
+  "plot_source_plaintext": "Dan looks at Phil the bum in a whole new light when the bum rescues a defendant who's been left penniless by the late 1980s savings and loan crisis.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S08/S08E14/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "Kevin Kelton",
+    "production_code": "186944"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          3
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "phil",
+      "matched_terms": [
+        "Phil"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          13,
+          17
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

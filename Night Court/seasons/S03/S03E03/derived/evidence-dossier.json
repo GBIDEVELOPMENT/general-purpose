@@ -1,0 +1,85 @@
+{
+  "id": "S03E03",
+  "title": "Dad's First Date",
+  "broadcast_date": "1985-10-17",
+  "season": 3,
+  "episode": 3,
+  "plot_source_plaintext": "Christine's father (Eugene Roche) has his first date in eight years and ends up in court, charged with soliciting a prostitute (Estelle Harris); Harry also must deal with the tenants of a clothing-optional building.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S03/S03E03/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Reinhold Weege",
+    "production_code": "185716"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          145,
+          150
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          9
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "family-parenthood",
+      "matched_words": [
+        "father"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "romantic-relationships",
+      "matched_words": [
+        "date"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "court"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

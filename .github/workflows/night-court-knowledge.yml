@@ -1,0 +1,63 @@
+name: Night Court structured knowledge indexing
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-cast-indexing
+    paths:
+      - "Night Court/tools/build_retrieval_index.py"
+      - "Night Court/tools/collect_tvmaze_cast.py"
+      - "Night Court/tools/collect_licensed_context.py"
+      - "Night Court/tools/collect_licensed_fandom.py"
+      - "Night Court/tools/validate_knowledge.py"
+      - "Night Court/tools/build_cast_graph.py"
+      - "Night Court/tools/query_corpus.py"
+      - "Night Court/tools/audit_holdings.py"
+      - "Night Court/tools/build_source_statements.py"
+      - ".github/workflows/night-court-knowledge.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-knowledge
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate original corpus
+        run: python "Night Court/tools/validate.py"
+      - name: Collect factual TVmaze cast, crew and episode guestcast (bounded)
+        run: python "Night Court/tools/collect_tvmaze_cast.py"
+      - name: Preserve attributed CC BY-SA biographies and broadcast context
+        run: python "Night Court/tools/collect_licensed_context.py"
+      - name: Attempt authorized fan wiki source collection (fail closed)
+        run: python "Night Court/tools/collect_licensed_fandom.py"
+      - name: Build 193 licensed synopsis dossiers and retrieval indices
+        run: python "Night Court/tools/build_retrieval_index.py"
+      - name: Index source synopsis statements at character offsets
+        run: python "Night Court/tools/build_source_statements.py"
+      - name: Build episodic cast-credit and production collaboration graph
+        run: python "Night Court/tools/build_cast_graph.py"
+      - name: Audit episode-by-episode held artifacts and source discovery gaps
+        run: python "Night Court/tools/audit_holdings.py"
+      - name: Audit derived knowledge and attribution
+        run: python "Night Court/tools/validate_knowledge.py"
+      - name: Smoke-test evidence query
+        run: python "Night Court/tools/query_corpus.py" --theme romantic-relationships --limit 2
+      - name: Commit only Night Court archive changes
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then
+            echo "Corpus unchanged"; exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): index 193 episodes and cast evidence"
+          if [ "$GITHUB_REF_NAME" = "main" ]; then echo "Read-only main workflow: create a research branch to commit updates"; exit 0; fi
+          git push origin "HEAD:$GITHUB_REF_NAME"

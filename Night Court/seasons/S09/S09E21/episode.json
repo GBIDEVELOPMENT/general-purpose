@@ -1,119 +1,319 @@
 {
-  "id": "S09E21",
-  "series": "night-court-1984",
-  "season": 9,
-  "episode": 21,
   "absolute_episode_by_season_sum": 192,
+  "credits": {
+    "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Will Sanders",
+          "tvmaze_id": 1208566,
+          "url": "https://www.tvmaze.com/characters/1208566/night-court-will-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Spring",
+          "tvmaze_id": 1208504,
+          "url": "https://www.tvmaze.com/characters/1208504/night-court-spring"
+        },
+        "person": {
+          "name": "Jacalyn O'Shaughnessy",
+          "tvmaze_id": 157079,
+          "url": "https://www.tvmaze.com/people/157079/jacalyn-oshaughnessy"
+        }
+      },
+      {
+        "character": {
+          "name": "Norm",
+          "tvmaze_id": 1137010,
+          "url": "https://www.tvmaze.com/characters/1137010/night-court-norm"
+        },
+        "person": {
+          "name": "Phil Leeds",
+          "tvmaze_id": 45591,
+          "url": "https://www.tvmaze.com/people/45591/phil-leeds"
+        }
+      },
+      {
+        "character": {
+          "name": "Heidi",
+          "tvmaze_id": 238517,
+          "url": "https://www.tvmaze.com/characters/238517/night-court-heidi"
+        },
+        "person": {
+          "name": "Louan Gideon",
+          "tvmaze_id": 115533,
+          "url": "https://www.tvmaze.com/people/115533/louan-gideon"
+        }
+      },
+      {
+        "character": {
+          "name": "Claudia Mannix",
+          "tvmaze_id": 1208833,
+          "url": "https://www.tvmaze.com/characters/1208833/night-court-claudia-mannix"
+        },
+        "person": {
+          "name": "Catherine MacNeal",
+          "tvmaze_id": 21740,
+          "url": "https://www.tvmaze.com/people/21740/catherine-macneal"
+        }
+      },
+      {
+        "character": {
+          "name": "Candy",
+          "tvmaze_id": 1208874,
+          "url": "https://www.tvmaze.com/characters/1208874/night-court-candy"
+        },
+        "person": {
+          "name": "Sharon Lee Jones",
+          "tvmaze_id": 163495,
+          "url": "https://www.tvmaze.com/people/163495/sharon-lee-jones"
+        }
+      },
+      {
+        "character": {
+          "name": "Angelo",
+          "tvmaze_id": 1137011,
+          "url": "https://www.tvmaze.com/characters/1137011/night-court-angelo"
+        },
+        "person": {
+          "name": "Ralph Manza",
+          "tvmaze_id": 45697,
+          "url": "https://www.tvmaze.com/people/45697/ralph-manza"
+        }
+      },
+      {
+        "character": {
+          "name": "Bambi",
+          "tvmaze_id": 1209278,
+          "url": "https://www.tvmaze.com/characters/1209278/night-court-bambi"
+        },
+        "person": {
+          "name": "Lisa Melilli",
+          "tvmaze_id": 45625,
+          "url": "https://www.tvmaze.com/people/45625/lisa-melilli"
+        }
+      },
+      {
+        "character": {
+          "name": "Faye",
+          "tvmaze_id": 1209284,
+          "url": "https://www.tvmaze.com/characters/1209284/night-court-faye"
+        },
+        "person": {
+          "name": "Lisa Robins",
+          "tvmaze_id": 100123,
+          "url": "https://www.tvmaze.com/people/100123/lisa-robins"
+        }
+      },
+      {
+        "character": {
+          "name": "Miss Crosstown Bus",
+          "tvmaze_id": 238409,
+          "url": "https://www.tvmaze.com/characters/238409/night-court-miss-crosstown-bus"
+        },
+        "person": {
+          "name": "Lisa Montgomery",
+          "tvmaze_id": 115468,
+          "url": "https://www.tvmaze.com/people/115468/lisa-montgomery"
+        }
+      },
+      {
+        "character": {
+          "name": "Tom Korpal",
+          "tvmaze_id": 1209293,
+          "url": "https://www.tvmaze.com/characters/1209293/night-court-tom-korpal"
+        },
+        "person": {
+          "name": "Marty Pollio",
+          "tvmaze_id": 211769,
+          "url": "https://www.tvmaze.com/people/211769/marty-pollio"
+        }
+      },
+      {
+        "character": {
+          "name": "Tammy",
+          "tvmaze_id": 1208842,
+          "url": "https://www.tvmaze.com/characters/1208842/night-court-tammy"
+        },
+        "person": {
+          "name": "Theresa Bell",
+          "tvmaze_id": 408711,
+          "url": "https://www.tvmaze.com/people/408711/theresa-bell"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Merrill",
+          "tvmaze_id": 1209296,
+          "url": "https://www.tvmaze.com/characters/1209296/night-court-mr-merrill"
+        },
+        "person": {
+          "name": "Al Fann",
+          "tvmaze_id": 86454,
+          "url": "https://www.tvmaze.com/people/86454/al-fann"
+        }
+      },
+      {
+        "character": {
+          "name": "Melba",
+          "tvmaze_id": 1209297,
+          "url": "https://www.tvmaze.com/characters/1209297/night-court-melba"
+        },
+        "person": {
+          "name": "Melba Englander",
+          "tvmaze_id": 111118,
+          "url": "https://www.tvmaze.com/people/111118/melba-englander"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Burke",
+          "tvmaze_id": 1209295,
+          "url": "https://www.tvmaze.com/characters/1209295/night-court-mr-burke"
+        },
+        "person": {
+          "name": "Lee Weaver",
+          "tvmaze_id": 23560,
+          "url": "https://www.tvmaze.com/people/23560/lee-weaver"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5842/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134434"
+    },
+    "production_code": "187252",
+    "writer_credit_display": "Nancylee Myatt",
+    "writers": [
+      "Nancylee Myatt"
+    ]
+  },
+  "editorial_notes": [],
+  "episode": 21,
+  "episode_sources": [
+    {
+      "kind": "episode_guide",
+      "level": "series_catalog",
+      "provider": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
+    },
+    {
+      "kind": "episode_guide",
+      "level": "series_catalog",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
+      "verified": true
+    },
+    {
+      "kind": "episode_guide",
+      "level": "series_catalog",
+      "provider": "TheTVDB",
+      "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
+      "verified": true
+    },
+    {
+      "kind": "fan_wiki",
+      "level": "series_catalog",
+      "provider": "Night Court Wiki",
+      "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
+      "verified": true
+    },
+    {
+      "kind": "episode_guide",
+      "level": "series_catalog",
+      "provider": "NBC Archives fan wiki",
+      "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
+      "verified": true
+    },
+    {
+      "kind": "subtitles_index",
+      "level": "series_catalog",
+      "provider": "SUBDL",
+      "url": "https://subdl.com/subtitle/sd1301097/night-court",
+      "verified": true
+    },
+    {
+      "content_imported": false,
+      "kind": "episode_guide",
+      "level": "episode_in_index",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134434/night-court-9x21-opportunity-knock-knocks-2",
+      "verified": true
+    },
+    {
+      "content_imported": true,
+      "episode_number_in_source": 192,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
+      "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
+    }
+  ],
+  "holdings": {
+    "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
+    "recaps": [
+      {
+        "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
+        "provenance_file": "sources/wikipedia-capsule.provenance.json",
+        "source": "Wikipedia"
+      }
+    ],
+    "reviews": [],
+    "wiki_exports": []
+  },
+  "id": "S09E21",
+  "original_air_date": "1992-05-13",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 9,
+  "series": "night-court-1984",
+  "synthesis": {
+    "annotation_file": null,
+    "canonical_synopsis": null,
+    "knowledge_file": null,
+    "status": "not_started"
+  },
   "title": "Opportunity Knocks (Part 2)",
-  "title_status": "source_catalogued",
   "title_aliases": [
     "Opportunity Knock Knocks (Part 2)",
     "Opportunity Knock Knocks (2)",
     "Opportunity Knock Knocks"
   ],
-  "original_air_date": "1992-05-13",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
-  "credits": {
-    "director": "Jim Drake",
-    "writers": [
-      "Nancylee Myatt"
-    ],
-    "guest_cast": [],
-    "production_code": "187252",
-    "writer_credit_display": "Nancylee Myatt"
-  },
-  "episode_sources": [
-    {
-      "kind": "episode_guide",
-      "provider": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "episode_guide",
-      "provider": "TVmaze",
-      "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "episode_guide",
-      "provider": "TheTVDB",
-      "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "fan_wiki",
-      "provider": "Night Court Wiki",
-      "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "episode_guide",
-      "provider": "NBC Archives fan wiki",
-      "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "subtitles_index",
-      "provider": "SUBDL",
-      "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "episode_guide",
-      "provider": "TVmaze",
-      "url": "https://www.tvmaze.com/episodes/134434/night-court-9x21-opportunity-knock-knocks-2",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
-    },
-    {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
-      "content_imported": true,
-      "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 192
-    }
-  ],
-  "holdings": {
-    "full_transcripts": [],
-    "caption_files": [],
-    "recaps": [
-      {
-        "source": "Wikipedia",
-        "file": "authorized-text/wikipedia-episode-capsule.wikitext",
-        "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "reviews": [],
-    "wiki_exports": [],
-    "other": []
-  },
-  "synthesis": {
-    "status": "not_started",
-    "canonical_synopsis": null,
-    "knowledge_file": null,
-    "annotation_file": null
-  },
-  "editorial_notes": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134434,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Opportunity Knock Knocks",
     "episode_airdate_wikitext": "{{Start date|1992|5|13}}",
     "household_rating_and_share": null,
-    "viewers_millions": 24.6,
     "is_combined_broadcast_entry": true,
-    "shared_entry_parts": 2
+    "shared_entry_parts": 2,
+    "title_on_wikipedia": "Opportunity Knock Knocks",
+    "viewers_millions": 24.6
   }
 }

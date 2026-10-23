@@ -1,0 +1,69 @@
+{
+  "id": "S08E09",
+  "title": "A Night Court at the Opera",
+  "broadcast_date": "1990-11-16",
+  "season": 8,
+  "episode": 9,
+  "plot_source_plaintext": "Dan tries to win over Margaret during a night at the opera. Meanwhile, disciples of an ancient religion stalk Bull after a tabloid story reveals that one of their gods looks just like him.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S08/S08E09/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "Jim Pond & Bill Fuller",
+    "production_code": "186940"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          3
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          110,
+          114
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "religion-and-tradition",
+      "matched_words": [
+        "religion"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

@@ -1,115 +1,183 @@
 {
-  "id": "S07E11",
-  "series": "night-court-1984",
-  "season": 7,
-  "episode": 11,
   "absolute_episode_by_season_sum": 134,
-  "title": "Passion Plundered",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1989-12-20",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Pamela Hammond",
+          "tvmaze_id": 1003864,
+          "url": "https://www.tvmaze.com/characters/1003864/night-court-pamela-hammond"
+        },
+        "person": {
+          "name": "Annette McCarthy",
+          "tvmaze_id": 29231,
+          "url": "https://www.tvmaze.com/people/29231/annette-mccarthy"
+        }
+      },
+      {
+        "character": {
+          "name": "Hovel Mum",
+          "tvmaze_id": 1003866,
+          "url": "https://www.tvmaze.com/characters/1003866/night-court-hovel-mum"
+        },
+        "person": {
+          "name": "Albie Selznick",
+          "tvmaze_id": 8948,
+          "url": "https://www.tvmaze.com/people/8948/albie-selznick"
+        }
+      },
+      {
+        "character": {
+          "name": "Vlad Mum",
+          "tvmaze_id": 1003867,
+          "url": "https://www.tvmaze.com/characters/1003867/night-court-vlad-mum"
+        },
+        "person": {
+          "name": "Roy Johns",
+          "tvmaze_id": 351613,
+          "url": "https://www.tvmaze.com/people/351613/roy-johns"
+        }
+      },
+      {
+        "character": {
+          "name": "T. Mark Fitch",
+          "tvmaze_id": 1003865,
+          "url": "https://www.tvmaze.com/characters/1003865/night-court-t-mark-fitch"
+        },
+        "person": {
+          "name": "Kenneth Kimmins",
+          "tvmaze_id": 39596,
+          "url": "https://www.tvmaze.com/people/39596/kenneth-kimmins"
+        }
+      },
+      {
+        "character": {
+          "name": "Pupa Mum",
+          "tvmaze_id": 1003868,
+          "url": "https://www.tvmaze.com/characters/1003868/night-court-pupa-mum"
+        },
+        "person": {
+          "name": "Nathan Stein",
+          "tvmaze_id": 351614,
+          "url": "https://www.tvmaze.com/people/351614/nathan-stein"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5840/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134376"
+    },
+    "production_code": "186343",
+    "writer_credit_display": "Gail Rock",
     "writers": [
       "Gail Rock"
-    ],
-    "guest_cast": [],
-    "production_code": "186343",
-    "writer_credit_display": "Gail Rock"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 11,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134376/night-court-7x11-passion-plundered",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 134,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 134
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S07E11",
+  "original_air_date": "1989-12-20",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 7,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Passion Plundered",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134376,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Passion Plundered",
     "episode_airdate_wikitext": "{{Start date|1989|12|20}}",
     "household_rating_and_share": null,
-    "viewers_millions": 20.7,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Passion Plundered",
+    "viewers_millions": 20.7
   }
 }

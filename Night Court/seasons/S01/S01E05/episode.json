@@ -1,131 +1,199 @@
 {
-  "id": "S01E05",
-  "series": "night-court-1984",
-  "season": 1,
-  "episode": 5,
   "absolute_episode_by_season_sum": 5,
-  "title": "The Eye of the Beholder",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1984-02-08",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Leonard Blum",
+          "tvmaze_id": 664701,
+          "url": "https://www.tvmaze.com/characters/664701/night-court-leonard-blum"
+        },
+        "person": {
+          "name": "Philip Sterling",
+          "tvmaze_id": 95931,
+          "url": "https://www.tvmaze.com/people/95931/philip-sterling"
+        }
+      },
+      {
+        "character": {
+          "name": "Ralph Foley",
+          "tvmaze_id": 652671,
+          "url": "https://www.tvmaze.com/characters/652671/night-court-ralph-foley"
+        },
+        "person": {
+          "name": "Al Ruscio",
+          "tvmaze_id": 45260,
+          "url": "https://www.tvmaze.com/people/45260/al-ruscio"
+        }
+      },
+      {
+        "character": {
+          "name": "Vincent Frago",
+          "tvmaze_id": 664699,
+          "url": "https://www.tvmaze.com/characters/664699/night-court-vincent-frago"
+        },
+        "person": {
+          "name": "Stanley Brock",
+          "tvmaze_id": 99795,
+          "url": "https://www.tvmaze.com/people/99795/stanley-brock"
+        }
+      },
+      {
+        "character": {
+          "name": "Iris Keller",
+          "tvmaze_id": 664700,
+          "url": "https://www.tvmaze.com/characters/664700/night-court-iris-keller"
+        },
+        "person": {
+          "name": "Jennifer Richards",
+          "tvmaze_id": 62745,
+          "url": "https://www.tvmaze.com/people/62745/jennifer-richards"
+        }
+      },
+      {
+        "character": {
+          "name": "Police Officer",
+          "tvmaze_id": 664702,
+          "url": "https://www.tvmaze.com/characters/664702/night-court-police-officer"
+        },
+        "person": {
+          "name": "Michael Alaimo",
+          "tvmaze_id": 411390,
+          "url": "https://www.tvmaze.com/people/411390/michael-alaimo"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5834/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134247"
+    },
+    "production_code": "185363",
+    "writer_credit_display": "Larry Balmagia",
     "writers": [
       "Larry Balmagia"
-    ],
-    "guest_cast": [],
-    "production_code": "185363",
-    "writer_credit_display": "Larry Balmagia"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 5,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e05&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134247/night-court-1x05-the-eye-of-the-beholder",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 5,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 5
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S01E05",
+  "original_air_date": "1984-02-08",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 1,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The Eye of the Beholder",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134247,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The Eye of the Beholder",
     "episode_airdate_wikitext": "{{Start date|1984|2|8}}",
     "household_rating_and_share": "16.2/24",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The Eye of the Beholder",
+    "viewers_millions": null
   }
 }

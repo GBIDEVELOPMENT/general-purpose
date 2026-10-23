@@ -1,0 +1,1212 @@
+{
+  "attribution": {
+    "api_docs": "https://www.tvmaze.com/api",
+    "licensing": "CC BY-SA (see TVmaze API license)",
+    "retrieval_strategy": "show cast, show crew, season episodes with embedded guestcast",
+    "show_id": 1489,
+    "source": "TVmaze",
+    "warning": "Series cast data does not establish participation in each episode"
+  },
+  "credits": [
+    {
+      "person": {
+        "name": "Jeff Melman",
+        "tvmaze_id": 14269,
+        "url": "https://www.tvmaze.com/people/14269/jeff-melman"
+      },
+      "type": "Supervising Producer"
+    },
+    {
+      "person": {
+        "name": "Jeff Melman",
+        "tvmaze_id": 14269,
+        "url": "https://www.tvmaze.com/people/14269/jeff-melman"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Gary Murphy",
+        "tvmaze_id": 14814,
+        "url": "https://www.tvmaze.com/people/14814/gary-murphy"
+      },
+      "type": "Executive Producer"
+    },
+    {
+      "person": {
+        "name": "Gary Murphy",
+        "tvmaze_id": 14814,
+        "url": "https://www.tvmaze.com/people/14814/gary-murphy"
+      },
+      "type": "Executive Story Editor"
+    },
+    {
+      "person": {
+        "name": "Gary Murphy",
+        "tvmaze_id": 14814,
+        "url": "https://www.tvmaze.com/people/14814/gary-murphy"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Kathy Griffin",
+        "tvmaze_id": 24338,
+        "url": "https://www.tvmaze.com/people/24338/kathy-griffin"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Tom Straw",
+        "tvmaze_id": 28145,
+        "url": "https://www.tvmaze.com/people/28145/tom-straw"
+      },
+      "type": "Executive Story Editor"
+    },
+    {
+      "person": {
+        "name": "Tom Straw",
+        "tvmaze_id": 28145,
+        "url": "https://www.tvmaze.com/people/28145/tom-straw"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Elaine Aronson",
+        "tvmaze_id": 40639,
+        "url": "https://www.tvmaze.com/people/40639/elaine-aronson"
+      },
+      "type": "Executive Story Editor"
+    },
+    {
+      "person": {
+        "name": "Elaine Aronson",
+        "tvmaze_id": 40639,
+        "url": "https://www.tvmaze.com/people/40639/elaine-aronson"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Vince Cheung",
+        "tvmaze_id": 41492,
+        "url": "https://www.tvmaze.com/people/41492/vince-cheung"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Ben Montanio",
+        "tvmaze_id": 41493,
+        "url": "https://www.tvmaze.com/people/41493/ben-montanio"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Ron Osborn",
+        "tvmaze_id": 43660,
+        "url": "https://www.tvmaze.com/people/43660/ron-osborn"
+      },
+      "type": "Executive Story Editor"
+    },
+    {
+      "person": {
+        "name": "Jeff Reno",
+        "tvmaze_id": 43661,
+        "url": "https://www.tvmaze.com/people/43661/jeff-reno"
+      },
+      "type": "Executive Story Editor"
+    },
+    {
+      "person": {
+        "name": "Gilda Stratton",
+        "tvmaze_id": 43728,
+        "url": "https://www.tvmaze.com/people/43728/gilda-stratton"
+      },
+      "type": "Casting"
+    },
+    {
+      "person": {
+        "name": "Linwood Boomer",
+        "tvmaze_id": 49285,
+        "url": "https://www.tvmaze.com/people/49285/linwood-boomer"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Linwood Boomer",
+        "tvmaze_id": 49285,
+        "url": "https://www.tvmaze.com/people/49285/linwood-boomer"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Neil Thompson",
+        "tvmaze_id": 49288,
+        "url": "https://www.tvmaze.com/people/49288/neil-thompson"
+      },
+      "type": "Supervising Producer"
+    },
+    {
+      "person": {
+        "name": "Neil Thompson",
+        "tvmaze_id": 49288,
+        "url": "https://www.tvmaze.com/people/49288/neil-thompson"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Marsha Posner Williams",
+        "tvmaze_id": 50072,
+        "url": "https://www.tvmaze.com/people/50072/marsha-posner-williams"
+      },
+      "type": "Associate Producer"
+    },
+    {
+      "person": {
+        "name": "Nancylee Myatt",
+        "tvmaze_id": 52412,
+        "url": "https://www.tvmaze.com/people/52412/nancylee-myatt"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Sally S. Kleiman",
+        "tvmaze_id": 53089,
+        "url": "https://www.tvmaze.com/people/53089/sally-s-kleiman"
+      },
+      "type": "Production Manager"
+    },
+    {
+      "person": {
+        "name": "Chris Cluess",
+        "tvmaze_id": 53615,
+        "url": "https://www.tvmaze.com/people/53615/chris-cluess"
+      },
+      "type": "Executive Producer"
+    },
+    {
+      "person": {
+        "name": "Chris Cluess",
+        "tvmaze_id": 53615,
+        "url": "https://www.tvmaze.com/people/53615/chris-cluess"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Reinhold Weege",
+        "tvmaze_id": 55809,
+        "url": "https://www.tvmaze.com/people/55809/reinhold-weege"
+      },
+      "type": "Creator"
+    },
+    {
+      "person": {
+        "name": "Reinhold Weege",
+        "tvmaze_id": 55809,
+        "url": "https://www.tvmaze.com/people/55809/reinhold-weege"
+      },
+      "type": "Executive Producer"
+    },
+    {
+      "person": {
+        "name": "Stuart Kreisman",
+        "tvmaze_id": 55810,
+        "url": "https://www.tvmaze.com/people/55810/stuart-kreisman"
+      },
+      "type": "Executive Producer"
+    },
+    {
+      "person": {
+        "name": "Stuart Kreisman",
+        "tvmaze_id": 55810,
+        "url": "https://www.tvmaze.com/people/55810/stuart-kreisman"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Marcia Govon",
+        "tvmaze_id": 55811,
+        "url": "https://www.tvmaze.com/people/55811/marcia-govon"
+      },
+      "type": "Associate Producer"
+    },
+    {
+      "person": {
+        "name": "John Rappaport",
+        "tvmaze_id": 95442,
+        "url": "https://www.tvmaze.com/people/95442/john-rappaport"
+      },
+      "type": "Consultant"
+    },
+    {
+      "person": {
+        "name": "Gary Shimokawa",
+        "tvmaze_id": 96124,
+        "url": "https://www.tvmaze.com/people/96124/gary-shimokawa"
+      },
+      "type": "Associate Director"
+    },
+    {
+      "person": {
+        "name": "Harriet B. Helberg",
+        "tvmaze_id": 96589,
+        "url": "https://www.tvmaze.com/people/96589/harriet-b-helberg"
+      },
+      "type": "Casting"
+    },
+    {
+      "person": {
+        "name": "April Webster",
+        "tvmaze_id": 98398,
+        "url": "https://www.tvmaze.com/people/98398/april-webster"
+      },
+      "type": "Casting"
+    },
+    {
+      "person": {
+        "name": "Joshua Meltzer",
+        "tvmaze_id": 101322,
+        "url": "https://www.tvmaze.com/people/101322/joshua-meltzer"
+      },
+      "type": "Property Master"
+    },
+    {
+      "person": {
+        "name": "Bob Stevens",
+        "tvmaze_id": 105972,
+        "url": "https://www.tvmaze.com/people/105972/bob-stevens"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Bob Stevens",
+        "tvmaze_id": 105972,
+        "url": "https://www.tvmaze.com/people/105972/bob-stevens"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Richard Friedman",
+        "tvmaze_id": 140357,
+        "url": "https://www.tvmaze.com/people/140357/richard-friedman"
+      },
+      "type": "Set Decorator"
+    },
+    {
+      "person": {
+        "name": "Dennis Koenig",
+        "tvmaze_id": 140380,
+        "url": "https://www.tvmaze.com/people/140380/dennis-koenig"
+      },
+      "type": "Executive Story Consultant"
+    },
+    {
+      "person": {
+        "name": "Dianne Young",
+        "tvmaze_id": 145045,
+        "url": "https://www.tvmaze.com/people/145045/dianne-young"
+      },
+      "type": "Casting"
+    },
+    {
+      "person": {
+        "name": "Alison Rosenfeld",
+        "tvmaze_id": 148612,
+        "url": "https://www.tvmaze.com/people/148612/alison-rosenfeld"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Tim Steele",
+        "tvmaze_id": 150716,
+        "url": "https://www.tvmaze.com/people/150716/tim-steele"
+      },
+      "type": "Associate Producer"
+    },
+    {
+      "person": {
+        "name": "Tim Steele",
+        "tvmaze_id": 150716,
+        "url": "https://www.tvmaze.com/people/150716/tim-steele"
+      },
+      "type": "Co-Producer"
+    },
+    {
+      "person": {
+        "name": "Tim Steele",
+        "tvmaze_id": 150716,
+        "url": "https://www.tvmaze.com/people/150716/tim-steele"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Kevin Kelton",
+        "tvmaze_id": 150717,
+        "url": "https://www.tvmaze.com/people/150717/kevin-kelton"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Kevin Kelton",
+        "tvmaze_id": 150717,
+        "url": "https://www.tvmaze.com/people/150717/kevin-kelton"
+      },
+      "type": "Executive Story Consultant"
+    },
+    {
+      "person": {
+        "name": "Christine Reedy",
+        "tvmaze_id": 150718,
+        "url": "https://www.tvmaze.com/people/150718/christine-reedy"
+      },
+      "type": "Associate Producer"
+    },
+    {
+      "person": {
+        "name": "Christine Reedy",
+        "tvmaze_id": 150718,
+        "url": "https://www.tvmaze.com/people/150718/christine-reedy"
+      },
+      "type": "Production Coordinator"
+    },
+    {
+      "person": {
+        "name": "Howard Ritter",
+        "tvmaze_id": 150719,
+        "url": "https://www.tvmaze.com/people/150719/howard-ritter"
+      },
+      "type": "Associate Director"
+    },
+    {
+      "person": {
+        "name": "Howard Ritter",
+        "tvmaze_id": 150719,
+        "url": "https://www.tvmaze.com/people/150719/howard-ritter"
+      },
+      "type": "Second Unit Director"
+    },
+    {
+      "person": {
+        "name": "Allen Patapoff",
+        "tvmaze_id": 150720,
+        "url": "https://www.tvmaze.com/people/150720/allen-patapoff"
+      },
+      "type": "Re-Recording Mixer"
+    },
+    {
+      "person": {
+        "name": "Craig Porter",
+        "tvmaze_id": 150721,
+        "url": "https://www.tvmaze.com/people/150721/craig-porter"
+      },
+      "type": "Re-Recording Mixer"
+    },
+    {
+      "person": {
+        "name": "George Spiro Dibie",
+        "tvmaze_id": 151688,
+        "url": "https://www.tvmaze.com/people/151688/george-spiro-dibie"
+      },
+      "type": "Director Of Photography"
+    },
+    {
+      "person": {
+        "name": "Thomas Azzari",
+        "tvmaze_id": 151689,
+        "url": "https://www.tvmaze.com/people/151689/thomas-azzari"
+      },
+      "type": "Art Director"
+    },
+    {
+      "person": {
+        "name": "Thomas Azzari",
+        "tvmaze_id": 151689,
+        "url": "https://www.tvmaze.com/people/151689/thomas-azzari"
+      },
+      "type": "Production Designer"
+    },
+    {
+      "person": {
+        "name": "Jack Elliott",
+        "tvmaze_id": 151690,
+        "url": "https://www.tvmaze.com/people/151690/jack-elliott"
+      },
+      "type": "Composer"
+    },
+    {
+      "person": {
+        "name": "Jack Elliott",
+        "tvmaze_id": 151690,
+        "url": "https://www.tvmaze.com/people/151690/jack-elliott"
+      },
+      "type": "Main Title Theme"
+    },
+    {
+      "person": {
+        "name": "Nat Mauldin",
+        "tvmaze_id": 152325,
+        "url": "https://www.tvmaze.com/people/152325/nat-mauldin"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Nat Mauldin",
+        "tvmaze_id": 152325,
+        "url": "https://www.tvmaze.com/people/152325/nat-mauldin"
+      },
+      "type": "Executive Story Consultant"
+    },
+    {
+      "person": {
+        "name": "Nancy Steen",
+        "tvmaze_id": 154544,
+        "url": "https://www.tvmaze.com/people/154544/nancy-steen"
+      },
+      "type": "Supervising Producer"
+    },
+    {
+      "person": {
+        "name": "Nancy Steen",
+        "tvmaze_id": 154544,
+        "url": "https://www.tvmaze.com/people/154544/nancy-steen"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Barbara Murphy",
+        "tvmaze_id": 156263,
+        "url": "https://www.tvmaze.com/people/156263/barbara-murphy"
+      },
+      "type": "Costume Designer"
+    },
+    {
+      "person": {
+        "name": "Noel Newman",
+        "tvmaze_id": 156271,
+        "url": "https://www.tvmaze.com/people/156271/noel-newman"
+      },
+      "type": "Technical Director"
+    },
+    {
+      "person": {
+        "name": "Fred Rubin",
+        "tvmaze_id": 156515,
+        "url": "https://www.tvmaze.com/people/156515/fred-rubin"
+      },
+      "type": "Supervising Producer"
+    },
+    {
+      "person": {
+        "name": "Fred Rubin",
+        "tvmaze_id": 156515,
+        "url": "https://www.tvmaze.com/people/156515/fred-rubin"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Bill Fuller",
+        "tvmaze_id": 176440,
+        "url": "https://www.tvmaze.com/people/176440/bill-fuller"
+      },
+      "type": "Executive Story Editor"
+    },
+    {
+      "person": {
+        "name": "Bill Fuller",
+        "tvmaze_id": 176440,
+        "url": "https://www.tvmaze.com/people/176440/bill-fuller"
+      },
+      "type": "Executive Story Consultant"
+    },
+    {
+      "person": {
+        "name": "Tom Reeder",
+        "tvmaze_id": 178471,
+        "url": "https://www.tvmaze.com/people/178471/tom-reeder"
+      },
+      "type": "Creative Consultant"
+    },
+    {
+      "person": {
+        "name": "Tom Reeder",
+        "tvmaze_id": 178471,
+        "url": "https://www.tvmaze.com/people/178471/tom-reeder"
+      },
+      "type": "Executive Consultant"
+    },
+    {
+      "person": {
+        "name": "Tom Reeder",
+        "tvmaze_id": 178471,
+        "url": "https://www.tvmaze.com/people/178471/tom-reeder"
+      },
+      "type": "Executive Story Consultant"
+    },
+    {
+      "person": {
+        "name": "Molly Harris Campbell",
+        "tvmaze_id": 179078,
+        "url": "https://www.tvmaze.com/people/179078/molly-harris-campbell"
+      },
+      "type": "Costumer"
+    },
+    {
+      "person": {
+        "name": "Jim Pond",
+        "tvmaze_id": 182832,
+        "url": "https://www.tvmaze.com/people/182832/jim-pond"
+      },
+      "type": "Executive Story Editor"
+    },
+    {
+      "person": {
+        "name": "Jim Pond",
+        "tvmaze_id": 182832,
+        "url": "https://www.tvmaze.com/people/182832/jim-pond"
+      },
+      "type": "Executive Story Consultant"
+    },
+    {
+      "person": {
+        "name": "Tom Abraham",
+        "tvmaze_id": 187028,
+        "url": "https://www.tvmaze.com/people/187028/tom-abraham"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Bob Underwood",
+        "tvmaze_id": 199703,
+        "url": "https://www.tvmaze.com/people/199703/bob-underwood"
+      },
+      "type": "Executive Story Editor"
+    },
+    {
+      "person": {
+        "name": "Bob Underwood",
+        "tvmaze_id": 199703,
+        "url": "https://www.tvmaze.com/people/199703/bob-underwood"
+      },
+      "type": "Supervising Producer"
+    },
+    {
+      "person": {
+        "name": "Bob Underwood",
+        "tvmaze_id": 199703,
+        "url": "https://www.tvmaze.com/people/199703/bob-underwood"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Larry Strawther",
+        "tvmaze_id": 199705,
+        "url": "https://www.tvmaze.com/people/199705/larry-strawther"
+      },
+      "type": "Executive Producer"
+    },
+    {
+      "person": {
+        "name": "Larry Strawther",
+        "tvmaze_id": 199705,
+        "url": "https://www.tvmaze.com/people/199705/larry-strawther"
+      },
+      "type": "Executive Story Editor"
+    },
+    {
+      "person": {
+        "name": "Larry Strawther",
+        "tvmaze_id": 199705,
+        "url": "https://www.tvmaze.com/people/199705/larry-strawther"
+      },
+      "type": "Producer"
+    },
+    {
+      "person": {
+        "name": "Grady Roberts",
+        "tvmaze_id": 211938,
+        "url": "https://www.tvmaze.com/people/211938/grady-roberts"
+      },
+      "type": "Casting Associate"
+    },
+    {
+      "person": {
+        "name": "Sharon Himes",
+        "tvmaze_id": 215242,
+        "url": "https://www.tvmaze.com/people/215242/sharon-himes"
+      },
+      "type": "Casting"
+    },
+    {
+      "person": {
+        "name": "Dorie D'Amore",
+        "tvmaze_id": 215364,
+        "url": "https://www.tvmaze.com/people/215364/dorie-damore"
+      },
+      "type": "Production Assistant"
+    },
+    {
+      "person": {
+        "name": "Dan Frank",
+        "tvmaze_id": 216417,
+        "url": "https://www.tvmaze.com/people/216417/dan-frank"
+      },
+      "type": "Costume Supervisor"
+    },
+    {
+      "person": {
+        "name": "Dan Frank",
+        "tvmaze_id": 216417,
+        "url": "https://www.tvmaze.com/people/216417/dan-frank"
+      },
+      "type": "Costumer"
+    },
+    {
+      "person": {
+        "name": "Christine Ballard",
+        "tvmaze_id": 223379,
+        "url": "https://www.tvmaze.com/people/223379/christine-ballard"
+      },
+      "type": "Associate Director"
+    },
+    {
+      "person": {
+        "name": "Arthur Harris",
+        "tvmaze_id": 226489,
+        "url": "https://www.tvmaze.com/people/226489/arthur-harris"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "E. Mike Berlin",
+        "tvmaze_id": 247956,
+        "url": "https://www.tvmaze.com/people/247956/e-mike-berlin"
+      },
+      "type": "Director Of Photography"
+    },
+    {
+      "person": {
+        "name": "Chris Haire",
+        "tvmaze_id": 247957,
+        "url": "https://www.tvmaze.com/people/247957/chris-haire"
+      },
+      "type": "Re-Recording Mixer"
+    },
+    {
+      "person": {
+        "name": "Eileen Knight",
+        "tvmaze_id": 247959,
+        "url": "https://www.tvmaze.com/people/247959/eileen-knight"
+      },
+      "type": "Casting"
+    },
+    {
+      "person": {
+        "name": "Teresa O'Neill",
+        "tvmaze_id": 265267,
+        "url": "https://www.tvmaze.com/people/265267/teresa-oneill"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Ed LaPorta",
+        "tvmaze_id": 266959,
+        "url": "https://www.tvmaze.com/people/266959/ed-laporta"
+      },
+      "type": "Art Director"
+    },
+    {
+      "person": {
+        "name": "Brenda Good",
+        "tvmaze_id": 266960,
+        "url": "https://www.tvmaze.com/people/266960/brenda-good"
+      },
+      "type": "Hair Stylist"
+    },
+    {
+      "person": {
+        "name": "Jim Nielsen",
+        "tvmaze_id": 266961,
+        "url": "https://www.tvmaze.com/people/266961/jim-nielsen"
+      },
+      "type": "Makeup Artist"
+    },
+    {
+      "person": {
+        "name": "Dodie Warren",
+        "tvmaze_id": 266962,
+        "url": "https://www.tvmaze.com/people/266962/dodie-warren"
+      },
+      "type": "Makeup Artist"
+    },
+    {
+      "person": {
+        "name": "Thomas Klein",
+        "tvmaze_id": 269584,
+        "url": "https://www.tvmaze.com/people/269584/thomas-klein"
+      },
+      "type": "Associate Director"
+    },
+    {
+      "person": {
+        "name": "Gil Spragg",
+        "tvmaze_id": 269826,
+        "url": "https://www.tvmaze.com/people/269826/gil-spragg"
+      },
+      "type": "Property Master"
+    },
+    {
+      "person": {
+        "name": "Robert Berry",
+        "tvmaze_id": 302793,
+        "url": "https://www.tvmaze.com/people/302793/robert-berry"
+      },
+      "type": "Director Of Photography"
+    },
+    {
+      "person": {
+        "name": "Charles L. Barbee",
+        "tvmaze_id": 303396,
+        "url": "https://www.tvmaze.com/people/303396/charles-l-barbee"
+      },
+      "type": "Director Of Photography"
+    },
+    {
+      "person": {
+        "name": "Bill Bryan",
+        "tvmaze_id": 303407,
+        "url": "https://www.tvmaze.com/people/303407/bill-bryan"
+      },
+      "type": "Story Editor"
+    },
+    {
+      "person": {
+        "name": "Lee Maddux",
+        "tvmaze_id": 311153,
+        "url": "https://www.tvmaze.com/people/311153/lee-maddux"
+      },
+      "type": "Executive Story Consultant"
+    },
+    {
+      "person": {
+        "name": "Mike Gavaldon",
+        "tvmaze_id": 311154,
+        "url": "https://www.tvmaze.com/people/311154/mike-gavaldon"
+      },
+      "type": "Film Editor"
+    },
+    {
+      "person": {
+        "name": "Edward J. McDonald",
+        "tvmaze_id": 311155,
+        "url": "https://www.tvmaze.com/people/311155/edward-j-mcdonald"
+      },
+      "type": "Set Decorator"
+    },
+    {
+      "person": {
+        "name": "Marina Hart",
+        "tvmaze_id": 311156,
+        "url": "https://www.tvmaze.com/people/311156/marina-hart"
+      },
+      "type": "Hair Stylist"
+    },
+    {
+      "person": {
+        "name": "Ken Wensevic",
+        "tvmaze_id": 311157,
+        "url": "https://www.tvmaze.com/people/311157/ken-wensevic"
+      },
+      "type": "Makeup Artist"
+    },
+    {
+      "person": {
+        "name": "Peggy A. Vargas",
+        "tvmaze_id": 311158,
+        "url": "https://www.tvmaze.com/people/311158/peggy-a-vargas"
+      },
+      "type": "Production Supervisor"
+    },
+    {
+      "person": {
+        "name": "Klaus Landsberg",
+        "tvmaze_id": 311159,
+        "url": "https://www.tvmaze.com/people/311159/klaus-landsberg"
+      },
+      "type": "Audio Engineer"
+    },
+    {
+      "person": {
+        "name": "Robert J. Bonas",
+        "tvmaze_id": 311160,
+        "url": "https://www.tvmaze.com/people/311160/robert-j-bonas"
+      },
+      "type": "Camera Operator"
+    },
+    {
+      "person": {
+        "name": "Rick Caswell",
+        "tvmaze_id": 311163,
+        "url": "https://www.tvmaze.com/people/311163/rick-caswell"
+      },
+      "type": "Camera Operator"
+    },
+    {
+      "person": {
+        "name": "Rocky Danielson",
+        "tvmaze_id": 311165,
+        "url": "https://www.tvmaze.com/people/311165/rocky-danielson"
+      },
+      "type": "Camera Operator"
+    },
+    {
+      "person": {
+        "name": "Jeffrey Wheat",
+        "tvmaze_id": 311166,
+        "url": "https://www.tvmaze.com/people/311166/jeffrey-wheat"
+      },
+      "type": "Camera Operator"
+    },
+    {
+      "person": {
+        "name": "Mari Grimaud",
+        "tvmaze_id": 311169,
+        "url": "https://www.tvmaze.com/people/311169/mari-grimaud"
+      },
+      "type": "Costumer"
+    },
+    {
+      "person": {
+        "name": "Susie Francis Gunter",
+        "tvmaze_id": 311170,
+        "url": "https://www.tvmaze.com/people/311170/susie-francis-gunter"
+      },
+      "type": "Script Supervisor"
+    },
+    {
+      "person": {
+        "name": "Paul H. Coderko",
+        "tvmaze_id": 311171,
+        "url": "https://www.tvmaze.com/people/311171/paul-h-coderko"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Paul H. Coderko",
+        "tvmaze_id": 311171,
+        "url": "https://www.tvmaze.com/people/311171/paul-h-coderko"
+      },
+      "type": "Stage Manager"
+    },
+    {
+      "person": {
+        "name": "Andrew Gabin",
+        "tvmaze_id": 311173,
+        "url": "https://www.tvmaze.com/people/311173/andrew-gabin"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Susan Youngman",
+        "tvmaze_id": 311174,
+        "url": "https://www.tvmaze.com/people/311174/susan-youngman"
+      },
+      "type": "Production Assistant"
+    },
+    {
+      "person": {
+        "name": "Robert Holmes",
+        "tvmaze_id": 311175,
+        "url": "https://www.tvmaze.com/people/311175/robert-holmes"
+      },
+      "type": "Technical Director"
+    },
+    {
+      "person": {
+        "name": "Paul Korpal",
+        "tvmaze_id": 311176,
+        "url": "https://www.tvmaze.com/people/311176/paul-korpal"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Tammye McDavid",
+        "tvmaze_id": 311184,
+        "url": "https://www.tvmaze.com/people/311184/tammye-mcdavid"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Paula S. Warner",
+        "tvmaze_id": 311185,
+        "url": "https://www.tvmaze.com/people/311185/paula-s-warner"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Nathalie Woods",
+        "tvmaze_id": 311186,
+        "url": "https://www.tvmaze.com/people/311186/nathalie-woods"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Alex Gimenez",
+        "tvmaze_id": 313440,
+        "url": "https://www.tvmaze.com/people/313440/alex-gimenez"
+      },
+      "type": "Film Editor"
+    },
+    {
+      "person": {
+        "name": "Leigh Nicholson",
+        "tvmaze_id": 313441,
+        "url": "https://www.tvmaze.com/people/313441/leigh-nicholson"
+      },
+      "type": "Camera Operator"
+    },
+    {
+      "person": {
+        "name": "John Repczynski",
+        "tvmaze_id": 313442,
+        "url": "https://www.tvmaze.com/people/313442/john-repczynski"
+      },
+      "type": "Camera Operator"
+    },
+    {
+      "person": {
+        "name": "Craig Scott",
+        "tvmaze_id": 313443,
+        "url": "https://www.tvmaze.com/people/313443/craig-scott"
+      },
+      "type": "Casting Associate"
+    },
+    {
+      "person": {
+        "name": "Julie Starr Dresner",
+        "tvmaze_id": 313444,
+        "url": "https://www.tvmaze.com/people/313444/julie-starr-dresner"
+      },
+      "type": "Wardrobe Supervisor"
+    },
+    {
+      "person": {
+        "name": "Julie Starr Dresner",
+        "tvmaze_id": 313444,
+        "url": "https://www.tvmaze.com/people/313444/julie-starr-dresner"
+      },
+      "type": "Costumer"
+    },
+    {
+      "person": {
+        "name": "Sheri Colenberg",
+        "tvmaze_id": 313452,
+        "url": "https://www.tvmaze.com/people/313452/sheri-colenberg"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Bonnie Halpern",
+        "tvmaze_id": 313497,
+        "url": "https://www.tvmaze.com/people/313497/bonnie-halpern"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Jim Johnson",
+        "tvmaze_id": 313498,
+        "url": "https://www.tvmaze.com/people/313498/jim-johnson"
+      },
+      "type": "Technical Director"
+    },
+    {
+      "person": {
+        "name": "Cherie D. Miller",
+        "tvmaze_id": 313499,
+        "url": "https://www.tvmaze.com/people/313499/cherie-d-miller"
+      },
+      "type": "Production Assistant"
+    },
+    {
+      "person": {
+        "name": "Thomas M. Oseransky",
+        "tvmaze_id": 313500,
+        "url": "https://www.tvmaze.com/people/313500/thomas-m-oseransky"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Paula G. Rosenberg",
+        "tvmaze_id": 313501,
+        "url": "https://www.tvmaze.com/people/313501/paula-g-rosenberg"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Kevin M. Sullivan",
+        "tvmaze_id": 313502,
+        "url": "https://www.tvmaze.com/people/313502/kevin-m-sullivan"
+      },
+      "type": "Stage Manager"
+    },
+    {
+      "person": {
+        "name": "Sharon Topping",
+        "tvmaze_id": 313503,
+        "url": "https://www.tvmaze.com/people/313503/sharon-topping"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Robert C. Furginson",
+        "tvmaze_id": 313504,
+        "url": "https://www.tvmaze.com/people/313504/robert-c-furginson"
+      },
+      "type": "Set Decorator"
+    },
+    {
+      "person": {
+        "name": "Pat Melton",
+        "tvmaze_id": 313505,
+        "url": "https://www.tvmaze.com/people/313505/pat-melton"
+      },
+      "type": "Casting Associate"
+    },
+    {
+      "person": {
+        "name": "Steve Bortko",
+        "tvmaze_id": 313506,
+        "url": "https://www.tvmaze.com/people/313506/steve-bortko"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Kevin Kennedy",
+        "tvmaze_id": 313507,
+        "url": "https://www.tvmaze.com/people/313507/kevin-kennedy"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Grace Lau",
+        "tvmaze_id": 313508,
+        "url": "https://www.tvmaze.com/people/313508/grace-lau"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Janice Jackson",
+        "tvmaze_id": 313509,
+        "url": "https://www.tvmaze.com/people/313509/janice-jackson"
+      },
+      "type": "Production Assistant"
+    },
+    {
+      "person": {
+        "name": "Barbara Roche",
+        "tvmaze_id": 313510,
+        "url": "https://www.tvmaze.com/people/313510/barbara-roche"
+      },
+      "type": "Stage Manager"
+    },
+    {
+      "person": {
+        "name": "Tim Gilleste",
+        "tvmaze_id": 357008,
+        "url": "https://www.tvmaze.com/people/357008/tim-gilleste"
+      },
+      "type": "Production Staff"
+    },
+    {
+      "person": {
+        "name": "Jerry Davis",
+        "tvmaze_id": 396146,
+        "url": "https://www.tvmaze.com/people/396146/jerry-davis"
+      },
+      "type": "Associate Producer"
+    },
+    {
+      "person": {
+        "name": "Jerry Davis",
+        "tvmaze_id": 396146,
+        "url": "https://www.tvmaze.com/people/396146/jerry-davis"
+      },
+      "type": "Film Editor"
+    },
+    {
+      "person": {
+        "name": "Kimon Beazlie",
+        "tvmaze_id": 406661,
+        "url": "https://www.tvmaze.com/people/406661/kimon-beazlie"
+      },
+      "type": "Costume Designer"
+    },
+    {
+      "person": {
+        "name": "John Ward Nielsen",
+        "tvmaze_id": 406662,
+        "url": "https://www.tvmaze.com/people/406662/john-ward-nielsen"
+      },
+      "type": "Editor"
+    },
+    {
+      "person": {
+        "name": "Ken Azzari",
+        "tvmaze_id": 406663,
+        "url": "https://www.tvmaze.com/people/406663/ken-azzari"
+      },
+      "type": "Art Director"
+    },
+    {
+      "person": {
+        "name": "Rikk Greengrass",
+        "tvmaze_id": 406664,
+        "url": "https://www.tvmaze.com/people/406664/rikk-greengrass"
+      },
+      "type": "Production Supervisor"
+    },
+    {
+      "person": {
+        "name": "Avigail Yaacovy",
+        "tvmaze_id": 406665,
+        "url": "https://www.tvmaze.com/people/406665/avigail-yaacovy"
+      },
+      "type": "Unit Manager"
+    }
+  ]
+}

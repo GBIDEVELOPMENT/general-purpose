@@ -1,117 +1,209 @@
 {
-  "id": "S08E04",
-  "series": "night-court-1984",
-  "season": 8,
-  "episode": 4,
   "absolute_episode_by_season_sum": 151,
-  "title": "Can't Buy Me Love",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [
-    "Can't Buy Me, Love"
-  ],
-  "original_air_date": "1990-10-19",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Phil Sanders",
+          "tvmaze_id": 695688,
+          "url": "https://www.tvmaze.com/characters/695688/night-court-phil-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Margaret Turner",
+          "tvmaze_id": 1149654,
+          "url": "https://www.tvmaze.com/characters/1149654/night-court-margaret-turner"
+        },
+        "person": {
+          "name": "Mary Cadorette",
+          "tvmaze_id": 129727,
+          "url": "https://www.tvmaze.com/people/129727/mary-cadorette"
+        }
+      },
+      {
+        "character": {
+          "name": "Woman",
+          "tvmaze_id": 1208439,
+          "url": "https://www.tvmaze.com/characters/1208439/night-court-woman"
+        },
+        "person": {
+          "name": "Candi Milo",
+          "tvmaze_id": 60705,
+          "url": "https://www.tvmaze.com/people/60705/candi-milo"
+        }
+      },
+      {
+        "character": {
+          "name": "Sonia Blair",
+          "tvmaze_id": 1208436,
+          "url": "https://www.tvmaze.com/characters/1208436/night-court-sonia-blair"
+        },
+        "person": {
+          "name": "Louan Gideon",
+          "tvmaze_id": 115533,
+          "url": "https://www.tvmaze.com/people/115533/louan-gideon"
+        }
+      },
+      {
+        "character": {
+          "name": "M.C.",
+          "tvmaze_id": 1208437,
+          "url": "https://www.tvmaze.com/characters/1208437/night-court-mc"
+        },
+        "person": {
+          "name": "Marilyn McCoo",
+          "tvmaze_id": 168839,
+          "url": "https://www.tvmaze.com/people/168839/marilyn-mccoo"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Fostmulleur",
+          "tvmaze_id": 1208435,
+          "url": "https://www.tvmaze.com/characters/1208435/night-court-mrs-fostmulleur"
+        },
+        "person": {
+          "name": "Natalie Core",
+          "tvmaze_id": 87142,
+          "url": "https://www.tvmaze.com/people/87142/natalie-core"
+        }
+      },
+      {
+        "character": {
+          "name": "Roxy",
+          "tvmaze_id": 1208438,
+          "url": "https://www.tvmaze.com/characters/1208438/night-court-roxy"
+        },
+        "person": {
+          "name": "Debi A. Monahan",
+          "tvmaze_id": 47356,
+          "url": "https://www.tvmaze.com/people/47356/debi-a-monahan"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5841/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134393"
+    },
+    "production_code": "186934",
+    "writer_credit_display": "Elaine Aronson",
     "writers": [
       "Elaine Aronson"
-    ],
-    "guest_cast": [],
-    "production_code": "186934",
-    "writer_credit_display": "Elaine Aronson"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 4,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134393/night-court-8x04-cant-buy-me-love",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 151,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 151
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S08E04",
+  "original_air_date": "1990-10-19",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 8,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Can't Buy Me Love",
+  "title_aliases": [
+    "Can't Buy Me, Love"
+  ],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134393,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Can't Buy Me, Love",
     "episode_airdate_wikitext": "{{Start date|1990|10|19}}",
     "household_rating_and_share": null,
-    "viewers_millions": 13.9,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Can't Buy Me, Love",
+    "viewers_millions": 13.9
   }
 }

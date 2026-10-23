@@ -1,115 +1,231 @@
 {
-  "id": "S07E23",
-  "series": "night-court-1984",
-  "season": 7,
-  "episode": 23,
   "absolute_episode_by_season_sum": 146,
-  "title": "A Closer Look",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1990-04-11",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Harry Anderson and Howard Ritter",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Walt Quinn",
+          "tvmaze_id": 1207970,
+          "url": "https://www.tvmaze.com/characters/1207970/night-court-walt-quinn"
+        },
+        "person": {
+          "name": "Lou Bonacki",
+          "tvmaze_id": 18245,
+          "url": "https://www.tvmaze.com/people/18245/lou-bonacki"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Bailey",
+          "tvmaze_id": 1207978,
+          "url": "https://www.tvmaze.com/characters/1207978/night-court-mrs-bailey"
+        },
+        "person": {
+          "name": "Marianne Muellerleile",
+          "tvmaze_id": 9386,
+          "url": "https://www.tvmaze.com/people/9386/marianne-muellerleile"
+        }
+      },
+      {
+        "character": {
+          "name": "Angela",
+          "tvmaze_id": 1207979,
+          "url": "https://www.tvmaze.com/characters/1207979/night-court-angela"
+        },
+        "person": {
+          "name": "Melba Englander",
+          "tvmaze_id": 111118,
+          "url": "https://www.tvmaze.com/people/111118/melba-englander"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Alvarez",
+          "tvmaze_id": 1207976,
+          "url": "https://www.tvmaze.com/characters/1207976/night-court-mr-alvarez"
+        },
+        "person": {
+          "name": "Luis Contreras",
+          "tvmaze_id": 30151,
+          "url": "https://www.tvmaze.com/people/30151/luis-contreras"
+        }
+      },
+      {
+        "character": {
+          "name": "Laurie Quinn",
+          "tvmaze_id": 1207972,
+          "url": "https://www.tvmaze.com/characters/1207972/night-court-laurie-quinn"
+        },
+        "person": {
+          "name": "Lois Foraker",
+          "tvmaze_id": 45311,
+          "url": "https://www.tvmaze.com/people/45311/lois-foraker"
+        }
+      },
+      {
+        "character": {
+          "name": "Lucy Walsh",
+          "tvmaze_id": 1207973,
+          "url": "https://www.tvmaze.com/characters/1207973/night-court-lucy-walsh"
+        },
+        "person": {
+          "name": "Debbie McLeod",
+          "tvmaze_id": 44480,
+          "url": "https://www.tvmaze.com/people/44480/debbie-mcleod"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Borelli",
+          "tvmaze_id": 1207977,
+          "url": "https://www.tvmaze.com/characters/1207977/night-court-mr-borelli"
+        },
+        "person": {
+          "name": "Jan Rabson",
+          "tvmaze_id": 92901,
+          "url": "https://www.tvmaze.com/people/92901/jan-rabson"
+        }
+      },
+      {
+        "character": {
+          "name": "Prisoner #1",
+          "tvmaze_id": 1207980,
+          "url": "https://www.tvmaze.com/characters/1207980/night-court-prisoner-1"
+        },
+        "person": {
+          "name": "Essex Smith",
+          "tvmaze_id": 163428,
+          "url": "https://www.tvmaze.com/people/163428/essex-smith"
+        }
+      },
+      {
+        "character": {
+          "name": "Ed Druthers",
+          "tvmaze_id": 1207969,
+          "url": "https://www.tvmaze.com/characters/1207969/night-court-ed-druthers"
+        },
+        "person": {
+          "name": "Bob Sarlatte",
+          "tvmaze_id": 203291,
+          "url": "https://www.tvmaze.com/people/203291/bob-sarlatte"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5840/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134388"
+    },
+    "production_code": "186353",
+    "writer_credit_display": "Bill Bryan, Fred Rubin, and Bob Underwood",
     "writers": [
       "Bill Bryan, Fred Rubin, and Bob Underwood"
-    ],
-    "guest_cast": [],
-    "production_code": "186353",
-    "writer_credit_display": "Bill Bryan, Fred Rubin, and Bob Underwood"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 23,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134388/night-court-7x23-a-closer-look",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 146,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 146
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S07E23",
+  "original_air_date": "1990-04-11",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 7,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "A Closer Look",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134388,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "A Closer Look",
     "episode_airdate_wikitext": "{{Start date|1990|4|11}}",
     "household_rating_and_share": null,
-    "viewers_millions": 19.4,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "A Closer Look",
+    "viewers_millions": 19.4
   }
 }

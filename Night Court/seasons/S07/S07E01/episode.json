@@ -1,117 +1,197 @@
 {
-  "id": "S07E01",
-  "series": "night-court-1984",
-  "season": 7,
-  "episode": 1,
   "absolute_episode_by_season_sum": 124,
-  "title": "Life with Buddy",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [
-    "Life With Buddy"
-  ],
-  "original_air_date": "1989-09-27",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Buddy Ryan",
+          "tvmaze_id": 499951,
+          "url": "https://www.tvmaze.com/characters/499951/night-court-buddy-ryan"
+        },
+        "person": {
+          "name": "John Astin",
+          "tvmaze_id": 61397,
+          "url": "https://www.tvmaze.com/people/61397/john-astin"
+        }
+      },
+      {
+        "character": {
+          "name": "Mike Sr.",
+          "tvmaze_id": 834863,
+          "url": "https://www.tvmaze.com/characters/834863/night-court-mike-sr"
+        },
+        "person": {
+          "name": "King Moody",
+          "tvmaze_id": 87786,
+          "url": "https://www.tvmaze.com/people/87786/king-moody"
+        }
+      },
+      {
+        "character": {
+          "name": "Mark Colson",
+          "tvmaze_id": 834861,
+          "url": "https://www.tvmaze.com/characters/834861/night-court-mark-colson"
+        },
+        "person": {
+          "name": "Charles Levin",
+          "tvmaze_id": 96097,
+          "url": "https://www.tvmaze.com/people/96097/charles-levin"
+        }
+      },
+      {
+        "character": {
+          "name": "Jacqueline",
+          "tvmaze_id": 834862,
+          "url": "https://www.tvmaze.com/characters/834862/night-court-jacqueline"
+        },
+        "person": {
+          "name": "Mary Stavin",
+          "tvmaze_id": 29202,
+          "url": "https://www.tvmaze.com/people/29202/mary-stavin"
+        }
+      },
+      {
+        "character": {
+          "name": "Mover",
+          "tvmaze_id": 834864,
+          "url": "https://www.tvmaze.com/characters/834864/night-court-mover"
+        },
+        "person": {
+          "name": "Hartley Silver",
+          "tvmaze_id": 96340,
+          "url": "https://www.tvmaze.com/people/96340/hartley-silver"
+        }
+      },
+      {
+        "character": {
+          "name": "Mike Jr.",
+          "tvmaze_id": 834865,
+          "url": "https://www.tvmaze.com/characters/834865/night-court-mike-jr"
+        },
+        "person": {
+          "name": "Roger Nolan",
+          "tvmaze_id": 159193,
+          "url": "https://www.tvmaze.com/people/159193/roger-nolan"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5840/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134366"
+    },
+    "production_code": "186331",
+    "writer_credit_display": "Bob Underwood",
     "writers": [
       "Bob Underwood"
-    ],
-    "guest_cast": [],
-    "production_code": "186331",
-    "writer_credit_display": "Bob Underwood"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 1,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134366/night-court-7x01-life-with-buddy",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 124,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 124
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S07E01",
+  "original_air_date": "1989-09-27",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 7,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Life with Buddy",
+  "title_aliases": [
+    "Life With Buddy"
+  ],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134366,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Life With Buddy",
     "episode_airdate_wikitext": "{{Start date|1989|9|27}}",
     "household_rating_and_share": null,
-    "viewers_millions": 25.3,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Life With Buddy",
+    "viewers_millions": 25.3
   }
 }

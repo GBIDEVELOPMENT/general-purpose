@@ -1,0 +1,150 @@
+{
+  "id": "S09E20",
+  "title": "Opportunity Knocks (Part 1)",
+  "broadcast_date": "1992-05-13",
+  "season": 9,
+  "episode": 20,
+  "plot_source_plaintext": "In the series finale, Harry contemplates the many job opportunities coming his way, Christine runs against a Congressman who's related to Art the janitor, Dan comes to terms with his womanizing ways when a wealthy socialite bars him from marrying her daughter and he dreams that every woman in New York City is suing him; Mac considers a career change, and Bull befriends some old men who turn out to be aliens from Jupiter who need his help on their home planet. The last line of the series is Bull's reply: \"Ohh-kay.\"",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S09/S09E20/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "Elaine Aronson",
+    "production_code": "187251"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          22,
+          27
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          155,
+          158
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          357,
+          361
+        ],
+        [
+          495,
+          499
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          84,
+          93
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "mac-robinson",
+      "matched_terms": [
+        "Mac"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          322,
+          325
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "art-fensterman",
+      "matched_terms": [
+        "Art"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          138,
+          141
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "family-parenthood",
+      "matched_words": [
+        "daughter"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "work-and-career",
+      "matched_words": [
+        "career",
+        "job"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "money-and-class",
+      "matched_words": [
+        "wealthy"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

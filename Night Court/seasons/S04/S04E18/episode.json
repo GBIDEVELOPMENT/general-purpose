@@ -1,115 +1,159 @@
 {
-  "id": "S04E18",
-  "series": "night-court-1984",
-  "season": 4,
-  "episode": 18,
   "absolute_episode_by_season_sum": 75,
-  "title": "Caught Red Handed",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1987-02-26",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Harry Anderson and Howard Ritter",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Arthur Thursby",
+          "tvmaze_id": 885622,
+          "url": "https://www.tvmaze.com/characters/885622/night-court-arthur-thursby"
+        },
+        "person": {
+          "name": "Michael Gross",
+          "tvmaze_id": 6535,
+          "url": "https://www.tvmaze.com/people/6535/michael-gross"
+        }
+      },
+      {
+        "character": {
+          "name": "Roberta La Page",
+          "tvmaze_id": 885623,
+          "url": "https://www.tvmaze.com/characters/885623/night-court-roberta-la-page"
+        },
+        "person": {
+          "name": "Teresa Ganzel",
+          "tvmaze_id": 164971,
+          "url": "https://www.tvmaze.com/people/164971/teresa-ganzel"
+        }
+      },
+      {
+        "character": {
+          "name": "Vicki Horwits",
+          "tvmaze_id": 885624,
+          "url": "https://www.tvmaze.com/characters/885624/night-court-vicki-horwits"
+        },
+        "person": {
+          "name": "Turk Pipkin",
+          "tvmaze_id": 167622,
+          "url": "https://www.tvmaze.com/people/167622/turk-pipkin"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5837/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134317"
+    },
+    "production_code": "185948",
+    "writer_credit_display": "Harry Anderson",
     "writers": [
       "Harry Anderson"
-    ],
-    "guest_cast": [],
-    "production_code": "185948",
-    "writer_credit_display": "Harry Anderson"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 18,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134317/night-court-4x18-caught-red-handed",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 75,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 75
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S04E18",
+  "original_air_date": "1987-02-26",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 4,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Caught Red Handed",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134317,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Caught Red Handed",
     "episode_airdate_wikitext": "{{Start date|1987|2|26}}",
     "household_rating_and_share": null,
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Caught Red Handed",
+    "viewers_millions": null
   }
 }

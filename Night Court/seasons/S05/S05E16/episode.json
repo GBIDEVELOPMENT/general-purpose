@@ -1,115 +1,399 @@
 {
-  "id": "S05E16",
-  "series": "night-court-1984",
-  "season": 5,
-  "episode": 16,
   "absolute_episode_by_season_sum": 95,
-  "title": "Another Day in the Life",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1988-02-18",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Sister Mo",
+          "tvmaze_id": 1207129,
+          "url": "https://www.tvmaze.com/characters/1207129/night-court-sister-mo"
+        },
+        "person": {
+          "name": "Sandy Martin",
+          "tvmaze_id": 21493,
+          "url": "https://www.tvmaze.com/people/21493/sandy-martin"
+        }
+      },
+      {
+        "character": {
+          "name": "Miss Phillips",
+          "tvmaze_id": 1207126,
+          "url": "https://www.tvmaze.com/characters/1207126/night-court-miss-phillips"
+        },
+        "person": {
+          "name": "Marcia Wallace",
+          "tvmaze_id": 34650,
+          "url": "https://www.tvmaze.com/people/34650/marcia-wallace"
+        }
+      },
+      {
+        "character": {
+          "name": "Morley",
+          "tvmaze_id": 1207125,
+          "url": "https://www.tvmaze.com/characters/1207125/night-court-morley"
+        },
+        "person": {
+          "name": "Brian Stokes Mitchell",
+          "tvmaze_id": 65957,
+          "url": "https://www.tvmaze.com/people/65957/brian-stokes-mitchell"
+        }
+      },
+      {
+        "character": {
+          "name": "Sister Carla",
+          "tvmaze_id": 1207131,
+          "url": "https://www.tvmaze.com/characters/1207131/night-court-sister-carla"
+        },
+        "person": {
+          "name": "Marji Martin",
+          "tvmaze_id": 154328,
+          "url": "https://www.tvmaze.com/people/154328/marji-martin"
+        }
+      },
+      {
+        "character": {
+          "name": "Dave Costanza",
+          "tvmaze_id": 1207134,
+          "url": "https://www.tvmaze.com/characters/1207134/night-court-dave-costanza"
+        },
+        "person": {
+          "name": "Karl Johnson",
+          "tvmaze_id": 289185,
+          "url": "https://www.tvmaze.com/people/289185/karl-johnson"
+        }
+      },
+      {
+        "character": {
+          "name": "Oris Edwards",
+          "tvmaze_id": 1207124,
+          "url": "https://www.tvmaze.com/characters/1207124/night-court-oris-edwards"
+        },
+        "person": {
+          "name": "Pat Corley",
+          "tvmaze_id": 97163,
+          "url": "https://www.tvmaze.com/people/97163/pat-corley"
+        }
+      },
+      {
+        "character": {
+          "name": "Roper",
+          "tvmaze_id": 1207127,
+          "url": "https://www.tvmaze.com/characters/1207127/night-court-roper"
+        },
+        "person": {
+          "name": "Boyd Bodwell",
+          "tvmaze_id": 105813,
+          "url": "https://www.tvmaze.com/people/105813/boyd-bodwell"
+        }
+      },
+      {
+        "character": {
+          "name": "Quartet",
+          "tvmaze_id": 1207145,
+          "url": "https://www.tvmaze.com/characters/1207145/night-court-quartet"
+        },
+        "person": {
+          "name": "Douglas Anderson",
+          "tvmaze_id": 106802,
+          "url": "https://www.tvmaze.com/people/106802/douglas-anderson"
+        }
+      },
+      {
+        "character": {
+          "name": "Quartet",
+          "tvmaze_id": 1207146,
+          "url": "https://www.tvmaze.com/characters/1207146/night-court-quartet"
+        },
+        "person": {
+          "name": "James Kline",
+          "tvmaze_id": 106803,
+          "url": "https://www.tvmaze.com/people/106803/james-kline"
+        }
+      },
+      {
+        "character": {
+          "name": "Martha",
+          "tvmaze_id": 1207135,
+          "url": "https://www.tvmaze.com/characters/1207135/night-court-martha"
+        },
+        "person": {
+          "name": "Molly David",
+          "tvmaze_id": 117404,
+          "url": "https://www.tvmaze.com/people/117404/molly-david"
+        }
+      },
+      {
+        "character": {
+          "name": "Murdock",
+          "tvmaze_id": 1207128,
+          "url": "https://www.tvmaze.com/characters/1207128/night-court-murdock"
+        },
+        "person": {
+          "name": "Dennis A. Pratt",
+          "tvmaze_id": 135646,
+          "url": "https://www.tvmaze.com/people/135646/dennis-a-pratt"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Klemper",
+          "tvmaze_id": 1207133,
+          "url": "https://www.tvmaze.com/characters/1207133/night-court-mrs-klemper"
+        },
+        "person": {
+          "name": "Lou Hancock",
+          "tvmaze_id": 162980,
+          "url": "https://www.tvmaze.com/people/162980/lou-hancock"
+        }
+      },
+      {
+        "character": {
+          "name": "Harris",
+          "tvmaze_id": 1207137,
+          "url": "https://www.tvmaze.com/characters/1207137/night-court-harris"
+        },
+        "person": {
+          "name": "David Carlile",
+          "tvmaze_id": 223308,
+          "url": "https://www.tvmaze.com/people/223308/david-carlile"
+        }
+      },
+      {
+        "character": {
+          "name": "Sister Laurie",
+          "tvmaze_id": 1207130,
+          "url": "https://www.tvmaze.com/characters/1207130/night-court-sister-laurie"
+        },
+        "person": {
+          "name": "Cathy Cahn",
+          "tvmaze_id": 282240,
+          "url": "https://www.tvmaze.com/people/282240/cathy-cahn"
+        }
+      },
+      {
+        "character": {
+          "name": "Velma",
+          "tvmaze_id": 1207136,
+          "url": "https://www.tvmaze.com/characters/1207136/night-court-velma"
+        },
+        "person": {
+          "name": "Lenore Woodward",
+          "tvmaze_id": 96778,
+          "url": "https://www.tvmaze.com/people/96778/lenore-woodward"
+        }
+      },
+      {
+        "character": {
+          "name": "The Pope",
+          "tvmaze_id": 1207140,
+          "url": "https://www.tvmaze.com/characters/1207140/night-court-the-pope"
+        },
+        "person": {
+          "name": "Eugene Greytak",
+          "tvmaze_id": 97024,
+          "url": "https://www.tvmaze.com/people/97024/eugene-greytak"
+        }
+      },
+      {
+        "character": {
+          "name": "Reilly",
+          "tvmaze_id": 1207141,
+          "url": "https://www.tvmaze.com/characters/1207141/night-court-reilly"
+        },
+        "person": {
+          "name": "Steven R. Bannister",
+          "tvmaze_id": 408347,
+          "url": "https://www.tvmaze.com/people/408347/steven-r-bannister"
+        }
+      },
+      {
+        "character": {
+          "name": "Hooker",
+          "tvmaze_id": 1207142,
+          "url": "https://www.tvmaze.com/characters/1207142/night-court-hooker"
+        },
+        "person": {
+          "name": "Gayle Woods",
+          "tvmaze_id": 278758,
+          "url": "https://www.tvmaze.com/people/278758/gayle-woods"
+        }
+      },
+      {
+        "character": {
+          "name": "Shouting Man",
+          "tvmaze_id": 1207132,
+          "url": "https://www.tvmaze.com/characters/1207132/night-court-shouting-man"
+        },
+        "person": {
+          "name": "Gary Grossman",
+          "tvmaze_id": 180727,
+          "url": "https://www.tvmaze.com/people/180727/gary-grossman"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Shafer",
+          "tvmaze_id": 1207139,
+          "url": "https://www.tvmaze.com/characters/1207139/night-court-mr-shafer"
+        },
+        "person": {
+          "name": "Steve DeVorkin",
+          "tvmaze_id": 109925,
+          "url": "https://www.tvmaze.com/people/109925/steve-devorkin"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. DeYoung",
+          "tvmaze_id": 1207138,
+          "url": "https://www.tvmaze.com/characters/1207138/night-court-mr-deyoung"
+        },
+        "person": {
+          "name": "Ron Boussom",
+          "tvmaze_id": 107023,
+          "url": "https://www.tvmaze.com/people/107023/ron-boussom"
+        }
+      },
+      {
+        "character": {
+          "name": "Quartet",
+          "tvmaze_id": 1207143,
+          "url": "https://www.tvmaze.com/characters/1207143/night-court-quartet"
+        },
+        "person": {
+          "name": "Larry F. Wright",
+          "tvmaze_id": 106801,
+          "url": "https://www.tvmaze.com/people/106801/larry-f-wright"
+        }
+      },
+      {
+        "character": {
+          "name": "Quartet",
+          "tvmaze_id": 1207144,
+          "url": "https://www.tvmaze.com/characters/1207144/night-court-quartet"
+        },
+        "person": {
+          "name": "Peter Neushul",
+          "tvmaze_id": 106800,
+          "url": "https://www.tvmaze.com/people/106800/peter-neushul"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5838/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134337"
+    },
+    "production_code": "186217",
+    "writer_credit_display": "Larry Strawther & Gary Murphy",
     "writers": [
       "Larry Strawther & Gary Murphy"
-    ],
-    "guest_cast": [],
-    "production_code": "186217",
-    "writer_credit_display": "Larry Strawther & Gary Murphy"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 16,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134337/night-court-5x16-another-day-in-the-life",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 95,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 95
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S05E16",
+  "original_air_date": "1988-02-18",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 5,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Another Day in the Life",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134337,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Another Day in the Life",
     "episode_airdate_wikitext": "{{Start date|1988|2|18}}",
     "household_rating_and_share": "18.3/27",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Another Day in the Life",
+    "viewers_millions": null
   }
 }

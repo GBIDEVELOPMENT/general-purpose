@@ -1,0 +1,46 @@
+{
+  "episodes_indexed": 193,
+  "character_mentions": 440,
+  "lexical_topic_hints": 255,
+  "episodes_with_named_character_mentions": 189,
+  "episodes_with_lexical_topic_hints": 151,
+  "character_mention_episode_counts": {
+    "art-fensterman": 7,
+    "billie-young": 6,
+    "buddy-ryan": 11,
+    "bull-shannon": 45,
+    "christine-sullivan": 64,
+    "dan-fielding": 101,
+    "florence-kleiner": 5,
+    "harry-stone": 110,
+    "lana-wagner": 5,
+    "leon": 2,
+    "liz-williams": 2,
+    "mac-robinson": 28,
+    "phil": 14,
+    "quon-le": 7,
+    "roz-russell": 25,
+    "selma-hacker": 7,
+    "sheila-gardner": 1
+  },
+  "theme_episode_counts": {
+    "animals": 4,
+    "confinement-and-disaster": 10,
+    "family-parenthood": 44,
+    "health-and-medicine": 12,
+    "legal-institutions": 64,
+    "money-and-class": 16,
+    "performance-and-entertainment": 26,
+    "politics-and-government": 7,
+    "religion-and-tradition": 6,
+    "romantic-relationships": 33,
+    "supernatural-and-scifi": 2,
+    "work-and-career": 31
+  },
+  "limitations": [
+    "lexical indexing, not narrative fact extraction",
+    "licensed Wikipedia capsule source reused; no independent corroboration",
+    "episode-specific case studies have not been scene-validated"
+  ],
+  "canonical_status": "retrieval_scaffold_not_canonical_knowledge"
+}

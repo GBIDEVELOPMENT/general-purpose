@@ -1,0 +1,63 @@
+{
+  "id": "S02E06",
+  "title": "Bull Gets a Kid",
+  "broadcast_date": "1984-11-08",
+  "season": 2,
+  "episode": 6,
+  "plot_source_plaintext": "Bull is finally allowed a foster son by a volunteer-fathers organization, but he winds up with a surprise when he learns the kid is a girl (Pamela Adlon, credited as \"Pamela Segall\") posing as a boy to help out her single mother.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S02/S02E06/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Nat Mauldin",
+    "production_code": "185608"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          4
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "family-parenthood",
+      "matched_words": [
+        "mother",
+        "son"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "performance-and-entertainment",
+      "matched_words": [
+        "single"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

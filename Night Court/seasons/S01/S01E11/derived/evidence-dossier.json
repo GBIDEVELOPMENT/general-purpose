@@ -1,0 +1,54 @@
+{
+  "id": "S01E11",
+  "title": "Harry and the Rock Star",
+  "broadcast_date": "1984-03-21",
+  "season": 1,
+  "episode": 11,
+  "plot_source_plaintext": "Fans and reporters disrupt court proceedings when Harry dates a rock star (Kristine DeBell), and tries to cope with a new court clerk.\n\nNote: This is the first episode to have the evil laugh as part of the Starry Night Productions logo.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S01/S01E11/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jay Sandrich",
+    "writer_credit": "Reinhold Weege",
+    "production_code": "185360"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          50,
+          55
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "court"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

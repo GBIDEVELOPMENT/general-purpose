@@ -1,0 +1,96 @@
+{
+  "id": "S02E09",
+  "title": "Inside Harry Stone",
+  "broadcast_date": "1984-11-29",
+  "season": 2,
+  "episode": 9,
+  "plot_source_plaintext": "Harry is reluctant to undergo tests for his ulcer symptoms, until Billie confesses her true feelings for him.\n\nNote: John Astin guest stars as a hospital patient named Kenny; he would later have a recurring role as Harry's father, Buddy Ryan.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S02/S02E09/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Stuart Kreisman & Chris Cluess",
+    "production_code": "185606"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          0,
+          5
+        ],
+        [
+          215,
+          220
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "billie-young",
+      "matched_terms": [
+        "Billie"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          66,
+          72
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "buddy-ryan",
+      "matched_terms": [
+        "Buddy Ryan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          231,
+          241
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "family-parenthood",
+      "matched_words": [
+        "father"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "health-and-medicine",
+      "matched_words": [
+        "hospital"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

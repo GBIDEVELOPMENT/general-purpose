@@ -1,0 +1,98 @@
+{
+  "id": "S04E09",
+  "title": "Earthquake",
+  "broadcast_date": "1986-12-04",
+  "season": 4,
+  "episode": 9,
+  "plot_source_plaintext": "A mild earthquake traps Dan, Roz, and two sumo wrestlers in an elevator. Meanwhile Harry has to deal with three kids who are spitting images for Dan, Christine, and Harry himself.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S04/S04E09/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Dennis Koenig",
+    "production_code": "185940"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          83,
+          88
+        ],
+        [
+          165,
+          170
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          24,
+          27
+        ],
+        [
+          145,
+          148
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "roz-russell",
+      "matched_terms": [
+        "Roz"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          29,
+          32
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          150,
+          159
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

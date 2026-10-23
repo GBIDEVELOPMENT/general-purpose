@@ -1,115 +1,195 @@
 {
-  "id": "S05E08",
-  "series": "night-court-1984",
-  "season": 5,
-  "episode": 8,
   "absolute_episode_by_season_sum": 87,
-  "title": "No Hard Feelings",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1987-11-29",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Joy Buscaglia",
+          "tvmaze_id": 1206871,
+          "url": "https://www.tvmaze.com/characters/1206871/night-court-joy-buscaglia"
+        },
+        "person": {
+          "name": "Elayne Boosler",
+          "tvmaze_id": 118900,
+          "url": "https://www.tvmaze.com/people/118900/elayne-boosler"
+        }
+      },
+      {
+        "character": {
+          "name": "Toni Corbin",
+          "tvmaze_id": 1206873,
+          "url": "https://www.tvmaze.com/characters/1206873/night-court-toni-corbin"
+        },
+        "person": {
+          "name": "Janice Lynde",
+          "tvmaze_id": 65567,
+          "url": "https://www.tvmaze.com/people/65567/janice-lynde"
+        }
+      },
+      {
+        "character": {
+          "name": "Rita",
+          "tvmaze_id": 1206877,
+          "url": "https://www.tvmaze.com/characters/1206877/night-court-rita"
+        },
+        "person": {
+          "name": "Laura Bassett",
+          "tvmaze_id": 139533,
+          "url": "https://www.tvmaze.com/people/139533/laura-bassett"
+        }
+      },
+      {
+        "character": {
+          "name": "Dr. Howard",
+          "tvmaze_id": 1206875,
+          "url": "https://www.tvmaze.com/characters/1206875/night-court-dr-howard"
+        },
+        "person": {
+          "name": "Alan Haufrect",
+          "tvmaze_id": 185700,
+          "url": "https://www.tvmaze.com/people/185700/alan-haufrect"
+        }
+      },
+      {
+        "character": {
+          "name": "Delivery Boy",
+          "tvmaze_id": 1206879,
+          "url": "https://www.tvmaze.com/characters/1206879/night-court-delivery-boy"
+        },
+        "person": {
+          "name": "Arlan Feiles",
+          "tvmaze_id": 408281,
+          "url": "https://www.tvmaze.com/people/408281/arlan-feiles"
+        }
+      },
+      {
+        "character": {
+          "name": "Cooper",
+          "tvmaze_id": 1206876,
+          "url": "https://www.tvmaze.com/characters/1206876/night-court-cooper"
+        },
+        "person": {
+          "name": "Kenneth Kimmins",
+          "tvmaze_id": 39596,
+          "url": "https://www.tvmaze.com/people/39596/kenneth-kimmins"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5838/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134329"
+    },
+    "production_code": "186204",
+    "writer_credit_display": "Tom Straw",
     "writers": [
       "Tom Straw"
-    ],
-    "guest_cast": [],
-    "production_code": "186204",
-    "writer_credit_display": "Tom Straw"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 8,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134329/night-court-5x08-no-hard-feelings",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 87,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 87
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S05E08",
+  "original_air_date": "1987-11-29",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 5,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "No Hard Feelings",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134329,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "No Hard Feelings",
     "episode_airdate_wikitext": "{{Start date|1987|11|29}}<ref>{{cite web|url=http://www.tvtango.com/listings/1987/11/29|title=TV Listings for November 29, 1987|access-date=August 10, 2023|publisher=TV Tango}}</ref>",
     "household_rating_and_share": "17.1/24",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "No Hard Feelings",
+    "viewers_millions": null
   }
 }

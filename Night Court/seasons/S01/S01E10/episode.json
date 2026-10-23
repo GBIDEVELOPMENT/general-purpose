@@ -1,131 +1,163 @@
 {
-  "id": "S01E10",
-  "series": "night-court-1984",
-  "season": 1,
-  "episode": 10,
   "absolute_episode_by_season_sum": 10,
-  "title": "Some Like It Hot",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1984-03-14",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jay Sandrich",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Yakov Korolenko",
+          "tvmaze_id": 652668,
+          "url": "https://www.tvmaze.com/characters/652668/night-court-yakov-korolenko"
+        },
+        "person": {
+          "name": "Yakov Smirnoff",
+          "tvmaze_id": 114816,
+          "url": "https://www.tvmaze.com/people/114816/yakov-smirnoff"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5834/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134252"
+    },
+    "production_code": "185368",
+    "writer_credit_display": "Stuart Kreisman & Chris Cluess",
     "writers": [
       "Stuart Kreisman & Chris Cluess"
-    ],
-    "guest_cast": [],
-    "production_code": "185368",
-    "writer_credit_display": "Stuart Kreisman & Chris Cluess"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 10,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e10&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134252/night-court-1x10-some-like-it-hot",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 10,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 10
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S01E10",
+  "original_air_date": "1984-03-14",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 1,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Some Like It Hot",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134252,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Some Like It Hot",
     "episode_airdate_wikitext": "{{Start date|1984|3|14}}",
     "household_rating_and_share": "15.4/24",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Some Like It Hot",
+    "viewers_millions": null
   }
 }

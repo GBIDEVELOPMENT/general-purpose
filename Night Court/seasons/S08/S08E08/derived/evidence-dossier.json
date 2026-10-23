@@ -1,0 +1,54 @@
+{
+  "id": "S08E08",
+  "title": "Day Court",
+  "broadcast_date": "1990-11-09",
+  "season": 8,
+  "episode": 8,
+  "plot_source_plaintext": "The staff is temporarily assigned to day court, where the cases are more serious and everyone's personality is different. Meanwhile, Tony tells Christine he wants to move out.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S08/S08E08/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "Kevin Kelton",
+    "production_code": "186935"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          144,
+          153
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "court"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

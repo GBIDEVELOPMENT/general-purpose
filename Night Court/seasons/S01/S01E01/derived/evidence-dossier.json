@@ -1,0 +1,151 @@
+{
+  "id": "S01E01",
+  "title": "All You Need Is Love",
+  "broadcast_date": "1984-01-04",
+  "season": 1,
+  "episode": 1,
+  "plot_source_plaintext": "Harold T. Stone (Harry Anderson) becomes a night court judge in New York City. Working with him are court clerk Lana Wagner (Karen Austin), prosecutor Dan Fielding (John Larroquette), public defender Sheila Gardner (Gail Strickland), and bailiffs Bull Shannon (Richard Moll) and Selma Hacker (Selma Diamond). In his first case, he has to settle a dispute involving a woman threatening her husband with gunfire while at the same time trying to earn the trust of his staff, who are skeptical about his unorthodox judicial methods.\n\nNote: This is Gail Strickland's only episode as a cast member.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S01/S01E01/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "James Burrows",
+    "writer_credit": "Reinhold Weege",
+    "production_code": "206719"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harold T. Stone",
+        "Harry"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          0,
+          15
+        ],
+        [
+          17,
+          22
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan Fielding"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          151,
+          163
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull Shannon"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          247,
+          259
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "selma-hacker",
+      "matched_terms": [
+        "Selma",
+        "Selma Hacker"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          279,
+          291
+        ],
+        [
+          293,
+          298
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "lana-wagner",
+      "matched_terms": [
+        "Lana Wagner"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          112,
+          123
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "sheila-gardner",
+      "matched_terms": [
+        "Sheila Gardner"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          200,
+          214
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "work-and-career",
+      "matched_words": [
+        "working"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "bailiffs",
+        "court",
+        "judge",
+        "judicial",
+        "prosecutor"
+      ],
+      "match_count": 6,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

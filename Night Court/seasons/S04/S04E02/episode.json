@@ -1,115 +1,219 @@
 {
-  "id": "S04E02",
-  "series": "night-court-1984",
-  "season": 4,
-  "episode": 2,
   "absolute_episode_by_season_sum": 59,
-  "title": "Giving Thanks",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1986-10-09",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Phil Sanders",
+          "tvmaze_id": 695688,
+          "url": "https://www.tvmaze.com/characters/695688/night-court-phil-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Freedman",
+          "tvmaze_id": 735201,
+          "url": "https://www.tvmaze.com/characters/735201/night-court-mr-freedman"
+        },
+        "person": {
+          "name": "Walter Olkewicz",
+          "tvmaze_id": 29193,
+          "url": "https://www.tvmaze.com/people/29193/walter-olkewicz"
+        }
+      },
+      {
+        "character": {
+          "name": "Cyril Phelps",
+          "tvmaze_id": 735198,
+          "url": "https://www.tvmaze.com/characters/735198/night-court-cyril-phelps"
+        },
+        "person": {
+          "name": "Sandy Helberg",
+          "tvmaze_id": 58143,
+          "url": "https://www.tvmaze.com/people/58143/sandy-helberg"
+        }
+      },
+      {
+        "character": {
+          "name": "Hotel Manager",
+          "tvmaze_id": 735199,
+          "url": "https://www.tvmaze.com/characters/735199/night-court-hotel-manager"
+        },
+        "person": {
+          "name": "Gino Conforti",
+          "tvmaze_id": 59200,
+          "url": "https://www.tvmaze.com/people/59200/gino-conforti"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Brush",
+          "tvmaze_id": 735202,
+          "url": "https://www.tvmaze.com/characters/735202/night-court-mr-brush"
+        },
+        "person": {
+          "name": "Raymond Singer",
+          "tvmaze_id": 117054,
+          "url": "https://www.tvmaze.com/people/117054/raymond-singer"
+        }
+      },
+      {
+        "character": {
+          "name": "Cop",
+          "tvmaze_id": 735200,
+          "url": "https://www.tvmaze.com/characters/735200/night-court-cop"
+        },
+        "person": {
+          "name": "Carmine Caridi",
+          "tvmaze_id": 127947,
+          "url": "https://www.tvmaze.com/people/127947/carmine-caridi"
+        }
+      },
+      {
+        "character": {
+          "name": "Father Gilday",
+          "tvmaze_id": 735203,
+          "url": "https://www.tvmaze.com/characters/735203/night-court-father-gilday"
+        },
+        "person": {
+          "name": "George Pentecost",
+          "tvmaze_id": 158034,
+          "url": "https://www.tvmaze.com/people/158034/george-pentecost"
+        }
+      },
+      {
+        "character": {
+          "name": "Court Stenographer",
+          "tvmaze_id": 943048,
+          "url": "https://www.tvmaze.com/characters/943048/night-court-court-stenographer"
+        },
+        "person": {
+          "name": "Charlotte Portney",
+          "tvmaze_id": 334259,
+          "url": "https://www.tvmaze.com/people/334259/charlotte-portney"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5837/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134301"
+    },
+    "production_code": "185935",
+    "writer_credit_display": "Teresa O'Neill",
     "writers": [
       "Teresa O'Neill"
-    ],
-    "guest_cast": [],
-    "production_code": "185935",
-    "writer_credit_display": "Teresa O'Neill"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 2,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134301/night-court-4x02-giving-thanks",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 59,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 59
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S04E02",
+  "original_air_date": "1986-10-09",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 4,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Giving Thanks",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134301,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Giving Thanks",
     "episode_airdate_wikitext": "{{Start date|1986|10|9}}",
     "household_rating_and_share": "23.2/34",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Giving Thanks",
+    "viewers_millions": null
   }
 }

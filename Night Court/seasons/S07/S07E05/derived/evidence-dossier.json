@@ -1,0 +1,111 @@
+{
+  "id": "S07E05",
+  "title": "Blue Suede Bull",
+  "broadcast_date": "1989-11-01",
+  "season": 7,
+  "episode": 5,
+  "plot_source_plaintext": "Harry embarrasses Christine in front of a very pro-feminist judge with his trick handcuffs while Dan takes Bull out to his favorite nightclub after Bull thinks his girlfriend, Rhoda, is cheating on him with a student in her dental hygienist class.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S07/S07E05/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "Bill Bryan",
+    "production_code": "186335"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          5
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          97,
+          100
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          107,
+          111
+        ],
+        [
+          148,
+          152
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          18,
+          27
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "romantic-relationships",
+      "matched_words": [
+        "girlfriend"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "judge"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

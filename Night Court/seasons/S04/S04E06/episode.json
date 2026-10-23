@@ -1,117 +1,197 @@
 {
-  "id": "S04E06",
-  "series": "night-court-1984",
-  "season": 4,
-  "episode": 6,
   "absolute_episode_by_season_sum": 63,
-  "title": "Dan's Operation (2)",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [
-    "Dan's Operation (Part 2)"
-  ],
-  "original_air_date": "1986-11-13",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Phil Sanders",
+          "tvmaze_id": 695688,
+          "url": "https://www.tvmaze.com/characters/695688/night-court-phil-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Dr. Flick",
+          "tvmaze_id": 1004509,
+          "url": "https://www.tvmaze.com/characters/1004509/night-court-dr-flick"
+        },
+        "person": {
+          "name": "Jack Riley",
+          "tvmaze_id": 43696,
+          "url": "https://www.tvmaze.com/people/43696/jack-riley"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Rodgers",
+          "tvmaze_id": 1206381,
+          "url": "https://www.tvmaze.com/characters/1206381/night-court-mr-rodgers"
+        },
+        "person": {
+          "name": "Todd Susman",
+          "tvmaze_id": 19859,
+          "url": "https://www.tvmaze.com/people/19859/todd-susman"
+        }
+      },
+      {
+        "character": {
+          "name": "Morgue Attendant",
+          "tvmaze_id": 1206383,
+          "url": "https://www.tvmaze.com/characters/1206383/night-court-morgue-attendant"
+        },
+        "person": {
+          "name": "Cal Gibson",
+          "tvmaze_id": 28410,
+          "url": "https://www.tvmaze.com/people/28410/cal-gibson"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Feldman",
+          "tvmaze_id": 1206385,
+          "url": "https://www.tvmaze.com/characters/1206385/night-court-mr-feldman"
+        },
+        "person": {
+          "name": "Gary Grossman",
+          "tvmaze_id": 180727,
+          "url": "https://www.tvmaze.com/people/180727/gary-grossman"
+        }
+      },
+      {
+        "character": {
+          "name": "Nurse",
+          "tvmaze_id": 1206395,
+          "url": "https://www.tvmaze.com/characters/1206395/night-court-nurse"
+        },
+        "person": {
+          "name": "Melody Rogers",
+          "tvmaze_id": 157612,
+          "url": "https://www.tvmaze.com/people/157612/melody-rogers"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5837/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134305"
+    },
+    "production_code": "185937",
+    "writer_credit_display": "Bob Stevens",
     "writers": [
       "Bob Stevens"
-    ],
-    "guest_cast": [],
-    "production_code": "185937",
-    "writer_credit_display": "Bob Stevens"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 6,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134305/night-court-4x06-dans-operation-2",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 63,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 63
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S04E06",
+  "original_air_date": "1986-11-13",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 4,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Dan's Operation (2)",
+  "title_aliases": [
+    "Dan's Operation (Part 2)"
+  ],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134305,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Dan's Operation (Part 2)",
     "episode_airdate_wikitext": "{{Start date|1986|11|13}}",
     "household_rating_and_share": "25.1/38",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Dan's Operation (Part 2)",
+    "viewers_millions": null
   }
 }

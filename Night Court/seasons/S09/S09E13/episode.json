@@ -1,115 +1,195 @@
 {
-  "id": "S09E13",
-  "series": "night-court-1984",
-  "season": 9,
-  "episode": 13,
   "absolute_episode_by_season_sum": 184,
-  "title": "A New York Story",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1992-01-15",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Miss Crosstown Bus",
+          "tvmaze_id": 238409,
+          "url": "https://www.tvmaze.com/characters/238409/night-court-miss-crosstown-bus"
+        },
+        "person": {
+          "name": "Lisa Montgomery",
+          "tvmaze_id": 115468,
+          "url": "https://www.tvmaze.com/people/115468/lisa-montgomery"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Willard",
+          "tvmaze_id": 238404,
+          "url": "https://www.tvmaze.com/characters/238404/night-court-mr-willard"
+        },
+        "person": {
+          "name": "Stephen Root",
+          "tvmaze_id": 4961,
+          "url": "https://www.tvmaze.com/people/4961/stephen-root"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Dijilly",
+          "tvmaze_id": 238408,
+          "url": "https://www.tvmaze.com/characters/238408/night-court-mr-dijilly"
+        },
+        "person": {
+          "name": "Lee Arenberg",
+          "tvmaze_id": 2941,
+          "url": "https://www.tvmaze.com/people/2941/lee-arenberg"
+        }
+      },
+      {
+        "character": {
+          "name": "Miss Turnstile",
+          "tvmaze_id": 238412,
+          "url": "https://www.tvmaze.com/characters/238412/night-court-miss-turnstile"
+        },
+        "person": {
+          "name": "Patricia Healy",
+          "tvmaze_id": 91843,
+          "url": "https://www.tvmaze.com/people/91843/patricia-healy"
+        }
+      },
+      {
+        "character": {
+          "name": "Ms. Adrian",
+          "tvmaze_id": 238407,
+          "url": "https://www.tvmaze.com/characters/238407/night-court-ms-adrian"
+        },
+        "person": {
+          "name": "Donna Lynn Leavy",
+          "tvmaze_id": 115467,
+          "url": "https://www.tvmaze.com/people/115467/donna-lynn-leavy"
+        }
+      },
+      {
+        "character": {
+          "name": "Miss Mass Transit",
+          "tvmaze_id": 238411,
+          "url": "https://www.tvmaze.com/characters/238411/night-court-miss-mass-transit"
+        },
+        "person": {
+          "name": "Nicole Chamberlain",
+          "tvmaze_id": 115470,
+          "url": "https://www.tvmaze.com/people/115470/nicole-chamberlain"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5842/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134426"
+    },
+    "production_code": "187244",
+    "writer_credit_display": "Fred Graver",
     "writers": [
       "Fred Graver"
-    ],
-    "guest_cast": [],
-    "production_code": "187244",
-    "writer_credit_display": "Fred Graver"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 13,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134426/night-court-9x13-a-new-york-story",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 184,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 184
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S09E13",
+  "original_air_date": "1992-01-15",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 9,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "A New York Story",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134426,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "A New York Story",
     "episode_airdate_wikitext": "{{Start date|1992|1|15}}",
     "household_rating_and_share": null,
-    "viewers_millions": 17.9,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "A New York Story",
+    "viewers_millions": 17.9
   }
 }

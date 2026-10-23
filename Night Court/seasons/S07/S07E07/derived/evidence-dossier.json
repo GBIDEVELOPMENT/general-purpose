@@ -1,0 +1,84 @@
+{
+  "id": "S07E07",
+  "title": "Auntie Maim",
+  "broadcast_date": "1989-11-15",
+  "season": 7,
+  "episode": 7,
+  "plot_source_plaintext": "Roz drafts Mac to pose as her fiancé when her overbearing aunt (Della Reese) comes to visit; Dan meets an older actress/wealthy socialite (Magda Harout) who teaches him some new tricks in an elevator.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S07/S07E07/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "Bob Underwood",
+    "production_code": "186338"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          93,
+          96
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "roz-russell",
+      "matched_terms": [
+        "Roz"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          3
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "mac-robinson",
+      "matched_terms": [
+        "Mac"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          11,
+          14
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "money-and-class",
+      "matched_words": [
+        "wealthy"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

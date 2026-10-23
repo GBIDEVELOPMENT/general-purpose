@@ -1,0 +1,100 @@
+{
+  "id": "S06E21",
+  "title": "Not My Type",
+  "broadcast_date": "1989-04-26",
+  "season": 6,
+  "episode": 21,
+  "plot_source_plaintext": "Christine accepts a date with Art the handyman, then regrets it when she escorts him to his lodge club meeting's annual dinner/talent show; meanwhile Mac's children's story for school is lost in the courthouse computer.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S06/S06E21/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Tim Steele",
+    "writer_credit": "James Gates",
+    "production_code": "186481"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          9
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "mac-robinson",
+      "matched_terms": [
+        "Mac"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          150,
+          153
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "art-fensterman",
+      "matched_terms": [
+        "Art"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          30,
+          33
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "family-parenthood",
+      "matched_words": [
+        "children"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "romantic-relationships",
+      "matched_words": [
+        "date"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "performance-and-entertainment",
+      "matched_words": [
+        "show"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

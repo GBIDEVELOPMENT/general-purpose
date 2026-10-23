@@ -1,0 +1,54 @@
+{
+  "id": "S06E08",
+  "title": "Night Court of the Living Dead",
+  "broadcast_date": "1988-12-14",
+  "season": 6,
+  "episode": 8,
+  "plot_source_plaintext": "An inventor runs away from court to avoid being committed to Bellevue, a man just out of a 20 year coma appears before the bench, and Christine fences with her replacement when a computer error declares her dead.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S06/S06E08/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Tim Steele",
+    "writer_credit": "Paul J. Raley",
+    "production_code": "186468"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          134,
+          143
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "court"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

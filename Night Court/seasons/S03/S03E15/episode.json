@@ -1,131 +1,223 @@
 {
-  "id": "S03E15",
-  "series": "night-court-1984",
-  "season": 3,
-  "episode": 15,
   "absolute_episode_by_season_sum": 50,
-  "title": "The Apartment",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1986-01-30",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Quon Le Duc Robinson",
+          "tvmaze_id": 233478,
+          "url": "https://www.tvmaze.com/characters/233478/night-court-quon-le-duc-robinson"
+        },
+        "person": {
+          "name": "Denice Kumagai",
+          "tvmaze_id": 53546,
+          "url": "https://www.tvmaze.com/people/53546/denice-kumagai"
+        }
+      },
+      {
+        "character": {
+          "name": "Leon",
+          "tvmaze_id": 765101,
+          "url": "https://www.tvmaze.com/characters/765101/night-court-leon"
+        },
+        "person": {
+          "name": "Bumper Robinson",
+          "tvmaze_id": 35515,
+          "url": "https://www.tvmaze.com/people/35515/bumper-robinson"
+        }
+      },
+      {
+        "character": {
+          "name": "Charlotte Lund",
+          "tvmaze_id": 765102,
+          "url": "https://www.tvmaze.com/characters/765102/night-court-charlotte-lund"
+        },
+        "person": {
+          "name": "Margot Rose",
+          "tvmaze_id": 25371,
+          "url": "https://www.tvmaze.com/people/25371/margot-rose"
+        }
+      },
+      {
+        "character": {
+          "name": "Dan's Date",
+          "tvmaze_id": 868373,
+          "url": "https://www.tvmaze.com/characters/868373/night-court-dans-date"
+        },
+        "person": {
+          "name": "Judy Landers",
+          "tvmaze_id": 158976,
+          "url": "https://www.tvmaze.com/people/158976/judy-landers"
+        }
+      },
+      {
+        "character": {
+          "name": "Grandfather Ho",
+          "tvmaze_id": 868374,
+          "url": "https://www.tvmaze.com/characters/868374/night-court-grandfather-ho"
+        },
+        "person": {
+          "name": "Keye Luke",
+          "tvmaze_id": 47065,
+          "url": "https://www.tvmaze.com/people/47065/keye-luke"
+        }
+      },
+      {
+        "character": {
+          "name": "Fireman",
+          "tvmaze_id": 868376,
+          "url": "https://www.tvmaze.com/characters/868376/night-court-fireman"
+        },
+        "person": {
+          "name": "Angus Duncan",
+          "tvmaze_id": 108242,
+          "url": "https://www.tvmaze.com/people/108242/angus-duncan"
+        }
+      },
+      {
+        "character": {
+          "name": "Balloon Stripper",
+          "tvmaze_id": 868375,
+          "url": "https://www.tvmaze.com/characters/868375/night-court-balloon-stripper"
+        },
+        "person": {
+          "name": "K.T. Sullivan",
+          "tvmaze_id": 181826,
+          "url": "https://www.tvmaze.com/people/181826/kt-sullivan"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5836/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134292"
+    },
+    "production_code": "185728",
+    "writer_credit_display": "Teresa O'Neill",
     "writers": [
       "Teresa O'Neill"
-    ],
-    "guest_cast": [],
-    "production_code": "185728",
-    "writer_credit_display": "Teresa O'Neill"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 15,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e15&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134292/night-court-3x15-the-apartment",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 50,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 50
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S03E15",
+  "original_air_date": "1986-01-30",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 3,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The Apartment",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134292,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The Apartment",
     "episode_airdate_wikitext": "{{Start date|1986|1|30}}",
     "household_rating_and_share": "21.2/31",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The Apartment",
+    "viewers_millions": null
   }
 }

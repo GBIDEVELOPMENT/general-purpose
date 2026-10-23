@@ -1,0 +1,78 @@
+{
+  "id": "S09E11",
+  "title": "Santa on the Lam",
+  "broadcast_date": "1991-12-11",
+  "season": 9,
+  "episode": 11,
+  "plot_source_plaintext": "On Christmas Eve, Dan tries to show a disillusioned Santa (Hansford Rowe) that the holiday spirit still exists as Harry tries to get away from a depressing lonely soul (Terri Hanauer) he's befriended.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S09/S09E11/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Howard Ritter",
+    "writer_credit": "Lee Maddux",
+    "production_code": "187242"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          114,
+          119
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          18,
+          21
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "religion-and-tradition",
+      "matched_words": [
+        "christmas",
+        "holiday"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "performance-and-entertainment",
+      "matched_words": [
+        "show"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

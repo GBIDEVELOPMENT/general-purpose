@@ -1,123 +1,239 @@
 {
-  "id": "S02E19",
-  "series": "night-court-1984",
-  "season": 2,
-  "episode": 19,
   "absolute_episode_by_season_sum": 32,
-  "title": "Married Alive",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1985-02-21",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Phil Sanders",
+          "tvmaze_id": 695688,
+          "url": "https://www.tvmaze.com/characters/695688/night-court-phil-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Angela",
+          "tvmaze_id": 1204744,
+          "url": "https://www.tvmaze.com/characters/1204744/night-court-angela"
+        },
+        "person": {
+          "name": "Angela Aames",
+          "tvmaze_id": 105607,
+          "url": "https://www.tvmaze.com/people/105607/angela-aames"
+        }
+      },
+      {
+        "character": {
+          "name": "Patti Douglas",
+          "tvmaze_id": 692792,
+          "url": "https://www.tvmaze.com/characters/692792/night-court-patti-douglas"
+        },
+        "person": {
+          "name": "Mimi Kennedy",
+          "tvmaze_id": 13355,
+          "url": "https://www.tvmaze.com/people/13355/mimi-kennedy"
+        }
+      },
+      {
+        "character": {
+          "name": "Wilbur Posten",
+          "tvmaze_id": 1204742,
+          "url": "https://www.tvmaze.com/characters/1204742/night-court-wilbur-posten"
+        },
+        "person": {
+          "name": "Elisha Cook",
+          "tvmaze_id": 46794,
+          "url": "https://www.tvmaze.com/people/46794/elisha-cook"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Douglas",
+          "tvmaze_id": 692793,
+          "url": "https://www.tvmaze.com/characters/692793/night-court-mr-douglas"
+        },
+        "person": {
+          "name": "Stanley Brock",
+          "tvmaze_id": 99795,
+          "url": "https://www.tvmaze.com/people/99795/stanley-brock"
+        }
+      },
+      {
+        "character": {
+          "name": "Phyllis",
+          "tvmaze_id": 1204743,
+          "url": "https://www.tvmaze.com/characters/1204743/night-court-phyllis"
+        },
+        "person": {
+          "name": "Micole Mercurio",
+          "tvmaze_id": 21669,
+          "url": "https://www.tvmaze.com/people/21669/micole-mercurio"
+        }
+      },
+      {
+        "character": {
+          "name": "Mervyn Jenkins",
+          "tvmaze_id": 1204745,
+          "url": "https://www.tvmaze.com/characters/1204745/night-court-mervyn-jenkins"
+        },
+        "person": {
+          "name": "Kenneth Danziger",
+          "tvmaze_id": 103764,
+          "url": "https://www.tvmaze.com/people/103764/kenneth-danziger"
+        }
+      },
+      {
+        "character": {
+          "name": "Biff",
+          "tvmaze_id": 1204746,
+          "url": "https://www.tvmaze.com/characters/1204746/night-court-biff"
+        },
+        "person": {
+          "name": "Patrick Wright",
+          "tvmaze_id": 121458,
+          "url": "https://www.tvmaze.com/people/121458/patrick-wright"
+        }
+      },
+      {
+        "character": {
+          "name": "Waiter",
+          "tvmaze_id": 1204747,
+          "url": "https://www.tvmaze.com/characters/1204747/night-court-waiter"
+        },
+        "person": {
+          "name": "Rocco DiNobile Jr.",
+          "tvmaze_id": 407753,
+          "url": "https://www.tvmaze.com/people/407753/rocco-dinobile-jr"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5835/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134274"
+    },
+    "production_code": "185619",
+    "writer_credit_display": "Ron Osborn & Jeff Reno",
     "writers": [
       "Ron Osborn & Jeff Reno"
-    ],
-    "guest_cast": [],
-    "production_code": "185619",
-    "writer_credit_display": "Ron Osborn & Jeff Reno"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 19,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134274/night-court-2x19-married-alive",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 32,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 32
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S02E19",
+  "original_air_date": "1985-02-21",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 2,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Married Alive",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134274,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Married Alive",
     "episode_airdate_wikitext": "{{Start date|1985|2|21}}",
     "household_rating_and_share": "18.6/28",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Married Alive",
+    "viewers_millions": null
   }
 }

@@ -1,0 +1,110 @@
+{
+  "id": "S01E08",
+  "title": "Quadrangle of Love",
+  "broadcast_date": "1984-02-29",
+  "season": 1,
+  "episode": 8,
+  "plot_source_plaintext": "Dan, Harry, and Bull all compete for the same pretty attorney (Caroline McWilliams); Harry tries to get tickets to see Mel Tormé.\n\nNote: George D. Wallace appears as a doctor. The end credits have a different background for this episode. Instead of the court, they show Harry and his little homemade Mel Tormé concert.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S01/S01E08/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "{{StoryTeleplay|s= R.J. Colleary|t= R.J. Colleary, Chris Cluess and Stuart Kreisman}}",
+    "production_code": "185369"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 3,
+      "text_offset_spans": [
+        [
+          5,
+          10
+        ],
+        [
+          85,
+          90
+        ],
+        [
+          270,
+          275
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          3
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          16,
+          20
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "attorney",
+        "court"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "health-and-medicine",
+      "matched_words": [
+        "doctor"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "performance-and-entertainment",
+      "matched_words": [
+        "concert",
+        "show"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

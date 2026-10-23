@@ -8,7 +8,7 @@
 - **193/193** titles, dates, directors, writer-credit lines and production codes, reconciled from TVmaze and Wikipedia. Source-specific aliases are retained; composite broadcasts and ambiguous numbering are flagged.
 - **193/193 CC BY-SA-licensed, episode-specific encyclopedia synopsis/capsule files**: `seasons/Sxx/SxxEyy/authorized-text/wikipedia-episode-capsule.wikitext`, each with `sources/wikipedia-capsule.provenance.json`. A five-entry discrepancy between Wikipedia's 188 episode-list rows and 193 actual episode parts is explained by paired broadcasts, whose shared summaries are annotated.
 - Full MediaWiki source of **two openly licensed articles**, `research/licensed-wiki/Night-Court.wikitext` and `research/licensed-wiki/List-of-Night-Court-episodes.wikitext`, each with a Wikipedia revision permalink, attribution and license manifest.
-- **1,651 provenance-bearing episode source references**, including many repeated series-index pointers. The number is *not* an independently recovered document count.
+- **1,652 provenance-bearing episode source references**, including many repeated series-index pointers. The number is *not* an independently recovered document count.
 - Episode-level bibliography plus original analyst-created first-pass fact sheets for S01E01 and S02E10; fandom observation examples, source inventory and canonical knowledge-model design.
 
 **Not held:** full scripts, proprietary dialogue transcriptions, closed-caption or subtitle tracks, copyrighted fan reviews and articles without reuse permission. The corresponding discovery links are retained, and holdings explicitly record zero for these categories. A private repository alone does not authorize copying them. If authorized materials become available, ingest each version in the relevant episode directory with precise provenance.
@@ -81,4 +81,29 @@ python "Night Court/tools/enrich_wikipedia_credits.py"
 python "Night Court/tools/validate.py"
 ```
 
-The workflow and analysis are work-in-progress. No scene-complete transcript corpus or canonical knowledge matrices have been produced yet.
+## Expanded evidence indexing and guest credits, 23 October 2026
+
+The second bounded GitHub Actions pipeline (`.github/workflows/night-court-knowledge.yml`) has populated the episode retrieval corpus and new contextual sources:
+
+- **193/193 evidence dossiers** (`seasons/Sxx/SxxEyy/derived/evidence-dossier.json`) and human-readable reading notes (`derived/reading-note.md`) with explicit links to the original licensed Wikipedia source and revision.
+- **342 source-authored synopsis statements**, with character offsets and per-episode `annotations/synopsis-statements.jsonl` files, available together as `catalog/source-statements.jsonl`. They are not verified events or scene transcripts.
+- **440 character-name mention relationships** and **255 topic keyword signals**, queryable through the `catalog/character-mentions.jsonl`, `catalog/theme-cues.jsonl`, `catalog/episode-knowledge.jsonl` and `tools/query_corpus.py` files. Labels expressly warn that text mention does not prove appearance.
+- **1,210 TVmaze episode guest actor-character credit edges**, covering all 193 episodes; a series-level main cast of **14 credited relationships**, with **797 distinct credited people** and **974 distinct credited character IDs** overall. See `catalog/cast-relationship-graph.json`, `catalog/guestcast-edges.jsonl` and `catalog/tvmaze-guestcast-coverage.json`. These are *credits*, not direct evidence of on-screen appearances.
+- **19 additional Creative Commons-licensed Wikipedia articles**, mostly bios of series cast and creators, stored with exact revision, SHA-256 and attribution at `research/licensed-wiki/context/`.
+- A cautious Fandom collector checked access and recorded **`blocked_by_robots`**. No Fandom wiki articles were copied. See `research/fandom-wiki/collection-status.json`.
+- `catalog/holdings-coverage.json` and `catalog/holdings-coverage.csv` audit all 193 episode directories. **Full scripts held: 0. Caption tracks held: 0. Full critic/reviewer articles held: 0.** Links and source discovery are not conflated with preserved content.
+
+The indexed guest cast is unusually useful: it supplies specific credit links between actors, recurring or one-off roles and episodes, including cast names not present in the short encyclopedia synopses. Separately, the source-statement ledger makes it possible to inspect exactly why a lexical search result was returned.
+
+**Try the local retrieval CLI** from the repository root:
+
+```sh
+python "Night Court/tools/query_corpus.py" --character harry-stone --limit 5
+python "Night Court/tools/query_corpus.py" --actor "Rita Taggart"
+python "Night Court/tools/query_corpus.py" --theme politics-and-government --limit 20
+python "Night Court/tools/query_corpus.py" --director "Jeff Melman" --season 4
+```
+
+See [RESEARCH-ROADMAP.md](RESEARCH-ROADMAP.md) for the next source-acquisition passes, licensing requirements, evidence-quality gates, canonicalization plan and handoff boundaries.
+
+Canonical scene, event, mood, joke, fandom and period-context knowledge remains **unbuilt**. The current corpus is a large, testable evidence and retrieval substrate, not an allegedly transcript-complete or eyewitness-validated reconstruction.

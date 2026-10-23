@@ -1,123 +1,215 @@
 {
-  "id": "S02E22",
-  "series": "night-court-1984",
-  "season": 2,
-  "episode": 22,
   "absolute_episode_by_season_sum": 35,
-  "title": "Walk, Don't Wheel",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1985-05-09",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Reinhold Weege",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Brian Reader",
+          "tvmaze_id": 1204785,
+          "url": "https://www.tvmaze.com/characters/1204785/night-court-brian-reader"
+        },
+        "person": {
+          "name": "Andre Gower",
+          "tvmaze_id": 185705,
+          "url": "https://www.tvmaze.com/people/185705/andre-gower"
+        }
+      },
+      {
+        "character": {
+          "name": "Screaming Woman in Courtroom",
+          "tvmaze_id": 1204784,
+          "url": "https://www.tvmaze.com/characters/1204784/night-court-screaming-woman-in-courtroom"
+        },
+        "person": {
+          "name": "Marianne Muellerleile",
+          "tvmaze_id": 9386,
+          "url": "https://www.tvmaze.com/people/9386/marianne-muellerleile"
+        }
+      },
+      {
+        "character": {
+          "name": "Jenny Reader",
+          "tvmaze_id": 1204786,
+          "url": "https://www.tvmaze.com/characters/1204786/night-court-jenny-reader"
+        },
+        "person": {
+          "name": "Amy O'Neill",
+          "tvmaze_id": 47897,
+          "url": "https://www.tvmaze.com/people/47897/amy-oneill"
+        }
+      },
+      {
+        "character": {
+          "name": "Blacky Buzzlick",
+          "tvmaze_id": 1204781,
+          "url": "https://www.tvmaze.com/characters/1204781/night-court-blacky-buzzlick"
+        },
+        "person": {
+          "name": "Eddie Barth",
+          "tvmaze_id": 62764,
+          "url": "https://www.tvmaze.com/people/62764/eddie-barth"
+        }
+      },
+      {
+        "character": {
+          "name": "Tom Reader",
+          "tvmaze_id": 1204782,
+          "url": "https://www.tvmaze.com/characters/1204782/night-court-tom-reader"
+        },
+        "person": {
+          "name": "William Frankfather",
+          "tvmaze_id": 47550,
+          "url": "https://www.tvmaze.com/people/47550/william-frankfather"
+        }
+      },
+      {
+        "character": {
+          "name": "Kristen",
+          "tvmaze_id": 1204780,
+          "url": "https://www.tvmaze.com/characters/1204780/night-court-kristen"
+        },
+        "person": {
+          "name": "Barbara C. Adside",
+          "tvmaze_id": 44068,
+          "url": "https://www.tvmaze.com/people/44068/barbara-c-adside"
+        }
+      },
+      {
+        "character": {
+          "name": "Sally Reader",
+          "tvmaze_id": 1204783,
+          "url": "https://www.tvmaze.com/characters/1204783/night-court-sally-reader"
+        },
+        "person": {
+          "name": "Annette Kurek",
+          "tvmaze_id": 407770,
+          "url": "https://www.tvmaze.com/people/407770/annette-kurek"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5835/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134277"
+    },
+    "production_code": "185622",
+    "writer_credit_display": "Reinhold Weege",
     "writers": [
       "Reinhold Weege"
-    ],
-    "guest_cast": [],
-    "production_code": "185622",
-    "writer_credit_display": "Reinhold Weege"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 22,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_page",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82716",
-      "level": "episode_page",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134277/night-court-2x22-walk-dont-wheel",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 35,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 35
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S02E22",
+  "original_air_date": "1985-05-09",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 2,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Walk, Don't Wheel",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134277,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Walk, Don't Wheel",
     "episode_airdate_wikitext": "{{Start date|1985|5|9}}",
     "household_rating_and_share": "16.0/26",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Walk, Don't Wheel",
+    "viewers_millions": null
   }
 }

@@ -1,0 +1,84 @@
+{
+  "id": "S08E19",
+  "title": "To Sleep, No More",
+  "broadcast_date": "1991-03-06",
+  "season": 8,
+  "episode": 19,
+  "plot_source_plaintext": "The court staff worries that Dan's insomnia over spending all his time preparing for the Phil Foundation banquet may be affecting his sanity. Meanwhile, Bull wins a high-end toupee in a cereal contest, and his new hair attracts all the women who once thought he was weird and repulsive.\n\nNote: Bert Parks appears as himself.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S08/S08E19/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "{{StoryTeleplay|s= Tom Abraham & Mike Underwood|t= Bob Underwood}}",
+    "production_code": "186947"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          29,
+          32
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          153,
+          157
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "phil",
+      "matched_terms": [
+        "Phil"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          89,
+          93
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "court"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

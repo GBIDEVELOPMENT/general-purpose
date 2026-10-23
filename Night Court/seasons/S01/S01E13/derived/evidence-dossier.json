@@ -1,0 +1,77 @@
+{
+  "id": "S01E13",
+  "title": "Hi Honey, I'm Home",
+  "broadcast_date": "1984-05-31",
+  "season": 1,
+  "episode": 13,
+  "plot_source_plaintext": "Harry has to settle the legal status of a woman (Marcia Rodd) who remarried after her first husband Mitch Bowers (Charles Napier) was mistakenly declared dead, and who wants her back even though she is now seeing another man (Basil Hoffman).\n\nNote: D.D. Howard appears as court clerk Charley Tracy. Milt Kogan appears as a doctor. Paula Kelly makes her final appearance as public defender Liz Williams.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S01/S01E13/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Gary Shimokawa",
+    "writer_credit": "Tom Reeder",
+    "production_code": "185361"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          5
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "liz-williams",
+      "matched_terms": [
+        "Liz Williams"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          389,
+          401
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "court"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "health-and-medicine",
+      "matched_words": [
+        "doctor"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

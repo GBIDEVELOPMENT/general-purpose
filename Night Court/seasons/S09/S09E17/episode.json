@@ -1,118 +1,234 @@
 {
-  "id": "S09E17",
-  "series": "night-court-1984",
-  "season": 9,
-  "episode": 17,
   "absolute_episode_by_season_sum": 188,
-  "title": "Party Girl (Part 2)",
-  "title_status": "source_catalogued",
-  "title_aliases": [
-    "Party Girl (2)",
-    "Party Girl"
-  ],
-  "original_air_date": "1992-02-12",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Dr. Weeks",
+          "tvmaze_id": 238505,
+          "url": "https://www.tvmaze.com/characters/238505/night-court-dr-weeks"
+        },
+        "person": {
+          "name": "Cristine Rose",
+          "tvmaze_id": 8472,
+          "url": "https://www.tvmaze.com/people/8472/cristine-rose"
+        }
+      },
+      {
+        "character": {
+          "name": "Heidi",
+          "tvmaze_id": 238517,
+          "url": "https://www.tvmaze.com/characters/238517/night-court-heidi"
+        },
+        "person": {
+          "name": "Louan Gideon",
+          "tvmaze_id": 115533,
+          "url": "https://www.tvmaze.com/people/115533/louan-gideon"
+        }
+      },
+      {
+        "character": {
+          "name": "Louise Cahill",
+          "tvmaze_id": 238507,
+          "url": "https://www.tvmaze.com/characters/238507/night-court-louise-cahill"
+        },
+        "person": {
+          "name": "Nancy Marchand",
+          "tvmaze_id": 48979,
+          "url": "https://www.tvmaze.com/people/48979/nancy-marchand"
+        }
+      },
+      {
+        "character": {
+          "name": "Johnny Dugan",
+          "tvmaze_id": 238504,
+          "url": "https://www.tvmaze.com/characters/238504/night-court-johnny-dugan"
+        },
+        "person": {
+          "name": "Don Amendolia",
+          "tvmaze_id": 29201,
+          "url": "https://www.tvmaze.com/people/29201/don-amendolia"
+        }
+      },
+      {
+        "character": {
+          "name": "Dan Look-Alike",
+          "tvmaze_id": 238519,
+          "url": "https://www.tvmaze.com/characters/238519/night-court-dan-look-alike"
+        },
+        "person": {
+          "name": "Bill Capizzi",
+          "tvmaze_id": 111093,
+          "url": "https://www.tvmaze.com/people/111093/bill-capizzi"
+        }
+      },
+      {
+        "character": {
+          "name": "Roz Look-Alike",
+          "tvmaze_id": 238530,
+          "url": "https://www.tvmaze.com/characters/238530/night-court-roz-look-alike"
+        },
+        "person": {
+          "name": "Darlene Jackson Hall",
+          "tvmaze_id": 115536,
+          "url": "https://www.tvmaze.com/people/115536/darlene-jackson-hall"
+        }
+      },
+      {
+        "character": {
+          "name": "Christine Look-Alike",
+          "tvmaze_id": 238520,
+          "url": "https://www.tvmaze.com/characters/238520/night-court-christine-look-alike"
+        },
+        "person": {
+          "name": "Kristin Hoover",
+          "tvmaze_id": 115534,
+          "url": "https://www.tvmaze.com/people/115534/kristin-hoover"
+        }
+      },
+      {
+        "character": {
+          "name": "Bull Look-Alike",
+          "tvmaze_id": 238529,
+          "url": "https://www.tvmaze.com/characters/238529/night-court-bull-look-alike"
+        },
+        "person": {
+          "name": "Bill Handy",
+          "tvmaze_id": 115535,
+          "url": "https://www.tvmaze.com/people/115535/bill-handy"
+        }
+      },
+      {
+        "character": {
+          "name": "Harry Look-Alike",
+          "tvmaze_id": 238518,
+          "url": "https://www.tvmaze.com/characters/238518/night-court-harry-look-alike"
+        },
+        "person": {
+          "name": "Alan Johnson",
+          "tvmaze_id": 144920,
+          "url": "https://www.tvmaze.com/people/144920/alan-johnson"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5842/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134430"
+    },
+    "production_code": "187247",
+    "writer_credit_display": "Alison Rosenfeld-Desmarais",
     "writers": [
       "Alison Rosenfeld-Desmarais"
-    ],
-    "guest_cast": [],
-    "production_code": "187247",
-    "writer_credit_display": "Alison Rosenfeld-Desmarais"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 17,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134430/night-court-9x17-party-girl-2",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 188,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 188
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S09E17",
+  "original_air_date": "1992-02-12",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 9,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Party Girl (Part 2)",
+  "title_aliases": [
+    "Party Girl (2)",
+    "Party Girl"
+  ],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134430,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Party Girl",
     "episode_airdate_wikitext": "{{Start date|1992|2|12}}",
     "household_rating_and_share": null,
-    "viewers_millions": 15.7,
     "is_combined_broadcast_entry": true,
-    "shared_entry_parts": 2
+    "shared_entry_parts": 2,
+    "title_on_wikipedia": "Party Girl",
+    "viewers_millions": 15.7
   }
 }

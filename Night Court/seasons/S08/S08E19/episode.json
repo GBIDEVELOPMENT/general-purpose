@@ -1,115 +1,219 @@
 {
-  "id": "S08E19",
-  "series": "night-court-1984",
-  "season": 8,
-  "episode": 19,
   "absolute_episode_by_season_sum": 166,
-  "title": "To Sleep, No More",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1991-03-06",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Phil Sanders",
+          "tvmaze_id": 695688,
+          "url": "https://www.tvmaze.com/characters/695688/night-court-phil-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Hampton",
+          "tvmaze_id": 1208524,
+          "url": "https://www.tvmaze.com/characters/1208524/night-court-mr-hampton"
+        },
+        "person": {
+          "name": "Milton James",
+          "tvmaze_id": 141507,
+          "url": "https://www.tvmaze.com/people/141507/milton-james"
+        }
+      },
+      {
+        "character": {
+          "name": "Wendy",
+          "tvmaze_id": 1208522,
+          "url": "https://www.tvmaze.com/characters/1208522/night-court-wendy"
+        },
+        "person": {
+          "name": "Melinda McGraw",
+          "tvmaze_id": 5589,
+          "url": "https://www.tvmaze.com/people/5589/melinda-mcgraw"
+        }
+      },
+      {
+        "character": {
+          "name": "Jim Wimberly",
+          "tvmaze_id": 1004510,
+          "url": "https://www.tvmaze.com/characters/1004510/night-court-jim-wimberly"
+        },
+        "person": {
+          "name": "Jack Riley",
+          "tvmaze_id": 43696,
+          "url": "https://www.tvmaze.com/people/43696/jack-riley"
+        }
+      },
+      {
+        "character": {
+          "name": "Dr. Nagelson",
+          "tvmaze_id": 1004511,
+          "url": "https://www.tvmaze.com/characters/1004511/night-court-dr-nagelson"
+        },
+        "person": {
+          "name": "Larry Linville",
+          "tvmaze_id": 49745,
+          "url": "https://www.tvmaze.com/people/49745/larry-linville"
+        }
+      },
+      {
+        "character": {
+          "name": "Bert Parks",
+          "tvmaze_id": 1208525,
+          "url": "https://www.tvmaze.com/characters/1208525/night-court-bert-parks"
+        },
+        "person": {
+          "name": "Bert Parks",
+          "tvmaze_id": 96803,
+          "url": "https://www.tvmaze.com/people/96803/bert-parks"
+        }
+      },
+      {
+        "character": {
+          "name": "Boring Man",
+          "tvmaze_id": 1208523,
+          "url": "https://www.tvmaze.com/characters/1208523/night-court-boring-man"
+        },
+        "person": {
+          "name": "Brian Kaiser",
+          "tvmaze_id": 126541,
+          "url": "https://www.tvmaze.com/people/126541/brian-kaiser"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5841/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134408"
+    },
+    "production_code": "186947",
+    "writer_credit_display": "{{StoryTeleplay|s= Tom Abraham & Mike Underwood|t= Bob Underwood}}",
     "writers": [
       "{{StoryTeleplay|s= Tom Abraham & Mike Underwood|t= Bob Underwood}}"
-    ],
-    "guest_cast": [],
-    "production_code": "186947",
-    "writer_credit_display": "{{StoryTeleplay|s= Tom Abraham & Mike Underwood|t= Bob Underwood}}"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 19,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134408/night-court-8x19-to-sleep-no-more",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 166,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 166
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S08E19",
+  "original_air_date": "1991-03-06",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 8,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "To Sleep, No More",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134408,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "To Sleep, No More",
     "episode_airdate_wikitext": "{{Start date|1991|3|6}}",
     "household_rating_and_share": null,
-    "viewers_millions": 18.4,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "To Sleep, No More",
+    "viewers_millions": 18.4
   }
 }

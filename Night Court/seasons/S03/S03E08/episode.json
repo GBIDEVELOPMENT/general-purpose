@@ -1,131 +1,211 @@
 {
-  "id": "S03E08",
-  "series": "night-court-1984",
-  "season": 3,
-  "episode": 8,
   "absolute_episode_by_season_sum": 43,
-  "title": "Up On the Roof",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1985-11-28",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Wally",
+          "tvmaze_id": 695680,
+          "url": "https://www.tvmaze.com/characters/695680/night-court-wally"
+        },
+        "person": {
+          "name": "Dian Gallup",
+          "tvmaze_id": 159574,
+          "url": "https://www.tvmaze.com/people/159574/dian-gallup"
+        }
+      },
+      {
+        "character": {
+          "name": "Dr. Melnick",
+          "tvmaze_id": 695679,
+          "url": "https://www.tvmaze.com/characters/695679/night-court-dr-melnick"
+        },
+        "person": {
+          "name": "Stuart Pankin",
+          "tvmaze_id": 62795,
+          "url": "https://www.tvmaze.com/people/62795/stuart-pankin"
+        }
+      },
+      {
+        "character": {
+          "name": "Man in the Gallery",
+          "tvmaze_id": 1205248,
+          "url": "https://www.tvmaze.com/characters/1205248/night-court-man-in-the-gallery"
+        },
+        "person": {
+          "name": "Jack Jozefson",
+          "tvmaze_id": 44131,
+          "url": "https://www.tvmaze.com/people/44131/jack-jozefson"
+        }
+      },
+      {
+        "character": {
+          "name": "Eddie Devon",
+          "tvmaze_id": 695682,
+          "url": "https://www.tvmaze.com/characters/695682/night-court-eddie-devon"
+        },
+        "person": {
+          "name": "Michael A. Ross",
+          "tvmaze_id": 50058,
+          "url": "https://www.tvmaze.com/people/50058/michael-a-ross"
+        }
+      },
+      {
+        "character": {
+          "name": "Willi",
+          "tvmaze_id": 695681,
+          "url": "https://www.tvmaze.com/characters/695681/night-court-willi"
+        },
+        "person": {
+          "name": "Denise Gallup",
+          "tvmaze_id": 159573,
+          "url": "https://www.tvmaze.com/people/159573/denise-gallup"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5836/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134285"
+    },
+    "production_code": "185717",
+    "writer_credit_display": "Jeffrey Davis & Julie Fleischer",
     "writers": [
       "Jeffrey Davis & Julie Fleischer"
-    ],
-    "guest_cast": [],
-    "production_code": "185717",
-    "writer_credit_display": "Jeffrey Davis & Julie Fleischer"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 8,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e08&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134285/night-court-3x08-up-on-the-roof",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 43,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 43
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S03E08",
+  "original_air_date": "1985-11-28",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 3,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Up On the Roof",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134285,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Up On the Roof",
     "episode_airdate_wikitext": "{{Start date|1985|11|28}}",
     "household_rating_and_share": "19.9/33",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Up On the Roof",
+    "viewers_millions": null
   }
 }

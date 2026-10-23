@@ -1,115 +1,207 @@
 {
-  "id": "S05E13",
-  "series": "night-court-1984",
-  "season": 5,
-  "episode": 13,
   "absolute_episode_by_season_sum": 92,
-  "title": "Hit the Road, Jack",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1988-01-14",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Jack Sullivan",
+          "tvmaze_id": 1204355,
+          "url": "https://www.tvmaze.com/characters/1204355/night-court-jack-sullivan"
+        },
+        "person": {
+          "name": "Eugene Roche",
+          "tvmaze_id": 47212,
+          "url": "https://www.tvmaze.com/people/47212/eugene-roche"
+        }
+      },
+      {
+        "character": {
+          "name": "Aqualung",
+          "tvmaze_id": 1207111,
+          "url": "https://www.tvmaze.com/characters/1207111/night-court-aqualung"
+        },
+        "person": {
+          "name": "Frank Collison",
+          "tvmaze_id": 13920,
+          "url": "https://www.tvmaze.com/people/13920/frank-collison"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Cooper",
+          "tvmaze_id": 1207108,
+          "url": "https://www.tvmaze.com/characters/1207108/night-court-mrs-cooper"
+        },
+        "person": {
+          "name": "Beverly Sanders",
+          "tvmaze_id": 147539,
+          "url": "https://www.tvmaze.com/people/147539/beverly-sanders"
+        }
+      },
+      {
+        "character": {
+          "name": "He / She",
+          "tvmaze_id": 1207110,
+          "url": "https://www.tvmaze.com/characters/1207110/night-court-he-she"
+        },
+        "person": {
+          "name": "B.J. Turner",
+          "tvmaze_id": 107056,
+          "url": "https://www.tvmaze.com/people/107056/bj-turner"
+        }
+      },
+      {
+        "character": {
+          "name": "Sparky",
+          "tvmaze_id": 1207109,
+          "url": "https://www.tvmaze.com/characters/1207109/night-court-sparky"
+        },
+        "person": {
+          "name": "Tommy Madden",
+          "tvmaze_id": 158680,
+          "url": "https://www.tvmaze.com/people/158680/tommy-madden"
+        }
+      },
+      {
+        "character": {
+          "name": "Brigette",
+          "tvmaze_id": 1207112,
+          "url": "https://www.tvmaze.com/characters/1207112/night-court-brigette"
+        },
+        "person": {
+          "name": "Teresa Frost",
+          "tvmaze_id": 404511,
+          "url": "https://www.tvmaze.com/people/404511/teresa-frost"
+        }
+      },
+      {
+        "character": {
+          "name": "Papaya Patty",
+          "tvmaze_id": 1207113,
+          "url": "https://www.tvmaze.com/characters/1207113/night-court-papaya-patty"
+        },
+        "person": {
+          "name": "Tona Dodd",
+          "tvmaze_id": 408345,
+          "url": "https://www.tvmaze.com/people/408345/tona-dodd"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5838/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134334"
+    },
+    "production_code": "186208",
+    "writer_credit_display": "Dennis Koenig",
     "writers": [
       "Dennis Koenig"
-    ],
-    "guest_cast": [],
-    "production_code": "186208",
-    "writer_credit_display": "Dennis Koenig"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 13,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134334/night-court-5x13-hit-the-road-jack",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 92,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 92
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S05E13",
+  "original_air_date": "1988-01-14",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 5,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Hit the Road, Jack",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134334,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Hit the Road, Jack",
     "episode_airdate_wikitext": "{{Start date|1988|1|14}}",
     "household_rating_and_share": "25.9/39",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Hit the Road, Jack",
+    "viewers_millions": null
   }
 }

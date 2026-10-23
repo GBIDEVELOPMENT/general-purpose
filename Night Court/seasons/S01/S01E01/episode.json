@@ -1,131 +1,223 @@
 {
-  "id": "S01E01",
-  "series": "night-court-1984",
-  "season": 1,
-  "episode": 1,
   "absolute_episode_by_season_sum": 1,
-  "title": "All You Need Is Love",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1984-01-04",
-  "original_air_date_status": "verified",
   "credits": {
     "director": "James Burrows",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Carla B.",
+          "tvmaze_id": 225580,
+          "url": "https://www.tvmaze.com/characters/225580/night-court-carla-b"
+        },
+        "person": {
+          "name": "Rita Taggart",
+          "tvmaze_id": 110576,
+          "url": "https://www.tvmaze.com/people/110576/rita-taggart"
+        }
+      },
+      {
+        "character": {
+          "name": "Phil Kerr",
+          "tvmaze_id": 664668,
+          "url": "https://www.tvmaze.com/characters/664668/night-court-phil-kerr"
+        },
+        "person": {
+          "name": "Joseph V. Perry",
+          "tvmaze_id": 59085,
+          "url": "https://www.tvmaze.com/people/59085/joseph-v-perry"
+        }
+      },
+      {
+        "character": {
+          "name": "Louise Kerr",
+          "tvmaze_id": 664669,
+          "url": "https://www.tvmaze.com/characters/664669/night-court-louise-kerr"
+        },
+        "person": {
+          "name": "Peggy McCay",
+          "tvmaze_id": 51995,
+          "url": "https://www.tvmaze.com/people/51995/peggy-mccay"
+        }
+      },
+      {
+        "character": {
+          "name": "Leonard 'Hacksaw' Hammond",
+          "tvmaze_id": 664671,
+          "url": "https://www.tvmaze.com/characters/664671/night-court-leonard-hacksaw-hammond"
+        },
+        "person": {
+          "name": "Andrew Bloch",
+          "tvmaze_id": 28709,
+          "url": "https://www.tvmaze.com/people/28709/andrew-bloch"
+        }
+      },
+      {
+        "character": {
+          "name": "Courier",
+          "tvmaze_id": 664672,
+          "url": "https://www.tvmaze.com/characters/664672/night-court-courier"
+        },
+        "person": {
+          "name": "Matt Landers",
+          "tvmaze_id": 22982,
+          "url": "https://www.tvmaze.com/people/22982/matt-landers"
+        }
+      },
+      {
+        "character": {
+          "name": "Shouting Man #1 in Gallery",
+          "tvmaze_id": 664673,
+          "url": "https://www.tvmaze.com/characters/664673/night-court-shouting-man-1-in-gallery"
+        },
+        "person": {
+          "name": "Cal Gibson",
+          "tvmaze_id": 28410,
+          "url": "https://www.tvmaze.com/people/28410/cal-gibson"
+        }
+      },
+      {
+        "character": {
+          "name": "Painter",
+          "tvmaze_id": 664670,
+          "url": "https://www.tvmaze.com/characters/664670/night-court-painter"
+        },
+        "person": {
+          "name": "Luke Andreas",
+          "tvmaze_id": 91987,
+          "url": "https://www.tvmaze.com/people/91987/luke-andreas"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5834/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134243"
+    },
+    "production_code": "206719",
+    "writer_credit_display": "Reinhold Weege",
     "writers": [
       "Reinhold Weege"
-    ],
-    "guest_cast": [],
-    "production_code": "206719",
-    "writer_credit_display": "Reinhold Weege"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 1,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_page",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewtopic.php?t=82333",
-      "level": "episode_page",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e01&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134243/night-court-1x01-all-you-need-is-love",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 1,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 1
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S01E01",
+  "original_air_date": "1984-01-04",
+  "original_air_date_status": "verified",
+  "season": 1,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "All You Need Is Love",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134243,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "All You Need Is Love",
     "episode_airdate_wikitext": "{{Start date|1984|1|4}}",
     "household_rating_and_share": "16.9/25",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "All You Need Is Love",
+    "viewers_millions": null
   }
 }

@@ -1,0 +1,60 @@
+{
+  "id": "S05E09",
+  "title": "Constitution (1)",
+  "broadcast_date": "1987-12-03",
+  "season": 5,
+  "episode": 9,
+  "plot_source_plaintext": "Part one. Harry tangles with a desperate man holding an original draft of the Constitution hostage in the courtroom. Meanwhile, Roz struggles with being diagnosed with diabetes.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S05/S05E09/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Rich Reinhart",
+    "production_code": "186209"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          10,
+          15
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "roz-russell",
+      "matched_terms": [
+        "Roz"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          128,
+          131
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

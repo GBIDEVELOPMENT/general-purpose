@@ -1,117 +1,197 @@
 {
-  "id": "S06E14",
-  "series": "night-court-1984",
-  "season": 6,
-  "episode": 14,
   "absolute_episode_by_season_sum": 115,
-  "title": "The Trouble Is Not in Your Set",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [
-    "The Trouble is Not in Your Set"
-  ],
-  "original_air_date": "1989-02-01",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Mrs. Daley",
+          "tvmaze_id": 834190,
+          "url": "https://www.tvmaze.com/characters/834190/night-court-mrs-daley"
+        },
+        "person": {
+          "name": "Marion Ross",
+          "tvmaze_id": 11816,
+          "url": "https://www.tvmaze.com/people/11816/marion-ross"
+        }
+      },
+      {
+        "character": {
+          "name": "Elaine Scott",
+          "tvmaze_id": 834194,
+          "url": "https://www.tvmaze.com/characters/834194/night-court-elaine-scott"
+        },
+        "person": {
+          "name": "Melba Englander",
+          "tvmaze_id": 111118,
+          "url": "https://www.tvmaze.com/people/111118/melba-englander"
+        }
+      },
+      {
+        "character": {
+          "name": "Martin Flemming",
+          "tvmaze_id": 834191,
+          "url": "https://www.tvmaze.com/characters/834191/night-court-martin-flemming"
+        },
+        "person": {
+          "name": "Larry Anderson",
+          "tvmaze_id": 24077,
+          "url": "https://www.tvmaze.com/people/24077/larry-anderson"
+        }
+      },
+      {
+        "character": {
+          "name": "Makeup Girl",
+          "tvmaze_id": 834195,
+          "url": "https://www.tvmaze.com/characters/834195/night-court-makeup-girl"
+        },
+        "person": {
+          "name": "Clara York",
+          "tvmaze_id": 23572,
+          "url": "https://www.tvmaze.com/people/23572/clara-york"
+        }
+      },
+      {
+        "character": {
+          "name": "Frank",
+          "tvmaze_id": 834193,
+          "url": "https://www.tvmaze.com/characters/834193/night-court-frank"
+        },
+        "person": {
+          "name": "Jed Mills",
+          "tvmaze_id": 29192,
+          "url": "https://www.tvmaze.com/people/29192/jed-mills"
+        }
+      },
+      {
+        "character": {
+          "name": "Jim Fischer",
+          "tvmaze_id": 834192,
+          "url": "https://www.tvmaze.com/characters/834192/night-court-jim-fischer"
+        },
+        "person": {
+          "name": "Christopher Cass",
+          "tvmaze_id": 161944,
+          "url": "https://www.tvmaze.com/people/161944/christopher-cass"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5839/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134357"
+    },
+    "production_code": "186474",
+    "writer_credit_display": "Mike Imfeld",
     "writers": [
       "Mike Imfeld"
-    ],
-    "guest_cast": [],
-    "production_code": "186474",
-    "writer_credit_display": "Mike Imfeld"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 14,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134357/night-court-6x14-the-trouble-is-not-in-your-set",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 115,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 115
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S06E14",
+  "original_air_date": "1989-02-01",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 6,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The Trouble Is Not in Your Set",
+  "title_aliases": [
+    "The Trouble is Not in Your Set"
+  ],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134357,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The Trouble is Not in Your Set",
     "episode_airdate_wikitext": "{{Start date|1989|2|1}}",
     "household_rating_and_share": null,
-    "viewers_millions": 26.3,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The Trouble is Not in Your Set",
+    "viewers_millions": 26.3
   }
 }

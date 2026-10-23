@@ -1,115 +1,243 @@
 {
-  "id": "S05E11",
-  "series": "night-court-1984",
-  "season": 5,
-  "episode": 11,
   "absolute_episode_by_season_sum": 90,
-  "title": "Let It Snow",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1987-12-17",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Quon Le Duc Robinson",
+          "tvmaze_id": 233478,
+          "url": "https://www.tvmaze.com/characters/233478/night-court-quon-le-duc-robinson"
+        },
+        "person": {
+          "name": "Denice Kumagai",
+          "tvmaze_id": 53546,
+          "url": "https://www.tvmaze.com/people/53546/denice-kumagai"
+        }
+      },
+      {
+        "character": {
+          "name": "Fire Captain",
+          "tvmaze_id": 1206897,
+          "url": "https://www.tvmaze.com/characters/1206897/night-court-fire-captain"
+        },
+        "person": {
+          "name": "Troy Evans",
+          "tvmaze_id": 29177,
+          "url": "https://www.tvmaze.com/people/29177/troy-evans"
+        }
+      },
+      {
+        "character": {
+          "name": "Mandy Davis",
+          "tvmaze_id": 1206893,
+          "url": "https://www.tvmaze.com/characters/1206893/night-court-mandy-davis"
+        },
+        "person": {
+          "name": "Diane Robin",
+          "tvmaze_id": 10639,
+          "url": "https://www.tvmaze.com/people/10639/diane-robin"
+        }
+      },
+      {
+        "character": {
+          "name": "Lorenzo Amador",
+          "tvmaze_id": 1206899,
+          "url": "https://www.tvmaze.com/characters/1206899/night-court-lorenzo-amador"
+        },
+        "person": {
+          "name": "Robert Pastorelli",
+          "tvmaze_id": 55159,
+          "url": "https://www.tvmaze.com/people/55159/robert-pastorelli"
+        }
+      },
+      {
+        "character": {
+          "name": "Santa",
+          "tvmaze_id": 1206892,
+          "url": "https://www.tvmaze.com/characters/1206892/night-court-santa"
+        },
+        "person": {
+          "name": "Robert Costanzo",
+          "tvmaze_id": 8547,
+          "url": "https://www.tvmaze.com/people/8547/robert-costanzo"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Stapleton",
+          "tvmaze_id": 1206895,
+          "url": "https://www.tvmaze.com/characters/1206895/night-court-mrs-stapleton"
+        },
+        "person": {
+          "name": "Channing Chase",
+          "tvmaze_id": 42589,
+          "url": "https://www.tvmaze.com/people/42589/channing-chase"
+        }
+      },
+      {
+        "character": {
+          "name": "Eric",
+          "tvmaze_id": 1206896,
+          "url": "https://www.tvmaze.com/characters/1206896/night-court-eric"
+        },
+        "person": {
+          "name": "Ben Ryan Ganger",
+          "tvmaze_id": 212507,
+          "url": "https://www.tvmaze.com/people/212507/ben-ryan-ganger"
+        }
+      },
+      {
+        "character": {
+          "name": "Ruthie Cook",
+          "tvmaze_id": 1206898,
+          "url": "https://www.tvmaze.com/characters/1206898/night-court-ruthie-cook"
+        },
+        "person": {
+          "name": "Madelyn Cates",
+          "tvmaze_id": 222296,
+          "url": "https://www.tvmaze.com/people/222296/madelyn-cates"
+        }
+      },
+      {
+        "character": {
+          "name": "Nicole Petty",
+          "tvmaze_id": 1206894,
+          "url": "https://www.tvmaze.com/characters/1206894/night-court-nicole-petty"
+        },
+        "person": {
+          "name": "Tricia McFarlin",
+          "tvmaze_id": 408284,
+          "url": "https://www.tvmaze.com/people/408284/tricia-mcfarlin"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5838/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134332"
+    },
+    "production_code": "186213",
+    "writer_credit_display": "Tom Reeder",
     "writers": [
       "Tom Reeder"
-    ],
-    "guest_cast": [],
-    "production_code": "186213",
-    "writer_credit_display": "Tom Reeder"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 11,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134332/night-court-5x11-let-it-snow",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 90,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 90
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S05E11",
+  "original_air_date": "1987-12-17",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 5,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Let It Snow",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134332,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Let It Snow",
     "episode_airdate_wikitext": "{{Start date|1987|12|17}}",
     "household_rating_and_share": "25.0/40",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Let It Snow",
+    "viewers_millions": null
   }
 }

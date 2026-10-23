@@ -1,115 +1,231 @@
 {
-  "id": "S07E21",
-  "series": "night-court-1984",
-  "season": 7,
-  "episode": 21,
   "absolute_episode_by_season_sum": 144,
-  "title": "My Three Dads",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1990-03-28",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Charles Robinson and Howard Ritter",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Toni",
+          "tvmaze_id": 1207935,
+          "url": "https://www.tvmaze.com/characters/1207935/night-court-toni"
+        },
+        "person": {
+          "name": "Nikki Cox",
+          "tvmaze_id": 47883,
+          "url": "https://www.tvmaze.com/people/47883/nikki-cox"
+        }
+      },
+      {
+        "character": {
+          "name": "Mara Bernstein",
+          "tvmaze_id": 1207929,
+          "url": "https://www.tvmaze.com/characters/1207929/night-court-mara-bernstein"
+        },
+        "person": {
+          "name": "Carol Ann Susi",
+          "tvmaze_id": 34772,
+          "url": "https://www.tvmaze.com/people/34772/carol-ann-susi"
+        }
+      },
+      {
+        "character": {
+          "name": "Carey",
+          "tvmaze_id": 1207936,
+          "url": "https://www.tvmaze.com/characters/1207936/night-court-carey"
+        },
+        "person": {
+          "name": "Lana Clarkson",
+          "tvmaze_id": 149623,
+          "url": "https://www.tvmaze.com/people/149623/lana-clarkson"
+        }
+      },
+      {
+        "character": {
+          "name": "Ben Bernstein",
+          "tvmaze_id": 1207928,
+          "url": "https://www.tvmaze.com/characters/1207928/night-court-ben-bernstein"
+        },
+        "person": {
+          "name": "Kelly Connell",
+          "tvmaze_id": 21432,
+          "url": "https://www.tvmaze.com/people/21432/kelly-connell"
+        }
+      },
+      {
+        "character": {
+          "name": "Ginny",
+          "tvmaze_id": 1207927,
+          "url": "https://www.tvmaze.com/characters/1207927/night-court-ginny"
+        },
+        "person": {
+          "name": "Jessie Jones",
+          "tvmaze_id": 152537,
+          "url": "https://www.tvmaze.com/people/152537/jessie-jones"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Griffin",
+          "tvmaze_id": 1207930,
+          "url": "https://www.tvmaze.com/characters/1207930/night-court-mr-griffin"
+        },
+        "person": {
+          "name": "Billy Beck",
+          "tvmaze_id": 30133,
+          "url": "https://www.tvmaze.com/people/30133/billy-beck"
+        }
+      },
+      {
+        "character": {
+          "name": "Barbie",
+          "tvmaze_id": 1207938,
+          "url": "https://www.tvmaze.com/characters/1207938/night-court-barbie"
+        },
+        "person": {
+          "name": "Lisa Jakub",
+          "tvmaze_id": 61468,
+          "url": "https://www.tvmaze.com/people/61468/lisa-jakub"
+        }
+      },
+      {
+        "character": {
+          "name": "Tony Jr.",
+          "tvmaze_id": 1207933,
+          "url": "https://www.tvmaze.com/characters/1207933/night-court-tony-jr"
+        },
+        "person": {
+          "name": "Benny Grant",
+          "tvmaze_id": 178686,
+          "url": "https://www.tvmaze.com/people/178686/benny-grant"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Griffin",
+          "tvmaze_id": 1207932,
+          "url": "https://www.tvmaze.com/characters/1207932/night-court-mrs-griffin"
+        },
+        "person": {
+          "name": "Debbie Barker",
+          "tvmaze_id": 358626,
+          "url": "https://www.tvmaze.com/people/358626/debbie-barker"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5840/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134386"
+    },
+    "production_code": "186351",
+    "writer_credit_display": "Neil Thompson & Nancy Steen",
     "writers": [
       "Neil Thompson & Nancy Steen"
-    ],
-    "guest_cast": [],
-    "production_code": "186351",
-    "writer_credit_display": "Neil Thompson & Nancy Steen"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 21,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134386/night-court-7x21-my-three-dads",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 144,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 144
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S07E21",
+  "original_air_date": "1990-03-28",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 7,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "My Three Dads",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134386,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "My Three Dads",
     "episode_airdate_wikitext": "{{Start date|1990|3|28}}",
     "household_rating_and_share": null,
-    "viewers_millions": 22.9,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "My Three Dads",
+    "viewers_millions": 22.9
   }
 }

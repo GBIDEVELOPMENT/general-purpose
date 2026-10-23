@@ -1,133 +1,285 @@
 {
-  "id": "S03E21",
-  "series": "night-court-1984",
-  "season": 3,
-  "episode": 21,
   "absolute_episode_by_season_sum": 56,
-  "title": "Hurricane (Part 1)",
-  "title_status": "source_catalogued",
-  "title_aliases": [
-    "Hurricane (1)"
-  ],
-  "original_air_date": "1986-05-01",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Bob Wheeler",
+          "tvmaze_id": 720086,
+          "url": "https://www.tvmaze.com/characters/720086/night-court-bob-wheeler"
+        },
+        "person": {
+          "name": "Brent Spiner",
+          "tvmaze_id": 28761,
+          "url": "https://www.tvmaze.com/people/28761/brent-spiner"
+        }
+      },
+      {
+        "character": {
+          "name": "June Wheeler",
+          "tvmaze_id": 720087,
+          "url": "https://www.tvmaze.com/characters/720087/night-court-june-wheeler"
+        },
+        "person": {
+          "name": "Annie O'Donnell",
+          "tvmaze_id": 10465,
+          "url": "https://www.tvmaze.com/people/10465/annie-odonnell"
+        }
+      },
+      {
+        "character": {
+          "name": "Benet Collins",
+          "tvmaze_id": 897459,
+          "url": "https://www.tvmaze.com/characters/897459/night-court-benet-collins"
+        },
+        "person": {
+          "name": "Pam Grier",
+          "tvmaze_id": 19351,
+          "url": "https://www.tvmaze.com/people/19351/pam-grier"
+        }
+      },
+      {
+        "character": {
+          "name": "Stanley",
+          "tvmaze_id": 897456,
+          "url": "https://www.tvmaze.com/characters/897456/night-court-stanley"
+        },
+        "person": {
+          "name": "Dick Butkus",
+          "tvmaze_id": 92724,
+          "url": "https://www.tvmaze.com/people/92724/dick-butkus"
+        }
+      },
+      {
+        "character": {
+          "name": "Babs Townsend",
+          "tvmaze_id": 897448,
+          "url": "https://www.tvmaze.com/characters/897448/night-court-babs-townsend"
+        },
+        "person": {
+          "name": "Rebecca York",
+          "tvmaze_id": 146309,
+          "url": "https://www.tvmaze.com/people/146309/rebecca-york"
+        }
+      },
+      {
+        "character": {
+          "name": "Chad Ulin",
+          "tvmaze_id": 897458,
+          "url": "https://www.tvmaze.com/characters/897458/night-court-chad-ulin"
+        },
+        "person": {
+          "name": "James Widdoes",
+          "tvmaze_id": 26944,
+          "url": "https://www.tvmaze.com/people/26944/james-widdoes"
+        }
+      },
+      {
+        "character": {
+          "name": "Man in Courtroom",
+          "tvmaze_id": 897457,
+          "url": "https://www.tvmaze.com/characters/897457/night-court-man-in-courtroom"
+        },
+        "person": {
+          "name": "John Dullaghan",
+          "tvmaze_id": 114590,
+          "url": "https://www.tvmaze.com/people/114590/john-dullaghan"
+        }
+      },
+      {
+        "character": {
+          "name": "Officer Tommy Connors",
+          "tvmaze_id": 897447,
+          "url": "https://www.tvmaze.com/characters/897447/night-court-officer-tommy-connors"
+        },
+        "person": {
+          "name": "John Scott Clough",
+          "tvmaze_id": 138770,
+          "url": "https://www.tvmaze.com/people/138770/john-scott-clough"
+        }
+      },
+      {
+        "character": {
+          "name": "Paco Chaconne",
+          "tvmaze_id": 897453,
+          "url": "https://www.tvmaze.com/characters/897453/night-court-paco-chaconne"
+        },
+        "person": {
+          "name": "Carlos Lacamara",
+          "tvmaze_id": 8662,
+          "url": "https://www.tvmaze.com/people/8662/carlos-lacamara"
+        }
+      },
+      {
+        "character": {
+          "name": "Elaina Chaconne",
+          "tvmaze_id": 897451,
+          "url": "https://www.tvmaze.com/characters/897451/night-court-elaina-chaconne"
+        },
+        "person": {
+          "name": "Marcia Del Mar",
+          "tvmaze_id": 53944,
+          "url": "https://www.tvmaze.com/people/53944/marcia-del-mar"
+        }
+      },
+      {
+        "character": {
+          "name": "Stanley's Wife",
+          "tvmaze_id": 897449,
+          "url": "https://www.tvmaze.com/characters/897449/night-court-stanleys-wife"
+        },
+        "person": {
+          "name": "Alix Elias",
+          "tvmaze_id": 55064,
+          "url": "https://www.tvmaze.com/people/55064/alix-elias"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5836/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134298"
+    },
+    "production_code": "185731",
+    "writer_credit_display": "Reinhold Weege",
     "writers": [
       "Reinhold Weege"
-    ],
-    "guest_cast": [],
-    "production_code": "185731",
-    "writer_credit_display": "Reinhold Weege"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 21,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e21&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134298/night-court-3x21-hurricane-1",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 56,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 56
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S03E21",
+  "original_air_date": "1986-05-01",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 3,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Hurricane (Part 1)",
+  "title_aliases": [
+    "Hurricane (1)"
+  ],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134298,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Hurricane (Part 1)",
     "episode_airdate_wikitext": "{{Start date|1986|5|1}}",
     "household_rating_and_share": "21.7/33",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Hurricane (Part 1)",
+    "viewers_millions": null
   }
 }

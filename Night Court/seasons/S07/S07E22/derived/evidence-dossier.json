@@ -1,0 +1,64 @@
+{
+  "id": "S07E22",
+  "title": "Still Another Day in the Life",
+  "broadcast_date": "1990-04-04",
+  "season": 7,
+  "episode": 22,
+  "plot_source_plaintext": "In another compilation of court cases, Harry helps a young man appearing before his court stop his girlfriend's marriage to a prefab preppie, and Wile E. Coyote gets put on trial for his years of harassing the Road Runner.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S07/S07E22/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Tim Steele",
+    "writer_credit": "Bob Underwood",
+    "production_code": "186352"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          39,
+          44
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "romantic-relationships",
+      "matched_words": [
+        "girlfriend",
+        "marriage"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "court",
+        "trial"
+      ],
+      "match_count": 3,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}
