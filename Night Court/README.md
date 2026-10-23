@@ -130,3 +130,10 @@ These fields **cannot all be compared directly**: household rating points, share
 `research/contemporary-press-bibliography.jsonl` now indexes **15 separately identified** press, industry, historic broadcasting, criticism and fandom sources, emphasizing two contemporaneous interviews with original producers and actors. `research/production-and-reception-claims.jsonl` holds **12 attributed analytical/production claims**, each with supporting source identifiers, confidence, boundaries and caveats. `research/press-evidence-brief.md` is a readable, original interpretive note; third-party full articles and reviews are *not* copied. Dates and original-series vs revival identity are explicit.
 
 `research/source-conflicts.json` records **four significant interpretive or source disagreements**, including two different Season 1 ranking/rating values published in different Wikipedia revisions, the distinction between the May 13, 1992 story finale and May 31 last broadcast, and contradictory modern fan-ranking sources. Never resolve the season-one statistical discrepancy merely by preference for a more recent revision. The `night-court-press.yml` workflow validates source-link integrity and claim provenance.
+
+
+## Immutable preservation of revision-pinned encyclopedia sources
+
+All **21 currently held licensed Wikipedia source articles** (two original-series reference articles and 19 cast/production/context articles) now also have their own immutable copies in `research/licensed-wiki/revisions/` using a canonical article/revision-ID path. Each copy has a separate attribution/license manifest and SHA-256 digest. `catalog/wiki-revision-archive.json` indexes those **21 saved revisions**, not the entire upstream edit history.
+
+Run `tools/preserve_wiki_revisions.py` both **before and after** future encyclopedia source refreshes, as now wired into the dedicated harvest and indexing workflows. Identical revision IDs with different bytes fail closed, while subsequent revisions accumulate without overwriting older held versions. This guards against upstream edits and disappearing pages beyond Git's commit history.
