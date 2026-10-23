@@ -13,7 +13,7 @@ from ftp_research_intake import connect,clean_path,list_here,is_night_court_dir
 
 VIDEO={".mkv",".mp4",".avi",".m4v",".mov",".wmv",".ts",".mpg",".mpeg"}
 SEASON_COUNTS=[13,22,22,22,22,22,24,24,22]
-PATTERN=re.compile(r"(?i)(?:^|[^a-z0-9])s(?:eason)?[\s._-]*0?([1-9])[\s._-]*e(?:p(?:isode)?)?[\s._-]*0?([0-9]{1,2})(?:[^0-9]|$)")
+PATTERN=re.compile(r"(?i)(?:^|[^a-z0-9])(?:s(?:eason)?[\s._-]*0?([1-9])[\s._-]*e(?:p(?:isode)?)?[\s._-]*0?([0-9]{1,2})|0?([1-9])x0?([0-9]{1,2}))(?:[^0-9]|$)")
 MAX_DIRECTORIES=28
 MAX_VIDEO_ROWS=350
 
@@ -42,7 +42,7 @@ def scan(ftp,root):
             match=PATTERN.search(name)
             epid=None
             if match:
-                season,number=int(match.group(1)),int(match.group(2))
+                season,number=map(int,(match.group(1) or match.group(3),match.group(2) or match.group(4)))
                 if 1<=season<=9 and 1<=number<=SEASON_COUNTS[season-1]:
                     epid=f"S{season:02d}E{number:02d}"
             count=facts.get("size")

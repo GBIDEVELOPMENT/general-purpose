@@ -1,5 +1,9 @@
 # Night Court audiovisual script-generation factory
 
+## Confirmed source-video inventory checkpoint: October 23, 2026
+
+The owner ran the existing FTP metadata workflow successfully ([run #40041061527](https://github.com/gamesbyian/general-purpose/actions/runs/40041061527)). Its 193 AVI files were all unrecognized initially because filenames use `1x01` notation. The reconciled [193-file inventory](catalog/ftp-video-inventory-2026-10-23.json) maps all expected episode IDs one-to-one. The exact S01E01 183,386,112-byte AVI file is identified by filename and path; source identity, duration, streams and content remain **unverified until audiovisual processing**. Do not re-run the network inventory solely to fix filenames.
+
 ## Implementation checkpoint: October 23, 2026
 
 The original 1984–1992 Night Court corpus **now holds 193/193 episode dialogue witnesses**, comprising **192 timed SRT sources and S09E19 untimed source-page text**. Historical 35-track and 158-missing counts elsewhere in this document describe its initial drafting state and must not be used as current prerequisites.

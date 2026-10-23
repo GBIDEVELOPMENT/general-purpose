@@ -2,6 +2,12 @@
 
 **Status: bounded local-media executable added; original episode AV processing NOT yet performed.** Dated 2026-10-23. Scope original 1984–1992 *Night Court*. This handoff supersedes historical 35-dialogue-witness planning figures: the actual private archive has 193 episode witnesses (192 SRT, one S09E19 untimed). Zero episode cuts have been certified audiovisually complete.
 
+## Confirmed FTP inventory dispatch: 2026-10-23
+
+Owner-dispatched [workflow run #40041061527](https://github.com/gamesbyian/general-purpose/actions/runs/40041061527) completed both offline and authenticated metadata-only inventory jobs. The read-only listing covered **193 AVI files across 10 directories**, with **no listing errors** and no scan cap reached. Source basenames use `Night Court - 1x01 - ...`, so the previous `S01E01`-only recognizer initially mislabeled all 193 as unmatched. The reconciled, self-contained [inventory JSON](catalog/ftp-video-inventory-2026-10-23.json) now maps **193 unique expected season/episode IDs with zero missing, duplicates or extra IDs**.
+
+**S01E01 candidate:** `/downloads/Night Court TVRip S1-S9/Night.Court.S01.DVDRip.DivX/Night Court - 1x01 - All You Need Is Love.avi` (183,386,112 bytes). This is **filename/size evidence only**. No actual audio, frame, codec details, video hash or episode identity have been observed or confirmed. A dedicated bounded, authorized video-byte access path remains the next blocker before a real vocal-performance run.
+
 ## Implemented in this PR
 
 - `tools/run_s01e01_vocal_pilot.py`: accepts one **locally present, owner-confirmed** episode file; probes streams/duration with ffprobe, computes a streaming SHA-256 of the unchanged input, extracts only a bounded ≤30-second 16-kHz mono PCM excerpt using FFmpeg into a temporary directory, and runs the existing standard-library acoustic measurement backend. Outputs compact JSON (source hash, timestamps, RMS/peak/mix activity) without original media or credentials.
