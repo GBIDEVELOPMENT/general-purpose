@@ -1,0 +1,41 @@
+name: Night Court all-episode dialogue QA triage
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_dialogue_qa_review_queue.py'
+      - '.github/workflows/night-court-dialogue-qa-triage.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'qa/night-court-all-episode-caption-review-queue'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: qa/night-court-all-episode-caption-review-queue
+          persist-credentials: true
+      - name: Generate 193-episode source-quality worklist
+        run: |
+          python "Night Court/tools/build_dialogue_qa_review_queue.py"
+          python "Night Court/tools/validate_dialogue.py"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path("Night Court/catalog/dialogue-qa-review-queue.json").read_text())
+          assert len(j["items"])==193
+          assert j["witnesses_with_flags"]==56
+          assert all(not e["audiovisual_completeness_verified"] for e in j["items"])
+          assert any(e["episode_id"]=="S09E19" and e["format"]=="txt" for e in j["items"])
+          print("193/193 episode QA packets, all source- and edition-caveated")
+          PY
+      - name: Commit new small derived queue only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/catalog/dialogue-qa-review-queue.json" "Night Court/catalog/dialogue-qa-review-queue.csv"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): rank 193 original-series caption sources for AV QA"
+            git push origin HEAD:qa/night-court-all-episode-caption-review-queue
+          fi
