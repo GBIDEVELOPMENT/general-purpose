@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - research/night-court-dialogue-source-queue
+      - "research/night-court-dialogue-source-*"
     paths:
       - "Night Court/tools/build_dialogue_source_queue.py"
       - "Night Court/tools/test_dialogue_source_queue.py"
