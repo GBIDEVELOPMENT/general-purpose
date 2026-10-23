@@ -1,0 +1,62 @@
+name: Night Court S01E01 real FTP acoustic pilot
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/pilot_ftp_video_acoustics.py'
+      - 'Night Court/tools/test_pilot_ftp_video_acoustics.py'
+      - '.github/workflows/night-court-s01e01-real-audio.yml'
+  workflow_dispatch:
+    inputs:
+      protocol:
+        description: "Use existing FTP transport or explicit TLS if supported"
+        type: choice
+        options: [ftp, ftps]
+        default: ftp
+      start_seconds:
+        description: "Start of one bounded excerpt within S01E01"
+        type: number
+        default: 60
+      duration_seconds:
+        description: "Bounded excerpt duration (1-30 seconds)"
+        type: number
+        default: 15
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Offline source selection and no-network safety tests
+        run: |
+          python -m py_compile 'Night Court/tools/pilot_ftp_video_acoustics.py'
+          python 'Night Court/tools/test_pilot_ftp_video_acoustics.py'
+  real-excerpt:
+    if: github.event_name == 'workflow_dispatch'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install FFmpeg and ffprobe
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Strictly bounded download and ephemeral acoustic source measurement
+        run: |
+          python 'Night Court/tools/pilot_ftp_video_acoustics.py' \
+            --protocol '${{ inputs.protocol }}' \
+            --start-seconds '${{ inputs.start_seconds }}' \
+            --duration-seconds '${{ inputs.duration_seconds }}' \
+            --output '${{ runner.temp }}/s01e01-acoustic-report.json'
+      - name: Preserve only compact source-hashed JSON evidence
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-acoustic-evidence
+          path: ${{ runner.temp }}/s01e01-acoustic-report.json
+          retention-days: 7
+          if-no-files-found: error
