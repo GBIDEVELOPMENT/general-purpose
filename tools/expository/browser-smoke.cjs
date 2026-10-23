@@ -142,6 +142,12 @@ async function main(){
   await screenshot('expository-reveal-393.png');
   await evaluate("document.querySelector('.compare-controls button').click()");
   await until("Boolean(document.querySelector('.compare-grid'))",'side by side mode');
+  await evaluate("document.querySelector('.compare-controls button:nth-child(3)').click()");
+  await until("Boolean(document.querySelector('.diff-canvas'))",'canvas pixel diff');
+  assert.equal(await evaluate("document.querySelector('.diff-summary')?.textContent?.includes('differing sampled pixels')"),true,'pixel difference metric visible');
+  await screenshot('expository-pixel-diff-393.png');
+  await evaluate("document.querySelector('.compare-controls button:first-child').click()");
+  await until("Boolean(document.querySelector('.compare-grid'))",'restore comparison mode');
   await send('Emulation.setDeviceMetricsOverride',{width:360,height:780,deviceScaleFactor:1,mobile:true});
   assert.equal(await evaluate("document.documentElement.scrollWidth<=innerWidth+2"),true,'360px overflow');
   await screenshot('expository-compare-360.png');
@@ -168,7 +174,7 @@ async function main(){
   await evaluate("document.querySelector('#storyToggle').click()");
   assert.equal(await evaluate("document.querySelector('#items').hidden"),false,'returns to files');
   assert.equal(runtimeErrors.length,0,'browser runtime exceptions: '+runtimeErrors.join(' | '));
-  console.log('PASS: real Chromium mobile gallery, sorting, bounded search, zoom, file history, JSON tree, modal isolation, reveal, side-by-side, 360/393px overflow checks.');
+  console.log('PASS: real Chromium mobile gallery, sorting, bounded search, zoom, file history, JSON tree, modal isolation, reveal, pixel difference, side-by-side, 360/393px overflow checks.');
   console.log('Evidence: '+screenshots);
  }finally{
   try{socket?.close()}catch{}
