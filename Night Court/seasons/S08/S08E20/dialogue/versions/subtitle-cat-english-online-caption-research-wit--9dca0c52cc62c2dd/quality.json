@@ -1,0 +1,32 @@
+{
+  "adjacent_exact_repetitions": 2,
+  "cue_count": 392,
+  "earliest_cue_start_ms": 3019,
+  "edition": "Subtitle Cat English online caption research witness",
+  "episode_id": "S08E20",
+  "epistemic_status": "heuristic_automated_source_QA_not_audiovisual_completeness",
+  "flags": [],
+  "format": "srt",
+  "latest_cue_end_ms": 1392490,
+  "limits": [
+    "An SRT's final timestamp does not prove every line was captured.",
+    "Music, quiet scenes, titles, ads and cuts can legitimately create long caption gaps.",
+    "Overlapping cues are often legitimate two-speaker or sound-effect captions.",
+    "No source video was viewed; independently verified completeness remains unknown.",
+    "Word counts are an English-oriented rough metric; this is not a semantic evaluation."
+  ],
+  "max_gap_between_source_cues_ms": 45470,
+  "median_cue_duration_ms": 1810.0,
+  "overlapping_cue_count": 0,
+  "source_cue_out_of_order_count": 0,
+  "source_cue_union_duration_ms": 865135,
+  "source_cue_union_fraction_of_final_time": 0.6213,
+  "source_declared_complete": false,
+  "source_gaps_over_30_seconds": 1,
+  "source_sha256": "9dca0c52cc62c2dd282308c57a5b2ee968497d919548623ba8f331b445d5885b",
+  "text_characters": 14120,
+  "timecoded": true,
+  "unique_caption_texts": 389,
+  "version_id": "subtitle-cat-english-online-caption-research-wit--9dca0c52cc62c2dd",
+  "word_count_rough": 2699
+}

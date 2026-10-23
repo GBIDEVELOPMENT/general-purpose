@@ -4,9 +4,8 @@
   "ranking_policy": "Least episode-specific source evidence first; within tier, later seasons first.",
   "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
   "source_status_counts": {
-    "held_dialogue_needs_quality_review": 104,
-    "index_coverage_only": 86,
-    "no_episode_dialogue_specific_locator": 3
+    "held_dialogue_needs_quality_review": 192,
+    "no_episode_dialogue_specific_locator": 1
   },
   "by_season": {
     "S01": {
@@ -22,117 +21,24 @@
       "held_dialogue_needs_quality_review": 22
     },
     "S05": {
-      "held_dialogue_needs_quality_review": 15,
-      "index_coverage_only": 7
+      "held_dialogue_needs_quality_review": 22
     },
     "S06": {
-      "held_dialogue_needs_quality_review": 2,
-      "index_coverage_only": 20
+      "held_dialogue_needs_quality_review": 22
     },
     "S07": {
-      "index_coverage_only": 21,
-      "held_dialogue_needs_quality_review": 3
+      "held_dialogue_needs_quality_review": 24
     },
     "S08": {
-      "index_coverage_only": 23,
-      "held_dialogue_needs_quality_review": 1
+      "held_dialogue_needs_quality_review": 24
     },
     "S09": {
-      "index_coverage_only": 15,
-      "held_dialogue_needs_quality_review": 4,
-      "no_episode_dialogue_specific_locator": 3
+      "held_dialogue_needs_quality_review": 21,
+      "no_episode_dialogue_specific_locator": 1
     }
   },
   "ranked_missing_episode_ids": [
-    "S09E08",
-    "S09E17",
-    "S09E19",
-    "S09E01",
-    "S09E02",
-    "S09E03",
-    "S09E04",
-    "S09E05",
-    "S09E07",
-    "S09E09",
-    "S09E10",
-    "S09E11",
-    "S09E12",
-    "S09E13",
-    "S09E14",
-    "S09E15",
-    "S09E16",
-    "S09E18",
-    "S08E01",
-    "S08E02",
-    "S08E03",
-    "S08E04",
-    "S08E05",
-    "S08E07",
-    "S08E08",
-    "S08E09",
-    "S08E10",
-    "S08E11",
-    "S08E12",
-    "S08E13",
-    "S08E14",
-    "S08E15",
-    "S08E16",
-    "S08E17",
-    "S08E18",
-    "S08E19",
-    "S08E20",
-    "S08E21",
-    "S08E22",
-    "S08E23",
-    "S08E24",
-    "S07E01",
-    "S07E02",
-    "S07E05",
-    "S07E06",
-    "S07E07",
-    "S07E08",
-    "S07E09",
-    "S07E10",
-    "S07E11",
-    "S07E12",
-    "S07E13",
-    "S07E14",
-    "S07E15",
-    "S07E16",
-    "S07E17",
-    "S07E18",
-    "S07E19",
-    "S07E20",
-    "S07E21",
-    "S07E22",
-    "S07E24",
-    "S06E03",
-    "S06E04",
-    "S06E05",
-    "S06E06",
-    "S06E07",
-    "S06E08",
-    "S06E09",
-    "S06E10",
-    "S06E11",
-    "S06E12",
-    "S06E13",
-    "S06E14",
-    "S06E15",
-    "S06E16",
-    "S06E17",
-    "S06E18",
-    "S06E19",
-    "S06E20",
-    "S06E21",
-    "S06E22",
-    "S05E02",
-    "S05E03",
-    "S05E04",
-    "S05E05",
-    "S05E15",
-    "S05E21",
-    "S05E22"
+    "S09E19"
   ],
   "episodes": [
     {
@@ -2647,11 +2553,11 @@
       "season": 5,
       "episode": 2,
       "title": "Her Honor (4)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2669,11 +2575,11 @@
       "season": 5,
       "episode": 3,
       "title": "Death of a Bailiff",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2691,11 +2597,11 @@
       "season": 5,
       "episode": 4,
       "title": "Ladies Night",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2713,11 +2619,11 @@
       "season": 5,
       "episode": 5,
       "title": "Safe",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2933,11 +2839,11 @@
       "season": 5,
       "episode": 15,
       "title": "Chrizzi's Honor",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3065,11 +2971,11 @@
       "season": 5,
       "episode": 21,
       "title": "Mac's Millions",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3087,11 +2993,11 @@
       "season": 5,
       "episode": 22,
       "title": "Danny Got His Gun (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3153,11 +3059,11 @@
       "season": 6,
       "episode": 3,
       "title": "Fire",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3175,11 +3081,11 @@
       "season": 6,
       "episode": 4,
       "title": "Harry and the Tramp",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3197,11 +3103,11 @@
       "season": 6,
       "episode": 5,
       "title": "Educating Rhoda",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3219,11 +3125,11 @@
       "season": 6,
       "episode": 6,
       "title": "The Last Temptation of Mac",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3241,11 +3147,11 @@
       "season": 6,
       "episode": 7,
       "title": "The Law Club",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3263,11 +3169,11 @@
       "season": 6,
       "episode": 8,
       "title": "Night Court of the Living Dead",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3285,11 +3191,11 @@
       "season": 6,
       "episode": 9,
       "title": "The Night Court Before Christmas",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3307,11 +3213,11 @@
       "season": 6,
       "episode": 10,
       "title": "Mental Giant",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3329,11 +3235,11 @@
       "season": 6,
       "episode": 11,
       "title": "Rock-a-Bye Baby",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3351,11 +3257,11 @@
       "season": 6,
       "episode": 12,
       "title": "Clip Show (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3373,11 +3279,11 @@
       "season": 6,
       "episode": 13,
       "title": "Clip Show (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3395,11 +3301,11 @@
       "season": 6,
       "episode": 14,
       "title": "The Trouble Is Not in Your Set",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3417,11 +3323,11 @@
       "season": 6,
       "episode": 15,
       "title": "The Game Show",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3439,11 +3345,11 @@
       "season": 6,
       "episode": 16,
       "title": "This Old Man",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3461,11 +3367,11 @@
       "season": 6,
       "episode": 17,
       "title": "Strange Bedfellows",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3483,11 +3389,11 @@
       "season": 6,
       "episode": 18,
       "title": "From Snoop to Nuts (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3505,11 +3411,11 @@
       "season": 6,
       "episode": 19,
       "title": "From Snoop to Nuts (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3527,11 +3433,11 @@
       "season": 6,
       "episode": 20,
       "title": "Pen Pal",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3549,11 +3455,11 @@
       "season": 6,
       "episode": 21,
       "title": "Not My Type",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3571,11 +3477,11 @@
       "season": 6,
       "episode": 22,
       "title": "Yet Another Day in the Life",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3593,11 +3499,11 @@
       "season": 7,
       "episode": 1,
       "title": "Life with Buddy",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3615,11 +3521,11 @@
       "season": 7,
       "episode": 2,
       "title": "If I Were a Rich Man",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3681,11 +3587,11 @@
       "season": 7,
       "episode": 5,
       "title": "Blue Suede Bull",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3703,11 +3609,11 @@
       "season": 7,
       "episode": 6,
       "title": "For Love or Money",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3725,11 +3631,11 @@
       "season": 7,
       "episode": 7,
       "title": "Auntie Maim",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3747,11 +3653,11 @@
       "season": 7,
       "episode": 8,
       "title": "Attack of the Mac Snacks",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3769,11 +3675,11 @@
       "season": 7,
       "episode": 9,
       "title": "Branded (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3791,11 +3697,11 @@
       "season": 7,
       "episode": 10,
       "title": "Branded (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3813,11 +3719,11 @@
       "season": 7,
       "episode": 11,
       "title": "Passion Plundered",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3835,11 +3741,11 @@
       "season": 7,
       "episode": 12,
       "title": "Amore or Less",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3857,11 +3763,11 @@
       "season": 7,
       "episode": 13,
       "title": "Razing Bull",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3879,11 +3785,11 @@
       "season": 7,
       "episode": 14,
       "title": "Futureman",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3901,11 +3807,11 @@
       "season": 7,
       "episode": 15,
       "title": "Wedding Bell Blues (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3923,11 +3829,11 @@
       "season": 7,
       "episode": 16,
       "title": "Wedding Bell Blues (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3945,11 +3851,11 @@
       "season": 7,
       "episode": 17,
       "title": "The Talk Show",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3967,11 +3873,11 @@
       "season": 7,
       "episode": 18,
       "title": "Melvin and Harold",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3989,11 +3895,11 @@
       "season": 7,
       "episode": 19,
       "title": "The Glasnost Menagerie",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4011,11 +3917,11 @@
       "season": 7,
       "episode": 20,
       "title": "I Said Dance!",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4033,11 +3939,11 @@
       "season": 7,
       "episode": 21,
       "title": "My Three Dads",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4055,11 +3961,11 @@
       "season": 7,
       "episode": 22,
       "title": "Still Another Day in the Life",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4108,11 +4014,11 @@
       "season": 7,
       "episode": 24,
       "title": "The Blues of the Birth",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4130,11 +4036,11 @@
       "season": 8,
       "episode": 1,
       "title": "A Family Affair (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4152,11 +4058,11 @@
       "season": 8,
       "episode": 2,
       "title": "A Family Affair (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4174,11 +4080,11 @@
       "season": 8,
       "episode": 3,
       "title": "When Harry Met Margaret",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4196,11 +4102,11 @@
       "season": 8,
       "episode": 4,
       "title": "Can't Buy Me Love",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4218,11 +4124,11 @@
       "season": 8,
       "episode": 5,
       "title": "Death Takes a Halloween",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4271,11 +4177,11 @@
       "season": 8,
       "episode": 7,
       "title": "Crossroads (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4293,11 +4199,11 @@
       "season": 8,
       "episode": 8,
       "title": "Day Court",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4315,11 +4221,11 @@
       "season": 8,
       "episode": 9,
       "title": "A Night Court at the Opera",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4337,11 +4243,11 @@
       "season": 8,
       "episode": 10,
       "title": "Nobody Says Rat Fink Anymore",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4359,11 +4265,11 @@
       "season": 8,
       "episode": 11,
       "title": "Jail Bait",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4381,11 +4287,11 @@
       "season": 8,
       "episode": 12,
       "title": "It's Just a Joke",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4403,11 +4309,11 @@
       "season": 8,
       "episode": 13,
       "title": "Bringing Down Baby",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4425,11 +4331,11 @@
       "season": 8,
       "episode": 14,
       "title": "Presumed Insolvent",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4447,11 +4353,11 @@
       "season": 8,
       "episode": 15,
       "title": "Mama Was a Rollin' Stone",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4469,11 +4375,11 @@
       "season": 8,
       "episode": 16,
       "title": "Attachments Included",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4491,11 +4397,11 @@
       "season": 8,
       "episode": 17,
       "title": "Alone Again, Naturally",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4513,11 +4419,11 @@
       "season": 8,
       "episode": 18,
       "title": "Hey Harry, F'Crying Out Loud-- It is a Wonderful Life ... Sorta",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4535,11 +4441,11 @@
       "season": 8,
       "episode": 19,
       "title": "To Sleep, No More",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4557,11 +4463,11 @@
       "season": 8,
       "episode": 20,
       "title": "With a Little Help from My Friends",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4579,11 +4485,11 @@
       "season": 8,
       "episode": 21,
       "title": "Mac Takes a Vocation",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4601,11 +4507,11 @@
       "season": 8,
       "episode": 22,
       "title": "Harry's Fifteen Minutes",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4623,11 +4529,11 @@
       "season": 8,
       "episode": 23,
       "title": "Where There's a Will, There's a Tony (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4645,11 +4551,11 @@
       "season": 8,
       "episode": 24,
       "title": "Where There's a Will, There's a Tony (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4667,11 +4573,11 @@
       "season": 9,
       "episode": 1,
       "title": "A Guy Named Phantom (Part 1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4689,11 +4595,11 @@
       "season": 9,
       "episode": 2,
       "title": "A Guy Named Phantom (Part 2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4711,11 +4617,11 @@
       "season": 9,
       "episode": 3,
       "title": "My Life as a Dog Lawyer",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4733,11 +4639,11 @@
       "season": 9,
       "episode": 4,
       "title": "Puppy Love",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4755,11 +4661,11 @@
       "season": 9,
       "episode": 5,
       "title": "Pop Goes the Question",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4799,11 +4705,11 @@
       "season": 9,
       "episode": 7,
       "title": "Looking for Mr. Shannon",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4821,11 +4727,11 @@
       "season": 9,
       "episode": 8,
       "title": "Teacher's Pet",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": []
     },
     {
@@ -4833,11 +4739,11 @@
       "season": 9,
       "episode": 9,
       "title": "The System Works",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4855,11 +4761,11 @@
       "season": 9,
       "episode": 10,
       "title": "Get Me to the Roof on Time",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4877,11 +4783,11 @@
       "season": 9,
       "episode": 11,
       "title": "Santa on the Lam",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4899,11 +4805,11 @@
       "season": 9,
       "episode": 12,
       "title": "Shave and a Haircut",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4921,11 +4827,11 @@
       "season": 9,
       "episode": 13,
       "title": "A New York Story",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4943,11 +4849,11 @@
       "season": 9,
       "episode": 14,
       "title": "Undressed for Success",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4965,11 +4871,11 @@
       "season": 9,
       "episode": 15,
       "title": "Poker? I Hardly Know Her",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4987,11 +4893,11 @@
       "season": 9,
       "episode": 16,
       "title": "Party Girl (Part 1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -5009,11 +4915,11 @@
       "season": 9,
       "episode": 17,
       "title": "Party Girl (Part 2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": []
     },
     {
@@ -5021,11 +4927,11 @@
       "season": 9,
       "episode": 18,
       "title": "To Sir With... Ah, What the Heck... Love",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",

@@ -154,20 +154,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/list_page.php?from=1710650",
-      "level": "episode_in_index",
-      "verified": true,
       "content_imported": false,
-      "verification": "episode_label_verified_in_public_upload_index_only",
-      "source_upload_date": "2025-06-22",
       "episode_id_in_listing": "S06E14",
-      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established."
+      "kind": "subtitle_index",
+      "level": "episode_in_index",
+      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established.",
+      "provider": "Subtitle Cat",
+      "source_upload_date": "2025-06-22",
+      "url": "https://www.subtitlecat.com/list_page.php?from=1710650",
+      "verification": "episode_label_verified_in_public_upload_index_only",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--e945a1e399b1a66b/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--e945a1e399b1a66b/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "e945a1e399b1a66ba672df8c0d8865959395d028fa1ae7d30e8cfc79a6658e84",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-online-caption-research-wit--e945a1e399b1a66b"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

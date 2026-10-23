@@ -154,20 +154,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/list_page.php?from=1710750",
-      "level": "episode_in_index",
-      "verified": true,
       "content_imported": false,
-      "verification": "episode_label_verified_in_public_upload_index_only",
-      "source_upload_date": "2025-06-22",
       "episode_id_in_listing": "S08E01",
-      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established."
+      "kind": "subtitle_index",
+      "level": "episode_in_index",
+      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established.",
+      "provider": "Subtitle Cat",
+      "source_upload_date": "2025-06-22",
+      "url": "https://www.subtitlecat.com/list_page.php?from=1710750",
+      "verification": "episode_label_verified_in_public_upload_index_only",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--dde70baf7a42abf2/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-online-caption-research-wit--dde70baf7a42abf2/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "dde70baf7a42abf2cea3381db3228975bc94fcf87a5840dabf5b2ba20e415bd5",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-online-caption-research-wit--dde70baf7a42abf2"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [
