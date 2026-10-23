@@ -1,0 +1,24 @@
+name: Night Court S09E19 source capture
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/probe_s09e19_original_source.py'
+      - '.github/workflows/night-court-s09e19-source-capture.yml'
+permissions:
+  contents: read
+jobs:
+  fetch-page:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Capture final missing episode caption page and SHA-256
+        run: python "Night Court/tools/probe_s09e19_original_source.py" "${{ runner.temp }}/s09e19-source"
+      - name: Preserve S09E19 original HTML and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s09e19-original-caption-html
+          path: ${{ runner.temp }}/s09e19-source/
+          if-no-files-found: error
+          retention-days: 7
