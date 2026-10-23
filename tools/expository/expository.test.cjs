@@ -31,7 +31,7 @@ function boot() {
  const pos=source.indexOf('const match=location.hash.slice(1)');
  assert.ok(pos>0, 'page-load bootstrap located');
  const isolated='return '+source.slice(0,pos).trimStart()+
-  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus,filterSort,typeOf,sourceViewer,toggleBookmark,cancelContentScan,jsonViewer,imageViewer};\n})();';
+  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus,filterSort,typeOf,sourceViewer,toggleBookmark,cancelContentScan,jsonViewer,imageViewer,storyEvent,renderStory,stopStory};\n})();';
  const app=new Function('document','history','location','localStorage','Option',isolated)(
    document,history,location,localStorage,function Option(name,value){return {name,value}}
  );
@@ -196,4 +196,20 @@ test('JSON structural viewer uses inert DOM nodes and depth bounds',()=>{
  assert.equal(tree.children[0].tagName,'DETAILS');
  assert.equal(tree.children[0].children[0].tagName,'SUMMARY');
  assert.equal(tree.children[0].children[0].textContent,'Root {3 keys}');
+});
+
+test('Story Mode builds dated, source-linked events without inventing undated chronology',()=>{
+ const {app,get}=boot();
+ app.state.repo='gamesbyian/Glimpse';app.state.branch='main';app.state.storyOpen=true;
+ const sha='a'.repeat(40);
+ app.state.storyData={filter:'all',errors:[],commits:[{sha,commit:{message:'Fix reel alignment\nDetailed body',author:{date:'2026-10-21T12:00:00Z'}}}],releases:[{tag_name:'v1.0',name:'First release',published_at:'2026-10-20T10:00:00Z'}],tags:[{name:'v1.0'}]};
+ app.renderStory();
+ const view=get('storyView');
+ assert.ok(view.children.some(x=>x.className==='story-stream'));
+ const stream=view.children.find(x=>x.className==='story-stream');
+ assert.equal(stream.children.filter(x=>x.className==='story-event').length,2);
+ assert.equal(stream.children[1].href,'https://github.com/gamesbyian/Glimpse/commit/'+sha);
+ app.state.storyData.filter='release';app.renderStory();
+ assert.equal(get('storyView').children.find(x=>x.className==='story-stream').children.filter(x=>x.className==='story-event').length,1);
+ app.stopStory();assert.equal(app.state.storyOpen,false);
 });
