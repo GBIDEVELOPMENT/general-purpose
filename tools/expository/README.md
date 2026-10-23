@@ -54,7 +54,17 @@ node --test tools/expository/expository.test.cjs
 
 Uses only the Node.js test runner, with no external dependencies. A path-filtered PR workflow runs these smoke checks when Expository files change. Checks cover application JavaScript syntax, sidebar ancestry, collapsed/expanded folder rendering, cross-folder search, recursive galleries, deep-link structure, session clearing, image reveal controls, modal focus wrapping, visual comparison boundaries, and basic security invariants.
 
-These are **not** substitutes for an optical/browser audit. Before a release, verify actual Android portrait Chrome (especially Pixel-width navigation, keyboard/screen-reader focus, and very large SVG galleries) and desktop Safari/Firefox.
+### Real browser smoke and visual evidence
+
+```sh
+node tools/expository/browser-smoke.cjs
+```
+
+Requires local Chromium or Google Chrome; no npm packages or GitHub credentials. It starts a real browser through the Chrome DevTools Protocol and substitutes deterministic **fictional SVG fixture responses** for GitHub API requests, so the test never accesses private repositories. It checks gallery rendering, responsive widths (360px and 393px), basic modal isolation, image comparisons, reveal slider interaction and above-the-fold controls. Its three screenshot outputs are stored in ignored `tools/expository/browser-evidence/`, and the path-scoped PR workflow keeps them as a private artifact for seven days.
+
+**QA boundary:** passing synthetic fixture browser checks proves these specific interactions, not all runtime file formats, external API/rate-limit behavior, visual correctness with the real projects, or full accessibility. Real Android Chrome and assistive-technology acceptance remain release tasks.
+
+These are **not** substitutes for an optical/browser audit. Before a release, verify actual Android portrait Chrome (especially keyboard/screen-reader focus, real authenticated private browsing, and very large SVG galleries) and desktop Safari/Firefox.
 
 ## Current limitations
 
