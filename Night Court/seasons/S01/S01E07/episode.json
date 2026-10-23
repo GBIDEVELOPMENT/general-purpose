@@ -146,20 +146,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/74/Night%20Court%20s01e07%20Once%20in%20Love%20With%20Harry.eng.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "original_1984_series_episode_page_individually_checked",
       "description": "Original season one English subtitles",
+      "kind": "subtitle_index",
       "language_observed": "en",
-      "rights_status": "not_established"
+      "level": "episode_page",
+      "provider": "Subtitle Cat",
+      "rights_status": "not_established",
+      "url": "https://www.subtitlecat.com/subs/74/Night%20Court%20s01e07%20Once%20in%20Love%20With%20Harry.eng.html",
+      "verification": "original_1984_series_episode_page_individually_checked",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--d4c5387ddfbb2390/original.srt",
+        "manifest_file": "dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--d4c5387ddfbb2390/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "d4c5387ddfbb2390765c30bdf7f6ebf0f85cf404e5d21b1cc17045be3f499616",
+        "source": "user_imported",
+        "version_id": "s01-internal-dvdrip-xvid-sprinter-english--d4c5387ddfbb2390"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

@@ -182,20 +182,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/74/Night%20Court%20s01e01%20All%20You%20Need%20is%20Love.eng.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "original_1984_series_episode_page_individually_checked",
       "description": "Original pilot English subtitles",
+      "kind": "subtitle_index",
       "language_observed": "en",
-      "rights_status": "not_established"
+      "level": "episode_page",
+      "provider": "Subtitle Cat",
+      "rights_status": "not_established",
+      "url": "https://www.subtitlecat.com/subs/74/Night%20Court%20s01e01%20All%20You%20Need%20is%20Love.eng.html",
+      "verification": "original_1984_series_episode_page_individually_checked",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6/original.srt",
+        "manifest_file": "dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+        "source": "user_imported",
+        "version_id": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

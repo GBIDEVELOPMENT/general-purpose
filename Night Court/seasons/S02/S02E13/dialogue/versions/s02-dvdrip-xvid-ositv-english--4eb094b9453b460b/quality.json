@@ -1,0 +1,32 @@
+{
+  "adjacent_exact_repetitions": 0,
+  "cue_count": 382,
+  "earliest_cue_start_ms": 3658,
+  "edition": "S02 DVDRip XviD OSiTV English",
+  "episode_id": "S02E13",
+  "epistemic_status": "heuristic_automated_source_QA_not_audiovisual_completeness",
+  "flags": [],
+  "format": "srt",
+  "latest_cue_end_ms": 1363981,
+  "limits": [
+    "An SRT's final timestamp does not prove every line was captured.",
+    "Music, quiet scenes, titles, ads and cuts can legitimately create long caption gaps.",
+    "Overlapping cues are often legitimate two-speaker or sound-effect captions.",
+    "No source video was viewed; independently verified completeness remains unknown.",
+    "Word counts are an English-oriented rough metric; this is not a semantic evaluation."
+  ],
+  "max_gap_between_source_cues_ms": 46658,
+  "median_cue_duration_ms": 2451.0,
+  "overlapping_cue_count": 0,
+  "source_cue_out_of_order_count": 0,
+  "source_cue_union_duration_ms": 995218,
+  "source_cue_union_fraction_of_final_time": 0.7296,
+  "source_declared_complete": false,
+  "source_gaps_over_30_seconds": 2,
+  "source_sha256": "4eb094b9453b460bb4d90b3cc94d8e50f3a98990e0e42246b398e8ea3f3ef269",
+  "text_characters": 14854,
+  "timecoded": true,
+  "unique_caption_texts": 379,
+  "version_id": "s02-dvdrip-xvid-ositv-english--4eb094b9453b460b",
+  "word_count_rough": 2840
+}
