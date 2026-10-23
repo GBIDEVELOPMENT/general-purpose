@@ -30,7 +30,7 @@ function boot() {
  // Remove only the page-load bootstrap. Actual application functions execute unmodified.
  const pos=source.indexOf('const match=location.hash.slice(1)');
  assert.ok(pos>0, 'page-load bootstrap located');
- const isolated='return '+source.slice(0,pos)+
+ const isolated='return '+source.slice(0,pos).trimStart()+
   'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession};\n})();';
  const app=new Function('document','history','location','localStorage','Option',isolated)(
    document,history,location,localStorage,function Option(name,value){return {name,value}}
