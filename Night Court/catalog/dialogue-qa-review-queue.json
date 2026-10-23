@@ -1,0 +1,3999 @@
+{
+  "series": "night-court-1984",
+  "episodes": 193,
+  "source_witnesses": 193,
+  "witnesses_with_flags": 56,
+  "source_quality_flags": {
+    "overlapping_source_cues_review": 21,
+    "repeated_adjacent_captions_review": 9,
+    "several_long_caption_gaps_review": 30,
+    "untimed_source_requires_separate_completeness_check": 1
+  },
+  "no_source_video_was_reviewed": true,
+  "priority_limit": "Heuristic ordering for human review efficiency, NOT source error probability or completeness assessment.",
+  "all_episodes_require_av_verification": true,
+  "items": [
+    {
+      "episode_id": "S09E19",
+      "season": 9,
+      "title": "P.S. Do I Know You?",
+      "score_for_triage_only": 101,
+      "flags": [
+        "untimed_source_requires_separate_completeness_check"
+      ],
+      "format": "txt",
+      "source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "cue_count": 347,
+      "words_rough": 2348,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 0,
+      "largest_cue_gap_ms": null,
+      "last_source_cue_end_ms": null,
+      "suggested_manual_checks": [
+        "source_audio_alignment_needed_for_timecodes"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E24",
+      "season": 7,
+      "title": "The Blues of the Birth",
+      "score_for_triage_only": 76,
+      "flags": [
+        "several_long_caption_gaps_review",
+        "repeated_adjacent_captions_review"
+      ],
+      "format": "srt",
+      "source_sha256": "e8a4cf978c49828528f0c94318f3393e4d99c1a445588b59b6941a7cb615fa6d",
+      "cue_count": 240,
+      "words_rough": 1720,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 7,
+      "largest_cue_gap_ms": 93940,
+      "last_source_cue_end_ms": 1374380,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions",
+        "listen_for_duplicate_or_repeated_spoken_lines"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E19",
+      "season": 3,
+      "title": "Monkey Business",
+      "score_for_triage_only": 71,
+      "flags": [
+        "overlapping_source_cues_review",
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "fef9ba98d580a9774763098587ba8f2d0e3539f86a648cc1399341a4851c5f42",
+      "cue_count": 537,
+      "words_rough": 2565,
+      "overlapping_cues": 179,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 44150,
+      "last_source_cue_end_ms": 1389580,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions",
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E15",
+      "season": 4,
+      "title": "A Day in the Life",
+      "score_for_triage_only": 66,
+      "flags": [
+        "several_long_caption_gaps_review",
+        "repeated_adjacent_captions_review"
+      ],
+      "format": "srt",
+      "source_sha256": "3332d91aa089eff699d6004e0dcc4c8fc22b96d04cf4c2bc4ec52d51a4c9ca7b",
+      "cue_count": 290,
+      "words_rough": 2163,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 4,
+      "largest_cue_gap_ms": 59410,
+      "last_source_cue_end_ms": 1383340,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions",
+        "listen_for_duplicate_or_repeated_spoken_lines"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E20",
+      "season": 4,
+      "title": "Here's to You, Mrs. Robinson",
+      "score_for_triage_only": 66,
+      "flags": [
+        "several_long_caption_gaps_review",
+        "repeated_adjacent_captions_review"
+      ],
+      "format": "srt",
+      "source_sha256": "67d2d122f28d5f14a776c4a6bd9ffebd705082d49c33168cbc2d6070e18c637c",
+      "cue_count": 342,
+      "words_rough": 2383,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 56420,
+      "last_source_cue_end_ms": 1371450,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions",
+        "listen_for_duplicate_or_repeated_spoken_lines"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E08",
+      "season": 3,
+      "title": "Up On the Roof",
+      "score_for_triage_only": 56,
+      "flags": [
+        "overlapping_source_cues_review",
+        "repeated_adjacent_captions_review"
+      ],
+      "format": "srt",
+      "source_sha256": "bdcb32e7868acffb7e1a307394ea4c2d2d3b141145664df2417a03ba6b0e5a1b",
+      "cue_count": 520,
+      "words_rough": 2420,
+      "overlapping_cues": 169,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 47090,
+      "last_source_cue_end_ms": 1400020,
+      "suggested_manual_checks": [
+        "listen_for_duplicate_or_repeated_spoken_lines",
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E01",
+      "season": 4,
+      "title": "The Next Voice You Hear",
+      "score_for_triage_only": 51,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "7f50c87427a2f7d482c160306a767890fbb2f219a770420f7b35d83c0719fc70",
+      "cue_count": 294,
+      "words_rough": 1991,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 5,
+      "largest_cue_gap_ms": 56450,
+      "last_source_cue_end_ms": 1389880,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E21",
+      "season": 4,
+      "title": "Her Honor (1)",
+      "score_for_triage_only": 51,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "b75a3bb8a556c609d15632c6a90b6bc2279ddafbf33a282b2eb34b4fdd3ba744",
+      "cue_count": 286,
+      "words_rough": 2106,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 5,
+      "largest_cue_gap_ms": 55240,
+      "last_source_cue_end_ms": 1369150,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E21",
+      "season": 6,
+      "title": "Not My Type",
+      "score_for_triage_only": 51,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "508e65e9ed8a3e103a778f2c00a052363e7a2a28cae8900fa6cc296b9b2005e8",
+      "cue_count": 360,
+      "words_rough": 2659,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 5,
+      "largest_cue_gap_ms": 44720,
+      "last_source_cue_end_ms": 1416280,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E02",
+      "season": 4,
+      "title": "Giving Thanks",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "127990898b4798f7975bb75b9af9f9abc66056a5b3560705990f0e82aab067de",
+      "cue_count": 309,
+      "words_rough": 2046,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 46870,
+      "last_source_cue_end_ms": 1381680,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E07",
+      "season": 4,
+      "title": "The New Judge",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "2eec252760d921ec80bd236b148c61df6bb01bc2d86e47cc7e27a35d3978c448",
+      "cue_count": 299,
+      "words_rough": 2239,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 58270,
+      "last_source_cue_end_ms": 1380560,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E12",
+      "season": 4,
+      "title": "Murder",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "4d56649b2e6f9d0f0e58e5c953289b7d38fb1984dfbd9b34e3260bc6522bbd7c",
+      "cue_count": 328,
+      "words_rough": 2325,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 43080,
+      "last_source_cue_end_ms": 1390600,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E14",
+      "season": 4,
+      "title": "The Modest Proposal",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "d03750c23239950ae05710da4c83bba8483b7e3c1329e273754df25b03ba914a",
+      "cue_count": 316,
+      "words_rough": 2182,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 47830,
+      "last_source_cue_end_ms": 1372900,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E17",
+      "season": 4,
+      "title": "Christine's Friend",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "39cfa37ae90d58a49a1ec25dfbe194c734514a092facc6d72de965fc136f0e13",
+      "cue_count": 311,
+      "words_rough": 2191,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 75020,
+      "last_source_cue_end_ms": 1301460,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E19",
+      "season": 4,
+      "title": "Paternity",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "874edcb22fea35ff2f29e538207c3f8bb8a17af9487f313a57595bcc25ab4982",
+      "cue_count": 313,
+      "words_rough": 2194,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 47090,
+      "last_source_cue_end_ms": 1347370,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E05",
+      "season": 5,
+      "title": "Safe",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "9bdf7ef5e94675ccc55238425c3ccf3dda6e46b92d9138ce0eb80a1837e978a0",
+      "cue_count": 300,
+      "words_rough": 2067,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 44110,
+      "last_source_cue_end_ms": 1374510,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E07",
+      "season": 5,
+      "title": "Who Was That Mashed Man?",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "6446f4f1170b0776281eb19b0147fad44791f05f0f481b54c77f87f279c10ea2",
+      "cue_count": 324,
+      "words_rough": 2453,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 45870,
+      "last_source_cue_end_ms": 1363930,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E16",
+      "season": 5,
+      "title": "Another Day in the Life",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "b2dd4d6ccccd62eb65c78b2361231cdccc77977269be78eaac9ee41949509370",
+      "cue_count": 340,
+      "words_rough": 2619,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 43780,
+      "last_source_cue_end_ms": 1376290,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E17",
+      "season": 5,
+      "title": "Heart of Stone",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "5cd9872461541e2c2b4f4fc10058116a765542710d8d5908d52e5de6da9967a7",
+      "cue_count": 319,
+      "words_rough": 2505,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 60070,
+      "last_source_cue_end_ms": 1374280,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E20",
+      "season": 5,
+      "title": "Top Judge",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "fb0483956457c94150da828d6cbe5471b0f8c2af459ba44fee72947b7e8afb51",
+      "cue_count": 305,
+      "words_rough": 2038,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 4,
+      "largest_cue_gap_ms": 50950,
+      "last_source_cue_end_ms": 1373650,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E07",
+      "season": 6,
+      "title": "The Law Club",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "4a7219cea717425cf914238abf5891eb754ac407d84594418f1d3de3dcf20b0a",
+      "cue_count": 381,
+      "words_rough": 2876,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 51250,
+      "last_source_cue_end_ms": 1416380,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E12",
+      "season": 6,
+      "title": "Clip Show (1)",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "8aba85631fc2b6b77c0e6b0af05ff9885d52e43230d319a878a058c79f618cc1",
+      "cue_count": 302,
+      "words_rough": 2215,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 4,
+      "largest_cue_gap_ms": 43290,
+      "last_source_cue_end_ms": 1306010,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E13",
+      "season": 6,
+      "title": "Clip Show (2)",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "4b18fb01591a1e5a73ccde88eb32144923b2204176d1f9d7c2e7ad1d2fa26106",
+      "cue_count": 302,
+      "words_rough": 2365,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 43450,
+      "last_source_cue_end_ms": 1302690,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E14",
+      "season": 6,
+      "title": "The Trouble Is Not in Your Set",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "e945a1e399b1a66ba672df8c0d8865959395d028fa1ae7d30e8cfc79a6658e84",
+      "cue_count": 351,
+      "words_rough": 2760,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 4,
+      "largest_cue_gap_ms": 61880,
+      "last_source_cue_end_ms": 1387300,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E15",
+      "season": 6,
+      "title": "The Game Show",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "461144a5a79fee356f73b4e7ff35e7656c5a25ad4c342cc0bbf3a7b39974d6a4",
+      "cue_count": 358,
+      "words_rough": 2595,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 45380,
+      "last_source_cue_end_ms": 1411350,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E22",
+      "season": 6,
+      "title": "Yet Another Day in the Life",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "c49ac58aed2f046ed633dd159be5ae7be8731e400f19ade0b708a41279989423",
+      "cue_count": 294,
+      "words_rough": 2441,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 82340,
+      "last_source_cue_end_ms": 1371860,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E08",
+      "season": 7,
+      "title": "Attack of the Mac Snacks",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "3d8bb0acd191948cc8699bc43584fe89a4f1e57a9adcb9760127e99166b90e00",
+      "cue_count": 339,
+      "words_rough": 2427,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 43750,
+      "last_source_cue_end_ms": 1369110,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E13",
+      "season": 7,
+      "title": "Razing Bull",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "965866bfc39a67a9ed8dde038e57ed790f34707a12350918f30f4f5785a44104",
+      "cue_count": 357,
+      "words_rough": 2906,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 45890,
+      "last_source_cue_end_ms": 1393010,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E21",
+      "season": 7,
+      "title": "My Three Dads",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "48e9e37a0c1466107051c23013b79cc1710b66e6104751e5e9a162b0193ce544",
+      "cue_count": 345,
+      "words_rough": 2547,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 51320,
+      "last_source_cue_end_ms": 1394420,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E09",
+      "season": 8,
+      "title": "A Night Court at the Opera",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "7d7f57a9b3e0a7c77f04475fe9dc9bec47bb1085c66276ce5071c1f4e7756c80",
+      "cue_count": 330,
+      "words_rough": 2123,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 57400,
+      "last_source_cue_end_ms": 1392880,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E19",
+      "season": 8,
+      "title": "To Sleep, No More",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "a7830142a61f0e7bbafc8cd532bcfa2f4ec9444c6bfaa59786d6dc00ea5ef3a1",
+      "cue_count": 342,
+      "words_rough": 2338,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 65080,
+      "last_source_cue_end_ms": 1397130,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E11",
+      "season": 9,
+      "title": "Santa on the Lam",
+      "score_for_triage_only": 41,
+      "flags": [
+        "several_long_caption_gaps_review"
+      ],
+      "format": "srt",
+      "source_sha256": "61b33329b78a8ccea88016be7483d3039fe09eaf6f5e243a07b19056ee9bd707",
+      "cue_count": 305,
+      "words_rough": 2218,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 3,
+      "largest_cue_gap_ms": 62320,
+      "last_source_cue_end_ms": 1353660,
+      "suggested_manual_checks": [
+        "inspect_silent_spans_and_possible_missing_captions"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E01",
+      "season": 3,
+      "title": "Hello, Goodbye",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "aae67e17d0cfee264d024d3aa1cc0a50f9d51c760823e168ea0ca8f97a10ecc2",
+      "cue_count": 524,
+      "words_rough": 2406,
+      "overlapping_cues": 181,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 54930,
+      "last_source_cue_end_ms": 1405360,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E02",
+      "season": 3,
+      "title": "The Hostage",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "13c5ba8270f0498b6e07975bbb749ed754a5272b8ad2cadb81af978e9d5be829",
+      "cue_count": 530,
+      "words_rough": 2445,
+      "overlapping_cues": 161,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 47980,
+      "last_source_cue_end_ms": 1374730,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E03",
+      "season": 3,
+      "title": "Dad's First Date",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "95b5ea1eaa87c852a6d9bb7dc8e8612586f50240eb2c25704a9ae1c0e0532e6f",
+      "cue_count": 533,
+      "words_rough": 2560,
+      "overlapping_cues": 156,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44180,
+      "last_source_cue_end_ms": 1396250,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E05",
+      "season": 3,
+      "title": "Halloween, Too",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "6abc5bf7a892c3650669f536bbb3ae786bbe1c202b75b0d6b6ffb2924297ccc7",
+      "cue_count": 479,
+      "words_rough": 2215,
+      "overlapping_cues": 133,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46380,
+      "last_source_cue_end_ms": 1392650,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E06",
+      "season": 3,
+      "title": "Best of Friends",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "87e2e5ecb9dc2a428efb568ad0fb1958b89eec90ede853294595dba2802f8d91",
+      "cue_count": 485,
+      "words_rough": 2320,
+      "overlapping_cues": 148,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 49780,
+      "last_source_cue_end_ms": 1396950,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E07",
+      "season": 3,
+      "title": "Dan's Boss",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "412d2f26dc55ea0ab64059c9053118c89b4a02c89d76c6f19de8cb8740fdbfdc",
+      "cue_count": 475,
+      "words_rough": 2259,
+      "overlapping_cues": 153,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45680,
+      "last_source_cue_end_ms": 1390450,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E09",
+      "season": 3,
+      "title": "The Wheels of Justice (Part 1)",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "6a6dec70df6271e515d7f80bb7940c0314bdaf078ffb8776399acdc028f37f31",
+      "cue_count": 483,
+      "words_rough": 2417,
+      "overlapping_cues": 133,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 46660,
+      "last_source_cue_end_ms": 1356950,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E10",
+      "season": 3,
+      "title": "The Wheels of Justice (Part 2)",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "9cf841375e33da4cb326a8edcf322db76766361ff16c529e51b721e9c4862d70",
+      "cue_count": 509,
+      "words_rough": 2552,
+      "overlapping_cues": 154,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43690,
+      "last_source_cue_end_ms": 1395620,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E11",
+      "season": 3,
+      "title": "Walk Away, Renee",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "84ab9975f4da0c678ad886567e16b81d98847659e0290206d3412ae06e5bba24",
+      "cue_count": 419,
+      "words_rough": 1965,
+      "overlapping_cues": 115,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 48220,
+      "last_source_cue_end_ms": 1394220,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E12",
+      "season": 3,
+      "title": "Dan's Escort",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "6db20c32e75c79371769612c6ad3be292c67ed4aeac60b9282327a76acb08c3b",
+      "cue_count": 455,
+      "words_rough": 2012,
+      "overlapping_cues": 106,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43740,
+      "last_source_cue_end_ms": 1389640,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E13",
+      "season": 3,
+      "title": "The Night Off",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "2540ca84ae119aef162778a7c878d63d9a506d0f49e2c1b816e6c7c61da432e3",
+      "cue_count": 495,
+      "words_rough": 2339,
+      "overlapping_cues": 146,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46090,
+      "last_source_cue_end_ms": 1396880,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E14",
+      "season": 3,
+      "title": "Harry and Leon",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "68ae15377e4e57b936043c8661e2f1f2191d532ab8086a998dcd7ef772d502a6",
+      "cue_count": 516,
+      "words_rough": 2469,
+      "overlapping_cues": 135,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 47290,
+      "last_source_cue_end_ms": 1397550,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E15",
+      "season": 3,
+      "title": "The Apartment",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "fd7d63c4b3fa08ceb75279a4e6983d7c701e349a81357059b765cca7e664082a",
+      "cue_count": 485,
+      "words_rough": 2231,
+      "overlapping_cues": 154,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 51060,
+      "last_source_cue_end_ms": 1386900,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E16",
+      "season": 3,
+      "title": "Leon, We Hardly Knew Ye",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "073e1b8a29e6aa9b4766c429d439a3e1e9bbcd4a2d971320f229994d916f1e2b",
+      "cue_count": 438,
+      "words_rough": 1931,
+      "overlapping_cues": 122,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 60700,
+      "last_source_cue_end_ms": 1321650,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E17",
+      "season": 3,
+      "title": "The Mugger",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "4437166bc9ecb09f934e09173f4f73270d2c1cddbe11e3c3a1c97501052de65d",
+      "cue_count": 504,
+      "words_rough": 2288,
+      "overlapping_cues": 154,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46950,
+      "last_source_cue_end_ms": 1395350,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E18",
+      "season": 3,
+      "title": "Could This Be Magic?",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "d5e4b72bdee51e0413077d444ac1eb32e398887f11059935bd0f953588c56f12",
+      "cue_count": 447,
+      "words_rough": 2297,
+      "overlapping_cues": 113,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 52920,
+      "last_source_cue_end_ms": 1397150,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E20",
+      "season": 3,
+      "title": "Flo's Retirement",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "1d128b97f1fe413b533acdd4c50d2a699c24d9892aa577049c74ed0ca0de5a54",
+      "cue_count": 478,
+      "words_rough": 2406,
+      "overlapping_cues": 158,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 47650,
+      "last_source_cue_end_ms": 1385870,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E21",
+      "season": 3,
+      "title": "Hurricane (Part 1)",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "c57390c6ef1179fff22ff21df3bde7605a6ac3f927ff4533b08e106c000fe223",
+      "cue_count": 533,
+      "words_rough": 2539,
+      "overlapping_cues": 174,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48360,
+      "last_source_cue_end_ms": 1390080,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E22",
+      "season": 3,
+      "title": "Hurricane (Part 2)",
+      "score_for_triage_only": 31,
+      "flags": [
+        "overlapping_source_cues_review"
+      ],
+      "format": "srt",
+      "source_sha256": "6be323580b22ebf43cdcb05b67a7b89b113dba8784949466fa8f36d516332ee5",
+      "cue_count": 469,
+      "words_rough": 2016,
+      "overlapping_cues": 139,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43820,
+      "last_source_cue_end_ms": 1392520,
+      "suggested_manual_checks": [
+        "compare_simultaneous_spoken_dialogue_and_cue_overlay"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E11",
+      "season": 1,
+      "title": "Harry and the Rock Star",
+      "score_for_triage_only": 26,
+      "flags": [
+        "repeated_adjacent_captions_review"
+      ],
+      "format": "srt",
+      "source_sha256": "025058ea02a3578967f5c96e8512b2292b55a906fb7b5f701b6a04828add9e16",
+      "cue_count": 343,
+      "words_rough": 2444,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46553,
+      "last_source_cue_end_ms": 1340434,
+      "suggested_manual_checks": [
+        "listen_for_duplicate_or_repeated_spoken_lines"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E02",
+      "season": 6,
+      "title": "Danny Got His Gun (3)",
+      "score_for_triage_only": 26,
+      "flags": [
+        "repeated_adjacent_captions_review"
+      ],
+      "format": "srt",
+      "source_sha256": "61a961d5e1812368cb60c39d513676d5d05f57d1aab25c5a32a9a67a52dcc876",
+      "cue_count": 363,
+      "words_rough": 2547,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 0,
+      "largest_cue_gap_ms": 22150,
+      "last_source_cue_end_ms": 1390010,
+      "suggested_manual_checks": [
+        "listen_for_duplicate_or_repeated_spoken_lines"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E03",
+      "season": 7,
+      "title": "The Cop and the Lady",
+      "score_for_triage_only": 26,
+      "flags": [
+        "repeated_adjacent_captions_review"
+      ],
+      "format": "srt",
+      "source_sha256": "c0ea55f542a7936deaa4389463d92c194047678b39d29806bd442597e9d41a79",
+      "cue_count": 330,
+      "words_rough": 2357,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 56630,
+      "last_source_cue_end_ms": 1385660,
+      "suggested_manual_checks": [
+        "listen_for_duplicate_or_repeated_spoken_lines"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E01",
+      "season": 8,
+      "title": "A Family Affair (1)",
+      "score_for_triage_only": 26,
+      "flags": [
+        "repeated_adjacent_captions_review"
+      ],
+      "format": "srt",
+      "source_sha256": "dde70baf7a42abf2cea3381db3228975bc94fcf87a5840dabf5b2ba20e415bd5",
+      "cue_count": 409,
+      "words_rough": 2806,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44110,
+      "last_source_cue_end_ms": 1418390,
+      "suggested_manual_checks": [
+        "listen_for_duplicate_or_repeated_spoken_lines"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E14",
+      "season": 8,
+      "title": "Presumed Insolvent",
+      "score_for_triage_only": 26,
+      "flags": [
+        "repeated_adjacent_captions_review"
+      ],
+      "format": "srt",
+      "source_sha256": "80762313e76d3ae87a328aa21bea62df9bf5969d60372e42797f6d4c7fe565b2",
+      "cue_count": 374,
+      "words_rough": 2619,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43950,
+      "last_source_cue_end_ms": 1393960,
+      "suggested_manual_checks": [
+        "listen_for_duplicate_or_repeated_spoken_lines"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "season": 1,
+      "title": "All You Need Is Love",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "cue_count": 336,
+      "words_rough": 2286,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 60266,
+      "last_source_cue_end_ms": 1397981,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E02",
+      "season": 1,
+      "title": "Santa Goes Downtown",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "5f47e8e5215916591ad49f847c1b2502914578dc6a6af643a10137d7f41674ea",
+      "cue_count": 380,
+      "words_rough": 2750,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43454,
+      "last_source_cue_end_ms": 1391250,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E03",
+      "season": 1,
+      "title": "The Former Harry Stone",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "7bb21bd5ac0d612fce84388953f6b5b16ae789f08c0964bd82f74135f4883a32",
+      "cue_count": 385,
+      "words_rough": 2932,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46379,
+      "last_source_cue_end_ms": 1403670,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E04",
+      "season": 1,
+      "title": "Welcome Back, Momma",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "a4910f679aaa88c5a1f71ab185bcc133ccd0a51eb3a831357b1f15331bf301b2",
+      "cue_count": 354,
+      "words_rough": 2438,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 44155,
+      "last_source_cue_end_ms": 1339991,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E05",
+      "season": 1,
+      "title": "The Eye of the Beholder",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "0cf714fe34337737802e488f004b315f5a577476b98c6476425b1386a29fefa1",
+      "cue_count": 410,
+      "words_rough": 2726,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 51151,
+      "last_source_cue_end_ms": 1393770,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E06",
+      "season": 1,
+      "title": "Death Threat",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "835d8dca053f96df4a4dc512f451712551d72bf155f5624b75905d99734daf3d",
+      "cue_count": 377,
+      "words_rough": 2973,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 42845,
+      "last_source_cue_end_ms": 1402329,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E07",
+      "season": 1,
+      "title": "Once in Love With Harry",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "d4c5387ddfbb2390765c30bdf7f6ebf0f85cf404e5d21b1cc17045be3f499616",
+      "cue_count": 366,
+      "words_rough": 2854,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 42485,
+      "last_source_cue_end_ms": 1389749,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E08",
+      "season": 1,
+      "title": "Quadrangle of Love",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "365b8f9c9d598a05a3ba1d5754e69b8ceba6c9f92594bdb91adfbe4521533889",
+      "cue_count": 407,
+      "words_rough": 2784,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44414,
+      "last_source_cue_end_ms": 1373437,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E09",
+      "season": 1,
+      "title": "Wonder Drugs",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "ca833d0f1f2f7c23e74df5ca4cfc1a2642d5aa006453cc22fc82fbd7c78d7406",
+      "cue_count": 350,
+      "words_rough": 2411,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48221,
+      "last_source_cue_end_ms": 1385521,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E10",
+      "season": 1,
+      "title": "Some Like It Hot",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "810b0a2588ea38f5cd7104cf30d22b25efb8733e9c22d1a044dc7314fb3e03ff",
+      "cue_count": 338,
+      "words_rough": 2288,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 42883,
+      "last_source_cue_end_ms": 1388322,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E12",
+      "season": 1,
+      "title": "Bull's Baby",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "1b9e66fb470ecd624777a9025df6c62dc30436771ede95e8fe9ce8629638067c",
+      "cue_count": 339,
+      "words_rough": 2365,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46815,
+      "last_source_cue_end_ms": 1343579,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S01E13",
+      "season": 1,
+      "title": "Hi Honey, I'm Home",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "ccf94dea7f6557109ad71cd688a67cf735bcea5e3d910302cf7bad48a30b88a4",
+      "cue_count": 423,
+      "words_rough": 2846,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45516,
+      "last_source_cue_end_ms": 1395466,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E01",
+      "season": 2,
+      "title": "The Nun",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "dfaa3f44c8ad69cba67a9ce3eb661bf13d49e164171ae315d5ba865a261f98cd",
+      "cue_count": 365,
+      "words_rough": 2613,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46217,
+      "last_source_cue_end_ms": 1394613,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E02",
+      "season": 2,
+      "title": "Daddy for the Defense",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "bf07a33e60efe55c3e1764568e78c50733b2f2de750f31adc96f72d256e0453e",
+      "cue_count": 395,
+      "words_rough": 2677,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 52557,
+      "last_source_cue_end_ms": 1382934,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E03",
+      "season": 2,
+      "title": "Billie and the Cat",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "6e32d3588aeab815c1c88b851a0eaf9f6f27611dfd21e280101b357a3e50f712",
+      "cue_count": 380,
+      "words_rough": 2780,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 45584,
+      "last_source_cue_end_ms": 1353464,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E04",
+      "season": 2,
+      "title": "Pick a Number",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "b43c9d72849944d765b0a5b452f3fc3607bfb2806553a43d4fc9dd35636810b1",
+      "cue_count": 403,
+      "words_rough": 2802,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46484,
+      "last_source_cue_end_ms": 1388207,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E05",
+      "season": 2,
+      "title": "The Computer Kid",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "7298f5a148b63988c10ed0109d01d29e96bd4f5178812114a17736f385dda677",
+      "cue_count": 371,
+      "words_rough": 2593,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 54593,
+      "last_source_cue_end_ms": 1395576,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E06",
+      "season": 2,
+      "title": "Bull Gets a Kid",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "a25b880b652f6f7f60e1b1a8593065e96a8d81c83a9f8269b2e3c5b18a1158e7",
+      "cue_count": 361,
+      "words_rough": 2433,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 53926,
+      "last_source_cue_end_ms": 1388135,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E07",
+      "season": 2,
+      "title": "Harry on Trial",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "12ce497fef270a1bbc2dadc5a0542c3cc3a07938fbae7845aa17f3dbe473ea87",
+      "cue_count": 348,
+      "words_rough": 2393,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43380,
+      "last_source_cue_end_ms": 1391206,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E08",
+      "season": 2,
+      "title": "Harry and the Madam",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "fbc096cb7985f06aa74b2061be53ff0a5df708e5702cbbcd1c7dc9831720b46a",
+      "cue_count": 397,
+      "words_rough": 2549,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 41952,
+      "last_source_cue_end_ms": 1382367,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E09",
+      "season": 2,
+      "title": "Inside Harry Stone",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "a972d4a38d5897ba1059f2dfecd281765a0b120f71e9860edd7c211d60fd4803",
+      "cue_count": 399,
+      "words_rough": 2829,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 42920,
+      "last_source_cue_end_ms": 1382900,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E10",
+      "season": 2,
+      "title": "The Blizzard",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "e4345ff162d9b979e7cd0ec338f93b57a1f498b5dc7abcc1fe4bd6006a44fa83",
+      "cue_count": 340,
+      "words_rough": 2473,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44715,
+      "last_source_cue_end_ms": 1378662,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E11",
+      "season": 2,
+      "title": "Take My Wife, Please",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "59b793b71f3f5f44aa6db406dc5f7f60763cbc451651a14aed5006847f4d2557",
+      "cue_count": 383,
+      "words_rough": 2837,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43213,
+      "last_source_cue_end_ms": 1393609,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E12",
+      "season": 2,
+      "title": "The Birthday Visitor",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "918c3de429b06e8d92e592d2236563a72d1475bb5b1f4a02c591cb7d6b8c90ee",
+      "cue_count": 371,
+      "words_rough": 2765,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 41844,
+      "last_source_cue_end_ms": 1389537,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E13",
+      "season": 2,
+      "title": "Dan's Parents",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "4eb094b9453b460bb4d90b3cc94d8e50f3a98990e0e42246b398e8ea3f3ef269",
+      "cue_count": 382,
+      "words_rough": 2840,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 46658,
+      "last_source_cue_end_ms": 1363981,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E14",
+      "season": 2,
+      "title": "Nuts About Harry",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "b907c29091ac7d36c7a370c17f971aa077cf0f6ce66cff7e7531bfd6f9127e61",
+      "cue_count": 350,
+      "words_rough": 2733,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 47489,
+      "last_source_cue_end_ms": 1386338,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E15",
+      "season": 2,
+      "title": "An Old Flame",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "806b5603d7756bf35a15da89538f19ebadb671fcb9e6631b4c9280926dc68633",
+      "cue_count": 392,
+      "words_rough": 2553,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 49584,
+      "last_source_cue_end_ms": 1394946,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E16",
+      "season": 2,
+      "title": "The Gypsy",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "65f3f4ed9a36501a776a7f0a612f6c8227b7a0d3d6a5bbc220d133297fd2c27a",
+      "cue_count": 394,
+      "words_rough": 2632,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44679,
+      "last_source_cue_end_ms": 1390532,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E17",
+      "season": 2,
+      "title": "Battling Bailiff",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "395fe63ae8513793e5b693681e70df023869300e9e2c0d4bd443dace95894ba1",
+      "cue_count": 358,
+      "words_rough": 2624,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 44312,
+      "last_source_cue_end_ms": 1388934,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E18",
+      "season": 2,
+      "title": "Billie's Valentine",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "a79b75d72f25cfa0cba5eea66c528e0b99e60399dbed08e20b5c1c8aa1f18b78",
+      "cue_count": 361,
+      "words_rough": 2245,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 55498,
+      "last_source_cue_end_ms": 1390707,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E19",
+      "season": 2,
+      "title": "Married Alive",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "33cb63c0ab8516bd08c7eac13d89cac77a91b8497907042d6bc0437ff06d6082",
+      "cue_count": 331,
+      "words_rough": 2469,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48490,
+      "last_source_cue_end_ms": 1397038,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E20",
+      "season": 2,
+      "title": "Mac and Quon Le: Together Again",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "3ae2ec31c264c6e451128418bb51888966826fc3d598c84f80e864ae98d202dc",
+      "cue_count": 378,
+      "words_rough": 2585,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46248,
+      "last_source_cue_end_ms": 1391238,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E21",
+      "season": 2,
+      "title": "World War III",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "c5d042ffdb9540ebe691aad36b127378f1600eba58040a594794d44f3477830c",
+      "cue_count": 348,
+      "words_rough": 2449,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44414,
+      "last_source_cue_end_ms": 1388770,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S02E22",
+      "season": 2,
+      "title": "Walk, Don't Wheel",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "1fd780edd1d574ae5395bf6461f17cf0edcc38d48f54eda4bcbe6e8ff508a7de",
+      "cue_count": 380,
+      "words_rough": 2374,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 50191,
+      "last_source_cue_end_ms": 1395711,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S03E04",
+      "season": 3,
+      "title": "Mac and Quon Le: No Reservations",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "6bc15c82a64d3cd29059b84b01e6e938030572f869ae9a83245101f96f01b9e8",
+      "cue_count": 363,
+      "words_rough": 2691,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 55794,
+      "last_source_cue_end_ms": 1421777,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E03",
+      "season": 4,
+      "title": "Author, Author",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "7f63d2372a4442c4353b11b753405d64ff33dfcd761af785e09b583cb8cc9562",
+      "cue_count": 312,
+      "words_rough": 2028,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43820,
+      "last_source_cue_end_ms": 1344460,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E04",
+      "season": 4,
+      "title": "Halloween II: The Return of Leon",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "e06039489987f78d12082798e98633559917d880d83a74e262600d8c12467299",
+      "cue_count": 338,
+      "words_rough": 2403,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 47820,
+      "last_source_cue_end_ms": 1341960,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E05",
+      "season": 4,
+      "title": "Dan's Operation (1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "9b0b7626749f4f36a63221abc4ddab32247a77866e59ad487683d2550027bdf7",
+      "cue_count": 341,
+      "words_rough": 2157,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 81030,
+      "last_source_cue_end_ms": 1354540,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E06",
+      "season": 4,
+      "title": "Dan's Operation (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "d197c0b8a18b5efc1c54ec014203e1e83ffe8c5a2c551ee933a84a71b88fa465",
+      "cue_count": 333,
+      "words_rough": 2442,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 58020,
+      "last_source_cue_end_ms": 1393120,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E08",
+      "season": 4,
+      "title": "Contempt of Courting",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "7b5fe723c997287dbf8c22a5e48e2f72dae69f699398e42bfc3f8690acf28f56",
+      "cue_count": 304,
+      "words_rough": 2192,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45680,
+      "last_source_cue_end_ms": 1397160,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E09",
+      "season": 4,
+      "title": "Earthquake",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "8a20e5b9aa5d31e92cb3a45f67d6ca6d143313cf8de244c8ae45a964f7d3a7de",
+      "cue_count": 351,
+      "words_rough": 2424,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44480,
+      "last_source_cue_end_ms": 1391320,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E10",
+      "season": 4,
+      "title": "Prince of a Guy",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "ed227b57997d30438693c6ce3c6681f00c9dc949666df895d35d951b60d2b2d3",
+      "cue_count": 370,
+      "words_rough": 2705,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45940,
+      "last_source_cue_end_ms": 1394320,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E11",
+      "season": 4,
+      "title": "New Year's Leave",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "3e8e09b2a9740e9a7d7899f584ed15c2e162a7a6845f6d463c1ddfabeb878a23",
+      "cue_count": 309,
+      "words_rough": 2048,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 44310,
+      "last_source_cue_end_ms": 1361010,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E13",
+      "season": 4,
+      "title": "Baby Talk",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "3bd1f19da7fcbd0fe7f2d55f4ac8ad9017f05fa41d63af12d108de85fb3b1b2a",
+      "cue_count": 349,
+      "words_rough": 2509,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 55680,
+      "last_source_cue_end_ms": 1395890,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E16",
+      "season": 4,
+      "title": "Rabid",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "00442de8605b7825fa320e4b390bd3e26fb8b6b2b97f918ef28867cf86375b8b",
+      "cue_count": 367,
+      "words_rough": 2658,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 43600,
+      "last_source_cue_end_ms": 1366600,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E18",
+      "season": 4,
+      "title": "Caught Red Handed",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "a8ff3be297b9c181b224186e0e32e5be0a93a2b15a883394d9b950cf000c8568",
+      "cue_count": 330,
+      "words_rough": 2303,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 49430,
+      "last_source_cue_end_ms": 1433590,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S04E22",
+      "season": 4,
+      "title": "Her Honor (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "a40070ece49987647903e3e40837fff63cd9c1907785752fa4539d95d5f8a374",
+      "cue_count": 332,
+      "words_rough": 2545,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 49060,
+      "last_source_cue_end_ms": 1442330,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E01",
+      "season": 5,
+      "title": "Her Honor (3)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "379b1c8d7b83cad5f8688f6e12e68245a5776ee4a30bd86053a3a84a33692536",
+      "cue_count": 310,
+      "words_rough": 2305,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 72010,
+      "last_source_cue_end_ms": 1375840,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E02",
+      "season": 5,
+      "title": "Her Honor (4)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "b1f54372c0b485f07591663d65c23e637aa6a038b70d48c7404afd9bf3c0cbbc",
+      "cue_count": 332,
+      "words_rough": 2357,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 45120,
+      "last_source_cue_end_ms": 1363930,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E03",
+      "season": 5,
+      "title": "Death of a Bailiff",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "5eff036234ff63394ee0164f0c32666d3bfc490a914ce383ca597cc4fc916ec2",
+      "cue_count": 341,
+      "words_rough": 2507,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44830,
+      "last_source_cue_end_ms": 1377720,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E04",
+      "season": 5,
+      "title": "Ladies Night",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "6ba175745b2adf51ab63fd59073626c59a7983a87f4f9eba9353dbfdcb70c368",
+      "cue_count": 283,
+      "words_rough": 2004,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 54040,
+      "last_source_cue_end_ms": 1356500,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E06",
+      "season": 5,
+      "title": "Mac's Dilemma",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "b225e86dd0dcdb25be79c49bbcb13a384561555dd7d96837aa9d4c185b37f220",
+      "cue_count": 332,
+      "words_rough": 2543,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 46400,
+      "last_source_cue_end_ms": 1373870,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E08",
+      "season": 5,
+      "title": "No Hard Feelings",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "f95d2da962706730b77cee449d71da2c81e1bee938c17fcc4b4c549bf1c8dfa5",
+      "cue_count": 353,
+      "words_rough": 2455,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 56050,
+      "last_source_cue_end_ms": 1377090,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E09",
+      "season": 5,
+      "title": "Constitution (1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "ab419263ca40cb0f95d3a22e8de2c2be2d12d7b24e69887f6bc5f3b67e83cbf7",
+      "cue_count": 359,
+      "words_rough": 2733,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 50400,
+      "last_source_cue_end_ms": 1330080,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E10",
+      "season": 5,
+      "title": "Constitution (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "98e9c53f4d404dc454671295a8b68ce8fe7aa71d56ea852dd767cb5b16fa461f",
+      "cue_count": 315,
+      "words_rough": 2392,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 45470,
+      "last_source_cue_end_ms": 1378620,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E11",
+      "season": 5,
+      "title": "Let It Snow",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "0a3e477f083e795baf7504cda990b2c60bf7dab8f2c82008a9ad81eed5ca6628",
+      "cue_count": 346,
+      "words_rough": 2585,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 44150,
+      "last_source_cue_end_ms": 1361500,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E12",
+      "season": 5,
+      "title": "Dan, the Walking Time Bomb",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "ef303e9d9d681d0e95d2d65bdd3d26c1de844d376e1574d2fe771f3752325c58",
+      "cue_count": 329,
+      "words_rough": 2478,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 51900,
+      "last_source_cue_end_ms": 1372870,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E13",
+      "season": 5,
+      "title": "Hit the Road, Jack",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "c161510361b0796ca4fa021f76ddacfce3ab92f1a821bed2a76ee504d79e2035",
+      "cue_count": 380,
+      "words_rough": 2705,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48570,
+      "last_source_cue_end_ms": 1314540,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E14",
+      "season": 5,
+      "title": "I'm OK, You're Catatonic/Schizophrenic",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "b748016bd9a4f1f53b1c9b44dfb0b4519efc0a9093e48bd1e7efe2f606bd8e4b",
+      "cue_count": 292,
+      "words_rough": 2195,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 45620,
+      "last_source_cue_end_ms": 1380980,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E15",
+      "season": 5,
+      "title": "Chrizzi's Honor",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "b52d3c3bd3fdefabb14b5ebcf46d01c45d2503f07159a7db90da026d89431a5d",
+      "cue_count": 346,
+      "words_rough": 2497,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 49930,
+      "last_source_cue_end_ms": 1362600,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E18",
+      "season": 5,
+      "title": "Russkie Business",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "aff24040f09c984c5b0919d9cad142b7c10c31489c30bce17865b63ccf3c8258",
+      "cue_count": 349,
+      "words_rough": 2652,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 47640,
+      "last_source_cue_end_ms": 1368570,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E19",
+      "season": 5,
+      "title": "Jung and the Restless",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "79514081fdc0833d80a0781cc8f2ab8036c921f46f7e6975d37bd10da237e765",
+      "cue_count": 318,
+      "words_rough": 2374,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48430,
+      "last_source_cue_end_ms": 1377740,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E21",
+      "season": 5,
+      "title": "Mac's Millions",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "fdcadcc1e452d9e50aee9d5a8a7429573d6d1d226588079dc7e3ae67e4394c9c",
+      "cue_count": 349,
+      "words_rough": 2512,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 47460,
+      "last_source_cue_end_ms": 1391600,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S05E22",
+      "season": 5,
+      "title": "Danny Got His Gun (1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "d2d0468f78e7bd2281eff17b6265d830e4b46370fa02815af8427470ac67ce5d",
+      "cue_count": 379,
+      "words_rough": 2821,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43490,
+      "last_source_cue_end_ms": 1418940,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E01",
+      "season": 6,
+      "title": "Danny Got His Gun (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "a2e8650ac16cd7ffe2adfd380e677ff99b556ae3543a72cf300082b7761d7cfc",
+      "cue_count": 354,
+      "words_rough": 2636,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 49979,
+      "last_source_cue_end_ms": 1380900,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E03",
+      "season": 6,
+      "title": "Fire",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "a71478344d57688e228c7b1642eb686f7f2cdde753c3e150fa1ccfc2dc730115",
+      "cue_count": 387,
+      "words_rough": 3072,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45920,
+      "last_source_cue_end_ms": 1387190,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E04",
+      "season": 6,
+      "title": "Harry and the Tramp",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "29f8354f5f424cbc9e43d4d15fa494354018387c9c9b76bf9cce562845a4ba2f",
+      "cue_count": 366,
+      "words_rough": 2735,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48160,
+      "last_source_cue_end_ms": 1371660,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E05",
+      "season": 6,
+      "title": "Educating Rhoda",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "c7e1043eb35ab7bc896c2185d1ac07f3df96092caf2319bee9a2287cee86db21",
+      "cue_count": 386,
+      "words_rough": 2842,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 42530,
+      "last_source_cue_end_ms": 1418380,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E06",
+      "season": 6,
+      "title": "The Last Temptation of Mac",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "ff0b9423c4dcd957082f961aedec8010d33e592a34b7660c732bb2e5602a127d",
+      "cue_count": 369,
+      "words_rough": 2848,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46790,
+      "last_source_cue_end_ms": 1399440,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E08",
+      "season": 6,
+      "title": "Night Court of the Living Dead",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "d2434850ea6cce7c17ccca49bc32b1eaf57774001fc4188030129b80e856d73e",
+      "cue_count": 372,
+      "words_rough": 2774,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 60970,
+      "last_source_cue_end_ms": 1407140,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E09",
+      "season": 6,
+      "title": "The Night Court Before Christmas",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "64b9d9278c7f9ff6bb11b08f783e378e8445f6677eedf757ba9ad14bd4552ecc",
+      "cue_count": 368,
+      "words_rough": 2751,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43800,
+      "last_source_cue_end_ms": 1399250,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E10",
+      "season": 6,
+      "title": "Mental Giant",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "ee238c2f8a0827924967ededb6fb47d25cc5089827e6c2eee7ab29b5c42f60d0",
+      "cue_count": 384,
+      "words_rough": 2787,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 42520,
+      "last_source_cue_end_ms": 1404690,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E11",
+      "season": 6,
+      "title": "Rock-a-Bye Baby",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "cef591b127edc6ea715f7581cb1c1163ffb94507d154ac8ff5593d007d7bfc41",
+      "cue_count": 337,
+      "words_rough": 2601,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 48010,
+      "last_source_cue_end_ms": 1318920,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E16",
+      "season": 6,
+      "title": "This Old Man",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "9c949db4a40a95e94f5db0c0a7870466e78029ca87253d296f387aa42efe4347",
+      "cue_count": 404,
+      "words_rough": 2899,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43150,
+      "last_source_cue_end_ms": 1392890,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E17",
+      "season": 6,
+      "title": "Strange Bedfellows",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "098fc95dca784d1c2dd07e30c56360f61f5ed1173aa1fc8bb4849378aab6cd0d",
+      "cue_count": 351,
+      "words_rough": 2579,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43640,
+      "last_source_cue_end_ms": 1399160,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E18",
+      "season": 6,
+      "title": "From Snoop to Nuts (1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "d8729476b4c8c1a88d12ef13e9cca77f008a1e5e8227526245f37744bf7efac7",
+      "cue_count": 346,
+      "words_rough": 2455,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45780,
+      "last_source_cue_end_ms": 1411010,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E19",
+      "season": 6,
+      "title": "From Snoop to Nuts (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "be33e97aaa5d83f7b7aec0168b88046a663fa9e6e5ff41644265b451d7d35c84",
+      "cue_count": 342,
+      "words_rough": 2521,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 46400,
+      "last_source_cue_end_ms": 1406940,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S06E20",
+      "season": 6,
+      "title": "Pen Pal",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "49bbb367c35d881980e4f72cb6b27264c7714bd374722ed6122543a1960afbc0",
+      "cue_count": 382,
+      "words_rough": 2764,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46690,
+      "last_source_cue_end_ms": 1402970,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E01",
+      "season": 7,
+      "title": "Life with Buddy",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "3367bb19d335383704caad0505c34f0e6104adcbc7a1ab920e4a00f312864965",
+      "cue_count": 340,
+      "words_rough": 2730,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43080,
+      "last_source_cue_end_ms": 1395530,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E02",
+      "season": 7,
+      "title": "If I Were a Rich Man",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "78770d3bbbffdbba119dca9b494bed64367e61d0f2306ac9305a2c4bba6e167a",
+      "cue_count": 354,
+      "words_rough": 2720,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 68650,
+      "last_source_cue_end_ms": 1395290,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E04",
+      "season": 7,
+      "title": "Come Back to the Five and Dime, Stephen King, Stephen King",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "ee1ef886bfeef5cd81380dc25cd6d0b919dbe1c785cd046b94d18ebcc0fbdf6d",
+      "cue_count": 345,
+      "words_rough": 2558,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 52080,
+      "last_source_cue_end_ms": 1394990,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E05",
+      "season": 7,
+      "title": "Blue Suede Bull",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "0eefd775142351b2c6d20d30ac6a1609096501a65d9eae9b1030d6f252d1253e",
+      "cue_count": 344,
+      "words_rough": 2485,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46140,
+      "last_source_cue_end_ms": 1394550,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E06",
+      "season": 7,
+      "title": "For Love or Money",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "845a2358635368fdd8555dc752c06b14d4e3c599f30c00459b9d2745b0050204",
+      "cue_count": 365,
+      "words_rough": 2712,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 50480,
+      "last_source_cue_end_ms": 1393140,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E07",
+      "season": 7,
+      "title": "Auntie Maim",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "63e11fd4ea69b3b4ec231df585ce1bcca14956ee4f83f1135fcfbbe88306c71a",
+      "cue_count": 355,
+      "words_rough": 2703,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44300,
+      "last_source_cue_end_ms": 1383940,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E09",
+      "season": 7,
+      "title": "Branded (1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "6ed415808ca7482c2583db0062add8fff3c02b108807c863c1987e792eb49e4b",
+      "cue_count": 339,
+      "words_rough": 2705,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 92750,
+      "last_source_cue_end_ms": 1392850,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E10",
+      "season": 7,
+      "title": "Branded (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "100b6a77d8c0aa67d1670c509d7a135b22e4f255c3d2ad455ef39916548d994e",
+      "cue_count": 323,
+      "words_rough": 2645,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 52370,
+      "last_source_cue_end_ms": 1379160,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E11",
+      "season": 7,
+      "title": "Passion Plundered",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "09122aac460369ef769298610917a3b26ae307737f0d3fc2d01af4ecd71b62e9",
+      "cue_count": 367,
+      "words_rough": 2896,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 54330,
+      "last_source_cue_end_ms": 1398030,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E12",
+      "season": 7,
+      "title": "Amore or Less",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "100cd1532512146df0e853091c70b57d6e9f0b6db863b75195c73455667aaf20",
+      "cue_count": 358,
+      "words_rough": 2765,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 47140,
+      "last_source_cue_end_ms": 1382110,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E14",
+      "season": 7,
+      "title": "Futureman",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "c089d69a93ee7107b8aac5b3517c5f16f5a8c8a9fb7444a6e93546ca4d5aa57f",
+      "cue_count": 355,
+      "words_rough": 2482,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 57340,
+      "last_source_cue_end_ms": 1385740,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E15",
+      "season": 7,
+      "title": "Wedding Bell Blues (1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "c9a3d80dc6f4931b5ea3311938e19fa7d5c23af410cbbe47603bd5fd9d5b0e2e",
+      "cue_count": 374,
+      "words_rough": 2760,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45050,
+      "last_source_cue_end_ms": 1387660,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E16",
+      "season": 7,
+      "title": "Wedding Bell Blues (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "de0b5b1a986043da8a77b83eed4df6108129e8675328d82590d7e74fd31387cc",
+      "cue_count": 360,
+      "words_rough": 2805,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48340,
+      "last_source_cue_end_ms": 1398630,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E17",
+      "season": 7,
+      "title": "The Talk Show",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "f0876f93d3b39fd08d46cc99cd1793a78546da6a409e34ecd82bbb3b12f74fdb",
+      "cue_count": 360,
+      "words_rough": 2803,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 44190,
+      "last_source_cue_end_ms": 1383770,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E18",
+      "season": 7,
+      "title": "Melvin and Harold",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "fab211b1264e557e51e15d1c7adc20ea34880c94bf37885f914c53f51d1e5a0c",
+      "cue_count": 351,
+      "words_rough": 2579,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 54580,
+      "last_source_cue_end_ms": 1372490,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E19",
+      "season": 7,
+      "title": "The Glasnost Menagerie",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "93debcb76a2cf3ed8292e9bb686f4b850b5684a604fb4fbac320a692a44628ed",
+      "cue_count": 360,
+      "words_rough": 2913,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 51750,
+      "last_source_cue_end_ms": 1380600,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E20",
+      "season": 7,
+      "title": "I Said Dance!",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "fd04f6857a7d06a708177c66b671da99bb2d1a481527fa3220d367a6d2b62ba8",
+      "cue_count": 385,
+      "words_rough": 2868,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45740,
+      "last_source_cue_end_ms": 1378330,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E22",
+      "season": 7,
+      "title": "Still Another Day in the Life",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "4d9b1d9b2f0eb761767c5b42ed5bd4be9cb5b6ec027a91577297a06d71d6e88e",
+      "cue_count": 286,
+      "words_rough": 2228,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 90130,
+      "last_source_cue_end_ms": 1366710,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S07E23",
+      "season": 7,
+      "title": "A Closer Look",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "f6bc944436203918ae91521baa87a91927568f666cfa318a9418bc564dabb744",
+      "cue_count": 370,
+      "words_rough": 3072,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45589,
+      "last_source_cue_end_ms": 1395240,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E02",
+      "season": 8,
+      "title": "A Family Affair (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "344e3cc24bd8bf66dc68d0801495292fbb201fa41e29218a3576fd1df679378a",
+      "cue_count": 396,
+      "words_rough": 2824,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 53160,
+      "last_source_cue_end_ms": 1362570,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E03",
+      "season": 8,
+      "title": "When Harry Met Margaret",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "596b2f0993004d3163c34bda62eb32f57adc915bcac0c4f7c98bc6364b85b0d6",
+      "cue_count": 344,
+      "words_rough": 2412,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 49570,
+      "last_source_cue_end_ms": 1357520,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E04",
+      "season": 8,
+      "title": "Can't Buy Me Love",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "95157994a0f9264f3ca018f773d58c037f24fbf83b6ff6a01fc3c08b492c759b",
+      "cue_count": 380,
+      "words_rough": 2787,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 50930,
+      "last_source_cue_end_ms": 1389750,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E05",
+      "season": 8,
+      "title": "Death Takes a Halloween",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "64973d90b40b3d86680dd4cc1c6489f0a9a1850b52ace712ab72e099705efa95",
+      "cue_count": 353,
+      "words_rough": 2611,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 52460,
+      "last_source_cue_end_ms": 1391910,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E06",
+      "season": 8,
+      "title": "Crossroads (1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "d59ac3ebf2d77499b7fcd075fc92d379e34509f4f6c82f9c755e31f4850e71b8",
+      "cue_count": 357,
+      "words_rough": 2518,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 44530,
+      "last_source_cue_end_ms": 1391720,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E07",
+      "season": 8,
+      "title": "Crossroads (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "e4f15e5ed6da43432250537e8a0479ba090b1af54a3b353f36f2f51015f5052b",
+      "cue_count": 321,
+      "words_rough": 2343,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 44920,
+      "last_source_cue_end_ms": 1419090,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E08",
+      "season": 8,
+      "title": "Day Court",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "33bcb0dd38e7414fe7cd12901bfbc620c631703e829f0bac84c701ce71478ddb",
+      "cue_count": 392,
+      "words_rough": 2910,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 59871,
+      "last_source_cue_end_ms": 1390580,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E10",
+      "season": 8,
+      "title": "Nobody Says Rat Fink Anymore",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "623028045421ce5bb08b1a6f1f56f74c36ac22b6114765da02f2d480d121d38d",
+      "cue_count": 351,
+      "words_rough": 2593,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 44160,
+      "last_source_cue_end_ms": 1349430,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E11",
+      "season": 8,
+      "title": "Jail Bait",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "3515102e62c0ad5db3b59deedf3d112e4416cc17f49b474bc6b08349a88dfada",
+      "cue_count": 403,
+      "words_rough": 2933,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 56580,
+      "last_source_cue_end_ms": 1394670,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E12",
+      "season": 8,
+      "title": "It's Just a Joke",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "86817f9e2e1c5fa5be796ea884aee76af9954983ff572d91b5511cd6af7efbae",
+      "cue_count": 376,
+      "words_rough": 2779,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44700,
+      "last_source_cue_end_ms": 1384450,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E13",
+      "season": 8,
+      "title": "Bringing Down Baby",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "04c7d8cbf5708dee0a61d29f57ecc599451d40e4052326feca5668d51a174989",
+      "cue_count": 373,
+      "words_rough": 2769,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 43900,
+      "last_source_cue_end_ms": 1390650,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E15",
+      "season": 8,
+      "title": "Mama Was a Rollin' Stone",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "5484f265a7ec5c9c8abad63ec2c7d8e5bfa1fdc9d001ec803b14c75caf38159f",
+      "cue_count": 355,
+      "words_rough": 2554,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 54220,
+      "last_source_cue_end_ms": 1395060,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E16",
+      "season": 8,
+      "title": "Attachments Included",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "755d0030ed3944cfb14fc4638d0fff0adcabed0dc9c6c52ada2999ebcd4c1e18",
+      "cue_count": 374,
+      "words_rough": 2734,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44170,
+      "last_source_cue_end_ms": 1393350,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E17",
+      "season": 8,
+      "title": "Alone Again, Naturally",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "dc7fb5d01817f794e296b180cfb0270a5d401b21635ded4793b4ba3401d2446e",
+      "cue_count": 374,
+      "words_rough": 2541,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44200,
+      "last_source_cue_end_ms": 1405600,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E18",
+      "season": 8,
+      "title": "Hey Harry, F'Crying Out Loud-- It is a Wonderful Life ... Sorta",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "a729fba99f638f865247c51024749b6322a34d4e060724c52e2e1e97745cd134",
+      "cue_count": 385,
+      "words_rough": 2662,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48800,
+      "last_source_cue_end_ms": 1388850,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E20",
+      "season": 8,
+      "title": "With a Little Help from My Friends",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "9dca0c52cc62c2dd282308c57a5b2ee968497d919548623ba8f331b445d5885b",
+      "cue_count": 392,
+      "words_rough": 2699,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45470,
+      "last_source_cue_end_ms": 1392490,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E21",
+      "season": 8,
+      "title": "Mac Takes a Vocation",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "9416e4f06f5d33326c6543e95be71fd09ee56b62acf0d5b50e2095e8100b8aae",
+      "cue_count": 385,
+      "words_rough": 2912,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44620,
+      "last_source_cue_end_ms": 1391670,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E22",
+      "season": 8,
+      "title": "Harry's Fifteen Minutes",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "56d46111c79c1a3b7dd68609926cce4af4726c94370822b0a19692f16eb570c6",
+      "cue_count": 389,
+      "words_rough": 2617,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46990,
+      "last_source_cue_end_ms": 1388320,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E23",
+      "season": 8,
+      "title": "Where There's a Will, There's a Tony (1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "4163aeab4fd6f8c8d94cd4ec30f02e3d1de50865fb19a181f53a04032ed54c0a",
+      "cue_count": 370,
+      "words_rough": 2571,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45120,
+      "last_source_cue_end_ms": 1395660,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S08E24",
+      "season": 8,
+      "title": "Where There's a Will, There's a Tony (2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "b82c84b738dbbf59b7c9ad57974d4a23522cc25f580ab8d6736a8a6ee4efda72",
+      "cue_count": 395,
+      "words_rough": 2949,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44800,
+      "last_source_cue_end_ms": 1363460,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E01",
+      "season": 9,
+      "title": "A Guy Named Phantom (Part 1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "95562502eefad6a5a619604caba78e7028f941c3814ee2aa2da8d87c8678d334",
+      "cue_count": 300,
+      "words_rough": 2030,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 48160,
+      "last_source_cue_end_ms": 1289500,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E02",
+      "season": 9,
+      "title": "A Guy Named Phantom (Part 2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "2ef4c1b2fd5d010c0fe5d5ef1cf5e4280150ad08f7339c9d9260c8f5310172ce",
+      "cue_count": 335,
+      "words_rough": 2242,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 87200,
+      "last_source_cue_end_ms": 1357510,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E03",
+      "season": 9,
+      "title": "My Life as a Dog Lawyer",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "5eda66ecb6584e2b3fcf3d4b424f3cf8011dc526789c5612a264c0898972afaa",
+      "cue_count": 376,
+      "words_rough": 2629,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 42940,
+      "last_source_cue_end_ms": 1356790,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E04",
+      "season": 9,
+      "title": "Puppy Love",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "0096d7392b7b52ca4da7ec1f8445abc551d36e8030c522be5ed933a27bd9bf6f",
+      "cue_count": 345,
+      "words_rough": 2355,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45840,
+      "last_source_cue_end_ms": 1334020,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E05",
+      "season": 9,
+      "title": "Pop Goes the Question",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "f0c7e11b6a772a8e5334fedffd2d8a6e80063833014e862c14b91ae893339d19",
+      "cue_count": 337,
+      "words_rough": 2405,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 44040,
+      "last_source_cue_end_ms": 1365420,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E06",
+      "season": 9,
+      "title": "Guess Who's Listening to Dinner?",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "64889a5b7fde5a15be4f5e6b300cb98668155d3944dc957acabfc73128fd2531",
+      "cue_count": 386,
+      "words_rough": 2577,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46120,
+      "last_source_cue_end_ms": 1361660,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E07",
+      "season": 9,
+      "title": "Looking for Mr. Shannon",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "8af7bf73c72cceb280013bb32d8cca60166f7faa0344f394ca7e2dbec0d26068",
+      "cue_count": 363,
+      "words_rough": 2633,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 45630,
+      "last_source_cue_end_ms": 1361100,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E08",
+      "season": 9,
+      "title": "Teacher's Pet",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "cb75c806132a8374e990d2650f083c778e5d8992b88d4306c68f086a28bfbaa1",
+      "cue_count": 354,
+      "words_rough": 2821,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 54810,
+      "last_source_cue_end_ms": 1354100,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E09",
+      "season": 9,
+      "title": "The System Works",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "7934bd41f0111aeefe322bb916a77357a86e6b5df78c49c1a64230c84e465c75",
+      "cue_count": 340,
+      "words_rough": 2410,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44740,
+      "last_source_cue_end_ms": 1361750,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E10",
+      "season": 9,
+      "title": "Get Me to the Roof on Time",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "50db8898d0d389bbca84fd8ef7aebf2fbb30c25aea6222f6353aa8635f236195",
+      "cue_count": 314,
+      "words_rough": 2406,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48210,
+      "last_source_cue_end_ms": 1359220,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E12",
+      "season": 9,
+      "title": "Shave and a Haircut",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "ca07d8ceb1885e5d2b109b72e874e7cf280716f90b3128de5b697f3e9f098a25",
+      "cue_count": 355,
+      "words_rough": 2710,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 45760,
+      "last_source_cue_end_ms": 1300070,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E13",
+      "season": 9,
+      "title": "A New York Story",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "c6dbf4885544ab0a82e62c5bb602ceb3bb1688e464dc5838de6279bbd4a8b6f7",
+      "cue_count": 349,
+      "words_rough": 2809,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 48040,
+      "last_source_cue_end_ms": 1323960,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E14",
+      "season": 9,
+      "title": "Undressed for Success",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "1aa81d55429ded5e2269c1ffdc91d07323575eca2ad908489d1e4c586fe8a52e",
+      "cue_count": 374,
+      "words_rough": 2911,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 46540,
+      "last_source_cue_end_ms": 1361620,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E15",
+      "season": 9,
+      "title": "Poker? I Hardly Know Her",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "7ad905c23fc3301b5102f286ba74b6bb678d3290aa71a45a76b4fd3963ec5dd8",
+      "cue_count": 316,
+      "words_rough": 2274,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43500,
+      "last_source_cue_end_ms": 1303500,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E16",
+      "season": 9,
+      "title": "Party Girl (Part 1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "f70d5b3732f1229d0d50ab9fb83949c00fb6441c1ec09f06b9c6390ffe5a29b3",
+      "cue_count": 357,
+      "words_rough": 2767,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43230,
+      "last_source_cue_end_ms": 1346160,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E17",
+      "season": 9,
+      "title": "Party Girl (Part 2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "e9196e3918b93efc06fcde301894297c1ae66a71b86fdda9b6318c048a5950df",
+      "cue_count": 370,
+      "words_rough": 2785,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 43950,
+      "last_source_cue_end_ms": 1410890,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E18",
+      "season": 9,
+      "title": "To Sir With... Ah, What the Heck... Love",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "44c9e4d2bb6023501dc051305e87a01ff1e93ce7af7928891e9a435cb3f2f29a",
+      "cue_count": 332,
+      "words_rough": 2307,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 44660,
+      "last_source_cue_end_ms": 1282570,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E20",
+      "season": 9,
+      "title": "Opportunity Knocks (Part 1)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "0add4e80a5b707028c9e494320863584b44018ad3210d67ad270fcba29d9e89e",
+      "cue_count": 343,
+      "words_rough": 2395,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 42890,
+      "last_source_cue_end_ms": 1296060,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E21",
+      "season": 9,
+      "title": "Opportunity Knocks (Part 2)",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "5add40b7e0cc951489326bab5576899d4785a770feb7850814a8b2c2dae1a953",
+      "cue_count": 398,
+      "words_rough": 2621,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 1,
+      "largest_cue_gap_ms": 59810,
+      "last_source_cue_end_ms": 1452610,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    },
+    {
+      "episode_id": "S09E22",
+      "season": 9,
+      "title": "The 1992 Boat Show",
+      "score_for_triage_only": 1,
+      "flags": [],
+      "format": "srt",
+      "source_sha256": "bd22e64a19d315939e5080c62433e58ae6c2918d4604afd76fcbff3bfbed0f5d",
+      "cue_count": 330,
+      "words_rough": 2231,
+      "overlapping_cues": 0,
+      "gaps_over_30_seconds": 2,
+      "largest_cue_gap_ms": 47320,
+      "last_source_cue_end_ms": 1300800,
+      "suggested_manual_checks": [
+        "sample_video_edition_alignment_and_full_runtime"
+      ],
+      "review_status": "needs_edition_aligned_av_review",
+      "audiovisual_completeness_verified": false
+    }
+  ]
+}
