@@ -1,0 +1,36 @@
+name: Night Court immutable licensed-source backup
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-immutable-revisions
+    paths:
+      - "Night Court/tools/preserve_wiki_revisions.py"
+      - "Night Court/tools/validate_knowledge.py"
+      - ".github/workflows/night-court-preserve-wiki.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify current episode corpus
+        run: python "Night Court/tools/validate.py"
+      - name: Capture existing licensed revision snapshots (offline)
+        run: python "Night Court/tools/preserve_wiki_revisions.py"
+      - name: Re-run to verify exact idempotence and immutable hashes
+        run: python "Night Court/tools/preserve_wiki_revisions.py"
+      - name: Verify derived knowledge after snapshots
+        run: python "Night Court/tools/validate_knowledge.py"
+      - name: Commit only archive snapshots to research branch
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): preserve immutable Wikipedia source revisions"
+          git push origin HEAD:research/night-court-immutable-revisions
