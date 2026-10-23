@@ -44,7 +44,7 @@ def inspect(path:Path):
             normalized=info.filename.replace("\\","/")
             parts=PurePosixPath(normalized)
             if (parts.is_absolute() or not normalized or any(p in (".","..") for p in parts.parts)
-                or ":" in parts.parts[0] or normalized.startswith("//")):
+                or not parts.parts or ":" in parts.parts[0] or normalized.startswith("//")):
                 raise ValueError("Unsafe archive member path "+repr(info.filename))
             mode=(info.external_attr>>16)
             if stat.S_ISLNK(mode):
@@ -84,7 +84,7 @@ def bundle_options(meta,episode,source,archive_hash,info):
       "complete":variant.get("complete",meta.get("complete",False)) is True,
       "source_name":f"{source.name}::{info.filename}",
       "source_url":meta.get("source_url"),
-      "notes":f"{notes} [ZIP SHA-256 {archive_hash}; source member CRC32 {info.CRC:08x}]"
+      "notes":f"{meta.get('source_name', 'Bundled user-provided subtitles')}; {notes} [ZIP SHA-256 {archive_hash}; source member CRC32 {info.CRC:08x}]"
     }
 
 def import_bundle(path:Path,meta:dict,dry_run=False):
