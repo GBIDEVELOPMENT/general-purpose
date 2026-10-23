@@ -104,6 +104,15 @@ async function main(){
   await until("document.querySelector('#status')?.textContent?.includes('items')",'initial listing');
   await evaluate("document.querySelector('#scope').value='images';document.querySelector('#scope').dispatchEvent(new Event('change'))");
   await until("document.querySelectorAll('#items .tile').length===2",'recursive image gallery');
+  await evaluate("document.querySelector('#sortFiles').value='size';document.querySelector('#sortFiles').dispatchEvent(new Event('change'))");
+  await until("document.querySelectorAll('#items .tile').length===2",'sorted gallery');
+  await evaluate("document.querySelector('#density').value='210';document.querySelector('#density').dispatchEvent(new Event('input'))");
+  assert.equal(await evaluate("document.querySelector('#items').style.getPropertyValue('--tile-min')"),'210px','resizable gallery');
+  await evaluate("document.querySelector('#filter').value='circle';document.querySelector('#contentSearch').click()");
+  await until("document.querySelector('#contentSearch').textContent==='Search contents'",'bounded content search completion');
+  assert.equal(await evaluate("document.querySelectorAll('#searchResults .search-hit').length>=1"),true,'content search found SVG text');
+  await evaluate("document.querySelector('#filter').value='';document.querySelector('#filter').dispatchEvent(new Event('input'))");
+  await until("document.querySelectorAll('#items .tile').length===2",'restored gallery after search');
   assert.equal(await evaluate("document.documentElement.scrollWidth<=innerWidth+2"),true,'393px overflow');
   await screenshot('expository-gallery-393.png');
   await evaluate("document.querySelector('#items .tile').click()");
