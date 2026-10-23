@@ -24,9 +24,12 @@ for season,total in enumerate(counts,1):
             assert source["url"].startswith("https://"),key
             assert source["level"] in (
                 "series_catalog","episode_in_index","episode_page",
-                "episode_url_derived_from_verified_index"),key
+                "episode_url_derived_from_verified_index","episode_streaming_catalog"),key
             if source["level"]=="episode_url_derived_from_verified_index":
                 assert source.get("verified") is False,key
+            if source["level"]=="episode_streaming_catalog":
+                assert source.get("kind")=="streaming_closed_caption_availability",key
+                assert source.get("content_imported") is False,key
         for holding in obj.get("holdings",{}).get("recaps",[]):
             file=directory/holding["file"]
             provenance=directory/holding["provenance_file"]
