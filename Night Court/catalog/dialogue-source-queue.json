@@ -4,8 +4,8 @@
   "ranking_policy": "Least episode-specific source evidence first; within tier, later seasons first.",
   "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
   "source_status_counts": {
-    "direct_episode_page_found_not_held": 53,
-    "held_dialogue_needs_quality_review": 35,
+    "direct_episode_page_found_not_held": 44,
+    "held_dialogue_needs_quality_review": 44,
     "index_coverage_only": 102,
     "no_episode_dialogue_specific_locator": 3
   },
@@ -23,7 +23,7 @@
       "direct_episode_page_found_not_held": 22
     },
     "S05": {
-      "direct_episode_page_found_not_held": 1,
+      "held_dialogue_needs_quality_review": 1,
       "index_coverage_only": 21
     },
     "S06": {
@@ -31,15 +31,15 @@
     },
     "S07": {
       "index_coverage_only": 21,
-      "direct_episode_page_found_not_held": 3
+      "held_dialogue_needs_quality_review": 3
     },
     "S08": {
       "index_coverage_only": 23,
-      "direct_episode_page_found_not_held": 1
+      "held_dialogue_needs_quality_review": 1
     },
     "S09": {
       "index_coverage_only": 15,
-      "direct_episode_page_found_not_held": 4,
+      "held_dialogue_needs_quality_review": 4,
       "no_episode_dialogue_specific_locator": 3
     }
   },
@@ -149,15 +149,6 @@
     "S05E20",
     "S05E21",
     "S05E22",
-    "S09E06",
-    "S09E20",
-    "S09E21",
-    "S09E22",
-    "S08E06",
-    "S07E03",
-    "S07E04",
-    "S07E23",
-    "S05E01",
     "S04E01",
     "S04E02",
     "S04E03",
@@ -2685,11 +2676,11 @@
       "season": 5,
       "episode": 1,
       "title": "Her Honor (3)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3706,11 +3697,11 @@
       "season": 7,
       "episode": 3,
       "title": "The Cop and the Lady",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3728,11 +3719,11 @@
       "season": 7,
       "episode": 4,
       "title": "Come Back to the Five and Dime, Stephen King, Stephen King",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4146,11 +4137,11 @@
       "season": 7,
       "episode": 23,
       "title": "A Closer Look",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4309,11 +4300,11 @@
       "season": 8,
       "episode": 6,
       "title": "Crossroads (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -4846,11 +4837,11 @@
       "season": 9,
       "episode": 6,
       "title": "Guess Who's Listening to Dinner?",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -5124,11 +5115,11 @@
       "season": 9,
       "episode": 20,
       "title": "Opportunity Knocks (Part 1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -5146,11 +5137,11 @@
       "season": 9,
       "episode": 21,
       "title": "Opportunity Knocks (Part 2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -5168,11 +5159,11 @@
       "season": 9,
       "episode": 22,
       "title": "The 1992 Boat Show",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 2,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",

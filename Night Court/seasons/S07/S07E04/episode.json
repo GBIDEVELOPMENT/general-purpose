@@ -142,19 +142,29 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1121/night_court_s07e04_come_back_to_the_five_and_dime.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "individually_checked_public_caption_display_page",
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "note": "Original-series episode page; URL only, no transcript bytes. ",
+      "provider": "Subtitle Cat",
       "source_index": null,
-      "note": "Original-series episode page; URL only, no transcript bytes. "
+      "url": "https://www.subtitlecat.com/subs/1121/night_court_s07e04_come_back_to_the_five_and_dime.html",
+      "verification": "individually_checked_public_caption_display_page",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--ee1ef886bfeef5cd/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--ee1ef886bfeef5cd/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "ee1ef886bfeef5cd81380dc25cd6d0b919dbe1c785cd046b94d18ebcc0fbdf6d",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-late-season-research-witnes--ee1ef886bfeef5cd"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

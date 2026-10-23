@@ -274,19 +274,29 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1121/night_court_s09e21_opportunity_knock_knocks_2.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "individually_checked_public_caption_display_page",
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "note": "Original-series episode page; URL only, no transcript bytes. Source calls story 'Opportunity Knock Knocks'; catalog titles 'Opportunity Knocks'. Episode ID and story are consistent.",
+      "provider": "Subtitle Cat",
       "source_index": null,
-      "note": "Original-series episode page; URL only, no transcript bytes. Source calls story 'Opportunity Knock Knocks'; catalog titles 'Opportunity Knocks'. Episode ID and story are consistent."
+      "url": "https://www.subtitlecat.com/subs/1121/night_court_s09e21_opportunity_knock_knocks_2.html",
+      "verification": "individually_checked_public_caption_display_page",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--5add40b7e0cc9514/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--5add40b7e0cc9514/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "5add40b7e0cc951489326bab5576899d4785a770feb7850814a8b2c2dae1a953",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-late-season-research-witnes--5add40b7e0cc9514"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

@@ -190,32 +190,42 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1121/Night%20Court%20s07e23%20A%20Closer%20Look.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "original_1984_series_episode_page_individually_checked",
       "description": "Original season seven A Closer Look caption page",
+      "kind": "subtitle_index",
       "language_observed": "unspecified",
-      "rights_status": "not_established"
+      "level": "episode_page",
+      "provider": "Subtitle Cat",
+      "rights_status": "not_established",
+      "url": "https://www.subtitlecat.com/subs/1121/Night%20Court%20s07e23%20A%20Closer%20Look.html",
+      "verification": "original_1984_series_episode_page_individually_checked",
+      "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/list_page.php?from=1710750",
-      "level": "episode_in_index",
-      "verified": true,
       "content_imported": false,
-      "verification": "episode_label_verified_in_public_upload_index_only",
-      "source_upload_date": "2025-06-22",
       "episode_id_in_listing": "S07E23",
-      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established."
+      "kind": "subtitle_index",
+      "level": "episode_in_index",
+      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established.",
+      "provider": "Subtitle Cat",
+      "source_upload_date": "2025-06-22",
+      "url": "https://www.subtitlecat.com/list_page.php?from=1710750",
+      "verification": "episode_label_verified_in_public_upload_index_only",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--f6bc944436203918/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--f6bc944436203918/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "f6bc944436203918ae91521baa87a91927568f666cfa318a9418bc564dabb744",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-late-season-research-witnes--f6bc944436203918"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [
