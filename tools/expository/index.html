@@ -58,7 +58,7 @@ body.light{--bg:#f4f4f7;--panel:#fff;--panel2:#f2f4f8;--stroke:#d4d8e2;--text:#1
 <section id="preview" class="preview" role="dialog" aria-modal="true" aria-label="File preview"><div class="preview-head"><button id="prevPreview" class="icon-btn" aria-label="Previous file" title="Previous file">‹</button><button id="nextPreview" class="icon-btn" aria-label="Next file" title="Next file">›</button><strong id="previewTitle"></strong><button id="compareAction" class="pill" hidden aria-label="Pin image for visual comparison">Pin A</button><button id="copyRaw" class="pill" hidden aria-label="Copy file text">Copy text</button><button id="downloadRaw" class="pill" hidden aria-label="Download original file">Download</button><button id="copyFile" class="pill" title="Copy file deep link" aria-label="Copy file deep link">Copy ↗</button><a id="fileLink" class="pill" target="_blank" rel="noopener noreferrer" aria-label="View file on GitHub">Git ↗</a><button id="closePreview" class="icon-btn" aria-label="Close preview">✕</button></div><div class="preview-body" id="previewBody"></div></section>
 <script>
 (()=>{'use strict';
-const $=id=>document.getElementById(id),state={repo:'',branch:'',path:'',items:[],mode:'grid',token:'',cache:new Map(),thumbUrls:new Set(),previewUrls:new Set(),preview:null,seq:0,repoRequest:0,tree:new Set(),expanded:new Set(),indexEntries:[],indexReady:false,indexTruncated:false,indexError:false,visibleItems:[],renderEpoch:0,limit:80,thumbObserver:null,returnFocus:null,pinned:null,currentBlob:null,compareMode:false,compareDisplay:'wipe',compareWipe:50,repoIsPrivate:true,bookmarks:new Set(),previewText:null,searchSeq:0};
+const $=id=>document.getElementById(id),state={repo:'',branch:'',path:'',items:[],mode:'grid',token:'',cache:new Map(),thumbUrls:new Set(),previewUrls:new Set(),preview:null,seq:0,repoRequest:0,tree:new Set(),expanded:new Set(),indexEntries:[],indexReady:false,indexTruncated:false,indexError:false,visibleItems:[],renderEpoch:0,limit:80,thumbObserver:null,returnFocus:null,pinned:null,currentBlob:null,compareMode:false,compareDisplay:'wipe',compareWipe:50,repoIsPrivate:true,bookmarks:new Set(),previewText:null,searchSeq:0,scanning:false};
 const codeRx=/\.(?:js|jsx|mjs|ts|tsx|py|rs|go|java|kt|c|cpp|h|hpp|sh|css|scss|html|sql|gradle)$/i,docsRx=/\.(?:md|markdown|txt|pdf|rst)$/i,dataRx=/\.(?:json|csv|tsv|yaml|yml|xml|toml|ini|properties)$/i;
 const imageRx=/\.(png|jpe?g|webp|gif|svg|avif|bmp)$/i,textRx=/\.(md|markdown|txt|json|ya?ml|xml|csv|tsv|js|jsx|ts|tsx|css|scss|html|py|kt|java|rs|go|sh|toml|ini|svg|sql|log|gradle|properties)$/i;
 function status(s){$('status').textContent=s}function closeNav(){$('sidebar').classList.remove('open');$('scrim').classList.remove('on')}
@@ -227,6 +227,34 @@ function adjacentPreview(direction){const files=state.visibleItems.filter(x=>x.t
 function previewButtons(){const files=state.visibleItems.filter(x=>x.type!=='dir');const enabled=files.length>1;$('prevPreview').disabled=!enabled;$('nextPreview').disabled=!enabled}
 async function downloadOriginal(){if(!state.preview||!state.currentBlob)return;const file=state.preview;const url=URL.createObjectURL(state.currentBlob);try{const a=elem('a');a.href=url;a.download=file.name;a.style.display='none';document.body.append(a);a.click();a.remove();status('Saving '+file.name)}finally{setTimeout(()=>URL.revokeObjectURL(url),15000)}}
 async function copyText(){if(!state.previewText)return;try{await navigator.clipboard.writeText(state.previewText);status('Copied file text')}catch{status('Clipboard unavailable; select text in preview.')}}
+function cancelContentScan(clear=true){++state.searchSeq;state.scanning=false;$('contentSearch').textContent='Search contents';if(clear)$('searchResults').replaceChildren()}
+async function scanContents(){
+ if(state.scanning){cancelContentScan(false);status('Content scan cancelled.');return}
+ const needle=$('filter').value.trim().toLowerCase();if(needle.length<2){status('Type at least two characters in Find by name, then select Search contents.');return}
+ const entries=state.indexReady?state.indexEntries:state.items;
+ const candidates=entries.filter(x=>x.type==='file'&&textRx.test(x.name)&&Number.isFinite(x.size)&&x.size<=128*1024).slice(0,120);
+ const limited=entries.filter(x=>x.type==='file'&&textRx.test(x.name)&&Number.isFinite(x.size)&&x.size<=128*1024).length>candidates.length;
+ const host=$('searchResults');host.replaceChildren();if(!candidates.length){status('No eligible text files to scan (128 KB maximum per file).');return}
+ const seq=++state.searchSeq,repo=state.repo,branch=state.branch;state.scanning=true;$('contentSearch').textContent='Cancel scan';
+ host.append(elem('p','hint','Scanning first '+candidates.length+' eligible text files, up to 128 KB each, with 3 concurrent requests. '+(limited?'Additional files are not scanned.':'')+' No results are stored.'));
+ let next=0,complete=0,matches=0,errors=0;
+ async function worker(){while(next<candidates.length&&seq===state.searchSeq){
+  const file=candidates[next++];try{
+   const blob=await fetchBlob(file);if(seq!==state.searchSeq||repo!==state.repo||branch!==state.branch)return;
+   const lines=(await blob.text()).split(/\r?\n/);let perFile=0;
+   for(let line=0;line<lines.length&&perFile<2&&matches<80;line++){
+    if(!lines[line].toLowerCase().includes(needle))continue;perFile++;matches++;
+    const result=elem('button','search-hit'),title=elem('strong','',file.path+':'+(line+1)),sample=elem('small','',lines[line].trim().slice(0,190));
+    result.append(title,sample);result.onclick=async()=>{await openPreview(file);const el=$('previewBody').querySelectorAll('.code-line')[line];el?.scrollIntoView({block:'center'});if(el)el.style.outline='1px solid var(--accent)'};
+    host.append(result)
+   }
+  }catch{errors++}finally{complete++;if(seq===state.searchSeq&&(complete%10===0||complete===candidates.length))status('Content scan '+complete+'/'+candidates.length+' files · '+matches+' matching lines'+(errors?' · '+errors+' inaccessible':''))}
+ }}
+ await Promise.all([worker(),worker(),worker()]);if(seq!==state.searchSeq)return;
+ state.scanning=false;$('contentSearch').textContent='Search contents';
+ if(!matches)host.append(elem('p','hint','No text matches in scanned files.'));
+ host.append(elem('p','hint','Finished: '+complete+' files; up to 2 matches per file and 80 matches total. '+(limited?'Only the first 120 eligible files were scanned.':'All eligible indexed files were scanned.')+(errors?' '+errors+' files could not be fetched.':'')));
+}
 function showContent(node){$('previewBody').replaceChildren(node)}
 function sourceViewer(text,name){const container=elem('div'),bar=elem('div','code-toolbar'),notice=elem('span','hint',name+' · '+text.split('\n').length+' lines');bar.append(notice);container.append(bar);const pre=elem('pre','code-view');const lines=text.split('\n').slice(0,2600);
  const rx=/(\/\/[^\n]*|#[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b(?:const|let|var|function|class|return|import|export|default|async|await|if|else|for|while|try|catch|throw|new|def|from|pass|public|private|void|struct|fn|use|true|false|null|None|undefined)\b|\b\d+(?:\.\d+)?\b)/g;
@@ -237,7 +265,7 @@ async function openPreview(item){if(!state.preview)state.returnFocus=document.ac
 async function openRepo(targetPath=''){
  const repo=$('repo').value.trim().replace(/^https?:\/\/github\.com\//,'').replace(/\/$/,'');
  if(!/^[\w.-]+\/[\w.-]+$/.test(repo)){status('Enter owner/repository.');return}
- const request=++state.repoRequest;state.repo=repo;state.branch='';state.path='';state.pinned=null;state.currentBlob=null;state.compareMode=false;
+ cancelContentScan();const request=++state.repoRequest;state.repo=repo;state.branch='';state.path='';state.pinned=null;state.currentBlob=null;state.compareMode=false;
  state.cache.clear();state.tree.clear();state.expanded.clear();state.repoIsPrivate=true;paintBookmarks();state.indexEntries=[];state.indexReady=false;state.indexTruncated=false;state.indexError=false;state.limit=80;state.items=[];state.visibleItems=[];$('items').replaceChildren();
  clearObjects();clearPreview();++state.seq;status('Connecting to '+repo+'…');
  try{
@@ -248,7 +276,7 @@ async function openRepo(targetPath=''){
  }catch(e){if(request===state.repoRequest)status('Cannot open repository: '+e.message)}
 }
 function resetSession(){
- ++state.repoRequest;++state.seq;state.token='';state.repo='';state.branch='';state.path='';state.pinned=null;state.currentBlob=null;state.compareMode=false;state.cache.clear();state.items=[];state.visibleItems=[];
+ cancelContentScan();++state.repoRequest;++state.seq;state.token='';state.repo='';state.branch='';state.path='';state.pinned=null;state.currentBlob=null;state.compareMode=false;state.cache.clear();state.items=[];state.visibleItems=[];
  state.tree.clear();state.expanded.clear();state.indexEntries=[];state.indexReady=false;state.indexError=false;state.indexTruncated=false;state.repoIsPrivate=true;
  state.renderEpoch++;if(state.thumbObserver){state.thumbObserver.disconnect();state.thumbObserver=null}thumbQueue.length=0;
  clearPreview();clearObjects();paintBookmarks();$('token').value='';$('branch').value='';
@@ -271,7 +299,7 @@ async function connect(){
  }catch(e){if(request===state.repoRequest)status('Repository list unavailable: '+e.message+' · Public repos can be entered manually.')}
 }
 async function copyCurrentLink(){try{await navigator.clipboard.writeText(location.href);status('Shareable link copied. Credentials are never included.')}catch{status('Clipboard unavailable. Copy this page URL from the address bar.')}}
-$('openRepo').onclick=()=>openRepo();$('disconnect').onclick=()=>{resetSession();status('Credentials and private browsing state cleared from this tab.')};$('copyFolder').onclick=copyCurrentLink;$('copyFile').onclick=copyCurrentLink;$('compareAction').onclick=compareAction;$('downloadRaw').onclick=downloadOriginal;$('copyRaw').onclick=copyText;$('bookmark').onclick=toggleBookmark;$('connect').onclick=connect;$('repoSelect').onchange=()=>{if($('repoSelect').value){$('repo').value=$('repoSelect').value;$('branch').value='';openRepo()}};
+$('openRepo').onclick=()=>openRepo();$('disconnect').onclick=()=>{resetSession();status('Credentials and private browsing state cleared from this tab.')};$('copyFolder').onclick=copyCurrentLink;$('copyFile').onclick=copyCurrentLink;$('compareAction').onclick=compareAction;$('downloadRaw').onclick=downloadOriginal;$('copyRaw').onclick=copyText;$('bookmark').onclick=toggleBookmark;$('contentSearch').onclick=scanContents;$('connect').onclick=connect;$('repoSelect').onchange=()=>{if($('repoSelect').value){$('repo').value=$('repoSelect').value;$('branch').value='';openRepo()}};
 $('filter').oninput=()=>{state.limit=80;paint()};$('sortFiles').onchange=()=>{state.limit=80;paint()};$('fileKind').onchange=()=>{state.limit=80;paint()};$('density').oninput=()=>{$('items').style.setProperty('--tile-min',$('density').value+'px')};$('scope').onchange=()=>{state.limit=80;paint()};$('prevPreview').onclick=()=>adjacentPreview(-1);$('nextPreview').onclick=()=>adjacentPreview(1);$('back').onclick=()=>navigate(state.path.split('/').slice(0,-1).join('/'));$('gridBtn').onclick=()=>{state.mode='grid';$('gridBtn').classList.add('active');$('listBtn').classList.remove('active');paint()};$('listBtn').onclick=()=>{state.mode='list';$('listBtn').classList.add('active');$('gridBtn').classList.remove('active');paint()};
 $('theme').onclick=()=>{document.body.classList.toggle('light');$('theme').textContent=document.body.classList.contains('light')?'☾':'☀︎';try{localStorage.setItem('expository-theme',document.body.classList.contains('light')?'light':'dark')}catch{}};
 try{if(localStorage.getItem('expository-theme')==='light')$('theme').click()}catch{}
