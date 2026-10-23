@@ -8,6 +8,8 @@ on:
     paths:
       - "Night Court/tools/build_retrieval_index.py"
       - "Night Court/tools/collect_tvmaze_cast.py"
+      - "Night Court/tools/collect_licensed_context.py"
+      - "Night Court/tools/collect_licensed_fandom.py"
       - "Night Court/tools/validate_knowledge.py"
       - ".github/workflows/night-court-knowledge.yml"
 
@@ -29,6 +31,10 @@ jobs:
         run: python "Night Court/tools/validate.py"
       - name: Collect factual TVmaze cast, crew and episode guestcast (bounded)
         run: python "Night Court/tools/collect_tvmaze_cast.py"
+      - name: Preserve attributed CC BY-SA biographies and broadcast context
+        run: python "Night Court/tools/collect_licensed_context.py"
+      - name: Attempt authorized fan wiki source collection (fail closed)
+        run: python "Night Court/tools/collect_licensed_fandom.py"
       - name: Build 193 licensed synopsis dossiers and retrieval indices
         run: python "Night Court/tools/build_retrieval_index.py"
       - name: Audit derived knowledge and attribution
