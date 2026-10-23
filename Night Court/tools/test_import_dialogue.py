@@ -81,6 +81,31 @@ class ImportTest(unittest.TestCase):
     def test_bad_timestamps_rejected(self):
         p=self.create("S01E01.bad.srt",b"1\n00:00:09,100 --> 00:00:01,200\nImpossible.\n")
         with self.assertRaises(ValueError):D.import_one(p,self.opts)
+    def test_cp1252_captions_not_misread_as_utf16(self):
+        # Legacy DVD captions often contain curly quotes or accented bytes.
+        source=("1\n00:00:00,500 --> 00:00:01,500\n"
+                "Café's courtroom.\n").encode("cp1252")
+        # Exercise the even-length legacy-file failure mode as well.
+        if len(source)%2:
+            source+=b" "
+        text,codec=D.to_text(source)
+        self.assertEqual(codec,"cp1252")
+        self.assertIn("Café",text)
+        f=self.create("S01E01.legacy.srt",source)
+        D.import_one(f,self.opts)
+        manifests=list((self.ep.parent/"dialogue"/"versions").glob("*/manifest.json"))
+        self.assertEqual(len(manifests),1)
+        self.assertEqual(json.loads(manifests[0].read_text("utf-8"))["encoding"],"cp1252")
+
+    def test_real_utf16_bom_decodes_correctly(self):
+        original="1\n00:00:01,000 --> 00:00:03,000\nTest UTF sixteen.\n"
+        text,codec=D.to_text(original.encode("utf-16"))
+        self.assertEqual(codec,"utf-16")
+        self.assertEqual(text,original)
+        text2,codec2=D.to_text(original.encode("utf-16-le"))
+        self.assertEqual(codec2,"utf-16-le")
+        self.assertEqual(text2,original)
+
     def test_vtt_punctuation_and_text(self):
         p=self.create("S01E01.vtt",b"WEBVTT\n\nNOTE test note\n\n"
            b"00:00:01.111 --> 00:00:02.222 align:start\n"
