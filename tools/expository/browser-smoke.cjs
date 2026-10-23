@@ -139,8 +139,14 @@ async function main(){
   console.log('Evidence: '+screenshots);
  }finally{
   try{socket?.close()}catch{}
-  browser.kill('SIGTERM');
-  fs.rmSync(work,{recursive:true,force:true});
+  if(browser.exitCode===null){
+   browser.kill('SIGTERM');
+   await Promise.race([
+    new Promise(resolve=>browser.once('exit',resolve)),
+    sleep(1500).then(()=>{if(browser.exitCode===null)browser.kill('SIGKILL')})
+   ]);
+  }
+  for(let attempt=0;attempt<4;attempt++){try{fs.rmSync(work,{recursive:true,force:true});break}catch(e){if(attempt===3)console.warn('Temporary Chrome profile could not be removed:',e.message);else await sleep(150)} }
  }
 }
 main().catch(e=>{console.error(e.stack||e);process.exitCode=1;});
