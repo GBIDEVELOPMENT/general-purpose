@@ -3,7 +3,7 @@
 # Usage: bash tools/expository/publish-pages.sh [owner/repo]
 set -euo pipefail
 
-TARGET="${1:-gamesbyian/expository}"
+TARGET="${1:-gamesbyian/Expository}"
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 SOURCE="$SCRIPT_DIR/index.html"
 MARKER=".expository-managed"
