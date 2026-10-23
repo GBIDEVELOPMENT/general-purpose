@@ -31,7 +31,7 @@ function boot() {
  const pos=source.indexOf('const match=location.hash.slice(1)');
  assert.ok(pos>0, 'page-load bootstrap located');
  const isolated='return '+source.slice(0,pos).trimStart()+
-  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus};\n})();';
+  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus,filterSort,typeOf,sourceViewer,toggleBookmark,cancelContentScan};\n})();';
  const app=new Function('document','history','location','localStorage','Option',isolated)(
    document,history,location,localStorage,function Option(name,value){return {name,value}}
  );
@@ -143,4 +143,47 @@ test('modal focus trap wraps keyboard Tab in both directions',()=>{
  document.activeElement=first;prevented=false;
  app.trapPreviewFocus({key:'Tab',shiftKey:true,preventDefault(){prevented=true}});
  assert.equal(prevented,true);assert.equal(active,'last');
+});
+
+test('category filtering and file sorting are deterministic',()=>{
+ const {app,get}=boot();
+ const files=[
+ {name:'z.svg',path:'z.svg',type:'file',size:50},
+ {name:'data.csv',path:'data.csv',type:'file',size:400},
+ {name:'folder',path:'folder',type:'dir',size:0},
+ {name:'a.js',path:'a.js',type:'file',size:900}];
+ get('fileKind').value='all';get('sortFiles').value='size';
+ assert.deepEqual(app.filterSort(files).map(x=>x.name),['folder','a.js','data.csv','z.svg']);
+ get('fileKind').value='image';
+ assert.deepEqual(app.filterSort(files).map(x=>x.name),['z.svg']);
+ get('fileKind').value='data';
+ assert.deepEqual(app.filterSort(files).map(x=>x.name),['data.csv']);
+ get('fileKind').value='all';get('sortFiles').value='extension';
+ assert.deepEqual(app.filterSort(files).map(x=>x.name),['folder','data.csv','a.js','z.svg']);
+});
+test('syntax viewer renders malicious-looking code as inert text nodes',()=>{
+ const {app}=boot();
+ const view=app.sourceViewer('<img src=x onerror=alert(1)>\nconst x = 42','danger.js');
+ assert.ok(view.children.some(x=>x.className==='code-view'));
+ const code=view.children.find(x=>x.className==='code-view');
+ assert.equal(code.children.length,2);
+ assert.equal(code.children[0].tagName,'DIV');
+});
+test('only explicitly confirmed public repo can be starred',()=>{
+ const {app,get}=boot();
+ app.state.repo='gamesbyian/private';app.state.repoIsPrivate=true;
+ app.toggleBookmark();
+ assert.equal(app.state.bookmarks.size,0);
+ app.state.repo='gamesbyian/open';app.state.repoIsPrivate=false;
+ app.toggleBookmark();
+ assert.equal(app.state.bookmarks.has('gamesbyian/open'),true);
+ app.toggleBookmark();
+ assert.equal(app.state.bookmarks.size,0);
+});
+test('content search cancellation is idempotent and clears transient results',()=>{
+ const {app,get}=boot();
+ app.state.scanning=true;app.state.searchSeq=5;
+ app.cancelContentScan();assert.equal(app.state.searchSeq,6);
+ assert.equal(app.state.scanning,false);
+ assert.equal(get('contentSearch').textContent,'Search contents');
 });
