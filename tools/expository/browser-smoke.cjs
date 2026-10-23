@@ -81,16 +81,17 @@ const fixtures=String.raw`
    {path:'design',type:'tree'},{path:'design/proposals',type:'tree'},
    {path:'design/proposals/a.svg',type:'blob',size:250},
    {path:'design/proposals/b.svg',type:'blob',size:250},
-   {path:'docs',type:'tree'},{path:'docs/README.md',type:'blob',size:48},{path:'docs/data.json',type:'blob',size:120}
+   {path:'docs',type:'tree'},{path:'docs/README.md',type:'blob',size:48},{path:'docs/data.json',type:'blob',size:120},{path:'docs/data.csv',type:'blob',size:100}
   ]});
   if(p.endsWith('/contents/'))return json(dirs(['design','design'],['docs','docs']));
   if(p.endsWith('/contents/design'))return json(dirs(['proposals','design/proposals']));
-  if(p.endsWith('/contents/docs'))return json(files(['README.md','docs/README.md'],['data.json','docs/data.json']));
+  if(p.endsWith('/contents/docs'))return json(files(['README.md','docs/README.md'],['data.json','docs/data.json'],['data.csv','docs/data.csv']));
   if(p.endsWith('/contents/design/proposals'))return json(files(['a.svg','design/proposals/a.svg'],['b.svg','design/proposals/b.svg']));
   if(p.endsWith('/contents/design/proposals/a.svg'))return new Response(dataA,{status:200,headers:{'content-type':'image/svg+xml'}});
   if(p.endsWith('/contents/design/proposals/b.svg'))return new Response(dataB,{status:200,headers:{'content-type':'image/svg+xml'}});
-  if(p.endsWith('/contents/docs/README.md'))return new Response('# Hello from fixture',{status:200,headers:{'content-type':'text/plain'}});
+  if(p.endsWith('/contents/docs/README.md'))return new Response('# Hello from fixture\n[Open data](data.csv) [unsafe](javascript:alert(1))',{status:200,headers:{'content-type':'text/plain'}});
   if(p.endsWith('/contents/docs/data.json'))return new Response(JSON.stringify({status:'ready',items:[1,2,3],active:true}),{status:200,headers:{'content-type':'application/json'}});
+  if(p.endsWith('/contents/docs/data.csv'))return new Response('name,value\nAlpha,17\nBeta,23',{status:200,headers:{'content-type':'text/csv'}});
   if(p.endsWith('/commits'))return json([{sha:'1111111111111111111111111111111111111111',commit:{message:'First fixture change',author:{date:'2026-10-22T12:00:00Z'}}}]);
   if(p.endsWith('/releases'))return json([{tag_name:'v1.0',name:'First public release',published_at:'2026-10-21T12:00:00Z'}]);
   if(p.endsWith('/tags'))return json([{name:'v1.0'}]);
@@ -162,6 +163,20 @@ async function main(){
   assert.equal(await evaluate("document.querySelector('.json-tree summary')?.textContent"),'Root {3 keys}','safe JSON hierarchy');
   await evaluate("document.querySelector('#closePreview').click()");
   assert.equal(await evaluate("document.documentElement.scrollWidth<=innerWidth+2"),true,'no overflow after inspector');
+  
+  await evaluate("document.querySelector('#filter').value='README.md';document.querySelector('#filter').dispatchEvent(new Event('input'))");
+  await until("document.querySelectorAll('#items .tile').length===1",'Markdown fixture found');
+  await evaluate("document.querySelector('#items .tile').click()");
+  await until("Boolean(document.querySelector('.md-link'))",'relative Markdown navigation available');
+  assert.equal(await evaluate("document.querySelectorAll('.md-link').length"),1,'unsafe URL not linkified');
+  await evaluate("document.querySelector('.md-link').click()");
+  await until("document.querySelector('#structuredToggle')?.hidden===false",'CSV table option shown');
+  await evaluate("document.querySelector('#structuredToggle').click()");
+  await until("Boolean(document.querySelector('.data-table'))",'CSV table rendered');
+  assert.equal(await evaluate("document.querySelectorAll('.data-table tbody tr').length"),2,'CSV rows shown');
+  await evaluate("document.querySelector('#closePreview').click()");
+  await evaluate("document.querySelector('#filter').value='';document.querySelector('#filter').dispatchEvent(new Event('input'))");
+  
   await evaluate("document.querySelector('#storyToggle').click()");
   await until("document.querySelectorAll('#storyView .story-event').length===2",'Story Mode history events');
   assert.equal(await evaluate("document.querySelector('#storyView').hidden"),false,'Story Mode visible');
