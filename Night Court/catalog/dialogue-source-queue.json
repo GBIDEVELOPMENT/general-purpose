@@ -4,8 +4,7 @@
   "ranking_policy": "Least episode-specific source evidence first; within tier, later seasons first.",
   "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
   "source_status_counts": {
-    "direct_episode_page_found_not_held": 44,
-    "held_dialogue_needs_quality_review": 60,
+    "held_dialogue_needs_quality_review": 104,
     "index_coverage_only": 86,
     "no_episode_dialogue_specific_locator": 3
   },
@@ -17,10 +16,10 @@
       "held_dialogue_needs_quality_review": 22
     },
     "S03": {
-      "direct_episode_page_found_not_held": 22
+      "held_dialogue_needs_quality_review": 22
     },
     "S04": {
-      "direct_episode_page_found_not_held": 22
+      "held_dialogue_needs_quality_review": 22
     },
     "S05": {
       "held_dialogue_needs_quality_review": 15,
@@ -133,51 +132,7 @@
     "S05E05",
     "S05E15",
     "S05E21",
-    "S05E22",
-    "S04E01",
-    "S04E02",
-    "S04E03",
-    "S04E04",
-    "S04E05",
-    "S04E06",
-    "S04E07",
-    "S04E08",
-    "S04E09",
-    "S04E10",
-    "S04E11",
-    "S04E12",
-    "S04E13",
-    "S04E14",
-    "S04E15",
-    "S04E16",
-    "S04E17",
-    "S04E18",
-    "S04E19",
-    "S04E20",
-    "S04E21",
-    "S04E22",
-    "S03E01",
-    "S03E02",
-    "S03E03",
-    "S03E04",
-    "S03E05",
-    "S03E06",
-    "S03E07",
-    "S03E08",
-    "S03E09",
-    "S03E10",
-    "S03E11",
-    "S03E12",
-    "S03E13",
-    "S03E14",
-    "S03E15",
-    "S03E16",
-    "S03E17",
-    "S03E18",
-    "S03E19",
-    "S03E20",
-    "S03E21",
-    "S03E22"
+    "S05E22"
   ],
   "episodes": [
     {
@@ -1288,11 +1243,11 @@
       "season": 3,
       "episode": 1,
       "title": "Hello, Goodbye",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 2,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1328,11 +1283,11 @@
       "season": 3,
       "episode": 2,
       "title": "The Hostage",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1368,11 +1323,11 @@
       "season": 3,
       "episode": 3,
       "title": "Dad's First Date",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1408,11 +1363,11 @@
       "season": 3,
       "episode": 4,
       "title": "Mac and Quon Le: No Reservations",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1448,11 +1403,11 @@
       "season": 3,
       "episode": 5,
       "title": "Halloween, Too",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1488,11 +1443,11 @@
       "season": 3,
       "episode": 6,
       "title": "Best of Friends",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1528,11 +1483,11 @@
       "season": 3,
       "episode": 7,
       "title": "Dan's Boss",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1568,11 +1523,11 @@
       "season": 3,
       "episode": 8,
       "title": "Up On the Roof",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1608,11 +1563,11 @@
       "season": 3,
       "episode": 9,
       "title": "The Wheels of Justice (Part 1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1648,11 +1603,11 @@
       "season": 3,
       "episode": 10,
       "title": "The Wheels of Justice (Part 2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1688,11 +1643,11 @@
       "season": 3,
       "episode": 11,
       "title": "Walk Away, Renee",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1728,11 +1683,11 @@
       "season": 3,
       "episode": 12,
       "title": "Dan's Escort",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1768,11 +1723,11 @@
       "season": 3,
       "episode": 13,
       "title": "The Night Off",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1808,11 +1763,11 @@
       "season": 3,
       "episode": 14,
       "title": "Harry and Leon",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1848,11 +1803,11 @@
       "season": 3,
       "episode": 15,
       "title": "The Apartment",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1888,11 +1843,11 @@
       "season": 3,
       "episode": 16,
       "title": "Leon, We Hardly Knew Ye",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1928,11 +1883,11 @@
       "season": 3,
       "episode": 17,
       "title": "The Mugger",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1968,11 +1923,11 @@
       "season": 3,
       "episode": 18,
       "title": "Could This Be Magic?",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -2008,11 +1963,11 @@
       "season": 3,
       "episode": 19,
       "title": "Monkey Business",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -2048,11 +2003,11 @@
       "season": 3,
       "episode": 20,
       "title": "Flo's Retirement",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -2088,11 +2043,11 @@
       "season": 3,
       "episode": 21,
       "title": "Hurricane (Part 1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -2128,11 +2083,11 @@
       "season": 3,
       "episode": 22,
       "title": "Hurricane (Part 2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -2168,11 +2123,11 @@
       "season": 4,
       "episode": 1,
       "title": "The Next Voice You Hear",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2190,11 +2145,11 @@
       "season": 4,
       "episode": 2,
       "title": "Giving Thanks",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2212,11 +2167,11 @@
       "season": 4,
       "episode": 3,
       "title": "Author, Author",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2234,11 +2189,11 @@
       "season": 4,
       "episode": 4,
       "title": "Halloween II: The Return of Leon",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2256,11 +2211,11 @@
       "season": 4,
       "episode": 5,
       "title": "Dan's Operation (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2278,11 +2233,11 @@
       "season": 4,
       "episode": 6,
       "title": "Dan's Operation (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2300,11 +2255,11 @@
       "season": 4,
       "episode": 7,
       "title": "The New Judge",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2322,11 +2277,11 @@
       "season": 4,
       "episode": 8,
       "title": "Contempt of Courting",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2344,11 +2299,11 @@
       "season": 4,
       "episode": 9,
       "title": "Earthquake",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2366,11 +2321,11 @@
       "season": 4,
       "episode": 10,
       "title": "Prince of a Guy",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2388,11 +2343,11 @@
       "season": 4,
       "episode": 11,
       "title": "New Year's Leave",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2410,11 +2365,11 @@
       "season": 4,
       "episode": 12,
       "title": "Murder",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2432,11 +2387,11 @@
       "season": 4,
       "episode": 13,
       "title": "Baby Talk",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2454,11 +2409,11 @@
       "season": 4,
       "episode": 14,
       "title": "The Modest Proposal",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2476,11 +2431,11 @@
       "season": 4,
       "episode": 15,
       "title": "A Day in the Life",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 2,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2507,11 +2462,11 @@
       "season": 4,
       "episode": 16,
       "title": "Rabid",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2529,11 +2484,11 @@
       "season": 4,
       "episode": 17,
       "title": "Christine's Friend",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2551,11 +2506,11 @@
       "season": 4,
       "episode": 18,
       "title": "Caught Red Handed",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2573,11 +2528,11 @@
       "season": 4,
       "episode": 19,
       "title": "Paternity",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2595,11 +2550,11 @@
       "season": 4,
       "episode": 20,
       "title": "Here's to You, Mrs. Robinson",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2617,11 +2572,11 @@
       "season": 4,
       "episode": 21,
       "title": "Her Honor (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2639,11 +2594,11 @@
       "season": 4,
       "episode": 22,
       "title": "Her Honor (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",

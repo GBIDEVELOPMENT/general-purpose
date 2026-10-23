@@ -182,20 +182,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E16%20-%20Leon%2C%20We%20Hardly%20Knew%20Ye%20(480p%20DVD%20x265%20Panda).eng.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "note": "Original 1984-series English DVD caption display URL. Source bytes NOT archived. Reuse rights not established.",
+      "provider": "Subtitle Cat",
       "source_index": "https://www.subtitlecat.com/list_page.php?from=1666800",
-      "verification": "public_upload_listing_plus_individual_episode_page",
       "source_label": "Night Court (1984) - S03E16 - Leon, We Hardly Knew Ye (480p DVD x265 Panda).eng",
-      "note": "Original 1984-series English DVD caption display URL. Source bytes NOT archived. Reuse rights not established."
+      "url": "https://www.subtitlecat.com/subs/1081/Night%20Court%20(1984)%20-%20S03E16%20-%20Leon%2C%20We%20Hardly%20Knew%20Ye%20(480p%20DVD%20x265%20Panda).eng.html",
+      "verification": "public_upload_listing_plus_individual_episode_page",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--073e1b8a29e6aa9b/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--073e1b8a29e6aa9b/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "073e1b8a29e6aa9b4766c429d439a3e1e9bbcd4a2d971320f229994d916f1e2b",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-480p-dvd-english-research-witness--073e1b8a29e6aa9b"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

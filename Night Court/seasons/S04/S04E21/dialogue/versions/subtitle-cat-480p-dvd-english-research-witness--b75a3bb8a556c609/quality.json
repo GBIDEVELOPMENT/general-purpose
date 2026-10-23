@@ -1,0 +1,34 @@
+{
+  "adjacent_exact_repetitions": 0,
+  "cue_count": 286,
+  "earliest_cue_start_ms": 9900,
+  "edition": "Subtitle Cat 480p DVD English research witness",
+  "episode_id": "S04E21",
+  "epistemic_status": "heuristic_automated_source_QA_not_audiovisual_completeness",
+  "flags": [
+    "several_long_caption_gaps_review"
+  ],
+  "format": "srt",
+  "latest_cue_end_ms": 1369150,
+  "limits": [
+    "An SRT's final timestamp does not prove every line was captured.",
+    "Music, quiet scenes, titles, ads and cuts can legitimately create long caption gaps.",
+    "Overlapping cues are often legitimate two-speaker or sound-effect captions.",
+    "No source video was viewed; independently verified completeness remains unknown.",
+    "Word counts are an English-oriented rough metric; this is not a semantic evaluation."
+  ],
+  "max_gap_between_source_cues_ms": 55240,
+  "median_cue_duration_ms": 2030.0,
+  "overlapping_cue_count": 0,
+  "source_cue_out_of_order_count": 0,
+  "source_cue_union_duration_ms": 658500,
+  "source_cue_union_fraction_of_final_time": 0.481,
+  "source_declared_complete": false,
+  "source_gaps_over_30_seconds": 5,
+  "source_sha256": "b75a3bb8a556c609d15632c6a90b6bc2279ddafbf33a282b2eb34b4fdd3ba744",
+  "text_characters": 11022,
+  "timecoded": true,
+  "unique_caption_texts": 283,
+  "version_id": "subtitle-cat-480p-dvd-english-research-witness--b75a3bb8a556c609",
+  "word_count_rough": 2106
+}

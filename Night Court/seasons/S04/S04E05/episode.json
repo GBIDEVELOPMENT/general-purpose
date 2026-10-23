@@ -190,20 +190,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e05_dan_s_operation_1.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "note": "Original 1984 series episode-matched caption display page. URL only; no subtitle text imported; reuse rights not established.",
+      "provider": "Subtitle Cat",
       "source_index": "https://www.subtitlecat.com/list_page.php?from=1710150",
-      "verification": "public_upload_listing_and_direct_episode_page",
       "source_label": "night_court_s04e05_dan_s_operation_1",
-      "note": "Original 1984 series episode-matched caption display page. URL only; no subtitle text imported; reuse rights not established."
+      "url": "https://www.subtitlecat.com/subs/1120/night_court_s04e05_dan_s_operation_1.html",
+      "verification": "public_upload_listing_and_direct_episode_page",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--9b0b7626749f4f36/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--9b0b7626749f4f36/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "9b0b7626749f4f36a63221abc4ddab32247a77866e59ad487683d2550027bdf7",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-480p-dvd-english-research-witness--9b0b7626749f4f36"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [
