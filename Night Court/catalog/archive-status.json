@@ -10,7 +10,7 @@
   "episodes_with_licensed_wiki_capsules": 193,
   "primary_licensed_wiki_articles": 2,
   "full_copyrighted_transcripts_stored": 0,
-  "caption_files_stored": 0,
+  "caption_files_stored": 35,
   "sources": {
     "forever_dreaming_topics_indexed": 57,
     "springfield_script_indexed": 47,
@@ -29,5 +29,12 @@
   "source_pointer_count_including_repeated_series_indexes": 1825,
   "subtitle_discovery_manifest": "catalog/subtitlecat-discovery.json",
   "holdings_audit": "catalog/holdings-coverage.json",
-  "source_locator_queue": "catalog/dialogue-source-queue.json"
+  "source_locator_queue": "catalog/dialogue-source-queue.json",
+  "episodes_with_held_dialogue": 35,
+  "dialogue_versions_stored": 35,
+  "independently_video_verified_complete_episodes": 0,
+  "source_archives_held": 2,
+  "user_supplied_rar_import_manifest": "catalog/rar-ingestion-manifest.json",
+  "actual_dialogue_quality_audit": "catalog/dialogue-quality.json",
+  "source_material_status": "35 physically held English SRT witnesses from two owner-uploaded RARs, one SRT each for S01E01–S02E22; completeness unverified"
 }

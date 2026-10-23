@@ -1,0 +1,32 @@
+{
+  "adjacent_exact_repetitions": 0,
+  "cue_count": 336,
+  "earliest_cue_start_ms": 3824,
+  "edition": "S01 iNTERNAL DVDRip XviD SPRiNTER English",
+  "episode_id": "S01E01",
+  "epistemic_status": "heuristic_automated_source_QA_not_audiovisual_completeness",
+  "flags": [],
+  "format": "srt",
+  "latest_cue_end_ms": 1397981,
+  "limits": [
+    "An SRT's final timestamp does not prove every line was captured.",
+    "Music, quiet scenes, titles, ads and cuts can legitimately create long caption gaps.",
+    "Overlapping cues are often legitimate two-speaker or sound-effect captions.",
+    "No source video was viewed; independently verified completeness remains unknown.",
+    "Word counts are an English-oriented rough metric; this is not a semantic evaluation."
+  ],
+  "max_gap_between_source_cues_ms": 60266,
+  "median_cue_duration_ms": 2594.0,
+  "overlapping_cue_count": 0,
+  "source_cue_out_of_order_count": 0,
+  "source_cue_union_duration_ms": 914534,
+  "source_cue_union_fraction_of_final_time": 0.6542,
+  "source_declared_complete": false,
+  "source_gaps_over_30_seconds": 2,
+  "source_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "text_characters": 12311,
+  "timecoded": true,
+  "unique_caption_texts": 334,
+  "version_id": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+  "word_count_rough": 2286
+}

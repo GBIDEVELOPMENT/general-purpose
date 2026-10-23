@@ -158,20 +158,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/74/Night%20Court%20s02e12%20The%20Birthday%20Visitor.eng.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "original_1984_series_episode_page_individually_checked",
       "description": "Original season two English subtitles",
+      "kind": "subtitle_index",
       "language_observed": "en",
-      "rights_status": "not_established"
+      "level": "episode_page",
+      "provider": "Subtitle Cat",
+      "rights_status": "not_established",
+      "url": "https://www.subtitlecat.com/subs/74/Night%20Court%20s02e12%20The%20Birthday%20Visitor.eng.html",
+      "verification": "original_1984_series_episode_page_individually_checked",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/s02-dvdrip-xvid-ositv-english--918c3de429b06e8d/original.srt",
+        "manifest_file": "dialogue/versions/s02-dvdrip-xvid-ositv-english--918c3de429b06e8d/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "918c3de429b06e8d92e592d2236563a72d1475bb5b1f4a02c591cb7d6b8c90ee",
+        "source": "user_imported",
+        "version_id": "s02-dvdrip-xvid-ositv-english--918c3de429b06e8d"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

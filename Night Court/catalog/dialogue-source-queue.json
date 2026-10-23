@@ -4,18 +4,17 @@
   "ranking_policy": "Least episode-specific source evidence first; within tier, later seasons first.",
   "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
   "source_status_counts": {
-    "direct_episode_page_found_not_held": 69,
-    "index_coverage_only": 121,
+    "direct_episode_page_found_not_held": 53,
+    "held_dialogue_needs_quality_review": 35,
+    "index_coverage_only": 102,
     "no_episode_dialogue_specific_locator": 3
   },
   "by_season": {
     "S01": {
-      "direct_episode_page_found_not_held": 6,
-      "index_coverage_only": 7
+      "held_dialogue_needs_quality_review": 13
     },
     "S02": {
-      "direct_episode_page_found_not_held": 10,
-      "index_coverage_only": 12
+      "held_dialogue_needs_quality_review": 22
     },
     "S03": {
       "direct_episode_page_found_not_held": 22
@@ -150,25 +149,6 @@
     "S05E20",
     "S05E21",
     "S05E22",
-    "S02E02",
-    "S02E04",
-    "S02E06",
-    "S02E07",
-    "S02E08",
-    "S02E09",
-    "S02E13",
-    "S02E14",
-    "S02E17",
-    "S02E18",
-    "S02E19",
-    "S02E21",
-    "S01E06",
-    "S01E08",
-    "S01E09",
-    "S01E10",
-    "S01E11",
-    "S01E12",
-    "S01E13",
     "S09E06",
     "S09E20",
     "S09E21",
@@ -221,23 +201,7 @@
     "S03E19",
     "S03E20",
     "S03E21",
-    "S03E22",
-    "S02E01",
-    "S02E03",
-    "S02E05",
-    "S02E10",
-    "S02E11",
-    "S02E12",
-    "S02E15",
-    "S02E16",
-    "S02E20",
-    "S02E22",
-    "S01E01",
-    "S01E02",
-    "S01E03",
-    "S01E04",
-    "S01E05",
-    "S01E07"
+    "S03E22"
   ],
   "episodes": [
     {
@@ -245,11 +209,11 @@
       "season": 1,
       "episode": 1,
       "title": "All You Need Is Love",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 2,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -285,11 +249,11 @@
       "season": 1,
       "episode": 2,
       "title": "Santa Goes Downtown",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -316,11 +280,11 @@
       "season": 1,
       "episode": 3,
       "title": "The Former Harry Stone",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -356,11 +320,11 @@
       "season": 1,
       "episode": 4,
       "title": "Welcome Back, Momma",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -387,11 +351,11 @@
       "season": 1,
       "episode": 5,
       "title": "The Eye of the Beholder",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -427,11 +391,11 @@
       "season": 1,
       "episode": 6,
       "title": "Death Threat",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -458,11 +422,11 @@
       "season": 1,
       "episode": 7,
       "title": "Once in Love With Harry",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -498,11 +462,11 @@
       "season": 1,
       "episode": 8,
       "title": "Quadrangle of Love",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -529,11 +493,11 @@
       "season": 1,
       "episode": 9,
       "title": "Wonder Drugs",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -560,11 +524,11 @@
       "season": 1,
       "episode": 10,
       "title": "Some Like It Hot",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -591,11 +555,11 @@
       "season": 1,
       "episode": 11,
       "title": "Harry and the Rock Star",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -622,11 +586,11 @@
       "season": 1,
       "episode": 12,
       "title": "Bull's Baby",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -653,11 +617,11 @@
       "season": 1,
       "episode": 13,
       "title": "Hi Honey, I'm Home",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -684,11 +648,11 @@
       "season": 2,
       "episode": 1,
       "title": "The Nun",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 2,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -724,11 +688,11 @@
       "season": 2,
       "episode": 2,
       "title": "Daddy for the Defense",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -755,11 +719,11 @@
       "season": 2,
       "episode": 3,
       "title": "Billie and the Cat",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -795,11 +759,11 @@
       "season": 2,
       "episode": 4,
       "title": "Pick a Number",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -826,11 +790,11 @@
       "season": 2,
       "episode": 5,
       "title": "The Computer Kid",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -866,11 +830,11 @@
       "season": 2,
       "episode": 6,
       "title": "Bull Gets a Kid",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -897,11 +861,11 @@
       "season": 2,
       "episode": 7,
       "title": "Harry on Trial",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -928,11 +892,11 @@
       "season": 2,
       "episode": 8,
       "title": "Harry and the Madam",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -959,11 +923,11 @@
       "season": 2,
       "episode": 9,
       "title": "Inside Harry Stone",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -990,11 +954,11 @@
       "season": 2,
       "episode": 10,
       "title": "The Blizzard",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1021,11 +985,11 @@
       "season": 2,
       "episode": 11,
       "title": "Take My Wife, Please",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1061,11 +1025,11 @@
       "season": 2,
       "episode": 12,
       "title": "The Birthday Visitor",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 2,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 1,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1101,11 +1065,11 @@
       "season": 2,
       "episode": 13,
       "title": "Dan's Parents",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1123,11 +1087,11 @@
       "season": 2,
       "episode": 14,
       "title": "Nuts About Harry",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1145,11 +1109,11 @@
       "season": 2,
       "episode": 15,
       "title": "An Old Flame",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1176,11 +1140,11 @@
       "season": 2,
       "episode": 16,
       "title": "The Gypsy",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1207,11 +1171,11 @@
       "season": 2,
       "episode": 17,
       "title": "Battling Bailiff",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1229,11 +1193,11 @@
       "season": 2,
       "episode": 18,
       "title": "Billie's Valentine",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1251,11 +1215,11 @@
       "season": 2,
       "episode": 19,
       "title": "Married Alive",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1273,11 +1237,11 @@
       "season": 2,
       "episode": 20,
       "title": "Mac and Quon Le: Together Again",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 2,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1304,11 +1268,11 @@
       "season": 2,
       "episode": 21,
       "title": "World War III",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",
@@ -1326,11 +1290,11 @@
       "season": 2,
       "episode": 22,
       "title": "Walk, Don't Wheel",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "direct_episode_page_found_not_held",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Forever Dreaming",

@@ -146,19 +146,29 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1079/Night%20Court%20(1984)%20-%20S01E03%20-%20The%20Former%20Harry%20Stone%20(480p%20DVD%20x265%20Panda).eng.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "individually_verified_public_caption_display",
       "description": "Night Court (1984) DVD English",
-      "rights_status": "not_established"
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "provider": "Subtitle Cat",
+      "rights_status": "not_established",
+      "url": "https://www.subtitlecat.com/subs/1079/Night%20Court%20(1984)%20-%20S01E03%20-%20The%20Former%20Harry%20Stone%20(480p%20DVD%20x265%20Panda).eng.html",
+      "verification": "individually_verified_public_caption_display",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--7bb21bd5ac0d612f/original.srt",
+        "manifest_file": "dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--7bb21bd5ac0d612f/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "7bb21bd5ac0d612fce84388953f6b5b16ae789f08c0964bd82f74135f4883a32",
+        "source": "user_imported",
+        "version_id": "s01-internal-dvdrip-xvid-sprinter-english--7bb21bd5ac0d612f"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

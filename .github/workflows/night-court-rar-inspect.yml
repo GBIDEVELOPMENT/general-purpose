@@ -1,0 +1,38 @@
+name: Night Court inspect uploaded RAR source archives
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-rar-ingestion
+    paths:
+      - .github/workflows/night-court-rar-inspect.yml
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pure Python RAR header reader
+        run: python -m pip install -q rarfile==4.2
+      - name: Inspect RAR member names and sizes only, never dialogue
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,rarfile,json
+          for p in sorted(Path("Night Court").glob("*.rar")):
+              print("ARCHIVE",p.name,"size",p.stat().st_size,"sha256",hashlib.sha256(p.read_bytes()).hexdigest())
+              with rarfile.RarFile(p) as rar:
+                  listing=rar.infolist()
+                  print("MEMBER_COUNT",len(listing))
+                  for x in listing[:125]:
+                      print("ENTRY",json.dumps({"name":x.filename,"size":x.file_size,
+                          "packed_size":x.compress_size,"crc":x.CRC,
+                          "isdir":x.isdir(),"mode":x.mode,"file_redir":getattr(x,"file_redir",None)},
+                          ensure_ascii=False,default=str))
+          PY

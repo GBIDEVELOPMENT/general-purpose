@@ -74,14 +74,45 @@ def ms(clock):
     return ((hour*60+minute)*60+second)*1000+millis
 
 def to_text(raw):
-    for codec in ("utf-8-sig","utf-16","cp1252"):
+    """Decode captions without mistaking legacy 8-bit text for UTF-16.
+
+    Python's UTF-16 codec accepts many even-length byte sequences without a
+    BOM, turning Windows-1252 SRTs into plausible but nonsensical glyphs.
+    Prefer UTF-8, accept UTF-16 when signalled by a BOM or NUL-byte pattern,
+    then decode legacy Windows-1252. Preserve the original source bytes.
+    """
+    if raw.startswith((b"\xff\xfe",b"\xfe\xff")):
+        # A real UTF-16 BOM takes priority over the NUL heuristic.
         try:
-            txt=raw.decode(codec)
-            if "\x00" in txt:continue
-            return txt,codec
+            return raw.decode("utf-16"),"utf-16"
+        except UnicodeError as exc:
+            raise ValueError("Invalid BOM-marked UTF-16 caption source") from exc
+    try:
+        text=raw.decode("utf-8-sig")
+        if "\x00" not in text:
+            return text,"utf-8-sig"
+    except UnicodeError:
+        pass
+    # BOM-less UTF-16 SRTs tend to have NULs in every second byte.
+    if len(raw)>=16 and raw.count(b"\x00")/len(raw)>=0.15:
+        even=sum(raw[i]==0 for i in range(0,min(len(raw),4096),2))
+        odd=sum(raw[i]==0 for i in range(1,min(len(raw),4096),2))
+        codec="utf-16-le" if odd>even*3 else "utf-16-be" if even>odd*3 else None
+        if codec:
+            try:
+                text=raw.decode(codec)
+                if "\x00" not in text:
+                    return text,codec
+            except UnicodeError:
+                pass
+    for codec in ("cp1252","iso-8859-1"):
+        try:
+            text=raw.decode(codec)
+            if "\x00" not in text:
+                return text,codec
         except UnicodeError:
-            pass
-    raise ValueError("Input could not be decoded as UTF-8/UTF-16/Windows-1252")
+            continue
+    raise ValueError("Unknown caption encoding; expected UTF-8, UTF-16, or legacy 8-bit text")
 
 def parse_timed(text,typ):
     if typ=="vtt":

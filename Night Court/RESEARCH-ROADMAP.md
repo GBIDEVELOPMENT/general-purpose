@@ -150,3 +150,8 @@ Only **S09E08 (Teacher's Pet), S09E17 (Party Girl (2)), and S09E19 (P.S. Do I Kn
 ### Last-three supplier-availability fallback complete
 
 Publisher-level CC availability is separately documented for the remaining original S09 episodes (S09E08/E17/E19), each with its own Apple TV link, region and reported runtime. The archive now knows where to investigate these episodes via original-series caption-enabled playback, **but still lacks an individually acquired SRT/transcript for those three and still holds zero complete episode dialogue copies**. Do not turn provider captions or a claimed source into imported evidence without actual user-provided source media or documented authorization. Next high-value work is obtaining episode sources and comparing original broadcast versus syndicated/DVD/streaming cut variations.
+
+
+### Dialogue acquisition milestone: 35 actual owner-provided sources
+
+S01 and S02 have 35 physically held, separately verified English SRT source witnesses after ingestion of two owner-uploaded RARs. Archive originals remain under research/source-archives; see catalog/rar-ingestion-manifest.json and research/season1-season2-subtitle-import-report.md. Prioritize audiovisual spot-checks of source timing, dialogue omissions, and S01E11's single adjacent-cue repetition flag. Shift the next source-acquisition effort to S03–S09, preserving source/edition variants instead of flattening them. The programme no longer has zero physically held TV dialogue.

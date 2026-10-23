@@ -212,3 +212,14 @@ python "Night Court/tools/compare_dialogue_versions.py"
 Outputs include `catalog/dialogue-variant-comparison.json` and an episode-specific `dialogue/variant-comparison.json` for episodes with multiple held sources. Every comparison preserves each source version ID, source SHA, word count, limited word differences and explicit caveats. When identical long normalized content appears assigned to two different episode IDs, a cross-episode misidentification flag is raised.
 
 Audio captions, inserted sound effects and character labels can affect wording comparison; the alignment removes basic markup and brackets for approximate matching only. Full original sources remain untouched. For performance, comparisons use at most the first 15,000 normalized words per witness. No comparison score alone certifies accuracy, edition alignment, or completeness.
+
+
+## Actual held owner-uploaded captions: Seasons 1 and 2
+
+On 23 October 2026, the owner placed two complete-season RAR packages in the Night Court repository root. The dedicated bounded RAR importer decoded and relocated those **original packages** to research/source-archives, and imported **35 English SRT source files** to the versioned episode archive. No manual re-upload or local video was required.
+
+The work is fully traceable in catalog/rar-ingestion-manifest.json, catalog/dialogue-index.jsonl and research/season1-season2-subtitle-import-report.md. All 35 episodes S01E01–S02E22 now hold an original subtitle source, and are searchable with tools/search_dialogue.py. Every original RAR member was mapped without duplicate or missing episodes, source bytes were CRC-checked and SHA-256-verified, and original filenames were retained as source provenance.
+
+A legacy Windows-1252 caption in the first season exposed a decoder bug: unconstrained UTF-16 could decode arbitrary 8-bit subtitle bytes into nonsensical characters. The importer now uses UTF-8, BOM or NUL-pattern verified UTF-16, then legacy 8-bit fallback. Automated regressions cover that case.
+
+One S01E11 cue-repeat flag remains open for audiovisual review. No source was declared or certified complete merely because it came from a season archive; the 35 held witness versions are *source candidates*, not verified network-master dialogue.
