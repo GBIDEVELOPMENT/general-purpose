@@ -56,7 +56,7 @@ def probe(media):
 def track_language(s):
     tags=s.get("tags") or {}
     value=str(tags.get("language") or "").lower().split("-")[0]
-    return {"eng":"en","english":"en","en":"en","und":"und","":"und"}.get(value,value)
+    return {"eng":"en","english":"en","en":"en","fra":"fr","fre":"fr","deu":"de","ger":"de","spa":"es","por":"pt","ita":"it","jpn":"ja","zho":"zh","chi":"zh","und":"und","":"und"}.get(value,value)
 
 def select_text_tracks(data, requested="en", specific=None, all_tracks=False):
     subtitles=[s for s in data["streams"] if s.get("codec_type")=="subtitle"]
