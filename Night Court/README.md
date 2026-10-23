@@ -153,3 +153,8 @@ Research and private-copying exceptions may be relevant to legitimate user-held 
 `tools/search_dialogue.py` provides source-attributed search over the *held* transcript/caption versions and the 193 licensed episode capsules. Search hits return cue timestamps, explicit speaker markers when present, edition and source checksum; a synopsis result is explicitly marked **not dialogue**. With no held dialogue, only synopsis search has results.
 
 `tools/audit_dialogue_quality.py` produces SHA-tied per-version QC and `catalog/dialogue-quality.json` / CSV, including approximate counts, cue overlaps, suspect source gaps and flags requiring audiovisual review. These metrics do not prove completeness or missing dialogue. The existing GitHub Actions import workflow tests and regenerates them on each imported batch.
+
+
+### Local-source episode media to dialogue
+
+`tools/extract_local_media.py` adds a way to generate source-preserved SRT dialogue witnesses from **locally held, DRM-free episode containers**, using embedded text subtitle streams or opt-in offline faster-whisper speech recognition when captions are unavailable. It can inspect individual media, extract specific or all subtitle streams, and batch-process a folder of SxxEyy-labeled original-series videos. It requires explicit original-series and source/rights confirmation before importing, and keeps video/audio outside the repository. [Detailed commands and limitations](DIALOGUE-INGESTION.md). A separate narrow synthetic MKV workflow checks the end-to-end subtitle extraction path.
