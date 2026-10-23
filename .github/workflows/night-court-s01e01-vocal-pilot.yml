@@ -1,0 +1,36 @@
+name: Night Court S01E01 bounded AV vocal pilot
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/run_s01e01_vocal_pilot.py'
+      - '.github/workflows/night-court-s01e01-vocal-pilot.yml'
+      - 'Night Court/S01E01-AV-PILOT-HANDOFF.md'
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install FFmpeg and ffprobe on runner
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Check required media utilities
+        run: ffmpeg -version | head -n 1 && ffprobe -version | head -n 1
+      - name: Generate a synthetic episode substitute with audio and video
+        run: |
+          ffmpeg -hide_banner -loglevel error -f lavfi -i color=c=black:s=320x180:r=10 -f lavfi -i "sine=frequency=190:sample_rate=16000" -t 4 -c:v mpeg4 -c:a pcm_s16le "${{ runner.temp }}/fixture.mkv"
+      - name: Refuse missing owner confirmations and execute bounded excerpt
+        run: |
+          if python "Night Court/tools/run_s01e01_vocal_pilot.py" --media "${{ runner.temp }}/fixture.mkv" --start-seconds 0 --duration-seconds 2 --output "${{ runner.temp }}/should-not-exist.json"; then exit 1; fi
+          python "Night Court/tools/run_s01e01_vocal_pilot.py" --media "${{ runner.temp }}/fixture.mkv" --start-seconds 0 --duration-seconds 2 --output "${{ runner.temp }}/evidence.json" --confirm-original-series --confirm-rights
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          j=json.loads((Path(os.environ["RUNNER_TEMP"])/"evidence.json").read_text())
+          assert j["episode_id"]=="S01E01" and j["source_media_sha256"]
+          assert j["subtitle_alignment_status"]=="not_done"
+          assert j["audio_features"]["features"]["f0_median_hz"] is None
+          assert j["excerpt_actual_duration_ms"]<=2100
+          print("Bounded pilot works; no real Night Court media or unverifiable annotation")
+          PY

@@ -1,5 +1,12 @@
 # Night Court audiovisual script-generation factory
 
+## Implementation checkpoint: October 23, 2026
+
+The original 1984–1992 Night Court corpus **now holds 193/193 episode dialogue witnesses**, comprising **192 timed SRT sources and S09E19 untimed source-page text**. Historical 35-track and 158-missing counts elsewhere in this document describe its initial drafting state and must not be used as current prerequisites.
+
+Vocal acoustic measurement and optional eGeMAPS/YIN tooling are merged in PRs #85–86 with successful synthetic CI. A new bounded **S01E01 local-video pilot** is being implemented in PR #87; see [S01E01-AV-PILOT-HANDOFF.md](S01E01-AV-PILOT-HANDOFF.md). It extracts at most 30 seconds of owner-confirmed local media audio, fingerprints input, and stores only a measurement manifest. **It has not yet analyzed real Night Court audio, performed ASR/diarization, verified captions against an episode cut, or reconstructed visual scenes.** The existing manual FTP metadata workflow is still the appropriate next step for identifying media candidates before any remote audiovisual processing. Do not confuse synthetic FFmpeg acceptance with real-episode acceptance.
+
+
 Status: engineering proposal, October 23, 2026. **No new video or audio files transferred.** The original 1984–1992 series has 193 episodes. 35 owner-provided S01/S02 SRT witnesses are already archived; do not re-import the original two RARs.
 
 ## Confirmed inputs and infrastructure
