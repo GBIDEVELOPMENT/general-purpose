@@ -42,7 +42,7 @@ body.light{--bg:#f4f4f7;--panel:#fff;--panel2:#f2f4f8;--stroke:#d4d8e2;--text:#1
 <section id="preview" class="preview" role="dialog" aria-modal="true" aria-label="File preview"><div class="preview-head"><button id="prevPreview" class="icon-btn" aria-label="Previous file" title="Previous file">‹</button><button id="nextPreview" class="icon-btn" aria-label="Next file" title="Next file">›</button><strong id="previewTitle"></strong><a id="fileLink" class="pill" target="_blank" rel="noopener noreferrer">On GitHub ↗</a><button id="closePreview" class="icon-btn" aria-label="Close preview">✕</button></div><div class="preview-body" id="previewBody"></div></section>
 <script>
 (()=>{'use strict';
-const $=id=>document.getElementById(id),state={repo:'',branch:'',path:'',items:[],mode:'grid',token:'',cache:new Map(),thumbUrls:new Set(),previewUrls:new Set(),preview:null,seq:0,repoRequest:0,tree:new Set(),expanded:new Set(),indexEntries:[],indexReady:false,indexTruncated:false,visibleItems:[],renderEpoch:0,limit:80,thumbObserver:null,returnFocus:null};
+const $=id=>document.getElementById(id),state={repo:'',branch:'',path:'',items:[],mode:'grid',token:'',cache:new Map(),thumbUrls:new Set(),previewUrls:new Set(),preview:null,seq:0,repoRequest:0,tree:new Set(),expanded:new Set(),indexEntries:[],indexReady:false,indexTruncated:false,indexError:false,visibleItems:[],renderEpoch:0,limit:80,thumbObserver:null,returnFocus:null};
 const imageRx=/\.(png|jpe?g|webp|gif|svg|avif|bmp)$/i,textRx=/\.(md|markdown|txt|json|ya?ml|xml|csv|tsv|js|jsx|ts|tsx|css|scss|html|py|kt|java|rs|go|sh|toml|ini|svg|sql|log|gradle|properties)$/i;
 function status(s){$('status').textContent=s}function closeNav(){$('sidebar').classList.remove('open');$('scrim').classList.remove('on')}
 function url(path){return 'https://api.github.com'+path}function enc(s){return encodeURIComponent(s)}
@@ -79,15 +79,15 @@ async function indexTree(repo,branch,request){
   const result=await json('/repos/'+repo+'/git/trees/'+enc(branch)+'?recursive=1');
   if(request!==state.repoRequest||repo!==state.repo||branch!==state.branch)return;
   state.indexEntries=(result.tree||[]).filter(x=>x.type==='blob').map(x=>({type:'file',path:x.path,name:x.path.split('/').at(-1),size:x.size}));
-  state.indexTruncated=Boolean(result.truncated);state.indexReady=true;
+  state.indexTruncated=Boolean(result.truncated);state.indexReady=true;state.indexError=false;
   for(const entry of result.tree||[])if(entry.type==='tree')treeAdd(entry.path);
   paintTree();if($('scope').value!=='folder')paint();
   if(result.truncated)status('Repository tree index truncated by GitHub. Search results may be incomplete.');
- }catch(e){if(request===state.repoRequest){state.indexReady=false;status('Folder indexing unavailable: '+e.message+' · Direct browsing still works.')}}
+ }catch(e){if(request===state.repoRequest){state.indexReady=false;state.indexError=true;if($('scope').value!=='folder')paint();status('Folder indexing unavailable: '+e.message+' · Direct browsing still works.')}}
 }
 async function navigate(path){
  const seq=++state.seq;state.path=path;expandAncestors(path);clearPreview();
- history.replaceState(null,'','#'+enc(state.repo)+'/'+enc(state.branch)+'/'+path.split('/').map(enc).join('/'));
+ updateHash();
  crumb();closeNav();status('Loading '+(path||'repository root')+'…');$('items').replaceChildren();
  try{
   const key=state.repo+'@'+state.branch+'/'+path;let data=state.cache.get(key);
@@ -100,26 +100,28 @@ async function navigate(path){
   status(state.items.length+' items · '+(state.path||'/')+(state.items.length>=1000?' · GitHub may truncate large directories':''));
  }catch(e){if(seq!==state.seq)return;status('Cannot open: '+e.message);$('items').append(elem('div','empty','Check repository name, branch, permissions, or API limit.'))}
 }
+function updateHash(filePath=''){const base='#'+state.repo.split('/').map(enc).join('/')+'/'+enc(state.branch)+'/'+state.path.split('/').map(enc).join('/');history.replaceState(null,'',base+(filePath?'?file='+enc(filePath):''))}
 function currentMatches(){
  const query=$('filter').value.trim().toLowerCase(),scope=$('scope').value;
  if(scope==='folder')return state.items.filter(x=>x.name.toLowerCase().includes(query));
- if(!state.indexReady)return null;
+ if(!state.indexReady){if(state.indexError)return scope==='images'?state.items.filter(x=>x.type==='file'&&imageRx.test(x.name)&&x.name.toLowerCase().includes(query)):state.items.filter(x=>x.name.toLowerCase().includes(query));return null}
  if(scope==='repo')return query?state.indexEntries.filter(x=>x.path.toLowerCase().includes(query)): [];
  const prefix=state.path?state.path+'/':'';
  return state.indexEntries.filter(x=>x.path.startsWith(prefix)&&imageRx.test(x.name)&&x.path.toLowerCase().includes(query));
 }
-function paint(){
- const host=$('items');state.renderEpoch++;const epoch=state.renderEpoch;
- if(state.thumbObserver){state.thumbObserver.disconnect();state.thumbObserver=null}
- thumbQueue.length=0;clearUrls('thumb');host.className='items '+state.mode;host.replaceChildren();
+function paint(more=false){
+ const host=$('items');if(!more)state.renderEpoch++;const epoch=state.renderEpoch;
+ if(!more){if(state.thumbObserver){state.thumbObserver.disconnect();state.thumbObserver=null}
+  thumbQueue.length=0;clearUrls('thumb');host.className='items '+state.mode;host.replaceChildren();
+ }else{host.querySelector('.more')?.remove()}
  const matching=currentMatches(),scope=$('scope').value;
  if(matching===null){host.append(elem('div','empty','Building the repository index…'));return}
  if(scope==='repo'&&!$('filter').value.trim()){host.append(elem('div','empty','Type a filename or path to search the repository.'));return}
- state.visibleItems=matching.slice(0,state.limit);
- if(typeof IntersectionObserver!=='undefined'&&state.mode==='grid'){
+ const previous=more?state.visibleItems.length:0;state.visibleItems=matching.slice(0,state.limit);
+ if(!more&&typeof IntersectionObserver!=='undefined'&&state.mode==='grid'){
   state.thumbObserver=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){const target=e.target;state.thumbObserver.unobserve(target);const job=target._thumbJob;if(job)loadThumb(job.item,job.thumb,job.glyph,epoch)}}},{rootMargin:'260px'});
  }
- for(const item of state.visibleItems){
+ for(const item of state.visibleItems.slice(previous)){
   const tile=elem('button','tile'),thumb=elem('div','thumb'),glyph=elem('span','glyph',icon(item));thumb.append(glyph);
   tile.append(thumb,elem('span','filename',item.name),elem('span','meta',scope==='folder'?(item.type==='dir'?'Folder':formatSize(item.size)):(item.path+(item.size?' · '+formatSize(item.size):''))));
   tile.title=item.path;tile.onclick=()=>item.type==='dir'?navigate(item.path):openPreview(item);host.append(tile);
@@ -130,10 +132,10 @@ function paint(){
  }
  if(matching.length>state.limit){
   const more=elem('button','pill more','Show more ('+(matching.length-state.limit)+' remaining)');
-  more.onclick=()=>{state.limit+=80;paint()};host.append(more)
+  more.onclick=()=>{state.limit+=80;paint(true)};host.append(more)
  }
  if(!matching.length)host.append(elem('div','empty',scope==='repo'?'No matching files.':'Nothing matches this view.'));
- if(scope!=='folder')status(matching.length+' matching files'+(state.indexTruncated?' · index incomplete':'')+(matching.length>state.limit?' · showing first '+state.limit:''));
+ status(matching.length+' items matched'+(scope==='folder'?' in folder':' across indexed paths')+(state.indexTruncated?' · index incomplete':'')+(state.indexError?' · index unavailable, limited to folder':'')+(matching.length>state.limit?' · showing first '+state.limit:''));
 }
 const thumbQueue=[];let running=0;
 function loadThumb(item,thumb,glyph,epoch){if(item.size>8e6)return;thumbQueue.push({item,thumb,glyph,repo:state.repo,branch:state.branch,epoch});pump()}
@@ -146,17 +148,17 @@ async function pump(){
   }catch{}finally{running--;pump()}})()
  }
 }
-function clearPreview(){const wasOpen=state.preview!==null;state.preview=null;$('preview').classList.remove('open');$('scrim').classList.remove('on');$('previewBody').replaceChildren();clearUrls('preview');if(wasOpen&&state.returnFocus?.isConnected)state.returnFocus.focus();state.returnFocus=null}
+function clearPreview(){const wasOpen=state.preview!==null;state.preview=null;$('preview').classList.remove('open');$('scrim').classList.remove('on');$('previewBody').replaceChildren();clearUrls('preview');if(wasOpen&&state.repo&&state.branch)updateHash();if(wasOpen&&state.returnFocus?.isConnected)state.returnFocus.focus();state.returnFocus=null}
 function adjacentPreview(direction){const files=state.visibleItems.filter(x=>x.type!=='dir');const i=files.findIndex(x=>x.path===state.preview?.path);if(i<0||!files.length)return;openPreview(files[(i+direction+files.length)%files.length])}
 function previewButtons(){const files=state.visibleItems.filter(x=>x.type!=='dir');const enabled=files.length>1;$('prevPreview').disabled=!enabled;$('nextPreview').disabled=!enabled}
 function showContent(node){$('previewBody').replaceChildren(node)}
 function simpleMarkdown(src){const div=elem('div');for(const line of src.split(/\r?\n/)){let match=line.match(/^(#{1,4})\s+(.+)/);if(match){div.append(elem('h'+match[1].length,'',match[2]));continue}if(/^>\s?/.test(line)){div.append(elem('blockquote','',line.slice(1).trim()));continue}if(/^[-*]\s+/.test(line)){div.append(elem('p','','• '+line.slice(2)));continue}if(line.trim()===''){div.append(elem('div',''));continue}div.append(elem('p','',line))}return div}
-async function openPreview(item){if(!state.preview)state.returnFocus=document.activeElement;clearUrls('preview');state.preview=item;previewButtons();$('previewTitle').textContent=item.name;$('fileLink').href='https://github.com/'+state.repo+'/blob/'+enc(state.branch)+'/'+pathPart(item.path);$('preview').classList.add('open');$('scrim').classList.add('on');const loading=elem('div','message','Loading preview…');showContent(loading);try{if(item.size>20e6){showContent(elem('div','message','Large file. Open it on GitHub to download.'));return}const blob=await fetchBlob(item);if(state.preview!==item)return;const lower=item.name.toLowerCase();let node;if(imageRx.test(lower)){node=elem('img');node.alt=item.name;node.src=blobUrl(blob)}else if(/\.pdf$/i.test(lower)){node=elem('iframe');node.title=item.name;node.src=blobUrl(new Blob([blob],{type:'application/pdf'}))}else if(/\.(mp4|webm|ogg)$/i.test(lower)){node=elem('video');node.controls=true;node.src=blobUrl(blob)}else if(/\.(mp3|wav|m4a|flac)$/i.test(lower)){node=elem('audio');node.controls=true;node.src=blobUrl(blob)}else if(textRx.test(lower)||blob.type.startsWith('text/')){const text=await blob.text();node=/\.md$/i.test(lower)?simpleMarkdown(text.slice(0,500000)):elem('pre','',text.slice(0,500000)+(text.length>500000?'\n…preview truncated':''))}else node=elem('div','message','No inline preview for this format. Use the GitHub link.');showContent(node)}catch(e){if(state.preview===item)showContent(elem('div','message','Preview unavailable: '+e.message))}}
+async function openPreview(item){if(!state.preview)state.returnFocus=document.activeElement;clearUrls('preview');state.preview=item;previewButtons();updateHash(item.path);$('previewTitle').textContent=item.name;$('fileLink').href='https://github.com/'+state.repo+'/blob/'+enc(state.branch)+'/'+pathPart(item.path);$('preview').classList.add('open');$('scrim').classList.add('on');const loading=elem('div','message','Loading preview…');showContent(loading);try{if(item.size>20e6){showContent(elem('div','message','Large file. Open it on GitHub to download.'));return}const blob=await fetchBlob(item);if(state.preview!==item)return;const lower=item.name.toLowerCase();let node;if(imageRx.test(lower)){node=elem('img');node.alt=item.name;node.src=blobUrl(blob)}else if(/\.pdf$/i.test(lower)){node=elem('iframe');node.title=item.name;node.src=blobUrl(new Blob([blob],{type:'application/pdf'}))}else if(/\.(mp4|webm|ogg)$/i.test(lower)){node=elem('video');node.controls=true;node.src=blobUrl(blob)}else if(/\.(mp3|wav|m4a|flac)$/i.test(lower)){node=elem('audio');node.controls=true;node.src=blobUrl(blob)}else if(textRx.test(lower)||blob.type.startsWith('text/')){const text=await blob.text();node=/\.md$/i.test(lower)?simpleMarkdown(text.slice(0,500000)):elem('pre','',text.slice(0,500000)+(text.length>500000?'\n…preview truncated':''))}else node=elem('div','message','No inline preview for this format. Use the GitHub link.');showContent(node)}catch(e){if(state.preview===item)showContent(elem('div','message','Preview unavailable: '+e.message))}}
 async function openRepo(targetPath=''){
  const repo=$('repo').value.trim().replace(/^https?:\/\/github\.com\//,'').replace(/\/$/,'');
  if(!/^[\w.-]+\/[\w.-]+$/.test(repo)){status('Enter owner/repository.');return}
  const request=++state.repoRequest;state.repo=repo;state.branch='';state.path='';
- state.cache.clear();state.tree.clear();state.expanded.clear();state.indexEntries=[];state.indexReady=false;state.indexTruncated=false;state.limit=80;
+ state.cache.clear();state.tree.clear();state.expanded.clear();state.indexEntries=[];state.indexReady=false;state.indexTruncated=false;state.indexError=false;state.limit=80;state.items=[];state.visibleItems=[];$('items').replaceChildren();
  clearObjects();clearPreview();++state.seq;status('Connecting to '+repo+'…');
  try{
   const info=await json('/repos/'+repo);if(request!==state.repoRequest)return;
@@ -173,7 +175,12 @@ try{if(localStorage.getItem('expository-theme')==='light')$('theme').click()}cat
 $('navToggle').onclick=()=>{$('sidebar').classList.add('open');$('scrim').classList.add('on')};$('closePreview').onclick=clearPreview;$('scrim').onclick=()=>{clearPreview();closeNav()};
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){clearPreview();closeNav()}else if(state.preview&&!['INPUT','TEXTAREA','SELECT'].includes(e.target?.tagName)){if(e.key==='ArrowRight')adjacentPreview(1);if(e.key==='ArrowLeft')adjacentPreview(-1)}});
 const match=location.hash.slice(1).match(/^([^/]+\/[^/]+)\/([^/]+)\/(.*)$/);
-if(match){try{$('repo').value=decodeURIComponent(match[1]);$('branch').value=decodeURIComponent(match[2]);const p=match[3].split('/').map(decodeURIComponent).join('/');openRepo(p)}catch{openRepo()}}else openRepo();
+if(match){try{
+ $('repo').value=decodeURIComponent(match[1]);$('branch').value=decodeURIComponent(match[2]);
+ const [encodedPath,encodedFile]=match[3].split('?file='),p=encodedPath.split('/').map(decodeURIComponent).join('/');
+ const file=encodedFile?decodeURIComponent(encodedFile):'';
+ openRepo(p).then(()=>{if(file&&state.repo&&state.branch){const item=state.items.find(x=>x.path===file)||state.indexEntries.find(x=>x.path===file)||{name:file.split('/').at(-1),path:file,type:'file'};openPreview(item)}});
+}catch{openRepo()}}else openRepo();
 })();
 </script>
 </body></html>
