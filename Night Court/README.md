@@ -8,10 +8,10 @@
 - **193/193** titles, dates, directors, writer-credit lines and production codes, reconciled from TVmaze and Wikipedia. Source-specific aliases are retained; composite broadcasts and ambiguous numbering are flagged.
 - **193/193 CC BY-SA-licensed, episode-specific encyclopedia synopsis/capsule files**: `seasons/Sxx/SxxEyy/authorized-text/wikipedia-episode-capsule.wikitext`, each with `sources/wikipedia-capsule.provenance.json`. A five-entry discrepancy between Wikipedia's 188 episode-list rows and 193 actual episode parts is explained by paired broadcasts, whose shared summaries are annotated.
 - Full MediaWiki source of **two openly licensed articles**, `research/licensed-wiki/Night-Court.wikitext` and `research/licensed-wiki/List-of-Night-Court-episodes.wikitext`, each with a Wikipedia revision permalink, attribution and license manifest.
-- **1,672 provenance-bearing episode source references**, including many repeated series-index pointers. The number is *not* an independently recovered document count.
+- **1,825 provenance-bearing episode source references**, including many repeated series-index pointers. The number is *not* an independently recovered document count.
 - Episode-level bibliography plus original analyst-created first-pass fact sheets for S01E01 and S02E10; fandom observation examples, source inventory and canonical knowledge-model design.
 
-**Not held:** full scripts, proprietary dialogue transcriptions, closed-caption or subtitle tracks, copyrighted fan reviews and articles without reuse permission. The corresponding discovery links are retained, and holdings explicitly record zero for these categories. A private repository alone does not authorize copying them. If authorized materials become available, ingest each version in the relevant episode directory with precise provenance.
+**Now held:** 35 English timed SRT subtitle witnesses supplied by the repository owner for every episode in Seasons 1–2, with original archived RARs, source checksums, episode directory holdings, cue indexes and provenance. **Not held:** verified original broadcast transcripts, original production screenplays, additional full editorial reviews or independently proven audiovisual completeness. Third-party research-source links remain separate from physically preserved source files.
 
 ## Repository organization
 
@@ -209,3 +209,10 @@ The updated 193-episode acquisition queue now shows **69 direct episode pages**,
 The only three episodes not yet linked to an external downloadable transcript/caption-display page or an episode-specific caption-upload index are S09E08, S09E17 and S09E19. Each now has an **episode-specific Apple TV listing explicitly advertising English (US) CC**, catalogued as `episode_streaming_catalog` instead of a transcript locator. Their source metadata, platform regions and reported runtimes appear in `catalog/streaming-cc-fallbacks.json`.
 
 These publisher listings may require access, purchases or regional availability. They do **not** deliver an exported SRT, confirm a source-video match, or authorize copying protected captions. The acquisition queue continues to report **69 direct third-party caption/transcript pages, 121 index-only leads and 3 episodes with no exported-dialogue source**, while the streaming-CC supplement covers those three for future audiovisual research.
+
+
+## Owner-provided Seasons 1–2 SRT dialogue acquisition: complete import
+
+Both owner-uploaded RARs have been extracted and relocated to `research/source-archives/`. All **35 episode-specific English SRT files** are physically held, one per S01E01–S02E22 episode, with **12,995 timestamped cues** and roughly **91,345 transcript words**. The existing importer keeps original subtitle bytes as `original.srt`, plus `segments.jsonl`, `readable.txt`, `manifest.json` and `quality.json` under each episode's `dialogue/versions/` directory. Original archive hashes and all 35 original member filenames are indexed in `catalog/rar-ingestion-manifest.json`.
+
+Thirty-four tracks had no automated quality flags. **S01E11** received one review flag for adjacent repeated caption text. Although the files reach roughly 22–23 minutes of source timing, **none is independently video-verified as complete**. `catalog/dialogue-coverage.json`, `catalog/dialogue-quality.json` and `catalog/dialogue-index.jsonl` now reflect actually held source text. See [the source import and quality report](research/season1-season2-subtitle-import-report.md). Next acquisition priority is Season 3 onwards, not reacquiring these 35 episodes.
