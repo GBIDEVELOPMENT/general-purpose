@@ -50,6 +50,49 @@ def main():
         c=json.loads(coverage.read_text("utf-8"))["counts"]
         assert c["episode_records_with_embedding"]<=193
         assert c["episode_records_with_guests"]+c["episode_records_empty_guestcast"]==c["episode_records_with_embedding"]
+    # Source statements should retain exact character offsets into source plaintext.
+    statements=read_jsonl(ROOT/"catalog"/"source-statements.jsonl")
+    keyed={r["id"]:r for r in records}
+    for st in statements:
+        origin=keyed[st["episode_id"]]
+        assert st["source_revision"]==origin["source"]["revision"],st["id"]
+        assert origin["plot_source_plaintext"][st["text_start"]:st["text_end"]]==st["text"],st["id"]
+        assert st["kind"]=="attributed_encyclopedia_source_statement_not_verified_event",st["id"]
+    summary=json.loads((ROOT/"catalog"/"source-statements-status.json").read_text("utf-8"))
+    assert len(statements)==summary["source_statements"]
+    assert summary["episodes"]==193
+
+    # Episode-specific role credits must agree with graph edges and source coverage.
+    cast_graph=ROOT/"catalog"/"cast-relationship-graph.json"
+    if cast_graph.exists():
+        graph=json.loads(cast_graph.read_text("utf-8"))
+        c=graph["credits"]
+        assert len([e for e in c if e["credit_scope"]=="episode_guest_cast"])==graph["episode_guest_cast_credits"]
+        assert all(e["person_id"] in graph["persons"] for e in c)
+        assert all(e["character_id"] in graph["characters"] for e in c)
+        assert graph["missing_guest_cast_collections"]==0
+        assert coverage.exists()
+        sourcecounts=json.loads(coverage.read_text("utf-8"))["counts"]
+        assert graph["episode_guest_cast_credits"]==sourcecounts["guest_credit_edges"]
+    audit=ROOT/"catalog"/"holdings-coverage.json"
+    if audit.exists():
+        a=json.loads(audit.read_text("utf-8"))
+        assert a["episodes"] and len(a["episodes"])==193
+        assert a["totals"]["licensed_wikipedia_capsule_held"]==193
+        assert a["totals"]["full_transcripts_held"]==0
+        if coverage.exists():
+            assert a["totals"]["guestcast_credited_roles"]==sourcecounts["guest_credit_edges"]
+    context=ROOT/"research"/"licensed-wiki"/"context"/"manifest.json"
+    if context.exists():
+        cm=json.loads(context.read_text("utf-8"))
+        for value in cm["captured"].values():
+            assert (ROOT/value["source_file"]).exists()
+        assert cm["captured_count"]==len(cm["captured"])
+    fandom=ROOT/"research"/"fandom-wiki"/"collection-status.json"
+    if fandom.exists():
+        f=json.loads(fandom.read_text("utf-8"))
+        if f["status"]=="blocked_by_robots":
+            assert not list((ROOT/"research"/"fandom-wiki").glob("*.wikitext"))
     print("VALID:",len(ids),"episode dossiers;",
           sum(len(x["named_character_mentions"]) for x in records),"name-mention relationships;",
           sum(len(x["theme_lexical_cues"]) for x in records),"lexical topic flags;",
