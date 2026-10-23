@@ -29,13 +29,20 @@ concurrency:
 jobs:
   import:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - name: Verify original 193-episode corpus
         run: python "Night Court/tools/validate.py"
       - name: Run isolated synthetic ingestion tests
         run: python "Night Court/tools/test_import_dialogue.py"
+      - name: Ensure FFmpeg for actual synthetic media round-trip
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          fi
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
       - name: Test DRM-free local media subtitle extraction on synthetic MKV
         run: python "Night Court/tools/test_extract_local_media.py"
       - name: Run source quality and search synthetic tests
