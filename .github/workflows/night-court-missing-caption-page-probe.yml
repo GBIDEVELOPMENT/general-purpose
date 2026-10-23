@@ -1,0 +1,24 @@
+name: Night Court missing caption page witness probe
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/probe_remaining_caption_pages.py'
+      - '.github/workflows/night-court-missing-caption-page-probe.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preserve bounded original-series S06E20 and S08E23 page evidence
+        run: python "Night Court/tools/probe_remaining_caption_pages.py" "${{ runner.temp }}/source-pages"
+      - name: Stage SHA-verified source pages for extraction design
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-two-missing-caption-page-witnesses
+          path: ${{ runner.temp }}/source-pages/
+          retention-days: 7
+          if-no-files-found: warn
