@@ -14,8 +14,19 @@
   "sources": {
     "forever_dreaming_topics_indexed": 57,
     "springfield_script_indexed": 47,
-    "subtitle_cat_direct_pages_verified": 2
+    "subtitle_cat_direct_pages_verified": 13,
+    "subtitle_cat_subtitle_files_held": 0
   },
   "production_matrix": "catalog/production-matrix.json",
-  "distinct_sources_warning": "1,651+ episode source pointers include repeated series catalog URLs; do not treat as unique independently preserved items"
+  "distinct_sources_warning": "1663 episode source pointers are not 1663 unique, held documents. 13 Subtitle Cat caption-display URL records, no held SRTs.",
+  "licensed_context_wikipedia_articles": 19,
+  "guest_cast_collections_embedded": 193,
+  "guest_cast_credited_role_edges": 1210,
+  "retrieval_dossiers": 193,
+  "licensed_synopsis_statements": 342,
+  "character_name_lexical_edges": 440,
+  "story_theme_lexical_edges": 255,
+  "source_pointer_count_including_repeated_series_indexes": 1663,
+  "subtitle_discovery_manifest": "catalog/subtitlecat-discovery.json",
+  "holdings_audit": "catalog/holdings-coverage.json"
 }

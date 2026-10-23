@@ -40,6 +40,10 @@ def main():
                     x["level"]=="episode_url_derived_from_verified_index" for x in sources)),
                 "subtitlecat_episode_page":int(any(x.get("provider")=="Subtitle Cat" and
                     x["level"]=="episode_page" for x in sources)),
+                "subtitlecat_any_episode_page_located":int(any(x.get("provider")=="Subtitle Cat" and
+                    x["level"] in ("episode_page","episode_in_index") for x in sources)),
+                "subtitlecat_distinct_page_links":len({x["url"] for x in sources
+                    if x.get("provider")=="Subtitle Cat" and x["level"] in ("episode_page","episode_in_index")}),
                 "exact_episode_source_links":sum(x["level"]=="episode_page" for x in sources),
                 "series_or_season_index_references":sum(x["level"]=="series_catalog" for x in sources),
                 "source_pointers":len(sources)
