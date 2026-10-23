@@ -116,8 +116,10 @@ def main():
         status["source_pointer_count_including_repeated_series_indexes"]=totals["source_pointers"]
         status["source_locator_queue"]="catalog/dialogue-source-queue.json"
         status["distinct_sources_warning"]=(
-          f'{totals["source_pointers"]} references may repeat a series catalog; '
-          "the 193 episode records contain no automatically acquired full television dialogue.")
+          f'{totals["source_pointers"]} research references include repeated series/index links '
+          "and must not be added to the count of physically held dialogue witnesses. "
+          "Neither online source retention nor subtitle timestamps establish "
+          "audiovisual completeness or speaker identity.")
         save(statusfile,json.dumps(status,indent=2,ensure_ascii=False)+"\\n".replace("\\n","\n"))
     print("Dialogue source queue:",len(entries),"episodes;",counts)
 if __name__=="__main__":main()
