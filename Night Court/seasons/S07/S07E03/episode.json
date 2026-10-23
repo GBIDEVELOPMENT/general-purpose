@@ -130,19 +130,29 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1121/night_court_s07e03_the_cop_and_the_lady.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "individually_checked_public_caption_display_page",
+      "kind": "subtitle_index",
+      "level": "episode_page",
+      "note": "Original-series episode page; URL only, no transcript bytes. ",
+      "provider": "Subtitle Cat",
       "source_index": null,
-      "note": "Original-series episode page; URL only, no transcript bytes. "
+      "url": "https://www.subtitlecat.com/subs/1121/night_court_s07e03_the_cop_and_the_lady.html",
+      "verification": "individually_checked_public_caption_display_page",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--c0ea55f542a7936d/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--c0ea55f542a7936d/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "c0ea55f542a7936deaa4389463d92c194047678b39d29806bd442597e9d41a79",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-late-season-research-witnes--c0ea55f542a7936d"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

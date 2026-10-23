@@ -128,20 +128,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1121/Night%20Court%20s09e22%20The%201992%20Boat%20Show.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "original_1984_series_episode_page_individually_checked",
       "description": "Second independently indexed S09E22 caption version",
+      "kind": "subtitle_index",
       "language_observed": "en",
-      "rights_status": "not_established"
+      "level": "episode_page",
+      "provider": "Subtitle Cat",
+      "rights_status": "not_established",
+      "url": "https://www.subtitlecat.com/subs/1121/Night%20Court%20s09e22%20The%201992%20Boat%20Show.html",
+      "verification": "original_1984_series_episode_page_individually_checked",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--bd22e64a19d31593/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--bd22e64a19d31593/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "bd22e64a19d315939e5080c62433e58ae6c2918d4604afd76fcbff3bfbed0f5d",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-late-season-research-witnes--bd22e64a19d31593"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

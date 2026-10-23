@@ -154,32 +154,42 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/subs/1121/Night%20Court%20s05e01%20Her%20Honor%203.html",
-      "level": "episode_page",
-      "verified": true,
       "content_imported": false,
-      "verification": "original_1984_series_episode_page_individually_checked",
       "description": "Original season five Her Honor Part 3 subtitles",
+      "kind": "subtitle_index",
       "language_observed": "en",
-      "rights_status": "not_established"
+      "level": "episode_page",
+      "provider": "Subtitle Cat",
+      "rights_status": "not_established",
+      "url": "https://www.subtitlecat.com/subs/1121/Night%20Court%20s05e01%20Her%20Honor%203.html",
+      "verification": "original_1984_series_episode_page_individually_checked",
+      "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/list_page.php?from=1710550",
-      "level": "episode_in_index",
-      "verified": true,
       "content_imported": false,
-      "verification": "episode_label_verified_in_public_upload_index_only",
-      "source_upload_date": "2025-06-22",
       "episode_id_in_listing": "S05E01",
-      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established."
+      "kind": "subtitle_index",
+      "level": "episode_in_index",
+      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established.",
+      "provider": "Subtitle Cat",
+      "source_upload_date": "2025-06-22",
+      "url": "https://www.subtitlecat.com/list_page.php?from=1710550",
+      "verification": "episode_label_verified_in_public_upload_index_only",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--379b1c8d7b83cad5/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--379b1c8d7b83cad5/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "379b1c8d7b83cad5f8688f6e12e68245a5776ee4a30bd86053a3a84a33692536",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-late-season-research-witnes--379b1c8d7b83cad5"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [

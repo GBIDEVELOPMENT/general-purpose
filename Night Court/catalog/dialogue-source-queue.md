@@ -7,8 +7,8 @@ Links are external research leads, not held dialogue or approved copying.
 | no episode dialogue specific locator | 3 |
 | inferred link only | 0 |
 | index coverage only | 102 |
-| direct episode page found not held | 53 |
-| held dialogue needs quality review | 35 |
+| direct episode page found not held | 44 |
+| held dialogue needs quality review | 44 |
 
 ## Verified episode-level external pages
 
