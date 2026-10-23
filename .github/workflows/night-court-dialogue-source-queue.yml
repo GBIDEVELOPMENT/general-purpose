@@ -7,6 +7,7 @@ on:
       - research/night-court-dialogue-source-queue
     paths:
       - "Night Court/tools/build_dialogue_source_queue.py"
+      - "Night Court/tools/test_dialogue_source_queue.py"
       - "Night Court/catalog/subtitlecat-discovery.json"
       - "Night Court/seasons/**/episode.json"
       - ".github/workflows/night-court-dialogue-source-queue.yml"
@@ -30,6 +31,8 @@ jobs:
         run: python "Night Court/tools/audit_holdings.py"
       - name: Generate sorted episode-source acquisition ledger
         run: python "Night Court/tools/build_dialogue_source_queue.py"
+      - name: Check 193-source ranking and recorded provenance consistency
+        run: python "Night Court/tools/test_dialogue_source_queue.py"
       - name: Verify held dialogue index is unmodified
         run: python "Night Court/tools/validate_dialogue.py"
       - name: Commit only generated Night Court source records
