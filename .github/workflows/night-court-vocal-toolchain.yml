@@ -32,7 +32,7 @@ jobs:
           python -m py_compile "Night Court/tools/measure_vocal_performance.py" "Night Court/tools/test_vocal_performance.py" "Night Court/tools/measure_vocal_prosody_optional.py"
           python "Night Court/tools/test_vocal_performance.py"
   optional-acoustic-install:
-    if: github.event_name == 'workflow_dispatch' && inputs.install_acoustics
+    if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && inputs.install_acoustics)
     needs: offline-baseline
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -50,4 +50,22 @@ jobs:
           print('librosa',librosa.__version__)
           print('soundfile',soundfile.__version__)
           print('opensmile',opensmile.__version__)
+          PY
+      - name: Extract actual F0/eGeMAPS from a synthetic WAV (no model weights)
+        run: |
+          python - <<'PY'
+          import math,struct,wave
+          with wave.open('/tmp/synthetic-voice.wav','wb') as f:
+              f.setnchannels(1);f.setsampwidth(2);f.setframerate(16000)
+              x=[int(3500*math.sin(2*math.pi*190*i/16000)) for i in range(16000)]
+              f.writeframes(struct.pack('<16000h',*x))
+          PY
+          python "Night Court/tools/measure_vocal_prosody_optional.py" --wav /tmp/synthetic-voice.wav --start-ms 0 --end-ms 1000 --output /tmp/prosody-test.json
+          python - <<'PY'
+          import json
+          j=json.load(open('/tmp/prosody-test.json'))
+          assert j['source_wav_sha256'] and len(j['egemaps_v02_functionals']) >= 60
+          assert 100 < j['f0_yin_median_hz'] < 300
+          assert j['delivery_interpretation'] is None and j['speaker_identity'] is None
+          print('Optional acoustic tier measured synthetic voice with evidence-only labels')
           PY
