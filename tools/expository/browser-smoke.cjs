@@ -15,7 +15,7 @@ const work=fs.mkdtempSync(path.join(os.tmpdir(),'expository-smoke-'));
 const screenshots=path.join(__dirname,'browser-evidence');
 fs.mkdirSync(screenshots,{recursive:true});
 const browser=spawn(CHROME,['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--no-first-run',
- '--disable-background-networking','--remote-debugging-port=0','--user-data-dir='+work,'--window-size=393,852','about:blank'],{stdio:'ignore'});
+ '--disable-background-networking','--remote-allow-origins=*','--remote-debugging-port=0','--user-data-dir='+work,'--window-size=393,852','about:blank'],{stdio:'ignore'});
 let socket,sequence=0;
 const pending=new Map(),runtimeErrors=[];
 function fail(message){throw Error(message)}
