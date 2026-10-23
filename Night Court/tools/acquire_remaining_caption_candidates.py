@@ -11,6 +11,7 @@ import argparse
 import csv
 import hashlib
 from html.parser import HTMLParser
+from http.client import IncompleteRead
 import json
 from pathlib import Path
 import re
@@ -162,7 +163,7 @@ def process(entry, output, delay):
             break
         except StopForSiteRestriction:
             raise
-        except (HTTPError, URLError, TimeoutError, ValueError) as exc:
+        except (HTTPError, URLError, TimeoutError, ValueError, IncompleteRead, OSError) as exc:
             attempt["status"] = "rejected"
             attempt["reason"] = str(exc)[:150]
     return record
