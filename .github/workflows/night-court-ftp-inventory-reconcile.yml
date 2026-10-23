@@ -1,0 +1,36 @@
+name: Night Court FTP source inventory reconciliation
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/ftp_video_metadata.py'
+      - 'Night Court/tools/test_ftp_video_metadata.py'
+      - 'Night Court/catalog/ftp-video-inventory-2026-10-23.json'
+      - '.github/workflows/night-court-ftp-inventory-reconcile.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Offline filename matcher regression
+        run: python 'Night Court/tools/test_ftp_video_metadata.py'
+      - name: Verify exact one-to-one inventory against 193 canonical episodes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('Night Court/catalog')
+          source=json.loads((p/'ftp-video-inventory-2026-10-23.json').read_text())
+          canonical=json.loads((p/'index.json').read_text())
+          expected={f.split('/')[-2] for f in canonical['episode_paths']}
+          actual=[f['episode_id_from_filename'] for f in source['files']]
+          assert len(actual)==193 and len(set(actual))==193
+          assert set(actual)==expected, (set(actual)^expected)
+          assert source['inventory_run_id']==40041061527
+          assert source['cap_reached'] is False and not source['errors']
+          assert all(f['identity_status']=='filename_candidate_not_video_verified' for f in source['files'])
+          assert any(f['episode_id_from_filename']=='S01E01' and f['size_bytes']==183386112 for f in source['files'])
+          print('193/193 unique FTP candidates matched; AV identity remains unverified')
+          PY
