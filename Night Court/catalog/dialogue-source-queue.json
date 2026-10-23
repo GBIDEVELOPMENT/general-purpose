@@ -5,8 +5,8 @@
   "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
   "source_status_counts": {
     "direct_episode_page_found_not_held": 44,
-    "held_dialogue_needs_quality_review": 44,
-    "index_coverage_only": 102,
+    "held_dialogue_needs_quality_review": 60,
+    "index_coverage_only": 86,
     "no_episode_dialogue_specific_locator": 3
   },
   "by_season": {
@@ -23,11 +23,12 @@
       "direct_episode_page_found_not_held": 22
     },
     "S05": {
-      "held_dialogue_needs_quality_review": 1,
-      "index_coverage_only": 21
+      "held_dialogue_needs_quality_review": 15,
+      "index_coverage_only": 7
     },
     "S06": {
-      "index_coverage_only": 22
+      "held_dialogue_needs_quality_review": 2,
+      "index_coverage_only": 20
     },
     "S07": {
       "index_coverage_only": 21,
@@ -106,8 +107,6 @@
     "S07E21",
     "S07E22",
     "S07E24",
-    "S06E01",
-    "S06E02",
     "S06E03",
     "S06E04",
     "S06E05",
@@ -132,21 +131,7 @@
     "S05E03",
     "S05E04",
     "S05E05",
-    "S05E06",
-    "S05E07",
-    "S05E08",
-    "S05E09",
-    "S05E10",
-    "S05E11",
-    "S05E12",
-    "S05E13",
-    "S05E14",
     "S05E15",
-    "S05E16",
-    "S05E17",
-    "S05E18",
-    "S05E19",
-    "S05E20",
     "S05E21",
     "S05E22",
     "S04E01",
@@ -2795,11 +2780,11 @@
       "season": 5,
       "episode": 6,
       "title": "Mac's Dilemma",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2817,11 +2802,11 @@
       "season": 5,
       "episode": 7,
       "title": "Who Was That Mashed Man?",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2839,11 +2824,11 @@
       "season": 5,
       "episode": 8,
       "title": "No Hard Feelings",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2861,11 +2846,11 @@
       "season": 5,
       "episode": 9,
       "title": "Constitution (1)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2883,11 +2868,11 @@
       "season": 5,
       "episode": 10,
       "title": "Constitution (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2905,11 +2890,11 @@
       "season": 5,
       "episode": 11,
       "title": "Let It Snow",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2927,11 +2912,11 @@
       "season": 5,
       "episode": 12,
       "title": "Dan, the Walking Time Bomb",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2949,11 +2934,11 @@
       "season": 5,
       "episode": 13,
       "title": "Hit the Road, Jack",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -2971,11 +2956,11 @@
       "season": 5,
       "episode": 14,
       "title": "I'm OK, You're Catatonic/Schizophrenic",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3015,11 +3000,11 @@
       "season": 5,
       "episode": 16,
       "title": "Another Day in the Life",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3037,11 +3022,11 @@
       "season": 5,
       "episode": 17,
       "title": "Heart of Stone",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3059,11 +3044,11 @@
       "season": 5,
       "episode": 18,
       "title": "Russkie Business",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3081,11 +3066,11 @@
       "season": 5,
       "episode": 19,
       "title": "Jung and the Restless",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3103,11 +3088,11 @@
       "season": 5,
       "episode": 20,
       "title": "Top Judge",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3169,11 +3154,11 @@
       "season": 6,
       "episode": 1,
       "title": "Danny Got His Gun (2)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",
@@ -3191,11 +3176,11 @@
       "season": 6,
       "episode": 2,
       "title": "Danny Got His Gun (3)",
-      "held_dialogue_versions": 0,
+      "held_dialogue_versions": 1,
       "direct_episode_page_locators": 0,
       "index_only_transcript_refs": 1,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "index_coverage_only",
+      "acquisition_status": "held_dialogue_needs_quality_review",
       "source_locations": [
         {
           "provider": "Subtitle Cat",

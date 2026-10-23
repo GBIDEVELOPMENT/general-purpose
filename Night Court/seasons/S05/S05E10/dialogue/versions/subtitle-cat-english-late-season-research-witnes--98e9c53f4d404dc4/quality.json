@@ -1,0 +1,32 @@
+{
+  "adjacent_exact_repetitions": 0,
+  "cue_count": 315,
+  "earliest_cue_start_ms": 3119,
+  "edition": "Subtitle Cat English late-season research witness",
+  "episode_id": "S05E10",
+  "epistemic_status": "heuristic_automated_source_QA_not_audiovisual_completeness",
+  "flags": [],
+  "format": "srt",
+  "latest_cue_end_ms": 1378620,
+  "limits": [
+    "An SRT's final timestamp does not prove every line was captured.",
+    "Music, quiet scenes, titles, ads and cuts can legitimately create long caption gaps.",
+    "Overlapping cues are often legitimate two-speaker or sound-effect captions.",
+    "No source video was viewed; independently verified completeness remains unknown.",
+    "Word counts are an English-oriented rough metric; this is not a semantic evaluation."
+  ],
+  "max_gap_between_source_cues_ms": 45470,
+  "median_cue_duration_ms": 1960,
+  "overlapping_cue_count": 0,
+  "source_cue_out_of_order_count": 0,
+  "source_cue_union_duration_ms": 745027,
+  "source_cue_union_fraction_of_final_time": 0.5404,
+  "source_declared_complete": false,
+  "source_gaps_over_30_seconds": 2,
+  "source_sha256": "98e9c53f4d404dc454671295a8b68ce8fe7aa71d56ea852dd767cb5b16fa461f",
+  "text_characters": 12317,
+  "timecoded": true,
+  "unique_caption_texts": 312,
+  "version_id": "subtitle-cat-english-late-season-research-witnes--98e9c53f4d404dc4",
+  "word_count_rough": 2392
+}

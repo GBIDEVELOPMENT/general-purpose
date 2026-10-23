@@ -154,20 +154,30 @@
       "verified": true
     },
     {
-      "kind": "subtitle_index",
-      "provider": "Subtitle Cat",
-      "url": "https://www.subtitlecat.com/list_page.php?from=1710600",
-      "level": "episode_in_index",
-      "verified": true,
       "content_imported": false,
-      "verification": "episode_label_verified_in_public_upload_index_only",
-      "source_upload_date": "2025-06-22",
       "episode_id_in_listing": "S06E01",
-      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established."
+      "kind": "subtitle_index",
+      "level": "episode_in_index",
+      "note": "Index page contains episode-named original-series English subtitle listing. Direct caption page not individually inspected; subtitle text not archived. Reuse rights not established.",
+      "provider": "Subtitle Cat",
+      "source_upload_date": "2025-06-22",
+      "url": "https://www.subtitlecat.com/list_page.php?from=1710600",
+      "verification": "episode_label_verified_in_public_upload_index_only",
+      "verified": true
     }
   ],
   "holdings": {
-    "caption_files": [],
+    "caption_files": [
+      {
+        "completeness_status": "unknown_unverified",
+        "file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--a2e8650ac16cd7ff/original.srt",
+        "manifest_file": "dialogue/versions/subtitle-cat-english-late-season-research-witnes--a2e8650ac16cd7ff/manifest.json",
+        "rights_basis_declared": "user_provided",
+        "sha256": "a2e8650ac16cd7ffe2adfd380e677ff99b556ae3543a72cf300082b7761d7cfc",
+        "source": "user_imported",
+        "version_id": "subtitle-cat-english-late-season-research-witnes--a2e8650ac16cd7ff"
+      }
+    ],
     "full_transcripts": [],
     "other": [],
     "recaps": [
