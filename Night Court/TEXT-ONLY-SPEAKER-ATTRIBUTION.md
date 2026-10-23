@@ -78,3 +78,25 @@ Public NLP research is encouraging but its reported results **do not transfer di
 - **Output:** uncertainty is visible and readable, preserving conversational order without hallucinated audiovisual directions.
 
 A zero-human workflow is feasible if “unknown” remains acceptable. A zero-human workflow that labels **every** line correctly from text alone is not generally possible, because some exchanges are observationally indistinguishable without voices or visuals.
+
+
+## Agent vote format and provisional renderer
+
+An agent receives `agent-packets.jsonl` for an episode version and writes one source-linked vote per turn it can evaluate. Save it at `speaker-attribution/votes/context-agent.jsonl` (and separately `skeptic-agent.jsonl` or other distinct worker IDs).
+
+```json
+{"turn_id":"S01E01:C00001:1","speaker_id":"tvmaze:99640","confidence":0.82,"source_sha256":"COPY EXACT SHA FROM CANDIDATE ROSTER SOURCE","evidence_turn_ids":["S01E01:C00001:1"],"short_evidence_summary":"Illustrative schema only; cite a real neighboring exchange here."}
+```
+
+The example is **synthetic documentation, not a claim** that the episode's first line was spoken by Harry. Replace every value with grounded packet evidence. Speaker IDs must match `candidate-roster.json`, or use `UNKNOWN`, `UNIDENTIFIED_GUEST`, or `OFFSCREEN_OR_CROWD`. The SHA must match the actual caption version. Never infer a speaker from title alone.
+
+Run:
+
+```sh
+python "Night Court/tools/reconcile_speaker_votes.py"
+python "Night Court/tools/test_reconcile_speaker_votes.py"
+```
+
+The reconciler requires at least two distinctly named agents with agreement ratings at or above 0.75 before tentatively labeling an unlabeled turn. Even then, it marks the result `uncalibrated_agent_agreement`, **not** verified fact. Any speaker conflict, a single agent, low ratings or a possible self-address leaves the turn as `UNKNOWN`. Truly explicit textual speaker prefixes override suggestions and are labeled as such. Each vote's evidence pointers are checked against exact original turn IDs and the source hash; unrelated or fabricated character IDs are rejected.
+
+Only versions **with vote files** receive `speaker-proposals-reconciled.jsonl` and `script-provisional.md` for reading. With zero agent votes, no scripts are fabricated. A global `catalog/speaker-attribution-reconciliation.json` records the situation honestly. The original captions are never overwritten.
