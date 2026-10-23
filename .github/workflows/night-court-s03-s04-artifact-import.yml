@@ -18,6 +18,12 @@ jobs:
         with:
           ref: research/night-court-s03-s04-artifact-ingestion
           persist-credentials: true
+      - name: Reconcile completed later-season import from current main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git merge -X ours --no-edit origin/main
       - name: Download existing successful source archive without re-fetching website
         env:
           GH_TOKEN: ${{ github.token }}
