@@ -8,6 +8,8 @@ on:
       - "research/night-court-local-media-*"
     paths:
       - "Night Court/tools/import_dialogue.py"
+      - "Night Court/tools/import_dialogue_bundle.py"
+      - "Night Court/tools/test_dialogue_bundle.py"
       - "Night Court/tools/validate_dialogue.py"
       - "Night Court/tools/audit_dialogue_coverage.py"
       - "Night Court/tools/test_import_dialogue.py"
@@ -40,6 +42,10 @@ jobs:
         run: python "Night Court/tools/test_extract_local_media.py"
       - name: Run source quality and search synthetic tests
         run: python "Night Court/tools/test_dialogue_quality_search.py"
+      - name: Run synthetic multi-episode ZIP safety and ingestion tests
+        run: python "Night Court/tools/test_dialogue_bundle.py"
+      - name: Import source-identified ZIP packages with explicit metadata
+        run: python "Night Court/tools/import_dialogue_bundle.py" --inbox "Night Court/incoming"
       - name: Import only supplied source files and matching confirmed sidecars
         run: python "Night Court/tools/import_dialogue.py" --inbox "Night Court/incoming"
       - name: Measure suspect gaps and duplicates without assuming completeness
