@@ -1,115 +1,207 @@
 {
-  "id": "S06E17",
-  "series": "night-court-1984",
-  "season": 6,
-  "episode": 17,
   "absolute_episode_by_season_sum": 118,
-  "title": "Strange Bedfellows",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1989-03-08",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Mel Tormé",
+          "tvmaze_id": 818319,
+          "url": "https://www.tvmaze.com/characters/818319/night-court-mel-torme"
+        },
+        "person": {
+          "name": "Mel Tormé",
+          "tvmaze_id": 108069,
+          "url": "https://www.tvmaze.com/people/108069/mel-torme"
+        }
+      },
+      {
+        "character": {
+          "name": "Phil Sanders",
+          "tvmaze_id": 695688,
+          "url": "https://www.tvmaze.com/characters/695688/night-court-phil-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Dr. Friedman",
+          "tvmaze_id": 833633,
+          "url": "https://www.tvmaze.com/characters/833633/night-court-dr-friedman"
+        },
+        "person": {
+          "name": "John Welsh",
+          "tvmaze_id": 299765,
+          "url": "https://www.tvmaze.com/people/299765/john-welsh"
+        }
+      },
+      {
+        "character": {
+          "name": "Joan Hobson",
+          "tvmaze_id": 834528,
+          "url": "https://www.tvmaze.com/characters/834528/night-court-joan-hobson"
+        },
+        "person": {
+          "name": "Janet Zarish",
+          "tvmaze_id": 18084,
+          "url": "https://www.tvmaze.com/people/18084/janet-zarish"
+        }
+      },
+      {
+        "character": {
+          "name": "Jack Brennan",
+          "tvmaze_id": 834531,
+          "url": "https://www.tvmaze.com/characters/834531/night-court-jack-brennan"
+        },
+        "person": {
+          "name": "Alan Shearman",
+          "tvmaze_id": 47836,
+          "url": "https://www.tvmaze.com/people/47836/alan-shearman"
+        }
+      },
+      {
+        "character": {
+          "name": "Trish",
+          "tvmaze_id": 834530,
+          "url": "https://www.tvmaze.com/characters/834530/night-court-trish"
+        },
+        "person": {
+          "name": "Kahlena Marie",
+          "tvmaze_id": 277153,
+          "url": "https://www.tvmaze.com/people/277153/kahlena-marie"
+        }
+      },
+      {
+        "character": {
+          "name": "Anchorwoman",
+          "tvmaze_id": 834529,
+          "url": "https://www.tvmaze.com/characters/834529/night-court-anchorwoman"
+        },
+        "person": {
+          "name": "Rachel Wells",
+          "tvmaze_id": 303321,
+          "url": "https://www.tvmaze.com/people/303321/rachel-wells"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5839/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134360"
+    },
+    "production_code": "186477",
+    "writer_credit_display": "Tom Reeder",
     "writers": [
       "Tom Reeder"
-    ],
-    "guest_cast": [],
-    "production_code": "186477",
-    "writer_credit_display": "Tom Reeder"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 17,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134360/night-court-6x17-strange-bedfellows",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 118,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 118
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S06E17",
+  "original_air_date": "1989-03-08",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 6,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Strange Bedfellows",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134360,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Strange Bedfellows",
     "episode_airdate_wikitext": "{{Start date|1989|3|8}}",
     "household_rating_and_share": null,
-    "viewers_millions": 26.9,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Strange Bedfellows",
+    "viewers_millions": 26.9
   }
 }

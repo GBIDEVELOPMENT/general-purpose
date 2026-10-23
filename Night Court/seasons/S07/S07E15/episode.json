@@ -1,117 +1,221 @@
 {
-  "id": "S07E15",
-  "series": "night-court-1984",
-  "season": 7,
-  "episode": 15,
   "absolute_episode_by_season_sum": 138,
-  "title": "Wedding Bell Blues (1)",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [
-    "Wedding Bell Blues (Part 1)"
-  ],
-  "original_air_date": "1990-02-07",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Tony Giuliano",
+          "tvmaze_id": 834896,
+          "url": "https://www.tvmaze.com/characters/834896/night-court-tony-giuliano"
+        },
+        "person": {
+          "name": "Ray Abruzzo",
+          "tvmaze_id": 9220,
+          "url": "https://www.tvmaze.com/people/9220/ray-abruzzo"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Marley",
+          "tvmaze_id": 1207877,
+          "url": "https://www.tvmaze.com/characters/1207877/night-court-mr-marley"
+        },
+        "person": {
+          "name": "Timothy Stack",
+          "tvmaze_id": 46526,
+          "url": "https://www.tvmaze.com/people/46526/timothy-stack"
+        }
+      },
+      {
+        "character": {
+          "name": "Judge Hopkins",
+          "tvmaze_id": 1207878,
+          "url": "https://www.tvmaze.com/characters/1207878/night-court-judge-hopkins"
+        },
+        "person": {
+          "name": "James Avery",
+          "tvmaze_id": 21477,
+          "url": "https://www.tvmaze.com/people/21477/james-avery"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Crane",
+          "tvmaze_id": 1207880,
+          "url": "https://www.tvmaze.com/characters/1207880/night-court-mrs-crane"
+        },
+        "person": {
+          "name": "Meg Wyllie",
+          "tvmaze_id": 46735,
+          "url": "https://www.tvmaze.com/people/46735/meg-wyllie"
+        }
+      },
+      {
+        "character": {
+          "name": "Santino",
+          "tvmaze_id": 1207879,
+          "url": "https://www.tvmaze.com/characters/1207879/night-court-santino"
+        },
+        "person": {
+          "name": "Joseph R. Sicari",
+          "tvmaze_id": 99422,
+          "url": "https://www.tvmaze.com/people/99422/joseph-r-sicari"
+        }
+      },
+      {
+        "character": {
+          "name": "Violinist",
+          "tvmaze_id": 1207883,
+          "url": "https://www.tvmaze.com/characters/1207883/night-court-violinist"
+        },
+        "person": {
+          "name": "Robert Korda",
+          "tvmaze_id": 281716,
+          "url": "https://www.tvmaze.com/people/281716/robert-korda"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Crane",
+          "tvmaze_id": 1207881,
+          "url": "https://www.tvmaze.com/characters/1207881/night-court-mr-crane"
+        },
+        "person": {
+          "name": "Ben Hartigan",
+          "tvmaze_id": 152348,
+          "url": "https://www.tvmaze.com/people/152348/ben-hartigan"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5840/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134380"
+    },
+    "production_code": "186346",
+    "writer_credit_display": "Larry Strawther & Gary Murphy",
     "writers": [
       "Larry Strawther & Gary Murphy"
-    ],
-    "guest_cast": [],
-    "production_code": "186346",
-    "writer_credit_display": "Larry Strawther & Gary Murphy"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 15,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134380/night-court-7x15-wedding-bell-blues-1",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 138,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 138
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S07E15",
+  "original_air_date": "1990-02-07",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 7,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Wedding Bell Blues (1)",
+  "title_aliases": [
+    "Wedding Bell Blues (Part 1)"
+  ],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134380,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Wedding Bell Blues (Part 1)",
     "episode_airdate_wikitext": "{{Start date|1990|2|7}}",
     "household_rating_and_share": null,
-    "viewers_millions": 21.5,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Wedding Bell Blues (Part 1)",
+    "viewers_millions": 21.5
   }
 }

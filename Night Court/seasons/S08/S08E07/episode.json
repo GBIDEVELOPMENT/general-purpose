@@ -1,117 +1,221 @@
 {
-  "id": "S08E07",
-  "series": "night-court-1984",
-  "season": 8,
-  "episode": 7,
   "absolute_episode_by_season_sum": 154,
-  "title": "Crossroads (2)",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [
-    "Crossroads"
-  ],
-  "original_air_date": "1990-11-02",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Foley",
+          "tvmaze_id": 967391,
+          "url": "https://www.tvmaze.com/characters/967391/night-court-foley"
+        },
+        "person": {
+          "name": "Jack Bannon",
+          "tvmaze_id": 97026,
+          "url": "https://www.tvmaze.com/people/97026/jack-bannon"
+        }
+      },
+      {
+        "character": {
+          "name": "Deyoung",
+          "tvmaze_id": 1208453,
+          "url": "https://www.tvmaze.com/characters/1208453/night-court-deyoung"
+        },
+        "person": {
+          "name": "Phil Proctor",
+          "tvmaze_id": 6501,
+          "url": "https://www.tvmaze.com/people/6501/phil-proctor"
+        }
+      },
+      {
+        "character": {
+          "name": "Kid",
+          "tvmaze_id": 1208464,
+          "url": "https://www.tvmaze.com/characters/1208464/night-court-kid"
+        },
+        "person": {
+          "name": "Chi Muoi Lo",
+          "tvmaze_id": 22261,
+          "url": "https://www.tvmaze.com/people/22261/chi-muoi-lo"
+        }
+      },
+      {
+        "character": {
+          "name": "Senior Partner",
+          "tvmaze_id": 1006811,
+          "url": "https://www.tvmaze.com/characters/1006811/night-court-senior-partner"
+        },
+        "person": {
+          "name": "Sandy Ward",
+          "tvmaze_id": 93509,
+          "url": "https://www.tvmaze.com/people/93509/sandy-ward"
+        }
+      },
+      {
+        "character": {
+          "name": "Harris",
+          "tvmaze_id": 1208462,
+          "url": "https://www.tvmaze.com/characters/1208462/night-court-harris"
+        },
+        "person": {
+          "name": "Michael McManus",
+          "tvmaze_id": 96547,
+          "url": "https://www.tvmaze.com/people/96547/michael-mcmanus"
+        }
+      },
+      {
+        "character": {
+          "name": "Partner #2",
+          "tvmaze_id": 1208466,
+          "url": "https://www.tvmaze.com/characters/1208466/night-court-partner-2"
+        },
+        "person": {
+          "name": "David Wiley",
+          "tvmaze_id": 106143,
+          "url": "https://www.tvmaze.com/people/106143/david-wiley"
+        }
+      },
+      {
+        "character": {
+          "name": "Gil-Ray",
+          "tvmaze_id": 1208465,
+          "url": "https://www.tvmaze.com/characters/1208465/night-court-gil-ray"
+        },
+        "person": {
+          "name": "Charles McDaniel",
+          "tvmaze_id": 117577,
+          "url": "https://www.tvmaze.com/people/117577/charles-mcdaniel"
+        }
+      },
+      {
+        "character": {
+          "name": "Evangeline",
+          "tvmaze_id": 1208463,
+          "url": "https://www.tvmaze.com/characters/1208463/night-court-evangeline"
+        },
+        "person": {
+          "name": "Theresa Bell",
+          "tvmaze_id": 408711,
+          "url": "https://www.tvmaze.com/people/408711/theresa-bell"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5841/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134396"
+    },
+    "production_code": "186938",
+    "writer_credit_display": "Bob Underwood",
     "writers": [
       "Bob Underwood"
-    ],
-    "guest_cast": [],
-    "production_code": "186938",
-    "writer_credit_display": "Bob Underwood"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 7,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134396/night-court-8x07-crossroads-2",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 154,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 154
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S08E07",
+  "original_air_date": "1990-11-02",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 8,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Crossroads (2)",
+  "title_aliases": [
+    "Crossroads"
+  ],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134396,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Crossroads",
     "episode_airdate_wikitext": "{{Start date|1990|11|2}}",
     "household_rating_and_share": null,
-    "viewers_millions": 15.4,
     "is_combined_broadcast_entry": true,
-    "shared_entry_parts": 2
+    "shared_entry_parts": 2,
+    "title_on_wikipedia": "Crossroads",
+    "viewers_millions": 15.4
   }
 }

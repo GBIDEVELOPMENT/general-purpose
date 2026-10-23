@@ -1,115 +1,243 @@
 {
-  "id": "S09E09",
-  "series": "night-court-1984",
-  "season": 9,
-  "episode": 9,
   "absolute_episode_by_season_sum": 180,
-  "title": "The System Works",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1991-11-17",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Travis Gerkin",
+          "tvmaze_id": 860380,
+          "url": "https://www.tvmaze.com/characters/860380/night-court-travis-gerkin"
+        },
+        "person": {
+          "name": "John Mariano",
+          "tvmaze_id": 28788,
+          "url": "https://www.tvmaze.com/people/28788/john-mariano"
+        }
+      },
+      {
+        "character": {
+          "name": "Walter Plimp",
+          "tvmaze_id": 860373,
+          "url": "https://www.tvmaze.com/characters/860373/night-court-walter-plimp"
+        },
+        "person": {
+          "name": "Walter Olkewicz",
+          "tvmaze_id": 29193,
+          "url": "https://www.tvmaze.com/people/29193/walter-olkewicz"
+        }
+      },
+      {
+        "character": {
+          "name": "P.J. Sparks",
+          "tvmaze_id": 860379,
+          "url": "https://www.tvmaze.com/characters/860379/night-court-pj-sparks"
+        },
+        "person": {
+          "name": "Robin Pearson Rose",
+          "tvmaze_id": 10129,
+          "url": "https://www.tvmaze.com/people/10129/robin-pearson-rose"
+        }
+      },
+      {
+        "character": {
+          "name": "Sylvia Fleckman",
+          "tvmaze_id": 860378,
+          "url": "https://www.tvmaze.com/characters/860378/night-court-sylvia-fleckman"
+        },
+        "person": {
+          "name": "Lucille Meredith",
+          "tvmaze_id": 164477,
+          "url": "https://www.tvmaze.com/people/164477/lucille-meredith"
+        }
+      },
+      {
+        "character": {
+          "name": "Morty Fleckman",
+          "tvmaze_id": 860376,
+          "url": "https://www.tvmaze.com/characters/860376/night-court-morty-fleckman"
+        },
+        "person": {
+          "name": "Eddie Barth",
+          "tvmaze_id": 62764,
+          "url": "https://www.tvmaze.com/people/62764/eddie-barth"
+        }
+      },
+      {
+        "character": {
+          "name": "John Taylor",
+          "tvmaze_id": 860381,
+          "url": "https://www.tvmaze.com/characters/860381/night-court-john-taylor"
+        },
+        "person": {
+          "name": "Nick Tate",
+          "tvmaze_id": 26432,
+          "url": "https://www.tvmaze.com/people/26432/nick-tate"
+        }
+      },
+      {
+        "character": {
+          "name": "Professor Jarvis Crowley",
+          "tvmaze_id": 860374,
+          "url": "https://www.tvmaze.com/characters/860374/night-court-professor-jarvis-crowley"
+        },
+        "person": {
+          "name": "Paul Sand",
+          "tvmaze_id": 44926,
+          "url": "https://www.tvmaze.com/people/44926/paul-sand"
+        }
+      },
+      {
+        "character": {
+          "name": "Helen Liptz",
+          "tvmaze_id": 860375,
+          "url": "https://www.tvmaze.com/characters/860375/night-court-helen-liptz"
+        },
+        "person": {
+          "name": "Miriam Flynn",
+          "tvmaze_id": 35147,
+          "url": "https://www.tvmaze.com/people/35147/miriam-flynn"
+        }
+      },
+      {
+        "character": {
+          "name": "Tommy Gamble",
+          "tvmaze_id": 860377,
+          "url": "https://www.tvmaze.com/characters/860377/night-court-tommy-gamble"
+        },
+        "person": {
+          "name": "Fred Applegate",
+          "tvmaze_id": 22382,
+          "url": "https://www.tvmaze.com/people/22382/fred-applegate"
+        }
+      },
+      {
+        "character": {
+          "name": "Cashier",
+          "tvmaze_id": 1204394,
+          "url": "https://www.tvmaze.com/characters/1204394/night-court-cashier"
+        },
+        "person": {
+          "name": "Dorothy Andrews",
+          "tvmaze_id": 407660,
+          "url": "https://www.tvmaze.com/people/407660/dorothy-andrews"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5842/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134422"
+    },
+    "production_code": "187236",
+    "writer_credit_display": "Lee Maddux",
     "writers": [
       "Lee Maddux"
-    ],
-    "guest_cast": [],
-    "production_code": "187236",
-    "writer_credit_display": "Lee Maddux"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 9,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134422/night-court-9x09-the-system-works",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 180,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 180
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S09E09",
+  "original_air_date": "1991-11-17",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 9,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The System Works",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134422,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The System Works",
     "episode_airdate_wikitext": "{{Start date|1991|11|17}}",
     "household_rating_and_share": null,
-    "viewers_millions": 9.4,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The System Works",
+    "viewers_millions": 9.4
   }
 }

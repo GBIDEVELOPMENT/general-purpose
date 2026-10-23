@@ -1,134 +1,238 @@
 {
-  "id": "S03E09",
-  "series": "night-court-1984",
-  "season": 3,
-  "episode": 9,
   "absolute_episode_by_season_sum": 44,
-  "title": "The Wheels of Justice (Part 1)",
-  "title_status": "source_catalogued",
-  "title_aliases": [
-    "Wheels of Justice: Part 1",
-    "The Wheels of Justice (1)"
-  ],
-  "original_air_date": "1985-12-05",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Alan Bergmann",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Phil Sanders",
+          "tvmaze_id": 695688,
+          "url": "https://www.tvmaze.com/characters/695688/night-court-phil-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Bob Wheeler",
+          "tvmaze_id": 720086,
+          "url": "https://www.tvmaze.com/characters/720086/night-court-bob-wheeler"
+        },
+        "person": {
+          "name": "Brent Spiner",
+          "tvmaze_id": 28761,
+          "url": "https://www.tvmaze.com/people/28761/brent-spiner"
+        }
+      },
+      {
+        "character": {
+          "name": "June Wheeler",
+          "tvmaze_id": 720087,
+          "url": "https://www.tvmaze.com/characters/720087/night-court-june-wheeler"
+        },
+        "person": {
+          "name": "Annie O'Donnell",
+          "tvmaze_id": 10465,
+          "url": "https://www.tvmaze.com/people/10465/annie-odonnell"
+        }
+      },
+      {
+        "character": {
+          "name": "Carol Anne Wheeler",
+          "tvmaze_id": 720088,
+          "url": "https://www.tvmaze.com/characters/720088/night-court-carol-anne-wheeler"
+        },
+        "person": {
+          "name": "Keri Houlihan",
+          "tvmaze_id": 98174,
+          "url": "https://www.tvmaze.com/people/98174/keri-houlihan"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Blake",
+          "tvmaze_id": 720091,
+          "url": "https://www.tvmaze.com/characters/720091/night-court-mrs-blake"
+        },
+        "person": {
+          "name": "Susan Ruttan",
+          "tvmaze_id": 35244,
+          "url": "https://www.tvmaze.com/people/35244/susan-ruttan"
+        }
+      },
+      {
+        "character": {
+          "name": "Joey",
+          "tvmaze_id": 720090,
+          "url": "https://www.tvmaze.com/characters/720090/night-court-joey"
+        },
+        "person": {
+          "name": "Harold Pruett",
+          "tvmaze_id": 205466,
+          "url": "https://www.tvmaze.com/people/205466/harold-pruett"
+        }
+      },
+      {
+        "character": {
+          "name": "Sidney Frizzell",
+          "tvmaze_id": 720092,
+          "url": "https://www.tvmaze.com/characters/720092/night-court-sidney-frizzell"
+        },
+        "person": {
+          "name": "Charles Bouvier",
+          "tvmaze_id": 51909,
+          "url": "https://www.tvmaze.com/people/51909/charles-bouvier"
+        }
+      },
+      {
+        "character": {
+          "name": "Cindy",
+          "tvmaze_id": 720089,
+          "url": "https://www.tvmaze.com/characters/720089/night-court-cindy"
+        },
+        "person": {
+          "name": "Laura Jacoby",
+          "tvmaze_id": 157729,
+          "url": "https://www.tvmaze.com/people/157729/laura-jacoby"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5836/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134286"
+    },
+    "production_code": "185714",
+    "writer_credit_display": "Jeff Reno & Ron Osborn",
     "writers": [
       "Jeff Reno & Ron Osborn"
-    ],
-    "guest_cast": [],
-    "production_code": "185714",
-    "writer_credit_display": "Jeff Reno & Ron Osborn"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 9,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e09&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134286/night-court-3x09-the-wheels-of-justice-1",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 44,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 44
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S03E09",
+  "original_air_date": "1985-12-05",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 3,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The Wheels of Justice (Part 1)",
+  "title_aliases": [
+    "Wheels of Justice: Part 1",
+    "The Wheels of Justice (1)"
+  ],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134286,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The Wheels of Justice (Part 1)",
     "episode_airdate_wikitext": "{{Start date|1985|12|5}}",
     "household_rating_and_share": "21.2/32",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The Wheels of Justice (Part 1)",
+    "viewers_millions": null
   }
 }

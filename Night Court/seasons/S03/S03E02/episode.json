@@ -1,131 +1,235 @@
 {
-  "id": "S03E02",
-  "series": "night-court-1984",
-  "season": 3,
-  "episode": 2,
   "absolute_episode_by_season_sum": 37,
-  "title": "The Hostage",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1985-10-03",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Sheila",
+          "tvmaze_id": 1205227,
+          "url": "https://www.tvmaze.com/characters/1205227/night-court-sheila"
+        },
+        "person": {
+          "name": "Leslie Bevis",
+          "tvmaze_id": 47495,
+          "url": "https://www.tvmaze.com/people/47495/leslie-bevis"
+        }
+      },
+      {
+        "character": {
+          "name": "Hooker #1",
+          "tvmaze_id": 1205230,
+          "url": "https://www.tvmaze.com/characters/1205230/night-court-hooker-1"
+        },
+        "person": {
+          "name": "Tessa Richarde",
+          "tvmaze_id": 105826,
+          "url": "https://www.tvmaze.com/people/105826/tessa-richarde"
+        }
+      },
+      {
+        "character": {
+          "name": "Subway Commuter",
+          "tvmaze_id": 1205229,
+          "url": "https://www.tvmaze.com/characters/1205229/night-court-subway-commuter"
+        },
+        "person": {
+          "name": "Ralph Manza",
+          "tvmaze_id": 45697,
+          "url": "https://www.tvmaze.com/people/45697/ralph-manza"
+        }
+      },
+      {
+        "character": {
+          "name": "Hooker #2",
+          "tvmaze_id": 1205231,
+          "url": "https://www.tvmaze.com/characters/1205231/night-court-hooker-2"
+        },
+        "person": {
+          "name": "Joy Garrett",
+          "tvmaze_id": 48084,
+          "url": "https://www.tvmaze.com/people/48084/joy-garrett"
+        }
+      },
+      {
+        "character": {
+          "name": "Paramedic",
+          "tvmaze_id": 1205228,
+          "url": "https://www.tvmaze.com/characters/1205228/night-court-paramedic"
+        },
+        "person": {
+          "name": "Nat Bernstein",
+          "tvmaze_id": 49570,
+          "url": "https://www.tvmaze.com/people/49570/nat-bernstein"
+        }
+      },
+      {
+        "character": {
+          "name": "Commander Tucker",
+          "tvmaze_id": 1205226,
+          "url": "https://www.tvmaze.com/characters/1205226/night-court-commander-tucker"
+        },
+        "person": {
+          "name": "Lyman Ward",
+          "tvmaze_id": 58545,
+          "url": "https://www.tvmaze.com/people/58545/lyman-ward"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Slotkin",
+          "tvmaze_id": 1205225,
+          "url": "https://www.tvmaze.com/characters/1205225/night-court-mr-slotkin"
+        },
+        "person": {
+          "name": "Kenneth Tigar",
+          "tvmaze_id": 8372,
+          "url": "https://www.tvmaze.com/people/8372/kenneth-tigar"
+        }
+      },
+      {
+        "character": {
+          "name": "Court Stenographer",
+          "tvmaze_id": 943048,
+          "url": "https://www.tvmaze.com/characters/943048/night-court-court-stenographer"
+        },
+        "person": {
+          "name": "Charlotte Portney",
+          "tvmaze_id": 334259,
+          "url": "https://www.tvmaze.com/people/334259/charlotte-portney"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5836/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134279"
+    },
+    "production_code": "185713",
+    "writer_credit_display": "Bob Stevens",
     "writers": [
       "Bob Stevens"
-    ],
-    "guest_cast": [],
-    "production_code": "185713",
-    "writer_credit_display": "Bob Stevens"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 2,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e02&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134279/night-court-3x02-the-hostage",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 37,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 37
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S03E02",
+  "original_air_date": "1985-10-03",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 3,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The Hostage",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134279,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The Hostage",
     "episode_airdate_wikitext": "{{Start date|1985|10|3}}",
     "household_rating_and_share": "20.4/30",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The Hostage",
+    "viewers_millions": null
   }
 }

@@ -1,131 +1,199 @@
 {
-  "id": "S03E18",
-  "series": "night-court-1984",
-  "season": 3,
-  "episode": 18,
   "absolute_episode_by_season_sum": 53,
-  "title": "Could This Be Magic?",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1986-02-27",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Phillip Falcone",
+          "tvmaze_id": 1204400,
+          "url": "https://www.tvmaze.com/characters/1204400/night-court-phillip-falcone"
+        },
+        "person": {
+          "name": "Carl Ballantine",
+          "tvmaze_id": 58927,
+          "url": "https://www.tvmaze.com/people/58927/carl-ballantine"
+        }
+      },
+      {
+        "character": {
+          "name": "Robert Marks",
+          "tvmaze_id": 1205459,
+          "url": "https://www.tvmaze.com/characters/1205459/night-court-robert-marks"
+        },
+        "person": {
+          "name": "Fred Applegate",
+          "tvmaze_id": 22382,
+          "url": "https://www.tvmaze.com/people/22382/fred-applegate"
+        }
+      },
+      {
+        "character": {
+          "name": "David Evans",
+          "tvmaze_id": 1205460,
+          "url": "https://www.tvmaze.com/characters/1205460/night-court-david-evans"
+        },
+        "person": {
+          "name": "Joe Alfasa",
+          "tvmaze_id": 88134,
+          "url": "https://www.tvmaze.com/people/88134/joe-alfasa"
+        }
+      },
+      {
+        "character": {
+          "name": "Court Stenographer",
+          "tvmaze_id": 943048,
+          "url": "https://www.tvmaze.com/characters/943048/night-court-court-stenographer"
+        },
+        "person": {
+          "name": "Charlotte Portney",
+          "tvmaze_id": 334259,
+          "url": "https://www.tvmaze.com/people/334259/charlotte-portney"
+        }
+      },
+      {
+        "character": {
+          "name": "Woman with Falcone",
+          "tvmaze_id": 1205463,
+          "url": "https://www.tvmaze.com/characters/1205463/night-court-woman-with-falcone"
+        },
+        "person": {
+          "name": "Joyce Mandel",
+          "tvmaze_id": 407904,
+          "url": "https://www.tvmaze.com/people/407904/joyce-mandel"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5836/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134295"
+    },
+    "production_code": "185725",
+    "writer_credit_display": "Jack Carrerow & Lisa A. Bannick",
     "writers": [
       "Jack Carrerow & Lisa A. Bannick"
-    ],
-    "guest_cast": [],
-    "production_code": "185725",
-    "writer_credit_display": "Jack Carrerow & Lisa A. Bannick"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 18,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e18&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134295/night-court-3x18-could-this-be-magic",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 53,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 53
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S03E18",
+  "original_air_date": "1986-02-27",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 3,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Could This Be Magic?",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134295,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Could This Be Magic?",
     "episode_airdate_wikitext": "{{Start date|1986|2|27}}",
     "household_rating_and_share": "22.8/34",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Could This Be Magic?",
+    "viewers_millions": null
   }
 }

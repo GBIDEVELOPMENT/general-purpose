@@ -1,0 +1,73 @@
+{
+  "id": "S02E03",
+  "title": "Billie and the Cat",
+  "broadcast_date": "1984-10-18",
+  "season": 2,
+  "episode": 3,
+  "plot_source_plaintext": "Harry sends the new public defender, Billie Young (Ellen Foley), to jail for refusing to reveal the whereabouts of a cat her client is accused of kidnapping.\n\nNote: Ellen Foley makes her first appearance as public defender Billie Young.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S02/S02E03/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Lee Bernhardi",
+    "writer_credit": "Zachary D. Wechsler",
+    "production_code": "185604"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          0,
+          5
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "billie-young",
+      "matched_terms": [
+        "Billie Young"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          37,
+          49
+        ],
+        [
+          223,
+          235
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "animals",
+      "matched_words": [
+        "cat"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

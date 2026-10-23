@@ -1,115 +1,183 @@
 {
-  "id": "S06E21",
-  "series": "night-court-1984",
-  "season": 6,
-  "episode": 21,
   "absolute_episode_by_season_sum": 122,
-  "title": "Not My Type",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1989-04-26",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Tim Steele",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Martha",
+          "tvmaze_id": 834570,
+          "url": "https://www.tvmaze.com/characters/834570/night-court-martha"
+        },
+        "person": {
+          "name": "Doris Hess",
+          "tvmaze_id": 161364,
+          "url": "https://www.tvmaze.com/people/161364/doris-hess"
+        }
+      },
+      {
+        "character": {
+          "name": "Arnold",
+          "tvmaze_id": 834571,
+          "url": "https://www.tvmaze.com/characters/834571/night-court-arnold"
+        },
+        "person": {
+          "name": "Bill Evans",
+          "tvmaze_id": 163444,
+          "url": "https://www.tvmaze.com/people/163444/bill-evans"
+        }
+      },
+      {
+        "character": {
+          "name": "Joyce",
+          "tvmaze_id": 834572,
+          "url": "https://www.tvmaze.com/characters/834572/night-court-joyce"
+        },
+        "person": {
+          "name": "Audrie Neenan",
+          "tvmaze_id": 19039,
+          "url": "https://www.tvmaze.com/people/19039/audrie-neenan"
+        }
+      },
+      {
+        "character": {
+          "name": "Nick Costanza",
+          "tvmaze_id": 834569,
+          "url": "https://www.tvmaze.com/characters/834569/night-court-nick-costanza"
+        },
+        "person": {
+          "name": "Bob Sarlatte",
+          "tvmaze_id": 203291,
+          "url": "https://www.tvmaze.com/people/203291/bob-sarlatte"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5839/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134364"
+    },
+    "production_code": "186481",
+    "writer_credit_display": "James Gates",
     "writers": [
       "James Gates"
-    ],
-    "guest_cast": [],
-    "production_code": "186481",
-    "writer_credit_display": "James Gates"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 21,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134364/night-court-6x21-not-my-type",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 122,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 122
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S06E21",
+  "original_air_date": "1989-04-26",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 6,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Not My Type",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134364,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Not My Type",
     "episode_airdate_wikitext": "{{Start date|1989|4|26}}",
     "household_rating_and_share": null,
-    "viewers_millions": 20.8,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Not My Type",
+    "viewers_millions": 20.8
   }
 }

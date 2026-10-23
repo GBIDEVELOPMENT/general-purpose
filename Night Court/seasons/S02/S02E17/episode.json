@@ -1,123 +1,227 @@
 {
-  "id": "S02E17",
-  "series": "night-court-1984",
-  "season": 2,
-  "episode": 17,
   "absolute_episode_by_season_sum": 30,
-  "title": "Battling Bailiff",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1985-02-07",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Dirk",
+          "tvmaze_id": 894286,
+          "url": "https://www.tvmaze.com/characters/894286/night-court-dirk"
+        },
+        "person": {
+          "name": "Ron Ross",
+          "tvmaze_id": 241971,
+          "url": "https://www.tvmaze.com/people/241971/ron-ross"
+        }
+      },
+      {
+        "character": {
+          "name": "The Klondike Butcher",
+          "tvmaze_id": 655288,
+          "url": "https://www.tvmaze.com/characters/655288/night-court-the-klondike-butcher"
+        },
+        "person": {
+          "name": "Lou Ferrigno",
+          "tvmaze_id": 30948,
+          "url": "https://www.tvmaze.com/people/30948/lou-ferrigno"
+        }
+      },
+      {
+        "character": {
+          "name": "Doris McKenzie",
+          "tvmaze_id": 655289,
+          "url": "https://www.tvmaze.com/characters/655289/night-court-doris-mckenzie"
+        },
+        "person": {
+          "name": "Meg Wyllie",
+          "tvmaze_id": 46735,
+          "url": "https://www.tvmaze.com/people/46735/meg-wyllie"
+        }
+      },
+      {
+        "character": {
+          "name": "Ring Announcer",
+          "tvmaze_id": 1204740,
+          "url": "https://www.tvmaze.com/characters/1204740/night-court-ring-announcer"
+        },
+        "person": {
+          "name": "Jimmy Lennon Sr.",
+          "tvmaze_id": 102705,
+          "url": "https://www.tvmaze.com/people/102705/jimmy-lennon-sr"
+        }
+      },
+      {
+        "character": {
+          "name": "Alan",
+          "tvmaze_id": 1204739,
+          "url": "https://www.tvmaze.com/characters/1204739/night-court-alan"
+        },
+        "person": {
+          "name": "P.L. Brown",
+          "tvmaze_id": 152529,
+          "url": "https://www.tvmaze.com/people/152529/pl-brown"
+        }
+      },
+      {
+        "character": {
+          "name": "Jack Delman",
+          "tvmaze_id": 1045313,
+          "url": "https://www.tvmaze.com/characters/1045313/night-court-jack-delman"
+        },
+        "person": {
+          "name": "Jack De Leon",
+          "tvmaze_id": 185331,
+          "url": "https://www.tvmaze.com/people/185331/jack-de-leon"
+        }
+      },
+      {
+        "character": {
+          "name": "Wrestler In Green",
+          "tvmaze_id": 655291,
+          "url": "https://www.tvmaze.com/characters/655291/night-court-wrestler-in-green"
+        },
+        "person": {
+          "name": "Richard Brose",
+          "tvmaze_id": 187971,
+          "url": "https://www.tvmaze.com/people/187971/richard-brose"
+        }
+      },
+      {
+        "character": {
+          "name": "Ed",
+          "tvmaze_id": 655290,
+          "url": "https://www.tvmaze.com/characters/655290/night-court-ed"
+        },
+        "person": {
+          "name": "Nicholas Worth",
+          "tvmaze_id": 45326,
+          "url": "https://www.tvmaze.com/people/45326/nicholas-worth"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5835/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134272"
+    },
+    "production_code": "185617",
+    "writer_credit_display": "Stuart Kreisman & Chris Cluess",
     "writers": [
       "Stuart Kreisman & Chris Cluess"
-    ],
-    "guest_cast": [],
-    "production_code": "185617",
-    "writer_credit_display": "Stuart Kreisman & Chris Cluess"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 17,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134272/night-court-2x17-battling-bailiff",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 30,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 30
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S02E17",
+  "original_air_date": "1985-02-07",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 2,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Battling Bailiff",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134272,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Battling Bailiff",
     "episode_airdate_wikitext": "{{Start date|1985|2|7}}",
     "household_rating_and_share": "16.2/24",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Battling Bailiff",
+    "viewers_millions": null
   }
 }

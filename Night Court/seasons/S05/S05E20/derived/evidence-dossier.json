@@ -1,0 +1,62 @@
+{
+  "id": "S05E20",
+  "title": "Top Judge",
+  "broadcast_date": "1988-04-08",
+  "season": 5,
+  "episode": 20,
+  "plot_source_plaintext": "Harry becomes uncharacteristically glum and morose when an elderly judge dies after one of Harry's pranks. His friends urge him to respond when a new judge (Gary Kroeger) lays claim to Harry's crown as the \"King of the Courtroom Cutups.\"",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S05/S05E20/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Dennis Koenig",
+    "production_code": "186219"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 3,
+      "text_offset_spans": [
+        [
+          0,
+          5
+        ],
+        [
+          91,
+          96
+        ],
+        [
+          185,
+          190
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "judge"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

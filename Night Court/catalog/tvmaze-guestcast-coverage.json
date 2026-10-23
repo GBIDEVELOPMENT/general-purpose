@@ -1,0 +1,21 @@
+{
+  "counts": {
+    "episode_mismatches": [],
+    "episode_records_empty_guestcast": 0,
+    "episode_records_with_embedding": 193,
+    "episode_records_with_guests": 193,
+    "guest_credit_edges": 1210,
+    "season_errors": {},
+    "seasons_attempted": 9,
+    "seasons_succeeded": 9
+  },
+  "note": "Coverage count is for explicit API embeddings only, not proof that an episode had no uncredited guests.",
+  "source": {
+    "api_docs": "https://www.tvmaze.com/api",
+    "licensing": "CC BY-SA (see TVmaze API license)",
+    "retrieval_strategy": "show cast, show crew, season episodes with embedded guestcast",
+    "show_id": 1489,
+    "source": "TVmaze",
+    "warning": "Series cast data does not establish participation in each episode"
+  }
+}

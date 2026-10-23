@@ -1,115 +1,231 @@
 {
-  "id": "S07E18",
-  "series": "night-court-1984",
-  "season": 7,
-  "episode": 18,
   "absolute_episode_by_season_sum": 141,
-  "title": "Melvin and Harold",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1990-02-28",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Buddy Ryan",
+          "tvmaze_id": 499951,
+          "url": "https://www.tvmaze.com/characters/499951/night-court-buddy-ryan"
+        },
+        "person": {
+          "name": "John Astin",
+          "tvmaze_id": 61397,
+          "url": "https://www.tvmaze.com/people/61397/john-astin"
+        }
+      },
+      {
+        "character": {
+          "name": "Mel Tormé",
+          "tvmaze_id": 818319,
+          "url": "https://www.tvmaze.com/characters/818319/night-court-mel-torme"
+        },
+        "person": {
+          "name": "Mel Tormé",
+          "tvmaze_id": 108069,
+          "url": "https://www.tvmaze.com/people/108069/mel-torme"
+        }
+      },
+      {
+        "character": {
+          "name": "Girl",
+          "tvmaze_id": 1207904,
+          "url": "https://www.tvmaze.com/characters/1207904/night-court-girl"
+        },
+        "person": {
+          "name": "Carolyn Ann Clark",
+          "tvmaze_id": 41702,
+          "url": "https://www.tvmaze.com/people/41702/carolyn-ann-clark"
+        }
+      },
+      {
+        "character": {
+          "name": "Howard",
+          "tvmaze_id": 1207901,
+          "url": "https://www.tvmaze.com/characters/1207901/night-court-howard"
+        },
+        "person": {
+          "name": "Andrew Lowery",
+          "tvmaze_id": 107060,
+          "url": "https://www.tvmaze.com/people/107060/andrew-lowery"
+        }
+      },
+      {
+        "character": {
+          "name": "Ritter",
+          "tvmaze_id": 1207902,
+          "url": "https://www.tvmaze.com/characters/1207902/night-court-ritter"
+        },
+        "person": {
+          "name": "Craig Gini",
+          "tvmaze_id": 163556,
+          "url": "https://www.tvmaze.com/people/163556/craig-gini"
+        }
+      },
+      {
+        "character": {
+          "name": "Snark",
+          "tvmaze_id": 1207903,
+          "url": "https://www.tvmaze.com/characters/1207903/night-court-snark"
+        },
+        "person": {
+          "name": "Dominick Brascia",
+          "tvmaze_id": 260539,
+          "url": "https://www.tvmaze.com/people/260539/dominick-brascia"
+        }
+      },
+      {
+        "character": {
+          "name": "Bum",
+          "tvmaze_id": 1207900,
+          "url": "https://www.tvmaze.com/characters/1207900/night-court-bum"
+        },
+        "person": {
+          "name": "Nicholas Worth",
+          "tvmaze_id": 45326,
+          "url": "https://www.tvmaze.com/people/45326/nicholas-worth"
+        }
+      },
+      {
+        "character": {
+          "name": "Old Man",
+          "tvmaze_id": 1207905,
+          "url": "https://www.tvmaze.com/characters/1207905/night-court-old-man"
+        },
+        "person": {
+          "name": "Harper Roisman",
+          "tvmaze_id": 42759,
+          "url": "https://www.tvmaze.com/people/42759/harper-roisman"
+        }
+      },
+      {
+        "character": {
+          "name": "Chinese Man",
+          "tvmaze_id": 1207906,
+          "url": "https://www.tvmaze.com/characters/1207906/night-court-chinese-man"
+        },
+        "person": {
+          "name": "Will Leong",
+          "tvmaze_id": 217709,
+          "url": "https://www.tvmaze.com/people/217709/will-leong"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5840/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134383"
+    },
+    "production_code": "186348",
+    "writer_credit_display": "Bob Underwood",
     "writers": [
       "Bob Underwood"
-    ],
-    "guest_cast": [],
-    "production_code": "186348",
-    "writer_credit_display": "Bob Underwood"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 18,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134383/night-court-7x18-melvin-and-harold",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 141,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 141
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S07E18",
+  "original_air_date": "1990-02-28",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 7,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Melvin and Harold",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134383,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Melvin and Harold",
     "episode_airdate_wikitext": "{{Start date|1990|2|28}}",
     "household_rating_and_share": null,
-    "viewers_millions": 22.4,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Melvin and Harold",
+    "viewers_millions": 22.4
   }
 }

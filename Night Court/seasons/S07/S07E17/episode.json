@@ -1,115 +1,219 @@
 {
-  "id": "S07E17",
-  "series": "night-court-1984",
-  "season": 7,
-  "episode": 17,
   "absolute_episode_by_season_sum": 140,
-  "title": "The Talk Show",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1990-02-21",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Quon Le Duc Robinson",
+          "tvmaze_id": 233478,
+          "url": "https://www.tvmaze.com/characters/233478/night-court-quon-le-duc-robinson"
+        },
+        "person": {
+          "name": "Denice Kumagai",
+          "tvmaze_id": 53546,
+          "url": "https://www.tvmaze.com/people/53546/denice-kumagai"
+        }
+      },
+      {
+        "character": {
+          "name": "Joyce",
+          "tvmaze_id": 1207895,
+          "url": "https://www.tvmaze.com/characters/1207895/night-court-joyce"
+        },
+        "person": {
+          "name": "Doris Hess",
+          "tvmaze_id": 161364,
+          "url": "https://www.tvmaze.com/people/161364/doris-hess"
+        }
+      },
+      {
+        "character": {
+          "name": "Margo Hunter",
+          "tvmaze_id": 664666,
+          "url": "https://www.tvmaze.com/characters/664666/night-court-margo-hunter"
+        },
+        "person": {
+          "name": "Susan Anton",
+          "tvmaze_id": 24372,
+          "url": "https://www.tvmaze.com/people/24372/susan-anton"
+        }
+      },
+      {
+        "character": {
+          "name": "Moderator",
+          "tvmaze_id": 1207897,
+          "url": "https://www.tvmaze.com/characters/1207897/night-court-moderator"
+        },
+        "person": {
+          "name": "Greg Norberg",
+          "tvmaze_id": 158743,
+          "url": "https://www.tvmaze.com/people/158743/greg-norberg"
+        }
+      },
+      {
+        "character": {
+          "name": "Al",
+          "tvmaze_id": 1207894,
+          "url": "https://www.tvmaze.com/characters/1207894/night-court-al"
+        },
+        "person": {
+          "name": "Don Bovingloh",
+          "tvmaze_id": 168674,
+          "url": "https://www.tvmaze.com/people/168674/don-bovingloh"
+        }
+      },
+      {
+        "character": {
+          "name": "Woman",
+          "tvmaze_id": 1207899,
+          "url": "https://www.tvmaze.com/characters/1207899/night-court-woman"
+        },
+        "person": {
+          "name": "Julie Andelman",
+          "tvmaze_id": 303405,
+          "url": "https://www.tvmaze.com/people/303405/julie-andelman"
+        }
+      },
+      {
+        "character": {
+          "name": "Priest",
+          "tvmaze_id": 1207896,
+          "url": "https://www.tvmaze.com/characters/1207896/night-court-priest"
+        },
+        "person": {
+          "name": "Dave Nicolson",
+          "tvmaze_id": 224497,
+          "url": "https://www.tvmaze.com/people/224497/dave-nicolson"
+        }
+      },
+      {
+        "character": {
+          "name": "Dr. Gerou",
+          "tvmaze_id": 1207898,
+          "url": "https://www.tvmaze.com/characters/1207898/night-court-dr-gerou"
+        },
+        "person": {
+          "name": "Jack L. Harrell",
+          "tvmaze_id": 391966,
+          "url": "https://www.tvmaze.com/people/391966/jack-l-harrell"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5840/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134382"
+    },
+    "production_code": "186345",
+    "writer_credit_display": "Nancy Steen & Neil Thompson",
     "writers": [
       "Nancy Steen & Neil Thompson"
-    ],
-    "guest_cast": [],
-    "production_code": "186345",
-    "writer_credit_display": "Nancy Steen & Neil Thompson"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 17,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134382/night-court-7x17-the-talk-show",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 140,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 140
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S07E17",
+  "original_air_date": "1990-02-21",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 7,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The Talk Show",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134382,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The Talk Show",
     "episode_airdate_wikitext": "{{Start date|1990|2|21}}",
     "household_rating_and_share": null,
-    "viewers_millions": 19.8,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The Talk Show",
+    "viewers_millions": 19.8
   }
 }

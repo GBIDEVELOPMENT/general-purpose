@@ -1,131 +1,223 @@
 {
-  "id": "S03E14",
-  "series": "night-court-1984",
-  "season": 3,
-  "episode": 14,
   "absolute_episode_by_season_sum": 49,
-  "title": "Harry and Leon",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1986-01-23",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Leon",
+          "tvmaze_id": 765101,
+          "url": "https://www.tvmaze.com/characters/765101/night-court-leon"
+        },
+        "person": {
+          "name": "Bumper Robinson",
+          "tvmaze_id": 35515,
+          "url": "https://www.tvmaze.com/people/35515/bumper-robinson"
+        }
+      },
+      {
+        "character": {
+          "name": "Charlotte Lund",
+          "tvmaze_id": 765102,
+          "url": "https://www.tvmaze.com/characters/765102/night-court-charlotte-lund"
+        },
+        "person": {
+          "name": "Margot Rose",
+          "tvmaze_id": 25371,
+          "url": "https://www.tvmaze.com/people/25371/margot-rose"
+        }
+      },
+      {
+        "character": {
+          "name": "Paul Hodo",
+          "tvmaze_id": 1205306,
+          "url": "https://www.tvmaze.com/characters/1205306/night-court-paul-hodo"
+        },
+        "person": {
+          "name": "Lorry Goldman",
+          "tvmaze_id": 21480,
+          "url": "https://www.tvmaze.com/people/21480/lorry-goldman"
+        }
+      },
+      {
+        "character": {
+          "name": "Juvenile Services Worker",
+          "tvmaze_id": 1205308,
+          "url": "https://www.tvmaze.com/characters/1205308/night-court-juvenile-services-worker"
+        },
+        "person": {
+          "name": "Peter Renaday",
+          "tvmaze_id": 44432,
+          "url": "https://www.tvmaze.com/people/44432/peter-renaday"
+        }
+      },
+      {
+        "character": {
+          "name": "Man with Pie",
+          "tvmaze_id": 1205309,
+          "url": "https://www.tvmaze.com/characters/1205309/night-court-man-with-pie"
+        },
+        "person": {
+          "name": "Lionel Douglas",
+          "tvmaze_id": 407884,
+          "url": "https://www.tvmaze.com/people/407884/lionel-douglas"
+        }
+      },
+      {
+        "character": {
+          "name": "Nancy Hines",
+          "tvmaze_id": 1205307,
+          "url": "https://www.tvmaze.com/characters/1205307/night-court-nancy-hines"
+        },
+        "person": {
+          "name": "Suzanne La Rusch",
+          "tvmaze_id": 313297,
+          "url": "https://www.tvmaze.com/people/313297/suzanne-la-rusch"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5836/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134291"
+    },
+    "production_code": "185727",
+    "writer_credit_display": "Nat Mauldin",
     "writers": [
       "Nat Mauldin"
-    ],
-    "guest_cast": [],
-    "production_code": "185727",
-    "writer_credit_display": "Nat Mauldin"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 14,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s03e14&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134291/night-court-3x14-harry-and-leon",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 49,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 49
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S03E14",
+  "original_air_date": "1986-01-23",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 3,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Harry and Leon",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134291,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Harry and Leon",
     "episode_airdate_wikitext": "{{Start date|1986|1|23}}",
     "household_rating_and_share": "22.0/32",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Harry and Leon",
+    "viewers_millions": null
   }
 }

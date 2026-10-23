@@ -1,0 +1,96 @@
+{
+  "id": "S06E18",
+  "title": "From Snoop to Nuts (1)",
+  "broadcast_date": "1989-03-15",
+  "season": 6,
+  "episode": 18,
+  "plot_source_plaintext": "Part one of two. Christine is worried about Harry after he rants about the justice system being a joke after a mobster is acquitted of all charges and suddenly sees Harry talking to the acquitted mobster about protecting him from legal interference (not knowing that the whole thing is part of an undercover sting). And things get worse when Buddy reveals to Harry that he's his biological father (and not his stepfather) and accidentally tells the mobster about Harry's sting operation.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S06/S06E18/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Harry Anderson",
+    "production_code": "186478"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 4,
+      "text_offset_spans": [
+        [
+          44,
+          49
+        ],
+        [
+          165,
+          170
+        ],
+        [
+          359,
+          364
+        ],
+        [
+          463,
+          468
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          17,
+          26
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "buddy-ryan",
+      "matched_terms": [
+        "Buddy"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          342,
+          347
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "family-parenthood",
+      "matched_words": [
+        "father"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

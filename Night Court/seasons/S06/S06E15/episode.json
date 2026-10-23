@@ -1,115 +1,267 @@
 {
-  "id": "S06E15",
-  "series": "night-court-1984",
-  "season": 6,
-  "episode": 15,
   "absolute_episode_by_season_sum": 116,
-  "title": "The Game Show",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1989-02-15",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Dale Coderko",
+          "tvmaze_id": 834199,
+          "url": "https://www.tvmaze.com/characters/834199/night-court-dale-coderko"
+        },
+        "person": {
+          "name": "Thomas F. Duffy",
+          "tvmaze_id": 11307,
+          "url": "https://www.tvmaze.com/people/11307/thomas-f-duffy"
+        }
+      },
+      {
+        "character": {
+          "name": "Chuck Fleck",
+          "tvmaze_id": 834197,
+          "url": "https://www.tvmaze.com/characters/834197/night-court-chuck-fleck"
+        },
+        "person": {
+          "name": "Robert Ridgely",
+          "tvmaze_id": 146475,
+          "url": "https://www.tvmaze.com/people/146475/robert-ridgely"
+        }
+      },
+      {
+        "character": {
+          "name": "Nadine",
+          "tvmaze_id": 834200,
+          "url": "https://www.tvmaze.com/characters/834200/night-court-nadine"
+        },
+        "person": {
+          "name": "Dee Booher",
+          "tvmaze_id": 165463,
+          "url": "https://www.tvmaze.com/people/165463/dee-booher"
+        }
+      },
+      {
+        "character": {
+          "name": "Chip Coderko",
+          "tvmaze_id": 834198,
+          "url": "https://www.tvmaze.com/characters/834198/night-court-chip-coderko"
+        },
+        "person": {
+          "name": "Tony Longo",
+          "tvmaze_id": 25339,
+          "url": "https://www.tvmaze.com/people/25339/tony-longo"
+        }
+      },
+      {
+        "character": {
+          "name": "Jeffrey Zane",
+          "tvmaze_id": 834203,
+          "url": "https://www.tvmaze.com/characters/834203/night-court-jeffrey-zane"
+        },
+        "person": {
+          "name": "Brent Hinkley",
+          "tvmaze_id": 30113,
+          "url": "https://www.tvmaze.com/people/30113/brent-hinkley"
+        }
+      },
+      {
+        "character": {
+          "name": "Newscaster",
+          "tvmaze_id": 834206,
+          "url": "https://www.tvmaze.com/characters/834206/night-court-newscaster"
+        },
+        "person": {
+          "name": "Kathye O'Brien",
+          "tvmaze_id": 303209,
+          "url": "https://www.tvmaze.com/people/303209/kathye-obrien"
+        }
+      },
+      {
+        "character": {
+          "name": "Charles Stempel",
+          "tvmaze_id": 834205,
+          "url": "https://www.tvmaze.com/characters/834205/night-court-charles-stempel"
+        },
+        "person": {
+          "name": "Marty Zagon",
+          "tvmaze_id": 45303,
+          "url": "https://www.tvmaze.com/people/45303/marty-zagon"
+        }
+      },
+      {
+        "character": {
+          "name": "Judge Wilbur",
+          "tvmaze_id": 834196,
+          "url": "https://www.tvmaze.com/characters/834196/night-court-judge-wilbur"
+        },
+        "person": {
+          "name": "Florence Stanley",
+          "tvmaze_id": 54023,
+          "url": "https://www.tvmaze.com/people/54023/florence-stanley"
+        }
+      },
+      {
+        "character": {
+          "name": "Stage Manager",
+          "tvmaze_id": 834201,
+          "url": "https://www.tvmaze.com/characters/834201/night-court-stage-manager"
+        },
+        "person": {
+          "name": "Ed Levey",
+          "tvmaze_id": 251083,
+          "url": "https://www.tvmaze.com/people/251083/ed-levey"
+        }
+      },
+      {
+        "character": {
+          "name": "Catherine Schuster",
+          "tvmaze_id": 834202,
+          "url": "https://www.tvmaze.com/characters/834202/night-court-catherine-schuster"
+        },
+        "person": {
+          "name": "Lilly Lyman",
+          "tvmaze_id": 303207,
+          "url": "https://www.tvmaze.com/people/303207/lilly-lyman"
+        }
+      },
+      {
+        "character": {
+          "name": "Thomas Van Doren",
+          "tvmaze_id": 834204,
+          "url": "https://www.tvmaze.com/characters/834204/night-court-thomas-van-doren"
+        },
+        "person": {
+          "name": "Peter J. Saputo",
+          "tvmaze_id": 303208,
+          "url": "https://www.tvmaze.com/people/303208/peter-j-saputo"
+        }
+      },
+      {
+        "character": {
+          "name": "Game Show Assistant",
+          "tvmaze_id": 1207433,
+          "url": "https://www.tvmaze.com/characters/1207433/night-court-game-show-assistant"
+        },
+        "person": {
+          "name": "Schae Harrison",
+          "tvmaze_id": 74654,
+          "url": "https://www.tvmaze.com/people/74654/schae-harrison"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5839/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134358"
+    },
+    "production_code": "186475",
+    "writer_credit_display": "Bob Underwood",
     "writers": [
       "Bob Underwood"
-    ],
-    "guest_cast": [],
-    "production_code": "186475",
-    "writer_credit_display": "Bob Underwood"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 15,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134358/night-court-6x15-the-game-show",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 116,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 116
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S06E15",
+  "original_air_date": "1989-02-15",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 6,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The Game Show",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134358,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The Game Show",
     "episode_airdate_wikitext": "{{Start date|1989|2|15}}",
     "household_rating_and_share": null,
-    "viewers_millions": 25.7,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The Game Show",
+    "viewers_millions": 25.7
   }
 }

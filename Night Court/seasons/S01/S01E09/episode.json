@@ -1,131 +1,199 @@
 {
-  "id": "S01E09",
-  "series": "night-court-1984",
-  "season": 1,
-  "episode": 9,
   "absolute_episode_by_season_sum": 9,
-  "title": "Wonder Drugs",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1984-03-07",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Asaad Kelada",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Emil Dutton",
+          "tvmaze_id": 664708,
+          "url": "https://www.tvmaze.com/characters/664708/night-court-emil-dutton"
+        },
+        "person": {
+          "name": "Jack Riley",
+          "tvmaze_id": 43696,
+          "url": "https://www.tvmaze.com/people/43696/jack-riley"
+        }
+      },
+      {
+        "character": {
+          "name": "Man in Dress",
+          "tvmaze_id": 664709,
+          "url": "https://www.tvmaze.com/characters/664709/night-court-man-in-dress"
+        },
+        "person": {
+          "name": "Ron Feinberg",
+          "tvmaze_id": 157090,
+          "url": "https://www.tvmaze.com/people/157090/ron-feinberg"
+        }
+      },
+      {
+        "character": {
+          "name": "Steven Bostwick",
+          "tvmaze_id": 664710,
+          "url": "https://www.tvmaze.com/characters/664710/night-court-steven-bostwick"
+        },
+        "person": {
+          "name": "Lionel Mark Smith",
+          "tvmaze_id": 59915,
+          "url": "https://www.tvmaze.com/people/59915/lionel-mark-smith"
+        }
+      },
+      {
+        "character": {
+          "name": "Woman in Gallery",
+          "tvmaze_id": 664713,
+          "url": "https://www.tvmaze.com/characters/664713/night-court-woman-in-gallery"
+        },
+        "person": {
+          "name": "Sandy Martin",
+          "tvmaze_id": 21493,
+          "url": "https://www.tvmaze.com/people/21493/sandy-martin"
+        }
+      },
+      {
+        "character": {
+          "name": "Woman in Gallery",
+          "tvmaze_id": 664712,
+          "url": "https://www.tvmaze.com/characters/664712/night-court-woman-in-gallery"
+        },
+        "person": {
+          "name": "Arva Holt",
+          "tvmaze_id": 148384,
+          "url": "https://www.tvmaze.com/people/148384/arva-holt"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5834/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134251"
+    },
+    "production_code": "185364",
+    "writer_credit_display": "Howard Ostroff",
     "writers": [
       "Howard Ostroff"
-    ],
-    "guest_cast": [],
-    "production_code": "185364",
-    "writer_credit_display": "Howard Ostroff"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 9,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e09&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134251/night-court-1x09-wonder-drugs",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 9,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 9
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S01E09",
+  "original_air_date": "1984-03-07",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 1,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Wonder Drugs",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134251,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Wonder Drugs",
     "episode_airdate_wikitext": "{{Start date|1984|3|7}}",
     "household_rating_and_share": "14.3/22",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Wonder Drugs",
+    "viewers_millions": null
   }
 }

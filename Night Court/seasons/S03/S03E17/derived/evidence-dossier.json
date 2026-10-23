@@ -1,0 +1,107 @@
+{
+  "id": "S03E17",
+  "title": "The Mugger",
+  "broadcast_date": "1986-02-20",
+  "season": 3,
+  "episode": 17,
+  "plot_source_plaintext": "After being mugged, Christine becomes belligerent and mistrustful, and unable to do her job as public defender. She has to rediscover her compassion when her mugger is trapped in the cafeteria and threatens hostages with a grenade. Meanwhile, Phil gets a hot stock tip from an old Wall Street buddy, and Dan nearly bankrupts himself trying to wheedle it out of him.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S03/S03E17/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jim Drake",
+    "writer_credit": "Robert Perlow & Gene Braunstein",
+    "production_code": "185726"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          304,
+          307
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          20,
+          29
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "buddy-ryan",
+      "matched_terms": [
+        "buddy"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          293,
+          298
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "phil",
+      "matched_terms": [
+        "Phil"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          243,
+          247
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "work-and-career",
+      "matched_words": [
+        "job"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    },
+    {
+      "topic": "confinement-and-disaster",
+      "matched_words": [
+        "trapped"
+      ],
+      "match_count": 1,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

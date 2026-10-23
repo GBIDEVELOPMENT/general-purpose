@@ -1,115 +1,183 @@
 {
-  "id": "S08E10",
-  "series": "night-court-1984",
-  "season": 8,
-  "episode": 10,
   "absolute_episode_by_season_sum": 157,
-  "title": "Nobody Says Rat Fink Anymore",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1990-11-23",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Howard Ritter",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Terry Benoon",
+          "tvmaze_id": 1206032,
+          "url": "https://www.tvmaze.com/characters/1206032/night-court-terry-benoon"
+        },
+        "person": {
+          "name": "Donald Gibb",
+          "tvmaze_id": 110267,
+          "url": "https://www.tvmaze.com/people/110267/donald-gibb"
+        }
+      },
+      {
+        "character": {
+          "name": "Woman",
+          "tvmaze_id": 1206037,
+          "url": "https://www.tvmaze.com/characters/1206037/night-court-woman"
+        },
+        "person": {
+          "name": "Logan McKarra",
+          "tvmaze_id": 408038,
+          "url": "https://www.tvmaze.com/people/408038/logan-mckarra"
+        }
+      },
+      {
+        "character": {
+          "name": "Lenny",
+          "tvmaze_id": 1206035,
+          "url": "https://www.tvmaze.com/characters/1206035/night-court-lenny"
+        },
+        "person": {
+          "name": "Rick Zumwalt",
+          "tvmaze_id": 164404,
+          "url": "https://www.tvmaze.com/people/164404/rick-zumwalt"
+        }
+      },
+      {
+        "character": {
+          "name": "Rose Minnik",
+          "tvmaze_id": 1206034,
+          "url": "https://www.tvmaze.com/characters/1206034/night-court-rose-minnik"
+        },
+        "person": {
+          "name": "Chris Weatherhead",
+          "tvmaze_id": 408036,
+          "url": "https://www.tvmaze.com/people/408036/chris-weatherhead"
+        }
+      },
+      {
+        "character": {
+          "name": "Beatrice Williker",
+          "tvmaze_id": 1206036,
+          "url": "https://www.tvmaze.com/characters/1206036/night-court-beatrice-williker"
+        },
+        "person": {
+          "name": "Mary Dean",
+          "tvmaze_id": 408037,
+          "url": "https://www.tvmaze.com/people/408037/mary-dean"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5841/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134399"
+    },
+    "production_code": "186939",
+    "writer_credit_display": "Fred Rubin",
     "writers": [
       "Fred Rubin"
-    ],
-    "guest_cast": [],
-    "production_code": "186939",
-    "writer_credit_display": "Fred Rubin"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 10,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134399/night-court-8x10-nobody-says-rat-fink-anymore",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 157,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 157
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S08E10",
+  "original_air_date": "1990-11-23",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 8,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Nobody Says Rat Fink Anymore",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134399,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Nobody Says Rat Fink Anymore",
     "episode_airdate_wikitext": "{{Start date|1990|11|23}}",
     "household_rating_and_share": null,
-    "viewers_millions": 17.4,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Nobody Says Rat Fink Anymore",
+    "viewers_millions": 17.4
   }
 }

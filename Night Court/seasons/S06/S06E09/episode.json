@@ -1,115 +1,219 @@
 {
-  "id": "S06E09",
-  "series": "night-court-1984",
-  "season": 6,
-  "episode": 9,
   "absolute_episode_by_season_sum": 110,
-  "title": "The Night Court Before Christmas",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1988-12-21",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Tim Steele",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Buddy Ryan",
+          "tvmaze_id": 499951,
+          "url": "https://www.tvmaze.com/characters/499951/night-court-buddy-ryan"
+        },
+        "person": {
+          "name": "John Astin",
+          "tvmaze_id": 61397,
+          "url": "https://www.tvmaze.com/people/61397/john-astin"
+        }
+      },
+      {
+        "character": {
+          "name": "James McCracken",
+          "tvmaze_id": 501144,
+          "url": "https://www.tvmaze.com/characters/501144/night-court-james-mccracken"
+        },
+        "person": {
+          "name": "Jordan Charney",
+          "tvmaze_id": 19261,
+          "url": "https://www.tvmaze.com/people/19261/jordan-charney"
+        }
+      },
+      {
+        "character": {
+          "name": "William Volpe",
+          "tvmaze_id": 501157,
+          "url": "https://www.tvmaze.com/characters/501157/night-court-william-volpe"
+        },
+        "person": {
+          "name": "Tony Rizzoli",
+          "tvmaze_id": 19254,
+          "url": "https://www.tvmaze.com/people/19254/tony-rizzoli"
+        }
+      },
+      {
+        "character": {
+          "name": "Female Caroler",
+          "tvmaze_id": 501156,
+          "url": "https://www.tvmaze.com/characters/501156/night-court-female-caroler"
+        },
+        "person": {
+          "name": "Ellen Ratner",
+          "tvmaze_id": 36368,
+          "url": "https://www.tvmaze.com/people/36368/ellen-ratner"
+        }
+      },
+      {
+        "character": {
+          "name": "Nick",
+          "tvmaze_id": 501161,
+          "url": "https://www.tvmaze.com/characters/501161/night-court-nick"
+        },
+        "person": {
+          "name": "Harry Frazier",
+          "tvmaze_id": 107009,
+          "url": "https://www.tvmaze.com/people/107009/harry-frazier"
+        }
+      },
+      {
+        "character": {
+          "name": "Nancy Garrett",
+          "tvmaze_id": 501158,
+          "url": "https://www.tvmaze.com/characters/501158/night-court-nancy-garrett"
+        },
+        "person": {
+          "name": "Marsha Meyers",
+          "tvmaze_id": 199708,
+          "url": "https://www.tvmaze.com/people/199708/marsha-meyers"
+        }
+      },
+      {
+        "character": {
+          "name": "Binky",
+          "tvmaze_id": 501159,
+          "url": "https://www.tvmaze.com/characters/501159/night-court-binky"
+        },
+        "person": {
+          "name": "Marsha McClelland",
+          "tvmaze_id": 199709,
+          "url": "https://www.tvmaze.com/people/199709/marsha-mcclelland"
+        }
+      },
+      {
+        "character": {
+          "name": "Laura",
+          "tvmaze_id": 501160,
+          "url": "https://www.tvmaze.com/characters/501160/night-court-laura"
+        },
+        "person": {
+          "name": "Juliet Sorci",
+          "tvmaze_id": 199710,
+          "url": "https://www.tvmaze.com/people/199710/juliet-sorci"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5839/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134352"
+    },
+    "production_code": "186469",
+    "writer_credit_display": "Bob Underwood",
     "writers": [
       "Bob Underwood"
-    ],
-    "guest_cast": [],
-    "production_code": "186469",
-    "writer_credit_display": "Bob Underwood"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 9,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134352/night-court-6x09-the-night-court-before-christmas",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 110,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 110
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S06E09",
+  "original_air_date": "1988-12-21",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 6,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "The Night Court Before Christmas",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134352,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "The Night Court Before Christmas",
     "episode_airdate_wikitext": "{{Start date|1988|12|21}}",
     "household_rating_and_share": null,
-    "viewers_millions": 25.8,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "The Night Court Before Christmas",
+    "viewers_millions": 25.8
   }
 }

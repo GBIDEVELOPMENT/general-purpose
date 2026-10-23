@@ -1,119 +1,211 @@
 {
-  "id": "S09E20",
-  "series": "night-court-1984",
-  "season": 9,
-  "episode": 20,
   "absolute_episode_by_season_sum": 191,
+  "credits": {
+    "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Mel Tormé",
+          "tvmaze_id": 818319,
+          "url": "https://www.tvmaze.com/characters/818319/night-court-mel-torme"
+        },
+        "person": {
+          "name": "Mel Tormé",
+          "tvmaze_id": 108069,
+          "url": "https://www.tvmaze.com/people/108069/mel-torme"
+        }
+      },
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Will Sanders",
+          "tvmaze_id": 1208566,
+          "url": "https://www.tvmaze.com/characters/1208566/night-court-will-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Tom Korpal",
+          "tvmaze_id": 1209293,
+          "url": "https://www.tvmaze.com/characters/1209293/night-court-tom-korpal"
+        },
+        "person": {
+          "name": "Marty Pollio",
+          "tvmaze_id": 211769,
+          "url": "https://www.tvmaze.com/people/211769/marty-pollio"
+        }
+      },
+      {
+        "character": {
+          "name": "Clare Monroe",
+          "tvmaze_id": 1209290,
+          "url": "https://www.tvmaze.com/characters/1209290/night-court-clare-monroe"
+        },
+        "person": {
+          "name": "Christine Belford",
+          "tvmaze_id": 60576,
+          "url": "https://www.tvmaze.com/people/60576/christine-belford"
+        }
+      },
+      {
+        "character": {
+          "name": "Pamela Monroe",
+          "tvmaze_id": 1209291,
+          "url": "https://www.tvmaze.com/characters/1209291/night-court-pamela-monroe"
+        },
+        "person": {
+          "name": "Marsha Dietlein",
+          "tvmaze_id": 17942,
+          "url": "https://www.tvmaze.com/people/17942/marsha-dietlein"
+        }
+      },
+      {
+        "character": {
+          "name": "Mark Monroe",
+          "tvmaze_id": 1209292,
+          "url": "https://www.tvmaze.com/characters/1209292/night-court-mark-monroe"
+        },
+        "person": {
+          "name": "Dean Hill",
+          "tvmaze_id": 150164,
+          "url": "https://www.tvmaze.com/people/150164/dean-hill"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5842/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134433"
+    },
+    "production_code": "187251",
+    "writer_credit_display": "Elaine Aronson",
+    "writers": [
+      "Elaine Aronson"
+    ]
+  },
+  "editorial_notes": [],
+  "episode": 20,
+  "episode_sources": [
+    {
+      "kind": "episode_guide",
+      "level": "series_catalog",
+      "provider": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
+    },
+    {
+      "kind": "episode_guide",
+      "level": "series_catalog",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
+      "verified": true
+    },
+    {
+      "kind": "episode_guide",
+      "level": "series_catalog",
+      "provider": "TheTVDB",
+      "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
+      "verified": true
+    },
+    {
+      "kind": "fan_wiki",
+      "level": "series_catalog",
+      "provider": "Night Court Wiki",
+      "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
+      "verified": true
+    },
+    {
+      "kind": "episode_guide",
+      "level": "series_catalog",
+      "provider": "NBC Archives fan wiki",
+      "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
+      "verified": true
+    },
+    {
+      "kind": "subtitles_index",
+      "level": "series_catalog",
+      "provider": "SUBDL",
+      "url": "https://subdl.com/subtitle/sd1301097/night-court",
+      "verified": true
+    },
+    {
+      "content_imported": false,
+      "kind": "episode_guide",
+      "level": "episode_in_index",
+      "provider": "TVmaze",
+      "url": "https://www.tvmaze.com/episodes/134433/night-court-9x20-opportunity-knock-knocks-1",
+      "verified": true
+    },
+    {
+      "content_imported": true,
+      "episode_number_in_source": 191,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
+      "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
+    }
+  ],
+  "holdings": {
+    "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
+    "recaps": [
+      {
+        "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
+        "provenance_file": "sources/wikipedia-capsule.provenance.json",
+        "source": "Wikipedia"
+      }
+    ],
+    "reviews": [],
+    "wiki_exports": []
+  },
+  "id": "S09E20",
+  "original_air_date": "1992-05-13",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 9,
+  "series": "night-court-1984",
+  "synthesis": {
+    "annotation_file": null,
+    "canonical_synopsis": null,
+    "knowledge_file": null,
+    "status": "not_started"
+  },
   "title": "Opportunity Knocks (Part 1)",
-  "title_status": "source_catalogued",
   "title_aliases": [
     "Opportunity Knock Knocks (Part 1)",
     "Opportunity Knock Knocks (1)",
     "Opportunity Knock Knocks"
   ],
-  "original_air_date": "1992-05-13",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
-  "credits": {
-    "director": "Jim Drake",
-    "writers": [
-      "Elaine Aronson"
-    ],
-    "guest_cast": [],
-    "production_code": "187251",
-    "writer_credit_display": "Elaine Aronson"
-  },
-  "episode_sources": [
-    {
-      "kind": "episode_guide",
-      "provider": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "episode_guide",
-      "provider": "TVmaze",
-      "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "episode_guide",
-      "provider": "TheTVDB",
-      "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "fan_wiki",
-      "provider": "Night Court Wiki",
-      "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "episode_guide",
-      "provider": "NBC Archives fan wiki",
-      "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "subtitles_index",
-      "provider": "SUBDL",
-      "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
-      "verified": true
-    },
-    {
-      "kind": "episode_guide",
-      "provider": "TVmaze",
-      "url": "https://www.tvmaze.com/episodes/134433/night-court-9x20-opportunity-knock-knocks-1",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
-    },
-    {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
-      "content_imported": true,
-      "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 191
-    }
-  ],
-  "holdings": {
-    "full_transcripts": [],
-    "caption_files": [],
-    "recaps": [
-      {
-        "source": "Wikipedia",
-        "file": "authorized-text/wikipedia-episode-capsule.wikitext",
-        "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "reviews": [],
-    "wiki_exports": [],
-    "other": []
-  },
-  "synthesis": {
-    "status": "not_started",
-    "canonical_synopsis": null,
-    "knowledge_file": null,
-    "annotation_file": null
-  },
-  "editorial_notes": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134433,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Opportunity Knock Knocks",
     "episode_airdate_wikitext": "{{Start date|1992|5|13}}",
     "household_rating_and_share": null,
-    "viewers_millions": 24.6,
     "is_combined_broadcast_entry": true,
-    "shared_entry_parts": 2
+    "shared_entry_parts": 2,
+    "title_on_wikipedia": "Opportunity Knock Knocks",
+    "viewers_millions": 24.6
   }
 }

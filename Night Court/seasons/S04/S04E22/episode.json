@@ -1,117 +1,185 @@
 {
-  "id": "S04E22",
-  "series": "night-court-1984",
-  "season": 4,
-  "episode": 22,
   "absolute_episode_by_season_sum": 79,
-  "title": "Her Honor (2)",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [
-    "Her Honor (Part 2)"
-  ],
-  "original_air_date": "1987-05-06",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Bob Wheeler",
+          "tvmaze_id": 720086,
+          "url": "https://www.tvmaze.com/characters/720086/night-court-bob-wheeler"
+        },
+        "person": {
+          "name": "Brent Spiner",
+          "tvmaze_id": 28761,
+          "url": "https://www.tvmaze.com/people/28761/brent-spiner"
+        }
+      },
+      {
+        "character": {
+          "name": "June Wheeler",
+          "tvmaze_id": 720087,
+          "url": "https://www.tvmaze.com/characters/720087/night-court-june-wheeler"
+        },
+        "person": {
+          "name": "Annie O'Donnell",
+          "tvmaze_id": 10465,
+          "url": "https://www.tvmaze.com/people/10465/annie-odonnell"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Jane Fletzker",
+          "tvmaze_id": 867739,
+          "url": "https://www.tvmaze.com/characters/867739/night-court-mrs-jane-fletzker"
+        },
+        "person": {
+          "name": "K Callan",
+          "tvmaze_id": 10252,
+          "url": "https://www.tvmaze.com/people/10252/k-callan"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Fetty",
+          "tvmaze_id": 867740,
+          "url": "https://www.tvmaze.com/characters/867740/night-court-mr-fetty"
+        },
+        "person": {
+          "name": "Al Ruscio",
+          "tvmaze_id": 45260,
+          "url": "https://www.tvmaze.com/people/45260/al-ruscio"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Binnit",
+          "tvmaze_id": 867741,
+          "url": "https://www.tvmaze.com/characters/867741/night-court-mr-binnit"
+        },
+        "person": {
+          "name": "Craig Richard Nelson",
+          "tvmaze_id": 47282,
+          "url": "https://www.tvmaze.com/people/47282/craig-richard-nelson"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5837/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134321"
+    },
+    "production_code": "185952",
+    "writer_credit_display": "Linwood Boomer",
     "writers": [
       "Linwood Boomer"
-    ],
-    "guest_cast": [],
-    "production_code": "185952",
-    "writer_credit_display": "Linwood Boomer"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 22,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134321/night-court-4x22-her-honor-2",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 79,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 79
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S04E22",
+  "original_air_date": "1987-05-06",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 4,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Her Honor (2)",
+  "title_aliases": [
+    "Her Honor (Part 2)"
+  ],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134321,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Her Honor (Part 2)",
     "episode_airdate_wikitext": "{{Start date|1987|5|6}}",
     "household_rating_and_share": "15.2/25",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Her Honor (Part 2)",
+    "viewers_millions": null
   }
 }

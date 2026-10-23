@@ -1,131 +1,211 @@
 {
-  "id": "S01E13",
-  "series": "night-court-1984",
-  "season": 1,
-  "episode": 13,
   "absolute_episode_by_season_sum": 13,
-  "title": "Hi Honey, I'm Home",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1984-05-31",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Gary Shimokawa",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Charley Tracy",
+          "tvmaze_id": 431948,
+          "url": "https://www.tvmaze.com/characters/431948/night-court-charley-tracy"
+        },
+        "person": {
+          "name": "D.D. Howard",
+          "tvmaze_id": 54037,
+          "url": "https://www.tvmaze.com/people/54037/dd-howard"
+        }
+      },
+      {
+        "character": {
+          "name": "Mitchell Bowers",
+          "tvmaze_id": 431946,
+          "url": "https://www.tvmaze.com/characters/431946/night-court-mitchell-bowers"
+        },
+        "person": {
+          "name": "Charles Napier",
+          "tvmaze_id": 22673,
+          "url": "https://www.tvmaze.com/people/22673/charles-napier"
+        }
+      },
+      {
+        "character": {
+          "name": "Duane Sedgwick",
+          "tvmaze_id": 431950,
+          "url": "https://www.tvmaze.com/characters/431950/night-court-duane-sedgwick"
+        },
+        "person": {
+          "name": "Basil Hoffman",
+          "tvmaze_id": 117188,
+          "url": "https://www.tvmaze.com/people/117188/basil-hoffman"
+        }
+      },
+      {
+        "character": {
+          "name": "Nora Bowers Sedgwick",
+          "tvmaze_id": 431952,
+          "url": "https://www.tvmaze.com/characters/431952/night-court-nora-bowers-sedgwick"
+        },
+        "person": {
+          "name": "Marcia Rodd",
+          "tvmaze_id": 89976,
+          "url": "https://www.tvmaze.com/people/89976/marcia-rodd"
+        }
+      },
+      {
+        "character": {
+          "name": "Bernie",
+          "tvmaze_id": 431955,
+          "url": "https://www.tvmaze.com/characters/431955/night-court-bernie"
+        },
+        "person": {
+          "name": "Martin Garner",
+          "tvmaze_id": 100853,
+          "url": "https://www.tvmaze.com/people/100853/martin-garner"
+        }
+      },
+      {
+        "character": {
+          "name": "Doctor",
+          "tvmaze_id": 431958,
+          "url": "https://www.tvmaze.com/characters/431958/night-court-doctor"
+        },
+        "person": {
+          "name": "Milt Kogan",
+          "tvmaze_id": 27893,
+          "url": "https://www.tvmaze.com/people/27893/milt-kogan"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5834/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134255"
+    },
+    "production_code": "185361",
+    "writer_credit_display": "Tom Reeder",
     "writers": [
       "Tom Reeder"
-    ],
-    "guest_cast": [],
-    "production_code": "185361",
-    "writer_credit_display": "Tom Reeder"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 13,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s01e13&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134255/night-court-1x13-hi-honey-im-home",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 13,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 13
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S01E13",
+  "original_air_date": "1984-05-31",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 1,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Hi Honey, I'm Home",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134255,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Hi Honey, I'm Home",
     "episode_airdate_wikitext": "{{Start date|1984|5|31}}",
     "household_rating_and_share": "16.4/28",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Hi Honey, I'm Home",
+    "viewers_millions": null
   }
 }

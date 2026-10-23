@@ -1,117 +1,173 @@
 {
-  "id": "S08E02",
-  "series": "night-court-1984",
-  "season": 8,
-  "episode": 2,
   "absolute_episode_by_season_sum": 149,
-  "title": "A Family Affair (2)",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [
-    "A Family Affair (Part 2)"
-  ],
-  "original_air_date": "1990-10-05",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Donna",
+          "tvmaze_id": 1208012,
+          "url": "https://www.tvmaze.com/characters/1208012/night-court-donna"
+        },
+        "person": {
+          "name": "Susan Diol",
+          "tvmaze_id": 8961,
+          "url": "https://www.tvmaze.com/people/8961/susan-diol"
+        }
+      },
+      {
+        "character": {
+          "name": "Miss Crombie",
+          "tvmaze_id": 1208014,
+          "url": "https://www.tvmaze.com/characters/1208014/night-court-miss-crombie"
+        },
+        "person": {
+          "name": "Fran Ryan",
+          "tvmaze_id": 97091,
+          "url": "https://www.tvmaze.com/people/97091/fran-ryan"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Austin",
+          "tvmaze_id": 1208425,
+          "url": "https://www.tvmaze.com/characters/1208425/night-court-mr-austin"
+        },
+        "person": {
+          "name": "Ben Slack",
+          "tvmaze_id": 48012,
+          "url": "https://www.tvmaze.com/people/48012/ben-slack"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Ketover",
+          "tvmaze_id": 898405,
+          "url": "https://www.tvmaze.com/characters/898405/night-court-mr-ketover"
+        },
+        "person": {
+          "name": "Larry Gelman",
+          "tvmaze_id": 63109,
+          "url": "https://www.tvmaze.com/people/63109/larry-gelman"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5841/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134391"
+    },
+    "production_code": "186932",
+    "writer_credit_display": "Stuart Kreisman & Chris Cluess",
     "writers": [
       "Stuart Kreisman & Chris Cluess"
-    ],
-    "guest_cast": [],
-    "production_code": "186932",
-    "writer_credit_display": "Stuart Kreisman & Chris Cluess"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 2,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134391/night-court-8x02-a-family-affair-2",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 149,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 149
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S08E02",
+  "original_air_date": "1990-10-05",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 8,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "A Family Affair (2)",
+  "title_aliases": [
+    "A Family Affair (Part 2)"
+  ],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134391,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "A Family Affair (Part 2)",
     "episode_airdate_wikitext": "{{Start date|1990|10|5}}",
     "household_rating_and_share": null,
-    "viewers_millions": 14.7,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "A Family Affair (Part 2)",
+    "viewers_millions": 14.7
   }
 }

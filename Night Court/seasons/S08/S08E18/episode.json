@@ -1,117 +1,209 @@
 {
-  "id": "S08E18",
-  "series": "night-court-1984",
-  "season": 8,
-  "episode": 18,
   "absolute_episode_by_season_sum": 165,
-  "title": "Hey Harry, F'Crying Out Loud-- It is a Wonderful Life ... Sorta",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [
-    "Hey Harry, F'Crying Out Loud — It is a Wonderful Life... Sorta"
-  ],
-  "original_air_date": "1991-02-27",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Herb",
+          "tvmaze_id": 1208515,
+          "url": "https://www.tvmaze.com/characters/1208515/night-court-herb"
+        },
+        "person": {
+          "name": "Mel Tormé",
+          "tvmaze_id": 108069,
+          "url": "https://www.tvmaze.com/people/108069/mel-torme"
+        }
+      },
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Bailiff",
+          "tvmaze_id": 1208512,
+          "url": "https://www.tvmaze.com/characters/1208512/night-court-bailiff"
+        },
+        "person": {
+          "name": "Randi Brough",
+          "tvmaze_id": 226154,
+          "url": "https://www.tvmaze.com/people/226154/randi-brough"
+        }
+      },
+      {
+        "character": {
+          "name": "Miss Wagner",
+          "tvmaze_id": 1208510,
+          "url": "https://www.tvmaze.com/characters/1208510/night-court-miss-wagner"
+        },
+        "person": {
+          "name": "Sharon Lee Jones",
+          "tvmaze_id": 163495,
+          "url": "https://www.tvmaze.com/people/163495/sharon-lee-jones"
+        }
+      },
+      {
+        "character": {
+          "name": "Bailiff",
+          "tvmaze_id": 1208511,
+          "url": "https://www.tvmaze.com/characters/1208511/night-court-bailiff"
+        },
+        "person": {
+          "name": "Candi Brough",
+          "tvmaze_id": 226153,
+          "url": "https://www.tvmaze.com/people/226153/candi-brough"
+        }
+      },
+      {
+        "character": {
+          "name": "Shifty Guy",
+          "tvmaze_id": 1208514,
+          "url": "https://www.tvmaze.com/characters/1208514/night-court-shifty-guy"
+        },
+        "person": {
+          "name": "Richard Morof",
+          "tvmaze_id": 82644,
+          "url": "https://www.tvmaze.com/people/82644/richard-morof"
+        }
+      },
+      {
+        "character": {
+          "name": "Mr. Arnovitz",
+          "tvmaze_id": 1208513,
+          "url": "https://www.tvmaze.com/characters/1208513/night-court-mr-arnovitz"
+        },
+        "person": {
+          "name": "Thom Rachford",
+          "tvmaze_id": 116610,
+          "url": "https://www.tvmaze.com/people/116610/thom-rachford"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5841/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134407"
+    },
+    "production_code": "186948",
+    "writer_credit_display": "Stuart Kreisman & Chris Cluess",
     "writers": [
       "Stuart Kreisman & Chris Cluess"
-    ],
-    "guest_cast": [],
-    "production_code": "186948",
-    "writer_credit_display": "Stuart Kreisman & Chris Cluess"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 18,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134407/night-court-8x18-hey-harry-fcrying-out-loud-it-is-a-wonderful-life-sorta",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 165,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 165
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S08E18",
+  "original_air_date": "1991-02-27",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 8,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Hey Harry, F'Crying Out Loud-- It is a Wonderful Life ... Sorta",
+  "title_aliases": [
+    "Hey Harry, F'Crying Out Loud — It is a Wonderful Life... Sorta"
+  ],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134407,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Hey Harry, F'Crying Out Loud — It is a Wonderful Life... Sorta",
     "episode_airdate_wikitext": "{{Start date|1991|2|27}}",
     "household_rating_and_share": null,
-    "viewers_millions": 18.9,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Hey Harry, F'Crying Out Loud — It is a Wonderful Life... Sorta",
+    "viewers_millions": 18.9
   }
 }

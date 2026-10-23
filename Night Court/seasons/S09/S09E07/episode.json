@@ -1,115 +1,195 @@
 {
-  "id": "S09E07",
-  "series": "night-court-1984",
-  "season": 9,
-  "episode": 7,
   "absolute_episode_by_season_sum": 178,
-  "title": "Looking for Mr. Shannon",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1991-11-06",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Will Sanders",
+          "tvmaze_id": 1208566,
+          "url": "https://www.tvmaze.com/characters/1208566/night-court-will-sanders"
+        },
+        "person": {
+          "name": "William Utay",
+          "tvmaze_id": 44467,
+          "url": "https://www.tvmaze.com/people/44467/william-utay"
+        }
+      },
+      {
+        "character": {
+          "name": "Oscar Brown",
+          "tvmaze_id": 1208590,
+          "url": "https://www.tvmaze.com/characters/1208590/night-court-oscar-brown"
+        },
+        "person": {
+          "name": "Gilbert Gottfried",
+          "tvmaze_id": 21889,
+          "url": "https://www.tvmaze.com/people/21889/gilbert-gottfried"
+        }
+      },
+      {
+        "character": {
+          "name": "Candy",
+          "tvmaze_id": 1208874,
+          "url": "https://www.tvmaze.com/characters/1208874/night-court-candy"
+        },
+        "person": {
+          "name": "Sharon Lee Jones",
+          "tvmaze_id": 163495,
+          "url": "https://www.tvmaze.com/people/163495/sharon-lee-jones"
+        }
+      },
+      {
+        "character": {
+          "name": "Fatima",
+          "tvmaze_id": 1208876,
+          "url": "https://www.tvmaze.com/characters/1208876/night-court-fatima"
+        },
+        "person": {
+          "name": "Christina Carlisi",
+          "tvmaze_id": 12587,
+          "url": "https://www.tvmaze.com/people/12587/christina-carlisi"
+        }
+      },
+      {
+        "character": {
+          "name": "Pizza Guy",
+          "tvmaze_id": 1208873,
+          "url": "https://www.tvmaze.com/characters/1208873/night-court-pizza-guy"
+        },
+        "person": {
+          "name": "Eric Menyuk",
+          "tvmaze_id": 47743,
+          "url": "https://www.tvmaze.com/people/47743/eric-menyuk"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5842/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134420"
+    },
+    "production_code": "187238",
+    "writer_credit_display": "Ben Montanio & Vince Cheung",
     "writers": [
       "Ben Montanio & Vince Cheung"
-    ],
-    "guest_cast": [],
-    "production_code": "187238",
-    "writer_credit_display": "Ben Montanio & Vince Cheung"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 7,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134420/night-court-9x07-looking-for-mr-shannon",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 178,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 178
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S09E07",
+  "original_air_date": "1991-11-06",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 9,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Looking for Mr. Shannon",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134420,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Looking for Mr. Shannon",
     "episode_airdate_wikitext": "{{Start date|1991|11|6}}",
     "household_rating_and_share": null,
-    "viewers_millions": 20.1,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Looking for Mr. Shannon",
+    "viewers_millions": 20.1
   }
 }

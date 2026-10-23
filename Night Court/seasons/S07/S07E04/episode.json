@@ -1,115 +1,183 @@
 {
-  "id": "S07E04",
-  "series": "night-court-1984",
-  "season": 7,
-  "episode": 4,
   "absolute_episode_by_season_sum": 127,
-  "title": "Come Back to the Five and Dime, Stephen King, Stephen King",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1989-10-25",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Tim Steele",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Shrill Woman",
+          "tvmaze_id": 834933,
+          "url": "https://www.tvmaze.com/characters/834933/night-court-shrill-woman"
+        },
+        "person": {
+          "name": "Julie Andelman",
+          "tvmaze_id": 303405,
+          "url": "https://www.tvmaze.com/people/303405/julie-andelman"
+        }
+      },
+      {
+        "character": {
+          "name": "Madame Rochelle",
+          "tvmaze_id": 834926,
+          "url": "https://www.tvmaze.com/characters/834926/night-court-madame-rochelle"
+        },
+        "person": {
+          "name": "Shirley Prestia",
+          "tvmaze_id": 59444,
+          "url": "https://www.tvmaze.com/people/59444/shirley-prestia"
+        }
+      },
+      {
+        "character": {
+          "name": "Timmy",
+          "tvmaze_id": 834927,
+          "url": "https://www.tvmaze.com/characters/834927/night-court-timmy"
+        },
+        "person": {
+          "name": "Brandon Maciel",
+          "tvmaze_id": 94487,
+          "url": "https://www.tvmaze.com/people/94487/brandon-maciel"
+        }
+      },
+      {
+        "character": {
+          "name": "Cleopatra",
+          "tvmaze_id": 834930,
+          "url": "https://www.tvmaze.com/characters/834930/night-court-cleopatra"
+        },
+        "person": {
+          "name": "Teresa Gilmore Capps",
+          "tvmaze_id": 303404,
+          "url": "https://www.tvmaze.com/people/303404/teresa-gilmore-capps"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5840/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134369"
+    },
+    "production_code": "186334",
+    "writer_credit_display": "Fred Rubin",
     "writers": [
       "Fred Rubin"
-    ],
-    "guest_cast": [],
-    "production_code": "186334",
-    "writer_credit_display": "Fred Rubin"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 4,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134369/night-court-7x04-come-back-to-the-five-and-dime-stephen-king-stephen-king",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 127,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 127
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S07E04",
+  "original_air_date": "1989-10-25",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 7,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Come Back to the Five and Dime, Stephen King, Stephen King",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134369,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Come Back to the Five and Dime, Stephen King, Stephen King",
     "episode_airdate_wikitext": "{{Start date|1989|10|25}}",
     "household_rating_and_share": null,
-    "viewers_millions": 23.6,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Come Back to the Five and Dime, Stephen King, Stephen King",
+    "viewers_millions": 23.6
   }
 }

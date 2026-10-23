@@ -1,131 +1,211 @@
 {
-  "id": "S02E03",
-  "series": "night-court-1984",
-  "season": 2,
-  "episode": 3,
   "absolute_episode_by_season_sum": 16,
-  "title": "Billie and the Cat",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1984-10-18",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Lee Bernhardi",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Brad Tallman",
+          "tvmaze_id": 1204372,
+          "url": "https://www.tvmaze.com/characters/1204372/night-court-brad-tallman"
+        },
+        "person": {
+          "name": "John Scott Clough",
+          "tvmaze_id": 138770,
+          "url": "https://www.tvmaze.com/people/138770/john-scott-clough"
+        }
+      },
+      {
+        "character": {
+          "name": "Hooker in Cell",
+          "tvmaze_id": 1204373,
+          "url": "https://www.tvmaze.com/characters/1204373/night-court-hooker-in-cell"
+        },
+        "person": {
+          "name": "Yana Nirvana",
+          "tvmaze_id": 158615,
+          "url": "https://www.tvmaze.com/people/158615/yana-nirvana"
+        }
+      },
+      {
+        "character": {
+          "name": "Miles Seaver",
+          "tvmaze_id": 1204376,
+          "url": "https://www.tvmaze.com/characters/1204376/night-court-miles-seaver"
+        },
+        "person": {
+          "name": "Don Calfa",
+          "tvmaze_id": 29228,
+          "url": "https://www.tvmaze.com/people/29228/don-calfa"
+        }
+      },
+      {
+        "character": {
+          "name": "Roger Blair",
+          "tvmaze_id": 1204371,
+          "url": "https://www.tvmaze.com/characters/1204371/night-court-roger-blair"
+        },
+        "person": {
+          "name": "Joel Brooks",
+          "tvmaze_id": 10995,
+          "url": "https://www.tvmaze.com/people/10995/joel-brooks"
+        }
+      },
+      {
+        "character": {
+          "name": "Defendant #2",
+          "tvmaze_id": 1204374,
+          "url": "https://www.tvmaze.com/characters/1204374/night-court-defendant-2"
+        },
+        "person": {
+          "name": "Luis Contreras",
+          "tvmaze_id": 30151,
+          "url": "https://www.tvmaze.com/people/30151/luis-contreras"
+        }
+      },
+      {
+        "character": {
+          "name": "Defendant #1",
+          "tvmaze_id": 1204375,
+          "url": "https://www.tvmaze.com/characters/1204375/night-court-defendant-1"
+        },
+        "person": {
+          "name": "Bob Perlow",
+          "tvmaze_id": 197382,
+          "url": "https://www.tvmaze.com/people/197382/bob-perlow"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5835/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134258"
+    },
+    "production_code": "185604",
+    "writer_credit_display": "Zachary D. Wechsler",
     "writers": [
       "Zachary D. Wechsler"
-    ],
-    "guest_cast": [],
-    "production_code": "185604",
-    "writer_credit_display": "Zachary D. Wechsler"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 3,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e03&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134258/night-court-2x03-billie-and-the-cat",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 16,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 16
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S02E03",
+  "original_air_date": "1984-10-18",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 2,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Billie and the Cat",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134258,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Billie and the Cat",
     "episode_airdate_wikitext": "{{Start date|1984|10|18}}",
     "household_rating_and_share": "16.2/25",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Billie and the Cat",
+    "viewers_millions": null
   }
 }

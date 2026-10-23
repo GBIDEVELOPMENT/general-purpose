@@ -1,115 +1,195 @@
 {
-  "id": "S08E05",
-  "series": "night-court-1984",
-  "season": 8,
-  "episode": 5,
   "absolute_episode_by_season_sum": 152,
-  "title": "Death Takes a Halloween",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1990-10-26",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Bum",
+          "tvmaze_id": 834568,
+          "url": "https://www.tvmaze.com/characters/834568/night-court-bum"
+        },
+        "person": {
+          "name": "Raf Mauro",
+          "tvmaze_id": 25759,
+          "url": "https://www.tvmaze.com/people/25759/raf-mauro"
+        }
+      },
+      {
+        "character": {
+          "name": "Death",
+          "tvmaze_id": 1079518,
+          "url": "https://www.tvmaze.com/characters/1079518/night-court-death"
+        },
+        "person": {
+          "name": "Stephen Root",
+          "tvmaze_id": 4961,
+          "url": "https://www.tvmaze.com/people/4961/stephen-root"
+        }
+      },
+      {
+        "character": {
+          "name": "Muriel Brown",
+          "tvmaze_id": 1079519,
+          "url": "https://www.tvmaze.com/characters/1079519/night-court-muriel-brown"
+        },
+        "person": {
+          "name": "Blanche Rubin",
+          "tvmaze_id": 108132,
+          "url": "https://www.tvmaze.com/people/108132/blanche-rubin"
+        }
+      },
+      {
+        "character": {
+          "name": "Dracula",
+          "tvmaze_id": 1079514,
+          "url": "https://www.tvmaze.com/characters/1079514/night-court-dracula"
+        },
+        "person": {
+          "name": "Doug MacHugh",
+          "tvmaze_id": 109999,
+          "url": "https://www.tvmaze.com/people/109999/doug-machugh"
+        }
+      },
+      {
+        "character": {
+          "name": "Hooker",
+          "tvmaze_id": 1079520,
+          "url": "https://www.tvmaze.com/characters/1079520/night-court-hooker"
+        },
+        "person": {
+          "name": "Melba Englander",
+          "tvmaze_id": 111118,
+          "url": "https://www.tvmaze.com/people/111118/melba-englander"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5841/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134394"
+    },
+    "production_code": "186936",
+    "writer_credit_display": "Harry Anderson",
     "writers": [
       "Harry Anderson"
-    ],
-    "guest_cast": [],
-    "production_code": "186936",
-    "writer_credit_display": "Harry Anderson"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 5,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134394/night-court-8x05-death-takes-a-halloween",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 152,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 152
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S08E05",
+  "original_air_date": "1990-10-26",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 8,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Death Takes a Halloween",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134394,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Death Takes a Halloween",
     "episode_airdate_wikitext": "{{Start date|1990|10|26}}",
     "household_rating_and_share": null,
-    "viewers_millions": 15.2,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Death Takes a Halloween",
+    "viewers_millions": 15.2
   }
 }

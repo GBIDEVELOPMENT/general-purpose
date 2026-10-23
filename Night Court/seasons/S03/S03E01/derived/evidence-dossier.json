@@ -1,0 +1,147 @@
+{
+  "id": "S03E01",
+  "title": "Hello, Goodbye",
+  "broadcast_date": "1985-09-26",
+  "season": 3,
+  "episode": 1,
+  "plot_source_plaintext": "Everyone tries to adjust to Selma's death as Harry interviews possible replacements, but Bull goes on a drinking binge instead; public defender Christine Sullivan is permanently assigned to the court, to both Harry and Dan's delight.\n\nNote: Markie Post and Florence Halop join the cast as public defender Christine Sullivan and bailiff Florence Kleiner, respectively. The episode ends with a brief tribute to Selma Diamond.",
+  "plot_source_type": "licensed_third_party_encyclopedia_synopsis",
+  "not_original_transcript": true,
+  "source": {
+    "path": "seasons/S03/S03E01/authorized-text/wikipedia-episode-capsule.wikitext",
+    "permalink": "https://en.wikipedia.org/w/index.php?oldid=1377931598",
+    "license": "CC BY-SA 4.0",
+    "revision": 1377931598,
+    "attribution": "Wikipedia contributors, List of Night Court episodes, revision 1377931598"
+  },
+  "production": {
+    "director": "Jeff Melman",
+    "writer_credit": "Reinhold Weege",
+    "production_code": "185711"
+  },
+  "named_character_mentions": [
+    {
+      "character_id": "harry-stone",
+      "matched_terms": [
+        "Harry"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          45,
+          50
+        ],
+        [
+          209,
+          214
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "dan-fielding",
+      "matched_terms": [
+        "Dan"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          219,
+          222
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "bull-shannon",
+      "matched_terms": [
+        "Bull"
+      ],
+      "count": 1,
+      "text_offset_spans": [
+        [
+          89,
+          93
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "selma-hacker",
+      "matched_terms": [
+        "Selma"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          28,
+          33
+        ],
+        [
+          409,
+          414
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "florence-kleiner",
+      "matched_terms": [
+        "Florence",
+        "Florence Kleiner"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          257,
+          265
+        ],
+        [
+          336,
+          352
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    },
+    {
+      "character_id": "christine-sullivan",
+      "matched_terms": [
+        "Christine Sullivan"
+      ],
+      "count": 2,
+      "text_offset_spans": [
+        [
+          144,
+          162
+        ],
+        [
+          305,
+          323
+        ]
+      ],
+      "relationship": "name_mentioned_in_source_capsule",
+      "not_evidence_of_appearance": true
+    }
+  ],
+  "theme_lexical_cues": [
+    {
+      "topic": "legal-institutions",
+      "matched_words": [
+        "bailiff",
+        "court"
+      ],
+      "match_count": 2,
+      "kind": "lexical_evidence_only_not_editorial_topic_judgment"
+    }
+  ],
+  "scope_limits": [
+    "character mentions do not prove onscreen presence",
+    "topic cues are lexical matches, not narrative interpretation",
+    "synopses can omit events and dialogue; no scene timing is available"
+  ]
+}

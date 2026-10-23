@@ -1,115 +1,195 @@
 {
-  "id": "S08E22",
-  "series": "night-court-1984",
-  "season": 8,
-  "episode": 22,
   "absolute_episode_by_season_sum": 169,
-  "title": "Harry's Fifteen Minutes",
-  "title_status": "tvmaze_api_factual_metadata",
-  "title_aliases": [],
-  "original_air_date": "1991-04-03",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jim Drake",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Art Fensterman",
+          "tvmaze_id": 652669,
+          "url": "https://www.tvmaze.com/characters/652669/night-court-art-fensterman"
+        },
+        "person": {
+          "name": "Mike Finneran",
+          "tvmaze_id": 187152,
+          "url": "https://www.tvmaze.com/people/187152/mike-finneran"
+        }
+      },
+      {
+        "character": {
+          "name": "Producer",
+          "tvmaze_id": 1208563,
+          "url": "https://www.tvmaze.com/characters/1208563/night-court-producer"
+        },
+        "person": {
+          "name": "Joel Swetow",
+          "tvmaze_id": 34214,
+          "url": "https://www.tvmaze.com/people/34214/joel-swetow"
+        }
+      },
+      {
+        "character": {
+          "name": "Twinkie",
+          "tvmaze_id": 1208564,
+          "url": "https://www.tvmaze.com/characters/1208564/night-court-twinkie"
+        },
+        "person": {
+          "name": "Stevie Sterling",
+          "tvmaze_id": 296039,
+          "url": "https://www.tvmaze.com/people/296039/stevie-sterling"
+        }
+      },
+      {
+        "character": {
+          "name": "Mrs. Fyborg",
+          "tvmaze_id": 443904,
+          "url": "https://www.tvmaze.com/characters/443904/night-court-mrs-fyborg"
+        },
+        "person": {
+          "name": "Valorie Armstrong",
+          "tvmaze_id": 180308,
+          "url": "https://www.tvmaze.com/people/180308/valorie-armstrong"
+        }
+      },
+      {
+        "character": {
+          "name": "Curtis",
+          "tvmaze_id": 443906,
+          "url": "https://www.tvmaze.com/characters/443906/night-court-curtis"
+        },
+        "person": {
+          "name": "Tommy Hinkley",
+          "tvmaze_id": 8326,
+          "url": "https://www.tvmaze.com/people/8326/tommy-hinkley"
+        }
+      },
+      {
+        "character": {
+          "name": "David Sachs",
+          "tvmaze_id": 443903,
+          "url": "https://www.tvmaze.com/characters/443903/night-court-david-sachs"
+        },
+        "person": {
+          "name": "Rod McCary",
+          "tvmaze_id": 32168,
+          "url": "https://www.tvmaze.com/people/32168/rod-mccary"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5841/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134411"
+    },
+    "production_code": "186951",
+    "writer_credit_display": "Bill Fuller & Jim Pond",
     "writers": [
       "Bill Fuller & Jim Pond"
-    ],
-    "guest_cast": [],
-    "production_code": "186951",
-    "writer_credit_display": "Bill Fuller & Jim Pond"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 22,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134411/night-court-8x22-harrys-fifteen-minutes",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 169,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 169
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S08E22",
+  "original_air_date": "1991-04-03",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 8,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Harry's Fifteen Minutes",
+  "title_aliases": [],
+  "title_status": "tvmaze_api_factual_metadata",
   "tvmaze_episode_id": 134411,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Harry's Fifteen Minutes",
     "episode_airdate_wikitext": "{{Start date|1991|4|3}}",
     "household_rating_and_share": null,
-    "viewers_millions": 17.3,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Harry's Fifteen Minutes",
+    "viewers_millions": 17.3
   }
 }

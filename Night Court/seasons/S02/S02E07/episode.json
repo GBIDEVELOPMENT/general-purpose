@@ -1,131 +1,235 @@
 {
-  "id": "S02E07",
-  "series": "night-court-1984",
-  "season": 2,
-  "episode": 7,
   "absolute_episode_by_season_sum": 20,
-  "title": "Harry on Trial",
-  "title_status": "source_catalogued",
-  "title_aliases": [],
-  "original_air_date": "1984-11-15",
-  "original_air_date_status": "tvmaze_api_factual_metadata",
   "credits": {
     "director": "Jeff Melman",
+    "guest_cast": [
+      {
+        "character": {
+          "name": "Judge Martin A. Landis",
+          "tvmaze_id": 943044,
+          "url": "https://www.tvmaze.com/characters/943044/night-court-judge-martin-a-landis"
+        },
+        "person": {
+          "name": "Ray Walston",
+          "tvmaze_id": 47291,
+          "url": "https://www.tvmaze.com/people/47291/ray-walston"
+        }
+      },
+      {
+        "character": {
+          "name": "Cashier",
+          "tvmaze_id": 1204394,
+          "url": "https://www.tvmaze.com/characters/1204394/night-court-cashier"
+        },
+        "person": {
+          "name": "Dorothy Andrews",
+          "tvmaze_id": 407660,
+          "url": "https://www.tvmaze.com/people/407660/dorothy-andrews"
+        }
+      },
+      {
+        "character": {
+          "name": "Carla B.",
+          "tvmaze_id": 225580,
+          "url": "https://www.tvmaze.com/characters/225580/night-court-carla-b"
+        },
+        "person": {
+          "name": "Rita Taggart",
+          "tvmaze_id": 110576,
+          "url": "https://www.tvmaze.com/people/110576/rita-taggart"
+        }
+      },
+      {
+        "character": {
+          "name": "Judge Robert T. Willard",
+          "tvmaze_id": 225577,
+          "url": "https://www.tvmaze.com/characters/225577/night-court-judge-robert-t-willard"
+        },
+        "person": {
+          "name": "Jason Bernard",
+          "tvmaze_id": 52097,
+          "url": "https://www.tvmaze.com/people/52097/jason-bernard"
+        }
+      },
+      {
+        "character": {
+          "name": "Peter DeMarco",
+          "tvmaze_id": 943045,
+          "url": "https://www.tvmaze.com/characters/943045/night-court-peter-demarco"
+        },
+        "person": {
+          "name": "Vincent Schiavelli",
+          "tvmaze_id": 43913,
+          "url": "https://www.tvmaze.com/people/43913/vincent-schiavelli"
+        }
+      },
+      {
+        "character": {
+          "name": "Bailiff",
+          "tvmaze_id": 943046,
+          "url": "https://www.tvmaze.com/characters/943046/night-court-bailiff"
+        },
+        "person": {
+          "name": "Biff Yeager",
+          "tvmaze_id": 17074,
+          "url": "https://www.tvmaze.com/people/17074/biff-yeager"
+        }
+      },
+      {
+        "character": {
+          "name": "Court Stenographer",
+          "tvmaze_id": 943048,
+          "url": "https://www.tvmaze.com/characters/943048/night-court-court-stenographer"
+        },
+        "person": {
+          "name": "Charlotte Portney",
+          "tvmaze_id": 334259,
+          "url": "https://www.tvmaze.com/people/334259/charlotte-portney"
+        }
+      },
+      {
+        "character": {
+          "name": "Juror",
+          "tvmaze_id": 943047,
+          "url": "https://www.tvmaze.com/characters/943047/night-court-juror"
+        },
+        "person": {
+          "name": "Turk Pipkin",
+          "tvmaze_id": 167622,
+          "url": "https://www.tvmaze.com/people/167622/turk-pipkin"
+        }
+      }
+    ],
+    "guest_cast_source": {
+      "endpoint": "https://api.tvmaze.com/seasons/5835/episodes?embed=guestcast",
+      "license": "CC BY-SA (TVmaze published terms)",
+      "provider": "TVmaze",
+      "status": "explicit_guestcast_collection",
+      "url": "https://www.tvmaze.com/episodes/134262"
+    },
+    "production_code": "185609",
+    "writer_credit_display": "Stuart Kreisman & Chris Cluess",
     "writers": [
       "Stuart Kreisman & Chris Cluess"
-    ],
-    "guest_cast": [],
-    "production_code": "185609",
-    "writer_credit_display": "Stuart Kreisman & Chris Cluess"
+    ]
   },
+  "editorial_notes": [],
+  "episode": 7,
   "episode_sources": [
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/shows/1489/night-court/episodeguide",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "TheTVDB",
       "url": "https://www.thetvdb.com/series/night-court/allseasons/official",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "fan_wiki",
+      "level": "series_catalog",
       "provider": "Night Court Wiki",
       "url": "https://nightcourt.fandom.com/wiki/List_of_Night_Court_episodes",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "episode_guide",
+      "level": "series_catalog",
       "provider": "NBC Archives fan wiki",
       "url": "https://nbcarchives.fandom.com/wiki/Night_Court_%281984%29",
-      "level": "series_catalog",
       "verified": true
     },
     {
       "kind": "subtitles_index",
+      "level": "series_catalog",
       "provider": "SUBDL",
       "url": "https://subdl.com/subtitle/sd1301097/night-court",
-      "level": "series_catalog",
       "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_in_index",
       "provider": "Forever Dreaming",
       "url": "https://transcripts.foreverdreaming.org/viewforum.php?f=1485",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
+      "content_imported": false,
       "kind": "transcript",
+      "level": "episode_url_derived_from_verified_index",
       "provider": "Springfield! Springfield!",
       "url": "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s02e07&tv-show=night-court-1984",
-      "level": "episode_url_derived_from_verified_index",
-      "verified": false,
-      "content_imported": false
+      "verified": false
     },
     {
+      "content_imported": false,
       "kind": "episode_guide",
+      "level": "episode_in_index",
       "provider": "TVmaze",
       "url": "https://www.tvmaze.com/episodes/134262/night-court-2x07-harry-on-trial",
-      "level": "episode_in_index",
-      "verified": true,
-      "content_imported": false
+      "verified": true
     },
     {
-      "kind": "production_credits",
-      "provider": "Wikipedia production table",
-      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
-      "level": "episode_in_index",
-      "verified": true,
-      "license": "CC BY-SA 4.0",
       "content_imported": true,
+      "episode_number_in_source": 20,
+      "kind": "production_credits",
+      "level": "episode_in_index",
+      "license": "CC BY-SA 4.0",
+      "provider": "Wikipedia production table",
       "source_file": "research/licensed-wiki/List-of-Night-Court-episodes.wikitext",
-      "episode_number_in_source": 20
+      "url": "https://en.wikipedia.org/wiki/List_of_Night_Court_episodes",
+      "verified": true
     }
   ],
   "holdings": {
-    "full_transcripts": [],
     "caption_files": [],
+    "full_transcripts": [],
+    "other": [],
     "recaps": [
       {
-        "source": "Wikipedia",
         "file": "authorized-text/wikipedia-episode-capsule.wikitext",
+        "license": "CC BY-SA 4.0",
         "provenance_file": "sources/wikipedia-capsule.provenance.json",
-        "license": "CC BY-SA 4.0"
+        "source": "Wikipedia"
       }
     ],
     "reviews": [],
-    "wiki_exports": [],
-    "other": []
+    "wiki_exports": []
   },
+  "id": "S02E07",
+  "original_air_date": "1984-11-15",
+  "original_air_date_status": "tvmaze_api_factual_metadata",
+  "season": 2,
+  "series": "night-court-1984",
   "synthesis": {
-    "status": "not_started",
+    "annotation_file": null,
     "canonical_synopsis": null,
     "knowledge_file": null,
-    "annotation_file": null
+    "status": "not_started"
   },
-  "editorial_notes": [],
+  "title": "Harry on Trial",
+  "title_aliases": [],
+  "title_status": "source_catalogued",
   "tvmaze_episode_id": 134262,
   "wikipedia_production_metadata": {
-    "title_on_wikipedia": "Harry on Trial",
     "episode_airdate_wikitext": "{{Start date|1984|11|15}}",
     "household_rating_and_share": "17.4/27",
-    "viewers_millions": null,
     "is_combined_broadcast_entry": false,
-    "shared_entry_parts": 1
+    "shared_entry_parts": 1,
+    "title_on_wikipedia": "Harry on Trial",
+    "viewers_millions": null
   }
 }
