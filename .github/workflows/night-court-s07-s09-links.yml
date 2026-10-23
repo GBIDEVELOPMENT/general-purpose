@@ -1,0 +1,49 @@
+name: Night Court final S07 S09 caption-page reconciliation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-final-s07-s09-leads
+    paths:
+      - "Night Court/research/s07-s09-remaining-direct-pages.json"
+      - "Night Court/tools/add_verified_s07_s09_caption_links.py"
+      - ".github/workflows/night-court-s07-s09-links.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-s07-s09-links
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Baseline original series corpus validation
+        run: python "Night Court/tools/validate.py"
+      - name: Reconcile only vetted URL metadata
+        run: python "Night Court/tools/add_verified_s07_s09_caption_links.py"
+      - name: Recompute physical holdings and source references
+        run: python "Night Court/tools/audit_holdings.py"
+      - name: Rebuild acquisition queue and validate 193 records
+        run: |
+          python "Night Court/tools/build_dialogue_source_queue.py"
+          python "Night Court/tools/test_dialogue_source_queue.py"
+          python "Night Court/tools/validate_knowledge.py"
+      - name: Check idempotence and revalidate
+        run: |
+          python "Night Court/tools/add_verified_s07_s09_caption_links.py"
+          python "Night Court/tools/test_dialogue_source_queue.py"
+      - name: Publish bounded source evidence onto research branch
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then
+            echo "No new source pointers"; exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): index five additional verified caption pages"
+          git push origin HEAD:research/night-court-final-s07-s09-leads

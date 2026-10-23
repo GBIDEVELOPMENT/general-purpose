@@ -195,3 +195,10 @@ The 193-episode acquisition queue now reports **44 episodes with direct external
 A separate evidence pass mapped **all 22** original 1984-series Season 4 episodes to their individual Subtitle Cat caption-display pages, including **20** episodes previously lacking any dialogue-specific locator. Verified source upload indexes from June 21, 2025: [1710150](https://www.subtitlecat.com/list_page.php?from=1710150) and [1710200](https://www.subtitlecat.com/list_page.php?from=1710200). The exact per-episode external URLs and source observations are in `research/season04-caption-page-locations.json`, with references attached to each episode's `episode_sources`.
 
 After rebuilding `catalog/dialogue-source-queue.json`, **64/193** episodes have direct external dialogue/caption pages, **121/193** have index-only leads and **8/193** still lack specific dialogue locators (S07E03–E04, S09E06, E08, E17, E19–E21). **No episode-complete copyrighted subtitle file was downloaded or mirrored** during this pass. The SRT/VTT/local-media ingestion and audiovisual quality tools remain ready for separately provided files.
+
+
+### Original S07/S09 caption-source cleanup
+
+Five more independently opened external caption-display pages have been mapped to S07E03, S07E04, S09E06, S09E20 and S09E21. A source-specific title variant calls the finale `Opportunity Knock Knocks`, while the catalogue records `Opportunity Knocks`; aliases are not conflated with different episodes.
+
+The updated 193-episode acquisition queue now shows **69 direct episode pages**, **121 episodes indexed at a series/season source**, and **3 without a specific dialogue locator**: S09E08, S09E17 and S09E19. These counts measure research pointers, not locally saved scripts or subtitle files. `research/s07-s09-remaining-direct-pages.json` records source URLs and evidence without copying the protected dialogue.

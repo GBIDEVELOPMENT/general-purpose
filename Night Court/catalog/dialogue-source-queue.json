@@ -4,9 +4,9 @@
   "ranking_policy": "Least episode-specific source evidence first; within tier, later seasons first.",
   "source_caveat": "A discovered link is not a held transcript and does not establish reuse permission.",
   "source_status_counts": {
-    "direct_episode_page_found_not_held": 64,
+    "direct_episode_page_found_not_held": 69,
     "index_coverage_only": 121,
-    "no_episode_dialogue_specific_locator": 8
+    "no_episode_dialogue_specific_locator": 3
   },
   "by_season": {
     "S01": {
@@ -32,8 +32,7 @@
     },
     "S07": {
       "index_coverage_only": 21,
-      "no_episode_dialogue_specific_locator": 2,
-      "direct_episode_page_found_not_held": 1
+      "direct_episode_page_found_not_held": 3
     },
     "S08": {
       "index_coverage_only": 23,
@@ -41,19 +40,14 @@
     },
     "S09": {
       "index_coverage_only": 15,
-      "no_episode_dialogue_specific_locator": 6,
-      "direct_episode_page_found_not_held": 1
+      "direct_episode_page_found_not_held": 4,
+      "no_episode_dialogue_specific_locator": 3
     }
   },
   "ranked_missing_episode_ids": [
-    "S09E06",
     "S09E08",
     "S09E17",
     "S09E19",
-    "S09E20",
-    "S09E21",
-    "S07E03",
-    "S07E04",
     "S09E01",
     "S09E02",
     "S09E03",
@@ -175,8 +169,13 @@
     "S01E11",
     "S01E12",
     "S01E13",
+    "S09E06",
+    "S09E20",
+    "S09E21",
     "S09E22",
     "S08E06",
+    "S07E03",
+    "S07E04",
     "S07E23",
     "S05E01",
     "S04E01",
@@ -3744,11 +3743,21 @@
       "episode": 3,
       "title": "The Cop and the Lady",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1121/night_court_s07e03_the_cop_and_the_lady.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S07E04",
@@ -3756,11 +3765,21 @@
       "episode": 4,
       "title": "Come Back to the Five and Dime, Stephen King, Stephen King",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1121/night_court_s07e04_come_back_to_the_five_and_dime.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S07E05",
@@ -4864,11 +4883,21 @@
       "episode": 6,
       "title": "Guess Who's Listening to Dinner?",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1121/night_court_s09e06_guess_who_s_listening_to_dinner.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S09E07",
@@ -5132,11 +5161,21 @@
       "episode": 20,
       "title": "Opportunity Knocks (Part 1)",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1121/Night%20Court%20s09e20%20Opportunity%20Knock%20Knocks%201.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S09E21",
@@ -5144,11 +5183,21 @@
       "episode": 21,
       "title": "Opportunity Knocks (Part 2)",
       "held_dialogue_versions": 0,
-      "direct_episode_page_locators": 0,
+      "direct_episode_page_locators": 1,
       "index_only_transcript_refs": 0,
       "unverified_pattern_urls": 0,
-      "acquisition_status": "no_episode_dialogue_specific_locator",
-      "source_locations": []
+      "acquisition_status": "direct_episode_page_found_not_held",
+      "source_locations": [
+        {
+          "provider": "Subtitle Cat",
+          "url": "https://www.subtitlecat.com/subs/1121/night_court_s09e21_opportunity_knock_knocks_2.html",
+          "status": "verified_direct_caption_display_page",
+          "verified": true,
+          "content_imported": false,
+          "source_kind": "subtitle_index",
+          "rights_status": "not_established"
+        }
+      ]
     },
     {
       "episode_id": "S09E22",

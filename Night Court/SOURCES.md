@@ -103,3 +103,8 @@ The following six public Subtitle Cat upload-index pages show 105 manually check
 ## All original Season 4 caption-display URLs located
 
 The [Subtitle Cat upload-page 1710150](https://www.subtitlecat.com/list_page.php?from=1710150) and [1710200](https://www.subtitlecat.com/list_page.php?from=1710200) both enumerate original-series Season 4 uploads from June 21, 2025. Their links and titles identify all **S04E01–S04E22**, confirmed against the actual episode pages. `research/season04-caption-page-locations.json` records each episode ID, permalink, source index, original display label and validation basis. `tools/add_verified_s04_caption_links.py` merges them as source **metadata only**, leaving caption contents and reuse rights unclaimed. Latest source-queue count: 64 direct pages, 121 index-covered episodes and eight with no dialogue locator.
+
+
+## Five more exact original-series subtitle pages
+
+Original caption-display pages now indexed: [S07E03](https://www.subtitlecat.com/subs/1121/night_court_s07e03_the_cop_and_the_lady.html), [S07E04](https://www.subtitlecat.com/subs/1121/night_court_s07e04_come_back_to_the_five_and_dime.html), [S09E06](https://www.subtitlecat.com/subs/1121/night_court_s09e06_guess_who_s_listening_to_dinner.html), [S09E20](https://www.subtitlecat.com/subs/1121/Night%20Court%20s09e20%20Opportunity%20Knock%20Knocks%201.html), and [S09E21](https://www.subtitlecat.com/subs/1121/night_court_s09e21_opportunity_knock_knocks_2.html). The URL mapping reflects each source's original-series episode identity and title variants. In `research/s07-s09-remaining-direct-pages.json` and each episode's `episode_sources` these are rights-unconfirmed *location references*, not copied TV dialogue.

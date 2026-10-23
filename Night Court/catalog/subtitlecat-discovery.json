@@ -1,5 +1,5 @@
 {
-  "episodes_with_indexed_pages": 60,
+  "episodes_with_indexed_pages": 65,
   "episodic_page_versions": {
     "S01E01": [
       {
@@ -637,6 +637,28 @@
         "full_caption_file_imported": false
       }
     ],
+    "S07E03": [
+      {
+        "provider": "Subtitle Cat",
+        "episode_id": "S07E03",
+        "source_page": "https://www.subtitlecat.com/subs/1121/night_court_s07e03_the_cop_and_the_lady.html",
+        "index_page": null,
+        "display_label": "S07E03",
+        "source_locator_status": "individually_checked_public_caption_display_page",
+        "full_caption_file_imported": false
+      }
+    ],
+    "S07E04": [
+      {
+        "provider": "Subtitle Cat",
+        "episode_id": "S07E04",
+        "source_page": "https://www.subtitlecat.com/subs/1121/night_court_s07e04_come_back_to_the_five_and_dime.html",
+        "index_page": null,
+        "display_label": "S07E04",
+        "source_locator_status": "individually_checked_public_caption_display_page",
+        "full_caption_file_imported": false
+      }
+    ],
     "S07E23": [
       {
         "provider": "Subtitle Cat",
@@ -656,6 +678,39 @@
         "index_page": null,
         "display_label": "S08E06",
         "source_locator_status": "original_1984_series_episode_page_individually_checked",
+        "full_caption_file_imported": false
+      }
+    ],
+    "S09E06": [
+      {
+        "provider": "Subtitle Cat",
+        "episode_id": "S09E06",
+        "source_page": "https://www.subtitlecat.com/subs/1121/night_court_s09e06_guess_who_s_listening_to_dinner.html",
+        "index_page": null,
+        "display_label": "S09E06",
+        "source_locator_status": "individually_checked_public_caption_display_page",
+        "full_caption_file_imported": false
+      }
+    ],
+    "S09E20": [
+      {
+        "provider": "Subtitle Cat",
+        "episode_id": "S09E20",
+        "source_page": "https://www.subtitlecat.com/subs/1121/Night%20Court%20s09e20%20Opportunity%20Knock%20Knocks%201.html",
+        "index_page": null,
+        "display_label": "S09E20",
+        "source_locator_status": "individually_checked_public_caption_display_page",
+        "full_caption_file_imported": false
+      }
+    ],
+    "S09E21": [
+      {
+        "provider": "Subtitle Cat",
+        "episode_id": "S09E21",
+        "source_page": "https://www.subtitlecat.com/subs/1121/night_court_s09e21_opportunity_knock_knocks_2.html",
+        "index_page": null,
+        "display_label": "S09E21",
+        "source_locator_status": "individually_checked_public_caption_display_page",
         "full_caption_file_imported": false
       }
     ],
@@ -681,7 +736,7 @@
     ]
   },
   "manually_verified_page_count": 62,
-  "page_versions_indexed": 62,
+  "page_versions_indexed": 67,
   "rights_note": "Only URL/filename metadata indexed; no transcript or SRT copied.",
   "scanned_index_urls": [],
   "scanning_errors": [
@@ -703,5 +758,6 @@
     "https://www.subtitlecat.com/list_page.php?from=1710200"
   ],
   "season04_direct_url_manifest": "research/season04-caption-page-locations.json",
-  "restriction": "URLs only; caption text is not held and reuse rights remain unassessed"
+  "restriction": "URLs only; caption text is not held and reuse rights remain unassessed",
+  "s07_s09_verified_pages_manifest": "research/s07-s09-remaining-direct-pages.json"
 }

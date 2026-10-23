@@ -140,3 +140,8 @@ The June 2025 batch yielded **105 individually episode-labeled upload-index entr
 ### S04 acquisition discovery complete; prioritize the remaining eight
 
 The entire original-series fourth season now has direct external caption-page locators without copying the protected dialogue. Next *discovery* effort should target **S07E03, S07E04, S09E06, S09E08, S09E17, S09E19, S09E20, S09E21** and independently verify actual caption/download accessibility, language, episode identity, and rights. S05–S09 otherwise have upload-index evidence for 105 episodes, but only some direct pages have been opened; index-only status must not be promoted automatically.
+
+
+### Source discovery now narrowed to three original-series episodes
+
+Only **S09E08 (Teacher's Pet), S09E17 (Party Girl (2)), and S09E19 (P.S. Do I Know You?)** currently lack a direct dialogue/caption page or an episode-specific source index. Season 4 is fully mapped and S07E03/E04 plus S09E06/E20/E21 now have verified external pages. Explore independent caption registries and authorized edition sources for the remaining three; do not invent a Subtitle Cat URL or mistake the 2023 reboot for the original. Once obtained, validate caption edition, source and completeness through the existing import/quality tools.
