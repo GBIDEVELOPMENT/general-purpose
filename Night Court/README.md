@@ -5,7 +5,7 @@ Scope: **only** the Harry Anderson / Reinhold Weege original series, not the 202
 ## Current material, 2026-10-23
 
 - All **193 season/episode identities**, nine seasons, have their own `seasons/Sxx/SxxEyy/episode.json` records. Season counts: 13, 22, 22, 22, 22, 22, 24, 24, 22.
-- **79 episode titles** verified from public episode indices are seeded (S01–S03 and S09; also S04E01), with **114 title slots intentionally unfilled** awaiting automated source reconciliation. [NOTE: arithmetic in this line is provisional; run `validate.py` for actual counts.]
+- **80 episode titles** verified from public episode indices are seeded (S01–S03 and S09; also S04E01), with **113 title slots intentionally unfilled** awaiting automated source reconciliation.
 - The catalog retains **57 episode-level Forever Dreaming transcript index entries** (S01–S03) and **47 Springfield! Springfield! transcript-index entries** (13 + 12 + 22), plus isolated caption pages for S04E01 and S09E22. A verified index does not mean the full text is stored here.
 - Six source-guide/index references are attached to each episode record as broad discovery pointers. Episode-specific evidence is distinguished by `level` and `verified`.
 - No third-party full scripts, subtitle files, review articles or wiki content has been copied into this repository. `holdings` arrays remain empty until a lawful/licensed/user-supplied artifact is ingested and checked.

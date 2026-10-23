@@ -61,8 +61,8 @@ def enrich(download=True):
             obj["original_air_date"]=r["airdate"]; obj["original_air_date_status"]="tvmaze_api_factual_metadata"; changed=True
         if r.get("id") and obj.get("tvmaze_episode_id") != r["id"]:
             obj["tvmaze_episode_id"]=r["id"]; changed=True
-        if r.get("url") and not any(x["provider"]=="TVmaze" and x.get("level")=="episode_page" for x in obj["episode_sources"]):
-            obj["episode_sources"].append({"kind":"episode_guide","provider":"TVmaze","url":r["url"],"level":"episode_page","verified":True,"content_imported":False});changed=True
+        if r.get("url") and not any(x["provider"]=="TVmaze" and x.get("level")=="episode_in_index" for x in obj["episode_sources"]):
+            obj["episode_sources"].append({"kind":"episode_guide","provider":"TVmaze","url":r["url"],"level":"episode_in_index","verified":True,"content_imported":False});changed=True
         if changed:
             p.write_text(json.dumps(obj,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
             updated+=1
