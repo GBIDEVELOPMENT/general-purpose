@@ -24,12 +24,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate initial records
         run: python "Night Court/tools/validate.py"
+      - name: Preserve previous licensed revisions before source refresh
+        run: python "Night Court/tools/preserve_wiki_revisions.py"
       - name: Reconcile TVmaze factual metadata
         run: python "Night Court/tools/refresh_episode_metadata.py" || echo "TVmaze unavailable"
       - name: Discover transcript page pointers (no dialogue)
         run: python "Night Court/tools/discover_transcript_urls.py"
       - name: Save two licensed Wikipedia pages (attributed)
         run: python "Night Court/tools/collect_open_wiki.py"
+      - name: Retain newly downloaded article revisions immutably
+        run: python "Night Court/tools/preserve_wiki_revisions.py"
       - name: Extract 193 production-credit rows from licensed wiki
         run: python "Night Court/tools/enrich_wikipedia_credits.py"
       - name: Validate enriched records
