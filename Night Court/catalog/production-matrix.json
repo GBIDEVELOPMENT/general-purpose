@@ -1,0 +1,297 @@
+{
+  "series": "night-court-1984",
+  "method": "deterministic count of archived Wikipedia credit strings; composite episodes counted separately",
+  "units": "episode parts",
+  "total_episodes": 193,
+  "distinct_director_credit_strings": 19,
+  "distinct_writer_credit_strings": 56,
+  "director_episode_counts": {
+    "Jeff Melman": 76,
+    "Jim Drake": 63,
+    "Tim Steele": 19,
+    "Alan Bergmann": 7,
+    "Jay Sandrich": 5,
+    "Howard Ritter": 3,
+    "Asaad Kelada": 2,
+    "Charles Robinson and Howard Ritter": 2,
+    "Gary Shimokawa": 2,
+    "Harry Anderson and Howard Ritter": 2,
+    "John Larroquette": 2,
+    "Kevin Sullivan": 2,
+    "Reinhold Weege": 2,
+    "Charles Robinson": 1,
+    "Christine Ballard": 1,
+    "James Burrows": 1,
+    "Lee Bernhardi": 1,
+    "Noam Pitlik": 1,
+    "Thomas Klein": 1
+  },
+  "writer_credit_line_episode_counts": {
+    "Reinhold Weege": 16,
+    "Tom Reeder": 14,
+    "Bob Stevens": 12,
+    "Bob Underwood": 12,
+    "Fred Rubin": 7,
+    "Gary Murphy & Larry Strawther": 7,
+    "Linwood Boomer": 7,
+    "Nat Mauldin": 7,
+    "Stuart Kreisman & Chris Cluess": 7,
+    "Elaine Aronson": 6,
+    "Teresa O'Neill": 6,
+    "Dennis Koenig": 5,
+    "Kevin Kelton": 5,
+    "Larry Strawther & Gary Murphy": 5,
+    "Nancy Steen & Neil Thompson": 5,
+    "Nancylee Myatt": 5,
+    "Bill Bryan": 4,
+    "Howard Ostroff": 4,
+    "Tom Straw": 4,
+    "Bill Fuller & Jim Pond": 3,
+    "Harry Anderson": 3,
+    "Jim Pond & Bill Fuller": 3,
+    "Lee Maddux": 3,
+    "Neil Thompson & Nancy Steen": 3,
+    "Ron Osborn & Jeff Reno": 3,
+    "Alison Rosenfeld-Desmarais": 2,
+    "Chris Cluess & Stuart Kreisman": 2,
+    "James Gates": 2,
+    "Mike Imfeld": 2,
+    "Paul J. Raley": 2,
+    "Rich Reinhart": 2,
+    "{{StoryTeleplay|s= Larry Strawther, Gary Murphy and Harry Anderson|t= Gary Murphy & Larry Strawther}}": 1,
+    "{{StoryTeleplay|s= R.J. Colleary|t= R.J. Colleary, Chris Cluess and Stuart Kreisman}}": 1,
+    "{{StoryTeleplay|s= Tom Abraham & Mike Underwood|t= Bob Underwood}}": 1,
+    "{{StoryTeleplay|s= Tom Straw & R.J. Colleary|t= Tom Straw}}": 1,
+    "Alison Rosenfeld": 1,
+    "Alison Rosenfeld Desmarais": 1,
+    "Ben Montanio & Vince Cheung": 1,
+    "Benjy Compson": 1,
+    "Bill Bryan, Fred Rubin, and Bob Underwood": 1,
+    "Fred Graver": 1,
+    "Gail Rock": 1,
+    "Harold Kimmel": 1,
+    "Harry Anderson & Turk Pipkin": 1,
+    "Jack Carrerow & Lisa A. Bannick": 1,
+    "Jeff Reno & Ron Osborn": 1,
+    "Jeffrey Davis & Julie Fleischer": 1,
+    "Larry Balmagia": 1,
+    "Leonard Mlodinow & Scott Rubenstein": 1,
+    "Nancylee Myatt & Karen Heckler": 1,
+    "Nat Mauldin and Reinhold Weege": 1,
+    "Nat Mauldin, Teresa O'Neill and Bob Stevens": 1,
+    "Robert Perlow & Gene Braunstein": 1,
+    "Tony Sheehan": 1,
+    "Vince Cheung & Ben Montanio": 1,
+    "Zachary D. Wechsler": 1
+  },
+  "season_matrices": {
+    "S01": {
+      "episodes": 13,
+      "directors": {
+        "James Burrows": 1,
+        "Asaad Kelada": 2,
+        "Jay Sandrich": 5,
+        "Jeff Melman": 4,
+        "Gary Shimokawa": 1
+      },
+      "writer_credit_lines": {
+        "Reinhold Weege": 5,
+        "Tom Reeder": 2,
+        "Larry Balmagia": 1,
+        "Bob Stevens": 2,
+        "{{StoryTeleplay|s= R.J. Colleary|t= R.J. Colleary, Chris Cluess and Stuart Kreisman}}": 1,
+        "Howard Ostroff": 1,
+        "Stuart Kreisman & Chris Cluess": 1
+      }
+    },
+    "S02": {
+      "episodes": 22,
+      "directors": {
+        "Jeff Melman": 14,
+        "Lee Bernhardi": 1,
+        "Jim Drake": 1,
+        "Noam Pitlik": 1,
+        "Gary Shimokawa": 1,
+        "Alan Bergmann": 3,
+        "Reinhold Weege": 1
+      },
+      "writer_credit_lines": {
+        "Bob Stevens": 3,
+        "Reinhold Weege": 4,
+        "Zachary D. Wechsler": 1,
+        "Ron Osborn & Jeff Reno": 3,
+        "Nat Mauldin": 3,
+        "Stuart Kreisman & Chris Cluess": 3,
+        "Tony Sheehan": 1,
+        "Tom Reeder": 3,
+        "Howard Ostroff": 1
+      }
+    },
+    "S03": {
+      "episodes": 22,
+      "directors": {
+        "Jeff Melman": 10,
+        "Alan Bergmann": 4,
+        "Reinhold Weege": 1,
+        "Jim Drake": 5,
+        "John Larroquette": 1,
+        "Tim Steele": 1
+      },
+      "writer_credit_lines": {
+        "Reinhold Weege": 4,
+        "Bob Stevens": 4,
+        "Teresa O'Neill": 4,
+        "Howard Ostroff": 1,
+        "Jeffrey Davis & Julie Fleischer": 1,
+        "Jeff Reno & Ron Osborn": 1,
+        "Nat Mauldin": 4,
+        "Nat Mauldin and Reinhold Weege": 1,
+        "Robert Perlow & Gene Braunstein": 1,
+        "Jack Carrerow & Lisa A. Bannick": 1
+      }
+    },
+    "S04": {
+      "episodes": 22,
+      "directors": {
+        "Jeff Melman": 13,
+        "Tim Steele": 2,
+        "John Larroquette": 1,
+        "Thomas Klein": 1,
+        "Jim Drake": 4,
+        "Harry Anderson and Howard Ritter": 1
+      },
+      "writer_credit_lines": {
+        "Reinhold Weege": 2,
+        "Teresa O'Neill": 2,
+        "Dennis Koenig": 3,
+        "Linwood Boomer": 4,
+        "Bob Stevens": 3,
+        "Tom Straw": 2,
+        "Tom Reeder": 3,
+        "Howard Ostroff": 1,
+        "Nat Mauldin, Teresa O'Neill and Bob Stevens": 1,
+        "Harry Anderson": 1
+      }
+    },
+    "S05": {
+      "episodes": 22,
+      "directors": {
+        "Jeff Melman": 17,
+        "Tim Steele": 5
+      },
+      "writer_credit_lines": {
+        "Linwood Boomer": 3,
+        "Bob Underwood": 2,
+        "Paul J. Raley": 1,
+        "Tom Reeder": 3,
+        "Gary Murphy & Larry Strawther": 3,
+        "{{StoryTeleplay|s= Tom Straw & R.J. Colleary|t= Tom Straw}}": 1,
+        "Tom Straw": 2,
+        "Rich Reinhart": 2,
+        "Dennis Koenig": 2,
+        "Reinhold Weege": 1,
+        "James Gates": 1,
+        "Larry Strawther & Gary Murphy": 1
+      }
+    },
+    "S06": {
+      "episodes": 22,
+      "directors": {
+        "Jeff Melman": 18,
+        "Tim Steele": 4
+      },
+      "writer_credit_lines": {
+        "Gary Murphy & Larry Strawther": 2,
+        "Bob Underwood": 4,
+        "Nancy Steen & Neil Thompson": 3,
+        "Harold Kimmel": 1,
+        "Tom Reeder": 3,
+        "Alison Rosenfeld": 1,
+        "Paul J. Raley": 1,
+        "Larry Strawther & Gary Murphy": 2,
+        "Mike Imfeld": 1,
+        "Harry Anderson": 1,
+        "{{StoryTeleplay|s= Larry Strawther, Gary Murphy and Harry Anderson|t= Gary Murphy & Larry Strawther}}": 1,
+        "James Gates": 1,
+        "Neil Thompson & Nancy Steen": 1
+      }
+    },
+    "S07": {
+      "episodes": 24,
+      "directors": {
+        "Jim Drake": 17,
+        "Tim Steele": 5,
+        "Charles Robinson and Howard Ritter": 1,
+        "Harry Anderson and Howard Ritter": 1
+      },
+      "writer_credit_lines": {
+        "Bob Underwood": 4,
+        "Gary Murphy & Larry Strawther": 2,
+        "Nancy Steen & Neil Thompson": 2,
+        "Fred Rubin": 4,
+        "Bill Bryan": 4,
+        "Neil Thompson & Nancy Steen": 2,
+        "Harry Anderson & Turk Pipkin": 1,
+        "Gail Rock": 1,
+        "Leonard Mlodinow & Scott Rubenstein": 1,
+        "Larry Strawther & Gary Murphy": 2,
+        "Bill Bryan, Fred Rubin, and Bob Underwood": 1
+      }
+    },
+    "S08": {
+      "episodes": 24,
+      "directors": {
+        "Jim Drake": 18,
+        "Howard Ritter": 2,
+        "Christine Ballard": 1,
+        "Charles Robinson and Howard Ritter": 1,
+        "Tim Steele": 1,
+        "Kevin Sullivan": 1
+      },
+      "writer_credit_lines": {
+        "Chris Cluess & Stuart Kreisman": 1,
+        "Stuart Kreisman & Chris Cluess": 2,
+        "Benjy Compson": 1,
+        "Elaine Aronson": 3,
+        "Harry Anderson": 1,
+        "Bob Underwood": 2,
+        "Kevin Kelton": 3,
+        "Jim Pond & Bill Fuller": 1,
+        "Fred Rubin": 3,
+        "Nancylee Myatt": 2,
+        "Lee Maddux": 1,
+        "Bill Fuller & Jim Pond": 2,
+        "Alison Rosenfeld-Desmarais": 1,
+        "{{StoryTeleplay|s= Tom Abraham & Mike Underwood|t= Bob Underwood}}": 1
+      }
+    },
+    "S09": {
+      "episodes": 22,
+      "directors": {
+        "Jim Drake": 18,
+        "Howard Ritter": 1,
+        "Tim Steele": 1,
+        "Kevin Sullivan": 1,
+        "Charles Robinson": 1
+      },
+      "writer_credit_lines": {
+        "Chris Cluess & Stuart Kreisman": 1,
+        "Stuart Kreisman & Chris Cluess": 1,
+        "Nancylee Myatt": 3,
+        "Kevin Kelton": 2,
+        "Elaine Aronson": 3,
+        "Jim Pond & Bill Fuller": 2,
+        "Ben Montanio & Vince Cheung": 1,
+        "Alison Rosenfeld Desmarais": 1,
+        "Lee Maddux": 2,
+        "Bill Fuller & Jim Pond": 1,
+        "Fred Graver": 1,
+        "Mike Imfeld": 1,
+        "Alison Rosenfeld-Desmarais": 1,
+        "Nancylee Myatt & Karen Heckler": 1,
+        "Vince Cheung & Ben Montanio": 1
+      }
+    }
+  },
+  "caveat": "Writer fields are source credit lines, not normalized individual contributor identities; co-writers, story/teleplay and name variants require manual parsing. Counts are episode parts, not filming or aired date chronology."
+}

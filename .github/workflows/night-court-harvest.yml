@@ -1,0 +1,45 @@
+name: Night Court archive metadata capture
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - research/night-court-original-archive
+    paths:
+      - "Night Court/tools/**"
+      - ".github/workflows/night-court-harvest.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: night-court-source-harvest
+  cancel-in-progress: false
+
+jobs:
+  gather:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate initial records
+        run: python "Night Court/tools/validate.py"
+      - name: Reconcile TVmaze factual metadata
+        run: python "Night Court/tools/refresh_episode_metadata.py" || echo "TVmaze unavailable"
+      - name: Discover transcript page pointers (no dialogue)
+        run: python "Night Court/tools/discover_transcript_urls.py"
+      - name: Save two licensed Wikipedia pages (attributed)
+        run: python "Night Court/tools/collect_open_wiki.py"
+      - name: Extract 193 production-credit rows from licensed wiki
+        run: python "Night Court/tools/enrich_wikipedia_credits.py"
+      - name: Validate enriched records
+        run: python "Night Court/tools/validate.py"
+      - name: Commit newly discovered information
+        shell: bash
+        run: |
+          git add -- "Night Court/"
+          if git diff --cached --quiet; then
+            echo "No new information"; exit 0
+          fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "research(night-court): refresh metadata and licensed wiki"
+          git push origin HEAD:research/night-court-original-archive
