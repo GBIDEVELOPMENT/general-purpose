@@ -1,0 +1,16 @@
+name: Night Court original caption HTML extraction self-test
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_original_caption_page_text.py'
+      - '.github/workflows/night-court-original-caption-page-parser.yml'
+permissions:
+  contents: read
+jobs:
+  parser-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify page extraction never imports unrelated HTML
+        run: python "Night Court/tools/import_original_caption_page_text.py" --self-test
