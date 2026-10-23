@@ -113,3 +113,8 @@ Original caption-display pages now indexed: [S07E03](https://www.subtitlecat.com
 ### Verified publisher caption-enabled viewing alternatives for remaining three
 
 Apple TV original-series episode pages explicitly advertise English (US) CC for [S09E08 *Teacher's Pet* (CA)](https://tv.apple.com/ca/episode/teachers-pet/umc.cmc.3um8xaumz7w0mjrn891m2sg4k?showId=umc.cmc.3v8igla11dgg4chywljv2og89), [S09E17 *Party Girl, Part 2* (US)](https://tv.apple.com/us/episode/party-girl-part-2/umc.cmc.5xgh3ov4a2c9kru8vn3n09xol?showId=umc.cmc.3v8igla11dgg4chywljv2og89), and [S09E19 *P.S. Do I Know You?* (CA)](https://tv.apple.com/ca/episode/ps-do-i-know-you/umc.cmc.55pw7ljknq3ttj9993slpfkdg?showId=umc.cmc.3v8igla11dgg4chywljv2og89). This establishes **caption-enabled streaming catalogue availability**, not availability of independently downloadable dialogue tracks. Content is copyrighted, region/payment requirements may apply, and zero caption file bytes were retrieved. See `catalog/streaming-cc-fallbacks.json`.
+
+
+## Owner-imported original-series dialogue, 2026-10-23
+
+**Two actual user-uploaded RARs physically preserved** in research/source-archives: 13 S01 SPRiNTER-labelled English SRTs and 22 S02 OSiTV-labelled English SRTs. All 35 subtitle files are stored as original bytes alongside source cue JSONL, readable text, hashes and edition/source attribution in their own episode dialogue/version directories. The precise byte-level source manifest is catalog/rar-ingestion-manifest.json; independently constructed inspection notes are research/season1-season2-subtitle-import-report.md. This is a source-acquisition milestone, unlike the previously catalogued external caption and transcript links. Full TV-episode completeness remains unverified.
