@@ -10,9 +10,9 @@ const html = fs.readFileSync(path.join(__dirname,'index.html'),'utf8');
 const source = html.match(/<script>([\s\S]+?)<\/script>/)?.[1];
 function fakeNode(tag='DIV') {
   return {
-    tagName:tag.toUpperCase(),children:[],value:'',textContent:'',style:{},classList:{add(){},remove(){},contains(){return false}},
+    tagName:tag.toUpperCase(),children:[],value:'',textContent:'',style:{setProperty(name,value){this[name]=value}},classList:{add(){},remove(){},contains(){return false}},
     append(...nodes){this.children.push(...nodes)},replaceChildren(...nodes){this.children=nodes},
-    remove(){},querySelector(){return null},setAttribute(){},getAttribute(){return null},
+    remove(){},querySelector(){return null},querySelectorAll(){return []},contains(){return false},getClientRects(){return [1]},setAttribute(name,value){this[name]=value},getAttribute(name){return this[name]||null},
     addEventListener(){},focus(){},click(){},get isConnected(){return true}
   };
 }
@@ -31,11 +31,11 @@ function boot() {
  const pos=source.indexOf('const match=location.hash.slice(1)');
  assert.ok(pos>0, 'page-load bootstrap located');
  const isolated='return '+source.slice(0,pos).trimStart()+
-  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady};\n})();';
+  'return {state,treeAdd,expandAncestors,paintTree,currentMatches,updateHash,withMediaType,resetSession,compareReady,drawComparison,trapPreviewFocus};\n})();';
  const app=new Function('document','history','location','localStorage','Option',isolated)(
    document,history,location,localStorage,function Option(name,value){return {name,value}}
  );
- return {app,get,urls};
+ return {app,get,urls,document};
 }
 test('browser source parses and controls have matching elements',()=>{
  assert.ok(source, 'inline script exists');
@@ -106,4 +106,41 @@ test('pinned visual comparisons require two different images on the same repo an
  app.state.preview={name:'A.svg',path:'design/A.svg'};assert.equal(app.compareReady(),false,'cannot compare file to itself');
  app.state.preview={name:'notes.md',path:'design/notes.md'};assert.equal(app.compareReady(),false,'only image compare');
  app.state.preview={name:'B.svg',path:'design/B.svg'};app.state.pinned.branch='other';assert.equal(app.compareReady(),false,'no cross-branch retained blob');
+});
+
+test('touch comparison renders wipe and side-by-side controls without network',()=>{
+ const {app,get}=boot();
+ app.state.repo='gamesbyian/Glimpse';app.state.branch='main';
+ app.state.preview={name:'current.svg',path:'design/current.svg'};app.state.currentBlob=new Blob(['B'],{type:'image/svg+xml'});
+ app.state.pinned={item:{name:'pinned.svg',path:'design/pinned.svg'},blob:new Blob(['A'],{type:'image/svg+xml'}),repo:app.state.repo,branch:'main'};
+ app.drawComparison();
+ assert.equal(app.state.compareMode,true);
+ assert.equal(get('previewBody').children.length,1);
+ const shell=get('previewBody').children[0],toolbar=shell.children[0];
+ assert.equal(toolbar.children.length,2);
+ assert.equal(shell.children[1].className,'compare-wipe');
+ const slider=shell.children[2];
+ assert.equal(slider.type,'range');
+ assert.equal(slider.value,'50');
+ slider.value='79';slider.oninput();
+ assert.equal(app.state.compareWipe,79);
+ assert.equal(shell.children[1].style['--reveal'],'79%');
+ toolbar.children[0].onclick();
+ assert.equal(app.state.compareDisplay,'side');
+ assert.equal(get('previewBody').children[0].children[1].className,'compare-grid');
+ app.state.compareMode=false;
+});
+test('modal focus trap wraps keyboard Tab in both directions',()=>{
+ const {app,get,document}=boot();
+ app.state.preview={name:'test.svg',path:'test.svg'};
+ const first=fakeNode('button'),last=fakeNode('button'), dialog=get('preview');
+ let active='';first.focus=()=>active='first';last.focus=()=>active='last';
+ dialog.querySelectorAll=()=>[first,last];dialog.contains=e=>e===first||e===last;
+ document.activeElement=last;
+ let prevented=false;
+ app.trapPreviewFocus({key:'Tab',shiftKey:false,preventDefault(){prevented=true}});
+ assert.equal(prevented,true);assert.equal(active,'first');
+ document.activeElement=first;prevented=false;
+ app.trapPreviewFocus({key:'Tab',shiftKey:true,preventDefault(){prevented=true}});
+ assert.equal(prevented,true);assert.equal(active,'last');
 });
