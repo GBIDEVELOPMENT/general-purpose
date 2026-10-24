@@ -1,0 +1,63 @@
+{
+  "schema": "night-court-s01e01-original-cadence-and-cost/1",
+  "episode_id": "S01E01",
+  "original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_video_bytes": 183386112,
+  "cadence": {
+    "codec_name": "mpeg4",
+    "avg_frame_rate": "30000/1001",
+    "r_frame_rate": "30000/1001",
+    "time_base": "1001/30000",
+    "start_pts": 0,
+    "nb_frames": "43404",
+    "field_order": null,
+    "width": 640,
+    "height": 480,
+    "duration_seconds": 1448.256,
+    "avg_fps_decimal": 29.97003,
+    "r_fps_decimal": 29.97003
+  },
+  "sampled_pts": {
+    "pts_sample_count": 91,
+    "unique_pts_count": 90,
+    "out_of_order_or_tied_adjacent_pts_count": 1,
+    "duplicate_pts_count": 1,
+    "sampled_video_pts_start_ms": 699933,
+    "sampled_video_pts_end_ms": 702902,
+    "median_sampled_frame_interval_ms": 33.367,
+    "nominal_interval_ms": 33.3667,
+    "sample_interval_within_1pct_nominal": true,
+    "decoded_frame_order_strictly_monotonic": false,
+    "whole_episode_cadence_verified": false
+  },
+  "wall_clock_stage_seconds": {
+    "ffprobe_stream_metadata_seconds": 0.055,
+    "ffprobe_sample_pts_seconds": 0.078,
+    "original_shot_score_window_seconds": 1.148,
+    "source_ftp_transfer_sha_verify_seconds": 4.796
+  },
+  "shot_proposal_count": 7,
+  "prior_shot_times_equal_current_run": true,
+  "verified_rate_visual_plan_counts": {
+    "frames": 31,
+    "baseline": 2,
+    "bursts": 5,
+    "transition_pairs": 7,
+    "cut_candidates": 7,
+    "events_supplied": 6,
+    "events_deferred": 1
+  },
+  "visual_plan_input_rate_provenance": "verified_local_ffprobe",
+  "original_picture_audio_frames_exported": false,
+  "source_video_ephemeral": true,
+  "full_episode_dual_asr_benchmarked": false,
+  "full_episode_visual_models_benchmarked": false,
+  "episode_initial_pass_under_30_minutes_verified": false,
+  "limitations": [
+    "PTS interval sampled in one short mid-episode seek, not a full frame cadence audit.",
+    "FFmpeg scene scores are original video *candidate changes*, not certified cuts.",
+    "Shot scoring only this 36s review window, not full-episode throughput.",
+    "No media content retained, no word recognition or character identity established."
+  ],
+  "wall_clock_measured_stages_seconds": 6.077
+}
