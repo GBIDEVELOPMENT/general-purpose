@@ -1,0 +1,58 @@
+name: Night Court trusted S09E19 sparse source anchors
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s09e19-untimed-anchors.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-s09e19-source-anchor
+  cancel-in-progress: false
+jobs:
+  source-evidence:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s09e19-untimed-anchor-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check original source/episode identity without credentials
+        run: python 'Night Court/tools/test_s09e19_untimed_video_anchor.py'
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Read one inventoried S09E19 AVI and prepare five temporary audio samples
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python 'Night Court/tools/s09e19_untimed_video_anchor_pilot.py' --acquire \
+            --scratch "${{ runner.temp }}/S09E19-ephemeral"
+      - name: Install independent compact ASR engine after credentialed step
+        run: python -m pip install 'faster-whisper>=1.1,<2'
+      - name: Compare ASR samples to original untimed source without FTP secrets
+        run: |
+          env -u FTP_PASSWORD python 'Night Court/tools/s09e19_untimed_video_anchor_pilot.py' \
+            --analyze --scratch "${{ runner.temp }}/S09E19-ephemeral" \
+            --output "${{ runner.temp }}/s09e19-untimed-anchor-review.json"
+      - name: Upload source-hashed JSON only, never AVI/WAV/model cache
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s09e19-untimed-original-source-anchors
+          path: ${{ runner.temp }}/s09e19-untimed-anchor-review.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Delete ephemeral audio and video byproducts
+        if: always()
+        run: rm -rf "${{ runner.temp }}/S09E19-ephemeral"
