@@ -15,7 +15,7 @@ class S09ReviewDecisions(unittest.TestCase):
     def accepted(self,d,kind):
         row=next(t for t in d["decisions"] if t["kind"]==kind)
         row.update(status="accepted_by_reviewer",reviewer_identifier="synthetic-unit-test",
-                   reviewer_note="Synthetic source evidence acceptance fixture only",
+                   review_note="Synthetic source evidence acceptance fixture only",
                    reviewer_attested=True)
         return row
 
