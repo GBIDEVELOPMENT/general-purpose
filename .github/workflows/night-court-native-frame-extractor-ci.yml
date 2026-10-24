@@ -1,0 +1,24 @@
+name: Night Court one-pass source frame extraction offline CI
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/extract_fast_visual_plan.py'
+      - 'Night Court/tools/test_extract_fast_visual_plan.py'
+      - '.github/workflows/night-court-native-frame-extractor-ci.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic-frames:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install video decoder
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Run bounded PTS source decoder tests
+        run: |
+          python 'Night Court/tools/test_extract_fast_visual_plan.py'
+          python 'Night Court/tools/test_fast_visual_pass.py'
