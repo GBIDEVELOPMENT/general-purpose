@@ -1,3 +1,5 @@
 Authorized exact S01E01 AVI five-window ASR sync-drift study. Inert owner request, no PR-supplied code or credentials. Trusted base SHA only; 5 x 30s windows.
 
 Second exact-source attempt after clipped-ASR abstention safeguard merged in PR #166.
+
+One bounded FTP connection retry is now allowed by reviewed main PR #173. Retry the exact same five fixed source audio windows; no broad media scan.
