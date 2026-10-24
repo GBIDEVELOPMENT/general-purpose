@@ -1,0 +1,50 @@
+name: FTP remove empty Screens directories
+on:
+  pull_request:
+    paths:
+      - 'media-organizer/empty_screens.py'
+      - 'media-organizer/approved-empty-screens.json'
+      - '.github/workflows/ftp-media-empty-screens.yml'
+  push:
+    branches: [main]
+    paths: ['media-organizer/approved-empty-screens.json']
+permissions:
+  contents: read
+concurrency:
+  group: ftp-media-empty-screen-folders
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python -m py_compile media-organizer/empty_screens.py
+          if [ -f media-organizer/approved-empty-screens.json ]; then
+            python media-organizer/empty_screens.py
+          fi
+  remove-empty:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    environment: ftp-media-changes
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          test -n "$FTP_PASSWORD"
+          python media-organizer/empty_screens.py --apply
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: removed-empty-screens
+          path: media-organizer/screens-folder-output/
+          if-no-files-found: warn
+          retention-days: 90
