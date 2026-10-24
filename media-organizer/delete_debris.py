@@ -48,7 +48,7 @@ def validate(manifest):
         raise ValueError("Invalid batch id")
     if not isinstance(manifest["description"],str) or len(manifest["description"])<15:raise ValueError("Missing rationale")
     entries=manifest["entries"]
-    if not isinstance(entries,list) or not 1<=len(entries)<=80:raise ValueError("Batch must have 1..80 entries")
+    if not isinstance(entries,list) or not 1<=len(entries)<=300:raise ValueError("Batch must have 1..300 entries")
     seen=set()
     for entry in entries:
         if not isinstance(entry,dict) or set(entry)!={"from","size","modify","category"}:raise ValueError("Unexpected entry keys")
