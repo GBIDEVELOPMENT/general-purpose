@@ -71,6 +71,20 @@ class FTPExecutionTests(unittest.TestCase):
             evidence=json.loads(journal.read_text())
             self.assertEqual(evidence["status"],"complete")
             self.assertEqual(len(evidence["completed"]),1)
+            self.assertTrue(evidence["completed"][0]["destination_verified"])
+    def test_broken_postrename_result_retains_uncertain_operation(self):
+        class DropOnRename(FakeFTP):
+            def rename(self,a,b):
+                self.files.pop(a)
+        ftp=DropOnRename()
+        with tempfile.TemporaryDirectory() as d:
+            journal=Path(d)/"completed.json"
+            with self.assertRaisesRegex(RuntimeError,"Post-rename"):
+                execute(ftp,plan([op()]),journal)
+            evidence=json.loads(journal.read_text())
+            self.assertEqual(evidence["status"],"partial_or_failed")
+            self.assertEqual(len(evidence["completed"]),1)
+            self.assertFalse(evidence["completed"][0]["destination_verified"])
     def test_occupied_destination_is_never_overwritten(self):
         ftp=FakeFTP()
         ftp.dirs.update({"/downloads/S","/downloads/S/Season 01"})
