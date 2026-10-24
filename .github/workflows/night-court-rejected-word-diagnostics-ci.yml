@@ -1,0 +1,27 @@
+name: Night Court bounded rejected-ASR word timestamp source-free QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/rejected_asr_word_diagnostics.py'
+      - 'Night Court/tools/test_rejected_asr_word_diagnostics.py'
+      - 'Night Court/tools/probe_s01e01_full_dual_asr.py'
+      - 'Night Court/tools/profile_s09e19_source_once_factory.py'
+      - 'Night Court/REJECTED-WORD-TIMESTAMP-TARGETED-REVIEW.md'
+      - '.github/workflows/night-court-rejected-word-diagnostics-ci.yml'
+permissions:
+  contents: read
+jobs:
+  diagnostics:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Reject forged timestamps, retain only capped source review hypotheses
+        run: |
+          python 'Night Court/tools/test_rejected_asr_word_diagnostics.py'
+          python 'Night Court/tools/test_s01e01_full_dual_asr.py'
+          python 'Night Court/tools/test_profile_s09e19_source_once_factory.py'
+          python -m py_compile 'Night Court/tools/probe_s01e01_full_dual_asr.py' 'Night Court/tools/profile_s09e19_source_once_factory.py'
