@@ -1,5 +1,10 @@
 # Nine-season evidence-linked screenplay production workboard
 
+## Highest-priority remaining untimed source: S09E19
+
+[S09E19-UNTIMED-VIDEO-ANCHOR-HANDOFF.md](S09E19-UNTIMED-VIDEO-ANCHOR-HANDOFF.md) defines a separately owned, five-window original-video ASR experiment for the single 347-paragraph untimed dialogue witness. The source AVI has only a filename/size inventory match, so the first secure job must fingerprint actual source bytes and compare **independent audio** with those paragraphs. Lexical matches are merely proposed source anchors, not invented SRT cue timecodes or evidence of speaker identity. This lane must not interfere with S01E01 voice/review work or the 193 reading-script scaffolds.
+
+
 ## Anonymous S01E01 voice similarity lane
 
 The owner-only [ECAPA voice experiment #40052520049](https://github.com/gamesbyian/general-purpose/actions/runs/40052520049) succeeded and [PR #205](https://github.com/gamesbyian/general-purpose/pull/205) retained [21 pairwise anonymous similarity measurements](seasons/S01/S01E01/derived/scene-review-v3/anonymous-voice-similarity.md) for seven sufficiently long proposed 60–90s spoken spans; three short candidate turns abstained. This is **not diarization, voice identification or character attribution**. Source extraction was isolated from third-party model execution at the credential boundary; no raw embeddings, voiceprints, AVI/audio or model weights were retained. Prioritize these pairs for original-source listening and actual mouth/voice corroboration before promoting any speaker claims. See [anonymous voice handoff](S01E01-ANONYMOUS-VOICE-HANDOFF.md).
