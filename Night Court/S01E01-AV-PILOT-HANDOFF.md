@@ -1,12 +1,12 @@
 # S01E01 audiovisual and vocal-performance pilot handoff
 
-**Status: bounded local-media executable added; original episode AV processing NOT yet performed.** Dated 2026-10-23. Scope original 1984–1992 *Night Court*. This handoff supersedes historical 35-dialogue-witness planning figures: the actual private archive has 193 episode witnesses (192 SRT, one S09E19 untimed). Zero episode cuts have been certified audiovisually complete.
+**Status: bounded local-media pipeline and actual S01E01 source audio/video sample processing completed; independent audiovisual and speaker verification remain open.** Dated 2026-10-23. Scope original 1984–1992 *Night Court*. This handoff supersedes historical 35-dialogue-witness planning figures: the actual private archive has 193 episode witnesses (192 SRT, one S09E19 untimed). Zero episode cuts have been certified audiovisually complete.
 
 ## Confirmed FTP inventory dispatch: 2026-10-23
 
 Owner-dispatched [workflow run #40041061527](https://github.com/gamesbyian/general-purpose/actions/runs/40041061527) completed both offline and authenticated metadata-only inventory jobs. The read-only listing covered **193 AVI files across 10 directories**, with **no listing errors** and no scan cap reached. Source basenames use `Night Court - 1x01 - ...`, so the previous `S01E01`-only recognizer initially mislabeled all 193 as unmatched. The reconciled, self-contained [inventory JSON](catalog/ftp-video-inventory-2026-10-23.json) now maps **193 unique expected season/episode IDs with zero missing, duplicates or extra IDs**.
 
-**S01E01 candidate:** `/downloads/Night Court TVRip S1-S9/Night.Court.S01.DVDRip.DivX/Night Court - 1x01 - All You Need Is Love.avi` (183,386,112 bytes). This is **filename/size evidence only**. No actual audio, frame, codec details, video hash or episode identity have been observed or confirmed. A dedicated bounded, authorized video-byte access path remains the next blocker before a real vocal-performance run.
+**S01E01 candidate:** `/downloads/Night Court TVRip S1-S9/Night.Court.S01.DVDRip.DivX/Night Court - 1x01 - All You Need Is Love.avi` (183,386,112 bytes). Subsequent real processing confirmed its AVI fingerprint, MPEG-4/MP3 streams, 1448.256-second runtime, bounded audio sample, frame hashes and a source speech-model sample. **Filename and digital evidence do not independently establish all audiovisual episode content, edition or transcript completeness.**
 
 ## Implemented in this PR
 
@@ -53,13 +53,13 @@ This is genuine **audio-processing infrastructure acceptance**, not speaker reco
 | 193/193 dialogue episode witnesses present | Completed in prior merged acquisitions |
 | 192 SRTs plus S09E19 untimed source | Completed |
 | Acoustic tools and optional eGeMAPS/F0 packages installed/tested on synthetic audio | Completed, CI #40040579138 |
-| FFmpeg/ffprobe single-episode bounded orchestration | Implemented here, synthetic CI pending |
+| FFmpeg/ffprobe single-episode bounded orchestration | **Completed and exercised on original S01E01 source** |
 | Actual S01E01 video-file identity and edition verified | **Not yet** |
 | Actual authorized S01E01 audio excerpt obtained and acoustically measured | **Completed, real pilot #40042590948** |
-| Caption/audio offset and drift map | **Not yet** |
+| Caption/audio offset and drift map | **Source-only 60–90s word-timing hypotheses exist; global offset/drift unverified** |
 | Speaker diarization and identity validation | **Not yet** |
 | Vocal delivery observations vs laughter/music contamination | **Not yet** |
-| Scene, physical action, and full episode AV script | **Not yet** |
+| Scene, physical action, and full episode AV script | **First source-linked static-frame scene passage rendered; dense 75–90s motion-review sampling in progress, complete production script not yet accepted** |
 
 ## Next engineering lanes
 
