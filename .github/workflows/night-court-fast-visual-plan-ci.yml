@@ -1,0 +1,39 @@
+name: Night Court fast shot-aware visual plan regression
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/plan_fast_visual_pass.py'
+      - 'Night Court/tools/test_fast_visual_pass.py'
+      - 'Night Court/research/s01e01-fast-visual-dryrun-input.json'
+      - 'Night Court/FAST-EPISODE-FACTORY-THROUGHPUT.md'
+      - '.github/workflows/night-court-fast-visual-plan-ci.yml'
+permissions:
+  contents: read
+jobs:
+  plan-test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-fast-shot-aware-visual-budget'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test fractional cadence, cut exclusion and hard evidence budgets
+        run: python 'Night Court/tools/test_fast_visual_pass.py'
+      - name: Check reproducible original S01E01 cut-time planning fixture
+        run: |
+          python 'Night Court/tools/plan_fast_visual_pass.py' \
+            --input 'Night Court/research/s01e01-fast-visual-dryrun-input.json' \
+            --output "${{ runner.temp }}/fast-visual-plan.json"
+          python - "${{ runner.temp }}/fast-visual-plan.json" <<'PY'
+          import json,sys
+          x=json.load(open(sys.argv[1],encoding="utf-8"))
+          assert x["counts"]=={
+              "frames":31,"baseline":2,"bursts":5,"transition_pairs":7,
+              "cut_candidates":7,"events_supplied":6,"events_deferred":1
+          },x["counts"]
+          assert x["frame_rate_provenance"]=="synthetic_unverified_assumption"
+          assert x["deferred_events"]==[{"event_id":"OBS-V2-02","reason":"near_or_crosses_cut"}]
+          assert not x["candidate_cuts_are_independently_verified"]
+          assert not x["speaker_action_or_script_accepted"]
+          PY
