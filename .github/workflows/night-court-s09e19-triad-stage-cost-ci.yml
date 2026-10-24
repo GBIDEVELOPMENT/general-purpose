@@ -1,0 +1,21 @@
+name: Night Court S09E19 immutable original-source triplet speed evidence QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/research/s09e19-original-triad-stage-speed-2026-10-24.json'
+      - 'Night Court/tools/test_s09e19_original_triad_stage_cost.py'
+      - '.github/workflows/night-court-s09e19-triad-stage-cost-ci.yml'
+permissions:
+  contents: read
+jobs:
+  source-free:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify source hash, full time budget, trial PTS and no screenplay acceptance
+        run: |
+          python 'Night Court/tools/test_s09e19_original_triad_stage_cost.py'
