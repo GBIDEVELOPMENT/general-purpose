@@ -1,0 +1,55 @@
+name: Night Court trusted S01E01 CTC word alignment
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-ctc-align.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-s01e01-ctc-alignment
+  cancel-in-progress: false
+jobs:
+  source-alignment:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-ctc-align-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      OMP_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CPU-only torch and bounded model dependencies
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python -m pip install 'torch==2.8.0+cpu' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install 'transformers>=4.47,<5' 'numpy>=1.26,<3' 'soundfile>=0.12,<0.14'
+      - name: Run source-independent CTC alignment correctness and abstention tests
+        run: |
+          python "Night Court/tools/test_ctc_source_aligner.py"
+          python "Night Court/tools/test_pilot_ftp_video_acoustics.py"
+      - name: Download exactly one owner AVI, run frozen-window original-text forced alignment
+        run: |
+          python "Night Court/tools/s01e01_ctc_source_pilot.py" --ftp \
+            --output "${{ runner.temp }}/s01e01-ctc-word-candidates.json"
+      - name: Retain compact tentative text/timing evidence only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-ctc-source-word-review
+          path: ${{ runner.temp }}/s01e01-ctc-word-candidates.json
+          retention-days: 7
+          if-no-files-found: error
