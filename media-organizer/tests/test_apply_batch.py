@@ -13,6 +13,16 @@ class BatchSafetyTests(unittest.TestCase):
         with self.assertRaises(ValueError):plan_validate(plan([op(dst="/downloads/../other/S - S01E01.mkv")]))
     def test_no_extension_change(self):
         with self.assertRaises(ValueError):plan_validate(plan([op(dst="/downloads/S/S - S01E01.avi")]))
+    def test_reviewed_artwork_and_text_are_allowed(self):
+        for ext in (".jpg",".jpeg",".png",".txt"):
+            x=op(src="/downloads/Studio 60/Source"+ext,
+                 dst="/downloads/Studio 60/Art and Notes/Reviewed"+ext)
+            self.assertEqual(len(plan_validate(plan([x]))),1)
+    def test_executable_and_mismatched_extension_refused(self):
+        for ext in (".exe",".sh",".bat",".py"):
+            with self.assertRaises(ValueError):
+                plan_validate(plan([op(src="/downloads/Studio 60/a"+ext,
+                        dst="/downloads/Studio 60/b"+ext)]))
     def test_no_episode_loss(self):
         with self.assertRaises(ValueError):plan_validate(plan([op(dst="/downloads/S/Filename.mkv")]))
     def test_multi_episode_retained(self):
