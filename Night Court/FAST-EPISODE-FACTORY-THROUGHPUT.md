@@ -98,3 +98,23 @@ Detailed stage timings in seconds: retrieve+SHA **5.275**; mono audio decode **5
 A durable [source and audio SHA pinned full-episode metric summary](research/s01e01-one-source-integrated-wall-clock-summary.json) links private source artifact #12567609259 (artifact expires October 31 2026), original artifact ZIP SHA `a0964a640c28814aeb18e89fcab9ce8d892fa3cc8f80d5e7e3aaa62d8b214033`, extracted original JSON SHA `c45b85e9bb17193cb0eeb6d60e86524349c00ea6e8d39d34bb01ea95989bd67d`.
 
 This establishes a **real, fast first source evidence pass** on S01E01, including entire original audio and entire original video scanning, but **not** visual-language image comprehension, full-source diarization/named characters, emotional expression or motion verification, human original-source listening, scene script completeness, GHA runner bootstrapping/install time or 193-episode p95. Candidate cuts are not certified shot/scene boundaries; one source still does not validate general runtime distribution. Original source/editors still have 0/17 human acceptance tasks S01E01, 0/11 S09E19, and 0/193 complete production-verified original-series screenplays.
+
+## October 24 verified *two-episode* source-once first-pass speed checkpoint
+
+**The first two genuinely source-verified original-series episodes ran in under four minutes of measured source work each.** Original S01E01 (1448.256s, source SRT) completed the integrated source-once audio+visual evidence pass in **239.826s** on [run #40115701804](https://github.com/gamesbyian/general-purpose/actions/runs/40115701804); actual S09E19 (1320.144s, 347 genuinely untimed original paragraphs) completed in **215.140s** on [run #40126128202](https://github.com/gamesbyian/general-purpose/actions/runs/40126128202). Each original AVI was retrieved/verified exactly once, decoded into one mono PCM soundtrack, independently recognized by Whisper tiny.en and Vosk/Kaldi HMM-WFST, source-frame-rate image-change scanned, then a limited set of source-PTS-checked JPEGs was decoded and discarded.
+
+| Actual measured first-pass pilot | S01E01 | S09E19 |
+|---|---:|---:|
+| Original running time | 24m08.256s | 22m00.144s |
+| Whole integrated source stages | 239.826s | 215.140s |
+| Independent model-agreed words | 1,417 | 1,299 |
+| Model-model agreement spans | 198 | 199 |
+| Scored video image changes, **not verified edits** | 212 | 212 |
+| Extracted source-PTS-checked JPEGs | 212 | 202 |
+| Original source file downloads | 1 | 1 |
+
+Both sources were encoded at `30000/1001` FPS. Original S09E19 has 40 sampled independent-ASR-versus-untimed-text probes, with 13 distinctive ordered original paragraph *lexical hypotheses* and **zero new original paragraph timestamps**. The S09E19 trusted artifact #12572627835, ZIP SHA `95af07bd3a2f5ad62a252fcb4171662b90e8ad926237479ad259280ee22eb0ca`, is being retained via exact-source import [PR #290](https://github.com/gamesbyian/general-purpose/pull/290) and a separate review branch.
+
+**Ground-truth dialogue coverage is not 92%.** For S01E01, 184/200 already machine-corroborated spans also correlate substantially with the original SRT, but the strict original episode source-word-position audit [CI #40126457612](https://github.com/gamesbyian/general-purpose/actions/runs/40126457612) found **1,332 of 2,286 immutable SRT token positions (58.3%)** represented in those positive three-text-witness candidates, across **237 of 336** source caption cues. That is *textual* coverage, not independently listened audio accuracy. **16** model/SRT disagreements remain for directed source listening. Both calculations avoid double-counting model spans/cue words.
+
+**Speed limit:** <=30-minute p95 *complete initial AV evidence pass* remains a design goal, not statistically proven by just two episodes. Measured stages excluded GitHub runner startup and OS/Python setup, **visual-language interpretation**, continuous source-video action/setting inspection, speaker-to-character assignment, vocal performance, independent dialogue error calibration, and final script QA. Downstream interpretation is the largest remaining unmeasured cost. Resist per-frame LLM calls over 43,000 source frames or default full-episode third ASR. Use short shot-aware bursts, batched scene contact sheets, critical dialogue discrepancies and spot-checks with measured quality/elapsed-time budgets. No full-screenplay publication may be inferred; original-series AV-accepted episodes remain **0/193**.
