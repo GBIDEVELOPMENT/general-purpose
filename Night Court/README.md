@@ -1,3 +1,39 @@
+## Actual complete held-dialogue pilot draft delivery, October 24
+
+The *code* from [PR #310](https://github.com/gamesbyian/general-purpose/pull/310),
+its output correction [PR #312](https://github.com/gamesbyian/general-purpose/pull/312),
+and the **two generated, source-reconciled artifacts** from
+[PR #313](https://github.com/gamesbyian/general-purpose/pull/313) are now
+merged. This is a concrete draft-production advance beyond research and
+scaffolding.
+
+- [S01E01 working screenplay](seasons/S01/S01E01/derived/caption-first-working-draft-v1/screenplay-draft.md)
+  reproduces all **336 original timecoded cues**, forming **404**
+  caption-typographic reading units, with six sampled source-video
+  observations and a targeted list of **16** ASR/caption mismatch cases
+  plus **eight** distributed checks. Dialogue defaults to the original
+  caption. No unknown dialogue is silently overwritten by ASR.
+- [S09E19 working screenplay](seasons/S09/S09E19/derived/caption-first-working-draft-v1/screenplay-draft.md)
+  reproduces all **347 untimed original source paragraphs**; it
+  includes six sampled picture notes scoped to the 15:00–15:25
+  candidate AV passage, while never fabricating original paragraph
+  times. Eight distributed source-paragraph controls are pending.
+- Both drafts have `draft-manifest.json` and `targeted-review.json`.
+  The exact-SHA regeneration test passes; both original source
+  witnesses remain untouched.
+
+**New measured draft status:** **2/193 complete-held-source-dialogue
+working drafts generated**, **0/193 editor-ready full-scene
+screenplays**, **0/193 independently AV-certified screenplays**.
+The original 193/193 source-only scaffolds still exist independently.
+These two initial drafts are currently *not* products that fully
+reconstruct action: substantial whole-episode setting, scene,
+speaker and physical-comedy work remains. The next genuine quality
+milestone is a human-usable screenplay with characters and key gags,
+not a new multi-model agreement artifact. We should use captions
+by default and selectively investigate disagreements rather than
+repeating whole-audio transcription.
+
 ## Fast caption-first working screenplay drafts
 
 The [working-screenplay standard](CAPTION-FIRST-WORKING-SCREENPLAY-POLICY.md)
