@@ -43,7 +43,7 @@ def windows(ep):
 
 
 def run(args,timeout=200):
-    return subprocess.run(args,check=True,capture_output=True,text=True,timeout=timeout)
+    try:\n        return subprocess.run(args,check=True,capture_output=True,text=True,timeout=timeout)\n    except subprocess.CalledProcessError as error:\n        # Display only FFmpeg stderr, never FTP credentials, audio or video.\n        raise RuntimeError('Bounded source decoder: '+(error.stderr or 'no detail')[-1000:]) from error
 
 
 def generate(media,out,ep):
@@ -55,7 +55,7 @@ def generate(media,out,ep):
     for start,duration,label in windows(ep):
         folder=out/label
         folder.mkdir()
-        run(['ffmpeg','-hide_banner','-nostdin','-loglevel','error',
+        run(['ffmpeg','-hide_banner','-nostdin','-loglevel','error','-threads','1','-filter_threads','1',
              '-ss',str(start),'-i',str(media),'-t',str(duration),'-an',
              '-vf','fps=5,scale=240:135:force_original_aspect_ratio=decrease,pad=240:135:(ow-iw)/2:(oh-ih)/2',
              '-q:v','7','-y',str(folder/'frame-%03d.jpg')],timeout=220)
