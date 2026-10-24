@@ -1,6 +1,6 @@
 # S01E01 anonymous voice-similarity proof
 
-**Status: first-pass engineering with source-independent synthetic CI pending.** Source only: original 1984–1992 *Night Court*, one pre-approved 60–90-second S01E01 window. The [ECAPA-TDNN VoxCeleb model](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb) is publicly released under Apache-2.0, with the supported current SpeechBrain `speechbrain.inference.speaker.EncoderClassifier` embedding interface. The model is pretrained for speech speaker verification, not for sitcom-character attribution or noisy television soundtracks.
+**Status: original-source model pass succeeded in owner-triggered [run #40052520049](https://github.com/gamesbyian/general-purpose/actions/runs/40052520049). Synthetic tests and exact-source FTP download succeeded; model and source files stayed ephemeral. The resulting anonymous JSON is being imported through this PR.** Source only: original 1984–1992 *Night Court*, one pre-approved 60–90-second S01E01 window. The [ECAPA-TDNN VoxCeleb model](https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb) is publicly released under Apache-2.0, with the supported current SpeechBrain `speechbrain.inference.speaker.EncoderClassifier` embedding interface. The model is pretrained for speech speaker verification, not for sitcom-character attribution or noisy television soundtracks.
 
 ## Evidence method
 
@@ -13,6 +13,12 @@ It stores **only a matrix of anonymous, uncalibrated pairwise cosine similaritie
 The trusted `.github/workflows/night-court-trusted-s01e01-ecapa.yml` is owner-only, exact-marker-branch and `pull_request_target` gated, with reviewed main-only checkout (`github.sha`) and disabled credential persistence. Crucially, **FTP_PASSWORD is exposed only in the first-party source download step**, never to the third-party SpeechBrain model. Original AVI bytes are confirmed with the known SHA and deleted before artifact publication. The model download is pin-recorded by remote commit hash at runtime and stays within ephemeral runner storage. CPU Torch/TorchAudio use matched 2.8 versions; SpeechBrain 1.0.3 is constrained away from incompatible Hugging Face Hub 1.x.
 
 Only a private, seven-day JSON artifact is saved when the real run succeeds. This is an additional bounded analysis pass, not permission to run thousands of episode model downloads or a 193-episode bulk factory.
+
+## Real source experiment findings
+
+Trusted run #40052520049 used the approved S01E01 AVI and model revision `0f99f2d0ebe89ac095bcc5903c4dd8f72b367286`. Of the ten prior ASR candidate spoken intervals, **seven** were at least 850ms and eligible for feature extraction; **three** were too short and explicitly abstained. **21 anonymous pairwise cosine scores** were retained, with the highest about **0.65873** (ASR segments 0 and 1). These scores are not speaker probabilities and cannot establish the number of speakers or their identities. Background music, sound effects, audience laughter and unverified diarization boundaries still contaminate the comparison.
+
+The source artifact #12543479351 contains only compact original-video SHA, source segment times, anonymous pairwise scores, exact model revision and uncertainties. No embedding vectors, voiceprints, audio/video bytes or person labels were retained. `tools/import_s01e01_anonymous_voice_similarity.py` will validate those limits again against the original ASR source before preserving JSON and a human-readable comparison inside `scene-review-v3`.
 
 ## Review acceptance
 
