@@ -11,7 +11,27 @@ from organize import ROOT, VIDEO, SIDE, connect, safe
 
 MAX_BATCH=80
 MEDIA=VIDEO|SIDE
-TOKEN=re.compile(r"(?i)\bS\d{2}E\d{2}\b")
+EPISODE=re.compile(r"(?i)S(\\d{1,2})E(\\d{1,3})")
+EXTRA_EPISODE=re.compile(r"(?i)^[ ._-]*E(\\d{1,3})(?!\\d)")
+def parse_episode_identity(filename):
+    """Return every represented episode, including E02 suffixes and cross-season spans.
+
+    Recognition is conservative. A video carrying an ambiguous cross-season
+    episode span must be routed for special handling instead of renamed.
+    """
+    stem=PurePosixPath(filename).stem
+    spans=list(EPISODE.finditer(stem))
+    identity=set()
+    for match in spans:
+        season=int(match.group(1))
+        identity.add((season,int(match.group(2))))
+        suffix=stem[match.end():]
+        while True:
+            extra=EXTRA_EPISODE.match(suffix)
+            if not extra:break
+            identity.add((season,int(extra.group(1))))
+            suffix=suffix[extra.end():]
+    return identity
 def validation_error(s):raise ValueError(s)
 def plan_validate(plan):
     if set(plan)!= {"root","batch_id","moves","description"}:
@@ -47,8 +67,12 @@ def plan_validate(plan):
         sources.add(src.casefold());targets.add(dst.casefold())
         # Content grouping, not arbitrary relabeling: recognizable TV filenames
         # must continue to contain an episode identifier after relocation.
-        if TOKEN.search(a.name) and not TOKEN.search(b.name):
-            validation_error("Cannot discard episode identity")
+        source_episodes=parse_episode_identity(a.name)
+        target_episodes=parse_episode_identity(b.name)
+        if len({s for s,_ in source_episodes})>1:
+            validation_error("Cross-season episode pack requires manual Plex mapping")
+        if source_episodes and source_episodes!=target_episodes:
+            validation_error("Cannot discard, change or invent episode identity")
         ops.append(item)
     if sources & targets:
         validation_error("Multi-stage chains/cycles not allowed in one batch")
