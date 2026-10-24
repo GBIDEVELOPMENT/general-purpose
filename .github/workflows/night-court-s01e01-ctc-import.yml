@@ -1,0 +1,54 @@
+name: Night Court S01E01 CTC source-alignment evidence import
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s01e01_ctc_source_evidence.py'
+      - 'Night Court/S01E01-CTC-ALIGNMENT-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-ctc-import.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  retain:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s01e01-ctc-audio-comparison'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-s01e01-ctc-audio-comparison
+          persist-credentials: true
+      - name: Fetch private acoustic source-only JSON artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/s01e01-ctc"
+          gh run download 40048872758 --repo gamesbyian/general-purpose \
+            --name night-court-s01e01-ctc-source-word-review \
+            --dir "${{ runner.temp }}/s01e01-ctc"
+      - name: Verify every source turn, source/AVI checksum and aligner uncertainty
+        run: |
+          python "Night Court/tools/import_s01e01_ctc_source_evidence.py" \
+            "${{ runner.temp }}/s01e01-ctc/s01e01-ctc-word-candidates.json"
+          python "Night Court/tools/validate_dialogue.py"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("Night Court/seasons/S01/S01E01/derived/scene-review-v3")
+          j=json.loads((p/"ctc-source-word-candidates.json").read_text())
+          assert len(j["source_turns"])==11
+          assert not j["model_predictions_are_verified_word_alignment"]
+          assert not j["actor_identity_verified"]
+          assert (p/"ctc-source-word-review.md").is_file()
+          print("Independent acoustic model review safely retained, still AV-unverified")
+          PY
+      - name: Commit only compact private derived data, no media/model weights
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/S01/S01E01/derived/scene-review-v3/ctc-source-word-candidates.json" \
+            "Night Court/seasons/S01/S01E01/derived/scene-review-v3/ctc-source-word-review.md"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): preserve independent CTC original-text candidate alignment"
+            git push origin HEAD:data/night-court-s01e01-ctc-audio-comparison
+          fi

@@ -1,0 +1,666 @@
+{
+  "schema": "night-court-ctc-source-constrained-words/1",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_pcm_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+  "source_window_ms": [
+    60000,
+    90000
+  ],
+  "ctc_model": "facebook/wav2vec2-base-960h",
+  "model_revision_sha": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+  "tools": {
+    "torch": "2.8.0+cpu",
+    "transformers": "4.57.6",
+    "numpy": "2.4.6",
+    "soundfile": "0.13.1"
+  },
+  "source_turns": [
+    {
+      "cue": 19,
+      "source_turn_index": 0,
+      "text": "Did you say \"mercurial\"?",
+      "status": "abstain_no_source_ASR_turn",
+      "proposed_words": []
+    },
+    {
+      "cue": 19,
+      "source_turn_index": 1,
+      "text": "I'm trying to make up for lack of education.",
+      "asr_segment_index": 0,
+      "segment_ms": [
+        60640,
+        62800
+      ],
+      "status": "candidate_ctc_forced_alignment_not_audio_verified",
+      "ctc_processing_window_ms": [
+        60290,
+        63150
+      ],
+      "proposed_words": [
+        {
+          "word": "IM",
+          "time_candidate_ms": [
+            60894,
+            60975
+          ],
+          "mean_matched_ctc_frame_probability": 0.5456,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "TRYING",
+          "time_candidate_ms": [
+            61015,
+            61156
+          ],
+          "mean_matched_ctc_frame_probability": 0.4356,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "TO",
+          "time_candidate_ms": [
+            61176,
+            61216
+          ],
+          "mean_matched_ctc_frame_probability": 0.9035,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "MAKE",
+          "time_candidate_ms": [
+            61257,
+            61378
+          ],
+          "mean_matched_ctc_frame_probability": 0.9878,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "UP",
+          "time_candidate_ms": [
+            61438,
+            61478
+          ],
+          "mean_matched_ctc_frame_probability": 0.9989,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "FOR",
+          "time_candidate_ms": [
+            61519,
+            61599
+          ],
+          "mean_matched_ctc_frame_probability": 0.9809,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "LACK",
+          "time_candidate_ms": [
+            61780,
+            61942
+          ],
+          "mean_matched_ctc_frame_probability": 0.9972,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "OF",
+          "time_candidate_ms": [
+            62002,
+            62042
+          ],
+          "mean_matched_ctc_frame_probability": 0.9926,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "EDUCATION",
+          "time_candidate_ms": [
+            62163,
+            62767
+          ],
+          "mean_matched_ctc_frame_probability": 0.6969,
+          "status": "candidate_unreviewed"
+        }
+      ],
+      "candidate_ctc_mean_log_probability": -0.7852,
+      "candidate_alignment_abstentions": 0,
+      "lexical_transcript": [
+        "IM",
+        "TRYING",
+        "TO",
+        "MAKE",
+        "UP",
+        "FOR",
+        "LACK",
+        "OF",
+        "EDUCATION"
+      ]
+    },
+    {
+      "cue": 20,
+      "source_turn_index": 0,
+      "text": "So every month, I pick a word at random out of the dictionary...",
+      "asr_segment_index": 1,
+      "segment_ms": [
+        63340,
+        65900
+      ],
+      "status": "candidate_ctc_forced_alignment_not_audio_verified",
+      "ctc_processing_window_ms": [
+        62990,
+        66250
+      ],
+      "proposed_words": [
+        {
+          "word": "SO",
+          "time_candidate_ms": [
+            63211,
+            63312
+          ],
+          "mean_matched_ctc_frame_probability": 0.9999,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "EVERY",
+          "time_candidate_ms": [
+            63413,
+            63553
+          ],
+          "mean_matched_ctc_frame_probability": 0.9994,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "MONTH",
+          "time_candidate_ms": [
+            63634,
+            63835
+          ],
+          "mean_matched_ctc_frame_probability": 0.9962,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "I",
+          "time_candidate_ms": [
+            63916,
+            63936
+          ],
+          "mean_matched_ctc_frame_probability": 0.9994,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "PICK",
+          "time_candidate_ms": [
+            64016,
+            64157
+          ],
+          "mean_matched_ctc_frame_probability": 0.6975,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "A",
+          "time_candidate_ms": [
+            64238,
+            64258
+          ],
+          "mean_matched_ctc_frame_probability": 0.9882,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "WORD",
+          "time_candidate_ms": [
+            64318,
+            64499
+          ],
+          "mean_matched_ctc_frame_probability": 0.9998,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "AT",
+          "time_candidate_ms": [
+            64580,
+            64620
+          ],
+          "mean_matched_ctc_frame_probability": 0.9867,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "RANDOM",
+          "time_candidate_ms": [
+            64700,
+            65063
+          ],
+          "mean_matched_ctc_frame_probability": 0.986,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "OUT",
+          "time_candidate_ms": [
+            65123,
+            65204
+          ],
+          "mean_matched_ctc_frame_probability": 0.9978,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "OF",
+          "time_candidate_ms": [
+            65244,
+            65284
+          ],
+          "mean_matched_ctc_frame_probability": 0.9523,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "THE",
+          "time_candidate_ms": [
+            65324,
+            65385
+          ],
+          "mean_matched_ctc_frame_probability": 0.961,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "DICTIONARY",
+          "time_candidate_ms": [
+            65425,
+            66009
+          ],
+          "mean_matched_ctc_frame_probability": 0.7956,
+          "status": "candidate_unreviewed"
+        }
+      ],
+      "candidate_ctc_mean_log_probability": -0.2783,
+      "candidate_alignment_abstentions": 0,
+      "lexical_transcript": [
+        "SO",
+        "EVERY",
+        "MONTH",
+        "I",
+        "PICK",
+        "A",
+        "WORD",
+        "AT",
+        "RANDOM",
+        "OUT",
+        "OF",
+        "THE",
+        "DICTIONARY"
+      ]
+    },
+    {
+      "cue": 21,
+      "source_turn_index": 0,
+      "text": "...and use it all that month.",
+      "asr_segment_index": 2,
+      "segment_ms": [
+        65900,
+        68080
+      ],
+      "status": "candidate_ctc_forced_alignment_not_audio_verified",
+      "ctc_processing_window_ms": [
+        65550,
+        68430
+      ],
+      "proposed_words": [
+        {
+          "word": "AND",
+          "time_candidate_ms": [
+            65772,
+            66497
+          ],
+          "mean_matched_ctc_frame_probability": 0.9706,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "USE",
+          "time_candidate_ms": [
+            66577,
+            66678
+          ],
+          "mean_matched_ctc_frame_probability": 0.9973,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "IT",
+          "time_candidate_ms": [
+            66758,
+            66799
+          ],
+          "mean_matched_ctc_frame_probability": 0.9953,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "ALL",
+          "time_candidate_ms": [
+            66960,
+            67081
+          ],
+          "mean_matched_ctc_frame_probability": 0.9995,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "THAT",
+          "time_candidate_ms": [
+            67141,
+            67242
+          ],
+          "mean_matched_ctc_frame_probability": 0.7133,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "MONTH",
+          "time_candidate_ms": [
+            67342,
+            68168
+          ],
+          "mean_matched_ctc_frame_probability": 0.5951,
+          "status": "candidate_unreviewed"
+        }
+      ],
+      "candidate_ctc_mean_log_probability": -0.6093,
+      "candidate_alignment_abstentions": 0,
+      "lexical_transcript": [
+        "AND",
+        "USE",
+        "IT",
+        "ALL",
+        "THAT",
+        "MONTH"
+      ]
+    },
+    {
+      "cue": 22,
+      "source_turn_index": 0,
+      "text": "My, how...",
+      "asr_segment_index": 3,
+      "segment_ms": [
+        70640,
+        71940
+      ],
+      "status": "candidate_ctc_forced_alignment_not_audio_verified",
+      "ctc_processing_window_ms": [
+        70290,
+        72290
+      ],
+      "proposed_words": [
+        {
+          "word": "MY",
+          "time_candidate_ms": [
+            70351,
+            70492
+          ],
+          "mean_matched_ctc_frame_probability": 0.0961,
+          "status": "abstain_low_acoustic_support"
+        },
+        {
+          "word": "HOW",
+          "time_candidate_ms": [
+            70674,
+            70856
+          ],
+          "mean_matched_ctc_frame_probability": 0.8528,
+          "status": "candidate_unreviewed"
+        }
+      ],
+      "candidate_ctc_mean_log_probability": -0.8082,
+      "candidate_alignment_abstentions": 1,
+      "lexical_transcript": [
+        "MY",
+        "HOW"
+      ]
+    },
+    {
+      "cue": 22,
+      "source_turn_index": 1,
+      "text": "Minimifidian?",
+      "status": "abstain_no_source_ASR_turn",
+      "proposed_words": []
+    },
+    {
+      "cue": 23,
+      "source_turn_index": 0,
+      "text": "Is that a real word?",
+      "asr_segment_index": 5,
+      "segment_ms": [
+        74880,
+        76740
+      ],
+      "status": "candidate_ctc_forced_alignment_not_audio_verified",
+      "ctc_processing_window_ms": [
+        74530,
+        77090
+      ],
+      "proposed_words": [
+        {
+          "word": "IS",
+          "time_candidate_ms": [
+            75155,
+            75215
+          ],
+          "mean_matched_ctc_frame_probability": 0.917,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "THAT",
+          "time_candidate_ms": [
+            75296,
+            75477
+          ],
+          "mean_matched_ctc_frame_probability": 0.976,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "A",
+          "time_candidate_ms": [
+            75578,
+            75598
+          ],
+          "mean_matched_ctc_frame_probability": 0.9963,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "REAL",
+          "time_candidate_ms": [
+            75760,
+            76022
+          ],
+          "mean_matched_ctc_frame_probability": 0.9677,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "WORD",
+          "time_candidate_ms": [
+            76143,
+            76445
+          ],
+          "mean_matched_ctc_frame_probability": 0.9999,
+          "status": "candidate_unreviewed"
+        }
+      ],
+      "candidate_ctc_mean_log_probability": -0.4291,
+      "candidate_alignment_abstentions": 0,
+      "lexical_transcript": [
+        "IS",
+        "THAT",
+        "A",
+        "REAL",
+        "WORD"
+      ]
+    },
+    {
+      "cue": 24,
+      "source_turn_index": 0,
+      "text": "Does a bear extravasate in the forest?",
+      "asr_segment_index": 6,
+      "segment_ms": [
+        77160,
+        79420
+      ],
+      "status": "candidate_ctc_forced_alignment_not_audio_verified",
+      "ctc_processing_window_ms": [
+        76810,
+        79770
+      ],
+      "proposed_words": [
+        {
+          "word": "DOES",
+          "time_candidate_ms": [
+            77112,
+            77313
+          ],
+          "mean_matched_ctc_frame_probability": 0.489,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "A",
+          "time_candidate_ms": [
+            77374,
+            77394
+          ],
+          "mean_matched_ctc_frame_probability": 0.9906,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "BEAR",
+          "time_candidate_ms": [
+            77474,
+            77716
+          ],
+          "mean_matched_ctc_frame_probability": 0.7886,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "EXTRAVASATE",
+          "time_candidate_ms": [
+            77897,
+            78542
+          ],
+          "mean_matched_ctc_frame_probability": 0.7777,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "IN",
+          "time_candidate_ms": [
+            78602,
+            78642
+          ],
+          "mean_matched_ctc_frame_probability": 0.9969,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "THE",
+          "time_candidate_ms": [
+            78683,
+            78763
+          ],
+          "mean_matched_ctc_frame_probability": 0.9948,
+          "status": "candidate_unreviewed"
+        },
+        {
+          "word": "FOREST",
+          "time_candidate_ms": [
+            78803,
+            79126
+          ],
+          "mean_matched_ctc_frame_probability": 0.902,
+          "status": "candidate_unreviewed"
+        }
+      ],
+      "candidate_ctc_mean_log_probability": -0.374,
+      "candidate_alignment_abstentions": 0,
+      "lexical_transcript": [
+        "DOES",
+        "A",
+        "BEAR",
+        "EXTRAVASATE",
+        "IN",
+        "THE",
+        "FOREST"
+      ]
+    },
+    {
+      "cue": 25,
+      "source_turn_index": 0,
+      "text": "What?",
+      "asr_segment_index": 7,
+      "segment_ms": [
+        83300,
+        83780
+      ],
+      "status": "candidate_ctc_forced_alignment_not_audio_verified",
+      "ctc_processing_window_ms": [
+        82950,
+        84130
+      ],
+      "proposed_words": [
+        {
+          "word": "WHAT",
+          "time_candidate_ms": [
+            83642,
+            83906
+          ],
+          "mean_matched_ctc_frame_probability": 0.4992,
+          "status": "candidate_unreviewed"
+        }
+      ],
+      "candidate_ctc_mean_log_probability": -0.725,
+      "candidate_alignment_abstentions": 0,
+      "lexical_transcript": [
+        "WHAT"
+      ]
+    },
+    {
+      "cue": 26,
+      "source_turn_index": 0,
+      "text": "No.",
+      "asr_segment_index": 8,
+      "segment_ms": [
+        86720,
+        87200
+      ],
+      "status": "candidate_ctc_forced_alignment_not_audio_verified",
+      "ctc_processing_window_ms": [
+        86370,
+        87550
+      ],
+      "proposed_words": [
+        {
+          "word": "NO",
+          "time_candidate_ms": [
+            86899,
+            87123
+          ],
+          "mean_matched_ctc_frame_probability": 0.248,
+          "status": "abstain_low_acoustic_support"
+        }
+      ],
+      "candidate_ctc_mean_log_probability": -0.5437,
+      "candidate_alignment_abstentions": 1,
+      "lexical_transcript": [
+        "NO"
+      ]
+    },
+    {
+      "cue": 27,
+      "source_turn_index": 0,
+      "text": "Tell the judge the mayor called.",
+      "asr_segment_index": 9,
+      "status": "abstain_source_caption_outside_audio_window",
+      "proposed_words": []
+    }
+  ],
+  "aligner": "original_source_text_constrained_CTC_Viterbi_with_abstention",
+  "model_audio_window_complete": false,
+  "model_predictions_are_verified_word_alignment": false,
+  "source_caption_offset_and_drift_verified": false,
+  "actor_identity_verified": false,
+  "acting_emotion_verified": false,
+  "finished_screenplay_verified": false,
+  "raw_episode_media_or_audio_in_artifact": false,
+  "limitations": [
+    "CTC_alignment_can_force_incorrect_text_onto_acoustic_frames",
+    "sitcom_music_and_laughter_are_present_in_mix",
+    "rare_comic_vocabulary_and_unmatched_cues_require_manual_review",
+    "model_segment_boundaries_are_tiny_en_hypotheses",
+    "only_60_to_90s_original_episode_excerpt_was_processed"
+  ]
+}
