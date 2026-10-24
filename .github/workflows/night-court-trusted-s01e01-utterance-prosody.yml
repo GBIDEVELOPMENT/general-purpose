@@ -1,0 +1,49 @@
+name: Night Court trusted S01E01 utterance prosody
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-utterance-prosody.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-s01e01-utterance-prosody
+  cancel-in-progress: false
+jobs:
+  measure:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-utterance-prosody-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install FFmpeg and noncommercially unrestricted Python acoustics tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python -m pip install -r "Night Court/tools/vocal-requirements-prosody-open.txt"
+      - name: Check synthetic F0 and source integrity
+        run: python "Night Court/tools/test_s01e01_utterance_prosody.py"
+      - name: Analyze 10 ASR-timed mixed-audio utterances from only pinned S01E01 AVI
+        run: |
+          python "Night Court/tools/s01e01_utterance_prosody.py" --ftp --output "${{ runner.temp }}/utterance-prosody.json"
+      - name: Preserve only derived vocal measurements, not media or model weights
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-utterance-mix-prosody
+          path: ${{ runner.temp }}/utterance-prosody.json
+          retention-days: 7
+          if-no-files-found: error
