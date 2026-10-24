@@ -1,0 +1,21 @@
+name: Night Court original series full runtime scene atlas offline QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/capture_whole_episode_scene_atlas.py'
+      - 'Night Court/tools/test_capture_whole_episode_scene_atlas.py'
+      - '.github/workflows/night-court-scene-atlas-qa.yml'
+      - '.github/workflows/night-court-trusted-scene-atlas.yml'
+permissions:
+  contents: read
+jobs:
+  no-source:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify SHA bindings, deterministic full runtime sampling, nonpromotion
+        run: python 'Night Court/tools/test_capture_whole_episode_scene_atlas.py'

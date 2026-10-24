@@ -1,0 +1,59 @@
+name: Night Court trusted original full-episode scene photo contact sheets
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-whole-episode-scene-atlas.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-original-overview-two-episodes
+  cancel-in-progress: false
+jobs:
+  original-video-overview:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-original-scene-atlas-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    strategy:
+      fail-fast: false
+      matrix:
+        episode: [S01E01, S09E19]
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Checkout reviewed base only, never proposed pull-request code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Verify original-video edition/sample bounds without secrets
+        run: python 'Night Court/tools/test_capture_whole_episode_scene_atlas.py'
+      - name: Install only bounded image renderer and source decoder
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1 || ! command -v ffprobe >/dev/null 2>&1; then
+            timeout 120s sudo apt-get update -qq
+            timeout 180s sudo apt-get install -y -qq ffmpeg
+          fi
+          python -m pip install --disable-pip-version-check --retries 2 --timeout 30 'Pillow==11.3.0'
+      - name: Independently capture exact-SHA original series episode overview
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python -u 'Night Court/tools/capture_whole_episode_scene_atlas.py' --ftp \
+            --episode "${{ matrix.episode }}" \
+            --output "${{ runner.temp }}/night-court-original-scene-overview/${{ matrix.episode }}"
+      - name: Preserve only temporary photo thumbnails and hash/PTS-proposal catalogue
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-private-original-scene-overview-${{ matrix.episode }}
+          path: ${{ runner.temp }}/night-court-original-scene-overview/${{ matrix.episode }}/
+          if-no-files-found: error
+          retention-days: 7
+      - name: Remove all runner image derivatives
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-original-scene-overview"
