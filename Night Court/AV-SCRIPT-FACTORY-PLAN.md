@@ -1,3 +1,7 @@
+## Current 193-episode AV evidence acceptance state
+
+All **193** original-series episodes have source-only reading-script scaffolds (192 timed SRT witnesses, one S09E19 untimed text witness). Exactly **two episodes** currently have bounded actual-source audiovisual script evidence: S01E01 (30-second multimodal original cut) and S09E19 (five sparse 25s original audio excerpts plus 100 source-image samples in a 25s visual passage). Both have separate evidence-linked, **unaccepted** script excerpts and source hash maps. **Zero of 193 episodes have independently verified production-quality complete scripts**, and no authoritative speaker/acting emotion claims are established. The workboard's generated [AV queue](catalog/av-script-reconstruction-queue.json) reconciles these source stages without promoting unverified source text to video truth.
+
 # Night Court audiovisual script-generation factory
 
 ## First anonymous acoustic speaker-resemblance checkpoint
