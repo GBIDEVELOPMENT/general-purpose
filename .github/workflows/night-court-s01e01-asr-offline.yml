@@ -1,0 +1,20 @@
+name: Night Court S01E01 ASR/prosody offline checks
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/run_s01e01_asr_prosody.py'
+      - 'Night Court/tools/pilot_ftp_s01e01_asr_prosody.py'
+      - 'Night Court/tools/test_s01e01_asr_alignment.py'
+      - '.github/workflows/night-court-s01e01-asr-offline.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test text-only alignment and compile source
+        run: |
+          python -m py_compile 'Night Court/tools/run_s01e01_asr_prosody.py' 'Night Court/tools/pilot_ftp_s01e01_asr_prosody.py'
+          python 'Night Court/tools/test_s01e01_asr_alignment.py'
