@@ -43,8 +43,11 @@ def windows(ep):
 
 
 def run(args,timeout=200):
-    try:\n        return subprocess.run(args,check=True,capture_output=True,text=True,timeout=timeout)\n    except subprocess.CalledProcessError as error:\n        # Display only FFmpeg stderr, never FTP credentials, audio or video.\n        raise RuntimeError('Bounded source decoder: '+(error.stderr or 'no detail')[-1000:]) from error
-
+    try:
+        return subprocess.run(args,check=True,capture_output=True,text=True,timeout=timeout)
+    except subprocess.CalledProcessError as error:
+        # Only decoder diagnostics. No credentials or source audio/video.
+        raise RuntimeError('Bounded original decoder: '+(error.stderr or 'no detail')[-1000:]) from error
 
 def generate(media,out,ep):
     from PIL import Image,ImageDraw
