@@ -1,0 +1,3934 @@
+{
+  "schema": "night-court-s09e19-whole-source-once-cross-episode-benchmark/1",
+  "episode_id": "S09E19",
+  "original_series": "night-court-1984",
+  "original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "source_video_bytes": 183377920,
+  "original_untimed_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_source_paragraphs": 347,
+  "original_source_paragraphs_with_source_timecodes": 0,
+  "decoded_original_pcm_sha256": "7f3e3634c99469214360d59faf69c7838301e6ee94d5f08968382a74607b6711",
+  "original_video_duration_ms": 1320144,
+  "original_audio_duration_ms": 1320144,
+  "video_encoded_avg_fps": "30000/1001",
+  "original_audio_decoded_once": true,
+  "original_video_download_count": 1,
+  "model_families": [
+    "whisper",
+    "kaldi_hmm_wfst"
+  ],
+  "model_was_primed_by_original_text": false,
+  "model_word_counts": {
+    "whisper": 2338,
+    "vosk": 2249
+  },
+  "model_invalid_word_time_counts": {
+    "whisper": 90,
+    "vosk": 0
+  },
+  "model_rejection_reasons": {
+    "whisper": {
+      "zero_or_reversed_rounded_word_time": 90
+    },
+    "vosk": {}
+  },
+  "whisper_rejected_word_time_review": {
+    "total_invalid_word_intervals": 90,
+    "retained_bounded_invalid_time_proposals": 90,
+    "unretained_diagnostics_over_cap": 0,
+    "rejection_details_no_source_time_promotion": [
+      {
+        "model_hypothesis_text": " Christine,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 25.18,
+        "untrusted_raw_model_end_seconds": 25.18,
+        "model_segment_interval_ms_proposal": [
+          23760,
+          27200
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "christine",
+            "model_proposed_time_ms": [
+              24660,
+              25170
+            ]
+          },
+          {
+            "hypothesis_text": "how",
+            "model_proposed_time_ms": [
+              25350,
+              25560
+            ]
+          },
+          {
+            "hypothesis_text": "is",
+            "model_proposed_time_ms": [
+              25560,
+              25649
+            ]
+          },
+          {
+            "hypothesis_text": "your",
+            "model_proposed_time_ms": [
+              25649,
+              25770
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Ross?",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 57.16,
+        "untrusted_raw_model_end_seconds": 57.16,
+        "model_segment_interval_ms_proposal": [
+          55820,
+          57160
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "ross",
+            "model_proposed_time_ms": [
+              56640,
+              57150
+            ]
+          },
+          {
+            "hypothesis_text": "humor",
+            "model_proposed_time_ms": [
+              57600,
+              58020
+            ]
+          },
+          {
+            "hypothesis_text": "and",
+            "model_proposed_time_ms": [
+              56521,
+              56640
+            ]
+          },
+          {
+            "hypothesis_text": "your",
+            "model_proposed_time_ms": [
+              56364,
+              56521
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " right",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 167.94,
+        "untrusted_raw_model_end_seconds": 167.94,
+        "model_segment_interval_ms_proposal": [
+          157260,
+          167940
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " back.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 167.94,
+        "untrusted_raw_model_end_seconds": 167.94,
+        "model_segment_interval_ms_proposal": [
+          157260,
+          167940
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " gonna",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.14,
+        "untrusted_raw_model_end_seconds": 168.14,
+        "model_segment_interval_ms_proposal": [
+          167940,
+          168140
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " be",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.14,
+        "untrusted_raw_model_end_seconds": 168.14,
+        "model_segment_interval_ms_proposal": [
+          167940,
+          168140
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " right",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.14,
+        "untrusted_raw_model_end_seconds": 168.14,
+        "model_segment_interval_ms_proposal": [
+          167940,
+          168140
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " back.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.14,
+        "untrusted_raw_model_end_seconds": 168.14,
+        "model_segment_interval_ms_proposal": [
+          167940,
+          168140
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " gonna",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.16,
+        "untrusted_raw_model_end_seconds": 168.16,
+        "model_segment_interval_ms_proposal": [
+          168140,
+          168160
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " be",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.16,
+        "untrusted_raw_model_end_seconds": 168.16,
+        "model_segment_interval_ms_proposal": [
+          168140,
+          168160
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " right",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.16,
+        "untrusted_raw_model_end_seconds": 168.16,
+        "model_segment_interval_ms_proposal": [
+          168140,
+          168160
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " back.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.16,
+        "untrusted_raw_model_end_seconds": 168.16,
+        "model_segment_interval_ms_proposal": [
+          168140,
+          168160
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " gonna",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.24,
+        "untrusted_raw_model_end_seconds": 168.24,
+        "model_segment_interval_ms_proposal": [
+          168160,
+          168240
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          },
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " be",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.24,
+        "untrusted_raw_model_end_seconds": 168.24,
+        "model_segment_interval_ms_proposal": [
+          168160,
+          168240
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          },
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " right",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.24,
+        "untrusted_raw_model_end_seconds": 168.24,
+        "model_segment_interval_ms_proposal": [
+          168160,
+          168240
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          },
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " back.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.24,
+        "untrusted_raw_model_end_seconds": 168.24,
+        "model_segment_interval_ms_proposal": [
+          168160,
+          168240
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stamp",
+            "model_proposed_time_ms": [
+              167041,
+              167460
+            ]
+          },
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " gonna",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.34,
+        "untrusted_raw_model_end_seconds": 168.34,
+        "model_segment_interval_ms_proposal": [
+          168240,
+          168340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " be",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.34,
+        "untrusted_raw_model_end_seconds": 168.34,
+        "model_segment_interval_ms_proposal": [
+          168240,
+          168340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " right",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.34,
+        "untrusted_raw_model_end_seconds": 168.34,
+        "model_segment_interval_ms_proposal": [
+          168240,
+          168340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " back.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 168.34,
+        "untrusted_raw_model_end_seconds": 168.34,
+        "model_segment_interval_ms_proposal": [
+          168240,
+          168340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " gonna",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 169.34,
+        "untrusted_raw_model_end_seconds": 169.34,
+        "model_segment_interval_ms_proposal": [
+          168680,
+          169340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              169354,
+              169470
+            ]
+          },
+          {
+            "hypothesis_text": "world",
+            "model_proposed_time_ms": [
+              169470,
+              169860
+            ]
+          },
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              170010,
+              170160
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " be",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 169.34,
+        "untrusted_raw_model_end_seconds": 169.34,
+        "model_segment_interval_ms_proposal": [
+          168680,
+          169340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              169354,
+              169470
+            ]
+          },
+          {
+            "hypothesis_text": "world",
+            "model_proposed_time_ms": [
+              169470,
+              169860
+            ]
+          },
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              170010,
+              170160
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " right",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 169.34,
+        "untrusted_raw_model_end_seconds": 169.34,
+        "model_segment_interval_ms_proposal": [
+          168680,
+          169340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              169354,
+              169470
+            ]
+          },
+          {
+            "hypothesis_text": "world",
+            "model_proposed_time_ms": [
+              169470,
+              169860
+            ]
+          },
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              170010,
+              170160
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " back.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 169.34,
+        "untrusted_raw_model_end_seconds": 169.34,
+        "model_segment_interval_ms_proposal": [
+          168680,
+          169340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "thirty",
+            "model_proposed_time_ms": [
+              169020,
+              169350
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              169354,
+              169470
+            ]
+          },
+          {
+            "hypothesis_text": "world",
+            "model_proposed_time_ms": [
+              169470,
+              169860
+            ]
+          },
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              170010,
+              170160
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " finally",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 201.2,
+        "untrusted_raw_model_end_seconds": 201.2,
+        "model_segment_interval_ms_proposal": [
+          200380,
+          201640
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "finally",
+            "model_proposed_time_ms": [
+              200845,
+              201180
+            ]
+          },
+          {
+            "hypothesis_text": "meet",
+            "model_proposed_time_ms": [
+              201180,
+              201630
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 213.8,
+        "untrusted_raw_model_end_seconds": 213.8,
+        "model_segment_interval_ms_proposal": [
+          213060,
+          214780
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "comic",
+            "model_proposed_time_ms": [
+              213690,
+              214080
+            ]
+          },
+          {
+            "hypothesis_text": "medina",
+            "model_proposed_time_ms": [
+              214080,
+              214680
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " sir.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 215.28,
+        "untrusted_raw_model_end_seconds": 215.28,
+        "model_segment_interval_ms_proposal": [
+          214780,
+          217240
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "or",
+            "model_proposed_time_ms": [
+              215070,
+              215280
+            ]
+          },
+          {
+            "hypothesis_text": "people",
+            "model_proposed_time_ms": [
+              215310,
+              215550
+            ]
+          },
+          {
+            "hypothesis_text": "yes",
+            "model_proposed_time_ms": [
+              214710,
+              215062
+            ]
+          },
+          {
+            "hypothesis_text": "versus",
+            "model_proposed_time_ms": [
+              215550,
+              216030
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " don't",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 253.14,
+        "untrusted_raw_model_end_seconds": 253.14,
+        "model_segment_interval_ms_proposal": [
+          252560,
+          255060
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "get",
+            "model_proposed_time_ms": [
+              253200,
+              253366
+            ]
+          },
+          {
+            "hypothesis_text": "a",
+            "model_proposed_time_ms": [
+              253376,
+              253410
+            ]
+          },
+          {
+            "hypothesis_text": "campaign",
+            "model_proposed_time_ms": [
+              253421,
+              253980
+            ]
+          },
+          {
+            "hypothesis_text": "folks",
+            "model_proposed_time_ms": [
+              251880,
+              252390
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " morning,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 259.0,
+        "untrusted_raw_model_end_seconds": 259.0,
+        "model_segment_interval_ms_proposal": [
+          255740,
+          259840
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "morning",
+            "model_proposed_time_ms": [
+              258270,
+              258810
+            ]
+          },
+          {
+            "hypothesis_text": "early",
+            "model_proposed_time_ms": [
+              259410,
+              259920
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " that",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 277.06,
+        "untrusted_raw_model_end_seconds": 277.06,
+        "model_segment_interval_ms_proposal": [
+          277040,
+          277060
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " on?",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 277.06,
+        "untrusted_raw_model_end_seconds": 277.06,
+        "model_segment_interval_ms_proposal": [
+          277040,
+          277060
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " hey,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 279.22,
+        "untrusted_raw_model_end_seconds": 279.22,
+        "model_segment_interval_ms_proposal": [
+          278100,
+          281060
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "hey",
+            "model_proposed_time_ms": [
+              278670,
+              279270
+            ]
+          },
+          {
+            "hypothesis_text": "it's",
+            "model_proposed_time_ms": [
+              279300,
+              279600
+            ]
+          },
+          {
+            "hypothesis_text": "a",
+            "model_proposed_time_ms": [
+              279600,
+              279720
+            ]
+          },
+          {
+            "hypothesis_text": "great",
+            "model_proposed_time_ms": [
+              279720,
+              280230
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " commercial",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 282.12,
+        "untrusted_raw_model_end_seconds": 282.12,
+        "model_segment_interval_ms_proposal": [
+          281600,
+          284520
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "commercial",
+            "model_proposed_time_ms": [
+              281640,
+              282120
+            ]
+          },
+          {
+            "hypothesis_text": "areas",
+            "model_proposed_time_ms": [
+              282120,
+              282390
+            ]
+          },
+          {
+            "hypothesis_text": "between",
+            "model_proposed_time_ms": [
+              282390,
+              282900
+            ]
+          },
+          {
+            "hypothesis_text": "christians",
+            "model_proposed_time_ms": [
+              281160,
+              281640
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 290.44,
+        "untrusted_raw_model_end_seconds": 290.44,
+        "model_segment_interval_ms_proposal": [
+          290440,
+          292000
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              290310,
+              290400
+            ]
+          },
+          {
+            "hypothesis_text": "don't",
+            "model_proposed_time_ms": [
+              290400,
+              290640
+            ]
+          },
+          {
+            "hypothesis_text": "debut",
+            "model_proposed_time_ms": [
+              289980,
+              290310
+            ]
+          },
+          {
+            "hypothesis_text": "expect",
+            "model_proposed_time_ms": [
+              290640,
+              291030
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " If",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 295.08,
+        "untrusted_raw_model_end_seconds": 295.08,
+        "model_segment_interval_ms_proposal": [
+          295080,
+          298040
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              294660,
+              294810
+            ]
+          },
+          {
+            "hypothesis_text": "fireplace",
+            "model_proposed_time_ms": [
+              294810,
+              295440
+            ]
+          },
+          {
+            "hypothesis_text": "myself",
+            "model_proposed_time_ms": [
+              295440,
+              295853
+            ]
+          },
+          {
+            "hypothesis_text": "patina",
+            "model_proposed_time_ms": [
+              293940,
+              294510
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " going",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 302.66,
+        "untrusted_raw_model_end_seconds": 302.66,
+        "model_segment_interval_ms_proposal": [
+          301200,
+          304880
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "to",
+            "model_proposed_time_ms": [
+              302580,
+              302640
+            ]
+          },
+          {
+            "hypothesis_text": "be",
+            "model_proposed_time_ms": [
+              302640,
+              302730
+            ]
+          },
+          {
+            "hypothesis_text": "very",
+            "model_proposed_time_ms": [
+              302730,
+              303180
+            ]
+          },
+          {
+            "hypothesis_text": "going",
+            "model_proposed_time_ms": [
+              302460,
+              302580
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 364.66,
+        "untrusted_raw_model_end_seconds": 364.66,
+        "model_segment_interval_ms_proposal": [
+          364660,
+          365140
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "their",
+            "model_proposed_time_ms": [
+              365280,
+              365610
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " but",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 374.28,
+        "untrusted_raw_model_end_seconds": 374.28,
+        "model_segment_interval_ms_proposal": [
+          372740,
+          374580
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "decay",
+            "model_proposed_time_ms": [
+              374160,
+              374490
+            ]
+          },
+          {
+            "hypothesis_text": "urban",
+            "model_proposed_time_ms": [
+              373860,
+              374100
+            ]
+          },
+          {
+            "hypothesis_text": "in",
+            "model_proposed_time_ms": [
+              373800,
+              373860
+            ]
+          },
+          {
+            "hypothesis_text": "sure",
+            "model_proposed_time_ms": [
+              374730,
+              375060
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " River",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 390.62,
+        "untrusted_raw_model_end_seconds": 390.62,
+        "model_segment_interval_ms_proposal": [
+          390620,
+          391000
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "rumor",
+            "model_proposed_time_ms": [
+              390360,
+              390630
+            ]
+          },
+          {
+            "hypothesis_text": "has",
+            "model_proposed_time_ms": [
+              390630,
+              390840
+            ]
+          },
+          {
+            "hypothesis_text": "it",
+            "model_proposed_time_ms": [
+              390840,
+              390900
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              390900,
+              390990
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " The",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 391.06,
+        "untrusted_raw_model_end_seconds": 391.06,
+        "model_segment_interval_ms_proposal": [
+          391060,
+          392920
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              390900,
+              390990
+            ]
+          },
+          {
+            "hypothesis_text": "old",
+            "model_proposed_time_ms": [
+              390990,
+              391170
+            ]
+          },
+          {
+            "hypothesis_text": "judges",
+            "model_proposed_time_ms": [
+              391170,
+              391538
+            ]
+          },
+          {
+            "hypothesis_text": "it",
+            "model_proposed_time_ms": [
+              390840,
+              390900
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " to",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 391.74,
+        "untrusted_raw_model_end_seconds": 391.74,
+        "model_segment_interval_ms_proposal": [
+          391060,
+          392920
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "it",
+            "model_proposed_time_ms": [
+              391650,
+              391740
+            ]
+          },
+          {
+            "hypothesis_text": "take",
+            "model_proposed_time_ms": [
+              391740,
+              391980
+            ]
+          },
+          {
+            "hypothesis_text": "will",
+            "model_proposed_time_ms": [
+              391538,
+              391650
+            ]
+          },
+          {
+            "hypothesis_text": "judges",
+            "model_proposed_time_ms": [
+              391170,
+              391538
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Ha,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 430.04,
+        "untrusted_raw_model_end_seconds": 430.04,
+        "model_segment_interval_ms_proposal": [
+          430040,
+          431380
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " Ha,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 431.38,
+        "untrusted_raw_model_end_seconds": 431.38,
+        "model_segment_interval_ms_proposal": [
+          431380,
+          432200
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " ha,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 432.2,
+        "untrusted_raw_model_end_seconds": 432.2,
+        "model_segment_interval_ms_proposal": [
+          431380,
+          432200
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " ha.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 432.2,
+        "untrusted_raw_model_end_seconds": 432.2,
+        "model_segment_interval_ms_proposal": [
+          431380,
+          432200
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " Ha,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 432.2,
+        "untrusted_raw_model_end_seconds": 432.2,
+        "model_segment_interval_ms_proposal": [
+          432200,
+          433880
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " ha,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 433.88,
+        "untrusted_raw_model_end_seconds": 433.88,
+        "model_segment_interval_ms_proposal": [
+          432200,
+          433880
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              434160,
+              434190
+            ]
+          },
+          {
+            "hypothesis_text": "was",
+            "model_proposed_time_ms": [
+              434195,
+              434340
+            ]
+          },
+          {
+            "hypothesis_text": "never",
+            "model_proposed_time_ms": [
+              434400,
+              434640
+            ]
+          },
+          {
+            "hypothesis_text": "any",
+            "model_proposed_time_ms": [
+              434640,
+              434940
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " ha.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 433.88,
+        "untrusted_raw_model_end_seconds": 433.88,
+        "model_segment_interval_ms_proposal": [
+          432200,
+          433880
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              434160,
+              434190
+            ]
+          },
+          {
+            "hypothesis_text": "was",
+            "model_proposed_time_ms": [
+              434195,
+              434340
+            ]
+          },
+          {
+            "hypothesis_text": "never",
+            "model_proposed_time_ms": [
+              434400,
+              434640
+            ]
+          },
+          {
+            "hypothesis_text": "any",
+            "model_proposed_time_ms": [
+              434640,
+              434940
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Christina.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 465.66,
+        "untrusted_raw_model_end_seconds": 465.66,
+        "model_segment_interval_ms_proposal": [
+          464760,
+          465660
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "christine",
+            "model_proposed_time_ms": [
+              465270,
+              465720
+            ]
+          },
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              465725,
+              465870
+            ]
+          },
+          {
+            "hypothesis_text": "thought",
+            "model_proposed_time_ms": [
+              465870,
+              466110
+            ]
+          },
+          {
+            "hypothesis_text": "you",
+            "model_proposed_time_ms": [
+              465090,
+              465270
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " possible",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 557.22,
+        "untrusted_raw_model_end_seconds": 557.22,
+        "model_segment_interval_ms_proposal": [
+          556580,
+          559700
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "possible",
+            "model_proposed_time_ms": [
+              556710,
+              557160
+            ]
+          },
+          {
+            "hypothesis_text": "combinations",
+            "model_proposed_time_ms": [
+              557160,
+              557730
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              556620,
+              556710
+            ]
+          },
+          {
+            "hypothesis_text": "to",
+            "model_proposed_time_ms": [
+              557730,
+              557850
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I'm",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 581.08,
+        "untrusted_raw_model_end_seconds": 581.08,
+        "model_segment_interval_ms_proposal": [
+          579720,
+          581920
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "i'm",
+            "model_proposed_time_ms": [
+              580830,
+              580980
+            ]
+          },
+          {
+            "hypothesis_text": "straight",
+            "model_proposed_time_ms": [
+              580980,
+              581280
+            ]
+          },
+          {
+            "hypothesis_text": "men",
+            "model_proposed_time_ms": [
+              581280,
+              581460
+            ]
+          },
+          {
+            "hypothesis_text": "like",
+            "model_proposed_time_ms": [
+              580620,
+              580830
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " going",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 589.74,
+        "untrusted_raw_model_end_seconds": 589.74,
+        "model_segment_interval_ms_proposal": [
+          589420,
+          592600
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "go",
+            "model_proposed_time_ms": [
+              589712,
+              589920
+            ]
+          },
+          {
+            "hypothesis_text": "to",
+            "model_proposed_time_ms": [
+              589639,
+              589710
+            ]
+          },
+          {
+            "hypothesis_text": "federal",
+            "model_proposed_time_ms": [
+              589320,
+              589620
+            ]
+          },
+          {
+            "hypothesis_text": "to",
+            "model_proposed_time_ms": [
+              589920,
+              590250
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 616.58,
+        "untrusted_raw_model_end_seconds": 616.58,
+        "model_segment_interval_ms_proposal": [
+          616580,
+          618780
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "embellished",
+            "model_proposed_time_ms": [
+              615650,
+              616220
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " don't",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 616.58,
+        "untrusted_raw_model_end_seconds": 616.58,
+        "model_segment_interval_ms_proposal": [
+          616580,
+          618780
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "embellished",
+            "model_proposed_time_ms": [
+              615650,
+              616220
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 635.98,
+        "untrusted_raw_model_end_seconds": 635.98,
+        "model_segment_interval_ms_proposal": [
+          635980,
+          637560
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " driving",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 716.68,
+        "untrusted_raw_model_end_seconds": 716.68,
+        "model_segment_interval_ms_proposal": [
+          716500,
+          718980
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "any",
+            "model_proposed_time_ms": [
+              716510,
+              716720
+            ]
+          },
+          {
+            "hypothesis_text": "a",
+            "model_proposed_time_ms": [
+              716720,
+              716780
+            ]
+          },
+          {
+            "hypothesis_text": "tough",
+            "model_proposed_time_ms": [
+              716780,
+              717020
+            ]
+          },
+          {
+            "hypothesis_text": "were",
+            "model_proposed_time_ms": [
+              716330,
+              716510
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Mom?",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 772.9,
+        "untrusted_raw_model_end_seconds": 772.9,
+        "model_segment_interval_ms_proposal": [
+          772160,
+          772900
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "blame",
+            "model_proposed_time_ms": [
+              773240,
+              773540
+            ]
+          },
+          {
+            "hypothesis_text": "that",
+            "model_proposed_time_ms": [
+              773540,
+              773780
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Oh,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 793.86,
+        "untrusted_raw_model_end_seconds": 793.86,
+        "model_segment_interval_ms_proposal": [
+          793860,
+          795460
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "oh",
+            "model_proposed_time_ms": [
+              793520,
+              793760
+            ]
+          },
+          {
+            "hypothesis_text": "fine",
+            "model_proposed_time_ms": [
+              794035,
+              794600
+            ]
+          },
+          {
+            "hypothesis_text": "figure",
+            "model_proposed_time_ms": [
+              792980,
+              793340
+            ]
+          },
+          {
+            "hypothesis_text": "fine",
+            "model_proposed_time_ms": [
+              794630,
+              795410
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I'm",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 841.0,
+        "untrusted_raw_model_end_seconds": 841.0,
+        "model_segment_interval_ms_proposal": [
+          841000,
+          841480
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "yours",
+            "model_proposed_time_ms": [
+              840896,
+              841280
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " sorry.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 842.5,
+        "untrusted_raw_model_end_seconds": 842.5,
+        "model_segment_interval_ms_proposal": [
+          841680,
+          842500
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "looks",
+            "model_proposed_time_ms": [
+              842300,
+              842450
+            ]
+          },
+          {
+            "hypothesis_text": "like",
+            "model_proposed_time_ms": [
+              842450,
+              842600
+            ]
+          },
+          {
+            "hypothesis_text": "someone",
+            "model_proposed_time_ms": [
+              842600,
+              842900
+            ]
+          },
+          {
+            "hypothesis_text": "just",
+            "model_proposed_time_ms": [
+              842060,
+              842300
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I'm",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 842.98,
+        "untrusted_raw_model_end_seconds": 842.98,
+        "model_segment_interval_ms_proposal": [
+          842980,
+          843340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "someone",
+            "model_proposed_time_ms": [
+              842600,
+              842900
+            ]
+          },
+          {
+            "hypothesis_text": "i'm",
+            "model_proposed_time_ms": [
+              842900,
+              843080
+            ]
+          },
+          {
+            "hypothesis_text": "supposed",
+            "model_proposed_time_ms": [
+              843080,
+              843530
+            ]
+          },
+          {
+            "hypothesis_text": "like",
+            "model_proposed_time_ms": [
+              842450,
+              842600
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I'm",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 843.34,
+        "untrusted_raw_model_end_seconds": 843.34,
+        "model_segment_interval_ms_proposal": [
+          843340,
+          843580
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "supposed",
+            "model_proposed_time_ms": [
+              843080,
+              843530
+            ]
+          },
+          {
+            "hypothesis_text": "to",
+            "model_proposed_time_ms": [
+              843530,
+              843590
+            ]
+          },
+          {
+            "hypothesis_text": "be",
+            "model_proposed_time_ms": [
+              843590,
+              843860
+            ]
+          },
+          {
+            "hypothesis_text": "i'm",
+            "model_proposed_time_ms": [
+              842900,
+              843080
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " sorry.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 845.98,
+        "untrusted_raw_model_end_seconds": 845.98,
+        "model_segment_interval_ms_proposal": [
+          845720,
+          845980
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "i've",
+            "model_proposed_time_ms": [
+              846025,
+              846175
+            ]
+          },
+          {
+            "hypothesis_text": "never",
+            "model_proposed_time_ms": [
+              846260,
+              846500
+            ]
+          },
+          {
+            "hypothesis_text": "seen",
+            "model_proposed_time_ms": [
+              846500,
+              846740
+            ]
+          },
+          {
+            "hypothesis_text": "mean",
+            "model_proposed_time_ms": [
+              845120,
+              845300
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " sorry.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 846.04,
+        "untrusted_raw_model_end_seconds": 846.04,
+        "model_segment_interval_ms_proposal": [
+          845980,
+          846040
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "i've",
+            "model_proposed_time_ms": [
+              846025,
+              846175
+            ]
+          },
+          {
+            "hypothesis_text": "never",
+            "model_proposed_time_ms": [
+              846260,
+              846500
+            ]
+          },
+          {
+            "hypothesis_text": "seen",
+            "model_proposed_time_ms": [
+              846500,
+              846740
+            ]
+          },
+          {
+            "hypothesis_text": "her",
+            "model_proposed_time_ms": [
+              846740,
+              846890
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " sorry.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 846.64,
+        "untrusted_raw_model_end_seconds": 846.64,
+        "model_segment_interval_ms_proposal": [
+          846040,
+          846640
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "seen",
+            "model_proposed_time_ms": [
+              846500,
+              846740
+            ]
+          },
+          {
+            "hypothesis_text": "her",
+            "model_proposed_time_ms": [
+              846740,
+              846890
+            ]
+          },
+          {
+            "hypothesis_text": "never",
+            "model_proposed_time_ms": [
+              846260,
+              846500
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              846897,
+              847030
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " sorry.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 848.2,
+        "untrusted_raw_model_end_seconds": 848.2,
+        "model_segment_interval_ms_proposal": [
+          847560,
+          848200
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "of",
+            "model_proposed_time_ms": [
+              848060,
+              848227
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              848227,
+              848360
+            ]
+          },
+          {
+            "hypothesis_text": "tangled",
+            "model_proposed_time_ms": [
+              848510,
+              849020
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " sorry.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 848.9,
+        "untrusted_raw_model_end_seconds": 848.9,
+        "model_segment_interval_ms_proposal": [
+          848560,
+          848900
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "tangled",
+            "model_proposed_time_ms": [
+              848510,
+              849020
+            ]
+          },
+          {
+            "hypothesis_text": "web",
+            "model_proposed_time_ms": [
+              849020,
+              849350
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              848227,
+              848360
+            ]
+          },
+          {
+            "hypothesis_text": "of",
+            "model_proposed_time_ms": [
+              848060,
+              848227
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " sorry.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 851.86,
+        "untrusted_raw_model_end_seconds": 851.86,
+        "model_segment_interval_ms_proposal": [
+          851580,
+          851860
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " sorry.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 854.88,
+        "untrusted_raw_model_end_seconds": 854.88,
+        "model_segment_interval_ms_proposal": [
+          854840,
+          854880
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "excuse",
+            "model_proposed_time_ms": [
+              854390,
+              854810
+            ]
+          },
+          {
+            "hypothesis_text": "me",
+            "model_proposed_time_ms": [
+              854810,
+              855050
+            ]
+          },
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              855470,
+              855560
+            ]
+          },
+          {
+            "hypothesis_text": "can't",
+            "model_proposed_time_ms": [
+              855560,
+              855860
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " sorry.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 855.98,
+        "untrusted_raw_model_end_seconds": 855.98,
+        "model_segment_interval_ms_proposal": [
+          855840,
+          855980
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "see",
+            "model_proposed_time_ms": [
+              855860,
+              856070
+            ]
+          },
+          {
+            "hypothesis_text": "all",
+            "model_proposed_time_ms": [
+              856070,
+              856220
+            ]
+          },
+          {
+            "hypothesis_text": "can't",
+            "model_proposed_time_ms": [
+              855560,
+              855860
+            ]
+          },
+          {
+            "hypothesis_text": "the",
+            "model_proposed_time_ms": [
+              856220,
+              856310
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " viewers.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 866.42,
+        "untrusted_raw_model_end_seconds": 866.42,
+        "model_segment_interval_ms_proposal": [
+          861980,
+          866420
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "meals",
+            "model_proposed_time_ms": [
+              865610,
+              866090
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " right.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 900.44,
+        "untrusted_raw_model_end_seconds": 900.44,
+        "model_segment_interval_ms_proposal": [
+          899860,
+          900440
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "now",
+            "model_proposed_time_ms": [
+              900380,
+              900740
+            ]
+          },
+          {
+            "hypothesis_text": "anyway",
+            "model_proposed_time_ms": [
+              899960,
+              900320
+            ]
+          },
+          {
+            "hypothesis_text": "wrong",
+            "model_proposed_time_ms": [
+              900746,
+              901130
+            ]
+          },
+          {
+            "hypothesis_text": "for",
+            "model_proposed_time_ms": [
+              901130,
+              901337
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " dance.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 927.96,
+        "untrusted_raw_model_end_seconds": 927.96,
+        "model_segment_interval_ms_proposal": [
+          927340,
+          927960
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " you",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 944.34,
+        "untrusted_raw_model_end_seconds": 944.34,
+        "model_segment_interval_ms_proposal": [
+          943800,
+          945000
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "you",
+            "model_proposed_time_ms": [
+              944119,
+              944330
+            ]
+          },
+          {
+            "hypothesis_text": "know",
+            "model_proposed_time_ms": [
+              944330,
+              944480
+            ]
+          },
+          {
+            "hypothesis_text": "they",
+            "model_proposed_time_ms": [
+              944480,
+              944600
+            ]
+          },
+          {
+            "hypothesis_text": "i",
+            "model_proposed_time_ms": [
+              943880,
+              944119
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Bar",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 947.96,
+        "untrusted_raw_model_end_seconds": 947.96,
+        "model_segment_interval_ms_proposal": [
+          947960,
+          948600
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "barbara",
+            "model_proposed_time_ms": [
+              947420,
+              948140
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Wow,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 957.62,
+        "untrusted_raw_model_end_seconds": 957.62,
+        "model_segment_interval_ms_proposal": [
+          957620,
+          958180
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "wow",
+            "model_proposed_time_ms": [
+              956810,
+              957440
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Oh,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 968.14,
+        "untrusted_raw_model_end_seconds": 968.14,
+        "model_segment_interval_ms_proposal": [
+          968140,
+          968800
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " God.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 984.06,
+        "untrusted_raw_model_end_seconds": 984.06,
+        "model_segment_interval_ms_proposal": [
+          979500,
+          984060
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      },
+      {
+        "model_hypothesis_text": " You",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 995.66,
+        "untrusted_raw_model_end_seconds": 995.66,
+        "model_segment_interval_ms_proposal": [
+          995660,
+          997300
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "you",
+            "model_proposed_time_ms": [
+              995480,
+              995600
+            ]
+          },
+          {
+            "hypothesis_text": "knew",
+            "model_proposed_time_ms": [
+              995600,
+              995780
+            ]
+          },
+          {
+            "hypothesis_text": "you",
+            "model_proposed_time_ms": [
+              995780,
+              995930
+            ]
+          },
+          {
+            "hypothesis_text": "mistake",
+            "model_proposed_time_ms": [
+              994910,
+              995480
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " really,",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1013.78,
+        "untrusted_raw_model_end_seconds": 1013.78,
+        "model_segment_interval_ms_proposal": [
+          1013300,
+          1014380
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "you",
+            "model_proposed_time_ms": [
+              1013719,
+              1013840
+            ]
+          },
+          {
+            "hypothesis_text": "piece",
+            "model_proposed_time_ms": [
+              1013840,
+              1014172
+            ]
+          },
+          {
+            "hypothesis_text": "really",
+            "model_proposed_time_ms": [
+              1013420,
+              1013719
+            ]
+          },
+          {
+            "hypothesis_text": "will",
+            "model_proposed_time_ms": [
+              1013240,
+              1013420
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " California.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1043.34,
+        "untrusted_raw_model_end_seconds": 1043.34,
+        "model_segment_interval_ms_proposal": [
+          1041380,
+          1043340
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "calif",
+            "model_proposed_time_ms": [
+              1042760,
+              1043480
+            ]
+          },
+          {
+            "hypothesis_text": "fresno",
+            "model_proposed_time_ms": [
+              1042370,
+              1042760
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " I'm",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1073.32,
+        "untrusted_raw_model_end_seconds": 1073.32,
+        "model_segment_interval_ms_proposal": [
+          1073200,
+          1073320
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "for",
+            "model_proposed_time_ms": [
+              1073180,
+              1073334
+            ]
+          },
+          {
+            "hypothesis_text": "a",
+            "model_proposed_time_ms": [
+              1073334,
+              1073390
+            ]
+          },
+          {
+            "hypothesis_text": "you",
+            "model_proposed_time_ms": [
+              1073428,
+              1073600
+            ]
+          },
+          {
+            "hypothesis_text": "tell",
+            "model_proposed_time_ms": [
+              1073600,
+              1073870
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " not.",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1073.32,
+        "untrusted_raw_model_end_seconds": 1073.32,
+        "model_segment_interval_ms_proposal": [
+          1073200,
+          1073320
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "for",
+            "model_proposed_time_ms": [
+              1073180,
+              1073334
+            ]
+          },
+          {
+            "hypothesis_text": "a",
+            "model_proposed_time_ms": [
+              1073334,
+              1073390
+            ]
+          },
+          {
+            "hypothesis_text": "you",
+            "model_proposed_time_ms": [
+              1073428,
+              1073600
+            ]
+          },
+          {
+            "hypothesis_text": "tell",
+            "model_proposed_time_ms": [
+              1073600,
+              1073870
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " an",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1232.44,
+        "untrusted_raw_model_end_seconds": 1232.44,
+        "model_segment_interval_ms_proposal": [
+          1232060,
+          1233900
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "an",
+            "model_proposed_time_ms": [
+              1232270,
+              1232390
+            ]
+          },
+          {
+            "hypothesis_text": "interesting",
+            "model_proposed_time_ms": [
+              1232390,
+              1232750
+            ]
+          },
+          {
+            "hypothesis_text": "that's",
+            "model_proposed_time_ms": [
+              1232090,
+              1232270
+            ]
+          },
+          {
+            "hypothesis_text": "place",
+            "model_proposed_time_ms": [
+              1232750,
+              1233020
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " 50",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1238.08,
+        "untrusted_raw_model_end_seconds": 1238.08,
+        "model_segment_interval_ms_proposal": [
+          1236480,
+          1238460
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "fifty",
+            "model_proposed_time_ms": [
+              1237820,
+              1238030
+            ]
+          },
+          {
+            "hypothesis_text": "split",
+            "model_proposed_time_ms": [
+              1238030,
+              1238390
+            ]
+          },
+          {
+            "hypothesis_text": "fifty",
+            "model_proposed_time_ms": [
+              1237564,
+              1237820
+            ]
+          },
+          {
+            "hypothesis_text": "right",
+            "model_proposed_time_ms": [
+              1238570,
+              1238870
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " talk",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1247.0,
+        "untrusted_raw_model_end_seconds": 1247.0,
+        "model_segment_interval_ms_proposal": [
+          1246460,
+          1247560
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "stocks",
+            "model_proposed_time_ms": [
+              1246640,
+              1247000
+            ]
+          },
+          {
+            "hypothesis_text": "and",
+            "model_proposed_time_ms": [
+              1247000,
+              1247090
+            ]
+          },
+          {
+            "hypothesis_text": "bonds",
+            "model_proposed_time_ms": [
+              1247090,
+              1247660
+            ]
+          },
+          {
+            "hypothesis_text": "i'll",
+            "model_proposed_time_ms": [
+              1247750,
+              1247930
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Yes!",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1258.68,
+        "untrusted_raw_model_end_seconds": 1258.68,
+        "model_segment_interval_ms_proposal": [
+          1257320,
+          1259300
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "yes",
+            "model_proposed_time_ms": [
+              1257981,
+              1258345
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Yes!",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1258.94,
+        "untrusted_raw_model_end_seconds": 1258.94,
+        "model_segment_interval_ms_proposal": [
+          1257320,
+          1259300
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "yes",
+            "model_proposed_time_ms": [
+              1257981,
+              1258345
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Yes!",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1259.08,
+        "untrusted_raw_model_end_seconds": 1259.08,
+        "model_segment_interval_ms_proposal": [
+          1257320,
+          1259300
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": [
+          {
+            "hypothesis_text": "yes",
+            "model_proposed_time_ms": [
+              1257981,
+              1258345
+            ]
+          }
+        ]
+      },
+      {
+        "model_hypothesis_text": " Yes!",
+        "rejection_reason": "zero_or_reversed_rounded_word_time",
+        "untrusted_raw_model_start_seconds": 1259.3,
+        "untrusted_raw_model_end_seconds": 1259.3,
+        "model_segment_interval_ms_proposal": [
+          1257320,
+          1259300
+        ],
+        "model_proposed_original_source_word_interval_valid": false,
+        "original_soundtrack_word_human_verified": false,
+        "same_time_other_model_context_unverified": []
+      }
+    ],
+    "original_soundtrack_listened": false,
+    "separate_model_context_human_verified": false
+  },
+  "source_consensus_word_counts": {
+    "a_words": 2338,
+    "b_words": 2249,
+    "paired_words": 1542,
+    "corroborated_words": 1299,
+    "corroborated_spans": 199,
+    "unresolved_word_candidates": 1989
+  },
+  "reviewed_untimed_source_lexical_probe_count": 40,
+  "untimed_paragraph_lexical_candidates": [
+    {
+      "consensus_span_index": 0,
+      "original_avi_audio_time_proposal_ms": [
+        4440,
+        6080
+      ],
+      "independent_model_agreed_text_hypothesis": "Well, that does it.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 5,
+      "original_avi_audio_time_proposal_ms": [
+        27900,
+        30560
+      ],
+      "independent_model_agreed_text_hypothesis": "going out to the television stations tonight, And I must say,",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 7,
+        "last": 7
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 10,
+      "original_avi_audio_time_proposal_ms": [
+        41490,
+        42450
+      ],
+      "independent_model_agreed_text_hypothesis": "the pretty fascinating",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 15,
+      "original_avi_audio_time_proposal_ms": [
+        78001,
+        84360
+      ],
+      "independent_model_agreed_text_hypothesis": "accompanied by how -to photos? It's nothing like that. Then why waste the",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 24,
+        "last": 26
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 20,
+      "original_avi_audio_time_proposal_ms": [
+        107370,
+        108360
+      ],
+      "independent_model_agreed_text_hypothesis": "what a great story.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 25,
+      "original_avi_audio_time_proposal_ms": [
+        180370,
+        182220
+      ],
+      "independent_model_agreed_text_hypothesis": "things to say? No,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 30,
+      "original_avi_audio_time_proposal_ms": [
+        205068,
+        210620
+      ],
+      "independent_model_agreed_text_hypothesis": "would take all the fun out of the fantasy. Yeah, I feel the same way about lamb chop.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 56,
+        "last": 57
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 36,
+      "original_avi_audio_time_proposal_ms": [
+        241590,
+        242740
+      ],
+      "independent_model_agreed_text_hypothesis": "I believe beef jerky runs about",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 66,
+        "last": 66
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 41,
+      "original_avi_audio_time_proposal_ms": [
+        266400,
+        267040
+      ],
+      "independent_model_agreed_text_hypothesis": "At that time",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 46,
+      "original_avi_audio_time_proposal_ms": [
+        290400,
+        291600
+      ],
+      "independent_model_agreed_text_hypothesis": "don't expect you to stay",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 51,
+      "original_avi_audio_time_proposal_ms": [
+        307371,
+        310860
+      ],
+      "independent_model_agreed_text_hypothesis": "and brilliant execution, I am confident that this spot is",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 85,
+        "last": 85
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 56,
+      "original_avi_audio_time_proposal_ms": [
+        354263,
+        355300
+      ],
+      "independent_model_agreed_text_hypothesis": "I've never seen it.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 61,
+      "original_avi_audio_time_proposal_ms": [
+        391740,
+        392280
+      ],
+      "independent_model_agreed_text_hypothesis": "take to the",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 66,
+      "original_avi_audio_time_proposal_ms": [
+        438360,
+        440700
+      ],
+      "independent_model_agreed_text_hypothesis": "Sullivan must be elected to Congress.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 71,
+      "original_avi_audio_time_proposal_ms": [
+        454800,
+        455440
+      ],
+      "independent_model_agreed_text_hypothesis": "of a line",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 76,
+      "original_avi_audio_time_proposal_ms": [
+        485400,
+        487360
+      ],
+      "independent_model_agreed_text_hypothesis": "I guess you're right. My measly",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 81,
+      "original_avi_audio_time_proposal_ms": [
+        511229,
+        513300
+      ],
+      "independent_model_agreed_text_hypothesis": "it. Come on, Harry. Yeah, thanks,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 86,
+      "original_avi_audio_time_proposal_ms": [
+        534340,
+        535460
+      ],
+      "independent_model_agreed_text_hypothesis": "my phone machine.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 91,
+      "original_avi_audio_time_proposal_ms": [
+        555270,
+        556340
+      ],
+      "independent_model_agreed_text_hypothesis": "this computer program will",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 96,
+      "original_avi_audio_time_proposal_ms": [
+        596640,
+        599520
+      ],
+      "independent_model_agreed_text_hypothesis": "What's the problem, Ross? It's not like Alex is a stranger.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 172,
+        "last": 172
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 102,
+      "original_avi_audio_time_proposal_ms": [
+        632780,
+        634980
+      ],
+      "independent_model_agreed_text_hypothesis": "skate. With holiday on ice?",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 183,
+        "last": 183
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 107,
+      "original_avi_audio_time_proposal_ms": [
+        657680,
+        658760
+      ],
+      "independent_model_agreed_text_hypothesis": "the moment, but there",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 112,
+      "original_avi_audio_time_proposal_ms": [
+        718460,
+        722090
+      ],
+      "independent_model_agreed_text_hypothesis": "and holding. He's picked every lock in the building. Any suggestions?",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 195,
+        "last": 196
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 117,
+      "original_avi_audio_time_proposal_ms": [
+        760790,
+        763460
+      ],
+      "independent_model_agreed_text_hypothesis": "but I'm losing support fast with a female constituency.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 202,
+        "last": 202
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 122,
+      "original_avi_audio_time_proposal_ms": [
+        779300,
+        781040
+      ],
+      "independent_model_agreed_text_hypothesis": "stupid commercial, but you should be happy it's",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 207,
+        "last": 207
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 127,
+      "original_avi_audio_time_proposal_ms": [
+        794035,
+        796780
+      ],
+      "independent_model_agreed_text_hypothesis": "fine. Fine. Five days of shooting",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 132,
+      "original_avi_audio_time_proposal_ms": [
+        827213,
+        828840
+      ],
+      "independent_model_agreed_text_hypothesis": "I always talk like this.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 221,
+        "last": 221
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 137,
+      "original_avi_audio_time_proposal_ms": [
+        878810,
+        879680
+      ],
+      "independent_model_agreed_text_hypothesis": "Pretty neat stuff,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 142,
+      "original_avi_audio_time_proposal_ms": [
+        896940,
+        897980
+      ],
+      "independent_model_agreed_text_hypothesis": "is a possibility.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 147,
+      "original_avi_audio_time_proposal_ms": [
+        923420,
+        924350
+      ],
+      "independent_model_agreed_text_hypothesis": "Why don't we forget",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 152,
+      "original_avi_audio_time_proposal_ms": [
+        988960,
+        992080
+      ],
+      "independent_model_agreed_text_hypothesis": "I lose. As usual,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 157,
+      "original_avi_audio_time_proposal_ms": [
+        1018940,
+        1020880
+      ],
+      "independent_model_agreed_text_hypothesis": "forgotten this is a place of business.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 162,
+      "original_avi_audio_time_proposal_ms": [
+        1037090,
+        1037640
+      ],
+      "independent_model_agreed_text_hypothesis": "When it comes to",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 168,
+      "original_avi_audio_time_proposal_ms": [
+        1089737,
+        1094500
+      ],
+      "independent_model_agreed_text_hypothesis": "me. So that was us.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 294,
+        "last": 294
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 173,
+      "original_avi_audio_time_proposal_ms": [
+        1143970,
+        1144780
+      ],
+      "independent_model_agreed_text_hypothesis": "like my perfect",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 178,
+      "original_avi_audio_time_proposal_ms": [
+        1155530,
+        1157740
+      ],
+      "independent_model_agreed_text_hypothesis": "love that. Let's go.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 183,
+      "original_avi_audio_time_proposal_ms": [
+        1183080,
+        1187000
+      ],
+      "independent_model_agreed_text_hypothesis": "I spoke to the guy who duplicated your commercial And I think it explains",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 318,
+        "last": 318
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 188,
+      "original_avi_audio_time_proposal_ms": [
+        1207070,
+        1209780
+      ],
+      "independent_model_agreed_text_hypothesis": "Yeah, you've been sharing our time with Candy Good Love,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 193,
+      "original_avi_audio_time_proposal_ms": [
+        1238030,
+        1240020
+      ],
+      "independent_model_agreed_text_hypothesis": "split. Right. I get all",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 198,
+      "original_avi_audio_time_proposal_ms": [
+        1250804,
+        1251980
+      ],
+      "independent_model_agreed_text_hypothesis": "the market this year.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    }
+  ],
+  "source_video_cut_change_candidates_unverified": 212,
+  "source_video_pts_trace_anomalies": {
+    "emitted_rows": 212,
+    "duplicate_timestamp_rows": 0,
+    "ordered_or_tied_timestamp_steps": 0
+  },
+  "source_sample_plan_counts": {
+    "frames": 202,
+    "baseline": 85,
+    "bursts": 31,
+    "transition_pairs": 12,
+    "cut_candidates": 212,
+    "events_supplied": 31,
+    "events_deferred": 0
+  },
+  "actual_source_frames_selected": 202,
+  "actual_source_jpegs_bytes_ephemeral": 999791,
+  "source_triads_with_pixel_change_features": 31,
+  "source_triads_abstaining_for_pts_order": 0,
+  "pixel_change_candidate_reviews": [
+    {
+      "event_id": "coverage-probe-00",
+      "candidate_shot_partition": 5,
+      "source_frame_pts_ms_actual": [
+        25259,
+        25425,
+        25592
+      ],
+      "frame_sha256": [
+        "b19953743e675e3c81bb6c65daedab5d3fce1ddacf518d26808c6eaafaa386df",
+        "140384a3d1320145661b5a3be709191369137c91a5caa5db1dd06305b903791e",
+        "ba9ed957db2318e8280b69ae155b07c5d06c22a7ae064c882966a1edf66e4519"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.047807,
+        "changed_pixel_fraction_ge_24": 0.167318
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.045537,
+        "changed_pixel_fraction_ge_24": 0.155273
+      },
+      "mean_temporal_pixel_change_score": 0.046672,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "S09-V03",
+      "candidate_shot_partition": 157,
+      "source_frame_pts_ms_actual": [
+        912979,
+        913146,
+        913312
+      ],
+      "frame_sha256": [
+        "7f57c6f6fa2796cd8948542f37b5c6728fe12d0e79b191afd6ad7a145a10d67f",
+        "64da89af1fe66c5b307a7a3033bccb8bd6e90f0644e76e2ba067415b01a280e3",
+        "3a9bd1055a87748c20b74885044759197e6c2f9ccbce1b52983a9ed96be4d82e"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.003793,
+        "changed_pixel_fraction_ge_24": 0.003581
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.066342,
+        "changed_pixel_fraction_ge_24": 0.236003
+      },
+      "mean_temporal_pixel_change_score": 0.035068,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "coverage-probe-06",
+      "candidate_shot_partition": 72,
+      "source_frame_pts_ms_actual": [
+        329896,
+        330063,
+        330230
+      ],
+      "frame_sha256": [
+        "00ce60a2cf44f148ffbfef536b33cc3b436d4f4e071396d1a784a01bb383720e",
+        "8ae8eea2f8e0428071b0ad4fe15e4d3c92e3a5baa03318dd1c3a5ee35132e71e",
+        "2d1df3eb480b4e13b32a649e43700961691f7e92a61be5bd28cdb02a5c46c36c"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.033945,
+        "changed_pixel_fraction_ge_24": 0.09668
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.028172,
+        "changed_pixel_fraction_ge_24": 0.061523
+      },
+      "mean_temporal_pixel_change_score": 0.031059,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "coverage-probe-15",
+      "candidate_shot_partition": 141,
+      "source_frame_pts_ms_actual": [
+        786886,
+        787053,
+        787220
+      ],
+      "frame_sha256": [
+        "50c8dc6d46e276383c6c356ba4561fb1887da45c9aa7e921a9736d4fc788b204",
+        "e45c728dfb8ddc108bf1bd136a254f4f8783a6073b67485f27ae84d7fc3c72fb",
+        "ef8870771c98c6b36e6a69c3db49da19192c96123df32c271ad0c35f7967118d"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.030003,
+        "changed_pixel_fraction_ge_24": 0.066406
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.027057,
+        "changed_pixel_fraction_ge_24": 0.074544
+      },
+      "mean_temporal_pixel_change_score": 0.02853,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "S09-V05",
+      "candidate_shot_partition": 157,
+      "source_frame_pts_ms_actual": [
+        919485,
+        919652,
+        919819
+      ],
+      "frame_sha256": [
+        "d94368310466b123ca942b9ac1e9b900f24661cad1cc50ec24ce03923018b471",
+        "71a90bc53d2002c9fc45903fca06064aae80029adb0a2babcab933257cd25481",
+        "c9241299ea416d3bdd4fea6a6124371eefbfa884bcb8d670c447c39518090357"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.007241,
+        "changed_pixel_fraction_ge_24": 0.006185
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.045001,
+        "changed_pixel_fraction_ge_24": 0.141276
+      },
+      "mean_temporal_pixel_change_score": 0.026121,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "coverage-probe-08",
+      "candidate_shot_partition": 88,
+      "source_frame_pts_ms_actual": [
+        431464,
+        431631,
+        431798
+      ],
+      "frame_sha256": [
+        "e1faefaa01663b060b47d1abe8518236bda2542855c9b648d2a833050a83048c",
+        "d53c0ecfc7a5aa1ec68021bffc79cdb90328db55a35351cb239a1ca83bb799dc",
+        "817734a5efafaf674817cc7f388d1f597eecde8e999f0688f27aea2418cbe5bb"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.024431,
+        "changed_pixel_fraction_ge_24": 0.073893
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.016476,
+        "changed_pixel_fraction_ge_24": 0.03125
+      },
+      "mean_temporal_pixel_change_score": 0.020453,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "coverage-probe-02",
+      "candidate_shot_partition": 32,
+      "source_frame_pts_ms_actual": [
+        127060,
+        127227,
+        127394
+      ],
+      "frame_sha256": [
+        "f288361d364faf095c30e654970b7158b39d9ba6e090cfc69801a08d9d6564f1",
+        "bbb77ba2e385d94d46a097115c0c0cc34e7131cab27c18efa34d5062370f4e86",
+        "c8f68b083d1d4399fd24011e1f1995b24c9f0dfed968cf6e460780768d5b83cf"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.033716,
+        "changed_pixel_fraction_ge_24": 0.097982
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.002711,
+        "changed_pixel_fraction_ge_24": 0.0
+      },
+      "mean_temporal_pixel_change_score": 0.018214,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "S09-V04",
+      "candidate_shot_partition": 157,
+      "source_frame_pts_ms_actual": [
+        916249,
+        916416,
+        916582
+      ],
+      "frame_sha256": [
+        "e58355a5fc1518b91edffb2969d31aeec00a8a6e7930ff98e5db4e115afcfdfa",
+        "5d8c352fa7ddf1233e5d1ad653217aa433878cff9c78b371b071a3d9bda64459",
+        "bc1e90a8c80bc523a6f4f98673f37a3cb77763a316db69d3f5856fa6f3dd19d3"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.015061,
+        "changed_pixel_fraction_ge_24": 0.041016
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.014394,
+        "changed_pixel_fraction_ge_24": 0.035156
+      },
+      "mean_temporal_pixel_change_score": 0.014728,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "coverage-probe-18",
+      "candidate_shot_partition": 160,
+      "source_frame_pts_ms_actual": [
+        939205,
+        939372,
+        939539
+      ],
+      "frame_sha256": [
+        "9ef06c8fe0b659c43009ddb4bfa8c2a858ad1c5100ab4205b0905bbd5924349b",
+        "ce98170be76858433306f1939f1c844b17295bc170ea8b66257960bbd202e094",
+        "143a372c71094088f59623663254a19e15228d595f0775bde20659b54f577c5f"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.01318,
+        "changed_pixel_fraction_ge_24": 0.017904
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.015453,
+        "changed_pixel_fraction_ge_24": 0.023112
+      },
+      "mean_temporal_pixel_change_score": 0.014316,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "coverage-probe-07",
+      "candidate_shot_partition": 78,
+      "source_frame_pts_ms_actual": [
+        380680,
+        380847,
+        381014
+      ],
+      "frame_sha256": [
+        "fa4d5d559a9bae8dbe8a59136b62a113694a1770b7f63c51121b6b40d4df6087",
+        "68f1c2d4bb5f5c20c7c4b060265fceb9f8bd2a91a07220218062ac6c1c6c14b4",
+        "b6c9bd77a417f48bf6205e0b43221260c6b1664a50cfc8049d05b265854e612f"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.01306,
+        "changed_pixel_fraction_ge_24": 0.019857
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.014864,
+        "changed_pixel_fraction_ge_24": 0.030599
+      },
+      "mean_temporal_pixel_change_score": 0.013962,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "coverage-probe-20",
+      "candidate_shot_partition": 165,
+      "source_frame_pts_ms_actual": [
+        1040740,
+        1040910,
+        1041070
+      ],
+      "frame_sha256": [
+        "1602a2bfd3f16bd35bd0d0349abc67773912661cee0d1a8ba1c70beab1b1c010",
+        "4fb6218d2cde47de4bace798f33c941205c1ad37b1347259a4cb73c31f78b5ab",
+        "c0d8b09789c3b2af81f7824ee601baf2b845e8a49e8f9978d9691071017e062e"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.013995,
+        "changed_pixel_fraction_ge_24": 0.034505
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.012916,
+        "changed_pixel_fraction_ge_24": 0.030273
+      },
+      "mean_temporal_pixel_change_score": 0.013456,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    },
+    {
+      "event_id": "coverage-probe-01",
+      "candidate_shot_partition": 13,
+      "source_frame_pts_ms_actual": [
+        76043,
+        76210,
+        76376
+      ],
+      "frame_sha256": [
+        "a7aacf84dbd102921330354d521f454d83ba722a6ee6bfcdbf5f5cdcaff192f5",
+        "7201aed7b700a14e74cccecb03b9fd8813f5ffb858ac3c31b0e3c521c006b48d",
+        "3d2b439675e4b898cfeed29e12eb367d78376fd31d212614479dfc9e77008d6e"
+      ],
+      "first_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.014397,
+        "changed_pixel_fraction_ge_24": 0.027018
+      },
+      "second_temporal_pixel_difference": {
+        "mean_normalized_abs_delta": 0.009398,
+        "changed_pixel_fraction_ge_24": 0.006185
+      },
+      "mean_temporal_pixel_change_score": 0.011898,
+      "interpretation_status": "candidate_intra_partition_change_for_visual_review"
+    }
+  ],
+  "pixel_change_is_verified_physical_action": false,
+  "shot_bounded_selective_original_video_review": {
+    "schema": "night-court-shot-bounded-original-continuity-review-plan/1",
+    "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+    "source_duration_ms": 1320144,
+    "requested_video_excerpt_count": 12,
+    "requested_total_video_excerpt_ms": 32488,
+    "source_cut_candidates_not_confirmed_shots": 212,
+    "source_triads_ranked": 31,
+    "source_triads_abstained_pts": 0,
+    "source_triads_deferred_actual_pts_cross_candidate_cut": 0,
+    "excerpt_media_decoded_or_retained": false,
+    "human_continuous_video_review_done": false,
+    "actor_gesture_voice_or_cut_verified": false,
+    "scene_or_stage_directions_accepted": false,
+    "full_original_episode_screenplay_accepted": false,
+    "review_requests": [
+      {
+        "event_id": "S09-V03",
+        "selection_reason": "editorial_original_source_task",
+        "time_window_ms_candidate_only": [
+          911779,
+          914512
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          912979,
+          913146,
+          913312
+        ],
+        "pixel_change_review_priority_rank": 2,
+        "pixel_change_score_unverified_action": 0.035068,
+        "candidate_shot_partition_unverified": 157,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "S09-V05",
+        "selection_reason": "editorial_original_source_task",
+        "time_window_ms_candidate_only": [
+          918285,
+          921019
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          919485,
+          919652,
+          919819
+        ],
+        "pixel_change_review_priority_rank": 5,
+        "pixel_change_score_unverified_action": 0.026121,
+        "candidate_shot_partition_unverified": 157,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "S09-V04",
+        "selection_reason": "editorial_original_source_task",
+        "time_window_ms_candidate_only": [
+          915049,
+          917782
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          916249,
+          916416,
+          916582
+        ],
+        "pixel_change_review_priority_rank": 8,
+        "pixel_change_score_unverified_action": 0.014728,
+        "candidate_shot_partition_unverified": 157,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "S09-V02",
+        "selection_reason": "editorial_original_source_task",
+        "time_window_ms_candidate_only": [
+          910044,
+          912777
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          911244,
+          911411,
+          911577
+        ],
+        "pixel_change_review_priority_rank": 17,
+        "pixel_change_score_unverified_action": 0.007663,
+        "candidate_shot_partition_unverified": 157,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "S09-V06",
+        "selection_reason": "editorial_original_source_task",
+        "time_window_ms_candidate_only": [
+          920921,
+          923655
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          922121,
+          922288,
+          922455
+        ],
+        "pixel_change_review_priority_rank": 18,
+        "pixel_change_score_unverified_action": 0.007441,
+        "candidate_shot_partition_unverified": 157,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "S09-V01",
+        "selection_reason": "editorial_original_source_task",
+        "time_window_ms_candidate_only": [
+          901168,
+          903902
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          902368,
+          902535,
+          902702
+        ],
+        "pixel_change_review_priority_rank": 20,
+        "pixel_change_score_unverified_action": 0.006818,
+        "candidate_shot_partition_unverified": 155,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "coverage-probe-00",
+        "selection_reason": "high_pixel_change_review",
+        "time_window_ms_candidate_only": [
+          24059,
+          26792
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          25259,
+          25425,
+          25592
+        ],
+        "pixel_change_review_priority_rank": 1,
+        "pixel_change_score_unverified_action": 0.046672,
+        "candidate_shot_partition_unverified": 5,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "coverage-probe-06",
+        "selection_reason": "high_pixel_change_review",
+        "time_window_ms_candidate_only": [
+          328696,
+          331430
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          329896,
+          330063,
+          330230
+        ],
+        "pixel_change_review_priority_rank": 3,
+        "pixel_change_score_unverified_action": 0.031059,
+        "candidate_shot_partition_unverified": 72,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "coverage-probe-15",
+        "selection_reason": "high_pixel_change_review",
+        "time_window_ms_candidate_only": [
+          785686,
+          788420
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          786886,
+          787053,
+          787220
+        ],
+        "pixel_change_review_priority_rank": 4,
+        "pixel_change_score_unverified_action": 0.02853,
+        "candidate_shot_partition_unverified": 141,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "coverage-probe-08",
+        "selection_reason": "high_pixel_change_review",
+        "time_window_ms_candidate_only": [
+          430264,
+          432998
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          431464,
+          431631,
+          431798
+        ],
+        "pixel_change_review_priority_rank": 6,
+        "pixel_change_score_unverified_action": 0.020453,
+        "candidate_shot_partition_unverified": 88,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "coverage-probe-13",
+        "selection_reason": "low_pixel_change_control",
+        "time_window_ms_candidate_only": [
+          684118,
+          686536
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          685318,
+          685485,
+          685652
+        ],
+        "pixel_change_review_priority_rank": 31,
+        "pixel_change_score_unverified_action": 0.001561,
+        "candidate_shot_partition_unverified": 127,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      },
+      {
+        "event_id": "coverage-probe-17",
+        "selection_reason": "low_pixel_change_control",
+        "time_window_ms_candidate_only": [
+          887221,
+          889955
+        ],
+        "contains_three_verified_original_source_pts_ms": [
+          888421,
+          888588,
+          888755
+        ],
+        "pixel_change_review_priority_rank": 30,
+        "pixel_change_score_unverified_action": 0.002335,
+        "candidate_shot_partition_unverified": 155,
+        "original_shot_and_action_human_verified": false,
+        "speaking_identity_or_prosody_verified": false,
+        "draft_stage_direction_accepted": false
+      }
+    ],
+    "deferred_review_requests": [],
+    "review_instructions": [
+      "Check each excerpt against actual original continuous video and original audio.",
+      "Candidate score cut boundaries can be false; verify edits, gesture continuity, participants and temporal context.",
+      "Low-score controls are intentional: audit important low-motion comedy and sampling misses.",
+      "Record physical actions and stage directions only after source-reviewed evidence, never from pixel score."
+    ]
+  },
+  "sampled_frames_original_pts_checked": true,
+  "component_measured_seconds": {
+    "single_original_ftp_transfer_and_sha_seconds": 5.2,
+    "ffprobe_source_metadata_seconds": 0.681,
+    "one_source_pcm_decode_seconds": 4.616,
+    "pinned_vosk_download_unpack_seconds": 6.173,
+    "kaldi_wfst_full_episode_inference_seconds": 94.916,
+    "whisper_tiny_full_episode_inference_seconds": 55.683,
+    "independent_model_word_reconciliation_seconds": 0.018,
+    "full_source_low_res_cut_scan_seconds": 24.924,
+    "bounded_visual_plan_seconds": 0.009,
+    "one_pass_source_frame_jpeg_extraction_seconds": 21.405,
+    "ephemeral_three_frame_pixel_difference_seconds": 0.1,
+    "shot_candidate_bounded_review_planning_seconds": 0.0,
+    "untimed_source_paragraph_lexical_probe_seconds": 0.206
+  },
+  "source_processing_wall_seconds_excluding_job_startup_and_dependency_install": 213.936,
+  "all_original_source_media_deleted_after_job": true,
+  "human_original_audio_listened": false,
+  "independently_verified_real_cuts_and_physical_action": false,
+  "source_untimed_paragraph_timestamps_created": false,
+  "speaker_identity_or_emotion_verified": false,
+  "episode_production_script_accepted": false,
+  "fleet_p95_episode_speed_verified": false,
+  "limitations": [
+    "The 347 source paragraphs have no source timecodes, and model lexical matches are proposals only.",
+    "Video cuts are FFmpeg frame-change hypotheses; uniform triads are not recognized motion.",
+    "Both recognizers decode independently but their errors may correlate.",
+    "No vision-language understanding or human hearing/continuous-video review is measured.",
+    "This second episode helps evaluate throughput generalization but does not establish p95 across 193 episodes."
+  ]
+}
