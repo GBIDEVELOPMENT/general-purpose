@@ -64,6 +64,7 @@ def plan_continuous_review(source_plan, pixels, cut_candidates):
     if len(bursts_by_id)!=len(bursts):
         raise ValueError('Duplicate original activity event ID')
     candidates={}
+    cut_pts_deferred=[]
     for rank,row in enumerate(ranked):
         if not isinstance(row,dict):raise ValueError('Bad original source pixel record')
         name=row.get('event_id')
@@ -83,14 +84,17 @@ def plan_continuous_review(source_plan, pixels, cut_candidates):
         # actual presentation-time space to avoid covert continuity claims.
         actual_partitions=[bisect_right(scored,t) for t in pts]
         if len(set(actual_partitions))!=1 or actual_partitions[0]!=partition:
-            raise ValueError('Observed native PTS cross planned source shot partition')
+            cut_pts_deferred.append({'event_id':name,
+                'reason':'actual_source_pts_cross_candidate_cut',
+                'source_frame_pts_ms_actual':pts})
+            continue
         candidates[name]={'event_id':name,'actual_pts_ms':pts,'score':score,
                           'partition':partition,'pixel_rank':rank+1,
                           'editorial_priority':event.get('priority',0)}
     for row in abstained:
         if row.get('event_id') not in bursts_by_id or row['event_id'] in candidates:
             raise ValueError('Invalid or duplicate source PTS abstention')
-    if len(candidates)+len(abstained)!=len(bursts):
+    if len(candidates)+len(abstained)+len(cut_pts_deferred)!=len(bursts):
         raise ValueError('Missing source original motion sampling event')
 
     ordered=list(candidates.values())
@@ -112,7 +116,7 @@ def plan_continuous_review(source_plan, pixels, cut_candidates):
     label={x['event_id']:'editorial_original_source_task' for x in editorial}
     label.update({x['event_id']:'high_pixel_change_review' for x in highest})
     label.update({x['event_id']:'low_pixel_change_control' for x in controls})
-    result=[];deferred=[]
+    result=[];deferred=list(cut_pts_deferred)
     for x in reserve:
         partition=x['partition']
         lo=bounds[partition]+CUT_MARGIN_MS
@@ -145,6 +149,7 @@ def plan_continuous_review(source_plan, pixels, cut_candidates):
       'source_cut_candidates_not_confirmed_shots':len(scored),
       'source_triads_ranked':len(ranked),
       'source_triads_abstained_pts':len(abstained),
+      'source_triads_deferred_actual_pts_cross_candidate_cut':len(cut_pts_deferred),
       'excerpt_media_decoded_or_retained':False,
       'human_continuous_video_review_done':False,
       'actor_gesture_voice_or_cut_verified':False,
