@@ -1,0 +1,73 @@
+{
+  "schema": "night-court-s01e01-avi-shot-change-candidates/1",
+  "episode_id": "S01E01",
+  "source_original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_video_expected_size_bytes": 183386112,
+  "source_window_ms": [
+    56912,
+    93074
+  ],
+  "original_srt_source_turns_in_scope": 11,
+  "sampled_visual_action_tasks_in_scope": 6,
+  "detector": "FFmpeg select(scene) contrast-based candidate threshold",
+  "detector_threshold": 0.12,
+  "candidate_count": 7,
+  "candidate_shot_changes": [
+    {
+      "selected_frame_index": 0,
+      "original_stream_pts_candidate_ms": 59026,
+      "ffmpeg_scene_score": 0.306012,
+      "source_time_status": "decoded_avi_presentation_timestamp_candidate_not_independently_verified_cut"
+    },
+    {
+      "selected_frame_index": 1,
+      "original_stream_pts_candidate_ms": 60928,
+      "ffmpeg_scene_score": 0.143181,
+      "source_time_status": "decoded_avi_presentation_timestamp_candidate_not_independently_verified_cut"
+    },
+    {
+      "selected_frame_index": 2,
+      "original_stream_pts_candidate_ms": 68268,
+      "ffmpeg_scene_score": 0.138734,
+      "source_time_status": "decoded_avi_presentation_timestamp_candidate_not_independently_verified_cut"
+    },
+    {
+      "selected_frame_index": 3,
+      "original_stream_pts_candidate_ms": 74107,
+      "ffmpeg_scene_score": 0.277865,
+      "source_time_status": "decoded_avi_presentation_timestamp_candidate_not_independently_verified_cut"
+    },
+    {
+      "selected_frame_index": 4,
+      "original_stream_pts_candidate_ms": 76777,
+      "ffmpeg_scene_score": 0.261383,
+      "source_time_status": "decoded_avi_presentation_timestamp_candidate_not_independently_verified_cut"
+    },
+    {
+      "selected_frame_index": 5,
+      "original_stream_pts_candidate_ms": 80948,
+      "ffmpeg_scene_score": 0.140563,
+      "source_time_status": "decoded_avi_presentation_timestamp_candidate_not_independently_verified_cut"
+    },
+    {
+      "selected_frame_index": 6,
+      "original_stream_pts_candidate_ms": 82382,
+      "ffmpeg_scene_score": 0.140819,
+      "source_time_status": "decoded_avi_presentation_timestamp_candidate_not_independently_verified_cut"
+    }
+  ],
+  "original_video_audio_or_frames_exported": false,
+  "independent_human_video_review": false,
+  "speaker_or_character_identity_verified": false,
+  "continuous_stage_action_verified": false,
+  "scene_boundaries_verified": false,
+  "original_video_to_subtitle_alignment_verified": false,
+  "production_script_accepted": false,
+  "limits": [
+    "Scene scores flag changes in adjacent decoded image frames, including edits, flashes or fast action.",
+    "A thresholded candidate is NOT a verified shot cut, dissolve or real story scene change.",
+    "Decoded AVI presentation timestamps are research proposals, not independently accepted source-cut sync.",
+    "No soundtrack was listened to, and no voice or acting delivery was attributed."
+  ]
+}
