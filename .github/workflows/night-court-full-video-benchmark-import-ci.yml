@@ -1,0 +1,41 @@
+name: Night Court source-pinned whole AVI visual performance summary QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/research/s01e01-full-video-throughput-summary.json'
+      - 'Night Court/FAST-EPISODE-FACTORY-THROUGHPUT.md'
+      - 'Night Court/AV-SCRIPT-PRODUCTION-WORKBOARD.md'
+      - '.github/workflows/night-court-full-video-benchmark-import-ci.yml'
+permissions:
+  contents: read
+jobs:
+  reconcile:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify real source metrics and original media acceptance guard
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path('Night Court/research/s01e01-full-video-throughput-summary.json').read_text('utf-8'))
+          assert j['source_video_sha256']=='5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962'
+          assert j['original_video_bytes']==183386112 and j['original_stream_avg_frame_rate']=='30000/1001'
+          assert j['original_private_json_sha256']=='11162478a37d0c1d7718908bd7ee38b15ebde42124f227aa6fe689e704c48545'
+          assert j['image_change_candidates_not_verified_cuts']==212
+          assert j['source_plan_counts']['frames']==212
+          assert j['source_plan_counts']['bursts']==31
+          assert j['actual_selected_frames']==212
+          assert j['actual_JPEG_bytes']==908395
+          assert j['all_image_frame_pts_match_verified'] is True
+          assert abs(sum(j['measured_stage_seconds'].values())-55.239)<1e-7
+          assert j['combined_one_source_end_to_end_factory_measured'] is False
+          assert j['shot_boundaries_verified'] is False
+          assert j['actual_visual_semantics_assessed'] is False
+          assert j['script_or_full_episode_accepted'] is False
+          print('One-source video cost, counts, no media promotion: pass')
+          PY
