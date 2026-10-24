@@ -1,0 +1,48 @@
+name: Night Court trusted S01E01 scene review packet
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-scene-review.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-s01e01-scene-evidence
+  cancel-in-progress: false
+jobs:
+  evidence:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-scene-review-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    steps:
+      - name: Checkout immutable trusted base only
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - name: Validate exact source SRT and fixed episode limits
+        run: |
+          python 'Night Court/tools/test_s01e01_scene_evidence.py'
+          python 'Night Court/tools/test_pilot_ftp_video_acoustics.py'
+      - name: Install FFmpeg and ffprobe
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Capture 30s S01E01 private audiovisual evidence
+        run: |
+          python 'Night Court/tools/pilot_ftp_s01e01_scene.py' \
+            --protocol ftp --output "${{ runner.temp }}/scene-packet"
+      - name: Preserve only sparse JPEGs, text and JSON
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-private-scene-review-packet
+          path: ${{ runner.temp }}/scene-packet/
+          if-no-files-found: error
+          retention-days: 7
