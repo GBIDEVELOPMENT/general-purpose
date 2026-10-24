@@ -1,0 +1,57 @@
+name: Night Court trusted original S01E01 source-once AV factory
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-one-source-factory.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-original-source-once-full-episode-pilot
+  cancel-in-progress: false
+jobs:
+  owner-source:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-one-source-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout reviewed trusted base SHA only
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run source-free cross-modal model, frame and immutable SHA tests
+        run: |
+          python 'Night Court/tools/test_s01e01_one_source_factory.py'
+          python 'Night Court/tools/test_s01e01_full_dual_asr.py'
+      - name: Install fixed model runtime and source decoder
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python -m pip install 'faster-whisper==1.2.1' 'vosk==0.3.45'
+      - name: Original AVI once, two independent recognizers, all-video shot scan and bounded JPEGs
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: |
+          python -u 'Night Court/tools/profile_s01e01_one_source_factory.py' --ftp \
+            --output "${{ runner.temp }}/night-court-one-source/integrated-wall-clock.json"
+      - name: Preserve only source SHA and numerical whole-pass evidence
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-original-s01e01-one-source-combined-audio-video-timings
+          path: ${{ runner.temp }}/night-court-one-source/integrated-wall-clock.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Remove numeric metadata working directory
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-one-source"
