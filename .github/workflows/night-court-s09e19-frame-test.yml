@@ -1,0 +1,21 @@
+name: Night Court S09E19 frame evidence offline regression
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_s09e19_visual_source_packet.py'
+      - 'Night Court/tools/test_s09e19_visual_source_packet.py'
+      - '.github/workflows/night-court-s09e19-frame-test.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install FFmpeg for short synthetic video only
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Verify exact source gate, image count, SHA and visual abstentions
+        run: |
+          python -m py_compile 'Night Court/tools/build_s09e19_visual_source_packet.py'
+          python 'Night Court/tools/test_s09e19_visual_source_packet.py'
