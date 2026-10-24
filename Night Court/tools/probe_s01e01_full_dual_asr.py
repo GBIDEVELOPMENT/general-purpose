@@ -8,6 +8,8 @@ No SRT is ever read by a decoder, and no dialogue or speaker is source-certified
 from __future__ import annotations
 
 import argparse
+from collections import Counter
+import math
 import ftplib
 import hashlib
 import importlib.metadata
@@ -94,14 +96,28 @@ def decode_audio(video:Path,wav:Path):
     return duration_ms,sha(wav)
 
 
-def preserve_word(text,a,b,duration_ms):
+def word_rejection_reason(text,a,b,duration_ms):
+    """Explain source-time rejection without altering original model hypotheses."""
     if not isinstance(text,str) or not text.strip() or len(text)>80:
+        return 'missing_empty_or_long_word'
+    if (type(a) not in (float,int) or type(b) not in (float,int)
+        or not math.isfinite(a) or not math.isfinite(b)):
+        return 'nonfinite_or_missing_model_time'
+    start=round(a*1000)
+    end=round(b*1000)
+    if start<0:
+        return 'negative_original_time'
+    if start>=end:
+        return 'zero_or_reversed_rounded_word_time'
+    if end>duration_ms:
+        return 'beyond_decoded_original_soundtrack'
+    return None
+
+
+def preserve_word(text,a,b,duration_ms):
+    if word_rejection_reason(text,a,b,duration_ms) is not None:
         return None
-    a=round(a*1000)
-    b=round(b*1000)
-    if not 0<=a<b<=duration_ms:
-        return None
-    return {'text':text.strip(),'start_ms':a,'end_ms':b}
+    return {'text':text.strip(),'start_ms':round(a*1000),'end_ms':round(b*1000)}
 
 
 def vosk_free_decode(wav:Path,model_path:Path,duration_ms:int):
@@ -112,6 +128,7 @@ def vosk_free_decode(wav:Path,model_path:Path,duration_ms:int):
     engine.SetWords(True)
     words=[]
     rejected=0
+    reasons=Counter()
 
     def add(response):
         nonlocal rejected
@@ -119,6 +136,7 @@ def vosk_free_decode(wav:Path,model_path:Path,duration_ms:int):
             w=preserve_word(row.get('word'),row.get('start'),row.get('end'),duration_ms)
             if w is None:
                 rejected+=1
+                reasons[word_rejection_reason(row.get('word'),row.get('start'),row.get('end'),duration_ms)]+=1
                 continue
             words.append(w)
             if len(words)>MAX_ASR_WORDS:
@@ -131,7 +149,7 @@ def vosk_free_decode(wav:Path,model_path:Path,duration_ms:int):
             if engine.AcceptWaveform(frames):
                 add(engine.Result())
         add(engine.FinalResult())
-    return words,rejected
+    return words,rejected,dict(reasons)
 
 
 def whisper_free_decode(wav:Path,cache:Path,duration_ms:int):
@@ -144,6 +162,7 @@ def whisper_free_decode(wav:Path,cache:Path,duration_ms:int):
                    initial_prompt=None)
     words=[]
     rejected=0
+    reasons=Counter()
     segments=0
     for seg in iterator:
         segments+=1
@@ -153,11 +172,12 @@ def whisper_free_decode(wav:Path,cache:Path,duration_ms:int):
             w=preserve_word(row.word,row.start,row.end,duration_ms)
             if w is None:
                 rejected+=1
+                reasons[word_rejection_reason(row.word,row.start,row.end,duration_ms)]+=1
                 continue
             words.append(w)
             if len(words)>MAX_ASR_WORDS:
                 raise ValueError('Whisper word count cap reached')
-    return words,rejected,segments
+    return words,rejected,segments,dict(reasons)
 
 
 def build_report(media:Path,scratch:Path,transfer_seconds:float):
@@ -176,10 +196,10 @@ def build_report(media:Path,scratch:Path,transfer_seconds:float):
     model_dir=unpack_pinned_model(archive,scratch/'vosk-model')
     times['vosk_weight_download_unpack_seconds']=round(time.monotonic()-t,3)
     t=time.monotonic()
-    vosk_words,vosk_rejected=vosk_free_decode(wav,model_dir,duration_ms)
+    vosk_words,vosk_rejected,vosk_reasons=vosk_free_decode(wav,model_dir,duration_ms)
     times['kaldi_wfst_vosk_full_episode_inference_seconds']=round(time.monotonic()-t,3)
     t=time.monotonic()
-    whisper_words,whisper_rejected,whisper_segments=whisper_free_decode(wav,scratch/'whisper-cache',duration_ms)
+    whisper_words,whisper_rejected,whisper_segments,whisper_reasons=whisper_free_decode(wav,scratch/'whisper-cache',duration_ms)
     times['whisper_tiny_en_full_episode_inference_seconds']=round(time.monotonic()-t,3)
     source_spec={
         'schema':'night-court-two-independent-asr-words/1',
@@ -206,11 +226,13 @@ def build_report(media:Path,scratch:Path,transfer_seconds:float):
                  'architecture_family':'kaldi_hmm_wfst',
                  'weight_zip_sha256':VOSK_ZIP_SHA256,'weight_zip_bytes':bytes_downloaded,
                  'vosk_package_version':importlib.metadata.version('vosk'),
-                 'rejected_word_timestamps':vosk_rejected,'word_count':len(vosk_words)},
+                 'rejected_word_timestamps':vosk_rejected,
+                 'rejected_word_reasons':vosk_reasons,'word_count':len(vosk_words)},
                 {'model_id':'faster-whisper tiny.en beam1 int8 cpu',
                  'architecture_family':'whisper',
                  'faster_whisper_version':importlib.metadata.version('faster-whisper'),
                  'rejected_word_timestamps':whisper_rejected,
+                 'rejected_word_reasons':whisper_reasons,
                  'segment_count':whisper_segments,'word_count':len(whisper_words)}],
       'measured_wall_time_seconds':times,
       'measured_source_processing_seconds_excludes_install':round(sum(times.values()),3),
