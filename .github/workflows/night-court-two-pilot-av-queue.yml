@@ -1,0 +1,50 @@
+name: Night Court two-pilot evidence acceptance queue reconciliation
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_av_script_production_queue.py'
+      - 'Night Court/tools/test_av_script_production_queue.py'
+      - '.github/workflows/night-court-two-pilot-av-queue.yml'
+permissions:
+  contents: write
+jobs:
+  source-reconcile:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'chore/night-court-two-pilot-av-workboard-reconciliation'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chore/night-court-two-pilot-av-workboard-reconciliation
+          persist-credentials: true
+      - name: Test cross-index reconciliation across all 193 episode witnesses
+        run: |
+          python "Night Court/tools/test_av_script_production_queue.py"
+          python "Night Court/tools/build_av_script_production_queue.py"
+          python "Night Court/tools/validate_dialogue.py"
+      - name: Reject false promoted episode scripts or timed S09E19 source
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path("Night Court/catalog/av-script-reconstruction-queue.json").read_text())
+          assert j["original_episode_records"]==193
+          assert j["episodes_with_bounded_real_AV_evidence"]==2
+          assert j["episodes_with_source_linked_multimodal_script_excerpts"]==2
+          assert j["episode_scripts_independently_av_verified"]==0
+          s09=next(x for x in j["episodes"] if x["episode_id"]=="S09E19")
+          assert not s09["source_metadata"]["timed"]
+          assert not s09["full_episode_screenplay_verified"]
+          assert s09["bounded_source_sample_evidence"]["untimed_original_paragraph_lexical_candidates"]==15
+          assert not s09["bounded_source_sample_evidence"]["complete_script_verified"]
+          print("Original-series AV workboard truthful: two bounded evidence pilots, zero complete episodes")
+          PY
+      - name: Commit only machine-readable AV workboard update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Night Court/catalog/av-script-reconstruction-queue.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): reconcile two true AV source pilots and 193 pending full scripts"
+            git push origin HEAD:chore/night-court-two-pilot-av-workboard-reconciliation
+          fi
