@@ -1,0 +1,627 @@
+{
+  "source": "reports/ftp-media-inventory (partial, 107 truncated directories)",
+  "scanned_files": 2042,
+  "unique_episode_keys": 155,
+  "duplicate_episode_keys": 22,
+  "classification": "Longest specific series identifier including Enterprise exclusion",
+  "policy": "Prefer verified HDR10/HDR10+ 4K, then HDR 4K, then non-DV-only 4K; at equal capability choose smaller. Never equate DV with HDR10 compatibility. Codec and dynamic-range labels require ffprobe confirmation before destructive pruning.",
+  "duplicates": [
+    {
+      "episode": "Discovery S02E09",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1803105501,
+          "path": "/downloads/Star Trek/Star Trek - Discovery (2017) S02 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/Star Trek - Discovery (2017) S02E09 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+          "modify": "20250722063850"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 9728200995,
+          "path": "/downloads/Star Trek/Star Trek Discovery S02E09 Project Daedalus 1080p DTS-HD MA 5 1 AVC REMUX-FraMeSToR/Star Trek Discovery S02E09 Project Daedalus 1080p DTS-HD MA 5 1 AVC REMUX-FraMeSToR.mkv",
+          "modify": "20250726041714"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek - Discovery (2017) S02 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/Star Trek - Discovery (2017) S02E09 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Discovery S02E10",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1253362381,
+          "path": "/downloads/Star Trek/Star Trek - Discovery (2017) S02 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/Star Trek - Discovery (2017) S02E10 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+          "modify": "20250722063852"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 4692375955,
+          "path": "/downloads/Star Trek/Star.Trek.Discovery.S02E10.1080p.BluRay.x264-ROVERS/star.trek.discovery.s02e10.1080p.bluray.x264-rovers.mkv",
+          "modify": "20971231170000"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek - Discovery (2017) S02 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/Star Trek - Discovery (2017) S02E10 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Discovery S02E12",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1364921772,
+          "path": "/downloads/Star Trek/Star Trek - Discovery (2017) S02 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/Star Trek - Discovery (2017) S02E12 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+          "modify": "20250722063850"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 2008495463,
+          "path": "/downloads/Star Trek/Star Trek Discovery S02E12 Through the Valley of Shadows 1080p BluRay 10Bit DDP5 1 HEVC-d3g/Star Trek Discovery S02E12 Through the Valley of Shadows 1080p BluRay 10Bit DDP5 1 HEVC-d3g.mkv",
+          "modify": "20250726065434"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek - Discovery (2017) S02 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/Star Trek - Discovery (2017) S02E12 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Lower Decks S01E01",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 459158920,
+          "path": "/downloads/Star Trek Lower Decks S01E01 Second Contact 1080p AMZN WEB-DL DDP5 1 H 265-NINJACENTRAL/Star Trek Lower Decks S01E01 Second Contact 1080p AMZN WEB-DL DDP5 1 H 265-NINJACENTRAL.mkv",
+          "modify": "20251126042147"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 189792256,
+          "path": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E01.1080p.HEVC.x265-MeGusta.mkv",
+          "modify": "20250703005942"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E01.1080p.HEVC.x265-MeGusta.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E01",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1183958274,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E01.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044607"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 2836047408,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E01 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043944"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E01 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E02",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1144438236,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E02.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044608"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 3231775329,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E02 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043944"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E02 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E03",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1005208422,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E03.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044608"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 2434328920,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E03 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043944"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E03 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E04",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1174901989,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E04.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044608"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 4161500048,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E04 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043943"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E04 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E05",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1131158154,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E05.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044608"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 2763757872,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E05 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043943"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E05 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E06",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1096435269,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E06.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044608"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 2858366298,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E06 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043944"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E06 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E07",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1080390902,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E07.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044608"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 3000376396,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E07 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043944"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E07 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E08",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1158669204,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E08.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044608"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 3252732800,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E08 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043942"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E08 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E09",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1146554023,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E09.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044608"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 3842910462,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E09 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043940"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E09 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S01E10",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 1371539152,
+          "path": "/downloads/Star Trek/Star Trek Strange New World S01 web hevc-d3g/Star.Trek.Strange.New.Worlds.S01E10.1080p.WEBRip.DDP5.1.H265-d3g.mkv",
+          "modify": "20250712044608"
+        },
+        {
+          "hdr": true,
+          "dv": true,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 3949307933,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E10 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+          "modify": "20250712043939"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds (2022) S01 (1080p UHD BDRip DV HDR DDP5 1 x265) - Vialle/Star Trek Strange New Worlds (2022) S01E10 (1080p UHD BDRip DV HDR DDP5.1 x265) - Vialle.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S03E01",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 519454084,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E01.1080p.HEVC.x265-MeGusta/Star.Trek.Strange.New.Worlds.S03E01.1080p.HEVC.x265-MeGusta.mkv",
+          "modify": "20250717041842"
+        },
+        {
+          "hdr": true,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 2111448590,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E01.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e01.hdr.2160p.web.h265-successfulcrab.mkv",
+          "modify": "20250717041007"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E01.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e01.hdr.2160p.web.h265-successfulcrab.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S03E02",
+      "candidates": [
+        {
+          "hdr": true,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 1443222663,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E02.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e02.hdr.2160p.web.h265-successfulcrab.mkv",
+          "modify": "20250717040523"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 524879574,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E02.Wedding.Bell.Blues.1080p.HEVC.x265-MeGusta/Star.Trek.Strange.New.Worlds.S03E02.Wedding.Bell.Blues.1080p.HEVC.x265-MeGusta.mkv",
+          "modify": "20250719034145"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E02.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e02.hdr.2160p.web.h265-successfulcrab.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S03E03",
+      "candidates": [
+        {
+          "hdr": true,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 2614206812,
+          "path": "/downloads/Star Trek/Star Trek Strange New Worlds S03E03 Shuttle to Kenfori 2160p PMTP WEB-DL DDP5 1 HDR H 265-STC/Star Trek Strange New Worlds S03E03 Shuttle to Kenfori 2160p PMTP WEB-DL DDP5 1 HDR H 265-STC.mkv",
+          "modify": "20250727032241"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 2828369364,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E03.1080p.WEB.H264-SuccessfulCrab/star.trek.strange.new.worlds.s03e03.1080p.web.h264-successfulcrab.mkv",
+          "modify": "20250724040650"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 480,
+          "bytes": 381573589,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E03.480p.x264-mSD/Star.Trek.Strange.New.Worlds.S03E03.480p.x264-mSD.mkv",
+          "modify": "20250724041219"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 0,
+          "bytes": 170071924,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E03.AAC.MP4-Mobile/Star.Trek.Strange.New.Worlds.S03E03.AAC.MP4-Mobile.mp4",
+          "modify": "20250724041320"
+        },
+        {
+          "hdr": false,
+          "dv": true,
+          "dvOnly": true,
+          "resolution": 2160,
+          "bytes": 2947403670,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E03.DV.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e03.dv.2160p.web.h265-successfulcrab.mkv",
+          "modify": "20250724040632"
+        },
+        {
+          "hdr": true,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 2644842666,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E03.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e03.hdr.2160p.web.h265-successfulcrab.mkv",
+          "modify": "20250724040630"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star Trek Strange New Worlds S03E03 Shuttle to Kenfori 2160p PMTP WEB-DL DDP5 1 HDR H 265-STC/Star Trek Strange New Worlds S03E03 Shuttle to Kenfori 2160p PMTP WEB-DL DDP5 1 HDR H 265-STC.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S03E06",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 3103459063,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E06.1080p.WEB.H264-SYLiX/star.trek.strange.new.worlds.s03e06.1080p.web.h264-sylix.mkv",
+          "modify": "20250814041608"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 5624784212,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E06.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e06.2160p.web.h265-successfulcrab.mkv",
+          "modify": "20250814040703"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E06.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e06.2160p.web.h265-successfulcrab.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S03E09",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 2633001183,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E09.1080p.WEB.H264-SuccessfulCrab/star.trek.strange.new.worlds.s03e09.1080p.web.h264-successfulcrab.mkv",
+          "modify": "20250904041358"
+        },
+        {
+          "hdr": true,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 2127197860,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E09.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e09.hdr.2160p.web.h265-successfulcrab.mkv",
+          "modify": "20250904040626"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E09.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e09.hdr.2160p.web.h265-successfulcrab.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S03E10",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 520531142,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E10.1080p.HEVC.x265-MeGusta/Star.Trek.Strange.New.Worlds.S03E10.1080p.HEVC.x265-MeGusta.mkv",
+          "modify": "20250911041713"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 2345781836,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E10.1080p.WEB.h264-ETHEL/Star.Trek.Strange.New.Worlds.S03E10.1080p.WEB.h264-ETHEL.mkv",
+          "modify": "20250911040736"
+        },
+        {
+          "hdr": true,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 2160,
+          "bytes": 1688352712,
+          "path": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E10.HDR.2160p.WEB.h265-ETHEL/Star.Trek.Strange.New.Worlds.S03E10.HDR.2160p.WEB.h265-ETHEL.mkv",
+          "modify": "20110314075417"
+        }
+      ],
+      "provisional_retained": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E10.HDR.2160p.WEB.h265-ETHEL/Star.Trek.Strange.New.Worlds.S03E10.HDR.2160p.WEB.h265-ETHEL.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S04E01",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 2338290033,
+          "path": "/downloads/Star Trek Strange New Worlds S04E01 Valles Marineris 1080p AMZN WEB-DL DDP5 1 H 264-playWEB/Star Trek Strange New Worlds S04E01 Valles Marineris 1080p AMZN WEB-DL DDP5 1 H 264-playWEB.mkv",
+          "modify": "20260723105415"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 725705743,
+          "path": "/downloads/Star.Trek.Strange.New.Worlds.S04E01.1080p.HEVC.x265-MeGusta/Star.Trek.Strange.New.Worlds.S04E01.1080p.HEVC.x265-MeGusta.mkv",
+          "modify": "20260723104447"
+        }
+      ],
+      "provisional_retained": "/downloads/Star.Trek.Strange.New.Worlds.S04E01.1080p.HEVC.x265-MeGusta/Star.Trek.Strange.New.Worlds.S04E01.1080p.HEVC.x265-MeGusta.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    },
+    {
+      "episode": "Strange New Worlds S04E08",
+      "candidates": [
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 2449338779,
+          "path": "/downloads/Star.Trek.Strange.New.Worlds.S04E08.1080p.WEB.h264-ETHEL/Star.Trek.Strange.New.Worlds.S04E08.1080p.WEB.h264-ETHEL.mkv",
+          "modify": "20260910071643"
+        },
+        {
+          "hdr": false,
+          "dv": false,
+          "dvOnly": false,
+          "resolution": 1080,
+          "bytes": 687997782,
+          "path": "/downloads/Star.Trek.Strange.New.Worlds.S04E08.Orders.of.Magnitude.1080p.HEVC.x265-MeGusta/Star.Trek.Strange.New.Worlds.S04E08.Orders.of.Magnitude.1080p.HEVC.x265-MeGusta.mkv",
+          "modify": "20261002070144"
+        }
+      ],
+      "provisional_retained": "/downloads/Star.Trek.Strange.New.Worlds.S04E08.Orders.of.Magnitude.1080p.HEVC.x265-MeGusta/Star.Trek.Strange.New.Worlds.S04E08.Orders.of.Magnitude.1080p.HEVC.x265-MeGusta.mkv",
+      "confidence": "metadata_only",
+      "note": "No deletion authorized until full inventory and stream-level HDR/DV verification"
+    }
+  ]
+}
