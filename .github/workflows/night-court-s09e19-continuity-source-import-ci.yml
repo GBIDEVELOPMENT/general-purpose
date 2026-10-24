@@ -1,0 +1,22 @@
+name: Night Court source-pinned S09E19 continuous original review archive QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s09e19_continuous_review_evidence.py'
+      - 'Night Court/tools/test_import_s09e19_continuous_review_evidence.py'
+      - '.github/workflows/night-court-s09e19-continuity-source-import-ci.yml'
+      - '.github/workflows/night-court-trusted-s09e19-continuity-source-import.yml'
+permissions:
+  contents: read
+jobs:
+  offline:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          python 'Night Court/tools/test_import_s09e19_continuous_review_evidence.py'
+          python -m py_compile 'Night Court/tools/import_s09e19_continuous_review_evidence.py'
