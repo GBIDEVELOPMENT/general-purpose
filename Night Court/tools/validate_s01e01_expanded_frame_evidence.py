@@ -32,28 +32,38 @@ def validate(packet=None, manifest=None, scene=None):
     s = scene if scene is not None else json.loads(SCENE.read_text("utf-8"))
     if (p.get("schema") != "night-court-s01e01-expanded-sampled-visual-observations/1"
         or p.get("episode_id") != "S01E01"
-        or p.get("source_original_video_sha256") != m["source_video_sha256"] != ""
+        or p.get("source_original_video_sha256") != m["source_video_sha256"]
         or p.get("source_original_video_sha256") != s["source_media_sha256"]
         or p.get("source_original_caption_sha256") != m["source_caption_sha256"]
         or p.get("source_original_caption_sha256") != s["original_subtitle_sha256"]):
         raise ValueError("Original S01E01 AVI/SRT source provenance mismatch")
     if (p.get("source_evidence_run") != 40065126174
         or p.get("source_artifact_id") != 12549082053
-        or not all(SHA.fullmatch(p.get(key, "")) for key in
-            ("source_artifact_sha256", "source_frame_index_sha256"))):
+        or p.get("source_artifact_sha256") !=
+            "a29f7bdbb869cacc81bcc13f26e35678fcdaee84ac3dc48dd3a4ebd20d367f28"
+        or p.get("source_frame_index_sha256") !=
+            "d041fc452cd1a8a2f97f95b92bd3313cdd6931c60b185f699c0bc8f66cd63347"):
         raise ValueError("Unrecognized actual original-source frame artifact evidence")
     if (p.get("source_window_ms") != [56912, 93074]
         or p.get("padded_visual_sampling_window_ms") != [56912, 93162]
         or p.get("sample_count") != 145
-        or p.get("original_evidence_task_count") != len(m["tasks"]) != 0
+        or p.get("original_evidence_task_count") != len(m["tasks"])
+        or len(m["tasks"]) != 17
         or p.get("independent_continuous_video_acceptances") != 0
         or p.get("independently_listened_voice_turns") != 0
         or p.get("finished_production_script") is not False):
         raise ValueError("Visual-only source scope or acceptance gate changed")
     contacts=p.get("contact_sheets")
+    expected_contact_hashes=[
+        "669fa0fc9fc48f81bf913c00fbab1210d907d04962bdd08ded64fe97aab84b91",
+        "2d9e523823c3f8c52d45abecd636b555f0ff59d3317aeefde6b402d5d9482fe9",
+        "22ce3b6d46f992ae212fb5631996fdd3c60577a48bdc4e5e2e8331f9480253e1",
+        "7bffb3e095bdf0cbebe276866990c1f045a0406942ff4da57660af0d8ac68cd8",
+    ]
     if (not isinstance(contacts,list) or len(contacts)!=4 or
         any(c.get("file")!=f"contact-{i:02d}.jpg"
-            or not SHA.fullmatch(c.get("sha256","")) for i,c in enumerate(contacts,1))):
+            or c.get("sha256")!=expected_contact_hashes[i-1]
+            for i,c in enumerate(contacts,1))):
         raise ValueError("Original source review contact sheet evidence missing")
     rows=p.get("observations")
     if not isinstance(rows,list) or len(rows)!=6:
