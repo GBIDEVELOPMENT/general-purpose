@@ -1,0 +1,33 @@
+{
+  "schema": "night-court-s01e01-three-text-witness-preserved-summary/1",
+  "episode_id": "S01E01",
+  "original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_audio_pcm_sha256": "7fd284e99af1d69ca429496060c876241f181738666a86e8cb1335d5b869861a",
+  "original_srt_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_three_witness_json_sha256": "4203b5550bad8e0a56bc9316144011f53e3e677fea3545dd3eab868a2f0019e5",
+  "original_three_witness_private_zip_sha256": "5130d3b61375e94b08165e7dec2dc9aa74423a9a13de6d499e32cd4d3fc1cd6d",
+  "trusted_original_source_run_id": 40116865728,
+  "original_private_artifact_id": 12569465735,
+  "original_private_artifact_expiry_utc": "2026-10-31T17:36:24Z",
+  "original_srt_cues": 336,
+  "independent_model_agreement_spans": 200,
+  "span_level_classification_counts": {
+    "three_text_witness_correspondence_candidate": 184,
+    "two_model_agreement_caption_lexical_disagreement": 16,
+    "no_original_caption_in_candidate_interval": 0
+  },
+  "model_consensus_spans_with_srt_correspondence_fraction": 0.92,
+  "requires_targeted_source_audio_review": 16,
+  "model_two_model_agreement_is_positive_machine_corroboration": true,
+  "original_srt_immutable": true,
+  "words_independently_human_listened": false,
+  "speaker_character_identity_accepted": false,
+  "complete_original_episode_screenplay_accepted": false,
+  "per_episode_production_run_time_not_measured_here": true,
+  "limits": [
+    "184/200 is span-level source subtitle correspondence, not a word-error-rate or precision estimate.",
+    "Two recognizers and a third source SRT are three text witnesses, not three statistically independent acoustical transcriptions.",
+    "Sixteen short lexical mismatch windows may be partial caption phrases; do not rewrite source without listening.",
+    "All source video/audio edition matching and character/performance validation remain pending."
+  ]
+}
