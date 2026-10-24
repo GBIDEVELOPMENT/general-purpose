@@ -13,7 +13,7 @@ SCREEN_FOLDER={"screens","screenshots","screen shots","screen caps","screencaps"
 SCREEN_FILE=re.compile(r"(?i)^(?:screen(?:shot)?[\s._-]*\d+|mpv-shot\d+|vlcsnap[-\d]+|thumbs?[-_ ]?\d+|.+[ ._-]screenshots?)\.(?:png|jpe?g|webp)$")
 # User-authorized release samples and trailers, never an ordinary episode.
 RELEASE_CLIP=re.compile(r"(?i)^(?:sample|trailer|teaser|.+[ ._-](?:sample|trailer|teaser))$")
-EPISODE_ID=re.compile(r"(?i)S\\d{1,2}E\\d{1,3}")
+EPISODE_ID=re.compile(r"(?i)S\d{1,2}E\d{1,3}")
 def category(path):
     p=PurePosixPath(path)
     if p.suffix.lower()==".nfo":return "nfo"
