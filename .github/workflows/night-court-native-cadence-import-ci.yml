@@ -1,0 +1,46 @@
+name: Night Court source-verified 29.97fps cadence import QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/research/s01e01-native-cadence-and-cost.json'
+      - 'Night Court/S01E01-CADENCE-COST-HANDOFF.md'
+      - 'Night Court/FAST-EPISODE-FACTORY-THROUGHPUT.md'
+      - 'Night Court/AV-SCRIPT-PRODUCTION-WORKBOARD.md'
+      - '.github/workflows/night-court-native-cadence-import-ci.yml'
+permissions:
+  contents: read
+jobs:
+  source-evidence:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-real-2997fps-source-benchmark'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Independently validate exact original source metadata and no media promotion
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from fractions import Fraction
+          from pathlib import Path
+          path=Path('Night Court/research/s01e01-native-cadence-and-cost.json')
+          raw=path.read_bytes()
+          assert hashlib.sha256(raw).hexdigest()=='e32b6c011cf54f52aa86f0e5dca64c5da7a2ad1284e63a2dd379fdf063d2faa1'
+          x=json.loads(raw)
+          assert x['schema']=='night-court-s01e01-original-cadence-and-cost/1'
+          assert x['original_video_sha256']=='5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962'
+          assert x['original_video_bytes']==183386112
+          assert x['cadence']['width']==640 and x['cadence']['height']==480
+          assert Fraction(x['cadence']['avg_frame_rate'])==Fraction(30000,1001)
+          assert x['sampled_pts']['unique_pts_count']==90
+          assert x['sampled_pts']['duplicate_pts_count']==1
+          assert x['sampled_pts']['out_of_order_or_tied_adjacent_pts_count']==1
+          assert x['sampled_pts']['whole_episode_cadence_verified'] is False
+          assert x['verified_rate_visual_plan_counts']['frames']==31
+          assert x['original_picture_audio_frames_exported'] is False
+          assert x['full_episode_dual_asr_benchmarked'] is False
+          assert x['episode_initial_pass_under_30_minutes_verified'] is False
+          assert abs(sum(x['wall_clock_stage_seconds'].values())-6.077)<1e-6
+          print('Real source 29.970fps cadence metadata SHA and non-promotion gates passed')
+          PY
