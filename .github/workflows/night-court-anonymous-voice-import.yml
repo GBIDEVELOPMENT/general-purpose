@@ -1,0 +1,59 @@
+name: Night Court anonymous original voice similarity import QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s01e01_anonymous_voice_similarity.py'
+      - 'Night Court/tools/test_import_s01e01_anonymous_voice_similarity.py'
+      - 'Night Court/S01E01-ANONYMOUS-VOICE-HANDOFF.md'
+      - '.github/workflows/night-court-anonymous-voice-import.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  evidence:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s01e01-anonymous-voice-evidence'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-s01e01-anonymous-voice-evidence
+          persist-credentials: true
+      - name: Test source and anonymization guards with synthetic records
+        run: |
+          python 'Night Court/tools/test_import_s01e01_anonymous_voice_similarity.py'
+          python -m py_compile 'Night Court/tools/import_s01e01_anonymous_voice_similarity.py'
+      - name: Retrieve bounded non-biometric source evidence from trusted run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/voice-source"
+          gh run download 40052520049 --repo gamesbyian/general-purpose \
+            --name night-court-s01e01-anonymous-voice-similarity \
+            --dir "${{ runner.temp }}/voice-source"
+      - name: Reject raw embeddings, fabricated voice identity and source changes
+        run: |
+          python 'Night Court/tools/import_s01e01_anonymous_voice_similarity.py' \
+            "${{ runner.temp }}/voice-source/s01e01-ecapa-anonymous.json"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('Night Court/seasons/S01/S01E01/derived/scene-review-v3')
+          j=json.loads((p/'anonymous-voice-similarity.json').read_text())
+          assert len(j['source_voice_intervals'])==10
+          assert not j['raw_voice_embeddings_retained']
+          assert not j['speaker_identities_assigned']
+          assert not j['emotion_and_delivery_inferred']
+          assert (p/'anonymous-voice-similarity.md').is_file()
+          print('Anonymous source pairs retained without voice embeddings or false character tags')
+          PY
+      - name: Commit only tiny scored similarity records
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/S01/S01E01/derived/scene-review-v3/anonymous-voice-similarity.json" \
+                     "Night Court/seasons/S01/S01E01/derived/scene-review-v3/anonymous-voice-similarity.md"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): preserve anonymous S01E01 voice resemblance scores"
+            git push origin HEAD:data/night-court-s01e01-anonymous-voice-evidence
+          fi
