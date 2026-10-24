@@ -1,0 +1,54 @@
+name: Night Court complete 193-episode speaker preparation
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/night-court-193-speaker-packets.yml'
+      - 'Night Court/SOURCE-SCRIPT-SCAFFOLDS-HANDOFF.md'
+permissions:
+  contents: write
+jobs:
+  prepare:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-193-speaker-work-packets'
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-193-speaker-work-packets
+          persist-credentials: true
+      - name: Run evidence-only speaker packet tests
+        run: python "Night Court/tools/test_prepare_speaker_attribution.py"
+      - name: Generate source-linked original-series character-roster and speech-turn packets
+        run: |
+          python "Night Court/tools/prepare_speaker_attribution.py"
+          python "Night Court/tools/validate_dialogue.py"
+      - name: Reject incomplete or invented character assignments
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("Night Court")
+          p=json.loads((root/"catalog/speaker-attribution-preparation.json").read_text())
+          scaffold=json.loads((root/"catalog/source-script-scaffold-coverage.json").read_text())
+          assert p["version_count"]==p["episodes_with_packets"]==193
+          assert p["caption_cues"]==scaffold["source_cues"]==70804
+          assert p["attribution_units"]>=p["caption_cues"]
+          assert p["explicit_speaker_names_assigned"]==0
+          assert p["authoritative_assignments"]==0
+          assert len(p["versions"])==193
+          for item in p["versions"]:
+            out=root/item["derived_path"]
+            assert (out/"candidate-roster.json").is_file()
+            assert (out/"turns.jsonl").is_file()
+            assert (out/"agent-packets.jsonl").is_file()
+          print("193/193 speaker-attribution work packets prepared, zero asserted character identities")
+          PY
+      - name: Commit per-episode neutral role/turn packets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/" "Night Court/catalog/speaker-attribution-preparation.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): prepare unassigned speaker packets for all 193 episodes"
+            git push origin HEAD:data/night-court-193-speaker-work-packets
+          fi
