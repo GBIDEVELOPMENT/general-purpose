@@ -1,0 +1,22 @@
+name: Night Court complete 36s S01E01 source-ASR comparison QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/probe_s01e01_full_review_asr.py'
+      - 'Night Court/tools/test_s01e01_full_review_asr.py'
+      - 'Night Court/S01E01-EXTENDED-ASR-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-full-review-asr-test.yml'
+      - '.github/workflows/night-court-trusted-s01e01-full-review-asr.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s01e01-full-review-asr'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Original source captions never promoted by model-word comparison
+        run: python 'Night Court/tools/test_s01e01_full_review_asr.py'

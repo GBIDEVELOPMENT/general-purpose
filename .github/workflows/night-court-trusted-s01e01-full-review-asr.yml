@@ -1,0 +1,56 @@
+name: Night Court trusted S01E01 complete original-scene ASR proposals
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-full-asr.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-complete-s01e01-original-asr
+  cancel-in-progress: false
+jobs:
+  source-inference:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-full-asr-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - name: Checkout approved trusted main only, not PR code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check original caption and source-video constraints without secrets
+        run: python 'Night Court/tools/test_s01e01_full_review_asr.py'
+      - name: Install fixed decode and ASR library dependencies
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python -m pip install -r 'Night Court/tools/vocal-requirements-asr.txt'
+      - name: Only one SHA-pinned AVI to ephemeral inference; no retained original media
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: |
+          python 'Night Court/tools/probe_s01e01_full_review_asr.py' --ftp \
+            --output "${{ runner.temp }}/s01e01-full-asr/candidate-36s-asr.json"
+      - name: Private bounded text/JSON ASR hypotheses only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-original-full-cut-asr-hypotheses
+          path: ${{ runner.temp }}/s01e01-full-asr/candidate-36s-asr.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Wipe inferred evidence cache
+        if: always()
+        run: rm -rf "${{ runner.temp }}/s01e01-full-asr"
