@@ -1,0 +1,25 @@
+name: Night Court S09E19 untimed scene editorial review queue
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_s09e19_editorial_review_queue.py'
+      - 'Night Court/tools/test_s09e19_editorial_review_queue.py'
+      - 'Night Court/seasons/S09/S09E19/derived/editorial-review-v1/untimed-scene-review-queue.json'
+      - 'Night Court/S09E19-EDITORIAL-REVIEW-HANDOFF.md'
+      - '.github/workflows/night-court-s09e19-editorial-queue.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s09e19-editorial-review-queue'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Assert 347 originally untimed paragraphs and all source image hashes
+        run: |
+          python 'Night Court/tools/test_s09e19_editorial_review_queue.py'
+          python 'Night Court/tools/build_s09e19_editorial_review_queue.py' --write
+          git diff --exit-code -- 'Night Court/seasons/S09/S09E19/derived/editorial-review-v1/untimed-scene-review-queue.json'
