@@ -1,0 +1,33 @@
+name: Night Court S09E19 exact original-source rederivation gate
+on:
+  pull_request:
+    paths:
+      - 'Night Court/seasons/S09/S09E19/derived/whole-source-once-v1/**'
+      - '.github/workflows/night-court-s09e19-import-exact-ci.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s09e19-original-full-source-evidence'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Reproduce exact full original episode S09E19 cost and paragraph proposals
+        run: |
+          python - <<'PY'
+          import sys,hashlib
+          from pathlib import Path
+          sys.path.insert(0,'Night Court/tools')
+          from preserve_s09e19_source_once_evidence import outputs,SHA
+          base=Path('Night Court/seasons/S09/S09E19/derived/whole-source-once-v1')
+          original=(base/'source-once-original-report.json').read_bytes()
+          assert hashlib.sha256(original).hexdigest()==SHA
+          expected=outputs(original,strict=True)
+          assert set(p.name for p in base.iterdir())==set(expected)
+          for name,blob in expected.items():
+              assert (base/name).read_bytes()==blob, f'Derived original S09E19 evidence changed: {name}'
+          print('S09E19 exact 215s original source evidence rederived byte-for-byte; 347 source paragraphs still untimed')
+          PY
