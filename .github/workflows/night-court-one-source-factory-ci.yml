@@ -1,0 +1,25 @@
+name: Night Court original source-once audio and video factory offline QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/profile_s01e01_one_source_factory.py'
+      - 'Night Court/tools/test_s01e01_one_source_factory.py'
+      - '.github/workflows/night-court-one-source-factory-ci.yml'
+      - '.github/workflows/night-court-trusted-one-source-factory.yml'
+permissions:
+  contents: read
+jobs:
+  source-free:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify original SHA, independent models, frame-PTS and wallclock invariants
+        run: |
+          python 'Night Court/tools/test_s01e01_one_source_factory.py'
+          python 'Night Court/tools/test_s01e01_full_dual_asr.py'
+          python 'Night Court/tools/test_compare_independent_asr.py'
+          python 'Night Court/tools/test_fast_visual_pass.py'
