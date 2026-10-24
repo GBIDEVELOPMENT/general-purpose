@@ -58,7 +58,7 @@ def inspect(x):
         filename=temporary.name
     try:
         try:read_bytes=read_header(x,filename)
-        except (OSError,ftplib.all_errors,ValueError):
+        except ftplib.all_errors + (OSError,ValueError):
             return {"status":"ftp_header_read_failed"}
         command=["ffprobe","-hide_banner","-loglevel","error",
                  "-probesize","1048576","-analyzeduration","1000000",
