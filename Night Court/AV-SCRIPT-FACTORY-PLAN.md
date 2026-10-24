@@ -2,7 +2,7 @@
 
 ## Nine-season reading-script preparation
 
-[Source reading-script scaffold handoff](SOURCE-SCRIPT-SCAFFOLDS-HANDOFF.md) describes the deterministic `build_source_script_scaffolds.py` stage. It converts each of the 193 physically held dialogue witnesses into an episode-local reading transcript, retaining original cue IDs and unverified speaker labels. All inferred dialogue blocks are marked as caption-gap hypotheses, not actual scenes, and S09E19 remains untimed. **The workflow is pending its independent all-episode CI acceptance in this PR.** These are not production scripts and do not replace the complete audiovisual scene-reconstruction pipeline.
+[Source reading-script scaffold handoff](SOURCE-SCRIPT-SCAFFOLDS-HANDOFF.md) describes the deterministic `build_source_script_scaffolds.py` stage. It converts each of the 193 physically held dialogue witnesses into an episode-local reading transcript, retaining original cue IDs and unverified speaker labels. All inferred dialogue blocks are marked as caption-gap hypotheses, not actual scenes, and S09E19 remains untimed. **The all-episode workflow passed CI and merged as [PR #156](https://github.com/gamesbyian/general-purpose/pull/156).** It produced 193 source-only episode reading scripts, 70,804 original caption cues, 72,733 source-linked units and 1,173 caption-gap candidate blocks. All AV/scene/character acceptance gates remain separate. These are not production scripts and do not replace the complete audiovisual scene-reconstruction pipeline.
 
 
 ## Next implementation lane: independent CTC source alignment

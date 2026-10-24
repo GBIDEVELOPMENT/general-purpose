@@ -1,5 +1,7 @@
 # Source-only reading scripts for all original Night Court episodes
 
+**Completed:** [PR #156](https://github.com/gamesbyian/general-purpose/pull/156), successful all-episode CI [run #40049496881](https://github.com/gamesbyian/general-purpose/actions/runs/40049496881). **193/193** reading scripts, **70,804** original caption cues, **72,733** script units, **1,173** provisional gap blocks, **192 timed + 1 untimed**. Source presence does not imply verified audiovisual completeness.
+
 ## Intent and evidence standard
 
 A **source-reading scaffold** is not a production screenplay, complete transcript, verified scene breakdown, performed actor script or copyright license. It is a chronological, readable working document that makes each retained original-series subtitle/dialogue source available to subsequent visual/speaker QA agents, without inventing information the source does not contain.

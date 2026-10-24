@@ -16,6 +16,10 @@ The project's first source-grounded [**integrated script excerpt**](seasons/S01/
 
 The [utterance acoustic report](seasons/S01/S01E01/derived/scene-review-v3/utterance-acoustic-review.md) records actual mixed-TV-audio pitch and intensity candidates for ten ASR-proposed speech spans. It does **not** validate speaker identity, expressive emotion, sarcasm, independent word-level forced alignment, continuous-video completeness or a finished production screenplay. These missing gates drive the [AV script factory plan](AV-SCRIPT-FACTORY-PLAN.md) and [S01E01 acceptance handoff](S01E01-AV-PILOT-HANDOFF.md).
 
+## All-episode reading-script scaffolds
+
+Every original episode now has a [source-only reading script](seasons/S01/S01E01/derived/source-script-scaffold-v1.md) in its `derived/` directory, built from the held caption witness with original source cues and an explicit **UNIDENTIFIED VOICE** label wherever the source is unattributed. [PR #156](https://github.com/gamesbyian/general-purpose/pull/156) passed all-193 CI, producing 70,804 original cues, 72,733 candidate dialogue units and 1,173 caption-gap blocks across 193 scripts. [See complete scaffold coverage](catalog/source-script-scaffold-coverage.json). These are **not** claimed to be actual production screenplays: they have no verified settings, speaker assignments, physical action, vocal-performance interpretation or episode-wide AV completeness. The first actual multimodal scene example is [S01E01 scene v3](seasons/S01/S01E01/derived/scene-review-v3/scene-script-v3.md).
+
 ## Actually held (23 October 2026)
 
 - **193/193** original-series episode records: `seasons/Sxx/SxxEyy/episode.json`, spanning 9 seasons (13, 22, 22, 22, 22, 22, 24, 24, 22).
