@@ -1,0 +1,24 @@
+name: Night Court original AVI PTS scene-candidate probe CI
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/probe_s01e01_source_avi_shot_changes.py'
+      - 'Night Court/tools/test_s01e01_source_avi_shot_changes.py'
+      - 'Night Court/S01E01-ORIGINAL-SHOT-PTS-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-shot-pts-offline.yml'
+      - '.github/workflows/night-court-trusted-s01e01-shot-pts.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s01e01-source-pts-shot-proposals'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install source-frame-rate video decode dependency
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Prove hard cut timing against independently generated 24fps fake episode
+        run: python 'Night Court/tools/test_s01e01_source_avi_shot_changes.py'

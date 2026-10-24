@@ -1,0 +1,13 @@
+# S01E01: actual-frame-rate, source-timestamp shot-change hypotheses
+
+Earlier S01E01 source video research generated 145 **four-frames-per-second** JPEG observations from 00:56.912–01:33.162. They establish reproducible sampled positions but cannot pinpoint exact cuts, distinguish a dissolve from source encoding, or establish continuous physical-action onset. The [review cut](S01E01-REVIEW-CUT-HANDOFF.md) covers 11 caption speaking-turn proposals and six pending motion editorial tasks.
+
+This new lane runs FFmpeg's decoded-frame `select(scene)` image-difference heuristic on the **exact SHA-256-pinned full original AVI** at the source frame rate, over **00:56.912–01:33.074** only, logging `lavfi.scene_score` and decoded stream PTS for each candidate. No decimated frame rate, interpolation or audio processing. The threshold is fixed at **0.12**, deliberately sensitive enough to prioritize image-transition review, not tuned or calibrated as an objective probability that a cut occurred.
+
+The score means **image difference**, not editorial cut confidence. Camera movement, dissolve, flashes, performers crossing the frame or compression can trigger candidates; a long soft dissolve may escape this detector. Source AVI container/stream presentation timestamps remain **research candidates**, not independently verified synchronized dialogue. Earlier `01:08` blended-frame observation especially needs manual examination before assigning a type of camera edit or scene break.
+
+Run an owner PR with an inert trigger file on branch `research/night-court-s01e01-shot-pts-trigger` after the implementation PR's synthetic CI passes and merges into trusted `main`. The `pull_request_target` job checks exact owner, repo, base and trigger branch, then runs only trusted `github.sha` code. It verifies original AVI size plus entire byte SHA-256, never exposes FTP credentials to PR-head scripts, downloads only one episode, analyzes a maximum of 45 seconds and retains a **tiny JSON-only private 7-day Actions artifact**. The original AVI is discarded from the temporary workspace. The source SRT and integrated scripts are unchanged.
+
+Synthetic tests construct a clearly artificial 24fps, ten-second AVI with hard cuts at 5.000 and 8.000 seconds. The detector must recover both original presentation time candidates from a nonzero-offset 4–9s review window, reject corrupt metadata and preserve all zero-acceptance gates. Manual review of original full-motion source and independent listening is still mandatory for every screenplay stage direction or speaking identity.
+
+**Acceptance status:** 17 S01E01 editorial tasks pending; 193 production scripts blocked. No video scene or character truth is certified by this image-difference scorer.
