@@ -1,0 +1,33 @@
+name: Night Court exact three-witness original source import CI
+on:
+  pull_request:
+    paths:
+      - 'Night Court/seasons/S01/S01E01/derived/three-witness-v1/**'
+      - '.github/workflows/night-court-three-witness-import-integrity.yml'
+permissions:
+  contents: read
+jobs:
+  exact-evidence:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s01e01-source-three-witness-review'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Independently rederive every imported source-hashed output
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import sys
+          sys.path.insert(0,'Night Court/tools')
+          from preserve_s01e01_three_witness import make_outputs, SOURCE_JSON_SHA, digest
+          path=Path('Night Court/seasons/S01/S01E01/derived/three-witness-v1')
+          raw=(path/'three-text-witness-review.json').read_bytes()
+          assert digest(raw)==SOURCE_JSON_SHA
+          expected=make_outputs(raw,strict_original=True)
+          assert set(p.name for p in path.iterdir())==set(expected)
+          for name,data in expected.items():
+              assert (path/name).read_bytes()==data, f'unverifiable imported witness: {name}'
+          print('Exact four-file derived original source import verified; no source transcript or human acceptance altered')
+          PY
