@@ -35,5 +35,18 @@ class WorkQueue(unittest.TestCase):
         self.assertFalse(untimed["source_metadata"]["timed"])
         self.assertTrue(any("untimed" in z for z in untimed["next_tasks"]))
         self.assertFalse(untimed["speaker_verified"])
+        self.assertEqual(untimed["status"],"S09E19_bounded_AV_experiment_original_source_untimed")
+        self.assertEqual(untimed["bounded_source_sample_evidence"]["untimed_original_paragraph_lexical_candidates"],15)
+        self.assertEqual(untimed["bounded_source_sample_evidence"]["sampled_real_video_frames"],100)
+        self.assertTrue(untimed["bounded_source_sample_evidence"]["original_source_remains_untimed"])
+    def test_real_bounded_video_pilots_do_not_falsely_upgrade_episode_certification(self):
+        self.assertEqual(self.j["episodes_with_bounded_real_AV_evidence"],2)
+        self.assertEqual(self.j["episodes_with_source_linked_multimodal_script_excerpts"],2)
+        self.assertEqual(self.j["active_bounded_media_pilots"],["S01E01","S09E19"])
+        self.assertEqual(self.j["original_untimed_dialogue_witnesses"],1)
+        self.assertEqual(self.j["episode_scripts_independently_av_verified"],0)
+        s09=next(x for x in self.j["episodes"] if x["episode_id"]=="S09E19")
+        self.assertFalse(s09["full_episode_screenplay_verified"])
+        self.assertEqual(s09["stage_acceptance"]["full_episode_independent_av_QA"],"not_verified")
 
 if __name__=="__main__":unittest.main()
