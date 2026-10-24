@@ -1,3 +1,7 @@
+## Delivered pilot files (2026-10-24)
+
+The renderer and its source-free tests merged via [PR #310](https://github.com/gamesbyian/general-purpose/pull/310), fixed source-format whitespace in [PR #312](https://github.com/gamesbyian/general-purpose/pull/312), and published two actual whole-held-dialogue working scripts via [PR #313](https://github.com/gamesbyian/general-purpose/pull/313). The private original witness text is preserved: S01E01 has 336/336 SRT cues and 404 typographic speech units, S09E19 has 347/347 untimed paragraphs. Six existing sampled picture notes were incorporated in each, without fabricating other scenes or character assignments. Both have deterministic source manifests and targeted review queues. This is **2 source-complete dialogue working drafts**, **0 editor-ready, visually complete scripts**, and **0 independently certified full AV scripts**, with no silent model overrides.
+
 # Night Court caption-first working-screenplay standard
 
 **Effective 2026-10-24. This changes working-draft production priorities, not the independent archival acceptance standard.**
