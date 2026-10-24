@@ -65,9 +65,9 @@ jobs:
         shell: bash
         run: |
           if [ -f media-organizer/approved-batch.json ]; then
-            python media-organizer/reconcile.py \\
-              --inventory media-organizer/output/inventory.json \\
-              --manifest media-organizer/approved-batch.json \\
+            python media-organizer/reconcile.py \
+              --inventory media-organizer/output/inventory.json \
+              --manifest media-organizer/approved-batch.json \
               --output media-organizer/output/current-batch-reconciliation.json
           fi
       - name: Upload private audit artifact
