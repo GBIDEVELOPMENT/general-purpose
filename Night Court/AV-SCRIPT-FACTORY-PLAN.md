@@ -1,5 +1,9 @@
 # Night Court audiovisual script-generation factory
 
+## S01E01 stage-direction and vocal attribution acceptance gates
+
+[PR #191](https://github.com/gamesbyian/general-purpose/pull/191) merged a [source-linked editorial worklist](seasons/S01/S01E01/derived/editorial-review-v1/acceptance-worklist.json) for all 11 caption speaking turns, 55 source words and six video motion observations. [PR #197](https://github.com/gamesbyian/general-purpose/pull/197) adds a [17-task pending decision template](seasons/S01/S01E01/derived/editorial-review-v1/review-decisions-template.json) and rejects ungrounded voice identity, emotional tone or stage action declarations without reviewer-attested original audio/video evidence. This is an evidence integrity gate, **not an actual independent human verification**. The next task is authentic audio-visual review of the 17 cases, particularly C19, C22 and C27, followed by longer whole-episode checks.
+
 ## All-episode evidence production queue
 
 [AV-SCRIPT-PRODUCTION-WORKBOARD.md](AV-SCRIPT-PRODUCTION-WORKBOARD.md) and its deterministic `catalog/av-script-reconstruction-queue.json` join the complete 193 source reading scripts, speaker packets, provisional scene-participation reports, source QA flags and owner FTP video filename inventory into one episode-by-episode task queue. Cross-file source SHA mismatches fail CI. The first episode remains a bounded media evidence pilot, and **zero full episodes are independently AV accepted**. This workboard does not process additional source video or claim automatic script completeness.
@@ -7,7 +11,7 @@
 
 ## Wider S01E01 source-cut sync experiment
 
-[The S01E01 source-cut drift handoff](S01E01-SOURCE-CUT-DRIFT-HANDOFF.md) defines five additional 30-second source-audio samples between 05:00 and 23:00 of the original AVI, independently transcribed with tiny.en and heuristically matched to the preserved SRT. It is a resource-bounded precursor to episode-wide edition acceptance. **Actual execution remains subject to offline CI and owner-only PR-triggered trusted-base workflow; no whole-episode synchronization is yet confirmed.**
+[The S01E01 source-cut drift handoff](S01E01-SOURCE-CUT-DRIFT-HANDOFF.md) defines five additional 30-second source-audio samples between 05:00 and 23:00 of the original AVI, independently transcribed with tiny.en and heuristically matched to the preserved SRT. It is a resource-bounded precursor to episode-wide edition acceptance. The owner-controlled [real sample run #40050642750](https://github.com/gamesbyian/general-purpose/actions/runs/40050642750) **succeeded**, and [PR #194](https://github.com/gamesbyian/general-purpose/pull/194) preserved all five sampled windows with stricter checksum and hallucinated duplicate-caption rejection. **No whole-episode offset or synchronized source edition has been confirmed.** See [sparse-drift QA](S01E01-SPARSE-DRIFT-QA-HANDOFF.md) for the anomalous repeated first-window matching and independent listening requirements.
 
 
 ## Nine-season reading-script preparation
