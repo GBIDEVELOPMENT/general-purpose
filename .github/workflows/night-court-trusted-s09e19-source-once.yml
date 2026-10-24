@@ -32,7 +32,7 @@ jobs:
       - name: Install source-video and distinct original speech recognizer dependencies
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-          python -m pip install 'faster-whisper==1.2.1' 'vosk==0.3.45'
+          python -m pip install 'faster-whisper==1.2.1' 'vosk==0.3.45' 'Pillow==11.3.0'
       - name: Download exactly one SHA-pinned original S09E19 and benchmark both sources
         env:
           FTP_HOST: wood.seedhost.eu
