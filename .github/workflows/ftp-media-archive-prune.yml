@@ -1,0 +1,54 @@
+name: FTP prune verified extracted RAR set
+on:
+  pull_request:
+    paths:
+      - 'media-organizer/archive_cleanup.py'
+      - 'media-organizer/tests/test_archive_cleanup.py'
+      - 'media-organizer/approved-archive-delete.json'
+      - '.github/workflows/ftp-media-archive-prune.yml'
+  push:
+    branches: [main]
+    paths: ['media-organizer/approved-archive-delete.json']
+permissions:
+  contents: read
+concurrency:
+  group: ftp-media-extracted-archive-prune
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python -m py_compile media-organizer/archive_cleanup.py
+          python -m unittest discover -s media-organizer/tests -v
+          if [ -f media-organizer/approved-archive-delete.json ]; then
+            python media-organizer/archive_cleanup.py
+          fi
+  delete:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    environment: ftp-media-changes
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ftp
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify extracted video and prune exact archive parts
+        run: |
+          test -n "$FTP_PASSWORD"
+          python media-organizer/archive_cleanup.py --apply
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: extracted-rar-prune-evidence
+          path: media-organizer/archive-delete-output/
+          if-no-files-found: warn
+          retention-days: 90
