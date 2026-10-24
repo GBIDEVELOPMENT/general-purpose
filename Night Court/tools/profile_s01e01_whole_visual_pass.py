@@ -22,6 +22,7 @@ from ftp_research_intake import connect
 from pilot_ftp_video_acoustics import candidate,retrieve
 from plan_fast_visual_pass import make_plan
 from extract_fast_visual_plan import extract
+from summarize_motion_triplets import summarize
 from probe_s01e01_cadence_and_cost import video_properties, SHA, SIZE
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -152,8 +153,12 @@ def profile_local(original:Path,private_output:Path):
         raise ValueError('Unbounded visual source plan')
     t=time.monotonic()
     with tempfile.TemporaryDirectory(prefix='night-court-private-jpegs-') as tmp:
-        captured=extract(original,plan,Path(tmp)/'extracted',expected_media_bytes=SIZE)
-    timings['one_pass_ffmpeg_source_frame_extraction_seconds']=round(time.monotonic()-t,3)
+        location=Path(tmp)/'extracted'
+        captured=extract(original,plan,location,expected_media_bytes=SIZE)
+        timings['one_pass_ffmpeg_source_frame_extraction_seconds']=round(time.monotonic()-t,3)
+        t=time.monotonic()
+        pixel_review=summarize(plan,captured,location/'frames')
+        timings['ephemeral_three_frame_pixel_difference_seconds']=round(time.monotonic()-t,3)
     if not captured['all_samples_within_source_pts_tolerance']:
         raise ValueError('Actual selected AVI PTS do not match planned times; do not publish image evidence')
     report={
@@ -173,6 +178,10 @@ def profile_local(original:Path,private_output:Path):
       'source_JPEGs_in_ephemeral_scratch_only':True,
       'actual_extracted_frame_count':captured['extraction_frame_count'],
       'actual_JPEG_bytes':captured['total_image_bytes'],
+      'source_triads_with_pixel_change_features':pixel_review['analyzed_three_frame_groups'],
+      'source_triads_abstaining_for_pts_order':pixel_review['pts_order_abstentions'],
+      'pixel_change_candidate_reviews':pixel_review['review_priority'][:12],
+      'pixel_change_is_verified_physical_action':False,
       'all_image_frame_pts_match_verified':captured['all_samples_within_source_pts_tolerance'],
       'visual_models_executed':False,
       'visual_content_independently_reviewed':False,
