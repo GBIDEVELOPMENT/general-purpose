@@ -1,0 +1,28 @@
+name: Night Court original subtitle and independent ASR model correspondence offline QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/triangulate_whole_s01e01_asr_with_srt.py'
+      - 'Night Court/tools/test_triangulate_whole_s01e01_asr_with_srt.py'
+      - '.github/workflows/night-court-whole-asr-caption-triangulation-ci.yml'
+      - '.github/workflows/night-court-trusted-whole-asr-caption-compare.yml'
+permissions:
+  contents: read
+jobs:
+  correspondence:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test positive three-witness matches, disagreement review and immutable source SRT hash
+        run: |
+          python 'Night Court/tools/test_triangulate_whole_s01e01_asr_with_srt.py'
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          p=Path('Night Court/seasons/S01/S01E01/dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6/original.srt')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496'
+          PY
