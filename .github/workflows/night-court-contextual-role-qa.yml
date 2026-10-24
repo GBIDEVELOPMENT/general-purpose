@@ -1,0 +1,34 @@
+name: Night Court contextual role source-dialogue editorial QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/render_caption_context_roles_v4.py'
+      - 'Night Court/tools/test_render_caption_context_roles_v4.py'
+      - 'Night Court/seasons/S01/S01E01/derived/dialogue-context-speakers-v1/**'
+      - 'Night Court/seasons/S09/S09E19/derived/dialogue-context-speakers-v1/**'
+      - 'Night Court/seasons/S01/S01E01/derived/caption-first-speaker-context-v4/**'
+      - 'Night Court/seasons/S09/S09E19/derived/caption-first-speaker-context-v4/**'
+      - '.github/workflows/night-court-contextual-role-qa.yml'
+      - '.github/workflows/night-court-trusted-contextual-role-scripts.yml'
+permissions:
+  contents: read
+jobs:
+  verified-source-only:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify original cue hashes, context cue pointers and provisional statuses
+        run: |
+          python 'Night Court/tools/test_render_caption_context_roles_v4.py'
+          python 'Night Court/tools/render_caption_context_roles_v4.py' --episode S01E01 --output-root "${{ runner.temp }}/speaker"
+          python 'Night Court/tools/render_caption_context_roles_v4.py' --episode S09E19 --output-root "${{ runner.temp }}/speaker"
+          if test -f 'Night Court/seasons/S01/S01E01/derived/caption-first-speaker-context-v4/screenplay-dialogue-context-edit.md'; then
+            python 'Night Court/tools/render_caption_context_roles_v4.py' --episode S01E01 --check
+          fi
+          if test -f 'Night Court/seasons/S09/S09E19/derived/caption-first-speaker-context-v4/screenplay-dialogue-context-edit.md'; then
+            python 'Night Court/tools/render_caption_context_roles_v4.py' --episode S09E19 --check
+          fi

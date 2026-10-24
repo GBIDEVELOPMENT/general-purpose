@@ -1,0 +1,251 @@
+{
+  "schema": "night-court-explicit-and-nearby-dialogue-context-speaker-proposals/1",
+  "episode_id": "S01E01",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "origin": "manual editorial reading of held source captions and immediate dialogue response context",
+  "named_character_speaking_original_audio_verified": false,
+  "speaker_identified_from_images": false,
+  "character_attributions_are_editable_unverified_hypotheses": true,
+  "proposals": [
+    {
+      "cue": 34,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "My name's Harry",
+      "source_context_cue_ids": [
+        34,
+        57
+      ],
+      "reason": "speaker says first name; later source dialogue directly identifies Judge Harold T. Stone",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 59,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "if I weren't the judge",
+      "source_context_cue_ids": [
+        57,
+        58,
+        59
+      ],
+      "reason": "reply to whether Judge Stone is actually the judge",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 68,
+      "part": 1,
+      "proposed_speaker_name": "DAN FIELDING",
+      "source_cue_contains_text": "Dan Fielding, assistant district attorney",
+      "source_context_cue_ids": [
+        67,
+        68
+      ],
+      "reason": "speaker introduces himself by name and position",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 70,
+      "part": 1,
+      "proposed_speaker_name": "SHEILA GARDINER",
+      "source_cue_contains_text": "I'm Sheila Gardiner",
+      "source_context_cue_ids": [
+        70
+      ],
+      "reason": "speaker introduces herself by name and role",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 86,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "Where's my gavel?",
+      "source_context_cue_ids": [
+        57,
+        78,
+        86
+      ],
+      "reason": "speaker occupying role of the newly appointed judge asks for his gavel",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 87,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "That hammer thing",
+      "source_context_cue_ids": [
+        86,
+        87
+      ],
+      "reason": "continues gavel request",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 88,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "Oh, here it is",
+      "source_context_cue_ids": [
+        86,
+        88
+      ],
+      "reason": "continues search for judge's gavel",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 89,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "Ladies and gentlemen of the court",
+      "source_context_cue_ids": [
+        57,
+        78,
+        89
+      ],
+      "reason": "newly appointed judge opens the courtroom remarks",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 90,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "Well, how the hell are you tonight",
+      "source_context_cue_ids": [
+        89,
+        90
+      ],
+      "reason": "continuation of the judge addressing the courtroom",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 98,
+      "part": 2,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "Miss Wagner",
+      "source_context_cue_ids": [
+        72,
+        97,
+        98
+      ],
+      "reason": "judge addresses court clerk after speaking to defendant",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 99,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "prepare the file",
+      "source_context_cue_ids": [
+        98,
+        99
+      ],
+      "reason": "continuation of judge's instruction to clerk",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 101,
+      "part": 2,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "It'll cost you 50 bucks",
+      "source_context_cue_ids": [
+        98,
+        99,
+        100,
+        101
+      ],
+      "reason": "judge imposes fine in courtroom exchange",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 103,
+      "part": 2,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "Case closed",
+      "source_context_cue_ids": [
+        101,
+        102,
+        103
+      ],
+      "reason": "judge closes the case",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 144,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "Court's recessed",
+      "source_context_cue_ids": [
+        139,
+        144
+      ],
+      "reason": "judge announces a recess",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 212,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "Heads, I stay a judge",
+      "source_context_cue_ids": [
+        203,
+        212
+      ],
+      "reason": "judge speaks about retaining the bench",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 274,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "Heads, we send her up the river",
+      "source_context_cue_ids": [
+        252,
+        274
+      ],
+      "reason": "judge offers a decision about a defendant",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 281,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "By the power vested in me",
+      "source_context_cue_ids": [
+        274,
+        281
+      ],
+      "reason": "judicial form of address in active court",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 336,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "fortunate I have that name",
+      "source_context_cue_ids": [
+        330,
+        336
+      ],
+      "reason": "continuing end-scene conversation identifying judge Harry",
+      "independently_verified": false,
+      "contextual_label_only": true
+    }
+  ]
+}

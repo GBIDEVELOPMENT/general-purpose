@@ -1,0 +1,42 @@
+name: Night Court trusted caption-context speaker pilot screenplay publish
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-caption-context-roles.txt'
+permissions:
+  contents: write
+concurrency:
+  group: night-court-owner-only-context-role-scripts
+  cancel-in-progress: false
+jobs:
+  render-two-contextual-role-scripts:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-caption-context-speaker-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout reviewed main SHA only, never PR-proposed code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Compile original source-dialogue roles with strict text and AV nonacceptance controls
+        run: |
+          python 'Night Court/tools/test_render_caption_context_roles_v4.py'
+          python 'Night Court/tools/render_caption_context_roles_v4.py' --episode S01E01
+          python 'Night Court/tools/render_caption_context_roles_v4.py' --episode S09E19
+          python 'Night Court/tools/render_caption_context_roles_v4.py' --episode S01E01 --check
+          python 'Night Court/tools/render_caption_context_roles_v4.py' --episode S09E19 --check
+      - name: Commit only original-dialogue derived editorial role drafts on isolated data review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-caption-context-speaker-drafts-20261024'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/caption-first-speaker-context-v4' 'Night Court/seasons/S09/S09E19/derived/caption-first-speaker-context-v4'
+          git diff --cached --check
+          git commit -m 'Night Court: complete original pilot source dialogue with cautiously proposed character speaker labels'
+          git push origin HEAD:refs/heads/data/night-court-caption-context-speaker-drafts-20261024
