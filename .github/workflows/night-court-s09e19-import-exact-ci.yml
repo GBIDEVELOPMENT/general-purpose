@@ -18,7 +18,7 @@ jobs:
       - name: Reproduce exact full original episode S09E19 cost and paragraph proposals
         run: |
           python - <<'PY'
-          import sys,hashlib
+          import sys,hashlib,json
           from pathlib import Path
           sys.path.insert(0,'Night Court/tools')
           from preserve_s09e19_source_once_evidence import outputs,SHA
@@ -28,6 +28,17 @@ jobs:
           expected=outputs(original,strict=True)
           assert set(p.name for p in base.iterdir())==set(expected)
           for name,blob in expected.items():
-              assert (base/name).read_bytes()==blob, f'Derived original S09E19 evidence changed: {name}'
+              actual=(base/name).read_bytes()
+              if name == 'untimed-model-paragraph-order.json':
+                  # The offline reconciler deliberately records elapsed CPU wall time;
+                  # only this single diagnostic field is nondeterministic between runs.
+                  prior=json.loads(actual)
+                  now=json.loads(blob)
+                  for item in (prior,now):
+                      seconds=item.pop('candidate_anchor_sort_stage_wall_seconds')
+                      assert type(seconds) in (float,int) and 0 <= seconds < 30
+                  assert prior==now, 'Untimed source anchor evidence differs'
+              else:
+                  assert actual==blob, f'Derived original S09E19 evidence changed: {name}'
           print('S09E19 exact 215s original source evidence rederived byte-for-byte; 347 source paragraphs still untimed')
           PY
