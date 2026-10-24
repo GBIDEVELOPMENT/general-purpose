@@ -134,11 +134,20 @@ def execute(ftp,plan,audit_file):
             if stat_existing(ftp,x["to"]) is not None:
                 validation_error("Destination occupied: "+x["to"])
             ftp.rename(x["from"],x["to"])
-            completed.append(x)
+            # Record the remote ACK before another network operation. If the
+            # verification request fails, evidence retains the uncertain move
+            # rather than inviting the next run to replay it.
+            completed.append({**x,"destination_verified":False})
+            audit_write(audit_file,{"batch_id":plan["batch_id"],"completed":completed,"status":"in_progress"})
+            after=stat_existing(ftp,x["to"])
+            if not after or after.get("type")!="file" or str(after.get("size"))!=str(x["size"]):
+                raise RuntimeError("Post-rename verification failed; preserve journal for manual review")
+            completed[-1]["destination_verified"]=True
             audit_write(audit_file,{"batch_id":plan["batch_id"],"completed":completed,"status":"in_progress"})
     finally:
+        all_verified=(len(completed)==len(ops) and all(m.get("destination_verified") for m in completed))
         audit_write(audit_file,{"batch_id":plan["batch_id"],"completed":completed,
-                               "status":"complete" if len(completed)==len(ops) else "partial_or_failed"})
+                               "status":"complete" if all_verified else "partial_or_failed"})
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--plan",default="media-organizer/approved-batch.json")
