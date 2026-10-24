@@ -1,5 +1,12 @@
 # Night Court audiovisual script-generation factory
 
+## First source-grounded visual scene milestone: October 23, 2026
+
+[PR #115](https://github.com/gamesbyian/general-purpose/pull/115) merged ten actual 480px video frames, five source-mix acoustic windows and nine original timestamped caption cues for the S01E01 01:00–01:30 scene. The capture ran safely via owner-PR-triggered trusted main workflow #40044673687. Reviewed observations include a book-lined court office, desk paperwork and telephone, a lavender-clad person and a uniformed officer; a telephone receiver is visibly at the officer's ear in the 01:27 sampled frame. Source media and caption checksums are preserved alongside individual JPEG digests in `seasons/S01/S01E01/derived/scene-review-v1/`. No raw audio/video entered Git.
+
+This is the first **real visual setting and prop annotation**, not proof of scene identity, speaker attribution, subtitle synchronization, continuous action or a finished screenplay. The new [S01E01 ASR/prosody pilot](S01E01-ASR-PROSODY-PILOT.md) is the next step to propose an independent audio-caption match and acoustic pitch candidates. All source-specific speech and performance interpretation remains unreviewed.
+
+
 ## First real source-audio checkpoint: 23 October 2026
 
 The trusted-base, owner-PR-triggered [S01E01 acoustic run #40042590948](https://github.com/gamesbyian/general-purpose/actions/runs/40042590948) **succeeded**. Source AVI SHA-256 and stream/runtime metadata, plus 15 seconds of mixed-audio RMS/peak/activity diagnostics, are retained as compact, private [pilot evidence](research/s01e01-real-ftp-acoustic-pilot.json). The FTP-to-ephemeral-runner-to-FFmpeg pipeline is now empirically proven with one real source. No voice identity, ASR, pitch, emotional delivery or visual-stage annotations were yet inferred, and the source remains not AV-verified.
