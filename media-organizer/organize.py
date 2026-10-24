@@ -20,10 +20,25 @@ def safe(p):
 def connect():
     host=os.environ["FTP_HOST"]; user=os.environ["FTP_USER"]; passwd=os.environ["FTP_PASSWORD"]
     protocol=os.environ.get("FTP_PROTOCOL","ftp")
-    ftp=ftplib.FTP_TLS(timeout=30) if protocol=="ftps" else ftplib.FTP(timeout=30)
-    ftp.connect(host,21); ftp.login(user,passwd)
-    if protocol=="ftps": ftp.prot_p()
-    return ftp
+    if protocol not in ("ftp","ftps"):raise ValueError("Unknown FTP protocol")
+    # Only retry connection-stage transient faults. The file-move executors
+    # never retry individual RNFR/RNTO or DELE operations, preserving audit safety.
+    for attempt in range(3):
+        ftp=ftplib.FTP_TLS(timeout=30) if protocol=="ftps" else ftplib.FTP(timeout=30)
+        try:
+            ftp.connect(host,21); ftp.login(user,passwd)
+            if protocol=="ftps":ftp.prot_p()
+            return ftp
+        except (OSError, EOFError, ftplib.error_temp) as error:
+            try:ftp.close()
+            except Exception:pass
+            if attempt==2:raise
+            print(f"FTP_CONNECTION_RETRY attempt={attempt+1} error_type={type(error).__name__}",flush=True)
+            time.sleep(2*(attempt+1))
+        except Exception:
+            try:ftp.close()
+            except Exception:pass
+            raise
 def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7,max_seconds=420):
     pending=deque([(ROOT,0)]); seen=set(); out=[]; failures=[]; truncated=[];folder_records=[];started=time.monotonic()
     while pending:
