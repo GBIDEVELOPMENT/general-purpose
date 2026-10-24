@@ -1,276 +1,486 @@
 {
   "root": "/downloads",
-  "batch_id": "debris_pilot_001",
-  "description": "Delete explicitly unwanted NFO release metadata and image files located in Screens directories, per owner instruction; exact size and modification time required.",
+  "batch_id": "debris_batch_002",
+  "description": "Remove next 80 exact-inventory unwanted NFO and Screens image entries, preserving all other media, artwork and archive volumes.",
   "entries": [
     {
-      "from": "/downloads/30 Rock S01-S07 COMPLETE/30.Rock.S07.1080p.WEB-DL.DD5.1.H.264-POD/30.Rock.S07.1080p.WEB-DL.DD5.1.H.264-POD.nfo",
-      "size": 1045,
-      "modify": "20251020213944",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/A Knights Tale 2001 Extended Cut UHD BluRay 2160p DDP 7 1 DV HDR x265-hallowed/A Knights Tale 2001 Extended Cut UHD BluRay 2160p DDP 7 1 DV HDR x265-hallowed.mkv.nfo",
-      "size": 11958,
-      "modify": "20250525022123",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/A Love Song (2022) 1080p BluRay 5.1-LAMA/A.Love.Song.2022.1080p.BluRay.x264.AAC5.1-LAMA.mp4.nfo",
-      "size": 705,
-      "modify": "20260728010257",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/AOC.nfo",
-      "size": 1188,
-      "modify": "20251021051332",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/A.Tree.Grows.in.Brooklyn.1945.1080p.BluRay.H264.AAC/A.Tree.Grows.in.Brooklyn.1945.1080p.BluRay.H264.AAC.mp4.nfo",
-      "size": 4311,
-      "modify": "20260520235342",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR.nfo",
-      "size": 701,
-      "modify": "20261021083016",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/All Creatures Great and Small 2020 S06 1080p Web-DL x264-OFT/All Creatures Great and Small 2020 S06 1080p Web-DL x264-OFT.nfo",
-      "size": 600,
-      "modify": "20261021082920",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/All.About.Eve.1950.1080p.BluRay.x265/All.About.Eve.1950.1080p.BluRay.x265.mp4.nfo",
-      "size": 5741,
-      "modify": "20260521200920",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Apollo 13 1995 edition-Remastered REPACK 1080p BluRay DDP 5 1 10bit H 265-iVy/Apollo 13 1995 edition-Remastered REPACK 1080p BluRay DDP 5 1 10bit H 265-iVy.mkv.nfo",
-      "size": 1029,
-      "modify": "20261005004703",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Apple Tree Yard 2017 S01 1080p WEB-DL HEVC x265-BONE/Apple Tree Yard 2017 S01 1080p WEB-DL HEVC x265-BONE.nfo",
-      "size": 2167,
-      "modify": "20261021014552",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Babys Day Out 1994 1080p WEBRip DDP 5 1 10bit H 265-iVy/Babys Day Out 1994 1080p WEBRip DDP 5 1 10bit H 265-iVy.mkv.nfo",
-      "size": 8953,
-      "modify": "20260801142729",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Back.to.the.Future.1985.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1-LAMA/Back.to.the.Future.1985.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1-LAMA.mkv.nfo",
-      "size": 8204,
-      "modify": "20250831203704",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Back.to.the.Future.Part.II.1989.2160p.UHD.BluRay.x265.10bit.HDR.TrueHD.7.1.Atmos-LAMA/Back.to.the.Future.Part.II.1989.2160p.UHD.BluRay.x265.10bit.HDR.TrueHD.7.1.Atmos-LAMA.mkv.nfo",
-      "size": 9272,
-      "modify": "20250831220347",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Back.to.the.Future.Part.III.1990.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1-LAMA/Back.to.the.Future.Part.III.1990.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1-LAMA.mkv.nfo",
-      "size": 8213,
-      "modify": "20250901000605",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Backrooms 2026 1080p AMZN WEB-DL DDP5 1 Atmos H 264-BYNDR/Backrooms 2026 1080p AMZN WEB-DL DDP5 1 Atmos H 264-BYNDR.mkv.nfo",
-      "size": 870,
-      "modify": "20260714032345",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Bait 2026 S01E01 BLATANT NOT SUBTLE 2160p AMZN WEB-DL DDP5 1 DV HDR H 265-FLUX/Bait.2026.S01E05.LURE.PART.OF.A.TRAP.2160p.AMZN.WEB-DL.DDP5.1.DV.HDR.H.265-FLUX.mkv.nfo",
-      "size": 1299,
-      "modify": "20260325193755",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Ballad.of.a.Small.Player.2025.HDR.2160p.WEB.h265-ETHEL/ballad.of.a.small.player.2025.hdr.2160p.web.h265-ethel.nfo",
-      "size": 1043,
-      "modify": "20251101055218",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Batman Knightfall Part 1 (2026) 1080p WEBRip 5.1-LAMA/Batman.Knightfall.Part.1.2026.1080p.WEBRip.x264.AAC5.1-LAMA.mp4.nfo",
-      "size": 754,
-      "modify": "20260825035619",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Bernie 2011 1080p AMZN WEB-DL H264-GPRS/Bernie 2011 1080p AMZN WEB-DL H264-GPRS.mkv.nfo",
-      "size": 744,
-      "modify": "20260101015153",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Big Business 1988 1080p DSNP WEB-DL AAC2 0 H 264 DUAL-NeX/Big Business 1988 1080p DSNP WEB-DL AAC2 0 H 264 DUAL-NeX.mkv.nfo",
-      "size": 0,
-      "modify": "20260215004711",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Blade.Trilogy.1080p.BluRay.H264.AC3.DD5.1.Will1869/Blade.Trilogy.1080p.BluRay.H264.AC3.DD5.1.Will1869.nfo",
-      "size": 16773,
-      "modify": "20260830034920",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Blaze.1989.720p.BluRay.x264-x0r/Blaze.1989.720p.BluRay.x264-x0r.nfo",
-      "size": 54,
-      "modify": "20260731234317",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB.nfo",
-      "size": 2552,
-      "modify": "20260604224216",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Brooklyn Nine-Nine S04E07 Mr Santiago 1080p DTS-HD MA 5 1 AVC REMUX-FraMeSToR/Brooklyn Nine-Nine S04E07 Mr Santiago 1080p DTS-HD MA 5 1 AVC REMUX-FraMeSToR.mkv.nfo",
-      "size": 877,
-      "modify": "20260818231449",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Cadillac Records 2008 1080p BluRay x265-YAWNTiC/Cadillac Records 2008 1080p BluRay x265-YAWNTiC.mkv.nfo",
-      "size": 785,
-      "modify": "20260606005431",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Cape Fear 2026 S01 1080p WEBRip 10bit EAC3 5 1 x265-iVy/Cape Fear 2026 S01 1080p WEBRip 10bit EAC3 5 1 x265-iVy.nfo",
-      "size": 2745,
-      "modify": "20260920015528",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Captain America Civil War (2016) REMASTERED 1080p BluRay 5.1-LAMA/Captain.America.Civil.War.2016.REMASTERED.1080p.BluRay.x264.AAC5.1-LAMA.mp4.nfo",
-      "size": 3851,
-      "modify": "20260726043919",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Captain America The Winter Soldier 2014 1080p BluRay x264-nikt0/Captain.America.The.Winter.Soldier.2014.1080p.BluRay.x264-nikt0.mkv.nfo",
-      "size": 4668,
-      "modify": "20260727002435",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Casablanca 1942 1080p BluRay x264-OFT/Casablanca 1942 1080p BluRay x264-OFT.mkv.nfo",
-      "size": 8689,
-      "modify": "20260521200855",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Caught Stealing 2025 Hybrid 2160p MA WEB-DL DDP 5 1 Atmos DV HDR H 265-HONE/Caught Stealing 2025 Hybrid 2160p MA WEB-DL DDP 5 1 Atmos DV HDR H 265-HONE.mkv.nfo",
-      "size": 1153,
-      "modify": "20251001042011",
-      "category": "nfo"
-    },
-    {
-      "from": "/downloads/Celebrity.Jeopardy.S04E01.720p.HEVC.x265-MeGusta/Celebrity.Jeopardy.S04E01.720p.HEVC.x265-MeGusta.nfo",
-      "size": 1140,
+      "from": "/downloads/Celebrity.Jeopardy.S04E01.720p.HEVC.x265-MeGusta/Screens/screen0003.png",
+      "size": 2342492,
       "modify": "20260501033328",
-      "category": "nfo"
+      "category": "screenshot"
     },
     {
-      "from": "/downloads/Celebrity.Jeopardy.S04E02.720p.HEVC.x265-MeGusta/Celebrity.Jeopardy.S04E02.720p.HEVC.x265-MeGusta.nfo",
-      "size": 1141,
+      "from": "/downloads/Celebrity.Jeopardy.S04E02.720p.HEVC.x265-MeGusta/Screens/screen0001.png",
+      "size": 2881929,
+      "modify": "20260510032233",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Celebrity.Jeopardy.S04E02.720p.HEVC.x265-MeGusta/Screens/screen0002.png",
+      "size": 2668122,
       "modify": "20260510032232",
-      "category": "nfo"
+      "category": "screenshot"
     },
     {
-      "from": "/downloads/Celebrity.Jeopardy.S04E03.720p.HEVC.x265-MeGusta/Celebrity.Jeopardy.S04E03.720p.HEVC.x265-MeGusta.nfo",
-      "size": 1138,
+      "from": "/downloads/Celebrity.Jeopardy.S04E02.720p.HEVC.x265-MeGusta/Screens/screen0003.png",
+      "size": 3577446,
+      "modify": "20260510032232",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Celebrity.Jeopardy.S04E03.720p.HEVC.x265-MeGusta/Screens/screen0001.png",
+      "size": 3771021,
       "modify": "20260605025214",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Celebrity.Jeopardy.S04E03.720p.HEVC.x265-MeGusta/Screens/screen0002.png",
+      "size": 4739964,
+      "modify": "20260605025214",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Celebrity.Jeopardy.S04E03.720p.HEVC.x265-MeGusta/Screens/screen0003.png",
+      "size": 3284304,
+      "modify": "20260605025214",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Cleaner (2025) 1080p WEBRip 5.1-LAMA/Cleaner.2025.1080p.WEBRip.x264.AAC5.1-LAMA.mp4.nfo",
+      "size": 4181,
+      "modify": "20250322072930",
       "category": "nfo"
     },
     {
-      "from": "/downloads/Citizen Kane 1941 1080p BluRayRip EAC3 1 0 x265-Lootera/Citizen Kane 1941 1080p BluRayRip EAC3 1 0 x265-Lootera.mkv.nfo",
-      "size": 812,
-      "modify": "20260521201057",
+      "from": "/downloads/Color Book (2024) 2160p 4K WEB 5.1-LAMA/Color.Book.2024.2160p.4K.WEB.x265.10bit.AAC5.1-LAMA.mkv.nfo",
+      "size": 985,
+      "modify": "20260719221442",
       "category": "nfo"
     },
     {
-      "from": "/downloads/City.Slickers.Collection.1080p.H264.AC3.DD5.1.Will1869/City.Slickers.Collection.1080p.H264.AC3.DD5.1.Will1869.nfo",
-      "size": 10919,
-      "modify": "20260816004659",
+      "from": "/downloads/Conclave (2024) 2160p 4K WEB 5.1-LAMA/Conclave.2024.2160p.4K.WEB.x265.10bit.AAC5.1-LAMA.mkv.nfo",
+      "size": 6575,
+      "modify": "20251007220409",
       "category": "nfo"
     },
     {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/Screens/mpv-shot0001.jpg",
-      "size": 505072,
-      "modify": "20251021051332",
+      "from": "/downloads/Crime 101 2026 2160p AMZN WEB-DL DDP5 1 Atmos DV HDR10Plus H 265-Kitsune/Crime 101 2026 2160p AMZN WEB-DL DDP5 1 Atmos DV HDR10Plus H 265-Kitsune.mkv.nfo",
+      "size": 1699,
+      "modify": "20260401194754",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Dead Mans Wire (2025) 2160p 4K WEB 5.1-LAMA/Dead.Mans.Wire.2025.2160p.4K.WEB.x265.10bit.AAC5.1-LAMA.mkv.nfo",
+      "size": 703,
+      "modify": "20260304194842",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Dead.of.Winter.2025.2160p.WEB.H265-SLOT/dead.of.winter.2025.2160p.web.h265-slot.nfo",
+      "size": 226,
+      "modify": "20251021051018",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Dirty Harry (1971) 2160p 4K BluRay 5.1-LAMA/Dirty.Harry.1971.2160p.4K.BluRay.x265.10bit.AAC5.1-LAMA.mkv.nfo",
+      "size": 28327,
+      "modify": "20260809223118",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Dirty Harry Collection (1971-1988) BDRip 1080p DTS multi- HighCode/INFO.nfo",
+      "size": 2339,
+      "modify": "20260809223918",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Dolly Parton Here I Am (2019) 1080p WEBRip-LAMA/Dolly.Parton.Here.I.Am.2019.1080p.WEBRip.x264.AAC-LAMA.mp4.nfo",
+      "size": 720,
+      "modify": "20260902230945",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Down Cemetery Road S01E01 Almost True 2160p ATVP WEB-DL DDP5 1 Atmos H 265-FLUX/Down Cemetery Road S01E01 Almost True 2160p ATVP WEB-DL DDP5 1 Atmos H 265-FLUX.mkv.nfo",
+      "size": 1327,
+      "modify": "20251029054127",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Down Cemetery Road S01E02 A Kind of Grief 2160p ATVP WEB-DL DDP5 1 Atmos H 265-RAWR/Down Cemetery Road S01E02 A Kind of Grief 2160p ATVP WEB-DL DDP5 1 Atmos H 265-RAWR.mkv.nfo",
+      "size": 1322,
+      "modify": "20251029054556",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Downton Abbey 2010 S01 1080p WEB-DL HEVC x265-BONE/Downton Abbey 2010 S01 1080p WEB-DL HEVC x265-BONE.nfo",
+      "size": 2338,
+      "modify": "20261021082719",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Downton Abbey 2010 S02 1080p WEB-DL HEVC x265-BONE/Downton Abbey 2010 S02 1080p WEB-DL HEVC x265-BONE.nfo",
+      "size": 2474,
+      "modify": "20261021082642",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Dune Part Two (2024) 2160p 4K WEB 5.1-LAMA/Dune.Part.Two.2024.2160p.4K.WEB.x265.10bit.AAC5.1-LAMA.mkv.nfo",
+      "size": 9570,
+      "modify": "20260709075812",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Dune.2021.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1.Atmos-LAMA/Dune.2021.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1.Atmos-LAMA.mkv.nfo",
+      "size": 8375,
+      "modify": "20260709054945",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.nfo",
+      "size": 0,
+      "modify": "20260709075741",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Dust.Bunny.2025.HDR.2160p.WEB.H265-SLOT/dust.bunny.2025.hdr.2160p.web.h265-slot.nfo",
+      "size": 234,
+      "modify": "20260113075250",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Election 1999 UHD BluRay 2160p DD 5 1 DV HDR x265-BHDStudio/Election 1999 UHD BluRay 2160p DD 5 1 DV HDR x265-BHDStudio.mp4.nfo",
+      "size": 7987,
+      "modify": "20250527051151",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/F1 The Movie 2025 1080p ATVP WEB-DL DDPA 5 1 H 264-PiRaTeS/F1 The Movie 2025 1080p ATVP WEB-DL DDPA 5 1 H 264-PiRaTeS.mkv.nfo",
+      "size": 804,
+      "modify": "20260920015809",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Fight Club 1999 2160p UHD BluRay HDR X265 DD 5 1-Chivaman/Fight Club 1999 2160p UHD BluRay HDR X265 DD 5 1-Chivaman.mkv.nfo",
+      "size": 1152,
+      "modify": "20260506005150",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/For All Mankind S05E01 First Light 2160p ATVP WEB-DL DDP5 1 DV HDR H 265-NTb/For All Mankind S05E01 First Light 2160p ATVP WEB-DL DDP5 1 DV HDR H 265-NTb.mkv.nfo",
+      "size": 1311,
+      "modify": "20260327024648",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/For All Mankind S05E02 The Hard Six 2160p ATVP WEB-DL DDP5 1 DV HDR H 265-NTb/For All Mankind S05E02 The Hard Six 2160p ATVP WEB-DL DDP5 1 DV HDR H 265-NTb.mkv.nfo",
+      "size": 1311,
+      "modify": "20260403091444",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/For All Mankind S05E03 Home 2160p ATVP WEB-DL DDP5 1 DV HDR H 265-NTb/For All Mankind S05E03 Home 2160p ATVP WEB-DL DDP5 1 DV HDR H 265-NTb.mkv.nfo",
+      "size": 1286,
+      "modify": "20260413214842",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Frequency 2000 1080p AMZN HWDY WEB-DL DDP 5 1 H 264-PiRaTeS/Frequency 2000 1080p AMZN HWDY WEB-DL DDP 5 1 H 264-PiRaTeS.mkv.nfo",
+      "size": 806,
+      "modify": "20260725234959",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Friends.S09E04.2160p.UHD.BluRay.H265-PRiSTiNE/friends.s09e04.2160p.uhd.bluray.h265-pristine.nfo",
+      "size": 4586,
+      "modify": "20260819044358",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Friends.S09E04.2160p.WEB.H265-JoeyTribbiani/friends.s09e04.2160p.web.h265-joeytribbiani.nfo",
+      "size": 679,
+      "modify": "20260819040414",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Friendship 2024 1080p AMZN WEB-DL H264-BYNDR/Friendship 2024 1080p AMZN WEB-DL H264-BYNDR.mkv.nfo",
+      "size": 4814,
+      "modify": "20250611051405",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Furious S01E01 1080p x265-ELiTE/Furious S01E01 1080p x265-ELiTE.mkv.nfo",
+      "size": 723,
+      "modify": "20260728033801",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Furious S01E02 1080p x265-ELiTE/Furious S01E02 1080p x265-ELiTE.mkv.nfo",
+      "size": 723,
+      "modify": "20260728064545",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Furious S01E03 1080p x265-ELiTE/Furious S01E03 1080p x265-ELiTE.mkv.nfo",
+      "size": 723,
+      "modify": "20260728093446",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Furious.S01E04.1080p.WEB.H264-CAKES/furious.s01e04.1080p.web.h264-cakes.nfo",
+      "size": 2002,
+      "modify": "20260804020944",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Furious.S01E05.1080p.HEVC.x265-MeGusta/Furious.S01E05.1080p.HEVC.x265-MeGusta.nfo",
+      "size": 1038,
+      "modify": "20260810043141",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Furious.S01E05.1080p.HEVC.x265-MeGusta/Screens/screen0001.jpg",
+      "size": 64202,
+      "modify": "20260810043141",
       "category": "screenshot"
     },
     {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/Screens/mpv-shot0002.jpg",
-      "size": 498708,
-      "modify": "20251021051332",
+      "from": "/downloads/Furious.S01E05.1080p.HEVC.x265-MeGusta/Screens/screen0002.jpg",
+      "size": 272149,
+      "modify": "20260810043141",
       "category": "screenshot"
     },
     {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/Screens/mpv-shot0003.jpg",
-      "size": 775121,
-      "modify": "20251021051332",
+      "from": "/downloads/Furious.S01E05.1080p.HEVC.x265-MeGusta/Screens/screen0003.jpg",
+      "size": 121354,
+      "modify": "20260810043141",
       "category": "screenshot"
     },
     {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/Screens/mpv-shot0004.jpg",
-      "size": 470407,
-      "modify": "20251021051332",
+      "from": "/downloads/Furious.S01E06.1080p.WEB.H264-CAKES/furious.s01e06.1080p.web.h264-cakes.nfo",
+      "size": 2022,
+      "modify": "20260817043938",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Furious.S01E06.1080p.WEB.H264-CAKES/Screens/screen0001.jpg",
+      "size": 131898,
+      "modify": "20260817043938",
       "category": "screenshot"
     },
     {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/Screens/mpv-shot0005.jpg",
-      "size": 540134,
-      "modify": "20251021051332",
+      "from": "/downloads/Furious.S01E06.1080p.WEB.H264-CAKES/Screens/screen0002.jpg",
+      "size": 128545,
+      "modify": "20260817043938",
       "category": "screenshot"
     },
     {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/Screens/mpv-shot0006.jpg",
-      "size": 380987,
-      "modify": "20251021051332",
+      "from": "/downloads/Furious.S01E06.1080p.WEB.H264-CAKES/Screens/screen0003.jpg",
+      "size": 104621,
+      "modify": "20260817043938",
       "category": "screenshot"
     },
     {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/Screens/mpv-shot0007.jpg",
-      "size": 601191,
-      "modify": "20251021051332",
+      "from": "/downloads/Furious.S01E06.1080p.WEB.H264-CAKES/Screens/screen0004.jpg",
+      "size": 108624,
+      "modify": "20260817043938",
       "category": "screenshot"
     },
     {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/Screens/mpv-shot0008.jpg",
-      "size": 349645,
-      "modify": "20251021051332",
+      "from": "/downloads/Furious.S01E07.1080p.HEVC.x265-MeGusta/Furious.S01E07.1080p.HEVC.x265-MeGusta.nfo",
+      "size": 1037,
+      "modify": "20260824042902",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Furious.S01E07.1080p.HEVC.x265-MeGusta/Screens/screen0001.jpg",
+      "size": 53858,
+      "modify": "20260824042902",
       "category": "screenshot"
     },
     {
-      "from": "/downloads/Celebrity.Jeopardy.S04E01.720p.HEVC.x265-MeGusta/Screens/screen0001.png",
-      "size": 4005311,
-      "modify": "20260501033328",
+      "from": "/downloads/Furious.S01E07.1080p.HEVC.x265-MeGusta/Screens/screen0002.jpg",
+      "size": 56255,
+      "modify": "20260824042902",
       "category": "screenshot"
     },
     {
-      "from": "/downloads/Celebrity.Jeopardy.S04E01.720p.HEVC.x265-MeGusta/Screens/screen0002.png",
-      "size": 1942493,
-      "modify": "20260501033328",
+      "from": "/downloads/Furious.S01E07.1080p.HEVC.x265-MeGusta/Screens/screen0003.jpg",
+      "size": 130467,
+      "modify": "20260824042902",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Furious.S01E08.1080p.WEB.h264-ETHEL/furious.s01e08.1080p.web.h264-ethel.nfo",
+      "size": 477,
+      "modify": "20260831050631",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Furious.S01E08.1080p.WEB.h264-ETHEL/Screens/screen0001.jpg",
+      "size": 55212,
+      "modify": "20260831050631",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Furious.S01E08.1080p.WEB.h264-ETHEL/Screens/screen0002.jpg",
+      "size": 97244,
+      "modify": "20260831050631",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Furious.S01E08.1080p.WEB.h264-ETHEL/Screens/screen0003.jpg",
+      "size": 93277,
+      "modify": "20260831050631",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Furious.S01E08.1080p.WEB.h264-ETHEL/Screens/screen0004.jpg",
+      "size": 85206,
+      "modify": "20260831050631",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/G20 (2025) 2160p 4K WEB 5.1-LAMA/G20.2025.2160p.4K.WEB.x265.10bit.AAC5.1-LAMA.mkv.nfo",
+      "size": 21127,
+      "modify": "20250412101219",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Ghost Rider 2007 Extended Cut BluRay 1080p DTS x264-NCmt/Ghost Rider 2007 Extended Cut BluRay 1080p DTS x264-NCmt.mkv.nfo",
+      "size": 889,
+      "modify": "20260828072533",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Gone.With.The.Wind.1939.1080p.BluRay.H264.AAC/Gone.With.The.Wind.1939.1080p.BluRay.H264.AAC.mp4.nfo",
+      "size": 4361,
+      "modify": "20260217021545",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Good American Family S01 1080p WEBRip x265-KONTRAST/Good American Family S01 1080p WEBRip x265-KONTRAST.nfo",
+      "size": 483,
+      "modify": "20260820235729",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Good Fortune 2025 2160p AMZN WEB-DL DDP5 1 Atmos H 265-BYNDR/Good Fortune 2025 2160p AMZN WEB-DL DDP5 1 Atmos H 265-BYNDR.mkv.nfo",
+      "size": 861,
+      "modify": "20251107190559",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Gremlins 1984 UHD BluRay 2160p DDP 5 1 DV HDR x265-hallowed/Gremlins 1984 UHD BluRay 2160p DDP 5 1 DV HDR x265-hallowed.mkv.nfo",
+      "size": 12638,
+      "modify": "20250628181805",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Havoc (2025) 2160p 4K WEB 5.1-LAMA/Havoc.2025.2160p.4K.WEB.x265.10bit.AAC5.1-LAMA.mkv.nfo",
+      "size": 20110,
+      "modify": "20250710002741",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/High Potential S02E01 1080p x265-ELiTE/High Potential S02E01 1080p x265-ELiTE.mkv.nfo",
+      "size": 747,
+      "modify": "20251008204001",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/High Potential S02E02 1080p x265-ELiTE/High Potential S02E02 1080p x265-ELiTE.mkv.nfo",
+      "size": 747,
+      "modify": "20251008204103",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/High Potential S02E03 1080p x265-ELiTE/High Potential S02E03 1080p x265-ELiTE.mkv.nfo",
+      "size": 747,
+      "modify": "20251008204211",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/High.Potential.S02E04.1080p.AV1.10bit-MeGusta/High.Potential.S02E04.1080p.AV1.10bit-MeGusta.nfo",
+      "size": 1125,
+      "modify": "20251008203255",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Highest.2.Lowest.2025.1080p.WEB.H264-AccomplishedYak/highest.2.lowest.2025.1080p.web.h264-accomplishedyak.nfo",
+      "size": 1475,
+      "modify": "20250905032649",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/Highest.2.Lowest.2025.1080p.WEB.H264-AccomplishedYak/Screens/screen0001.png",
+      "size": 2105859,
+      "modify": "20250905032650",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Highest.2.Lowest.2025.1080p.WEB.H264-AccomplishedYak/Screens/screen0002.png",
+      "size": 3253899,
+      "modify": "20250905032650",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Highest.2.Lowest.2025.1080p.WEB.H264-AccomplishedYak/Screens/screen0003.png",
+      "size": 2458352,
+      "modify": "20250905032650",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/Highest.2.Lowest.2025.1080p.WEB.H264-AccomplishedYak/Screens/screen0004.png",
+      "size": 2908280,
+      "modify": "20250905032650",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/History.of.the.Sitcom.S01E01.1080p.HEVC.x265-MeGusta/History.of.the.Sitcom.S01E01.1080p.HEVC.x265-MeGusta.nfo",
+      "size": 1153,
+      "modify": "20260625001343",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/History.of.the.Sitcom.S01E01.1080p.HEVC.x265-MeGusta/Screens/screen0001.png",
+      "size": 5225578,
+      "modify": "20260625001347",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/History.of.the.Sitcom.S01E01.1080p.HEVC.x265-MeGusta/Screens/screen0002.png",
+      "size": 6899454,
+      "modify": "20260625001355",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/History.of.the.Sitcom.S01E01.1080p.HEVC.x265-MeGusta/Screens/screen0003.png",
+      "size": 4445844,
+      "modify": "20260625001402",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/History.of.the.Sitcom.S01E01.720p.HEVC.x265-MeGusta/History.of.the.Sitcom.S01E01.720p.HEVC.x265-MeGusta.nfo",
+      "size": 1149,
+      "modify": "20260624235948",
+      "category": "nfo"
+    },
+    {
+      "from": "/downloads/History.of.the.Sitcom.S01E01.720p.HEVC.x265-MeGusta/Screens/screen0001.png",
+      "size": 2594029,
+      "modify": "20260624235948",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/History.of.the.Sitcom.S01E01.720p.HEVC.x265-MeGusta/Screens/screen0002.png",
+      "size": 3428623,
+      "modify": "20260624235949",
+      "category": "screenshot"
+    },
+    {
+      "from": "/downloads/History.of.the.Sitcom.S01E01.720p.HEVC.x265-MeGusta/Screens/screen0003.png",
+      "size": 2422998,
+      "modify": "20260624235949",
       "category": "screenshot"
     }
   ]
