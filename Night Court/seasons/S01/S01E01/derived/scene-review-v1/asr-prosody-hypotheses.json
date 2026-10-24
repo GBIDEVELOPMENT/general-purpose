@@ -1,0 +1,1078 @@
+{
+  "schema": "night-court-s01e01-asr-prosody/1",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "dialogue_source_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "audio_wav_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+  "source_window_ms": [
+    60000,
+    90000
+  ],
+  "asr_engine": "faster-whisper",
+  "asr_model": "tiny.en",
+  "faster_whisper_version": "1.2.1",
+  "asr_hypothesis_only": true,
+  "asr_segments": [
+    {
+      "index": 0,
+      "start_ms": 60640,
+      "end_ms": 62800,
+      "text": "I'm trying to make up for my lack of education.",
+      "log_probability": -0.5503,
+      "no_speech_prob": 0.0385,
+      "word_candidates": [
+        {
+          "word": "I'm",
+          "start_ms": 60640,
+          "end_ms": 61120,
+          "model_probability": 0.2979
+        },
+        {
+          "word": "trying",
+          "start_ms": 61120,
+          "end_ms": 61240,
+          "model_probability": 0.9645
+        },
+        {
+          "word": "to",
+          "start_ms": 61240,
+          "end_ms": 61440,
+          "model_probability": 0.9787
+        },
+        {
+          "word": "make",
+          "start_ms": 61440,
+          "end_ms": 61440,
+          "model_probability": 0.9752
+        },
+        {
+          "word": "up",
+          "start_ms": 61440,
+          "end_ms": 61580,
+          "model_probability": 0.9936
+        },
+        {
+          "word": "for",
+          "start_ms": 61580,
+          "end_ms": 61720,
+          "model_probability": 0.9663
+        },
+        {
+          "word": "my",
+          "start_ms": 61720,
+          "end_ms": 61840,
+          "model_probability": 0.994
+        },
+        {
+          "word": "lack",
+          "start_ms": 61840,
+          "end_ms": 62020,
+          "model_probability": 0.9855
+        },
+        {
+          "word": "of",
+          "start_ms": 62020,
+          "end_ms": 62200,
+          "model_probability": 0.9988
+        },
+        {
+          "word": "education.",
+          "start_ms": 62200,
+          "end_ms": 62800,
+          "model_probability": 0.9962
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "start_ms": 63340,
+      "end_ms": 65900,
+      "text": "So every month, I pick a word at random out of the dictionary",
+      "log_probability": -0.5503,
+      "no_speech_prob": 0.0385,
+      "word_candidates": [
+        {
+          "word": "So",
+          "start_ms": 63340,
+          "end_ms": 63460,
+          "model_probability": 0.8915
+        },
+        {
+          "word": "every",
+          "start_ms": 63460,
+          "end_ms": 63640,
+          "model_probability": 0.9449
+        },
+        {
+          "word": "month,",
+          "start_ms": 63640,
+          "end_ms": 63920,
+          "model_probability": 0.9998
+        },
+        {
+          "word": "I",
+          "start_ms": 63940,
+          "end_ms": 64080,
+          "model_probability": 0.9978
+        },
+        {
+          "word": "pick",
+          "start_ms": 64080,
+          "end_ms": 64240,
+          "model_probability": 0.9706
+        },
+        {
+          "word": "a",
+          "start_ms": 64240,
+          "end_ms": 64420,
+          "model_probability": 0.9943
+        },
+        {
+          "word": "word",
+          "start_ms": 64420,
+          "end_ms": 64560,
+          "model_probability": 0.9955
+        },
+        {
+          "word": "at",
+          "start_ms": 64560,
+          "end_ms": 64780,
+          "model_probability": 0.3369
+        },
+        {
+          "word": "random",
+          "start_ms": 64780,
+          "end_ms": 65060,
+          "model_probability": 0.9518
+        },
+        {
+          "word": "out",
+          "start_ms": 65060,
+          "end_ms": 65300,
+          "model_probability": 0.9742
+        },
+        {
+          "word": "of",
+          "start_ms": 65300,
+          "end_ms": 65420,
+          "model_probability": 0.9919
+        },
+        {
+          "word": "the",
+          "start_ms": 65420,
+          "end_ms": 65500,
+          "model_probability": 0.9896
+        },
+        {
+          "word": "dictionary",
+          "start_ms": 65500,
+          "end_ms": 65900,
+          "model_probability": 0.9948
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "start_ms": 65900,
+      "end_ms": 68080,
+      "text": "and use it all that month.",
+      "log_probability": -0.5503,
+      "no_speech_prob": 0.0385,
+      "word_candidates": [
+        {
+          "word": "and",
+          "start_ms": 65900,
+          "end_ms": 66540,
+          "model_probability": 0.7551
+        },
+        {
+          "word": "use",
+          "start_ms": 66540,
+          "end_ms": 66740,
+          "model_probability": 0.9967
+        },
+        {
+          "word": "it",
+          "start_ms": 66740,
+          "end_ms": 66920,
+          "model_probability": 0.9952
+        },
+        {
+          "word": "all",
+          "start_ms": 66920,
+          "end_ms": 67140,
+          "model_probability": 0.9992
+        },
+        {
+          "word": "that",
+          "start_ms": 67140,
+          "end_ms": 67360,
+          "model_probability": 0.5528
+        },
+        {
+          "word": "month.",
+          "start_ms": 67360,
+          "end_ms": 68080,
+          "model_probability": 0.9537
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "start_ms": 70640,
+      "end_ms": 71940,
+      "text": "My, how, um...",
+      "log_probability": -0.5503,
+      "no_speech_prob": 0.0385,
+      "word_candidates": [
+        {
+          "word": "My,",
+          "start_ms": 70640,
+          "end_ms": 71120,
+          "model_probability": 0.242
+        },
+        {
+          "word": "how,",
+          "start_ms": 71120,
+          "end_ms": 71600,
+          "model_probability": 0.9436
+        },
+        {
+          "word": "um...",
+          "start_ms": 71620,
+          "end_ms": 71940,
+          "model_probability": 0.7243
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "start_ms": 71940,
+      "end_ms": 72700,
+      "text": "Minima Fydian?",
+      "log_probability": -0.5503,
+      "no_speech_prob": 0.0385,
+      "word_candidates": [
+        {
+          "word": "Minima",
+          "start_ms": 71940,
+          "end_ms": 72120,
+          "model_probability": 0.5966
+        },
+        {
+          "word": "Fydian?",
+          "start_ms": 72120,
+          "end_ms": 72700,
+          "model_probability": 0.4458
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "start_ms": 74880,
+      "end_ms": 76740,
+      "text": "Is that a real word?",
+      "log_probability": -0.5503,
+      "no_speech_prob": 0.0385,
+      "word_candidates": [
+        {
+          "word": "Is",
+          "start_ms": 74880,
+          "end_ms": 75360,
+          "model_probability": 0.8606
+        },
+        {
+          "word": "that",
+          "start_ms": 75360,
+          "end_ms": 75600,
+          "model_probability": 0.9976
+        },
+        {
+          "word": "a",
+          "start_ms": 75600,
+          "end_ms": 75860,
+          "model_probability": 0.9966
+        },
+        {
+          "word": "real",
+          "start_ms": 75860,
+          "end_ms": 76220,
+          "model_probability": 0.9979
+        },
+        {
+          "word": "word?",
+          "start_ms": 76220,
+          "end_ms": 76740,
+          "model_probability": 0.994
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "start_ms": 77160,
+      "end_ms": 79420,
+      "text": "There's a bear extra fissade in the forest.",
+      "log_probability": -0.5503,
+      "no_speech_prob": 0.0385,
+      "word_candidates": [
+        {
+          "word": "There's",
+          "start_ms": 77160,
+          "end_ms": 77400,
+          "model_probability": 0.8172
+        },
+        {
+          "word": "a",
+          "start_ms": 77400,
+          "end_ms": 77600,
+          "model_probability": 0.9983
+        },
+        {
+          "word": "bear",
+          "start_ms": 77600,
+          "end_ms": 77900,
+          "model_probability": 0.9244
+        },
+        {
+          "word": "extra",
+          "start_ms": 77900,
+          "end_ms": 78180,
+          "model_probability": 0.4136
+        },
+        {
+          "word": "fissade",
+          "start_ms": 78180,
+          "end_ms": 78600,
+          "model_probability": 0.1976
+        },
+        {
+          "word": "in",
+          "start_ms": 78600,
+          "end_ms": 78720,
+          "model_probability": 0.9653
+        },
+        {
+          "word": "the",
+          "start_ms": 78720,
+          "end_ms": 78920,
+          "model_probability": 0.9929
+        },
+        {
+          "word": "forest.",
+          "start_ms": 78920,
+          "end_ms": 79420,
+          "model_probability": 0.9986
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "start_ms": 83300,
+      "end_ms": 83780,
+      "text": "What?",
+      "log_probability": -0.5503,
+      "no_speech_prob": 0.0385,
+      "word_candidates": [
+        {
+          "word": "What?",
+          "start_ms": 83300,
+          "end_ms": 83780,
+          "model_probability": 0.7314
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "start_ms": 86720,
+      "end_ms": 87200,
+      "text": "No.",
+      "log_probability": -0.5503,
+      "no_speech_prob": 0.0385,
+      "word_candidates": [
+        {
+          "word": "No.",
+          "start_ms": 86720,
+          "end_ms": 87200,
+          "model_probability": 0.9102
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "start_ms": 89100,
+      "end_ms": 89980,
+      "text": "Tell the judge a mayor.",
+      "log_probability": -0.9759,
+      "no_speech_prob": 0.1271,
+      "word_candidates": [
+        {
+          "word": "Tell",
+          "start_ms": 89100,
+          "end_ms": 89420,
+          "model_probability": 0.0243
+        },
+        {
+          "word": "the",
+          "start_ms": 89420,
+          "end_ms": 89580,
+          "model_probability": 0.5875
+        },
+        {
+          "word": "judge",
+          "start_ms": 89580,
+          "end_ms": 89740,
+          "model_probability": 0.9631
+        },
+        {
+          "word": "a",
+          "start_ms": 89740,
+          "end_ms": 89920,
+          "model_probability": 0.5354
+        },
+        {
+          "word": "mayor.",
+          "start_ms": 89920,
+          "end_ms": 89980,
+          "model_probability": 0.5714
+        }
+      ]
+    }
+  ],
+  "alignment_candidates": [
+    {
+      "asr_segment_index": 0,
+      "candidate_caption_cue": 19,
+      "text_similarity_heuristic": 0.7748,
+      "suggested_offset_ms": 1728,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    },
+    {
+      "asr_segment_index": 1,
+      "candidate_caption_cue": 20,
+      "text_similarity_heuristic": 1.0,
+      "suggested_offset_ms": 624,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    },
+    {
+      "asr_segment_index": 2,
+      "candidate_caption_cue": 21,
+      "text_similarity_heuristic": 1.0,
+      "suggested_offset_ms": -19,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    },
+    {
+      "asr_segment_index": 3,
+      "candidate_caption_cue": 22,
+      "text_similarity_heuristic": 0.5714,
+      "suggested_offset_ms": 951,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    },
+    {
+      "asr_segment_index": 4,
+      "candidate_caption_cue": 22,
+      "text_similarity_heuristic": 0.625,
+      "suggested_offset_ms": 2251,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    },
+    {
+      "asr_segment_index": 5,
+      "candidate_caption_cue": 23,
+      "text_similarity_heuristic": 1.0,
+      "suggested_offset_ms": 252,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    },
+    {
+      "asr_segment_index": 6,
+      "candidate_caption_cue": 24,
+      "text_similarity_heuristic": 0.8101,
+      "suggested_offset_ms": 497,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    },
+    {
+      "asr_segment_index": 7,
+      "candidate_caption_cue": 25,
+      "text_similarity_heuristic": 1.0,
+      "suggested_offset_ms": 164,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    },
+    {
+      "asr_segment_index": 8,
+      "candidate_caption_cue": 26,
+      "text_similarity_heuristic": 1.0,
+      "suggested_offset_ms": 381,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    },
+    {
+      "asr_segment_index": 9,
+      "candidate_caption_cue": 27,
+      "text_similarity_heuristic": 0.7925,
+      "suggested_offset_ms": 358,
+      "status": "automated_heuristic_not_verified",
+      "caution": "Caption and model segment boundaries differ; a text match does not prove exact sync."
+    }
+  ],
+  "source_caption_cues": [
+    {
+      "cue": 19,
+      "start_ms": 58912,
+      "end_ms": 62541
+    },
+    {
+      "cue": 20,
+      "start_ms": 62716,
+      "end_ms": 65742
+    },
+    {
+      "cue": 21,
+      "start_ms": 65919,
+      "end_ms": 67887
+    },
+    {
+      "cue": 22,
+      "start_ms": 69689,
+      "end_ms": 73147
+    },
+    {
+      "cue": 23,
+      "start_ms": 74628,
+      "end_ms": 76357
+    },
+    {
+      "cue": 24,
+      "start_ms": 76663,
+      "end_ms": 79894
+    },
+    {
+      "cue": 25,
+      "start_ms": 83136,
+      "end_ms": 84501
+    },
+    {
+      "cue": 26,
+      "start_ms": 86339,
+      "end_ms": 87738
+    },
+    {
+      "cue": 27,
+      "start_ms": 88742,
+      "end_ms": 91074
+    }
+  ],
+  "acoustic_feature_engine": "librosa YIN + openSMILE eGeMAPSv02",
+  "acoustic_mixed_audio_windows": [
+    {
+      "source_video_interval_ms": [
+        60000,
+        66000
+      ],
+      "f0_yin_median_hz": 148.58,
+      "f0_yin_tenth_percentile_hz": 99.7,
+      "f0_yin_ninetieth_percentile_hz": 303.18,
+      "pitch_reliability_note": "unreviewed_pitch_candidates_mix_contamination_possible",
+      "egemaps_v02_functionals": {
+        "F0semitoneFrom27.5Hz_sma3nz_amean": 32.21735,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevNorm": 0.18677,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile20.0": 25.63359,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile50.0": 33.03993,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile80.0": 37.8629,
+        "F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2": 12.22931,
+        "F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope": 362.63528,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope": 373.69815,
+        "F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope": 132.52795,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope": 78.36472,
+        "loudness_sma3_amean": 1.06927,
+        "loudness_sma3_stddevNorm": 0.67113,
+        "loudness_sma3_percentile20.0": 0.32243,
+        "loudness_sma3_percentile50.0": 0.98293,
+        "loudness_sma3_percentile80.0": 1.87108,
+        "loudness_sma3_pctlrange0-2": 1.54865,
+        "loudness_sma3_meanRisingSlope": 18.21601,
+        "loudness_sma3_stddevRisingSlope": 8.96274,
+        "loudness_sma3_meanFallingSlope": 13.77064,
+        "loudness_sma3_stddevFallingSlope": 6.95884,
+        "spectralFlux_sma3_amean": 0.49461,
+        "spectralFlux_sma3_stddevNorm": 0.74582,
+        "mfcc1_sma3_amean": 23.03985,
+        "mfcc1_sma3_stddevNorm": 0.74984,
+        "mfcc2_sma3_amean": -18.54192,
+        "mfcc2_sma3_stddevNorm": -0.67399,
+        "mfcc3_sma3_amean": 16.08817,
+        "mfcc3_sma3_stddevNorm": 1.04195,
+        "mfcc4_sma3_amean": 3.24809,
+        "mfcc4_sma3_stddevNorm": 5.19837,
+        "jitterLocal_sma3nz_amean": 0.0493,
+        "jitterLocal_sma3nz_stddevNorm": 1.87893,
+        "shimmerLocaldB_sma3nz_amean": 1.6504,
+        "shimmerLocaldB_sma3nz_stddevNorm": 0.85846,
+        "HNRdBACF_sma3nz_amean": 3.47075,
+        "HNRdBACF_sma3nz_stddevNorm": 1.51547,
+        "logRelF0-H1-H2_sma3nz_amean": 5.42101,
+        "logRelF0-H1-H2_sma3nz_stddevNorm": 1.90663,
+        "logRelF0-H1-A3_sma3nz_amean": 14.1019,
+        "logRelF0-H1-A3_sma3nz_stddevNorm": 0.93142,
+        "F1frequency_sma3nz_amean": 962.284,
+        "F1frequency_sma3nz_stddevNorm": 0.18369,
+        "F1bandwidth_sma3nz_amean": 983.90814,
+        "F1bandwidth_sma3nz_stddevNorm": 0.3248,
+        "F1amplitudeLogRelF0_sma3nz_amean": -103.66392,
+        "F1amplitudeLogRelF0_sma3nz_stddevNorm": -0.90298,
+        "F2frequency_sma3nz_amean": 1940.021,
+        "F2frequency_sma3nz_stddevNorm": 0.08687,
+        "F2bandwidth_sma3nz_amean": 1006.74835,
+        "F2bandwidth_sma3nz_stddevNorm": 0.28063,
+        "F2amplitudeLogRelF0_sma3nz_amean": -98.97194,
+        "F2amplitudeLogRelF0_sma3nz_stddevNorm": -0.95174,
+        "F3frequency_sma3nz_amean": 2899.40503,
+        "F3frequency_sma3nz_stddevNorm": 0.0657,
+        "F3bandwidth_sma3nz_amean": 917.8147,
+        "F3bandwidth_sma3nz_stddevNorm": 0.38219,
+        "F3amplitudeLogRelF0_sma3nz_amean": -102.71581,
+        "F3amplitudeLogRelF0_sma3nz_stddevNorm": -0.88331,
+        "alphaRatioV_sma3nz_amean": -4.43,
+        "alphaRatioV_sma3nz_stddevNorm": -1.75543,
+        "hammarbergIndexV_sma3nz_amean": 12.40248,
+        "hammarbergIndexV_sma3nz_stddevNorm": 0.77303,
+        "slopeV0-500_sma3nz_amean": 0.07148,
+        "slopeV0-500_sma3nz_stddevNorm": 0.29262,
+        "slopeV500-1500_sma3nz_amean": -0.00544,
+        "slopeV500-1500_sma3nz_stddevNorm": -2.98607,
+        "spectralFluxV_sma3nz_amean": 0.63878,
+        "spectralFluxV_sma3nz_stddevNorm": 0.55548,
+        "mfcc1V_sma3nz_amean": 28.09561,
+        "mfcc1V_sma3nz_stddevNorm": 0.43939,
+        "mfcc2V_sma3nz_amean": -23.03936,
+        "mfcc2V_sma3nz_stddevNorm": -0.47659,
+        "mfcc3V_sma3nz_amean": 14.03877,
+        "mfcc3V_sma3nz_stddevNorm": 1.24409,
+        "mfcc4V_sma3nz_amean": -0.34025,
+        "mfcc4V_sma3nz_stddevNorm": -55.2846,
+        "alphaRatioUV_sma3nz_amean": -1.39998,
+        "hammarbergIndexUV_sma3nz_amean": 9.38837,
+        "slopeUV0-500_sma3nz_amean": 0.06056,
+        "slopeUV500-1500_sma3nz_amean": 0.00832,
+        "spectralFluxUV_sma3nz_amean": 0.35288,
+        "loudnessPeaksPerSec": 5.34224,
+        "VoicedSegmentsPerSec": 3.70995,
+        "MeanVoicedSegmentLengthSec": 0.12727,
+        "StddevVoicedSegmentLengthSec": 0.12352,
+        "MeanUnvoicedSegmentLength": 0.12762,
+        "StddevUnvoicedSegmentLength": 0.12562,
+        "equivalentSoundLevel_dBp": -20.14858
+      }
+    },
+    {
+      "source_video_interval_ms": [
+        66000,
+        72000
+      ],
+      "f0_yin_median_hz": 221.97,
+      "f0_yin_tenth_percentile_hz": 100.03,
+      "f0_yin_ninetieth_percentile_hz": 400.3,
+      "pitch_reliability_note": "unreviewed_pitch_candidates_mix_contamination_possible",
+      "egemaps_v02_functionals": {
+        "F0semitoneFrom27.5Hz_sma3nz_amean": 35.92069,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevNorm": 0.16464,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile20.0": 33.89249,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile50.0": 35.80171,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile80.0": 40.02723,
+        "F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2": 6.13473,
+        "F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope": 76.76807,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope": 88.5154,
+        "F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope": 150.31453,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope": 121.06668,
+        "loudness_sma3_amean": 1.09662,
+        "loudness_sma3_stddevNorm": 0.72686,
+        "loudness_sma3_percentile20.0": 0.2149,
+        "loudness_sma3_percentile50.0": 1.08624,
+        "loudness_sma3_percentile80.0": 1.88796,
+        "loudness_sma3_pctlrange0-2": 1.67306,
+        "loudness_sma3_meanRisingSlope": 12.0909,
+        "loudness_sma3_stddevRisingSlope": 5.73216,
+        "loudness_sma3_meanFallingSlope": 11.10475,
+        "loudness_sma3_stddevFallingSlope": 6.72874,
+        "spectralFlux_sma3_amean": 0.51343,
+        "spectralFlux_sma3_stddevNorm": 0.92366,
+        "mfcc1_sma3_amean": 20.38364,
+        "mfcc1_sma3_stddevNorm": 0.56123,
+        "mfcc2_sma3_amean": -20.91057,
+        "mfcc2_sma3_stddevNorm": -0.61705,
+        "mfcc3_sma3_amean": 3.75885,
+        "mfcc3_sma3_stddevNorm": 4.48687,
+        "mfcc4_sma3_amean": -5.75606,
+        "mfcc4_sma3_stddevNorm": -3.16991,
+        "jitterLocal_sma3nz_amean": 0.03484,
+        "jitterLocal_sma3nz_stddevNorm": 2.56252,
+        "shimmerLocaldB_sma3nz_amean": 1.1238,
+        "shimmerLocaldB_sma3nz_stddevNorm": 0.8225,
+        "HNRdBACF_sma3nz_amean": 6.11428,
+        "HNRdBACF_sma3nz_stddevNorm": 0.8094,
+        "logRelF0-H1-H2_sma3nz_amean": 0.42671,
+        "logRelF0-H1-H2_sma3nz_stddevNorm": 23.17406,
+        "logRelF0-H1-A3_sma3nz_amean": 11.77384,
+        "logRelF0-H1-A3_sma3nz_stddevNorm": 1.09091,
+        "F1frequency_sma3nz_amean": 836.32739,
+        "F1frequency_sma3nz_stddevNorm": 0.27467,
+        "F1bandwidth_sma3nz_amean": 1282.45166,
+        "F1bandwidth_sma3nz_stddevNorm": 0.29099,
+        "F1amplitudeLogRelF0_sma3nz_amean": -121.78546,
+        "F1amplitudeLogRelF0_sma3nz_stddevNorm": -0.78811,
+        "F2frequency_sma3nz_amean": 1808.15735,
+        "F2frequency_sma3nz_stddevNorm": 0.1481,
+        "F2bandwidth_sma3nz_amean": 1094.78345,
+        "F2bandwidth_sma3nz_stddevNorm": 0.29654,
+        "F2amplitudeLogRelF0_sma3nz_amean": -115.14099,
+        "F2amplitudeLogRelF0_sma3nz_stddevNorm": -0.82176,
+        "F3frequency_sma3nz_amean": 2820.4375,
+        "F3frequency_sma3nz_stddevNorm": 0.08997,
+        "F3bandwidth_sma3nz_amean": 990.9079,
+        "F3bandwidth_sma3nz_stddevNorm": 0.34333,
+        "F3amplitudeLogRelF0_sma3nz_amean": -118.19509,
+        "F3amplitudeLogRelF0_sma3nz_stddevNorm": -0.77359,
+        "alphaRatioV_sma3nz_amean": -5.06251,
+        "alphaRatioV_sma3nz_stddevNorm": -1.82374,
+        "hammarbergIndexV_sma3nz_amean": 18.57126,
+        "hammarbergIndexV_sma3nz_stddevNorm": 0.55974,
+        "slopeV0-500_sma3nz_amean": 0.07077,
+        "slopeV0-500_sma3nz_stddevNorm": 0.3996,
+        "slopeV500-1500_sma3nz_amean": -0.00407,
+        "slopeV500-1500_sma3nz_stddevNorm": -5.07323,
+        "spectralFluxV_sma3nz_amean": 0.60642,
+        "spectralFluxV_sma3nz_stddevNorm": 0.67388,
+        "mfcc1V_sma3nz_amean": 27.16017,
+        "mfcc1V_sma3nz_stddevNorm": 0.43166,
+        "mfcc2V_sma3nz_amean": -23.00184,
+        "mfcc2V_sma3nz_stddevNorm": -0.63176,
+        "mfcc3V_sma3nz_amean": 2.79634,
+        "mfcc3V_sma3nz_stddevNorm": 7.80999,
+        "mfcc4V_sma3nz_amean": -11.09845,
+        "mfcc4V_sma3nz_stddevNorm": -2.17778,
+        "alphaRatioUV_sma3nz_amean": 0.56327,
+        "hammarbergIndexUV_sma3nz_amean": 9.37045,
+        "slopeUV0-500_sma3nz_amean": 0.07093,
+        "slopeUV500-1500_sma3nz_amean": 0.00682,
+        "spectralFluxUV_sma3nz_amean": 0.44051,
+        "loudnessPeaksPerSec": 3.17195,
+        "VoicedSegmentsPerSec": 1.68634,
+        "MeanVoicedSegmentLengthSec": 0.251,
+        "StddevVoicedSegmentLengthSec": 0.273,
+        "MeanUnvoicedSegmentLength": 0.35667,
+        "StddevUnvoicedSegmentLength": 0.30916,
+        "equivalentSoundLevel_dBp": -19.93533
+      }
+    },
+    {
+      "source_video_interval_ms": [
+        72000,
+        78000
+      ],
+      "f0_yin_median_hz": 189.89,
+      "f0_yin_tenth_percentile_hz": 96.86,
+      "f0_yin_ninetieth_percentile_hz": 276.74,
+      "pitch_reliability_note": "unreviewed_pitch_candidates_mix_contamination_possible",
+      "egemaps_v02_functionals": {
+        "F0semitoneFrom27.5Hz_sma3nz_amean": 33.3642,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevNorm": 0.11097,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile20.0": 30.68296,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile50.0": 32.75594,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile80.0": 35.5757,
+        "F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2": 4.89274,
+        "F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope": 173.67877,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope": 155.41362,
+        "F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope": 56.71309,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope": 32.11376,
+        "loudness_sma3_amean": 0.92969,
+        "loudness_sma3_stddevNorm": 0.81417,
+        "loudness_sma3_percentile20.0": 0.21978,
+        "loudness_sma3_percentile50.0": 0.71202,
+        "loudness_sma3_percentile80.0": 1.71803,
+        "loudness_sma3_pctlrange0-2": 1.49825,
+        "loudness_sma3_meanRisingSlope": 12.0715,
+        "loudness_sma3_stddevRisingSlope": 9.55751,
+        "loudness_sma3_meanFallingSlope": 9.24898,
+        "loudness_sma3_stddevFallingSlope": 7.2926,
+        "spectralFlux_sma3_amean": 0.39362,
+        "spectralFlux_sma3_stddevNorm": 0.98785,
+        "mfcc1_sma3_amean": 20.39029,
+        "mfcc1_sma3_stddevNorm": 0.69566,
+        "mfcc2_sma3_amean": -12.53848,
+        "mfcc2_sma3_stddevNorm": -1.11562,
+        "mfcc3_sma3_amean": 4.49148,
+        "mfcc3_sma3_stddevNorm": 3.2863,
+        "mfcc4_sma3_amean": -1.10609,
+        "mfcc4_sma3_stddevNorm": -12.96982,
+        "jitterLocal_sma3nz_amean": 0.03004,
+        "jitterLocal_sma3nz_stddevNorm": 1.64616,
+        "shimmerLocaldB_sma3nz_amean": 1.37419,
+        "shimmerLocaldB_sma3nz_stddevNorm": 0.94289,
+        "HNRdBACF_sma3nz_amean": 5.23267,
+        "HNRdBACF_sma3nz_stddevNorm": 1.03426,
+        "logRelF0-H1-H2_sma3nz_amean": 4.63751,
+        "logRelF0-H1-H2_sma3nz_stddevNorm": 3.05192,
+        "logRelF0-H1-A3_sma3nz_amean": 21.86533,
+        "logRelF0-H1-A3_sma3nz_stddevNorm": 0.93245,
+        "F1frequency_sma3nz_amean": 919.65485,
+        "F1frequency_sma3nz_stddevNorm": 0.21889,
+        "F1bandwidth_sma3nz_amean": 1183.72571,
+        "F1bandwidth_sma3nz_stddevNorm": 0.27219,
+        "F1amplitudeLogRelF0_sma3nz_amean": -138.46196,
+        "F1amplitudeLogRelF0_sma3nz_stddevNorm": -0.63529,
+        "F2frequency_sma3nz_amean": 1877.26196,
+        "F2frequency_sma3nz_stddevNorm": 0.1177,
+        "F2bandwidth_sma3nz_amean": 1101.05212,
+        "F2bandwidth_sma3nz_stddevNorm": 0.2069,
+        "F2amplitudeLogRelF0_sma3nz_amean": -134.57608,
+        "F2amplitudeLogRelF0_sma3nz_stddevNorm": -0.6577,
+        "F3frequency_sma3nz_amean": 2933.39258,
+        "F3frequency_sma3nz_stddevNorm": 0.08503,
+        "F3bandwidth_sma3nz_amean": 990.65173,
+        "F3bandwidth_sma3nz_stddevNorm": 0.26432,
+        "F3amplitudeLogRelF0_sma3nz_amean": -138.65688,
+        "F3amplitudeLogRelF0_sma3nz_stddevNorm": -0.59874,
+        "alphaRatioV_sma3nz_amean": -7.5833,
+        "alphaRatioV_sma3nz_stddevNorm": -1.33464,
+        "hammarbergIndexV_sma3nz_amean": 20.42642,
+        "hammarbergIndexV_sma3nz_stddevNorm": 0.63244,
+        "slopeV0-500_sma3nz_amean": 0.0716,
+        "slopeV0-500_sma3nz_stddevNorm": 0.22227,
+        "slopeV500-1500_sma3nz_amean": -0.00954,
+        "slopeV500-1500_sma3nz_stddevNorm": -1.86034,
+        "spectralFluxV_sma3nz_amean": 0.44392,
+        "spectralFluxV_sma3nz_stddevNorm": 0.74349,
+        "mfcc1V_sma3nz_amean": 30.71494,
+        "mfcc1V_sma3nz_stddevNorm": 0.48258,
+        "mfcc2V_sma3nz_amean": -13.02549,
+        "mfcc2V_sma3nz_stddevNorm": -1.15291,
+        "mfcc3V_sma3nz_amean": 4.15886,
+        "mfcc3V_sma3nz_stddevNorm": 5.08682,
+        "mfcc4V_sma3nz_amean": -3.6441,
+        "mfcc4V_sma3nz_stddevNorm": -4.64304,
+        "alphaRatioUV_sma3nz_amean": -2.19903,
+        "hammarbergIndexUV_sma3nz_amean": 12.02946,
+        "slopeUV0-500_sma3nz_amean": 0.06597,
+        "slopeUV500-1500_sma3nz_amean": 0.00708,
+        "spectralFluxUV_sma3nz_amean": 0.36999,
+        "loudnessPeaksPerSec": 3.50584,
+        "VoicedSegmentsPerSec": 2.18855,
+        "MeanVoicedSegmentLengthSec": 0.14615,
+        "StddevVoicedSegmentLengthSec": 0.30828,
+        "MeanUnvoicedSegmentLength": 0.28923,
+        "StddevUnvoicedSegmentLength": 0.25448,
+        "equivalentSoundLevel_dBp": -21.66332
+      }
+    },
+    {
+      "source_video_interval_ms": [
+        78000,
+        84000
+      ],
+      "f0_yin_median_hz": 197.62,
+      "f0_yin_tenth_percentile_hz": 91.3,
+      "f0_yin_ninetieth_percentile_hz": 514.66,
+      "pitch_reliability_note": "unreviewed_pitch_candidates_mix_contamination_possible",
+      "egemaps_v02_functionals": {
+        "F0semitoneFrom27.5Hz_sma3nz_amean": 41.94143,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevNorm": 0.22741,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile20.0": 32.89439,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile50.0": 42.53996,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile80.0": 50.53424,
+        "F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2": 17.63985,
+        "F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope": 283.00385,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope": 403.57248,
+        "F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope": 113.84779,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope": 59.87086,
+        "loudness_sma3_amean": 1.19008,
+        "loudness_sma3_stddevNorm": 0.61696,
+        "loudness_sma3_percentile20.0": 0.40085,
+        "loudness_sma3_percentile50.0": 1.14998,
+        "loudness_sma3_percentile80.0": 1.91037,
+        "loudness_sma3_pctlrange0-2": 1.50952,
+        "loudness_sma3_meanRisingSlope": 11.28123,
+        "loudness_sma3_stddevRisingSlope": 7.08222,
+        "loudness_sma3_meanFallingSlope": 7.52081,
+        "loudness_sma3_stddevFallingSlope": 3.21861,
+        "spectralFlux_sma3_amean": 0.59004,
+        "spectralFlux_sma3_stddevNorm": 0.77857,
+        "mfcc1_sma3_amean": 12.61733,
+        "mfcc1_sma3_stddevNorm": 0.99131,
+        "mfcc2_sma3_amean": -22.81388,
+        "mfcc2_sma3_stddevNorm": -0.54382,
+        "mfcc3_sma3_amean": -3.0465,
+        "mfcc3_sma3_stddevNorm": -5.07321,
+        "mfcc4_sma3_amean": -2.95673,
+        "mfcc4_sma3_stddevNorm": -4.87373,
+        "jitterLocal_sma3nz_amean": 0.05955,
+        "jitterLocal_sma3nz_stddevNorm": 1.18597,
+        "shimmerLocaldB_sma3nz_amean": 1.80234,
+        "shimmerLocaldB_sma3nz_stddevNorm": 0.53331,
+        "HNRdBACF_sma3nz_amean": 1.7275,
+        "HNRdBACF_sma3nz_stddevNorm": 1.82594,
+        "logRelF0-H1-H2_sma3nz_amean": 5.24662,
+        "logRelF0-H1-H2_sma3nz_stddevNorm": 3.20537,
+        "logRelF0-H1-A3_sma3nz_amean": 14.55654,
+        "logRelF0-H1-A3_sma3nz_stddevNorm": 0.71892,
+        "F1frequency_sma3nz_amean": 860.00153,
+        "F1frequency_sma3nz_stddevNorm": 0.26956,
+        "F1bandwidth_sma3nz_amean": 1220.05957,
+        "F1bandwidth_sma3nz_stddevNorm": 0.34202,
+        "F1amplitudeLogRelF0_sma3nz_amean": -153.54602,
+        "F1amplitudeLogRelF0_sma3nz_stddevNorm": -0.53824,
+        "F2frequency_sma3nz_amean": 1828.92505,
+        "F2frequency_sma3nz_stddevNorm": 0.124,
+        "F2bandwidth_sma3nz_amean": 1158.29724,
+        "F2bandwidth_sma3nz_stddevNorm": 0.23989,
+        "F2amplitudeLogRelF0_sma3nz_amean": -136.243,
+        "F2amplitudeLogRelF0_sma3nz_stddevNorm": -0.67627,
+        "F3frequency_sma3nz_amean": 2807.27075,
+        "F3frequency_sma3nz_stddevNorm": 0.07359,
+        "F3bandwidth_sma3nz_amean": 1025.71619,
+        "F3bandwidth_sma3nz_stddevNorm": 0.40373,
+        "F3amplitudeLogRelF0_sma3nz_amean": -140.24928,
+        "F3amplitudeLogRelF0_sma3nz_stddevNorm": -0.61403,
+        "alphaRatioV_sma3nz_amean": 3.84702,
+        "alphaRatioV_sma3nz_stddevNorm": 2.52956,
+        "hammarbergIndexV_sma3nz_amean": 16.70913,
+        "hammarbergIndexV_sma3nz_stddevNorm": 0.40201,
+        "slopeV0-500_sma3nz_amean": 0.06947,
+        "slopeV0-500_sma3nz_stddevNorm": 0.27323,
+        "slopeV500-1500_sma3nz_amean": 0.00732,
+        "slopeV500-1500_sma3nz_stddevNorm": 2.7914,
+        "spectralFluxV_sma3nz_amean": 0.66489,
+        "spectralFluxV_sma3nz_stddevNorm": 0.55579,
+        "mfcc1V_sma3nz_amean": 14.84776,
+        "mfcc1V_sma3nz_stddevNorm": 0.92537,
+        "mfcc2V_sma3nz_amean": -24.54946,
+        "mfcc2V_sma3nz_stddevNorm": -0.43315,
+        "mfcc3V_sma3nz_amean": -9.04732,
+        "mfcc3V_sma3nz_stddevNorm": -2.47387,
+        "mfcc4V_sma3nz_amean": 3.66943,
+        "mfcc4V_sma3nz_stddevNorm": 4.26325,
+        "alphaRatioUV_sma3nz_amean": 2.63593,
+        "hammarbergIndexUV_sma3nz_amean": 8.98676,
+        "slopeUV0-500_sma3nz_amean": 0.07168,
+        "slopeUV500-1500_sma3nz_amean": 0.00878,
+        "spectralFluxUV_sma3nz_amean": 0.56385,
+        "loudnessPeaksPerSec": 4.34057,
+        "VoicedSegmentsPerSec": 2.6936,
+        "MeanVoicedSegmentLengthSec": 0.10437,
+        "StddevVoicedSegmentLengthSec": 0.09868,
+        "MeanUnvoicedSegmentLength": 0.26133,
+        "StddevUnvoicedSegmentLength": 0.35549,
+        "equivalentSoundLevel_dBp": -20.78948
+      }
+    },
+    {
+      "source_video_interval_ms": [
+        84000,
+        90000
+      ],
+      "f0_yin_median_hz": 209.97,
+      "f0_yin_tenth_percentile_hz": 102.97,
+      "f0_yin_ninetieth_percentile_hz": 486.6,
+      "pitch_reliability_note": "unreviewed_pitch_candidates_mix_contamination_possible",
+      "egemaps_v02_functionals": {
+        "F0semitoneFrom27.5Hz_sma3nz_amean": 43.80884,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevNorm": 0.18651,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile20.0": 34.1413,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile50.0": 44.63162,
+        "F0semitoneFrom27.5Hz_sma3nz_percentile80.0": 52.47471,
+        "F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2": 18.33341,
+        "F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope": 499.62781,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope": 431.93124,
+        "F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope": 222.21768,
+        "F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope": 178.59665,
+        "loudness_sma3_amean": 1.01556,
+        "loudness_sma3_stddevNorm": 0.89146,
+        "loudness_sma3_percentile20.0": 0.13223,
+        "loudness_sma3_percentile50.0": 0.68406,
+        "loudness_sma3_percentile80.0": 2.11086,
+        "loudness_sma3_pctlrange0-2": 1.97862,
+        "loudness_sma3_meanRisingSlope": 11.33654,
+        "loudness_sma3_stddevRisingSlope": 7.42044,
+        "loudness_sma3_meanFallingSlope": 10.33081,
+        "loudness_sma3_stddevFallingSlope": 8.43218,
+        "spectralFlux_sma3_amean": 0.49511,
+        "spectralFlux_sma3_stddevNorm": 1.06327,
+        "mfcc1_sma3_amean": 15.38668,
+        "mfcc1_sma3_stddevNorm": 0.61354,
+        "mfcc2_sma3_amean": -21.04557,
+        "mfcc2_sma3_stddevNorm": -0.59938,
+        "mfcc3_sma3_amean": 1.45996,
+        "mfcc3_sma3_stddevNorm": 6.38926,
+        "mfcc4_sma3_amean": -6.08125,
+        "mfcc4_sma3_stddevNorm": -1.4794,
+        "jitterLocal_sma3nz_amean": 0.1008,
+        "jitterLocal_sma3nz_stddevNorm": 1.95265,
+        "shimmerLocaldB_sma3nz_amean": 1.66829,
+        "shimmerLocaldB_sma3nz_stddevNorm": 0.51556,
+        "HNRdBACF_sma3nz_amean": 2.51967,
+        "HNRdBACF_sma3nz_stddevNorm": 1.39857,
+        "logRelF0-H1-H2_sma3nz_amean": 2.83297,
+        "logRelF0-H1-H2_sma3nz_stddevNorm": 2.87803,
+        "logRelF0-H1-A3_sma3nz_amean": 13.1522,
+        "logRelF0-H1-A3_sma3nz_stddevNorm": 0.69231,
+        "F1frequency_sma3nz_amean": 968.30408,
+        "F1frequency_sma3nz_stddevNorm": 0.1874,
+        "F1bandwidth_sma3nz_amean": 1069.12036,
+        "F1bandwidth_sma3nz_stddevNorm": 0.26295,
+        "F1amplitudeLogRelF0_sma3nz_amean": -165.07166,
+        "F1amplitudeLogRelF0_sma3nz_stddevNorm": -0.42533,
+        "F2frequency_sma3nz_amean": 1901.98669,
+        "F2frequency_sma3nz_stddevNorm": 0.09427,
+        "F2bandwidth_sma3nz_amean": 1111.06726,
+        "F2bandwidth_sma3nz_stddevNorm": 0.3819,
+        "F2amplitudeLogRelF0_sma3nz_amean": -156.29694,
+        "F2amplitudeLogRelF0_sma3nz_stddevNorm": -0.48613,
+        "F3frequency_sma3nz_amean": 2871.30786,
+        "F3frequency_sma3nz_stddevNorm": 0.07,
+        "F3bandwidth_sma3nz_amean": 967.6532,
+        "F3bandwidth_sma3nz_stddevNorm": 0.36542,
+        "F3amplitudeLogRelF0_sma3nz_amean": -158.27107,
+        "F3amplitudeLogRelF0_sma3nz_stddevNorm": -0.45799,
+        "alphaRatioV_sma3nz_amean": 0.611,
+        "alphaRatioV_sma3nz_stddevNorm": 10.38115,
+        "hammarbergIndexV_sma3nz_amean": 9.70468,
+        "hammarbergIndexV_sma3nz_stddevNorm": 0.63317,
+        "slopeV0-500_sma3nz_amean": 0.07489,
+        "slopeV0-500_sma3nz_stddevNorm": 0.21099,
+        "slopeV500-1500_sma3nz_amean": 0.00025,
+        "slopeV500-1500_sma3nz_stddevNorm": 53.25095,
+        "spectralFluxV_sma3nz_amean": 0.72734,
+        "spectralFluxV_sma3nz_stddevNorm": 0.73132,
+        "mfcc1V_sma3nz_amean": 16.74174,
+        "mfcc1V_sma3nz_stddevNorm": 0.63656,
+        "mfcc2V_sma3nz_amean": -26.75968,
+        "mfcc2V_sma3nz_stddevNorm": -0.40007,
+        "mfcc3V_sma3nz_amean": 3.204,
+        "mfcc3V_sma3nz_stddevNorm": 3.44662,
+        "mfcc4V_sma3nz_amean": -8.4946,
+        "mfcc4V_sma3nz_stddevNorm": -1.31018,
+        "alphaRatioUV_sma3nz_amean": -0.33236,
+        "hammarbergIndexUV_sma3nz_amean": 9.56166,
+        "slopeUV0-500_sma3nz_amean": 0.07318,
+        "slopeUV500-1500_sma3nz_amean": 0.00532,
+        "spectralFluxUV_sma3nz_amean": 0.41904,
+        "loudnessPeaksPerSec": 3.3389,
+        "VoicedSegmentsPerSec": 3.38983,
+        "MeanVoicedSegmentLengthSec": 0.0565,
+        "StddevVoicedSegmentLengthSec": 0.04258,
+        "MeanUnvoicedSegmentLength": 0.27062,
+        "StddevUnvoicedSegmentLength": 0.20705,
+        "equivalentSoundLevel_dBp": -21.15536
+      }
+    }
+  ],
+  "voice_identity_verified": false,
+  "source_caption_alignment_verified": false,
+  "emotion_interpretation_verified": false,
+  "all_model_outputs_need_audio_review": true,
+  "rights": "owner-directed private research, no public audio/video distribution",
+  "retained_media_audio_or_model_weights": false
+}

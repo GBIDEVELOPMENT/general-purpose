@@ -38,7 +38,7 @@ We have now achieved **first reviewed static-frame setting and prop annotations 
 | S01E01 source hash from real FTP AVI | Confirmed run #40042590948 |
 | 30-second exact source read with 10 JPEG hashes and 5 acoustic windows | **Completed, GHA #40044673687 and merged PR #115** |
 | Relevant source subtitle cues preserved by ID/source hash | **Completed, nine original SRT cues C19–C27, PR #115** |
-| Caption/video speech offset verified independently | Not yet |
+| Caption/video speech offset verified independently | **Local audio-caption content corroborated by 10 ASR segments in run #40045128799; exact word alignment, drift and independent verification remain open** |
 | Observed appearance and set objects recorded from source frames | **Completed, ten frames, SHA-verified; visual character IDs unresolved** |
 | Continuous motion and meaningful stage directions grounded in reviewed clip | Not yet |
 | Final first scene screenplay accepted | Not yet |

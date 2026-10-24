@@ -1,8 +1,16 @@
 # S01E01 exploratory speech and prosody alignment
 
-Date: 2026-10-23. Status: **implementation awaiting synthetic/PR verification; real source run not yet dispatched**.
+Date: 2026-10-23. Status: **real 30-second source-audio study succeeded; evidence requires human/source-cut review**.
 
 This phase follows the successfully acquired original-source 60–90 second scene packet ([run #40044673687](https://github.com/gamesbyian/general-purpose/actions/runs/40044673687)). Real source frames, caption cue IDs and mix-level acoustic measurements are retained in `seasons/S01/S01E01/derived/scene-review-v1`.
+
+## Actual original-series source-audio results: succeeded October 23, 2026
+
+Trusted owner-PR trigger [PR #117](https://github.com/gamesbyian/general-purpose/pull/117) executed successful [Actions run #40045128799](https://github.com/gamesbyian/general-purpose/actions/runs/40045128799). The source video and SRT SHA-256 checks passed, and the runner saved a compact, private text-only `night-court-s01e01-source-asr-prosody` evidence artifact, ID `12540714997`. The source media, decoded WAV and public model-cache weights were discarded after inference. Inference engine was **faster-whisper 1.2.1 with public tiny.en** on CPU.
+
+The 60–90s interval produced **10 independent candidate ASR segments**. **8/10** best matches had heuristic text similarity >=0.75 to original caption cues; **5/10** were >=0.95, with median candidate start-time offset **+252 ms** for those five (individual values -19, +164, +252, +381, +624 ms). This is strong *local content corroboration* between audio and saved SRT, **not** independently approved subtitle timing or evidence of no drift outside this 30s window. One cue begins before the excerpt and merges distinct speakers; ASR also misheard unusual comedic vocabulary. Preserve the original caption wording unchanged.
+
+The five mixed-audio six-second pitch-candidate medians were 148.58, 221.97, 189.89, 197.62 and 209.97 Hz. These are **not per-character pitch measurements**; musical tones, audience laughter and simultaneous voices can corrupt the estimation. Neither diarization, emotion nor character attribution was performed.
 
 ## Purpose
 
