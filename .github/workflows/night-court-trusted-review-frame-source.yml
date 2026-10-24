@@ -1,0 +1,49 @@
+name: Night Court trusted 36-second S01E01 private visual sampling
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-complete-review-frames.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-s01e01-review-frames
+  cancel-in-progress: false
+jobs:
+  sample:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-complete-review-frames-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - name: Checkout trusted current main; never PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Install FFmpeg for synthetic test and bounded source extraction
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Validate SHA-pinned source contract and synthetic regression without secrets
+        run: python 'Night Court/tools/test_s01e01_complete_review_frames.py'
+      - name: Download immutable AVI and extract private silent reviewer frames
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python 'Night Court/tools/build_s01e01_complete_review_frames.py' --ftp \
+            --output "${{ runner.temp }}/s01e01-complete-review-frames"
+      - name: Upload only 145 small silent frames, 4 contact sheets, immutable metadata
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-complete-review-private-frames
+          path: ${{ runner.temp }}/s01e01-complete-review-frames/
+          if-no-files-found: error
+          retention-days: 7
+      - name: Wipe derived images regardless of previous result
+        if: always()
+        run: rm -rf "${{ runner.temp }}/s01e01-complete-review-frames"

@@ -1,0 +1,25 @@
+name: Night Court 36-second reviewer evidence packet tests
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_s01e01_complete_review_frames.py'
+      - 'Night Court/tools/test_s01e01_complete_review_frames.py'
+      - 'Night Court/S01E01-COMPLETE-REVIEW-FRAMES-HANDOFF.md'
+      - '.github/workflows/night-court-review-frame-offline.yml'
+      - '.github/workflows/night-court-trusted-review-frame-source.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s01e01-complete-review-frames'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install FFmpeg for synthetic test and bounded source extraction
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Synthetic media packet and exact source-interval invariant tests
+        run: |
+          python 'Night Court/tools/test_s01e01_complete_review_frames.py'
