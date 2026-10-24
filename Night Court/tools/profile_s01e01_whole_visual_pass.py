@@ -23,6 +23,7 @@ from pilot_ftp_video_acoustics import candidate,retrieve
 from plan_fast_visual_pass import make_plan
 from extract_fast_visual_plan import extract
 from summarize_motion_triplets import summarize
+from plan_continuous_action_review import plan_continuous_review
 from probe_s01e01_cadence_and_cost import video_properties, SHA, SIZE
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -159,6 +160,9 @@ def profile_local(original:Path,private_output:Path):
         t=time.monotonic()
         pixel_review=summarize(plan,captured,location/'frames')
         timings['ephemeral_three_frame_pixel_difference_seconds']=round(time.monotonic()-t,3)
+    t=time.monotonic()
+    continuous_review=plan_continuous_review(plan,pixel_review,scored)
+    timings['shot_candidate_bounded_review_planning_seconds']=round(time.monotonic()-t,3)
     if not captured['all_samples_within_source_pts_tolerance']:
         raise ValueError('Actual selected AVI PTS do not match planned times; do not publish image evidence')
     report={
@@ -182,6 +186,7 @@ def profile_local(original:Path,private_output:Path):
       'source_triads_abstaining_for_pts_order':pixel_review['pts_order_abstentions'],
       'pixel_change_candidate_reviews':pixel_review['review_priority'][:12],
       'pixel_change_is_verified_physical_action':False,
+      'shot_bounded_selective_original_video_review':continuous_review,
       'all_image_frame_pts_match_verified':captured['all_samples_within_source_pts_tolerance'],
       'visual_models_executed':False,
       'visual_content_independently_reviewed':False,
