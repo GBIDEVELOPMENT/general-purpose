@@ -1,0 +1,191 @@
+{
+  "schema": "night-court-real-original-image-scene-observations/1",
+  "episode_id": "S01E01",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_duration_ms": 1448256,
+  "private_source_workflow_run": 40137223223,
+  "private_thumbnail_artifact_id": 12577216339,
+  "original_image_artifact_zip_sha256": "ac07280d701ec0cc04255724d39f5098e0e907e44d2b392da94bc905b74f5a22",
+  "frame_catalogue_sha256": "577185f09f80ca0c866f8a5484e1c2ada3c08f634671d876cddfd0ed508ac98e",
+  "whole_episode_uniform_frames_captured": 80,
+  "scene_description_provenance": "assistant_direct_visual_inspection_of_18s_uniform_original_AVI_contact_sheets",
+  "source_video_image_generation": false,
+  "frame_time_kind": "requested_source_decode_offset_unverified_exact_PTS",
+  "speaker_identity_from_picture_asserted": false,
+  "physical_motion_source_verified": false,
+  "continuous_scene_boundaries_verified": false,
+  "visual_observations": [
+    {
+      "frame_id": 1,
+      "source_requested_ms": 9000,
+      "source_thumbnail_sha256": "dec9ca3179d4fbb843251bc6d53618d06183d2d5acfefe94a39a349440a25e49",
+      "provisional_location": "book-lined court office",
+      "visually_observed_static_description": "A lavender-suited adult works at a desk; boxes and papers fill a book-lined office.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 3,
+      "source_requested_ms": 45000,
+      "source_thumbnail_sha256": "b5ac1780304f9b41b0a9869f6b3cd68dae5bc805a503f416cbb4ebc02b842c55",
+      "provisional_location": "book-lined court office",
+      "visually_observed_static_description": "A uniformed adult stands opposite the desk while the lavender-suited adult bends over paperwork.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 7,
+      "source_requested_ms": 117000,
+      "source_thumbnail_sha256": "3ee2caed1d3c1ec22879fe269cec475fe7fa3eebc7279c356b3f424bfc900fdb",
+      "provisional_location": "book-lined court office doorway",
+      "visually_observed_static_description": "An adult enters through the office door carrying a dark bag.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 10,
+      "source_requested_ms": 171000,
+      "source_thumbnail_sha256": "0cf8f0eea6451f63f8f20f6a884bc64a2b7f015f5303856d557f753c89a89b3e",
+      "provisional_location": "book-lined court office",
+      "visually_observed_static_description": "An adult is stretched out on the ledge of an open window while the lavender-suited adult stands nearby.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 15,
+      "source_requested_ms": 261000,
+      "source_thumbnail_sha256": "bc1b5fbdb0079f488a4475ada062a4f2efc9bedc16a7504d0c97c10d13377052",
+      "provisional_location": "exterior nighttime bridge",
+      "visually_observed_static_description": "An exterior view shows a large illuminated bridge against the nighttime city skyline, unlike the surrounding interiors.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 16,
+      "source_requested_ms": 279000,
+      "source_thumbnail_sha256": "d310cf24c313bd09c3a73fb32b05e68c65bc50bf455591f26f702477d0e395a9",
+      "provisional_location": "courtroom",
+      "visually_observed_static_description": "The setting is now a courtroom with a raised bench, dark-robed seated adult and the lavender-suited adult at the lectern.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 22,
+      "source_requested_ms": 387000,
+      "source_thumbnail_sha256": "374685e5a6782c0cbd630cd61f3d63e57bbb600ebbf05a35b55a45b03b92d9cb",
+      "provisional_location": "courtroom",
+      "visually_observed_static_description": "A dark-robed adult speaks from behind the raised judicial bench.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 25,
+      "source_requested_ms": 441000,
+      "source_thumbnail_sha256": "0c74d2a3df497d39f08a75093c92709778fad2567bc47840d1691413806d76b4",
+      "provisional_location": "crowded courtroom",
+      "visually_observed_static_description": "Several people cluster around a seated adult, with a uniformed person behind; the sampled still alone cannot establish why.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 35,
+      "source_requested_ms": 621000,
+      "source_thumbnail_sha256": "2f446dee55c0a7f57c7490fcf90c5b02318ac57d723103b485ab3f795f20d53d",
+      "provisional_location": "court office",
+      "visually_observed_static_description": "In the book-lined office, the lavender-suited adult leans across a desk toward a dark-robed adult.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 38,
+      "source_requested_ms": 675000,
+      "source_thumbnail_sha256": "c50c7af069c463ed8be2c5757e2ba28be63e28847a6fbb8f6932cf3b40d81f61",
+      "provisional_location": "court office",
+      "visually_observed_static_description": "A dark-robed adult stands near the law-book shelves, with the office doors and windows behind.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 42,
+      "source_requested_ms": 747000,
+      "source_thumbnail_sha256": "c4c79ce396d4978399c160f9a8f9ddb31ed0400079adc88a736f8c145d13fca5",
+      "provisional_location": "courtroom",
+      "visually_observed_static_description": "Uniformed personnel and several other adults stand around the courtroom rail and seating.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 52,
+      "source_requested_ms": 927000,
+      "source_thumbnail_sha256": "7c1469fb1f1a7a003726ab9c2f5b91befc48644b6bf2416c5fc788a13dcd24e6",
+      "provisional_location": "courtroom audience rail",
+      "visually_observed_static_description": "A dark-robed adult faces a seated red-clad adult near the courtroom rail.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 55,
+      "source_requested_ms": 981000,
+      "source_thumbnail_sha256": "1faeec6c3e52e98c2d35b63d85392cfa0ea63f8596bd8d822f0aae79de3f7dbc",
+      "provisional_location": "courtroom",
+      "visually_observed_static_description": "The dark-robed adult stands before the crowded gallery and speaks toward the courtroom seating.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 65,
+      "source_requested_ms": 1161000,
+      "source_thumbnail_sha256": "5eb877bad46d021016fc6ac42c37f78356794efafaf97aafc51e0597aa0e3256",
+      "provisional_location": "courtroom",
+      "visually_observed_static_description": "A uniformed adult stands beside a shorter uniformed adult near the bookcase; relative roles remain uncertain.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 71,
+      "source_requested_ms": 1269000,
+      "source_thumbnail_sha256": "7afbe895d16831126052feee53c64cbe997266f3547f2d876cab03c45ae7d3b5",
+      "provisional_location": "courtroom bench",
+      "visually_observed_static_description": "The dark-robed adult reclines along the judicial bench in a noticeably unconventional posture.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 73,
+      "source_requested_ms": 1305000,
+      "source_thumbnail_sha256": "d24b7aab409a81302f5e89d253377b1423a28913e06eabd3374e35a75fb55fc8",
+      "provisional_location": "courtroom",
+      "visually_observed_static_description": "A casually dressed adult reclines beside the lavender-suited adult while she turns toward him.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 78,
+      "source_requested_ms": 1395000,
+      "source_thumbnail_sha256": "e807cfeb98c5040c7aa17c4b308cea52c068f0ea9a5924b317acf199cacf0d72",
+      "provisional_location": "courtroom exit",
+      "visually_observed_static_description": "A casually dressed adult stands near a double doorway late in the episode.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    }
+  ],
+  "episode_editor_ready": false
+}
