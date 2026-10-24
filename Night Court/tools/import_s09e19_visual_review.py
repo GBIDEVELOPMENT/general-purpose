@@ -126,7 +126,7 @@ def import_packet(path):
     for o in OBSERVATIONS:
         a,b=o["interval_ms"]
         refs=", ".join("F"+str(n).zfill(3) for n in o["frame_numbers"])
-        lines += [f"**{a/1000:.2f}–{b/1000:.2f}s | {o[\"id\"]} | {o[\"evidence_kind\"]} | {refs}**",
+        lines += [f"**{a/1000:.2f}–{b/1000:.2f}s | {o['id']} | {o['evidence_kind']} | {refs}**",
                   o["description"], ""]
     lines += ["## Dialogue correspondence", "",
        "The concurrent independent ASR window has five distinctive candidate",
@@ -137,7 +137,7 @@ def import_packet(path):
        "Confirm source camera cuts against continuous video, identify who is",
        "visibly present, review physical action between samples, synchronize the",
        "original untimed text, and attribute vocal performances separately.", ""]
-    (TARGET/"scene-visual-observations.md").write_text("\\n".join(lines),"utf-8")
+    (TARGET/"scene-visual-observations.md").write_text("\n".join(lines),"utf-8")
     (TARGET/"README.md").write_text(
         "# S09E19 actual video source scene frames\n\n"
         "100 original-video sampled images, nominal 4fps from 15:00–15:25, SHA verified.\n\n"
