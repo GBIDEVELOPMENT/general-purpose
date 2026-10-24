@@ -31,6 +31,11 @@ class DebrisTests(unittest.TestCase):
     def test_screens(self):self.assertEqual(category("/downloads/Movie/Screens/mpv-shot0001.jpg"),"screenshot")
     def test_named_screenshot_file_outside_screens_dir(self):
         self.assertEqual(category("/downloads/S60/DVD/Studio 60 - 01 - SCREENSHOTS.jpg"),"screenshot")
+    def test_only_explicit_dvd_vob_samples(self):
+        self.assertEqual(category("/downloads/DVD/Sample/film.sample.VOB"),"sample")
+        self.assertIsNone(category("/downloads/DVD/VIDEO_TS/VTS_01_1.VOB"))
+        self.assertIsNone(category("/downloads/DVD/Featurettes/film.sample.VOB"))
+        self.assertIsNone(category("/downloads/DVD/Sample/film.VOB"))
     def test_explicit_release_sample_and_trailer(self):
         self.assertEqual(category("/downloads/Film.2025/Sample.mkv"),"sample")
         self.assertEqual(category("/downloads/Film.2025/Sample/film-sample.mkv"),"sample")
