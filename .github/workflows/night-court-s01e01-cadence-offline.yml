@@ -1,0 +1,26 @@
+name: Night Court native source cadence offline QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/probe_s01e01_cadence_and_cost.py'
+      - 'Night Court/tools/test_s01e01_cadence_and_cost.py'
+      - 'Night Court/S01E01-CADENCE-COST-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-cadence-offline.yml'
+      - '.github/workflows/night-court-trusted-s01e01-cadence.yml'
+permissions:
+  contents: read
+jobs:
+  native-cadence:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-source-cadence-and-benchmark'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install FFmpeg stream/PTS decode dependency
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Validate synthetic 24.000 and 23.976 source stream cadence
+        run: |
+          python 'Night Court/tools/test_s01e01_cadence_and_cost.py'
+          python 'Night Court/tools/test_fast_visual_pass.py'
