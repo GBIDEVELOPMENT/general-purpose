@@ -1,0 +1,41 @@
+name: Night Court source-hash pinned whole episode independent ASR metric QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/research/s01e01-whole-dual-asr-benchmark-summary.json'
+      - 'Night Court/FAST-EPISODE-FACTORY-THROUGHPUT.md'
+      - 'Night Court/AV-SCRIPT-PRODUCTION-WORKBOARD.md'
+      - '.github/workflows/night-court-dual-asr-benchmark-summary-ci.yml'
+permissions:
+  contents: read
+jobs:
+  metrics:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-original-full-asr-benchmark-metrics'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify original immutable source, model independence and budget evidence without accepting script
+        run: |
+          python - <<'PY'
+          import json
+          p='Night Court/research/s01e01-whole-dual-asr-benchmark-summary.json'
+          x=json.load(open(p,encoding='utf-8'))
+          assert x['schema']=='night-court-original-whole-episode-two-family-asr-benchmark-summary/1'
+          assert x['original_video_sha256']=='5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962'
+          assert x['decoded_audio_sha256']=='7fd284e99af1d69ca429496060c876241f181738666a86e8cb1335d5b869861a'
+          assert set(x['model_families'])=={'whisper','kaldi_hmm_wfst'}
+          assert x['original_private_zip_sha256']=='69cbb9f2f07036053c8c58912c90f38288b680bb3943548bd47b4fdbb7e30e7a'
+          assert x['original_private_json_sha256']=='197404e41a68b4c373770e1771d7059d23b993efcdc38e6cee0db1fe8f8c666b'
+          assert x['comparison']['corroborated_words']==1447
+          assert x['comparison']['corroborated_spans']==200
+          assert x['comparison']['unresolved_word_candidates']==1673
+          assert x['models'][0]['words_rejected_invalid_time']==238
+          assert abs(sum(x['measured_seconds'].values())-134.165)<1e-6
+          assert x['full_episode_visual_inference_complete'] is False
+          assert x['episode_script_accepted'] is False
+          assert x['production_factory_p95_under_30_minutes_verified'] is False
+          print('Actual source 134s dual ASR data and nonpromotion gates validated')
+          PY

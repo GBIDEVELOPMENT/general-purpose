@@ -1,0 +1,70 @@
+{
+  "schema": "night-court-original-whole-episode-two-family-asr-benchmark-summary/1",
+  "episode_id": "S01E01",
+  "original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_video_bytes": 183386112,
+  "source_audio_duration_ms": 1448256,
+  "decoded_audio_sha256": "7fd284e99af1d69ca429496060c876241f181738666a86e8cb1335d5b869861a",
+  "trusted_source_run_id": 40071950255,
+  "source_artifact_id": 12551588072,
+  "original_private_zip_sha256": "69cbb9f2f07036053c8c58912c90f38288b680bb3943548bd47b4fdbb7e30e7a",
+  "original_private_json_sha256": "197404e41a68b4c373770e1771d7059d23b993efcdc38e6cee0db1fe8f8c666b",
+  "artifact_expiration_utc": "2026-10-31T06:56:11Z",
+  "model_families": [
+    "whisper",
+    "kaldi_hmm_wfst"
+  ],
+  "models": [
+    {
+      "model_id": "faster-whisper tiny.en beam1 int8 cpu",
+      "package_version": "1.2.1",
+      "words_retained": 2362,
+      "words_rejected_invalid_time": 238,
+      "segments": 482,
+      "seconds_inference": 43.755
+    },
+    {
+      "model_id": "vosk-model-small-en-us-0.15 Kaldi WFST",
+      "package_version": "0.3.45",
+      "weights_zip_sha256": "30f26242c4eb449f948e42cb302dd7a686cb29a3423a8367f99ff41780942498",
+      "weights_zip_bytes": 41205931,
+      "words_retained": 2205,
+      "words_rejected_invalid_time": 0,
+      "seconds_inference": 79.603
+    }
+  ],
+  "measured_seconds": {
+    "original_ftp_transfer_sha_verification": 3.157,
+    "one_pcm_audio_decode": 3.642,
+    "vosk_model_download_unpack": 3.993,
+    "vosk_episode_inference": 79.603,
+    "whisper_episode_inference": 43.755,
+    "word_time_reconciliation": 0.015
+  },
+  "measured_source_stages_seconds": 134.165,
+  "comparison": {
+    "a_words": 2362,
+    "b_words": 2205,
+    "paired_words": 1645,
+    "corroborated_words": 1447,
+    "corroborated_spans": 200,
+    "unresolved_word_candidates": 1673,
+    "three_or_more_adjacent_word_agreement_required": true,
+    "maximum_candidate_word_middle_gap_ms": 600
+  },
+  "independent_original_srt_was_used_as_model_prompt": false,
+  "original_srt_agreement_pilot_pending": true,
+  "joint_recognizer_error_rate_measured": false,
+  "full_episode_audio_verified_by_human": false,
+  "speaker_identities_verified": false,
+  "motion_and_cut_inference_not_included": true,
+  "full_episode_visual_inference_complete": false,
+  "episode_script_accepted": false,
+  "production_factory_p95_under_30_minutes_verified": false,
+  "notes": [
+    "Model architecture independence gives positive machine-corroborated dialogue evidence, not statistically independent errors or independent source listening.",
+    "238 Whisper word-time candidates were rejected by strict timing gate: inspect reasons before treating consensus nonmatches as definite model disagreement.",
+    "Performance is one real 24-minute source run on runner including model download, not population p95 or full end-to-end AV workflow.",
+    "Do not force assign source original SRT character identity, vocal inflection or physical actions based on ASR agreements."
+  ]
+}
