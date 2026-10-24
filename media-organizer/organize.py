@@ -25,7 +25,7 @@ def connect():
     if protocol=="ftps": ftp.prot_p()
     return ftp
 def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7,max_seconds=420):
-    pending=deque([(ROOT,0)]); seen=set(); out=[]; failures=[]; truncated=[];started=time.monotonic()
+    pending=deque([(ROOT,0)]); seen=set(); out=[]; failures=[]; truncated=[];folder_records=[];started=time.monotonic()
     while pending:
         path,depth=pending.popleft()
         if path in seen: continue
@@ -39,6 +39,11 @@ def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7,max_seconds=420):
             ftp.cwd(path); rows=list(ftp.mlsd())
         except (ftplib.all_errors, OSError) as err:
             failures.append({"directory":path,"error_type":type(err).__name__});continue
+        visible=[(n,f) for n,f in rows if n not in (".","..")]
+        folder_records.append({"path":path,"entries":len(visible),
+                               "file_entries":sum(f.get("type")=="file" for _,f in visible),
+                               "directory_entries":sum(f.get("type")=="dir" for _,f in visible),
+                               "hidden_entries":sum(n.startswith(".") for n,_ in visible)})
         for name,facts in rows:
             if name in (".","..") or "/" in name or "\\" in name or name.startswith("."):continue
             full=safe(path.rstrip("/")+"/"+name)
@@ -49,7 +54,8 @@ def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7,max_seconds=420):
             elif kind=="file":
                 out.append({"path":full,"size":int(facts["size"]) if facts.get("size","").isdigit() else None,"modify":facts.get("modify")})
     if len(out)>max_files:truncated.append(ROOT+"/[file-count-limit]")
-    return {"root":ROOT,"directories":len(seen),"files":sorted(out,key=lambda x:x["path"].casefold()),"failures":failures,"truncated":sorted(set(truncated))}
+    return {"root":ROOT,"directories":len(seen),"folders":sorted(folder_records,key=lambda x:x["path"].casefold()),
+            "files":sorted(out,key=lambda x:x["path"].casefold()),"failures":failures,"truncated":sorted(set(truncated))}
 def basename_clean(s):
     return re.sub(r"\s+"," ",re.sub(r"[._]+"," ",s)).strip(" -")
 def propose(inv):
@@ -120,7 +126,7 @@ def main():
             node["suggested_episode_renames"]+=1
             if len(node["samples"])<3:node["samples"].append(move["from"])
         (out/"series-groups.json").write_text(json.dumps(sorted(groups.values(),key=lambda x:(-x["suggested_episode_renames"],x["series"])),indent=2,ensure_ascii=False))
-        summary={"files":len(inv["files"]),"directories":inv["directories"],"rename_candidates":len(plan["moves"]),"review_queue":len(plan["review"]),"scan_errors":len(inv["failures"]),"truncated_dirs":len(inv["truncated"])}
+        summary={"files":len(inv["files"]),"directories":inv["directories"],"rename_candidates":len(plan["moves"]),"review_queue":len(plan["review"]),"scan_errors":len(inv["failures"]),"truncated_dirs":len(inv["truncated"]),"empty_folders":sum(f["entries"]==0 for f in inv["folders"]),"folders_with_hidden_entries":sum(f["hidden_entries"]>0 for f in inv["folders"])}
         (out/"summary.json").write_text(json.dumps(summary,indent=2))
         print("MEDIA_INVENTORY_SUMMARY "+json.dumps(summary))
         if args.mode=="inventory":return
