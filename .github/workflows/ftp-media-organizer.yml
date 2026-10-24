@@ -9,6 +9,7 @@ on:
     paths:
       - "media-organizer/organize.py"
       - "media-organizer/folder_plan.py"
+      - "media-organizer/plex_filename_audit.py"
       - ".github/workflows/ftp-media-organizer.yml"
   workflow_dispatch:
     inputs:
@@ -35,7 +36,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Syntax and offline behavioral tests
         run: |
-          python -m py_compile media-organizer/organize.py
+          python -m py_compile media-organizer/organize.py media-organizer/plex_filename_audit.py
           python -m unittest discover -s media-organizer/tests -v
   inventory:
     if: >-
@@ -61,6 +62,12 @@ jobs:
         run: python media-organizer/organize.py --mode inventory
       - name: Produce independent offline folder suggestions
         run: python media-organizer/folder_plan.py --inventory media-organizer/output/inventory.json --output media-organizer/output/folder-plan.json
+      - name: Audit filename patterns that can confuse Plex
+        run: |
+          python media-organizer/plex_filename_audit.py \
+            --inventory media-organizer/output/inventory.json \
+            --output media-organizer/output/plex-filename-audit.json \
+            --markdown media-organizer/output/plex-filename-audit.md
       - name: Independently reconcile current reviewed batch against live FTP files
         shell: bash
         run: |
