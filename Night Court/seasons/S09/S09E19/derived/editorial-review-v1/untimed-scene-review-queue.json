@@ -1,0 +1,235 @@
+{
+  "schema": "night-court-s09e19-untimed-editorial-review-queue/1",
+  "episode_id": "S09E19",
+  "original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_untimed_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_paragraph_count": 347,
+  "original_source_paragraphs_with_actual_timecodes": 0,
+  "video_excerpt_ms": [
+    900000,
+    925000
+  ],
+  "source_asr_candidate_count": 5,
+  "sampled_video_event_count": 6,
+  "individual_review_tasks": 11,
+  "independently_accepted_dialogue_matches": 0,
+  "independently_accepted_physical_actions": 0,
+  "speaker_identity_verified": false,
+  "vocal_delivery_verified": false,
+  "complete_scene_audiovisual_accepted": false,
+  "tasks": [
+    {
+      "task_id": "S09E19:S09-V01",
+      "kind": "sampled_visual_stage_claim",
+      "sampled_video_interval_ms": [
+        900000,
+        905000
+      ],
+      "description": "Two adults stand at a counter: one wears a dark uniform with prominent buttons, and the other wears a gray jacket and glasses. Another person in light clothing is visible behind them.",
+      "supporting_frame_sha256": [
+        "a367d203eb88836cf193ad8f30485e0cff768605dea9e57f107cd1bb9463bf3f",
+        "0e351ae4248c47577a97128fad123b3350cda753f31f1199824d1af34b9860f5",
+        "33a976d2489f17192c60f4d839d6b4aac6c91da56b8a726273da857c3863fc83",
+        "087ed8517b192363e74be49f28adf1727c72b8dc6bd5e2d78cbe9f9412f2b065"
+      ],
+      "original_frame_presentation_times_verified": false,
+      "continuous_video_action_verified": false,
+      "source_audio_speaker_identity": null,
+      "review_evidence_status": "pending_continuous_video"
+    },
+    {
+      "task_id": "S09E19:P240:ASR0",
+      "kind": "proposed_dialogue_match",
+      "original_untimed_paragraphs": [
+        240,
+        240
+      ],
+      "original_source_text": "Anyway, they're all wrong for you. each other.",
+      "source_paragraph_timestamp_ms": null,
+      "model_proposed_video_time_interval_ms": [
+        900000,
+        902800
+      ],
+      "model_similarity_heuristic": 0.9333,
+      "review_evidence_status": "pending_source_audio_listening",
+      "accepted_speaking_character": null,
+      "accepted_vocal_delivery": null,
+      "source_audio_segment_independently_verified": false,
+      "mouth_voice_synchronization_verified": false
+    },
+    {
+      "task_id": "S09E19:P241:ASR1",
+      "kind": "proposed_dialogue_match",
+      "original_untimed_paragraphs": [
+        241,
+        241
+      ],
+      "original_source_text": "I think they make a cute couple.",
+      "source_paragraph_timestamp_ms": null,
+      "model_proposed_video_time_interval_ms": [
+        902800,
+        905320
+      ],
+      "model_similarity_heuristic": 1.0,
+      "review_evidence_status": "pending_source_audio_listening",
+      "accepted_speaking_character": null,
+      "accepted_vocal_delivery": null,
+      "source_audio_segment_independently_verified": false,
+      "mouth_voice_synchronization_verified": false
+    },
+    {
+      "task_id": "S09E19:P243:ASR4",
+      "kind": "proposed_dialogue_match",
+      "original_untimed_paragraphs": [
+        243,
+        243
+      ],
+      "original_source_text": "Hey, five bucks so they leave here together.",
+      "source_paragraph_timestamp_ms": null,
+      "model_proposed_video_time_interval_ms": [
+        908600,
+        911120
+      ],
+      "model_similarity_heuristic": 0.8,
+      "review_evidence_status": "pending_source_audio_listening",
+      "accepted_speaking_character": null,
+      "accepted_vocal_delivery": null,
+      "source_audio_segment_independently_verified": false,
+      "mouth_voice_synchronization_verified": false
+    },
+    {
+      "task_id": "S09E19:S09-V02",
+      "kind": "sampled_visual_stage_claim",
+      "sampled_video_interval_ms": [
+        909750,
+        913000
+      ],
+      "description": "At the counter, the uniformed person moves the hands up near the upper chest while the gray-jacketed person gestures with an arm.",
+      "supporting_frame_sha256": [
+        "06ea997edb68de97bdeae01504a32afea27205f4ce393eed905ab3d37da9785e",
+        "25c6491b2c004f9fdee253a3dccc1fd69c860e902793b305a04575832fad976b",
+        "e447071f46506c87ec460d04d128f5064af9292ad4da1fb1517d971e8b4357de",
+        "14f52389e536bdfe5055dd926ce56fdd77ac3b74bcf2bfc89f6cd21c40694a87"
+      ],
+      "original_frame_presentation_times_verified": false,
+      "continuous_video_action_verified": false,
+      "source_audio_speaker_identity": null,
+      "review_evidence_status": "pending_continuous_video"
+    },
+    {
+      "task_id": "S09E19:S09-V03",
+      "kind": "sampled_visual_stage_claim",
+      "sampled_video_interval_ms": [
+        913000,
+        913250
+      ],
+      "description": "The picture cuts from the counter pair to an adult with curly hair, burgundy clothing and a bright yellow collar seated beside a tabletop with a drinking glass.",
+      "supporting_frame_sha256": [
+        "14f52389e536bdfe5055dd926ce56fdd77ac3b74bcf2bfc89f6cd21c40694a87",
+        "d7b62d2050bc9055a6aaa8d5680973f299bfa6a554269d079c2d0476b8824b14"
+      ],
+      "original_frame_presentation_times_verified": false,
+      "continuous_video_action_verified": false,
+      "source_audio_speaker_identity": null,
+      "review_evidence_status": "pending_continuous_video"
+    },
+    {
+      "task_id": "S09E19:S09-V04",
+      "kind": "sampled_visual_stage_claim",
+      "sampled_video_interval_ms": [
+        913250,
+        919500
+      ],
+      "description": "The seated person in burgundy repeatedly moves hands near the face and chest, looks down and up, and changes head position.",
+      "supporting_frame_sha256": [
+        "d7b62d2050bc9055a6aaa8d5680973f299bfa6a554269d079c2d0476b8824b14",
+        "bfd8fc52eac258b8e04e27e994806199d3f41d3e47db3b9325dd87dd5eb45279",
+        "dbdbc05c22f7a2fc651e135f994ffc954e19e8d47058bb5dfdcdbacaf49ae0b8",
+        "6c4551014caa2f8edf287b17a3c04d38af989363492ce70aa42c41f1b22b7a4c",
+        "4559f4cc71754d73f3ea9dc4e18f0de1557cf2afd6f8111da2f46390e0f319a8"
+      ],
+      "original_frame_presentation_times_verified": false,
+      "continuous_video_action_verified": false,
+      "source_audio_speaker_identity": null,
+      "review_evidence_status": "pending_continuous_video"
+    },
+    {
+      "task_id": "S09E19:P251:ASR8",
+      "kind": "proposed_dialogue_match",
+      "original_untimed_paragraphs": [
+        251,
+        251
+      ],
+      "original_source_text": "How's the weather in Fresca?",
+      "source_paragraph_timestamp_ms": null,
+      "model_proposed_video_time_interval_ms": [
+        917680,
+        920280
+      ],
+      "model_similarity_heuristic": 0.8,
+      "review_evidence_status": "pending_source_audio_listening",
+      "accepted_speaking_character": null,
+      "accepted_vocal_delivery": null,
+      "source_audio_segment_independently_verified": false,
+      "mouth_voice_synchronization_verified": false
+    },
+    {
+      "task_id": "S09E19:S09-V05",
+      "kind": "sampled_visual_stage_claim",
+      "sampled_video_interval_ms": [
+        919500,
+        919750
+      ],
+      "description": "The image changes from the seated person in burgundy to an adult with a beard wearing a jacket, collared shirt and patterned tie.",
+      "supporting_frame_sha256": [
+        "4559f4cc71754d73f3ea9dc4e18f0de1557cf2afd6f8111da2f46390e0f319a8",
+        "b584c6dbe2c3fc00bdb57886f166c4893b9a250a25ac51d07fada40cec62abc3"
+      ],
+      "original_frame_presentation_times_verified": false,
+      "continuous_video_action_verified": false,
+      "source_audio_speaker_identity": null,
+      "review_evidence_status": "pending_continuous_video"
+    },
+    {
+      "task_id": "S09E19:S09-V06",
+      "kind": "sampled_visual_stage_claim",
+      "sampled_video_interval_ms": [
+        919750,
+        924750
+      ],
+      "description": "The bearded person remains in a close view and smiles in later sampled frames. Other people and a green wall appear in the background.",
+      "supporting_frame_sha256": [
+        "b584c6dbe2c3fc00bdb57886f166c4893b9a250a25ac51d07fada40cec62abc3",
+        "c3bd6bb2524ffdd7d7c5d2af9f256f5b1067839e3afd8750a37964c414242ef2",
+        "c8d4108cd7d1f2f08e33bbbdc7e3d6ffa8ea36d44bfb9bd685146b7863eb4c17",
+        "8e1a11a80d40655402a02c2a262cdc510349d607a2917f9571bcd06eb034f229"
+      ],
+      "original_frame_presentation_times_verified": false,
+      "continuous_video_action_verified": false,
+      "source_audio_speaker_identity": null,
+      "review_evidence_status": "pending_continuous_video"
+    },
+    {
+      "task_id": "S09E19:P253:ASR10",
+      "kind": "proposed_dialogue_match",
+      "original_untimed_paragraphs": [
+        253,
+        253
+      ],
+      "original_source_text": "Why don't we forget the talking? Let's dance.",
+      "source_paragraph_timestamp_ms": null,
+      "model_proposed_video_time_interval_ms": [
+        923360,
+        925000
+      ],
+      "model_similarity_heuristic": 0.8571,
+      "review_evidence_status": "pending_source_audio_listening",
+      "accepted_speaking_character": null,
+      "accepted_vocal_delivery": null,
+      "source_audio_segment_independently_verified": false,
+      "mouth_voice_synchronization_verified": false
+    }
+  ],
+  "acceptance_order": "Listen to exact original AVI; confirm each proposed spoken line and untimed paragraph; separately inspect continuous video for real action and mouth-voice identity; document reviewer provenance; only then consider timecoded derived *edition*, never modify original untimed source.",
+  "rights_note": "Private audiovisual research only; source rights and episode completeness unverified."
+}
