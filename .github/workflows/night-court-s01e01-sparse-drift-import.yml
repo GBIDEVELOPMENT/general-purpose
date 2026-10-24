@@ -23,7 +23,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p "${{ runner.temp }}/sparse-study"
-          gh run download 40049788603 --repo gamesbyian/general-purpose \
+          gh run download 40049969051 --repo gamesbyian/general-purpose \
             --name night-court-s01e01-source-cut-drift-review \
             --dir "${{ runner.temp }}/sparse-study"
       - name: Verify every source subtitle, audio interval and epistemic gate
