@@ -1,0 +1,20 @@
+name: Night Court S01E01 scene evidence offline checks
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_s01e01_scene_evidence.py'
+      - 'Night Court/tools/pilot_ftp_s01e01_scene.py'
+      - 'Night Court/tools/test_s01e01_scene_evidence.py'
+      - '.github/workflows/night-court-s01e01-scene-evidence-test.yml'
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce immutable source/cue alignment boundaries
+        run: |
+          python -m py_compile 'Night Court/tools/build_s01e01_scene_evidence.py' 'Night Court/tools/pilot_ftp_s01e01_scene.py'
+          python 'Night Court/tools/test_s01e01_scene_evidence.py'
