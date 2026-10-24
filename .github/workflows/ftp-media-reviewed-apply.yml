@@ -12,7 +12,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: ftp-media-approved-apply
+  group: ${{ github.event_name == 'pull_request' && format('ftp-media-apply-pr-{0}', github.event.pull_request.number) || 'ftp-media-approved-apply' }}
   cancel-in-progress: false
 jobs:
   offline:
