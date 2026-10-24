@@ -1,0 +1,41 @@
+name: Night Court real source-once four-minute factory metrics QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/research/s01e01-one-source-integrated-wall-clock-summary.json'
+      - 'Night Court/FAST-EPISODE-FACTORY-THROUGHPUT.md'
+      - 'Night Court/AV-SCRIPT-PRODUCTION-WORKBOARD.md'
+      - '.github/workflows/night-court-source-once-metrics-ci.yml'
+permissions:
+  contents: read
+jobs:
+  accounting:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify immutable source hashes, double model families and strict zero screenplay acceptances
+        run: |
+          python - <<'PY'
+          import json
+          j=json.load(open('Night Court/research/s01e01-one-source-integrated-wall-clock-summary.json'))
+          assert j['original_video_sha256']=='5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962'
+          assert j['decoded_audio_sha256']=='7fd284e99af1d69ca429496060c876241f181738666a86e8cb1335d5b869861a'
+          assert j['original_json_sha256']=='c45b85e9bb17193cb0eeb6d60e86524349c00ea6e8d39d34bb01ea95989bd67d'
+          assert j['original_source_video_download_count']==1
+          assert j['original_audio_pcm_decode_count']==1
+          assert set(j['model_architecture_families'])=={'kaldi_hmm_wfst','whisper'}
+          assert abs(sum(j['measured_seconds'].values())-239.559)<1e-6
+          assert abs(j['measured_one_source_continuous_wall_seconds']-239.826)<1e-6
+          assert j['consensus']['corroborated_words']==1417
+          assert j['consensus']['corroborated_spans']==198
+          assert j['model_rejection_diagnostics']['whisper_rejection_reasons']=={'zero_or_reversed_rounded_word_time':343}
+          assert j['source_pts_verified_JPEG_frames']==212
+          assert j['source_frame_pts_all_matched'] is True
+          assert j['complete_original_series_script_accepted'] is False
+          assert j['p95_193_episode_factory_under_30_minutes_verified'] is False
+          print('Actual original one-source 239.826-second source run integrity passed')
+          PY
