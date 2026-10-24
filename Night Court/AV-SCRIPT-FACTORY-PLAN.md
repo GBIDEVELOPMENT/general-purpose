@@ -1,5 +1,10 @@
 # Night Court audiovisual script-generation factory
 
+## All-episode evidence production queue
+
+[AV-SCRIPT-PRODUCTION-WORKBOARD.md](AV-SCRIPT-PRODUCTION-WORKBOARD.md) and its deterministic `catalog/av-script-reconstruction-queue.json` join the complete 193 source reading scripts, speaker packets, provisional scene-participation reports, source QA flags and owner FTP video filename inventory into one episode-by-episode task queue. Cross-file source SHA mismatches fail CI. The first episode remains a bounded media evidence pilot, and **zero full episodes are independently AV accepted**. This workboard does not process additional source video or claim automatic script completeness.
+
+
 ## Wider S01E01 source-cut sync experiment
 
 [The S01E01 source-cut drift handoff](S01E01-SOURCE-CUT-DRIFT-HANDOFF.md) defines five additional 30-second source-audio samples between 05:00 and 23:00 of the original AVI, independently transcribed with tiny.en and heuristically matched to the preserved SRT. It is a resource-bounded precursor to episode-wide edition acceptance. **Actual execution remains subject to offline CI and owner-only PR-triggered trusted-base workflow; no whole-episode synchronization is yet confirmed.**
