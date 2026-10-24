@@ -1,5 +1,10 @@
 # Nine-season evidence-linked screenplay production workboard
 
+## Editorial acceptance pilot: S01E01
+
+The `S01E01-EDITORIAL-REVIEW-HANDOFF.md` lane adds an explicit source-linked acceptance packet for the first 60–90s original-video passage. It joins source SRT turns/55 words, two acoustic timing proposals, unseparated mix-level pitch reports and six SHA-backed sampled-motion observations. The packet will rank every source voice turn and each motion review task with missing-evidence flags, but **every speaker, dialogue, vocal-expression, exact word time and stage-action acceptance gate remains unverified**. This provides a bounded editorial workflow beyond the first rendered script while the separate sparse source-cut drift test is being developed. Results are generated through an offline PR workflow and must not be conflated with a new video review.
+
+
 Every original *Night Court* episode now has a source-only reading script, neutral source-cue turn data, speaker-attribution work packets, provisional caption-gap scene participation notes, and a candidate local-video filename. These five inventories need to stay **one-to-one by episode/source hash** before richer audio-visual processing scales.
 
 `tools/build_av_script_production_queue.py` performs that reconciliation, joining all **193** original-series entries from:

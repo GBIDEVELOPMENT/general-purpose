@@ -1,0 +1,1820 @@
+{
+  "schema": "night-court-s01e01-editorial-qa-packet/1",
+  "episode_id": "S01E01",
+  "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "review_scope_ms": [
+    60000,
+    90000
+  ],
+  "inputs": {
+    "script": "scene-review-v3/scene-evidence-map.json",
+    "word_comparison": "scene-review-v3/word-timing-model-comparison.json",
+    "audio": "scene-review-v3/utterance-mix-prosody.json",
+    "visual": "scene-review-v2/visual-motion-observations.json",
+    "source_dialogue": "scene-review-v1/word-alignment-review.json"
+  },
+  "counts": {
+    "source_caption_cues": 9,
+    "source_speaking_turns": 11,
+    "source_words": 55,
+    "visual_motion_observations": 6,
+    "source_model_comparison_categories": {
+      "CTC_only_model_word_candidate": 3,
+      "no_usable_word_timing_candidate": 7,
+      "tiny_en_only_word_candidate": 6,
+      "two_model_start_disagreement_over_300ms": 2,
+      "two_model_start_proximity_300ms_or_less": 37
+    },
+    "voice_turns_human_accepted": 0,
+    "visual_events_continuous_video_accepted": 0
+  },
+  "voice_review_tasks": [
+    {
+      "task_id": "S01E01:C00019.1",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 19,
+      "source_turn_index": 0,
+      "source_caption_interval_ms": [
+        58912,
+        62541
+      ],
+      "original_dialogue": "Did you say \"mercurial\"?",
+      "source_words": [
+        {
+          "source_cue": 19,
+          "source_turn_index": 0,
+          "source_word_index": 0,
+          "original_normalized_word": "DID",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "no_usable_word_timing_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 0,
+          "source_word_index": 1,
+          "original_normalized_word": "YOU",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "no_usable_word_timing_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 0,
+          "source_word_index": 2,
+          "original_normalized_word": "SAY",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "no_usable_word_timing_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 0,
+          "source_word_index": 3,
+          "original_normalized_word": "MERCURIAL",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "no_usable_word_timing_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "no_usable_word_timing_candidate": 4
+      },
+      "asr_speech_candidate_interval_ms": null,
+      "mixed_audio_metrics": null,
+      "nearby_sampled_visual_events_not_speaker_evidence": [],
+      "review_flags": [
+        "caption_starts_before_audio_sample",
+        "no_source_asr_speaker_turn",
+        "words_without_model_time"
+      ],
+      "priority_score_for_editor_only": 62,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00027.1",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 27,
+      "source_turn_index": 0,
+      "source_caption_interval_ms": [
+        88742,
+        91074
+      ],
+      "original_dialogue": "Tell the judge the mayor called.",
+      "source_words": [
+        {
+          "source_cue": 27,
+          "source_turn_index": 0,
+          "source_word_index": 0,
+          "original_normalized_word": "TELL",
+          "tiny_en_start_end_ms": [
+            89100,
+            89420
+          ],
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "tiny_en_only_word_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 27,
+          "source_turn_index": 0,
+          "source_word_index": 1,
+          "original_normalized_word": "THE",
+          "tiny_en_start_end_ms": [
+            89420,
+            89580
+          ],
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "tiny_en_only_word_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 27,
+          "source_turn_index": 0,
+          "source_word_index": 2,
+          "original_normalized_word": "JUDGE",
+          "tiny_en_start_end_ms": [
+            89580,
+            89740
+          ],
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "tiny_en_only_word_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 27,
+          "source_turn_index": 0,
+          "source_word_index": 3,
+          "original_normalized_word": "THE",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "no_usable_word_timing_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 27,
+          "source_turn_index": 0,
+          "source_word_index": 4,
+          "original_normalized_word": "MAYOR",
+          "tiny_en_start_end_ms": [
+            89920,
+            89980
+          ],
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "tiny_en_only_word_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 27,
+          "source_turn_index": 0,
+          "source_word_index": 5,
+          "original_normalized_word": "CALLED",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "no_usable_word_timing_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "no_usable_word_timing_candidate": 2,
+        "tiny_en_only_word_candidate": 4
+      },
+      "asr_speech_candidate_interval_ms": [
+        89100,
+        89980
+      ],
+      "mixed_audio_metrics": {
+        "rms_dbfs": -18.06,
+        "peak_dbfs": -4.81,
+        "mix_pitch_median_hz": 173.67,
+        "mix_pitch_p10_hz": 135.91,
+        "mix_pitch_p90_hz": 378.38,
+        "mix_pitch_frames_passing_energy_gate": 55,
+        "mix_pitch_frame_count": 56,
+        "mix_pitch_first_to_last_change_semitones": -15.52,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 880
+      },
+      "nearby_sampled_visual_events_not_speaker_evidence": [
+        {
+          "observation_id": "OBS-V2-05",
+          "source_interval_ms": [
+            87500,
+            88500
+          ],
+          "sampled_frame_sha256": [
+            "fcf09f971d6f54aca21a49b26f2abb5406acd47cb023ca85441fe9160f8828f1",
+            "462a69834ffe42a761c4d51bae7fc4d0d48caf5dcd412085983235f5b196972f",
+            "741f3a68967ac09bb9c9682e21dbb9611663a0e595cb4e5493b9262f89326733",
+            "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9"
+          ]
+        },
+        {
+          "observation_id": "OBS-V2-06",
+          "source_interval_ms": [
+            88500,
+            89750
+          ],
+          "sampled_frame_sha256": [
+            "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9",
+            "0069cb4ebb32f89dc926a0310cf0d73864c807d51541d1e5e892f247a2817f25",
+            "68748e66ac8c4a82f1f41785c0e07e85cfe4273c860aefdf25c4dd0c2bc30715",
+            "30b46e70fa1cabb0957404fdebdf0563df61627cee45976359b4b36307527960"
+          ]
+        }
+      ],
+      "review_flags": [
+        "caption_continues_after_audio_sample",
+        "words_without_model_time"
+      ],
+      "priority_score_for_editor_only": 52,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00022.2",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 22,
+      "source_turn_index": 1,
+      "source_caption_interval_ms": [
+        69689,
+        73147
+      ],
+      "original_dialogue": "Minimifidian?",
+      "source_words": [
+        {
+          "source_cue": 22,
+          "source_turn_index": 1,
+          "source_word_index": 0,
+          "original_normalized_word": "MINIMIFIDIAN",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "no_usable_word_timing_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "no_usable_word_timing_candidate": 1
+      },
+      "asr_speech_candidate_interval_ms": null,
+      "mixed_audio_metrics": null,
+      "nearby_sampled_visual_events_not_speaker_evidence": [],
+      "review_flags": [
+        "no_source_asr_speaker_turn",
+        "words_without_model_time",
+        "unusual_comic_vocabulary_requires_listening"
+      ],
+      "priority_score_for_editor_only": 38,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00025.1",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 25,
+      "source_turn_index": 0,
+      "source_caption_interval_ms": [
+        83136,
+        84501
+      ],
+      "original_dialogue": "What?",
+      "source_words": [
+        {
+          "source_cue": 25,
+          "source_turn_index": 0,
+          "source_word_index": 0,
+          "original_normalized_word": "WHAT",
+          "tiny_en_start_end_ms": [
+            83300,
+            83780
+          ],
+          "ctc_start_end_ms": [
+            83642,
+            83906
+          ],
+          "start_delta_ctc_minus_tiny_ms": 342,
+          "source_review_priority": "two_model_start_disagreement_over_300ms",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "two_model_start_disagreement_over_300ms": 1
+      },
+      "asr_speech_candidate_interval_ms": [
+        83300,
+        83780
+      ],
+      "mixed_audio_metrics": {
+        "rms_dbfs": -19.98,
+        "peak_dbfs": -6.17,
+        "mix_pitch_median_hz": 142.71,
+        "mix_pitch_p10_hz": 141.66,
+        "mix_pitch_p90_hz": 338.49,
+        "mix_pitch_frames_passing_energy_gate": 14,
+        "mix_pitch_frame_count": 31,
+        "mix_pitch_first_to_last_change_semitones": 4.69,
+        "pitch_reliability": "too_short_for_trustworthy_delivery_label_or_stable_voice_baseline",
+        "acoustic_duration_ms": 480
+      },
+      "nearby_sampled_visual_events_not_speaker_evidence": [
+        {
+          "observation_id": "OBS-V2-03",
+          "source_interval_ms": [
+            82500,
+            83750
+          ],
+          "sampled_frame_sha256": [
+            "7d621462b0e83d61ad3ef13b7e81848ff5997d7e6fe1a339e2ac8aa997e36acd",
+            "7bbc1ab0746b350f1e3268254d48e9ade78249f68fd2b2afbf73d259aa2c579a",
+            "342b70cf9fd847d8d2b954dd7a1f3d745473816dbfb3c100891784c19f85848e",
+            "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2"
+          ]
+        },
+        {
+          "observation_id": "OBS-V2-04",
+          "source_interval_ms": [
+            83750,
+            87250
+          ],
+          "sampled_frame_sha256": [
+            "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2",
+            "903ecee2571c6e6fbb004d0bbd891bec5d391cc6eb81875f3a37a718678b0d84",
+            "8ceb42e9f0d69466bc666baa82c69dbad171cefac33fc01c70a1dfd78b5bbaa7",
+            "2f0ea684dc1d1095173a55f2266f6b024c84e01cb95312fc6c6f6d27f821c385"
+          ]
+        }
+      ],
+      "review_flags": [
+        "model_timing_disagreement",
+        "voice_span_too_short_for_stable_pitch"
+      ],
+      "priority_score_for_editor_only": 26,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00022.1",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 22,
+      "source_turn_index": 0,
+      "source_caption_interval_ms": [
+        69689,
+        73147
+      ],
+      "original_dialogue": "My, how...",
+      "source_words": [
+        {
+          "source_cue": 22,
+          "source_turn_index": 0,
+          "source_word_index": 0,
+          "original_normalized_word": "MY",
+          "tiny_en_start_end_ms": [
+            70640,
+            71120
+          ],
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "tiny_en_only_word_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 22,
+          "source_turn_index": 0,
+          "source_word_index": 1,
+          "original_normalized_word": "HOW",
+          "tiny_en_start_end_ms": [
+            71120,
+            71600
+          ],
+          "ctc_start_end_ms": [
+            70674,
+            70856
+          ],
+          "start_delta_ctc_minus_tiny_ms": -446,
+          "source_review_priority": "two_model_start_disagreement_over_300ms",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "tiny_en_only_word_candidate": 1,
+        "two_model_start_disagreement_over_300ms": 1
+      },
+      "asr_speech_candidate_interval_ms": [
+        70640,
+        71940
+      ],
+      "mixed_audio_metrics": {
+        "rms_dbfs": -21.18,
+        "peak_dbfs": -3.97,
+        "mix_pitch_median_hz": 226.58,
+        "mix_pitch_p10_hz": 98.04,
+        "mix_pitch_p90_hz": 259.55,
+        "mix_pitch_frames_passing_energy_gate": 67,
+        "mix_pitch_frame_count": 82,
+        "mix_pitch_first_to_last_change_semitones": -16.93,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 1300
+      },
+      "nearby_sampled_visual_events_not_speaker_evidence": [],
+      "review_flags": [
+        "model_timing_disagreement"
+      ],
+      "priority_score_for_editor_only": 20,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00024.1",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 24,
+      "source_turn_index": 0,
+      "source_caption_interval_ms": [
+        76663,
+        79894
+      ],
+      "original_dialogue": "Does a bear extravasate in the forest?",
+      "source_words": [
+        {
+          "source_cue": 24,
+          "source_turn_index": 0,
+          "source_word_index": 0,
+          "original_normalized_word": "DOES",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": [
+            77112,
+            77313
+          ],
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "CTC_only_model_word_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 24,
+          "source_turn_index": 0,
+          "source_word_index": 1,
+          "original_normalized_word": "A",
+          "tiny_en_start_end_ms": [
+            77400,
+            77600
+          ],
+          "ctc_start_end_ms": [
+            77374,
+            77394
+          ],
+          "start_delta_ctc_minus_tiny_ms": -26,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 24,
+          "source_turn_index": 0,
+          "source_word_index": 2,
+          "original_normalized_word": "BEAR",
+          "tiny_en_start_end_ms": [
+            77600,
+            77900
+          ],
+          "ctc_start_end_ms": [
+            77474,
+            77716
+          ],
+          "start_delta_ctc_minus_tiny_ms": -126,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 24,
+          "source_turn_index": 0,
+          "source_word_index": 3,
+          "original_normalized_word": "EXTRAVASATE",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": [
+            77897,
+            78542
+          ],
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "CTC_only_model_word_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 24,
+          "source_turn_index": 0,
+          "source_word_index": 4,
+          "original_normalized_word": "IN",
+          "tiny_en_start_end_ms": [
+            78600,
+            78720
+          ],
+          "ctc_start_end_ms": [
+            78602,
+            78642
+          ],
+          "start_delta_ctc_minus_tiny_ms": 2,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 24,
+          "source_turn_index": 0,
+          "source_word_index": 5,
+          "original_normalized_word": "THE",
+          "tiny_en_start_end_ms": [
+            78720,
+            78920
+          ],
+          "ctc_start_end_ms": [
+            78683,
+            78763
+          ],
+          "start_delta_ctc_minus_tiny_ms": -37,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 24,
+          "source_turn_index": 0,
+          "source_word_index": 6,
+          "original_normalized_word": "FOREST",
+          "tiny_en_start_end_ms": [
+            78920,
+            79420
+          ],
+          "ctc_start_end_ms": [
+            78803,
+            79126
+          ],
+          "start_delta_ctc_minus_tiny_ms": -117,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "CTC_only_model_word_candidate": 2,
+        "two_model_start_proximity_300ms_or_less": 5
+      },
+      "asr_speech_candidate_interval_ms": [
+        77160,
+        79420
+      ],
+      "mixed_audio_metrics": {
+        "rms_dbfs": -22.16,
+        "peak_dbfs": -4.34,
+        "mix_pitch_median_hz": 102.07,
+        "mix_pitch_p10_hz": 91.72,
+        "mix_pitch_p90_hz": 200.45,
+        "mix_pitch_frames_passing_energy_gate": 132,
+        "mix_pitch_frame_count": 142,
+        "mix_pitch_first_to_last_change_semitones": -0.83,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 2260
+      },
+      "nearby_sampled_visual_events_not_speaker_evidence": [
+        {
+          "observation_id": "OBS-V2-01",
+          "source_interval_ms": [
+            76250,
+            76500
+          ],
+          "sampled_frame_sha256": [
+            "dbe7ba1379231326d0e3dcc60713b6a32f7f9e78ced5ae74cdc13d8efeb9c960",
+            "e12f283a8eab60c74fd0155ecc17cdf3426f74578d6d002c75752774fa07afe9"
+          ]
+        },
+        {
+          "observation_id": "OBS-V2-02",
+          "source_interval_ms": [
+            80750,
+            81000
+          ],
+          "sampled_frame_sha256": [
+            "7dd8935cde6063c7fc1bbac3f68fe4859b3c1a8730a41ef00846511b8a743b0c",
+            "73c41740012839add8c409ac2c22cbd7fa4db7e4464889eef730bbca22cf36fe"
+          ]
+        }
+      ],
+      "review_flags": [
+        "unusual_comic_vocabulary_requires_listening"
+      ],
+      "priority_score_for_editor_only": 18,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00019.2",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_caption_interval_ms": [
+        58912,
+        62541
+      ],
+      "original_dialogue": "I'm trying to make up for lack of education.",
+      "source_words": [
+        {
+          "source_cue": 19,
+          "source_turn_index": 1,
+          "source_word_index": 0,
+          "original_normalized_word": "IM",
+          "tiny_en_start_end_ms": [
+            60640,
+            61120
+          ],
+          "ctc_start_end_ms": [
+            60894,
+            60975
+          ],
+          "start_delta_ctc_minus_tiny_ms": 254,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 1,
+          "source_word_index": 1,
+          "original_normalized_word": "TRYING",
+          "tiny_en_start_end_ms": [
+            61120,
+            61240
+          ],
+          "ctc_start_end_ms": [
+            61015,
+            61156
+          ],
+          "start_delta_ctc_minus_tiny_ms": -105,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 1,
+          "source_word_index": 2,
+          "original_normalized_word": "TO",
+          "tiny_en_start_end_ms": [
+            61240,
+            61440
+          ],
+          "ctc_start_end_ms": [
+            61176,
+            61216
+          ],
+          "start_delta_ctc_minus_tiny_ms": -64,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 1,
+          "source_word_index": 3,
+          "original_normalized_word": "MAKE",
+          "tiny_en_start_end_ms": null,
+          "ctc_start_end_ms": [
+            61257,
+            61378
+          ],
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "CTC_only_model_word_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 1,
+          "source_word_index": 4,
+          "original_normalized_word": "UP",
+          "tiny_en_start_end_ms": [
+            61440,
+            61580
+          ],
+          "ctc_start_end_ms": [
+            61438,
+            61478
+          ],
+          "start_delta_ctc_minus_tiny_ms": -2,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 1,
+          "source_word_index": 5,
+          "original_normalized_word": "FOR",
+          "tiny_en_start_end_ms": [
+            61580,
+            61720
+          ],
+          "ctc_start_end_ms": [
+            61519,
+            61599
+          ],
+          "start_delta_ctc_minus_tiny_ms": -61,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 1,
+          "source_word_index": 6,
+          "original_normalized_word": "LACK",
+          "tiny_en_start_end_ms": [
+            61840,
+            62020
+          ],
+          "ctc_start_end_ms": [
+            61780,
+            61942
+          ],
+          "start_delta_ctc_minus_tiny_ms": -60,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 1,
+          "source_word_index": 7,
+          "original_normalized_word": "OF",
+          "tiny_en_start_end_ms": [
+            62020,
+            62200
+          ],
+          "ctc_start_end_ms": [
+            62002,
+            62042
+          ],
+          "start_delta_ctc_minus_tiny_ms": -18,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 19,
+          "source_turn_index": 1,
+          "source_word_index": 8,
+          "original_normalized_word": "EDUCATION",
+          "tiny_en_start_end_ms": [
+            62200,
+            62800
+          ],
+          "ctc_start_end_ms": [
+            62163,
+            62767
+          ],
+          "start_delta_ctc_minus_tiny_ms": -37,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "CTC_only_model_word_candidate": 1,
+        "two_model_start_proximity_300ms_or_less": 8
+      },
+      "asr_speech_candidate_interval_ms": [
+        60640,
+        62800
+      ],
+      "mixed_audio_metrics": {
+        "rms_dbfs": -20.5,
+        "peak_dbfs": -4.04,
+        "mix_pitch_median_hz": 137.5,
+        "mix_pitch_p10_hz": 119.87,
+        "mix_pitch_p90_hz": 201.88,
+        "mix_pitch_frames_passing_energy_gate": 120,
+        "mix_pitch_frame_count": 136,
+        "mix_pitch_first_to_last_change_semitones": -1.17,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 2160
+      },
+      "nearby_sampled_visual_events_not_speaker_evidence": [],
+      "review_flags": [
+        "caption_starts_before_audio_sample"
+      ],
+      "priority_score_for_editor_only": 14,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00026.1",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 26,
+      "source_turn_index": 0,
+      "source_caption_interval_ms": [
+        86339,
+        87738
+      ],
+      "original_dialogue": "No.",
+      "source_words": [
+        {
+          "source_cue": 26,
+          "source_turn_index": 0,
+          "source_word_index": 0,
+          "original_normalized_word": "NO",
+          "tiny_en_start_end_ms": [
+            86720,
+            87200
+          ],
+          "ctc_start_end_ms": null,
+          "start_delta_ctc_minus_tiny_ms": null,
+          "source_review_priority": "tiny_en_only_word_candidate",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "tiny_en_only_word_candidate": 1
+      },
+      "asr_speech_candidate_interval_ms": [
+        86720,
+        87200
+      ],
+      "mixed_audio_metrics": {
+        "rms_dbfs": -18.94,
+        "peak_dbfs": -3.85,
+        "mix_pitch_median_hz": 143.64,
+        "mix_pitch_p10_hz": 101.99,
+        "mix_pitch_p90_hz": 458.92,
+        "mix_pitch_frames_passing_energy_gate": 20,
+        "mix_pitch_frame_count": 31,
+        "mix_pitch_first_to_last_change_semitones": -12.4,
+        "pitch_reliability": "too_short_for_trustworthy_delivery_label_or_stable_voice_baseline",
+        "acoustic_duration_ms": 480
+      },
+      "nearby_sampled_visual_events_not_speaker_evidence": [
+        {
+          "observation_id": "OBS-V2-04",
+          "source_interval_ms": [
+            83750,
+            87250
+          ],
+          "sampled_frame_sha256": [
+            "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2",
+            "903ecee2571c6e6fbb004d0bbd891bec5d391cc6eb81875f3a37a718678b0d84",
+            "8ceb42e9f0d69466bc666baa82c69dbad171cefac33fc01c70a1dfd78b5bbaa7",
+            "2f0ea684dc1d1095173a55f2266f6b024c84e01cb95312fc6c6f6d27f821c385"
+          ]
+        },
+        {
+          "observation_id": "OBS-V2-05",
+          "source_interval_ms": [
+            87500,
+            88500
+          ],
+          "sampled_frame_sha256": [
+            "fcf09f971d6f54aca21a49b26f2abb5406acd47cb023ca85441fe9160f8828f1",
+            "462a69834ffe42a761c4d51bae7fc4d0d48caf5dcd412085983235f5b196972f",
+            "741f3a68967ac09bb9c9682e21dbb9611663a0e595cb4e5493b9262f89326733",
+            "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9"
+          ]
+        },
+        {
+          "observation_id": "OBS-V2-06",
+          "source_interval_ms": [
+            88500,
+            89750
+          ],
+          "sampled_frame_sha256": [
+            "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9",
+            "0069cb4ebb32f89dc926a0310cf0d73864c807d51541d1e5e892f247a2817f25",
+            "68748e66ac8c4a82f1f41785c0e07e85cfe4273c860aefdf25c4dd0c2bc30715",
+            "30b46e70fa1cabb0957404fdebdf0563df61627cee45976359b4b36307527960"
+          ]
+        }
+      ],
+      "review_flags": [
+        "voice_span_too_short_for_stable_pitch"
+      ],
+      "priority_score_for_editor_only": 14,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00020.1",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_caption_interval_ms": [
+        62716,
+        65742
+      ],
+      "original_dialogue": "So every month, I pick a word at random out of the dictionary...",
+      "source_words": [
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 0,
+          "original_normalized_word": "SO",
+          "tiny_en_start_end_ms": [
+            63340,
+            63460
+          ],
+          "ctc_start_end_ms": [
+            63211,
+            63312
+          ],
+          "start_delta_ctc_minus_tiny_ms": -129,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 1,
+          "original_normalized_word": "EVERY",
+          "tiny_en_start_end_ms": [
+            63460,
+            63640
+          ],
+          "ctc_start_end_ms": [
+            63413,
+            63553
+          ],
+          "start_delta_ctc_minus_tiny_ms": -47,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 2,
+          "original_normalized_word": "MONTH",
+          "tiny_en_start_end_ms": [
+            63640,
+            63920
+          ],
+          "ctc_start_end_ms": [
+            63634,
+            63835
+          ],
+          "start_delta_ctc_minus_tiny_ms": -6,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 3,
+          "original_normalized_word": "I",
+          "tiny_en_start_end_ms": [
+            63940,
+            64080
+          ],
+          "ctc_start_end_ms": [
+            63916,
+            63936
+          ],
+          "start_delta_ctc_minus_tiny_ms": -24,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 4,
+          "original_normalized_word": "PICK",
+          "tiny_en_start_end_ms": [
+            64080,
+            64240
+          ],
+          "ctc_start_end_ms": [
+            64016,
+            64157
+          ],
+          "start_delta_ctc_minus_tiny_ms": -64,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 5,
+          "original_normalized_word": "A",
+          "tiny_en_start_end_ms": [
+            64240,
+            64420
+          ],
+          "ctc_start_end_ms": [
+            64238,
+            64258
+          ],
+          "start_delta_ctc_minus_tiny_ms": -2,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 6,
+          "original_normalized_word": "WORD",
+          "tiny_en_start_end_ms": [
+            64420,
+            64560
+          ],
+          "ctc_start_end_ms": [
+            64318,
+            64499
+          ],
+          "start_delta_ctc_minus_tiny_ms": -102,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 7,
+          "original_normalized_word": "AT",
+          "tiny_en_start_end_ms": [
+            64560,
+            64780
+          ],
+          "ctc_start_end_ms": [
+            64580,
+            64620
+          ],
+          "start_delta_ctc_minus_tiny_ms": 20,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 8,
+          "original_normalized_word": "RANDOM",
+          "tiny_en_start_end_ms": [
+            64780,
+            65060
+          ],
+          "ctc_start_end_ms": [
+            64700,
+            65063
+          ],
+          "start_delta_ctc_minus_tiny_ms": -80,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 9,
+          "original_normalized_word": "OUT",
+          "tiny_en_start_end_ms": [
+            65060,
+            65300
+          ],
+          "ctc_start_end_ms": [
+            65123,
+            65204
+          ],
+          "start_delta_ctc_minus_tiny_ms": 63,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 10,
+          "original_normalized_word": "OF",
+          "tiny_en_start_end_ms": [
+            65300,
+            65420
+          ],
+          "ctc_start_end_ms": [
+            65244,
+            65284
+          ],
+          "start_delta_ctc_minus_tiny_ms": -56,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 11,
+          "original_normalized_word": "THE",
+          "tiny_en_start_end_ms": [
+            65420,
+            65500
+          ],
+          "ctc_start_end_ms": [
+            65324,
+            65385
+          ],
+          "start_delta_ctc_minus_tiny_ms": -96,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 20,
+          "source_turn_index": 0,
+          "source_word_index": 12,
+          "original_normalized_word": "DICTIONARY",
+          "tiny_en_start_end_ms": [
+            65500,
+            65900
+          ],
+          "ctc_start_end_ms": [
+            65425,
+            66009
+          ],
+          "start_delta_ctc_minus_tiny_ms": -75,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "two_model_start_proximity_300ms_or_less": 13
+      },
+      "asr_speech_candidate_interval_ms": [
+        63340,
+        65900
+      ],
+      "mixed_audio_metrics": {
+        "rms_dbfs": -19.11,
+        "peak_dbfs": -5.84,
+        "mix_pitch_median_hz": 125.04,
+        "mix_pitch_p10_hz": 95.92,
+        "mix_pitch_p90_hz": 205.36,
+        "mix_pitch_frames_passing_energy_gate": 161,
+        "mix_pitch_frame_count": 161,
+        "mix_pitch_first_to_last_change_semitones": -8.49,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 2560
+      },
+      "nearby_sampled_visual_events_not_speaker_evidence": [],
+      "review_flags": [],
+      "priority_score_for_editor_only": 0,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00021.1",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 21,
+      "source_turn_index": 0,
+      "source_caption_interval_ms": [
+        65919,
+        67887
+      ],
+      "original_dialogue": "...and use it all that month.",
+      "source_words": [
+        {
+          "source_cue": 21,
+          "source_turn_index": 0,
+          "source_word_index": 0,
+          "original_normalized_word": "AND",
+          "tiny_en_start_end_ms": [
+            65900,
+            66540
+          ],
+          "ctc_start_end_ms": [
+            65772,
+            66497
+          ],
+          "start_delta_ctc_minus_tiny_ms": -128,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 21,
+          "source_turn_index": 0,
+          "source_word_index": 1,
+          "original_normalized_word": "USE",
+          "tiny_en_start_end_ms": [
+            66540,
+            66740
+          ],
+          "ctc_start_end_ms": [
+            66577,
+            66678
+          ],
+          "start_delta_ctc_minus_tiny_ms": 37,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 21,
+          "source_turn_index": 0,
+          "source_word_index": 2,
+          "original_normalized_word": "IT",
+          "tiny_en_start_end_ms": [
+            66740,
+            66920
+          ],
+          "ctc_start_end_ms": [
+            66758,
+            66799
+          ],
+          "start_delta_ctc_minus_tiny_ms": 18,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 21,
+          "source_turn_index": 0,
+          "source_word_index": 3,
+          "original_normalized_word": "ALL",
+          "tiny_en_start_end_ms": [
+            66920,
+            67140
+          ],
+          "ctc_start_end_ms": [
+            66960,
+            67081
+          ],
+          "start_delta_ctc_minus_tiny_ms": 40,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 21,
+          "source_turn_index": 0,
+          "source_word_index": 4,
+          "original_normalized_word": "THAT",
+          "tiny_en_start_end_ms": [
+            67140,
+            67360
+          ],
+          "ctc_start_end_ms": [
+            67141,
+            67242
+          ],
+          "start_delta_ctc_minus_tiny_ms": 1,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 21,
+          "source_turn_index": 0,
+          "source_word_index": 5,
+          "original_normalized_word": "MONTH",
+          "tiny_en_start_end_ms": [
+            67360,
+            68080
+          ],
+          "ctc_start_end_ms": [
+            67342,
+            68168
+          ],
+          "start_delta_ctc_minus_tiny_ms": -18,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "two_model_start_proximity_300ms_or_less": 6
+      },
+      "asr_speech_candidate_interval_ms": [
+        65900,
+        68080
+      ],
+      "mixed_audio_metrics": {
+        "rms_dbfs": -20.75,
+        "peak_dbfs": -5.52,
+        "mix_pitch_median_hz": 160.26,
+        "mix_pitch_p10_hz": 98.65,
+        "mix_pitch_p90_hz": 354.26,
+        "mix_pitch_frames_passing_energy_gate": 94,
+        "mix_pitch_frame_count": 137,
+        "mix_pitch_first_to_last_change_semitones": 22.88,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 2180
+      },
+      "nearby_sampled_visual_events_not_speaker_evidence": [],
+      "review_flags": [],
+      "priority_score_for_editor_only": 0,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    },
+    {
+      "task_id": "S01E01:C00023.1",
+      "episode_id": "S01E01",
+      "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue": 23,
+      "source_turn_index": 0,
+      "source_caption_interval_ms": [
+        74628,
+        76357
+      ],
+      "original_dialogue": "Is that a real word?",
+      "source_words": [
+        {
+          "source_cue": 23,
+          "source_turn_index": 0,
+          "source_word_index": 0,
+          "original_normalized_word": "IS",
+          "tiny_en_start_end_ms": [
+            74880,
+            75360
+          ],
+          "ctc_start_end_ms": [
+            75155,
+            75215
+          ],
+          "start_delta_ctc_minus_tiny_ms": 275,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 23,
+          "source_turn_index": 0,
+          "source_word_index": 1,
+          "original_normalized_word": "THAT",
+          "tiny_en_start_end_ms": [
+            75360,
+            75600
+          ],
+          "ctc_start_end_ms": [
+            75296,
+            75477
+          ],
+          "start_delta_ctc_minus_tiny_ms": -64,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 23,
+          "source_turn_index": 0,
+          "source_word_index": 2,
+          "original_normalized_word": "A",
+          "tiny_en_start_end_ms": [
+            75600,
+            75860
+          ],
+          "ctc_start_end_ms": [
+            75578,
+            75598
+          ],
+          "start_delta_ctc_minus_tiny_ms": -22,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 23,
+          "source_turn_index": 0,
+          "source_word_index": 3,
+          "original_normalized_word": "REAL",
+          "tiny_en_start_end_ms": [
+            75860,
+            76220
+          ],
+          "ctc_start_end_ms": [
+            75760,
+            76022
+          ],
+          "start_delta_ctc_minus_tiny_ms": -100,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        },
+        {
+          "source_cue": 23,
+          "source_turn_index": 0,
+          "source_word_index": 4,
+          "original_normalized_word": "WORD",
+          "tiny_en_start_end_ms": [
+            76220,
+            76740
+          ],
+          "ctc_start_end_ms": [
+            76143,
+            76445
+          ],
+          "start_delta_ctc_minus_tiny_ms": -77,
+          "source_review_priority": "two_model_start_proximity_300ms_or_less",
+          "manual_audio_confirmation": false,
+          "speaker_verified": false,
+          "original_caption_text_modified": false
+        }
+      ],
+      "word_timing_category_counts": {
+        "two_model_start_proximity_300ms_or_less": 5
+      },
+      "asr_speech_candidate_interval_ms": [
+        74880,
+        76740
+      ],
+      "mixed_audio_metrics": {
+        "rms_dbfs": -21.18,
+        "peak_dbfs": -3.89,
+        "mix_pitch_median_hz": 178.43,
+        "mix_pitch_p10_hz": 161.77,
+        "mix_pitch_p90_hz": 234.07,
+        "mix_pitch_frames_passing_energy_gate": 94,
+        "mix_pitch_frame_count": 117,
+        "mix_pitch_first_to_last_change_semitones": -2.83,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 1860
+      },
+      "nearby_sampled_visual_events_not_speaker_evidence": [
+        {
+          "observation_id": "OBS-V2-01",
+          "source_interval_ms": [
+            76250,
+            76500
+          ],
+          "sampled_frame_sha256": [
+            "dbe7ba1379231326d0e3dcc60713b6a32f7f9e78ced5ae74cdc13d8efeb9c960",
+            "e12f283a8eab60c74fd0155ecc17cdf3426f74578d6d002c75752774fa07afe9"
+          ]
+        }
+      ],
+      "review_flags": [],
+      "priority_score_for_editor_only": 0,
+      "speaker_identity": null,
+      "audio_text_confirmation": "not_reviewed",
+      "audio_word_timing_confirmation": "not_reviewed",
+      "audio_delivery_review": "not_reviewed",
+      "video_mouth_to_voice_confirmation": "not_reviewed",
+      "visual_context_alone_proves_speaker": false,
+      "independent_human_acceptance": false
+    }
+  ],
+  "visual_review_tasks": [
+    {
+      "task_id": "S01E01:OBS-V2-01",
+      "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "source_interval_ms": [
+        76250,
+        76500
+      ],
+      "observation": "The view shifts from the lavender-clad person in front of book shelves to a closer view of the uniformed person.",
+      "observation_class": "change_between_adjacent_sampled_shots",
+      "supporting_source_frames": [
+        {
+          "path": "sampled-frames/frame-006.jpg",
+          "sha256": "dbe7ba1379231326d0e3dcc60713b6a32f7f9e78ced5ae74cdc13d8efeb9c960",
+          "time_ms": 76250
+        },
+        {
+          "path": "sampled-frames/frame-007.jpg",
+          "sha256": "e12f283a8eab60c74fd0155ecc17cdf3426f74578d6d002c75752774fa07afe9",
+          "time_ms": 76500
+        }
+      ],
+      "continuous_video_observation_verified": false,
+      "exact_action_onset_verified": false,
+      "character_identity_from_visual_evidence": null,
+      "spoken_voice_from_visual_evidence": null,
+      "review_status": "AI_sampled_frames_needs_independent_video_acceptance"
+    },
+    {
+      "task_id": "S01E01:OBS-V2-02",
+      "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "source_interval_ms": [
+        80750,
+        81000
+      ],
+      "observation": "The view changes from the uniformed person's face to the lavender-clad person beside the desk.",
+      "observation_class": "change_between_adjacent_sampled_shots",
+      "supporting_source_frames": [
+        {
+          "path": "sampled-frames/frame-024.jpg",
+          "sha256": "7dd8935cde6063c7fc1bbac3f68fe4859b3c1a8730a41ef00846511b8a743b0c",
+          "time_ms": 80750
+        },
+        {
+          "path": "sampled-frames/frame-025.jpg",
+          "sha256": "73c41740012839add8c409ac2c22cbd7fa4db7e4464889eef730bbca22cf36fe",
+          "time_ms": 81000
+        }
+      ],
+      "continuous_video_observation_verified": false,
+      "exact_action_onset_verified": false,
+      "character_identity_from_visual_evidence": null,
+      "spoken_voice_from_visual_evidence": null,
+      "review_status": "AI_sampled_frames_needs_independent_video_acceptance"
+    },
+    {
+      "task_id": "S01E01:OBS-V2-03",
+      "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "source_interval_ms": [
+        82500,
+        83750
+      ],
+      "observation": "At the desk, the uniformed person reaches toward the black telephone and raises its handset to the ear.",
+      "observation_class": "motion_inferred_from_ordered_sampled_positions",
+      "supporting_source_frames": [
+        {
+          "path": "sampled-frames/frame-031.jpg",
+          "sha256": "7d621462b0e83d61ad3ef13b7e81848ff5997d7e6fe1a339e2ac8aa997e36acd",
+          "time_ms": 82500
+        },
+        {
+          "path": "sampled-frames/frame-032.jpg",
+          "sha256": "7bbc1ab0746b350f1e3268254d48e9ade78249f68fd2b2afbf73d259aa2c579a",
+          "time_ms": 82750
+        },
+        {
+          "path": "sampled-frames/frame-034.jpg",
+          "sha256": "342b70cf9fd847d8d2b954dd7a1f3d745473816dbfb3c100891784c19f85848e",
+          "time_ms": 83250
+        },
+        {
+          "path": "sampled-frames/frame-036.jpg",
+          "sha256": "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2",
+          "time_ms": 83750
+        }
+      ],
+      "continuous_video_observation_verified": false,
+      "exact_action_onset_verified": false,
+      "character_identity_from_visual_evidence": null,
+      "spoken_voice_from_visual_evidence": null,
+      "review_status": "AI_sampled_frames_needs_independent_video_acceptance"
+    },
+    {
+      "task_id": "S01E01:OBS-V2-04",
+      "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "source_interval_ms": [
+        83750,
+        87250
+      ],
+      "observation": "The uniformed person holds the black telephone receiver against the ear while the lavender-clad person remains on the other side of the desk.",
+      "observation_class": "repeated_visible_state_across_frames",
+      "supporting_source_frames": [
+        {
+          "path": "sampled-frames/frame-036.jpg",
+          "sha256": "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2",
+          "time_ms": 83750
+        },
+        {
+          "path": "sampled-frames/frame-040.jpg",
+          "sha256": "903ecee2571c6e6fbb004d0bbd891bec5d391cc6eb81875f3a37a718678b0d84",
+          "time_ms": 84750
+        },
+        {
+          "path": "sampled-frames/frame-044.jpg",
+          "sha256": "8ceb42e9f0d69466bc666baa82c69dbad171cefac33fc01c70a1dfd78b5bbaa7",
+          "time_ms": 85750
+        },
+        {
+          "path": "sampled-frames/frame-050.jpg",
+          "sha256": "2f0ea684dc1d1095173a55f2266f6b024c84e01cb95312fc6c6f6d27f821c385",
+          "time_ms": 87250
+        }
+      ],
+      "continuous_video_observation_verified": false,
+      "exact_action_onset_verified": false,
+      "character_identity_from_visual_evidence": null,
+      "spoken_voice_from_visual_evidence": null,
+      "review_status": "AI_sampled_frames_needs_independent_video_acceptance"
+    },
+    {
+      "task_id": "S01E01:OBS-V2-05",
+      "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "source_interval_ms": [
+        87500,
+        88500
+      ],
+      "observation": "The uniformed person lowers the receiver from the ear toward the telephone on the desktop.",
+      "observation_class": "motion_inferred_from_ordered_sampled_positions",
+      "supporting_source_frames": [
+        {
+          "path": "sampled-frames/frame-051.jpg",
+          "sha256": "fcf09f971d6f54aca21a49b26f2abb5406acd47cb023ca85441fe9160f8828f1",
+          "time_ms": 87500
+        },
+        {
+          "path": "sampled-frames/frame-052.jpg",
+          "sha256": "462a69834ffe42a761c4d51bae7fc4d0d48caf5dcd412085983235f5b196972f",
+          "time_ms": 87750
+        },
+        {
+          "path": "sampled-frames/frame-054.jpg",
+          "sha256": "741f3a68967ac09bb9c9682e21dbb9611663a0e595cb4e5493b9262f89326733",
+          "time_ms": 88250
+        },
+        {
+          "path": "sampled-frames/frame-055.jpg",
+          "sha256": "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9",
+          "time_ms": 88500
+        }
+      ],
+      "continuous_video_observation_verified": false,
+      "exact_action_onset_verified": false,
+      "character_identity_from_visual_evidence": null,
+      "spoken_voice_from_visual_evidence": null,
+      "review_status": "AI_sampled_frames_needs_independent_video_acceptance"
+    },
+    {
+      "task_id": "S01E01:OBS-V2-06",
+      "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "source_interval_ms": [
+        88500,
+        89750
+      ],
+      "observation": "The receiver is down at the desk; the uniformed person straightens while the lavender-clad person remains nearby.",
+      "observation_class": "repeated_visible_state_across_frames",
+      "supporting_source_frames": [
+        {
+          "path": "sampled-frames/frame-055.jpg",
+          "sha256": "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9",
+          "time_ms": 88500
+        },
+        {
+          "path": "sampled-frames/frame-056.jpg",
+          "sha256": "0069cb4ebb32f89dc926a0310cf0d73864c807d51541d1e5e892f247a2817f25",
+          "time_ms": 88750
+        },
+        {
+          "path": "sampled-frames/frame-059.jpg",
+          "sha256": "68748e66ac8c4a82f1f41785c0e07e85cfe4273c860aefdf25c4dd0c2bc30715",
+          "time_ms": 89500
+        },
+        {
+          "path": "sampled-frames/frame-060.jpg",
+          "sha256": "30b46e70fa1cabb0957404fdebdf0563df61627cee45976359b4b36307527960",
+          "time_ms": 89750
+        }
+      ],
+      "continuous_video_observation_verified": false,
+      "exact_action_onset_verified": false,
+      "character_identity_from_visual_evidence": null,
+      "spoken_voice_from_visual_evidence": null,
+      "review_status": "AI_sampled_frames_needs_independent_video_acceptance"
+    }
+  ],
+  "independent_audio_reviewed": false,
+  "source_cut_verified": false,
+  "speaker_identity_verified": false,
+  "acting_emotion_verified": false,
+  "episode_audiovisual_complete": false,
+  "review_note": "Tasks are compiled from prior evidence, not additional listening or video viewing"
+}

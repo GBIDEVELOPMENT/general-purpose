@@ -1,0 +1,47 @@
+name: Night Court S01E01 evidence-backed editorial review worklist
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_s01e01_editorial_review.py'
+      - 'Night Court/tools/test_s01e01_editorial_review.py'
+      - 'Night Court/S01E01-EDITORIAL-REVIEW-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-editorial-review.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s01e01-editorial-acceptance-packet'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/night-court-s01e01-editorial-acceptance-packet
+          persist-credentials: true
+      - name: Cross-check source hashes, original words, model limits and frame evidence
+        run: |
+          python "Night Court/tools/test_s01e01_editorial_review.py"
+          python "Night Court/tools/build_s01e01_editorial_review.py"
+      - name: Validate exactly eleven unaccepted voice reviews and six visual checks
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("Night Court/seasons/S01/S01E01/derived/editorial-review-v1")
+          j=json.loads((p/"acceptance-worklist.json").read_text())
+          assert j["counts"]["source_speaking_turns"]==11
+          assert j["counts"]["source_words"]==55
+          assert j["counts"]["visual_motion_observations"]==6
+          assert not j["speaker_identity_verified"] and not j["episode_audiovisual_complete"]
+          assert (p/"acceptance-worklist.md").is_file()
+          print("Source-linked editorial review prepared with no false production acceptance")
+          PY
+      - name: Commit only compact research evidence tasks
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/S01/S01E01/derived/editorial-review-v1/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): generate source-evidence editorial acceptance worklist"
+            git push origin HEAD:feature/night-court-s01e01-editorial-acceptance-packet
+          fi
