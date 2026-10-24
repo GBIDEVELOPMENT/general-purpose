@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Read-only bounded ffprobe against exact FTP Trek media files, no media downloads saved."""
 from __future__ import annotations
-import argparse,ftplib,json,os,re,subprocess
+import argparse,ftplib,json,os,re,subprocess,tempfile
 from pathlib import Path,PurePosixPath
 from urllib.parse import quote
 from organize import ROOT,connect,safe
@@ -29,40 +29,54 @@ def assert_unchanged(ftp,x):
     if str(matches[0].get("size"))!=str(x["size"]) or matches[0].get("modify")!=x["modify"]:
         raise ValueError("Changed metadata")
 
-def inspect(x):
-    user=os.environ["FTP_USER"];password=os.environ["FTP_PASSWORD"];host=os.environ["FTP_HOST"]
-    url="ftp://"+quote(user,safe="")+":"+quote(password,safe="")+"@"+host+quote(x["from"],safe="/")
-    command=["ffprobe","-hide_banner","-loglevel","error",
-             "-probesize","131072","-analyzeduration","1000000",
-             "-select_streams","v:0","-show_entries",
-             "stream=codec_name,profile,pix_fmt,width,height,color_range,color_space,color_transfer,color_primaries,side_data_list",
-             "-of","json",url]
+class HeaderLimitReached(Exception):pass
+MAX_HEADER_BYTES=8*1024*1024
+
+def read_header(x,filename):
+    received=0
+    ftp=connect()
     try:
-        response=subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=40,check=False)
-        if response.returncode!=0:
-            message=response.stderr.decode("utf-8",errors="replace").lower()
-            if "protocol not found" in message or "unknown protocol" in message:
-                reason="unsupported_input_protocol"
-            elif "530 " in message or "login incorrect" in message or "authentication" in message:
-                reason="ftp_authentication"
-            elif "550 " in message or "no such file" in message:
-                reason="ftp_path_unavailable"
-            elif "invalid data" in message or "invalid argument" in message:
-                reason="media_input_or_url_invalid"
-            elif "connection refused" in message or "timed out" in message:
-                reason="network"
-            elif "end of file" in message:
-                reason="unexpected_eof"
-            else:reason="other_input_error"
-            return {"status":"probe_failed","exit_code":response.returncode,"error_class":reason}
-        data=json.loads(response.stdout.decode("utf-8"))
-        streams=data.get("streams",[])
-        if not streams:return {"status":"no_video_metadata"}
+        assert_unchanged(ftp,x)
+        with open(filename,"wb") as out:
+            def block(data):
+                nonlocal received
+                needed=MAX_HEADER_BYTES-received
+                if needed<=0:raise HeaderLimitReached()
+                out.write(data[:needed])
+                received+=min(len(data),needed)
+                if received>=MAX_HEADER_BYTES:raise HeaderLimitReached()
+            try:ftp.retrbinary("RETR "+x["from"],block,blocksize=65536)
+            except HeaderLimitReached:pass
+    finally:
+        # Close rather than QUIT: this transfer may have been intentionally cut short.
+        ftp.close()
+    return received
+
+def inspect(x):
+    extension=PurePosixPath(x["from"]).suffix
+    with tempfile.NamedTemporaryFile(prefix="trek_probe_",suffix=extension,delete=False) as temporary:
+        filename=temporary.name
+    try:
+        try:read_bytes=read_header(x,filename)
+        except (OSError,ftplib.all_errors,ValueError):
+            return {"status":"ftp_header_read_failed"}
+        command=["ffprobe","-hide_banner","-loglevel","error",
+                 "-probesize","1048576","-analyzeduration","1000000",
+                 "-select_streams","v:0","-show_entries",
+                 "stream=codec_name,profile,pix_fmt,width,height,color_range,color_space,color_transfer,color_primaries,side_data_list",
+                 "-of","json",filename]
+        try:result=subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=30,check=False)
+        except subprocess.TimeoutExpired:return {"status":"ffprobe_timeout","bytes_read":read_bytes}
+        try:observed=json.loads(result.stdout.decode("utf-8"))
+        except (ValueError,UnicodeError):return {"status":"ffprobe_no_json","bytes_read":read_bytes}
+        streams=observed.get("streams",[])
+        if not streams:return {"status":"ffprobe_no_streams","bytes_read":read_bytes}
         stream=streams[0]
-        return {"status":"probed","stream":{k:stream.get(k) for k in
-            ("codec_name","profile","pix_fmt","width","height","color_range","color_space","color_transfer","color_primaries","side_data_list") if k in stream}}
-    except subprocess.TimeoutExpired:return {"status":"timeout"}
-    except (OSError,UnicodeError,ValueError):return {"status":"probe_error"}
+        return {"status":"probed_header","bytes_read":read_bytes,
+                "stream":{k:stream.get(k) for k in
+                 ("codec_name","profile","pix_fmt","width","height","color_range","color_space","color_transfer","color_primaries","side_data_list") if k in stream}}
+    finally:
+        Path(filename).unlink(missing_ok=True)
 
 def main():
     parser=argparse.ArgumentParser()
