@@ -50,6 +50,11 @@ jobs:
           python 'Night Court/tools/build_multigoal_review_packet.py' \
             --source-report "${{ runner.temp }}/night-court-one-source/integrated-wall-clock.json" \
             --output "${{ runner.temp }}/night-court-one-source/multigoal-pending-review.json"
+      - name: Build bounded semantic review batch manifest for later independent video inference
+        run: |
+          python 'Night Court/tools/plan_original_av_microbatches.py' \
+            --review-packet "${{ runner.temp }}/night-court-one-source/multigoal-pending-review.json" \
+            --output "${{ runner.temp }}/night-court-one-source/pending-semantic-microbatches.json"
       - name: Preserve only source SHA and numerical whole-pass evidence
         if: success()
         uses: actions/upload-artifact@v4
