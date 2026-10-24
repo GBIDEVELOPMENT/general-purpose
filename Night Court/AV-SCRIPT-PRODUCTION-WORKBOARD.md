@@ -122,3 +122,8 @@ Trusted [S09E19 original full-source run #40128021777](https://github.com/gamesb
 ### Follow-up: S01E01 combined rejected-word retention
 
 After PR #295 introduced optional source-model rejected Whisper timing packets, the S01E01 integrated summary composer was found to drop them. The incremental source-once composer fix now exports up to **64 evenly distributed original invalid-model word review cases**, counts all unretained cases and retains the existing 100KB output cap. No human audio listening, model word-time repair or source dialog text alteration is performed. The historical S01E01 239.826s run predates this feature and cannot be retrospectively enriched. Future actual source experiments are required to populate it.
+
+
+### New selective continuous-action video review planner
+
+A new [candidate-shot-bounded original video playback planner](SHOT-BOUNDED-CONTINUOUS-REVIEW.md) consumes SHA/actual-PTS-verified triad ranking and the **same original source** candidate cut list to propose at most twelve short video review windows. It reserves up to six original editorial action events, four highest remaining pixel-change events and two intentionally **low-change holdouts** to evaluate unobserved physical comedy. The fast metadata-only stage does not itself decode clips, check continuity or accept stage directions. Future trusted-source execution must record actual clip availability, inference accuracy, model inference time, retention bytes and observed low-score missed events before accepting audiovisual semantics. The 0/193 original-series complete screenplay acceptance remains unchanged.

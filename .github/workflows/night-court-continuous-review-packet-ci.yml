@@ -1,0 +1,29 @@
+name: Night Court bounded original-video continuity review packet QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/plan_continuous_action_review.py'
+      - 'Night Court/tools/test_plan_continuous_action_review.py'
+      - 'Night Court/tools/profile_s01e01_whole_visual_pass.py'
+      - 'Night Court/tools/profile_s09e19_source_once_factory.py'
+      - 'Night Court/tools/profile_s01e01_one_source_factory.py'
+      - 'Night Court/SHOT-BOUNDED-CONTINUOUS-REVIEW.md'
+      - '.github/workflows/night-court-continuous-review-packet-ci.yml'
+permissions:
+  contents: read
+jobs:
+  source-free:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test original-source continuity review caps, low-score controls and false-cut safety
+        run: |
+          python 'Night Court/tools/test_plan_continuous_action_review.py'
+          python 'Night Court/tools/test_fast_visual_pass.py'
+          python 'Night Court/tools/test_profile_s09e19_source_once_factory.py'
+          python 'Night Court/tools/test_s01e01_one_source_factory.py'
+          python -m py_compile 'Night Court/tools/plan_continuous_action_review.py' 'Night Court/tools/profile_s09e19_source_once_factory.py' 'Night Court/tools/profile_s01e01_whole_visual_pass.py'

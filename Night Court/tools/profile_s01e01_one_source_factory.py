@@ -122,6 +122,7 @@ def compose_summary(audio,visual,transfer_s,combined_s):
         'source_triplets_with_pixel_change_features':visual.get('source_triads_with_pixel_change_features',0),
         'source_triplets_abstaining_for_pts_order':visual.get('source_triads_abstaining_for_pts_order',0),
         'source_pixel_change_review_ranked_top12':visual.get('pixel_change_candidate_reviews',[]),
+        'shot_bounded_original_video_review':visual.get('shot_bounded_selective_original_video_review'),
         'actual_physical_motion_recognized':False,
         'all_source_frame_pts_checked':visual['all_image_frame_pts_match_verified'],
         'original_source_video_download_count':1,

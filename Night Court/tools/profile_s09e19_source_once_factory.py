@@ -18,6 +18,7 @@ from compare_independent_asr import compare
 from rejected_asr_word_diagnostics import add_independent_context
 from extract_fast_visual_plan import extract, sha
 from summarize_motion_triplets import summarize
+from plan_continuous_action_review import plan_continuous_review
 from ftp_research_intake import connect
 from match_s09e19_untimed_paragraphs import assess, candidates
 from pilot_ftp_video_acoustics import retrieve
@@ -159,6 +160,9 @@ def profile(media:Path, scratch:Path, transfer:float):
         t=time.monotonic()
         pixel_review=summarize(plan,image_report,location/'frames')
         timings['ephemeral_three_frame_pixel_difference_seconds']=round(time.monotonic()-t,3)
+    t=time.monotonic()
+    continuous_review=plan_continuous_review(plan,pixel_review,scored)
+    timings['shot_candidate_bounded_review_planning_seconds']=round(time.monotonic()-t,3)
     if not image_report['all_samples_within_source_pts_tolerance']:
         raise ValueError('Image source PTS drift; no source screenshot labels accepted')
     t=time.monotonic()
@@ -199,6 +203,7 @@ def profile(media:Path, scratch:Path, transfer:float):
        'source_triads_abstaining_for_pts_order':pixel_review['pts_order_abstentions'],
        'pixel_change_candidate_reviews':pixel_review['review_priority'][:12],
        'pixel_change_is_verified_physical_action':False,
+       'shot_bounded_selective_original_video_review':continuous_review,
        'sampled_frames_original_pts_checked':image_report['all_samples_within_source_pts_tolerance'],
        'component_measured_seconds':timings,
        'source_processing_wall_seconds_excluding_job_startup_and_dependency_install':full_wall,
