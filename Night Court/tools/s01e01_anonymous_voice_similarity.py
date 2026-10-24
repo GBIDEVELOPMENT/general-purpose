@@ -6,7 +6,7 @@ weights, character identity, diarization decision, or emotion is exported.
 """
 from __future__ import annotations
 from itertools import combinations
-import argparse,ftplib,hashlib,json,math,os,subprocess,tempfile
+import argparse,hashlib,json,math,os,subprocess,tempfile
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -153,27 +153,9 @@ def process(media,output):
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument("--media",type=Path)
-    p.add_argument("--ftp",action="store_true")
+    p.add_argument("--media",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True)
     a=p.parse_args()
-    if a.ftp==bool(a.media):p.error("Choose exactly one of --ftp or --media")
-    if a.ftp:
-        from ftp_research_intake import connect
-        from pilot_ftp_video_acoustics import candidate,retrieve
-        item=candidate()
-        password=os.getenv("FTP_PASSWORD")
-        if not password:raise ValueError("Existing FTP_PASSWORD required")
-        with tempfile.TemporaryDirectory(prefix="nc-anonymous-voice-") as t:
-            media=Path(t)/item["basename"]
-            ftp=connect(os.getenv("FTP_HOST","wood.seedhost.eu"),
-              os.getenv("FTP_USER","ianseeds"),password,"ftp")
-            try:verified_sha=retrieve(ftp,item,media)
-            finally:
-                try:ftp.quit()
-                except ftplib.all_errors:ftp.close()
-            if verified_sha!=MEDIA_SHA:raise ValueError("Source FTP bytes changed")
-            process(media,a.output)
-    else:process(a.media,a.output)
+    process(a.media,a.output)
 
 if __name__=="__main__":main()
