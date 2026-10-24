@@ -17,6 +17,7 @@ EPISODE_ID=re.compile(r"(?i)S\d{1,2}E\d{1,3}")
 def category(path):
     p=PurePosixPath(path)
     if p.suffix.lower()==".nfo":return "nfo"
+    if p.suffix.lower()==".txt":return "txt"
     if p.suffix.lower() in VIDEO and not EPISODE_ID.search(p.name):
         clip_name=p.stem
         if RELEASE_CLIP.fullmatch(clip_name):
@@ -62,7 +63,7 @@ def validate(manifest):
     for entry in entries:
         if not isinstance(entry,dict) or set(entry)!={"from","size","modify","category"}:raise ValueError("Unexpected entry keys")
         p=safe(entry["from"])
-        if category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot","sample","trailer"):
+        if category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot","sample","trailer","txt"):
             raise ValueError("Not an exact approved debris class")
         if p.casefold() in seen:raise ValueError("Duplicate delete")
         seen.add(p.casefold())
