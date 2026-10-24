@@ -1,0 +1,56 @@
+name: FTP remove empty original release folders
+on:
+  pull_request:
+    paths:
+      - 'media-organizer/empty_release_dirs.py'
+      - 'media-organizer/tests/test_empty_release_dirs.py'
+      - 'media-organizer/approved-empty-release.json'
+      - '.github/workflows/ftp-media-empty-release.yml'
+  push:
+    branches: [main]
+    paths: ['media-organizer/approved-empty-release.json']
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('ftp-media-empty-release-pr-{0}', github.event.pull_request.number) || 'ftp-media-empty-release-live' }}
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate exact paths and offline tests
+        run: |
+          python -m py_compile media-organizer/empty_release_dirs.py
+          python -m unittest discover -s media-organizer/tests -v
+          if [ -f media-organizer/approved-empty-release.json ]; then
+            python media-organizer/empty_release_dirs.py
+          fi
+  rmd:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: ftp-media-changes
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ftp
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Remove only verified empty old release folders
+        run: |
+          test -n "$FTP_PASSWORD"
+          python media-organizer/empty_release_dirs.py --apply
+      - name: Upload audit even on partial completion
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ftp-empty-release-audit
+          path: media-organizer/empty-release-output/
+          if-no-files-found: warn
+          retention-days: 90
