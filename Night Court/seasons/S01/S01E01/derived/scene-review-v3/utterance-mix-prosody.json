@@ -1,0 +1,293 @@
+{
+  "schema": "night-court-s01e01-utterance-mix-prosody/1",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "asr_evidence": "scene-review-v1/asr-prosody-hypotheses.json",
+  "asr_model": "faster-whisper tiny.en",
+  "asr_segments": 10,
+  "source_window_ms": [
+    60000,
+    90000
+  ],
+  "audio_wav_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+  "extractors": {
+    "librosa": "0.11.0",
+    "soundfile": "0.13.1",
+    "numpy": "2.4.6"
+  },
+  "audio_source_persistent_in_repo": false,
+  "utterance_prosody_hypotheses": [
+    {
+      "asr_segment_index": 0,
+      "caption_cue_hint": 19,
+      "asr_source_audio_interval_ms": [
+        60640,
+        62800
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -20.5,
+        "peak_dbfs": -4.04,
+        "mix_pitch_median_hz": 137.5,
+        "mix_pitch_p10_hz": 119.87,
+        "mix_pitch_p90_hz": 201.88,
+        "mix_pitch_frames_passing_energy_gate": 120,
+        "mix_pitch_frame_count": 136,
+        "mix_pitch_first_to_last_change_semitones": -1.17,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 2160
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    },
+    {
+      "asr_segment_index": 1,
+      "caption_cue_hint": 20,
+      "asr_source_audio_interval_ms": [
+        63340,
+        65900
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -19.11,
+        "peak_dbfs": -5.84,
+        "mix_pitch_median_hz": 125.04,
+        "mix_pitch_p10_hz": 95.92,
+        "mix_pitch_p90_hz": 205.36,
+        "mix_pitch_frames_passing_energy_gate": 161,
+        "mix_pitch_frame_count": 161,
+        "mix_pitch_first_to_last_change_semitones": -8.49,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 2560
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    },
+    {
+      "asr_segment_index": 2,
+      "caption_cue_hint": 21,
+      "asr_source_audio_interval_ms": [
+        65900,
+        68080
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -20.75,
+        "peak_dbfs": -5.52,
+        "mix_pitch_median_hz": 160.26,
+        "mix_pitch_p10_hz": 98.65,
+        "mix_pitch_p90_hz": 354.26,
+        "mix_pitch_frames_passing_energy_gate": 94,
+        "mix_pitch_frame_count": 137,
+        "mix_pitch_first_to_last_change_semitones": 22.88,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 2180
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    },
+    {
+      "asr_segment_index": 3,
+      "caption_cue_hint": 22,
+      "asr_source_audio_interval_ms": [
+        70640,
+        71940
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -21.18,
+        "peak_dbfs": -3.97,
+        "mix_pitch_median_hz": 226.58,
+        "mix_pitch_p10_hz": 98.04,
+        "mix_pitch_p90_hz": 259.55,
+        "mix_pitch_frames_passing_energy_gate": 67,
+        "mix_pitch_frame_count": 82,
+        "mix_pitch_first_to_last_change_semitones": -16.93,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 1300
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    },
+    {
+      "asr_segment_index": 4,
+      "caption_cue_hint": 22,
+      "asr_source_audio_interval_ms": [
+        71940,
+        72700
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -21.49,
+        "peak_dbfs": -4.94,
+        "mix_pitch_median_hz": 202.57,
+        "mix_pitch_p10_hz": 107.55,
+        "mix_pitch_p90_hz": 237.4,
+        "mix_pitch_frames_passing_energy_gate": 36,
+        "mix_pitch_frame_count": 48,
+        "mix_pitch_first_to_last_change_semitones": 0.18,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 760
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    },
+    {
+      "asr_segment_index": 5,
+      "caption_cue_hint": 23,
+      "asr_source_audio_interval_ms": [
+        74880,
+        76740
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -21.18,
+        "peak_dbfs": -3.89,
+        "mix_pitch_median_hz": 178.43,
+        "mix_pitch_p10_hz": 161.77,
+        "mix_pitch_p90_hz": 234.07,
+        "mix_pitch_frames_passing_energy_gate": 94,
+        "mix_pitch_frame_count": 117,
+        "mix_pitch_first_to_last_change_semitones": -2.83,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 1860
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    },
+    {
+      "asr_segment_index": 6,
+      "caption_cue_hint": 24,
+      "asr_source_audio_interval_ms": [
+        77160,
+        79420
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -22.16,
+        "peak_dbfs": -4.34,
+        "mix_pitch_median_hz": 102.07,
+        "mix_pitch_p10_hz": 91.72,
+        "mix_pitch_p90_hz": 200.45,
+        "mix_pitch_frames_passing_energy_gate": 132,
+        "mix_pitch_frame_count": 142,
+        "mix_pitch_first_to_last_change_semitones": -0.83,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 2260
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    },
+    {
+      "asr_segment_index": 7,
+      "caption_cue_hint": 25,
+      "asr_source_audio_interval_ms": [
+        83300,
+        83780
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -19.98,
+        "peak_dbfs": -6.17,
+        "mix_pitch_median_hz": 142.71,
+        "mix_pitch_p10_hz": 141.66,
+        "mix_pitch_p90_hz": 338.49,
+        "mix_pitch_frames_passing_energy_gate": 14,
+        "mix_pitch_frame_count": 31,
+        "mix_pitch_first_to_last_change_semitones": 4.69,
+        "pitch_reliability": "too_short_for_trustworthy_delivery_label_or_stable_voice_baseline",
+        "acoustic_duration_ms": 480
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    },
+    {
+      "asr_segment_index": 8,
+      "caption_cue_hint": 26,
+      "asr_source_audio_interval_ms": [
+        86720,
+        87200
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -18.94,
+        "peak_dbfs": -3.85,
+        "mix_pitch_median_hz": 143.64,
+        "mix_pitch_p10_hz": 101.99,
+        "mix_pitch_p90_hz": 458.92,
+        "mix_pitch_frames_passing_energy_gate": 20,
+        "mix_pitch_frame_count": 31,
+        "mix_pitch_first_to_last_change_semitones": -12.4,
+        "pitch_reliability": "too_short_for_trustworthy_delivery_label_or_stable_voice_baseline",
+        "acoustic_duration_ms": 480
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    },
+    {
+      "asr_segment_index": 9,
+      "caption_cue_hint": 27,
+      "asr_source_audio_interval_ms": [
+        89100,
+        89980
+      ],
+      "model_word_timing_source": "faster-whisper_tiny.en_unverified_word_timestamps",
+      "speech_utterance_identity": null,
+      "acoustics": {
+        "rms_dbfs": -18.06,
+        "peak_dbfs": -4.81,
+        "mix_pitch_median_hz": 173.67,
+        "mix_pitch_p10_hz": 135.91,
+        "mix_pitch_p90_hz": 378.38,
+        "mix_pitch_frames_passing_energy_gate": 55,
+        "mix_pitch_frame_count": 56,
+        "mix_pitch_first_to_last_change_semitones": -15.52,
+        "pitch_reliability": "unreviewed_sitcom_audio_mix_non_voice_noise_and_overlapping_speakers_possible",
+        "acoustic_duration_ms": 880
+      },
+      "speaker_isolated": false,
+      "delivery_interpretation": null,
+      "emotion_interpretation": null,
+      "source_text_unchanged": true
+    }
+  ],
+  "source_edition_aligned_verified": false,
+  "speaker_diarized_or_identified": false,
+  "pitch_from_isolated_voice": false,
+  "emotion_or_character_tone_inferred": false,
+  "quality_limitations": [
+    "YIN_generates_F0_even_for_non_voice_so_energy_gating_is_only_a_heuristic",
+    "audience_laughter_music_effects_and_speaker_overlap_contaminate_pitch",
+    "short_segments_have_unstable_pitch_baselines",
+    "ASR_times_are_model_candidates_not_manual_word_or_edition_alignment"
+  ],
+  "review_status": "real_audio_measurements_unreviewed"
+}
