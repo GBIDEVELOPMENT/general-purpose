@@ -1,0 +1,175 @@
+{
+  "schema": "night-court-s09e19-source-triad-stage-cost-summary/1",
+  "episode_id": "S09E19",
+  "source_provenance": {
+    "trusted_github_run": 40128021777,
+    "source_artifact_id": 12572964697,
+    "artifact_expires_utc": "2026-10-31T20:06:23Z",
+    "artifact_zip_sha256": "1098410992cd41e9a488ba93273e33c947568becda1eeaba73beee8e8db3084a",
+    "artifact_json_sha256": "9032cd9308e904d2c52da261c6f8b2538565555a0588cbef0ff7388e390dfa57",
+    "original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+    "original_pcm_sha256": "7f3e3634c99469214360d59faf69c7838301e6ee94d5f08968382a74607b6711",
+    "original_untimed_dialogue_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2"
+  },
+  "original_video_duration_ms": 1320144,
+  "original_source_paragraph_count": 347,
+  "original_source_paragraph_timestamps": 0,
+  "source_encoded_fps": "30000/1001",
+  "processing": {
+    "source_once_wall_seconds_excluding_install_and_job_startup": 170.522,
+    "components_seconds": {
+      "single_original_ftp_transfer_and_sha_seconds": 5.041,
+      "ffprobe_source_metadata_seconds": 0.237,
+      "one_source_pcm_decode_seconds": 2.523,
+      "pinned_vosk_download_unpack_seconds": 42.044,
+      "kaldi_wfst_full_episode_inference_seconds": 67.152,
+      "whisper_tiny_full_episode_inference_seconds": 27.247,
+      "independent_model_word_reconciliation_seconds": 0.011,
+      "full_source_low_res_cut_scan_seconds": 14.264,
+      "bounded_visual_plan_seconds": 0.005,
+      "one_pass_source_frame_jpeg_extraction_seconds": 11.835,
+      "ephemeral_three_frame_pixel_difference_seconds": 0.053,
+      "untimed_source_paragraph_lexical_probe_seconds": 0.107
+    }
+  },
+  "evidence_counts": {
+    "source_avi_retrievals": 1,
+    "pcm_decodes": 1,
+    "independent_model_families": [
+      "whisper",
+      "kaldi_hmm_wfst"
+    ],
+    "model_model_agreement_spans": 189,
+    "model_model_corroborated_word_hypotheses": 1218,
+    "model_word_candidates_unresolved": 2094,
+    "whisper_invalid_word_times": 223,
+    "possible_visual_change_candidates_not_verified_cuts": 212,
+    "source_pts_verified_jpegs": 202,
+    "ephemeral_jpeg_bytes": 999791,
+    "triads_with_pixel_change_scores": 31,
+    "triads_pts_order_abstentions": 0,
+    "original_untimed_paragraph_probes": 40
+  },
+  "pixel_change_ranked_top12": [
+    {
+      "event_id": "coverage-probe-00",
+      "source_frame_pts_ms_actual": [
+        25259,
+        25425,
+        25592
+      ],
+      "mean_temporal_pixel_change_score": 0.046672
+    },
+    {
+      "event_id": "S09-V03",
+      "source_frame_pts_ms_actual": [
+        912979,
+        913146,
+        913312
+      ],
+      "mean_temporal_pixel_change_score": 0.035068
+    },
+    {
+      "event_id": "coverage-probe-06",
+      "source_frame_pts_ms_actual": [
+        329896,
+        330063,
+        330230
+      ],
+      "mean_temporal_pixel_change_score": 0.031059
+    },
+    {
+      "event_id": "coverage-probe-15",
+      "source_frame_pts_ms_actual": [
+        786886,
+        787053,
+        787220
+      ],
+      "mean_temporal_pixel_change_score": 0.02853
+    },
+    {
+      "event_id": "S09-V05",
+      "source_frame_pts_ms_actual": [
+        919485,
+        919652,
+        919819
+      ],
+      "mean_temporal_pixel_change_score": 0.026121
+    },
+    {
+      "event_id": "coverage-probe-08",
+      "source_frame_pts_ms_actual": [
+        431464,
+        431631,
+        431798
+      ],
+      "mean_temporal_pixel_change_score": 0.020453
+    },
+    {
+      "event_id": "coverage-probe-02",
+      "source_frame_pts_ms_actual": [
+        127060,
+        127227,
+        127394
+      ],
+      "mean_temporal_pixel_change_score": 0.018214
+    },
+    {
+      "event_id": "S09-V04",
+      "source_frame_pts_ms_actual": [
+        916249,
+        916416,
+        916582
+      ],
+      "mean_temporal_pixel_change_score": 0.014728
+    },
+    {
+      "event_id": "coverage-probe-18",
+      "source_frame_pts_ms_actual": [
+        939205,
+        939372,
+        939539
+      ],
+      "mean_temporal_pixel_change_score": 0.014316
+    },
+    {
+      "event_id": "coverage-probe-07",
+      "source_frame_pts_ms_actual": [
+        380680,
+        380847,
+        381014
+      ],
+      "mean_temporal_pixel_change_score": 0.013962
+    },
+    {
+      "event_id": "coverage-probe-20",
+      "source_frame_pts_ms_actual": [
+        1040740,
+        1040910,
+        1041070
+      ],
+      "mean_temporal_pixel_change_score": 0.013456
+    },
+    {
+      "event_id": "coverage-probe-01",
+      "source_frame_pts_ms_actual": [
+        76043,
+        76210,
+        76376
+      ],
+      "mean_temporal_pixel_change_score": 0.011898
+    }
+  ],
+  "limitations": {
+    "actual_cuts_verified": false,
+    "physical_actions_or_body_motion_verified": false,
+    "human_source_audio_listened": false,
+    "speaker_identity_or_vocal_expression_verified": false,
+    "original_paragraph_timestamps_created": false,
+    "original_source_media_committed": false,
+    "complete_original_episode_screenplay_accepted": false,
+    "p95_at_scale_verified": false,
+    "older_s09e19_wall_seconds": 215.14,
+    "older_s09e19_agreement_spans": 199
+  }
+}
