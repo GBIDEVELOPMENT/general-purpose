@@ -1,0 +1,23 @@
+name: Night Court S01E01 expanded frame observation integrity
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/validate_s01e01_expanded_frame_evidence.py'
+      - 'Night Court/tools/test_s01e01_expanded_frame_evidence.py'
+      - 'Night Court/seasons/S01/S01E01/derived/visual-review-v3/**'
+      - '.github/workflows/night-court-expanded-frame-review.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s01e01-expanded-reviewed-frame-evidence'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Prove observed frame time SHA and conservative claim boundaries
+        run: |
+          python 'Night Court/tools/test_s01e01_expanded_frame_evidence.py'
+          python 'Night Court/tools/validate_s01e01_expanded_frame_evidence.py'
