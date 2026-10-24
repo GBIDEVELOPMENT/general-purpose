@@ -1,0 +1,39 @@
+{
+  "schema": "night-court-first-measured-parallel-vs-historical-serial-comparison/1",
+  "episode_id": "S09E19",
+  "source_run_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40133282389",
+  "source_artifact_id": 12576021781,
+  "source_artifact_zip_sha256": "aa5df63fbc0540bf681ee816e0abf0e016a56f33e9d9c43a68f28f18f3a1dcc7",
+  "original_source_report_sha256": "ae20fabb3487e7c33a01e4d40203dca3bf9e68a0b14a394c804dc7a4e3eb7eb0",
+  "pending_multigoal_review_sha256": "7fa018aec8ecc631ba47ff83890d57050fa537f528f06dd55315d2bed6c139d5",
+  "pending_semantic_microbatches_sha256": "f3ece255f54fac2e98ca3f21a0cf861f3d3c847fa64f1bb5de39729120580179",
+  "original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_video_duration_ms": 1320144,
+  "source_av_execution_mode": "parallel",
+  "measured_source_processing_seconds_excludes_install": 242.378,
+  "sum_of_measured_stages_seconds": 269.694,
+  "measured_stage_clock_overlap_seconds": 27.316,
+  "historical_serial_original_source_processing_seconds": [
+    215.14,
+    170.522,
+    213.936
+  ],
+  "measured_stage_seconds": {
+    "pinned_vosk_download_unpack": 60.31,
+    "kaldi_wfst_inference": 91.304,
+    "whisper_tiny_inference": 54.515,
+    "full_frame_video_scan": 27.322,
+    "selected_pts_jpeg_extraction": 21.205
+  },
+  "source_frames_selected": 202,
+  "original_review_windows": 12,
+  "selected_distinct_original_video_runtime_ms": 31392,
+  "selected_original_runtime_fraction": 0.023779,
+  "semantic_batches_planned": 3,
+  "visual_language_inference_executed": false,
+  "original_video_source_speaker_or_action_reviewed": false,
+  "episode_accepted": false,
+  "fleet_p95_established": false,
+  "parallel_faster_than_serial_proven": false,
+  "interpretation": "Parallel successfully overlapped 27.316s but this whole run took 242.378s, slower than historical serial 213.936s and 170.522s. Changing model/weight download and inference stage times confounds causal conclusions. Retain mode as experimental, restore serial fallback for trusted production until repeated matched A/B proves a speedup."
+}
