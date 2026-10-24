@@ -1,0 +1,274 @@
+{
+  "schema": "night-court-integrated-evidence-script/3",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_subtitle_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "scene_heading": "INT. BOOK-LINED COURT OFFICE – TIME OF DAY UNVERIFIED",
+  "scope": "bounded_source_video_time_60_to_90_seconds_only",
+  "first_visual_source": "scene-review-v1/visual-observations.json",
+  "dense_visual_source": "scene-review-v2/visual-motion-observations.json",
+  "word_evidence_source": "scene-review-v1/word-alignment-review.json",
+  "reviewed_by": "AI from sampled source stills; independent full-motion, audio and cast acceptance pending",
+  "counts_and_gates": {
+    "source_caption_cues": 9,
+    "explicit_subtitle_typographic_voice_turns": 11,
+    "reviewed_static_observations": 5,
+    "reviewed_dense_motion_observations": 6,
+    "exact_text_ASR_word_time_candidates": 45,
+    "source_window_ms": [
+      60000,
+      90000
+    ],
+    "all_known_speakers_unverified": true,
+    "caption_audio_edition_synchronization_verified": false,
+    "scene_continuous_video_verified": false,
+    "scene_audiovisual_complete": false
+  },
+  "events": [
+    {
+      "start_ms": 58912,
+      "end_ms": 62541,
+      "source_kind": "caption_turn",
+      "cue": 19,
+      "source_turn_index": 0,
+      "text": "Did you say \"mercurial\"?",
+      "exact_model_word_time_candidates": 0,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 58912,
+      "end_ms": 62541,
+      "source_kind": "caption_turn",
+      "cue": 19,
+      "source_turn_index": 1,
+      "text": "I'm trying to make up for lack of education.",
+      "exact_model_word_time_candidates": 8,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 60000,
+      "end_ms": 60000,
+      "source_kind": "reviewed_static_frame",
+      "id": "STATIC-01",
+      "text": "The person in lavender is next to the desk and looks down toward its surface.",
+      "evidence": [
+        "frames/source-0060s.jpg"
+      ],
+      "review_status": "AI_still_image_observation_not_motion"
+    },
+    {
+      "start_ms": 62716,
+      "end_ms": 65742,
+      "source_kind": "caption_turn",
+      "cue": 20,
+      "source_turn_index": 0,
+      "text": "So every month, I pick a word at random out of the dictionary...",
+      "exact_model_word_time_candidates": 13,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 65919,
+      "end_ms": 67887,
+      "source_kind": "caption_turn",
+      "cue": 21,
+      "source_turn_index": 0,
+      "text": "...and use it all that month.",
+      "exact_model_word_time_candidates": 6,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 69000,
+      "end_ms": 69000,
+      "source_kind": "reviewed_static_frame",
+      "id": "STATIC-02",
+      "text": "Both people are in the room; the lavender-clad person has both hands by the desk while the uniformed person stands opposite.",
+      "evidence": [
+        "frames/source-0069s.jpg"
+      ],
+      "review_status": "AI_still_image_observation_not_motion"
+    },
+    {
+      "start_ms": 69689,
+      "end_ms": 73147,
+      "source_kind": "caption_turn",
+      "cue": 22,
+      "source_turn_index": 0,
+      "text": "My, how...",
+      "exact_model_word_time_candidates": 2,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 69689,
+      "end_ms": 73147,
+      "source_kind": "caption_turn",
+      "cue": 22,
+      "source_turn_index": 1,
+      "text": "Minimifidian?",
+      "exact_model_word_time_candidates": 0,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 74628,
+      "end_ms": 76357,
+      "source_kind": "caption_turn",
+      "cue": 23,
+      "source_turn_index": 0,
+      "text": "Is that a real word?",
+      "exact_model_word_time_candidates": 5,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 75000,
+      "end_ms": 75000,
+      "source_kind": "reviewed_static_frame",
+      "id": "STATIC-03",
+      "text": "The desk, folders, telephone and box are all visible in a wider view with both people.",
+      "evidence": [
+        "frames/source-0075s.jpg"
+      ],
+      "review_status": "AI_still_image_observation_not_motion"
+    },
+    {
+      "start_ms": 76250,
+      "end_ms": 76500,
+      "source_kind": "reviewed_sampled_sequence",
+      "id": "OBS-V2-01",
+      "text": "The view shifts from the lavender-clad person in front of book shelves to a closer view of the uniformed person.",
+      "evidence": [
+        "sampled-frames/frame-006.jpg",
+        "sampled-frames/frame-007.jpg"
+      ],
+      "review_status": "AI_ordered_4fps_frames_not_continuous_video_review"
+    },
+    {
+      "start_ms": 76663,
+      "end_ms": 79894,
+      "source_kind": "caption_turn",
+      "cue": 24,
+      "source_turn_index": 0,
+      "text": "Does a bear extravasate in the forest?",
+      "exact_model_word_time_candidates": 5,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 80750,
+      "end_ms": 81000,
+      "source_kind": "reviewed_sampled_sequence",
+      "id": "OBS-V2-02",
+      "text": "The view changes from the uniformed person's face to the lavender-clad person beside the desk.",
+      "evidence": [
+        "sampled-frames/frame-024.jpg",
+        "sampled-frames/frame-025.jpg"
+      ],
+      "review_status": "AI_ordered_4fps_frames_not_continuous_video_review"
+    },
+    {
+      "start_ms": 82500,
+      "end_ms": 83750,
+      "source_kind": "reviewed_sampled_sequence",
+      "id": "OBS-V2-03",
+      "text": "At the desk, the uniformed person reaches toward the black telephone and raises its handset to the ear.",
+      "evidence": [
+        "sampled-frames/frame-031.jpg",
+        "sampled-frames/frame-032.jpg",
+        "sampled-frames/frame-034.jpg",
+        "sampled-frames/frame-036.jpg"
+      ],
+      "review_status": "AI_ordered_4fps_frames_not_continuous_video_review"
+    },
+    {
+      "start_ms": 83136,
+      "end_ms": 84501,
+      "source_kind": "caption_turn",
+      "cue": 25,
+      "source_turn_index": 0,
+      "text": "What?",
+      "exact_model_word_time_candidates": 1,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 83750,
+      "end_ms": 87250,
+      "source_kind": "reviewed_sampled_sequence",
+      "id": "OBS-V2-04",
+      "text": "The uniformed person holds the black telephone receiver against the ear while the lavender-clad person remains on the other side of the desk.",
+      "evidence": [
+        "sampled-frames/frame-036.jpg",
+        "sampled-frames/frame-040.jpg",
+        "sampled-frames/frame-044.jpg",
+        "sampled-frames/frame-050.jpg"
+      ],
+      "review_status": "AI_ordered_4fps_frames_not_continuous_video_review"
+    },
+    {
+      "start_ms": 84000,
+      "end_ms": 84000,
+      "source_kind": "reviewed_static_frame",
+      "id": "STATIC-04",
+      "text": "The uniformed person's mouth is drawn into a tense-looking expression, with the second person's hair visible in the foreground.",
+      "evidence": [
+        "frames/source-0084s.jpg"
+      ],
+      "review_status": "AI_still_image_observation_not_motion"
+    },
+    {
+      "start_ms": 86339,
+      "end_ms": 87738,
+      "source_kind": "caption_turn",
+      "cue": 26,
+      "source_turn_index": 0,
+      "text": "No.",
+      "exact_model_word_time_candidates": 1,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    },
+    {
+      "start_ms": 87000,
+      "end_ms": 87000,
+      "source_kind": "reviewed_static_frame",
+      "id": "STATIC-05",
+      "text": "The uniformed person has a dark telephone receiver at the ear. The lavender-clad person faces toward the officer, with a hand near the chest.",
+      "evidence": [
+        "frames/source-0087s.jpg"
+      ],
+      "review_status": "AI_still_image_observation_not_motion"
+    },
+    {
+      "start_ms": 87500,
+      "end_ms": 88500,
+      "source_kind": "reviewed_sampled_sequence",
+      "id": "OBS-V2-05",
+      "text": "The uniformed person lowers the receiver from the ear toward the telephone on the desktop.",
+      "evidence": [
+        "sampled-frames/frame-051.jpg",
+        "sampled-frames/frame-052.jpg",
+        "sampled-frames/frame-054.jpg",
+        "sampled-frames/frame-055.jpg"
+      ],
+      "review_status": "AI_ordered_4fps_frames_not_continuous_video_review"
+    },
+    {
+      "start_ms": 88500,
+      "end_ms": 89750,
+      "source_kind": "reviewed_sampled_sequence",
+      "id": "OBS-V2-06",
+      "text": "The receiver is down at the desk; the uniformed person straightens while the lavender-clad person remains nearby.",
+      "evidence": [
+        "sampled-frames/frame-055.jpg",
+        "sampled-frames/frame-056.jpg",
+        "sampled-frames/frame-059.jpg",
+        "sampled-frames/frame-060.jpg"
+      ],
+      "review_status": "AI_ordered_4fps_frames_not_continuous_video_review"
+    },
+    {
+      "start_ms": 88742,
+      "end_ms": 91074,
+      "source_kind": "caption_turn",
+      "cue": 27,
+      "source_turn_index": 0,
+      "text": "Tell the judge the mayor called.",
+      "exact_model_word_time_candidates": 4,
+      "review_status": "unattributed_source_dialogue_candidate_audio_timing"
+    }
+  ]
+}
