@@ -86,3 +86,15 @@ also changed; this cannot establish that parallelism caused the slowdown.
 The trusted S09E19 owner workflow therefore now selects **serial** again,
 retaining a command-line parallel mode for controlled future comparisons.
 Neither p95 production speed nor screenplay content improved or was accepted.
+
+### Cold runner installation mitigation
+
+The first parallel S01E01 source job #40133280264 spent unexpectedly long
+in its fixed-dependency install step, while S09E19 completed installation
+normally. Do **not** mistake installer time for model inference or assume
+a cause without the completed job logs. Both trusted source workflows now
+first test for already installed `ffmpeg` and `ffprobe`; fallback APT is
+time-bounded, and fixed-version Python package install has explicit limited
+retries and network timeouts. The SHA-verified source worker and source media
+publication gate are unchanged. Verify end-to-end job duration on a subsequent
+owner-controlled run before claiming improved startup reliability.
