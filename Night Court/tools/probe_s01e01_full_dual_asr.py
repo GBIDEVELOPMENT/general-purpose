@@ -25,6 +25,7 @@ import wave
 import zipfile
 
 from compare_independent_asr import compare
+from rejected_asr_word_diagnostics import capture_rejection, add_independent_context
 from ftp_research_intake import connect
 from pilot_ftp_video_acoustics import candidate, retrieve
 from probe_s01e01_cadence_and_cost import SIZE, SHA
@@ -154,7 +155,7 @@ def vosk_free_decode(wav:Path,model_path:Path,duration_ms:int):
     return words,rejected,dict(reasons)
 
 
-def whisper_free_decode(wav:Path,cache:Path,duration_ms:int):
+def whisper_free_decode(wav:Path,cache:Path,duration_ms:int,*,rejected_details=None):
     from faster_whisper import WhisperModel
     model=WhisperModel('tiny.en',device='cpu',compute_type='int8',
                        download_root=str(cache),cpu_threads=2,num_workers=1)
@@ -174,7 +175,12 @@ def whisper_free_decode(wav:Path,cache:Path,duration_ms:int):
             w=preserve_word(row.word,row.start,row.end,duration_ms)
             if w is None:
                 rejected+=1
-                reasons[word_rejection_reason(row.word,row.start,row.end,duration_ms)]+=1
+                reason=word_rejection_reason(row.word,row.start,row.end,duration_ms)
+                reasons[reason]+=1
+                if rejected_details is not None:
+                    capture_rejection(rejected_details,word=row.word,start=row.start,end=row.end,
+                        reason=reason,segment_start=seg.start,segment_end=seg.end,
+                        duration_ms=duration_ms)
                 continue
             words.append(w)
             if len(words)>MAX_ASR_WORDS:
@@ -201,7 +207,10 @@ def build_report(media:Path,scratch:Path,transfer_seconds:float):
     vosk_words,vosk_rejected,vosk_reasons=vosk_free_decode(wav,model_dir,duration_ms)
     times['kaldi_wfst_vosk_full_episode_inference_seconds']=round(time.monotonic()-t,3)
     t=time.monotonic()
-    whisper_words,whisper_rejected,whisper_segments,whisper_reasons=whisper_free_decode(wav,scratch/'whisper-cache',duration_ms)
+    rejected_details=[]
+    whisper_words,whisper_rejected,whisper_segments,whisper_reasons=whisper_free_decode(
+        wav,scratch/'whisper-cache',duration_ms,rejected_details=rejected_details)
+    add_independent_context(rejected_details,vosk_words,duration_ms)
     times['whisper_tiny_en_full_episode_inference_seconds']=round(time.monotonic()-t,3)
     source_spec={
         'schema':'night-court-two-independent-asr-words/1',
@@ -236,6 +245,13 @@ def build_report(media:Path,scratch:Path,transfer_seconds:float):
                  'rejected_word_timestamps':whisper_rejected,
                  'rejected_word_reasons':whisper_reasons,
                  'segment_count':whisper_segments,'word_count':len(whisper_words)}],
+      'whisper_rejected_word_time_review':{
+           'total_invalid_word_intervals':whisper_rejected,
+           'retained_bounded_invalid_time_proposals':len(rejected_details),
+           'unretained_diagnostics_over_cap':max(0,whisper_rejected-len(rejected_details)),
+           'rejection_details_no_source_time_promotion':rejected_details,
+           'original_soundtrack_listened':False,
+           'separate_model_context_human_verified':False},
       'measured_wall_time_seconds':times,
       'measured_source_processing_seconds_excludes_install':round(sum(times.values()),3),
       'comparison':result,
