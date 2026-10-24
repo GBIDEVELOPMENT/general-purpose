@@ -1,0 +1,34 @@
+name: Night Court editorial review claim acceptance schema
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/validate_editorial_decisions.py'
+      - 'Night Court/tools/test_editorial_decisions.py'
+      - '.github/workflows/night-court-editorial-decision-validation.yml'
+permissions:
+  contents: write
+jobs:
+  validate:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-editorial-decision-acceptance-gate'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/night-court-editorial-decision-acceptance-gate
+          persist-credentials: true
+      - name: Run adversarial source-evidence and fake character-voice tests
+        run: |
+          python "Night Court/tools/test_editorial_decisions.py"
+          python "Night Court/tools/validate_editorial_decisions.py" --write-template
+          python "Night Court/tools/validate_editorial_decisions.py" --validate \
+             "Night Court/seasons/S01/S01E01/derived/editorial-review-v1/review-decisions-template.json"
+      - name: Store only unaccepted decision schema template
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Night Court/seasons/S01/S01E01/derived/editorial-review-v1/review-decisions-template.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): add pending reviewer decisions for S01E01 first scene"
+            git push origin HEAD:feature/night-court-editorial-decision-acceptance-gate
+          fi
