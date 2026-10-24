@@ -1,0 +1,55 @@
+name: FTP inspect Trek video HDR and Dolby Vision stream metadata
+on:
+  pull_request:
+    paths:
+      - 'media-organizer/trek_probe.py'
+      - 'media-organizer/tests/test_trek_probe.py'
+      - 'media-organizer/trek-probe-targets.json'
+      - '.github/workflows/ftp-media-trek-stream-probe.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'media-organizer/trek_probe.py'
+      - 'media-organizer/trek-probe-targets.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('ftp-trek-probe-pr-{0}', github.event.pull_request.number) || 'ftp-trek-probe-trusted' }}
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python -m py_compile media-organizer/trek_probe.py
+          python -m unittest discover -s media-organizer/tests -v
+          python media-organizer/trek_probe.py
+  probe:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    environment: ftp-media-changes
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ftp
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate external media inspector
+        run: ffprobe -version >/dev/null
+      - name: Inspect only eight exact files, never write to FTP
+        run: python media-organizer/trek_probe.py --apply
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ftp-trek-stream-metadata-private
+          path: media-organizer/probe-output/
+          if-no-files-found: warn
+          retention-days: 30
