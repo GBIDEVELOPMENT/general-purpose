@@ -1,0 +1,80 @@
+{
+  "schema": "night-court-fast-visual-input/1",
+  "episode_id": "S01E01",
+  "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "duration_ms": 1448256,
+  "window_ms": [
+    56912,
+    93074
+  ],
+  "avg_frame_rate": "24",
+  "frame_rate_provenance": "synthetic_unverified_assumption",
+  "cut_candidates": [
+    {
+      "time_ms": 59026,
+      "image_change_score": 0.306012
+    },
+    {
+      "time_ms": 60928,
+      "image_change_score": 0.143181
+    },
+    {
+      "time_ms": 68268,
+      "image_change_score": 0.138734
+    },
+    {
+      "time_ms": 74107,
+      "image_change_score": 0.277865
+    },
+    {
+      "time_ms": 76777,
+      "image_change_score": 0.261383
+    },
+    {
+      "time_ms": 80948,
+      "image_change_score": 0.140563
+    },
+    {
+      "time_ms": 82382,
+      "image_change_score": 0.140819
+    }
+  ],
+  "activity_events": [
+    {
+      "event_id": "OBS-V2-01",
+      "time_ms": 76375,
+      "priority": 2,
+      "mode": "gesture"
+    },
+    {
+      "event_id": "OBS-V2-02",
+      "time_ms": 80875,
+      "priority": 3,
+      "mode": "gesture"
+    },
+    {
+      "event_id": "OBS-V2-03",
+      "time_ms": 83125,
+      "priority": 5,
+      "mode": "gesture"
+    },
+    {
+      "event_id": "OBS-V2-04",
+      "time_ms": 85500,
+      "priority": 2,
+      "mode": "gesture"
+    },
+    {
+      "event_id": "OBS-V2-05",
+      "time_ms": 88000,
+      "priority": 5,
+      "mode": "gesture"
+    },
+    {
+      "event_id": "OBS-V2-06",
+      "time_ms": 89125,
+      "priority": 3,
+      "mode": "gesture"
+    }
+  ]
+}
