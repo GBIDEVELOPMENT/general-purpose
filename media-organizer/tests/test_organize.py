@@ -27,6 +27,23 @@ class OrganizerTests(unittest.TestCase):
         result=m.propose(inventory("/downloads/Comedy.Show.S1E2.mkv","/downloads/Comedy Show - S01E02.mkv"))
         self.assertEqual(result["moves"],[])
         self.assertEqual(result["review"][0]["reason"],"Destination collision")
+    def test_folder_occupancy_counts_hidden_files_without_indexing_them(self):
+        class FakeFTP:
+            def cwd(self,p):self.path=p
+            def mlsd(self):
+                return iter([(".private",{"type":"file","size":"3"}),
+                             ("episode.mkv",{"type":"file","size":"99"})])
+        result=m.scan(FakeFTP(),max_depth=0)
+        self.assertEqual(result["folders"][0]["entries"],2)
+        self.assertEqual(result["folders"][0]["hidden_entries"],1)
+        self.assertEqual(result["folders"][0]["file_entries"],2)
+        self.assertEqual(len(result["files"]),1)
+    def test_empty_directory_is_explicitly_recorded(self):
+        class FakeFTP:
+            def cwd(self,p):self.path=p
+            def mlsd(self):return iter([])
+        result=m.scan(FakeFTP(),max_depth=0)
+        self.assertEqual(result["folders"][0]["entries"],0)
     def test_depth_limit_is_reported(self):
         class FakeFTP:
             def cwd(self,p):self.path=p
