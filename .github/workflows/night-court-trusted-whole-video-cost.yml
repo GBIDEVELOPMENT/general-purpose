@@ -1,0 +1,51 @@
+name: Night Court trusted original whole video image-budget timing
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-whole-visual-cost.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-original-s01e01-whole-visual-budget
+  cancel-in-progress: false
+jobs:
+  owner-source:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-whole-visual-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Checkout trusted base only
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Test bounded source code before granting FTP credential
+        run: |
+          python 'Night Court/tools/test_profile_s01e01_whole_visual_pass.py'
+          python 'Night Court/tools/test_extract_fast_visual_plan.py'
+      - name: Scan original SHA-pinned full episode and measure source-frame cost
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python -u 'Night Court/tools/profile_s01e01_whole_visual_pass.py' --ftp \
+            --output "${{ runner.temp }}/night-court-whole-video/visual-benchmark.json"
+      - name: Preserve only numeric source measurements
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-full-original-video-stage-timings
+          path: ${{ runner.temp }}/night-court-whole-video/visual-benchmark.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Clear scratch metadata
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-whole-video"
