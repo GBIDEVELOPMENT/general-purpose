@@ -4,6 +4,7 @@ import copy
 import unittest
 from profile_s01e01_one_source_factory import compose_summary
 from probe_s01e01_cadence_and_cost import SHA,SIZE
+from source_once_av_lanes import LaneResult
 
 
 def samples():
@@ -53,6 +54,25 @@ class OneOwnerEpisode(unittest.TestCase):
         self.assertFalse(report['visual_language_model_applied'])
         self.assertFalse(report['complete_production_screenplay_accepted'])
         self.assertAlmostEqual(report['actual_source_to_final_metadata_wall_seconds'],expected+1)
+
+    def test_parallel_clock_is_stage_sum_less_measured_overlap_not_false_serial_time(self):
+        a,v=samples()
+        stage_sum=(4.0 + sum(a['measured_wall_time_seconds'].values()) - 4.0
+                   + sum(v['measured_stage_seconds'].values()))
+        lane=LaneResult(None,None,'parallel',stage_sum-4.0-65.0,130,51,65)
+        report=compose_summary(a,v,4.0,stage_sum-65.0,
+                               execution_mode='parallel',lane_metrics=lane)
+        self.assertEqual(report['source_av_execution_mode'],'parallel')
+        self.assertEqual(report['measured_source_lane_overlap_seconds'],65)
+        self.assertFalse(report['execution_mode_is_an_accuracy_or_speed_improvement_proof'])
+        with self.assertRaisesRegex(ValueError,'overlap provenance'):
+            compose_summary(a,v,4.0,stage_sum-65.0,execution_mode='parallel')
+        with self.assertRaisesRegex(ValueError,'Worker execution'):
+            compose_summary(a,v,4.0,stage_sum-65.0,
+                            execution_mode='serial',lane_metrics=lane)
+        with self.assertRaisesRegex(ValueError,'monotonic'):
+            compose_summary(a,v,4.0,stage_sum+500,
+                            execution_mode='parallel',lane_metrics=lane)
 
     def test_reject_different_audio_video_edition_or_media_promotion(self):
         for mutated in ('video_sha','duration','source_not_listened','video_pts','framecap','wrong_family','accepted'):

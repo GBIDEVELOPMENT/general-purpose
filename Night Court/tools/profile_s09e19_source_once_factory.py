@@ -7,6 +7,8 @@ The original AVI, PCM, model weights and JPEGs are ephemeral.
 """
 from __future__ import annotations
 import argparse
+from concurrent.futures import ThreadPoolExecutor
+from contextlib import nullcontext
 import ftplib
 import json
 import os
@@ -90,7 +92,7 @@ def review_untimed_paragraphs(spans, paragraphs):
     return report
 
 
-def profile(media:Path, scratch:Path, transfer:float):
+def profile(media:Path, scratch:Path, transfer:float, *, execution_mode='serial'):
     if media.stat().st_size!=BYTES or sha(media)!=SHA:
         raise ValueError('Original S09E19 full AVI SHA and byte size mismatch')
     paragraphs=sources()
@@ -99,6 +101,8 @@ def profile(media:Path, scratch:Path, transfer:float):
     packet_path=(Path(__file__).resolve().parents[1]/
           'seasons/S09/S09E19/derived/editorial-review-v1/untimed-scene-review-queue.json')
     packet=json.loads(packet_path.read_text('utf-8'))
+    if execution_mode not in ('serial','parallel'):
+        raise ValueError('Unexpected source AV execution mode')
     timings={'single_original_ftp_transfer_and_sha_seconds':round(transfer,3)}
     total_start=time.monotonic()
     t=time.monotonic()
@@ -107,42 +111,54 @@ def profile(media:Path, scratch:Path, transfer:float):
     if not 1200000<=duration<=1800000:
         raise ValueError('Wrong original 1984-series episode duration')
     timings['ffprobe_source_metadata_seconds']=round(time.monotonic()-t,3)
-    t=time.monotonic()
-    wav=scratch/'shared-16khz-mono-original.wav'
-    audio_duration,audio_sha=decode_audio(media,wav)
-    if abs(audio_duration-duration)>1500:
-        raise ValueError('Source episode sound/video duration drift')
-    timings['one_source_pcm_decode_seconds']=round(time.monotonic()-t,3)
-    t=time.monotonic()
-    model_archive=scratch/'weights.zip'
-    weight_bytes=download_pinned_model(model_archive)
-    model_dir=unpack_pinned_model(model_archive,scratch/'vosk-root')
-    timings['pinned_vosk_download_unpack_seconds']=round(time.monotonic()-t,3)
-    t=time.monotonic()
-    vosk_words,vosk_rejected,vosk_reasons=vosk_free_decode(wav,model_dir,audio_duration)
-    timings['kaldi_wfst_full_episode_inference_seconds']=round(time.monotonic()-t,3)
-    t=time.monotonic()
-    rejected_details=[]
-    whisper_words,whisper_rejected,whisper_segments,whisper_reasons=whisper_free_decode(
-        wav,scratch/'whisper-cache',audio_duration,rejected_details=rejected_details)
-    add_independent_context(rejected_details,vosk_words,audio_duration)
-    timings['whisper_tiny_full_episode_inference_seconds']=round(time.monotonic()-t,3)
-    t=time.monotonic()
-    comparison=compare({'schema':'night-court-two-independent-asr-words/1',
-       'episode_id':'S09E19','source_video_sha256':SHA,
-       'decoded_audio_sha256':audio_sha,
-       'source_window_ms':[0,audio_duration],
-       'models':[
-        {'model_id':'faster-whisper tiny.en beam1 cpu','architecture_family':'whisper',
-         'free_decoding':True,'srt_or_other_model_prompt_used':False,'words':whisper_words},
-        {'model_id':'vosk-model-small-en-us-0.15 Kaldi WFST',
-         'architecture_family':'kaldi_hmm_wfst','free_decoding':True,
-         'srt_or_other_model_prompt_used':False,'words':vosk_words}]})
-    timings['independent_model_word_reconciliation_seconds']=round(time.monotonic()-t,3)
-    t=time.monotonic()
-    scored,trace=scan_video(media,duration_ms=duration)
-    if len(scored)>MAX_CUT_CANDIDATES:raise ValueError('Unbounded original image-change candidates')
-    timings['full_source_low_res_cut_scan_seconds']=round(time.monotonic()-t,3)
+    def timed_scan():
+        started=time.monotonic()
+        result=scan_video(media,duration_ms=duration)
+        return result,time.monotonic()-started
+    # Launch read-only video decode while the separately decoded soundtrack
+    # and architecturally distinct model passes work against the same AVI.
+    # Controlled serial mode remains the reference and safe fallback.
+    with (ThreadPoolExecutor(max_workers=1,thread_name_prefix='nc-video-scan')
+          if execution_mode=='parallel' else nullcontext()) as scan_pool:
+        scan_future=(scan_pool.submit(timed_scan) if scan_pool else None)
+        t=time.monotonic()
+        wav=scratch/'shared-16khz-mono-original.wav'
+        audio_duration,audio_sha=decode_audio(media,wav)
+        if abs(audio_duration-duration)>1500:
+            raise ValueError('Source episode sound/video duration drift')
+        timings['one_source_pcm_decode_seconds']=round(time.monotonic()-t,3)
+        t=time.monotonic()
+        model_archive=scratch/'weights.zip'
+        weight_bytes=download_pinned_model(model_archive)
+        model_dir=unpack_pinned_model(model_archive,scratch/'vosk-root')
+        timings['pinned_vosk_download_unpack_seconds']=round(time.monotonic()-t,3)
+        t=time.monotonic()
+        vosk_words,vosk_rejected,vosk_reasons=vosk_free_decode(wav,model_dir,audio_duration)
+        timings['kaldi_wfst_full_episode_inference_seconds']=round(time.monotonic()-t,3)
+        t=time.monotonic()
+        rejected_details=[]
+        whisper_words,whisper_rejected,whisper_segments,whisper_reasons=whisper_free_decode(
+            wav,scratch/'whisper-cache',audio_duration,rejected_details=rejected_details)
+        add_independent_context(rejected_details,vosk_words,audio_duration)
+        timings['whisper_tiny_full_episode_inference_seconds']=round(time.monotonic()-t,3)
+        t=time.monotonic()
+        comparison=compare({'schema':'night-court-two-independent-asr-words/1',
+           'episode_id':'S09E19','source_video_sha256':SHA,
+           'decoded_audio_sha256':audio_sha,
+           'source_window_ms':[0,audio_duration],
+           'models':[
+            {'model_id':'faster-whisper tiny.en beam1 cpu','architecture_family':'whisper',
+             'free_decoding':True,'srt_or_other_model_prompt_used':False,'words':whisper_words},
+            {'model_id':'vosk-model-small-en-us-0.15 Kaldi WFST',
+             'architecture_family':'kaldi_hmm_wfst','free_decoding':True,
+             'srt_or_other_model_prompt_used':False,'words':vosk_words}]})
+        timings['independent_model_word_reconciliation_seconds']=round(time.monotonic()-t,3)
+        if scan_future is None:
+            (scored,trace),scan_seconds=timed_scan()
+        else:
+            (scored,trace),scan_seconds=scan_future.result()
+        if len(scored)>MAX_CUT_CANDIDATES:raise ValueError('Unbounded original image-change candidates')
+        timings['full_source_low_res_cut_scan_seconds']=round(scan_seconds,3)
     t=time.monotonic()
     events=original_events(scored,duration,packet)
     plan=make_plan({'schema':'night-court-fast-visual-input/1',
@@ -169,6 +185,9 @@ def profile(media:Path, scratch:Path, transfer:float):
     paragraph_matches=review_untimed_paragraphs(comparison['corroborated_spans'],paragraphs)
     timings['untimed_source_paragraph_lexical_probe_seconds']=round(time.monotonic()-t,3)
     full_wall=round(time.monotonic()-total_start+transfer,3)
+    measured_overlap=max(0.0,round(sum(timings.values())-full_wall,3))
+    if execution_mode=='serial' and measured_overlap>20:
+        raise ValueError('Unexpected serial source stage timing overlap')
     return {
        'schema':'night-court-s09e19-whole-source-once-cross-episode-benchmark/1',
        'episode_id':'S09E19','original_series':'night-court-1984',
@@ -206,6 +225,10 @@ def profile(media:Path, scratch:Path, transfer:float):
        'shot_bounded_selective_original_video_review':continuous_review,
        'sampled_frames_original_pts_checked':image_report['all_samples_within_source_pts_tolerance'],
        'component_measured_seconds':timings,
+       'source_av_execution_mode':execution_mode,
+       'individual_stages_sum_seconds':round(sum(timings.values()),3),
+       'source_stage_clock_overlap_seconds':measured_overlap,
+       'parallel_execution_verified_faster_than_serial':False,
        'source_processing_wall_seconds_excluding_job_startup_and_dependency_install':full_wall,
        'all_original_source_media_deleted_after_job':True,
        'human_original_audio_listened':False,
@@ -224,7 +247,7 @@ def profile(media:Path, scratch:Path, transfer:float):
     }
 
 
-def run_ftp(destination:Path):
+def run_ftp(destination:Path,*,execution_mode='serial'):
     if destination.exists():raise ValueError('Do not overwrite source evidence')
     item=exact_candidate()
     if item['size_bytes']!=BYTES or not os.getenv('FTP_PASSWORD'):
@@ -240,7 +263,7 @@ def run_ftp(destination:Path):
             try:ftp.quit()
             except ftplib.all_errors:ftp.close()
         if received!=SHA:raise ValueError('Actual original AVI S09E19 fingerprint differs')
-        report=profile(video,root,time.monotonic()-t)
+        report=profile(video,root,time.monotonic()-t,execution_mode=execution_mode)
         encoded=(json.dumps(report,indent=2,ensure_ascii=False)+'\n').encode()
         if len(encoded)>MAX_BYTES:
             raise ValueError('Numeric/candidate source output exceeds tiny report cap')
@@ -256,10 +279,11 @@ def run_ftp(destination:Path):
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--ftp',action='store_true')
+    p.add_argument('--execution-mode',choices=('serial','parallel'),default='serial')
     p.add_argument('--output',type=Path,required=True)
     args=p.parse_args()
     if not args.ftp:p.error('Authorized trusted owner original-source Actions job only')
-    run_ftp(args.output)
+    run_ftp(args.output,execution_mode=args.execution_mode)
 
 
 if __name__=='__main__':

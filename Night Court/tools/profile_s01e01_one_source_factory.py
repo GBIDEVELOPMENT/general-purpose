@@ -2,8 +2,8 @@
 """Source-once initial Night Court audiovisual pass: actual combined wall time.
 
 One SHA-pinned FTP AVI is held transiently while two independent free-decode
-ASR models and capped full-video visual sampling run serially on the same
-source. Export compact numerical/candidate statistics only; no movie, PCM,
+ASR models and capped full-video visual sampling run on the same
+source (serial control or bounded parallel AV lanes). Export compact numerical/candidate statistics only; no movie, PCM,
 JPEG, model weights, verified speakers or human-accepted performance claims.
 """
 from __future__ import annotations
@@ -20,6 +20,7 @@ from pilot_ftp_video_acoustics import candidate,retrieve
 from probe_s01e01_full_dual_asr import build_report
 from probe_s01e01_cadence_and_cost import SHA,SIZE
 from profile_s01e01_whole_visual_pass import profile_local
+from source_once_av_lanes import run_av_lanes
 
 MAX_REPORT_BYTES=100000
 MAX_EXPORTED_REJECTED_WORD_REVIEW=64
@@ -69,7 +70,7 @@ def compact_rejected_word_review(audio):
     }
 
 
-def compose_summary(audio,visual,transfer_s,combined_s):
+def compose_summary(audio,visual,transfer_s,combined_s,*,execution_mode='serial',lane_metrics=None):
     if (audio.get('schema')!='night-court-original-full-episode-dual-independent-asr-cost-and-agreement/1'
         or visual.get('schema')!='night-court-whole-source-visual-time-budget/1'
         or audio.get('original_video_sha256')!=SHA or visual.get('source_video_sha256')!=SHA
@@ -96,8 +97,22 @@ def compose_summary(audio,visual,transfer_s,combined_s):
            for x in list(stage_a.values())+list(stage_v.values())):
         raise ValueError('Invalid source timing evidence')
     source_stage_sum=round(float(transfer_s)+sum(stage_a.values())+sum(stage_v.values()),3)
-    if not 0<combined_s<=1800 or abs(source_stage_sum-combined_s)>20:
-        raise ValueError('Combined monotonic clock differs unexpectedly from component timings')
+    if execution_mode not in ('serial','parallel'):
+        raise ValueError('Unknown bounded source AV execution mode')
+    if lane_metrics is not None and lane_metrics.mode!=execution_mode:
+        raise ValueError('Worker execution provenance mismatch')
+    if not 0<combined_s<=1800:
+        raise ValueError('Invalid combined monotonic source wall time')
+    if execution_mode=='serial':
+        expected=source_stage_sum
+    else:
+        if lane_metrics is None:
+            raise ValueError('Parallel run requires measured overlap provenance')
+        if not 0<=lane_metrics.overlapped_seconds<=sum(stage_a.values())+sum(stage_v.values())+20:
+            raise ValueError('Impossible parallel worker overlap')
+        expected=source_stage_sum-lane_metrics.overlapped_seconds
+    if abs(expected-combined_s)>20:
+        raise ValueError('Combined monotonic clock differs unexpectedly from source lane timings')
     return {
         'schema':'night-court-original-one-source-integrated-first-pass/1',
         'episode_id':'S01E01','original_video_sha256':SHA,'original_video_bytes':SIZE,
@@ -109,6 +124,10 @@ def compose_summary(audio,visual,transfer_s,combined_s):
         'visual_measured_seconds_excluding_ftp':stage_v,
         'ftp_verify_original_once_seconds':round(float(transfer_s),3),
         'sum_measured_individual_stages_seconds':source_stage_sum,
+        'source_av_execution_mode':execution_mode,
+        'measured_source_lane_overlap_seconds':round(lane_metrics.overlapped_seconds,3) if lane_metrics else 0.0,
+        'measured_source_lane_elapsed_seconds':lane_metrics.elapsed_seconds if lane_metrics else None,
+        'execution_mode_is_an_accuracy_or_speed_improvement_proof':False,
         'actual_source_to_final_metadata_wall_seconds':round(float(combined_s),3),
         'word_candidate_summary':count,
         'whisper_invalid_word_targeted_review':compact_rejected_word_review(audio),
@@ -146,7 +165,7 @@ def compose_summary(audio,visual,transfer_s,combined_s):
     }
 
 
-def run_source(out:Path):
+def run_source(out:Path,*,execution_mode='serial'):
     if out.exists():raise ValueError('Refuse to overwrite trusted source benchmark')
     item=candidate()
     if item['size_bytes']!=SIZE or not os.environ.get('FTP_PASSWORD'):
@@ -165,10 +184,13 @@ def run_source(out:Path):
         transfer=time.monotonic()-transfer_start
         if received!=SHA:
             raise ValueError('Original AVI bytes differ from approved edition SHA')
-        audio=build_report(source,scratch,transfer)
-        visual=profile_local(source,scratch/'source-visual-numeric.json')
+        lanes=run_av_lanes(
+            lambda:build_report(source,scratch,transfer),
+            lambda:profile_local(source,scratch/'source-visual-numeric.json'),
+            mode=execution_mode)
         combined=time.monotonic()-total_start
-        summary=compose_summary(audio,visual,transfer,combined)
+        summary=compose_summary(lanes.audio,lanes.visual,transfer,combined,
+                                execution_mode=execution_mode,lane_metrics=lanes)
         encoded=(json.dumps(summary,indent=2,ensure_ascii=False)+'\n').encode()
         if len(encoded)>MAX_REPORT_BYTES:
             raise ValueError('Integrated metadata report too large')
@@ -183,10 +205,12 @@ def run_source(out:Path):
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--ftp',action='store_true')
+    ap.add_argument('--execution-mode',choices=('serial','parallel'),default='serial',
+                    help='Serial reference or bounded parallel read-only AV lanes')
     ap.add_argument('--output',required=True,type=Path)
     args=ap.parse_args()
     if not args.ftp:ap.error('Trusted original-source owner workflow only')
-    run_source(args.output)
+    run_source(args.output,execution_mode=args.execution_mode)
 
 
 if __name__=='__main__':
