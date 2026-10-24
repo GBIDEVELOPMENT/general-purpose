@@ -8,7 +8,7 @@ The corpus baseline is **193 original 1984–1992 episode dialogue witnesses**: 
 
 ## Implementation
 
-`tools/build_source_script_scaffolds.py` uses exactly the indexed held dialogue versions and the already generated `candidate-turns.jsonl` and `conversation-packets.jsonl` for each one. All source text, cue IDs and existing source labels are preserved. Only explicit multi-dash caption typography causes unattributed voice turns to be split. The source's own labels, if any, are flagged **unverified**, not asserted as character identities.
+`tools/build_source_script_scaffolds.py` uses exactly the indexed held dialogue versions and invokes the existing `build_caption_turns.build` algorithm directly on the immutable `segments.jsonl` of each source. This is important because many late-season episodes **do not yet have** cached `candidate-turns.jsonl`/`conversation-packets.jsonl`; the reading script must not depend on those optional derived caches. All source text, cue IDs and existing source labels are preserved. Only explicit multi-dash caption typography causes unattributed voice turns to be split. The source's own labels, if any, are flagged **unverified**, not asserted as character identities.
 
 It creates `seasons/Sxx/SxxEyy/derived/source-script-scaffold-v1.md` per original-series episode, and a complete `catalog/source-script-scaffold-coverage.json` to quantify progress. Each candidate dialogue block is a **caption-gap heuristic**, not an interior/exterior or set-specific scene location. The Markdown uses `UNIDENTIFIED VOICE` and refuses to fabricate stage actions, soundscapes, performances, reactions, location headings or speaker identities. S09E19 retains **UNTIMED SOURCE PARAGRAPHS**, without invented clock positions.
 
