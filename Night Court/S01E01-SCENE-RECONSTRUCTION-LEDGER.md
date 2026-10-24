@@ -44,6 +44,12 @@ Owner-controlled run [#40047395721](https://github.com/gamesbyian/general-purpos
 
 The exact-token [word review](S01E01-WORD-ALIGNMENT-HANDOFF.md) contains 45 tentative word-time anchors, still requiring audio review. Both source products maintain SHA provenance and are kept separate from the original SRT.
 
+## Merged integrated scene and per-turn prosody evidence
+
+The combined [v3 scene script](seasons/S01/S01E01/derived/scene-review-v3/scene-script-v3.md) and [evidence map](seasons/S01/S01E01/derived/scene-review-v3/scene-evidence-map.json) were generated and merged in [PR #146](https://github.com/gamesbyian/general-purpose/pull/146), covering all nine caption cues (11 source turns), five static image observations, six ordered motion observations and 45 exact-token timing proposals. The script is a **30-second research excerpt only**.
+
+Owner-only [run #40048178210](https://github.com/gamesbyian/general-purpose/actions/runs/40048178210) measured F0 candidate contours and mixed-audio RMS for all ten ASR-proposed spoken spans, in a separate [utterance-prosody handoff](S01E01-UTTERANCE-PROSODY-HANDOFF.md). It does **not** identify speaker voices or emotional delivery. The next gates are exact source-audio constrained alignment and speaker-isolated listening, plus independent continuous-video review, before a full production script can be called complete.
+
 ## Acceptance ledger
 
 | Gate | Status |
