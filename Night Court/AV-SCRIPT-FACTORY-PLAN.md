@@ -1,5 +1,9 @@
 # Night Court audiovisual script-generation factory
 
+## First anonymous acoustic speaker-resemblance checkpoint
+
+[PR #201](https://github.com/gamesbyian/general-purpose/pull/201) established the source-hashed, credential-isolated ECAPA-TDNN model lane, and [PR #205](https://github.com/gamesbyian/general-purpose/pull/205) preserved results from real [workflow #40052520049](https://github.com/gamesbyian/general-purpose/actions/runs/40052520049): seven eligible S01E01 ASR candidate turns, three short-turn abstentions, and 21 uncalibrated anonymous pairwise similarities. The strongest acoustic cosine is about 0.659. **No same-speaker clusters, character names, emotion, voiceprint or accepted diarization exist.** The future scene factory should use these only to select original media listening/cast-matching checks and must never present cosine values as human-reviewed character dialogue. See [S01E01 anonymous voice handoff](S01E01-ANONYMOUS-VOICE-HANDOFF.md).
+
 ## S01E01 stage-direction and vocal attribution acceptance gates
 
 [PR #191](https://github.com/gamesbyian/general-purpose/pull/191) merged a [source-linked editorial worklist](seasons/S01/S01E01/derived/editorial-review-v1/acceptance-worklist.json) for all 11 caption speaking turns, 55 source words and six video motion observations. [PR #197](https://github.com/gamesbyian/general-purpose/pull/197) adds a [17-task pending decision template](seasons/S01/S01E01/derived/editorial-review-v1/review-decisions-template.json) and rejects ungrounded voice identity, emotional tone or stage action declarations without reviewer-attested original audio/video evidence. This is an evidence integrity gate, **not an actual independent human verification**. The next task is authentic audio-visual review of the 17 cases, particularly C19, C22 and C27, followed by longer whole-episode checks.
