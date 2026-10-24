@@ -14,6 +14,27 @@ SOURCE_SHA="51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649"
 TXT_SHA="659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2"
 SOURCE_ANCHORS=ROOT/"seasons"/"S09"/"S09E19"/"derived"/"source-timing-review-v1"/"sparse-source-paragraph-candidates.json"
 
+OBSERVATIONS=[
+ {"id":"S09-V01","interval_ms":[900000,905000],
+  "description":"Two adults stand at a counter: one wears a dark uniform with prominent buttons, and the other wears a gray jacket and glasses. Another person in light clothing is visible behind them.",
+  "frame_numbers":[1,8,12,20],"evidence_kind":"repeated_sampled_state"},
+ {"id":"S09-V02","interval_ms":[909750,913000],
+  "description":"At the counter, the uniformed person moves the hands up near the upper chest while the gray-jacketed person gestures with an arm.",
+  "frame_numbers":[40,47,51,53],"evidence_kind":"ordered_sampled_pose_change"},
+ {"id":"S09-V03","interval_ms":[913000,913250],
+  "description":"The picture cuts from the counter pair to an adult with curly hair, burgundy clothing and a bright yellow collar seated beside a tabletop with a drinking glass.",
+  "frame_numbers":[53,54],"evidence_kind":"shot_change_between_neighboring_sampled_frames"},
+ {"id":"S09-V04","interval_ms":[913250,919500],
+  "description":"The seated person in burgundy repeatedly moves hands near the face and chest, looks down and up, and changes head position.",
+  "frame_numbers":[54,61,69,75,79],"evidence_kind":"ordered_sampled_pose_change"},
+ {"id":"S09-V05","interval_ms":[919500,919750],
+  "description":"The image changes from the seated person in burgundy to an adult with a beard wearing a jacket, collared shirt and patterned tie.",
+  "frame_numbers":[79,80],"evidence_kind":"shot_change_between_neighboring_sampled_frames"},
+ {"id":"S09-V06","interval_ms":[919750,924750],
+  "description":"The bearded person remains in a close view and smiles in later sampled frames. Other people and a green wall appear in the background.",
+  "frame_numbers":[80,86,93,100],"evidence_kind":"repeated_sampled_state"}
+]
+
 def sha(path):
     h=hashlib.sha256()
     with path.open("rb") as f:
@@ -63,6 +84,10 @@ def validate(source):
     selected=[x for x in anchors["windows"] if x["source_window_ms"]==[900000,925000]]
     if len(selected)!=1 or selected[0]["distinct_high_lexical_match_candidates"]!=5:
         raise ValueError("Wrong visual window/source text comparison")
+    for observation in OBSERVATIONS:
+        timings=[images[n-1]["approx_source_time_ms"] for n in observation["frame_numbers"]]
+        if min(timings)<observation["interval_ms"][0] or max(timings)>observation["interval_ms"][1]:
+            raise ValueError("Visual observation frame evidence outside claimed interval")
     return report,selected[0]
 
 def import_packet(path):
@@ -79,8 +104,14 @@ def import_packet(path):
        "nominal_source_window_ms":[900000,925000],"frames_hash_verified":100,
        "related_source_paragraph_candidates":[x["source_paragraph_candidate"]
           for x in matched["text_alignment_candidates"] if x["source_paragraph_candidate"]],
-       "scene_observations":[],
-       "editorial_review_status":"frames_collected_not_yet_visually_interpreted",
+       "scene_observations":[{**x,
+          "source_frame_evidence":[{"frame_number":n,
+              "approx_source_time_ms":report["frames"][n-1]["approx_source_time_ms"],
+              "file":report["frames"][n-1]["file"],
+              "sha256":report["frames"][n-1]["sha256"]}
+              for n in x["frame_numbers"]]}
+          for x in OBSERVATIONS],
+       "editorial_review_status":"AI_sampled_4fps_image_review_not_continuous_video_acceptance",
        "voice_and_character_identities_verified":False,
        "sampled_motion_continuity_verified":False,
        "actual_source_utterance_timecodes_verified":False,
@@ -88,10 +119,29 @@ def import_packet(path):
        "source_sampled_film_republished":False
     }
     (TARGET/"visual-source-review.json").write_text(json.dumps(provenance,indent=2)+"\n","utf-8")
+    lines=["# S09E19 | source-linked visual scene notes (15:00–15:25)",
+       "", "**Visual evidence is sampled at 4fps.** No independently reviewed continuous",
+       "video, speaker identity, vocal inflection or verified subtitle timing.", "",
+       "**PROVISIONAL INTERIOR, WITH COUNTER AND SEATED PEOPLE; specific set/location unverified.**", ""]
+    for o in OBSERVATIONS:
+        a,b=o["interval_ms"]
+        refs=", ".join("F"+str(n).zfill(3) for n in o["frame_numbers"])
+        lines += [f"**{a/1000:.2f}–{b/1000:.2f}s | {o[\"id\"]} | {o[\"evidence_kind\"]} | {refs}**",
+                  o["description"], ""]
+    lines += ["## Dialogue correspondence", "",
+       "The concurrent independent ASR window has five distinctive candidate",
+       "source paragraphs, but no original source dialogue timestamp or speaking",
+       "character has been confirmed. Do not insert original dialogue here as a",
+       "timed line until audio and mouth/voice review corroborate it.", "",
+       "## Remaining stage-direction gates", "",
+       "Confirm source camera cuts against continuous video, identify who is",
+       "visibly present, review physical action between samples, synchronize the",
+       "original untimed text, and attribute vocal performances separately.", ""]
+    (TARGET/"scene-visual-observations.md").write_text("\\n".join(lines),"utf-8")
     (TARGET/"README.md").write_text(
         "# S09E19 actual video source scene frames\n\n"
         "100 original-video sampled images, nominal 4fps from 15:00–15:25, SHA verified.\n\n"
-        "The sampled frames and contact sheet are unreviewed source evidence.\n"
+        "The sampled frames and contact sheet are original source evidence.\n"
         "Their presence does not prove an actor's name, scene location, action,\n"
         "dialogue-to-mouth correspondence or continuous motion. Review the JSON index.\n"
         "The five related untimed-source lexical paragraph candidates are only\n"
