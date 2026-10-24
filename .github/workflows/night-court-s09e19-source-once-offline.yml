@@ -1,0 +1,26 @@
+name: Night Court second original episode untimed fast factory QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/profile_s09e19_source_once_factory.py'
+      - 'Night Court/tools/test_profile_s09e19_source_once_factory.py'
+      - 'Night Court/S09E19-SECOND-EPISODE-FACTORY-PILOT.md'
+      - '.github/workflows/night-court-s09e19-source-once-offline.yml'
+      - '.github/workflows/night-court-trusted-s09e19-source-once.yml'
+permissions:
+  contents: read
+jobs:
+  tests:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check original S09E19 file/provenance, source-untimed invariants and capped visual planning
+        run: |
+          python 'Night Court/tools/test_profile_s09e19_source_once_factory.py'
+          python 'Night Court/tools/test_fast_visual_pass.py'
+          python 'Night Court/tools/test_compare_independent_asr.py'
+          python -m py_compile 'Night Court/tools/profile_s09e19_source_once_factory.py'
