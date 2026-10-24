@@ -1,504 +1,469 @@
 {
   "root": "/downloads",
-  "batch_id": "tng_s01_s03_071",
-  "description": "Plex-organize 71 unambiguous Star Trek The Next Generation episodes from seasons 1-3. Hold one cross-season S03E26S04E01 episode separately for manual Plex mapping; preserve same-season S01E01-E02 multipart.",
+  "batch_id": "studio60_editions_066",
+  "description": "Preserve and unify 22 each of three Studio 60 episode versions in mixed Downloads under correctly year-qualified show Season 01 folder; normalize all filenames using verified DVD episode titles and distinct resolution/source labels.",
   "moves": [
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E01E02.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E01-E02.mkv",
-      "size": 2066967066,
-      "modify": "20260120051138",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E01.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E01 - Pilot - 1080p.mp4",
+      "size": 1425858280,
+      "modify": "20250908073108",
+      "reason": "Verified 1080p release of Studio 60 S01E01; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E03.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E03.mkv",
-      "size": 1022613771,
-      "modify": "20260120050541",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E02.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E02 - The Cold Open - 1080p.mp4",
+      "size": 1316323915,
+      "modify": "20250908073134",
+      "reason": "Verified 1080p release of Studio 60 S01E02; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E04.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E04.mkv",
-      "size": 1022880381,
-      "modify": "20260120050638",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E03.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E03 - The Focus Group - 1080p.mp4",
+      "size": 1289172961,
+      "modify": "20250908073533",
+      "reason": "Verified 1080p release of Studio 60 S01E03; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E05.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E05.mkv",
-      "size": 1024333451,
-      "modify": "20260120050615",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E04.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E04 - The West Coast Delay - 1080p.mp4",
+      "size": 1277255336,
+      "modify": "20250908073747",
+      "reason": "Verified 1080p release of Studio 60 S01E04; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E06.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E06.mkv",
-      "size": 1024545679,
-      "modify": "20260120050443",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E05.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E05 - The Long Lead Story - 1080p.mp4",
+      "size": 1345411522,
+      "modify": "20250908073722",
+      "reason": "Verified 1080p release of Studio 60 S01E05; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E07.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E07.mkv",
-      "size": 1024039751,
-      "modify": "20260120050437",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E06.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E06 - The Wrap Party - 1080p.mp4",
+      "size": 1337333579,
+      "modify": "20250908073736",
+      "reason": "Verified 1080p release of Studio 60 S01E06; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E08.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E08.mkv",
-      "size": 1023826533,
-      "modify": "20260120050220",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E07.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E07 - Nevada Day (Part 1) - 1080p.mp4",
+      "size": 1337439306,
+      "modify": "20250908073747",
+      "reason": "Verified 1080p release of Studio 60 S01E07; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E09.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E09.mkv",
-      "size": 1022928273,
-      "modify": "20260120050220",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E08.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E08 - Nevada Day (Part 2) - 1080p.mp4",
+      "size": 1308093979,
+      "modify": "20250908073747",
+      "reason": "Verified 1080p release of Studio 60 S01E08; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E10.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E10.mkv",
-      "size": 1022956412,
-      "modify": "20260120050221",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E09.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E09 - The Option Period - 1080p.mp4",
+      "size": 1286854459,
+      "modify": "20250908073352",
+      "reason": "Verified 1080p release of Studio 60 S01E09; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E11.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E11.mkv",
-      "size": 1023898641,
-      "modify": "20260120050437",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E10.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E10 - B-12 - 1080p.mp4",
+      "size": 1334887251,
+      "modify": "20250908073306",
+      "reason": "Verified 1080p release of Studio 60 S01E10; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E12.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E12.mkv",
-      "size": 1023278612,
-      "modify": "20260120050257",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E11.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E11 - The Christmas Show - 1080p.mp4",
+      "size": 1334204727,
+      "modify": "20250908073319",
+      "reason": "Verified 1080p release of Studio 60 S01E11; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E13.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E13.mkv",
-      "size": 1024355844,
-      "modify": "20260120050657",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E12.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E12 - Monday - 1080p.mp4",
+      "size": 1306638804,
+      "modify": "20250908073330",
+      "reason": "Verified 1080p release of Studio 60 S01E12; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E14.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E14.mkv",
-      "size": 1023684919,
-      "modify": "20260120050736",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E13.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E13 - The Harriet Dinner (part 1) - 1080p.mp4",
+      "size": 1305207168,
+      "modify": "20250908073349",
+      "reason": "Verified 1080p release of Studio 60 S01E13; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E15.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E15.mkv",
-      "size": 1023831157,
-      "modify": "20260120051045",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E14.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E14 - The Harriet Dinner (part 2) - 1080p.mp4",
+      "size": 1357832891,
+      "modify": "20250908073522",
+      "reason": "Verified 1080p release of Studio 60 S01E14; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E16.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E16.mkv",
-      "size": 1023376129,
-      "modify": "20260120050305",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E15.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E15 - The Friday Night Slaughter - 1080p.mp4",
+      "size": 1346566733,
+      "modify": "20250908073522",
+      "reason": "Verified 1080p release of Studio 60 S01E15; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E17.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E17.mkv",
-      "size": 1025189945,
-      "modify": "20260120050233",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E16.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E16 - 4 AM Miracle - 1080p.mp4",
+      "size": 1289335523,
+      "modify": "20250908073525",
+      "reason": "Verified 1080p release of Studio 60 S01E16; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E18.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E18.mkv",
-      "size": 1023342166,
-      "modify": "20260120051140",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E17.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E17 - The Disaster Show - 1080p.mp4",
+      "size": 1136567045,
+      "modify": "20250908073512",
+      "reason": "Verified 1080p release of Studio 60 S01E17; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E19.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E19.mkv",
-      "size": 1023588784,
-      "modify": "20260120050706",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E18.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E18 - Breaking News - 1080p.mp4",
+      "size": 1309576931,
+      "modify": "20250908073527",
+      "reason": "Verified 1080p release of Studio 60 S01E18; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E20.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E20.mkv",
-      "size": 1023880282,
-      "modify": "20260120050851",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E19.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E19 - K and R (Part 1) - 1080p.mp4",
+      "size": 1277620305,
+      "modify": "20250908073532",
+      "reason": "Verified 1080p release of Studio 60 S01E19; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E21.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E21.mkv",
-      "size": 1022077751,
-      "modify": "20260120050822",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E20.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E20 - K and R (Part 2) - 1080p.mp4",
+      "size": 1210845151,
+      "modify": "20250908073747",
+      "reason": "Verified 1080p release of Studio 60 S01E20; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E22.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E22.mkv",
-      "size": 1022875214,
-      "modify": "20260120050927",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E21.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E21 - K and R (Part 3) - 1080p.mp4",
+      "size": 1280705844,
+      "modify": "20250908073538",
+      "reason": "Verified 1080p release of Studio 60 S01E21; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E23.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E23.mkv",
-      "size": 1024057933,
-      "modify": "20260120050125",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/1080p/Studio 60 S01E22.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E22 - What Kind of Day Has It Been - 1080p.mp4",
+      "size": 1313907791,
+      "modify": "20250908073550",
+      "reason": "Verified 1080p release of Studio 60 S01E22; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E24.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E24.mkv",
-      "size": 1023483534,
-      "modify": "20260120050121",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E01.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E01 - Pilot - 720p.mp4",
+      "size": 828932568,
+      "modify": "20250908073052",
+      "reason": "Verified 720p release of Studio 60 S01E01; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E25.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E25.mkv",
-      "size": 1024639470,
-      "modify": "20260120050437",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E02.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E02 - The Cold Open - 720p.mp4",
+      "size": 765116972,
+      "modify": "20250908073331",
+      "reason": "Verified 720p release of Studio 60 S01E02; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E26.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E26.mkv",
-      "size": 1024093114,
-      "modify": "20260120050221",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E03.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E03 - The Focus Group - 720p.mp4",
+      "size": 749373096,
+      "modify": "20250908073605",
+      "reason": "Verified 720p release of Studio 60 S01E03; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E01.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E01.mkv",
-      "size": 981792144,
-      "modify": "20260120050204",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E04.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E04 - The West Coast Delay - 720p.mp4",
+      "size": 742450604,
+      "modify": "20250908073904",
+      "reason": "Verified 720p release of Studio 60 S01E04; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E02.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E02.mkv",
-      "size": 983919624,
-      "modify": "20260120050437",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E05.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E05 - The Long Lead Story - 720p.mp4",
+      "size": 782140896,
+      "modify": "20250908075401",
+      "reason": "Verified 720p release of Studio 60 S01E05; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E03.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E03.mkv",
-      "size": 983782913,
-      "modify": "20260120050437",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E06.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E06 - The Wrap Party - 720p.mp4",
+      "size": 777369947,
+      "modify": "20250908075550",
+      "reason": "Verified 720p release of Studio 60 S01E06; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E04.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E04.mkv",
-      "size": 979782626,
-      "modify": "20260120045921",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E07.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E07 - Nevada Day (Part 1) - 720p.mp4",
+      "size": 777436224,
+      "modify": "20250908075714",
+      "reason": "Verified 720p release of Studio 60 S01E07; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E05.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E05.mkv",
-      "size": 977722210,
-      "modify": "20260120045624",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E08.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E08 - Nevada Day (Part 2) - 720p.mp4",
+      "size": 760449201,
+      "modify": "20250908075843",
+      "reason": "Verified 720p release of Studio 60 S01E08; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E06.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E06.mkv",
-      "size": 982222749,
-      "modify": "20260120045636",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E09.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E09 - The Option Period - 720p.mp4",
+      "size": 748037788,
+      "modify": "20250908080111",
+      "reason": "Verified 720p release of Studio 60 S01E09; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E07.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E07.mkv",
-      "size": 975259288,
-      "modify": "20260120045926",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E10.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E10 - B-12 - 720p.mp4",
+      "size": 775985924,
+      "modify": "20250908080026",
+      "reason": "Verified 720p release of Studio 60 S01E10; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E08.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E08.mkv",
-      "size": 980272762,
-      "modify": "20260120045550",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E11.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E11 - The Christmas Show - 720p.mp4",
+      "size": 775417705,
+      "modify": "20250908074709",
+      "reason": "Verified 720p release of Studio 60 S01E11; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E09.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E09.mkv",
-      "size": 981837959,
-      "modify": "20260120045813",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E12.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E12 - Monday - 720p.mp4",
+      "size": 759576601,
+      "modify": "20250908074819",
+      "reason": "Verified 720p release of Studio 60 S01E12; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E11.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E11.mkv",
-      "size": 981490435,
-      "modify": "20260120045803",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E13.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E13 - The Harriet Dinner (part 1) - 720p.mp4",
+      "size": 758716611,
+      "modify": "20250908074951",
+      "reason": "Verified 720p release of Studio 60 S01E13; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E12.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E12.mkv",
-      "size": 980369028,
-      "modify": "20260120045839",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E14.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E14 - The Harriet Dinner (part 2) - 720p.mp4",
+      "size": 789337346,
+      "modify": "20250908075138",
+      "reason": "Verified 720p release of Studio 60 S01E14; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E13.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E13.mkv",
-      "size": 980608338,
-      "modify": "20260120050054",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E15.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E15 - The Friday Night Slaughter - 720p.mp4",
+      "size": 782772707,
+      "modify": "20250908080103",
+      "reason": "Verified 720p release of Studio 60 S01E15; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E14.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E14.mkv",
-      "size": 978819732,
-      "modify": "20260120045835",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E16.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E16 - 4 AM Miracle - 720p.mp4",
+      "size": 749528963,
+      "modify": "20250908080235",
+      "reason": "Verified 720p release of Studio 60 S01E16; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E15.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E15.mkv",
-      "size": 977349161,
-      "modify": "20260120045835",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E17.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E17 - The Disaster Show - 720p.mp4",
+      "size": 660659730,
+      "modify": "20250908080355",
+      "reason": "Verified 720p release of Studio 60 S01E17; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E16.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E16.mkv",
-      "size": 977860251,
-      "modify": "20260120045814",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E18.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E18 - Breaking News - 720p.mp4",
+      "size": 761261685,
+      "modify": "20250908080527",
+      "reason": "Verified 720p release of Studio 60 S01E18; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E17.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E17.mkv",
-      "size": 978516159,
-      "modify": "20260120045819",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E19.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E19 - K and R (Part 1) - 720p.mp4",
+      "size": 742722938,
+      "modify": "20250908080540",
+      "reason": "Verified 720p release of Studio 60 S01E19; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E18.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E18.mkv",
-      "size": 978796963,
-      "modify": "20260120045823",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E20.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E20 - K and R (Part 2) - 720p.mp4",
+      "size": 703875266,
+      "modify": "20250908080605",
+      "reason": "Verified 720p release of Studio 60 S01E20; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E19.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E19.mkv",
-      "size": 978888463,
-      "modify": "20260120045828",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E21.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E21 - K and R (Part 3) - 720p.mp4",
+      "size": 744454891,
+      "modify": "20250908080727",
+      "reason": "Verified 720p release of Studio 60 S01E21; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E20.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E20.mkv",
-      "size": 981409749,
-      "modify": "20260120050322",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E22.mp4",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E22 - What Kind of Day Has It Been - 720p.mp4",
+      "size": 763830742,
+      "modify": "20250908080758",
+      "reason": "Verified 720p release of Studio 60 S01E22; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E21.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E21.mkv",
-      "size": 980470016,
-      "modify": "20260120051052",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E01.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E01 - Pilot - XviD DVDRip.avi",
+      "size": 365393920,
+      "modify": "20261001104452",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E01; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E22.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E22.mkv",
-      "size": 979950469,
-      "modify": "20260120050338",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E02.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E02 - The Cold Open - XviD DVDRip.avi",
+      "size": 365262848,
+      "modify": "20261001104346",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E02; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E01.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E01.mkv",
-      "size": 982587792,
-      "modify": "20260120050543",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E03.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E03 - The Focus Group - XviD DVDRip.avi",
+      "size": 365250560,
+      "modify": "20261001104320",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E03; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E02.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E02.mkv",
-      "size": 982950090,
-      "modify": "20260120050543",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E04.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E04 - The West Coast Delay - XviD DVDRip.avi",
+      "size": 360099840,
+      "modify": "20261001104254",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E04; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E03.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E03.mkv",
-      "size": 982932208,
-      "modify": "20260120050333",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E05.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E05 - The Long Lead Story - XviD DVDRip.avi",
+      "size": 361189376,
+      "modify": "20261001104228",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E05; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E04.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E04.mkv",
-      "size": 980787967,
-      "modify": "20260120051141",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E06.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E06 - The Wrap Party - XviD DVDRip.avi",
+      "size": 361187328,
+      "modify": "20261001104403",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E06; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E05.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E05.mkv",
-      "size": 982031106,
-      "modify": "20260120051110",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E07.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E07 - Nevada Day (Part 1) - XviD DVDRip.avi",
+      "size": 361162752,
+      "modify": "20261001103921",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E07; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E06.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E06.mkv",
-      "size": 982678500,
-      "modify": "20260120051141",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E08.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E08 - Nevada Day (Part 2) - XviD DVDRip.avi",
+      "size": 361168896,
+      "modify": "20261001104449",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E08; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E07.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E07.mkv",
-      "size": 981949877,
-      "modify": "20260120051141",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E09.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E09 - The Option Period - XviD DVDRip.avi",
+      "size": 361132032,
+      "modify": "20261001104419",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E09; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E08.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E08.mkv",
-      "size": 983094920,
-      "modify": "20260120050056",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E10.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E10 - B-12 - XviD DVDRip.avi",
+      "size": 361181184,
+      "modify": "20261001103959",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E10; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E09.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E09.mkv",
-      "size": 982806234,
-      "modify": "20260120051120",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E11.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E11 - The Christmas Show - XviD DVDRip.avi",
+      "size": 361185280,
+      "modify": "20261001104202",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E11; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E10.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E10.mkv",
-      "size": 983449289,
-      "modify": "20260120051141",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E12.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E12 - Monday - XviD DVDRip.avi",
+      "size": 361150464,
+      "modify": "20261001104021",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E12; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E11.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E11.mkv",
-      "size": 981933442,
-      "modify": "20260120050102",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E13.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E13 - The Harriet Dinner (part 1) - XviD DVDRip.avi",
+      "size": 361136128,
+      "modify": "20261001103552",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E13; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E12.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E12.mkv",
-      "size": 984688238,
-      "modify": "20260120050109",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E14.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E14 - The Harriet Dinner (part 2) - XviD DVDRip.avi",
+      "size": 361228288,
+      "modify": "20261001103804",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E14; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E13.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E13.mkv",
-      "size": 982790808,
-      "modify": "20260120051136",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E15.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E15 - The Friday Night Slaughter - XviD DVDRip.avi",
+      "size": 361246720,
+      "modify": "20261001103727",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E15; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E14.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E14.mkv",
-      "size": 981602394,
-      "modify": "20260120050100",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E16.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E16 - 4 AM Miracle - XviD DVDRip.avi",
+      "size": 361138176,
+      "modify": "20261001104501",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E16; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E15.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E15.mkv",
-      "size": 985936744,
-      "modify": "20260120050052",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E17.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E17 - The Disaster Show - XviD DVDRip.avi",
+      "size": 360976384,
+      "modify": "20261001103738",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E17; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E16.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E16.mkv",
-      "size": 984417579,
-      "modify": "20260120051126",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E18.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E18 - Breaking News - XviD DVDRip.avi",
+      "size": 361183232,
+      "modify": "20261001104115",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E18; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E17.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E17.mkv",
-      "size": 985659217,
-      "modify": "20260120051128",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E19.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E19 - K and R (Part 1) - XviD DVDRip.avi",
+      "size": 361158656,
+      "modify": "20261001103829",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E19; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E18.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E18.mkv",
-      "size": 982311037,
-      "modify": "20260120045845",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E20.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E20 - K and R (Part 2) - XviD DVDRip.avi",
+      "size": 361056256,
+      "modify": "20261001103912",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E20; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E19.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E19.mkv",
-      "size": 984136582,
-      "modify": "20260120050610",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E21.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E21 - K and R (Part 3) - XviD DVDRip.avi",
+      "size": 364105728,
+      "modify": "20261001104500",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E21; title independently crosschecked against DVD episode catalogue"
     },
     {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E20.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E20.mkv",
-      "size": 984489358,
-      "modify": "20260120050601",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
-    },
-    {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E21.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E21.mkv",
-      "size": 984019123,
-      "modify": "20260120051141",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
-    },
-    {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E22.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E22.mkv",
-      "size": 982049416,
-      "modify": "20260120050257",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
-    },
-    {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E23.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E23.mkv",
-      "size": 982498147,
-      "modify": "20260120051141",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
-    },
-    {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E24.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E24.mkv",
-      "size": 982303972,
-      "modify": "20260120051141",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
-    },
-    {
-      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E25.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E25.mkv",
-      "size": 981733678,
-      "modify": "20260120051056",
-      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E22.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E22 - What Kind of Day Has It Been - XviD DVDRip.avi",
+      "size": 364212224,
+      "modify": "20261001104147",
+      "reason": "Verified XviD DVDRip release of Studio 60 S01E22; title independently crosschecked against DVD episode catalogue"
     }
   ]
 }
