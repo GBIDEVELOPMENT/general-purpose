@@ -1,0 +1,6 @@
+# CPU-only model installation tier, only in trusted manually scoped media workflow.
+# Model facebook/wav2vec2-base-960h: Apache-2.0; weights downloaded ephemerally.
+torch>=2.5,<2.9
+transformers>=4.47,<5
+numpy>=1.26,<3
+soundfile>=0.12,<0.14
