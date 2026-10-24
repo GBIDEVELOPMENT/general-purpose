@@ -3,6 +3,9 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from delete_debris import category,assess,validate
 class DebrisTests(unittest.TestCase):
+    def test_user_approved_plaintext(self):
+        self.assertEqual(category("/downloads/Release/readme.txt"),"txt")
+        self.assertIsNone(category("/downloads/Release/readme.md"))
     def test_nfo(self):self.assertEqual(category("/downloads/Movie/info.nfo"),"nfo")
     def test_screens(self):self.assertEqual(category("/downloads/Movie/Screens/mpv-shot0001.jpg"),"screenshot")
     def test_named_screenshot_file_outside_screens_dir(self):
