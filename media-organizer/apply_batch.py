@@ -10,7 +10,9 @@ from pathlib import Path, PurePosixPath
 from organize import ROOT, VIDEO, SIDE, connect, safe
 
 MAX_BATCH=80
-MEDIA=VIDEO|SIDE
+# Non-executable media artwork and text annotations can accompany verified editions.
+# All moves remain exact-source, size/mtime pinned and destination collision guarded.
+MEDIA=VIDEO|SIDE|{".jpg",".jpeg",".png",".txt"}
 EPISODE=re.compile(r"(?i)S(\d{1,2})E(\d{1,3})")
 EXTRA_EPISODE=re.compile(r"(?i)^[ ._-]*E(\d{1,3})(?!\d)")
 def parse_episode_identity(filename):
