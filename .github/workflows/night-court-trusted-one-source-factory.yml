@@ -43,13 +43,19 @@ jobs:
           HF_HUB_DISABLE_TELEMETRY: '1'
         run: |
           python -u 'Night Court/tools/profile_s01e01_one_source_factory.py' --ftp \
+            --execution-mode parallel \
             --output "${{ runner.temp }}/night-court-one-source/integrated-wall-clock.json"
+      - name: Generate multi-goal original-source review packets without another AVI pass
+        run: |
+          python 'Night Court/tools/build_multigoal_review_packet.py' \
+            --source-report "${{ runner.temp }}/night-court-one-source/integrated-wall-clock.json" \
+            --output "${{ runner.temp }}/night-court-one-source/multigoal-pending-review.json"
       - name: Preserve only source SHA and numerical whole-pass evidence
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: night-court-original-s01e01-one-source-combined-audio-video-timings
-          path: ${{ runner.temp }}/night-court-one-source/integrated-wall-clock.json
+          path: ${{ runner.temp }}/night-court-one-source/
           if-no-files-found: error
           retention-days: 7
       - name: Remove numeric metadata working directory
