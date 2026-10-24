@@ -1,0 +1,55 @@
+name: Night Court archive S01E01 reviewed scene evidence
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s01e01_scene_review.py'
+      - 'Night Court/seasons/S01/S01E01/derived/scene-review-v1/visual-observations.json'
+      - 'Night Court/seasons/S01/S01E01/derived/scene-review-v1/scene-script-review.md'
+      - '.github/workflows/night-court-s01e01-scene-review-import.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  retain:
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-observed-scene'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/night-court-s01e01-observed-scene
+      - name: Retrieve previously completed source-hashed private evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/scene-evidence"
+          gh run download 40044673687 \
+            --repo gamesbyian/general-purpose \
+            --name night-court-s01e01-private-scene-review-packet \
+            --dir "${{ runner.temp }}/scene-evidence"
+      - name: Verify exact frame SHA and retain only private review assets
+        run: |
+          python 'Night Court/tools/import_s01e01_scene_review.py' "${{ runner.temp }}/scene-evidence"
+          python 'Night Court/tools/validate_dialogue.py'
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("Night Court/seasons/S01/S01E01/derived/scene-review-v1")
+          data=json.loads((p/"evidence.json").read_text("utf-8"))
+          review=json.loads((p/"visual-observations.json").read_text("utf-8"))
+          assert len(data["frame_evidence"])==10 and len(data["mixed_audio_windows"])==5
+          assert review["audiovisual_completeness_verified"] is False
+          assert data["caption_audio_alignment_status"].startswith("unverified")
+          print("Source-hashed partial visual scene evidence retained")
+          PY
+      - name: Commit only bounded, verified scene review assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/scene-review-v1/'
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): retain source-hashed S01E01 visual and acoustic review witnesses"
+            git push origin HEAD:research/night-court-s01e01-observed-scene
+          fi
