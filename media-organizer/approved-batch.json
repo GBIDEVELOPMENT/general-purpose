@@ -1,469 +1,511 @@
 {
   "root": "/downloads",
-  "batch_id": "studio60_editions_066",
-  "description": "Preserve and unify 22 each of three Studio 60 episode versions in mixed Downloads under correctly year-qualified show Season 01 folder; normalize all filenames using verified DVD episode titles and distinct resolution/source labels.",
+  "batch_id": "studio60_dvd_072",
+  "description": "Preserve all 22 DVD Studio 60 main episodes with paired VobSub IDX/SUB; rehome commentary to show Other and documentary to Featurettes, all in title/year-qualified Plex folders beneath mixed Downloads.",
   "moves": [
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E01.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E01 - Pilot - 1080p.mp4",
-      "size": 1425858280,
-      "modify": "20250908073108",
-      "reason": "Verified 1080p release of Studio 60 S01E01; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 01 - Pilot (Commentary Audio Track).avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Other/Pilot commentary audio track.avi",
+      "size": 735722412,
+      "modify": "20261001113718",
+      "reason": "Pilot audio commentary in Plex Other extras, not a duplicate regular episode"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E02.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E02 - The Cold Open - 1080p.mp4",
-      "size": 1316323915,
-      "modify": "20250908073134",
-      "reason": "Verified 1080p release of Studio 60 S01E02; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 01 - Pilot (Commentary Audio Track).idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Other/Pilot commentary audio track.idx",
+      "size": 109391,
+      "modify": "20261001104810",
+      "reason": "Pilot audio commentary in Plex Other extras, not a duplicate regular episode"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E03.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E03 - The Focus Group - 1080p.mp4",
-      "size": 1289172961,
-      "modify": "20250908073533",
-      "reason": "Verified 1080p release of Studio 60 S01E03; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 01 - Pilot (Commentary Audio Track).sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Other/Pilot commentary audio track.sub",
+      "size": 7696384,
+      "modify": "20261001112933",
+      "reason": "Pilot audio commentary in Plex Other extras, not a duplicate regular episode"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E04.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E04 - The West Coast Delay - 1080p.mp4",
-      "size": 1277255336,
-      "modify": "20250908073747",
-      "reason": "Verified 1080p release of Studio 60 S01E04; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 01 - Pilot.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E01 - Pilot - DVD.avi",
+      "size": 736067452,
+      "modify": "20261001113244",
+      "reason": "Exact DVD edition for Studio 60 episode 1; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E05.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E05 - The Long Lead Story - 1080p.mp4",
-      "size": 1345411522,
-      "modify": "20250908073722",
-      "reason": "Verified 1080p release of Studio 60 S01E05; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 01 - Pilot.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E01 - Pilot - DVD.idx",
+      "size": 109391,
+      "modify": "20261001104810",
+      "reason": "Exact DVD edition for Studio 60 episode 1; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E06.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E06 - The Wrap Party - 1080p.mp4",
-      "size": 1337333579,
-      "modify": "20250908073736",
-      "reason": "Verified 1080p release of Studio 60 S01E06; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 01 - Pilot.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E01 - Pilot - DVD.sub",
+      "size": 7696384,
+      "modify": "20261001112833",
+      "reason": "Exact DVD edition for Studio 60 episode 1; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E07.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E07 - Nevada Day (Part 1) - 1080p.mp4",
-      "size": 1337439306,
-      "modify": "20250908073747",
-      "reason": "Verified 1080p release of Studio 60 S01E07; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 02 - The Cold Open.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E02 - The Cold Open - DVD.avi",
+      "size": 735799918,
+      "modify": "20261001113333",
+      "reason": "Exact DVD edition for Studio 60 episode 2; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E08.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E08 - Nevada Day (Part 2) - 1080p.mp4",
-      "size": 1308093979,
-      "modify": "20250908073747",
-      "reason": "Verified 1080p release of Studio 60 S01E08; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 02 - The Cold Open.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E02 - The Cold Open - DVD.idx",
+      "size": 105386,
+      "modify": "20261001104814",
+      "reason": "Exact DVD edition for Studio 60 episode 2; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E09.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E09 - The Option Period - 1080p.mp4",
-      "size": 1286854459,
-      "modify": "20250908073352",
-      "reason": "Verified 1080p release of Studio 60 S01E09; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 02 - The Cold Open.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E02 - The Cold Open - DVD.sub",
+      "size": 7700480,
+      "modify": "20261001112832",
+      "reason": "Exact DVD edition for Studio 60 episode 2; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E10.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E10 - B-12 - 1080p.mp4",
-      "size": 1334887251,
-      "modify": "20250908073306",
-      "reason": "Verified 1080p release of Studio 60 S01E10; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 03 - The Focus Group.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E03 - The Focus Group - DVD.avi",
+      "size": 735858786,
+      "modify": "20261001113149",
+      "reason": "Exact DVD edition for Studio 60 episode 3; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E11.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E11 - The Christmas Show - 1080p.mp4",
-      "size": 1334204727,
-      "modify": "20250908073319",
-      "reason": "Verified 1080p release of Studio 60 S01E11; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 03 - The Focus Group.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E03 - The Focus Group - DVD.idx",
+      "size": 103088,
+      "modify": "20261001104815",
+      "reason": "Exact DVD edition for Studio 60 episode 3; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E12.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E12 - Monday - 1080p.mp4",
-      "size": 1306638804,
-      "modify": "20250908073330",
-      "reason": "Verified 1080p release of Studio 60 S01E12; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 03 - The Focus Group.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E03 - The Focus Group - DVD.sub",
+      "size": 7370752,
+      "modify": "20261001112834",
+      "reason": "Exact DVD edition for Studio 60 episode 3; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E13.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E13 - The Harriet Dinner (part 1) - 1080p.mp4",
-      "size": 1305207168,
-      "modify": "20250908073349",
-      "reason": "Verified 1080p release of Studio 60 S01E13; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 04 - The West Coast Delay.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E04 - The West Coast Delay - DVD.avi",
+      "size": 735933226,
+      "modify": "20261001110902",
+      "reason": "Exact DVD edition for Studio 60 episode 4; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E14.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E14 - The Harriet Dinner (part 2) - 1080p.mp4",
-      "size": 1357832891,
-      "modify": "20250908073522",
-      "reason": "Verified 1080p release of Studio 60 S01E14; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 04 - The West Coast Delay.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E04 - The West Coast Delay - DVD.idx",
+      "size": 110513,
+      "modify": "20261001104810",
+      "reason": "Exact DVD edition for Studio 60 episode 4; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E15.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E15 - The Friday Night Slaughter - 1080p.mp4",
-      "size": 1346566733,
-      "modify": "20250908073522",
-      "reason": "Verified 1080p release of Studio 60 S01E15; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 04 - The West Coast Delay.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E04 - The West Coast Delay - DVD.sub",
+      "size": 7542784,
+      "modify": "20261001112933",
+      "reason": "Exact DVD edition for Studio 60 episode 4; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E16.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E16 - 4 AM Miracle - 1080p.mp4",
-      "size": 1289335523,
-      "modify": "20250908073525",
-      "reason": "Verified 1080p release of Studio 60 S01E16; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 05 - The Long Lead Story.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E05 - The Long Lead Story - DVD.avi",
+      "size": 735579448,
+      "modify": "20261001113411",
+      "reason": "Exact DVD edition for Studio 60 episode 5; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E17.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E17 - The Disaster Show - 1080p.mp4",
-      "size": 1136567045,
-      "modify": "20250908073512",
-      "reason": "Verified 1080p release of Studio 60 S01E17; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 05 - The Long Lead Story.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E05 - The Long Lead Story - DVD.idx",
+      "size": 105604,
+      "modify": "20261001104812",
+      "reason": "Exact DVD edition for Studio 60 episode 5; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E18.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E18 - Breaking News - 1080p.mp4",
-      "size": 1309576931,
-      "modify": "20250908073527",
-      "reason": "Verified 1080p release of Studio 60 S01E18; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 05 - The Long Lead Story.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E05 - The Long Lead Story - DVD.sub",
+      "size": 7272448,
+      "modify": "20261001112835",
+      "reason": "Exact DVD edition for Studio 60 episode 5; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E19.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E19 - K and R (Part 1) - 1080p.mp4",
-      "size": 1277620305,
-      "modify": "20250908073532",
-      "reason": "Verified 1080p release of Studio 60 S01E19; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 06 - The Wrap Party.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E06 - The Wrap Party - DVD.avi",
+      "size": 735812618,
+      "modify": "20261001113246",
+      "reason": "Exact DVD edition for Studio 60 episode 6; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E20.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E20 - K and R (Part 2) - 1080p.mp4",
-      "size": 1210845151,
-      "modify": "20250908073747",
-      "reason": "Verified 1080p release of Studio 60 S01E20; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 06 - The Wrap Party.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E06 - The Wrap Party - DVD.idx",
+      "size": 108526,
+      "modify": "20261001104810",
+      "reason": "Exact DVD edition for Studio 60 episode 6; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E21.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E21 - K and R (Part 3) - 1080p.mp4",
-      "size": 1280705844,
-      "modify": "20250908073538",
-      "reason": "Verified 1080p release of Studio 60 S01E21; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 06 - The Wrap Party.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E06 - The Wrap Party - DVD.sub",
+      "size": 7434240,
+      "modify": "20261001112934",
+      "reason": "Exact DVD edition for Studio 60 episode 6; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/1080p/Studio 60 S01E22.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E22 - What Kind of Day Has It Been - 1080p.mp4",
-      "size": 1313907791,
-      "modify": "20250908073550",
-      "reason": "Verified 1080p release of Studio 60 S01E22; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 07 - Nevada Day (Part 1).avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E07 - Nevada Day (Part 1) - DVD.avi",
+      "size": 735408642,
+      "modify": "20261001113720",
+      "reason": "Exact DVD edition for Studio 60 episode 7; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E01.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E01 - Pilot - 720p.mp4",
-      "size": 828932568,
-      "modify": "20250908073052",
-      "reason": "Verified 720p release of Studio 60 S01E01; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 07 - Nevada Day (Part 1).idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E07 - Nevada Day (Part 1) - DVD.idx",
+      "size": 104836,
+      "modify": "20261001104814",
+      "reason": "Exact DVD edition for Studio 60 episode 7; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E02.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E02 - The Cold Open - 720p.mp4",
-      "size": 765116972,
-      "modify": "20250908073331",
-      "reason": "Verified 720p release of Studio 60 S01E02; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 07 - Nevada Day (Part 1).sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E07 - Nevada Day (Part 1) - DVD.sub",
+      "size": 7352320,
+      "modify": "20261001112834",
+      "reason": "Exact DVD edition for Studio 60 episode 7; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E03.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E03 - The Focus Group - 720p.mp4",
-      "size": 749373096,
-      "modify": "20250908073605",
-      "reason": "Verified 720p release of Studio 60 S01E03; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 08 - Nevada Day (Part 2).avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E08 - Nevada Day (Part 2) - DVD.avi",
+      "size": 735441658,
+      "modify": "20261001113702",
+      "reason": "Exact DVD edition for Studio 60 episode 8; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E04.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E04 - The West Coast Delay - 720p.mp4",
-      "size": 742450604,
-      "modify": "20250908073904",
-      "reason": "Verified 720p release of Studio 60 S01E04; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 08 - Nevada Day (Part 2).idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E08 - Nevada Day (Part 2) - DVD.idx",
+      "size": 101551,
+      "modify": "20261001104816",
+      "reason": "Exact DVD edition for Studio 60 episode 8; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E05.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E05 - The Long Lead Story - 720p.mp4",
-      "size": 782140896,
-      "modify": "20250908075401",
-      "reason": "Verified 720p release of Studio 60 S01E05; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 08 - Nevada Day (Part 2).sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E08 - Nevada Day (Part 2) - DVD.sub",
+      "size": 7127040,
+      "modify": "20261001112835",
+      "reason": "Exact DVD edition for Studio 60 episode 8; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E06.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E06 - The Wrap Party - 720p.mp4",
-      "size": 777369947,
-      "modify": "20250908075550",
-      "reason": "Verified 720p release of Studio 60 S01E06; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 09 - The Option Period.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E09 - The Option Period - DVD.avi",
+      "size": 679490806,
+      "modify": "20261001113543",
+      "reason": "Exact DVD edition for Studio 60 episode 9; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E07.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E07 - Nevada Day (Part 1) - 720p.mp4",
-      "size": 777436224,
-      "modify": "20250908075714",
-      "reason": "Verified 720p release of Studio 60 S01E07; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 09 - The Option Period.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E09 - The Option Period - DVD.idx",
+      "size": 104251,
+      "modify": "20261001104814",
+      "reason": "Exact DVD edition for Studio 60 episode 9; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E08.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E08 - Nevada Day (Part 2) - 720p.mp4",
-      "size": 760449201,
-      "modify": "20250908075843",
-      "reason": "Verified 720p release of Studio 60 S01E08; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 09 - The Option Period.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E09 - The Option Period - DVD.sub",
+      "size": 7307264,
+      "modify": "20261001112835",
+      "reason": "Exact DVD edition for Studio 60 episode 9; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E09.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E09 - The Option Period - 720p.mp4",
-      "size": 748037788,
-      "modify": "20250908080111",
-      "reason": "Verified 720p release of Studio 60 S01E09; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 10 - B-12.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E10 - B-12 - DVD.avi",
+      "size": 732760494,
+      "modify": "20261001113540",
+      "reason": "Exact DVD edition for Studio 60 episode 10; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E10.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E10 - B-12 - 720p.mp4",
-      "size": 775985924,
-      "modify": "20250908080026",
-      "reason": "Verified 720p release of Studio 60 S01E10; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 10 - B-12.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E10 - B-12 - DVD.idx",
+      "size": 108211,
+      "modify": "20261001104810",
+      "reason": "Exact DVD edition for Studio 60 episode 10; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E11.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E11 - The Christmas Show - 720p.mp4",
-      "size": 775417705,
-      "modify": "20250908074709",
-      "reason": "Verified 720p release of Studio 60 S01E11; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 10 - B-12.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E10 - B-12 - DVD.sub",
+      "size": 7378944,
+      "modify": "20261001112935",
+      "reason": "Exact DVD edition for Studio 60 episode 10; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E12.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E12 - Monday - 720p.mp4",
-      "size": 759576601,
-      "modify": "20250908074819",
-      "reason": "Verified 720p release of Studio 60 S01E12; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 11 - The Christmas Show.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E11 - The Christmas Show - DVD.avi",
+      "size": 735333666,
+      "modify": "20261001113728",
+      "reason": "Exact DVD edition for Studio 60 episode 11; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E13.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E13 - The Harriet Dinner (part 1) - 720p.mp4",
-      "size": 758716611,
-      "modify": "20250908074951",
-      "reason": "Verified 720p release of Studio 60 S01E13; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 11 - The Christmas Show.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E11 - The Christmas Show - DVD.idx",
+      "size": 103441,
+      "modify": "20261001104815",
+      "reason": "Exact DVD edition for Studio 60 episode 11; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E14.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E14 - The Harriet Dinner (part 2) - 720p.mp4",
-      "size": 789337346,
-      "modify": "20250908075138",
-      "reason": "Verified 720p release of Studio 60 S01E14; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 11 - The Christmas Show.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E11 - The Christmas Show - DVD.sub",
+      "size": 6897664,
+      "modify": "20261001112837",
+      "reason": "Exact DVD edition for Studio 60 episode 11; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E15.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E15 - The Friday Night Slaughter - 720p.mp4",
-      "size": 782772707,
-      "modify": "20250908080103",
-      "reason": "Verified 720p release of Studio 60 S01E15; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 12 - Monday.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E12 - Monday - DVD.avi",
+      "size": 735690538,
+      "modify": "20261001113718",
+      "reason": "Exact DVD edition for Studio 60 episode 12; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E16.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E16 - 4 AM Miracle - 720p.mp4",
-      "size": 749528963,
-      "modify": "20250908080235",
-      "reason": "Verified 720p release of Studio 60 S01E16; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 12 - Monday.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E12 - Monday - DVD.idx",
+      "size": 107626,
+      "modify": "20261001104811",
+      "reason": "Exact DVD edition for Studio 60 episode 12; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E17.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E17 - The Disaster Show - 720p.mp4",
-      "size": 660659730,
-      "modify": "20250908080355",
-      "reason": "Verified 720p release of Studio 60 S01E17; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 12 - Monday.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E12 - Monday - DVD.sub",
+      "size": 6715392,
+      "modify": "20261001112837",
+      "reason": "Exact DVD edition for Studio 60 episode 12; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E18.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E18 - Breaking News - 720p.mp4",
-      "size": 761261685,
-      "modify": "20250908080527",
-      "reason": "Verified 720p release of Studio 60 S01E18; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 13 - The Harriet Dinner (part 1).avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E13 - The Harriet Dinner (part 1) - DVD.avi",
+      "size": 735287334,
+      "modify": "20261001113529",
+      "reason": "Exact DVD edition for Studio 60 episode 13; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E19.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E19 - K and R (Part 1) - 720p.mp4",
-      "size": 742722938,
-      "modify": "20250908080540",
-      "reason": "Verified 720p release of Studio 60 S01E19; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 13 - The Harriet Dinner (part 1).idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E13 - The Harriet Dinner (part 1) - DVD.idx",
+      "size": 123196,
+      "modify": "20261001104809",
+      "reason": "Exact DVD edition for Studio 60 episode 13; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E20.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E20 - K and R (Part 2) - 720p.mp4",
-      "size": 703875266,
-      "modify": "20250908080605",
-      "reason": "Verified 720p release of Studio 60 S01E20; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 13 - The Harriet Dinner (part 1).sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E13 - The Harriet Dinner (part 1) - DVD.sub",
+      "size": 7766016,
+      "modify": "20261001112832",
+      "reason": "Exact DVD edition for Studio 60 episode 13; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E21.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E21 - K and R (Part 3) - 720p.mp4",
-      "size": 744454891,
-      "modify": "20250908080727",
-      "reason": "Verified 720p release of Studio 60 S01E21; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 14 - The Harriet Dinner (part 2).avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E14 - The Harriet Dinner (part 2) - DVD.avi",
+      "size": 735800916,
+      "modify": "20261001113257",
+      "reason": "Exact DVD edition for Studio 60 episode 14; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/S60/720p/Studio 60 On The Sunset Strip S01E22.mp4",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E22 - What Kind of Day Has It Been - 720p.mp4",
-      "size": 763830742,
-      "modify": "20250908080758",
-      "reason": "Verified 720p release of Studio 60 S01E22; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 14 - The Harriet Dinner (part 2).idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E14 - The Harriet Dinner (part 2) - DVD.idx",
+      "size": 115411,
+      "modify": "20261001104809",
+      "reason": "Exact DVD edition for Studio 60 episode 14; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E01.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E01 - Pilot - XviD DVDRip.avi",
-      "size": 365393920,
-      "modify": "20261001104452",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E01; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 14 - The Harriet Dinner (part 2).sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E14 - The Harriet Dinner (part 2) - DVD.sub",
+      "size": 7108608,
+      "modify": "20261001112836",
+      "reason": "Exact DVD edition for Studio 60 episode 14; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E02.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E02 - The Cold Open - XviD DVDRip.avi",
-      "size": 365262848,
-      "modify": "20261001104346",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E02; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 15 - The Friday Night Slaughter.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E15 - The Friday Night Slaughter - DVD.avi",
+      "size": 735668270,
+      "modify": "20261001113507",
+      "reason": "Exact DVD edition for Studio 60 episode 15; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E03.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E03 - The Focus Group - XviD DVDRip.avi",
-      "size": 365250560,
-      "modify": "20261001104320",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E03; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 15 - The Friday Night Slaughter.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E15 - The Friday Night Slaughter - DVD.idx",
+      "size": 107449,
+      "modify": "20261001104812",
+      "reason": "Exact DVD edition for Studio 60 episode 15; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E04.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E04 - The West Coast Delay - XviD DVDRip.avi",
-      "size": 360099840,
-      "modify": "20261001104254",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E04; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 15 - The Friday Night Slaughter.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E15 - The Friday Night Slaughter - DVD.sub",
+      "size": 7010304,
+      "modify": "20261001112836",
+      "reason": "Exact DVD edition for Studio 60 episode 15; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E05.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E05 - The Long Lead Story - XviD DVDRip.avi",
-      "size": 361189376,
-      "modify": "20261001104228",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E05; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 16 - 4 AM Miracle.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E16 - 4 AM Miracle - DVD.avi",
+      "size": 735644646,
+      "modify": "20261001113515",
+      "reason": "Exact DVD edition for Studio 60 episode 16; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E06.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E06 - The Wrap Party - XviD DVDRip.avi",
-      "size": 361187328,
-      "modify": "20261001104403",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E06; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 16 - 4 AM Miracle.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E16 - 4 AM Miracle - DVD.idx",
+      "size": 100111,
+      "modify": "20261001104816",
+      "reason": "Exact DVD edition for Studio 60 episode 16; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E07.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E07 - Nevada Day (Part 1) - XviD DVDRip.avi",
-      "size": 361162752,
-      "modify": "20261001103921",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E07; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 16 - 4 AM Miracle.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E16 - 4 AM Miracle - DVD.sub",
+      "size": 6985728,
+      "modify": "20261001112836",
+      "reason": "Exact DVD edition for Studio 60 episode 16; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E08.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E08 - Nevada Day (Part 2) - XviD DVDRip.avi",
-      "size": 361168896,
-      "modify": "20261001104449",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E08; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 17 - The Disaster Show.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E17 - The Disaster Show - DVD.avi",
+      "size": 630725922,
+      "modify": "20261001113237",
+      "reason": "Exact DVD edition for Studio 60 episode 17; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E09.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E09 - The Option Period - XviD DVDRip.avi",
-      "size": 361132032,
-      "modify": "20261001104419",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E09; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 17 - The Disaster Show.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E17 - The Disaster Show - DVD.idx",
+      "size": 90661,
+      "modify": "20261001104816",
+      "reason": "Exact DVD edition for Studio 60 episode 17; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E10.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E10 - B-12 - XviD DVDRip.avi",
-      "size": 361181184,
-      "modify": "20261001103959",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E10; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 17 - The Disaster Show.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E17 - The Disaster Show - DVD.sub",
+      "size": 6045696,
+      "modify": "20261001112837",
+      "reason": "Exact DVD edition for Studio 60 episode 17; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E11.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E11 - The Christmas Show - XviD DVDRip.avi",
-      "size": 361185280,
-      "modify": "20261001104202",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E11; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 18 - Breaking News.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E18 - Breaking News - DVD.avi",
+      "size": 735602922,
+      "modify": "20261001113629",
+      "reason": "Exact DVD edition for Studio 60 episode 18; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E12.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E12 - Monday - XviD DVDRip.avi",
-      "size": 361150464,
-      "modify": "20261001104021",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E12; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 18 - Breaking News.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E18 - Breaking News - DVD.idx",
+      "size": 102361,
+      "modify": "20261001104815",
+      "reason": "Exact DVD edition for Studio 60 episode 18; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E13.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E13 - The Harriet Dinner (part 1) - XviD DVDRip.avi",
-      "size": 361136128,
-      "modify": "20261001103552",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E13; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 18 - Breaking News.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E18 - Breaking News - DVD.sub",
+      "size": 6983680,
+      "modify": "20261001112836",
+      "reason": "Exact DVD edition for Studio 60 episode 18; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E14.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E14 - The Harriet Dinner (part 2) - XviD DVDRip.avi",
-      "size": 361228288,
-      "modify": "20261001103804",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E14; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 19 - K and R (Part 1).avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E19 - K and R (Part 1) - DVD.avi",
+      "size": 735584672,
+      "modify": "20261001113718",
+      "reason": "Exact DVD edition for Studio 60 episode 19; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E15.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E15 - The Friday Night Slaughter - XviD DVDRip.avi",
-      "size": 361246720,
-      "modify": "20261001103727",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E15; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 19 - K and R (Part 1).idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E19 - K and R (Part 1) - DVD.idx",
+      "size": 106006,
+      "modify": "20261001104812",
+      "reason": "Exact DVD edition for Studio 60 episode 19; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E16.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E16 - 4 AM Miracle - XviD DVDRip.avi",
-      "size": 361138176,
-      "modify": "20261001104501",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E16; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 19 - K and R (Part 1).sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E19 - K and R (Part 1) - DVD.sub",
+      "size": 7368704,
+      "modify": "20261001112834",
+      "reason": "Exact DVD edition for Studio 60 episode 19; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E17.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E17 - The Disaster Show - XviD DVDRip.avi",
-      "size": 360976384,
-      "modify": "20261001103738",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E17; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 20 - K and R (Part 2).avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E20 - K and R (Part 2) - DVD.avi",
+      "size": 735503386,
+      "modify": "20261001113640",
+      "reason": "Exact DVD edition for Studio 60 episode 20; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E18.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E18 - Breaking News - XviD DVDRip.avi",
-      "size": 361183232,
-      "modify": "20261001104115",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E18; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 20 - K and R (Part 2).idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E20 - K and R (Part 2) - DVD.idx",
+      "size": 110056,
+      "modify": "20261001104810",
+      "reason": "Exact DVD edition for Studio 60 episode 20; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E19.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E19 - K and R (Part 1) - XviD DVDRip.avi",
-      "size": 361158656,
-      "modify": "20261001103829",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E19; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 20 - K and R (Part 2).sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E20 - K and R (Part 2) - DVD.sub",
+      "size": 7389184,
+      "modify": "20261001112935",
+      "reason": "Exact DVD edition for Studio 60 episode 20; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E20.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E20 - K and R (Part 2) - XviD DVDRip.avi",
-      "size": 361056256,
-      "modify": "20261001103912",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E20; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 21 - K and R (Part 3).avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E21 - K and R (Part 3) - DVD.avi",
+      "size": 735736116,
+      "modify": "20261001113437",
+      "reason": "Exact DVD edition for Studio 60 episode 21; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E21.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E21 - K and R (Part 3) - XviD DVDRip.avi",
-      "size": 364105728,
-      "modify": "20261001104500",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E21; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 21 - K and R (Part 3).idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E21 - K and R (Part 3) - DVD.idx",
+      "size": 99076,
+      "modify": "20261001104816",
+      "reason": "Exact DVD edition for Studio 60 episode 21; preserve VobSub IDX/SUB pairing"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E22.avi",
-      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E22 - What Kind of Day Has It Been - XviD DVDRip.avi",
-      "size": 364212224,
-      "modify": "20261001104147",
-      "reason": "Verified XviD DVDRip release of Studio 60 S01E22; title independently crosschecked against DVD episode catalogue"
+      "from": "/downloads/S60/DVD/Studio 60 - 21 - K and R (Part 3).sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E21 - K and R (Part 3) - DVD.sub",
+      "size": 7223296,
+      "modify": "20261001112835",
+      "reason": "Exact DVD edition for Studio 60 episode 21; preserve VobSub IDX/SUB pairing"
+    },
+    {
+      "from": "/downloads/S60/DVD/Studio 60 - 22 - What Kind of Day Has It Been.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E22 - What Kind of Day Has It Been - DVD.avi",
+      "size": 735647478,
+      "modify": "20261001113519",
+      "reason": "Exact DVD edition for Studio 60 episode 22; preserve VobSub IDX/SUB pairing"
+    },
+    {
+      "from": "/downloads/S60/DVD/Studio 60 - 22 - What Kind of Day Has It Been.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E22 - What Kind of Day Has It Been - DVD.idx",
+      "size": 95659,
+      "modify": "20261001104816",
+      "reason": "Exact DVD edition for Studio 60 episode 22; preserve VobSub IDX/SUB pairing"
+    },
+    {
+      "from": "/downloads/S60/DVD/Studio 60 - 22 - What Kind of Day Has It Been.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Season 01/Studio 60 on the Sunset Strip (2006) - S01E22 - What Kind of Day Has It Been - DVD.sub",
+      "size": 6062080,
+      "modify": "20261001112837",
+      "reason": "Exact DVD edition for Studio 60 episode 22; preserve VobSub IDX/SUB pairing"
+    },
+    {
+      "from": "/downloads/S60/DVD/Studio 60 - Making of Documentary.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Featurettes/Making of Studio 60 on the Sunset Strip.avi",
+      "size": 210430626,
+      "modify": "20261001112932",
+      "reason": "Show-wide making-of featurette, not an episode or film"
+    },
+    {
+      "from": "/downloads/S60/DVD/Studio 60 - Making of Documentary.idx",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Featurettes/Making of Studio 60 on the Sunset Strip.idx",
+      "size": 41161,
+      "modify": "20261001104816",
+      "reason": "Show-wide making-of featurette, not an episode or film"
+    },
+    {
+      "from": "/downloads/S60/DVD/Studio 60 - Making of Documentary.sub",
+      "to": "/downloads/Studio 60 on the Sunset Strip (2006)/Featurettes/Making of Studio 60 on the Sunset Strip.sub",
+      "size": 2809856,
+      "modify": "20261001112837",
+      "reason": "Show-wide making-of featurette, not an episode or film"
     }
   ]
 }
