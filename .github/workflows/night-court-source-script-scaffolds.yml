@@ -1,0 +1,49 @@
+name: Night Court full original-series source script scaffolds
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_source_script_scaffolds.py'
+      - 'Night Court/tools/test_source_script_scaffolds.py'
+      - '.github/workflows/night-court-source-script-scaffolds.yml'
+permissions:
+  contents: write
+jobs:
+  generate:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-193-episode-script-scaffolds'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/night-court-193-episode-script-scaffolds
+          persist-credentials: true
+      - name: Test every source transcript and preserve untimed exception
+        run: |
+          python "Night Court/tools/test_source_script_scaffolds.py"
+          python "Night Court/tools/build_source_script_scaffolds.py"
+          python "Night Court/tools/validate_dialogue.py"
+      - name: Verify 193/193 output and zero invented AV acceptance
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("Night Court")
+          s=json.loads((root/"catalog/source-script-scaffold-coverage.json").read_text())
+          assert s["episodes_with_source_scaffold"]==193
+          assert s["timed_subtitle_scaffolds"]==192
+          assert s["untimed_transcript_scaffolds"]==1
+          assert s["video_verified_production_scenes"]==0
+          assert len(s["episodes"])==193
+          assert all((root/x["derived_path"]).is_file() for x in s["episodes"])
+          assert all(not x["complete_script_verified"] for x in s["episodes"])
+          print("193 source-linked original-series reading-script foundations accepted; no invented scenes")
+          PY
+      - name: Commit generated source-only script reading editions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/" "Night Court/catalog/source-script-scaffold-coverage.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): generate 193 source-backed reading-script scaffolds"
+            git push origin HEAD:feature/night-court-193-episode-script-scaffolds
+          fi
