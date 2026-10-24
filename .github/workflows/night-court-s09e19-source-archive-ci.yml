@@ -1,0 +1,24 @@
+name: Night Court real S09E19 source archive validation offline QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/preserve_s09e19_source_once_evidence.py'
+      - 'Night Court/tools/test_preserve_s09e19_source_once_evidence.py'
+      - 'Night Court/S09E19-REAL-ORIGINAL-SECOND-PILOT.md'
+      - '.github/workflows/night-court-s09e19-source-archive-ci.yml'
+      - '.github/workflows/night-court-trusted-s09e19-source-import.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify exact real-source SHA contract with adversarial untimed paragraph tests
+        run: |
+          python 'Night Court/tools/test_preserve_s09e19_source_once_evidence.py'
+          python 'Night Court/tools/test_reconcile_s09e19_untimed_source_order.py'
