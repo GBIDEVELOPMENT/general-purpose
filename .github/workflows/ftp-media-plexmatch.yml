@@ -1,0 +1,54 @@
+name: FTP Plex match hints (no media moves)
+on:
+  pull_request:
+    paths:
+      - 'media-organizer/plexmatch/**'
+      - 'media-organizer/plexmatch_upload.py'
+      - 'media-organizer/tests/test_plexmatch_upload.py'
+      - '.github/workflows/ftp-media-plexmatch.yml'
+  push:
+    branches: [main]
+    paths: ['media-organizer/plexmatch/approved.json']
+permissions:
+  contents: read
+concurrency:
+  group: ftp-media-plexmatch-uploads
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate exact match-hint recipe without FTP secret
+        run: |
+          python -m py_compile media-organizer/plexmatch_upload.py
+          python -m unittest discover -s media-organizer/tests -v
+          python media-organizer/plexmatch_upload.py --validate-only
+  upload:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: ftp-media-changes
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ftp
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate configured secret
+        run: test -n "$FTP_PASSWORD"
+      - name: Write only verified and previously absent .plexmatch hints
+        run: python media-organizer/plexmatch_upload.py
+      - name: Keep readback verification and partial audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ftp-plexmatch-verified-journal
+          path: media-organizer/plexmatch-output/
+          retention-days: 90
+          if-no-files-found: warn
