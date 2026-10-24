@@ -1,0 +1,57 @@
+name: Night Court trusted import real second original series episode metadata
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s09e19-full-evidence-import.txt'
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: night-court-trusted-s09e19-evidence-import
+  cancel-in-progress: false
+jobs:
+  import:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s09e19-real-evidence-import-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout trusted base SHA only, never source PR-head code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Verify immutable untimed source corpus before receiving any external data
+        run: |
+          python 'Night Court/tools/test_preserve_s09e19_source_once_evidence.py'
+          python 'Night Court/tools/test_reconcile_s09e19_untimed_source_order.py'
+      - name: Download SHA-pinned original S09E19 model and video metadata result only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/s09e19-pinned-data"
+          gh api "repos/${{ github.repository }}/actions/artifacts/12572627835/zip" > "${{ runner.temp }}/s09e19-pinned-data/source.zip"
+          echo "95af07bd3a2f5ad62a252fcb4171662b90e8ad926237479ad259280ee22eb0ca  ${{ runner.temp }}/s09e19-pinned-data/source.zip" | sha256sum -c -
+          unzip -p "${{ runner.temp }}/s09e19-pinned-data/source.zip" second-episode-report.json > "${{ runner.temp }}/s09e19-pinned-data/source.json"
+          echo "14e721068a10ceb1c84b62ef04169364edb2a58741aaf889afe4a5ef90daa51c  ${{ runner.temp }}/s09e19-pinned-data/source.json" | sha256sum -c -
+      - name: Derive only exact original research metadata and original-untimed order candidates
+        run: |
+          python 'Night Court/tools/preserve_s09e19_source_once_evidence.py' \
+            --input "${{ runner.temp }}/s09e19-pinned-data/source.json" \
+            --output-dir 'Night Court/seasons/S09/S09E19/derived/whole-source-once-v1'
+      - name: Push verified, text-only research evidence to separate data review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-s09e19-original-full-source-evidence'
+          git add -- 'Night Court/seasons/S09/S09E19/derived/whole-source-once-v1'
+          git diff --cached --check
+          git commit -m 'Night Court: archive exact real S09E19 original full episode source timing and untimed 13 anchor candidates'
+          git push origin HEAD:refs/heads/data/night-court-s09e19-original-full-source-evidence
+      - name: Clear temporary source archive intake material
+        if: always()
+        run: rm -rf "${{ runner.temp }}/s09e19-pinned-data"
