@@ -1,0 +1,420 @@
+{
+  "character_to_scene_evidence_status": "participant_hypotheses_only_not_attributed_speakers",
+  "credit_roster_count": 20,
+  "episode_id": "S05E03",
+  "provisional_scene_count": 2,
+  "scenes": [
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Ron Fassler",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:867710",
+          "character_name": "Bob Miller",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Frazier",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:867712",
+          "character_name": "Derelict",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Simmy Bow",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:867713",
+          "character_name": "Doctor",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Courtenay McWhinney",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1206849",
+          "character_name": "Gracie",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Carol Swarbrick",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:867711",
+          "character_name": "Wendy Hampton",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S05E03:C00001:1",
+      "first_start_ms": 5859,
+      "last_end_ms": 186670,
+      "last_source_turn_id": "S05E03:C00049:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 1,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 49,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Mike Finneran",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00040:1",
+            "S05E03:C00046:1"
+          ],
+          "character_id": "tvmaze:652669",
+          "character_name": "Art Fensterman",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00021:1"
+          ],
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00028:1"
+          ],
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00036:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 49,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Harry Frazier",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:867712",
+          "character_name": "Derelict",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Simmy Bow",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:867713",
+          "character_name": "Doctor",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Courtenay McWhinney",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1206849",
+          "character_name": "Gracie",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Carol Swarbrick",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:867711",
+          "character_name": "Wendy Hampton",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S05E03:C00050:1",
+      "first_start_ms": 231500,
+      "last_end_ms": 1377720,
+      "last_source_turn_id": "S05E03:C00341:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 2,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 292,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Richard Moll",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00053:1",
+            "S05E03:C00078:1",
+            "S05E03:C00123:1",
+            "S05E03:C00125:1",
+            "S05E03:C00134:1",
+            "S05E03:C00139:1",
+            "S05E03:C00142:1",
+            "S05E03:C00154:1",
+            "S05E03:C00155:1",
+            "S05E03:C00156:1",
+            "S05E03:C00225:1",
+            "S05E03:C00244:1",
+            "S05E03:C00256:1",
+            "S05E03:C00280:1"
+          ],
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Mike Finneran",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00050:1",
+            "S05E03:C00052:1",
+            "S05E03:C00213:1",
+            "S05E03:C00222:1",
+            "S05E03:C00226:1"
+          ],
+          "character_id": "tvmaze:652669",
+          "character_name": "Art Fensterman",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00089:1",
+            "S05E03:C00197:1",
+            "S05E03:C00199:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Ron Fassler",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00323:1"
+          ],
+          "character_id": "tvmaze:867710",
+          "character_name": "Bob Miller",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00162:1"
+          ],
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "addressed_by_name_turn_ids": [
+            "S05E03:C00173:1"
+          ],
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 292,
+      "uncredited_participants_must_remain_possible": true
+    }
+  ],
+  "source_caption_turns": 341,
+  "source_manifest": "seasons/S05/S05E03/dialogue/versions/subtitle-cat-english-online-caption-research-wit--5eff036234ff6339/manifest.json",
+  "source_sha256": "5eff036234ff63394ee0164f0c32666d3bfc490a914ce383ca597cc4fc916ec2",
+  "version_id": "subtitle-cat-english-online-caption-research-wit--5eff036234ff6339"
+}

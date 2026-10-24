@@ -1,0 +1,777 @@
+{
+  "character_to_scene_evidence_status": "participant_hypotheses_only_not_attributed_speakers",
+  "credit_roster_count": 21,
+  "episode_id": "S08E09",
+  "provisional_scene_count": 4,
+  "scenes": [
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Mike Finneran",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:652669",
+          "character_name": "Art Fensterman",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Meg Wyllie",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149665",
+          "character_name": "Matilda",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Mary Pat Gleason",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:747054",
+          "character_name": "Matron",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "William Utay",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:695688",
+          "character_name": "Phil Sanders",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Robert Trebor",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149666",
+          "character_name": "Zealot # 1",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Melanie MacQueen",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149668",
+          "character_name": "Zealot # 2",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S08E09:C00001:1",
+      "first_start_ms": 3040,
+      "last_end_ms": 139190,
+      "last_source_turn_id": "S08E09:C00036:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 1,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 36,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "S. Marc Jordan",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00013:1",
+            "S08E09:C00021:1"
+          ],
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00028:1"
+          ],
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00009:1"
+          ],
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Mary Cadorette",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00001:1"
+          ],
+          "character_id": "tvmaze:1149654",
+          "character_name": "Margaret Turner",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 36,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Mike Finneran",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:652669",
+          "character_name": "Art Fensterman",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Mary Pat Gleason",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:747054",
+          "character_name": "Matron",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Robert Trebor",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149666",
+          "character_name": "Zealot # 1",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Melanie MacQueen",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149668",
+          "character_name": "Zealot # 2",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S08E09:C00037:1",
+      "first_start_ms": 196590,
+      "last_end_ms": 1218610,
+      "last_source_turn_id": "S08E09:C00305:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 2,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 269,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Harry Anderson",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00158:1",
+            "S08E09:C00162:1",
+            "S08E09:C00173:1",
+            "S08E09:C00176:1",
+            "S08E09:C00190:1",
+            "S08E09:C00219:1",
+            "S08E09:C00249:1",
+            "S08E09:C00280:1",
+            "S08E09:C00283:1",
+            "S08E09:C00291:1"
+          ],
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00136:1",
+            "S08E09:C00175:1",
+            "S08E09:C00208:1",
+            "S08E09:C00228:1",
+            "S08E09:C00240:1",
+            "S08E09:C00250:1",
+            "S08E09:C00261:1",
+            "S08E09:C00269:1"
+          ],
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00107:1"
+          ],
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00137:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Mary Cadorette",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00173:1"
+          ],
+          "character_id": "tvmaze:1149654",
+          "character_name": "Margaret Turner",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Meg Wyllie",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00246:1"
+          ],
+          "character_id": "tvmaze:1149665",
+          "character_name": "Matilda",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "William Utay",
+          "addressed_by_name_turn_ids": [
+            "S08E09:C00063:1"
+          ],
+          "character_id": "tvmaze:695688",
+          "character_name": "Phil Sanders",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 269,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Mike Finneran",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:652669",
+          "character_name": "Art Fensterman",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Mary Cadorette",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149654",
+          "character_name": "Margaret Turner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Meg Wyllie",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149665",
+          "character_name": "Matilda",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Mary Pat Gleason",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:747054",
+          "character_name": "Matron",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "William Utay",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:695688",
+          "character_name": "Phil Sanders",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Robert Trebor",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149666",
+          "character_name": "Zealot # 1",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Melanie MacQueen",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149668",
+          "character_name": "Zealot # 2",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S08E09:C00306:1",
+      "first_start_ms": 1249900,
+      "last_end_ms": 1302300,
+      "last_source_turn_id": "S08E09:C00317:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 3,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 12,
+      "textually_signaled_possible_participants": [],
+      "turns_with_no_unique_speaker_label": 12,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Mike Finneran",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:652669",
+          "character_name": "Art Fensterman",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Mary Cadorette",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149654",
+          "character_name": "Margaret Turner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Meg Wyllie",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149665",
+          "character_name": "Matilda",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Mary Pat Gleason",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:747054",
+          "character_name": "Matron",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "William Utay",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:695688",
+          "character_name": "Phil Sanders",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Robert Trebor",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149666",
+          "character_name": "Zealot # 1",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Melanie MacQueen",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1149668",
+          "character_name": "Zealot # 2",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S08E09:C00318:1",
+      "first_start_ms": 1343920,
+      "last_end_ms": 1392880,
+      "last_source_turn_id": "S08E09:C00330:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 4,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 13,
+      "textually_signaled_possible_participants": [],
+      "turns_with_no_unique_speaker_label": 13,
+      "uncredited_participants_must_remain_possible": true
+    }
+  ],
+  "source_caption_turns": 330,
+  "source_manifest": "seasons/S08/S08E09/dialogue/versions/subtitle-cat-english-online-caption-research-wit--7d7f57a9b3e0a7c7/manifest.json",
+  "source_sha256": "7d7f57a9b3e0a7c77f04475fe9dc9bec47bb1085c66276ce5071c1f4e7756c80",
+  "version_id": "subtitle-cat-english-online-caption-research-wit--7d7f57a9b3e0a7c7"
+}

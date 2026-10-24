@@ -1,0 +1,484 @@
+{
+  "character_to_scene_evidence_status": "participant_hypotheses_only_not_attributed_speakers",
+  "credit_roster_count": 26,
+  "episode_id": "S04E09",
+  "provisional_scene_count": 2,
+  "scenes": [
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Mike Finneran",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:652669",
+          "character_name": "Art Fensterman",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Dorothy Andrews",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204394",
+          "character_name": "Cashier",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Jason Horst",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081507",
+          "character_name": "Chad",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Angela Aames",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081508",
+          "character_name": "Debbie",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Douglas Emerson",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1206439",
+          "character_name": "Ernie",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Tad Horino",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1206440",
+          "character_name": "Interpreter",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Nicole Rosselle",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081506",
+          "character_name": "Mary",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charles Bouvier",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081503",
+          "character_name": "Melvin Hall",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Susan Cash",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081504",
+          "character_name": "Ms. Linda Eagen",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Tessa Richarde",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081505",
+          "character_name": "Roberta De Vries",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Reid Asato",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081502",
+          "character_name": "Sumo Wrestler",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Sebastian Massa",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081501",
+          "character_name": "Sumo Wrestler",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S04E09:C00001:1",
+      "first_start_ms": 1770,
+      "last_end_ms": 173870,
+      "last_source_turn_id": "S04E09:C00038:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 1,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 38,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S04E09:C00022:1",
+            "S04E09:C00023:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 38,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Dorothy Andrews",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204394",
+          "character_name": "Cashier",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Angela Aames",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081508",
+          "character_name": "Debbie",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Tad Horino",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1206440",
+          "character_name": "Interpreter",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charles Bouvier",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081503",
+          "character_name": "Melvin Hall",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Susan Cash",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081504",
+          "character_name": "Ms. Linda Eagen",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Tessa Richarde",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081505",
+          "character_name": "Roberta De Vries",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Reid Asato",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081502",
+          "character_name": "Sumo Wrestler",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Sebastian Massa",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1081501",
+          "character_name": "Sumo Wrestler",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S04E09:C00039:1",
+      "first_start_ms": 218350,
+      "last_end_ms": 1391320,
+      "last_source_turn_id": "S04E09:C00351:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 2,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 313,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "John Larroquette",
+          "addressed_by_name_turn_ids": [
+            "S04E09:C00098:1",
+            "S04E09:C00113:1",
+            "S04E09:C00114:1",
+            "S04E09:C00305:1",
+            "S04E09:C00315:1"
+          ],
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Mike Finneran",
+          "addressed_by_name_turn_ids": [
+            "S04E09:C00046:1",
+            "S04E09:C00130:1",
+            "S04E09:C00243:1"
+          ],
+          "character_id": "tvmaze:652669",
+          "character_name": "Art Fensterman",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Douglas Emerson",
+          "addressed_by_name_turn_ids": [
+            "S04E09:C00064:1",
+            "S04E09:C00118:1",
+            "S04E09:C00223:1"
+          ],
+          "character_id": "tvmaze:1206439",
+          "character_name": "Ernie",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Nicole Rosselle",
+          "addressed_by_name_turn_ids": [
+            "S04E09:C00064:1",
+            "S04E09:C00076:1",
+            "S04E09:C00089:1"
+          ],
+          "character_id": "tvmaze:1081506",
+          "character_name": "Mary",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Jason Horst",
+          "addressed_by_name_turn_ids": [
+            "S04E09:C00187:1",
+            "S04E09:C00213:1"
+          ],
+          "character_id": "tvmaze:1081507",
+          "character_name": "Chad",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "addressed_by_name_turn_ids": [
+            "S04E09:C00310:1"
+          ],
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S04E09:C00092:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 313,
+      "uncredited_participants_must_remain_possible": true
+    }
+  ],
+  "source_caption_turns": 351,
+  "source_manifest": "seasons/S04/S04E09/dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--8a20e5b9aa5d31e9/manifest.json",
+  "source_sha256": "8a20e5b9aa5d31e92cb3a45f67d6ca6d143313cf8de244c8ae45a964f7d3a7de",
+  "version_id": "subtitle-cat-480p-dvd-english-research-witness--8a20e5b9aa5d31e9"
+}
