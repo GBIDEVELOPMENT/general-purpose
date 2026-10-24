@@ -1,3 +1,5 @@
 One-shot owner-approved whole-episode S01E01 source audio inference benchmark.
 Trusted base main only. Original AVI SHA-pinned, temporary PCM used by independent Kaldi/Vosk and Whisper.
 No media, model weights or secrets committed; private bounded comparison JSON only.
+
+Second deliberate real original whole-episode run after merged timestamp rejection classification PR #272. Keep same models and immutable source. Archive only counts per rejection cause, not source media.
