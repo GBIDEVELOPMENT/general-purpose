@@ -1,0 +1,25 @@
+name: Night Court full episode visual cost synthetic integration
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/profile_s01e01_whole_visual_pass.py'
+      - 'Night Court/tools/test_profile_s01e01_whole_visual_pass.py'
+      - '.github/workflows/night-court-whole-video-cost-ci.yml'
+      - '.github/workflows/night-court-trusted-whole-video-cost.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Validate full synthetic edit-score scan and frame-budget inference
+        run: |
+          python 'Night Court/tools/test_profile_s01e01_whole_visual_pass.py'
+          python 'Night Court/tools/test_extract_fast_visual_plan.py'
