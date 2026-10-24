@@ -11,9 +11,16 @@ IMAGE={".jpg",".jpeg",".png",".webp",".bmp",".gif"}
 ARCHIVE=re.compile(r"(?i)(?:\.rar|\.r\d\d|\.part\d+\.rar|\.7z|\.zip)$")
 SCREEN_FOLDER={"screens","screenshots","screen shots","screen caps","screencaps"}
 SCREEN_FILE=re.compile(r"(?i)^(?:screen(?:shot)?[\s._-]*\d+|mpv-shot\d+|vlcsnap[-\d]+|thumbs?[-_ ]?\d+|.+[ ._-]screenshots?)\.(?:png|jpe?g|webp)$")
+# User-authorized release samples and trailers, never an ordinary episode.
+RELEASE_CLIP=re.compile(r"(?i)^(?:sample|trailer|teaser|.+[ ._-](?:sample|trailer|teaser))$")
+EPISODE_ID=re.compile(r"(?i)S\d{1,2}E\d{1,3}")
 def category(path):
     p=PurePosixPath(path)
     if p.suffix.lower()==".nfo":return "nfo"
+    if p.suffix.lower() in VIDEO and not EPISODE_ID.search(p.name):
+        clip_name=p.stem
+        if RELEASE_CLIP.fullmatch(clip_name):
+            return "sample" if clip_name.lower()=="sample" or re.search(r"(?i)[ ._-]sample$",clip_name) else "trailer"
     if p.suffix.lower() in IMAGE and (
             any(x.lower() in SCREEN_FOLDER for x in p.parts) or SCREEN_FILE.fullmatch(p.name)):
         return "screenshot"
@@ -38,6 +45,8 @@ def assess(inv):
             if media: archives.append(record)
             else: reserved.append(record)
     return {"root":ROOT,"nfo":sum(x["category"]=="nfo" for x in clean),
+            "samples":sum(x["category"]=="sample" for x in clean),
+            "trailers":sum(x["category"]=="trailer" for x in clean),
             "screenshots":sum(x["category"]=="screenshot" for x in clean),
             "debris_candidates":clean,"archive_review":archives,"archive_without_local_video":reserved,
             "important":"Archive candidates are NEVER auto-delete candidates; verify extracted content and archive relationship separately."}
@@ -53,7 +62,7 @@ def validate(manifest):
     for entry in entries:
         if not isinstance(entry,dict) or set(entry)!={"from","size","modify","category"}:raise ValueError("Unexpected entry keys")
         p=safe(entry["from"])
-        if category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot"):
+        if category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot","sample","trailer"):
             raise ValueError("Not an exact approved debris class")
         if p.casefold() in seen:raise ValueError("Duplicate delete")
         seen.add(p.casefold())
