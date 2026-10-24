@@ -1,15 +1,13 @@
 {
   "root": "/downloads",
-  "batch_id": "vacated_release_001",
-  "description": "Remove only original release folders whose media were confirmed relocated in completed audit journals for All Creatures Great and Small, Joey, Green Lantern, Studio 60 and The Good Doctor; skip any FTP directory still containing content.",
+  "batch_id": "vacated_release_002",
+  "description": "Remove only the six original release folders for 78 Burn Notice and Downton Abbey episodes whose FTP rename journal was verified complete, skipping any directory still containing files or children.",
   "directories": [
-    "/downloads/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR",
-    "/downloads/All Creatures Great and Small 2020 S06 1080p Web-DL x264-OFT",
-    "/downloads/All Creatures Great and Small S04 br 10bit hevc-d3g",
-    "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON",
-    "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX",
-    "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX",
-    "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY",
-    "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV"
+    "/downloads/Burn Notice complete S01-S07 web 10bit ddp2 hevc-d3g/S01",
+    "/downloads/Burn Notice complete S01-S07 web 10bit ddp2 hevc-d3g/S02",
+    "/downloads/Burn Notice complete S01-S07 web 10bit ddp2 hevc-d3g/S03",
+    "/downloads/Burn Notice complete S01-S07 web 10bit ddp2 hevc-d3g/S04",
+    "/downloads/Downton Abbey 2010 S01 1080p WEB-DL HEVC x265-BONE",
+    "/downloads/Downton Abbey 2010 S02 1080p WEB-DL HEVC x265-BONE"
   ]
 }
