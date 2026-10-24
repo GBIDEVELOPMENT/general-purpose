@@ -1,0 +1,24 @@
+name: Night Court S01E01 bounded continuous review cut
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_s01e01_review_cut_manifest.py'
+      - 'Night Court/tools/test_s01e01_review_cut_manifest.py'
+      - 'Night Court/S01E01-REVIEW-CUT-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-review-cut.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s01e01-bounded-review-cut'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check all seventeen source tasks are covered without fake acceptance
+        run: |
+          python 'Night Court/tools/test_s01e01_review_cut_manifest.py'
+          python 'Night Court/tools/build_s01e01_review_cut_manifest.py' --write
+          git diff --exit-code -- 'Night Court/seasons/S01/S01E01/derived/editorial-review-v1/review-cut-manifest.json'
