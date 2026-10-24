@@ -1,3 +1,19 @@
+## Separate fast editing milestone (2026-10-24)
+
+The independent whole-episode AV-certification gates above continue
+unchanged. A **working screenplay** can and should be published to
+the project's private editorial research tree before these gates
+pass. See [caption-first working-screenplay policy](CAPTION-FIRST-WORKING-SCREENPLAY-POLICY.md).
+That new tier uses held original captions as presumptive dialogue and
+model comparisons as selective review pointers. It can be marked
+`COMPLETE_HELD_DIALOGUE_WORKING_DRAFT_VISUAL_AND_SPEAKER_EDIT_PENDING`
+when the full *held source witness* is included, without calling it a
+verified screenplay or claiming physical-action coverage. A later
+`WORKING_SCREENPLAY_EDITORIALLY_READY` requires actual substantial
+scene and speaker editing, and is distinct from `INDEPENDENTLY_AV_CERTIFIED`.
+Neither of these editorial statuses changes this stricter existing
+archive acceptance ledger, which still stands at 0/193.
+
 # Night Court production-script publication gates
 
 The archive holds source-only reading scripts for **193/193 original-series episodes** and has two ongoing bounded audiovisual pilots, S01E01 and S09E19. None of the 193 episodes is independently verified complete against its source video, including source speech, cast speakers, scenes, sound and physical action.

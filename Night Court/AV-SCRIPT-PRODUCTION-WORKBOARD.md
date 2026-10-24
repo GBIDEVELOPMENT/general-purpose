@@ -1,3 +1,33 @@
+## Caption-first production pivot, October 24, 2026
+
+A practical working screenplay is no longer held back until word-for-word
+independent audio certification. [CAPTION-FIRST-WORKING-SCREENPLAY-POLICY.md](CAPTION-FIRST-WORKING-SCREENPLAY-POLICY.md)
+establishes source captions as the **default working dialogue**, ASR as
+a targeted exception detector, and a distinct editorial product state
+between source-only scaffolds and independently AV-certified archives.
+The strict [archival publication gate](AV-SCRIPT-PUBLICATION-GATES.md)
+remains unchanged.
+
+The implementation `tools/build_caption_first_working_drafts.py` produces
+the two pilot working drafts from all **336** S01E01 original timed caption
+cues and all **347** S09E19 original **untimed** paragraphs. It carries
+existing actual sampled-video observations into the appropriate bounded
+passages, keeps speaker attribution uncertain when not independently
+identified, and creates **16** S01E01 original-ASR mismatch review tasks
+plus distributed control samples. It does **not** rewrite subtitles
+using ASR, invent original S09 caption times, fill unobserved visual
+actions, or mark the drafts independently complete. The outputs and
+derived manifest will be committed by a separately gated, trusted-main
+owner workflow. This is real full-held-dialogue script production,
+not the final video-action/character edit.
+
+**Next real production work:** review the source-AV scene changes
+throughout both original episodes and supply legible scene headings,
+visible cast/speaker association, performance and important physical
+comedy beyond the narrow already described sample windows. Measure
+draft usability separately from archival certainty; do not run
+multiple whole-episode ASR models as a default prerequisite.
+
 # Nine-season evidence-linked screenplay production workboard
 
 ## Release-readiness safety audit
