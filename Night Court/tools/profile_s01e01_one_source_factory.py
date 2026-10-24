@@ -22,6 +22,51 @@ from probe_s01e01_cadence_and_cost import SHA,SIZE
 from profile_s01e01_whole_visual_pass import profile_local
 
 MAX_REPORT_BYTES=100000
+MAX_EXPORTED_REJECTED_WORD_REVIEW=64
+
+
+def compact_rejected_word_review(audio):
+    """Retain a bounded source-spread sample, never promoting invalid time."""
+    whole=audio.get('whisper_rejected_word_time_review')
+    if whole is None:
+        return None  # Historical source reports predate diagnostics.
+    if not isinstance(whole,dict):
+        raise ValueError('Malformed model rejection review envelope')
+    candidates=whole.get('rejection_details_no_source_time_promotion')
+    total=whole.get('total_invalid_word_intervals')
+    if (not isinstance(candidates,list) or len(candidates)>512
+        or type(total) is not int or not 0<=len(candidates)<=total<=15000
+        or whole.get('original_soundtrack_listened') is not False
+        or whole.get('separate_model_context_human_verified') is not False):
+        raise ValueError('Invalid model rejection numbers or false source promotion')
+    if candidates:
+        # Uniform positional samples from chronological invalid-word hypotheses,
+        # preserving late as well as early source windows without full export.
+        wanted=min(MAX_EXPORTED_REJECTED_WORD_REVIEW,len(candidates))
+        indices=([round(i*(len(candidates)-1)/(wanted-1)) for i in range(wanted)]
+                 if wanted>1 else [0])
+    else:
+        indices=[]
+    rows=[]
+    for index in indices:
+        row=candidates[index]
+        if (not isinstance(row,dict)
+            or row.get('model_proposed_original_source_word_interval_valid') is not False
+            or row.get('original_soundtrack_word_human_verified') is not False
+            or not isinstance(row.get('same_time_other_model_context_unverified'),list)
+            or len(row['same_time_other_model_context_unverified'])>4):
+            raise ValueError('An invalid-word research pointer claims source truth')
+        rows.append({'original_invalid_hypothesis_index':index, **row})
+    return {
+       'source_model_total_invalid_word_proposals':total,
+       'source_model_bounded_rejection_detail_count':len(candidates),
+       'exported_review_pointer_count':len(rows),
+       'source_model_invalid_proposals_not_exported':total-len(rows),
+       'sampling':'uniform_indices_across_original_decode_order',
+       'source_word_times_repaired_or_verified':False,
+       'source_human_listening_completed':False,
+       'cases':rows
+    }
 
 
 def compose_summary(audio,visual,transfer_s,combined_s):
@@ -66,6 +111,7 @@ def compose_summary(audio,visual,transfer_s,combined_s):
         'sum_measured_individual_stages_seconds':source_stage_sum,
         'actual_source_to_final_metadata_wall_seconds':round(float(combined_s),3),
         'word_candidate_summary':count,
+        'whisper_invalid_word_targeted_review':compact_rejected_word_review(audio),
         'model_diagnostic_summary':[{'model_id':m['model_id'],
              'rejected_word_timestamps':m.get('rejected_word_timestamps'),
              'rejected_word_reasons':m.get('rejected_word_reasons',{})}
