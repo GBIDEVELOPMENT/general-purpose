@@ -68,3 +68,21 @@ speakers and match voices to synchronized screen evidence, and produce two
 complete independently reviewed pilot screenplay manuscripts. The current
 work does **not** itself interpret visuals or create accepted stage directions.
 Private source material and model weights stay outside Git.
+
+### First measured parallel S09E19 checkpoint, October 24
+
+Trusted actual original AVI run [#40133282389](https://github.com/gamesbyian/general-purpose/actions/runs/40133282389)
+succeeded: **242.378s** source processing excluding runner setup and
+dependency install; stage clocks sum **269.694s**, with **27.316s** measured
+overlap. It emitted **202** PTS-matched source JPEG candidates, a 12-window
+multi-goal original-source AV pending review (31.392s *distinct* selected
+runtime) and **three** small semantic microbatches with **zero** actual vision
+model interpretation. The strict artifact SHA and stage breakdown are
+[archived here](research/s09e19-first-parallel-source-wall-evidence-2026-10-24.json).
+
+The measured source-processing wall is **slower** than older S09E19 serial
+runs of 213.936s and 170.522s. Model download and inference stage times
+also changed; this cannot establish that parallelism caused the slowdown.
+The trusted S09E19 owner workflow therefore now selects **serial** again,
+retaining a command-line parallel mode for controlled future comparisons.
+Neither p95 production speed nor screenplay content improved or was accepted.
