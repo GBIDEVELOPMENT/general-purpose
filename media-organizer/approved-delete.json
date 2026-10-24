@@ -1,42 +1,24 @@
 {
   "root": "/downloads",
-  "batch_id": "txt_samples_retry_002",
-  "description": "Recheck and delete the six exact user-approved text files and release samples, recording already-missing sources as skipped and refusing any changed live media.",
+  "batch_id": "studio_txt_cleanup_003",
+  "description": "Remove all three explicitly owner-approved plain-text Studio 60 release and DVD notes sidecars after their metadata has already informed canonical episode title organization; preserve 88 videos and all subtitle pairs.",
   "entries": [
     {
-      "from": "/downloads/A.Big.Bold.Beautiful.Journey.2025.Hybrid.2160p.WEB-DL.DV.HDR.DDP5.1.Atmos.H265-AOC/Sample.mkv",
-      "size": 325095290,
-      "modify": "20251021051425",
-      "category": "sample"
-    },
-    {
-      "from": "/downloads/Michael.2026.2160p.WEB-DL.DDP5.1.Atmos.SDR.H265-AOC/Sample.mkv",
-      "size": 369746278,
-      "modify": "20260609200718",
-      "category": "sample"
-    },
-    {
-      "from": "/downloads/Now.You.See.Me.Now.You.Don't.2025.1080p.TS.TR.EN-RGB/Info.txt",
-      "size": 194,
-      "modify": "20251118193116",
+      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/1080p Release Read Me.txt",
+      "size": 1550,
+      "modify": "20250908072141",
       "category": "txt"
     },
     {
-      "from": "/downloads/Southland.Tales.2006.1080p.Bluray.x264-SECTOR7/Sample/sector7-southland.tales.1080p-sample.mkv",
-      "size": 80579940,
-      "modify": "20260908033459",
-      "category": "sample"
-    },
-    {
-      "from": "/downloads/Star Trek Voyager 1995.S01.1080p.NTSC DVD Upscale.H265.10bit.DDP5.1-Zero00/info-readme.txt",
-      "size": 1063,
-      "modify": "20251003062853",
+      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/720p Release Read Me.txt",
+      "size": 1550,
+      "modify": "20250908073052",
       "category": "txt"
     },
     {
-      "from": "/downloads/The.Boys.and.Girl.from.County.Clare.2003.1080p.WEBRip.x264-RARBG/RARBG.txt",
-      "size": 30,
-      "modify": "20260819093725",
+      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/DVD Typical Episode Notes.txt",
+      "size": 9820,
+      "modify": "20261001104816",
       "category": "txt"
     }
   ]
