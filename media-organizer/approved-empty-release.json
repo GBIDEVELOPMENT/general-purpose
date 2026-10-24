@@ -1,13 +1,13 @@
 {
   "root": "/downloads",
-  "batch_id": "vacated_release_002",
-  "description": "Remove only the six original release folders for 78 Burn Notice and Downton Abbey episodes whose FTP rename journal was verified complete, skipping any directory still containing files or children.",
+  "batch_id": "studio60_empty_release_005",
+  "description": "After four exact Studio 60 artwork and note moves complete, remove only the original now-vacated S60 release folders and old XviD season folder, each independently verified empty immediately before nonrecursive FTP RMD.",
   "directories": [
-    "/downloads/Burn Notice complete S01-S07 web 10bit ddp2 hevc-d3g/S01",
-    "/downloads/Burn Notice complete S01-S07 web 10bit ddp2 hevc-d3g/S02",
-    "/downloads/Burn Notice complete S01-S07 web 10bit ddp2 hevc-d3g/S03",
-    "/downloads/Burn Notice complete S01-S07 web 10bit ddp2 hevc-d3g/S04",
-    "/downloads/Downton Abbey 2010 S01 1080p WEB-DL HEVC x265-BONE",
-    "/downloads/Downton Abbey 2010 S02 1080p WEB-DL HEVC x265-BONE"
+    "/downloads/S60/1080p",
+    "/downloads/S60/720p",
+    "/downloads/S60/DVD",
+    "/downloads/S60",
+    "/downloads/Studio 60 on the Sunset Strip/Season 01",
+    "/downloads/Studio 60 on the Sunset Strip"
   ]
 }
