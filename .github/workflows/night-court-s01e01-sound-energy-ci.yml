@@ -1,0 +1,22 @@
+name: Night Court S01E01 original-mix acoustic envelope regression
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/probe_s01e01_audio_energy_envelope.py'
+      - 'Night Court/tools/test_s01e01_audio_energy_envelope.py'
+      - 'Night Court/S01E01-SOUNDTRACK-ENERGY-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-sound-energy-ci.yml'
+      - '.github/workflows/night-court-trusted-s01e01-sound-energy.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s01e01-audio-edge-envelope'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test 37 seconds synthetic mono mix energy without real source/media
+        run: python 'Night Court/tools/test_s01e01_audio_energy_envelope.py'

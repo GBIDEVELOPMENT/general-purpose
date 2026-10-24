@@ -1,0 +1,49 @@
+name: Night Court trusted S01E01 source-mix acoustic energy envelope
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-sound-energy.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-s01e01-sound-energy
+  cancel-in-progress: false
+jobs:
+  source-energy:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-sound-energy-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - name: Checkout reviewed GitHub main not PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Install fixed system decode dependency
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Synthetic waveform unit tests run without credentials
+        run: python 'Night Court/tools/test_s01e01_audio_energy_envelope.py'
+      - name: SHA-verify one AVI and measure only 100ms mono-mix RMS/peak
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python 'Night Court/tools/probe_s01e01_audio_energy_envelope.py' --ftp \
+            --output "${{ runner.temp }}/s01e01-audio-level/energy-envelope.json"
+      - name: Private small JSON-only sound level evidence
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-source-mix-sound-energy
+          path: ${{ runner.temp }}/s01e01-audio-level/energy-envelope.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Wipe temporary derived metadata
+        if: always()
+        run: rm -rf "${{ runner.temp }}/s01e01-audio-level"
