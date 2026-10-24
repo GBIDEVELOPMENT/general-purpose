@@ -30,6 +30,10 @@ We have now achieved **first reviewed static-frame setting and prop annotations 
 - Original caption cues must be separately authenticated against audio. Their nominal SRT time markers remain `not_audio_verified` until content/word comparison or manual review. Distinguish dialogue utterance, speaker hypothesis, scene setting, acoustic cue and observed visual action.
 - No broad 193-video factory until a real source-edition alignment, facial/voice tracking and scene-action sample pass acceptance.
 
+## Source turn/word alignment engineering checkpoint
+
+A source-preserving [word evidence review](S01E01-WORD-ALIGNMENT-HANDOFF.md) is now implemented. It connects original SRT word tokens to candidate ASR word timestamps **only for exact lexical matches**, splits explicit multi-speaker subtitle typography without inventing speakers, and records all unanchored words and boundary truncation. It intentionally does not certify source/video synchronization, speech identity, emotion or a finished scene. See `tools/build_s01e01_word_alignment_review.py` and the generated `derived/scene-review-v1/word-alignment-review.json` after CI.
+
 ## Acceptance ledger
 
 | Gate | Status |
