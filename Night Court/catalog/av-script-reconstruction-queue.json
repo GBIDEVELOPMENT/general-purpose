@@ -11,8 +11,15 @@
   "source_only_voice_attribution_units": 72823,
   "provisional_scene_gap_clusters": 508,
   "episode_scripts_independently_av_verified": 0,
+  "episodes_with_bounded_real_AV_evidence": 2,
+  "episodes_with_source_linked_multimodal_script_excerpts": 2,
+  "original_untimed_dialogue_witnesses": 1,
   "current_active_pilot": "S01E01",
-  "ranking_basis": "S01E01 continuation first; other episodes use existing caption-QA heuristic review priority; not a measure of true AV accuracy",
+  "active_bounded_media_pilots": [
+    "S01E01",
+    "S09E19"
+  ],
+  "ranking_basis": "S01E01 continuation first, then highest existing caption-QA score including S09E19; no ranking certifies actual audio/video accuracy",
   "file_identity_note": "FTP filenames and sizes do not prove video episode identity, content, or edition match",
   "rights_note": "Private owner research, no legal rights determination for external subtitles and production media",
   "episodes": [
@@ -54,6 +61,7 @@
         "vocal_prosody_and_delivery": "unreviewed_pilot_mix_features_only",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -98,25 +106,39 @@
         "source_reading_script": "complete_not_av_verified",
         "source_turns_and_roster": "prepared_unknown_speakers",
         "provisional_scene_participants": "source_only_no_confirmed_scene",
-        "video_edition_identification": "filename_candidate_only",
-        "full_episode_subtitle_audio_alignment": "not_verified",
+        "video_edition_identification": "bounded_sample_pilot_not_whole_episode_verified",
+        "full_episode_subtitle_audio_alignment": "not_verified_original_untimed_source_has_15_sparse_ASR_text_proposals",
         "speaker_and_character_voice_identity": "not_verified",
         "observed_scene_boundaries_and_locations": "not_verified",
-        "physical_stage_directions_and_reactions": "not_started",
-        "vocal_prosody_and_delivery": "not_started",
+        "physical_stage_directions_and_reactions": "bounded_sampled_video_states_only",
+        "vocal_prosody_and_delivery": "sparse_ASR_only_not_vocal_delivery",
         "full_episode_independent_av_QA": "not_verified"
+      },
+      "bounded_source_sample_evidence": {
+        "observed_original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+        "observed_original_video_duration_seconds": 1320.144,
+        "independent_sparse_ASR_segments": 50,
+        "untimed_original_paragraph_lexical_candidates": 15,
+        "sampled_real_video_frames": 100,
+        "sampled_video_visual_observations": 6,
+        "integrated_source_scene": "seasons/S09/S09E19/derived/scene-review-v1/source-linked-scene.md",
+        "original_source_remains_untimed": true,
+        "whole_episode_edition_verified": false,
+        "character_speakers_verified": false,
+        "complete_script_verified": false
       },
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Derive AV-validated original-source word times from untimed S09E19 paragraphs",
         "Review source QA warnings: untimed_source_requires_separate_completeness_check",
+        "Review fifteen distinct original-text ASR candidates, six real frame observations and all unverified speakers",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
         "Confirm source words, diarize/identify voices from verified evidence",
         "Observe video cuts, scene locations, facial/physical action and props",
         "Review audio prosody/emphasis/laughter separately from emotion guesses",
         "Generate source-linked proper scene script and independently accept episode"
       ],
-      "status": "source_ready_AV_pending",
+      "status": "S09E19_bounded_AV_experiment_original_source_untimed",
       "speaker_verified": false,
       "full_episode_screenplay_verified": false
     },
@@ -161,6 +183,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -215,6 +238,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -269,6 +293,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -323,6 +348,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -377,6 +403,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -430,6 +457,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -483,6 +511,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -536,6 +565,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -589,6 +619,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -642,6 +673,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -695,6 +727,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -748,6 +781,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -801,6 +835,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -854,6 +889,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -907,6 +943,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -960,6 +997,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1013,6 +1051,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1066,6 +1105,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1119,6 +1159,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1172,6 +1213,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1225,6 +1267,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1278,6 +1321,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1331,6 +1375,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1384,6 +1429,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1437,6 +1483,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1490,6 +1537,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1543,6 +1591,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1596,6 +1645,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1649,6 +1699,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1702,6 +1753,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1755,6 +1807,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1808,6 +1861,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1861,6 +1915,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1914,6 +1969,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -1967,6 +2023,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2020,6 +2077,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2073,6 +2131,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2126,6 +2185,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2179,6 +2239,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2232,6 +2293,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2285,6 +2347,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2338,6 +2401,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2391,6 +2455,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2444,6 +2509,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2497,6 +2563,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2550,6 +2617,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2603,6 +2671,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2656,6 +2725,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2709,6 +2779,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2762,6 +2833,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2815,6 +2887,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2868,6 +2941,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2921,6 +2995,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -2974,6 +3049,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3027,6 +3103,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3078,6 +3155,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3128,6 +3206,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3178,6 +3257,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3228,6 +3308,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3278,6 +3359,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3328,6 +3410,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3378,6 +3461,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3428,6 +3512,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3478,6 +3563,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3528,6 +3614,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3578,6 +3665,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3628,6 +3716,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3678,6 +3767,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3728,6 +3818,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3778,6 +3869,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3828,6 +3920,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3878,6 +3971,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3928,6 +4022,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -3978,6 +4073,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4028,6 +4124,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4078,6 +4175,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4128,6 +4226,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4178,6 +4277,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4228,6 +4328,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4278,6 +4379,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4328,6 +4430,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4378,6 +4481,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4428,6 +4532,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4478,6 +4583,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4528,6 +4634,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4578,6 +4685,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4628,6 +4736,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4678,6 +4787,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4728,6 +4838,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4778,6 +4889,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4828,6 +4940,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4878,6 +4991,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4928,6 +5042,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -4978,6 +5093,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5028,6 +5144,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5078,6 +5195,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5128,6 +5246,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5178,6 +5297,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5228,6 +5348,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5278,6 +5399,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5328,6 +5450,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5378,6 +5501,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5428,6 +5552,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5478,6 +5603,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5528,6 +5654,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5578,6 +5705,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5628,6 +5756,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5678,6 +5807,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5728,6 +5858,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5778,6 +5909,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5828,6 +5960,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5878,6 +6011,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5928,6 +6062,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -5978,6 +6113,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6028,6 +6164,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6078,6 +6215,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6128,6 +6266,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6178,6 +6317,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6228,6 +6368,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6278,6 +6419,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6328,6 +6470,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6378,6 +6521,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6428,6 +6572,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6478,6 +6623,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6528,6 +6674,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6578,6 +6725,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6628,6 +6776,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6678,6 +6827,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6728,6 +6878,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6778,6 +6929,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6828,6 +6980,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6878,6 +7031,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6928,6 +7082,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -6978,6 +7133,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7028,6 +7184,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7078,6 +7235,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7128,6 +7286,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7178,6 +7337,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7228,6 +7388,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7278,6 +7439,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7328,6 +7490,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7378,6 +7541,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7428,6 +7592,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7478,6 +7643,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7528,6 +7694,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7578,6 +7745,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7628,6 +7796,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7678,6 +7847,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7728,6 +7898,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7778,6 +7949,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7828,6 +8000,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7878,6 +8051,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7928,6 +8102,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -7978,6 +8153,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8028,6 +8204,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8078,6 +8255,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8128,6 +8306,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8178,6 +8357,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8228,6 +8408,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8278,6 +8459,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8328,6 +8510,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8378,6 +8561,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8428,6 +8612,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8478,6 +8663,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8528,6 +8714,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8578,6 +8765,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8628,6 +8816,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8678,6 +8867,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8728,6 +8918,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8778,6 +8969,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8828,6 +9020,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8878,6 +9071,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8928,6 +9122,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -8978,6 +9173,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9028,6 +9224,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9078,6 +9275,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9128,6 +9326,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9178,6 +9377,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9228,6 +9428,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9278,6 +9479,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9328,6 +9530,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9378,6 +9581,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9428,6 +9632,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9478,6 +9683,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9528,6 +9734,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9578,6 +9785,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9628,6 +9836,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9678,6 +9887,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9728,6 +9938,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9778,6 +9989,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
@@ -9828,6 +10040,7 @@
         "vocal_prosody_and_delivery": "not_started",
         "full_episode_independent_av_QA": "not_verified"
       },
+      "bounded_source_sample_evidence": null,
       "next_tasks": [
         "Identify correct source-video release and decode/verify duration",
         "Listen for completeness, caption omissions and source-to-video offsets/drift",
