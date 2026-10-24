@@ -1,0 +1,181 @@
+{
+  "schema": "night-court-real-original-image-scene-observations/1",
+  "episode_id": "S09E19",
+  "source_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_duration_ms": 1320144,
+  "private_source_workflow_run": 40137223223,
+  "private_thumbnail_artifact_id": 12578036143,
+  "original_image_artifact_zip_sha256": "fa5d4f5ed8791e26257d447c5d40b02d8cf8469e82784b52bbdee6f3a498717d",
+  "frame_catalogue_sha256": "3b6cc0e0b89a6f517036485d5379ae0b8c7fe83dfda5954c576e8ed91bff253c",
+  "whole_episode_uniform_frames_captured": 73,
+  "scene_description_provenance": "assistant_direct_visual_inspection_of_18s_uniform_original_AVI_contact_sheets",
+  "source_video_image_generation": false,
+  "frame_time_kind": "requested_source_decode_offset_unverified_exact_PTS",
+  "speaker_identity_from_picture_asserted": false,
+  "physical_motion_source_verified": false,
+  "continuous_scene_boundaries_verified": false,
+  "visual_observations": [
+    {
+      "frame_id": 1,
+      "source_requested_ms": 9000,
+      "source_thumbnail_sha256": "914d1ba18d2d5124040100629bf650896e12f5956c85c1dc6c2d0609b2ae8b4b",
+      "provisional_location": "bright diner counter",
+      "visually_observed_static_description": "A purple-clad adult is seated at a diner table; a busy food counter is visible behind.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 8,
+      "source_requested_ms": 135000,
+      "source_thumbnail_sha256": "c715573fb6b3f0a05c20fbefb2fb56d2e3e212036552e713973432d2eb0e4af8",
+      "provisional_location": "courtroom",
+      "visually_observed_static_description": "A yellow-suited adult sits at the courtroom bench among desks and administrative furnishings.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 19,
+      "source_requested_ms": 333000,
+      "source_thumbnail_sha256": "6468dbf8f382b63f9dc32ecb3f4f11090d6816290d0a5895c153e7ecfce4f6d7",
+      "provisional_location": "book-lined court office",
+      "visually_observed_static_description": "A suited adult stands in a law-book-lined office; papers and a large work table are visible.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 22,
+      "source_requested_ms": 387000,
+      "source_thumbnail_sha256": "f103c71e5d9699f0863209e1fc3ffa529103bb62f6d85a7f9476d830af1ccb7d",
+      "provisional_location": "court office doorway",
+      "visually_observed_static_description": "A uniformed adult stands framed by a doorway in the office area.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 25,
+      "source_requested_ms": 441000,
+      "source_thumbnail_sha256": "2d7c361e0ec883cb1ba1a6df00ab721e41449006e6c4a6f12e205d02767b9c1a",
+      "provisional_location": "diner tables",
+      "visually_observed_static_description": "Several adults sit together at small diner tables, with food and drinks in front of them.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 31,
+      "source_requested_ms": 549000,
+      "source_thumbnail_sha256": "9003879da2a91019240399744a9d76a1b28889c2c8dbd287f4a78cb537090608",
+      "provisional_location": "diner and court office transition",
+      "visually_observed_static_description": "A uniformed adult appears near the bright restaurant fixtures; the sampled frames here do not establish the precise edit.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 38,
+      "source_requested_ms": 675000,
+      "source_thumbnail_sha256": "6818582ab4e978dd665fff705258810e2c94d3cf274c6a8c20e39a1b0cc7fd4f",
+      "provisional_location": "courtroom",
+      "visually_observed_static_description": "A burgundy-patterned adult leans across a courtroom rail toward a seated uniformed adult.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 39,
+      "source_requested_ms": 693000,
+      "source_thumbnail_sha256": "e4e7af2a2edb82c42b70fde869de02b48a50fa30db21c8871bec556e950853e7",
+      "provisional_location": "floor insert",
+      "visually_observed_static_description": "A bright spark or flame appears along a crack in a gray floor; source and consequence of the movement cannot be determined from one still.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 41,
+      "source_requested_ms": 729000,
+      "source_thumbnail_sha256": "615293c16405c13b92e5eb885b7142ab468f7a09629bcc6739fb31ffddc29290",
+      "provisional_location": "book-lined court office",
+      "visually_observed_static_description": "Two suited adults stand together amid the bookcases and papers of the office.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 47,
+      "source_requested_ms": 837000,
+      "source_thumbnail_sha256": "e2414d32603a88f956cbec8e8ec93aefe521ba6bccbfc4181a8a7546e0c18da1",
+      "provisional_location": "warmly lit restaurant bar",
+      "visually_observed_static_description": "A crowded, warmly lit restaurant or bar replaces the courthouse interiors, with a curved counter and small tables.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 48,
+      "source_requested_ms": 855000,
+      "source_thumbnail_sha256": "9699a5fb0a458773b1ba2da8010d870b45b820221432d2fd452da5578b553f0b",
+      "provisional_location": "restaurant bar",
+      "visually_observed_static_description": "A uniformed adult faces a server carrying a tray near the bar.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 55,
+      "source_requested_ms": 981000,
+      "source_thumbnail_sha256": "04c817397009beee2d50f12880e3572bbab0b7516978cc95b0ee1cc012b76d17",
+      "provisional_location": "restaurant dance area",
+      "visually_observed_static_description": "Several adults are standing together on the restaurant floor and appear to be paired closely, consistent with a dance; no precise choreography is certified.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 60,
+      "source_requested_ms": 1071000,
+      "source_thumbnail_sha256": "21c5460b22cbd3a4f2fe817f8181494da68b223ab02c0634c8acea9bf68f32b8",
+      "provisional_location": "bar counter",
+      "visually_observed_static_description": "A uniformed adult faces a bespectacled suited adult in conversation beside the bar.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 66,
+      "source_requested_ms": 1179000,
+      "source_thumbnail_sha256": "0547f65ea59016c0f5d3412640fa3acd52d3f48ab6e63e94c6648ef4b11c505c",
+      "provisional_location": "courthouse corridor",
+      "visually_observed_static_description": "Two adults talk standing near a hallway doorway with cream walls, distinct from the bar.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 70,
+      "source_requested_ms": 1251000,
+      "source_thumbnail_sha256": "7c7baa7079c4034192eb65dca432ec03c323507442d771eac404738ee78d4e2d",
+      "provisional_location": "book-lined office",
+      "visually_observed_static_description": "A dark-jacketed adult sits at a table in the book-lined interior with papers in view.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    },
+    {
+      "frame_id": 72,
+      "source_requested_ms": 1287000,
+      "source_thumbnail_sha256": "9e5eb0f81e195c750398aacb00e429a5f9656141e173218c76b22da3a754f097",
+      "provisional_location": "court office",
+      "visually_observed_static_description": "Several adults gather around a table in the book-lined office during the episode's final minutes.",
+      "evidence_basis": "single_original_source_video_thumbnail",
+      "speaking_identity_verified": false,
+      "continuous_action_or_precise_cut_verified": false
+    }
+  ],
+  "episode_editor_ready": false
+}

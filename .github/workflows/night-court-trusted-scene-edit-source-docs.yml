@@ -1,0 +1,42 @@
+name: Night Court trusted scene-enriched pilot script delivery
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-source-photo-scene-edit.txt'
+permissions:
+  contents: write
+concurrency:
+  group: night-court-trusted-original-picture-scene-notes
+  cancel-in-progress: false
+jobs:
+  compile-two-script-revisions:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-source-photo-scene-edit-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout reviewed trusted base SHA only
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Check source-text, original frame SHA and render two source-photo screenplay edits
+        run: |
+          python 'Night Court/tools/test_render_caption_first_scene_edit_v2.py'
+          python 'Night Court/tools/render_caption_first_scene_edit_v2.py' --episode S01E01
+          python 'Night Court/tools/render_caption_first_scene_edit_v2.py' --episode S09E19
+          python 'Night Court/tools/render_caption_first_scene_edit_v2.py' --episode S01E01 --check
+          python 'Night Court/tools/render_caption_first_scene_edit_v2.py' --episode S09E19 --check
+      - name: Publish only derived source text and frame references for review
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-source-photo-scene-scripts-20261024'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/caption-first-scene-edit-v2' 'Night Court/seasons/S09/S09E19/derived/caption-first-scene-edit-v2'
+          git diff --cached --check
+          git commit -m 'Night Court: enrich two source-dialogue drafts with source-photographic scene readings'
+          git push origin HEAD:refs/heads/data/night-court-source-photo-scene-scripts-20261024

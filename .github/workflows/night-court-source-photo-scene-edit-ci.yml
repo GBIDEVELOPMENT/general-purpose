@@ -1,0 +1,34 @@
+name: Night Court source-photo enhanced pilot screenplay source-free QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/render_caption_first_scene_edit_v2.py'
+      - 'Night Court/tools/test_render_caption_first_scene_edit_v2.py'
+      - 'Night Court/seasons/S01/S01E01/derived/source-photo-scene-overview-v1/**'
+      - 'Night Court/seasons/S09/S09E19/derived/source-photo-scene-overview-v1/**'
+      - 'Night Court/seasons/S01/S01E01/derived/caption-first-scene-edit-v2/**'
+      - 'Night Court/seasons/S09/S09E19/derived/caption-first-scene-edit-v2/**'
+      - '.github/workflows/night-court-source-photo-scene-edit-ci.yml'
+      - '.github/workflows/night-court-trusted-scene-edit-source-docs.yml'
+permissions:
+  contents: read
+jobs:
+  source-free:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test direct photo SHA and source-caption complete screenplay revision
+        run: |
+          python 'Night Court/tools/test_render_caption_first_scene_edit_v2.py'
+          python 'Night Court/tools/render_caption_first_scene_edit_v2.py' --episode S01E01 --output-root "${{ runner.temp }}/photo-edit"
+          python 'Night Court/tools/render_caption_first_scene_edit_v2.py' --episode S09E19 --output-root "${{ runner.temp }}/photo-edit"
+          if test -f 'Night Court/seasons/S01/S01E01/derived/caption-first-scene-edit-v2/screenplay-scene-edit.md'; then
+            python 'Night Court/tools/render_caption_first_scene_edit_v2.py' --episode S01E01 --check
+          fi
+          if test -f 'Night Court/seasons/S09/S09E19/derived/caption-first-scene-edit-v2/screenplay-scene-edit.md'; then
+            python 'Night Court/tools/render_caption_first_scene_edit_v2.py' --episode S09E19 --check
+          fi
