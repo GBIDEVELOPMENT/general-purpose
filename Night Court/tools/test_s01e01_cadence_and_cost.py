@@ -6,10 +6,21 @@ import unittest
 from fractions import Fraction
 from pathlib import Path
 
-from probe_s01e01_cadence_and_cost import video_properties,sample_frame_cadence
+from probe_s01e01_cadence_and_cost import video_properties,sample_frame_cadence,summarize_presentation_times
 
 
 class NativeCadenceTest(unittest.TestCase):
+    def test_reordered_and_duplicate_avi_pts_are_reported_not_discarded(self):
+        times=[Fraction(i,24) for i in range(40)]
+        times[8],times[9]=times[9],times[8]
+        times[20]=times[19]
+        result=summarize_presentation_times(times,Fraction(24))
+        self.assertGreater(result['out_of_order_or_tied_adjacent_pts_count'],0)
+        self.assertEqual(result['duplicate_pts_count'],1)
+        self.assertTrue(result['sample_interval_within_1pct_nominal'])
+        self.assertFalse(result['decoded_frame_order_strictly_monotonic'])
+        self.assertEqual(result['unique_pts_count'],39)
+
     def test_real_decoded_24_and_23976_fps(self):
         for rate in ('24','24000/1001'):
             with self.subTest(rate=rate),tempfile.TemporaryDirectory() as temp:

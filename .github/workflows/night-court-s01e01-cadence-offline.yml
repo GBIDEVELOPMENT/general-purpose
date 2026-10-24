@@ -11,7 +11,7 @@ permissions:
   contents: read
 jobs:
   native-cadence:
-    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-source-cadence-and-benchmark'
+    if: github.event.pull_request.head.repo.full_name == github.repository && (github.event.pull_request.head.ref == 'feature/night-court-source-cadence-and-benchmark' || github.event.pull_request.head.ref == 'fix/night-court-nonmonotonic-avi-frame-pts')
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
