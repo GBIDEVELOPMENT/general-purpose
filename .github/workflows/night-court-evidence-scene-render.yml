@@ -1,0 +1,34 @@
+name: Night Court evidence-linked scene rendering
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/render_evidence_linked_scene.py'
+      - 'Night Court/tools/test_evidence_scene_renderer.py'
+      - '.github/workflows/night-court-evidence-scene-render.yml'
+permissions:
+  contents: write
+jobs:
+  render:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-evidence-script-renderer'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/night-court-evidence-script-renderer
+      - name: Validate that source cues and real observations render without guesses
+        run: |
+          python 'Night Court/tools/test_evidence_scene_renderer.py'
+          python 'Night Court/tools/render_evidence_linked_scene.py' \
+            --evidence 'Night Court/seasons/S01/S01E01/derived/scene-review-v1/evidence.json' \
+            --observations 'Night Court/seasons/S01/S01E01/derived/scene-review-v1/visual-observations.json' \
+            --output 'Night Court/seasons/S01/S01E01/derived/scene-review-v1/scene-source-rendered.md'
+      - name: Commit deterministic first scene screenplay-style presentation
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/scene-review-v1/scene-source-rendered.md'
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(night-court): render first S01E01 evidence-linked scene timeline'
+            git push origin HEAD:feature/night-court-evidence-script-renderer
+          fi
