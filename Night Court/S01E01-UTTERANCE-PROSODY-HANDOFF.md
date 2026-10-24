@@ -1,6 +1,6 @@
 # S01E01 vocal performance: utterance-level measurement lane
 
-Status: implemented with a **permissively licensed** librosa/SoundFile/NumPy acoustic backend; source-media analysis pending trusted workflow run. October 23, 2026. This phase improves on earlier five six-second averaged audio mix measurements, but is still **not isolated voice diarization**.
+Status: implemented and **successfully run against the actual source S01E01 soundtrack** using permissively licensed librosa/SoundFile/NumPy in [GHA #40048178210](https://github.com/gamesbyian/general-purpose/actions/runs/40048178210), October 23, 2026. Audio is mixed and remains unverified for speaker/emotion analysis. This phase improves on earlier five six-second averaged audio mix measurements, but is still **not isolated voice diarization**.
 
 ## What is measured
 
@@ -20,14 +20,20 @@ No raw audio, video or pretrained model weights enter the repository or artifact
 
 The new dependency tier `tools/vocal-requirements-prosody-open.txt` uses librosa (ISC), SoundFile (BSD) and NumPy (BSD). It does not call openSMILE or require commercial openSMILE feature-extraction permission. Exact resolved dependency versions are retained in the eventual results.
 
+## Verified run observations
+
+The owner-only trusted PR [#147](https://github.com/gamesbyian/general-purpose/pull/147) launched real [run #40048178210](https://github.com/gamesbyian/general-purpose/actions/runs/40048178210), which succeeded and uploaded its compact source-hashed 10-utterance JSON (artifact #12542266921). It used librosa **0.11.0**, SoundFile **0.13.1**, NumPy **2.4.6**, the preexisting original S01E01 AVI, and previously recorded tiny.en candidate ASR time spans.
+
+The ten candidate median mixed-signal F0 values range approximately **102–227Hz**. **Do not call this a confirmed actor pitch range.** Two spans are only 480ms long and were flagged as too short to characterize stable delivery. Large first-to-last candidate pitch jumps, including one of approximately **22.88 semitones**, are warning signs for YIN octave jumps, mixed voices, effects or audience laughter, not evidence for exaggerated dramatic delivery. Detailed source interval, feature and quality flags are in `derived/scene-review-v3/utterance-mix-prosody.json` and the readable `utterance-acoustic-review.md`.
+
 ## Review/acceptance ledger
 
 | Check | State |
 |---|---|
 | Real S01E01 60–90s source AVI hashed and archived as metadata | Complete |
 | Original SRT and candidate ASR cue/word mapping retained | Complete (45 exact-token ASR time proposals; not independently verified) |
-| Per-utterance acoustic algorithm and offline synthetic pitch test | Implemented; CI pending |
-| Real per-utterance F0 and loudness measured, checked against original source | Pending trusted run |
+| Per-utterance acoustic algorithm and offline synthetic pitch test | **CI passed; PR #144 merged** |
+| Real per-utterance F0 and loudness measured, checked against original source | **Run #40048178210 successful; source hash and model-time provenance verified** |
 | Speech isolated from audience/music/overlapping speakers | Not done |
 | Character voice/visual speaker attribution | Not done |
 | Emotional or sarcastic/comic inflection validated | Not done |
