@@ -18,6 +18,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE_SRT=ROOT/'seasons/S01/S01E01/dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6/original.srt'
 VIDEO_SHA='5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962'
 SRT_SHA='aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496'
+SRT_SOURCE_BYTE_ENCODING='cp1252'  # Legacy Western DVD transcription; SHA is of original bytes
 MARGIN_MS=2000
 MIN_WORDS=3
 MAX_SPANS=4000
@@ -158,7 +159,7 @@ def main():
     if sha(SOURCE_SRT)!=SRT_SHA:
         raise ValueError('Original subtitle bytes changed')
     data=json.loads(args.source_two_model_json.read_text('utf-8'))
-    report=match_consensus_to_srt(data,SOURCE_SRT.read_text('utf-8-sig'))
+    report=match_consensus_to_srt(data,SOURCE_SRT.read_bytes().decode(SRT_SOURCE_BYTE_ENCODING))
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n','utf-8')
     print(f"{report['independent_model_consensus_spans']} original consensus spans vs "
