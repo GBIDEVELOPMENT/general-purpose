@@ -1,0 +1,48 @@
+name: Night Court SHA-pin complete S01E01 source Whisper candidate import
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/validate_s01e01_full_asr_import.py'
+      - 'Night Court/tools/test_s01e01_full_asr_import.py'
+      - 'Night Court/S01E01-FULL-ASR-IMPORT-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-full-asr-import.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  source-record:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref == 'data/night-court-s01e01-full-cut-asr-hypotheses' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-s01e01-full-cut-asr-hypotheses
+          persist-credentials: true
+      - name: Test original clip source/word timing abstention with synthetic data only
+        run: python 'Night Court/tools/test_s01e01_full_asr_import.py'
+      - name: Download fixed successful trusted original source ASR text JSON only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/s01e01-source-asr"
+          gh run download 40067972923 --repo gamesbyian/general-purpose \
+            --name night-court-s01e01-original-full-cut-asr-hypotheses \
+            --dir "${{ runner.temp }}/s01e01-source-asr"
+      - name: SHA-confirm exact model output and preserve conservative source comparison
+        run: |
+          python 'Night Court/tools/validate_s01e01_full_asr_import.py' \
+            "${{ runner.temp }}/s01e01-source-asr/candidate-36s-asr.json"
+      - name: Commit only compact source-soundtrack ASR candidate text research
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/scene-review-v4/asr-full-cut-v1/'
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(night-court): archive SHA-pinned full-cut S01E01 ASR proposals'
+            git push origin HEAD:data/night-court-s01e01-full-cut-asr-hypotheses
+          fi
