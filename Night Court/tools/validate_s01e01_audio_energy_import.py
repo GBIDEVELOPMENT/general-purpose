@@ -89,7 +89,13 @@ def import_file(source):
     data=json.loads(raw)
     bin_count,turn_count=verify(data)
     if DEST.exists():
-        raise ValueError("Refuse overwrite of existing source-derived energy evidence edition")
+        old=DEST/"energy-envelope.json"
+        memo=DEST/"energy-review.md"
+        if (not old.is_file() or not memo.is_file() or
+            hashlib.sha256(old.read_bytes()).hexdigest()!=EXPECTED_SHA):
+            raise ValueError("Existing source-derived energy evidence is incomplete or changed")
+        print("Exact original audio envelope already preserved; no overwrite attempted")
+        return
     DEST.mkdir(parents=True)
     (DEST/"energy-envelope.json").write_bytes(raw)
     lines=[
