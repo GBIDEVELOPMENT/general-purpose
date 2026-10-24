@@ -8,6 +8,7 @@ performer/character identification. Source witnesses remain untouched.
 from collections import Counter
 import json
 from pathlib import Path
+from build_caption_turns import build as derive_turns
 
 ROOT=Path(__file__).resolve().parents[1]
 INDEX=ROOT/"catalog"/"dialogue-index.jsonl"
@@ -32,10 +33,10 @@ def render_source(item):
     if (episode["id"]!=ep or meta["episode_id"]!=ep or meta["sha256"]!=item["sha256"]
         or meta["version_id"]!=item["version_id"] or meta["declared_complete"]):
         raise ValueError("Source or episode identity drift")
-    folder=(ROOT/item["manifest"]).parent
-    units=jsonl(folder/"candidate-turns.jsonl")
-    packets=jsonl(folder/"conversation-packets.jsonl")
+    # Derive from the immutable source segments directly: many later-season
+    # caption-turn caches were never materialized after the acquisition surge.
     segments=jsonl(ROOT/"seasons"/ep[:3]/ep/meta["segments_path"])
+    units,packets=derive_turns(meta,segments)
     original_cues={x["cue"] for x in segments}
     if len(segments)!=meta["cue_count"] or original_cues!=set(range(1,len(segments)+1)):
         raise ValueError("Missing original source caption cues")
