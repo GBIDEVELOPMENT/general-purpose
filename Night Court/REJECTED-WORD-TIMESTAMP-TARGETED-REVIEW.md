@@ -11,3 +11,8 @@ The sink is capped at **512 rejected word diagnostics** per original episode wit
 **QA:** `test_rejected_asr_word_diagnostics.py` verifies zero-duration abstention with nearest independent-source model context, negative and NaN inputs, oversized words and the hard 512 cap, and rejects unordered Vosk source hypotheses. Source-free PR CI also runs the existing two-family and untimed-original contract tests.
 
 This does not change the historical full source processing wall times: S01E01 **239.826s**, S09E19 **215.140s**. It contributes no independently accepted theatrical lines, scene directions or character identities. Full audiovisual script acceptance remains **0/193**.
+
+
+## Source-once S01E01 export hardening
+
+The combined S01E01 source factory originally called the model diagnostic importer but omitted its bounded rejected-word findings from the final report. The integrated composer now preserves a **64-case temporally distributed subset** of source rejected-word research pointers, uniformly sampled in original invalid hypothesis decoding order. It keeps exact original invalid numerical model proposals, nearby independently decoded model context, source-not-listened flags and explicit counts of omitted cases. It does **not** fabricate source word timestamps or confirm one spoken word. The total 100KB private metadata export ceiling remains unchanged, and zero accepted audio/script claims continue to hold. `test_s01e01_one_source_factory.py` exercises this retention, first/last-sample coverage and forged-word-acceptance rejection. Historical source reports predating the diagnostic capture still have no recoverable invalid-word detail; do not represent this change as newly reviewed evidence.
