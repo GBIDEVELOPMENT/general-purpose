@@ -1,0 +1,74 @@
+{
+  "schema": "night-court-original-5fps-source-picture-physical-beat-annotations/1",
+  "episode_id": "S01E01",
+  "original_source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_motion_coverage_run_id": 40139082891,
+  "original_private_image_artifact_id": 12577043742,
+  "private_original_artifact_zip_sha256": "838234cc08f7982bf8ca5c68579a9e317f4a627c00be6ac9d4e3398c4dc7cb78",
+  "original_exported_numeric_report_sha256": "b30a56a686008731dc8120f96ffe720bdd77221f29445a425e94d14f750c955d",
+  "source_original_audio_listened_during_picture_annotation": false,
+  "named_actors_or_voices_identified": false,
+  "full_motion_or_scene_completeness_claimed": false,
+  "local_visual_inspection_of_sampled_original_motion_sheet": true,
+  "nominal_sampling_fps": 5,
+  "sequence_count": 2,
+  "sequences": [
+    {
+      "window_label": "court-office-open-window-action",
+      "source_window_s": [
+        160,
+        182
+      ],
+      "sampled_frames": 110,
+      "confidence_scope": "visible changes across 5fps original-source still sequence; no audio",
+      "setting": "court office with a window and law books",
+      "stage_direction": "A man in a grey shirt and blue trousers reclines along the padded ledge beneath the office windows. He gestures upward toward the window while a woman in lavender stands nearby with a folder. A second man in a dark suit appears holding rolled papers; the woman moves across the office as the reclining man settles back.",
+      "notes": "The sequence shows multiple shots; it does not establish the words, named identities or why the man occupies the ledge.",
+      "sheets": [
+        {
+          "file": "court-office-open-window-action-sheet-01.jpg",
+          "sha256": "4d6f437789f5ace66426551699c9abaf8674b3132385d7e0cc0d41e68385bc95"
+        },
+        {
+          "file": "court-office-open-window-action-sheet-02.jpg",
+          "sha256": "9a4834ed2f4374fb0d0b6d7d37701c275024c6bca68cefd43c3ac7416f2aa106"
+        },
+        {
+          "file": "court-office-open-window-action-sheet-03.jpg",
+          "sha256": "0545c31e9af06f3a57cdb8df44c571fb08c86cf10f4c441b18d9d5df5350f0ff"
+        }
+      ],
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "original_source_timing_kind": "requested_source_position_no_native_frame_PTS_verification",
+      "source_picture_observation_status": "reviewed_bounded_still_sequence_not_audio_verified",
+      "source_drama_beat_text_is_an_editorial_paraphrase": true
+    },
+    {
+      "window_label": "court-bench-posture",
+      "source_window_s": [
+        1258,
+        1278
+      ],
+      "sampled_frames": 100,
+      "confidence_scope": "visible changes across 5fps original-source still sequence; no audio",
+      "setting": "courtroom gallery and judicial bench",
+      "stage_direction": "A wide view moves across nearly empty courtroom benches toward the raised judge's desk. Behind the desk, a casually dressed man reclines low in the judge's chair, one arm lifted. A woman in lavender comes through the courtroom doors carrying her folder. The image alternates between her approach and the man lounging at the bench.",
+      "notes": "The source frames support camera/framing change and body position, not a particular speaker, dialogue cause or exact shot cut time.",
+      "sheets": [
+        {
+          "file": "court-bench-posture-sheet-01.jpg",
+          "sha256": "893f948f8f9b08a9daab2719132edb065ec4270e01172f8eda62800891109eff"
+        },
+        {
+          "file": "court-bench-posture-sheet-02.jpg",
+          "sha256": "3110714a1d815addafcf01f6d5785863ca40aabacd188ba1e8ceb7c26befb62c"
+        }
+      ],
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "original_source_timing_kind": "requested_source_position_no_native_frame_PTS_verification",
+      "source_picture_observation_status": "reviewed_bounded_still_sequence_not_audio_verified",
+      "source_drama_beat_text_is_an_editorial_paraphrase": true
+    }
+  ]
+}
