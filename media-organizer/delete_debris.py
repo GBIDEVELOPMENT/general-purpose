@@ -18,6 +18,10 @@ def category(path):
     p=PurePosixPath(path)
     if p.suffix.lower()==".nfo":return "nfo"
     if p.suffix.lower()==".txt":return "txt"
+    # Small non-media torrent packaging crumbs. Binary payloads (.bin), game
+    # installer files, ISO checksums and playlists are NOT treated as debris.
+    if p.suffix.lower() in {".url",".lnk",".diz",".sfv",".log"}:return "detritus"
+    if p.name.casefold()=="rarbg_do_not_mirror.exe":return "detritus"
     if p.suffix.lower()==".vob" and p.parent.name.casefold()=="sample" and re.search(r"(?i)[._ -]sample$",p.stem):return "sample"
     if p.suffix.lower() in VIDEO and not EPISODE_ID.search(p.name):
         clip_name=p.stem
@@ -64,7 +68,7 @@ def validate(manifest):
     for entry in entries:
         if not isinstance(entry,dict) or set(entry)!={"from","size","modify","category"}:raise ValueError("Unexpected entry keys")
         p=safe(entry["from"])
-        if category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot","sample","trailer","txt"):
+        if category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot","sample","trailer","txt","detritus"):
             raise ValueError("Not an exact approved debris class")
         if p.casefold() in seen:raise ValueError("Duplicate delete")
         seen.add(p.casefold())
