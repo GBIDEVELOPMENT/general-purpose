@@ -1,0 +1,55 @@
+name: Night Court trusted S09E19 source visual review
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s09e19-visual-review.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-s09e19-source-visual
+  cancel-in-progress: false
+jobs:
+  private-frames:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s09e19-visual-review-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Check source-only original text and S09E19 exact FTP candidate
+        run: |
+          python - <<'PY'
+          import sys
+          sys.path.insert(0,'Night Court/tools')
+          from s09e19_untimed_video_anchor_pilot import exact_candidate,sources
+          assert exact_candidate()['size_bytes']==183377920
+          assert len(sources())==347
+          PY
+      - name: Install FFmpeg and ffprobe
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Retrieve exact accepted AVI, extract 100 silent original frames, discard AVI
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python 'Night Court/tools/build_s09e19_visual_source_packet.py' --ftp \
+            --output "${{ runner.temp }}/s09e19-source-frames"
+      - name: Upload only small private JPEG stills/contact sheet and source frame index
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s09e19-900-925s-visual-review
+          path: ${{ runner.temp }}/s09e19-source-frames/
+          if-no-files-found: error
+          retention-days: 7
+      - name: Wipe temporary derived images even if upload fails
+        if: always()
+        run: rm -rf "${{ runner.temp }}/s09e19-source-frames"
