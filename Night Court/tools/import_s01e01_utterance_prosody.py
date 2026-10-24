@@ -70,15 +70,20 @@ def main(path):
       "Mixed-TV-soundtrack measurements anchored to **ASR candidate spans**,",
       "**not** isolated actor voices, verified caption timing or emotion.",
       "",
-      "| ASR | Caption hint | Time | Mix RMS dBFS | Candidate F0 median | Pitch change (semitones) |",
-      "|---:|---|---|---:|---:|---:|"]
+      "| ASR | Caption hint | Time | Mix RMS dBFS | Candidate F0 median | Pitch change (semitones) | Reliability caution |",
+      "|---:|---|---|---:|---:|---:|---|"]
     for x in obj["utterance_prosody_hypotheses"]:
         a=x["acoustics"];ms=x["asr_source_audio_interval_ms"]
         med="unreliable / unavailable" if a["mix_pitch_median_hz"] is None else str(a["mix_pitch_median_hz"])
         change="unavailable" if a["mix_pitch_first_to_last_change_semitones"] is None else str(a["mix_pitch_first_to_last_change_semitones"])
+        caution=("too short for trustworthy delivery" if "too_short" in a["pitch_reliability"]
+                 else "large pitch jump: octave/mix artifact possible"
+                 if a["mix_pitch_first_to_last_change_semitones"] is not None
+                 and abs(a["mix_pitch_first_to_last_change_semitones"])>12
+                 else "mixed, unreviewed source audio")
         out.append(
             f'| {x["asr_segment_index"]} | C{x["caption_cue_hint"]:04d} (candidate) | '
-            f'{ms[0]/1000:.3f}–{ms[1]/1000:.3f}s | {a["rms_dbfs"]:.2f} | {med} | {change} |')
+            f'{ms[0]/1000:.3f}–{ms[1]/1000:.3f}s | {a["rms_dbfs"]:.2f} | {med} | {change} | {caution} |')
     out.extend(["",
       "These measurements combine whatever speech, laugh-track, music and effects",
       "are present. Differences in pitch can arise from a changed speaker or",
