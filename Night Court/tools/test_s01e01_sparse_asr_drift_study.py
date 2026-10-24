@@ -27,6 +27,12 @@ class Windows(unittest.TestCase):
         self.assertIsNone(match({"index":0,"text":"","start_ms":600020,"end_ms":600340},cues,600,630))
         x=match({"index":0,"text":"completely different words","start_ms":600020,"end_ms":601990},cues,600,630)
         self.assertFalse(x["usable_for_global_drift_review"])
+    def test_clipped_asr_end_cannot_be_global_drift_anchor(self):
+        cues=[{"cue":1,"start_ms":600000,"end_ms":602500,"text":"Hello, good evening."}]
+        x=match({"index":0,"text":"Hello good evening","start_ms":600260,
+                 "end_ms":602050,"segment_boundary_clipped":True},cues,600,630)
+        self.assertFalse(x["usable_for_global_drift_review"])
+        self.assertEqual(x["candidate_start_offset_ms"],260)
     def test_spread_metric_not_av_acceptance(self):
         example=[{"source_window_ms":[300000,330000],
                   "alignment_candidates":[{"usable_for_global_drift_review":True,"candidate_start_offset_ms":200}]*2},
