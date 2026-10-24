@@ -5,7 +5,7 @@ on:
       - 'Night Court/tools/validate_s09e19_review_decisions.py'
       - 'Night Court/tools/test_s09e19_review_decisions.py'
       - 'Night Court/seasons/S09/S09E19/derived/editorial-review-v1/review-decisions-template.json'
-      - 'Night Court/S09E19-EDITORIAL-REVIEW-HANDOFF.md'
+      - 'Night Court/S09E19-REVIEW-DECISION-INTEGRITY.md'
       - '.github/workflows/night-court-s09e19-decision-integrity.yml'
 permissions:
   contents: read
