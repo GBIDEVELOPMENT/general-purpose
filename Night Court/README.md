@@ -10,6 +10,12 @@ Season-by-season held episodes: **S01 13/13, S02 22/22, S03 22/22, S04 22/22, S0
 
 The automated quality report has **56 witnesses with at least one heuristic review flag**, and zero independent AV-completeness certifications. Such flags may reflect legitimate overlaps or silent scenes. No cross-episode identical long-text collisions were detected. The remaining work is edition-aligned audio/video QA, overlap and cue-gap review, speaker attribution, scene boundaries and evidence-linked visual actions, not wholesale rediscovery of episode captions. See [S09E19 source acquisition](research/s09e19-final-dialogue-acquisition.json) for the sole untimed source and [the source-to-script factory plan](AV-SCRIPT-FACTORY-PLAN.md) for the next pipeline.
 
+## First multimodal script evidence: S01E01 pilot
+
+The project's first source-grounded [**integrated script excerpt**](seasons/S01/S01E01/derived/scene-review-v3/scene-script-v3.md) now combines genuine S01E01 spoken-caption witnesses with reviewed static and temporally ordered visual evidence from the original SHA-fingerprinted AVI, including a desk-telephone action. The evidence covers **01:00–01:30 only**, not a full episode. Read the [machine-readable claim/evidence map](seasons/S01/S01E01/derived/scene-review-v3/scene-evidence-map.json) for provenance and limits.
+
+The [utterance acoustic report](seasons/S01/S01E01/derived/scene-review-v3/utterance-acoustic-review.md) records actual mixed-TV-audio pitch and intensity candidates for ten ASR-proposed speech spans. It does **not** validate speaker identity, expressive emotion, sarcasm, independent word-level forced alignment, continuous-video completeness or a finished production screenplay. These missing gates drive the [AV script factory plan](AV-SCRIPT-FACTORY-PLAN.md) and [S01E01 acceptance handoff](S01E01-AV-PILOT-HANDOFF.md).
+
 ## Actually held (23 October 2026)
 
 - **193/193** original-series episode records: `seasons/Sxx/SxxEyy/episode.json`, spanning 9 seasons (13, 22, 22, 22, 22, 22, 24, 24, 22).
