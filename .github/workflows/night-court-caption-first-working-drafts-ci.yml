@@ -25,3 +25,11 @@ jobs:
           python 'Night Court/tools/test_build_caption_first_working_drafts.py'
           python 'Night Court/tools/build_caption_first_working_drafts.py' --episode S01E01 --output-root "${{ runner.temp }}/captions"
           python 'Night Court/tools/build_caption_first_working_drafts.py' --episode S09E19 --output-root "${{ runner.temp }}/captions"
+      - name: Reconcile committed editable pilot drafts with original held witnesses when present
+        run: |
+          if test -f 'Night Court/seasons/S01/S01E01/derived/caption-first-working-draft-v1/screenplay-draft.md'; then
+            python 'Night Court/tools/build_caption_first_working_drafts.py' --episode S01E01 --check
+          fi
+          if test -f 'Night Court/seasons/S09/S09E19/derived/caption-first-working-draft-v1/screenplay-draft.md'; then
+            python 'Night Court/tools/build_caption_first_working_drafts.py' --episode S09E19 --check
+          fi
