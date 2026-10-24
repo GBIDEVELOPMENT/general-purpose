@@ -1,0 +1,22 @@
+name: Night Court original three-witness evidence preservation offline QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/preserve_s01e01_three_witness.py'
+      - 'Night Court/tools/test_preserve_s01e01_three_witness.py'
+      - 'Night Court/THREE-WITNESS-ORIGINAL-EPISODE-REVIEW.md'
+      - '.github/workflows/night-court-three-witness-preservation-ci.yml'
+      - '.github/workflows/night-court-trusted-three-witness-import.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate immutable original cue hash, 200 source spans and 16 review candidates
+        run: python 'Night Court/tools/test_preserve_s01e01_three_witness.py'
