@@ -38,3 +38,7 @@ The accepted scripts were derived on the fly because `catalog/caption-turn-cover
 ## Full-series unattributed speaker work preparation
 
 The existing `prepare_speaker_attribution.py` has remained frozen at the old 35-episode materialized index, despite the full 193-episode source corpus. A dedicated CI pass now regenerates per-episode `speaker-attribution/candidate-roster.json`, `turns.jsonl` and bounded `agent-packets.jsonl` for **all 193 episodes**. It uses actual TVmaze credits only as candidate roles, never as proof of scene presence or speaker identity, and preserves every unattributed subtitle turn. Acceptance requires 70,804 cues, 193 separate episode source witnesses, and **zero** authoritative or merely guessed character-to-line assignments. These packets are infrastructure for subsequent voice/video agents, not reconstructed performance scripts.
+
+## Provisional character-and-scene participation catch-up
+
+The offline `build_scene_participation.py` report also remained at 35 episodes while the 193-episode speaker preparation succeeded. The new CI pass refreshes the existing per-episode `scene-participation-evidence.json` and global catalog for **all 193** source versions. It reports name-address **listener** hints and explicit original speaker prefixes separately, never promoting an addressee into the speaker or claiming that all credited cast appear in a specific scene. Gap-delimited clusters are **provisional text packets, not observed production scenes**.
