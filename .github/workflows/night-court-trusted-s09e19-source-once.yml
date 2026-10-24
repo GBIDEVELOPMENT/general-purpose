@@ -1,0 +1,56 @@
+name: Night Court trusted original S09E19 source-once two-model plus video pilot
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s09e19-source-once-fast.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-second-original-episode-source-once
+  cancel-in-progress: false
+jobs:
+  original-source:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s09e19-source-once-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout trusted main only
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test untimed original textual witness and source fingerprint before credentials
+        run: python 'Night Court/tools/test_profile_s09e19_source_once_factory.py'
+      - name: Install source-video and distinct original speech recognizer dependencies
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python -m pip install 'faster-whisper==1.2.1' 'vosk==0.3.45'
+      - name: Download exactly one SHA-pinned original S09E19 and benchmark both sources
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+        run: |
+          python -u 'Night Court/tools/profile_s09e19_source_once_factory.py' --ftp \
+            --output "${{ runner.temp }}/night-court-s09e19/second-episode-report.json"
+      - name: Retain only small numeric and untimed text research suggestions
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s09e19-one-source-original-episode-speed
+          path: ${{ runner.temp }}/night-court-s09e19/second-episode-report.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Delete temporary result staging
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-s09e19"
