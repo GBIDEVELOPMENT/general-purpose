@@ -1,0 +1,54 @@
+name: Night Court S01E01 real utterance acoustic import
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s01e01_utterance_prosody.py'
+      - 'Night Court/S01E01-UTTERANCE-PROSODY-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-utterance-import.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  preserve:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s01e01-utterance-prosody-evidence'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-s01e01-utterance-prosody-evidence
+          persist-credentials: true
+      - name: Fetch actual fixed S01E01 prosody evidence from successful run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/s01e01-utterance"
+          gh run download 40048178210 --repo gamesbyian/general-purpose \
+            --name night-court-s01e01-utterance-mix-prosody \
+            --dir "${{ runner.temp }}/s01e01-utterance"
+      - name: Reconcile SHA/ASR segment boundaries and preserve only acoustic JSON
+        run: |
+          python "Night Court/tools/import_s01e01_utterance_prosody.py" \
+            "${{ runner.temp }}/s01e01-utterance/utterance-prosody.json"
+          python "Night Court/tools/validate_dialogue.py"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("Night Court/seasons/S01/S01E01/derived/scene-review-v3")
+          j=json.loads((p/"utterance-mix-prosody.json").read_text())
+          assert len(j["utterance_prosody_hypotheses"])==10
+          assert not j["speaker_diarized_or_identified"]
+          assert not j["emotion_or_character_tone_inferred"]
+          assert (p/"utterance-acoustic-review.md").is_file()
+          print("Real mixed audio measurements preserved without invented identity/emotion labels")
+          PY
+      - name: Commit only reviewed compact episode derived evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Night Court/seasons/S01/S01E01/derived/scene-review-v3/utterance-mix-prosody.json" \
+                  "Night Court/seasons/S01/S01E01/derived/scene-review-v3/utterance-acoustic-review.md"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): retain per-utterance S01E01 acoustic measurements"
+            git push origin HEAD:data/night-court-s01e01-utterance-prosody-evidence
+          fi
