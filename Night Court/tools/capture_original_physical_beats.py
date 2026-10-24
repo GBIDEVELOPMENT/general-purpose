@@ -60,7 +60,7 @@ def generate(media,out,ep):
         folder.mkdir()
         run(['ffmpeg','-hide_banner','-nostdin','-loglevel','error','-threads','1','-filter_threads','1',
              '-ss',str(start),'-i',str(media),'-t',str(duration),'-an',
-             '-vf','fps=5,scale=240:135:force_original_aspect_ratio=decrease,pad=240:135:(ow-iw)/2:(oh-ih)/2',
+             '-vf','fps=5,scale=240:144:force_original_aspect_ratio=decrease,pad=240:144:(ow-iw)/2:(oh-ih)/2',
              '-q:v','7','-y',str(folder/'frame-%03d.jpg')],timeout=220)
         frames=sorted(folder.glob('frame-*.jpg'))
         if not (FPS*duration-2<=len(frames)<=FPS*duration+2 and
@@ -77,16 +77,16 @@ def generate(media,out,ep):
                          'requested_offset_not_native_PTS_verified':True,
                          'original_audio_or_speaker_observed':False})
         for base in range(0,len(frames),50):
-            sheet=Image.new('RGB',(2400,5*154),(11,12,15))
+            sheet=Image.new('RGB',(2400,5*164),(11,12,15))
             draw=ImageDraw.Draw(sheet)
             for j,p in enumerate(frames[base:base+50]):
                 with Image.open(p) as img:
-                    if img.size!=(240,135):raise ValueError("Unexpected image geometry")
-                    x=j%10*240;y=j//10*154
+                    if img.size!=(240,144):raise ValueError("Unexpected image geometry")
+                    x=j%10*240;y=j//10*164
                     sheet.paste(img,(x,y))
                 t=start+(base+j)/FPS
                 caption=f'{ep}  {int(t//60):02}:{t%60:04.1f}  #{base+j+1:03}'
-                draw.text((x+5,y+136),caption,fill=(245,245,245))
+                draw.text((x+5,y+145),caption,fill=(245,245,245))
             image_name=f'{label}-sheet-{base//50+1:02}.jpg'
             image_path=out/image_name
             sheet.save(image_path,'JPEG',quality=82,optimize=True)
