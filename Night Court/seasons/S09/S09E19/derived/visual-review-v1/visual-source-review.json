@@ -1,0 +1,266 @@
+{
+  "schema": "night-court-s09e19-visual-review-evidence/1",
+  "episode_id": "S09E19",
+  "source_media_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_untimed_text_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "nominal_source_window_ms": [
+    900000,
+    925000
+  ],
+  "frames_hash_verified": 100,
+  "related_source_paragraph_candidates": [
+    {
+      "first": 240,
+      "last": 240
+    },
+    {
+      "first": 241,
+      "last": 241
+    },
+    {
+      "first": 243,
+      "last": 243
+    },
+    {
+      "first": 251,
+      "last": 251
+    },
+    {
+      "first": 253,
+      "last": 253
+    }
+  ],
+  "scene_observations": [
+    {
+      "id": "S09-V01",
+      "interval_ms": [
+        900000,
+        905000
+      ],
+      "description": "Two adults stand at a counter: one wears a dark uniform with prominent buttons, and the other wears a gray jacket and glasses. Another person in light clothing is visible behind them.",
+      "frame_numbers": [
+        1,
+        8,
+        12,
+        20
+      ],
+      "evidence_kind": "repeated_sampled_state",
+      "source_frame_evidence": [
+        {
+          "frame_number": 1,
+          "approx_source_time_ms": 900000,
+          "file": "frames/frame-001.jpg",
+          "sha256": "a367d203eb88836cf193ad8f30485e0cff768605dea9e57f107cd1bb9463bf3f"
+        },
+        {
+          "frame_number": 8,
+          "approx_source_time_ms": 901750,
+          "file": "frames/frame-008.jpg",
+          "sha256": "0e351ae4248c47577a97128fad123b3350cda753f31f1199824d1af34b9860f5"
+        },
+        {
+          "frame_number": 12,
+          "approx_source_time_ms": 902750,
+          "file": "frames/frame-012.jpg",
+          "sha256": "33a976d2489f17192c60f4d839d6b4aac6c91da56b8a726273da857c3863fc83"
+        },
+        {
+          "frame_number": 20,
+          "approx_source_time_ms": 904750,
+          "file": "frames/frame-020.jpg",
+          "sha256": "087ed8517b192363e74be49f28adf1727c72b8dc6bd5e2d78cbe9f9412f2b065"
+        }
+      ]
+    },
+    {
+      "id": "S09-V02",
+      "interval_ms": [
+        909750,
+        913000
+      ],
+      "description": "At the counter, the uniformed person moves the hands up near the upper chest while the gray-jacketed person gestures with an arm.",
+      "frame_numbers": [
+        40,
+        47,
+        51,
+        53
+      ],
+      "evidence_kind": "ordered_sampled_pose_change",
+      "source_frame_evidence": [
+        {
+          "frame_number": 40,
+          "approx_source_time_ms": 909750,
+          "file": "frames/frame-040.jpg",
+          "sha256": "06ea997edb68de97bdeae01504a32afea27205f4ce393eed905ab3d37da9785e"
+        },
+        {
+          "frame_number": 47,
+          "approx_source_time_ms": 911500,
+          "file": "frames/frame-047.jpg",
+          "sha256": "25c6491b2c004f9fdee253a3dccc1fd69c860e902793b305a04575832fad976b"
+        },
+        {
+          "frame_number": 51,
+          "approx_source_time_ms": 912500,
+          "file": "frames/frame-051.jpg",
+          "sha256": "e447071f46506c87ec460d04d128f5064af9292ad4da1fb1517d971e8b4357de"
+        },
+        {
+          "frame_number": 53,
+          "approx_source_time_ms": 913000,
+          "file": "frames/frame-053.jpg",
+          "sha256": "14f52389e536bdfe5055dd926ce56fdd77ac3b74bcf2bfc89f6cd21c40694a87"
+        }
+      ]
+    },
+    {
+      "id": "S09-V03",
+      "interval_ms": [
+        913000,
+        913250
+      ],
+      "description": "The picture cuts from the counter pair to an adult with curly hair, burgundy clothing and a bright yellow collar seated beside a tabletop with a drinking glass.",
+      "frame_numbers": [
+        53,
+        54
+      ],
+      "evidence_kind": "shot_change_between_neighboring_sampled_frames",
+      "source_frame_evidence": [
+        {
+          "frame_number": 53,
+          "approx_source_time_ms": 913000,
+          "file": "frames/frame-053.jpg",
+          "sha256": "14f52389e536bdfe5055dd926ce56fdd77ac3b74bcf2bfc89f6cd21c40694a87"
+        },
+        {
+          "frame_number": 54,
+          "approx_source_time_ms": 913250,
+          "file": "frames/frame-054.jpg",
+          "sha256": "d7b62d2050bc9055a6aaa8d5680973f299bfa6a554269d079c2d0476b8824b14"
+        }
+      ]
+    },
+    {
+      "id": "S09-V04",
+      "interval_ms": [
+        913250,
+        919500
+      ],
+      "description": "The seated person in burgundy repeatedly moves hands near the face and chest, looks down and up, and changes head position.",
+      "frame_numbers": [
+        54,
+        61,
+        69,
+        75,
+        79
+      ],
+      "evidence_kind": "ordered_sampled_pose_change",
+      "source_frame_evidence": [
+        {
+          "frame_number": 54,
+          "approx_source_time_ms": 913250,
+          "file": "frames/frame-054.jpg",
+          "sha256": "d7b62d2050bc9055a6aaa8d5680973f299bfa6a554269d079c2d0476b8824b14"
+        },
+        {
+          "frame_number": 61,
+          "approx_source_time_ms": 915000,
+          "file": "frames/frame-061.jpg",
+          "sha256": "bfd8fc52eac258b8e04e27e994806199d3f41d3e47db3b9325dd87dd5eb45279"
+        },
+        {
+          "frame_number": 69,
+          "approx_source_time_ms": 917000,
+          "file": "frames/frame-069.jpg",
+          "sha256": "dbdbc05c22f7a2fc651e135f994ffc954e19e8d47058bb5dfdcdbacaf49ae0b8"
+        },
+        {
+          "frame_number": 75,
+          "approx_source_time_ms": 918500,
+          "file": "frames/frame-075.jpg",
+          "sha256": "6c4551014caa2f8edf287b17a3c04d38af989363492ce70aa42c41f1b22b7a4c"
+        },
+        {
+          "frame_number": 79,
+          "approx_source_time_ms": 919500,
+          "file": "frames/frame-079.jpg",
+          "sha256": "4559f4cc71754d73f3ea9dc4e18f0de1557cf2afd6f8111da2f46390e0f319a8"
+        }
+      ]
+    },
+    {
+      "id": "S09-V05",
+      "interval_ms": [
+        919500,
+        919750
+      ],
+      "description": "The image changes from the seated person in burgundy to an adult with a beard wearing a jacket, collared shirt and patterned tie.",
+      "frame_numbers": [
+        79,
+        80
+      ],
+      "evidence_kind": "shot_change_between_neighboring_sampled_frames",
+      "source_frame_evidence": [
+        {
+          "frame_number": 79,
+          "approx_source_time_ms": 919500,
+          "file": "frames/frame-079.jpg",
+          "sha256": "4559f4cc71754d73f3ea9dc4e18f0de1557cf2afd6f8111da2f46390e0f319a8"
+        },
+        {
+          "frame_number": 80,
+          "approx_source_time_ms": 919750,
+          "file": "frames/frame-080.jpg",
+          "sha256": "b584c6dbe2c3fc00bdb57886f166c4893b9a250a25ac51d07fada40cec62abc3"
+        }
+      ]
+    },
+    {
+      "id": "S09-V06",
+      "interval_ms": [
+        919750,
+        924750
+      ],
+      "description": "The bearded person remains in a close view and smiles in later sampled frames. Other people and a green wall appear in the background.",
+      "frame_numbers": [
+        80,
+        86,
+        93,
+        100
+      ],
+      "evidence_kind": "repeated_sampled_state",
+      "source_frame_evidence": [
+        {
+          "frame_number": 80,
+          "approx_source_time_ms": 919750,
+          "file": "frames/frame-080.jpg",
+          "sha256": "b584c6dbe2c3fc00bdb57886f166c4893b9a250a25ac51d07fada40cec62abc3"
+        },
+        {
+          "frame_number": 86,
+          "approx_source_time_ms": 921250,
+          "file": "frames/frame-086.jpg",
+          "sha256": "c3bd6bb2524ffdd7d7c5d2af9f256f5b1067839e3afd8750a37964c414242ef2"
+        },
+        {
+          "frame_number": 93,
+          "approx_source_time_ms": 923000,
+          "file": "frames/frame-093.jpg",
+          "sha256": "c8d4108cd7d1f2f08e33bbbdc7e3d6ffa8ea36d44bfb9bd685146b7863eb4c17"
+        },
+        {
+          "frame_number": 100,
+          "approx_source_time_ms": 924750,
+          "file": "frames/frame-100.jpg",
+          "sha256": "8e1a11a80d40655402a02c2a262cdc510349d607a2917f9571bcd06eb034f229"
+        }
+      ]
+    }
+  ],
+  "editorial_review_status": "AI_sampled_4fps_image_review_not_continuous_video_acceptance",
+  "voice_and_character_identities_verified": false,
+  "sampled_motion_continuity_verified": false,
+  "actual_source_utterance_timecodes_verified": false,
+  "source_episode_audiovisual_complete": false,
+  "source_sampled_film_republished": false
+}

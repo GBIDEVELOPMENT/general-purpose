@@ -1,0 +1,928 @@
+{
+  "schema": "night-court-s09e19-video-frame-samples/1",
+  "episode_id": "S09E19",
+  "source_original_avi_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "source_window_ms": [
+    900000,
+    925000
+  ],
+  "nominal_sampling_hz": 4,
+  "sample_count": 100,
+  "frames": [
+    {
+      "sample_index": 1,
+      "approx_source_time_ms": 900000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "a367d203eb88836cf193ad8f30485e0cff768605dea9e57f107cd1bb9463bf3f",
+      "file": "frames/frame-001.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 2,
+      "approx_source_time_ms": 900250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "0bd3462d4591e080768ec0172bdc8faf95c4e790ce728f836cf00ea7c7b26ef5",
+      "file": "frames/frame-002.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 3,
+      "approx_source_time_ms": 900500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "77df65df501affea5a54f862508a6f016670e0a4582c24479524a5519e5560d1",
+      "file": "frames/frame-003.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 4,
+      "approx_source_time_ms": 900750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "acb9cc9c758182e823e411d0683f301914df01943cefe4a17c047a52dc11ecb6",
+      "file": "frames/frame-004.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 5,
+      "approx_source_time_ms": 901000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "1bb92ed92dc70cd00a46b63cce4966301a644fa326c7473cab535bc22064e87c",
+      "file": "frames/frame-005.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 6,
+      "approx_source_time_ms": 901250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "8918579e352c6c53ced4f8bc6abeb83c8492974e624cb686e214f26fff16a59c",
+      "file": "frames/frame-006.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 7,
+      "approx_source_time_ms": 901500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "ea91a78e297076d26eaf3b9877b94c6b9c0ba802407109bcc8a14c7848720d1a",
+      "file": "frames/frame-007.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 8,
+      "approx_source_time_ms": 901750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "0e351ae4248c47577a97128fad123b3350cda753f31f1199824d1af34b9860f5",
+      "file": "frames/frame-008.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 9,
+      "approx_source_time_ms": 902000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "d4722cbf99557c492c3e03ed53ce6a242f68cec4722f60b0a46759178baf24fd",
+      "file": "frames/frame-009.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 10,
+      "approx_source_time_ms": 902250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "29f01ea25163ce993c4599a84f3ff6c328d273a1b3973e9dff99703ba9a3acca",
+      "file": "frames/frame-010.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 11,
+      "approx_source_time_ms": 902500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "8d98fd870e0ae7a5385937a2e3d670681c73a2f02a813faa0bf5f2c3a89813df",
+      "file": "frames/frame-011.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 12,
+      "approx_source_time_ms": 902750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "33a976d2489f17192c60f4d839d6b4aac6c91da56b8a726273da857c3863fc83",
+      "file": "frames/frame-012.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 13,
+      "approx_source_time_ms": 903000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "ab43892605107deb4884056ffc0de2106fbd504c751ba638b552d3f5cc35a2da",
+      "file": "frames/frame-013.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 14,
+      "approx_source_time_ms": 903250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "ac06e9111160d51588c9f0e23f3169f946601351d5e46cd81cd336001c6ef3ab",
+      "file": "frames/frame-014.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 15,
+      "approx_source_time_ms": 903500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "83c0080f4f83fde2aac753c73dd1ba94e5ea92938598a7a6186210a47e012544",
+      "file": "frames/frame-015.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 16,
+      "approx_source_time_ms": 903750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "61bb67bfec9997ad644e1c05f14f8f06f7193eda83491112da38a362229e2883",
+      "file": "frames/frame-016.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 17,
+      "approx_source_time_ms": 904000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "621c5572b766e22c63c959cc0ceae13bb61a5d329aeee17c8948a8e8ecc77c61",
+      "file": "frames/frame-017.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 18,
+      "approx_source_time_ms": 904250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "01bfd59c2346261b209558f778a0b8b07ca484cf14e0cd1a795901d9d8e33516",
+      "file": "frames/frame-018.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 19,
+      "approx_source_time_ms": 904500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "81ee1ce6c7759cb2df3a6f575bbf7c25e416a681a2e806ad3727c128c05116ab",
+      "file": "frames/frame-019.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 20,
+      "approx_source_time_ms": 904750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "087ed8517b192363e74be49f28adf1727c72b8dc6bd5e2d78cbe9f9412f2b065",
+      "file": "frames/frame-020.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 21,
+      "approx_source_time_ms": 905000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "a46b2366d795b67e91787418230c1278592e6a5ca0ebade46c82157e36042cc3",
+      "file": "frames/frame-021.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 22,
+      "approx_source_time_ms": 905250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "4ccb0f6ea49ef921596291e669158fad8b8f2b207a797720683fffef4a0f52e1",
+      "file": "frames/frame-022.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 23,
+      "approx_source_time_ms": 905500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "5a916327d319cbbb53f2693e33752925788eb991cbb9108611f273285a2517bb",
+      "file": "frames/frame-023.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 24,
+      "approx_source_time_ms": 905750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "5626a9411f0cd1d9cb3ac07104ce7e9322362ccfdc07b210a810dab2edf43952",
+      "file": "frames/frame-024.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 25,
+      "approx_source_time_ms": 906000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "92abf593aa2488897b8c9eda02bc6d222e43d0ba2b7000d524fc256cec182743",
+      "file": "frames/frame-025.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 26,
+      "approx_source_time_ms": 906250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "5fa7321ee0d116ab83970242436a033274dedfe5f0016f776b57a070ce027ef7",
+      "file": "frames/frame-026.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 27,
+      "approx_source_time_ms": 906500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "2e627f7d2e33b4eefe92853800381a1cd2e23873d6fe3470d2387b06c2ce0c4b",
+      "file": "frames/frame-027.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 28,
+      "approx_source_time_ms": 906750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "b7993cf089631db90038e0d36c1f55d52535c8efc02f06d767a0724865edd706",
+      "file": "frames/frame-028.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 29,
+      "approx_source_time_ms": 907000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "881e829d7e995c1f6eb2e057aefa29b200ea4d6c7b0ed2e108ec56d3238bad37",
+      "file": "frames/frame-029.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 30,
+      "approx_source_time_ms": 907250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "064a5605850678ac0f6b70f2b938c0f5b28cd90cf6ac6c56138a9963b7f7f493",
+      "file": "frames/frame-030.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 31,
+      "approx_source_time_ms": 907500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "b000b8839676507289fef4e24cdf184cdca05842ba029e24dd70dce9c81ff860",
+      "file": "frames/frame-031.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 32,
+      "approx_source_time_ms": 907750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "a63367cb5928ab6a033bff6671e6de09737c9dafea9b70e2cd7edf4d0af13248",
+      "file": "frames/frame-032.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 33,
+      "approx_source_time_ms": 908000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "3aa685791f652b19794596e90805d14cb7e3e06dab2a61da27aa4cc1c0c5935d",
+      "file": "frames/frame-033.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 34,
+      "approx_source_time_ms": 908250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "9dcec835ed03bc303c6a2d7dcfc52ce59cb4658d2d4bf154c43240ae2ad16b5d",
+      "file": "frames/frame-034.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 35,
+      "approx_source_time_ms": 908500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "b403a51b1663f7ffa77f51b1242fb67f8bc72b13a0f4696c9e5686da3a5cd214",
+      "file": "frames/frame-035.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 36,
+      "approx_source_time_ms": 908750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "b2b7d424dd79581657b994eef7278864909b4c53534f16d20965fdf220eb18e2",
+      "file": "frames/frame-036.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 37,
+      "approx_source_time_ms": 909000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "ace37eab4d8412ecd1e62d59efc7955132bef716967eddea836eb009138aa885",
+      "file": "frames/frame-037.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 38,
+      "approx_source_time_ms": 909250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "6dfc89daeae470eae47f8d1477d419459a0865b1eb884835420a650e6cf45419",
+      "file": "frames/frame-038.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 39,
+      "approx_source_time_ms": 909500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "4c77e46c502d7b937d689df86f3373036a0b47f162bb4b49e88a2df6091a75dc",
+      "file": "frames/frame-039.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 40,
+      "approx_source_time_ms": 909750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "06ea997edb68de97bdeae01504a32afea27205f4ce393eed905ab3d37da9785e",
+      "file": "frames/frame-040.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 41,
+      "approx_source_time_ms": 910000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "fbea22fce3b8c58eea39204335ddf4f31c8fead306ae0326ef87781f7fd9e413",
+      "file": "frames/frame-041.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 42,
+      "approx_source_time_ms": 910250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "5fd3dafa1b71400e243a8b3645065280fd25edeb7d67b2b43aea07f4e456f3d3",
+      "file": "frames/frame-042.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 43,
+      "approx_source_time_ms": 910500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "1aa3712e5400a15b5c68ad6f39e948c7e9345914f49d6b602790c0084534ec66",
+      "file": "frames/frame-043.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 44,
+      "approx_source_time_ms": 910750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "b4be3bfabec34a45fe585648dfd12c1092786512ce362a88e857ff71398adb94",
+      "file": "frames/frame-044.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 45,
+      "approx_source_time_ms": 911000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "c07ba6ff5ba391c9ca30462cdb7bbe1d42041a7b2aad9e10d4d75bc9bf1258c6",
+      "file": "frames/frame-045.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 46,
+      "approx_source_time_ms": 911250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "c0cfdbe202f1a8d0f2514f6bee9f2f20aecee5cfc2bceb26524a5f5dc565c96d",
+      "file": "frames/frame-046.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 47,
+      "approx_source_time_ms": 911500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "25c6491b2c004f9fdee253a3dccc1fd69c860e902793b305a04575832fad976b",
+      "file": "frames/frame-047.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 48,
+      "approx_source_time_ms": 911750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "2c936c38e1c33d1b8bc617ef8d74d4612a72c6bd6f4de2233f534963eb520555",
+      "file": "frames/frame-048.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 49,
+      "approx_source_time_ms": 912000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "44bd654c454d7c9967a200b4f5464a449c8b38968476ccac33838bc99d0cc7f9",
+      "file": "frames/frame-049.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 50,
+      "approx_source_time_ms": 912250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "9da42777f38e7a46b6c91a6b3d5b13afdf67b5710d45b4822a37bd6c368ea543",
+      "file": "frames/frame-050.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 51,
+      "approx_source_time_ms": 912500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "e447071f46506c87ec460d04d128f5064af9292ad4da1fb1517d971e8b4357de",
+      "file": "frames/frame-051.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 52,
+      "approx_source_time_ms": 912750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "772f6226b3d51c642639ed4a32788474f12cb80ee2200db4cd630c95fbbd28f5",
+      "file": "frames/frame-052.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 53,
+      "approx_source_time_ms": 913000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "14f52389e536bdfe5055dd926ce56fdd77ac3b74bcf2bfc89f6cd21c40694a87",
+      "file": "frames/frame-053.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 54,
+      "approx_source_time_ms": 913250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "d7b62d2050bc9055a6aaa8d5680973f299bfa6a554269d079c2d0476b8824b14",
+      "file": "frames/frame-054.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 55,
+      "approx_source_time_ms": 913500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "0baa93ab2a60b8074fa23f9f373c7b484025ee049343f8d85a3f0589cef1ed36",
+      "file": "frames/frame-055.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 56,
+      "approx_source_time_ms": 913750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "71b05c4fcba24472ee93afa61b34f0caf6bb8ac0bf50b66589ac77f999bf4bd6",
+      "file": "frames/frame-056.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 57,
+      "approx_source_time_ms": 914000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "11d86b0a635fe9f2974de82f1ea80b078aa9c15789e8e6dc9e975a60a75f12ac",
+      "file": "frames/frame-057.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 58,
+      "approx_source_time_ms": 914250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "09b3428d30844b3d3d22bf193d2b7f0179ac9f2e318d7589f49e079d243e43fa",
+      "file": "frames/frame-058.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 59,
+      "approx_source_time_ms": 914500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "85fdbee23e362c6db62bb1bb12229408bd6d4dccdb6264a22231dd2cca47fe6b",
+      "file": "frames/frame-059.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 60,
+      "approx_source_time_ms": 914750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "655a57d2785ac19aec380297cb02a749707928bc5fc6f320c6b9c29033e81bb8",
+      "file": "frames/frame-060.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 61,
+      "approx_source_time_ms": 915000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "bfd8fc52eac258b8e04e27e994806199d3f41d3e47db3b9325dd87dd5eb45279",
+      "file": "frames/frame-061.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 62,
+      "approx_source_time_ms": 915250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "6766100eea94f55b675be3f0d2a26267f872261c4dce9c29ec333c954ca1f0c8",
+      "file": "frames/frame-062.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 63,
+      "approx_source_time_ms": 915500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "98e800de0fb123e9264507edf96f42ecf828b24ae8893ce781dd37cc157c5172",
+      "file": "frames/frame-063.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 64,
+      "approx_source_time_ms": 915750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "81304acf809f0f1f9c90f2484a82de553c32ffb687968946bdb6ffd48fcd7802",
+      "file": "frames/frame-064.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 65,
+      "approx_source_time_ms": 916000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "4723fdd9869eead1efa16c01e306e3152b1fc352ae676e0e2c47d81b1592604c",
+      "file": "frames/frame-065.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 66,
+      "approx_source_time_ms": 916250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "198569b2d6f035d5d6a8de5482fd2b2cfdc21a1961dcfaa7658ffa3021887c53",
+      "file": "frames/frame-066.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 67,
+      "approx_source_time_ms": 916500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "2e396b5b1b28740390522ce90bf6c36cdf069f662cdb710c25619f235aa8467c",
+      "file": "frames/frame-067.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 68,
+      "approx_source_time_ms": 916750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "5e71006f8d1c8c42291295c3345adf35c72cefcf078032cff92333e0c102da58",
+      "file": "frames/frame-068.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 69,
+      "approx_source_time_ms": 917000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "dbdbc05c22f7a2fc651e135f994ffc954e19e8d47058bb5dfdcdbacaf49ae0b8",
+      "file": "frames/frame-069.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 70,
+      "approx_source_time_ms": 917250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "6db11d2fc7fa674e4398cbdc3b7e4d94edc520b04abe3f9f2aafc44fee1251e0",
+      "file": "frames/frame-070.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 71,
+      "approx_source_time_ms": 917500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "5060a02ae7f564b8112d7b22411a45c612ec87e73d29073aca2355b287f6997c",
+      "file": "frames/frame-071.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 72,
+      "approx_source_time_ms": 917750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "34c51c6937fbd8717f46f1d8d41a6a9596ed74dd5fabb28b4974d9a403e515de",
+      "file": "frames/frame-072.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 73,
+      "approx_source_time_ms": 918000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "cb0f75c2461e3f8489834b66caebb7791f5dabd71939303400345e3168f0d4a8",
+      "file": "frames/frame-073.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 74,
+      "approx_source_time_ms": 918250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "d890b2f33cc440483d5fcba8135fcc204edbb99499cb2d869bf0906dc298172f",
+      "file": "frames/frame-074.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 75,
+      "approx_source_time_ms": 918500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "6c4551014caa2f8edf287b17a3c04d38af989363492ce70aa42c41f1b22b7a4c",
+      "file": "frames/frame-075.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 76,
+      "approx_source_time_ms": 918750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "282fb0af91ed893059fb5d7f2b7fa10b9685f170a5312c966a5500f3a66dca24",
+      "file": "frames/frame-076.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 77,
+      "approx_source_time_ms": 919000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "62710391f57ee3873e83c779f109afd7dd67e3269c107560e0cfa38103785ba0",
+      "file": "frames/frame-077.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 78,
+      "approx_source_time_ms": 919250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "48739a4531aedd4e41008746e1f330760587e9489237ec93246de0acab4e1288",
+      "file": "frames/frame-078.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 79,
+      "approx_source_time_ms": 919500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "4559f4cc71754d73f3ea9dc4e18f0de1557cf2afd6f8111da2f46390e0f319a8",
+      "file": "frames/frame-079.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 80,
+      "approx_source_time_ms": 919750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "b584c6dbe2c3fc00bdb57886f166c4893b9a250a25ac51d07fada40cec62abc3",
+      "file": "frames/frame-080.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 81,
+      "approx_source_time_ms": 920000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "7615d188985e4b6b84dbb3f89a993f9211418fb4a33386d4ec2b4185d473839e",
+      "file": "frames/frame-081.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 82,
+      "approx_source_time_ms": 920250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "dbd23889b610b520caea3c660bb596f67bf4bcbdf2a829c6702bbb15838164a2",
+      "file": "frames/frame-082.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 83,
+      "approx_source_time_ms": 920500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "e2671d4d25c7f928cfe2b43168efa16dd5ced0ad0f66645d5bd297547bfa175c",
+      "file": "frames/frame-083.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 84,
+      "approx_source_time_ms": 920750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "72115d1851cffb8216f6e023bf8ad780bc5e0818bc6ea8a12a351d4eae0f6340",
+      "file": "frames/frame-084.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 85,
+      "approx_source_time_ms": 921000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "686fcd334feaed0a5fec7dcadcf00ab47b05c97758a17b94c3ec5257f10ce705",
+      "file": "frames/frame-085.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 86,
+      "approx_source_time_ms": 921250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "c3bd6bb2524ffdd7d7c5d2af9f256f5b1067839e3afd8750a37964c414242ef2",
+      "file": "frames/frame-086.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 87,
+      "approx_source_time_ms": 921500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "d5dc01a36a310b06808313f27d8e1a87a2d2e4e03bdb11a2a8ab386df5e1846d",
+      "file": "frames/frame-087.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 88,
+      "approx_source_time_ms": 921750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "68b7b4921970b0cac0d65896d8b404df2d101db18a9c5031a30776dc97c61932",
+      "file": "frames/frame-088.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 89,
+      "approx_source_time_ms": 922000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "e14323655fda08fbedff15816adef48d78dbe10b33340343c77f973b0eac658c",
+      "file": "frames/frame-089.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 90,
+      "approx_source_time_ms": 922250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "fb91bb84e5f21b521f6016dc4901cc129c863326c6cfe2c42847f1e66644d970",
+      "file": "frames/frame-090.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 91,
+      "approx_source_time_ms": 922500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "4659c437a1b84ab8589b2d2bdb26e5986bac6719d7bed12799430d7387d2cf1c",
+      "file": "frames/frame-091.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 92,
+      "approx_source_time_ms": 922750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "69198c1766e83533fb434121447733fb830ac204ef28bfbc1dda442eec5484f5",
+      "file": "frames/frame-092.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 93,
+      "approx_source_time_ms": 923000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "c8d4108cd7d1f2f08e33bbbdc7e3d6ffa8ea36d44bfb9bd685146b7863eb4c17",
+      "file": "frames/frame-093.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 94,
+      "approx_source_time_ms": 923250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "e10d8765f6c3aa17bcf199503df47f24e7f241b20e03f6a9f3a00d21a1add586",
+      "file": "frames/frame-094.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 95,
+      "approx_source_time_ms": 923500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "55c88ef1937f2fd0c89af9126ee1829b8c9699370dbf4c2cc2e9009bb67d7964",
+      "file": "frames/frame-095.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 96,
+      "approx_source_time_ms": 923750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "b848d075c20246e9c2c9264d032aeb73925c5ea217112fa4894fb2fbefecd881",
+      "file": "frames/frame-096.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 97,
+      "approx_source_time_ms": 924000,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "8c365447441f13c46af5f544b2841613e6b4d501e1a837ef3b5eeac60dd6e918",
+      "file": "frames/frame-097.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 98,
+      "approx_source_time_ms": 924250,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "33a853f1c6d67d0b3c7b4d8fbdf220fd7ec3a5356863ebdd55b8418362a6922f",
+      "file": "frames/frame-098.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 99,
+      "approx_source_time_ms": 924500,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "e84e399e8ebce58ff6d35778049e21b91cb839e57d733e8a6f78afa75b87634e",
+      "file": "frames/frame-099.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    },
+    {
+      "sample_index": 100,
+      "approx_source_time_ms": 924750,
+      "source_time_qualification": "nominal_4fps_sample_not_original_frame_pts",
+      "sha256": "8e1a11a80d40655402a02c2a262cdc510349d607a2917f9571bcd06eb034f229",
+      "file": "frames/frame-100.jpg",
+      "reviewed_for_scene_content": false,
+      "motion_interpolation_verified": false
+    }
+  ],
+  "contact_sheet_sha256": "e937470ce0a93989ac71ffbbe6577fa4d421489e89ea0ed05cac497e3157efa5",
+  "original_untimed_text_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "cross_reference_audio_source": "source-timing-review-v1/sparse-source-paragraph-candidates.json",
+  "source_paragraph_timecode_verified": false,
+  "scene_setting_reviewed": false,
+  "physical_action_continuous_video_reviewed": false,
+  "character_speaker_identified": false,
+  "episode_audiovisual_complete": false,
+  "original_video_or_audio_in_artifact": false,
+  "limitations": [
+    "Frames are sampled snapshots; may miss fast motion and shot transitions.",
+    "Nominal 4fps timestamps do not independently prove source presentation times.",
+    "The previous five-window ASR-to-paragraph proposals are lexical research only.",
+    "No named actor, speaker, scene setting or physical action has been reviewed."
+  ]
+}
