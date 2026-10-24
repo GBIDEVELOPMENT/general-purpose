@@ -1,0 +1,20 @@
+name: Night Court bounded original stage action photos source-free QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/capture_original_physical_beats.py'
+      - 'Night Court/tools/test_capture_original_physical_beats.py'
+      - '.github/workflows/night-court-original-physical-beat-qa.yml'
+      - '.github/workflows/night-court-trusted-original-physical-beats.yml'
+permissions:
+  contents: read
+jobs:
+  no-media:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python 'Night Court/tools/test_capture_original_physical_beats.py'
