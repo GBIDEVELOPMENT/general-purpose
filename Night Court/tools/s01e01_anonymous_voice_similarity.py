@@ -84,7 +84,6 @@ def main():
         raise ValueError("Expected fixed 30-second mono 16k WAV")
     model=EncoderClassifier.from_hparams(source=MODEL,revision=REVISION,
         savedir=str(a.model_cache),run_opts={"device":"cpu"})
-    model.eval()
     candidates=allowed_segments()
     voices={}
     for seg in candidates:
