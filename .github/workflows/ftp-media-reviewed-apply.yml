@@ -1,0 +1,59 @@
+name: FTP media apply reviewed batch
+on:
+  pull_request:
+    paths:
+      - 'media-organizer/apply_batch.py'
+      - 'media-organizer/tests/test_apply_batch.py'
+      - 'media-organizer/approved-batch.json'
+      - '.github/workflows/ftp-media-reviewed-apply.yml'
+  push:
+    branches: [main]
+    paths: ['media-organizer/approved-batch.json']
+permissions:
+  contents: read
+concurrency:
+  group: ftp-media-approved-apply
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate the whole FTP mover without credentials
+        run: |
+          python -m py_compile media-organizer/apply_batch.py
+          python -m unittest discover -s media-organizer/tests -v
+          if [ -f media-organizer/approved-batch.json ]; then
+            python media-organizer/apply_batch.py --validate-only
+          fi
+  apply:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    environment: ftp-media-changes
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ftp
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Revalidate approved plan and credentials
+        run: |
+          test -s media-organizer/approved-batch.json
+          test -n "$FTP_PASSWORD"
+          python media-organizer/apply_batch.py --validate-only
+      - name: Execute validated FTP changes with durable local journal
+        run: python media-organizer/apply_batch.py
+      - name: Keep complete or partial transaction evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ftp-media-reviewed-apply-journal
+          path: media-organizer/apply-output/
+          if-no-files-found: warn
+          retention-days: 90
