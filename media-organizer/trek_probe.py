@@ -52,31 +52,58 @@ def read_header(x,filename):
         ftp.close()
     return received
 
-def inspect(x):
-    extension=PurePosixPath(x["from"]).suffix
-    with tempfile.NamedTemporaryFile(prefix="trek_probe_",suffix=extension,delete=False) as temporary:
-        filename=temporary.name
-    try:
-        try:read_bytes=read_header(x,filename)
-        except ftplib.all_errors + (OSError,ValueError):
-            return {"status":"ftp_header_read_failed"}
-        command=["ffprobe","-hide_banner","-loglevel","error",
-                 "-probesize","1048576","-analyzeduration","1000000",
-                 "-select_streams","v:0","-show_entries",
-                 "stream=codec_name,profile,pix_fmt,width,height,color_range,color_space,color_transfer,color_primaries,side_data_list",
-                 "-of","json",filename]
-        try:result=subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=30,check=False)
-        except subprocess.TimeoutExpired:return {"status":"ffprobe_timeout","bytes_read":read_bytes}
-        try:observed=json.loads(result.stdout.decode("utf-8"))
-        except (ValueError,UnicodeError):return {"status":"ffprobe_no_json","bytes_read":read_bytes}
-        streams=observed.get("streams",[])
-        if not streams:return {"status":"ffprobe_no_streams","bytes_read":read_bytes}
+class PrefixComplete(Exception):
+    """Stop FTP RETR after a hard byte limit; caller closes data connection."""
+
+def read_prefix(x, limit=8*1024*1024):
+    """Read a bounded prefix directly via authenticated FTP, never the whole video."""
+    import tempfile
+    from pathlib import Path
+    received=0
+    with tempfile.TemporaryDirectory(prefix="trek-stream-") as folder:
+        local=Path(folder)/("video"+PurePosixPath(x["from"]).suffix)
+        ftp=connect()
+        try:
+            with local.open("wb") as destination:
+                def chunk(data):
+                    nonlocal received
+                    left=limit-received
+                    if left>0:
+                        destination.write(data[:left])
+                        received+=min(len(data),left)
+                    if received>=limit:raise PrefixComplete()
+                try:
+                    ftp.retrbinary("RETR "+x["from"],chunk,blocksize=65536)
+                except PrefixComplete:
+                    pass
+        finally:
+            ftp.close()
+        result=subprocess.run(["ffprobe","-hide_banner","-loglevel","error",
+            "-probesize","4000000","-analyzeduration","1500000",
+            "-select_streams","v:0","-show_entries",
+            "stream=codec_name,profile,pix_fmt,width,height,color_range,color_space,color_transfer,color_primaries,side_data_list",
+            "-of","json",str(local)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,
+            timeout=35,check=False)
+        try:
+            streams=json.loads(result.stdout.decode("utf-8",errors="replace")).get("streams",[])
+        except ValueError:
+            streams=[]
+        if not streams:
+            return {"status":"prefix_no_video_metadata","bytes_examined":received,
+                    "exit_code":result.returncode}
         stream=streams[0]
-        return {"status":"probed_header","bytes_read":read_bytes,
-                "stream":{k:stream.get(k) for k in
-                 ("codec_name","profile","pix_fmt","width","height","color_range","color_space","color_transfer","color_primaries","side_data_list") if k in stream}}
-    finally:
-        Path(filename).unlink(missing_ok=True)
+        return {"status":"prefix_probed","bytes_examined":received,"stream":{
+            k:stream[k] for k in ("codec_name","profile","pix_fmt","width","height",
+              "color_range","color_space","color_transfer","color_primaries","side_data_list")
+            if k in stream}}
+
+def inspect(x):
+    try:
+        return read_prefix(x)
+    except subprocess.TimeoutExpired:
+        return {"status":"timeout"}
+    except (OSError,ftplib.all_errors,ValueError) as error:
+        return {"status":"probe_failed","error_class":type(error).__name__}
 
 def main():
     parser=argparse.ArgumentParser()
