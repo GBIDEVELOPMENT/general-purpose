@@ -42,8 +42,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Validate external media inspector
-        run: ffprobe -version >/dev/null
+      - name: Install offline media inspection utility on clean runner
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends ffmpeg
+          ffprobe -version >/dev/null
       - name: Inspect only eight exact files, never write to FTP
         run: python media-organizer/trek_probe.py --apply
       - uses: actions/upload-artifact@v4
