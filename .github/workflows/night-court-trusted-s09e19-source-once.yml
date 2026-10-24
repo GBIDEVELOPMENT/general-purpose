@@ -49,6 +49,11 @@ jobs:
           python 'Night Court/tools/build_multigoal_review_packet.py' \
             --source-report "${{ runner.temp }}/night-court-s09e19/second-episode-report.json" \
             --output "${{ runner.temp }}/night-court-s09e19/multigoal-pending-review.json"
+      - name: Build bounded semantic review batch manifest for later independent video inference
+        run: |
+          python 'Night Court/tools/plan_original_av_microbatches.py' \
+            --review-packet "${{ runner.temp }}/night-court-s09e19/multigoal-pending-review.json" \
+            --output "${{ runner.temp }}/night-court-s09e19/pending-semantic-microbatches.json"
       - name: Retain only small numeric and untimed text research suggestions
         if: success()
         uses: actions/upload-artifact@v4
