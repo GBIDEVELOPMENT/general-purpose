@@ -1,329 +1,469 @@
 {
   "root": "/downloads",
-  "batch_id": "joey_plex_046",
-  "description": "Move 46 verified Joey TV series episodes from two release folders into Joey Seasons 01 and 02 under the same mixed /downloads library; leave unrelated sidecars untouched.",
+  "batch_id": "media_tv_066",
+  "description": "Relocate confirmed complete Green Lantern Animated Series season 1, Studio 60 season 1 and The Good Doctor 2017 season 1, 66 episodes total with pinned original size/mtime and unchanged extensions.",
   "moves": [
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E01.Pilot.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E01 - Pilot.mkv",
-      "size": 1611989225,
-      "modify": "20260818002512",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E01.Beware.My.Power.Part.1.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E01 - Beware My Power Part 1.mkv",
+      "size": 3955119355,
+      "modify": "20260810074806",
+      "reason": "Verified Green Lantern The Animated Series S01E01 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E02.Joey.and.the.Student.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E02 - Joey and the Student.mkv",
-      "size": 1535962309,
-      "modify": "20260818002520",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E02.Beware.My.Power.Part.2.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E02 - Beware My Power Part 2.mkv",
+      "size": 3607770157,
+      "modify": "20260810074821",
+      "reason": "Verified Green Lantern The Animated Series S01E02 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E03.Joey.and.the.Party.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E03 - Joey and the Party.mkv",
-      "size": 1529075268,
-      "modify": "20260818002533",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E03.Razers.Edge.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E03 - Razers Edge.mkv",
+      "size": 3497799491,
+      "modify": "20260810074823",
+      "reason": "Verified Green Lantern The Animated Series S01E03 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E04.Joey.and.the.Book.Club.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E04 - Joey and the Book Club.mkv",
-      "size": 1659429195,
-      "modify": "20260818002543",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E04.Into.the.Abyss.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E04 - Into the Abyss.mkv",
+      "size": 3809463210,
+      "modify": "20260810074727",
+      "reason": "Verified Green Lantern The Animated Series S01E04 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E05.Joey.and.the.Perfect.Storm.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E05 - Joey and the Perfect Storm.mkv",
-      "size": 1597576910,
-      "modify": "20260818002543",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E05.Heir.Apparent.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E05 - Heir Apparent.mkv",
+      "size": 3334683936,
+      "modify": "20260810074808",
+      "reason": "Verified Green Lantern The Animated Series S01E05 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E06.Joey.and.the.Nemesis.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E06 - Joey and the Nemesis.mkv",
-      "size": 1726437137,
-      "modify": "20260818002449",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E06.Lost.Planet.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E06 - Lost Planet.mkv",
+      "size": 3755576186,
+      "modify": "20260810074821",
+      "reason": "Verified Green Lantern The Animated Series S01E06 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E07.Joey.and.the.Husband.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E07 - Joey and the Husband.mkv",
-      "size": 1763433985,
-      "modify": "20260818002459",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E07.Reckoning.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E07 - Reckoning.mkv",
+      "size": 3483861757,
+      "modify": "20260810074845",
+      "reason": "Verified Green Lantern The Animated Series S01E07 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E08.Joey.and.the.Dream.Girl.1.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E08 - Joey and the Dream Girl 1.mkv",
-      "size": 1558116953,
-      "modify": "20260818002210",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E08.Fear.Itself.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E08 - Fear Itself.mkv",
+      "size": 3345078221,
+      "modify": "20260810074846",
+      "reason": "Verified Green Lantern The Animated Series S01E08 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E09.Joey.and.the.Dream.Girl.2.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E09 - Joey and the Dream Girl 2.mkv",
-      "size": 1566089450,
-      "modify": "20260818002223",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E09.In.Love.and.War.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E09 - In Love and War.mkv",
+      "size": 2644520606,
+      "modify": "20260810074744",
+      "reason": "Verified Green Lantern The Animated Series S01E09 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E10.Joey.and.the.Big.Audition.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E10 - Joey and the Big Audition.mkv",
-      "size": 1399863973,
-      "modify": "20260818002233",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E10.Regime.Change.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E10 - Regime Change.mkv",
+      "size": 2456819630,
+      "modify": "20260810074832",
+      "reason": "Verified Green Lantern The Animated Series S01E10 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E11.Joey.and.the.Road.Trip.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E11 - Joey and the Road Trip.mkv",
-      "size": 1130306626,
-      "modify": "20260818002501",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E11.Flight.Club.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E11 - Flight Club.mkv",
+      "size": 3996666960,
+      "modify": "20260810074846",
+      "reason": "Verified Green Lantern The Animated Series S01E11 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E12.Joey.and.the.Plot.Twist.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E12 - Joey and the Plot Twist.mkv",
-      "size": 1750525287,
-      "modify": "20260818002342",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E12.Invasion.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E12 - Invasion.mkv",
+      "size": 4140839277,
+      "modify": "20260810074846",
+      "reason": "Verified Green Lantern The Animated Series S01E12 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E13.Joey.and.the.Taste.Test.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E13 - Joey and the Taste Test.mkv",
-      "size": 1663108376,
-      "modify": "20260818002349",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E13.Homecoming.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E13 - Homecoming.mkv",
+      "size": 3740882411,
+      "modify": "20260810074549",
+      "reason": "Verified Green Lantern The Animated Series S01E13 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E14.Joey.and.the.Premiere.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E14 - Joey and the Premiere.mkv",
-      "size": 1389991189,
-      "modify": "20260818002030",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E14.The.New.Guy.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E14 - The New Guy.mkv",
+      "size": 3264556200,
+      "modify": "20260810074843",
+      "reason": "Verified Green Lantern The Animated Series S01E14 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E15.Joey.and.the.Assistant.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E15 - Joey and the Assistant.mkv",
-      "size": 1640731297,
-      "modify": "20260818002351",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E15.Reboot.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E15 - Reboot.mkv",
+      "size": 3267910596,
+      "modify": "20260810074340",
+      "reason": "Verified Green Lantern The Animated Series S01E15 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E16.Joey.and.the.Tonight.Show.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E16 - Joey and the Tonight Show.mkv",
-      "size": 1308778354,
-      "modify": "20260818002401",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E16.Steam.Lantern.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E16 - Steam Lantern.mkv",
+      "size": 3323963076,
+      "modify": "20260810074405",
+      "reason": "Verified Green Lantern The Animated Series S01E16 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E17.Joey.and.the.Valentines.Date.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E17 - Joey and the Valentines Date.mkv",
-      "size": 1793869864,
-      "modify": "20260818002415",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E17.Blue.Hope.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E17 - Blue Hope.mkv",
+      "size": 3752585529,
+      "modify": "20260810073803",
+      "reason": "Verified Green Lantern The Animated Series S01E17 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E18.Joey.and.the.Wrong.Name.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E18 - Joey and the Wrong Name.mkv",
-      "size": 1599565214,
-      "modify": "20260818002100",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E18.Prisoner.of.Sinestro.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E18 - Prisoner of Sinestro.mkv",
+      "size": 3525941209,
+      "modify": "20260810074424",
+      "reason": "Verified Green Lantern The Animated Series S01E18 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E19.Joey.and.the.Fancy.Sister.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E19 - Joey and the Fancy Sister.mkv",
-      "size": 1755767722,
-      "modify": "20260818002428",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E19.Loss.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E19 - Loss.mkv",
+      "size": 3522677000,
+      "modify": "20260810074455",
+      "reason": "Verified Green Lantern The Animated Series S01E19 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E20.Joey.and.the.Neighbor.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E20 - Joey and the Neighbor.mkv",
-      "size": 1676401629,
-      "modify": "20260818002445",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E20.Cold.Fury.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E20 - Cold Fury.mkv",
+      "size": 3904270676,
+      "modify": "20260810074844",
+      "reason": "Verified Green Lantern The Animated Series S01E20 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E21.Joey.and.the.Spying.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E21 - Joey and the Spying.mkv",
-      "size": 1768305450,
-      "modify": "20260818002259",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E21.Babel.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E21 - Babel.mkv",
+      "size": 3689556237,
+      "modify": "20260810074505",
+      "reason": "Verified Green Lantern The Animated Series S01E21 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E22.Joey.and.the.Temptation.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E22 - Joey and the Temptation.mkv",
-      "size": 1693260274,
-      "modify": "20260818002312",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E22.Love.is.a.Battlefield.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E22 - Love is a Battlefield.mkv",
+      "size": 2993001222,
+      "modify": "20260810074720",
+      "reason": "Verified Green Lantern The Animated Series S01E22 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E23.Joey.and.the.Breakup.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E23 - Joey and the Breakup.mkv",
-      "size": 1746921684,
-      "modify": "20260818002327",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E23.Larfleeze.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E23 - Larfleeze.mkv",
+      "size": 3226350894,
+      "modify": "20260810074745",
+      "reason": "Verified Green Lantern The Animated Series S01E23 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E24.Joey.and.the.Moving.In.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 01/Joey - S01E24 - Joey and the Moving In.mkv",
-      "size": 1753886593,
-      "modify": "20260818002441",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E24.Scarred.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E24 - Scarred.mkv",
+      "size": 3277856821,
+      "modify": "20260810074654",
+      "reason": "Verified Green Lantern The Animated Series S01E24 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E01.Joey.and.the.Big.Break.1.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E01 - Joey and the Big Break 1.mkv",
-      "size": 799818178,
-      "modify": "20260817223306",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E25.Ranx.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E25 - Ranx.mkv",
+      "size": 4315944026,
+      "modify": "20260810074750",
+      "reason": "Verified Green Lantern The Animated Series S01E25 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E02.Joey.and.the.Big.Break.2.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E02 - Joey and the Big Break 2.mkv",
-      "size": 851031327,
-      "modify": "20260817223341",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Green.Lantern.The.Animated.Series.S01.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON/Green.Lantern.The.Animated.Series.S01E26.Dark.Matter.1080p.BluRay.REMUX.AVC.DTS-HD.MA.2.0-EPSiLON.mkv",
+      "to": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E26 - Dark Matter.mkv",
+      "size": 4029530353,
+      "modify": "20260810074745",
+      "reason": "Verified Green Lantern The Animated Series S01E26 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E03.Joey.and.the.Spanking.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E03 - Joey and the Spanking.mkv",
-      "size": 963774896,
-      "modify": "20260817223420",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e01.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E01.avi",
+      "size": 365393920,
+      "modify": "20261001104452",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E01 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E04.Joey.and.the.Stuntman.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E04 - Joey and the Stuntman.mkv",
-      "size": 909717833,
-      "modify": "20260817223446",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e02.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E02.avi",
+      "size": 365262848,
+      "modify": "20261001104346",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E02 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E05.Joey.and.the.House.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E05 - Joey and the House.mkv",
-      "size": 886738835,
-      "modify": "20260817223429",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e03.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E03.avi",
+      "size": 365250560,
+      "modify": "20261001104320",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E03 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E06.Joey.and.the.ESL.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E06 - Joey and the ESL.mkv",
-      "size": 845148627,
-      "modify": "20260817223427",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e04.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E04.avi",
+      "size": 360099840,
+      "modify": "20261001104254",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E04 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E07.Joey.and.the.Poker.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E07 - Joey and the Poker.mkv",
-      "size": 889790638,
-      "modify": "20260817223431",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e05.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E05.avi",
+      "size": 361189376,
+      "modify": "20261001104228",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E05 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E08.Joey.and.the.Sex.Tape.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E08 - Joey and the Sex Tape.mkv",
-      "size": 874816667,
-      "modify": "20260817223453",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e06.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E06.avi",
+      "size": 361187328,
+      "modify": "20261001104403",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E06 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E09.Joey.and.the.Musical.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E09 - Joey and the Musical.mkv",
-      "size": 824611266,
-      "modify": "20260817223005",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e07.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E07.avi",
+      "size": 361162752,
+      "modify": "20261001103921",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E07 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E10.Joey.and.the.Bachelor.Thanksgiving.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E10 - Joey and the Bachelor Thanksgiving.mkv",
-      "size": 913518366,
-      "modify": "20260817223455",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e08.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E08.avi",
+      "size": 361168896,
+      "modify": "20261001104449",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E08 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E11.Joey.and.the.High.School.Friend.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E11 - Joey and the High School Friend.mkv",
-      "size": 875450049,
-      "modify": "20260817223500",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e09.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E09.avi",
+      "size": 361132032,
+      "modify": "20261001104419",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E09 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E12.Joey.and.the.Tijuana.Trip.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E12 - Joey and the Tijuana Trip.mkv",
-      "size": 983589017,
-      "modify": "20260817223504",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e10.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E10.avi",
+      "size": 361181184,
+      "modify": "20261001103959",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E10 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E13.Joey.and.the.Christmas.Party.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E13 - Joey and the Christmas Party.mkv",
-      "size": 988793873,
-      "modify": "20260817223504",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e11.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E11.avi",
+      "size": 361185280,
+      "modify": "20261001104202",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E11 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E14.Joey.and.the.Snowball.Fight.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E14 - Joey and the Snowball Fight.mkv",
-      "size": 955504141,
-      "modify": "20260817223507",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e12.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E12.avi",
+      "size": 361150464,
+      "modify": "20261001104021",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E12 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E15.Joey.and.the.Dad.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E15 - Joey and the Dad.mkv",
-      "size": 881246794,
-      "modify": "20260817223507",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e13.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E13.avi",
+      "size": 361136128,
+      "modify": "20261001103552",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E13 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E16.Joey.and.the.Party.for.Alex.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E16 - Joey and the Party for Alex.mkv",
-      "size": 945585401,
-      "modify": "20260817223328",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e14.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E14.avi",
+      "size": 361228288,
+      "modify": "20261001103804",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E14 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E17.Joey.and.the.Big.Move.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E17 - Joey and the Big Move.mkv",
-      "size": 946358847,
-      "modify": "20260817223332",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e15.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E15.avi",
+      "size": 361246720,
+      "modify": "20261001103727",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E15 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E18.Joey.and.the.Beard.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E18 - Joey and the Beard.mkv",
-      "size": 1008792169,
-      "modify": "20260817222933",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e16.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E16.avi",
+      "size": 361138176,
+      "modify": "20261001104501",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E16 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E19.Joey.and.the.Critic.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E19 - Joey and the Critic.mkv",
-      "size": 808382364,
-      "modify": "20260817223016",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e17.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E17.avi",
+      "size": 360976384,
+      "modify": "20261001103738",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E17 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E20.Joey.and.the.Actors.Studio.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E20 - Joey and the Actors Studio.mkv",
-      "size": 991748394,
-      "modify": "20260817223453",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e18.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E18.avi",
+      "size": 361183232,
+      "modify": "20261001104115",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E18 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E21.Joey.and.the.Holding.Hands.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E21 - Joey and the Holding Hands.mkv",
-      "size": 885703737,
-      "modify": "20260817223336",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e19.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E19.avi",
+      "size": 361158656,
+      "modify": "20261001103829",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E19 from uniform release; Plex season-folder canonicalization"
     },
     {
-      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E22.Joey.and.the.Wedding.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
-      "to": "/downloads/Joey/Season 02/Joey - S02E22 - Joey and the Wedding.mkv",
-      "size": 925336045,
-      "modify": "20260817223453",
-      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e20.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E20.avi",
+      "size": 361056256,
+      "modify": "20261001103912",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E20 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e21.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E21.avi",
+      "size": 364105728,
+      "modify": "20261001104500",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E21 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/Studio.60.on.the.Sunset.Strip.S01.DVDRip.XviD-DiRTY/s60-s01e22.avi",
+      "to": "/downloads/Studio 60 on the Sunset Strip/Season 01/Studio 60 on the Sunset Strip - S01E22.avi",
+      "size": 364212224,
+      "modify": "20261001104147",
+      "reason": "Verified Studio 60 on the Sunset Strip S01E22 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E01.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E01.mkv",
+      "size": 1827015897,
+      "modify": "20261001014912",
+      "reason": "Verified The Good Doctor (2017) S01E01 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E02.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E02.mkv",
+      "size": 1805930220,
+      "modify": "20261001014635",
+      "reason": "Verified The Good Doctor (2017) S01E02 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E03.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E03.mkv",
+      "size": 1760315960,
+      "modify": "20261001014631",
+      "reason": "Verified The Good Doctor (2017) S01E03 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E04.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E04.mkv",
+      "size": 1808883540,
+      "modify": "20261001014633",
+      "reason": "Verified The Good Doctor (2017) S01E04 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E05.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E05.mkv",
+      "size": 1810579261,
+      "modify": "20261001014846",
+      "reason": "Verified The Good Doctor (2017) S01E05 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E06.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E06.mkv",
+      "size": 1810748524,
+      "modify": "20261001014857",
+      "reason": "Verified The Good Doctor (2017) S01E06 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E07.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E07.mkv",
+      "size": 1790094332,
+      "modify": "20261001014911",
+      "reason": "Verified The Good Doctor (2017) S01E07 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E08.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E08.mkv",
+      "size": 1794298400,
+      "modify": "20261001014914",
+      "reason": "Verified The Good Doctor (2017) S01E08 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E09.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E09.mkv",
+      "size": 1789895194,
+      "modify": "20261001014914",
+      "reason": "Verified The Good Doctor (2017) S01E09 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E10.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E10.mkv",
+      "size": 1812214645,
+      "modify": "20261001014915",
+      "reason": "Verified The Good Doctor (2017) S01E10 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E11.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E11.mkv",
+      "size": 1812499589,
+      "modify": "20261001014916",
+      "reason": "Verified The Good Doctor (2017) S01E11 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E12.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E12.mkv",
+      "size": 1812097410,
+      "modify": "20261001014917",
+      "reason": "Verified The Good Doctor (2017) S01E12 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E13.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E13.mkv",
+      "size": 1809035456,
+      "modify": "20261001014631",
+      "reason": "Verified The Good Doctor (2017) S01E13 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E14.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E14.mkv",
+      "size": 1808148346,
+      "modify": "20261001014631",
+      "reason": "Verified The Good Doctor (2017) S01E14 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E15.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E15.mkv",
+      "size": 1810390361,
+      "modify": "20261001014913",
+      "reason": "Verified The Good Doctor (2017) S01E15 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E16.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E16.mkv",
+      "size": 1790755650,
+      "modify": "20261001014914",
+      "reason": "Verified The Good Doctor (2017) S01E16 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E17.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E17.mkv",
+      "size": 1811330039,
+      "modify": "20261001014915",
+      "reason": "Verified The Good Doctor (2017) S01E17 from uniform release; Plex season-folder canonicalization"
+    },
+    {
+      "from": "/downloads/The Good Doctor S01 2017 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/The.Good.Doctor.S01E18.2017.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
+      "to": "/downloads/The Good Doctor (2017)/Season 01/The Good Doctor (2017) - S01E18.mkv",
+      "size": 1812428391,
+      "modify": "20261001014912",
+      "reason": "Verified The Good Doctor (2017) S01E18 from uniform release; Plex season-folder canonicalization"
     }
   ]
 }
