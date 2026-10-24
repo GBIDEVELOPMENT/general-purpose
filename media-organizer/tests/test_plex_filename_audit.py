@@ -25,6 +25,17 @@ class PlexFilenameAuditTests(unittest.TestCase):
     def test_year_after_episode_is_flagged(self):
         r=scan("/downloads/Bait/Bait.S01E02.2026.1080p.mkv")
         self.assertEqual(r["summary"]["year_after_episode_code"],1)
+    def test_episodic_airdate_is_not_assumed_to_be_premiere_year(self):
+        r=scan("/downloads/Dateline NBC/Dateline.NBC.s33e34.2025.09.12.The.Night.mkv")
+        self.assertEqual(r["summary"]["airdate_after_episode"],1)
+        self.assertNotIn("year_after_episode_code",r["summary"])
+    def test_release_group_movie_prefix_with_year_only_in_parent(self):
+        r=scan("/downloads/Southland.Tales.2006.1080p.BluRay/sector7-southland.tales.1080p-x264.mkv")
+        self.assertEqual(r["summary"]["movie_year_only_in_folder"],1)
+        self.assertEqual(r["summary"]["release_group_before_movie_title"],1)
+    def test_real_movie_title_prefix_not_assumed_release_group(self):
+        r=scan("/downloads/Southland Tales (2006)/Southland-Tales.1080p.mkv")
+        self.assertNotIn("release_group_before_movie_title",r["summary"])
     def test_clean_tv_name_not_flagged(self):
         r=scan("/downloads/Joey/Season 01/Joey - S01E01 - Pilot.mkv")
         self.assertEqual(r["issues"],[])
