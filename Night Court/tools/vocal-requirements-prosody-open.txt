@@ -1,0 +1,5 @@
+# Permissively licensed speech signal analysis: librosa ISC, SoundFile BSD, NumPy BSD.
+# Resolve exact deployed versions through CI metadata and reviewed pilot output.
+librosa>=0.10.2,<0.12
+soundfile>=0.12,<0.14
+numpy>=1.26,<3

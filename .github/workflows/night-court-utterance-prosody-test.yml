@@ -1,0 +1,25 @@
+name: Night Court local utterance prosody tests
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/s01e01_utterance_prosody.py'
+      - 'Night Court/tools/test_s01e01_utterance_prosody.py'
+      - 'Night Court/tools/vocal-requirements-prosody-open.txt'
+      - '.github/workflows/night-court-utterance-prosody-test.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install permissive signal toolkit (no speech models/weights)
+        run: python -m pip install -r "Night Court/tools/vocal-requirements-prosody-open.txt"
+      - name: Enforce bounded real-ASR-source and pure synthetic signal assertions
+        run: |
+          python -m py_compile "Night Court/tools/s01e01_utterance_prosody.py"
+          python "Night Court/tools/test_s01e01_utterance_prosody.py"
