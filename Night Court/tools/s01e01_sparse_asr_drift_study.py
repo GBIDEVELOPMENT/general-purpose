@@ -47,6 +47,7 @@ def match(asr_source,cues,start,end):
       "candidate_start_offset_ms":asr_source["start_ms"]-cue["start_ms"] if score>=.55 else None,
       "cue_fully_inside_window":contained,
       "usable_for_global_drift_review":bool(score>=.85 and contained
+         and not asr_source.get("segment_boundary_clipped",False)
          and asr_source["end_ms"]>asr_source["start_ms"]+400),
       "review_state":"heuristic_text_match_not_verified_audio",
       "caution":"Caption cue and model segment boundaries can refer to different sub-utterances."
@@ -106,12 +107,20 @@ def run(media,destination):
               condition_on_previous_text=False)
             texts=[]
             for ix,x in enumerate(found):
-                abs_start=round(start*1000+x.start*1000)
-                abs_end=round(start*1000+x.end*1000)
-                if not start*1000<=abs_start<=abs_end<=end*1000+100:
-                    raise ValueError("Model transcribed outside bounded source window")
+                raw_start=round(start*1000+x.start*1000)
+                raw_end=round(start*1000+x.end*1000)
+                abs_start=max(start*1000,raw_start)
+                abs_end=min(end*1000,raw_end)
+                # Whisper may estimate speech beyond an excerpt even though no
+                # such samples were decoded. Preserve a bounded candidate and
+                # disqualify it from drift statistics rather than inventing audio.
+                if raw_end<=raw_start or abs_start>=abs_end:
+                    continue
+                clipped=(raw_start<start*1000 or raw_end>end*1000)
                 texts.append({
-                   "index":ix,"start_ms":abs_start,"end_ms":abs_end,
+                   "index":len(texts),"start_ms":abs_start,"end_ms":abs_end,
+                   "segment_boundary_clipped":clipped,
+                   "model_proposed_end_ms_before_clamping":raw_end,
                    "text":x.text.strip(),"model_average_log_probability":round(float(x.avg_logprob),4),
                    "model_no_speech_probability":round(float(x.no_speech_prob),4)
                 })
