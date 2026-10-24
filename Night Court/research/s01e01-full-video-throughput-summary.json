@@ -1,0 +1,61 @@
+{
+  "schema": "night-court-whole-source-visual-time-budget-summary/1",
+  "episode_id": "S01E01",
+  "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_video_bytes": 183386112,
+  "source_video_duration_ms": 1448256,
+  "original_stream_avg_frame_rate": "30000/1001",
+  "original_stream_r_frame_rate": "30000/1001",
+  "trusted_source_run_id": 40114720483,
+  "private_artifact_id": 12568510039,
+  "private_artifact_expiry_utc": "2026-10-31T17:09:20Z",
+  "original_private_zip_sha256": "2ea1ff770be898cea2d5dc46eb0ca93b065b366a5161fd62b44147b78592b7cd",
+  "original_private_json_sha256": "11162478a37d0c1d7718908bd7ee38b15ebde42124f227aa6fe689e704c48545",
+  "image_change_score_threshold": 0.12,
+  "image_change_candidates_not_verified_cuts": 212,
+  "score_anomalies": {
+    "emitted_rows": 212,
+    "duplicate_timestamp_rows": 0,
+    "ordered_or_tied_timestamp_steps": 0
+  },
+  "editorial_sampled_events": 6,
+  "uniform_coverage_probe_events": 26,
+  "source_plan_counts": {
+    "frames": 212,
+    "baseline": 95,
+    "bursts": 31,
+    "transition_pairs": 12,
+    "cut_candidates": 212,
+    "events_supplied": 32,
+    "events_deferred": 1
+  },
+  "deferred_event": "OBS-V2-02",
+  "measured_stage_seconds": {
+    "ftp_source_transfer_sha256": 4.089,
+    "ffprobe_metadata": 0.064,
+    "full_episode_lowres_cut_proposal_scan": 27.624,
+    "source_plan": 0.009,
+    "one_pass_ffmpeg_source_frame_extraction": 23.453
+  },
+  "measured_source_stage_total_seconds": 55.239,
+  "actual_selected_frames": 212,
+  "actual_JPEG_bytes": 908395,
+  "all_image_frame_pts_match_verified": true,
+  "actual_visual_semantics_assessed": false,
+  "full_episode_video_model_pass_benchmarked": false,
+  "whole_episode_dual_asr_stage_seconds_from_independent_previous_run": 134.165,
+  "separate_audio_and_visual_stage_sum_seconds_not_combined_run": 189.404,
+  "combined_one_source_end_to_end_factory_measured": false,
+  "original_video_audio_jpegs_not_committed": true,
+  "shot_boundaries_verified": false,
+  "real_scenes_verified": false,
+  "character_identity_verified": false,
+  "script_or_full_episode_accepted": false,
+  "limitations": [
+    "FFmpeg frame difference at threshold 0.12 produces image change hypotheses, not confirmed shot/scene boundaries.",
+    "26 evenly selected coverage probes were not independently discovered physical-action events.",
+    "Single episode cost on a GitHub runner excludes pip/FFmpeg install, orchestration and visual-language model inference.",
+    "Audio and visual stages were timed in separate owner source runs, so 189.404s is an arithmetic sum, not observed combined wall time.",
+    "212 extracted source JPGs were ephemeral; only timing, total bytes, counts, SHA-provenance and candidates were retained."
+  ]
+}
