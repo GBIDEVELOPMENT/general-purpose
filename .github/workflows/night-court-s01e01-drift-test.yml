@@ -1,0 +1,19 @@
+name: Night Court sparse S01E01 source-cut sync sampling offline
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/s01e01_sparse_asr_drift_study.py'
+      - 'Night Court/tools/test_s01e01_sparse_asr_drift_study.py'
+      - '.github/workflows/night-court-s01e01-drift-test.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Strict original subtitle sample and offset-abstention regression
+        run: |
+          python -m py_compile "Night Court/tools/s01e01_sparse_asr_drift_study.py"
+          python "Night Court/tools/test_s01e01_sparse_asr_drift_study.py"

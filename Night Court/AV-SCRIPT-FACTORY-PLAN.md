@@ -1,5 +1,10 @@
 # Night Court audiovisual script-generation factory
 
+## Wider S01E01 source-cut sync experiment
+
+[The S01E01 source-cut drift handoff](S01E01-SOURCE-CUT-DRIFT-HANDOFF.md) defines five additional 30-second source-audio samples between 05:00 and 23:00 of the original AVI, independently transcribed with tiny.en and heuristically matched to the preserved SRT. It is a resource-bounded precursor to episode-wide edition acceptance. **Actual execution remains subject to offline CI and owner-only PR-triggered trusted-base workflow; no whole-episode synchronization is yet confirmed.**
+
+
 ## Nine-season reading-script preparation
 
 [Source reading-script scaffold handoff](SOURCE-SCRIPT-SCAFFOLDS-HANDOFF.md) describes the deterministic `build_source_script_scaffolds.py` stage. It converts each of the 193 physically held dialogue witnesses into an episode-local reading transcript, retaining original cue IDs and unverified speaker labels. All inferred dialogue blocks are marked as caption-gap hypotheses, not actual scenes, and S09E19 remains untimed. **The all-episode workflow passed CI and merged as [PR #156](https://github.com/gamesbyian/general-purpose/pull/156).** It produced 193 source-only episode reading scripts, 70,804 original caption cues, 72,733 source-linked units and 1,173 caption-gap candidate blocks. All AV/scene/character acceptance gates remain separate. These are not production scripts and do not replace the complete audiovisual scene-reconstruction pipeline.
