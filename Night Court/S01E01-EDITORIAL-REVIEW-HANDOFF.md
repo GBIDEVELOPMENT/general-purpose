@@ -15,6 +15,17 @@ The new `tools/build_s01e01_editorial_review.py` prepares a deterministic, evide
 
 Outputs in `seasons/S01/S01E01/derived/editorial-review-v1/`: `acceptance-worklist.json` (source-linked review tasks and blank decisions) and `acceptance-worklist.md` (readable priority queue). The editor can check failed/missing word candidates and visual actions without having to collate five previous research outputs manually.
 
+## Editorial decision integrity gate
+
+`tools/validate_editorial_decisions.py` creates an all-PENDING JSON template for the 11 original dialogue-turn tasks and six physical-action checks, then validates any future completed editorial decisions against the exact source AVI/SRT SHA and original-source time range. Its adversarial tests reject invented speaker names from cast/wardrobe, expressive delivery from mixed pitch alone, stage-motion acceptance based only on stills, altered original source hashes, missing original cue tasks or unaudited decisions.
+
+- A **voice text** acceptance must include an identified reviewer's explicit attestation of listening to original audio **and** checking the preserved source caption.
+- Naming a **speaker** further requires synchronized continuous video/mouth-to-voice evidence; cast credits or a costume alone are never enough.
+- A **vocal delivery** acceptance requires a separate original source listen and self-attested isolated-voice review. Numerical F0 alone is not an emotion label.
+- A **physical stage direction** acceptance requires the reviewer to attest to continuous-video review. The original 4fps source frames can be used for pre-review observations, not independently timed full-action claims.
+
+The validator checks *record format and source provenance* only. A person could falsely report having listened or watched; **reviewer identity and evidence quality are not cryptographically verified**, and valid JSON is not automatic truth. The template is deliberately pending, with zero accepted claims. The next editorial run must be authorized, source-linked, and independently QA-checked before any character/performance script is declared correct.
+
 ## Hard acceptance boundary
 
 **Zero speaker identities or voice performances are automatically accepted.** Every speaker, word-timing, vocal-delivery and stage-motion review field is deliberately `not_reviewed`, `null` or `false`. Nearby sampled images supply only contextual timing, not proof that the visible individual spoke. No model agreement becomes a certified word timestamp, and no vocal pitch contour becomes sarcasm, anger or emphasis without separate evidence. Original caption source bytes stay untouched.
