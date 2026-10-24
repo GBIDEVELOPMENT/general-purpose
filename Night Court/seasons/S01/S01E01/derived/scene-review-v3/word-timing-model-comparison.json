@@ -1,0 +1,1008 @@
+{
+  "schema": "night-court-s01e01-cross-model-word-triage/1",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_window_ms": [
+    60000,
+    90000
+  ],
+  "tiny_en_source": "scene-review-v1/word-alignment-review.json",
+  "CTC_source": "scene-review-v3/ctc-source-word-candidates.json",
+  "CTC_model_revision": "22aad52d435eb6dbaf354bdad9b0da84ce7d6156",
+  "shared_words_with_both_time_candidates": 39,
+  "within_300ms_start_proposals": 37,
+  "over_300ms_start_disagreements": 2,
+  "median_CTC_minus_tiny_start_ms": -37,
+  "counts": {
+    "CTC_only_model_word_candidate": 3,
+    "no_usable_word_timing_candidate": 7,
+    "tiny_en_only_word_candidate": 6,
+    "two_model_start_disagreement_over_300ms": 2,
+    "two_model_start_proximity_300ms_or_less": 37
+  },
+  "source_words": 55,
+  "shared_window_dependence": "CTC windows derived from tiny.en speech segments; proximity is not independent timestamp validation",
+  "per_source_word_review": [
+    {
+      "source_cue": 19,
+      "source_turn_index": 0,
+      "source_word_index": 0,
+      "original_normalized_word": "DID",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "no_usable_word_timing_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 0,
+      "source_word_index": 1,
+      "original_normalized_word": "YOU",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "no_usable_word_timing_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 0,
+      "source_word_index": 2,
+      "original_normalized_word": "SAY",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "no_usable_word_timing_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 0,
+      "source_word_index": 3,
+      "original_normalized_word": "MERCURIAL",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "no_usable_word_timing_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_word_index": 0,
+      "original_normalized_word": "IM",
+      "tiny_en_start_end_ms": [
+        60640,
+        61120
+      ],
+      "ctc_start_end_ms": [
+        60894,
+        60975
+      ],
+      "start_delta_ctc_minus_tiny_ms": 254,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_word_index": 1,
+      "original_normalized_word": "TRYING",
+      "tiny_en_start_end_ms": [
+        61120,
+        61240
+      ],
+      "ctc_start_end_ms": [
+        61015,
+        61156
+      ],
+      "start_delta_ctc_minus_tiny_ms": -105,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_word_index": 2,
+      "original_normalized_word": "TO",
+      "tiny_en_start_end_ms": [
+        61240,
+        61440
+      ],
+      "ctc_start_end_ms": [
+        61176,
+        61216
+      ],
+      "start_delta_ctc_minus_tiny_ms": -64,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_word_index": 3,
+      "original_normalized_word": "MAKE",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": [
+        61257,
+        61378
+      ],
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "CTC_only_model_word_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_word_index": 4,
+      "original_normalized_word": "UP",
+      "tiny_en_start_end_ms": [
+        61440,
+        61580
+      ],
+      "ctc_start_end_ms": [
+        61438,
+        61478
+      ],
+      "start_delta_ctc_minus_tiny_ms": -2,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_word_index": 5,
+      "original_normalized_word": "FOR",
+      "tiny_en_start_end_ms": [
+        61580,
+        61720
+      ],
+      "ctc_start_end_ms": [
+        61519,
+        61599
+      ],
+      "start_delta_ctc_minus_tiny_ms": -61,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_word_index": 6,
+      "original_normalized_word": "LACK",
+      "tiny_en_start_end_ms": [
+        61840,
+        62020
+      ],
+      "ctc_start_end_ms": [
+        61780,
+        61942
+      ],
+      "start_delta_ctc_minus_tiny_ms": -60,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_word_index": 7,
+      "original_normalized_word": "OF",
+      "tiny_en_start_end_ms": [
+        62020,
+        62200
+      ],
+      "ctc_start_end_ms": [
+        62002,
+        62042
+      ],
+      "start_delta_ctc_minus_tiny_ms": -18,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 19,
+      "source_turn_index": 1,
+      "source_word_index": 8,
+      "original_normalized_word": "EDUCATION",
+      "tiny_en_start_end_ms": [
+        62200,
+        62800
+      ],
+      "ctc_start_end_ms": [
+        62163,
+        62767
+      ],
+      "start_delta_ctc_minus_tiny_ms": -37,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 0,
+      "original_normalized_word": "SO",
+      "tiny_en_start_end_ms": [
+        63340,
+        63460
+      ],
+      "ctc_start_end_ms": [
+        63211,
+        63312
+      ],
+      "start_delta_ctc_minus_tiny_ms": -129,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 1,
+      "original_normalized_word": "EVERY",
+      "tiny_en_start_end_ms": [
+        63460,
+        63640
+      ],
+      "ctc_start_end_ms": [
+        63413,
+        63553
+      ],
+      "start_delta_ctc_minus_tiny_ms": -47,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 2,
+      "original_normalized_word": "MONTH",
+      "tiny_en_start_end_ms": [
+        63640,
+        63920
+      ],
+      "ctc_start_end_ms": [
+        63634,
+        63835
+      ],
+      "start_delta_ctc_minus_tiny_ms": -6,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 3,
+      "original_normalized_word": "I",
+      "tiny_en_start_end_ms": [
+        63940,
+        64080
+      ],
+      "ctc_start_end_ms": [
+        63916,
+        63936
+      ],
+      "start_delta_ctc_minus_tiny_ms": -24,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 4,
+      "original_normalized_word": "PICK",
+      "tiny_en_start_end_ms": [
+        64080,
+        64240
+      ],
+      "ctc_start_end_ms": [
+        64016,
+        64157
+      ],
+      "start_delta_ctc_minus_tiny_ms": -64,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 5,
+      "original_normalized_word": "A",
+      "tiny_en_start_end_ms": [
+        64240,
+        64420
+      ],
+      "ctc_start_end_ms": [
+        64238,
+        64258
+      ],
+      "start_delta_ctc_minus_tiny_ms": -2,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 6,
+      "original_normalized_word": "WORD",
+      "tiny_en_start_end_ms": [
+        64420,
+        64560
+      ],
+      "ctc_start_end_ms": [
+        64318,
+        64499
+      ],
+      "start_delta_ctc_minus_tiny_ms": -102,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 7,
+      "original_normalized_word": "AT",
+      "tiny_en_start_end_ms": [
+        64560,
+        64780
+      ],
+      "ctc_start_end_ms": [
+        64580,
+        64620
+      ],
+      "start_delta_ctc_minus_tiny_ms": 20,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 8,
+      "original_normalized_word": "RANDOM",
+      "tiny_en_start_end_ms": [
+        64780,
+        65060
+      ],
+      "ctc_start_end_ms": [
+        64700,
+        65063
+      ],
+      "start_delta_ctc_minus_tiny_ms": -80,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 9,
+      "original_normalized_word": "OUT",
+      "tiny_en_start_end_ms": [
+        65060,
+        65300
+      ],
+      "ctc_start_end_ms": [
+        65123,
+        65204
+      ],
+      "start_delta_ctc_minus_tiny_ms": 63,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 10,
+      "original_normalized_word": "OF",
+      "tiny_en_start_end_ms": [
+        65300,
+        65420
+      ],
+      "ctc_start_end_ms": [
+        65244,
+        65284
+      ],
+      "start_delta_ctc_minus_tiny_ms": -56,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 11,
+      "original_normalized_word": "THE",
+      "tiny_en_start_end_ms": [
+        65420,
+        65500
+      ],
+      "ctc_start_end_ms": [
+        65324,
+        65385
+      ],
+      "start_delta_ctc_minus_tiny_ms": -96,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 20,
+      "source_turn_index": 0,
+      "source_word_index": 12,
+      "original_normalized_word": "DICTIONARY",
+      "tiny_en_start_end_ms": [
+        65500,
+        65900
+      ],
+      "ctc_start_end_ms": [
+        65425,
+        66009
+      ],
+      "start_delta_ctc_minus_tiny_ms": -75,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 21,
+      "source_turn_index": 0,
+      "source_word_index": 0,
+      "original_normalized_word": "AND",
+      "tiny_en_start_end_ms": [
+        65900,
+        66540
+      ],
+      "ctc_start_end_ms": [
+        65772,
+        66497
+      ],
+      "start_delta_ctc_minus_tiny_ms": -128,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 21,
+      "source_turn_index": 0,
+      "source_word_index": 1,
+      "original_normalized_word": "USE",
+      "tiny_en_start_end_ms": [
+        66540,
+        66740
+      ],
+      "ctc_start_end_ms": [
+        66577,
+        66678
+      ],
+      "start_delta_ctc_minus_tiny_ms": 37,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 21,
+      "source_turn_index": 0,
+      "source_word_index": 2,
+      "original_normalized_word": "IT",
+      "tiny_en_start_end_ms": [
+        66740,
+        66920
+      ],
+      "ctc_start_end_ms": [
+        66758,
+        66799
+      ],
+      "start_delta_ctc_minus_tiny_ms": 18,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 21,
+      "source_turn_index": 0,
+      "source_word_index": 3,
+      "original_normalized_word": "ALL",
+      "tiny_en_start_end_ms": [
+        66920,
+        67140
+      ],
+      "ctc_start_end_ms": [
+        66960,
+        67081
+      ],
+      "start_delta_ctc_minus_tiny_ms": 40,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 21,
+      "source_turn_index": 0,
+      "source_word_index": 4,
+      "original_normalized_word": "THAT",
+      "tiny_en_start_end_ms": [
+        67140,
+        67360
+      ],
+      "ctc_start_end_ms": [
+        67141,
+        67242
+      ],
+      "start_delta_ctc_minus_tiny_ms": 1,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 21,
+      "source_turn_index": 0,
+      "source_word_index": 5,
+      "original_normalized_word": "MONTH",
+      "tiny_en_start_end_ms": [
+        67360,
+        68080
+      ],
+      "ctc_start_end_ms": [
+        67342,
+        68168
+      ],
+      "start_delta_ctc_minus_tiny_ms": -18,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 22,
+      "source_turn_index": 0,
+      "source_word_index": 0,
+      "original_normalized_word": "MY",
+      "tiny_en_start_end_ms": [
+        70640,
+        71120
+      ],
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "tiny_en_only_word_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 22,
+      "source_turn_index": 0,
+      "source_word_index": 1,
+      "original_normalized_word": "HOW",
+      "tiny_en_start_end_ms": [
+        71120,
+        71600
+      ],
+      "ctc_start_end_ms": [
+        70674,
+        70856
+      ],
+      "start_delta_ctc_minus_tiny_ms": -446,
+      "source_review_priority": "two_model_start_disagreement_over_300ms",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 22,
+      "source_turn_index": 1,
+      "source_word_index": 0,
+      "original_normalized_word": "MINIMIFIDIAN",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "no_usable_word_timing_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 23,
+      "source_turn_index": 0,
+      "source_word_index": 0,
+      "original_normalized_word": "IS",
+      "tiny_en_start_end_ms": [
+        74880,
+        75360
+      ],
+      "ctc_start_end_ms": [
+        75155,
+        75215
+      ],
+      "start_delta_ctc_minus_tiny_ms": 275,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 23,
+      "source_turn_index": 0,
+      "source_word_index": 1,
+      "original_normalized_word": "THAT",
+      "tiny_en_start_end_ms": [
+        75360,
+        75600
+      ],
+      "ctc_start_end_ms": [
+        75296,
+        75477
+      ],
+      "start_delta_ctc_minus_tiny_ms": -64,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 23,
+      "source_turn_index": 0,
+      "source_word_index": 2,
+      "original_normalized_word": "A",
+      "tiny_en_start_end_ms": [
+        75600,
+        75860
+      ],
+      "ctc_start_end_ms": [
+        75578,
+        75598
+      ],
+      "start_delta_ctc_minus_tiny_ms": -22,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 23,
+      "source_turn_index": 0,
+      "source_word_index": 3,
+      "original_normalized_word": "REAL",
+      "tiny_en_start_end_ms": [
+        75860,
+        76220
+      ],
+      "ctc_start_end_ms": [
+        75760,
+        76022
+      ],
+      "start_delta_ctc_minus_tiny_ms": -100,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 23,
+      "source_turn_index": 0,
+      "source_word_index": 4,
+      "original_normalized_word": "WORD",
+      "tiny_en_start_end_ms": [
+        76220,
+        76740
+      ],
+      "ctc_start_end_ms": [
+        76143,
+        76445
+      ],
+      "start_delta_ctc_minus_tiny_ms": -77,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 24,
+      "source_turn_index": 0,
+      "source_word_index": 0,
+      "original_normalized_word": "DOES",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": [
+        77112,
+        77313
+      ],
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "CTC_only_model_word_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 24,
+      "source_turn_index": 0,
+      "source_word_index": 1,
+      "original_normalized_word": "A",
+      "tiny_en_start_end_ms": [
+        77400,
+        77600
+      ],
+      "ctc_start_end_ms": [
+        77374,
+        77394
+      ],
+      "start_delta_ctc_minus_tiny_ms": -26,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 24,
+      "source_turn_index": 0,
+      "source_word_index": 2,
+      "original_normalized_word": "BEAR",
+      "tiny_en_start_end_ms": [
+        77600,
+        77900
+      ],
+      "ctc_start_end_ms": [
+        77474,
+        77716
+      ],
+      "start_delta_ctc_minus_tiny_ms": -126,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 24,
+      "source_turn_index": 0,
+      "source_word_index": 3,
+      "original_normalized_word": "EXTRAVASATE",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": [
+        77897,
+        78542
+      ],
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "CTC_only_model_word_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 24,
+      "source_turn_index": 0,
+      "source_word_index": 4,
+      "original_normalized_word": "IN",
+      "tiny_en_start_end_ms": [
+        78600,
+        78720
+      ],
+      "ctc_start_end_ms": [
+        78602,
+        78642
+      ],
+      "start_delta_ctc_minus_tiny_ms": 2,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 24,
+      "source_turn_index": 0,
+      "source_word_index": 5,
+      "original_normalized_word": "THE",
+      "tiny_en_start_end_ms": [
+        78720,
+        78920
+      ],
+      "ctc_start_end_ms": [
+        78683,
+        78763
+      ],
+      "start_delta_ctc_minus_tiny_ms": -37,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 24,
+      "source_turn_index": 0,
+      "source_word_index": 6,
+      "original_normalized_word": "FOREST",
+      "tiny_en_start_end_ms": [
+        78920,
+        79420
+      ],
+      "ctc_start_end_ms": [
+        78803,
+        79126
+      ],
+      "start_delta_ctc_minus_tiny_ms": -117,
+      "source_review_priority": "two_model_start_proximity_300ms_or_less",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 25,
+      "source_turn_index": 0,
+      "source_word_index": 0,
+      "original_normalized_word": "WHAT",
+      "tiny_en_start_end_ms": [
+        83300,
+        83780
+      ],
+      "ctc_start_end_ms": [
+        83642,
+        83906
+      ],
+      "start_delta_ctc_minus_tiny_ms": 342,
+      "source_review_priority": "two_model_start_disagreement_over_300ms",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 26,
+      "source_turn_index": 0,
+      "source_word_index": 0,
+      "original_normalized_word": "NO",
+      "tiny_en_start_end_ms": [
+        86720,
+        87200
+      ],
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "tiny_en_only_word_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 27,
+      "source_turn_index": 0,
+      "source_word_index": 0,
+      "original_normalized_word": "TELL",
+      "tiny_en_start_end_ms": [
+        89100,
+        89420
+      ],
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "tiny_en_only_word_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 27,
+      "source_turn_index": 0,
+      "source_word_index": 1,
+      "original_normalized_word": "THE",
+      "tiny_en_start_end_ms": [
+        89420,
+        89580
+      ],
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "tiny_en_only_word_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 27,
+      "source_turn_index": 0,
+      "source_word_index": 2,
+      "original_normalized_word": "JUDGE",
+      "tiny_en_start_end_ms": [
+        89580,
+        89740
+      ],
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "tiny_en_only_word_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 27,
+      "source_turn_index": 0,
+      "source_word_index": 3,
+      "original_normalized_word": "THE",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "no_usable_word_timing_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 27,
+      "source_turn_index": 0,
+      "source_word_index": 4,
+      "original_normalized_word": "MAYOR",
+      "tiny_en_start_end_ms": [
+        89920,
+        89980
+      ],
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "tiny_en_only_word_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    },
+    {
+      "source_cue": 27,
+      "source_turn_index": 0,
+      "source_word_index": 5,
+      "original_normalized_word": "CALLED",
+      "tiny_en_start_end_ms": null,
+      "ctc_start_end_ms": null,
+      "start_delta_ctc_minus_tiny_ms": null,
+      "source_review_priority": "no_usable_word_timing_candidate",
+      "manual_audio_confirmation": false,
+      "speaker_verified": false,
+      "original_caption_text_modified": false
+    }
+  ],
+  "audiovisual_word_timing_verified": false,
+  "original_caption_edition_completeness_verified": false,
+  "character_voices_verified": false,
+  "interpretive_performance_tags_verified": false
+}
