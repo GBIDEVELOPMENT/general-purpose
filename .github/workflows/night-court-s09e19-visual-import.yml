@@ -1,0 +1,61 @@
+name: Night Court S09E19 source visual scene import
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s09e19_visual_review.py'
+      - 'Night Court/tools/test_import_s09e19_visual_review.py'
+      - 'Night Court/S09E19-VISUAL-SCENE-HANDOFF.md'
+      - '.github/workflows/night-court-s09e19-visual-import.yml'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  preserve:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s09e19-source-frame-integration'
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-s09e19-source-frame-integration
+          persist-credentials: true
+      - name: Test source frame checksum and adversarial editorial gates
+        run: |
+          python -m py_compile 'Night Court/tools/import_s09e19_visual_review.py'
+          python 'Night Court/tools/test_import_s09e19_visual_review.py'
+      - name: Download one immutable private 100-frame original-video evidence packet
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/s09e19-frame-sources"
+          gh run download 40054491519 --repo gamesbyian/general-purpose \
+            --name night-court-s09e19-900-925s-visual-review \
+            --dir "${{ runner.temp }}/s09e19-frame-sources"
+      - name: Verify all 100 source JPEGs and connect reviewed visual notes to original text SHA
+        run: |
+          python 'Night Court/tools/import_s09e19_visual_review.py' \
+            "${{ runner.temp }}/s09e19-frame-sources"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('Night Court/seasons/S09/S09E19/derived/visual-review-v1')
+          j=json.loads((root/'visual-source-review.json').read_text())
+          assert j['frames_hash_verified']==100
+          assert len(j['related_source_paragraph_candidates'])==5
+          assert len(j['scene_observations'])==6
+          assert not j['voice_and_character_identities_verified']
+          assert not j['actual_source_utterance_timecodes_verified']
+          assert not j['source_episode_audiovisual_complete']
+          assert len(list((root/'frames').glob('frame-*.jpg')))==100
+          assert (root/'scene-visual-observations.md').is_file()
+          print('S09E19 genuine visual evidence and cautious stage observations accepted')
+          PY
+      - name: Commit only small source JPEGs and reviewed non-identity scene evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/S09/S09E19/derived/visual-review-v1/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): preserve S09E19 original frame sequence and bounded scene observations"
+            git push origin HEAD:data/night-court-s09e19-source-frame-integration
+          fi
