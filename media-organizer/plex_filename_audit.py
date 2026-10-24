@@ -15,7 +15,7 @@ DISC=re.compile(r"(?i)S\d{1,2}D\d{1,2}")
 YEAR=re.compile(r"(?<!\d)(?:19|20)\d{2}(?!\d)")
 RELEASE=re.compile(r"(?i)(?:1080p|2160p|720p|480p|x26[45]|H[ ._-]*26[45]|HEVC|WEB[ ._-]*DL|WEBRip|BluRay|DVDRip|HDR|DDP\d)")
 SEASON_DIR=re.compile(r"(?i)^(?:Season[ ._-]*|S)(\d{1,2})$")
-SAMPLE=re.compile(r"(?i)^(?:sample|proof|screenshots?|preview)(?:[ ._-]|\.)")
+SAMPLE=re.compile(r"(?i)^(?:sample|proof|screenshots?|preview)(?:[ ._-]|\.|$)")
 MISMATCH_YEAR=re.compile(r"(?i)S\d{1,2}E\d{1,3}[ ._-]+(?:19|20)\d{2}(?:[ ._-]|$)")
 PRIORITY={"high":0,"medium":1,"review":2,"info":3}
 
