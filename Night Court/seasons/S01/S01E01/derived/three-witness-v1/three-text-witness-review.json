@@ -1,0 +1,5123 @@
+{
+  "schema": "night-court-whole-s01e01-two-independent-models-plus-original-caption/1",
+  "original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "decoded_audio_sha256": "7fd284e99af1d69ca429496060c876241f181738666a86e8cb1335d5b869861a",
+  "source_audio_duration_ms": 1448256,
+  "original_srt_cues": 336,
+  "independent_model_consensus_spans": 200,
+  "classification_counts": {
+    "three_text_witness_correspondence_candidate": 184,
+    "two_model_agreement_caption_lexical_disagreement": 16,
+    "no_original_caption_in_candidate_interval": 0
+  },
+  "review_spans": [
+    {
+      "span_index": 0,
+      "model_agreed_text_candidate": "The judge will be here any minute. Are you finished painting? Yeah. Well then what are you doing?",
+      "model_word_count": 18,
+      "model_consensus_interval_ms": [
+        4040,
+        10040
+      ],
+      "nearest_source_caption_cue_id": 1,
+      "source_caption_cue_ids": [
+        1,
+        2,
+        3
+      ],
+      "source_caption_interval_ms": [
+        3824,
+        9790
+      ],
+      "source_caption_verbatim": "The judge will be here any minute. - Are you finished painting? - Yeah. Then what are you doing?",
+      "longest_contiguous_token_coverage": 0.6667,
+      "ordered_matched_model_token_fraction": 0.9444,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 1,
+      "model_agreed_text_candidate": "couple in the building across the alley",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        11310,
+        12900
+      ],
+      "nearest_source_caption_cue_id": 4,
+      "source_caption_cue_ids": [
+        4
+      ],
+      "source_caption_interval_ms": [
+        10063,
+        14557
+      ],
+      "source_caption_verbatim": "I'm watching a naked couple in the building across the alley. They're fooling around.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 2,
+      "model_agreed_text_candidate": "fooling around. That's",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        13020,
+        15820
+      ],
+      "nearest_source_caption_cue_id": 4,
+      "source_caption_cue_ids": [
+        4,
+        5
+      ],
+      "source_caption_interval_ms": [
+        10063,
+        16032
+      ],
+      "source_caption_verbatim": "I'm watching a naked couple in the building across the alley. They're fooling around. That's depraved.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 3,
+      "model_agreed_text_candidate": "I meant you.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        19380,
+        20640
+      ],
+      "nearest_source_caption_cue_id": 7,
+      "source_caption_cue_ids": [
+        7
+      ],
+      "source_caption_interval_ms": [
+        19473,
+        23000
+      ],
+      "source_caption_verbatim": "How would you like somebody watching you and your wife doing that?",
+      "longest_contiguous_token_coverage": 0.3333,
+      "ordered_matched_model_token_fraction": 0.3333,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 4,
+      "model_agreed_text_candidate": "would you like",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        20820,
+        21380
+      ],
+      "nearest_source_caption_cue_id": 7,
+      "source_caption_cue_ids": [
+        7
+      ],
+      "source_caption_interval_ms": [
+        19473,
+        23000
+      ],
+      "source_caption_verbatim": "How would you like somebody watching you and your wife doing that?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 5,
+      "model_agreed_text_candidate": "watching you and your wife doing that? My",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        21660,
+        23800
+      ],
+      "nearest_source_caption_cue_id": 7,
+      "source_caption_cue_ids": [
+        7,
+        8
+      ],
+      "source_caption_interval_ms": [
+        19473,
+        25644
+      ],
+      "source_caption_verbatim": "How would you like somebody watching you and your wife doing that? My wife won't do that.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 6,
+      "model_agreed_text_candidate": "God, I was so close.",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        35850,
+        37280
+      ],
+      "nearest_source_caption_cue_id": 11,
+      "source_caption_cue_ids": [
+        11
+      ],
+      "source_caption_interval_ms": [
+        35422,
+        37287
+      ],
+      "source_caption_verbatim": "God, I was so close.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 7,
+      "model_agreed_text_candidate": "both. Any sign of the new judge? Not yet. Say,",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        39600,
+        43520
+      ],
+      "nearest_source_caption_cue_id": 12,
+      "source_caption_cue_ids": [
+        12,
+        13
+      ],
+      "source_caption_interval_ms": [
+        38925,
+        44324
+      ],
+      "source_caption_verbatim": "Hi, Bull. Any sign of the new judge? Not yet. Say, Lana...",
+      "longest_contiguous_token_coverage": 0.9,
+      "ordered_matched_model_token_fraction": 0.9,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 8,
+      "model_agreed_text_candidate": "What's this guy supposed to be like? I don't know.",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        44940,
+        48180
+      ],
+      "nearest_source_caption_cue_id": 14,
+      "source_caption_cue_ids": [
+        14,
+        15
+      ],
+      "source_caption_interval_ms": [
+        44498,
+        49295
+      ],
+      "source_caption_verbatim": "...what's this guy supposed to be like? I don't know. Our ex-mayor just filled the vacancies...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 9,
+      "model_agreed_text_candidate": "-mayor just filled all the vacancies in the court on his last day",
+      "model_word_count": 13,
+      "model_consensus_interval_ms": [
+        48540,
+        51480
+      ],
+      "nearest_source_caption_cue_id": 15,
+      "source_caption_cue_ids": [
+        15,
+        16
+      ],
+      "source_caption_interval_ms": [
+        46633,
+        51369
+      ],
+      "source_caption_verbatim": "I don't know. Our ex-mayor just filled the vacancies... ...in the court his last day in office.",
+      "longest_contiguous_token_coverage": 0.3846,
+      "ordered_matched_model_token_fraction": 0.8462,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 10,
+      "model_agreed_text_candidate": "office. Nobody knows who was appointed",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        51540,
+        53490
+      ],
+      "nearest_source_caption_cue_id": 16,
+      "source_caption_cue_ids": [
+        16,
+        17
+      ],
+      "source_caption_interval_ms": [
+        49469,
+        54666
+      ],
+      "source_caption_verbatim": "...in the court his last day in office. Nobody knows who was appointed or where they were assigned.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 11,
+      "model_agreed_text_candidate": "where they were assigned. I think that's... Mercurial.",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        53550,
+        57460
+      ],
+      "nearest_source_caption_cue_id": 17,
+      "source_caption_cue_ids": [
+        17,
+        18
+      ],
+      "source_caption_interval_ms": [
+        51538,
+        57833
+      ],
+      "source_caption_verbatim": "Nobody knows who was appointed or where they were assigned. I think that's mercurial.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 12,
+      "model_agreed_text_candidate": "Did you say Mercurial?",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        59040,
+        60720
+      ],
+      "nearest_source_caption_cue_id": 19,
+      "source_caption_cue_ids": [
+        19
+      ],
+      "source_caption_interval_ms": [
+        58912,
+        62541
+      ],
+      "source_caption_verbatim": "- Did you say \"mercurial\"? - I'm trying to make up for lack of education.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 13,
+      "model_agreed_text_candidate": "up for my lack of education. So every month",
+      "model_word_count": 9,
+      "model_consensus_interval_ms": [
+        61410,
+        63880
+      ],
+      "nearest_source_caption_cue_id": 19,
+      "source_caption_cue_ids": [
+        19,
+        20
+      ],
+      "source_caption_interval_ms": [
+        58912,
+        65742
+      ],
+      "source_caption_verbatim": "- Did you say \"mercurial\"? - I'm trying to make up for lack of education. So every month, I pick a word at random out of the dictionary...",
+      "longest_contiguous_token_coverage": 0.6667,
+      "ordered_matched_model_token_fraction": 0.8889,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 14,
+      "model_agreed_text_candidate": "dictionary and use it all",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        65370,
+        67160
+      ],
+      "nearest_source_caption_cue_id": 20,
+      "source_caption_cue_ids": [
+        20,
+        21
+      ],
+      "source_caption_interval_ms": [
+        62716,
+        67887
+      ],
+      "source_caption_verbatim": "So every month, I pick a word at random out of the dictionary... ...and use it all that month.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 15,
+      "model_agreed_text_candidate": "Is that a real word?",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        74840,
+        76800
+      ],
+      "nearest_source_caption_cue_id": 23,
+      "source_caption_cue_ids": [
+        23
+      ],
+      "source_caption_interval_ms": [
+        74628,
+        76357
+      ],
+      "source_caption_verbatim": "Is that a real word?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 16,
+      "model_agreed_text_candidate": "in the forest?",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        78500,
+        79300
+      ],
+      "nearest_source_caption_cue_id": 24,
+      "source_caption_cue_ids": [
+        24
+      ],
+      "source_caption_interval_ms": [
+        76663,
+        79894
+      ],
+      "source_caption_verbatim": "Does a bear extravasate in the forest?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 17,
+      "model_agreed_text_candidate": "Tell a judge",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        89190,
+        89740
+      ],
+      "nearest_source_caption_cue_id": 27,
+      "source_caption_cue_ids": [
+        27
+      ],
+      "source_caption_interval_ms": [
+        88742,
+        91074
+      ],
+      "source_caption_verbatim": "Tell the judge the mayor called.",
+      "longest_contiguous_token_coverage": 0.3333,
+      "ordered_matched_model_token_fraction": 0.6667,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 18,
+      "model_agreed_text_candidate": "Is that stuff for the judge?",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        98370,
+        99630
+      ],
+      "nearest_source_caption_cue_id": 29,
+      "source_caption_cue_ids": [
+        29
+      ],
+      "source_caption_interval_ms": [
+        96483,
+        99384
+      ],
+      "source_caption_verbatim": "- Hello. - Is that stuff for the judge?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 19,
+      "model_agreed_text_candidate": "Yeah. What is it?",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        101120,
+        102900
+      ],
+      "nearest_source_caption_cue_id": 30,
+      "source_caption_cue_ids": [
+        30
+      ],
+      "source_caption_interval_ms": [
+        100787,
+        102982
+      ],
+      "source_caption_verbatim": "- Yeah. - What is it?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 20,
+      "model_agreed_text_candidate": "like junk to me. Well, stick it over in the",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        103890,
+        107520
+      ],
+      "nearest_source_caption_cue_id": 31,
+      "source_caption_cue_ids": [
+        31,
+        32
+      ],
+      "source_caption_interval_ms": [
+        103156,
+        107550
+      ],
+      "source_caption_verbatim": "It looks like junk to me. Well, stick it over in the corner.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 21,
+      "model_agreed_text_candidate": "here yet? Not",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        117217,
+        119180
+      ],
+      "nearest_source_caption_cue_id": 36,
+      "source_caption_cue_ids": [
+        36,
+        37
+      ],
+      "source_caption_interval_ms": [
+        116536,
+        120236
+      ],
+      "source_caption_verbatim": "Is he here yet? Not yet, Sheila. Good evening, Daniel.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 22,
+      "model_agreed_text_candidate": "Good evening. To",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        120870,
+        121800
+      ],
+      "nearest_source_caption_cue_id": 38,
+      "source_caption_cue_ids": [
+        38
+      ],
+      "source_caption_interval_ms": [
+        120407,
+        122739
+      ],
+      "source_caption_verbatim": "- Good evening. - Do I look all right?",
+      "longest_contiguous_token_coverage": 0.6667,
+      "ordered_matched_model_token_fraction": 0.6667,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 23,
+      "model_agreed_text_candidate": "You look... fine,",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        123360,
+        125060
+      ],
+      "nearest_source_caption_cue_id": 39,
+      "source_caption_cue_ids": [
+        39
+      ],
+      "source_caption_interval_ms": [
+        122909,
+        126606
+      ],
+      "source_caption_verbatim": "You look fine, Sheila. Doesn't she, Dan?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 24,
+      "model_agreed_text_candidate": "anything about him? Anything at all?",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        129750,
+        131560
+      ],
+      "nearest_source_caption_cue_id": 41,
+      "source_caption_cue_ids": [
+        41
+      ],
+      "source_caption_interval_ms": [
+        129115,
+        131310
+      ],
+      "source_caption_verbatim": "You heard anything about him? Anything at all?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 25,
+      "model_agreed_text_candidate": "I was just told to expect him",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        132660,
+        134640
+      ],
+      "nearest_source_caption_cue_id": 42,
+      "source_caption_cue_ids": [
+        42
+      ],
+      "source_caption_interval_ms": [
+        131484,
+        135215
+      ],
+      "source_caption_verbatim": "<i>Nada.</i> I was just told to expect him tonight.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 26,
+      "model_agreed_text_candidate": "hope he plays chess. A new man has been appointed to the bench, and all you hope for is someone who can play chess. I also hope his first name is not",
+      "model_word_count": 32,
+      "model_consensus_interval_ms": [
+        138720,
+        149940
+      ],
+      "nearest_source_caption_cue_id": 44,
+      "source_caption_cue_ids": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "source_caption_interval_ms": [
+        138124,
+        150961
+      ],
+      "source_caption_verbatim": "I hope he plays chess. A new man has been appointed to the bench... ...and all you hope for is someone who can play chess. I also hope his first name is not Shecky.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 4,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 27,
+      "model_agreed_text_candidate": "judge Stone. He's not here.",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        154318,
+        156060
+      ],
+      "nearest_source_caption_cue_id": 48,
+      "source_caption_cue_ids": [
+        48
+      ],
+      "source_caption_interval_ms": [
+        153373,
+        155739
+      ],
+      "source_caption_verbatim": "- Package for Judge Stone. - He's not here.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 28,
+      "model_agreed_text_candidate": "you doing up there?",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        159030,
+        159990
+      ],
+      "nearest_source_caption_cue_id": 50,
+      "source_caption_cue_ids": [
+        50
+      ],
+      "source_caption_interval_ms": [
+        158278,
+        162681
+      ],
+      "source_caption_verbatim": "- What are you doing up there? - I'm watching this guy trying to...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 29,
+      "model_agreed_text_candidate": "this guy trying",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        160470,
+        161660
+      ],
+      "nearest_source_caption_cue_id": 50,
+      "source_caption_cue_ids": [
+        50
+      ],
+      "source_caption_interval_ms": [
+        158278,
+        162681
+      ],
+      "source_caption_verbatim": "- What are you doing up there? - I'm watching this guy trying to...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 30,
+      "model_agreed_text_candidate": "Look, I'm sorry.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        166168,
+        166740
+      ],
+      "nearest_source_caption_cue_id": 52,
+      "source_caption_cue_ids": [
+        52
+      ],
+      "source_caption_interval_ms": [
+        164384,
+        167820
+      ],
+      "source_caption_verbatim": "- Could you just get off of there? - The judge has to sign for this himself.",
+      "longest_contiguous_token_coverage": 0.0,
+      "ordered_matched_model_token_fraction": 0.0,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 31,
+      "model_agreed_text_candidate": "I said he is not here. Oh, yes he is. What?",
+      "model_word_count": 11,
+      "model_consensus_interval_ms": [
+        168390,
+        173660
+      ],
+      "nearest_source_caption_cue_id": 53,
+      "source_caption_cue_ids": [
+        53,
+        54,
+        55
+      ],
+      "source_caption_interval_ms": [
+        167988,
+        173987
+      ],
+      "source_caption_verbatim": "I said, he is not here. Oh, yes, he is. What?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 32,
+      "model_agreed_text_candidate": "you don't mean...",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        177446,
+        179340
+      ],
+      "nearest_source_caption_cue_id": 56,
+      "source_caption_cue_ids": [
+        56
+      ],
+      "source_caption_interval_ms": [
+        176696,
+        178391
+      ],
+      "source_caption_verbatim": "Oh, you don't mean...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 33,
+      "model_agreed_text_candidate": "You are really a judge?",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        189600,
+        191580
+      ],
+      "nearest_source_caption_cue_id": 58,
+      "source_caption_cue_ids": [
+        58
+      ],
+      "source_caption_interval_ms": [
+        189276,
+        191369
+      ],
+      "source_caption_verbatim": "You are really a judge?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 34,
+      "model_agreed_text_candidate": "listen, if I weren't the judge,",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        192090,
+        194190
+      ],
+      "nearest_source_caption_cue_id": 59,
+      "source_caption_cue_ids": [
+        59
+      ],
+      "source_caption_interval_ms": [
+        191544,
+        194570
+      ],
+      "source_caption_verbatim": "Hey, listen, if I weren't the judge...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 35,
+      "model_agreed_text_candidate": "I do this?",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        195390,
+        196840
+      ],
+      "nearest_source_caption_cue_id": 60,
+      "source_caption_cue_ids": [
+        60
+      ],
+      "source_caption_interval_ms": [
+        194748,
+        196875
+      ],
+      "source_caption_verbatim": "...could I do this?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 36,
+      "model_agreed_text_candidate": "In his office?",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        212420,
+        214420
+      ],
+      "nearest_source_caption_cue_id": 61,
+      "source_caption_cue_ids": [
+        61
+      ],
+      "source_caption_interval_ms": [
+        212599,
+        215830
+      ],
+      "source_caption_verbatim": "- In his office? - No, I guess not.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 37,
+      "model_agreed_text_candidate": "I guess not.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        214872,
+        215980
+      ],
+      "nearest_source_caption_cue_id": 61,
+      "source_caption_cue_ids": [
+        61
+      ],
+      "source_caption_interval_ms": [
+        212599,
+        215830
+      ],
+      "source_caption_verbatim": "- In his office? - No, I guess not.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 38,
+      "model_agreed_text_candidate": "how do I know you're not the type to go out and spend it on a",
+      "model_word_count": 16,
+      "model_consensus_interval_ms": [
+        222060,
+        225820
+      ],
+      "nearest_source_caption_cue_id": 64,
+      "source_caption_cue_ids": [
+        64,
+        65
+      ],
+      "source_caption_interval_ms": [
+        221107,
+        226838
+      ],
+      "source_caption_verbatim": "Besides, how do I know you're not the type... ...to go out and spend it on a Barry Manilow album?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 39,
+      "model_agreed_text_candidate": "district attorney. Nice to meet you. I'm Sheila",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        238380,
+        242520
+      ],
+      "nearest_source_caption_cue_id": 68,
+      "source_caption_cue_ids": [
+        68,
+        69,
+        70
+      ],
+      "source_caption_interval_ms": [
+        236623,
+        243961
+      ],
+      "source_caption_verbatim": "Dan Fielding, assistant district attorney. Nice to meet you. I'm Sheila Gardiner, an attorney with legal aid.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 40,
+      "model_agreed_text_candidate": "clerk. Couldn't you just die?",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        251940,
+        255040
+      ],
+      "nearest_source_caption_cue_id": 72,
+      "source_caption_cue_ids": [
+        72,
+        73
+      ],
+      "source_caption_interval_ms": [
+        247467,
+        255503
+      ],
+      "source_caption_verbatim": "I'm Lana Wagner, your court clerk. Couldn't you just die?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 41,
+      "model_agreed_text_candidate": "Pay no attention to the",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        315900,
+        318220
+      ],
+      "nearest_source_caption_cue_id": 74,
+      "source_caption_cue_ids": [
+        74
+      ],
+      "source_caption_interval_ms": [
+        315769,
+        318237
+      ],
+      "source_caption_verbatim": "Pay no attention to the gossip.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 42,
+      "model_agreed_text_candidate": "they look good.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        320730,
+        322360
+      ],
+      "nearest_source_caption_cue_id": 75,
+      "source_caption_cue_ids": [
+        75
+      ],
+      "source_caption_interval_ms": [
+        319572,
+        322700
+      ],
+      "source_caption_verbatim": "On you, they look good.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 43,
+      "model_agreed_text_candidate": "I don't know what's holding the",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        327280,
+        328880
+      ],
+      "nearest_source_caption_cue_id": 76,
+      "source_caption_cue_ids": [
+        76
+      ],
+      "source_caption_interval_ms": [
+        327180,
+        329045
+      ],
+      "source_caption_verbatim": "I don't know what's holding the judge up.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 44,
+      "model_agreed_text_candidate": "Diaper change, perhaps. All right.",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        329640,
+        333060
+      ],
+      "nearest_source_caption_cue_id": 77,
+      "source_caption_cue_ids": [
+        77
+      ],
+      "source_caption_interval_ms": [
+        329215,
+        333652
+      ],
+      "source_caption_verbatim": "- Diaper change, perhaps. - All rise.",
+      "longest_contiguous_token_coverage": 0.8,
+      "ordered_matched_model_token_fraction": 0.8,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 45,
+      "model_agreed_text_candidate": "Criminal court, part",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        336600,
+        337900
+      ],
+      "nearest_source_caption_cue_id": 78,
+      "source_caption_cue_ids": [
+        78
+      ],
+      "source_caption_interval_ms": [
+        336222,
+        339658
+      ],
+      "source_caption_verbatim": "Criminal courts, part two, city of New York, is now in session.",
+      "longest_contiguous_token_coverage": 0.3333,
+      "ordered_matched_model_token_fraction": 0.6667,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 46,
+      "model_agreed_text_candidate": "New York is now in session. The honorable,",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        338430,
+        341140
+      ],
+      "nearest_source_caption_cue_id": 78,
+      "source_caption_cue_ids": [
+        78,
+        79
+      ],
+      "source_caption_interval_ms": [
+        336222,
+        341623
+      ],
+      "source_caption_verbatim": "Criminal courts, part two, city of New York, is now in session. The Honorable...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 47,
+      "model_agreed_text_candidate": "I've always wanted to see that happen.",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        370980,
+        372780
+      ],
+      "nearest_source_caption_cue_id": 84,
+      "source_caption_cue_ids": [
+        84
+      ],
+      "source_caption_interval_ms": [
+        370023,
+        373254
+      ],
+      "source_caption_verbatim": "- Your Honor... - I've always wanted to see that happen.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 48,
+      "model_agreed_text_candidate": "for me to advise you on matters of",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        374380,
+        376540
+      ],
+      "nearest_source_caption_cue_id": 85,
+      "source_caption_cue_ids": [
+        85
+      ],
+      "source_caption_interval_ms": [
+        373426,
+        375986
+      ],
+      "source_caption_verbatim": "Far be it from me to advise you on courtroom matters...",
+      "longest_contiguous_token_coverage": 0.625,
+      "ordered_matched_model_token_fraction": 0.75,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 49,
+      "model_agreed_text_candidate": "beg your pardon?",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        377880,
+        378660
+      ],
+      "nearest_source_caption_cue_id": 86,
+      "source_caption_cue_ids": [
+        86
+      ],
+      "source_caption_interval_ms": [
+        376162,
+        378027
+      ],
+      "source_caption_verbatim": "- Where's my gavel? - I beg your pardon?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 50,
+      "model_agreed_text_candidate": "little hammer thing.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        378750,
+        379740
+      ],
+      "nearest_source_caption_cue_id": 87,
+      "source_caption_cue_ids": [
+        87
+      ],
+      "source_caption_interval_ms": [
+        378198,
+        380257
+      ],
+      "source_caption_verbatim": "- That hammer thing. - I know what it is...",
+      "longest_contiguous_token_coverage": 0.6667,
+      "ordered_matched_model_token_fraction": 0.6667,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 51,
+      "model_agreed_text_candidate": "of the court.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        383960,
+        385140
+      ],
+      "nearest_source_caption_cue_id": 89,
+      "source_caption_cue_ids": [
+        89
+      ],
+      "source_caption_interval_ms": [
+        382535,
+        384833
+      ],
+      "source_caption_verbatim": "Ladies and gentlemen of the court...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 52,
+      "model_agreed_text_candidate": "Well how the hell are you",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        387260,
+        388680
+      ],
+      "nearest_source_caption_cue_id": 90,
+      "source_caption_cue_ids": [
+        90
+      ],
+      "source_caption_interval_ms": [
+        386973,
+        389703
+      ],
+      "source_caption_verbatim": "Well, how the hell are you tonight?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 53,
+      "model_agreed_text_candidate": "so the first case on the docket",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        391680,
+        393030
+      ],
+      "nearest_source_caption_cue_id": 91,
+      "source_caption_cue_ids": [
+        91
+      ],
+      "source_caption_interval_ms": [
+        391344,
+        393972
+      ],
+      "source_caption_verbatim": "- Sir, the first case on the docket... - Harry?",
+      "longest_contiguous_token_coverage": 0.8571,
+      "ordered_matched_model_token_fraction": 0.8571,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 54,
+      "model_agreed_text_candidate": "Is that you? Hacksaw?",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        394620,
+        397080
+      ],
+      "nearest_source_caption_cue_id": 92,
+      "source_caption_cue_ids": [
+        92
+      ],
+      "source_caption_interval_ms": [
+        394147,
+        396741
+      ],
+      "source_caption_verbatim": "- Is that you? - Hacksaw?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 55,
+      "model_agreed_text_candidate": "He has a friend",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        400740,
+        401960
+      ],
+      "nearest_source_caption_cue_id": 94,
+      "source_caption_cue_ids": [
+        94
+      ],
+      "source_caption_interval_ms": [
+        400587,
+        402521
+      ],
+      "source_caption_verbatim": "He has a friend named Hacksaw.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 56,
+      "model_agreed_text_candidate": "must be caught in traffic.",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        404070,
+        405420
+      ],
+      "nearest_source_caption_cue_id": 95,
+      "source_caption_cue_ids": [
+        95
+      ],
+      "source_caption_interval_ms": [
+        402689,
+        405920
+      ],
+      "source_caption_verbatim": "Blocky and Lefty must be caught in traffic.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 57,
+      "model_agreed_text_candidate": "the file on",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        414280,
+        415000
+      ],
+      "nearest_source_caption_cue_id": 99,
+      "source_caption_cue_ids": [
+        99
+      ],
+      "source_caption_interval_ms": [
+        413533,
+        415660
+      ],
+      "source_caption_verbatim": "...prepare the file on Hammond, Leonard G.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 58,
+      "model_agreed_text_candidate": "to a misdemeanor.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        418590,
+        419550
+      ],
+      "nearest_source_caption_cue_id": 101,
+      "source_caption_cue_ids": [
+        101
+      ],
+      "source_caption_interval_ms": [
+        419305,
+        421296
+      ],
+      "source_caption_verbatim": "- Be right there. - It'll cost you 50 bucks.",
+      "longest_contiguous_token_coverage": 0.0,
+      "ordered_matched_model_token_fraction": 0.0,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 59,
+      "model_agreed_text_candidate": "Thank you. My pleasure.",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        423870,
+        424920
+      ],
+      "nearest_source_caption_cue_id": 103,
+      "source_caption_cue_ids": [
+        103
+      ],
+      "source_caption_interval_ms": [
+        423409,
+        426310
+      ],
+      "source_caption_verbatim": "- Thank you. Here's the file. - Case closed.",
+      "longest_contiguous_token_coverage": 0.5,
+      "ordered_matched_model_token_fraction": 0.5,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 60,
+      "model_agreed_text_candidate": "to have. That was quick. What's next? I",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        429990,
+        434120
+      ],
+      "nearest_source_caption_cue_id": 104,
+      "source_caption_cue_ids": [
+        104,
+        105,
+        106
+      ],
+      "source_caption_interval_ms": [
+        427413,
+        435610
+      ],
+      "source_caption_verbatim": "- Good to see you, Hacksaw, really good. - You too. Boy, that was quick. What's next? - I hate you! - Well, I hate you more!",
+      "longest_contiguous_token_coverage": 0.75,
+      "ordered_matched_model_token_fraction": 0.875,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 61,
+      "model_agreed_text_candidate": "Your whole family's crazy.",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        437430,
+        438860
+      ],
+      "nearest_source_caption_cue_id": 107,
+      "source_caption_cue_ids": [
+        107
+      ],
+      "source_caption_interval_ms": [
+        436089,
+        438353
+      ],
+      "source_caption_verbatim": "- We'll talk later. - Your whole family's crazy.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 62,
+      "model_agreed_text_candidate": "they all look like",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        440820,
+        441800
+      ],
+      "nearest_source_caption_cue_id": 108,
+      "source_caption_cue_ids": [
+        108
+      ],
+      "source_caption_interval_ms": [
+        438525,
+        441858
+      ],
+      "source_caption_verbatim": "Their chromosomes aren't normal, and they all look like Slinkys.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 63,
+      "model_agreed_text_candidate": "Let's put a lid on this",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        456320,
+        458280
+      ],
+      "nearest_source_caption_cue_id": 113,
+      "source_caption_cue_ids": [
+        113
+      ],
+      "source_caption_interval_ms": [
+        456042,
+        459808
+      ],
+      "source_caption_verbatim": "Let's put a lid on this assiduousness.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 64,
+      "model_agreed_text_candidate": "around the big",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        468580,
+        469260
+      ],
+      "nearest_source_caption_cue_id": 115,
+      "source_caption_cue_ids": [
+        115
+      ],
+      "source_caption_interval_ms": [
+        466019,
+        469352
+      ],
+      "source_caption_verbatim": "- This case has some intricate... - Let's all gather around the big desk.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 65,
+      "model_agreed_text_candidate": "this case has some",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        470430,
+        472060
+      ],
+      "nearest_source_caption_cue_id": 116,
+      "source_caption_cue_ids": [
+        116
+      ],
+      "source_caption_interval_ms": [
+        469522,
+        472389
+      ],
+      "source_caption_verbatim": "Your Honor, this case has some intricate facets.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 66,
+      "model_agreed_text_candidate": "I want to it",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        473180,
+        473840
+      ],
+      "nearest_source_caption_cue_id": 117,
+      "source_caption_cue_ids": [
+        117
+      ],
+      "source_caption_interval_ms": [
+        472559,
+        474424
+      ],
+      "source_caption_verbatim": "Can you give it to me in a nutshell?",
+      "longest_contiguous_token_coverage": 0.25,
+      "ordered_matched_model_token_fraction": 0.25,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 67,
+      "model_agreed_text_candidate": "years. She catches",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        477520,
+        478944
+      ],
+      "nearest_source_caption_cue_id": 118,
+      "source_caption_cue_ids": [
+        118
+      ],
+      "source_caption_interval_ms": [
+        475228,
+        479358
+      ],
+      "source_caption_verbatim": "Husband and wife, married 27 years. She catches him with a prostitute...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 68,
+      "model_agreed_text_candidate": "with a prostitute, fires a couple of shots,",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        479040,
+        481240
+      ],
+      "nearest_source_caption_cue_id": 118,
+      "source_caption_cue_ids": [
+        118,
+        119
+      ],
+      "source_caption_interval_ms": [
+        475228,
+        482126
+      ],
+      "source_caption_verbatim": "Husband and wife, married 27 years. She catches him with a prostitute... ...fires a couple of shots, misses them both by a mile...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 69,
+      "model_agreed_text_candidate": "them both by a mile, so the DA files for attempted murder.",
+      "model_word_count": 12,
+      "model_consensus_interval_ms": [
+        481560,
+        484680
+      ],
+      "nearest_source_caption_cue_id": 119,
+      "source_caption_cue_ids": [
+        119,
+        120
+      ],
+      "source_caption_interval_ms": [
+        479532,
+        484532
+      ],
+      "source_caption_verbatim": "...fires a couple of shots, misses them both by a mile... ...so the DA files for attempted murder.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 70,
+      "model_agreed_text_candidate": "could go either way. Yes. Unless.",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        485250,
+        489720
+      ],
+      "nearest_source_caption_cue_id": 121,
+      "source_caption_cue_ids": [
+        121,
+        122
+      ],
+      "source_caption_interval_ms": [
+        484704,
+        490699
+      ],
+      "source_caption_verbatim": "- This could go either way. - Yes. - Unless... - What?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 71,
+      "model_agreed_text_candidate": "No, I guess it's",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        492660,
+        493540
+      ],
+      "nearest_source_caption_cue_id": 123,
+      "source_caption_cue_ids": [
+        123
+      ],
+      "source_caption_interval_ms": [
+        492345,
+        494745
+      ],
+      "source_caption_verbatim": "No, I guess it's gotta go either way, doesn't it?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 72,
+      "model_agreed_text_candidate": "go either way,",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        493650,
+        494380
+      ],
+      "nearest_source_caption_cue_id": 123,
+      "source_caption_cue_ids": [
+        123
+      ],
+      "source_caption_interval_ms": [
+        492345,
+        494745
+      ],
+      "source_caption_verbatim": "No, I guess it's gotta go either way, doesn't it?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 73,
+      "model_agreed_text_candidate": "Your Honor. Hi.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        499780,
+        501580
+      ],
+      "nearest_source_caption_cue_id": 124,
+      "source_caption_cue_ids": [
+        124
+      ],
+      "source_caption_interval_ms": [
+        499719,
+        501186
+      ],
+      "source_caption_verbatim": "- Your Honor... - Hi.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 74,
+      "model_agreed_text_candidate": "They call me",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        512620,
+        513640
+      ],
+      "nearest_source_caption_cue_id": 129,
+      "source_caption_cue_ids": [
+        129
+      ],
+      "source_caption_interval_ms": [
+        512465,
+        515366
+      ],
+      "source_caption_verbatim": "They call me Carla B., Your Honor. I'm probably down there...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 75,
+      "model_agreed_text_candidate": "down there for",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        515464,
+        516540
+      ],
+      "nearest_source_caption_cue_id": 129,
+      "source_caption_cue_ids": [
+        129,
+        130
+      ],
+      "source_caption_interval_ms": [
+        512465,
+        519835
+      ],
+      "source_caption_verbatim": "They call me Carla B., Your Honor. I'm probably down there... ...for alleged solicitation of prostitution or something.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 76,
+      "model_agreed_text_candidate": "Right, you are.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        521400,
+        522780
+      ],
+      "nearest_source_caption_cue_id": 131,
+      "source_caption_cue_ids": [
+        131
+      ],
+      "source_caption_interval_ms": [
+        520940,
+        523135
+      ],
+      "source_caption_verbatim": "Right you are.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 77,
+      "model_agreed_text_candidate": "honor, may I?",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        525390,
+        526320
+      ],
+      "nearest_source_caption_cue_id": 132,
+      "source_caption_cue_ids": [
+        132
+      ],
+      "source_caption_interval_ms": [
+        524677,
+        527407
+      ],
+      "source_caption_verbatim": "- Your Honor, may I? - Mr. Prosecutor...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 78,
+      "model_agreed_text_candidate": "Gardner, I am prepared to listen to the testimony",
+      "model_word_count": 9,
+      "model_consensus_interval_ms": [
+        528210,
+        531180
+      ],
+      "nearest_source_caption_cue_id": 133,
+      "source_caption_cue_ids": [
+        133
+      ],
+      "source_caption_interval_ms": [
+        527580,
+        530981
+      ],
+      "source_caption_verbatim": "...Miss Gardiner, I am prepared to listen to the testimony...",
+      "longest_contiguous_token_coverage": 0.8889,
+      "ordered_matched_model_token_fraction": 0.8889,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 79,
+      "model_agreed_text_candidate": "examine the witnesses, consider the",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        531930,
+        534320
+      ],
+      "nearest_source_caption_cue_id": 134,
+      "source_caption_cue_ids": [
+        134,
+        135
+      ],
+      "source_caption_interval_ms": [
+        531150,
+        536850
+      ],
+      "source_caption_verbatim": "...cross-examine the witnesses... ...consider the precedents that I'm sure you've both prepared.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 80,
+      "model_agreed_text_candidate": "that I'm sure you've both prepared.",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        534620,
+        536340
+      ],
+      "nearest_source_caption_cue_id": 135,
+      "source_caption_cue_ids": [
+        135
+      ],
+      "source_caption_interval_ms": [
+        533119,
+        536850
+      ],
+      "source_caption_verbatim": "...consider the precedents that I'm sure you've both prepared.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 81,
+      "model_agreed_text_candidate": "But I don't think that's",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        537630,
+        539380
+      ],
+      "nearest_source_caption_cue_id": 136,
+      "source_caption_cue_ids": [
+        136
+      ],
+      "source_caption_interval_ms": [
+        537223,
+        539953
+      ],
+      "source_caption_verbatim": "But I don't think that's gonna be necessary.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 82,
+      "model_agreed_text_candidate": "necessary? Glad you asked. We will now take a short recess. During that time, I ordered the defendant",
+      "model_word_count": 18,
+      "model_consensus_interval_ms": [
+        541260,
+        547980
+      ],
+      "nearest_source_caption_cue_id": 137,
+      "source_caption_cue_ids": [
+        137,
+        138,
+        139
+      ],
+      "source_caption_interval_ms": [
+        540126,
+        549626
+      ],
+      "source_caption_verbatim": "- What do you mean it's not necessary? - Glad you asked. We will now take a short recess. During that time, I order the defendant Mrs. Kerr and her husband Mr. Kerr...",
+      "longest_contiguous_token_coverage": 0.8333,
+      "ordered_matched_model_token_fraction": 0.9444,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 83,
+      "model_agreed_text_candidate": "and her husband,",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        548640,
+        549440
+      ],
+      "nearest_source_caption_cue_id": 139,
+      "source_caption_cue_ids": [
+        139
+      ],
+      "source_caption_interval_ms": [
+        545565,
+        549626
+      ],
+      "source_caption_verbatim": "During that time, I order the defendant Mrs. Kerr and her husband Mr. Kerr...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 84,
+      "model_agreed_text_candidate": "Kerr, and the attorneys involved to go to a nearby restaurant. Sit",
+      "model_word_count": 12,
+      "model_consensus_interval_ms": [
+        549720,
+        555120
+      ],
+      "nearest_source_caption_cue_id": 139,
+      "source_caption_cue_ids": [
+        139,
+        140,
+        141
+      ],
+      "source_caption_interval_ms": [
+        545565,
+        559109
+      ],
+      "source_caption_verbatim": "During that time, I order the defendant Mrs. Kerr and her husband Mr. Kerr... ...and the attorneys involved to go to a nearby restaurant... ...sit down, have a cup of coffee, relax, try to work out this little thing.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 85,
+      "model_agreed_text_candidate": "Have a cup of coffee.",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        555720,
+        556890
+      ],
+      "nearest_source_caption_cue_id": 141,
+      "source_caption_cue_ids": [
+        141
+      ],
+      "source_caption_interval_ms": [
+        554240,
+        559109
+      ],
+      "source_caption_verbatim": "...sit down, have a cup of coffee, relax, try to work out this little thing.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 86,
+      "model_agreed_text_candidate": "Try to work out this little thing. First, Your honor,",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        557580,
+        561660
+      ],
+      "nearest_source_caption_cue_id": 141,
+      "source_caption_cue_ids": [
+        141,
+        142
+      ],
+      "source_caption_interval_ms": [
+        554240,
+        563444
+      ],
+      "source_caption_verbatim": "...sit down, have a cup of coffee, relax, try to work out this little thing. Your Honor, this is highly irregular.",
+      "longest_contiguous_token_coverage": 0.7,
+      "ordered_matched_model_token_fraction": 0.9,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 87,
+      "model_agreed_text_candidate": "is highly irregular. Thanks.",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        562000,
+        565420
+      ],
+      "nearest_source_caption_cue_id": 142,
+      "source_caption_cue_ids": [
+        142,
+        143
+      ],
+      "source_caption_interval_ms": [
+        560680,
+        566275
+      ],
+      "source_caption_verbatim": "Your Honor, this is highly irregular. Thanks.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 88,
+      "model_agreed_text_candidate": "I cannot work with that,",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        572320,
+        574240
+      ],
+      "nearest_source_caption_cue_id": 145,
+      "source_caption_cue_ids": [
+        145
+      ],
+      "source_caption_interval_ms": [
+        572225,
+        576889
+      ],
+      "source_caption_verbatim": "I cannot work with that man. He's disrupting my court.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 89,
+      "model_agreed_text_candidate": "He's disrupting my court. There isn't much we can do. What's that mean? A judicial review board takes months, sometimes even years to investigate a suspect judge. And then they're usually only given",
+      "model_word_count": 33,
+      "model_consensus_interval_ms": [
+        574740,
+        588640
+      ],
+      "nearest_source_caption_cue_id": 146,
+      "source_caption_cue_ids": [
+        146,
+        147,
+        148,
+        149
+      ],
+      "source_caption_interval_ms": [
+        577063,
+        589607
+      ],
+      "source_caption_verbatim": "- There isn't much we can do. - What's that mean? A judicial review board takes months, sometimes even years... ...to investigate a suspect judge. And then they're usually only given an official reprimand.",
+      "longest_contiguous_token_coverage": 0.8788,
+      "ordered_matched_model_token_fraction": 0.8788,
+      "cue_window_count": 4,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 90,
+      "model_agreed_text_candidate": "official reprimand. It is virtually impossible to remove",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        588780,
+        592020
+      ],
+      "nearest_source_caption_cue_id": 149,
+      "source_caption_cue_ids": [
+        149,
+        150
+      ],
+      "source_caption_interval_ms": [
+        586706,
+        593610
+      ],
+      "source_caption_verbatim": "And then they're usually only given an official reprimand. It is virtually impossible to remove a sitting judge from the bench.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 91,
+      "model_agreed_text_candidate": "sitting judge from the bench.",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        592110,
+        593960
+      ],
+      "nearest_source_caption_cue_id": 150,
+      "source_caption_cue_ids": [
+        150
+      ],
+      "source_caption_interval_ms": [
+        589776,
+        593610
+      ],
+      "source_caption_verbatim": "It is virtually impossible to remove a sitting judge from the bench.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 92,
+      "model_agreed_text_candidate": "So what you're saying is... We have to kill him.",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        595840,
+        600240
+      ],
+      "nearest_source_caption_cue_id": 151,
+      "source_caption_cue_ids": [
+        151,
+        152
+      ],
+      "source_caption_interval_ms": [
+        595715,
+        600486
+      ],
+      "source_caption_verbatim": "So, what you're saying is... We have to kill him.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 93,
+      "model_agreed_text_candidate": "Sir, I have to speak with you.",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        612250,
+        614000
+      ],
+      "nearest_source_caption_cue_id": 154,
+      "source_caption_cue_ids": [
+        154
+      ],
+      "source_caption_interval_ms": [
+        611798,
+        615427
+      ],
+      "source_caption_verbatim": "- Sir, I have to speak with you. - Lana, good to see you. Come over.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 94,
+      "model_agreed_text_candidate": "Your honor, I feel that it's my duty to discuss with you.",
+      "model_word_count": 12,
+      "model_consensus_interval_ms": [
+        616900,
+        620340
+      ],
+      "nearest_source_caption_cue_id": 155,
+      "source_caption_cue_ids": [
+        155
+      ],
+      "source_caption_interval_ms": [
+        616636,
+        620197
+      ],
+      "source_caption_verbatim": "Your Honor, I feel that it's my duty to discuss with you your behavior...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 95,
+      "model_agreed_text_candidate": "urgent business to discuss. You can talk while you're doing this.",
+      "model_word_count": 11,
+      "model_consensus_interval_ms": [
+        623200,
+        625960
+      ],
+      "nearest_source_caption_cue_id": 156,
+      "source_caption_cue_ids": [
+        156,
+        157
+      ],
+      "source_caption_interval_ms": [
+        620373,
+        628507
+      ],
+      "source_caption_verbatim": "- Pick a card. - Sir, I have urgent business to discuss. You can talk while you're doing this. Come on. Come on, come on.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 96,
+      "model_agreed_text_candidate": "Judge Stone, I think your actions in the",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        632320,
+        634740
+      ],
+      "nearest_source_caption_cue_id": 159,
+      "source_caption_cue_ids": [
+        159
+      ],
+      "source_caption_interval_ms": [
+        631851,
+        635514
+      ],
+      "source_caption_verbatim": "Judge Stone, I think your actions in the Kerr case were impulsive...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 97,
+      "model_agreed_text_candidate": "and totally irresponsible.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        636920,
+        639310
+      ],
+      "nearest_source_caption_cue_id": 160,
+      "source_caption_cue_ids": [
+        160
+      ],
+      "source_caption_interval_ms": [
+        635688,
+        639556
+      ],
+      "source_caption_verbatim": "...unorthodox and totally irresponsible.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 98,
+      "model_agreed_text_candidate": "My god, they're",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        643540,
+        644720
+      ],
+      "nearest_source_caption_cue_id": 161,
+      "source_caption_cue_ids": [
+        161
+      ],
+      "source_caption_interval_ms": [
+        643196,
+        646359
+      ],
+      "source_caption_verbatim": "My God, they're at it again?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 99,
+      "model_agreed_text_candidate": "me Harry. I don't think I can. Yeah, my baby brother had trouble pronouncing it",
+      "model_word_count": 15,
+      "model_consensus_interval_ms": [
+        649540,
+        654420
+      ],
+      "nearest_source_caption_cue_id": 162,
+      "source_caption_cue_ids": [
+        162,
+        163,
+        164
+      ],
+      "source_caption_interval_ms": [
+        647133,
+        654203
+      ],
+      "source_caption_verbatim": "- Your Honor! - Come on, call me Harry. - I don't think I can. - Yeah... ...my baby brother had trouble pronouncing it too.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 100,
+      "model_agreed_text_candidate": "to come out,",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        654942,
+        655740
+      ],
+      "nearest_source_caption_cue_id": 165,
+      "source_caption_cue_ids": [
+        165
+      ],
+      "source_caption_interval_ms": [
+        654374,
+        655773
+      ],
+      "source_caption_verbatim": "Used to come out:",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 101,
+      "model_agreed_text_candidate": "attempted murder, and you send a",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        661960,
+        663340
+      ],
+      "nearest_source_caption_cue_id": 167,
+      "source_caption_cue_ids": [
+        167,
+        168
+      ],
+      "source_caption_interval_ms": [
+        659312,
+        668179
+      ],
+      "source_caption_verbatim": "You're crazy. An attempted murder, and you send the plaintiff and the defendant... ...out for a cup of coffee? What do murderers get? Brunch?",
+      "longest_contiguous_token_coverage": 0.8333,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 102,
+      "model_agreed_text_candidate": "in the defendant out for a cup of coffee, what",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        663560,
+        665820
+      ],
+      "nearest_source_caption_cue_id": 167,
+      "source_caption_cue_ids": [
+        167,
+        168
+      ],
+      "source_caption_interval_ms": [
+        659312,
+        668179
+      ],
+      "source_caption_verbatim": "You're crazy. An attempted murder, and you send the plaintiff and the defendant... ...out for a cup of coffee? What do murderers get? Brunch?",
+      "longest_contiguous_token_coverage": 0.9,
+      "ordered_matched_model_token_fraction": 0.9,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 103,
+      "model_agreed_text_candidate": "All right, my methods are informal.",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        669060,
+        672250
+      ],
+      "nearest_source_caption_cue_id": 169,
+      "source_caption_cue_ids": [
+        169
+      ],
+      "source_caption_interval_ms": [
+        668588,
+        672149
+      ],
+      "source_caption_verbatim": "All right, my methods are informal.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 104,
+      "model_agreed_text_candidate": "Hey, give them a chance. They might work. Maybe, just maybe it'll work.",
+      "model_word_count": 13,
+      "model_consensus_interval_ms": [
+        674880,
+        679840
+      ],
+      "nearest_source_caption_cue_id": 170,
+      "source_caption_cue_ids": [
+        170,
+        171
+      ],
+      "source_caption_interval_ms": [
+        674427,
+        679520
+      ],
+      "source_caption_verbatim": "Hey, give them a chance. They might work. Maybe, just maybe, it'll work.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 105,
+      "model_agreed_text_candidate": "Then again, maybe someday pigs will fly.",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        684900,
+        688440
+      ],
+      "nearest_source_caption_cue_id": 172,
+      "source_caption_cue_ids": [
+        172
+      ],
+      "source_caption_interval_ms": [
+        684804,
+        688968
+      ],
+      "source_caption_verbatim": "Then again, maybe someday pigs will fly.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 106,
+      "model_agreed_text_candidate": "Oh, my God, Sheila, Dan,",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        690140,
+        692960
+      ],
+      "nearest_source_caption_cue_id": 173,
+      "source_caption_cue_ids": [
+        173
+      ],
+      "source_caption_interval_ms": [
+        689742,
+        693439
+      ],
+      "source_caption_verbatim": "Oh, my God, Sheila, Dan, are you all right?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 107,
+      "model_agreed_text_candidate": "you all right? What happened? You",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        693040,
+        695240
+      ],
+      "nearest_source_caption_cue_id": 173,
+      "source_caption_cue_ids": [
+        173,
+        174
+      ],
+      "source_caption_interval_ms": [
+        689742,
+        696707
+      ],
+      "source_caption_verbatim": "Oh, my God, Sheila, Dan, are you all right? - What happened? - You wanna know what happened?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 108,
+      "model_agreed_text_candidate": "I'll tell you what happened. No settlement with the curves. Oh,",
+      "model_word_count": 11,
+      "model_consensus_interval_ms": [
+        701020,
+        706220
+      ],
+      "nearest_source_caption_cue_id": 175,
+      "source_caption_cue_ids": [
+        175,
+        176
+      ],
+      "source_caption_interval_ms": [
+        700920,
+        708993
+      ],
+      "source_caption_verbatim": "- I'll tell you what happened. - No settlement with the Kerrs. Oh, Dan, it must have been awful.",
+      "longest_contiguous_token_coverage": 0.8182,
+      "ordered_matched_model_token_fraction": 0.9091,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 109,
+      "model_agreed_text_candidate": "it must have been",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        706930,
+        708060
+      ],
+      "nearest_source_caption_cue_id": 176,
+      "source_caption_cue_ids": [
+        176
+      ],
+      "source_caption_interval_ms": [
+        705091,
+        708993
+      ],
+      "source_caption_verbatim": "Oh, Dan, it must have been awful.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 110,
+      "model_agreed_text_candidate": "I really thought it would work.",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        720520,
+        723400
+      ],
+      "nearest_source_caption_cue_id": 178,
+      "source_caption_cue_ids": [
+        178
+      ],
+      "source_caption_interval_ms": [
+        720907,
+        723501
+      ],
+      "source_caption_verbatim": "I really thought it would work.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 111,
+      "model_agreed_text_candidate": "I'm sorry. I really am,",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        725700,
+        728500
+      ],
+      "nearest_source_caption_cue_id": 179,
+      "source_caption_cue_ids": [
+        179
+      ],
+      "source_caption_interval_ms": [
+        725244,
+        729305
+      ],
+      "source_caption_verbatim": "I'm sorry. I really am...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 112,
+      "model_agreed_text_candidate": "it was predictable.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        729960,
+        731860
+      ],
+      "nearest_source_caption_cue_id": 180,
+      "source_caption_cue_ids": [
+        180
+      ],
+      "source_caption_interval_ms": [
+        730249,
+        732183
+      ],
+      "source_caption_verbatim": "...but it was predictable.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 113,
+      "model_agreed_text_candidate": "Yeah, maybe it was.",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        734000,
+        735740
+      ],
+      "nearest_source_caption_cue_id": 181,
+      "source_caption_cue_ids": [
+        181
+      ],
+      "source_caption_interval_ms": [
+        733786,
+        735947
+      ],
+      "source_caption_verbatim": "Yeah, maybe it was.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 114,
+      "model_agreed_text_candidate": "I'm going to turn",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        753760,
+        754600
+      ],
+      "nearest_source_caption_cue_id": 185,
+      "source_caption_cue_ids": [
+        185
+      ],
+      "source_caption_interval_ms": [
+        752305,
+        755968
+      ],
+      "source_caption_verbatim": "Now, pipe down, or I'm gonna turn Bull loose to kick some butt.",
+      "longest_contiguous_token_coverage": 0.25,
+      "ordered_matched_model_token_fraction": 0.5,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 115,
+      "model_agreed_text_candidate": "to kick some butt!",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        755080,
+        756300
+      ],
+      "nearest_source_caption_cue_id": 185,
+      "source_caption_cue_ids": [
+        185
+      ],
+      "source_caption_interval_ms": [
+        752305,
+        755968
+      ],
+      "source_caption_verbatim": "Now, pipe down, or I'm gonna turn Bull loose to kick some butt.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 116,
+      "model_agreed_text_candidate": "to look menacing.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        759760,
+        761040
+      ],
+      "nearest_source_caption_cue_id": 186,
+      "source_caption_cue_ids": [
+        186
+      ],
+      "source_caption_interval_ms": [
+        759078,
+        761273
+      ],
+      "source_caption_verbatim": "Try to look menacing.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 117,
+      "model_agreed_text_candidate": "everybody, sit down.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        764945,
+        766200
+      ],
+      "nearest_source_caption_cue_id": 188,
+      "source_caption_cue_ids": [
+        188
+      ],
+      "source_caption_interval_ms": [
+        764217,
+        766412
+      ],
+      "source_caption_verbatim": "All right, everybody sit down.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 118,
+      "model_agreed_text_candidate": "sent you to a way to work this thing out. Well, I tried to work",
+      "model_word_count": 15,
+      "model_consensus_interval_ms": [
+        767770,
+        771080
+      ],
+      "nearest_source_caption_cue_id": 189,
+      "source_caption_cue_ids": [
+        189,
+        190
+      ],
+      "source_caption_interval_ms": [
+        766586,
+        773223
+      ],
+      "source_caption_verbatim": "Now, I thought I sent you two away to work this thing out. I tried to work things out with her, but she won't have none of it.",
+      "longest_contiguous_token_coverage": 0.3333,
+      "ordered_matched_model_token_fraction": 0.7333,
+      "cue_window_count": 2,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 119,
+      "model_agreed_text_candidate": "this has been trying, this",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        776770,
+        778380
+      ],
+      "nearest_source_caption_cue_id": 192,
+      "source_caption_cue_ids": [
+        192
+      ],
+      "source_caption_interval_ms": [
+        775895,
+        779956
+      ],
+      "source_caption_verbatim": "Louise has been trying. This dude won't give her a chance.",
+      "longest_contiguous_token_coverage": 0.8,
+      "ordered_matched_model_token_fraction": 0.8,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 120,
+      "model_agreed_text_candidate": "the one that",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        782230,
+        782720
+      ],
+      "nearest_source_caption_cue_id": 193,
+      "source_caption_cue_ids": [
+        193
+      ],
+      "source_caption_interval_ms": [
+        780132,
+        783192
+      ],
+      "source_caption_verbatim": "Hey, don't forget, Phil's the one that was shot at.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 121,
+      "model_agreed_text_candidate": "more shouting from",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        786940,
+        788180
+      ],
+      "nearest_source_caption_cue_id": 194,
+      "source_caption_cue_ids": [
+        194
+      ],
+      "source_caption_interval_ms": [
+        783369,
+        788397
+      ],
+      "source_caption_verbatim": "All right. All right, I want no more shouting from the gallery.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 122,
+      "model_agreed_text_candidate": "gallery. Do I make myself clear? Yes,",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        788143,
+        792580
+      ],
+      "nearest_source_caption_cue_id": 194,
+      "source_caption_cue_ids": [
+        194,
+        195,
+        196
+      ],
+      "source_caption_interval_ms": [
+        783369,
+        793736
+      ],
+      "source_caption_verbatim": "All right. All right, I want no more shouting from the gallery. Do I make myself clear? Yes, the man in the back in the bathrobe.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 123,
+      "model_agreed_text_candidate": "man in the back in the",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        792640,
+        793760
+      ],
+      "nearest_source_caption_cue_id": 196,
+      "source_caption_cue_ids": [
+        196
+      ],
+      "source_caption_interval_ms": [
+        791677,
+        793736
+      ],
+      "source_caption_verbatim": "Yes, the man in the back in the bathrobe.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 124,
+      "model_agreed_text_candidate": "Have we started?",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        806350,
+        807254
+      ],
+      "nearest_source_caption_cue_id": 199,
+      "source_caption_cue_ids": [
+        199
+      ],
+      "source_caption_interval_ms": [
+        805858,
+        809055
+      ],
+      "source_caption_verbatim": "- Have we started? - Can I have the Kerr file, please?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 125,
+      "model_agreed_text_candidate": "right. Listen up,",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        812200,
+        814480
+      ],
+      "nearest_source_caption_cue_id": 201,
+      "source_caption_cue_ids": [
+        201
+      ],
+      "source_caption_interval_ms": [
+        811397,
+        815333
+      ],
+      "source_caption_verbatim": "All right. Listen up, folks.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 126,
+      "model_agreed_text_candidate": "It seems that there are those who feel that I am not fit to be a judge.",
+      "model_word_count": 17,
+      "model_consensus_interval_ms": [
+        817800,
+        823750
+      ],
+      "nearest_source_caption_cue_id": 202,
+      "source_caption_cue_ids": [
+        202,
+        203
+      ],
+      "source_caption_interval_ms": [
+        817670,
+        824139
+      ],
+      "source_caption_verbatim": "It seems that there are those... ...who feel that I am not fit to be a judge.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 127,
+      "model_agreed_text_candidate": "It seems that there are those who think I'm crazy.",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        825500,
+        828880
+      ],
+      "nearest_source_caption_cue_id": 204,
+      "source_caption_cue_ids": [
+        204
+      ],
+      "source_caption_interval_ms": [
+        825545,
+        828207
+      ],
+      "source_caption_verbatim": "It seems that there are those who think I'm crazy.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 128,
+      "model_agreed_text_candidate": "Well, frankly, I just don't know.",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        832080,
+        837440
+      ],
+      "nearest_source_caption_cue_id": 205,
+      "source_caption_cue_ids": [
+        205,
+        206
+      ],
+      "source_caption_interval_ms": [
+        831884,
+        837314
+      ],
+      "source_caption_verbatim": "Well, frankly... ...I just don't know.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 129,
+      "model_agreed_text_candidate": "behind your ear? Why? It's",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        843554,
+        847440
+      ],
+      "nearest_source_caption_cue_id": 208,
+      "source_caption_cue_ids": [
+        208,
+        209
+      ],
+      "source_caption_interval_ms": [
+        842328,
+        848567
+      ],
+      "source_caption_verbatim": "What's that behind your ear? Why, it's a coin.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 130,
+      "model_agreed_text_candidate": "feeling very well.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        853360,
+        854480
+      ],
+      "nearest_source_caption_cue_id": 211,
+      "source_caption_cue_ids": [
+        211
+      ],
+      "source_caption_interval_ms": [
+        852171,
+        856369
+      ],
+      "source_caption_verbatim": "- I don't think you're feeling very well. - Let's flip the coin, let it decide.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 131,
+      "model_agreed_text_candidate": "what, let's flip the coin, let",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        854770,
+        856320
+      ],
+      "nearest_source_caption_cue_id": 211,
+      "source_caption_cue_ids": [
+        211
+      ],
+      "source_caption_interval_ms": [
+        852171,
+        856369
+      ],
+      "source_caption_verbatim": "- I don't think you're feeling very well. - Let's flip the coin, let it decide.",
+      "longest_contiguous_token_coverage": 0.8333,
+      "ordered_matched_model_token_fraction": 0.8333,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 132,
+      "model_agreed_text_candidate": "decide. Heads, I stay a judge,",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        856450,
+        858360
+      ],
+      "nearest_source_caption_cue_id": 211,
+      "source_caption_cue_ids": [
+        211,
+        212
+      ],
+      "source_caption_interval_ms": [
+        852171,
+        860069
+      ],
+      "source_caption_verbatim": "- I don't think you're feeling very well. - Let's flip the coin, let it decide. Heads, I stay a judge, tails, I resign.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 133,
+      "model_agreed_text_candidate": "I resign. Heads, I'm still a",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        858720,
+        861920
+      ],
+      "nearest_source_caption_cue_id": 212,
+      "source_caption_cue_ids": [
+        212,
+        213
+      ],
+      "source_caption_interval_ms": [
+        856542,
+        862111
+      ],
+      "source_caption_verbatim": "Heads, I stay a judge, tails, I resign. Heads. I'm still a judge.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 134,
+      "model_agreed_text_candidate": "I'm going for an ambulance. Take a seat, Miss Wagner.",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        864820,
+        869140
+      ],
+      "nearest_source_caption_cue_id": 214,
+      "source_caption_cue_ids": [
+        214,
+        215
+      ],
+      "source_caption_interval_ms": [
+        864584,
+        869752
+      ],
+      "source_caption_verbatim": "I'm going for an ambulance. Take a seat, Miss Wagner.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 135,
+      "model_agreed_text_candidate": "let me get. You",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        889992,
+        891960
+      ],
+      "nearest_source_caption_cue_id": 222,
+      "source_caption_cue_ids": [
+        222
+      ],
+      "source_caption_interval_ms": [
+        889342,
+        894405
+      ],
+      "source_caption_verbatim": "Wait, let me guess. You two haven't had that much to say to each other recently?",
+      "longest_contiguous_token_coverage": 0.5,
+      "ordered_matched_model_token_fraction": 0.75,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 136,
+      "model_agreed_text_candidate": "haven't had that much to say to each other recently. romance",
+      "model_word_count": 11,
+      "model_consensus_interval_ms": [
+        892390,
+        896440
+      ],
+      "nearest_source_caption_cue_id": 222,
+      "source_caption_cue_ids": [
+        222,
+        223
+      ],
+      "source_caption_interval_ms": [
+        889342,
+        900150
+      ],
+      "source_caption_verbatim": "Wait, let me guess. You two haven't had that much to say to each other recently? Romance has sort of been replaced by a really good night's sleep?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 137,
+      "model_agreed_text_candidate": "sort of been replaced by a really good night's sleep.",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        896589,
+        900680
+      ],
+      "nearest_source_caption_cue_id": 223,
+      "source_caption_cue_ids": [
+        223
+      ],
+      "source_caption_interval_ms": [
+        895247,
+        900150
+      ],
+      "source_caption_verbatim": "Romance has sort of been replaced by a really good night's sleep?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 138,
+      "model_agreed_text_candidate": "And so he goes to the other woman. It's a living.",
+      "model_word_count": 11,
+      "model_consensus_interval_ms": [
+        904640,
+        912060
+      ],
+      "nearest_source_caption_cue_id": 224,
+      "source_caption_cue_ids": [
+        224,
+        225,
+        226
+      ],
+      "source_caption_interval_ms": [
+        904490,
+        912396
+      ],
+      "source_caption_verbatim": "And so he goes... ...to the other woman. It's a living.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 139,
+      "model_agreed_text_candidate": "Crime, solicitation. Heads, I just",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        914680,
+        918540
+      ],
+      "nearest_source_caption_cue_id": 227,
+      "source_caption_cue_ids": [
+        227,
+        228
+      ],
+      "source_caption_interval_ms": [
+        914567,
+        921163
+      ],
+      "source_caption_verbatim": "Crime: Solicitation. - Heads, I just fine you, tails, you go to jail. - Wait.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 140,
+      "model_agreed_text_candidate": "go to jail.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        919780,
+        920300
+      ],
+      "nearest_source_caption_cue_id": 228,
+      "source_caption_cue_ids": [
+        228
+      ],
+      "source_caption_interval_ms": [
+        917136,
+        921163
+      ],
+      "source_caption_verbatim": "- Heads, I just fine you, tails, you go to jail. - Wait.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 141,
+      "model_agreed_text_candidate": "it's your lucky day!",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        923770,
+        925323
+      ],
+      "nearest_source_caption_cue_id": 229,
+      "source_caption_cue_ids": [
+        229
+      ],
+      "source_caption_interval_ms": [
+        922174,
+        924608
+      ],
+      "source_caption_verbatim": "Heads again. It's your lucky day.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 142,
+      "model_agreed_text_candidate": "I can appreciate that.",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        930360,
+        932360
+      ],
+      "nearest_source_caption_cue_id": 231,
+      "source_caption_cue_ids": [
+        231
+      ],
+      "source_caption_interval_ms": [
+        930216,
+        932241
+      ],
+      "source_caption_verbatim": "I can appreciate that.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 143,
+      "model_agreed_text_candidate": "must protest for the record. Mr. Fielding, did you have a happy childhood? What?",
+      "model_word_count": 14,
+      "model_consensus_interval_ms": [
+        933460,
+        940060
+      ],
+      "nearest_source_caption_cue_id": 232,
+      "source_caption_cue_ids": [
+        232,
+        233,
+        234
+      ],
+      "source_caption_interval_ms": [
+        932418,
+        940219
+      ],
+      "source_caption_verbatim": "Your Honor, I must protest for the record. Mr. Fielding, did you have a happy childhood? What?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 144,
+      "model_agreed_text_candidate": "mean, did you laugh a lot as a youngster?",
+      "model_word_count": 9,
+      "model_consensus_interval_ms": [
+        942160,
+        944350
+      ],
+      "nearest_source_caption_cue_id": 235,
+      "source_caption_cue_ids": [
+        235
+      ],
+      "source_caption_interval_ms": [
+        940826,
+        944956
+      ],
+      "source_caption_verbatim": "Was it happy? I mean, did you laugh a lot as a youngster?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 145,
+      "model_agreed_text_candidate": "I don't want to answer. I don't want",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        949460,
+        951380
+      ],
+      "nearest_source_caption_cue_id": 236,
+      "source_caption_cue_ids": [
+        236
+      ],
+      "source_caption_interval_ms": [
+        949268,
+        951896
+      ],
+      "source_caption_verbatim": "- I don't want to answer. - I don't wanna fine you for contempt.",
+      "longest_contiguous_token_coverage": 0.875,
+      "ordered_matched_model_token_fraction": 0.875,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 146,
+      "model_agreed_text_candidate": "find you for",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        951310,
+        951940
+      ],
+      "nearest_source_caption_cue_id": 236,
+      "source_caption_cue_ids": [
+        236
+      ],
+      "source_caption_interval_ms": [
+        949268,
+        951896
+      ],
+      "source_caption_verbatim": "- I don't want to answer. - I don't wanna fine you for contempt.",
+      "longest_contiguous_token_coverage": 0.6667,
+      "ordered_matched_model_token_fraction": 0.6667,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 147,
+      "model_agreed_text_candidate": "I didn't laugh a lot. Thank you.",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        952300,
+        954120
+      ],
+      "nearest_source_caption_cue_id": 237,
+      "source_caption_cue_ids": [
+        237
+      ],
+      "source_caption_interval_ms": [
+        952071,
+        953766
+      ],
+      "source_caption_verbatim": "- I didn't laugh a lot. - Thank you.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 148,
+      "model_agreed_text_candidate": "Does anybody understand what I'm saying here? Does anyone understand what",
+      "model_word_count": 11,
+      "model_consensus_interval_ms": [
+        955900,
+        962300
+      ],
+      "nearest_source_caption_cue_id": 238,
+      "source_caption_cue_ids": [
+        238,
+        239
+      ],
+      "source_caption_interval_ms": [
+        956042,
+        964014
+      ],
+      "source_caption_verbatim": "Does anybody understand what I'm saying here? Does anyone understand what I'm trying to do here?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 149,
+      "model_agreed_text_candidate": "trying to do",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        962230,
+        963120
+      ],
+      "nearest_source_caption_cue_id": 239,
+      "source_caption_cue_ids": [
+        239
+      ],
+      "source_caption_interval_ms": [
+        960112,
+        964014
+      ],
+      "source_caption_verbatim": "Does anyone understand what I'm trying to do here?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 150,
+      "model_agreed_text_candidate": "Bull, I don't know what the hell's going on.",
+      "model_word_count": 9,
+      "model_consensus_interval_ms": [
+        974650,
+        977840
+      ],
+      "nearest_source_caption_cue_id": 242,
+      "source_caption_cue_ids": [
+        242
+      ],
+      "source_caption_interval_ms": [
+        974193,
+        978391
+      ],
+      "source_caption_verbatim": "- Bull. - I don't know what the hell's going on.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 151,
+      "model_agreed_text_candidate": "I'm just talking folks. You get it? I'm talking. I'm talking.",
+      "model_word_count": 11,
+      "model_consensus_interval_ms": [
+        979960,
+        985980
+      ],
+      "nearest_source_caption_cue_id": 243,
+      "source_caption_cue_ids": [
+        243,
+        244,
+        245
+      ],
+      "source_caption_interval_ms": [
+        979665,
+        988303
+      ],
+      "source_caption_verbatim": "I'm just talking, folks. You get it? I'm talking. Talking. You talk to people.",
+      "longest_contiguous_token_coverage": 0.8182,
+      "ordered_matched_model_token_fraction": 0.9091,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 152,
+      "model_agreed_text_candidate": "You talk to people. You talk you find out about",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        987610,
+        990540
+      ],
+      "nearest_source_caption_cue_id": 245,
+      "source_caption_cue_ids": [
+        245,
+        246
+      ],
+      "source_caption_interval_ms": [
+        985971,
+        990203
+      ],
+      "source_caption_verbatim": "Talking. You talk to people. You talk, you find out about them.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 153,
+      "model_agreed_text_candidate": "Maybe you reveal a little bit about yourself in the process. But the main thing is you get to know them. You go inside their head. You find out what their dreams are, what their",
+      "model_word_count": 35,
+      "model_consensus_interval_ms": [
+        990597,
+        1002020
+      ],
+      "nearest_source_caption_cue_id": 247,
+      "source_caption_cue_ids": [
+        247,
+        248,
+        249,
+        250
+      ],
+      "source_caption_interval_ms": [
+        990376,
+        1002977
+      ],
+      "source_caption_verbatim": "Maybe you reveal a little bit about yourself in the process. But the main thing is, you get to know them. You go inside their head. You find out what their dreams are... ...what their hopes are.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 4,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 154,
+      "model_agreed_text_candidate": "Are there any English -speaking people here",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        1005280,
+        1007540
+      ],
+      "nearest_source_caption_cue_id": 251,
+      "source_caption_cue_ids": [
+        251
+      ],
+      "source_caption_interval_ms": [
+        1004824,
+        1008316
+      ],
+      "source_caption_verbatim": "Are there any English-speaking people here tonight?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 155,
+      "model_agreed_text_candidate": "then let's flip the coin again. Let's decide the",
+      "model_word_count": 9,
+      "model_consensus_interval_ms": [
+        1010840,
+        1013020
+      ],
+      "nearest_source_caption_cue_id": 252,
+      "source_caption_cue_ids": [
+        252
+      ],
+      "source_caption_interval_ms": [
+        1010096,
+        1013463
+      ],
+      "source_caption_verbatim": "All right, then let's flip the coin again. Let's decide the Kerr case.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 156,
+      "model_agreed_text_candidate": "I'm sorry. I don't know",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        1024940,
+        1026620
+      ],
+      "nearest_source_caption_cue_id": 254,
+      "source_caption_cue_ids": [
+        254
+      ],
+      "source_caption_interval_ms": [
+        1024710,
+        1027907
+      ],
+      "source_caption_verbatim": "I'm sorry. I don't know what I'm saying.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 157,
+      "model_agreed_text_candidate": "Louise to jail for seven years.",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        1031230,
+        1033450
+      ],
+      "nearest_source_caption_cue_id": 255,
+      "source_caption_cue_ids": [
+        255
+      ],
+      "source_caption_interval_ms": [
+        1028814,
+        1033114
+      ],
+      "source_caption_verbatim": "Here it is: Heads, I send Louise to jail for seven years.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 158,
+      "model_agreed_text_candidate": "we let her go.",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        1034470,
+        1035560
+      ],
+      "nearest_source_caption_cue_id": 256,
+      "source_caption_cue_ids": [
+        256
+      ],
+      "source_caption_interval_ms": [
+        1033285,
+        1034752
+      ],
+      "source_caption_verbatim": "Tails, we let her go.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 159,
+      "model_agreed_text_candidate": "was there anything you wanted to say to your wife before I flip?",
+      "model_word_count": 13,
+      "model_consensus_interval_ms": [
+        1037320,
+        1040000
+      ],
+      "nearest_source_caption_cue_id": 257,
+      "source_caption_cue_ids": [
+        257
+      ],
+      "source_caption_interval_ms": [
+        1035888,
+        1039654
+      ],
+      "source_caption_verbatim": "Phil, was there anything you wanted to say to your wife before I flip?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 160,
+      "model_agreed_text_candidate": "was your own fault for trying to shoot",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        1053130,
+        1054680
+      ],
+      "nearest_source_caption_cue_id": 260,
+      "source_caption_cue_ids": [
+        260
+      ],
+      "source_caption_interval_ms": [
+        1051604,
+        1054334
+      ],
+      "source_caption_verbatim": "- Okay. - It was your own fault for trying to shoot me.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 161,
+      "model_agreed_text_candidate": "straight up in the air!",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        1057090,
+        1058340
+      ],
+      "nearest_source_caption_cue_id": 261,
+      "source_caption_cue_ids": [
+        261
+      ],
+      "source_caption_interval_ms": [
+        1054507,
+        1057908
+      ],
+      "source_caption_verbatim": "Shoot, \"shmoot.\" I fired straight up in the air.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 162,
+      "model_agreed_text_candidate": "you think I would take a chance on hurting you? Is that true, Louise? Why?",
+      "model_word_count": 15,
+      "model_consensus_interval_ms": [
+        1058740,
+        1063390
+      ],
+      "nearest_source_caption_cue_id": 262,
+      "source_caption_cue_ids": [
+        262,
+        263
+      ],
+      "source_caption_interval_ms": [
+        1058077,
+        1061876
+      ],
+      "source_caption_verbatim": "Do you think I would take a chance on hurting you? Is that true, Louise?",
+      "longest_contiguous_token_coverage": 0.9333,
+      "ordered_matched_model_token_fraction": 0.9333,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 163,
+      "model_agreed_text_candidate": "mean, you think I know",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        1063480,
+        1065640
+      ],
+      "nearest_source_caption_cue_id": 264,
+      "source_caption_cue_ids": [
+        264,
+        265
+      ],
+      "source_caption_interval_ms": [
+        1062615,
+        1067784
+      ],
+      "source_caption_verbatim": "What, I mean... ...you think I nursed him through three bouts of pneumonia...",
+      "longest_contiguous_token_coverage": 0.8,
+      "ordered_matched_model_token_fraction": 0.8,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 164,
+      "model_agreed_text_candidate": "through three bouts",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        1065820,
+        1066760
+      ],
+      "nearest_source_caption_cue_id": 265,
+      "source_caption_cue_ids": [
+        265
+      ],
+      "source_caption_interval_ms": [
+        1064383,
+        1067784
+      ],
+      "source_caption_verbatim": "...you think I nursed him through three bouts of pneumonia...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 165,
+      "model_agreed_text_candidate": "trying to hurt me?",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        1074760,
+        1075780
+      ],
+      "nearest_source_caption_cue_id": 267,
+      "source_caption_cue_ids": [
+        267
+      ],
+      "source_caption_interval_ms": [
+        1072658,
+        1075422
+      ],
+      "source_caption_verbatim": "You mean you weren't trying to hurt me?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 166,
+      "model_agreed_text_candidate": "What do we do it here?",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        1090580,
+        1091760
+      ],
+      "nearest_source_caption_cue_id": 271,
+      "source_caption_cue_ids": [
+        271
+      ],
+      "source_caption_interval_ms": [
+        1088240,
+        1091505
+      ],
+      "source_caption_verbatim": "- And I love you, Phil. - Then what are we doing here?",
+      "longest_contiguous_token_coverage": 0.1667,
+      "ordered_matched_model_token_fraction": 0.5,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 167,
+      "model_agreed_text_candidate": "can we forget this whole thing? I'd like to. I really would.",
+      "model_word_count": 12,
+      "model_consensus_interval_ms": [
+        1093094,
+        1097080
+      ],
+      "nearest_source_caption_cue_id": 272,
+      "source_caption_cue_ids": [
+        272
+      ],
+      "source_caption_interval_ms": [
+        1092378,
+        1096678
+      ],
+      "source_caption_verbatim": "- Phil, can we forget this whole thing? - I'd like to. I really would.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 168,
+      "model_agreed_text_candidate": "Oh, come on.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        1098430,
+        1099060
+      ],
+      "nearest_source_caption_cue_id": 273,
+      "source_caption_cue_ids": [
+        273
+      ],
+      "source_caption_interval_ms": [
+        1096849,
+        1099215
+      ],
+      "source_caption_verbatim": "- Your Honor... - Oh, come on, Phil, one more flip.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 169,
+      "model_agreed_text_candidate": "one more flip. Heads, we",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        1099251,
+        1100540
+      ],
+      "nearest_source_caption_cue_id": 273,
+      "source_caption_cue_ids": [
+        273,
+        274
+      ],
+      "source_caption_interval_ms": [
+        1096849,
+        1102183
+      ],
+      "source_caption_verbatim": "- Your Honor... - Oh, come on, Phil, one more flip. Heads, we send her up the river, tails, you take her home.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 170,
+      "model_agreed_text_candidate": "of course it does. It's a double -headed",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        1105593,
+        1107400
+      ],
+      "nearest_source_caption_cue_id": 276,
+      "source_caption_cue_ids": [
+        276
+      ],
+      "source_caption_interval_ms": [
+        1104990,
+        1108016
+      ],
+      "source_caption_verbatim": "Well, of course it does, it's a double-headed coin.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 171,
+      "model_agreed_text_candidate": "think I believed",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        1119490,
+        1120420
+      ],
+      "nearest_source_caption_cue_id": 278,
+      "source_caption_cue_ids": [
+        278
+      ],
+      "source_caption_interval_ms": [
+        1117436,
+        1122203
+      ],
+      "source_caption_verbatim": "Come on. You didn't think I believed in luck, did you?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 172,
+      "model_agreed_text_candidate": "Louise Kerr. Yes, sir. By the power vested in me by the state of New York, I pronounce",
+      "model_word_count": 18,
+      "model_consensus_interval_ms": [
+        1126500,
+        1133530
+      ],
+      "nearest_source_caption_cue_id": 280,
+      "source_caption_cue_ids": [
+        280,
+        281,
+        282
+      ],
+      "source_caption_interval_ms": [
+        1126111,
+        1134650
+      ],
+      "source_caption_verbatim": "- Louise Kerr. - Yes, sir. By the power vested in me by the state of New York... ...I pronounce you...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 173,
+      "model_agreed_text_candidate": "little better off than you were when you came in.",
+      "model_word_count": 10,
+      "model_consensus_interval_ms": [
+        1137430,
+        1140260
+      ],
+      "nearest_source_caption_cue_id": 283,
+      "source_caption_cue_ids": [
+        283
+      ],
+      "source_caption_interval_ms": [
+        1136856,
+        1140553
+      ],
+      "source_caption_verbatim": "...a little better off than you were when you came in.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 174,
+      "model_agreed_text_candidate": "Has been just like that.",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        1160860,
+        1163120
+      ],
+      "nearest_source_caption_cue_id": 284,
+      "source_caption_cue_ids": [
+        284
+      ],
+      "source_caption_interval_ms": [
+        1159745,
+        1162612
+      ],
+      "source_caption_verbatim": "I had a husband just like that.",
+      "longest_contiguous_token_coverage": 0.6,
+      "ordered_matched_model_token_fraction": 0.6,
+      "cue_window_count": 1,
+      "review_tier": "two_model_agreement_caption_lexical_disagreement",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 175,
+      "model_agreed_text_candidate": "Yeah. I had to shoot him",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        1164670,
+        1166980
+      ],
+      "nearest_source_caption_cue_id": 286,
+      "source_caption_cue_ids": [
+        286
+      ],
+      "source_caption_interval_ms": [
+        1164250,
+        1167913
+      ],
+      "source_caption_verbatim": "Yeah. I had to shoot him too.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 176,
+      "model_agreed_text_candidate": "How about you guys? I'll do anything you want. Terrific. You guys sorted out.",
+      "model_word_count": 14,
+      "model_consensus_interval_ms": [
+        1180960,
+        1186340
+      ],
+      "nearest_source_caption_cue_id": 289,
+      "source_caption_cue_ids": [
+        289,
+        290
+      ],
+      "source_caption_interval_ms": [
+        1180332,
+        1185835
+      ],
+      "source_caption_verbatim": "How about you guys? - I'll do anything you want. - Terrific. You guys sort it out.",
+      "longest_contiguous_token_coverage": 0.8571,
+      "ordered_matched_model_token_fraction": 0.9286,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 177,
+      "model_agreed_text_candidate": "go to my chambers and do some judge stuff.",
+      "model_word_count": 9,
+      "model_consensus_interval_ms": [
+        1187140,
+        1192180
+      ],
+      "nearest_source_caption_cue_id": 291,
+      "source_caption_cue_ids": [
+        291,
+        292
+      ],
+      "source_caption_interval_ms": [
+        1186005,
+        1191770
+      ],
+      "source_caption_verbatim": "I'm gonna go to my chambers... ...and do some judge stuff.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 178,
+      "model_agreed_text_candidate": "How did you get appointed to the bench?",
+      "model_word_count": 8,
+      "model_consensus_interval_ms": [
+        1198840,
+        1202440
+      ],
+      "nearest_source_caption_cue_id": 295,
+      "source_caption_cue_ids": [
+        295
+      ],
+      "source_caption_interval_ms": [
+        1198817,
+        1202810
+      ],
+      "source_caption_verbatim": "How did you get appointed to the bench?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 179,
+      "model_agreed_text_candidate": "You know, Dan, that's",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        1204870,
+        1206360
+      ],
+      "nearest_source_caption_cue_id": 296,
+      "source_caption_cue_ids": [
+        296
+      ],
+      "source_caption_interval_ms": [
+        1204690,
+        1207659
+      ],
+      "source_caption_verbatim": "You know, Dan, that's a funny story.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 180,
+      "model_agreed_text_candidate": "mayor's last day",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        1209400,
+        1210760
+      ],
+      "nearest_source_caption_cue_id": 297,
+      "source_caption_cue_ids": [
+        297
+      ],
+      "source_caption_interval_ms": [
+        1208661,
+        1212256
+      ],
+      "source_caption_verbatim": "It was the mayor's last day in office, and it was a Sunday.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 181,
+      "model_agreed_text_candidate": "office, and it was a Sunday. And my name was at the bottom of a list of a thousand candidates. So they start calling folks, starting at the top of the list. But you see, it's Sunday, so no one's home. So they keep calling down the list,",
+      "model_word_count": 48,
+      "model_consensus_interval_ms": [
+        1210810,
+        1224160
+      ],
+      "nearest_source_caption_cue_id": 298,
+      "source_caption_cue_ids": [
+        298,
+        299,
+        300,
+        301
+      ],
+      "source_caption_interval_ms": [
+        1212431,
+        1224934
+      ],
+      "source_caption_verbatim": "And my name was at the bottom of a list of a thousand candidates. They start calling folks, starting at the top of the list. But you see, it's Sunday, so no one's home. So they keep calling down the list name by name.",
+      "longest_contiguous_token_coverage": 0.5625,
+      "ordered_matched_model_token_fraction": 0.8542,
+      "cue_window_count": 4,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 182,
+      "model_agreed_text_candidate": "by name. No one answers. Finally, they get down to the",
+      "model_word_count": 11,
+      "model_consensus_interval_ms": [
+        1224520,
+        1228300
+      ],
+      "nearest_source_caption_cue_id": 301,
+      "source_caption_cue_ids": [
+        301,
+        302
+      ],
+      "source_caption_interval_ms": [
+        1221840,
+        1230013
+      ],
+      "source_caption_verbatim": "So they keep calling down the list name by name. No one answers. Finally, they get down to the bottom of the list...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 183,
+      "model_agreed_text_candidate": "bottom of the list and voila.",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        1228240,
+        1231390
+      ],
+      "nearest_source_caption_cue_id": 302,
+      "source_caption_cue_ids": [
+        302,
+        303
+      ],
+      "source_caption_interval_ms": [
+        1225110,
+        1231843
+      ],
+      "source_caption_verbatim": "No one answers. Finally, they get down to the bottom of the list... ...and <i>voilà.</i>",
+      "longest_contiguous_token_coverage": 0.8333,
+      "ordered_matched_model_token_fraction": 0.8333,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 184,
+      "model_agreed_text_candidate": "You mean you were appointed a judge because... I was home.",
+      "model_word_count": 11,
+      "model_consensus_interval_ms": [
+        1233180,
+        1237720
+      ],
+      "nearest_source_caption_cue_id": 304,
+      "source_caption_cue_ids": [
+        304,
+        305
+      ],
+      "source_caption_interval_ms": [
+        1232918,
+        1238320
+      ],
+      "source_caption_verbatim": "You mean you were appointed a judge because... I was home.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 185,
+      "model_agreed_text_candidate": "be a ten minute recess. Pass it",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        1242070,
+        1245360
+      ],
+      "nearest_source_caption_cue_id": 306,
+      "source_caption_cue_ids": [
+        306,
+        307
+      ],
+      "source_caption_interval_ms": [
+        1241427,
+        1246161
+      ],
+      "source_caption_verbatim": "There will be a 10-minute recess. Pass it on.",
+      "longest_contiguous_token_coverage": 0.5714,
+      "ordered_matched_model_token_fraction": 0.8571,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 186,
+      "model_agreed_text_candidate": "marry the girl",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        1307680,
+        1308620
+      ],
+      "nearest_source_caption_cue_id": 311,
+      "source_caption_cue_ids": [
+        311
+      ],
+      "source_caption_interval_ms": [
+        1306959,
+        1310190
+      ],
+      "source_caption_verbatim": "I'm gonna marry the girl that's impressed by that.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 187,
+      "model_agreed_text_candidate": "impressed by that. I",
+      "model_word_count": 4,
+      "model_consensus_interval_ms": [
+        1308784,
+        1310960
+      ],
+      "nearest_source_caption_cue_id": 311,
+      "source_caption_cue_ids": [
+        311,
+        312
+      ],
+      "source_caption_interval_ms": [
+        1306959,
+        1313263
+      ],
+      "source_caption_verbatim": "I'm gonna marry the girl that's impressed by that. - I beg your pardon? - You were about to say?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 188,
+      "model_agreed_text_candidate": "You're about to say... Oh, yes. They're ready to lock up now. Fine.",
+      "model_word_count": 13,
+      "model_consensus_interval_ms": [
+        1311920,
+        1316980
+      ],
+      "nearest_source_caption_cue_id": 312,
+      "source_caption_cue_ids": [
+        312,
+        313,
+        314
+      ],
+      "source_caption_interval_ms": [
+        1310362,
+        1317592
+      ],
+      "source_caption_verbatim": "- I beg your pardon? - You were about to say? Oh, yes. They're ready to lock up now. Fine.",
+      "longest_contiguous_token_coverage": 0.9231,
+      "ordered_matched_model_token_fraction": 0.9231,
+      "cue_window_count": 3,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 189,
+      "model_agreed_text_candidate": "the way, thanks a lot for",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        1319110,
+        1321500
+      ],
+      "nearest_source_caption_cue_id": 315,
+      "source_caption_cue_ids": [
+        315
+      ],
+      "source_caption_interval_ms": [
+        1318504,
+        1322372
+      ],
+      "source_caption_verbatim": "By the way, thanks a lot for being patient with me tonight.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 190,
+      "model_agreed_text_candidate": "with me tonight.",
+      "model_word_count": 3,
+      "model_consensus_interval_ms": [
+        1322140,
+        1322880
+      ],
+      "nearest_source_caption_cue_id": 315,
+      "source_caption_cue_ids": [
+        315
+      ],
+      "source_caption_interval_ms": [
+        1318504,
+        1322372
+      ],
+      "source_caption_verbatim": "By the way, thanks a lot for being patient with me tonight.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 191,
+      "model_agreed_text_candidate": "new here, you know. Yeah, we noticed.",
+      "model_word_count": 7,
+      "model_consensus_interval_ms": [
+        1323340,
+        1326580
+      ],
+      "nearest_source_caption_cue_id": 316,
+      "source_caption_cue_ids": [
+        316,
+        317
+      ],
+      "source_caption_interval_ms": [
+        1322541,
+        1327012
+      ],
+      "source_caption_verbatim": "I am new here, you know. Yeah, we noticed.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 192,
+      "model_agreed_text_candidate": "my name was at the bottom of that list of prospective judges because I haven't had much experience really. But every candidate does go through a thorough screening process and whatever anybody thinks of that list. I was on it.",
+      "model_word_count": 40,
+      "model_consensus_interval_ms": [
+        1327840,
+        1343640
+      ],
+      "nearest_source_caption_cue_id": 318,
+      "source_caption_cue_ids": [
+        318,
+        319,
+        320,
+        321
+      ],
+      "source_caption_interval_ms": [
+        1327179,
+        1341355
+      ],
+      "source_caption_verbatim": "My name was at the bottom of that list of prospective judges... ...because I haven't had much experience, really. But every candidate does go through a thorough screening process. And whatever anybody thinks of that list...",
+      "longest_contiguous_token_coverage": 0.9,
+      "ordered_matched_model_token_fraction": 0.9,
+      "cue_window_count": 4,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 193,
+      "model_agreed_text_candidate": "you did out here tonight",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        1349140,
+        1350820
+      ],
+      "nearest_source_caption_cue_id": 324,
+      "source_caption_cue_ids": [
+        324
+      ],
+      "source_caption_interval_ms": [
+        1348467,
+        1350992
+      ],
+      "source_caption_verbatim": "What you did out here tonight...",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 194,
+      "model_agreed_text_candidate": "Oh, and a bohemian sort of way. No, no.",
+      "model_word_count": 9,
+      "model_consensus_interval_ms": [
+        1355050,
+        1358080
+      ],
+      "nearest_source_caption_cue_id": 326,
+      "source_caption_cue_ids": [
+        326,
+        327
+      ],
+      "source_caption_interval_ms": [
+        1354706,
+        1360678
+      ],
+      "source_caption_verbatim": "Oh, in a bohemian sort of way. No, no. I mean it.",
+      "longest_contiguous_token_coverage": 0.7778,
+      "ordered_matched_model_token_fraction": 0.8889,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 195,
+      "model_agreed_text_candidate": "You saved that marriage. And the",
+      "model_word_count": 6,
+      "model_consensus_interval_ms": [
+        1361300,
+        1364220
+      ],
+      "nearest_source_caption_cue_id": 328,
+      "source_caption_cue_ids": [
+        328,
+        329
+      ],
+      "source_caption_interval_ms": [
+        1361113,
+        1368777
+      ],
+      "source_caption_verbatim": "You saved that marriage... ...and the 27 years of love and memories and fulfillment that go along with it.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 196,
+      "model_agreed_text_candidate": "years of love and memories and fulfillment that go along with it. Sometimes I get lucky.",
+      "model_word_count": 16,
+      "model_consensus_interval_ms": [
+        1364600,
+        1371780
+      ],
+      "nearest_source_caption_cue_id": 329,
+      "source_caption_cue_ids": [
+        329,
+        330
+      ],
+      "source_caption_interval_ms": [
+        1363282,
+        1372282
+      ],
+      "source_caption_verbatim": "...and the 27 years of love and memories and fulfillment that go along with it. Sometimes I get lucky.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 197,
+      "model_agreed_text_candidate": "Give me one more chance,",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        1381140,
+        1382740
+      ],
+      "nearest_source_caption_cue_id": 333,
+      "source_caption_cue_ids": [
+        333
+      ],
+      "source_caption_interval_ms": [
+        1380766,
+        1382996
+      ],
+      "source_caption_verbatim": "Give me one more chance, huh?",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 198,
+      "model_agreed_text_candidate": "It would be an honor to call you Harry.",
+      "model_word_count": 9,
+      "model_consensus_interval_ms": [
+        1386040,
+        1391320
+      ],
+      "nearest_source_caption_cue_id": 334,
+      "source_caption_cue_ids": [
+        334,
+        335
+      ],
+      "source_caption_interval_ms": [
+        1386271,
+        1391843
+      ],
+      "source_caption_verbatim": "It would be an honor... ...to call you Harry.",
+      "longest_contiguous_token_coverage": 1.0,
+      "ordered_matched_model_token_fraction": 1.0,
+      "cue_window_count": 2,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    },
+    {
+      "span_index": 199,
+      "model_agreed_text_candidate": "And it's fortunate I have",
+      "model_word_count": 5,
+      "model_consensus_interval_ms": [
+        1394960,
+        1396860
+      ],
+      "nearest_source_caption_cue_id": 336,
+      "source_caption_cue_ids": [
+        336
+      ],
+      "source_caption_interval_ms": [
+        1394580,
+        1397981
+      ],
+      "source_caption_verbatim": "Then it's fortunate I have that name.",
+      "longest_contiguous_token_coverage": 0.8,
+      "ordered_matched_model_token_fraction": 0.8,
+      "cue_window_count": 1,
+      "review_tier": "three_text_witness_correspondence_candidate",
+      "original_srt_changed": false,
+      "source_audio_human_listened": false,
+      "source_video_lip_or_speaker_identity_accepted": false
+    }
+  ],
+  "original_source_srt_modified": false,
+  "original_soundtrack_human_listening_completed": false,
+  "subtitle_video_edition_sync_confirmed": false,
+  "source_character_speaker_identity_confirmed": false,
+  "full_production_script_verified": false,
+  "limits": [
+    "Model consensus and source subtitle lexical/time proximity are research correspondence candidates.",
+    "Caption original clock may drift from the verified original AVI; ±2 seconds is an exploratory window.",
+    "A cue includes multiple speaker hyphen lines and may exceed a short model agreement span.",
+    "A third text witness reduces review effort but does not attest lips, names or physical actions."
+  ]
+}
