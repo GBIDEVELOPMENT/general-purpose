@@ -1,5 +1,10 @@
 # Night Court audiovisual script-generation factory
 
+## Next implementation lane: independent CTC source alignment
+
+The first source-traceable 60–90s S01E01 script and separately retained audio measurements are in `scene-review-v3`, but Whisper word timing is not an independently verified transcript alignment. [S01E01-CTC-ALIGNMENT-HANDOFF.md](S01E01-CTC-ALIGNMENT-HANDOFF.md) specifies a second acoustic-model experiment: Wav2Vec2 CTC constrained to the exact original subtitle text, explicit abstentions for unsupported or clipped turns, and strict source-media SHA preservation. **CI and owner-controlled real source evidence are acceptance prerequisites; no real-word validation is currently claimed.** Its output will be used to prioritize audio listening, not to manufacture confirmed speaker identities or stage inflection.
+
+
 ## Latest S01E01 performance and source-linked screenplay checkpoint
 
 The first integrated original-source [script excerpt v3](seasons/S01/S01E01/derived/scene-review-v3/scene-script-v3.md) is merged ([PR #146](https://github.com/gamesbyian/general-purpose/pull/146)), alongside a [machine-readable evidence map](seasons/S01/S01E01/derived/scene-review-v3/scene-evidence-map.json). It combines nine source caption cues, eleven subtitle-typographic speaking turns, five static observations, six ordered physical/shot observations, and 45 exact-token ASR timing hypotheses across 60–90 seconds. The first observed telephone handset action is based on 60 real 4fps frames, not inferred from dialogue.
