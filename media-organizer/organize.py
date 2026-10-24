@@ -58,7 +58,8 @@ def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7,max_seconds=420):
         folder_records.append({"path":path,"entries":len(visible),
                                "file_entries":sum(f.get("type")=="file" for _,f in visible),
                                "directory_entries":sum(f.get("type")=="dir" for _,f in visible),
-                               "hidden_entries":sum(n.startswith(".") for n,_ in visible)})
+                               "hidden_entries":sum(n.startswith(".") for n,_ in visible),
+                               "hidden_name_samples":[n for n,_ in visible if n.startswith(".")][:12]})
         for name,facts in rows:
             if name in (".","..") or "/" in name or "\\" in name or name.startswith("."):continue
             full=safe(path.rstrip("/")+"/"+name)
