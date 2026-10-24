@@ -5,7 +5,7 @@ Five disjoint 30s windows are independently transcribed with tiny.en.
 Matching to the existing SRT only yields candidates for human verification.
 """
 from __future__ import annotations
-import argparse, hashlib, json, os, re, subprocess, tempfile
+import argparse, hashlib, json, os, re, subprocess, tempfile, time
 from difflib import SequenceMatcher
 from pathlib import Path
 from statistics import median
@@ -164,6 +164,16 @@ def run(media,destination):
           str(sum(len(x["asr_segments"]) for x in records))+
           " independent ASR segments; zero globally verified offsets")
 
+def ftp_connect_with_one_retry(connect_fn,host,user,password,sleep=time.sleep):
+    """One retry for an actual TCP connection timeout; never loop over media."""
+    for attempt in (0,1):
+        try:
+            return connect_fn(host,user,password,"ftp")
+        except (TimeoutError,OSError):
+            if attempt==1:
+                raise
+            sleep(4)
+
 def ftp_source(destination):
     import ftplib
     with tempfile.TemporaryDirectory(prefix="nc-s01e01-sync-") as tmp:
@@ -171,8 +181,9 @@ def ftp_source(destination):
         media=Path(tmp)/item["basename"]
         pwd=os.getenv("FTP_PASSWORD")
         if not pwd:raise ValueError("Existing owner FTP_PASSWORD missing")
-        ftp=connect(os.getenv("FTP_HOST","wood.seedhost.eu"),
-           os.getenv("FTP_USER","ianseeds"),pwd,"ftp")
+        ftp=ftp_connect_with_one_retry(connect,
+           os.getenv("FTP_HOST","wood.seedhost.eu"),
+           os.getenv("FTP_USER","ianseeds"),pwd)
         try:received=retrieve(ftp,item,media)
         finally:
             try:ftp.quit()
