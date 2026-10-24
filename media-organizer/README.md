@@ -1,3 +1,5 @@
+> **Initial cleanup complete and owner-accepted (2026-10-24).** To repeat the process with a single prompt, use [ONE-PROMPT-MAINTENANCE.md](ONE-PROMPT-MAINTENANCE.md). Earlier sections describe the tooling; see the dated [status ledger](STATUS-2026-10-24.md) for audited outcomes and outstanding deferred decisions.
+
 # Mixed-library FTP Downloads organizer
 
 Scope: organize owner media already stored under the remote `/downloads` directory for Plex. **Movies and television stay together.** Series/franchise subfolders are welcome when positively identified, but the initial safe pass does not move files between directories.
