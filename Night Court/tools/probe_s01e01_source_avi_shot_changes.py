@@ -96,11 +96,15 @@ def ffmpeg_candidates(media:Path,start_ms:int,end_ms:int,threshold:Decimal=THRES
         raise ValueError("Analysis restricted to 45 seconds of source")
     if not (Decimal("0.05")<=threshold<=Decimal("0.7")):
         raise ValueError("Scene threshold outside bounded review range")
-    filtergraph=f"select='gt(scene,{threshold})',metadata=print:key=lavfi.scene_score"
+    # Restrict the decoder-visible scoring frames INSIDE the filter graph.
+    # ffmpeg's OUTPUT -ss would discard video after the metadata filter runs;
+    # that would leak earlier score events into the supposed review interval.
+    # trim preserves absolute source-AVI stream PTS for output metadata.
+    filtergraph=(f"trim=start={start_ms/1000:.3f}:end={end_ms/1000:.3f},"
+                 f"select='gt(scene,{threshold})',"
+                 "metadata=print:key=lavfi.scene_score")
     argv=["ffmpeg","-nostdin","-hide_banner","-loglevel","info",
-          "-i",str(media),"-ss",f"{start_ms/1000:.3f}",
-          "-t",f"{(end_ms-start_ms)/1000:.3f}",
-          "-map","0:v:0","-an","-vf",filtergraph,
+          "-i",str(media),"-map","0:v:0","-an","-vf",filtergraph,
           "-fps_mode","vfr","-f","null","-"]
     job=subprocess.run(argv,capture_output=True,text=True,timeout=160,check=True)
     if len(job.stderr)>3_000_000:
