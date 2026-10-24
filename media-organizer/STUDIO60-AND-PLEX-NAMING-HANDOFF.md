@@ -19,14 +19,27 @@ The exact episode titles come from the DVD directory's 22 named episode files,
 not automatic media inference. PR #157 moved the first 66 regular episode files,
 and its audit `studio60_editions_066` recorded **66/66 complete**.
 
-PR #158 is the **sequential DVD batch**. It contains 22 main AVI files and all
-44 matching `.idx` and `.sub` files, plus **three commentary files and three
-documentary files**:
+PR #158 **completed successfully** with its trusted FTP journal recording
+`studio60_dvd_072`, `complete`, 72/72. It moved the 22 DVD AVI episodes,
+44 matching `.idx` and `.sub` files, plus three commentary files and three
+documentary files:
 
 - Pilot commentary audio version `/Other/Pilot commentary audio track.avi/.idx/.sub`,
   to distinguish it from regular episode playback
 - Making-of documentary `/Featurettes/Making of Studio 60 on the Sunset Strip.avi/.idx/.sub`,
   to identify it as a show extra rather than a film or ordinary episode
+
+A separate **independent read-only FTP acceptance test** in PR #182 passed:
+**22/22 episodes**, exactly 22 files in each of the four video variants,
+**22 DVD IDX plus 22 DVD SUB pairs**, a matching episode title for all variants,
+and complete commentary and making-of documentary extras.
+
+After the independent check, PR #186 moved the two 1080p/720p release Read Me
+texts, original DVD episode notes and DVD cover JPEG into the canonical show's
+`Production Notes/` and `Artwork/` directories. Journal
+`studio60_notes_art_004` reports **4/4 complete**. PR #188 then removed
+**all six vacated old Studio 60 release directories**, with nonrecursive live
+empty checks and an audit status of `complete`, 6/6 removed, zero skipped.
 
 Do not delete any of these versions as duplicates. The DVD cover photograph is
 preserved as artwork pending optional poster integration. The separately named
@@ -64,9 +77,12 @@ remain on FTP**. Plex's TV naming guide recommends a year-qualified show folder,
    `HEVC`, `DV`, `HDR`, group suffix `-ETHEL`, `-LAMA`,
    and `PROPER` are filename claims, not independently verified streams.
    Prefer show/episode or movie title/year *before* those tokens.
-6. **Samples and proof clips** such as `Sample.mkv` within film release
-   folders can be mistaken for feature films. Do not rename or discard them
-   automatically without confirming what content they represent.
+6. **Samples and trailers**: the owner has now explicitly authorized their removal.
+   PR #179 expanded the conservative exact-file classifier, and PR #181's
+   audit confirms all **three** identified distribution sample videos were
+   deleted (3/3). The older #176 proposal to relocate two samples was
+   closed as superseded. Preserve full films, commentaries, and extras that
+   are not unequivocally samples or trailers.
 7. **Library layout limit**: Plex explicitly recommends separate movie and
    TV library roots. We respect the user's single mixed FTP /downloads
    requirement, but cannot guarantee that even perfectly named files will
