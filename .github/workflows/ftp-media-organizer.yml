@@ -7,7 +7,8 @@ on:
   push:
     branches: [main]
     paths:
-      - "media-organizer/**"
+      - "media-organizer/organize.py"
+      - "media-organizer/folder_plan.py"
       - ".github/workflows/ftp-media-organizer.yml"
   workflow_dispatch:
     inputs:
