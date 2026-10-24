@@ -1,0 +1,48 @@
+name: Night Court S09E19 first integrated source script
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/render_s09e19_source_scene.py'
+      - 'Night Court/tools/test_render_s09e19_source_scene.py'
+      - '.github/workflows/night-court-s09e19-script-v1.yml'
+permissions:
+  contents: write
+jobs:
+  source-only:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s09e19-integrated-scene-v1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/night-court-s09e19-integrated-scene-v1
+          persist-credentials: true
+      - name: Check exact 347-paragraph source text / original AVI / 100 frame evidence
+        run: |
+          python 'Night Court/tools/test_render_s09e19_source_scene.py'
+          python 'Night Court/tools/render_s09e19_source_scene.py'
+          python 'Night Court/tools/validate_dialogue.py'
+      - name: Certify script claims remain explicitly unverified
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=Path('Night Court/seasons/S09/S09E19/derived/scene-review-v1')
+          j=json.loads((d/'source-linked-scene.json').read_text())
+          assert j['source_paragraph_dialogue_candidates']==5
+          assert j['reviewed_sampled_video_observations']==6
+          assert not j['independent_audio_word_verification']
+          assert not j['independent_speaker_character_attribution']
+          assert not j['original_episode_audiovisual_complete']
+          assert (d/'source-linked-scene.md').is_file()
+          print('S09E19 first evidence-linked scene passed; original transcript stays untimed')
+          PY
+      - name: Commit bounded two-modal source scene
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/S09/S09E19/derived/scene-review-v1/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): render first S09E19 source-linked audio+visual script excerpt"
+            git push origin HEAD:feature/night-court-s09e19-integrated-scene-v1
+          fi

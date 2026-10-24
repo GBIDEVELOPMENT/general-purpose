@@ -1,5 +1,10 @@
 # Nine-season evidence-linked screenplay production workboard
 
+## Second original-series integrated audiovisual script excerpt: S09E19
+
+[S09E19-INTEGRATED-SCENE-V1-HANDOFF.md](S09E19-INTEGRATED-SCENE-V1-HANDOFF.md) joins five high-lexical but still unverified original-untimed paragraph candidates to six frame-hashed video observations in the 15:00–15:25 source window. The output is an evidence-linked script excerpt and machine-readable research map, separate from the immutable untimed 347-paragraph original witness. It is **not** a source-timed SRT, confirmed speaker attribution, performance interpretation, complete scene or episode completeness verification. The renderer undergoes offline CI and must not confuse visually adjacent actors with any proposed spoken line.
+
+
 ## S09E19 real scene/physical-action video evidence pilot
 
 The [S09E19-VISUAL-SCENE-HANDOFF.md](S09E19-VISUAL-SCENE-HANDOFF.md) adds a **strictly bounded 15:00–15:25, 100-frame 4fps** source-image worker for the accepted AVI SHA and the window with five independent ASR-to-untimed-paragraph candidate matches. Unlike the source text scaffolds, this gathers actual original-series video evidence for future setting and stage-action review. **The frames are not visually reviewed merely by extracting them**, and no speaker, performance, stage directions, timing or episode completeness is promoted automatically. A separate SHA-verified image import/review stage remains necessary.
