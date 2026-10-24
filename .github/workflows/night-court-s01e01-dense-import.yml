@@ -1,0 +1,54 @@
+name: Night Court S01E01 dense motion evidence import
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s01e01_dense_scene_artifact.py'
+      - 'Night Court/S01E01-DENSE-VISUAL-HANDOFF.md'
+      - '.github/workflows/night-court-s01e01-dense-import.yml'
+permissions:
+  actions: read
+  contents: write
+jobs:
+  integrate:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s01e01-dense-evidence-integration'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-s01e01-dense-evidence-integration
+          persist-credentials: true
+      - name: Retrieve bounded 4fps original evidence from successful source run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/dense-source"
+          gh run download 40047395721 --repo gamesbyian/general-purpose \
+            --name night-court-s01e01-dense-visual-75-90s \
+            --dir "${{ runner.temp }}/dense-source"
+      - name: SHA-validate every frame and render strictly evidence-grounded stage motion
+        run: |
+          python "Night Court/tools/import_s01e01_dense_scene_artifact.py" "${{ runner.temp }}/dense-source"
+          python "Night Court/tools/validate_dialogue.py"
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path("Night Court/seasons/S01/S01E01/derived/scene-review-v2")
+          j=json.loads((p/"dense-frame-index.json").read_text())
+          v=json.loads((p/"visual-motion-observations.json").read_text())
+          assert j["source_media_sha256"]=="5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962"
+          assert len(j["frame_evidence"])==60
+          assert len(v["time_scoped_observations"])==6
+          assert not v["speaker_identities_verified"] and not v["audiovisual_complete"]
+          assert (p/"scene-source-motion-v2.md").is_file()
+          print("60 checked frames, 6 bounded visual action observations and cautious v2 script ready")
+          PY
+      - name: Commit derived evidence only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/S01/S01E01/derived/scene-review-v2/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): retain ordered 60-frame S01E01 physical-action observations"
+            git push origin HEAD:data/night-court-s01e01-dense-evidence-integration
+          fi
