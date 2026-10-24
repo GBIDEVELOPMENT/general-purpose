@@ -19,3 +19,10 @@ The previously merged [integrated source-once first pass](FAST-EPISODE-FACTORY-T
 Next accuracy work is a selective original-audio adjudication of the 16 flagged text windows and rare joke words, followed by sampled video/action/voice evidence review. Do not automatically re-run expensive models or process the entire episode with a visual-language model simply because some dialogue remains ambiguous.
 
 **Acceptance:** independently human-reviewed dialogue and performances 0/17 currently for bounded S01E01 worklist, S09E19 0/11, original-series AV-complete screenplays 0/193.
+
+
+## October 24 targeted-listening execution planner for sixteen unresolved cases
+
+`tools/plan_three_witness_targeted_listening.py` now converts the **existing original-source sixteen ASR/SRT disagreements**, and *only those sixteen*, into overlap-deduplicated bounded listening requests. No re-decoding of the full original source AVI is performed in this source-free planning stage. Input binds to S01E01's original video SHA `5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962`, original PCM SHA `7fd284e99af1d69ca429496060c876241f181738666a86e8cb1335d5b869861a` and immutable original SRT SHA `aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496`. Each request combines the independent ASR *proposed* interval and original SRT cue reference interval with only 600ms playback context, then merges nearby or overlapping windows; it never invents original word timestamps or treats two-model agreement as proof.
+
+The source-free CI checks all sixteen original cases and exports **no source audio**, just small time/number review metadata. Use the resulting listening windows to review the specific disputes in the original source media, with separate checks for overlap, partial phrases and subtitle paraphrases. Preserve both original witness texts until human or source-grounded confirmation. This does **not** resolve the disputes; currently 184 of 200 corroborated spans substantially match the caption witness, sixteen require listening, and 0 of 193 original episodes has an accepted complete AV screenplay.
