@@ -1,3 +1,17 @@
+## Fast caption-first working screenplay drafts
+
+The [working-screenplay standard](CAPTION-FIRST-WORKING-SCREENPLAY-POLICY.md)
+now prioritizes producing usable **complete-held-dialogue** script drafts
+before exhaustive source certification. The first two pilot generators
+are `tools/build_caption_first_working_drafts.py --episode S01E01` and
+`--episode S09E19`. Original subtitle text is authoritative for the
+working draft; ASR flags exceptions without silently rewriting words.
+Observed source-frame descriptions supplement bounded passages. The
+stricter archival AV publication gate remains separate and unchanged.
+These drafts do **not yet** reconstruct all scenes or key physical
+comedy and are not labeled editor-ready until that substantive work
+is performed.
+
 # Night Court: the original NBC series (1984–1992)
 
 **Independent research archive**, inside the private `gamesbyian/general-purpose` repository. Scope excludes the 2023 revival. The purpose is durable, provenance-aware research and a future LLM-readable knowledge base about the original program, its fictional and production history, comedic conventions, cultural moment, and fandom.
