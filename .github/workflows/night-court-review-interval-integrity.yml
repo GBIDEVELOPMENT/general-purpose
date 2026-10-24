@@ -1,0 +1,23 @@
+name: Night Court S01E01 review interval integrity
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/validate_editorial_decisions.py'
+      - 'Night Court/tools/test_editorial_decisions.py'
+      - 'Night Court/S01E01-EDITORIAL-REVIEW-HANDOFF.md'
+      - '.github/workflows/night-court-review-interval-integrity.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'qa/night-court-s01e01-evidence-time-anchors'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Exercise synthetic claim-acceptance and time-window rejection
+        run: |
+          python "Night Court/tools/test_editorial_decisions.py"
+          python "Night Court/tools/validate_editorial_decisions.py" --validate "Night Court/seasons/S01/S01E01/derived/editorial-review-v1/review-decisions-template.json"
