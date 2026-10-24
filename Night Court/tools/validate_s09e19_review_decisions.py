@@ -100,9 +100,14 @@ def validate(p,byid,d):
     if not isinstance(records,list) or len(records)!=len(byid):
         raise ValueError("Incomplete original source review decisions")
     seen=set(); counts=Counter()
+    record_fields={"task_id","kind","status","reviewer_identifier",
+                   "review_note","reviewer_attested","evidence",
+                   "accepted_speaker_identity","accepted_vocal_delivery"}
     for result in records:
-        if not isinstance(result,dict) or set(result)!=set(template(p,byid)["decisions"][0]):
-            raise ValueError("Review record has unknown or missing claim fields")
+        if not isinstance(result,dict) or set(result)!=record_fields:
+            missing=(record_fields-set(result)) if isinstance(result,dict) else record_fields
+            extra=(set(result)-record_fields) if isinstance(result,dict) else set()
+            raise ValueError(f"Review record has unknown or missing claim fields: missing={sorted(missing)} extra={sorted(extra)}")
         task_id=result.get("task_id")
         if task_id not in byid or task_id in seen:
             raise ValueError("Duplicate or unknown source paragraph/action task")
