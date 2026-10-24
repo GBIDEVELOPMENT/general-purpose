@@ -1,21 +1,25 @@
 {
   "root": "/downloads",
-  "inventory_files": 3122,
-  "video_files": 2085,
-  "inventory_complete": true,
+  "inventory_files": 3062,
+  "video_files": 2058,
+  "inventory_complete": false,
   "truncated": [],
-  "scan_failures": [],
+  "scan_failures": [
+    {
+      "directory": "/downloads/Southland.Tales.2006.1080p.Bluray.x264-SECTOR7",
+      "error_type": "error_perm"
+    }
+  ],
   "summary": {
     "cross_season_episode": 1,
     "legacy_1x_episode": 193,
     "episode_unrecognized_in_season": 1,
-    "year_after_episode_code": 15,
     "airdate_after_episode": 1,
     "multiple_episodes": 10
   },
   "priorities": {
     "high": 194,
-    "medium": 16,
+    "medium": 1,
     "review": 11
   },
   "issues": [
@@ -1384,111 +1388,6 @@
       "note": "TV season container but media name lacks standard SxxEyy identification"
     },
     {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E01.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E02.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E03.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E04.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E05.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E06.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E07.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E08.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E09.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E10.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E11.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E12.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E13.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E14.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
-      "severity": "medium",
-      "category": "year_after_episode_code",
-      "path": "/downloads/The Pitt S02 2026 2160p MAX WEB-DL DDP5 1 Atmos H 265-HDSWEB/The.Pitt.S02E15.2026.2160p.MAX.WEB-DL.DDP5.1.Atmos.H.265-HDSWEB.mkv",
-      "note": "Year after episode marker may be an airing/release year, not show premiere year",
-      "suggestion": "Move show premiere year before SxxEyy only after confirming show identity"
-    },
-    {
       "severity": "review",
       "category": "airdate_after_episode",
       "path": "/downloads/Dateline NBC/Dateline.NBC.s33e34.2025.09.12.The.Night.of.the.Audition.1080p.WEB.h264-EDITH.mkv",
@@ -1512,13 +1411,6 @@
     {
       "severity": "review",
       "category": "multiple_episodes",
-      "path": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E25E26 - What You Leave Behind [2160p].mkv",
-      "note": "File contains more than one episode",
-      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
-    },
-    {
-      "severity": "review",
-      "category": "multiple_episodes",
       "path": "/downloads/Star Trek Enterprise Season 1 [2160p]/Star Trek Enterprise S01E01E02 - Broken Bow [2160p]_2.mkv",
       "note": "File contains more than one episode",
       "suggestion": "Preserve every episode number, e.g. S01E01-E02"
@@ -1534,6 +1426,13 @@
       "severity": "review",
       "category": "multiple_episodes",
       "path": "/downloads/Star Trek Voyager 1995.S01.1080p.NTSC DVD Upscale.H265.10bit.DDP5.1-Zero00/Star Trek Voyager S01E01-E02 Caretaker 1080p Ai Zero00.mkv",
+      "note": "File contains more than one episode",
+      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
+    },
+    {
+      "severity": "review",
+      "category": "multiple_episodes",
+      "path": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E25-E26.mkv",
       "note": "File contains more than one episode",
       "suggestion": "Preserve every episode number, e.g. S01E01-E02"
     },

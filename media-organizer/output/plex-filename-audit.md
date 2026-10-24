@@ -4,13 +4,12 @@ Read-only filename heuristics. A flagged file is **not proven mislabeled**;
 verify title, episode identity and codec with authoritative media data before moving.
 No files were moved or deleted by this audit.
 
-Inventory fully covered: **yes**.
-Videos examined: **2085**.
+Inventory fully covered: **no; scan was truncated or failed**.
+Videos examined: **2058**.
 
 ## Counts by category
 
 - **legacy_1x_episode**: 193
-- **year_after_episode_code**: 15
 - **multiple_episodes**: 10
 - **airdate_after_episode**: 1
 - **cross_season_episode**: 1
