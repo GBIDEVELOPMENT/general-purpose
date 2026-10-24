@@ -96,7 +96,7 @@ def markdown(report,limit=12):
         chunks.append("- **%s**: %d"%(category,count))
     chunks+=["","## Highest-risk examples",""]
     for issue in report["issues"][:limit]:
-        chunks.append("- **%s / %s**: \\%s\\  %s"%(issue["severity"],issue["category"],issue["path"],issue["note"]))
+        chunks.append("- **%s / %s**: `%s`. %s"%(issue["severity"],issue["category"],issue["path"],issue["note"]))
     chunks+=["","## Known constraints","",
         "- This library deliberately mixes movies and TV shows at /downloads, which Plex warns may cause mismatching.",
         "- Codec strings in filenames are claims by uploaders; they do not establish actual stream codec or resolution.",
