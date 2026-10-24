@@ -1,0 +1,26 @@
+name: Night Court CTC source forced-alignment offline regression
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/ctc_source_aligner.py'
+      - 'Night Court/tools/test_ctc_source_aligner.py'
+      - 'Night Court/tools/s01e01_ctc_source_pilot.py'
+      - 'Night Court/tools/ctc-model-requirements.txt'
+      - '.github/workflows/night-court-ctc-offline.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deterministic math core only (no model download)
+        run: python -m pip install 'numpy>=1.26,<3'
+      - name: Run repeated-letter and low-confidence abstention tests
+        run: |
+          python -m py_compile "Night Court/tools/ctc_source_aligner.py" "Night Court/tools/s01e01_ctc_source_pilot.py"
+          python "Night Court/tools/test_ctc_source_aligner.py"
