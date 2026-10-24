@@ -160,11 +160,11 @@ def render_episode(episode,root=ROOT):
       "Picture directions below describe only sampled original-image evidence;",
       "no action outside those windows is implied to have been reviewed.",
       "",
-      f"Source caption SHA-256: \`{item['sha256']}\`",
-      f"Source AVI SHA-256 (visual witness): \`{av['source_media_sha256']}\`",
+      f"Source caption SHA-256: `{item['sha256']}`",
+      f"Source AVI SHA-256 (visual witness): `{av['source_media_sha256']}`",
       f"Source cues: {len(segments)}; subtitle-derived speaking units: {len(units)}",
       f"Dialogue timing: {'original SRT cues' if timed else 'UNTIMED source paragraphs; positions NOT assigned'}",
-      f"ASR/caption disputes to review: {16 if timed else 0}; ",
+      f"ASR/caption disputes to review: {16 if timed else 0};",
       "",
       "## Working episode dialogue",
       "",
@@ -223,7 +223,7 @@ def render_episode(episode,root=ROOT):
                            "a telephone, bookcases, a person in lavender and an",
                            "adult in a dark uniform. Names and speakers remain",
                            "unassigned; sampled frames are not continuous action.*",
-                           f"Picture research: \`{EVIDENCE[episode]}\`",""])
+                           f"Picture research: `{EVIDENCE[episode]}`",""])
         for u in ulist:
             source_cues_used.append(u["cue"])
             original=u["source_text"].strip().replace("\r","")
@@ -238,7 +238,7 @@ def render_episode(episode,root=ROOT):
                 pieces.extend([f"*PIC NOTE [{time_label(observation['start_ms'])}"
                                f"–{time_label(observation['end_ms'])}]: "
                                f"{observation['text']}*",
-                               f"*Evidence: \`{EVIDENCE[episode]}\`, "
+                               f"*Evidence: `{EVIDENCE[episode]}`, "
                                f"observation {observation['id']}. "
                                "Sampled frames, not a claimed speaker/action cause.*",""])
                 visual_refs_used.append(observation["id"])
@@ -251,7 +251,7 @@ def render_episode(episode,root=ROOT):
                                    "to nearby untimed paragraphs is a lexical proposal.*",""])
                 pieces.extend([f"*PIC NOTE [source 15:00–15:25, sampled]: "
                                f"{observation['description']}*",
-                               f"*Evidence: \`{EVIDENCE[episode]}\`, "
+                               f"*Evidence: `{EVIDENCE[episode]}`, "
                                f"{observation['visual_id']}; "
                                "paragraph time and speaker NOT confirmed.*",""])
                 visual_refs_used.append(observation["visual_id"])
@@ -318,7 +318,7 @@ def main():
     base=(a.output_root/"seasons"/a.episode[:3]/a.episode/
           "derived"/OUTPUT_NAME)
     outputs={
-      "screenplay-draft.md":script+"\n",
+      "screenplay-draft.md":script.rstrip()+"\n",
       "draft-manifest.json":json.dumps(manifest,indent=2,ensure_ascii=False)+"\n",
       "targeted-review.json":json.dumps(queue,indent=2,ensure_ascii=False)+"\n"
     }
