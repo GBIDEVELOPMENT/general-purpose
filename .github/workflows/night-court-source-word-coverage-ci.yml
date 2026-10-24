@@ -1,0 +1,23 @@
+name: Night Court original S01E01 three-witness unique word coverage QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/measure_s01e01_three_witness_srt_coverage.py'
+      - 'Night Court/tools/test_measure_s01e01_three_witness_srt_coverage.py'
+      - 'Night Court/S01E01-THREE-WITNESS-WORD-COVERAGE.md'
+      - '.github/workflows/night-court-source-word-coverage-ci.yml'
+permissions:
+  contents: read
+jobs:
+  corpus-coverage:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Independently compute 336-cue original-SRT distinct source token coverage
+        run: |
+          python 'Night Court/tools/test_measure_s01e01_three_witness_srt_coverage.py'
+          python 'Night Court/tools/measure_s01e01_three_witness_srt_coverage.py' --output "${{ runner.temp }}/source-word-coverage.json"
