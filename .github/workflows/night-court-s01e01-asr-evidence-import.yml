@@ -1,0 +1,43 @@
+name: Night Court retain reviewed source ASR/prosody pilot
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s01e01_asr_prosody.py'
+      - '.github/workflows/night-court-s01e01-asr-evidence-import.yml'
+      - 'Night Court/S01E01-ASR-PROSODY-PILOT.md'
+permissions:
+  contents: write
+  actions: read
+jobs:
+  import-hypotheses:
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-asr-evidence-integration'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/night-court-s01e01-asr-evidence-integration
+      - name: Fetch successful source-audio inference JSON
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/nc-asr"
+          gh run download 40045128799 \
+            --repo gamesbyian/general-purpose \
+            --name night-court-s01e01-source-asr-prosody \
+            --dir "${{ runner.temp }}/nc-asr"
+      - name: Enforce source hashes and abstention evidence checks
+        run: |
+          python 'Night Court/tools/import_s01e01_asr_prosody.py' "${{ runner.temp }}/nc-asr/s01e01-asr-prosody.json"
+          python 'Night Court/tools/validate_dialogue.py'
+      - name: Commit only private text JSON alternative inference
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/scene-review-v1/asr-prosody-hypotheses.json'
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(night-court): preserve exploratory S01E01 ASR and mix pitch evidence'
+            git push origin HEAD:research/night-court-s01e01-asr-evidence-integration
+          fi
