@@ -1,5 +1,10 @@
 # Nine-season evidence-linked screenplay production workboard
 
+## S09E19 real scene/physical-action video evidence pilot
+
+The [S09E19-VISUAL-SCENE-HANDOFF.md](S09E19-VISUAL-SCENE-HANDOFF.md) adds a **strictly bounded 15:00–15:25, 100-frame 4fps** source-image worker for the accepted AVI SHA and the window with five independent ASR-to-untimed-paragraph candidate matches. Unlike the source text scaffolds, this gathers actual original-series video evidence for future setting and stage-action review. **The frames are not visually reviewed merely by extracting them**, and no speaker, performance, stage directions, timing or episode completeness is promoted automatically. A separate SHA-verified image import/review stage remains necessary.
+
+
 ## Highest-priority remaining untimed source: S09E19
 
 [S09E19-UNTIMED-VIDEO-ANCHOR-HANDOFF.md](S09E19-UNTIMED-VIDEO-ANCHOR-HANDOFF.md) defines a separately owned, five-window original-video ASR experiment for the single 347-paragraph untimed dialogue witness. The actual 183,377,920-byte AVI is now SHA-fingerprinted from trusted [run #40054051699](https://github.com/gamesbyian/general-purpose/actions/runs/40054051699) (22m 0.144s) and its **125 seconds of sampled audio** produced 50 ASR segments and 15 distinctive candidate matches to retained paragraph IDs (roughly source paragraphs 49–331). No original source timestamps were invented and **1195 seconds of this cut remain unsampled**. The compact result is being stored separately under S09E19 derived source-timing evidence. Lexical matches are merely proposed source anchors, not invented SRT cue timecodes or evidence of speaker identity. This lane must not interfere with S01E01 voice/review work or the 193 reading-script scaffolds.
