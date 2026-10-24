@@ -1,6 +1,6 @@
 # S01E01 original-text-constrained CTC alignment experiment
 
-Status: CTC offline proof passed ([PR #152](https://github.com/gamesbyian/general-purpose/pull/152)); owner-only [real-source alignment run #40048872758](https://github.com/gamesbyian/general-purpose/actions/runs/40048872758) launched from inert [PR #153](https://github.com/gamesbyian/general-purpose/pull/153). Exact real-source acceptance is gated by successful run, saved model revision and in-repo import QA. Original 1984–1992 *Night Court* S01E01, fixed 60–90-second passage.
+Status: CTC offline proof passed ([PR #152](https://github.com/gamesbyian/general-purpose/pull/152)); owner-only [real-source alignment run #40048872758](https://github.com/gamesbyian/general-purpose/actions/runs/40048872758) **succeeded**, launched from inert [PR #153](https://github.com/gamesbyian/general-purpose/pull/153). The 16,765-byte compact JSON artifact (#12542019756) contains 42 word-time candidates, 2 low-acoustic-support word abstentions and three source turns that could not be aligned (C19 first voice, C22 second voice, C27 truncated boundary). Model revision: `22aad52d435eb6dbaf354bdad9b0da84ce7d6156`. Real-result retention remains gated by importer CI. Original 1984–1992 *Night Court* S01E01, fixed 60–90-second passage.
 
 ## Goal and method
 
