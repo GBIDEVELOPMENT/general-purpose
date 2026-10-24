@@ -30,7 +30,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: offline
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 35
     environment: ftp-media-changes
     env:
       FTP_HOST: wood.seedhost.eu
