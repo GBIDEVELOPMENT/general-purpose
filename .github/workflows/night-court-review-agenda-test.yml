@@ -1,0 +1,25 @@
+name: Night Court S01E01 cross-evidence original review agenda CI
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_s01e01_review_agenda.py'
+      - 'Night Court/tools/test_s01e01_review_agenda.py'
+      - 'Night Court/seasons/S01/S01E01/derived/editorial-review-v2/source-playback-agenda.json'
+      - 'Night Court/S01E01-CHRONOLOGICAL-REVIEW-AGENDA.md'
+      - '.github/workflows/night-court-review-agenda-test.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s01e01-editorial-review-agenda'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify 24 review prompts, original sources, and mix/model caveats
+        run: |
+          python 'Night Court/tools/test_s01e01_review_agenda.py'
+          python 'Night Court/tools/build_s01e01_review_agenda.py' --write
+          git diff --exit-code -- 'Night Court/seasons/S01/S01E01/derived/editorial-review-v2/source-playback-agenda.json'
