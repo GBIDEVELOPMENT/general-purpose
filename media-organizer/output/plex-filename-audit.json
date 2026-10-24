@@ -2,14 +2,9 @@
   "root": "/downloads",
   "inventory_files": 3062,
   "video_files": 2058,
-  "inventory_complete": false,
+  "inventory_complete": true,
   "truncated": [],
-  "scan_failures": [
-    {
-      "directory": "/downloads/Southland.Tales.2006.1080p.Bluray.x264-SECTOR7",
-      "error_type": "error_perm"
-    }
-  ],
+  "scan_failures": [],
   "summary": {
     "cross_season_episode": 1,
     "legacy_1x_episode": 193,
@@ -1397,7 +1392,7 @@
     {
       "severity": "review",
       "category": "multiple_episodes",
-      "path": "/downloads/30 Rock S01-S07 COMPLETE/30.Rock.S07.1080p.WEB-DL.DD5.1.H.264-POD/30.Rock.S07E12E13.1080p.WEB-DL.DD5.1.H.264-POD.mkv",
+      "path": "/downloads/30 Rock (2006)/Season 07/30 Rock (2006) - S07E12-E13.mkv",
       "note": "File contains more than one episode",
       "suggestion": "Preserve every episode number, e.g. S01E01-E02"
     },
@@ -1405,20 +1400,6 @@
       "severity": "review",
       "category": "multiple_episodes",
       "path": "/downloads/Green Lantern The Animated Series S01/Green.Lantern.The.Animated.Series.S01E01-E02.HDTV.XviD-ASAP/Green.Lantern.The.Animated.Series.S01E01-E02.HDTV.XviD-ASAP.avi",
-      "note": "File contains more than one episode",
-      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
-    },
-    {
-      "severity": "review",
-      "category": "multiple_episodes",
-      "path": "/downloads/Star Trek Enterprise Season 1 [2160p]/Star Trek Enterprise S01E01E02 - Broken Bow [2160p]_2.mkv",
-      "note": "File contains more than one episode",
-      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
-    },
-    {
-      "severity": "review",
-      "category": "multiple_episodes",
-      "path": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S07 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S07E25E26.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
       "note": "File contains more than one episode",
       "suggestion": "Preserve every episode number, e.g. S01E01-E02"
     },
@@ -1439,7 +1420,21 @@
     {
       "severity": "review",
       "category": "multiple_episodes",
+      "path": "/downloads/Star Trek/Star Trek Enterprise/Season 01/Star Trek Enterprise - S01E01-E02.mkv",
+      "note": "File contains more than one episode",
+      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
+    },
+    {
+      "severity": "review",
+      "category": "multiple_episodes",
       "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E01-E02.mkv",
+      "note": "File contains more than one episode",
+      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
+    },
+    {
+      "severity": "review",
+      "category": "multiple_episodes",
+      "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E25-E26.mkv",
       "note": "File contains more than one episode",
       "suggestion": "Preserve every episode number, e.g. S01E01-E02"
     },

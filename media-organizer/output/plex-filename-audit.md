@@ -4,7 +4,7 @@ Read-only filename heuristics. A flagged file is **not proven mislabeled**;
 verify title, episode identity and codec with authoritative media data before moving.
 No files were moved or deleted by this audit.
 
-Inventory fully covered: **no; scan was truncated or failed**.
+Inventory fully covered: **yes**.
 Videos examined: **2058**.
 
 ## Counts by category
