@@ -1,0 +1,1021 @@
+{
+  "schema": "night-court-s01e01-multisite-asr-drift/1",
+  "episode_id": "S01E01",
+  "original_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_video_duration_ms": 1448256,
+  "windows": [
+    {
+      "source_window_ms": [
+        300000,
+        330000
+      ],
+      "source_audio_sha256": "3babae574db300c55dd68663b3d61965dcf205491a6c05b68f08250a9ba9eb4f",
+      "expected_source_caption_cues": [
+        74,
+        75,
+        76,
+        77
+      ],
+      "source_cues_in_window": 4,
+      "asr_segments": [
+        {
+          "index": 0,
+          "start_ms": 300000,
+          "end_ms": 323520,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 323520,
+          "text": "I don't know what's holding the judge up.",
+          "model_average_log_probability": -0.6757,
+          "model_no_speech_probability": 0.0596
+        },
+        {
+          "index": 1,
+          "start_ms": 323520,
+          "end_ms": 329760,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 329760,
+          "text": "I don't know what's holding the judge up.",
+          "model_average_log_probability": -0.6757,
+          "model_no_speech_probability": 0.0596
+        }
+      ],
+      "alignment_candidates": [
+        {
+          "asr_segment_index": 0,
+          "source_caption_cue": 76,
+          "source_cue_interval_ms": [
+            327180,
+            329045
+          ],
+          "lexical_similarity": 1.0,
+          "candidate_start_offset_ms": -27180,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 1,
+          "source_caption_cue": 76,
+          "source_cue_interval_ms": [
+            327180,
+            329045
+          ],
+          "lexical_similarity": 1.0,
+          "candidate_start_offset_ms": -3660,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        }
+      ],
+      "source_caption_alignment_status": "unverified_candidate_only",
+      "scene_and_speaker_identity_verified": false,
+      "strong_lexical_anchor_count": 2,
+      "strong_lexical_start_delta_median_ms": -15420.0
+    },
+    {
+      "source_window_ms": [
+        600000,
+        630000
+      ],
+      "source_audio_sha256": "7dda17bee3dbceea89e715a4031809150bd1ffb8b51a2ed17c355070f72cada1",
+      "expected_source_caption_cues": [
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158
+      ],
+      "source_cues_in_window": 7,
+      "asr_segments": [
+        {
+          "index": 0,
+          "start_ms": 600000,
+          "end_ms": 605000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 605000,
+          "text": "LAUGHTER",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 1,
+          "start_ms": 605000,
+          "end_ms": 608000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 608000,
+          "text": "APPLAUSE",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 2,
+          "start_ms": 608000,
+          "end_ms": 612000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 612000,
+          "text": "Yo!",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 3,
+          "start_ms": 612000,
+          "end_ms": 614000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 614000,
+          "text": "Sir, I have to speak with you.",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 4,
+          "start_ms": 614000,
+          "end_ms": 617000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 617000,
+          "text": "Wanna, good to see you. Come over.",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 5,
+          "start_ms": 617000,
+          "end_ms": 618000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 618000,
+          "text": "You honor?",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 6,
+          "start_ms": 618000,
+          "end_ms": 620000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 620000,
+          "text": "I feel that it's my duty to discuss with you.",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 7,
+          "start_ms": 620000,
+          "end_ms": 622000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 622000,
+          "text": "You're your behavior.",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 8,
+          "start_ms": 622000,
+          "end_ms": 624000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 624000,
+          "text": "Sir, I have urgent business to discuss.",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 9,
+          "start_ms": 624000,
+          "end_ms": 629000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 629000,
+          "text": "You can talk while you're doing this. Come on. Come on. Come on. Come on. Come on. Come on. Come on. Come on. Come on. Come on. Come on. Come on. Come on. Come on. Come on.",
+          "model_average_log_probability": -0.2924,
+          "model_no_speech_probability": 0.034
+        },
+        {
+          "index": 10,
+          "start_ms": 629000,
+          "end_ms": 630000,
+          "segment_boundary_clipped": true,
+          "model_proposed_end_ms_before_clamping": 631000,
+          "text": "Laughing at me.",
+          "model_average_log_probability": -0.9565,
+          "model_no_speech_probability": 0.4318
+        }
+      ],
+      "alignment_candidates": [
+        {
+          "asr_segment_index": 0,
+          "source_caption_cue": null,
+          "source_cue_interval_ms": [
+            629849,
+            631680
+          ],
+          "lexical_similarity": 0.1935,
+          "candidate_start_offset_ms": null,
+          "cue_fully_inside_window": false,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 1,
+          "source_caption_cue": null,
+          "source_cue_interval_ms": [
+            611798,
+            615427
+          ],
+          "lexical_similarity": 0.1791,
+          "candidate_start_offset_ms": null,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 2,
+          "source_caption_cue": 153,
+          "source_cue_interval_ms": [
+            609195,
+            610423
+          ],
+          "lexical_similarity": 1.0,
+          "candidate_start_offset_ms": -1195,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 3,
+          "source_caption_cue": 154,
+          "source_cue_interval_ms": [
+            611798,
+            615427
+          ],
+          "lexical_similarity": 0.6437,
+          "candidate_start_offset_ms": 202,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 4,
+          "source_caption_cue": 154,
+          "source_cue_interval_ms": [
+            611798,
+            615427
+          ],
+          "lexical_similarity": 0.6667,
+          "candidate_start_offset_ms": 2202,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 5,
+          "source_caption_cue": 153,
+          "source_cue_interval_ms": [
+            609195,
+            610423
+          ],
+          "lexical_similarity": 0.3636,
+          "candidate_start_offset_ms": null,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 6,
+          "source_caption_cue": 155,
+          "source_cue_interval_ms": [
+            616636,
+            620197
+          ],
+          "lexical_similarity": 0.7788,
+          "candidate_start_offset_ms": 1364,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 7,
+          "source_caption_cue": 155,
+          "source_cue_interval_ms": [
+            616636,
+            620197
+          ],
+          "lexical_similarity": 0.4494,
+          "candidate_start_offset_ms": null,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 8,
+          "source_caption_cue": 156,
+          "source_cue_interval_ms": [
+            620373,
+            624207
+          ],
+          "lexical_similarity": 0.8605,
+          "candidate_start_offset_ms": 1627,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 9,
+          "source_caption_cue": 157,
+          "source_cue_interval_ms": [
+            624377,
+            628507
+          ],
+          "lexical_similarity": 0.5556,
+          "candidate_start_offset_ms": -377,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 10,
+          "source_caption_cue": null,
+          "source_cue_interval_ms": [
+            624377,
+            628507
+          ],
+          "lexical_similarity": 0.2703,
+          "candidate_start_offset_ms": null,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        }
+      ],
+      "source_caption_alignment_status": "unverified_candidate_only",
+      "scene_and_speaker_identity_verified": false,
+      "strong_lexical_anchor_count": 2,
+      "strong_lexical_start_delta_median_ms": 216.0
+    },
+    {
+      "source_window_ms": [
+        900000,
+        930000
+      ],
+      "source_audio_sha256": "876fb30d0cc86b74017885c88d6f761997e05f525e9b23c56fac27614b300dea",
+      "expected_source_caption_cues": [
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230
+      ],
+      "source_cues_in_window": 8,
+      "asr_segments": [
+        {
+          "index": 0,
+          "start_ms": 900000,
+          "end_ms": 903000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 903000,
+          "text": "And so he goes to the other woman.",
+          "model_average_log_probability": -0.3656,
+          "model_no_speech_probability": 0.0926
+        },
+        {
+          "index": 1,
+          "start_ms": 903000,
+          "end_ms": 907000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 907000,
+          "text": "It's a living.",
+          "model_average_log_probability": -0.3656,
+          "model_no_speech_probability": 0.0926
+        },
+        {
+          "index": 2,
+          "start_ms": 907000,
+          "end_ms": 911000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 911000,
+          "text": "Crime, solicitation.",
+          "model_average_log_probability": -0.3656,
+          "model_no_speech_probability": 0.0926
+        },
+        {
+          "index": 3,
+          "start_ms": 911000,
+          "end_ms": 913000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 913000,
+          "text": "Heads, I just find you.",
+          "model_average_log_probability": -0.3656,
+          "model_no_speech_probability": 0.0926
+        },
+        {
+          "index": 4,
+          "start_ms": 913000,
+          "end_ms": 916000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 916000,
+          "text": "Tails, you go to jail.",
+          "model_average_log_probability": -0.3656,
+          "model_no_speech_probability": 0.0926
+        },
+        {
+          "index": 5,
+          "start_ms": 916000,
+          "end_ms": 917000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 917000,
+          "text": "Wait.",
+          "model_average_log_probability": -0.3656,
+          "model_no_speech_probability": 0.0926
+        },
+        {
+          "index": 6,
+          "start_ms": 917000,
+          "end_ms": 919000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 919000,
+          "text": "Heads again.",
+          "model_average_log_probability": -0.3656,
+          "model_no_speech_probability": 0.0926
+        },
+        {
+          "index": 7,
+          "start_ms": 919000,
+          "end_ms": 921000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 921000,
+          "text": "It's your lucky day.",
+          "model_average_log_probability": -0.3656,
+          "model_no_speech_probability": 0.0926
+        },
+        {
+          "index": 8,
+          "start_ms": 921000,
+          "end_ms": 923000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 923000,
+          "text": "Could be your two.",
+          "model_average_log_probability": -0.3656,
+          "model_no_speech_probability": 0.0926
+        },
+        {
+          "index": 9,
+          "start_ms": 923000,
+          "end_ms": 925280,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 925280,
+          "text": "Again, it's your lucky day!",
+          "model_average_log_probability": -0.7523,
+          "model_no_speech_probability": 0.0542
+        },
+        {
+          "index": 10,
+          "start_ms": 925280,
+          "end_ms": 927000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 927000,
+          "text": "Good be yours, too!",
+          "model_average_log_probability": -0.7523,
+          "model_no_speech_probability": 0.0542
+        }
+      ],
+      "alignment_candidates": [
+        {
+          "asr_segment_index": 0,
+          "source_caption_cue": 225,
+          "source_cue_interval_ms": [
+            907893,
+            910191
+          ],
+          "lexical_similarity": 0.7059,
+          "candidate_start_offset_ms": -7893,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 1,
+          "source_caption_cue": 226,
+          "source_cue_interval_ms": [
+            910496,
+            912396
+          ],
+          "lexical_similarity": 1.0,
+          "candidate_start_offset_ms": -7496,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 2,
+          "source_caption_cue": 227,
+          "source_cue_interval_ms": [
+            914567,
+            916967
+          ],
+          "lexical_similarity": 1.0,
+          "candidate_start_offset_ms": -7567,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 3,
+          "source_caption_cue": 228,
+          "source_cue_interval_ms": [
+            917136,
+            921163
+          ],
+          "lexical_similarity": 0.5882,
+          "candidate_start_offset_ms": -6136,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 4,
+          "source_caption_cue": 228,
+          "source_cue_interval_ms": [
+            917136,
+            921163
+          ],
+          "lexical_similarity": 0.597,
+          "candidate_start_offset_ms": -4136,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 5,
+          "source_caption_cue": null,
+          "source_cue_interval_ms": [
+            910496,
+            912396
+          ],
+          "lexical_similarity": 0.2353,
+          "candidate_start_offset_ms": null,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 6,
+          "source_caption_cue": 229,
+          "source_cue_interval_ms": [
+            922174,
+            924608
+          ],
+          "lexical_similarity": 0.5238,
+          "candidate_start_offset_ms": null,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 7,
+          "source_caption_cue": 229,
+          "source_cue_interval_ms": [
+            922174,
+            924608
+          ],
+          "lexical_similarity": 0.76,
+          "candidate_start_offset_ms": -3174,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 8,
+          "source_caption_cue": 230,
+          "source_cue_interval_ms": [
+            924777,
+            927439
+          ],
+          "lexical_similarity": 0.9143,
+          "candidate_start_offset_ms": -3777,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 9,
+          "source_caption_cue": 229,
+          "source_cue_interval_ms": [
+            922174,
+            924608
+          ],
+          "lexical_similarity": 0.8929,
+          "candidate_start_offset_ms": 826,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 10,
+          "source_caption_cue": 230,
+          "source_cue_interval_ms": [
+            924777,
+            927439
+          ],
+          "lexical_similarity": 0.8571,
+          "candidate_start_offset_ms": 503,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        }
+      ],
+      "source_caption_alignment_status": "unverified_candidate_only",
+      "scene_and_speaker_identity_verified": false,
+      "strong_lexical_anchor_count": 5,
+      "strong_lexical_start_delta_median_ms": -3777
+    },
+    {
+      "source_window_ms": [
+        1200000,
+        1230000
+      ],
+      "source_audio_sha256": "bd40c0d2d72efc006702c1a76c71591d8829ad1c9f4366e886b36178e63689f4",
+      "expected_source_caption_cues": [
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302
+      ],
+      "source_cues_in_window": 8,
+      "asr_segments": [
+        {
+          "index": 0,
+          "start_ms": 1200000,
+          "end_ms": 1202000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1202000,
+          "text": "got appointed to the bench.",
+          "model_average_log_probability": -0.291,
+          "model_no_speech_probability": 0.0472
+        },
+        {
+          "index": 1,
+          "start_ms": 1202000,
+          "end_ms": 1203000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1203000,
+          "text": "Shh.",
+          "model_average_log_probability": -0.291,
+          "model_no_speech_probability": 0.0472
+        },
+        {
+          "index": 2,
+          "start_ms": 1203000,
+          "end_ms": 1207000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1207000,
+          "text": "You know, Dan, that's a funny story.",
+          "model_average_log_probability": -0.291,
+          "model_no_speech_probability": 0.0472
+        },
+        {
+          "index": 3,
+          "start_ms": 1207000,
+          "end_ms": 1213000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1213000,
+          "text": "It was a mayor's last day in office, and it was a Sunday.",
+          "model_average_log_probability": -0.291,
+          "model_no_speech_probability": 0.0472
+        },
+        {
+          "index": 4,
+          "start_ms": 1213000,
+          "end_ms": 1218400,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1218400,
+          "text": "And my name was at the bottom of a list of 1,000 candidates, so they start calling folks",
+          "model_average_log_probability": -0.291,
+          "model_no_speech_probability": 0.0472
+        },
+        {
+          "index": 5,
+          "start_ms": 1218400,
+          "end_ms": 1222400,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1222400,
+          "text": "starting at the top of the list, but you see it's Sunday, so no one's home.",
+          "model_average_log_probability": -0.291,
+          "model_no_speech_probability": 0.0472
+        },
+        {
+          "index": 6,
+          "start_ms": 1222400,
+          "end_ms": 1227000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1227000,
+          "text": "So they keep calling down the list, name by name, no one answers.",
+          "model_average_log_probability": -0.291,
+          "model_no_speech_probability": 0.0472
+        },
+        {
+          "index": 7,
+          "start_ms": 1227000,
+          "end_ms": 1230000,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1230000,
+          "text": "Finally, they get down to the bottom of the list, and...",
+          "model_average_log_probability": -0.4044,
+          "model_no_speech_probability": 0.1059
+        }
+      ],
+      "alignment_candidates": [
+        {
+          "asr_segment_index": 0,
+          "source_caption_cue": 295,
+          "source_cue_interval_ms": [
+            1198817,
+            1202810
+          ],
+          "lexical_similarity": 0.7812,
+          "candidate_start_offset_ms": 1183,
+          "cue_fully_inside_window": false,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 1,
+          "source_caption_cue": null,
+          "source_cue_interval_ms": [
+            1221840,
+            1224934
+          ],
+          "lexical_similarity": 0.12,
+          "candidate_start_offset_ms": null,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 2,
+          "source_caption_cue": 296,
+          "source_cue_interval_ms": [
+            1204690,
+            1207659
+          ],
+          "lexical_similarity": 1.0,
+          "candidate_start_offset_ms": -1690,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 3,
+          "source_caption_cue": 297,
+          "source_cue_interval_ms": [
+            1208661,
+            1212256
+          ],
+          "lexical_similarity": 0.9643,
+          "candidate_start_offset_ms": -1661,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 4,
+          "source_caption_cue": 298,
+          "source_cue_interval_ms": [
+            1212431,
+            1216492
+          ],
+          "lexical_similarity": 0.7285,
+          "candidate_start_offset_ms": 569,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 5,
+          "source_caption_cue": 300,
+          "source_cue_interval_ms": [
+            1219538,
+            1221665
+          ],
+          "lexical_similarity": 0.7143,
+          "candidate_start_offset_ms": -1138,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 6,
+          "source_caption_cue": 301,
+          "source_cue_interval_ms": [
+            1221840,
+            1224934
+          ],
+          "lexical_similarity": 0.8624,
+          "candidate_start_offset_ms": 560,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 7,
+          "source_caption_cue": 302,
+          "source_cue_interval_ms": [
+            1225110,
+            1230013
+          ],
+          "lexical_similarity": 0.8319,
+          "candidate_start_offset_ms": 1890,
+          "cue_fully_inside_window": false,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        }
+      ],
+      "source_caption_alignment_status": "unverified_candidate_only",
+      "scene_and_speaker_identity_verified": false,
+      "strong_lexical_anchor_count": 3,
+      "strong_lexical_start_delta_median_ms": -1661
+    },
+    {
+      "source_window_ms": [
+        1350000,
+        1380000
+      ],
+      "source_audio_sha256": "16d2a712f13e2669460e33ff6b1738f174a1284faef547e18c264cea9b834814",
+      "expected_source_caption_cues": [
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332
+      ],
+      "source_cues_in_window": 9,
+      "asr_segments": [
+        {
+          "index": 0,
+          "start_ms": 1350000,
+          "end_ms": 1362520,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1362520,
+          "text": "night was beautiful. Oh, and a bohemian sort of way. No, no. I mean it. You saved that",
+          "model_average_log_probability": -0.328,
+          "model_no_speech_probability": 0.0575
+        },
+        {
+          "index": 1,
+          "start_ms": 1362520,
+          "end_ms": 1370320,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1370320,
+          "text": "marriage and the 27 years of love and memories and fulfillment that go along with it.",
+          "model_average_log_probability": -0.328,
+          "model_no_speech_probability": 0.0575
+        },
+        {
+          "index": 2,
+          "start_ms": 1370320,
+          "end_ms": 1374320,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1374320,
+          "text": "times I get lucky. Good night.",
+          "model_average_log_probability": -0.6576,
+          "model_no_speech_probability": 0.0128
+        },
+        {
+          "index": 3,
+          "start_ms": 1376320,
+          "end_ms": 1378320,
+          "segment_boundary_clipped": false,
+          "model_proposed_end_ms_before_clamping": 1378320,
+          "text": "About my job.",
+          "model_average_log_probability": -0.6576,
+          "model_no_speech_probability": 0.0128
+        }
+      ],
+      "alignment_candidates": [
+        {
+          "asr_segment_index": 0,
+          "source_caption_cue": 326,
+          "source_cue_interval_ms": [
+            1354706,
+            1356571
+          ],
+          "lexical_similarity": 0.5,
+          "candidate_start_offset_ms": null,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 1,
+          "source_caption_cue": 329,
+          "source_cue_interval_ms": [
+            1363282,
+            1368777
+          ],
+          "lexical_similarity": 0.9434,
+          "candidate_start_offset_ms": -762,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 2,
+          "source_caption_cue": 330,
+          "source_cue_interval_ms": [
+            1369688,
+            1372282
+          ],
+          "lexical_similarity": 0.6939,
+          "candidate_start_offset_ms": 632,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": false,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        },
+        {
+          "asr_segment_index": 3,
+          "source_caption_cue": 332,
+          "source_cue_interval_ms": [
+            1376028,
+            1378223
+          ],
+          "lexical_similarity": 1.0,
+          "candidate_start_offset_ms": 292,
+          "cue_fully_inside_window": true,
+          "usable_for_global_drift_review": true,
+          "review_state": "heuristic_text_match_not_verified_audio",
+          "caution": "Caption cue and model segment boundaries can refer to different sub-utterances."
+        }
+      ],
+      "source_caption_alignment_status": "unverified_candidate_only",
+      "scene_and_speaker_identity_verified": false,
+      "strong_lexical_anchor_count": 2,
+      "strong_lexical_start_delta_median_ms": -235.0
+    }
+  ],
+  "drift_hypothesis_summary": {
+    "qualified_windows_with_2plus_lexical_anchors": 5,
+    "spread_between_window_median_start_differences_ms": 15636.0,
+    "interpretation": "qualifying source-cue vs tiny.en segment START difference only, not exact offset/drift",
+    "global_video_to_subtitle_offset_verified": false,
+    "global_drift_verified": false
+  },
+  "ASR_model": "faster-whisper tiny.en",
+  "faster_whisper_version": "1.2.1",
+  "ASR_is_independent_transcription_not_source_truth": true,
+  "original_caption_times_independently_verified": false,
+  "source_edition_audio_sync_verified": false,
+  "audiovisual_episode_completeness_verified": false,
+  "identifiable_speakers_or_expressive_emotions_claimed": false,
+  "media_wav_and_model_weights_retained": false,
+  "quality_limits": [
+    "Sparse five-by-thirty-second sampling does not measure all intervening episode minutes",
+    "Cue-start vs utterance-start differences are not a calibrated offset",
+    "Simultaneous dialog and multi-line captions affect lexical match and apparent timing",
+    "Unmatched windows must be reviewed, not removed from the source corpus",
+    "A source cut can be temporally well aligned yet incomplete or incorrectly identified"
+  ]
+}
