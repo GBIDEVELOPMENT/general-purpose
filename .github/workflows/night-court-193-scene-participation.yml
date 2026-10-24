@@ -1,0 +1,51 @@
+name: Night Court 193-episode provisional scene participation evidence
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/night-court-193-scene-participation.yml'
+      - 'Night Court/SOURCE-SCRIPT-SCAFFOLDS-HANDOFF.md'
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-193-scene-participation'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-193-scene-participation
+          persist-credentials: true
+      - name: Validate source-roster and addressee-not-speaker logic
+        run: python "Night Court/tools/test_scene_participation.py"
+      - name: Rebuild all 193 provisional conversation/credit evidence records
+        run: |
+          python "Night Court/tools/build_scene_participation.py"
+          python "Night Court/tools/validate_dialogue.py"
+      - name: Require full original-series source and no fabricated named speakers
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("Night Court/catalog")
+          x=json.loads((p/"scene-participation-evidence.json").read_text())
+          y=json.loads((p/"speaker-attribution-preparation.json").read_text())
+          assert x["episodes"]==x["versions"]==y["episodes_with_packets"]==193
+          assert len(x["versions_index"])==193
+          assert x["provisional_scenes"]>=193
+          assert "No new speaker assignments" in x["source_limits"]
+          for item in x["versions_index"]:
+            scene=json.loads((Path("Night Court")/item["file"]).read_text())
+            assert scene["character_to_scene_evidence_status"]=="participant_hypotheses_only_not_attributed_speakers"
+            assert scene["provisional_scene_count"]>=1
+          print("193 source-text provisional scene records built; zero AV speaker identifications")
+          PY
+      - name: Commit source-derived scene and named-addressee evidence, nothing audiovisual
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/" "Night Court/catalog/scene-participation-evidence.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): provide provisional speaker/addressee scene packets across all 193 episodes"
+            git push origin HEAD:data/night-court-193-scene-participation
+          fi
