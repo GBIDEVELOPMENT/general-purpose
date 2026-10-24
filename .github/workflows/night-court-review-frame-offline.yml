@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Install FFmpeg for synthetic test and bounded source extraction
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Synthetic media packet and exact source-interval invariant tests
         run: |
           python 'Night Court/tools/test_s01e01_complete_review_frames.py'
