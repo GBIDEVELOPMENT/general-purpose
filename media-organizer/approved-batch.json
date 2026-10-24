@@ -1,357 +1,469 @@
 {
   "root": "/downloads",
-  "batch_id": "lower_decks_050",
-  "description": "Place 50 regular Star Trek Lower Decks episode files from five release folders into Plex series/season folders under the existing Star Trek franchise; retain separate alternate S01E01 release.",
+  "batch_id": "series_seven_066",
+  "description": "Move 66 verified episodic files from The Looming Tower, True Detective, Legion, Masters of the Air, Silo, Poker Face and Shrinking into canonical show and season folders under mixed Downloads.",
   "moves": [
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E01.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E01.mkv",
-      "size": 189792256,
-      "modify": "20250703005942",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E01.Now.It.Begins.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E01 - Now It Begins.mkv",
+      "size": 2255685673,
+      "modify": "20260913012141",
+      "reason": "Verified The Looming Tower (2018) S01E01 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E02.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E02.mkv",
-      "size": 256277959,
-      "modify": "20250703005941",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E02.Losing.My.Religion.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E02 - Losing My Religion.mkv",
+      "size": 2279139009,
+      "modify": "20260913012145",
+      "reason": "Verified The Looming Tower (2018) S01E02 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E03.PROPER.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E03.mkv",
-      "size": 310494835,
-      "modify": "20250703005940",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E03.Mistakes.Were.Made.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E03 - Mistakes Were Made.mkv",
+      "size": 2243727041,
+      "modify": "20260913012149",
+      "reason": "Verified The Looming Tower (2018) S01E03 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E04.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E04.mkv",
-      "size": 206805809,
-      "modify": "20250703005941",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E04.Mercury.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E04 - Mercury.mkv",
+      "size": 2248598873,
+      "modify": "20260913012049",
+      "reason": "Verified The Looming Tower (2018) S01E04 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E05.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E05.mkv",
-      "size": 209494776,
-      "modify": "20250703005941",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E05.Y2K.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E05 - Y2K.mkv",
+      "size": 2075051847,
+      "modify": "20260913012134",
+      "reason": "Verified The Looming Tower (2018) S01E05 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E06.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E06.mkv",
-      "size": 238675296,
-      "modify": "20250703005941",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E06.Boys.at.War.1080p.BluRay10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E06 - Boys at War.mkv",
+      "size": 2198111068,
+      "modify": "20260913012137",
+      "reason": "Verified The Looming Tower (2018) S01E06 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E07.1080p.x265-ZMNT.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E07.mkv",
-      "size": 357417403,
-      "modify": "20250703005941",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E07.The.General.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E07 - The General.mkv",
+      "size": 2271445659,
+      "modify": "20260913012147",
+      "reason": "Verified The Looming Tower (2018) S01E07 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E08.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E08.mkv",
-      "size": 237946433,
-      "modify": "20250703005940",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E08.A.Very.Special.Relationship.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E08 - A Very Special Relationship.mkv",
+      "size": 2210080187,
+      "modify": "20260913012147",
+      "reason": "Verified The Looming Tower (2018) S01E08 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E09.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E09.mkv",
-      "size": 243726768,
-      "modify": "20250703005936",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E09.Tuesday.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E09 - Tuesday.mkv",
+      "size": 2169049152,
+      "modify": "20260913012126",
+      "reason": "Verified The Looming Tower (2018) S01E09 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S01.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S01E10.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 01/Star Trek Lower Decks (2020) - S01E10.mkv",
-      "size": 307301541,
-      "modify": "20250703005939",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E10.9.11.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
+      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E10 - 9 11.mkv",
+      "size": 2232334812,
+      "modify": "20260913012136",
+      "reason": "Verified The Looming Tower (2018) S01E10 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E01.Strange.Energies.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E01 - Strange Energies.mkv",
-      "size": 1448627821,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E01.mkv",
+      "size": 2998419528,
+      "modify": "20250302020835",
+      "reason": "Verified True Detective (2014) S01E01 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E02.Kayshon.His.Eyes.Open.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E02 - Kayshon His Eyes Open.mkv",
-      "size": 1341612001,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E02 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E02.mkv",
+      "size": 2941636597,
+      "modify": "20250302020846",
+      "reason": "Verified True Detective (2014) S01E02 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E03.Well.Always.Have.Tom.Paris.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E03 - Well Always Have Tom Paris.mkv",
-      "size": 1292493531,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E03 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E03.mkv",
+      "size": 2937822947,
+      "modify": "20250302020905",
+      "reason": "Verified True Detective (2014) S01E03 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E04.Mugato.Gumato.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E04 - Mugato Gumato.mkv",
-      "size": 1505556137,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E04 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E04.mkv",
+      "size": 2609475488,
+      "modify": "20250302020910",
+      "reason": "Verified True Detective (2014) S01E04 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E05.An.Embarrassment.of.Dooplers.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E05 - An Embarrassment of Dooplers.mkv",
-      "size": 1344805336,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E05 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E05.mkv",
+      "size": 3073099913,
+      "modify": "20250302020840",
+      "reason": "Verified True Detective (2014) S01E05 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E06.The.Spy.Humongous.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E06 - The Spy Humongous.mkv",
-      "size": 1307880173,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E06 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E06.mkv",
+      "size": 3260242162,
+      "modify": "20250302020841",
+      "reason": "Verified True Detective (2014) S01E06 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E07.Where.Pleasant.Fountains.Lie.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E07 - Where Pleasant Fountains Lie.mkv",
-      "size": 1344187115,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E07 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E07.mkv",
+      "size": 3095310688,
+      "modify": "20250302020841",
+      "reason": "Verified True Detective (2014) S01E07 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E08.I.Excretus.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E08 - I Excretus.mkv",
-      "size": 1313137449,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E08 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E08.mkv",
+      "size": 2938643959,
+      "modify": "20250302020841",
+      "reason": "Verified True Detective (2014) S01E08 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E09.wej.Duj.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E09 - wej Duj.mkv",
-      "size": 1366355198,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E01.Chapter.1.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
+      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E01 - Chapter 1.mkv",
+      "size": 7868158773,
+      "modify": "20260512055431",
+      "reason": "Verified Legion (2017) S01E01 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S02.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb/Star.Trek.Lower.Decks.S02E10.First.First.Contact.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 02/Star Trek Lower Decks (2020) - S02E10 - First First Contact.mkv",
-      "size": 1554248436,
-      "modify": "20250701052042",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E02.Chapter.2.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
+      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E02 - Chapter 2.mkv",
+      "size": 5403168411,
+      "modify": "20260512055424",
+      "reason": "Verified Legion (2017) S01E02 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E01.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E01.mkv",
-      "size": 325571938,
-      "modify": "20250628060259",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E03.Chapter.3.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
+      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E03 - Chapter 3.mkv",
+      "size": 5012124147,
+      "modify": "20260512055425",
+      "reason": "Verified Legion (2017) S01E03 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E02.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E02.mkv",
-      "size": 295453046,
-      "modify": "20250628060250",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E04.Chapter.4.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
+      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E04 - Chapter 4.mkv",
+      "size": 6280839971,
+      "modify": "20260512055423",
+      "reason": "Verified Legion (2017) S01E04 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E03.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E03.mkv",
-      "size": 279362053,
-      "modify": "20250628060251",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E05.Chapter.5.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
+      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E05 - Chapter 5.mkv",
+      "size": 5972613164,
+      "modify": "20260512055425",
+      "reason": "Verified Legion (2017) S01E05 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E04.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E04.mkv",
-      "size": 293279285,
-      "modify": "20250628060253",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E06.Chapter.6.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
+      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E06 - Chapter 6.mkv",
+      "size": 5804968226,
+      "modify": "20260512055425",
+      "reason": "Verified Legion (2017) S01E06 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E05.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E05.mkv",
-      "size": 300716788,
-      "modify": "20250628060255",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E07.Chapter.7.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
+      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E07 - Chapter 7.mkv",
+      "size": 5203053795,
+      "modify": "20260512055302",
+      "reason": "Verified Legion (2017) S01E07 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E06.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E06.mkv",
-      "size": 271508161,
-      "modify": "20250628060259",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E08.Chapter.8.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
+      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E08 - Chapter 8.mkv",
+      "size": 5592973649,
+      "modify": "20260512055302",
+      "reason": "Verified Legion (2017) S01E08 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E07.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E07.mkv",
-      "size": 327604927,
-      "modify": "20250628060259",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E01.mkv",
+      "size": 11243966837,
+      "modify": "20250630003153",
+      "reason": "Verified Masters of the Air (2024) S01E01 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E08.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E08.mkv",
-      "size": 317123392,
-      "modify": "20250628060259",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E02.mkv",
+      "size": 9915841967,
+      "modify": "20250630003114",
+      "reason": "Verified Masters of the Air (2024) S01E02 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E09.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E09.mkv",
-      "size": 312166430,
-      "modify": "20250628060259",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E03 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E03.mkv",
+      "size": 8591898595,
+      "modify": "20250630003150",
+      "reason": "Verified Masters of the Air (2024) S01E03 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S03.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S03E10.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 03/Star Trek Lower Decks (2020) - S03E10.mkv",
-      "size": 333444130,
-      "modify": "20250628060259",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E04 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E04.mkv",
+      "size": 9169988612,
+      "modify": "20250630003151",
+      "reason": "Verified Masters of the Air (2024) S01E04 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E01.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E01.mkv",
-      "size": 270860055,
-      "modify": "20250623023824",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E05 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E05.mkv",
+      "size": 9571208073,
+      "modify": "20250630003028",
+      "reason": "Verified Masters of the Air (2024) S01E05 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E02.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E02.mkv",
-      "size": 255101745,
-      "modify": "20250623023818",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E06 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E06.mkv",
+      "size": 11035101340,
+      "modify": "20250630003056",
+      "reason": "Verified Masters of the Air (2024) S01E06 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E03.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E03.mkv",
-      "size": 289193131,
-      "modify": "20250623023819",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E07 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E07.mkv",
+      "size": 8659256457,
+      "modify": "20250630003153",
+      "reason": "Verified Masters of the Air (2024) S01E07 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E04.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E04.mkv",
-      "size": 290823942,
-      "modify": "20250623023830",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E08 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E08.mkv",
+      "size": 9128624404,
+      "modify": "20250630003027",
+      "reason": "Verified Masters of the Air (2024) S01E08 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E05.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E05.mkv",
-      "size": 319696119,
-      "modify": "20250623023833",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E09 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E09.mkv",
+      "size": 14054061890,
+      "modify": "20250630003151",
+      "reason": "Verified Masters of the Air (2024) S01E09 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E06.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E06.mkv",
-      "size": 288512663,
-      "modify": "20250623023833",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E01.mkv",
+      "size": 8522958006,
+      "modify": "20251013054249",
+      "reason": "Verified Silo (2023) S02E01 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E07.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E07.mkv",
-      "size": 285183664,
-      "modify": "20250623023833",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E02.mkv",
+      "size": 7717178643,
+      "modify": "20251013054111",
+      "reason": "Verified Silo (2023) S02E02 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E08.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E08.mkv",
-      "size": 276032100,
-      "modify": "20250623023833",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E03 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E03.mkv",
+      "size": 10085098969,
+      "modify": "20251013054210",
+      "reason": "Verified Silo (2023) S02E03 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E09.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E09.mkv",
-      "size": 268611162,
-      "modify": "20250623023817",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E04 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E04.mkv",
+      "size": 10390847682,
+      "modify": "20251013054245",
+      "reason": "Verified Silo (2023) S02E04 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star.Trek.Lower.Decks.S04.1080p.x265-MeGusta/Star.Trek.Lower.Decks.S04E10.1080p.HEVC.x265-MeGusta.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 04/Star Trek Lower Decks (2020) - S04E10.mkv",
-      "size": 381609168,
-      "modify": "20250623023830",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E05 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E05.mkv",
+      "size": 9348800998,
+      "modify": "20251013054249",
+      "reason": "Verified Silo (2023) S02E05 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E01.Dos.Cerrito.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E01 - Dos Cerrito.mkv",
-      "size": 1992644163,
-      "modify": "20250608022924",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E06 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E06.mkv",
+      "size": 8033036466,
+      "modify": "20251013054102",
+      "reason": "Verified Silo (2023) S02E06 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E02.Shades.of.Green.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E02 - Shades of Green.mkv",
-      "size": 1839146771,
-      "modify": "20250608022727",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E07 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E07.mkv",
+      "size": 9615320667,
+      "modify": "20251013054105",
+      "reason": "Verified Silo (2023) S02E07 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E03.The.Best.Exotic.Nanite.Hotel.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E03 - The Best Exotic Nanite Hotel.mkv",
-      "size": 1899673327,
-      "modify": "20250608022924",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E08 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E08.mkv",
+      "size": 8952501205,
+      "modify": "20251013053938",
+      "reason": "Verified Silo (2023) S02E08 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E04.A.Farewell.to.Farms.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E04 - A Farewell to Farms.mkv",
-      "size": 1945036384,
-      "modify": "20250608022924",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E09 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E09.mkv",
+      "size": 11211790351,
+      "modify": "20251013053923",
+      "reason": "Verified Silo (2023) S02E09 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E05.Star.Base.80.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E05 - Star Base 80.mkv",
-      "size": 1805292218,
-      "modify": "20250608022914",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E10 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
+      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E10.mkv",
+      "size": 11201659402,
+      "modify": "20251013053940",
+      "reason": "Verified Silo (2023) S02E10 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E06.Of.Gods.and.Angles.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E06 - Of Gods and Angles.mkv",
-      "size": 1745429986,
-      "modify": "20250608022744",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E01.mkv",
+      "size": 3008616112,
+      "modify": "20260820204803",
+      "reason": "Verified Poker Face (2023) S01E01 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E07.Fully.Dilated.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E07 - Fully Dilated.mkv",
-      "size": 1846356902,
-      "modify": "20250608022918",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E02 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E02.mkv",
+      "size": 2817081728,
+      "modify": "20260820204806",
+      "reason": "Verified Poker Face (2023) S01E02 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E08.Upper.Decks.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E08 - Upper Decks.mkv",
-      "size": 1790273675,
-      "modify": "20250608022743",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E03 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E03.mkv",
+      "size": 2471061583,
+      "modify": "20260820204809",
+      "reason": "Verified Poker Face (2023) S01E03 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E09.Fissure.Quest.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E09 - Fissure Quest.mkv",
-      "size": 2074471692,
-      "modify": "20250608022802",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E04 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E04.mkv",
+      "size": 2137322496,
+      "modify": "20260820204812",
+      "reason": "Verified Poker Face (2023) S01E04 episode, named for Plex without changing the video"
     },
     {
-      "from": "/downloads/Star Trek/Star Trek Lower Decks S05 1080p AMZN WEB-DL DDP5 1 H 264-FLUX/Star.Trek.Lower.Decks.S05E10.The.New.Next.Generation.1080p.AMZN.WEB-DL.DDP5.1.H.264-FLUX.mkv",
-      "to": "/downloads/Star Trek/Star Trek Lower Decks (2020)/Season 05/Star Trek Lower Decks (2020) - S05E10 - The New Next Generation.mkv",
-      "size": 2469554943,
-      "modify": "20250608022919",
-      "reason": "Unambiguous Star Trek Lower Decks (2020) season and episode; preserve separate S01 premiere alternate"
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E05 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E05.mkv",
+      "size": 2266050502,
+      "modify": "20260820204829",
+      "reason": "Verified Poker Face (2023) S01E05 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E06 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E06.mkv",
+      "size": 2109492695,
+      "modify": "20260820204827",
+      "reason": "Verified Poker Face (2023) S01E06 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E07 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E07.mkv",
+      "size": 2147789208,
+      "modify": "20260820204832",
+      "reason": "Verified Poker Face (2023) S01E07 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E08 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E08.mkv",
+      "size": 2535049945,
+      "modify": "20260820204830",
+      "reason": "Verified Poker Face (2023) S01E08 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E09 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E09.mkv",
+      "size": 2656564572,
+      "modify": "20260820204802",
+      "reason": "Verified Poker Face (2023) S01E09 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E10 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
+      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E10.mkv",
+      "size": 2530364300,
+      "modify": "20260820204803",
+      "reason": "Verified Poker Face (2023) S01E10 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E01.My.Bad.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E01 - My Bad.mkv",
+      "size": 3883184031,
+      "modify": "20260805215809",
+      "reason": "Verified Shrinking (2023) S03E01 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E02.Happiness.Mission.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E02 - Happiness Mission.mkv",
+      "size": 2098976984,
+      "modify": "20260805215927",
+      "reason": "Verified Shrinking (2023) S03E02 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E03.D-Day.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E03 - D-Day.mkv",
+      "size": 2047072245,
+      "modify": "20260805215928",
+      "reason": "Verified Shrinking (2023) S03E03 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E04.The.Field.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E04 - The Field.mkv",
+      "size": 2085927397,
+      "modify": "20260805215932",
+      "reason": "Verified Shrinking (2023) S03E04 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E05.Hold.Your.Horsies.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E05 - Hold Your Horsies.mkv",
+      "size": 1995785487,
+      "modify": "20260805215932",
+      "reason": "Verified Shrinking (2023) S03E05 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E06.Dereks.Dont.Die.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E06 - Dereks Dont Die.mkv",
+      "size": 1894459897,
+      "modify": "20260805215932",
+      "reason": "Verified Shrinking (2023) S03E06 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E07.I.Will.Be.Grape.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E07 - I Will Be Grape.mkv",
+      "size": 1881419445,
+      "modify": "20260805215816",
+      "reason": "Verified Shrinking (2023) S03E07 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E08.Depression.Diet.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E08 - Depression Diet.mkv",
+      "size": 1761182542,
+      "modify": "20260805215753",
+      "reason": "Verified Shrinking (2023) S03E08 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E09.Daddy.Issues.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E09 - Daddy Issues.mkv",
+      "size": 1847757460,
+      "modify": "20260805215803",
+      "reason": "Verified Shrinking (2023) S03E09 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E10.The.Bodyguard.of.Sadness.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E10 - The Bodyguard of Sadness.mkv",
+      "size": 2141995597,
+      "modify": "20260805215753",
+      "reason": "Verified Shrinking (2023) S03E10 episode, named for Plex without changing the video"
+    },
+    {
+      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E11.And.Thats.Our.Time.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
+      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E11 - And Thats Our Time.mkv",
+      "size": 1831056241,
+      "modify": "20260805215753",
+      "reason": "Verified Shrinking (2023) S03E11 episode, named for Plex without changing the video"
     }
   ]
 }
