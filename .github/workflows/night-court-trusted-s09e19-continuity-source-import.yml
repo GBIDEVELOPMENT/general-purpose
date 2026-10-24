@@ -1,0 +1,57 @@
+name: Night Court trusted original S09E19 continuity and rejected ASR word evidence import
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s09e19-continuity-original-import.txt'
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: night-court-trusted-s09e19-continuity-source-preservation
+  cancel-in-progress: false
+jobs:
+  import-original-verified:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s09e19-continuity-source-import-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout trusted base commit, never arbitrary pull request head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Source-free SHA and false-acceptance validation before import
+        run: python 'Night Court/tools/test_import_s09e19_continuous_review_evidence.py'
+      - name: Fetch and verify exactly one expiring original numeric-text artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/night-court-s09e19-continuity"
+          gh api "repos/${{ github.repository }}/actions/artifacts/12573968622/zip" \
+            > "${{ runner.temp }}/night-court-s09e19-continuity/locked.zip"
+          echo "49de244f965f07baa62b714984506ee55a1a6824e32d516196b8935dc64f064c  ${{ runner.temp }}/night-court-s09e19-continuity/locked.zip" | sha256sum -c -
+          unzip -p "${{ runner.temp }}/night-court-s09e19-continuity/locked.zip" second-episode-report.json \
+            > "${{ runner.temp }}/night-court-s09e19-continuity/source.json"
+          echo "b86f1de8be857216fa89102c43e8e0cf4ffce64106879ab7e8729ce505530318  ${{ runner.temp }}/night-court-s09e19-continuity/source.json" | sha256sum -c -
+      - name: Preserve only exact source-identified unaccepted model and review metadata
+        run: |
+          python 'Night Court/tools/import_s09e19_continuous_review_evidence.py' \
+            --input "${{ runner.temp }}/night-court-s09e19-continuity/source.json" \
+            --output-dir 'Night Court/seasons/S09/S09E19/derived/continuous-review-original-v1'
+      - name: Commit exact derived text and numeric research to isolated data-review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-s09e19-original-continuity-review-20261024'
+          git add -- 'Night Court/seasons/S09/S09E19/derived/continuous-review-original-v1'
+          git diff --cached --check
+          git commit -m 'Night Court: preserve SHA-pinned original S09E19 continuous review and word-time diagnostics'
+          git push origin HEAD:refs/heads/data/night-court-s09e19-original-continuity-review-20261024
+      - name: Delete ephemeral research archive
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-s09e19-continuity"
