@@ -1,3 +1,70 @@
+## Actual original-video scene editing delivered, 2026-10-24
+
+**This is screenplay content progress, not merely a pipeline benchmark.**
+
+[PR #315](https://github.com/gamesbyian/general-purpose/pull/315)
+implemented source-bound original AVI whole-episode image overview;
+trusted original-video [run #40137223223](https://github.com/gamesbyian/general-purpose/actions/runs/40137223223)
+completed **both** pilot sources. This produced **80** uniformly source-time-spaced
+S01E01 frames and **73** S09E19 frames across each complete original
+episode. Private temporary seven-day contact-sheet artifacts are
+**#12577216339** (S01) and **#12578036143** (S09), with exact AVI,
+frame and artifact ZIP hashes preserved in the repository's derived
+source-photo evidence ledgers. No AVI, audio, model weights, original
+images or speaker voiceprints were committed.
+
+[PR #317](https://github.com/gamesbyian/general-purpose/pull/317)
+preserved **33 actual directly visually inspected image observations**:
+17 S01E01 and 16 S09E19, individually referenced to original-frame
+SHA-256. Room transitions and visible stage *states* now cover the
+book-lined office, courtroom/bench, nighttime bridge insert, diner,
+court-office and restaurant/bar instead of blanket unspecified scene
+settings. The preview images helped locate possible physical-business
+research, but 18-second gaps cannot prove all fast gags, precise cuts,
+or observed voice identity.
+
+Trusted owner original-caption source [run #40138198200](https://github.com/gamesbyian/general-purpose/actions/runs/40138198200)
+produced two new, separately regenerated source-dialogue-complete
+**scene-edit v2 screenplays**. They passed CI and were merged through
+[PR #320](https://github.com/gamesbyian/general-purpose/pull/320):
+
+- [S01E01 complete dialogue with 17 inline original-image stage notes](seasons/S01/S01E01/derived/caption-first-scene-edit-v2/screenplay-scene-edit.md)
+  and [source manifest](seasons/S01/S01E01/derived/caption-first-scene-edit-v2/scene-edit-manifest.json).
+  All **336 SRT caption cues** are preserved, and two speaking turns
+  have **provisional self-identification from dialogue**, rather than
+  image-based actor naming.
+- [S09E19 complete original untimed dialogue with 16 original-image notes and eight textual story beats](seasons/S09/S09E19/derived/caption-first-scene-edit-v2/screenplay-scene-edit.md)
+  and [source manifest](seasons/S09/S09E19/derived/caption-first-scene-edit-v2/scene-edit-manifest.json).
+  All **347 untimed transcript paragraphs** remain untimed. The
+  image chronology is explicitly separate from proposed source-text
+  story-breaks; one self-identifying name remains a claim by a
+  speaking voice, not proof of character identity.
+
+[PR #321](https://github.com/gamesbyian/general-purpose/pull/321)
+then added source-bounded, original-AVI **5fps dense physical gag**
+candidate capture for two valuable windows per episode. First owner
+run encountered a decoder failure (not accepted motion evidence).
+[PR #323](https://github.com/gamesbyian/general-purpose/pull/323)
+added bounded single-thread decoding and actionable error diagnostics;
+a separate owner-only retry was dispatched. Do not mark that second
+capture or any continuous gag as complete before its real artifact
+and direct review are confirmed.
+
+**Honest measurable current state:**
+- 193/193 source-only original episode text scaffolds.
+- **2/193** complete held-source-dialogue *scene-enriched drafts*,
+  containing 33 new genuine photo observations and eight S09
+  caption-textual scene beats.
+- **0/193** truly editor-ready full visual/action/speaker screenplays.
+- **0/193** independently whole-original-video-certified archival scripts.
+
+The remaining major workload is assigning a comprehensible speaker
+to most dialogue, actually watching source motion to describe physical
+gags, finding precise scene divisions and reconnecting S09 untimed
+paragraphs to the picture. None of these should be blocked on
+running two competing full-episode speech recognizers again by
+default. Priority is source-grounded *writing and editing* now.
+
 ## Actual complete held-dialogue pilot draft delivery, October 24
 
 The *code* from [PR #310](https://github.com/gamesbyian/general-purpose/pull/310),
