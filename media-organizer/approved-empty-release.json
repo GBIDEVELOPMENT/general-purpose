@@ -1,10 +1,9 @@
 {
   "root": "/downloads",
-  "batch_id": "incidental_folders_003",
-  "description": "Remove three exact directories consisting solely of already approved TXT or obsolete SFV detritus, only when FTP reports each directory completely empty; keep Studio 60 show directory.",
+  "batch_id": "southland_sample_004",
+  "description": "Remove empty old Southland Tales Sample subdirectory, then its abandoned parent release directory if empty after SFV deletion; preserve separately organized movie media.",
   "directories": [
-    "/downloads/Now.You.See.Me.Now.You.Don't.2025.1080p.TS.TR.EN-RGB",
-    "/downloads/Southland.Tales.2006.1080p.Bluray.x264-SECTOR7",
-    "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes"
+    "/downloads/Southland.Tales.2006.1080p.Bluray.x264-SECTOR7/Sample",
+    "/downloads/Southland.Tales.2006.1080p.Bluray.x264-SECTOR7"
   ]
 }
