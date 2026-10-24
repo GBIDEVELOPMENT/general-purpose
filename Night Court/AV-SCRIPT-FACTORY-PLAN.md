@@ -1,5 +1,10 @@
 # Night Court audiovisual script-generation factory
 
+## First independent caption/audio comparison: October 23, 2026
+
+A fixed, owner-PR-triggered real-source S01E01 60–90s audio study [run #40045128799](https://github.com/gamesbyian/general-purpose/actions/runs/40045128799) succeeded using CPU faster-whisper 1.2.1 tiny.en and YIN/eGeMAPSv02 acoustic analysis. Ten independent ASR segments were produced; eight had >=0.75 heuristic similarity to existing original SRT cues, with five near-exact matches and a median candidate start offset +252 ms among those five. Model mistakes occurred on invented vocabulary and a cue spanning two speakers. This supports source passage identity, but does not certify word-accurate synchronization, character speech turns, overall edition drift or full episode completeness. Five six-second pitch estimates reflect the **whole television mix**, not confirmed individual voice inflection. Source evidence retained under S01E01 derived scene-review after independent ingestion; details [S01E01-ASR-PROSODY-PILOT.md](S01E01-ASR-PROSODY-PILOT.md).
+
+
 ## First source-grounded visual scene milestone: October 23, 2026
 
 [PR #115](https://github.com/gamesbyian/general-purpose/pull/115) merged ten actual 480px video frames, five source-mix acoustic windows and nine original timestamped caption cues for the S01E01 01:00–01:30 scene. The capture ran safely via owner-PR-triggered trusted main workflow #40044673687. Reviewed observations include a book-lined court office, desk paperwork and telephone, a lavender-clad person and a uniformed officer; a telephone receiver is visibly at the officer's ear in the 01:27 sampled frame. Source media and caption checksums are preserved alongside individual JPEG digests in `seasons/S01/S01E01/derived/scene-review-v1/`. No raw audio/video entered Git.
