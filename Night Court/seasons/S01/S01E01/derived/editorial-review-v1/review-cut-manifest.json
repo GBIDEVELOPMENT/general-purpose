@@ -1,0 +1,206 @@
+{
+  "schema": "night-court-source-hash-pinned-review-cut-manifest/1",
+  "episode_id": "S01E01",
+  "publication_status": "review_material_only_zero_av_acceptances",
+  "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_video_filename_candidate": "Night Court - 1x01 - All You Need Is Love.avi",
+  "source_video_size_bytes_candidate": 183386112,
+  "source_runtime_ms": 1448256,
+  "existing_sample_scope_ms": [
+    60000,
+    90000
+  ],
+  "preroll_postroll_ms": 2000,
+  "merge_gap_ms": 1000,
+  "voice_tasks": 11,
+  "visual_tasks": 6,
+  "tasks": [
+    {
+      "task_id": "S01E01:C00019.1",
+      "task_type": "voice",
+      "source_interval_ms": [
+        58912,
+        62541
+      ],
+      "outside_existing_60000_90000_sample": true
+    },
+    {
+      "task_id": "S01E01:C00019.2",
+      "task_type": "voice",
+      "source_interval_ms": [
+        58912,
+        62541
+      ],
+      "outside_existing_60000_90000_sample": true
+    },
+    {
+      "task_id": "S01E01:C00020.1",
+      "task_type": "voice",
+      "source_interval_ms": [
+        62716,
+        65742
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:C00021.1",
+      "task_type": "voice",
+      "source_interval_ms": [
+        65919,
+        67887
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:C00022.1",
+      "task_type": "voice",
+      "source_interval_ms": [
+        69689,
+        73147
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:C00022.2",
+      "task_type": "voice",
+      "source_interval_ms": [
+        69689,
+        73147
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:C00023.1",
+      "task_type": "voice",
+      "source_interval_ms": [
+        74628,
+        76357
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:OBS-V2-01",
+      "task_type": "visual",
+      "source_interval_ms": [
+        76250,
+        76500
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:C00024.1",
+      "task_type": "voice",
+      "source_interval_ms": [
+        76663,
+        79894
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:OBS-V2-02",
+      "task_type": "visual",
+      "source_interval_ms": [
+        80750,
+        81000
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:OBS-V2-03",
+      "task_type": "visual",
+      "source_interval_ms": [
+        82500,
+        83750
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:C00025.1",
+      "task_type": "voice",
+      "source_interval_ms": [
+        83136,
+        84501
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:OBS-V2-04",
+      "task_type": "visual",
+      "source_interval_ms": [
+        83750,
+        87250
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:C00026.1",
+      "task_type": "voice",
+      "source_interval_ms": [
+        86339,
+        87738
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:OBS-V2-05",
+      "task_type": "visual",
+      "source_interval_ms": [
+        87500,
+        88500
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:OBS-V2-06",
+      "task_type": "visual",
+      "source_interval_ms": [
+        88500,
+        89750
+      ],
+      "outside_existing_60000_90000_sample": false
+    },
+    {
+      "task_id": "S01E01:C00027.1",
+      "task_type": "voice",
+      "source_interval_ms": [
+        88742,
+        91074
+      ],
+      "outside_existing_60000_90000_sample": true
+    }
+  ],
+  "continuous_review_windows": [
+    {
+      "start_ms": 56912,
+      "end_ms": 93074,
+      "review_window_id": "S01E01-RW-01",
+      "duration_ms": 36162,
+      "task_ids": [
+        "S01E01:C00019.1",
+        "S01E01:C00019.2",
+        "S01E01:C00020.1",
+        "S01E01:C00021.1",
+        "S01E01:C00022.1",
+        "S01E01:C00022.2",
+        "S01E01:C00023.1",
+        "S01E01:OBS-V2-01",
+        "S01E01:C00024.1",
+        "S01E01:OBS-V2-02",
+        "S01E01:OBS-V2-03",
+        "S01E01:C00025.1",
+        "S01E01:OBS-V2-04",
+        "S01E01:C00026.1",
+        "S01E01:OBS-V2-05",
+        "S01E01:OBS-V2-06",
+        "S01E01:C00027.1"
+      ]
+    }
+  ],
+  "outside_existing_sample_task_ids": [
+    "S01E01:C00019.1",
+    "S01E01:C00019.2",
+    "S01E01:C00027.1"
+  ],
+  "caveat": "Source timestamps are research cues. A cut list does not validate dialogue, cast identity, actions, inflection, or completeness."
+}
