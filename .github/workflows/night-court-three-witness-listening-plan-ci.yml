@@ -1,0 +1,31 @@
+name: Night Court three-witness targeted original-audio listening windows QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/plan_three_witness_targeted_listening.py'
+      - 'Night Court/tools/test_plan_three_witness_targeted_listening.py'
+      - 'Night Court/THREE-WITNESS-ORIGINAL-EPISODE-REVIEW.md'
+      - '.github/workflows/night-court-three-witness-listening-plan-ci.yml'
+permissions:
+  contents: read
+jobs:
+  source-free:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check exact sixteen original-source lexical disputes, hashes, bounded windows and abstentions
+        run: |
+          python 'Night Court/tools/test_plan_three_witness_targeted_listening.py'
+          python 'Night Court/tools/plan_three_witness_targeted_listening.py' --output "${RUNNER_TEMP}/night-court-s01-listening-windows.json"
+          test "$(wc -c < "${RUNNER_TEMP}/night-court-s01-listening-windows.json")" -lt 30000
+      - name: Export ephemeral research-only time pointers, never original audio
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-targeted-16-cue-listening-plan
+          path: ${{ runner.temp }}/night-court-s01-listening-windows.json
+          retention-days: 7
+          if-no-files-found: error
