@@ -1,0 +1,21 @@
+name: Night Court distinct ASR free-decoder agreement QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/compare_independent_asr.py'
+      - 'Night Court/tools/test_compare_independent_asr.py'
+      - 'Night Court/ASR-INDEPENDENT-CONSENSUS-FAST-PASS.md'
+      - '.github/workflows/night-court-independent-asr-consensus-ci.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-fast-independent-asr-consensus'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Pure-Python source-free independent word/PTS regression and 10000-word stress test
+        run: python 'Night Court/tools/test_compare_independent_asr.py'
