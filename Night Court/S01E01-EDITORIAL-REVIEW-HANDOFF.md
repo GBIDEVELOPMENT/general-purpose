@@ -41,3 +41,11 @@ The offline CI tests every source hash, all 55 word indices, model-time categori
 5. Compile production-facing scene headings, dialogue, performance directions and temporal action only when each editorial claim has an accepted evidence pointer and review decision. Then assess full episode completeness.
 
 The dossier is a step toward proper scene scripts, not an assertion that the pilot is complete.
+
+## Source-time evidence integrity hardening (October 23 continuation)
+
+The earlier reviewer-decision validator checked the source AVI SHA and whether an evidence clip fell anywhere in the episode, but did not require the cited clip to include the **specific source speaking turn or visual observation** being accepted. A valid source hash and a review of the wrong minute could therefore satisfy a text, voice or stage-action acceptance method. The tightened validator now requires **each evidence method on an accepted decision** to contain the full original source-caption interval (voice tasks) or sampled-observation interval (visual tasks). Rejected / needs-recheck decisions may retain partial investigative observations, but they cannot confer an acceptance. Synthetic tests reject unrelated clips, one-millisecond truncations at either edge and Boolean timestamp values.
+
+This deliberately exposes the boundary of the existing **01:00–01:30** pilot: C19 starts at 00:58.912 and C27 ends at 01:31.074. A reviewer must inspect the original source **outside** the sampled excerpt to accept either complete caption turn. A 30-second model-generated excerpt cannot validate those margins. The interval check is mechanical provenance hygiene, not proof that a reviewer truly watched or listened; all 17 live decisions remain PENDING and no speaker, inflection or action is promoted.
+
+PR verification uses a small read-only, no-FTP-secret CI check on a designated same-repository branch rather than reusing an older merged feature branch or altering the credential-bearing media workflows.
