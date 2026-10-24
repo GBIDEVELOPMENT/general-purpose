@@ -39,7 +39,22 @@ def inspect(x):
              "-of","json",url]
     try:
         response=subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=40,check=False)
-        if response.returncode!=0:return {"status":"probe_failed","exit_code":response.returncode}
+        if response.returncode!=0:
+            message=response.stderr.decode("utf-8",errors="replace").lower()
+            if "protocol not found" in message or "unknown protocol" in message:
+                reason="unsupported_input_protocol"
+            elif "530 " in message or "login incorrect" in message or "authentication" in message:
+                reason="ftp_authentication"
+            elif "550 " in message or "no such file" in message:
+                reason="ftp_path_unavailable"
+            elif "invalid data" in message or "invalid argument" in message:
+                reason="media_input_or_url_invalid"
+            elif "connection refused" in message or "timed out" in message:
+                reason="network"
+            elif "end of file" in message:
+                reason="unexpected_eof"
+            else:reason="other_input_error"
+            return {"status":"probe_failed","exit_code":response.returncode,"error_class":reason}
         data=json.loads(response.stdout.decode("utf-8"))
         streams=data.get("streams",[])
         if not streams:return {"status":"no_video_metadata"}
