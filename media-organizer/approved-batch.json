@@ -1,105 +1,329 @@
 {
   "root": "/downloads",
-  "batch_id": "series_followup_003",
-  "description": "Group 14 verified season-four and season-five All Creatures Great and Small episodes with the already-piloted season-six Plex tree.",
+  "batch_id": "joey_plex_046",
+  "description": "Move 46 verified Joey TV series episodes from two release folders into Joey Seasons 01 and 02 under the same mixed /downloads library; leave unrelated sidecars untouched.",
   "moves": [
     {
-      "from": "/downloads/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR/All.Creatures.Great.and.Small.2020.S05E01.To.All.Our.Boys.1080p.MY5.WEB-DL.AAC2.0.H.264-RAWR.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 05/All Creatures Great and Small (2020) - S05E01 - To All Our Boys.mkv",
-      "size": 2084835359,
-      "modify": "20261021083032",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E01.Pilot.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E01 - Pilot.mkv",
+      "size": 1611989225,
+      "modify": "20260818002512",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR/All.Creatures.Great.and.Small.2020.S05E02.Holding.the.Baby.1080p.MY5.WEB-DL.AAC2.0.H.264-RAWR.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 05/All Creatures Great and Small (2020) - S05E02 - Holding the Baby.mkv",
-      "size": 2038951699,
-      "modify": "20261021083032",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E02.Joey.and.the.Student.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E02 - Joey and the Student.mkv",
+      "size": 1535962309,
+      "modify": "20260818002520",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR/All.Creatures.Great.and.Small.2020.S05E03.Homecoming.1080p.MY5.WEB-DL.AAC2.0.H.264-RAWR.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 05/All Creatures Great and Small (2020) - S05E03 - Homecoming.mkv",
-      "size": 2045218862,
-      "modify": "20261021083032",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E03.Joey.and.the.Party.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E03 - Joey and the Party.mkv",
+      "size": 1529075268,
+      "modify": "20260818002533",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR/All.Creatures.Great.and.Small.2020.S05E04.Uninvited.Guests.1080p.MY5.WEB-DL.AAC2.0.H.264-RAWR.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 05/All Creatures Great and Small (2020) - S05E04 - Uninvited Guests.mkv",
-      "size": 2056339625,
-      "modify": "20261021083032",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E04.Joey.and.the.Book.Club.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E04 - Joey and the Book Club.mkv",
+      "size": 1659429195,
+      "modify": "20260818002543",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR/All.Creatures.Great.and.Small.2020.S05E05.Pair.Bond.1080p.MY5.WEB-DL.AAC2.0.H.264-RAWR.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 05/All Creatures Great and Small (2020) - S05E05 - Pair Bond.mkv",
-      "size": 2055193622,
-      "modify": "20261021083005",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E05.Joey.and.the.Perfect.Storm.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E05 - Joey and the Perfect Storm.mkv",
+      "size": 1597576910,
+      "modify": "20260818002543",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR/All.Creatures.Great.and.Small.2020.S05E06.Glass.Half.Full.1080p.MY5.WEB-DL.AAC2.0.H.264-RAWR.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 05/All Creatures Great and Small (2020) - S05E06 - Glass Half Full.mkv",
-      "size": 2085420552,
-      "modify": "20261021083028",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E06.Joey.and.the.Nemesis.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E06 - Joey and the Nemesis.mkv",
+      "size": 1726437137,
+      "modify": "20260818002449",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small 2020 S05 REPACK 1080p MY5 WEB-DL AAC2 0 H 264-RAWR/All.Creatures.Great.and.Small.2020.S05E07.Christmas.Special.All.Gods.Creatures.1080p.MY5.WEB-DL.AAC2.0.H.264-RAWR.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 05/All Creatures Great and Small (2020) - S05E07 - Christmas Special All Gods Creatures.mkv",
-      "size": 2561870627,
-      "modify": "20261021083028",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E07.Joey.and.the.Husband.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E07 - Joey and the Husband.mkv",
+      "size": 1763433985,
+      "modify": "20260818002459",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small S04 br 10bit hevc-d3g/All.Creatures.Great.and.Small.S04E01.Broodiness.1080p.Blu-ray.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 04/All Creatures Great and Small (2020) - S04E01 - Broodiness.mkv",
-      "size": 2187876865,
-      "modify": "20261021082905",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E08.Joey.and.the.Dream.Girl.1.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E08 - Joey and the Dream Girl 1.mkv",
+      "size": 1558116953,
+      "modify": "20260818002210",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small S04 br 10bit hevc-d3g/All.Creatures.Great.and.Small.S04E02.Carpe.Diem.1080p.Blu-ray.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 04/All Creatures Great and Small (2020) - S04E02 - Carpe Diem.mkv",
-      "size": 2137142578,
-      "modify": "20261021082843",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E09.Joey.and.the.Dream.Girl.2.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E09 - Joey and the Dream Girl 2.mkv",
+      "size": 1566089450,
+      "modify": "20260818002223",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small S04 br 10bit hevc-d3g/All.Creatures.Great.and.Small.S04E03.Right.Hand.Man.1080p.Blu-ray.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 04/All Creatures Great and Small (2020) - S04E03 - Right Hand Man.mkv",
-      "size": 2098909790,
-      "modify": "20261021082904",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E10.Joey.and.the.Big.Audition.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E10 - Joey and the Big Audition.mkv",
+      "size": 1399863973,
+      "modify": "20260818002233",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small S04 br 10bit hevc-d3g/All.Creatures.Great.and.Small.S04E04.By.the.Book.1080p.Blu-ray.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 04/All Creatures Great and Small (2020) - S04E04 - By the Book.mkv",
-      "size": 2109760915,
-      "modify": "20261021082905",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E11.Joey.and.the.Road.Trip.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E11 - Joey and the Road Trip.mkv",
+      "size": 1130306626,
+      "modify": "20260818002501",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small S04 br 10bit hevc-d3g/All.Creatures.Great.and.Small.S04E05.Papers.1080p.Blu-ray.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 04/All Creatures Great and Small (2020) - S04E05 - Papers.mkv",
-      "size": 2092450707,
-      "modify": "20261021082905",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E12.Joey.and.the.Plot.Twist.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E12 - Joey and the Plot Twist.mkv",
+      "size": 1750525287,
+      "modify": "20260818002342",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small S04 br 10bit hevc-d3g/All.Creatures.Great.and.Small.S04E06.The.Home.Front.1080p.Blu-ray.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 04/All Creatures Great and Small (2020) - S04E06 - The Home Front.mkv",
-      "size": 2103865239,
-      "modify": "20261021082846",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E13.Joey.and.the.Taste.Test.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E13 - Joey and the Taste Test.mkv",
+      "size": 1663108376,
+      "modify": "20260818002349",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     },
     {
-      "from": "/downloads/All Creatures Great and Small S04 br 10bit hevc-d3g/All.Creatures.Great.and.Small.S04E07.On.A.Wing.and.a.Prayer.1080p.Blu-ray.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/All Creatures Great and Small (2020)/Season 04/All Creatures Great and Small (2020) - S04E07 - On A Wing and a Prayer.mkv",
-      "size": 2336366531,
-      "modify": "20261021082905",
-      "reason": "Verified All Creatures Great and Small 2020 season/episode title and canonical Plex location"
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E14.Joey.and.the.Premiere.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E14 - Joey and the Premiere.mkv",
+      "size": 1389991189,
+      "modify": "20260818002030",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E15.Joey.and.the.Assistant.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E15 - Joey and the Assistant.mkv",
+      "size": 1640731297,
+      "modify": "20260818002351",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E16.Joey.and.the.Tonight.Show.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E16 - Joey and the Tonight Show.mkv",
+      "size": 1308778354,
+      "modify": "20260818002401",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E17.Joey.and.the.Valentines.Date.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E17 - Joey and the Valentines Date.mkv",
+      "size": 1793869864,
+      "modify": "20260818002415",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E18.Joey.and.the.Wrong.Name.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E18 - Joey and the Wrong Name.mkv",
+      "size": 1599565214,
+      "modify": "20260818002100",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E19.Joey.and.the.Fancy.Sister.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E19 - Joey and the Fancy Sister.mkv",
+      "size": 1755767722,
+      "modify": "20260818002428",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E20.Joey.and.the.Neighbor.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E20 - Joey and the Neighbor.mkv",
+      "size": 1676401629,
+      "modify": "20260818002445",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E21.Joey.and.the.Spying.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E21 - Joey and the Spying.mkv",
+      "size": 1768305450,
+      "modify": "20260818002259",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E22.Joey.and.the.Temptation.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E22 - Joey and the Temptation.mkv",
+      "size": 1693260274,
+      "modify": "20260818002312",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E23.Joey.and.the.Breakup.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E23 - Joey and the Breakup.mkv",
+      "size": 1746921684,
+      "modify": "20260818002327",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S01 1080p HMAX WEB-DL DDP2 0 H 264-iCX/Joey.S01E24.Joey.and.the.Moving.In.1080p.HMAX.WEB-DL.DDP2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 01/Joey - S01E24 - Joey and the Moving In.mkv",
+      "size": 1753886593,
+      "modify": "20260818002441",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E01.Joey.and.the.Big.Break.1.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E01 - Joey and the Big Break 1.mkv",
+      "size": 799818178,
+      "modify": "20260817223306",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E02.Joey.and.the.Big.Break.2.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E02 - Joey and the Big Break 2.mkv",
+      "size": 851031327,
+      "modify": "20260817223341",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E03.Joey.and.the.Spanking.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E03 - Joey and the Spanking.mkv",
+      "size": 963774896,
+      "modify": "20260817223420",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E04.Joey.and.the.Stuntman.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E04 - Joey and the Stuntman.mkv",
+      "size": 909717833,
+      "modify": "20260817223446",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E05.Joey.and.the.House.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E05 - Joey and the House.mkv",
+      "size": 886738835,
+      "modify": "20260817223429",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E06.Joey.and.the.ESL.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E06 - Joey and the ESL.mkv",
+      "size": 845148627,
+      "modify": "20260817223427",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E07.Joey.and.the.Poker.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E07 - Joey and the Poker.mkv",
+      "size": 889790638,
+      "modify": "20260817223431",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E08.Joey.and.the.Sex.Tape.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E08 - Joey and the Sex Tape.mkv",
+      "size": 874816667,
+      "modify": "20260817223453",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E09.Joey.and.the.Musical.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E09 - Joey and the Musical.mkv",
+      "size": 824611266,
+      "modify": "20260817223005",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E10.Joey.and.the.Bachelor.Thanksgiving.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E10 - Joey and the Bachelor Thanksgiving.mkv",
+      "size": 913518366,
+      "modify": "20260817223455",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E11.Joey.and.the.High.School.Friend.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E11 - Joey and the High School Friend.mkv",
+      "size": 875450049,
+      "modify": "20260817223500",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E12.Joey.and.the.Tijuana.Trip.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E12 - Joey and the Tijuana Trip.mkv",
+      "size": 983589017,
+      "modify": "20260817223504",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E13.Joey.and.the.Christmas.Party.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E13 - Joey and the Christmas Party.mkv",
+      "size": 988793873,
+      "modify": "20260817223504",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E14.Joey.and.the.Snowball.Fight.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E14 - Joey and the Snowball Fight.mkv",
+      "size": 955504141,
+      "modify": "20260817223507",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E15.Joey.and.the.Dad.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E15 - Joey and the Dad.mkv",
+      "size": 881246794,
+      "modify": "20260817223507",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E16.Joey.and.the.Party.for.Alex.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E16 - Joey and the Party for Alex.mkv",
+      "size": 945585401,
+      "modify": "20260817223328",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E17.Joey.and.the.Big.Move.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E17 - Joey and the Big Move.mkv",
+      "size": 946358847,
+      "modify": "20260817223332",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E18.Joey.and.the.Beard.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E18 - Joey and the Beard.mkv",
+      "size": 1008792169,
+      "modify": "20260817222933",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E19.Joey.and.the.Critic.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E19 - Joey and the Critic.mkv",
+      "size": 808382364,
+      "modify": "20260817223016",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E20.Joey.and.the.Actors.Studio.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E20 - Joey and the Actors Studio.mkv",
+      "size": 991748394,
+      "modify": "20260817223453",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E21.Joey.and.the.Holding.Hands.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E21 - Joey and the Holding Hands.mkv",
+      "size": 885703737,
+      "modify": "20260817223336",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
+    },
+    {
+      "from": "/downloads/Joey S02 1080p ITVX WEB-DL AAC2 0 H 264-iCX/Joey.S02E22.Joey.and.the.Wedding.1080p.ITVX.WEB-DL.AAC2.0.H.264-iCX.mkv",
+      "to": "/downloads/Joey/Season 02/Joey - S02E22 - Joey and the Wedding.mkv",
+      "size": 925336045,
+      "modify": "20260817223453",
+      "reason": "Verified Joey television episode with season and episode title, move to canonical Plex series folder"
     }
   ]
 }
