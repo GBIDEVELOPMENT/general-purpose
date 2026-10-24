@@ -1,105 +1,14 @@
 {
   "root": "/downloads",
-  "batch_id": "tv_premiere_year_014",
-  "description": "Correct misleading broadcast-year tokens following SxxEyy and release/codec suffixes for 8 Bridgerton S04 and 6 Queen Charlotte S01 video episodes, using verified series premiere years.",
+  "batch_id": "movie_southland_001",
+  "description": "Prevent Plex treating a movie release-group basename as a different title by moving the known Southland Tales 2006 video into an exact movie title/year folder.",
   "moves": [
     {
-      "from": "/downloads/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB/Bridgerton.S04E01.2026.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-HDSWEB.mkv",
-      "to": "/downloads/Bridgerton (2020)/Season 04/Bridgerton (2020) - S04E01.mkv",
-      "size": 2623818707,
-      "modify": "20260604224216",
-      "reason": "Verified Bridgerton (2020) premiere year, source episode S04E01; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB/Bridgerton.S04E02.2026.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-HDSWEB.mkv",
-      "to": "/downloads/Bridgerton (2020)/Season 04/Bridgerton (2020) - S04E02.mkv",
-      "size": 2712777885,
-      "modify": "20260604224213",
-      "reason": "Verified Bridgerton (2020) premiere year, source episode S04E02; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB/Bridgerton.S04E03.2026.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-HDSWEB.mkv",
-      "to": "/downloads/Bridgerton (2020)/Season 04/Bridgerton (2020) - S04E03.mkv",
-      "size": 2923346988,
-      "modify": "20260604224213",
-      "reason": "Verified Bridgerton (2020) premiere year, source episode S04E03; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB/Bridgerton.S04E04.2026.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-HDSWEB.mkv",
-      "to": "/downloads/Bridgerton (2020)/Season 04/Bridgerton (2020) - S04E04.mkv",
-      "size": 2600928273,
-      "modify": "20260604224212",
-      "reason": "Verified Bridgerton (2020) premiere year, source episode S04E04; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB/Bridgerton.S04E05.2026.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-HDSWEB.mkv",
-      "to": "/downloads/Bridgerton (2020)/Season 04/Bridgerton (2020) - S04E05.mkv",
-      "size": 2665957453,
-      "modify": "20260604224213",
-      "reason": "Verified Bridgerton (2020) premiere year, source episode S04E05; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB/Bridgerton.S04E06.2026.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-HDSWEB.mkv",
-      "to": "/downloads/Bridgerton (2020)/Season 04/Bridgerton (2020) - S04E06.mkv",
-      "size": 2782923986,
-      "modify": "20260604224213",
-      "reason": "Verified Bridgerton (2020) premiere year, source episode S04E06; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB/Bridgerton.S04E07.2026.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-HDSWEB.mkv",
-      "to": "/downloads/Bridgerton (2020)/Season 04/Bridgerton (2020) - S04E07.mkv",
-      "size": 2786819127,
-      "modify": "20260604224212",
-      "reason": "Verified Bridgerton (2020) premiere year, source episode S04E07; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Bridgerton S04 2026 1080p NF WEB-DL DDP5 1 Atmos H 264-HDSWEB/Bridgerton.S04E08.2026.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-HDSWEB.mkv",
-      "to": "/downloads/Bridgerton (2020)/Season 04/Bridgerton (2020) - S04E08.mkv",
-      "size": 2932480086,
-      "modify": "20260604224216",
-      "reason": "Verified Bridgerton (2020) premiere year, source episode S04E08; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Queen Charlotte A Bridgerton Story S01 2023 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/Queen.Charlotte.A.Bridgerton.Story.S01E01.2023.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
-      "to": "/downloads/Queen Charlotte A Bridgerton Story (2023)/Season 01/Queen Charlotte A Bridgerton Story (2023) - S01E01 - Queen to Be.mkv",
-      "size": 2208211604,
-      "modify": "20260805220144",
-      "reason": "Verified Queen Charlotte A Bridgerton Story (2023) premiere year, source episode S01E01; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Queen Charlotte A Bridgerton Story S01 2023 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/Queen.Charlotte.A.Bridgerton.Story.S01E02.2023.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
-      "to": "/downloads/Queen Charlotte A Bridgerton Story (2023)/Season 01/Queen Charlotte A Bridgerton Story (2023) - S01E02 - Honeymoon Bliss.mkv",
-      "size": 2482482896,
-      "modify": "20260805220148",
-      "reason": "Verified Queen Charlotte A Bridgerton Story (2023) premiere year, source episode S01E02; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Queen Charlotte A Bridgerton Story S01 2023 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/Queen.Charlotte.A.Bridgerton.Story.S01E03.2023.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
-      "to": "/downloads/Queen Charlotte A Bridgerton Story (2023)/Season 01/Queen Charlotte A Bridgerton Story (2023) - S01E03 - Even Days.mkv",
-      "size": 2269242846,
-      "modify": "20260805220152",
-      "reason": "Verified Queen Charlotte A Bridgerton Story (2023) premiere year, source episode S01E03; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Queen Charlotte A Bridgerton Story S01 2023 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/Queen.Charlotte.A.Bridgerton.Story.S01E04.2023.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
-      "to": "/downloads/Queen Charlotte A Bridgerton Story (2023)/Season 01/Queen Charlotte A Bridgerton Story (2023) - S01E04 - Holding the King.mkv",
-      "size": 2182465209,
-      "modify": "20260805220152",
-      "reason": "Verified Queen Charlotte A Bridgerton Story (2023) premiere year, source episode S01E04; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Queen Charlotte A Bridgerton Story S01 2023 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/Queen.Charlotte.A.Bridgerton.Story.S01E05.2023.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
-      "to": "/downloads/Queen Charlotte A Bridgerton Story (2023)/Season 01/Queen Charlotte A Bridgerton Story (2023) - S01E05 - Gardens in Bloom.mkv",
-      "size": 3109467897,
-      "modify": "20260805220138",
-      "reason": "Verified Queen Charlotte A Bridgerton Story (2023) premiere year, source episode S01E05; move year to show name and drop noisy post-episode release-year field"
-    },
-    {
-      "from": "/downloads/Queen Charlotte A Bridgerton Story S01 2023 Complete 1080p Netflix WEB-DL AVC DDP 5 1-DBTV/Queen.Charlotte.A.Bridgerton.Story.S01E06.2023.1080p.Netflix.WEB-DL.AVC.DDP.5.1-DBTV.mkv",
-      "to": "/downloads/Queen Charlotte A Bridgerton Story (2023)/Season 01/Queen Charlotte A Bridgerton Story (2023) - S01E06 - Crown Jewels.mkv",
-      "size": 3547139464,
-      "modify": "20260805220149",
-      "reason": "Verified Queen Charlotte A Bridgerton Story (2023) premiere year, source episode S01E06; move year to show name and drop noisy post-episode release-year field"
+      "from": "/downloads/Southland.Tales.2006.1080p.Bluray.x264-SECTOR7/sector7-southland.tales.1080p-x264.mkv",
+      "to": "/downloads/Southland Tales (2006)/Southland Tales (2006).mkv",
+      "size": 9390565517,
+      "modify": "20081118125153",
+      "reason": "Verified full movie title and year from release folder; former stem begins with release-group sector7 and lacks year"
     }
   ]
 }
