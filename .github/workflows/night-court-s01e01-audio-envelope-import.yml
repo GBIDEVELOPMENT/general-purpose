@@ -1,0 +1,49 @@
+name: Night Court retain exact original S01E01 mixed-soundtrack RMS evidence
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/validate_s01e01_audio_energy_import.py'
+      - 'Night Court/tools/test_s01e01_audio_energy_import.py'
+      - 'Night Court/S01E01-SOUNDTRACK-ENERGY-IMPORT.md'
+      - '.github/workflows/night-court-s01e01-audio-envelope-import.yml'
+permissions:
+  actions: read
+  contents: write
+jobs:
+  import:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref == 'data/night-court-s01e01-real-sound-envelope' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-s01e01-real-sound-envelope
+          persist-credentials: true
+      - name: Reject invalid source/audio claims without artifacts or credentials
+        run: python 'Night Court/tools/test_s01e01_audio_energy_import.py'
+      - name: Fetch fixed successful exact original-AVI numeric-only artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/nc-original-sound"
+          gh run download 40066968589 --repo gamesbyian/general-purpose \
+            --name night-court-s01e01-source-mix-sound-energy \
+            --dir "${{ runner.temp }}/nc-original-sound"
+      - name: Verify source JSON SHA, 362 bins, 11 tasks and store no source media
+        run: |
+          python 'Night Court/tools/validate_s01e01_audio_energy_import.py' \
+            "${{ runner.temp }}/nc-original-sound/energy-envelope.json"
+      - name: Commit verified numerical metadata to working branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/audio-energy-v1/energy-envelope.json' \
+            'Night Court/seasons/S01/S01E01/derived/audio-energy-v1/energy-review.md'
+          if ! git diff --cached --quiet; then
+            git commit -m 'data(night-court): retain original-cut source-mix RMS and peak profile'
+            git push origin HEAD:data/night-court-s01e01-real-sound-envelope
+          fi

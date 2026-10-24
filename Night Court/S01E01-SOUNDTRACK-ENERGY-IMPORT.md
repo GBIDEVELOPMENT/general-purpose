@@ -1,0 +1,7 @@
+# S01E01 source-only numeric soundtrack evidence import
+
+The original SHA-pinned S01E01 36.162-second cut (00:56.912–01:33.074) was decoded safely by trusted source workflow [#40066968589](https://github.com/gamesbyian/general-purpose/actions/runs/40066968589), which verified the exact original AVI SHA and size. It produced 362 **100ms** mono television-mix RMS/peak level records and 11 original-caption-turn numerical level summaries; no PCM/AVI was uploaded, and no speech/actor or vocal delivery was inferred.
+
+The fixed source artifact #12549956081 has ZIP SHA-256 `69cd4519af34a68fe326bd03f9dea77d69023b8913f7d4510c6323b863d7e7f3` and unzipped JSON SHA-256 `1943f489cb29bdc4446984709e55866284c8aefcb53681e8f8cf4a252a54ad2a`. This PR's tightly scoped import reads that artifact by exact successful run ID, verifies its original JSON SHA and every source time/word-review row, commits **only the validated numeric JSON and an accompanying descriptive report** to the working branch, and never executes a runner job with FTP credentials. Existing repo workflows follow the same PR-bounded successful-artifact ingestion pattern.
+
+A real mixed soundtrack level is not an isolated voice, verified word, sound effect identifier, emotion, caption offset or full episode script. Nothing from these numeric observations can independently accept any C19–C27 dialogue wording, speaker identity or stage action. The 17 official review decisions remain pending; 0/193 episode-complete screenplays.

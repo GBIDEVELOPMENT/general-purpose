@@ -1,0 +1,2711 @@
+{
+  "schema": "night-court-s01e01-mixed-soundtrack-envelope/1",
+  "episode_id": "S01E01",
+  "original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_source_srt_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_review_window_ms": [
+    56912,
+    93074
+  ],
+  "source_audio_extraction": "FFmpeg original AVI 16kHz mono PCM in ephemeral memory only",
+  "nominal_decoded_time_origin_ms": 56912,
+  "decoded_sample_rate_hz": 16000,
+  "sample_count": 578592,
+  "duration_ms_derived_from_sample_count": 36162,
+  "level_bin_width_ms": 100,
+  "level_bins": [
+    {
+      "index": 0,
+      "nominal_start_ms": 56912,
+      "nominal_end_ms": 57012,
+      "rms_dbfs": -18.827,
+      "peak_dbfs": -8.537
+    },
+    {
+      "index": 1,
+      "nominal_start_ms": 57012,
+      "nominal_end_ms": 57112,
+      "rms_dbfs": -29.084,
+      "peak_dbfs": -15.735
+    },
+    {
+      "index": 2,
+      "nominal_start_ms": 57112,
+      "nominal_end_ms": 57212,
+      "rms_dbfs": -49.031,
+      "peak_dbfs": -34.717
+    },
+    {
+      "index": 3,
+      "nominal_start_ms": 57212,
+      "nominal_end_ms": 57312,
+      "rms_dbfs": -59.242,
+      "peak_dbfs": -49.481
+    },
+    {
+      "index": 4,
+      "nominal_start_ms": 57312,
+      "nominal_end_ms": 57412,
+      "rms_dbfs": -56.044,
+      "peak_dbfs": -45.399
+    },
+    {
+      "index": 5,
+      "nominal_start_ms": 57412,
+      "nominal_end_ms": 57512,
+      "rms_dbfs": -58.286,
+      "peak_dbfs": -44.288
+    },
+    {
+      "index": 6,
+      "nominal_start_ms": 57512,
+      "nominal_end_ms": 57612,
+      "rms_dbfs": -50.911,
+      "peak_dbfs": -38.488
+    },
+    {
+      "index": 7,
+      "nominal_start_ms": 57612,
+      "nominal_end_ms": 57712,
+      "rms_dbfs": -33.962,
+      "peak_dbfs": -17.35
+    },
+    {
+      "index": 8,
+      "nominal_start_ms": 57712,
+      "nominal_end_ms": 57812,
+      "rms_dbfs": -24.527,
+      "peak_dbfs": -11.525
+    },
+    {
+      "index": 9,
+      "nominal_start_ms": 57812,
+      "nominal_end_ms": 57912,
+      "rms_dbfs": -18.17,
+      "peak_dbfs": -5.719
+    },
+    {
+      "index": 10,
+      "nominal_start_ms": 57912,
+      "nominal_end_ms": 58012,
+      "rms_dbfs": -14.84,
+      "peak_dbfs": -6.05
+    },
+    {
+      "index": 11,
+      "nominal_start_ms": 58012,
+      "nominal_end_ms": 58112,
+      "rms_dbfs": -16.742,
+      "peak_dbfs": -6.737
+    },
+    {
+      "index": 12,
+      "nominal_start_ms": 58112,
+      "nominal_end_ms": 58212,
+      "rms_dbfs": -16.738,
+      "peak_dbfs": -6.773
+    },
+    {
+      "index": 13,
+      "nominal_start_ms": 58212,
+      "nominal_end_ms": 58312,
+      "rms_dbfs": -18.777,
+      "peak_dbfs": -8.832
+    },
+    {
+      "index": 14,
+      "nominal_start_ms": 58312,
+      "nominal_end_ms": 58412,
+      "rms_dbfs": -18.322,
+      "peak_dbfs": -7.794
+    },
+    {
+      "index": 15,
+      "nominal_start_ms": 58412,
+      "nominal_end_ms": 58512,
+      "rms_dbfs": -20.826,
+      "peak_dbfs": -8.42
+    },
+    {
+      "index": 16,
+      "nominal_start_ms": 58512,
+      "nominal_end_ms": 58612,
+      "rms_dbfs": -19.966,
+      "peak_dbfs": -9.224
+    },
+    {
+      "index": 17,
+      "nominal_start_ms": 58612,
+      "nominal_end_ms": 58712,
+      "rms_dbfs": -26.523,
+      "peak_dbfs": -13.811
+    },
+    {
+      "index": 18,
+      "nominal_start_ms": 58712,
+      "nominal_end_ms": 58812,
+      "rms_dbfs": -24.107,
+      "peak_dbfs": -11.367
+    },
+    {
+      "index": 19,
+      "nominal_start_ms": 58812,
+      "nominal_end_ms": 58912,
+      "rms_dbfs": -26.234,
+      "peak_dbfs": -11.173
+    },
+    {
+      "index": 20,
+      "nominal_start_ms": 58912,
+      "nominal_end_ms": 59012,
+      "rms_dbfs": -42.709,
+      "peak_dbfs": -32.901
+    },
+    {
+      "index": 21,
+      "nominal_start_ms": 59012,
+      "nominal_end_ms": 59112,
+      "rms_dbfs": -43.805,
+      "peak_dbfs": -32.043
+    },
+    {
+      "index": 22,
+      "nominal_start_ms": 59112,
+      "nominal_end_ms": 59212,
+      "rms_dbfs": -27.773,
+      "peak_dbfs": -15.311
+    },
+    {
+      "index": 23,
+      "nominal_start_ms": 59212,
+      "nominal_end_ms": 59312,
+      "rms_dbfs": -25.271,
+      "peak_dbfs": -14.694
+    },
+    {
+      "index": 24,
+      "nominal_start_ms": 59312,
+      "nominal_end_ms": 59412,
+      "rms_dbfs": -26.108,
+      "peak_dbfs": -12.115
+    },
+    {
+      "index": 25,
+      "nominal_start_ms": 59412,
+      "nominal_end_ms": 59512,
+      "rms_dbfs": -26.934,
+      "peak_dbfs": -12.728
+    },
+    {
+      "index": 26,
+      "nominal_start_ms": 59512,
+      "nominal_end_ms": 59612,
+      "rms_dbfs": -21.976,
+      "peak_dbfs": -13.117
+    },
+    {
+      "index": 27,
+      "nominal_start_ms": 59612,
+      "nominal_end_ms": 59712,
+      "rms_dbfs": -23.019,
+      "peak_dbfs": -14.387
+    },
+    {
+      "index": 28,
+      "nominal_start_ms": 59712,
+      "nominal_end_ms": 59812,
+      "rms_dbfs": -19.482,
+      "peak_dbfs": -8.374
+    },
+    {
+      "index": 29,
+      "nominal_start_ms": 59812,
+      "nominal_end_ms": 59912,
+      "rms_dbfs": -21.401,
+      "peak_dbfs": -12.706
+    },
+    {
+      "index": 30,
+      "nominal_start_ms": 59912,
+      "nominal_end_ms": 60012,
+      "rms_dbfs": -23.018,
+      "peak_dbfs": -15.088
+    },
+    {
+      "index": 31,
+      "nominal_start_ms": 60012,
+      "nominal_end_ms": 60112,
+      "rms_dbfs": -39.414,
+      "peak_dbfs": -23.832
+    },
+    {
+      "index": 32,
+      "nominal_start_ms": 60112,
+      "nominal_end_ms": 60212,
+      "rms_dbfs": -30.972,
+      "peak_dbfs": -18.134
+    },
+    {
+      "index": 33,
+      "nominal_start_ms": 60212,
+      "nominal_end_ms": 60312,
+      "rms_dbfs": -24.322,
+      "peak_dbfs": -15.242
+    },
+    {
+      "index": 34,
+      "nominal_start_ms": 60312,
+      "nominal_end_ms": 60412,
+      "rms_dbfs": -22.111,
+      "peak_dbfs": -14.18
+    },
+    {
+      "index": 35,
+      "nominal_start_ms": 60412,
+      "nominal_end_ms": 60512,
+      "rms_dbfs": -18.065,
+      "peak_dbfs": -9.267
+    },
+    {
+      "index": 36,
+      "nominal_start_ms": 60512,
+      "nominal_end_ms": 60612,
+      "rms_dbfs": -22.899,
+      "peak_dbfs": -9.912
+    },
+    {
+      "index": 37,
+      "nominal_start_ms": 60612,
+      "nominal_end_ms": 60712,
+      "rms_dbfs": -58.915,
+      "peak_dbfs": -48.441
+    },
+    {
+      "index": 38,
+      "nominal_start_ms": 60712,
+      "nominal_end_ms": 60812,
+      "rms_dbfs": -61.47,
+      "peak_dbfs": -51.419
+    },
+    {
+      "index": 39,
+      "nominal_start_ms": 60812,
+      "nominal_end_ms": 60912,
+      "rms_dbfs": -24.241,
+      "peak_dbfs": -5.998
+    },
+    {
+      "index": 40,
+      "nominal_start_ms": 60912,
+      "nominal_end_ms": 61012,
+      "rms_dbfs": -22.525,
+      "peak_dbfs": -7.205
+    },
+    {
+      "index": 41,
+      "nominal_start_ms": 61012,
+      "nominal_end_ms": 61112,
+      "rms_dbfs": -14.51,
+      "peak_dbfs": -4.038
+    },
+    {
+      "index": 42,
+      "nominal_start_ms": 61112,
+      "nominal_end_ms": 61212,
+      "rms_dbfs": -17.939,
+      "peak_dbfs": -6.022
+    },
+    {
+      "index": 43,
+      "nominal_start_ms": 61212,
+      "nominal_end_ms": 61312,
+      "rms_dbfs": -17.746,
+      "peak_dbfs": -6.189
+    },
+    {
+      "index": 44,
+      "nominal_start_ms": 61312,
+      "nominal_end_ms": 61412,
+      "rms_dbfs": -21.662,
+      "peak_dbfs": -7.877
+    },
+    {
+      "index": 45,
+      "nominal_start_ms": 61412,
+      "nominal_end_ms": 61512,
+      "rms_dbfs": -21.863,
+      "peak_dbfs": -8.033
+    },
+    {
+      "index": 46,
+      "nominal_start_ms": 61512,
+      "nominal_end_ms": 61612,
+      "rms_dbfs": -26.015,
+      "peak_dbfs": -13.922
+    },
+    {
+      "index": 47,
+      "nominal_start_ms": 61612,
+      "nominal_end_ms": 61712,
+      "rms_dbfs": -18.638,
+      "peak_dbfs": -7.236
+    },
+    {
+      "index": 48,
+      "nominal_start_ms": 61712,
+      "nominal_end_ms": 61812,
+      "rms_dbfs": -19.404,
+      "peak_dbfs": -7.932
+    },
+    {
+      "index": 49,
+      "nominal_start_ms": 61812,
+      "nominal_end_ms": 61912,
+      "rms_dbfs": -18.999,
+      "peak_dbfs": -6.346
+    },
+    {
+      "index": 50,
+      "nominal_start_ms": 61912,
+      "nominal_end_ms": 62012,
+      "rms_dbfs": -23.354,
+      "peak_dbfs": -9.298
+    },
+    {
+      "index": 51,
+      "nominal_start_ms": 62012,
+      "nominal_end_ms": 62112,
+      "rms_dbfs": -20.059,
+      "peak_dbfs": -7.373
+    },
+    {
+      "index": 52,
+      "nominal_start_ms": 62112,
+      "nominal_end_ms": 62212,
+      "rms_dbfs": -20.427,
+      "peak_dbfs": -7.496
+    },
+    {
+      "index": 53,
+      "nominal_start_ms": 62212,
+      "nominal_end_ms": 62312,
+      "rms_dbfs": -25.949,
+      "peak_dbfs": -12.391
+    },
+    {
+      "index": 54,
+      "nominal_start_ms": 62312,
+      "nominal_end_ms": 62412,
+      "rms_dbfs": -25.175,
+      "peak_dbfs": -7.383
+    },
+    {
+      "index": 55,
+      "nominal_start_ms": 62412,
+      "nominal_end_ms": 62512,
+      "rms_dbfs": -15.625,
+      "peak_dbfs": -4.856
+    },
+    {
+      "index": 56,
+      "nominal_start_ms": 62512,
+      "nominal_end_ms": 62612,
+      "rms_dbfs": -24.466,
+      "peak_dbfs": -12.541
+    },
+    {
+      "index": 57,
+      "nominal_start_ms": 62612,
+      "nominal_end_ms": 62712,
+      "rms_dbfs": -29.452,
+      "peak_dbfs": -14.188
+    },
+    {
+      "index": 58,
+      "nominal_start_ms": 62712,
+      "nominal_end_ms": 62812,
+      "rms_dbfs": -39.794,
+      "peak_dbfs": -27.957
+    },
+    {
+      "index": 59,
+      "nominal_start_ms": 62812,
+      "nominal_end_ms": 62912,
+      "rms_dbfs": -60.205,
+      "peak_dbfs": -45.803
+    },
+    {
+      "index": 60,
+      "nominal_start_ms": 62912,
+      "nominal_end_ms": 63012,
+      "rms_dbfs": -49.742,
+      "peak_dbfs": -37.579
+    },
+    {
+      "index": 61,
+      "nominal_start_ms": 63012,
+      "nominal_end_ms": 63112,
+      "rms_dbfs": -48.855,
+      "peak_dbfs": -36.278
+    },
+    {
+      "index": 62,
+      "nominal_start_ms": 63112,
+      "nominal_end_ms": 63212,
+      "rms_dbfs": -34.273,
+      "peak_dbfs": -20.418
+    },
+    {
+      "index": 63,
+      "nominal_start_ms": 63212,
+      "nominal_end_ms": 63312,
+      "rms_dbfs": -16.648,
+      "peak_dbfs": -4.893
+    },
+    {
+      "index": 64,
+      "nominal_start_ms": 63312,
+      "nominal_end_ms": 63412,
+      "rms_dbfs": -13.92,
+      "peak_dbfs": -6.343
+    },
+    {
+      "index": 65,
+      "nominal_start_ms": 63412,
+      "nominal_end_ms": 63512,
+      "rms_dbfs": -17.404,
+      "peak_dbfs": -6.832
+    },
+    {
+      "index": 66,
+      "nominal_start_ms": 63512,
+      "nominal_end_ms": 63612,
+      "rms_dbfs": -16.449,
+      "peak_dbfs": -7.521
+    },
+    {
+      "index": 67,
+      "nominal_start_ms": 63612,
+      "nominal_end_ms": 63712,
+      "rms_dbfs": -16.578,
+      "peak_dbfs": -7.645
+    },
+    {
+      "index": 68,
+      "nominal_start_ms": 63712,
+      "nominal_end_ms": 63812,
+      "rms_dbfs": -20.666,
+      "peak_dbfs": -8.381
+    },
+    {
+      "index": 69,
+      "nominal_start_ms": 63812,
+      "nominal_end_ms": 63912,
+      "rms_dbfs": -22.575,
+      "peak_dbfs": -7.334
+    },
+    {
+      "index": 70,
+      "nominal_start_ms": 63912,
+      "nominal_end_ms": 64012,
+      "rms_dbfs": -21.929,
+      "peak_dbfs": -8.277
+    },
+    {
+      "index": 71,
+      "nominal_start_ms": 64012,
+      "nominal_end_ms": 64112,
+      "rms_dbfs": -20.258,
+      "peak_dbfs": -7.46
+    },
+    {
+      "index": 72,
+      "nominal_start_ms": 64112,
+      "nominal_end_ms": 64212,
+      "rms_dbfs": -24.442,
+      "peak_dbfs": -10.123
+    },
+    {
+      "index": 73,
+      "nominal_start_ms": 64212,
+      "nominal_end_ms": 64312,
+      "rms_dbfs": -18.901,
+      "peak_dbfs": -9.57
+    },
+    {
+      "index": 74,
+      "nominal_start_ms": 64312,
+      "nominal_end_ms": 64412,
+      "rms_dbfs": -15.628,
+      "peak_dbfs": -6.716
+    },
+    {
+      "index": 75,
+      "nominal_start_ms": 64412,
+      "nominal_end_ms": 64512,
+      "rms_dbfs": -16.837,
+      "peak_dbfs": -8.205
+    },
+    {
+      "index": 76,
+      "nominal_start_ms": 64512,
+      "nominal_end_ms": 64612,
+      "rms_dbfs": -19.79,
+      "peak_dbfs": -6.982
+    },
+    {
+      "index": 77,
+      "nominal_start_ms": 64612,
+      "nominal_end_ms": 64712,
+      "rms_dbfs": -26.077,
+      "peak_dbfs": -13.191
+    },
+    {
+      "index": 78,
+      "nominal_start_ms": 64712,
+      "nominal_end_ms": 64812,
+      "rms_dbfs": -15.994,
+      "peak_dbfs": -6.144
+    },
+    {
+      "index": 79,
+      "nominal_start_ms": 64812,
+      "nominal_end_ms": 64912,
+      "rms_dbfs": -18.436,
+      "peak_dbfs": -7.25
+    },
+    {
+      "index": 80,
+      "nominal_start_ms": 64912,
+      "nominal_end_ms": 65012,
+      "rms_dbfs": -26.009,
+      "peak_dbfs": -10.768
+    },
+    {
+      "index": 81,
+      "nominal_start_ms": 65012,
+      "nominal_end_ms": 65112,
+      "rms_dbfs": -22.481,
+      "peak_dbfs": -7.647
+    },
+    {
+      "index": 82,
+      "nominal_start_ms": 65112,
+      "nominal_end_ms": 65212,
+      "rms_dbfs": -18.479,
+      "peak_dbfs": -6.723
+    },
+    {
+      "index": 83,
+      "nominal_start_ms": 65212,
+      "nominal_end_ms": 65312,
+      "rms_dbfs": -27.313,
+      "peak_dbfs": -14.407
+    },
+    {
+      "index": 84,
+      "nominal_start_ms": 65312,
+      "nominal_end_ms": 65412,
+      "rms_dbfs": -33.552,
+      "peak_dbfs": -15.981
+    },
+    {
+      "index": 85,
+      "nominal_start_ms": 65412,
+      "nominal_end_ms": 65512,
+      "rms_dbfs": -18.808,
+      "peak_dbfs": -6.282
+    },
+    {
+      "index": 86,
+      "nominal_start_ms": 65512,
+      "nominal_end_ms": 65612,
+      "rms_dbfs": -22.476,
+      "peak_dbfs": -11.928
+    },
+    {
+      "index": 87,
+      "nominal_start_ms": 65612,
+      "nominal_end_ms": 65712,
+      "rms_dbfs": -21.345,
+      "peak_dbfs": -9.556
+    },
+    {
+      "index": 88,
+      "nominal_start_ms": 65712,
+      "nominal_end_ms": 65812,
+      "rms_dbfs": -18.371,
+      "peak_dbfs": -5.839
+    },
+    {
+      "index": 89,
+      "nominal_start_ms": 65812,
+      "nominal_end_ms": 65912,
+      "rms_dbfs": -18.805,
+      "peak_dbfs": -6.136
+    },
+    {
+      "index": 90,
+      "nominal_start_ms": 65912,
+      "nominal_end_ms": 66012,
+      "rms_dbfs": -24.401,
+      "peak_dbfs": -9.498
+    },
+    {
+      "index": 91,
+      "nominal_start_ms": 66012,
+      "nominal_end_ms": 66112,
+      "rms_dbfs": -57.488,
+      "peak_dbfs": -42.777
+    },
+    {
+      "index": 92,
+      "nominal_start_ms": 66112,
+      "nominal_end_ms": 66212,
+      "rms_dbfs": -61.8,
+      "peak_dbfs": -51.721
+    },
+    {
+      "index": 93,
+      "nominal_start_ms": 66212,
+      "nominal_end_ms": 66312,
+      "rms_dbfs": -59.25,
+      "peak_dbfs": -49.171
+    },
+    {
+      "index": 94,
+      "nominal_start_ms": 66312,
+      "nominal_end_ms": 66412,
+      "rms_dbfs": -42.57,
+      "peak_dbfs": -23.79
+    },
+    {
+      "index": 95,
+      "nominal_start_ms": 66412,
+      "nominal_end_ms": 66512,
+      "rms_dbfs": -16.499,
+      "peak_dbfs": -5.521
+    },
+    {
+      "index": 96,
+      "nominal_start_ms": 66512,
+      "nominal_end_ms": 66612,
+      "rms_dbfs": -14.673,
+      "peak_dbfs": -6.132
+    },
+    {
+      "index": 97,
+      "nominal_start_ms": 66612,
+      "nominal_end_ms": 66712,
+      "rms_dbfs": -22.276,
+      "peak_dbfs": -8.379
+    },
+    {
+      "index": 98,
+      "nominal_start_ms": 66712,
+      "nominal_end_ms": 66812,
+      "rms_dbfs": -19.572,
+      "peak_dbfs": -6.417
+    },
+    {
+      "index": 99,
+      "nominal_start_ms": 66812,
+      "nominal_end_ms": 66912,
+      "rms_dbfs": -15.642,
+      "peak_dbfs": -6.306
+    },
+    {
+      "index": 100,
+      "nominal_start_ms": 66912,
+      "nominal_end_ms": 67012,
+      "rms_dbfs": -16.054,
+      "peak_dbfs": -7.02
+    },
+    {
+      "index": 101,
+      "nominal_start_ms": 67012,
+      "nominal_end_ms": 67112,
+      "rms_dbfs": -18.653,
+      "peak_dbfs": -7.474
+    },
+    {
+      "index": 102,
+      "nominal_start_ms": 67112,
+      "nominal_end_ms": 67212,
+      "rms_dbfs": -17.23,
+      "peak_dbfs": -7.339
+    },
+    {
+      "index": 103,
+      "nominal_start_ms": 67212,
+      "nominal_end_ms": 67312,
+      "rms_dbfs": -28.649,
+      "peak_dbfs": -18.381
+    },
+    {
+      "index": 104,
+      "nominal_start_ms": 67312,
+      "nominal_end_ms": 67412,
+      "rms_dbfs": -19.36,
+      "peak_dbfs": -7.905
+    },
+    {
+      "index": 105,
+      "nominal_start_ms": 67412,
+      "nominal_end_ms": 67512,
+      "rms_dbfs": -30.603,
+      "peak_dbfs": -11.761
+    },
+    {
+      "index": 106,
+      "nominal_start_ms": 67512,
+      "nominal_end_ms": 67612,
+      "rms_dbfs": -50.882,
+      "peak_dbfs": -37.13
+    },
+    {
+      "index": 107,
+      "nominal_start_ms": 67612,
+      "nominal_end_ms": 67712,
+      "rms_dbfs": -46.219,
+      "peak_dbfs": -33.736
+    },
+    {
+      "index": 108,
+      "nominal_start_ms": 67712,
+      "nominal_end_ms": 67812,
+      "rms_dbfs": -50.494,
+      "peak_dbfs": -36.33
+    },
+    {
+      "index": 109,
+      "nominal_start_ms": 67812,
+      "nominal_end_ms": 67912,
+      "rms_dbfs": -45.016,
+      "peak_dbfs": -29.317
+    },
+    {
+      "index": 110,
+      "nominal_start_ms": 67912,
+      "nominal_end_ms": 68012,
+      "rms_dbfs": -23.974,
+      "peak_dbfs": -11.144
+    },
+    {
+      "index": 111,
+      "nominal_start_ms": 68012,
+      "nominal_end_ms": 68112,
+      "rms_dbfs": -22.691,
+      "peak_dbfs": -10.636
+    },
+    {
+      "index": 112,
+      "nominal_start_ms": 68112,
+      "nominal_end_ms": 68212,
+      "rms_dbfs": -15.804,
+      "peak_dbfs": -6.524
+    },
+    {
+      "index": 113,
+      "nominal_start_ms": 68212,
+      "nominal_end_ms": 68312,
+      "rms_dbfs": -16.614,
+      "peak_dbfs": -7.304
+    },
+    {
+      "index": 114,
+      "nominal_start_ms": 68312,
+      "nominal_end_ms": 68412,
+      "rms_dbfs": -16.086,
+      "peak_dbfs": -6.091
+    },
+    {
+      "index": 115,
+      "nominal_start_ms": 68412,
+      "nominal_end_ms": 68512,
+      "rms_dbfs": -18.976,
+      "peak_dbfs": -9.207
+    },
+    {
+      "index": 116,
+      "nominal_start_ms": 68512,
+      "nominal_end_ms": 68612,
+      "rms_dbfs": -17.781,
+      "peak_dbfs": -6.848
+    },
+    {
+      "index": 117,
+      "nominal_start_ms": 68612,
+      "nominal_end_ms": 68712,
+      "rms_dbfs": -17.478,
+      "peak_dbfs": -6.944
+    },
+    {
+      "index": 118,
+      "nominal_start_ms": 68712,
+      "nominal_end_ms": 68812,
+      "rms_dbfs": -18.696,
+      "peak_dbfs": -7.902
+    },
+    {
+      "index": 119,
+      "nominal_start_ms": 68812,
+      "nominal_end_ms": 68912,
+      "rms_dbfs": -17.347,
+      "peak_dbfs": -7.696
+    },
+    {
+      "index": 120,
+      "nominal_start_ms": 68912,
+      "nominal_end_ms": 69012,
+      "rms_dbfs": -17.91,
+      "peak_dbfs": -7.417
+    },
+    {
+      "index": 121,
+      "nominal_start_ms": 69012,
+      "nominal_end_ms": 69112,
+      "rms_dbfs": -19.717,
+      "peak_dbfs": -9.909
+    },
+    {
+      "index": 122,
+      "nominal_start_ms": 69112,
+      "nominal_end_ms": 69212,
+      "rms_dbfs": -18.671,
+      "peak_dbfs": -7.239
+    },
+    {
+      "index": 123,
+      "nominal_start_ms": 69212,
+      "nominal_end_ms": 69312,
+      "rms_dbfs": -22.138,
+      "peak_dbfs": -9.506
+    },
+    {
+      "index": 124,
+      "nominal_start_ms": 69312,
+      "nominal_end_ms": 69412,
+      "rms_dbfs": -24.663,
+      "peak_dbfs": -10.582
+    },
+    {
+      "index": 125,
+      "nominal_start_ms": 69412,
+      "nominal_end_ms": 69512,
+      "rms_dbfs": -34.686,
+      "peak_dbfs": -23.292
+    },
+    {
+      "index": 126,
+      "nominal_start_ms": 69512,
+      "nominal_end_ms": 69612,
+      "rms_dbfs": -35.586,
+      "peak_dbfs": -19.738
+    },
+    {
+      "index": 127,
+      "nominal_start_ms": 69612,
+      "nominal_end_ms": 69712,
+      "rms_dbfs": -39.079,
+      "peak_dbfs": -26.413
+    },
+    {
+      "index": 128,
+      "nominal_start_ms": 69712,
+      "nominal_end_ms": 69812,
+      "rms_dbfs": -41.968,
+      "peak_dbfs": -28.864
+    },
+    {
+      "index": 129,
+      "nominal_start_ms": 69812,
+      "nominal_end_ms": 69912,
+      "rms_dbfs": -42.832,
+      "peak_dbfs": -30.958
+    },
+    {
+      "index": 130,
+      "nominal_start_ms": 69912,
+      "nominal_end_ms": 70012,
+      "rms_dbfs": -48.88,
+      "peak_dbfs": -35.518
+    },
+    {
+      "index": 131,
+      "nominal_start_ms": 70012,
+      "nominal_end_ms": 70112,
+      "rms_dbfs": -56.407,
+      "peak_dbfs": -43.304
+    },
+    {
+      "index": 132,
+      "nominal_start_ms": 70112,
+      "nominal_end_ms": 70212,
+      "rms_dbfs": -21.085,
+      "peak_dbfs": -10.381
+    },
+    {
+      "index": 133,
+      "nominal_start_ms": 70212,
+      "nominal_end_ms": 70312,
+      "rms_dbfs": -13.084,
+      "peak_dbfs": -4.539
+    },
+    {
+      "index": 134,
+      "nominal_start_ms": 70312,
+      "nominal_end_ms": 70412,
+      "rms_dbfs": -14.906,
+      "peak_dbfs": -7.511
+    },
+    {
+      "index": 135,
+      "nominal_start_ms": 70412,
+      "nominal_end_ms": 70512,
+      "rms_dbfs": -17.774,
+      "peak_dbfs": -8.462
+    },
+    {
+      "index": 136,
+      "nominal_start_ms": 70512,
+      "nominal_end_ms": 70612,
+      "rms_dbfs": -23.543,
+      "peak_dbfs": -14.165
+    },
+    {
+      "index": 137,
+      "nominal_start_ms": 70612,
+      "nominal_end_ms": 70712,
+      "rms_dbfs": -32.783,
+      "peak_dbfs": -22.597
+    },
+    {
+      "index": 138,
+      "nominal_start_ms": 70712,
+      "nominal_end_ms": 70812,
+      "rms_dbfs": -20.234,
+      "peak_dbfs": -9.442
+    },
+    {
+      "index": 139,
+      "nominal_start_ms": 70812,
+      "nominal_end_ms": 70912,
+      "rms_dbfs": -18.497,
+      "peak_dbfs": -8.847
+    },
+    {
+      "index": 140,
+      "nominal_start_ms": 70912,
+      "nominal_end_ms": 71012,
+      "rms_dbfs": -31.51,
+      "peak_dbfs": -20.324
+    },
+    {
+      "index": 141,
+      "nominal_start_ms": 71012,
+      "nominal_end_ms": 71112,
+      "rms_dbfs": -17.839,
+      "peak_dbfs": -7.869
+    },
+    {
+      "index": 142,
+      "nominal_start_ms": 71112,
+      "nominal_end_ms": 71212,
+      "rms_dbfs": -16.68,
+      "peak_dbfs": -7.334
+    },
+    {
+      "index": 143,
+      "nominal_start_ms": 71212,
+      "nominal_end_ms": 71312,
+      "rms_dbfs": -24.644,
+      "peak_dbfs": -9.648
+    },
+    {
+      "index": 144,
+      "nominal_start_ms": 71312,
+      "nominal_end_ms": 71412,
+      "rms_dbfs": -28.317,
+      "peak_dbfs": -21.444
+    },
+    {
+      "index": 145,
+      "nominal_start_ms": 71412,
+      "nominal_end_ms": 71512,
+      "rms_dbfs": -37.702,
+      "peak_dbfs": -25.359
+    },
+    {
+      "index": 146,
+      "nominal_start_ms": 71512,
+      "nominal_end_ms": 71612,
+      "rms_dbfs": -49.337,
+      "peak_dbfs": -27.245
+    },
+    {
+      "index": 147,
+      "nominal_start_ms": 71612,
+      "nominal_end_ms": 71712,
+      "rms_dbfs": -60.702,
+      "peak_dbfs": -48.945
+    },
+    {
+      "index": 148,
+      "nominal_start_ms": 71712,
+      "nominal_end_ms": 71812,
+      "rms_dbfs": -22.81,
+      "peak_dbfs": -4.871
+    },
+    {
+      "index": 149,
+      "nominal_start_ms": 71812,
+      "nominal_end_ms": 71912,
+      "rms_dbfs": -16.375,
+      "peak_dbfs": -3.973
+    },
+    {
+      "index": 150,
+      "nominal_start_ms": 71912,
+      "nominal_end_ms": 72012,
+      "rms_dbfs": -16.695,
+      "peak_dbfs": -7.19
+    },
+    {
+      "index": 151,
+      "nominal_start_ms": 72012,
+      "nominal_end_ms": 72112,
+      "rms_dbfs": -27.605,
+      "peak_dbfs": -13.246
+    },
+    {
+      "index": 152,
+      "nominal_start_ms": 72112,
+      "nominal_end_ms": 72212,
+      "rms_dbfs": -17.847,
+      "peak_dbfs": -4.945
+    },
+    {
+      "index": 153,
+      "nominal_start_ms": 72212,
+      "nominal_end_ms": 72312,
+      "rms_dbfs": -18.583,
+      "peak_dbfs": -7.819
+    },
+    {
+      "index": 154,
+      "nominal_start_ms": 72312,
+      "nominal_end_ms": 72412,
+      "rms_dbfs": -27.094,
+      "peak_dbfs": -17.666
+    },
+    {
+      "index": 155,
+      "nominal_start_ms": 72412,
+      "nominal_end_ms": 72512,
+      "rms_dbfs": -27.615,
+      "peak_dbfs": -17.827
+    },
+    {
+      "index": 156,
+      "nominal_start_ms": 72512,
+      "nominal_end_ms": 72612,
+      "rms_dbfs": -61.831,
+      "peak_dbfs": -52.579
+    },
+    {
+      "index": 157,
+      "nominal_start_ms": 72612,
+      "nominal_end_ms": 72712,
+      "rms_dbfs": -60.832,
+      "peak_dbfs": -51.128
+    },
+    {
+      "index": 158,
+      "nominal_start_ms": 72712,
+      "nominal_end_ms": 72812,
+      "rms_dbfs": -55.363,
+      "peak_dbfs": -43.15
+    },
+    {
+      "index": 159,
+      "nominal_start_ms": 72812,
+      "nominal_end_ms": 72912,
+      "rms_dbfs": -31.796,
+      "peak_dbfs": -14.26
+    },
+    {
+      "index": 160,
+      "nominal_start_ms": 72912,
+      "nominal_end_ms": 73012,
+      "rms_dbfs": -33.223,
+      "peak_dbfs": -17.735
+    },
+    {
+      "index": 161,
+      "nominal_start_ms": 73012,
+      "nominal_end_ms": 73112,
+      "rms_dbfs": -26.102,
+      "peak_dbfs": -14.697
+    },
+    {
+      "index": 162,
+      "nominal_start_ms": 73112,
+      "nominal_end_ms": 73212,
+      "rms_dbfs": -25.561,
+      "peak_dbfs": -12.607
+    },
+    {
+      "index": 163,
+      "nominal_start_ms": 73212,
+      "nominal_end_ms": 73312,
+      "rms_dbfs": -23.192,
+      "peak_dbfs": -10.52
+    },
+    {
+      "index": 164,
+      "nominal_start_ms": 73312,
+      "nominal_end_ms": 73412,
+      "rms_dbfs": -16.412,
+      "peak_dbfs": -7.491
+    },
+    {
+      "index": 165,
+      "nominal_start_ms": 73412,
+      "nominal_end_ms": 73512,
+      "rms_dbfs": -15.056,
+      "peak_dbfs": -5.318
+    },
+    {
+      "index": 166,
+      "nominal_start_ms": 73512,
+      "nominal_end_ms": 73612,
+      "rms_dbfs": -19.478,
+      "peak_dbfs": -7.987
+    },
+    {
+      "index": 167,
+      "nominal_start_ms": 73612,
+      "nominal_end_ms": 73712,
+      "rms_dbfs": -16.181,
+      "peak_dbfs": -6.579
+    },
+    {
+      "index": 168,
+      "nominal_start_ms": 73712,
+      "nominal_end_ms": 73812,
+      "rms_dbfs": -19.752,
+      "peak_dbfs": -10.02
+    },
+    {
+      "index": 169,
+      "nominal_start_ms": 73812,
+      "nominal_end_ms": 73912,
+      "rms_dbfs": -18.573,
+      "peak_dbfs": -8.163
+    },
+    {
+      "index": 170,
+      "nominal_start_ms": 73912,
+      "nominal_end_ms": 74012,
+      "rms_dbfs": -20.281,
+      "peak_dbfs": -7.579
+    },
+    {
+      "index": 171,
+      "nominal_start_ms": 74012,
+      "nominal_end_ms": 74112,
+      "rms_dbfs": -20.416,
+      "peak_dbfs": -10.591
+    },
+    {
+      "index": 172,
+      "nominal_start_ms": 74112,
+      "nominal_end_ms": 74212,
+      "rms_dbfs": -20.998,
+      "peak_dbfs": -9.73
+    },
+    {
+      "index": 173,
+      "nominal_start_ms": 74212,
+      "nominal_end_ms": 74312,
+      "rms_dbfs": -28.171,
+      "peak_dbfs": -16.081
+    },
+    {
+      "index": 174,
+      "nominal_start_ms": 74312,
+      "nominal_end_ms": 74412,
+      "rms_dbfs": -27.884,
+      "peak_dbfs": -15.592
+    },
+    {
+      "index": 175,
+      "nominal_start_ms": 74412,
+      "nominal_end_ms": 74512,
+      "rms_dbfs": -37.471,
+      "peak_dbfs": -25.518
+    },
+    {
+      "index": 176,
+      "nominal_start_ms": 74512,
+      "nominal_end_ms": 74612,
+      "rms_dbfs": -31.168,
+      "peak_dbfs": -17.537
+    },
+    {
+      "index": 177,
+      "nominal_start_ms": 74612,
+      "nominal_end_ms": 74712,
+      "rms_dbfs": -40.133,
+      "peak_dbfs": -26.741
+    },
+    {
+      "index": 178,
+      "nominal_start_ms": 74712,
+      "nominal_end_ms": 74812,
+      "rms_dbfs": -41.112,
+      "peak_dbfs": -25.902
+    },
+    {
+      "index": 179,
+      "nominal_start_ms": 74812,
+      "nominal_end_ms": 74912,
+      "rms_dbfs": -44.769,
+      "peak_dbfs": -29.885
+    },
+    {
+      "index": 180,
+      "nominal_start_ms": 74912,
+      "nominal_end_ms": 75012,
+      "rms_dbfs": -40.103,
+      "peak_dbfs": -28.343
+    },
+    {
+      "index": 181,
+      "nominal_start_ms": 75012,
+      "nominal_end_ms": 75112,
+      "rms_dbfs": -31.92,
+      "peak_dbfs": -20.053
+    },
+    {
+      "index": 182,
+      "nominal_start_ms": 75112,
+      "nominal_end_ms": 75212,
+      "rms_dbfs": -28.734,
+      "peak_dbfs": -19.433
+    },
+    {
+      "index": 183,
+      "nominal_start_ms": 75212,
+      "nominal_end_ms": 75312,
+      "rms_dbfs": -38.141,
+      "peak_dbfs": -16.951
+    },
+    {
+      "index": 184,
+      "nominal_start_ms": 75312,
+      "nominal_end_ms": 75412,
+      "rms_dbfs": -13.424,
+      "peak_dbfs": -3.895
+    },
+    {
+      "index": 185,
+      "nominal_start_ms": 75412,
+      "nominal_end_ms": 75512,
+      "rms_dbfs": -16.706,
+      "peak_dbfs": -7.898
+    },
+    {
+      "index": 186,
+      "nominal_start_ms": 75512,
+      "nominal_end_ms": 75612,
+      "rms_dbfs": -21.759,
+      "peak_dbfs": -9.844
+    },
+    {
+      "index": 187,
+      "nominal_start_ms": 75612,
+      "nominal_end_ms": 75712,
+      "rms_dbfs": -31.31,
+      "peak_dbfs": -20.037
+    },
+    {
+      "index": 188,
+      "nominal_start_ms": 75712,
+      "nominal_end_ms": 75812,
+      "rms_dbfs": -22.038,
+      "peak_dbfs": -11.048
+    },
+    {
+      "index": 189,
+      "nominal_start_ms": 75812,
+      "nominal_end_ms": 75912,
+      "rms_dbfs": -16.17,
+      "peak_dbfs": -8.873
+    },
+    {
+      "index": 190,
+      "nominal_start_ms": 75912,
+      "nominal_end_ms": 76012,
+      "rms_dbfs": -18.606,
+      "peak_dbfs": -9.018
+    },
+    {
+      "index": 191,
+      "nominal_start_ms": 76012,
+      "nominal_end_ms": 76112,
+      "rms_dbfs": -23.11,
+      "peak_dbfs": -12.812
+    },
+    {
+      "index": 192,
+      "nominal_start_ms": 76112,
+      "nominal_end_ms": 76212,
+      "rms_dbfs": -25.318,
+      "peak_dbfs": -16.142
+    },
+    {
+      "index": 193,
+      "nominal_start_ms": 76212,
+      "nominal_end_ms": 76312,
+      "rms_dbfs": -22.775,
+      "peak_dbfs": -14.491
+    },
+    {
+      "index": 194,
+      "nominal_start_ms": 76312,
+      "nominal_end_ms": 76412,
+      "rms_dbfs": -22.224,
+      "peak_dbfs": -13.441
+    },
+    {
+      "index": 195,
+      "nominal_start_ms": 76412,
+      "nominal_end_ms": 76512,
+      "rms_dbfs": -27.112,
+      "peak_dbfs": -16.728
+    },
+    {
+      "index": 196,
+      "nominal_start_ms": 76512,
+      "nominal_end_ms": 76612,
+      "rms_dbfs": -57.181,
+      "peak_dbfs": -43.782
+    },
+    {
+      "index": 197,
+      "nominal_start_ms": 76612,
+      "nominal_end_ms": 76712,
+      "rms_dbfs": -63.639,
+      "peak_dbfs": -51.927
+    },
+    {
+      "index": 198,
+      "nominal_start_ms": 76712,
+      "nominal_end_ms": 76812,
+      "rms_dbfs": -64.015,
+      "peak_dbfs": -53.659
+    },
+    {
+      "index": 199,
+      "nominal_start_ms": 76812,
+      "nominal_end_ms": 76912,
+      "rms_dbfs": -64.766,
+      "peak_dbfs": -53.659
+    },
+    {
+      "index": 200,
+      "nominal_start_ms": 76912,
+      "nominal_end_ms": 77012,
+      "rms_dbfs": -63.186,
+      "peak_dbfs": -53.532
+    },
+    {
+      "index": 201,
+      "nominal_start_ms": 77012,
+      "nominal_end_ms": 77112,
+      "rms_dbfs": -63.553,
+      "peak_dbfs": -50.846
+    },
+    {
+      "index": 202,
+      "nominal_start_ms": 77112,
+      "nominal_end_ms": 77212,
+      "rms_dbfs": -23.238,
+      "peak_dbfs": -6.598
+    },
+    {
+      "index": 203,
+      "nominal_start_ms": 77212,
+      "nominal_end_ms": 77312,
+      "rms_dbfs": -26.863,
+      "peak_dbfs": -11.012
+    },
+    {
+      "index": 204,
+      "nominal_start_ms": 77312,
+      "nominal_end_ms": 77412,
+      "rms_dbfs": -25.689,
+      "peak_dbfs": -11.429
+    },
+    {
+      "index": 205,
+      "nominal_start_ms": 77412,
+      "nominal_end_ms": 77512,
+      "rms_dbfs": -38.392,
+      "peak_dbfs": -15.779
+    },
+    {
+      "index": 206,
+      "nominal_start_ms": 77512,
+      "nominal_end_ms": 77612,
+      "rms_dbfs": -15.413,
+      "peak_dbfs": -4.336
+    },
+    {
+      "index": 207,
+      "nominal_start_ms": 77612,
+      "nominal_end_ms": 77712,
+      "rms_dbfs": -16.477,
+      "peak_dbfs": -5.694
+    },
+    {
+      "index": 208,
+      "nominal_start_ms": 77712,
+      "nominal_end_ms": 77812,
+      "rms_dbfs": -23.418,
+      "peak_dbfs": -9.14
+    },
+    {
+      "index": 209,
+      "nominal_start_ms": 77812,
+      "nominal_end_ms": 77912,
+      "rms_dbfs": -21.271,
+      "peak_dbfs": -6.826
+    },
+    {
+      "index": 210,
+      "nominal_start_ms": 77912,
+      "nominal_end_ms": 78012,
+      "rms_dbfs": -31.303,
+      "peak_dbfs": -18.741
+    },
+    {
+      "index": 211,
+      "nominal_start_ms": 78012,
+      "nominal_end_ms": 78112,
+      "rms_dbfs": -26.985,
+      "peak_dbfs": -9.014
+    },
+    {
+      "index": 212,
+      "nominal_start_ms": 78112,
+      "nominal_end_ms": 78212,
+      "rms_dbfs": -28.331,
+      "peak_dbfs": -9.383
+    },
+    {
+      "index": 213,
+      "nominal_start_ms": 78212,
+      "nominal_end_ms": 78312,
+      "rms_dbfs": -21.508,
+      "peak_dbfs": -8.94
+    },
+    {
+      "index": 214,
+      "nominal_start_ms": 78312,
+      "nominal_end_ms": 78412,
+      "rms_dbfs": -19.43,
+      "peak_dbfs": -4.358
+    },
+    {
+      "index": 215,
+      "nominal_start_ms": 78412,
+      "nominal_end_ms": 78512,
+      "rms_dbfs": -18.015,
+      "peak_dbfs": -5.101
+    },
+    {
+      "index": 216,
+      "nominal_start_ms": 78512,
+      "nominal_end_ms": 78612,
+      "rms_dbfs": -31.524,
+      "peak_dbfs": -17.208
+    },
+    {
+      "index": 217,
+      "nominal_start_ms": 78612,
+      "nominal_end_ms": 78712,
+      "rms_dbfs": -24.278,
+      "peak_dbfs": -12.057
+    },
+    {
+      "index": 218,
+      "nominal_start_ms": 78712,
+      "nominal_end_ms": 78812,
+      "rms_dbfs": -41.956,
+      "peak_dbfs": -29.689
+    },
+    {
+      "index": 219,
+      "nominal_start_ms": 78812,
+      "nominal_end_ms": 78912,
+      "rms_dbfs": -19.756,
+      "peak_dbfs": -9.231
+    },
+    {
+      "index": 220,
+      "nominal_start_ms": 78912,
+      "nominal_end_ms": 79012,
+      "rms_dbfs": -20.752,
+      "peak_dbfs": -9.777
+    },
+    {
+      "index": 221,
+      "nominal_start_ms": 79012,
+      "nominal_end_ms": 79112,
+      "rms_dbfs": -35.033,
+      "peak_dbfs": -21.707
+    },
+    {
+      "index": 222,
+      "nominal_start_ms": 79112,
+      "nominal_end_ms": 79212,
+      "rms_dbfs": -36.873,
+      "peak_dbfs": -25.639
+    },
+    {
+      "index": 223,
+      "nominal_start_ms": 79212,
+      "nominal_end_ms": 79312,
+      "rms_dbfs": -38.632,
+      "peak_dbfs": -25.271
+    },
+    {
+      "index": 224,
+      "nominal_start_ms": 79312,
+      "nominal_end_ms": 79412,
+      "rms_dbfs": -27.562,
+      "peak_dbfs": -15.57
+    },
+    {
+      "index": 225,
+      "nominal_start_ms": 79412,
+      "nominal_end_ms": 79512,
+      "rms_dbfs": -20.778,
+      "peak_dbfs": -7.069
+    },
+    {
+      "index": 226,
+      "nominal_start_ms": 79512,
+      "nominal_end_ms": 79612,
+      "rms_dbfs": -17.648,
+      "peak_dbfs": -7.786
+    },
+    {
+      "index": 227,
+      "nominal_start_ms": 79612,
+      "nominal_end_ms": 79712,
+      "rms_dbfs": -15.31,
+      "peak_dbfs": -5.495
+    },
+    {
+      "index": 228,
+      "nominal_start_ms": 79712,
+      "nominal_end_ms": 79812,
+      "rms_dbfs": -16.101,
+      "peak_dbfs": -7.629
+    },
+    {
+      "index": 229,
+      "nominal_start_ms": 79812,
+      "nominal_end_ms": 79912,
+      "rms_dbfs": -16.068,
+      "peak_dbfs": -7.585
+    },
+    {
+      "index": 230,
+      "nominal_start_ms": 79912,
+      "nominal_end_ms": 80012,
+      "rms_dbfs": -16.187,
+      "peak_dbfs": -6.548
+    },
+    {
+      "index": 231,
+      "nominal_start_ms": 80012,
+      "nominal_end_ms": 80112,
+      "rms_dbfs": -16.278,
+      "peak_dbfs": -7.898
+    },
+    {
+      "index": 232,
+      "nominal_start_ms": 80112,
+      "nominal_end_ms": 80212,
+      "rms_dbfs": -16.914,
+      "peak_dbfs": -7.926
+    },
+    {
+      "index": 233,
+      "nominal_start_ms": 80212,
+      "nominal_end_ms": 80312,
+      "rms_dbfs": -17.848,
+      "peak_dbfs": -8.974
+    },
+    {
+      "index": 234,
+      "nominal_start_ms": 80312,
+      "nominal_end_ms": 80412,
+      "rms_dbfs": -17.122,
+      "peak_dbfs": -8.158
+    },
+    {
+      "index": 235,
+      "nominal_start_ms": 80412,
+      "nominal_end_ms": 80512,
+      "rms_dbfs": -18.863,
+      "peak_dbfs": -8.965
+    },
+    {
+      "index": 236,
+      "nominal_start_ms": 80512,
+      "nominal_end_ms": 80612,
+      "rms_dbfs": -18.295,
+      "peak_dbfs": -8.913
+    },
+    {
+      "index": 237,
+      "nominal_start_ms": 80612,
+      "nominal_end_ms": 80712,
+      "rms_dbfs": -22.511,
+      "peak_dbfs": -11.645
+    },
+    {
+      "index": 238,
+      "nominal_start_ms": 80712,
+      "nominal_end_ms": 80812,
+      "rms_dbfs": -20.67,
+      "peak_dbfs": -9.969
+    },
+    {
+      "index": 239,
+      "nominal_start_ms": 80812,
+      "nominal_end_ms": 80912,
+      "rms_dbfs": -25.589,
+      "peak_dbfs": -13.317
+    },
+    {
+      "index": 240,
+      "nominal_start_ms": 80912,
+      "nominal_end_ms": 81012,
+      "rms_dbfs": -20.739,
+      "peak_dbfs": -9.662
+    },
+    {
+      "index": 241,
+      "nominal_start_ms": 81012,
+      "nominal_end_ms": 81112,
+      "rms_dbfs": -21.445,
+      "peak_dbfs": -9.983
+    },
+    {
+      "index": 242,
+      "nominal_start_ms": 81112,
+      "nominal_end_ms": 81212,
+      "rms_dbfs": -22.112,
+      "peak_dbfs": -10.332
+    },
+    {
+      "index": 243,
+      "nominal_start_ms": 81212,
+      "nominal_end_ms": 81312,
+      "rms_dbfs": -20.269,
+      "peak_dbfs": -8.853
+    },
+    {
+      "index": 244,
+      "nominal_start_ms": 81312,
+      "nominal_end_ms": 81412,
+      "rms_dbfs": -22.124,
+      "peak_dbfs": -9.988
+    },
+    {
+      "index": 245,
+      "nominal_start_ms": 81412,
+      "nominal_end_ms": 81512,
+      "rms_dbfs": -19.262,
+      "peak_dbfs": -10.043
+    },
+    {
+      "index": 246,
+      "nominal_start_ms": 81512,
+      "nominal_end_ms": 81612,
+      "rms_dbfs": -21.803,
+      "peak_dbfs": -11.71
+    },
+    {
+      "index": 247,
+      "nominal_start_ms": 81612,
+      "nominal_end_ms": 81712,
+      "rms_dbfs": -18.385,
+      "peak_dbfs": -8.943
+    },
+    {
+      "index": 248,
+      "nominal_start_ms": 81712,
+      "nominal_end_ms": 81812,
+      "rms_dbfs": -21.991,
+      "peak_dbfs": -12.921
+    },
+    {
+      "index": 249,
+      "nominal_start_ms": 81812,
+      "nominal_end_ms": 81912,
+      "rms_dbfs": -19.325,
+      "peak_dbfs": -8.28
+    },
+    {
+      "index": 250,
+      "nominal_start_ms": 81912,
+      "nominal_end_ms": 82012,
+      "rms_dbfs": -22.16,
+      "peak_dbfs": -13.15
+    },
+    {
+      "index": 251,
+      "nominal_start_ms": 82012,
+      "nominal_end_ms": 82112,
+      "rms_dbfs": -20.008,
+      "peak_dbfs": -10.814
+    },
+    {
+      "index": 252,
+      "nominal_start_ms": 82112,
+      "nominal_end_ms": 82212,
+      "rms_dbfs": -20.783,
+      "peak_dbfs": -10.062
+    },
+    {
+      "index": 253,
+      "nominal_start_ms": 82212,
+      "nominal_end_ms": 82312,
+      "rms_dbfs": -23.225,
+      "peak_dbfs": -10.173
+    },
+    {
+      "index": 254,
+      "nominal_start_ms": 82312,
+      "nominal_end_ms": 82412,
+      "rms_dbfs": -20.227,
+      "peak_dbfs": -8.505
+    },
+    {
+      "index": 255,
+      "nominal_start_ms": 82412,
+      "nominal_end_ms": 82512,
+      "rms_dbfs": -29.039,
+      "peak_dbfs": -15.492
+    },
+    {
+      "index": 256,
+      "nominal_start_ms": 82512,
+      "nominal_end_ms": 82612,
+      "rms_dbfs": -28.229,
+      "peak_dbfs": -14.26
+    },
+    {
+      "index": 257,
+      "nominal_start_ms": 82612,
+      "nominal_end_ms": 82712,
+      "rms_dbfs": -26.204,
+      "peak_dbfs": -12.679
+    },
+    {
+      "index": 258,
+      "nominal_start_ms": 82712,
+      "nominal_end_ms": 82812,
+      "rms_dbfs": -34.56,
+      "peak_dbfs": -19.497
+    },
+    {
+      "index": 259,
+      "nominal_start_ms": 82812,
+      "nominal_end_ms": 82912,
+      "rms_dbfs": -49.638,
+      "peak_dbfs": -36.849
+    },
+    {
+      "index": 260,
+      "nominal_start_ms": 82912,
+      "nominal_end_ms": 83012,
+      "rms_dbfs": -31.255,
+      "peak_dbfs": -14.607
+    },
+    {
+      "index": 261,
+      "nominal_start_ms": 83012,
+      "nominal_end_ms": 83112,
+      "rms_dbfs": -48.415,
+      "peak_dbfs": -33.345
+    },
+    {
+      "index": 262,
+      "nominal_start_ms": 83112,
+      "nominal_end_ms": 83212,
+      "rms_dbfs": -29.11,
+      "peak_dbfs": -13.323
+    },
+    {
+      "index": 263,
+      "nominal_start_ms": 83212,
+      "nominal_end_ms": 83312,
+      "rms_dbfs": -51.009,
+      "peak_dbfs": -36.997
+    },
+    {
+      "index": 264,
+      "nominal_start_ms": 83312,
+      "nominal_end_ms": 83412,
+      "rms_dbfs": -57.844,
+      "peak_dbfs": -46.729
+    },
+    {
+      "index": 265,
+      "nominal_start_ms": 83412,
+      "nominal_end_ms": 83512,
+      "rms_dbfs": -55.554,
+      "peak_dbfs": -45.498
+    },
+    {
+      "index": 266,
+      "nominal_start_ms": 83512,
+      "nominal_end_ms": 83612,
+      "rms_dbfs": -51.068,
+      "peak_dbfs": -34.024
+    },
+    {
+      "index": 267,
+      "nominal_start_ms": 83612,
+      "nominal_end_ms": 83712,
+      "rms_dbfs": -14.343,
+      "peak_dbfs": -6.171
+    },
+    {
+      "index": 268,
+      "nominal_start_ms": 83712,
+      "nominal_end_ms": 83812,
+      "rms_dbfs": -19.367,
+      "peak_dbfs": -7.347
+    },
+    {
+      "index": 269,
+      "nominal_start_ms": 83812,
+      "nominal_end_ms": 83912,
+      "rms_dbfs": -37.351,
+      "peak_dbfs": -23.981
+    },
+    {
+      "index": 270,
+      "nominal_start_ms": 83912,
+      "nominal_end_ms": 84012,
+      "rms_dbfs": -49.999,
+      "peak_dbfs": -33.826
+    },
+    {
+      "index": 271,
+      "nominal_start_ms": 84012,
+      "nominal_end_ms": 84112,
+      "rms_dbfs": -58.558,
+      "peak_dbfs": -48.302
+    },
+    {
+      "index": 272,
+      "nominal_start_ms": 84112,
+      "nominal_end_ms": 84212,
+      "rms_dbfs": -60.732,
+      "peak_dbfs": -49.403
+    },
+    {
+      "index": 273,
+      "nominal_start_ms": 84212,
+      "nominal_end_ms": 84312,
+      "rms_dbfs": -63.389,
+      "peak_dbfs": -52.579
+    },
+    {
+      "index": 274,
+      "nominal_start_ms": 84312,
+      "nominal_end_ms": 84412,
+      "rms_dbfs": -59.993,
+      "peak_dbfs": -50.052
+    },
+    {
+      "index": 275,
+      "nominal_start_ms": 84412,
+      "nominal_end_ms": 84512,
+      "rms_dbfs": -57.013,
+      "peak_dbfs": -40.767
+    },
+    {
+      "index": 276,
+      "nominal_start_ms": 84512,
+      "nominal_end_ms": 84612,
+      "rms_dbfs": -46.055,
+      "peak_dbfs": -33.879
+    },
+    {
+      "index": 277,
+      "nominal_start_ms": 84612,
+      "nominal_end_ms": 84712,
+      "rms_dbfs": -47.813,
+      "peak_dbfs": -34.077
+    },
+    {
+      "index": 278,
+      "nominal_start_ms": 84712,
+      "nominal_end_ms": 84812,
+      "rms_dbfs": -24.425,
+      "peak_dbfs": -10.875
+    },
+    {
+      "index": 279,
+      "nominal_start_ms": 84812,
+      "nominal_end_ms": 84912,
+      "rms_dbfs": -19.331,
+      "peak_dbfs": -7.573
+    },
+    {
+      "index": 280,
+      "nominal_start_ms": 84912,
+      "nominal_end_ms": 85012,
+      "rms_dbfs": -20.511,
+      "peak_dbfs": -7.567
+    },
+    {
+      "index": 281,
+      "nominal_start_ms": 85012,
+      "nominal_end_ms": 85112,
+      "rms_dbfs": -15.871,
+      "peak_dbfs": -6.495
+    },
+    {
+      "index": 282,
+      "nominal_start_ms": 85112,
+      "nominal_end_ms": 85212,
+      "rms_dbfs": -15.586,
+      "peak_dbfs": -5.619
+    },
+    {
+      "index": 283,
+      "nominal_start_ms": 85212,
+      "nominal_end_ms": 85312,
+      "rms_dbfs": -15.406,
+      "peak_dbfs": -6.695
+    },
+    {
+      "index": 284,
+      "nominal_start_ms": 85312,
+      "nominal_end_ms": 85412,
+      "rms_dbfs": -16.52,
+      "peak_dbfs": -7.869
+    },
+    {
+      "index": 285,
+      "nominal_start_ms": 85412,
+      "nominal_end_ms": 85512,
+      "rms_dbfs": -15.787,
+      "peak_dbfs": -8.339
+    },
+    {
+      "index": 286,
+      "nominal_start_ms": 85512,
+      "nominal_end_ms": 85612,
+      "rms_dbfs": -17.436,
+      "peak_dbfs": -7.52
+    },
+    {
+      "index": 287,
+      "nominal_start_ms": 85612,
+      "nominal_end_ms": 85712,
+      "rms_dbfs": -17.278,
+      "peak_dbfs": -8.666
+    },
+    {
+      "index": 288,
+      "nominal_start_ms": 85712,
+      "nominal_end_ms": 85812,
+      "rms_dbfs": -18.977,
+      "peak_dbfs": -9.112
+    },
+    {
+      "index": 289,
+      "nominal_start_ms": 85812,
+      "nominal_end_ms": 85912,
+      "rms_dbfs": -17.772,
+      "peak_dbfs": -8.95
+    },
+    {
+      "index": 290,
+      "nominal_start_ms": 85912,
+      "nominal_end_ms": 86012,
+      "rms_dbfs": -23.239,
+      "peak_dbfs": -12.644
+    },
+    {
+      "index": 291,
+      "nominal_start_ms": 86012,
+      "nominal_end_ms": 86112,
+      "rms_dbfs": -25.206,
+      "peak_dbfs": -12.988
+    },
+    {
+      "index": 292,
+      "nominal_start_ms": 86112,
+      "nominal_end_ms": 86212,
+      "rms_dbfs": -30.201,
+      "peak_dbfs": -17.039
+    },
+    {
+      "index": 293,
+      "nominal_start_ms": 86212,
+      "nominal_end_ms": 86312,
+      "rms_dbfs": -31.376,
+      "peak_dbfs": -19.795
+    },
+    {
+      "index": 294,
+      "nominal_start_ms": 86312,
+      "nominal_end_ms": 86412,
+      "rms_dbfs": -38.63,
+      "peak_dbfs": -23.977
+    },
+    {
+      "index": 295,
+      "nominal_start_ms": 86412,
+      "nominal_end_ms": 86512,
+      "rms_dbfs": -48.897,
+      "peak_dbfs": -37.264
+    },
+    {
+      "index": 296,
+      "nominal_start_ms": 86512,
+      "nominal_end_ms": 86612,
+      "rms_dbfs": -53.034,
+      "peak_dbfs": -42.814
+    },
+    {
+      "index": 297,
+      "nominal_start_ms": 86612,
+      "nominal_end_ms": 86712,
+      "rms_dbfs": -55.522,
+      "peak_dbfs": -44.202
+    },
+    {
+      "index": 298,
+      "nominal_start_ms": 86712,
+      "nominal_end_ms": 86812,
+      "rms_dbfs": -37.922,
+      "peak_dbfs": -25.131
+    },
+    {
+      "index": 299,
+      "nominal_start_ms": 86812,
+      "nominal_end_ms": 86912,
+      "rms_dbfs": -17.744,
+      "peak_dbfs": -3.845
+    },
+    {
+      "index": 300,
+      "nominal_start_ms": 86912,
+      "nominal_end_ms": 87012,
+      "rms_dbfs": -14.289,
+      "peak_dbfs": -4.902
+    },
+    {
+      "index": 301,
+      "nominal_start_ms": 87012,
+      "nominal_end_ms": 87112,
+      "rms_dbfs": -21.561,
+      "peak_dbfs": -7.416
+    },
+    {
+      "index": 302,
+      "nominal_start_ms": 87112,
+      "nominal_end_ms": 87212,
+      "rms_dbfs": -45.315,
+      "peak_dbfs": -30.7
+    },
+    {
+      "index": 303,
+      "nominal_start_ms": 87212,
+      "nominal_end_ms": 87312,
+      "rms_dbfs": -60.179,
+      "peak_dbfs": -49.247
+    },
+    {
+      "index": 304,
+      "nominal_start_ms": 87312,
+      "nominal_end_ms": 87412,
+      "rms_dbfs": -63.226,
+      "peak_dbfs": -53.162
+    },
+    {
+      "index": 305,
+      "nominal_start_ms": 87412,
+      "nominal_end_ms": 87512,
+      "rms_dbfs": -61.558,
+      "peak_dbfs": -50.052
+    },
+    {
+      "index": 306,
+      "nominal_start_ms": 87512,
+      "nominal_end_ms": 87612,
+      "rms_dbfs": -57.762,
+      "peak_dbfs": -46.729
+    },
+    {
+      "index": 307,
+      "nominal_start_ms": 87612,
+      "nominal_end_ms": 87712,
+      "rms_dbfs": -49.83,
+      "peak_dbfs": -41.811
+    },
+    {
+      "index": 308,
+      "nominal_start_ms": 87712,
+      "nominal_end_ms": 87812,
+      "rms_dbfs": -33.377,
+      "peak_dbfs": -14.911
+    },
+    {
+      "index": 309,
+      "nominal_start_ms": 87812,
+      "nominal_end_ms": 87912,
+      "rms_dbfs": -40.968,
+      "peak_dbfs": -26.661
+    },
+    {
+      "index": 310,
+      "nominal_start_ms": 87912,
+      "nominal_end_ms": 88012,
+      "rms_dbfs": -34.495,
+      "peak_dbfs": -17.403
+    },
+    {
+      "index": 311,
+      "nominal_start_ms": 88012,
+      "nominal_end_ms": 88112,
+      "rms_dbfs": -37.093,
+      "peak_dbfs": -24.784
+    },
+    {
+      "index": 312,
+      "nominal_start_ms": 88112,
+      "nominal_end_ms": 88212,
+      "rms_dbfs": -21.929,
+      "peak_dbfs": -4.463
+    },
+    {
+      "index": 313,
+      "nominal_start_ms": 88212,
+      "nominal_end_ms": 88312,
+      "rms_dbfs": -21.27,
+      "peak_dbfs": -7.458
+    },
+    {
+      "index": 314,
+      "nominal_start_ms": 88312,
+      "nominal_end_ms": 88412,
+      "rms_dbfs": -22.424,
+      "peak_dbfs": -11.83
+    },
+    {
+      "index": 315,
+      "nominal_start_ms": 88412,
+      "nominal_end_ms": 88512,
+      "rms_dbfs": -26.365,
+      "peak_dbfs": -11.227
+    },
+    {
+      "index": 316,
+      "nominal_start_ms": 88512,
+      "nominal_end_ms": 88612,
+      "rms_dbfs": -26.728,
+      "peak_dbfs": -13.171
+    },
+    {
+      "index": 317,
+      "nominal_start_ms": 88612,
+      "nominal_end_ms": 88712,
+      "rms_dbfs": -33.683,
+      "peak_dbfs": -17.638
+    },
+    {
+      "index": 318,
+      "nominal_start_ms": 88712,
+      "nominal_end_ms": 88812,
+      "rms_dbfs": -42.309,
+      "peak_dbfs": -29.387
+    },
+    {
+      "index": 319,
+      "nominal_start_ms": 88812,
+      "nominal_end_ms": 88912,
+      "rms_dbfs": -33.714,
+      "peak_dbfs": -18.64
+    },
+    {
+      "index": 320,
+      "nominal_start_ms": 88912,
+      "nominal_end_ms": 89012,
+      "rms_dbfs": -46.0,
+      "peak_dbfs": -34.024
+    },
+    {
+      "index": 321,
+      "nominal_start_ms": 89012,
+      "nominal_end_ms": 89112,
+      "rms_dbfs": -31.563,
+      "peak_dbfs": -18.886
+    },
+    {
+      "index": 322,
+      "nominal_start_ms": 89112,
+      "nominal_end_ms": 89212,
+      "rms_dbfs": -34.496,
+      "peak_dbfs": -20.831
+    },
+    {
+      "index": 323,
+      "nominal_start_ms": 89212,
+      "nominal_end_ms": 89312,
+      "rms_dbfs": -15.981,
+      "peak_dbfs": -6.23
+    },
+    {
+      "index": 324,
+      "nominal_start_ms": 89312,
+      "nominal_end_ms": 89412,
+      "rms_dbfs": -15.247,
+      "peak_dbfs": -6.97
+    },
+    {
+      "index": 325,
+      "nominal_start_ms": 89412,
+      "nominal_end_ms": 89512,
+      "rms_dbfs": -22.874,
+      "peak_dbfs": -8.827
+    },
+    {
+      "index": 326,
+      "nominal_start_ms": 89512,
+      "nominal_end_ms": 89612,
+      "rms_dbfs": -15.761,
+      "peak_dbfs": -4.807
+    },
+    {
+      "index": 327,
+      "nominal_start_ms": 89612,
+      "nominal_end_ms": 89712,
+      "rms_dbfs": -23.692,
+      "peak_dbfs": -8.696
+    },
+    {
+      "index": 328,
+      "nominal_start_ms": 89712,
+      "nominal_end_ms": 89812,
+      "rms_dbfs": -20.166,
+      "peak_dbfs": -9.103
+    },
+    {
+      "index": 329,
+      "nominal_start_ms": 89812,
+      "nominal_end_ms": 89912,
+      "rms_dbfs": -16.975,
+      "peak_dbfs": -6.387
+    },
+    {
+      "index": 330,
+      "nominal_start_ms": 89912,
+      "nominal_end_ms": 90012,
+      "rms_dbfs": -16.669,
+      "peak_dbfs": -7.896
+    },
+    {
+      "index": 331,
+      "nominal_start_ms": 90012,
+      "nominal_end_ms": 90112,
+      "rms_dbfs": -27.024,
+      "peak_dbfs": -11.972
+    },
+    {
+      "index": 332,
+      "nominal_start_ms": 90112,
+      "nominal_end_ms": 90212,
+      "rms_dbfs": -18.471,
+      "peak_dbfs": -7.912
+    },
+    {
+      "index": 333,
+      "nominal_start_ms": 90212,
+      "nominal_end_ms": 90312,
+      "rms_dbfs": -19.57,
+      "peak_dbfs": -8.338
+    },
+    {
+      "index": 334,
+      "nominal_start_ms": 90312,
+      "nominal_end_ms": 90412,
+      "rms_dbfs": -35.585,
+      "peak_dbfs": -15.685
+    },
+    {
+      "index": 335,
+      "nominal_start_ms": 90412,
+      "nominal_end_ms": 90512,
+      "rms_dbfs": -47.272,
+      "peak_dbfs": -34.732
+    },
+    {
+      "index": 336,
+      "nominal_start_ms": 90512,
+      "nominal_end_ms": 90612,
+      "rms_dbfs": -43.657,
+      "peak_dbfs": -29.729
+    },
+    {
+      "index": 337,
+      "nominal_start_ms": 90612,
+      "nominal_end_ms": 90712,
+      "rms_dbfs": -29.281,
+      "peak_dbfs": -15.879
+    },
+    {
+      "index": 338,
+      "nominal_start_ms": 90712,
+      "nominal_end_ms": 90812,
+      "rms_dbfs": -16.653,
+      "peak_dbfs": -6.058
+    },
+    {
+      "index": 339,
+      "nominal_start_ms": 90812,
+      "nominal_end_ms": 90912,
+      "rms_dbfs": -16.131,
+      "peak_dbfs": -6.86
+    },
+    {
+      "index": 340,
+      "nominal_start_ms": 90912,
+      "nominal_end_ms": 91012,
+      "rms_dbfs": -18.634,
+      "peak_dbfs": -8.366
+    },
+    {
+      "index": 341,
+      "nominal_start_ms": 91012,
+      "nominal_end_ms": 91112,
+      "rms_dbfs": -16.58,
+      "peak_dbfs": -6.596
+    },
+    {
+      "index": 342,
+      "nominal_start_ms": 91112,
+      "nominal_end_ms": 91212,
+      "rms_dbfs": -14.998,
+      "peak_dbfs": -6.255
+    },
+    {
+      "index": 343,
+      "nominal_start_ms": 91212,
+      "nominal_end_ms": 91312,
+      "rms_dbfs": -16.993,
+      "peak_dbfs": -7.119
+    },
+    {
+      "index": 344,
+      "nominal_start_ms": 91312,
+      "nominal_end_ms": 91412,
+      "rms_dbfs": -15.627,
+      "peak_dbfs": -7.04
+    },
+    {
+      "index": 345,
+      "nominal_start_ms": 91412,
+      "nominal_end_ms": 91512,
+      "rms_dbfs": -17.674,
+      "peak_dbfs": -7.566
+    },
+    {
+      "index": 346,
+      "nominal_start_ms": 91512,
+      "nominal_end_ms": 91612,
+      "rms_dbfs": -17.856,
+      "peak_dbfs": -8.072
+    },
+    {
+      "index": 347,
+      "nominal_start_ms": 91612,
+      "nominal_end_ms": 91712,
+      "rms_dbfs": -18.959,
+      "peak_dbfs": -8.709
+    },
+    {
+      "index": 348,
+      "nominal_start_ms": 91712,
+      "nominal_end_ms": 91812,
+      "rms_dbfs": -19.676,
+      "peak_dbfs": -9.045
+    },
+    {
+      "index": 349,
+      "nominal_start_ms": 91812,
+      "nominal_end_ms": 91912,
+      "rms_dbfs": -20.506,
+      "peak_dbfs": -10.948
+    },
+    {
+      "index": 350,
+      "nominal_start_ms": 91912,
+      "nominal_end_ms": 92012,
+      "rms_dbfs": -22.274,
+      "peak_dbfs": -11.808
+    },
+    {
+      "index": 351,
+      "nominal_start_ms": 92012,
+      "nominal_end_ms": 92112,
+      "rms_dbfs": -23.236,
+      "peak_dbfs": -12.023
+    },
+    {
+      "index": 352,
+      "nominal_start_ms": 92112,
+      "nominal_end_ms": 92212,
+      "rms_dbfs": -26.579,
+      "peak_dbfs": -15.529
+    },
+    {
+      "index": 353,
+      "nominal_start_ms": 92212,
+      "nominal_end_ms": 92312,
+      "rms_dbfs": -24.394,
+      "peak_dbfs": -13.308
+    },
+    {
+      "index": 354,
+      "nominal_start_ms": 92312,
+      "nominal_end_ms": 92412,
+      "rms_dbfs": -25.205,
+      "peak_dbfs": -14.6
+    },
+    {
+      "index": 355,
+      "nominal_start_ms": 92412,
+      "nominal_end_ms": 92512,
+      "rms_dbfs": -27.857,
+      "peak_dbfs": -15.605
+    },
+    {
+      "index": 356,
+      "nominal_start_ms": 92512,
+      "nominal_end_ms": 92612,
+      "rms_dbfs": -29.766,
+      "peak_dbfs": -18.45
+    },
+    {
+      "index": 357,
+      "nominal_start_ms": 92612,
+      "nominal_end_ms": 92712,
+      "rms_dbfs": -28.093,
+      "peak_dbfs": -13.875
+    },
+    {
+      "index": 358,
+      "nominal_start_ms": 92712,
+      "nominal_end_ms": 92812,
+      "rms_dbfs": -20.182,
+      "peak_dbfs": -9.144
+    },
+    {
+      "index": 359,
+      "nominal_start_ms": 92812,
+      "nominal_end_ms": 92912,
+      "rms_dbfs": -18.565,
+      "peak_dbfs": -9.365
+    },
+    {
+      "index": 360,
+      "nominal_start_ms": 92912,
+      "nominal_end_ms": 93012,
+      "rms_dbfs": -21.193,
+      "peak_dbfs": -9.705
+    },
+    {
+      "index": 361,
+      "nominal_start_ms": 93012,
+      "nominal_end_ms": 93074,
+      "rms_dbfs": -18.927,
+      "peak_dbfs": -9.872
+    }
+  ],
+  "caption_turn_mixed_audio": [
+    {
+      "source_task_id": "S01E01:C00019.1",
+      "original_source_caption_interval_ms": [
+        58912,
+        62541
+      ],
+      "overlapping_mixed_audio_bin_count": 37,
+      "mixed_soundtrack_rms_median_dbfs": -23.018,
+      "mixed_soundtrack_peak_max_dbfs": -4.038,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00027.1",
+      "original_source_caption_interval_ms": [
+        88742,
+        91074
+      ],
+      "overlapping_mixed_audio_bin_count": 24,
+      "mixed_soundtrack_rms_median_dbfs": -21.52,
+      "mixed_soundtrack_peak_max_dbfs": -4.807,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00022.2",
+      "original_source_caption_interval_ms": [
+        69689,
+        73147
+      ],
+      "overlapping_mixed_audio_bin_count": 36,
+      "mixed_soundtrack_rms_median_dbfs": -27.349,
+      "mixed_soundtrack_peak_max_dbfs": -3.973,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00025.1",
+      "original_source_caption_interval_ms": [
+        83136,
+        84501
+      ],
+      "overlapping_mixed_audio_bin_count": 14,
+      "mixed_soundtrack_rms_median_dbfs": -53.311,
+      "mixed_soundtrack_peak_max_dbfs": -6.171,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00022.1",
+      "original_source_caption_interval_ms": [
+        69689,
+        73147
+      ],
+      "overlapping_mixed_audio_bin_count": 36,
+      "mixed_soundtrack_rms_median_dbfs": -27.349,
+      "mixed_soundtrack_peak_max_dbfs": -3.973,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00024.1",
+      "original_source_caption_interval_ms": [
+        76663,
+        79894
+      ],
+      "overlapping_mixed_audio_bin_count": 33,
+      "mixed_soundtrack_rms_median_dbfs": -25.689,
+      "mixed_soundtrack_peak_max_dbfs": -4.336,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00019.2",
+      "original_source_caption_interval_ms": [
+        58912,
+        62541
+      ],
+      "overlapping_mixed_audio_bin_count": 37,
+      "mixed_soundtrack_rms_median_dbfs": -23.018,
+      "mixed_soundtrack_peak_max_dbfs": -4.038,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00026.1",
+      "original_source_caption_interval_ms": [
+        86339,
+        87738
+      ],
+      "overlapping_mixed_audio_bin_count": 15,
+      "mixed_soundtrack_rms_median_dbfs": -48.897,
+      "mixed_soundtrack_peak_max_dbfs": -3.845,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00020.1",
+      "original_source_caption_interval_ms": [
+        62716,
+        65742
+      ],
+      "overlapping_mixed_audio_bin_count": 31,
+      "mixed_soundtrack_rms_median_dbfs": -20.666,
+      "mixed_soundtrack_peak_max_dbfs": -4.893,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00021.1",
+      "original_source_caption_interval_ms": [
+        65919,
+        67887
+      ],
+      "overlapping_mixed_audio_bin_count": 20,
+      "mixed_soundtrack_rms_median_dbfs": -26.525,
+      "mixed_soundtrack_peak_max_dbfs": -5.521,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    },
+    {
+      "source_task_id": "S01E01:C00023.1",
+      "original_source_caption_interval_ms": [
+        74628,
+        76357
+      ],
+      "overlapping_mixed_audio_bin_count": 18,
+      "mixed_soundtrack_rms_median_dbfs": -24.214,
+      "mixed_soundtrack_peak_max_dbfs": -3.895,
+      "original_speech_present_verified": false,
+      "source_word_times_verified": false,
+      "speaker_or_delivery_verified": false
+    }
+  ],
+  "original_source_caption_turns": 11,
+  "human_listened_original_audio": false,
+  "any_speech_words_verified": false,
+  "speaker_identity_verified": false,
+  "vocal_delivery_or_emotion_verified": false,
+  "original_audio_to_caption_alignment_verified": false,
+  "episode_screenplay_complete": false,
+  "audio_PCM_or_AVI_exported": false,
+  "limits": [
+    "Audio is the MONO television mix, including music, laughter, noise and overlapping voices.",
+    "RMS/peak energy cannot establish whether a caption word was spoken or identify a speaker.",
+    "Nominal decoded time bins require independent source-edition AV synchronization review.",
+    "ASR, isolated voices, emotional delivery and complete dialogue are not inferred by this worker."
+  ]
+}
