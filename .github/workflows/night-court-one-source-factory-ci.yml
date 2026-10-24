@@ -8,6 +8,8 @@ on:
       - 'Night Court/tools/test_source_once_av_lanes.py'
       - 'Night Court/tools/build_multigoal_review_packet.py'
       - 'Night Court/tools/test_build_multigoal_review_packet.py'
+      - 'Night Court/tools/plan_original_av_microbatches.py'
+      - 'Night Court/tools/test_plan_original_av_microbatches.py'
       - '.github/workflows/night-court-one-source-factory-ci.yml'
       - '.github/workflows/night-court-trusted-one-source-factory.yml'
 permissions:
@@ -25,6 +27,7 @@ jobs:
         run: |
           python 'Night Court/tools/test_source_once_av_lanes.py'
           python 'Night Court/tools/test_build_multigoal_review_packet.py'
+          python 'Night Court/tools/test_plan_original_av_microbatches.py'
           python 'Night Court/tools/test_s01e01_one_source_factory.py'
           python 'Night Court/tools/test_s01e01_full_dual_asr.py'
           python 'Night Court/tools/test_compare_independent_asr.py'
