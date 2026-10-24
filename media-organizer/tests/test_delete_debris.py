@@ -5,6 +5,8 @@ from delete_debris import category,assess,validate
 class DebrisTests(unittest.TestCase):
     def test_nfo(self):self.assertEqual(category("/downloads/Movie/info.nfo"),"nfo")
     def test_screens(self):self.assertEqual(category("/downloads/Movie/Screens/mpv-shot0001.jpg"),"screenshot")
+    def test_named_screenshot_file_outside_screens_dir(self):
+        self.assertEqual(category("/downloads/S60/DVD/Studio 60 - 01 - SCREENSHOTS.jpg"),"screenshot")
     def test_keep_artwork(self):
         for x in ("poster.jpg","fanart.jpg","cover.png","Photoshop.png","folder.jpg"):
             self.assertIsNone(category("/downloads/Movie/"+x))
