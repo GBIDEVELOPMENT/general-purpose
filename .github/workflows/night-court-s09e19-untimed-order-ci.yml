@@ -1,0 +1,23 @@
+name: Night Court S09E19 untimed source paragraph order QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/reconcile_s09e19_untimed_source_order.py'
+      - 'Night Court/tools/test_reconcile_s09e19_untimed_source_order.py'
+      - 'Night Court/S09E19-UNTIMED-MONOTONIC-ANCHORS.md'
+      - '.github/workflows/night-court-s09e19-untimed-order-ci.yml'
+permissions:
+  contents: read
+jobs:
+  paragraphs:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify original immutable 347-paragraph text, independent model span order and null original timing
+        run: |
+          python 'Night Court/tools/test_reconcile_s09e19_untimed_source_order.py'
+          python 'Night Court/tools/test_profile_s09e19_source_once_factory.py'
