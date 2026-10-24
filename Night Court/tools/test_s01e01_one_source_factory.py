@@ -67,7 +67,7 @@ class OneOwnerEpisode(unittest.TestCase):
         self.assertFalse(report['execution_mode_is_an_accuracy_or_speed_improvement_proof'])
         with self.assertRaisesRegex(ValueError,'overlap provenance'):
             compose_summary(a,v,4.0,stage_sum-65.0,execution_mode='parallel')
-        with self.assertRaisesRegex(ValueError,'worker execution'):
+        with self.assertRaisesRegex(ValueError,'Worker execution'):
             compose_summary(a,v,4.0,stage_sum-65.0,
                             execution_mode='serial',lane_metrics=lane)
         with self.assertRaisesRegex(ValueError,'monotonic'):
