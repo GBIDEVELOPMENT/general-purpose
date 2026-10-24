@@ -1,0 +1,42 @@
+name: Night Court trusted original motion stage directions for two screenplay pilots
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-original-motion-screenplay-v3.txt'
+permissions:
+  contents: write
+concurrency:
+  group: night-court-source-only-physical-business-pilot-drafts
+  cancel-in-progress: false
+jobs:
+  compile-source-cited-motion-scripts:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-original-motion-screenplay-v3-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout reviewed trusted main SHA only, no untrusted PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Validate and render source dialogue-complete pilots plus genuine physical notes
+        run: |
+          python 'Night Court/tools/test_render_caption_first_motion_edit_v3.py'
+          python 'Night Court/tools/render_caption_first_motion_edit_v3.py' --episode S01E01
+          python 'Night Court/tools/render_caption_first_motion_edit_v3.py' --episode S09E19
+          python 'Night Court/tools/render_caption_first_motion_edit_v3.py' --episode S01E01 --check
+          python 'Night Court/tools/render_caption_first_motion_edit_v3.py' --episode S09E19 --check
+      - name: Save only script prose and original SHA manifest on separate data review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-original-motion-screenplay-v3-20261024'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/caption-first-physical-business-v3' 'Night Court/seasons/S09/S09E19/derived/caption-first-physical-business-v3'
+          git diff --cached --check
+          git commit -m 'Night Court: source-complete scripts with four original picture-reviewed physical-business scenes'
+          git push origin HEAD:refs/heads/data/night-court-original-motion-screenplay-v3-20261024
