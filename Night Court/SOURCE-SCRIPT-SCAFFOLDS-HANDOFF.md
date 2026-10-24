@@ -30,3 +30,7 @@ Run `python "Night Court/tools/test_source_script_scaffolds.py"` before acquisit
 6. Independently audit full episode runtime for dropped dialogue, source-version drift and scene/visual completeness.
 
 The existing `S01E01` 60–90s integrated scene is the first worked audiovisual example. The scaffolds provide every later episode a deterministic **place to attach better evidence**, not a false claim that all 193 scripts are finished.
+
+## Repository-wide caption-turn cache catch-up
+
+The accepted scripts were derived on the fly because `catalog/caption-turn-coverage.json` previously indexed only 35 episodes. A separate bounded CI batch regenerates the existing `candidate-turns.jsonl` and `conversation-packets.jsonl` per every original subtitle witness. It must reconcile **193 episodes, 70,804 source cues, 72,733 candidate dialogue units and 1,173 gap packets** against the immutable source-only reading-script catalog. This is purely source preparation: it does not detect actual scenes, certify speakers or touch FTP audio/video.
