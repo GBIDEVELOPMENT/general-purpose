@@ -1,0 +1,84 @@
+name: FTP Downloads fast shallow survey
+on:
+  pull_request:
+    paths: ['.github/workflows/ftp-media-quick-survey.yml']
+  push:
+    branches: [main]
+    paths: ['.github/workflows/ftp-media-quick-survey.yml']
+permissions:
+  contents: read
+concurrency:
+  group: ftp-media-quick-survey
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax and organizer tests
+        run: |
+          python -m py_compile media-organizer/organize.py
+          python -m unittest discover -s media-organizer/tests -q
+  shallow-survey:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ftp
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Probe only top two directory levels with hard time bound
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$FTP_PASSWORD"
+          python - <<'PY'
+          import json,sys
+          from pathlib import Path
+          sys.path.insert(0,"media-organizer")
+          from organize import connect,scan,propose
+          root=Path("media-organizer/quick-output")
+          root.mkdir(parents=True,exist_ok=True)
+          with connect() as ftp:
+              inventory=scan(ftp,max_dirs=250,max_files=12000,max_depth=2,max_seconds=135)
+          (root/"inventory.json").write_text(json.dumps(inventory,indent=2,ensure_ascii=False))
+          suggestion=propose(inventory)
+          (root/"suggestions.json").write_text(json.dumps(suggestion,indent=2,ensure_ascii=False))
+          report={"scan_depth":2,"file_count":len(inventory["files"]),"directory_count":inventory["directories"],
+                  "errors":len(inventory["failures"]),"truncated_dirs":len(inventory["truncated"]),
+                  "candidate_renames":len(suggestion["moves"]),"review":len(suggestion["review"])}
+          (root/"summary.json").write_text(json.dumps(report,indent=2))
+          print("FTP_QUICK_SURVEY "+json.dumps(report),flush=True)
+          for index in range(0,len(inventory["files"]),150):
+              path=root/"shards"/f"files-{index//150+1:04d}.json"
+              path.parent.mkdir(exist_ok=True)
+              path.write_text(json.dumps(inventory["files"][index:index+150],indent=2,ensure_ascii=False))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ftp-media-shallow-private
+          path: media-organizer/quick-output/
+          retention-days: 30
+      - name: Preserve private survey in a dedicated branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp -a media-organizer/quick-output "$RUNNER_TEMP/ftp-quick"
+          rm -rf media-organizer/quick-output
+          git fetch origin refs/heads/reports/ftp-media-shallow:refs/remotes/origin/reports/ftp-media-shallow
+          git switch -c _quick_report origin/reports/ftp-media-shallow
+          mkdir -p media-organizer/quick-output
+          cp -a "$RUNNER_TEMP/ftp-quick/." media-organizer/quick-output/
+          git add -- media-organizer/quick-output
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "report(media): FTP top-level inventory"
+          git push origin HEAD:refs/heads/reports/ftp-media-shallow
