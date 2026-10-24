@@ -39,7 +39,7 @@ def connect():
             try:ftp.close()
             except Exception:pass
             raise
-def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7,max_seconds=420):
+def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7,max_seconds=960):
     pending=deque([(ROOT,0)]); seen=set(); out=[]; failures=[]; truncated=[];folder_records=[];started=time.monotonic()
     while pending:
         path,depth=pending.popleft()
