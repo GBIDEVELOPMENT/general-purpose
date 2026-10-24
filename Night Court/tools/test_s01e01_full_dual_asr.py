@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Offline trusted-source constraints only. No network, model weights or real AV."""
 import hashlib
+from fractions import Fraction
 import json
 import os
 from pathlib import Path
@@ -63,6 +64,9 @@ class DistinctModelSourceAcceptance(unittest.TestCase):
                          'missing_empty_or_long_word')
         self.assertIsNone(word_rejection_reason('genuinely spoken',0.1,0.2,3000))
         self.assertIsNone(preserve_word('x',0.1,0.1,3000))
+        self.assertIsNone(word_rejection_reason('fraction',Fraction(1,10),Fraction(1,5),3000))
+        self.assertEqual(preserve_word('fraction',Fraction(1,10),Fraction(1,5),3000),{'text':'fraction','start_ms':100,'end_ms':200})
+        self.assertEqual(word_rejection_reason('x',True,0.3,3000),'nonfinite_or_missing_model_time')
 
     def test_model_zip_rejects_traversal_and_symlink(self):
         with tempfile.TemporaryDirectory() as tmp:
