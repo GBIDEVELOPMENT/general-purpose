@@ -113,7 +113,7 @@ def edit(episode,root=ROOT):
         overview.extend([
           f"**{position(entry['source_requested_ms'])} · frame {entry['frame_id']:03d} · {entry['provisional_location']}**",
           entry["visually_observed_static_description"],
-          f"*Original frame SHA-256: \`{entry['source_thumbnail_sha256']}\`*",
+          f"*Original frame SHA-256: `{entry['source_thumbnail_sha256']}`*",
           ""
         ])
     script=script.replace(heading,"\n".join(overview)+heading)
@@ -125,7 +125,7 @@ def edit(episode,root=ROOT):
         for entry in visual:
             cue_id=best_cue_at_or_after(cues,entry["source_requested_ms"])
             anchor=f"C{cue_id:03d}.1"
-            find=re.search(r"(?m)^\*\*[^\n]*\[C"+re.escape(f"{cue_id:03d}")+r"\.1\s+·\s+[^\n]*\*\*$",script)
+            find=re.search(r"(?m)^\*\*[^\n]*\[C"+re.escape(f"{cue_id:03d}")+r"\.1\s+·\s+[^\n]*\]\*$",script)
             if not find:raise ValueError("Original caption anchor lost for photo note")
             note=(f"*PICTURE [{position(entry['source_requested_ms'])}, original still "
                   f"{entry['frame_id']:03d}]: {entry['visually_observed_static_description']} "
@@ -159,7 +159,7 @@ def edit(episode,root=ROOT):
       "- Full editor-ready screenplay requires substantially more verified "
       "physical comedy, cast dialogue attribution and dialogue-to-scene continuity.\n"
     )
-    script=script.rstrip()+caution
+    script=script.rstrip()+"\n"+caution
     report={
         "schema":"night-court-caption-first-source-photo-scene-edit/2",
         "episode_id":episode,"original_caption_sha256":SOURCE_SHA[episode],
