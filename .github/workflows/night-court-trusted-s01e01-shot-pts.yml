@@ -1,0 +1,49 @@
+name: Night Court trusted original S01E01 scene PTS candidates
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-shot-pts.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-original-avi-shot-pts
+  cancel-in-progress: false
+jobs:
+  probe:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-shot-pts-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - name: Checkout trusted base GitHub main exclusively
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Test deterministic scene-detection and PTS parsing without FTP secrets
+        run: python 'Night Court/tools/test_s01e01_source_avi_shot_changes.py'
+      - name: Verify original AVI SHA and extract only bounded frame-rate shot metadata
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python 'Night Court/tools/probe_s01e01_source_avi_shot_changes.py' --ftp \
+            --output "${{ runner.temp }}/night-court-pts/scene-candidates.json"
+      - name: Store only scored source timestamps, no image or audio data
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-source-frame-rate-shot-pts
+          path: ${{ runner.temp }}/night-court-pts/scene-candidates.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Wipe derived temp metadata
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-pts"
