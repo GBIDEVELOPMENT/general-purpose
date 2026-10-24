@@ -42,7 +42,7 @@ jobs:
           TOKENIZERS_PARALLELISM: 'false'
         run: |
           python -u 'Night Court/tools/profile_s09e19_source_once_factory.py' --ftp \
-            --execution-mode parallel \
+            --execution-mode serial \
             --output "${{ runner.temp }}/night-court-s09e19/second-episode-report.json"
       - name: Generate multi-goal original-source review packets without another AVI pass
         run: |
