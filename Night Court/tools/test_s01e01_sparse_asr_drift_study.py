@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """No FTP/model: verify bounded S01E01 sampling and honest subtitle matches."""
 import unittest
-from s01e01_sparse_asr_drift_study import WINDOWS,caption_candidates,match,compare_windows,sources
+from s01e01_sparse_asr_drift_study import WINDOWS,caption_candidates,match,compare_windows,sources,ftp_connect_with_one_retry
 
 class Windows(unittest.TestCase):
     @classmethod
@@ -33,6 +33,23 @@ class Windows(unittest.TestCase):
                  "end_ms":602050,"segment_boundary_clipped":True},cues,600,630)
         self.assertFalse(x["usable_for_global_drift_review"])
         self.assertEqual(x["candidate_start_offset_ms"],260)
+    def test_bounded_one_retry_only_on_connection_errors(self):
+        attempts=[]
+        def flaky(*args):
+            attempts.append(args)
+            if len(attempts)==1:raise TimeoutError("synthetic connect timeout")
+            return "connected"
+        sleeps=[]
+        self.assertEqual(ftp_connect_with_one_retry(flaky,"test.host","user","dummy",
+                         sleep=lambda s:sleeps.append(s)),"connected")
+        self.assertEqual(len(attempts),2)
+        self.assertEqual(sleeps,[4])
+        def always_bad(*args):
+            attempts.append(args)
+            raise TimeoutError("connection unavailable")
+        with self.assertRaises(TimeoutError):
+            ftp_connect_with_one_retry(always_bad,"host","user","dummy",sleep=lambda _:None)
+        self.assertEqual(len(attempts),4)
     def test_spread_metric_not_av_acceptance(self):
         example=[{"source_window_ms":[300000,330000],
                   "alignment_candidates":[{"usable_for_global_drift_review":True,"candidate_start_offset_ms":200}]*2},
