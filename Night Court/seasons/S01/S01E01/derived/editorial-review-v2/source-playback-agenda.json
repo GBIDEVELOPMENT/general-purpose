@@ -1,0 +1,656 @@
+{
+  "schema": "night-court-s01e01-editorial-playback-agenda/1",
+  "episode_id": "S01E01",
+  "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_timed_SRT_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_avi_window_ms": [
+    56912,
+    93074
+  ],
+  "original_caption_turn_review_tasks": 11,
+  "original_visual_stage_review_tasks": 6,
+  "extra_machine_transition_review_prompts": 7,
+  "total_chronological_review_entries": 24,
+  "all_original_editorial_tasks_still_unaccepted": true,
+  "total_full_episode_screenplays_verified": 0,
+  "epistemic_limits": "The original TV mix RMS is not an isolated voice. FFmpeg scores and sampled frames are not accepted edits or continuous actions. This is a review navigation agenda, not a verified script.",
+  "chronological_review_entries": [
+    {
+      "task_id": "S01E01:C00019.1",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        58912,
+        62541
+      ],
+      "suggested_original_video_playback_ms": [
+        57912,
+        63541
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 59026,
+          "ffmpeg_scene_score": 0.306012,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        },
+        {
+          "original_stream_pts_candidate_ms": 60928,
+          "ffmpeg_scene_score": 0.143181,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "Did you say \"mercurial\"?",
+      "review_priority": 62,
+      "caption_review_flags": [
+        "caption_starts_before_audio_sample",
+        "no_source_asr_speaker_turn",
+        "words_without_model_time"
+      ],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -23.018,
+        "peak_max_dbfs": -4.038,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:C00019.2",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        58912,
+        62541
+      ],
+      "suggested_original_video_playback_ms": [
+        57912,
+        63541
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 59026,
+          "ffmpeg_scene_score": 0.306012,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        },
+        {
+          "original_stream_pts_candidate_ms": 60928,
+          "ffmpeg_scene_score": 0.143181,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "I'm trying to make up for lack of education.",
+      "review_priority": 14,
+      "caption_review_flags": [
+        "caption_starts_before_audio_sample"
+      ],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -23.018,
+        "peak_max_dbfs": -4.038,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:VIDEO-PTS-01",
+      "kind": "unverified_machine_image_change",
+      "source_interval_ms": [
+        59026,
+        59026
+      ],
+      "suggested_original_video_playback_ms": [
+        58026,
+        60026
+      ],
+      "ffmpeg_scene_score": 0.306012,
+      "review_goal": "Watch original continuous AVI around this frame; decide edit vs gesture/flash/dissolve; reject score as cut probability",
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false
+    },
+    {
+      "task_id": "S01E01:VIDEO-PTS-02",
+      "kind": "unverified_machine_image_change",
+      "source_interval_ms": [
+        60928,
+        60928
+      ],
+      "suggested_original_video_playback_ms": [
+        59928,
+        61928
+      ],
+      "ffmpeg_scene_score": 0.143181,
+      "review_goal": "Watch original continuous AVI around this frame; decide edit vs gesture/flash/dissolve; reject score as cut probability",
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false
+    },
+    {
+      "task_id": "S01E01:C00020.1",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        62716,
+        65742
+      ],
+      "suggested_original_video_playback_ms": [
+        61716,
+        66742
+      ],
+      "adjacent_machine_image_change_candidates": [],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "So every month, I pick a word at random out of the dictionary...",
+      "review_priority": 0,
+      "caption_review_flags": [],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -20.666,
+        "peak_max_dbfs": -4.893,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:C00021.1",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        65919,
+        67887
+      ],
+      "suggested_original_video_playback_ms": [
+        64919,
+        68887
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 68268,
+          "ffmpeg_scene_score": 0.138734,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "...and use it all that month.",
+      "review_priority": 0,
+      "caption_review_flags": [],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -26.525,
+        "peak_max_dbfs": -5.521,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:VIDEO-PTS-03",
+      "kind": "unverified_machine_image_change",
+      "source_interval_ms": [
+        68268,
+        68268
+      ],
+      "suggested_original_video_playback_ms": [
+        67268,
+        69268
+      ],
+      "ffmpeg_scene_score": 0.138734,
+      "review_goal": "Watch original continuous AVI around this frame; decide edit vs gesture/flash/dissolve; reject score as cut probability",
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false
+    },
+    {
+      "task_id": "S01E01:C00022.1",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        69689,
+        73147
+      ],
+      "suggested_original_video_playback_ms": [
+        68689,
+        74147
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 74107,
+          "ffmpeg_scene_score": 0.277865,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "My, how...",
+      "review_priority": 20,
+      "caption_review_flags": [
+        "model_timing_disagreement"
+      ],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -27.349,
+        "peak_max_dbfs": -3.973,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:C00022.2",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        69689,
+        73147
+      ],
+      "suggested_original_video_playback_ms": [
+        68689,
+        74147
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 74107,
+          "ffmpeg_scene_score": 0.277865,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "Minimifidian?",
+      "review_priority": 38,
+      "caption_review_flags": [
+        "no_source_asr_speaker_turn",
+        "words_without_model_time",
+        "unusual_comic_vocabulary_requires_listening"
+      ],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -27.349,
+        "peak_max_dbfs": -3.973,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:VIDEO-PTS-04",
+      "kind": "unverified_machine_image_change",
+      "source_interval_ms": [
+        74107,
+        74107
+      ],
+      "suggested_original_video_playback_ms": [
+        73107,
+        75107
+      ],
+      "ffmpeg_scene_score": 0.277865,
+      "review_goal": "Watch original continuous AVI around this frame; decide edit vs gesture/flash/dissolve; reject score as cut probability",
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false
+    },
+    {
+      "task_id": "S01E01:C00023.1",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        74628,
+        76357
+      ],
+      "suggested_original_video_playback_ms": [
+        73628,
+        77357
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 74107,
+          "ffmpeg_scene_score": 0.277865,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        },
+        {
+          "original_stream_pts_candidate_ms": 76777,
+          "ffmpeg_scene_score": 0.261383,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "Is that a real word?",
+      "review_priority": 0,
+      "caption_review_flags": [],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -24.214,
+        "peak_max_dbfs": -3.895,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:OBS-V2-01",
+      "kind": "sampled_visual_action",
+      "source_interval_ms": [
+        76250,
+        76500
+      ],
+      "suggested_original_video_playback_ms": [
+        75250,
+        77500
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 76777,
+          "ffmpeg_scene_score": 0.261383,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "original_sampled_action_note": "The view shifts from the lavender-clad person in front of book shelves to a closer view of the uniformed person.",
+      "source_frame_digests": [
+        "dbe7ba1379231326d0e3dcc60713b6a32f7f9e78ced5ae74cdc13d8efeb9c960",
+        "e12f283a8eab60c74fd0155ecc17cdf3426f74578d6d002c75752774fa07afe9"
+      ],
+      "review_goal": "Original continuous-video viewing: identify actual edit, physical action, timing and reactions without assigning speech from still frames"
+    },
+    {
+      "task_id": "S01E01:C00024.1",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        76663,
+        79894
+      ],
+      "suggested_original_video_playback_ms": [
+        75663,
+        80894
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 76777,
+          "ffmpeg_scene_score": 0.261383,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "Does a bear extravasate in the forest?",
+      "review_priority": 18,
+      "caption_review_flags": [
+        "unusual_comic_vocabulary_requires_listening"
+      ],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -25.689,
+        "peak_max_dbfs": -4.336,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:VIDEO-PTS-05",
+      "kind": "unverified_machine_image_change",
+      "source_interval_ms": [
+        76777,
+        76777
+      ],
+      "suggested_original_video_playback_ms": [
+        75777,
+        77777
+      ],
+      "ffmpeg_scene_score": 0.261383,
+      "review_goal": "Watch original continuous AVI around this frame; decide edit vs gesture/flash/dissolve; reject score as cut probability",
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false
+    },
+    {
+      "task_id": "S01E01:OBS-V2-02",
+      "kind": "sampled_visual_action",
+      "source_interval_ms": [
+        80750,
+        81000
+      ],
+      "suggested_original_video_playback_ms": [
+        79750,
+        82000
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 80948,
+          "ffmpeg_scene_score": 0.140563,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "original_sampled_action_note": "The view changes from the uniformed person's face to the lavender-clad person beside the desk.",
+      "source_frame_digests": [
+        "7dd8935cde6063c7fc1bbac3f68fe4859b3c1a8730a41ef00846511b8a743b0c",
+        "73c41740012839add8c409ac2c22cbd7fa4db7e4464889eef730bbca22cf36fe"
+      ],
+      "review_goal": "Original continuous-video viewing: identify actual edit, physical action, timing and reactions without assigning speech from still frames"
+    },
+    {
+      "task_id": "S01E01:VIDEO-PTS-06",
+      "kind": "unverified_machine_image_change",
+      "source_interval_ms": [
+        80948,
+        80948
+      ],
+      "suggested_original_video_playback_ms": [
+        79948,
+        81948
+      ],
+      "ffmpeg_scene_score": 0.140563,
+      "review_goal": "Watch original continuous AVI around this frame; decide edit vs gesture/flash/dissolve; reject score as cut probability",
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false
+    },
+    {
+      "task_id": "S01E01:VIDEO-PTS-07",
+      "kind": "unverified_machine_image_change",
+      "source_interval_ms": [
+        82382,
+        82382
+      ],
+      "suggested_original_video_playback_ms": [
+        81382,
+        83382
+      ],
+      "ffmpeg_scene_score": 0.140819,
+      "review_goal": "Watch original continuous AVI around this frame; decide edit vs gesture/flash/dissolve; reject score as cut probability",
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false
+    },
+    {
+      "task_id": "S01E01:OBS-V2-03",
+      "kind": "sampled_visual_action",
+      "source_interval_ms": [
+        82500,
+        83750
+      ],
+      "suggested_original_video_playback_ms": [
+        81500,
+        84750
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 82382,
+          "ffmpeg_scene_score": 0.140819,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "original_sampled_action_note": "At the desk, the uniformed person reaches toward the black telephone and raises its handset to the ear.",
+      "source_frame_digests": [
+        "7d621462b0e83d61ad3ef13b7e81848ff5997d7e6fe1a339e2ac8aa997e36acd",
+        "7bbc1ab0746b350f1e3268254d48e9ade78249f68fd2b2afbf73d259aa2c579a",
+        "342b70cf9fd847d8d2b954dd7a1f3d745473816dbfb3c100891784c19f85848e",
+        "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2"
+      ],
+      "review_goal": "Original continuous-video viewing: identify actual edit, physical action, timing and reactions without assigning speech from still frames"
+    },
+    {
+      "task_id": "S01E01:C00025.1",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        83136,
+        84501
+      ],
+      "suggested_original_video_playback_ms": [
+        82136,
+        85501
+      ],
+      "adjacent_machine_image_change_candidates": [
+        {
+          "original_stream_pts_candidate_ms": 82382,
+          "ffmpeg_scene_score": 0.140819,
+          "interpretation": "image_difference_only_not_verified_camera_cut"
+        }
+      ],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "What?",
+      "review_priority": 26,
+      "caption_review_flags": [
+        "model_timing_disagreement",
+        "voice_span_too_short_for_stable_pitch"
+      ],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -53.311,
+        "peak_max_dbfs": -6.171,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:OBS-V2-04",
+      "kind": "sampled_visual_action",
+      "source_interval_ms": [
+        83750,
+        87250
+      ],
+      "suggested_original_video_playback_ms": [
+        82750,
+        88250
+      ],
+      "adjacent_machine_image_change_candidates": [],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "original_sampled_action_note": "The uniformed person holds the black telephone receiver against the ear while the lavender-clad person remains on the other side of the desk.",
+      "source_frame_digests": [
+        "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2",
+        "903ecee2571c6e6fbb004d0bbd891bec5d391cc6eb81875f3a37a718678b0d84",
+        "8ceb42e9f0d69466bc666baa82c69dbad171cefac33fc01c70a1dfd78b5bbaa7",
+        "2f0ea684dc1d1095173a55f2266f6b024c84e01cb95312fc6c6f6d27f821c385"
+      ],
+      "review_goal": "Original continuous-video viewing: identify actual edit, physical action, timing and reactions without assigning speech from still frames"
+    },
+    {
+      "task_id": "S01E01:C00026.1",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        86339,
+        87738
+      ],
+      "suggested_original_video_playback_ms": [
+        85339,
+        88738
+      ],
+      "adjacent_machine_image_change_candidates": [],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "No.",
+      "review_priority": 14,
+      "caption_review_flags": [
+        "voice_span_too_short_for_stable_pitch"
+      ],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -48.897,
+        "peak_max_dbfs": -3.845,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    },
+    {
+      "task_id": "S01E01:OBS-V2-05",
+      "kind": "sampled_visual_action",
+      "source_interval_ms": [
+        87500,
+        88500
+      ],
+      "suggested_original_video_playback_ms": [
+        86500,
+        89500
+      ],
+      "adjacent_machine_image_change_candidates": [],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "original_sampled_action_note": "The uniformed person lowers the receiver from the ear toward the telephone on the desktop.",
+      "source_frame_digests": [
+        "fcf09f971d6f54aca21a49b26f2abb5406acd47cb023ca85441fe9160f8828f1",
+        "462a69834ffe42a761c4d51bae7fc4d0d48caf5dcd412085983235f5b196972f",
+        "741f3a68967ac09bb9c9682e21dbb9611663a0e595cb4e5493b9262f89326733",
+        "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9"
+      ],
+      "review_goal": "Original continuous-video viewing: identify actual edit, physical action, timing and reactions without assigning speech from still frames"
+    },
+    {
+      "task_id": "S01E01:OBS-V2-06",
+      "kind": "sampled_visual_action",
+      "source_interval_ms": [
+        88500,
+        89750
+      ],
+      "suggested_original_video_playback_ms": [
+        87500,
+        90750
+      ],
+      "adjacent_machine_image_change_candidates": [],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "original_sampled_action_note": "The receiver is down at the desk; the uniformed person straightens while the lavender-clad person remains nearby.",
+      "source_frame_digests": [
+        "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9",
+        "0069cb4ebb32f89dc926a0310cf0d73864c807d51541d1e5e892f247a2817f25",
+        "68748e66ac8c4a82f1f41785c0e07e85cfe4273c860aefdf25c4dd0c2bc30715",
+        "30b46e70fa1cabb0957404fdebdf0563df61627cee45976359b4b36307527960"
+      ],
+      "review_goal": "Original continuous-video viewing: identify actual edit, physical action, timing and reactions without assigning speech from still frames"
+    },
+    {
+      "task_id": "S01E01:C00027.1",
+      "kind": "caption_turn",
+      "source_interval_ms": [
+        88742,
+        91074
+      ],
+      "suggested_original_video_playback_ms": [
+        87742,
+        92074
+      ],
+      "adjacent_machine_image_change_candidates": [],
+      "independent_original_audio_or_video_review_conducted": false,
+      "review_state": "pending",
+      "named_character_or_expressive_delivery_verified": false,
+      "source_caption_text_untouched": "Tell the judge the mayor called.",
+      "review_priority": 52,
+      "caption_review_flags": [
+        "caption_continues_after_audio_sample",
+        "words_without_model_time"
+      ],
+      "mixed_soundtrack_level_only": {
+        "rms_median_dbfs": -21.52,
+        "peak_max_dbfs": -4.807,
+        "speech_presence_cannot_be_inferred": true
+      },
+      "review_goal": "Original soundtrack listening: source text, overlap, word timing, source AVI edition, and actual performed voice; never infer from mixture level"
+    }
+  ]
+}
