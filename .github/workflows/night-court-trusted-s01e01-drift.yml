@@ -26,7 +26,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.sha }}
+          # pull_request_target github.sha is the reviewed base branch commit at event time.
+          # Do NOT checkout PR head or stale pull_request.base.sha.
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:

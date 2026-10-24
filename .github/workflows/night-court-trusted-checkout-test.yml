@@ -1,0 +1,17 @@
+name: Night Court trusted source checkout protection
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/night-court-trusted-s01e01-drift.yml'
+      - 'Night Court/tools/test_trusted_s01e01_drift_checkout.py'
+      - '.github/workflows/night-court-trusted-checkout-test.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify owner gated PR target and trusted current-base checkout
+        run: python "Night Court/tools/test_trusted_s01e01_drift_checkout.py"
