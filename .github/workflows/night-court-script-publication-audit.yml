@@ -1,0 +1,44 @@
+name: Night Court full-episode script publication evidence gate
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/audit_production_script_publication.py'
+      - 'Night Court/tools/test_production_script_publication.py'
+      - 'Night Court/AV-SCRIPT-PUBLICATION-GATES.md'
+      - '.github/workflows/night-court-script-publication-audit.yml'
+permissions:
+  contents: write
+jobs:
+  audit:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'qa/night-court-script-publication-gates'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: qa/night-court-script-publication-gates
+          persist-credentials: true
+      - name: Independently gate every original-series episode's publishing claims
+        run: |
+          python "Night Court/tools/test_production_script_publication.py"
+          python "Night Court/tools/audit_production_script_publication.py"
+      - name: Assert no model-generated script is falsely production-certified
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          j=json.loads(Path("Night Court/catalog/production-script-publication-gates.json").read_text())
+          assert len(j["episodes"])==193
+          assert j["verified_full_episode_scripts"]==0
+          assert j["blocked_full_episode_scripts"]==193
+          print("193/193 evidence-gated; no invented AV screenplay acceptance")
+          PY
+      - name: Commit source-reconciled release gate report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/catalog/production-script-publication-gates.json"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): record 193 production-script publication gates"
+            git push origin HEAD:qa/night-court-script-publication-gates
+          fi
