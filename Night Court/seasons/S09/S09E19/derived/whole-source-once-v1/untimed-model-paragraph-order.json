@@ -1,0 +1,703 @@
+{
+  "schema": "night-court-s09e19-untimed-ordered-machine-anchors/1",
+  "episode_id": "S09E19",
+  "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_untimed_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "source_paragraph_count": 347,
+  "original_source_paragraphs_with_timecodes": 0,
+  "independent_agreement_spans_considered": 40,
+  "uniquely_lexical_matches_before_ordering": 13,
+  "order_consistent_candidate_anchors": 13,
+  "candidate_anchor_sort_stage_wall_seconds": 0.26,
+  "source_original_text_modified": false,
+  "new_original_source_timecodes_created": false,
+  "speakers_and_continuous_actions_verified": false,
+  "production_script_accepted": false,
+  "review_cases": [
+    {
+      "source_agreement_span_index": 0,
+      "model_source_audio_time_proposal_ms": [
+        4440,
+        6080
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 5,
+      "model_source_audio_time_proposal_ms": [
+        27900,
+        30560
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 7,
+        "last": 7
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.88,
+      "next_nonoverlapping_lexical_similarity": 0.3077,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 10,
+      "model_source_audio_time_proposal_ms": [
+        41490,
+        42450
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 15,
+      "model_source_audio_time_proposal_ms": [
+        78001,
+        84360
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 24,
+        "last": 26
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.7826,
+      "next_nonoverlapping_lexical_similarity": 0.3333,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 20,
+      "model_source_audio_time_proposal_ms": [
+        107370,
+        108360
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 25,
+      "model_source_audio_time_proposal_ms": [
+        180370,
+        182220
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 30,
+      "model_source_audio_time_proposal_ms": [
+        205068,
+        210620
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 56,
+        "last": 57
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.8182,
+      "next_nonoverlapping_lexical_similarity": 0.2875,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 36,
+      "model_source_audio_time_proposal_ms": [
+        241590,
+        242740
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 66,
+        "last": 66
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.9231,
+      "next_nonoverlapping_lexical_similarity": 0.0,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 41,
+      "model_source_audio_time_proposal_ms": [
+        266400,
+        267040
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 46,
+      "model_source_audio_time_proposal_ms": [
+        290400,
+        291600
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.4348,
+      "next_nonoverlapping_lexical_similarity": 0.2857,
+      "lexical_match_decision": "abstain_low_or_ambiguous_lexical_evidence",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 51,
+      "model_source_audio_time_proposal_ms": [
+        307371,
+        310860
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 85,
+        "last": 85
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.7826,
+      "next_nonoverlapping_lexical_similarity": 0.2727,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 56,
+      "model_source_audio_time_proposal_ms": [
+        354263,
+        355300
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 61,
+      "model_source_audio_time_proposal_ms": [
+        391740,
+        392280
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 66,
+      "model_source_audio_time_proposal_ms": [
+        438360,
+        440700
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.7059,
+      "next_nonoverlapping_lexical_similarity": 0.26,
+      "lexical_match_decision": "abstain_low_or_ambiguous_lexical_evidence",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 71,
+      "model_source_audio_time_proposal_ms": [
+        454800,
+        455440
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 76,
+      "model_source_audio_time_proposal_ms": [
+        485400,
+        487360
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.7273,
+      "next_nonoverlapping_lexical_similarity": 0.6,
+      "lexical_match_decision": "abstain_low_or_ambiguous_lexical_evidence",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 81,
+      "model_source_audio_time_proposal_ms": [
+        511229,
+        513300
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.5,
+      "next_nonoverlapping_lexical_similarity": 0.1419,
+      "lexical_match_decision": "abstain_low_or_ambiguous_lexical_evidence",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 86,
+      "model_source_audio_time_proposal_ms": [
+        534340,
+        535460
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 91,
+      "model_source_audio_time_proposal_ms": [
+        555270,
+        556340
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 96,
+      "model_source_audio_time_proposal_ms": [
+        596640,
+        599520
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 172,
+        "last": 172
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.88,
+      "next_nonoverlapping_lexical_similarity": 0.3167,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 102,
+      "model_source_audio_time_proposal_ms": [
+        632780,
+        634980
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 183,
+        "last": 183
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 1.0,
+      "next_nonoverlapping_lexical_similarity": 0.0,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 107,
+      "model_source_audio_time_proposal_ms": [
+        657680,
+        658760
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 112,
+      "model_source_audio_time_proposal_ms": [
+        718460,
+        722090
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 195,
+        "last": 196
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.9,
+      "next_nonoverlapping_lexical_similarity": 0.208,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 117,
+      "model_source_audio_time_proposal_ms": [
+        760790,
+        763460
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 202,
+        "last": 202
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.8421,
+      "next_nonoverlapping_lexical_similarity": 0.173,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 122,
+      "model_source_audio_time_proposal_ms": [
+        779300,
+        781040
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 207,
+        "last": 207
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.7619,
+      "next_nonoverlapping_lexical_similarity": 0.1913,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 127,
+      "model_source_audio_time_proposal_ms": [
+        794035,
+        796780
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.5,
+      "next_nonoverlapping_lexical_similarity": 0.0,
+      "lexical_match_decision": "abstain_low_or_ambiguous_lexical_evidence",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 132,
+      "model_source_audio_time_proposal_ms": [
+        827213,
+        828840
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 221,
+        "last": 221
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.9091,
+      "next_nonoverlapping_lexical_similarity": 0.0,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 137,
+      "model_source_audio_time_proposal_ms": [
+        878810,
+        879680
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 142,
+      "model_source_audio_time_proposal_ms": [
+        896940,
+        897980
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 147,
+      "model_source_audio_time_proposal_ms": [
+        923420,
+        924350
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 152,
+      "model_source_audio_time_proposal_ms": [
+        988960,
+        992080
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 157,
+      "model_source_audio_time_proposal_ms": [
+        1018940,
+        1020880
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.5455,
+      "next_nonoverlapping_lexical_similarity": 0.5,
+      "lexical_match_decision": "abstain_low_or_ambiguous_lexical_evidence",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 162,
+      "model_source_audio_time_proposal_ms": [
+        1037090,
+        1037640
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 168,
+      "model_source_audio_time_proposal_ms": [
+        1089737,
+        1094500
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 294,
+        "last": 294
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.8889,
+      "next_nonoverlapping_lexical_similarity": 0.325,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 173,
+      "model_source_audio_time_proposal_ms": [
+        1143970,
+        1144780
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 178,
+      "model_source_audio_time_proposal_ms": [
+        1155530,
+        1157740
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 183,
+      "model_source_audio_time_proposal_ms": [
+        1183080,
+        1187000
+      ],
+      "source_original_paragraph_candidate": {
+        "first": 318,
+        "last": 318
+      },
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.9655,
+      "next_nonoverlapping_lexical_similarity": 0.2947,
+      "lexical_match_decision": "distinct_high_lexical_match_UNVERIFIED",
+      "candidate_in_global_original_paragraph_order": true,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "order_consistent_lexical_anchor_candidate"
+    },
+    {
+      "source_agreement_span_index": 188,
+      "model_source_audio_time_proposal_ms": [
+        1207070,
+        1209780
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.6667,
+      "next_nonoverlapping_lexical_similarity": 0.1875,
+      "lexical_match_decision": "abstain_low_or_ambiguous_lexical_evidence",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 193,
+      "model_source_audio_time_proposal_ms": [
+        1238030,
+        1240020
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": 0.5,
+      "next_nonoverlapping_lexical_similarity": 0.2933,
+      "lexical_match_decision": "abstain_low_or_ambiguous_lexical_evidence",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    },
+    {
+      "source_agreement_span_index": 198,
+      "model_source_audio_time_proposal_ms": [
+        1250804,
+        1251980
+      ],
+      "source_original_paragraph_candidate": null,
+      "source_original_paragraph_timecode_ms": null,
+      "best_independent_model_lexical_similarity": null,
+      "next_nonoverlapping_lexical_similarity": null,
+      "lexical_match_decision": "abstain_short_asr_phrase",
+      "candidate_in_global_original_paragraph_order": false,
+      "original_source_dialogue_human_verified": false,
+      "speaking_character_identified": false,
+      "review_status": "unresolved_or_out_of_order_model_lexical_hypothesis"
+    }
+  ],
+  "limitations": [
+    "Order-consistent candidates align audio-model claims to paragraphs; original paragraphs remain untimed.",
+    "Machine-audio agreement can repeat shared errors and source text may differ from exact original dialogue.",
+    "Unique lexical evidence and monotonicity are not proof of audio/source synchronization or omitted text.",
+    "All candidate text is research; speaker identity, delivery and full screenplay acceptance are separate."
+  ]
+}

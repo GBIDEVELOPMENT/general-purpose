@@ -1,0 +1,611 @@
+{
+  "schema": "night-court-s09e19-whole-source-once-cross-episode-benchmark/1",
+  "episode_id": "S09E19",
+  "original_series": "night-court-1984",
+  "original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "source_video_bytes": 183377920,
+  "original_untimed_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_source_paragraphs": 347,
+  "original_source_paragraphs_with_source_timecodes": 0,
+  "decoded_original_pcm_sha256": "7f3e3634c99469214360d59faf69c7838301e6ee94d5f08968382a74607b6711",
+  "original_video_duration_ms": 1320144,
+  "original_audio_duration_ms": 1320144,
+  "video_encoded_avg_fps": "30000/1001",
+  "original_audio_decoded_once": true,
+  "original_video_download_count": 1,
+  "model_families": [
+    "whisper",
+    "kaldi_hmm_wfst"
+  ],
+  "model_was_primed_by_original_text": false,
+  "model_word_counts": {
+    "whisper": 2338,
+    "vosk": 2249
+  },
+  "model_invalid_word_time_counts": {
+    "whisper": 90,
+    "vosk": 0
+  },
+  "model_rejection_reasons": {
+    "whisper": {
+      "zero_or_reversed_rounded_word_time": 90
+    },
+    "vosk": {}
+  },
+  "source_consensus_word_counts": {
+    "a_words": 2338,
+    "b_words": 2249,
+    "paired_words": 1542,
+    "corroborated_words": 1299,
+    "corroborated_spans": 199,
+    "unresolved_word_candidates": 1989
+  },
+  "reviewed_untimed_source_lexical_probe_count": 40,
+  "untimed_paragraph_lexical_candidates": [
+    {
+      "consensus_span_index": 0,
+      "original_avi_audio_time_proposal_ms": [
+        4440,
+        6080
+      ],
+      "independent_model_agreed_text_hypothesis": "Well, that does it.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 5,
+      "original_avi_audio_time_proposal_ms": [
+        27900,
+        30560
+      ],
+      "independent_model_agreed_text_hypothesis": "going out to the television stations tonight, And I must say,",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 7,
+        "last": 7
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 10,
+      "original_avi_audio_time_proposal_ms": [
+        41490,
+        42450
+      ],
+      "independent_model_agreed_text_hypothesis": "the pretty fascinating",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 15,
+      "original_avi_audio_time_proposal_ms": [
+        78001,
+        84360
+      ],
+      "independent_model_agreed_text_hypothesis": "accompanied by how -to photos? It's nothing like that. Then why waste the",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 24,
+        "last": 26
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 20,
+      "original_avi_audio_time_proposal_ms": [
+        107370,
+        108360
+      ],
+      "independent_model_agreed_text_hypothesis": "what a great story.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 25,
+      "original_avi_audio_time_proposal_ms": [
+        180370,
+        182220
+      ],
+      "independent_model_agreed_text_hypothesis": "things to say? No,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 30,
+      "original_avi_audio_time_proposal_ms": [
+        205068,
+        210620
+      ],
+      "independent_model_agreed_text_hypothesis": "would take all the fun out of the fantasy. Yeah, I feel the same way about lamb chop.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 56,
+        "last": 57
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 36,
+      "original_avi_audio_time_proposal_ms": [
+        241590,
+        242740
+      ],
+      "independent_model_agreed_text_hypothesis": "I believe beef jerky runs about",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 66,
+        "last": 66
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 41,
+      "original_avi_audio_time_proposal_ms": [
+        266400,
+        267040
+      ],
+      "independent_model_agreed_text_hypothesis": "At that time",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 46,
+      "original_avi_audio_time_proposal_ms": [
+        290400,
+        291600
+      ],
+      "independent_model_agreed_text_hypothesis": "don't expect you to stay",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 51,
+      "original_avi_audio_time_proposal_ms": [
+        307371,
+        310860
+      ],
+      "independent_model_agreed_text_hypothesis": "and brilliant execution, I am confident that this spot is",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 85,
+        "last": 85
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 56,
+      "original_avi_audio_time_proposal_ms": [
+        354263,
+        355300
+      ],
+      "independent_model_agreed_text_hypothesis": "I've never seen it.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 61,
+      "original_avi_audio_time_proposal_ms": [
+        391740,
+        392280
+      ],
+      "independent_model_agreed_text_hypothesis": "take to the",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 66,
+      "original_avi_audio_time_proposal_ms": [
+        438360,
+        440700
+      ],
+      "independent_model_agreed_text_hypothesis": "Sullivan must be elected to Congress.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 71,
+      "original_avi_audio_time_proposal_ms": [
+        454800,
+        455440
+      ],
+      "independent_model_agreed_text_hypothesis": "of a line",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 76,
+      "original_avi_audio_time_proposal_ms": [
+        485400,
+        487360
+      ],
+      "independent_model_agreed_text_hypothesis": "I guess you're right. My measly",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 81,
+      "original_avi_audio_time_proposal_ms": [
+        511229,
+        513300
+      ],
+      "independent_model_agreed_text_hypothesis": "it. Come on, Harry. Yeah, thanks,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 86,
+      "original_avi_audio_time_proposal_ms": [
+        534340,
+        535460
+      ],
+      "independent_model_agreed_text_hypothesis": "my phone machine.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 91,
+      "original_avi_audio_time_proposal_ms": [
+        555270,
+        556340
+      ],
+      "independent_model_agreed_text_hypothesis": "this computer program will",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 96,
+      "original_avi_audio_time_proposal_ms": [
+        596640,
+        599520
+      ],
+      "independent_model_agreed_text_hypothesis": "What's the problem, Ross? It's not like Alex is a stranger.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 172,
+        "last": 172
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 102,
+      "original_avi_audio_time_proposal_ms": [
+        632780,
+        634980
+      ],
+      "independent_model_agreed_text_hypothesis": "skate. With holiday on ice?",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 183,
+        "last": 183
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 107,
+      "original_avi_audio_time_proposal_ms": [
+        657680,
+        658760
+      ],
+      "independent_model_agreed_text_hypothesis": "the moment, but there",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 112,
+      "original_avi_audio_time_proposal_ms": [
+        718460,
+        722090
+      ],
+      "independent_model_agreed_text_hypothesis": "and holding. He's picked every lock in the building. Any suggestions?",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 195,
+        "last": 196
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 117,
+      "original_avi_audio_time_proposal_ms": [
+        760790,
+        763460
+      ],
+      "independent_model_agreed_text_hypothesis": "but I'm losing support fast with a female constituency.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 202,
+        "last": 202
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 122,
+      "original_avi_audio_time_proposal_ms": [
+        779300,
+        781040
+      ],
+      "independent_model_agreed_text_hypothesis": "stupid commercial, but you should be happy it's",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 207,
+        "last": 207
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 127,
+      "original_avi_audio_time_proposal_ms": [
+        794035,
+        796780
+      ],
+      "independent_model_agreed_text_hypothesis": "fine. Fine. Five days of shooting",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 132,
+      "original_avi_audio_time_proposal_ms": [
+        827213,
+        828840
+      ],
+      "independent_model_agreed_text_hypothesis": "I always talk like this.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 221,
+        "last": 221
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 137,
+      "original_avi_audio_time_proposal_ms": [
+        878810,
+        879680
+      ],
+      "independent_model_agreed_text_hypothesis": "Pretty neat stuff,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 142,
+      "original_avi_audio_time_proposal_ms": [
+        896940,
+        897980
+      ],
+      "independent_model_agreed_text_hypothesis": "is a possibility.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 147,
+      "original_avi_audio_time_proposal_ms": [
+        923420,
+        924350
+      ],
+      "independent_model_agreed_text_hypothesis": "Why don't we forget",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 152,
+      "original_avi_audio_time_proposal_ms": [
+        988960,
+        992080
+      ],
+      "independent_model_agreed_text_hypothesis": "I lose. As usual,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 157,
+      "original_avi_audio_time_proposal_ms": [
+        1018940,
+        1020880
+      ],
+      "independent_model_agreed_text_hypothesis": "forgotten this is a place of business.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 162,
+      "original_avi_audio_time_proposal_ms": [
+        1037090,
+        1037640
+      ],
+      "independent_model_agreed_text_hypothesis": "When it comes to",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 168,
+      "original_avi_audio_time_proposal_ms": [
+        1089737,
+        1094500
+      ],
+      "independent_model_agreed_text_hypothesis": "me. So that was us.",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 294,
+        "last": 294
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 173,
+      "original_avi_audio_time_proposal_ms": [
+        1143970,
+        1144780
+      ],
+      "independent_model_agreed_text_hypothesis": "like my perfect",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 178,
+      "original_avi_audio_time_proposal_ms": [
+        1155530,
+        1157740
+      ],
+      "independent_model_agreed_text_hypothesis": "love that. Let's go.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 183,
+      "original_avi_audio_time_proposal_ms": [
+        1183080,
+        1187000
+      ],
+      "independent_model_agreed_text_hypothesis": "I spoke to the guy who duplicated your commercial And I think it explains",
+      "untimed_original_source_paragraph_candidate": {
+        "first": 318,
+        "last": 318
+      },
+      "lexical_uniqueness_status": "distinct_high_lexical_match_UNVERIFIED",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 188,
+      "original_avi_audio_time_proposal_ms": [
+        1207070,
+        1209780
+      ],
+      "independent_model_agreed_text_hypothesis": "Yeah, you've been sharing our time with Candy Good Love,",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 193,
+      "original_avi_audio_time_proposal_ms": [
+        1238030,
+        1240020
+      ],
+      "independent_model_agreed_text_hypothesis": "split. Right. I get all",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_low_or_ambiguous_lexical_evidence",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    },
+    {
+      "consensus_span_index": 198,
+      "original_avi_audio_time_proposal_ms": [
+        1250804,
+        1251980
+      ],
+      "independent_model_agreed_text_hypothesis": "the market this year.",
+      "untimed_original_source_paragraph_candidate": null,
+      "lexical_uniqueness_status": "abstain_short_asr_phrase",
+      "original_source_paragraph_time_ms": null,
+      "word_identity_original_audio_human_verified": false
+    }
+  ],
+  "source_video_cut_change_candidates_unverified": 212,
+  "source_video_pts_trace_anomalies": {
+    "emitted_rows": 212,
+    "duplicate_timestamp_rows": 0,
+    "ordered_or_tied_timestamp_steps": 0
+  },
+  "source_sample_plan_counts": {
+    "frames": 202,
+    "baseline": 85,
+    "bursts": 31,
+    "transition_pairs": 12,
+    "cut_candidates": 212,
+    "events_supplied": 31,
+    "events_deferred": 0
+  },
+  "actual_source_frames_selected": 202,
+  "actual_source_jpegs_bytes_ephemeral": 999791,
+  "sampled_frames_original_pts_checked": true,
+  "component_measured_seconds": {
+    "single_original_ftp_transfer_and_sha_seconds": 3.132,
+    "ffprobe_source_metadata_seconds": 0.097,
+    "one_source_pcm_decode_seconds": 4.622,
+    "pinned_vosk_download_unpack_seconds": 9.95,
+    "kaldi_wfst_full_episode_inference_seconds": 97.109,
+    "whisper_tiny_full_episode_inference_seconds": 53.614,
+    "independent_model_word_reconciliation_seconds": 0.019,
+    "full_source_low_res_cut_scan_seconds": 25.133,
+    "bounded_visual_plan_seconds": 0.009,
+    "one_pass_source_frame_jpeg_extraction_seconds": 21.248,
+    "untimed_source_paragraph_lexical_probe_seconds": 0.207
+  },
+  "source_processing_wall_seconds_excluding_job_startup_and_dependency_install": 215.14,
+  "all_original_source_media_deleted_after_job": true,
+  "human_original_audio_listened": false,
+  "independently_verified_real_cuts_and_physical_action": false,
+  "source_untimed_paragraph_timestamps_created": false,
+  "speaker_identity_or_emotion_verified": false,
+  "episode_production_script_accepted": false,
+  "fleet_p95_episode_speed_verified": false,
+  "limitations": [
+    "The 347 source paragraphs have no source timecodes, and model lexical matches are proposals only.",
+    "Video cuts are FFmpeg frame-change hypotheses; uniform triads are not recognized motion.",
+    "Both recognizers decode independently but their errors may correlate.",
+    "No vision-language understanding or human hearing/continuous-video review is measured.",
+    "This second episode helps evaluate throughput generalization but does not establish p95 across 193 episodes."
+  ]
+}
