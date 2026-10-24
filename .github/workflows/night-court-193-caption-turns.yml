@@ -1,0 +1,48 @@
+name: Night Court complete original-series caption-turn preprocessing
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/night-court-193-caption-turns.yml'
+      - 'Night Court/SOURCE-SCRIPT-SCAFFOLDS-HANDOFF.md'
+permissions:
+  contents: write
+jobs:
+  generate:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-193-caption-turn-packets'
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-193-caption-turn-packets
+          persist-credentials: true
+      - name: Regenerate all original held transcript turn units and gap packets
+        run: |
+          python "Night Court/tools/build_caption_turns.py"
+          python "Night Court/tools/validate_dialogue.py"
+      - name: Compare exact source cue, turn, gap counts against accepted reading scripts
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root=Path("Night Court/catalog")
+          t=json.loads((root/"caption-turn-coverage.json").read_text())
+          s=json.loads((root/"source-script-scaffold-coverage.json").read_text())
+          assert t["input_held_source_witnesses"]==193
+          assert t["episodes_with_turns"]==193
+          assert t["totals"]["units"]==s["caption_units"]==72733
+          assert t["totals"]["packets"]==s["dialogue_gap_blocks"]==1173
+          assert sum(x["source_cues"] for x in t["versions"])==s["source_cues"]==70804
+          assert all(x["source_explicit_speaker_labels"]<=x["candidate_turns"] for x in t["versions"])
+          print("Accepted 193/193 original source turns, 72,733 units and 1,173 gap packets; none AV-verified")
+          PY
+      - name: Persist new derived per-episode caption/turn and catalog evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/" "Night Court/catalog/caption-turn-coverage.json" \
+            "Night Court/catalog/caption-conversation-packets.jsonl"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): finish neutral caption turn and gap packets for 193 episodes"
+            git push origin HEAD:data/night-court-193-caption-turn-packets
+          fi

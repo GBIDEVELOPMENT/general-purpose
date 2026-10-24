@@ -1,11 +1,12 @@
 {
   "series": "night-court-1984",
-  "input_held_source_witnesses": 35,
-  "episodes_with_turns": 35,
+  "input_held_source_witnesses": 193,
+  "episodes_with_turns": 193,
   "totals": {
-    "units": 14924,
+    "units": 72733,
     "units_split_from_multi_dash_caption": 3858,
-    "packets": 165
+    "packets": 1173,
+    "explicit_source_labels": 4
   },
   "speaker_model": "explicit_source_labels_only_no_character_inference",
   "conversation_boundary_model": "12s_caption_gap_heuristic_not_scene_segmentation",
@@ -331,6 +332,1428 @@
       "candidate_turns": 428,
       "source_explicit_speaker_labels": 0,
       "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S03E01",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--aae67e17d0cfee26",
+      "source_sha256": "aae67e17d0cfee264d024d3aa1cc0a50f9d51c760823e168ea0ca8f97a10ecc2",
+      "source_cues": 524,
+      "candidate_turns": 524,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S03E02",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--13c5ba8270f0498b",
+      "source_sha256": "13c5ba8270f0498b6e07975bbb749ed754a5272b8ad2cadb81af978e9d5be829",
+      "source_cues": 530,
+      "candidate_turns": 530,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S03E03",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--95b5ea1eaa87c852",
+      "source_sha256": "95b5ea1eaa87c852a6d9bb7dc8e8612586f50240eb2c25704a9ae1c0e0532e6f",
+      "source_cues": 533,
+      "candidate_turns": 533,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 2
+    },
+    {
+      "episode_id": "S03E04",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--6bc15c82a64d3cd2",
+      "source_sha256": "6bc15c82a64d3cd29059b84b01e6e938030572f869ae9a83245101f96f01b9e8",
+      "source_cues": 363,
+      "candidate_turns": 363,
+      "source_explicit_speaker_labels": 4,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S03E05",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--6abc5bf7a892c365",
+      "source_sha256": "6abc5bf7a892c3650669f536bbb3ae786bbe1c202b75b0d6b6ffb2924297ccc7",
+      "source_cues": 479,
+      "candidate_turns": 479,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S03E06",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--87e2e5ecb9dc2a42",
+      "source_sha256": "87e2e5ecb9dc2a428efb568ad0fb1958b89eec90ede853294595dba2802f8d91",
+      "source_cues": 485,
+      "candidate_turns": 485,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S03E07",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--412d2f26dc55ea0a",
+      "source_sha256": "412d2f26dc55ea0ab64059c9053118c89b4a02c89d76c6f19de8cb8740fdbfdc",
+      "source_cues": 475,
+      "candidate_turns": 475,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S03E08",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--bdcb32e7868acffb",
+      "source_sha256": "bdcb32e7868acffb7e1a307394ea4c2d2d3b141145664df2417a03ba6b0e5a1b",
+      "source_cues": 520,
+      "candidate_turns": 520,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 2
+    },
+    {
+      "episode_id": "S03E09",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--6a6dec70df6271e5",
+      "source_sha256": "6a6dec70df6271e515d7f80bb7940c0314bdaf078ffb8776399acdc028f37f31",
+      "source_cues": 483,
+      "candidate_turns": 483,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S03E10",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--9cf841375e33da4c",
+      "source_sha256": "9cf841375e33da4cb326a8edcf322db76766361ff16c529e51b721e9c4862d70",
+      "source_cues": 509,
+      "candidate_turns": 509,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S03E11",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--84ab9975f4da0c67",
+      "source_sha256": "84ab9975f4da0c678ad886567e16b81d98847659e0290206d3412ae06e5bba24",
+      "source_cues": 419,
+      "candidate_turns": 419,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S03E12",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--6db20c32e75c7937",
+      "source_sha256": "6db20c32e75c79371769612c6ad3be292c67ed4aeac60b9282327a76acb08c3b",
+      "source_cues": 455,
+      "candidate_turns": 455,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S03E13",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--2540ca84ae119aef",
+      "source_sha256": "2540ca84ae119aef162778a7c878d63d9a506d0f49e2c1b816e6c7c61da432e3",
+      "source_cues": 495,
+      "candidate_turns": 495,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S03E14",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--68ae15377e4e57b9",
+      "source_sha256": "68ae15377e4e57b936043c8661e2f1f2191d532ab8086a998dcd7ef772d502a6",
+      "source_cues": 516,
+      "candidate_turns": 516,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S03E15",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--fd7d63c4b3fa08ce",
+      "source_sha256": "fd7d63c4b3fa08ceb75279a4e6983d7c701e349a81357059b765cca7e664082a",
+      "source_cues": 485,
+      "candidate_turns": 485,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S03E16",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--073e1b8a29e6aa9b",
+      "source_sha256": "073e1b8a29e6aa9b4766c429d439a3e1e9bbcd4a2d971320f229994d916f1e2b",
+      "source_cues": 438,
+      "candidate_turns": 438,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S03E17",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--4437166bc9ecb09f",
+      "source_sha256": "4437166bc9ecb09f934e09173f4f73270d2c1cddbe11e3c3a1c97501052de65d",
+      "source_cues": 504,
+      "candidate_turns": 504,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S03E18",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--d5e4b72bdee51e04",
+      "source_sha256": "d5e4b72bdee51e0413077d444ac1eb32e398887f11059935bd0f953588c56f12",
+      "source_cues": 447,
+      "candidate_turns": 447,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S03E19",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--fef9ba98d580a977",
+      "source_sha256": "fef9ba98d580a9774763098587ba8f2d0e3539f86a648cc1399341a4851c5f42",
+      "source_cues": 537,
+      "candidate_turns": 537,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S03E20",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--1d128b97f1fe413b",
+      "source_sha256": "1d128b97f1fe413b533acdd4c50d2a699c24d9892aa577049c74ed0ca0de5a54",
+      "source_cues": 478,
+      "candidate_turns": 478,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S03E21",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--c57390c6ef1179ff",
+      "source_sha256": "c57390c6ef1179fff22ff21df3bde7605a6ac3f927ff4533b08e106c000fe223",
+      "source_cues": 533,
+      "candidate_turns": 533,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S03E22",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--6be323580b22ebf4",
+      "source_sha256": "6be323580b22ebf43cdcb05b67a7b89b113dba8784949466fa8f36d516332ee5",
+      "source_cues": 469,
+      "candidate_turns": 469,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S04E01",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--7f50c87427a2f7d4",
+      "source_sha256": "7f50c87427a2f7d482c160306a767890fbb2f219a770420f7b35d83c0719fc70",
+      "source_cues": 294,
+      "candidate_turns": 294,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 11
+    },
+    {
+      "episode_id": "S04E02",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--127990898b4798f7",
+      "source_sha256": "127990898b4798f7975bb75b9af9f9abc66056a5b3560705990f0e82aab067de",
+      "source_cues": 309,
+      "candidate_turns": 309,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 11
+    },
+    {
+      "episode_id": "S04E03",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--7f63d2372a4442c4",
+      "source_sha256": "7f63d2372a4442c4353b11b753405d64ff33dfcd761af785e09b583cb8cc9562",
+      "source_cues": 312,
+      "candidate_turns": 312,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S04E04",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--e06039489987f78d",
+      "source_sha256": "e06039489987f78d12082798e98633559917d880d83a74e262600d8c12467299",
+      "source_cues": 338,
+      "candidate_turns": 338,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S04E05",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--9b0b7626749f4f36",
+      "source_sha256": "9b0b7626749f4f36a63221abc4ddab32247a77866e59ad487683d2550027bdf7",
+      "source_cues": 341,
+      "candidate_turns": 341,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S04E06",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--d197c0b8a18b5efc",
+      "source_sha256": "d197c0b8a18b5efc1c54ec014203e1e83ffe8c5a2c551ee933a84a71b88fa465",
+      "source_cues": 333,
+      "candidate_turns": 333,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 9
+    },
+    {
+      "episode_id": "S04E07",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--2eec252760d921ec",
+      "source_sha256": "2eec252760d921ec80bd236b148c61df6bb01bc2d86e47cc7e27a35d3978c448",
+      "source_cues": 299,
+      "candidate_turns": 299,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S04E08",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--7b5fe723c997287d",
+      "source_sha256": "7b5fe723c997287dbf8c22a5e48e2f72dae69f699398e42bfc3f8690acf28f56",
+      "source_cues": 304,
+      "candidate_turns": 304,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S04E09",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--8a20e5b9aa5d31e9",
+      "source_sha256": "8a20e5b9aa5d31e92cb3a45f67d6ca6d143313cf8de244c8ae45a964f7d3a7de",
+      "source_cues": 351,
+      "candidate_turns": 351,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S04E10",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--ed227b57997d3043",
+      "source_sha256": "ed227b57997d30438693c6ce3c6681f00c9dc949666df895d35d951b60d2b2d3",
+      "source_cues": 370,
+      "candidate_turns": 370,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 2
+    },
+    {
+      "episode_id": "S04E11",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--3e8e09b2a9740e9a",
+      "source_sha256": "3e8e09b2a9740e9a7d7899f584ed15c2e162a7a6845f6d463c1ddfabeb878a23",
+      "source_cues": 309,
+      "candidate_turns": 309,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S04E12",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--4d56649b2e6f9d0f",
+      "source_sha256": "4d56649b2e6f9d0f0e58e5c953289b7d38fb1984dfbd9b34e3260bc6522bbd7c",
+      "source_cues": 328,
+      "candidate_turns": 328,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 11
+    },
+    {
+      "episode_id": "S04E13",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--3bd1f19da7fcbd0f",
+      "source_sha256": "3bd1f19da7fcbd0fe7f2d55f4ac8ad9017f05fa41d63af12d108de85fb3b1b2a",
+      "source_cues": 349,
+      "candidate_turns": 349,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S04E14",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--d03750c23239950a",
+      "source_sha256": "d03750c23239950ae05710da4c83bba8483b7e3c1329e273754df25b03ba914a",
+      "source_cues": 316,
+      "candidate_turns": 316,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S04E15",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--3332d91aa089eff6",
+      "source_sha256": "3332d91aa089eff699d6004e0dcc4c8fc22b96d04cf4c2bc4ec52d51a4c9ca7b",
+      "source_cues": 290,
+      "candidate_turns": 290,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 9
+    },
+    {
+      "episode_id": "S04E16",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--00442de8605b7825",
+      "source_sha256": "00442de8605b7825fa320e4b390bd3e26fb8b6b2b97f918ef28867cf86375b8b",
+      "source_cues": 367,
+      "candidate_turns": 367,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S04E17",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--39cfa37ae90d58a4",
+      "source_sha256": "39cfa37ae90d58a49a1ec25dfbe194c734514a092facc6d72de965fc136f0e13",
+      "source_cues": 311,
+      "candidate_turns": 311,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S04E18",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--a8ff3be297b9c181",
+      "source_sha256": "a8ff3be297b9c181b224186e0e32e5be0a93a2b15a883394d9b950cf000c8568",
+      "source_cues": 330,
+      "candidate_turns": 330,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S04E19",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--874edcb22fea35ff",
+      "source_sha256": "874edcb22fea35ff2f29e538207c3f8bb8a17af9487f313a57595bcc25ab4982",
+      "source_cues": 313,
+      "candidate_turns": 313,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S04E20",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--67d2d122f28d5f14",
+      "source_sha256": "67d2d122f28d5f14a776c4a6bd9ffebd705082d49c33168cbc2d6070e18c637c",
+      "source_cues": 342,
+      "candidate_turns": 342,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S04E21",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--b75a3bb8a556c609",
+      "source_sha256": "b75a3bb8a556c609d15632c6a90b6bc2279ddafbf33a282b2eb34b4fdd3ba744",
+      "source_cues": 286,
+      "candidate_turns": 286,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 13
+    },
+    {
+      "episode_id": "S04E22",
+      "version_id": "subtitle-cat-480p-dvd-english-research-witness--a40070ece4998764",
+      "source_sha256": "a40070ece49987647903e3e40837fff63cd9c1907785752fa4539d95d5f8a374",
+      "source_cues": 332,
+      "candidate_turns": 332,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 11
+    },
+    {
+      "episode_id": "S05E01",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--379b1c8d7b83cad5",
+      "source_sha256": "379b1c8d7b83cad5f8688f6e12e68245a5776ee4a30bd86053a3a84a33692536",
+      "source_cues": 310,
+      "candidate_turns": 310,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S05E02",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--b1f54372c0b485f0",
+      "source_sha256": "b1f54372c0b485f07591663d65c23e637aa6a038b70d48c7404afd9bf3c0cbbc",
+      "source_cues": 332,
+      "candidate_turns": 332,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 11
+    },
+    {
+      "episode_id": "S05E03",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--5eff036234ff6339",
+      "source_sha256": "5eff036234ff63394ee0164f0c32666d3bfc490a914ce383ca597cc4fc916ec2",
+      "source_cues": 341,
+      "candidate_turns": 341,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S05E04",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--6ba175745b2adf51",
+      "source_sha256": "6ba175745b2adf51ab63fd59073626c59a7983a87f4f9eba9353dbfdcb70c368",
+      "source_cues": 283,
+      "candidate_turns": 283,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 13
+    },
+    {
+      "episode_id": "S05E05",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--9bdf7ef5e94675cc",
+      "source_sha256": "9bdf7ef5e94675ccc55238425c3ccf3dda6e46b92d9138ce0eb80a1837e978a0",
+      "source_cues": 300,
+      "candidate_turns": 300,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S05E06",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--b225e86dd0dcdb25",
+      "source_sha256": "b225e86dd0dcdb25be79c49bbcb13a384561555dd7d96837aa9d4c185b37f220",
+      "source_cues": 332,
+      "candidate_turns": 332,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S05E07",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--6446f4f1170b0776",
+      "source_sha256": "6446f4f1170b0776281eb19b0147fad44791f05f0f481b54c77f87f279c10ea2",
+      "source_cues": 324,
+      "candidate_turns": 324,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S05E08",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--f95d2da962706730",
+      "source_sha256": "f95d2da962706730b77cee449d71da2c81e1bee938c17fcc4b4c549bf1c8dfa5",
+      "source_cues": 353,
+      "candidate_turns": 353,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S05E09",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--ab419263ca40cb0f",
+      "source_sha256": "ab419263ca40cb0f95d3a22e8de2c2be2d12d7b24e69887f6bc5f3b67e83cbf7",
+      "source_cues": 359,
+      "candidate_turns": 359,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S05E10",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--98e9c53f4d404dc4",
+      "source_sha256": "98e9c53f4d404dc454671295a8b68ce8fe7aa71d56ea852dd767cb5b16fa461f",
+      "source_cues": 315,
+      "candidate_turns": 315,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 13
+    },
+    {
+      "episode_id": "S05E11",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--0a3e477f083e795b",
+      "source_sha256": "0a3e477f083e795baf7504cda990b2c60bf7dab8f2c82008a9ad81eed5ca6628",
+      "source_cues": 346,
+      "candidate_turns": 346,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S05E12",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--ef303e9d9d681d0e",
+      "source_sha256": "ef303e9d9d681d0e95d2d65bdd3d26c1de844d376e1574d2fe771f3752325c58",
+      "source_cues": 329,
+      "candidate_turns": 329,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S05E13",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--c161510361b0796c",
+      "source_sha256": "c161510361b0796ca4fa021f76ddacfce3ab92f1a821bed2a76ee504d79e2035",
+      "source_cues": 380,
+      "candidate_turns": 380,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S05E14",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--b748016bd9a4f1f5",
+      "source_sha256": "b748016bd9a4f1f53b1c9b44dfb0b4519efc0a9093e48bd1e7efe2f606bd8e4b",
+      "source_cues": 292,
+      "candidate_turns": 292,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 14
+    },
+    {
+      "episode_id": "S05E15",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--b52d3c3bd3fdefab",
+      "source_sha256": "b52d3c3bd3fdefabb14b5ebcf46d01c45d2503f07159a7db90da026d89431a5d",
+      "source_cues": 346,
+      "candidate_turns": 346,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 9
+    },
+    {
+      "episode_id": "S05E16",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--b2dd4d6ccccd62eb",
+      "source_sha256": "b2dd4d6ccccd62eb65c78b2361231cdccc77977269be78eaac9ee41949509370",
+      "source_cues": 340,
+      "candidate_turns": 340,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S05E17",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--5cd9872461541e2c",
+      "source_sha256": "5cd9872461541e2c2b4f4fc10058116a765542710d8d5908d52e5de6da9967a7",
+      "source_cues": 319,
+      "candidate_turns": 319,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S05E18",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--aff24040f09c984c",
+      "source_sha256": "aff24040f09c984c5b0919d9cad142b7c10c31489c30bce17865b63ccf3c8258",
+      "source_cues": 349,
+      "candidate_turns": 349,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S05E19",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--79514081fdc0833d",
+      "source_sha256": "79514081fdc0833d80a0781cc8f2ab8036c921f46f7e6975d37bd10da237e765",
+      "source_cues": 318,
+      "candidate_turns": 318,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S05E20",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--fb0483956457c941",
+      "source_sha256": "fb0483956457c94150da828d6cbe5471b0f8c2af459ba44fee72947b7e8afb51",
+      "source_cues": 305,
+      "candidate_turns": 305,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S05E21",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--fdcadcc1e452d9e5",
+      "source_sha256": "fdcadcc1e452d9e50aee9d5a8a7429573d6d1d226588079dc7e3ae67e4394c9c",
+      "source_cues": 349,
+      "candidate_turns": 349,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 9
+    },
+    {
+      "episode_id": "S05E22",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--d2d0468f78e7bd22",
+      "source_sha256": "d2d0468f78e7bd2281eff17b6265d830e4b46370fa02815af8427470ac67ce5d",
+      "source_cues": 379,
+      "candidate_turns": 379,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S06E01",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--a2e8650ac16cd7ff",
+      "source_sha256": "a2e8650ac16cd7ffe2adfd380e677ff99b556ae3543a72cf300082b7761d7cfc",
+      "source_cues": 354,
+      "candidate_turns": 354,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S06E02",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--61a961d5e1812368",
+      "source_sha256": "61a961d5e1812368cb60c39d513676d5d05f57d1aab25c5a32a9a67a52dcc876",
+      "source_cues": 363,
+      "candidate_turns": 363,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S06E03",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--a71478344d57688e",
+      "source_sha256": "a71478344d57688e228c7b1642eb686f7f2cdde753c3e150fa1ccfc2dc730115",
+      "source_cues": 387,
+      "candidate_turns": 387,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S06E04",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--29f8354f5f424cbc",
+      "source_sha256": "29f8354f5f424cbc9e43d4d15fa494354018387c9c9b76bf9cce562845a4ba2f",
+      "source_cues": 366,
+      "candidate_turns": 366,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S06E05",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--c7e1043eb35ab7bc",
+      "source_sha256": "c7e1043eb35ab7bc896c2185d1ac07f3df96092caf2319bee9a2287cee86db21",
+      "source_cues": 386,
+      "candidate_turns": 386,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S06E06",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--ff0b9423c4dcd957",
+      "source_sha256": "ff0b9423c4dcd957082f961aedec8010d33e592a34b7660c732bb2e5602a127d",
+      "source_cues": 369,
+      "candidate_turns": 369,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S06E07",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--4a7219cea717425c",
+      "source_sha256": "4a7219cea717425cf914238abf5891eb754ac407d84594418f1d3de3dcf20b0a",
+      "source_cues": 381,
+      "candidate_turns": 381,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S06E08",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--d2434850ea6cce7c",
+      "source_sha256": "d2434850ea6cce7c17ccca49bc32b1eaf57774001fc4188030129b80e856d73e",
+      "source_cues": 372,
+      "candidate_turns": 372,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S06E09",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--64b9d9278c7f9ff6",
+      "source_sha256": "64b9d9278c7f9ff6bb11b08f783e378e8445f6677eedf757ba9ad14bd4552ecc",
+      "source_cues": 368,
+      "candidate_turns": 368,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S06E10",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--ee238c2f8a082792",
+      "source_sha256": "ee238c2f8a0827924967ededb6fb47d25cc5089827e6c2eee7ab29b5c42f60d0",
+      "source_cues": 384,
+      "candidate_turns": 384,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S06E11",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--cef591b127edc6ea",
+      "source_sha256": "cef591b127edc6ea715f7581cb1c1163ffb94507d154ac8ff5593d007d7bfc41",
+      "source_cues": 337,
+      "candidate_turns": 337,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S06E12",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--8aba85631fc2b6b7",
+      "source_sha256": "8aba85631fc2b6b77c0e6b0af05ff9885d52e43230d319a878a058c79f618cc1",
+      "source_cues": 302,
+      "candidate_turns": 302,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 11
+    },
+    {
+      "episode_id": "S06E13",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--4b18fb01591a1e5a",
+      "source_sha256": "4b18fb01591a1e5a73ccde88eb32144923b2204176d1f9d7c2e7ad1d2fa26106",
+      "source_cues": 302,
+      "candidate_turns": 302,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S06E14",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--e945a1e399b1a66b",
+      "source_sha256": "e945a1e399b1a66ba672df8c0d8865959395d028fa1ae7d30e8cfc79a6658e84",
+      "source_cues": 351,
+      "candidate_turns": 351,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S06E15",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--461144a5a79fee35",
+      "source_sha256": "461144a5a79fee356f73b4e7ff35e7656c5a25ad4c342cc0bbf3a7b39974d6a4",
+      "source_cues": 358,
+      "candidate_turns": 358,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S06E16",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--9c949db4a40a95e9",
+      "source_sha256": "9c949db4a40a95e94f5db0c0a7870466e78029ca87253d296f387aa42efe4347",
+      "source_cues": 404,
+      "candidate_turns": 404,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S06E17",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--098fc95dca784d1c",
+      "source_sha256": "098fc95dca784d1c2dd07e30c56360f61f5ed1173aa1fc8bb4849378aab6cd0d",
+      "source_cues": 351,
+      "candidate_turns": 351,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S06E18",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--d8729476b4c8c1a8",
+      "source_sha256": "d8729476b4c8c1a88d12ef13e9cca77f008a1e5e8227526245f37744bf7efac7",
+      "source_cues": 346,
+      "candidate_turns": 346,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S06E19",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--be33e97aaa5d83f7",
+      "source_sha256": "be33e97aaa5d83f7b7aec0168b88046a663fa9e6e5ff41644265b451d7d35c84",
+      "source_cues": 342,
+      "candidate_turns": 342,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S06E20",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--49bbb367c35d8819",
+      "source_sha256": "49bbb367c35d881980e4f72cb6b27264c7714bd374722ed6122543a1960afbc0",
+      "source_cues": 382,
+      "candidate_turns": 382,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S06E21",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--508e65e9ed8a3e10",
+      "source_sha256": "508e65e9ed8a3e103a778f2c00a052363e7a2a28cae8900fa6cc296b9b2005e8",
+      "source_cues": 360,
+      "candidate_turns": 360,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S06E22",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--c49ac58aed2f046e",
+      "source_sha256": "c49ac58aed2f046ed633dd159be5ae7be8731e400f19ade0b708a41279989423",
+      "source_cues": 294,
+      "candidate_turns": 294,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 11
+    },
+    {
+      "episode_id": "S07E01",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--3367bb19d3353837",
+      "source_sha256": "3367bb19d335383704caad0505c34f0e6104adcbc7a1ab920e4a00f312864965",
+      "source_cues": 340,
+      "candidate_turns": 340,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S07E02",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--78770d3bbbffdbba",
+      "source_sha256": "78770d3bbbffdbba119dca9b494bed64367e61d0f2306ac9305a2c4bba6e167a",
+      "source_cues": 354,
+      "candidate_turns": 354,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S07E03",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--c0ea55f542a7936d",
+      "source_sha256": "c0ea55f542a7936deaa4389463d92c194047678b39d29806bd442597e9d41a79",
+      "source_cues": 330,
+      "candidate_turns": 330,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S07E04",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--ee1ef886bfeef5cd",
+      "source_sha256": "ee1ef886bfeef5cd81380dc25cd6d0b919dbe1c785cd046b94d18ebcc0fbdf6d",
+      "source_cues": 345,
+      "candidate_turns": 345,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S07E05",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--0eefd775142351b2",
+      "source_sha256": "0eefd775142351b2c6d20d30ac6a1609096501a65d9eae9b1030d6f252d1253e",
+      "source_cues": 344,
+      "candidate_turns": 344,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S07E06",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--845a2358635368fd",
+      "source_sha256": "845a2358635368fdd8555dc752c06b14d4e3c599f30c00459b9d2745b0050204",
+      "source_cues": 365,
+      "candidate_turns": 365,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S07E07",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--63e11fd4ea69b3b4",
+      "source_sha256": "63e11fd4ea69b3b4ec231df585ce1bcca14956ee4f83f1135fcfbbe88306c71a",
+      "source_cues": 355,
+      "candidate_turns": 355,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S07E08",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--3d8bb0acd191948c",
+      "source_sha256": "3d8bb0acd191948cc8699bc43584fe89a4f1e57a9adcb9760127e99166b90e00",
+      "source_cues": 339,
+      "candidate_turns": 339,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S07E09",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--6ed415808ca7482c",
+      "source_sha256": "6ed415808ca7482c2583db0062add8fff3c02b108807c863c1987e792eb49e4b",
+      "source_cues": 339,
+      "candidate_turns": 339,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S07E10",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--100b6a77d8c0aa67",
+      "source_sha256": "100b6a77d8c0aa67d1670c509d7a135b22e4f255c3d2ad455ef39916548d994e",
+      "source_cues": 323,
+      "candidate_turns": 323,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S07E11",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--09122aac460369ef",
+      "source_sha256": "09122aac460369ef769298610917a3b26ae307737f0d3fc2d01af4ecd71b62e9",
+      "source_cues": 367,
+      "candidate_turns": 367,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S07E12",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--100cd1532512146d",
+      "source_sha256": "100cd1532512146df0e853091c70b57d6e9f0b6db863b75195c73455667aaf20",
+      "source_cues": 358,
+      "candidate_turns": 358,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S07E13",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--965866bfc39a67a9",
+      "source_sha256": "965866bfc39a67a9ed8dde038e57ed790f34707a12350918f30f4f5785a44104",
+      "source_cues": 357,
+      "candidate_turns": 357,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S07E14",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--c089d69a93ee7107",
+      "source_sha256": "c089d69a93ee7107b8aac5b3517c5f16f5a8c8a9fb7444a6e93546ca4d5aa57f",
+      "source_cues": 355,
+      "candidate_turns": 355,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S07E15",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--c9a3d80dc6f4931b",
+      "source_sha256": "c9a3d80dc6f4931b5ea3311938e19fa7d5c23af410cbbe47603bd5fd9d5b0e2e",
+      "source_cues": 374,
+      "candidate_turns": 374,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S07E16",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--de0b5b1a986043da",
+      "source_sha256": "de0b5b1a986043da8a77b83eed4df6108129e8675328d82590d7e74fd31387cc",
+      "source_cues": 360,
+      "candidate_turns": 360,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S07E17",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--f0876f93d3b39fd0",
+      "source_sha256": "f0876f93d3b39fd08d46cc99cd1793a78546da6a409e34ecd82bbb3b12f74fdb",
+      "source_cues": 360,
+      "candidate_turns": 360,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S07E18",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--fab211b1264e557e",
+      "source_sha256": "fab211b1264e557e51e15d1c7adc20ea34880c94bf37885f914c53f51d1e5a0c",
+      "source_cues": 351,
+      "candidate_turns": 351,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 11
+    },
+    {
+      "episode_id": "S07E19",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--93debcb76a2cf3ed",
+      "source_sha256": "93debcb76a2cf3ed8292e9bb686f4b850b5684a604fb4fbac320a692a44628ed",
+      "source_cues": 360,
+      "candidate_turns": 360,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S07E20",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--fd04f6857a7d06a7",
+      "source_sha256": "fd04f6857a7d06a708177c66b671da99bb2d1a481527fa3220d367a6d2b62ba8",
+      "source_cues": 385,
+      "candidate_turns": 385,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S07E21",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--48e9e37a0c146610",
+      "source_sha256": "48e9e37a0c1466107051c23013b79cc1710b66e6104751e5e9a162b0193ce544",
+      "source_cues": 345,
+      "candidate_turns": 345,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S07E22",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--4d9b1d9b2f0eb761",
+      "source_sha256": "4d9b1d9b2f0eb761767c5b42ed5bd4be9cb5b6ec027a91577297a06d71d6e88e",
+      "source_cues": 286,
+      "candidate_turns": 286,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S07E23",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--f6bc944436203918",
+      "source_sha256": "f6bc944436203918ae91521baa87a91927568f666cfa318a9418bc564dabb744",
+      "source_cues": 370,
+      "candidate_turns": 370,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S07E24",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--e8a4cf978c498285",
+      "source_sha256": "e8a4cf978c49828528f0c94318f3393e4d99c1a445588b59b6941a7cb615fa6d",
+      "source_cues": 240,
+      "candidate_turns": 240,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 18
+    },
+    {
+      "episode_id": "S08E01",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--dde70baf7a42abf2",
+      "source_sha256": "dde70baf7a42abf2cea3381db3228975bc94fcf87a5840dabf5b2ba20e415bd5",
+      "source_cues": 409,
+      "candidate_turns": 409,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S08E02",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--344e3cc24bd8bf66",
+      "source_sha256": "344e3cc24bd8bf66dc68d0801495292fbb201fa41e29218a3576fd1df679378a",
+      "source_cues": 396,
+      "candidate_turns": 396,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S08E03",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--596b2f0993004d31",
+      "source_sha256": "596b2f0993004d3163c34bda62eb32f57adc915bcac0c4f7c98bc6364b85b0d6",
+      "source_cues": 344,
+      "candidate_turns": 344,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 9
+    },
+    {
+      "episode_id": "S08E04",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--95157994a0f9264f",
+      "source_sha256": "95157994a0f9264f3ca018f773d58c037f24fbf83b6ff6a01fc3c08b492c759b",
+      "source_cues": 380,
+      "candidate_turns": 380,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S08E05",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--64973d90b40b3d86",
+      "source_sha256": "64973d90b40b3d86680dd4cc1c6489f0a9a1850b52ace712ab72e099705efa95",
+      "source_cues": 353,
+      "candidate_turns": 353,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S08E06",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--d59ac3ebf2d77499",
+      "source_sha256": "d59ac3ebf2d77499b7fcd075fc92d379e34509f4f6c82f9c755e31f4850e71b8",
+      "source_cues": 357,
+      "candidate_turns": 357,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S08E07",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--e4f15e5ed6da4343",
+      "source_sha256": "e4f15e5ed6da43432250537e8a0479ba090b1af54a3b353f36f2f51015f5052b",
+      "source_cues": 321,
+      "candidate_turns": 321,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 9
+    },
+    {
+      "episode_id": "S08E08",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--33bcb0dd38e7414f",
+      "source_sha256": "33bcb0dd38e7414fe7cd12901bfbc620c631703e829f0bac84c701ce71478ddb",
+      "source_cues": 392,
+      "candidate_turns": 392,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S08E09",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--7d7f57a9b3e0a7c7",
+      "source_sha256": "7d7f57a9b3e0a7c77f04475fe9dc9bec47bb1085c66276ce5071c1f4e7756c80",
+      "source_cues": 330,
+      "candidate_turns": 330,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S08E10",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--623028045421ce5b",
+      "source_sha256": "623028045421ce5bb08b1a6f1f56f74c36ac22b6114765da02f2d480d121d38d",
+      "source_cues": 351,
+      "candidate_turns": 351,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S08E11",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--3515102e62c0ad5d",
+      "source_sha256": "3515102e62c0ad5db3b59deedf3d112e4416cc17f49b474bc6b08349a88dfada",
+      "source_cues": 403,
+      "candidate_turns": 403,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S08E12",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--86817f9e2e1c5fa5",
+      "source_sha256": "86817f9e2e1c5fa5be796ea884aee76af9954983ff572d91b5511cd6af7efbae",
+      "source_cues": 376,
+      "candidate_turns": 376,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S08E13",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--04c7d8cbf5708dee",
+      "source_sha256": "04c7d8cbf5708dee0a61d29f57ecc599451d40e4052326feca5668d51a174989",
+      "source_cues": 373,
+      "candidate_turns": 373,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S08E14",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--80762313e76d3ae8",
+      "source_sha256": "80762313e76d3ae87a328aa21bea62df9bf5969d60372e42797f6d4c7fe565b2",
+      "source_cues": 374,
+      "candidate_turns": 374,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S08E15",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--5484f265a7ec5c9c",
+      "source_sha256": "5484f265a7ec5c9c8abad63ec2c7d8e5bfa1fdc9d001ec803b14c75caf38159f",
+      "source_cues": 355,
+      "candidate_turns": 355,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S08E16",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--755d0030ed3944cf",
+      "source_sha256": "755d0030ed3944cfb14fc4638d0fff0adcabed0dc9c6c52ada2999ebcd4c1e18",
+      "source_cues": 374,
+      "candidate_turns": 374,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S08E17",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--dc7fb5d01817f794",
+      "source_sha256": "dc7fb5d01817f794e296b180cfb0270a5d401b21635ded4793b4ba3401d2446e",
+      "source_cues": 374,
+      "candidate_turns": 374,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S08E18",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--a729fba99f638f86",
+      "source_sha256": "a729fba99f638f865247c51024749b6322a34d4e060724c52e2e1e97745cd134",
+      "source_cues": 385,
+      "candidate_turns": 385,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S08E19",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--a7830142a61f0e7b",
+      "source_sha256": "a7830142a61f0e7bbafc8cd532bcfa2f4ec9444c6bfaa59786d6dc00ea5ef3a1",
+      "source_cues": 342,
+      "candidate_turns": 342,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S08E20",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--9dca0c52cc62c2dd",
+      "source_sha256": "9dca0c52cc62c2dd282308c57a5b2ee968497d919548623ba8f331b445d5885b",
+      "source_cues": 392,
+      "candidate_turns": 392,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S08E21",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--9416e4f06f5d3332",
+      "source_sha256": "9416e4f06f5d33326c6543e95be71fd09ee56b62acf0d5b50e2095e8100b8aae",
+      "source_cues": 385,
+      "candidate_turns": 385,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S08E22",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--56d46111c79c1a3b",
+      "source_sha256": "56d46111c79c1a3b7dd68609926cce4af4726c94370822b0a19692f16eb570c6",
+      "source_cues": 389,
+      "candidate_turns": 389,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S08E23",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--4163aeab4fd6f8c8",
+      "source_sha256": "4163aeab4fd6f8c8d94cd4ec30f02e3d1de50865fb19a181f53a04032ed54c0a",
+      "source_cues": 370,
+      "candidate_turns": 370,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S08E24",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--b82c84b738dbbf59",
+      "source_sha256": "b82c84b738dbbf59b7c9ad57974d4a23522cc25f580ab8d6736a8a6ee4efda72",
+      "source_cues": 395,
+      "candidate_turns": 395,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S09E01",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--95562502eefad6a5",
+      "source_sha256": "95562502eefad6a5a619604caba78e7028f941c3814ee2aa2da8d87c8678d334",
+      "source_cues": 300,
+      "candidate_turns": 300,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S09E02",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--2ef4c1b2fd5d010c",
+      "source_sha256": "2ef4c1b2fd5d010c0fe5d5ef1cf5e4280150ad08f7339c9d9260c8f5310172ce",
+      "source_cues": 335,
+      "candidate_turns": 335,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S09E03",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--5eda66ecb6584e2b",
+      "source_sha256": "5eda66ecb6584e2b3fcf3d4b424f3cf8011dc526789c5612a264c0898972afaa",
+      "source_cues": 376,
+      "candidate_turns": 376,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S09E04",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--0096d7392b7b52ca",
+      "source_sha256": "0096d7392b7b52ca4da7ec1f8445abc551d36e8030c522be5ed933a27bd9bf6f",
+      "source_cues": 345,
+      "candidate_turns": 345,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S09E05",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--f0c7e11b6a772a8e",
+      "source_sha256": "f0c7e11b6a772a8e5334fedffd2d8a6e80063833014e862c14b91ae893339d19",
+      "source_cues": 337,
+      "candidate_turns": 337,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S09E06",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--64889a5b7fde5a15",
+      "source_sha256": "64889a5b7fde5a15be4f5e6b300cb98668155d3944dc957acabfc73128fd2531",
+      "source_cues": 386,
+      "candidate_turns": 386,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S09E07",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--8af7bf73c72cceb2",
+      "source_sha256": "8af7bf73c72cceb280013bb32d8cca60166f7faa0344f394ca7e2dbec0d26068",
+      "source_cues": 363,
+      "candidate_turns": 363,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S09E08",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--cb75c806132a8374",
+      "source_sha256": "cb75c806132a8374e990d2650f083c778e5d8992b88d4306c68f086a28bfbaa1",
+      "source_cues": 354,
+      "candidate_turns": 354,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S09E09",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--7934bd41f0111aee",
+      "source_sha256": "7934bd41f0111aeefe322bb916a77357a86e6b5df78c49c1a64230c84e465c75",
+      "source_cues": 340,
+      "candidate_turns": 340,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S09E10",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--50db8898d0d389bb",
+      "source_sha256": "50db8898d0d389bbca84fd8ef7aebf2fbb30c25aea6222f6353aa8635f236195",
+      "source_cues": 314,
+      "candidate_turns": 314,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 10
+    },
+    {
+      "episode_id": "S09E11",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--61b33329b78a8cce",
+      "source_sha256": "61b33329b78a8ccea88016be7483d3039fe09eaf6f5e243a07b19056ee9bd707",
+      "source_cues": 305,
+      "candidate_turns": 305,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 8
+    },
+    {
+      "episode_id": "S09E12",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--ca07d8ceb1885e5d",
+      "source_sha256": "ca07d8ceb1885e5d2b109b72e874e7cf280716f90b3128de5b697f3e9f098a25",
+      "source_cues": 355,
+      "candidate_turns": 355,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S09E13",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--c6dbf4885544ab0a",
+      "source_sha256": "c6dbf4885544ab0a82e62c5bb602ceb3bb1688e464dc5838de6279bbd4a8b6f7",
+      "source_cues": 349,
+      "candidate_turns": 349,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S09E14",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--1aa81d55429ded5e",
+      "source_sha256": "1aa81d55429ded5e2269c1ffdc91d07323575eca2ad908489d1e4c586fe8a52e",
+      "source_cues": 374,
+      "candidate_turns": 374,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 7
+    },
+    {
+      "episode_id": "S09E15",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--7ad905c23fc3301b",
+      "source_sha256": "7ad905c23fc3301b5102f286ba74b6bb678d3290aa71a45a76b4fd3963ec5dd8",
+      "source_cues": 316,
+      "candidate_turns": 316,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 9
+    },
+    {
+      "episode_id": "S09E16",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--f70d5b3732f1229d",
+      "source_sha256": "f70d5b3732f1229d0d50ab9fb83949c00fb6441c1ec09f06b9c6390ffe5a29b3",
+      "source_cues": 357,
+      "candidate_turns": 357,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 4
+    },
+    {
+      "episode_id": "S09E17",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--e9196e3918b93efc",
+      "source_sha256": "e9196e3918b93efc06fcde301894297c1ae66a71b86fdda9b6318c048a5950df",
+      "source_cues": 370,
+      "candidate_turns": 370,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 3
+    },
+    {
+      "episode_id": "S09E18",
+      "version_id": "subtitle-cat-english-online-caption-research-wit--44c9e4d2bb602350",
+      "source_sha256": "44c9e4d2bb6023501dc051305e87a01ff1e93ce7af7928891e9a435cb3f2f29a",
+      "source_cues": 332,
+      "candidate_turns": 332,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S09E19",
+      "version_id": "subtitle-cat-s09e19-original-caption-page-untime--659beb9c50fabdd1",
+      "source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "source_cues": 347,
+      "candidate_turns": 347,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 1
+    },
+    {
+      "episode_id": "S09E20",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--0add4e80a5b70702",
+      "source_sha256": "0add4e80a5b707028c9e494320863584b44018ad3210d67ad270fcba29d9e89e",
+      "source_cues": 343,
+      "candidate_turns": 343,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
+    },
+    {
+      "episode_id": "S09E21",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--5add40b7e0cc9514",
+      "source_sha256": "5add40b7e0cc951489326bab5576899d4785a770feb7850814a8b2c2dae1a953",
+      "source_cues": 398,
+      "candidate_turns": 398,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 5
+    },
+    {
+      "episode_id": "S09E22",
+      "version_id": "subtitle-cat-english-late-season-research-witnes--bd22e64a19d31593",
+      "source_sha256": "bd22e64a19d315939e5080c62433e58ae6c2918d4604afd76fcbff3bfbed0f5d",
+      "source_cues": 330,
+      "candidate_turns": 330,
+      "source_explicit_speaker_labels": 0,
+      "candidate_conversation_packets": 6
     }
   ]
 }
