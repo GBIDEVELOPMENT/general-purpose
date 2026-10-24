@@ -1,0 +1,290 @@
+{
+  "schema": "night-court-explicit-and-nearby-dialogue-context-speaker-proposals/1",
+  "episode_id": "S09E19",
+  "source_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "origin": "manual editorial reading of held source captions and immediate dialogue response context",
+  "named_character_speaking_original_audio_verified": false,
+  "speaker_identified_from_images": false,
+  "character_attributions_are_editable_unverified_hypotheses": true,
+  "proposals": [
+    {
+      "cue": 5,
+      "part": 1,
+      "proposed_speaker_name": "DAN FIELDING",
+      "source_cue_contains_text": "I sprained my tongue",
+      "source_context_cue_ids": [
+        4,
+        5
+      ],
+      "reason": "direct response to another person addressing Dan about licking envelopes",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 19,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "letter from my pen pal",
+      "source_context_cue_ids": [
+        16,
+        19
+      ],
+      "reason": "speaker responds to direct previous question addressed to 'Ross' (possible caption spelling of Roz); provisional identity",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 21,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "his name is Alex",
+      "source_context_cue_ids": [
+        19,
+        20,
+        21
+      ],
+      "reason": "continuation of pen-pal account after her response",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 25,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "It's nothing like that",
+      "source_context_cue_ids": [
+        21,
+        23,
+        25
+      ],
+      "reason": "speaker rebuts suggestion about her pen-pal correspondence",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 28,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "Alex had my apartment",
+      "source_context_cue_ids": [
+        19,
+        21,
+        27,
+        28
+      ],
+      "reason": "speaker explains how the pen-pal exchange began",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 33,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "I guess I did charm him",
+      "source_context_cue_ids": [
+        28,
+        31,
+        33
+      ],
+      "reason": "speaker continues personal account of the pen pal",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 40,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "What's next, Mac",
+      "source_context_cue_ids": [
+        39,
+        40,
+        41
+      ],
+      "reason": "person managing court docket addresses named clerk; role inference",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 41,
+      "part": 1,
+      "proposed_speaker_name": "MAC ROBINSON",
+      "source_cue_contains_text": "Last case of the night",
+      "source_context_cue_ids": [
+        40,
+        41
+      ],
+      "reason": "direct reply after being addressed 'Mac' by name",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 45,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "send this letter off to Alex",
+      "source_context_cue_ids": [
+        19,
+        21,
+        42,
+        45
+      ],
+      "reason": "speaker continues personally described correspondence",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 48,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "We write about everything",
+      "source_context_cue_ids": [
+        45,
+        46,
+        48
+      ],
+      "reason": "speaker continues describing her pen pal",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 52,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "He's a nut salesman",
+      "source_context_cue_ids": [
+        49,
+        51,
+        52
+      ],
+      "reason": "speaker answers question about her correspondent's work",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 55,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "Never, I hope",
+      "source_context_cue_ids": [
+        54,
+        55
+      ],
+      "reason": "speaker answers when she will meet her pen pal",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 56,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "if I ever met Alex",
+      "source_context_cue_ids": [
+        54,
+        55,
+        56
+      ],
+      "reason": "continuation of her thoughts on meeting the correspondent",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 58,
+      "part": 1,
+      "proposed_speaker_name": "MAC ROBINSON",
+      "source_cue_contains_text": "People versus Fingers Kirby",
+      "source_context_cue_ids": [
+        40,
+        41,
+        58
+      ],
+      "reason": "court staff announces next case in docket exchange",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 69,
+      "part": 1,
+      "proposed_speaker_name": "HARRY STONE",
+      "source_cue_contains_text": "I'll hold this over for trial",
+      "source_context_cue_ids": [
+        58,
+        59,
+        68,
+        69
+      ],
+      "reason": "presiding judge disposes of case",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 82,
+      "part": 1,
+      "proposed_speaker_name": "DAN FIELDING",
+      "source_cue_contains_text": "my favorite stewardess",
+      "source_context_cue_ids": [
+        82,
+        87,
+        89
+      ],
+      "reason": "later source exchange addresses Dan and refers to the same stewardess",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 88,
+      "part": 1,
+      "proposed_speaker_name": "DAN FIELDING",
+      "source_cue_contains_text": "Hey",
+      "source_context_cue_ids": [
+        87,
+        88,
+        89
+      ],
+      "reason": "starts direct reply to an address naming Dan",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 89,
+      "part": 1,
+      "proposed_speaker_name": "DAN FIELDING",
+      "source_cue_contains_text": "my stewardess can't get back",
+      "source_context_cue_ids": [
+        82,
+        87,
+        89
+      ],
+      "reason": "the respondent to 'Don't, Dan' continues his stewardess story",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 90,
+      "part": 1,
+      "proposed_speaker_name": "DAN FIELDING",
+      "source_cue_contains_text": "She's got a layover",
+      "source_context_cue_ids": [
+        89,
+        90
+      ],
+      "reason": "continues the same person's previous statement",
+      "independently_verified": false,
+      "contextual_label_only": true
+    },
+    {
+      "cue": 300,
+      "part": 1,
+      "proposed_speaker_name": "ROZ RUSSELL",
+      "source_cue_contains_text": "You know, Alex",
+      "source_context_cue_ids": [
+        19,
+        21,
+        283,
+        300
+      ],
+      "reason": "provisional pen-pal storyline speaker, explicitly addressing Alex",
+      "independently_verified": false,
+      "contextual_label_only": true
+    }
+  ]
+}
