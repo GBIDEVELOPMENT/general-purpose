@@ -4,6 +4,7 @@ import copy
 import unittest
 from profile_s01e01_one_source_factory import compose_summary
 from probe_s01e01_cadence_and_cost import SHA,SIZE
+from source_once_av_lanes import LaneResult
 
 
 def samples():
