@@ -45,8 +45,11 @@ def build():
     for episode_id in sorted(universe):
         s=byscript[episode_id];q=byqa[episode_id];c=byscene[episode_id]
         p=byspeaker[episode_id];v=byvideo[episode_id]
+        roster=json.loads((ROOT/p["derived_path"]/"candidate-roster.json").read_text("utf-8"))
         if (s["source_sha256"]!=q["source_sha256"] or
-           s["source_sha256"]!=p["source_sha256"] or
+           s["source_sha256"]!=roster["source_sha256"] or
+           s["version_id"]!=p["version_id"] or
+           s["version_id"]!=c["version_id"] or
            s["source_sha256"]!=c["source_sha256"] or
            v["identity_status"]!="filename_candidate_not_video_verified"):
             raise ValueError("Cross-index source/fingerprint mismatch "+episode_id)
