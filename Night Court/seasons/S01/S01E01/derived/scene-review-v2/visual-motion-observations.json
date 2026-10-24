@@ -1,0 +1,243 @@
+{
+  "schema": "night-court-visual-motion-review/2",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_workflow_run": 40047395721,
+  "source_artifact_id": 12542300327,
+  "review_status": "ai_visual_review_of_sampled_sequence_not_independent_continuous_video_acceptance",
+  "review_method": "visual_review_of_4fps_15s_contact_sheet_and_individual_source_frames",
+  "speaker_identities_verified": false,
+  "spoken_line_to_mouth_verified": false,
+  "scene_heading_status": "provisional_office_setting_from_prior_source_frames",
+  "sampling_limitation": "4fps snapshots may omit rapid action and are not exact source PTS measurements",
+  "time_scoped_observations": [
+    {
+      "id": "OBS-V2-01",
+      "interval_ms": [
+        76250,
+        76500
+      ],
+      "description": "The view shifts from the lavender-clad person in front of book shelves to a closer view of the uniformed person.",
+      "frame_indices": [
+        6,
+        7
+      ],
+      "observation_class": "change_between_adjacent_sampled_shots",
+      "confidence": "high",
+      "supporting_frames": [
+        {
+          "frame": 6,
+          "file": "sampled-frames/frame-006.jpg",
+          "source_nominal_ms": 76250,
+          "sha256": "dbe7ba1379231326d0e3dcc60713b6a32f7f9e78ced5ae74cdc13d8efeb9c960"
+        },
+        {
+          "frame": 7,
+          "file": "sampled-frames/frame-007.jpg",
+          "source_nominal_ms": 76500,
+          "sha256": "e12f283a8eab60c74fd0155ecc17cdf3426f74578d6d002c75752774fa07afe9"
+        }
+      ]
+    },
+    {
+      "id": "OBS-V2-02",
+      "interval_ms": [
+        80750,
+        81000
+      ],
+      "description": "The view changes from the uniformed person's face to the lavender-clad person beside the desk.",
+      "frame_indices": [
+        24,
+        25
+      ],
+      "observation_class": "change_between_adjacent_sampled_shots",
+      "confidence": "high",
+      "supporting_frames": [
+        {
+          "frame": 24,
+          "file": "sampled-frames/frame-024.jpg",
+          "source_nominal_ms": 80750,
+          "sha256": "7dd8935cde6063c7fc1bbac3f68fe4859b3c1a8730a41ef00846511b8a743b0c"
+        },
+        {
+          "frame": 25,
+          "file": "sampled-frames/frame-025.jpg",
+          "source_nominal_ms": 81000,
+          "sha256": "73c41740012839add8c409ac2c22cbd7fa4db7e4464889eef730bbca22cf36fe"
+        }
+      ]
+    },
+    {
+      "id": "OBS-V2-03",
+      "interval_ms": [
+        82500,
+        83750
+      ],
+      "description": "At the desk, the uniformed person reaches toward the black telephone and raises its handset to the ear.",
+      "frame_indices": [
+        31,
+        32,
+        34,
+        36
+      ],
+      "observation_class": "motion_inferred_from_ordered_sampled_positions",
+      "confidence": "high",
+      "supporting_frames": [
+        {
+          "frame": 31,
+          "file": "sampled-frames/frame-031.jpg",
+          "source_nominal_ms": 82500,
+          "sha256": "7d621462b0e83d61ad3ef13b7e81848ff5997d7e6fe1a339e2ac8aa997e36acd"
+        },
+        {
+          "frame": 32,
+          "file": "sampled-frames/frame-032.jpg",
+          "source_nominal_ms": 82750,
+          "sha256": "7bbc1ab0746b350f1e3268254d48e9ade78249f68fd2b2afbf73d259aa2c579a"
+        },
+        {
+          "frame": 34,
+          "file": "sampled-frames/frame-034.jpg",
+          "source_nominal_ms": 83250,
+          "sha256": "342b70cf9fd847d8d2b954dd7a1f3d745473816dbfb3c100891784c19f85848e"
+        },
+        {
+          "frame": 36,
+          "file": "sampled-frames/frame-036.jpg",
+          "source_nominal_ms": 83750,
+          "sha256": "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2"
+        }
+      ]
+    },
+    {
+      "id": "OBS-V2-04",
+      "interval_ms": [
+        83750,
+        87250
+      ],
+      "description": "The uniformed person holds the black telephone receiver against the ear while the lavender-clad person remains on the other side of the desk.",
+      "frame_indices": [
+        36,
+        40,
+        44,
+        50
+      ],
+      "observation_class": "repeated_visible_state_across_frames",
+      "confidence": "high",
+      "supporting_frames": [
+        {
+          "frame": 36,
+          "file": "sampled-frames/frame-036.jpg",
+          "source_nominal_ms": 83750,
+          "sha256": "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2"
+        },
+        {
+          "frame": 40,
+          "file": "sampled-frames/frame-040.jpg",
+          "source_nominal_ms": 84750,
+          "sha256": "903ecee2571c6e6fbb004d0bbd891bec5d391cc6eb81875f3a37a718678b0d84"
+        },
+        {
+          "frame": 44,
+          "file": "sampled-frames/frame-044.jpg",
+          "source_nominal_ms": 85750,
+          "sha256": "8ceb42e9f0d69466bc666baa82c69dbad171cefac33fc01c70a1dfd78b5bbaa7"
+        },
+        {
+          "frame": 50,
+          "file": "sampled-frames/frame-050.jpg",
+          "source_nominal_ms": 87250,
+          "sha256": "2f0ea684dc1d1095173a55f2266f6b024c84e01cb95312fc6c6f6d27f821c385"
+        }
+      ]
+    },
+    {
+      "id": "OBS-V2-05",
+      "interval_ms": [
+        87500,
+        88500
+      ],
+      "description": "The uniformed person lowers the receiver from the ear toward the telephone on the desktop.",
+      "frame_indices": [
+        51,
+        52,
+        54,
+        55
+      ],
+      "observation_class": "motion_inferred_from_ordered_sampled_positions",
+      "confidence": "high",
+      "supporting_frames": [
+        {
+          "frame": 51,
+          "file": "sampled-frames/frame-051.jpg",
+          "source_nominal_ms": 87500,
+          "sha256": "fcf09f971d6f54aca21a49b26f2abb5406acd47cb023ca85441fe9160f8828f1"
+        },
+        {
+          "frame": 52,
+          "file": "sampled-frames/frame-052.jpg",
+          "source_nominal_ms": 87750,
+          "sha256": "462a69834ffe42a761c4d51bae7fc4d0d48caf5dcd412085983235f5b196972f"
+        },
+        {
+          "frame": 54,
+          "file": "sampled-frames/frame-054.jpg",
+          "source_nominal_ms": 88250,
+          "sha256": "741f3a68967ac09bb9c9682e21dbb9611663a0e595cb4e5493b9262f89326733"
+        },
+        {
+          "frame": 55,
+          "file": "sampled-frames/frame-055.jpg",
+          "source_nominal_ms": 88500,
+          "sha256": "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9"
+        }
+      ]
+    },
+    {
+      "id": "OBS-V2-06",
+      "interval_ms": [
+        88500,
+        89750
+      ],
+      "description": "The receiver is down at the desk; the uniformed person straightens while the lavender-clad person remains nearby.",
+      "frame_indices": [
+        55,
+        56,
+        59,
+        60
+      ],
+      "observation_class": "repeated_visible_state_across_frames",
+      "confidence": "moderate",
+      "supporting_frames": [
+        {
+          "frame": 55,
+          "file": "sampled-frames/frame-055.jpg",
+          "source_nominal_ms": 88500,
+          "sha256": "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9"
+        },
+        {
+          "frame": 56,
+          "file": "sampled-frames/frame-056.jpg",
+          "source_nominal_ms": 88750,
+          "sha256": "0069cb4ebb32f89dc926a0310cf0d73864c807d51541d1e5e892f247a2817f25"
+        },
+        {
+          "frame": 59,
+          "file": "sampled-frames/frame-059.jpg",
+          "source_nominal_ms": 89500,
+          "sha256": "68748e66ac8c4a82f1f41785c0e07e85cfe4273c860aefdf25c4dd0c2bc30715"
+        },
+        {
+          "frame": 60,
+          "file": "sampled-frames/frame-060.jpg",
+          "source_nominal_ms": 89750,
+          "sha256": "30b46e70fa1cabb0957404fdebdf0563df61627cee45976359b4b36307527960"
+        }
+      ]
+    }
+  ],
+  "stage_direction_status": "bounded_visual_motion_observations_only_not_finished_screenplay",
+  "edition_match_verified": false,
+  "audiovisual_complete": false
+}
