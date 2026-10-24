@@ -1,0 +1,13 @@
+# Selective review of invalid Whisper word-time hypotheses
+
+**Implementation:** `tools/rejected_asr_word_diagnostics.py` provides compact bounded review metadata for model words that fail source-time validation. It is wired into the shared S01E01 / S09E19 independent original-audio source workers, without another audio decode, another ASR inference pass, or source SRT prompting.
+
+**Evidence separation:** A source-word interval with zero or reversed time after millisecond rounding is **invalid** even if the model produced apparent speech text. Instead of silently discarding it or inventing corrected times, record its exact bounded word hypothesis (≤80 characters), original numerical model time proposals (if finite), its containing model segment's *proposed* interval when in audio bounds, and at most four near-time Vosk/Kaldi word hypotheses. Near-time independent-model context is a review pointer, **not independent confirmation that the rejected Whisper word was spoken**. No original transcript timestamp, speaker, emotive inflection or dialogue acceptance is created.
+
+The sink is capped at **512 rejected word diagnostics** per original episode with an explicit overflow count. Original S01E01 previously rejected **343** Whisper word timestamps, S09E19 rejected **90**; these historical totals are not reinterpreted or considered new analyses. The prior model passes never retained the invalid word details, so no historical word-level diagnostic recovery can be claimed. A new trusted-original source run is required before the new details exist, and such a run must retain only bounded private text/number evidence, never AVI, audio or weights.
+
+**Next:** Cross-reference future retained review pointers to the existing 16 three-witness S01E01 lexical conflicts, source-caption edges and S09E19 untimed paragraph anchors. Prefer direct original-source listening of short disputed windows and rare joke language. Only use a third model on bounded contradictions after measuring whether it actually improves source truth. Always keep original S09E19's 347 source paragraphs untimed. Never accept word timestamps by interpolating invalid intervals.
+
+**QA:** `test_rejected_asr_word_diagnostics.py` verifies zero-duration abstention with nearest independent-source model context, negative and NaN inputs, oversized words and the hard 512 cap, and rejects unordered Vosk source hypotheses. Source-free PR CI also runs the existing two-family and untimed-original contract tests.
+
+This does not change the historical full source processing wall times: S01E01 **239.826s**, S09E19 **215.140s**. It contributes no independently accepted theatrical lines, scene directions or character identities. Full audiovisual script acceptance remains **0/193**.
