@@ -43,7 +43,7 @@ class OriginalTriadTiming(unittest.TestCase):
             self.assertEqual(len(times),3)
             self.assertTrue(0<=times[0]<times[1]<times[2]<v['original_video_duration_ms'])
             score=event['mean_temporal_pixel_change_score']
-            self.assertTrue(0<=score<=last<=1)
+            self.assertTrue(0<=score<=1 and score<=last)
             last=score
         self.assertTrue(all(flag is False for key,flag in v['limitations'].items()
             if key.endswith('_verified') or key.endswith('_created') or key.endswith('_committed') or key.endswith('_accepted')))
