@@ -27,3 +27,7 @@ Next acceptance: inspect sparse match results, mark incomplete/uncertain windows
 ## Transport retry acceptance
 
 A corrected source-run attempt #40049969051 reached FTP connect and then timed out before retrieving any media. No captions/audio were lost or misidentified. To tolerate a transient connection failure without overwhelming the owner server, the trusted source worker now makes **at most two** connect calls separated by four seconds; it never retries authentication failures, loops on file transfers, or automatically schedules further jobs. Repeated unavailability must remain an explicit blocked source state, while the 193-episode offline speaker/reading preparation continues independently.
+
+## Trusted checkout revision correction
+
+GHA run #40050425097 revealed that `pull_request_target` was checking out `github.event.pull_request.base.sha`, the original base SHA stored with the long-lived inert PR. It therefore executed older code after PR #166 and #173 had fixed ASR boundary handling and bounded FTP retry on current main. Fix this to checkout **`github.sha`**, which for `pull_request_target` is the reviewed base-branch commit for the triggering event. Guard the owner login, same-repo exact trigger branch and `main` base as before; never checkout or execute PR-head code with secrets. The next source run must show the correct code revision in checkout logs before any acceptance claims.
