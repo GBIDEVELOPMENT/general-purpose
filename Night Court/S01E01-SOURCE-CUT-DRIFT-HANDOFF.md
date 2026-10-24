@@ -1,6 +1,6 @@
 # S01E01 source-video cut drift audit: sparse independent samples
 
-Status: tooling installed on feature branch; real trusted source run pending its offline CI acceptance. October 23, 2026.
+Status: original source sampling tooling merged, original trusted run #40049788603 identified a Whisper segment extending beyond the decoded 30-second window. Follow-up fix clamps such model proposals while excluding them from drift review, and deliberately drops fully invalid segments. Real sparse drift results remain unaccepted until a fixed trusted workflow passes. October 23, 2026.
 
 The 01:00–01:30 S01E01 pilot now has two word timing models but they both focus on the **same 30 seconds**. Before trusting their cues for a full episode, check the original AVI against the held SRT at several locations spanning the 1448.256-second source cut.
 
