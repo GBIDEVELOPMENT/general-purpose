@@ -1,0 +1,46 @@
+name: Night Court trusted S01E01 dense visual sampling
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-dense-frames.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-dense-s01e01
+  cancel-in-progress: false
+jobs:
+  gather:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-dense-frames-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - name: Verify fixed owner episode source inventory
+        run: |
+          python 'Night Court/tools/test_pilot_ftp_video_acoustics.py'
+          python -m py_compile 'Night Court/tools/build_s01e01_dense_visual_review.py'
+      - name: Install required FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Extract strictly 75–90 seconds as 60 sampled private thumbnails
+        run: |
+          python 'Night Court/tools/build_s01e01_dense_visual_review.py' --ftp --output "${{ runner.temp }}/dense-packet"
+      - name: Upload only bounded individual images/contact index, never AVI/audio
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-dense-visual-75-90s
+          path: ${{ runner.temp }}/dense-packet/
+          retention-days: 7
+          if-no-files-found: error

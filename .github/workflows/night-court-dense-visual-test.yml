@@ -1,0 +1,21 @@
+name: Night Court S01E01 dense frame evidence tests
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_s01e01_dense_visual_review.py'
+      - 'Night Court/tools/test_s01e01_dense_visual_review.py'
+      - '.github/workflows/night-court-dense-visual-test.yml'
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Test source authorization and 60-frame synthetic render
+        run: |
+          python -m py_compile 'Night Court/tools/build_s01e01_dense_visual_review.py'
+          python 'Night Court/tools/test_s01e01_dense_visual_review.py'
