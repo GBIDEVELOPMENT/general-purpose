@@ -1,0 +1,139 @@
+{
+  "schema": "night-court-s01e01-visual-review/1",
+  "episode_id": "S01E01",
+  "reviewed_source_artifact_run": 40044673687,
+  "reviewed_source_artifact_id": 12540443971,
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "subtitle_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "cut_interval_ms": [
+    60000,
+    90000
+  ],
+  "review_method": "visual inspection of contact sheet composed from ten exact, SHA-verified 480px source video frames",
+  "scene_heading_candidate": "INT. BOOK-LINED COURT OFFICE - TIME OF DAY NOT VERIFIED",
+  "setting_observations": [
+    {
+      "description": "Tall shelves packed with book volumes and wood-panelled trim appear behind the people in the scene.",
+      "frame_seconds": [
+        60,
+        63,
+        69,
+        75
+      ]
+    },
+    {
+      "description": "A dark desk holds papers, folders and a dark landline telephone. A cardboard box is beside the uniformed person.",
+      "frame_seconds": [
+        69,
+        72,
+        75,
+        87
+      ]
+    }
+  ],
+  "visual_entities": [
+    {
+      "visual_id": "person-in-lavender",
+      "description": "Adult with curled light hair, wearing a lavender jacket and skirt over a light collared blouse.",
+      "character_id": null,
+      "visual_identity_status": "unresolved; do not identify from stills",
+      "frame_seconds": [
+        60,
+        69,
+        75,
+        81,
+        87
+      ]
+    },
+    {
+      "visual_id": "uniformed-person",
+      "description": "Adult with short hair, wearing a dark uniform jacket with shiny buttons, pale shirt, dark necktie and visible badge or insignia.",
+      "character_id": null,
+      "visual_identity_status": "unresolved; do not identify from stills",
+      "frame_seconds": [
+        63,
+        66,
+        69,
+        72,
+        84,
+        87
+      ]
+    }
+  ],
+  "time_bounded_observations": [
+    {
+      "time_ms": 60000,
+      "description": "The person in lavender is next to the desk and looks down toward its surface.",
+      "evidence": [
+        "frames/source-0060s.jpg"
+      ],
+      "motion_inference": false
+    },
+    {
+      "time_ms": 69000,
+      "description": "Both people are in the room; the lavender-clad person has both hands by the desk while the uniformed person stands opposite.",
+      "evidence": [
+        "frames/source-0069s.jpg"
+      ],
+      "motion_inference": false
+    },
+    {
+      "time_ms": 75000,
+      "description": "The desk, folders, telephone and box are all visible in a wider view with both people.",
+      "evidence": [
+        "frames/source-0075s.jpg"
+      ],
+      "motion_inference": false
+    },
+    {
+      "time_ms": 84000,
+      "description": "The uniformed person's mouth is drawn into a tense-looking expression, with the second person's hair visible in the foreground.",
+      "evidence": [
+        "frames/source-0084s.jpg"
+      ],
+      "motion_inference": false
+    },
+    {
+      "time_ms": 87000,
+      "description": "The uniformed person has a dark telephone receiver at the ear. The lavender-clad person faces toward the officer, with a hand near the chest.",
+      "evidence": [
+        "frames/source-0087s.jpg"
+      ],
+      "motion_inference": false
+    }
+  ],
+  "source_dialogue_cues": [
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "speaker_hypotheses": [
+    {
+      "source_group": "C19-C27",
+      "hypothesized_conversation_members": [
+        "Lana Wagner",
+        "Bull Shannon"
+      ],
+      "hypothesis_basis": "Earlier original subtitle cues C12-C13 refer directly to Bull and Lana; this is dialogue-context inference, not face/voice identification.",
+      "identity_status": "unverified"
+    }
+  ],
+  "editing_notes": [
+    "Do not convert still-frame differences into a claimed entrance, phone pickup, gesture sequence or reaction timing without viewing intervening motion.",
+    "Use source cue labels in the script rather than assert specific speaking characters until audio or mouth movement has been correlated.",
+    "Subtitles are aligned to their own SRT timeline; source video offset/drift remains unverified.",
+    "Comic function of elaborate-word dialogue may be interpreted separately, but who voices each line and how it is delivered require evidence.",
+    "Record subjective emotional labels as editor hypotheses, not confirmed observations."
+  ],
+  "audio_voice_identification": "not_done",
+  "audio_caption_synchronization": "not_done",
+  "movement_annotation": "not_verified_from_video_clip",
+  "audiovisual_completeness_verified": false,
+  "review_status": "static_frame_observations_reviewed_by_ai_with_source_images; pending independent human/video review"
+}
