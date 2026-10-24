@@ -12,7 +12,7 @@ permissions:
   contents: read
 jobs:
   source-free:
-    if: github.event.pull_request.head.repo.full_name == github.repository && (github.event.pull_request.head.ref == 'feature/night-court-full-episode-independent-asr-benchmark' || github.event.pull_request.head.ref == 'fix/night-court-asr-timestamp-loss-metrics')
+    if: github.event.pull_request.head.repo.full_name == github.repository && (github.event.pull_request.head.ref == 'feature/night-court-full-episode-independent-asr-benchmark' || (github.event.pull_request.head.ref == 'fix/night-court-asr-timestamp-loss-metrics' || github.event.pull_request.head.ref == 'fix/night-court-numeric-asr-timestamp-types'))
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:

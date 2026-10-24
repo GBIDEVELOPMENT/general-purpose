@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import math
+from numbers import Real
 import ftplib
 import hashlib
 import importlib.metadata
@@ -100,8 +101,9 @@ def word_rejection_reason(text,a,b,duration_ms):
     """Explain source-time rejection without altering original model hypotheses."""
     if not isinstance(text,str) or not text.strip() or len(text)>80:
         return 'missing_empty_or_long_word'
-    if (type(a) not in (float,int) or type(b) not in (float,int)
-        or not math.isfinite(a) or not math.isfinite(b)):
+    if (isinstance(a,bool) or isinstance(b,bool)
+        or not isinstance(a,Real) or not isinstance(b,Real)
+        or not math.isfinite(float(a)) or not math.isfinite(float(b))):
         return 'nonfinite_or_missing_model_time'
     start=round(a*1000)
     end=round(b*1000)
