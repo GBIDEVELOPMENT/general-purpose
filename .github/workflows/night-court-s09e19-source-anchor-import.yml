@@ -1,0 +1,58 @@
+name: Night Court S09E19 original untimed source evidence import
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s09e19_source_anchors.py'
+      - 'Night Court/tools/test_import_s09e19_source_anchors.py'
+      - 'Night Court/S09E19-UNTIMED-VIDEO-ANCHOR-HANDOFF.md'
+      - '.github/workflows/night-court-s09e19-source-anchor-import.yml'
+permissions:
+  actions: read
+  contents: write
+jobs:
+  accept:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s09e19-source-anchor-evidence'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-s09e19-source-anchor-evidence
+          persist-credentials: true
+      - name: Synthetic import and forgery regression
+        run: python 'Night Court/tools/test_import_s09e19_source_anchors.py'
+      - name: Retrieve trusted video-only source match JSON, never model weights/media
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/s09e19-review"
+          gh run download 40054051699 --repo gamesbyian/general-purpose \
+            --name night-court-s09e19-untimed-original-source-anchors \
+            --dir "${{ runner.temp }}/s09e19-review"
+      - name: Recompute every lexical match against immutable 347 original paragraphs
+        run: |
+          python 'Night Court/tools/import_s09e19_source_anchors.py' \
+            "${{ runner.temp }}/s09e19-review/s09e19-untimed-anchor-review.json"
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path('Night Court/seasons/S09/S09E19/derived/source-timing-review-v1')
+          j=json.loads((p/'sparse-source-paragraph-candidates.json').read_text())
+          assert j['segments_reviewed']==50
+          assert j['distinct_high_lexical_match_candidates_total']==15
+          assert abs(j['source_duration_seconds']-1320.144)<.01
+          assert j['candidate_paragraphs_monotonic_across_windows']
+          assert not j['original_source_cue_times_introduced']
+          assert not j['all_347_paragraphs_time_aligned']
+          assert (p/'sparse-source-paragraph-review.md').is_file()
+          print('S09E19 evidence accepted as candidates only, original 347 paragraphs remain untimed')
+          PY
+      - name: Commit only compact evidence and readable review
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/S09/S09E19/derived/source-timing-review-v1/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): retain first S09E19 genuine source audio-to-untimed transcript anchors"
+            git push origin HEAD:data/night-court-s09e19-source-anchor-evidence
+          fi
