@@ -1,0 +1,302 @@
+{
+  "schema": "night-court-s01e01-anonymous-voice-similarity/1",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_pcm_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+  "source_audio_window_ms": [
+    60000,
+    90000
+  ],
+  "candidate_ASR_speech_segments": 10,
+  "model": "speechbrain/spkrec-ecapa-voxceleb",
+  "model_revision_sha": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286",
+  "model_license": "Apache-2.0 per publisher model card",
+  "software_versions": {
+    "torch": "2.8.0+cpu",
+    "speechbrain": "1.0.3",
+    "soundfile": "0.13.1"
+  },
+  "source_voice_intervals": [
+    {
+      "asr_segment_index": 0,
+      "source_interval_ms": [
+        60640,
+        62800
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "anonymous_embedding_computed_not_speech_or_speaker_verified",
+      "mixed_audio_rms_dbfs": -20.5
+    },
+    {
+      "asr_segment_index": 1,
+      "source_interval_ms": [
+        63340,
+        65900
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "anonymous_embedding_computed_not_speech_or_speaker_verified",
+      "mixed_audio_rms_dbfs": -19.11
+    },
+    {
+      "asr_segment_index": 2,
+      "source_interval_ms": [
+        65900,
+        68080
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "anonymous_embedding_computed_not_speech_or_speaker_verified",
+      "mixed_audio_rms_dbfs": -20.75
+    },
+    {
+      "asr_segment_index": 3,
+      "source_interval_ms": [
+        70640,
+        71940
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "anonymous_embedding_computed_not_speech_or_speaker_verified",
+      "mixed_audio_rms_dbfs": -21.18
+    },
+    {
+      "asr_segment_index": 4,
+      "source_interval_ms": [
+        71940,
+        72700
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "abstain_short_ASR_segment"
+    },
+    {
+      "asr_segment_index": 5,
+      "source_interval_ms": [
+        74880,
+        76740
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "anonymous_embedding_computed_not_speech_or_speaker_verified",
+      "mixed_audio_rms_dbfs": -21.18
+    },
+    {
+      "asr_segment_index": 6,
+      "source_interval_ms": [
+        77160,
+        79420
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "anonymous_embedding_computed_not_speech_or_speaker_verified",
+      "mixed_audio_rms_dbfs": -22.16
+    },
+    {
+      "asr_segment_index": 7,
+      "source_interval_ms": [
+        83300,
+        83780
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "abstain_short_ASR_segment"
+    },
+    {
+      "asr_segment_index": 8,
+      "source_interval_ms": [
+        86720,
+        87200
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "abstain_short_ASR_segment"
+    },
+    {
+      "asr_segment_index": 9,
+      "source_interval_ms": [
+        89100,
+        89980
+      ],
+      "source_voice_identity": null,
+      "embedding_retained": false,
+      "speaker_isolation_verified": false,
+      "status": "anonymous_embedding_computed_not_speech_or_speaker_verified",
+      "mixed_audio_rms_dbfs": -18.06
+    }
+  ],
+  "anonymous_pairs": [
+    {
+      "asr_segment_a": 0,
+      "asr_segment_b": 1,
+      "anonymous_cosine_similarity_unreviewed": 0.65873,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 0,
+      "asr_segment_b": 2,
+      "anonymous_cosine_similarity_unreviewed": 0.48832,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 0,
+      "asr_segment_b": 3,
+      "anonymous_cosine_similarity_unreviewed": -0.04804,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 0,
+      "asr_segment_b": 5,
+      "anonymous_cosine_similarity_unreviewed": 0.10976,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 0,
+      "asr_segment_b": 6,
+      "anonymous_cosine_similarity_unreviewed": 0.48009,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 0,
+      "asr_segment_b": 9,
+      "anonymous_cosine_similarity_unreviewed": 0.36165,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 1,
+      "asr_segment_b": 2,
+      "anonymous_cosine_similarity_unreviewed": 0.59166,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 1,
+      "asr_segment_b": 3,
+      "anonymous_cosine_similarity_unreviewed": 0.05389,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 1,
+      "asr_segment_b": 5,
+      "anonymous_cosine_similarity_unreviewed": 0.15536,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 1,
+      "asr_segment_b": 6,
+      "anonymous_cosine_similarity_unreviewed": 0.56841,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 1,
+      "asr_segment_b": 9,
+      "anonymous_cosine_similarity_unreviewed": 0.42405,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 2,
+      "asr_segment_b": 3,
+      "anonymous_cosine_similarity_unreviewed": 0.02096,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 2,
+      "asr_segment_b": 5,
+      "anonymous_cosine_similarity_unreviewed": 0.08638,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 2,
+      "asr_segment_b": 6,
+      "anonymous_cosine_similarity_unreviewed": 0.48948,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 2,
+      "asr_segment_b": 9,
+      "anonymous_cosine_similarity_unreviewed": 0.23474,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 3,
+      "asr_segment_b": 5,
+      "anonymous_cosine_similarity_unreviewed": 0.38685,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 3,
+      "asr_segment_b": 6,
+      "anonymous_cosine_similarity_unreviewed": 0.09566,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 3,
+      "asr_segment_b": 9,
+      "anonymous_cosine_similarity_unreviewed": 0.01091,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 5,
+      "asr_segment_b": 6,
+      "anonymous_cosine_similarity_unreviewed": 0.21367,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 5,
+      "asr_segment_b": 9,
+      "anonymous_cosine_similarity_unreviewed": 0.09537,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    },
+    {
+      "asr_segment_a": 6,
+      "asr_segment_b": 9,
+      "anonymous_cosine_similarity_unreviewed": 0.28347,
+      "same_speaker_conclusion": null,
+      "model_probability_calibrated": false
+    }
+  ],
+  "raw_voice_embeddings_retained": false,
+  "speaker_clusters_assigned": false,
+  "speaker_identities_assigned": false,
+  "same_speaker_pairs_verified": false,
+  "voice_biometrics_or_source_media_in_artifact": false,
+  "emotion_and_delivery_inferred": false,
+  "limitations": [
+    "source_ASR_intervals_not_verified_speaker_turns",
+    "audience_laughter_music_and_overlaps_can_dominate_utterance_embedding",
+    "ECAPA_score_not_calibrated_for_original_sitcom_mix",
+    "no_name_or_visual_identity_from_embedding",
+    "short_source_ASR_intervals_abstain_without_padded_voice_guess"
+  ],
+  "review_status": "anonymous_acoustic_similarity_hypotheses_only"
+}
