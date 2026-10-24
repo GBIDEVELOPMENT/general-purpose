@@ -1,0 +1,58 @@
+name: Night Court trusted original S01E01 full episode dual ASR
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-whole-dual-asr.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-s01e01-whole-episode-two-independent-asr
+  cancel-in-progress: false
+jobs:
+  original-source:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-whole-dual-asr-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 27
+    steps:
+      - name: Checkout trusted main only, no PR head execution or credential persistence
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Revalidate untrusted ZIP defense and free decoder separation without secrets
+        run: |
+          python 'Night Court/tools/test_s01e01_full_dual_asr.py'
+          python 'Night Court/tools/test_compare_independent_asr.py'
+      - name: Install exactly necessary source decoder and fixed second speech-recognition runtime
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python -m pip install 'faster-whisper==1.2.1' 'vosk==0.3.45'
+      - name: Trusted SHA-pinned original AVI one download, one PCM, two independent full episode free decoders
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+        run: |
+          python -u 'Night Court/tools/probe_s01e01_full_dual_asr.py' --ftp \
+            --output "${{ runner.temp }}/night-court-whole-dual-asr/benchmark-and-consensus.json"
+      - name: Upload only bounded original dialogue model text and runtime JSON
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-full-original-two-independent-models
+          path: ${{ runner.temp }}/night-court-whole-dual-asr/benchmark-and-consensus.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Delete all temporary model evidence files
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-whole-dual-asr"
