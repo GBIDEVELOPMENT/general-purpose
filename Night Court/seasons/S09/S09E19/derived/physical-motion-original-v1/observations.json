@@ -1,0 +1,70 @@
+{
+  "schema": "night-court-original-5fps-source-picture-physical-beat-annotations/1",
+  "episode_id": "S09E19",
+  "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_source_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_motion_coverage_run_id": 40139082891,
+  "original_private_image_artifact_id": 12577894333,
+  "private_original_artifact_zip_sha256": "a688341ad55478b8876db523c8100386162fe336c7da1623ea5ad6ea9ad72e7d",
+  "original_exported_numeric_report_sha256": "584336d2f1b53ca2f449aaa97dc20b2c4619f3153d227d2ab6b252c0a7aec4a7",
+  "source_original_audio_listened_during_picture_annotation": false,
+  "named_actors_or_voices_identified": false,
+  "full_motion_or_scene_completeness_claimed": false,
+  "local_visual_inspection_of_sampled_original_motion_sheet": true,
+  "nominal_sampling_fps": 5,
+  "sequence_count": 2,
+  "sequences": [
+    {
+      "window_label": "brief-floor-spark",
+      "source_window_s": [
+        684,
+        704
+      ],
+      "sampled_frames": 100,
+      "confidence_scope": "visible changes across 5fps original-source still sequence; no audio",
+      "setting": "court office/courtroom with a wood partition",
+      "stage_direction": "A thin dark length on the floor begins spitting bright sparks. It flares and sends smoke across the room. Two adults in dark clothing hunker behind a wooden partition, watching the sparks; as smoke thickens, they rise and move around the partition, shielding themselves and retreating from the still-sparking spot.",
+      "notes": "Do not call the object dynamite, a fuse lit by a particular character, or establish a detonation or injuries without synced original audio/video. This is visible picture action only.",
+      "sheets": [
+        {
+          "file": "brief-floor-spark-sheet-01.jpg",
+          "sha256": "346aff0e1e6ef1576c0cc7b9606a040f6d71c5b471e26a4285f12fbe8d8b3aff"
+        },
+        {
+          "file": "brief-floor-spark-sheet-02.jpg",
+          "sha256": "0b6868644536133182316444aedebed762e03efea9d10f34a25e3b00e619736a"
+        }
+      ],
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "original_source_timing_kind": "requested_source_position_no_native_frame_PTS_verification",
+      "source_picture_observation_status": "reviewed_bounded_still_sequence_not_audio_verified",
+      "source_drama_beat_text_is_an_editorial_paraphrase": true
+    },
+    {
+      "window_label": "restaurant-dance-business",
+      "source_window_s": [
+        951,
+        971
+      ],
+      "sampled_frames": 100,
+      "confidence_scope": "visible changes across 5fps original-source still sequence; no audio",
+      "setting": "crowded warmly lit restaurant dance floor",
+      "stage_direction": "In the busy restaurant, a woman in a burgundy dress and a tall dark-suited man dance close together. They sway, turn toward one another and look into each other's faces as other couples move behind them. By the end of the sampled passage she turns away toward the foreground while the shot widens to the crowded floor.",
+      "notes": "The images show continuous changes of position at 5fps but neither establish the identity of either dancer nor the precise music or words.",
+      "sheets": [
+        {
+          "file": "restaurant-dance-business-sheet-01.jpg",
+          "sha256": "e9c6eae0d3ee8e96931c63c9fcb3144e42507513bcd1f3654a6b1ca7db45bfc0"
+        },
+        {
+          "file": "restaurant-dance-business-sheet-02.jpg",
+          "sha256": "7193810a7a9d2255e72557e802cd6092e371e1f75a985713dd468c3687d30552"
+        }
+      ],
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "original_source_timing_kind": "requested_source_position_no_native_frame_PTS_verification",
+      "source_picture_observation_status": "reviewed_bounded_still_sequence_not_audio_verified",
+      "source_drama_beat_text_is_an_editorial_paraphrase": true
+    }
+  ]
+}
