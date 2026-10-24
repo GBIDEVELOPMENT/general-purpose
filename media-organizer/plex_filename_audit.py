@@ -17,6 +17,9 @@ RELEASE=re.compile(r"(?i)(?:1080p|2160p|720p|480p|x26[45]|H[ ._-]*26[45]|HEVC|WE
 SEASON_DIR=re.compile(r"(?i)^(?:Season[ ._-]*|S)(\d{1,2})$")
 SAMPLE=re.compile(r"(?i)^(?:sample|proof|screenshots?|preview)(?:[ ._-]|\.|$)")
 MISMATCH_YEAR=re.compile(r"(?i)S\d{1,2}E\d{1,3}[ ._-]+(?:19|20)\d{2}(?:[ ._-]|$)")
+AIRDATE_AFTER_EP=re.compile(r"(?i)S\d{1,2}E\d{1,3}[ ._-]+(?:19|20)\d{2}[ ._-](?:0[1-9]|1[0-2])[ ._-](?:0[1-9]|[12]\d|3[01])(?:[ ._-]|$)")
+LEADING_GROUP=re.compile(r"(?i)^([A-Za-z0-9]{3,15})[-_][^.]+")
+
 PRIORITY={"high":0,"medium":1,"review":2,"info":3}
 
 def scan_inventory(inventory):
@@ -55,7 +58,11 @@ def scan_inventory(inventory):
             direct=SEASON_DIR.fullmatch(parent)
             if direct and int(direct.group(1))!=season:
                 add("high","season_folder_mismatch",path,"Season folder disagrees with episode filename")
-            if MISMATCH_YEAR.search(stem):
+            if AIRDATE_AFTER_EP.search(stem):
+                add("review","airdate_after_episode",path,
+                    "Date after SxxEyy looks like a broadcast/airdate, not the show premiere year",
+                    "Preserve the date until episode guide or broadcast metadata is verified")
+            elif MISMATCH_YEAR.search(stem):
                 add("medium","year_after_episode_code",path,
                     "Year after episode marker may be an airing/release year, not show premiere year",
                     "Move show premiere year before SxxEyy only after confirming show identity")
@@ -73,6 +80,11 @@ def scan_inventory(inventory):
             elif not YEAR.search(stem) and YEAR.search(parent):
                 add("medium","movie_year_only_in_folder",path,
                     "Likely film lacks title/year in its own basename; review with Plex film rules")
+                prefix=LEADING_GROUP.match(stem)
+                if prefix and prefix.group(1).casefold() not in parent.casefold():
+                    add("medium","release_group_before_movie_title",path,
+                        "Basename begins with a possible release-group token absent from the parent movie title",
+                        "Confirm the film identity; use Movie Title (Year).ext rather than guessing from release tag")
         if re.search(r"(?i)(?:S\d{2}E\d{2})[ ._-]+(?:H[ ._-]?26[45]|x[ ._-]?26[45])",stem):
             add("info","codec_immediately_after_episode",path,
                 "Codec label follows episode number; normal release tag, not independently verified metadata")
