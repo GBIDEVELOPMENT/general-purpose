@@ -18,6 +18,7 @@ def category(path):
     p=PurePosixPath(path)
     if p.suffix.lower()==".nfo":return "nfo"
     if p.suffix.lower()==".txt":return "txt"
+    if p.suffix.lower()==".vob" and p.parent.name.casefold()=="sample" and re.search(r"(?i)[._ -]sample$",p.stem):return "sample"
     if p.suffix.lower() in VIDEO and not EPISODE_ID.search(p.name):
         clip_name=p.stem
         if RELEASE_CLIP.fullmatch(clip_name):
