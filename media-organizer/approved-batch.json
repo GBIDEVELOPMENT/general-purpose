@@ -1,56 +1,504 @@
 {
   "root": "/downloads",
-  "batch_id": "franchise_movies_007",
-  "description": "Move seven verified films into genre/franchise folders, then an individual title-and-year folder for each film as Plex recommends; keep everything below the same mixed Downloads root.",
+  "batch_id": "tng_s01_s03_071",
+  "description": "Plex-organize 71 unambiguous Star Trek The Next Generation episodes from seasons 1-3. Hold one cross-season S03E26S04E01 episode separately for manual Plex mapping; preserve same-season S01E01-E02 multipart.",
   "moves": [
     {
-      "from": "/downloads/Back.to.the.Future.1985.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1-LAMA/Back.to.the.Future.1985.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1-LAMA.mkv",
-      "to": "/downloads/Back to the Future/Back to the Future (1985)/Back to the Future (1985).mkv",
-      "size": 7538375343,
-      "modify": "20250831203748",
-      "reason": "Confirmed franchise film title/year and same-format media; Plex-compatible movie basename under franchise folder"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E01E02.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E01-E02.mkv",
+      "size": 2066967066,
+      "modify": "20260120051138",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
     },
     {
-      "from": "/downloads/Back.to.the.Future.Part.II.1989.2160p.UHD.BluRay.x265.10bit.HDR.TrueHD.7.1.Atmos-LAMA/Back.to.the.Future.Part.II.1989.2160p.UHD.BluRay.x265.10bit.HDR.TrueHD.7.1.Atmos-LAMA.mkv",
-      "to": "/downloads/Back to the Future/Back to the Future Part II (1989)/Back to the Future Part II (1989).mkv",
-      "size": 10597316640,
-      "modify": "20250831220349",
-      "reason": "Confirmed franchise film title/year and same-format media; Plex-compatible movie basename under franchise folder"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E03.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E03.mkv",
+      "size": 1022613771,
+      "modify": "20260120050541",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
     },
     {
-      "from": "/downloads/Back.to.the.Future.Part.III.1990.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1-LAMA/Back.to.the.Future.Part.III.1990.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1-LAMA.mkv",
-      "to": "/downloads/Back to the Future/Back to the Future Part III (1990)/Back to the Future Part III (1990).mkv",
-      "size": 7684444359,
-      "modify": "20250901001532",
-      "reason": "Confirmed franchise film title/year and same-format media; Plex-compatible movie basename under franchise folder"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E04.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E04.mkv",
+      "size": 1022880381,
+      "modify": "20260120050638",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
     },
     {
-      "from": "/downloads/Dune.2021.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1.Atmos-LAMA/Dune.2021.2160p.UHD.BluRay.x265.10bit.HDR.DDP5.1.Atmos-LAMA.mkv",
-      "to": "/downloads/Dune/Dune (2021)/Dune (2021).mkv",
-      "size": 10242256021,
-      "modify": "20260709055031",
-      "reason": "Confirmed franchise film title/year and same-format media; Plex-compatible movie basename under franchise folder"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E05.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E05.mkv",
+      "size": 1024333451,
+      "modify": "20260120050615",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
     },
     {
-      "from": "/downloads/Dune Part Two (2024) 2160p 4K WEB 5.1-LAMA/Dune.Part.Two.2024.2160p.4K.WEB.x265.10bit.AAC5.1-LAMA.mkv",
-      "to": "/downloads/Dune/Dune Part Two (2024)/Dune Part Two (2024).mkv",
-      "size": 7946127244,
-      "modify": "20260709075852",
-      "reason": "Confirmed franchise film title/year and same-format media; Plex-compatible movie basename under franchise folder"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E06.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E06.mkv",
+      "size": 1024545679,
+      "modify": "20260120050443",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
     },
     {
-      "from": "/downloads/City.Slickers.Collection.1080p.H264.AC3.DD5.1.Will1869/City.Slickers.1991.REMASTERED.1080p.BluRay.H264.AC3.DD5.1.mp4",
-      "to": "/downloads/City Slickers/City Slickers (1991)/City Slickers (1991).mp4",
-      "size": 3187548619,
-      "modify": "20260816004710",
-      "reason": "Confirmed franchise film title/year and same-format media; Plex-compatible movie basename under franchise folder"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E07.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E07.mkv",
+      "size": 1024039751,
+      "modify": "20260120050437",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
     },
     {
-      "from": "/downloads/City.Slickers.Collection.1080p.H264.AC3.DD5.1.Will1869/City.Slickers.II.The.Legend.Of.Curlys.Gold.1994.1080p.WebRip.H264.AC3.DD5.1.mp4",
-      "to": "/downloads/City Slickers/City Slickers II The Legend of Curly's Gold (1994)/City Slickers II The Legend of Curly's Gold (1994).mp4",
-      "size": 3218624378,
-      "modify": "20260816004714",
-      "reason": "Confirmed franchise film title/year and same-format media; Plex-compatible movie basename under franchise folder"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E08.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E08.mkv",
+      "size": 1023826533,
+      "modify": "20260120050220",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E09.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E09.mkv",
+      "size": 1022928273,
+      "modify": "20260120050220",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E10.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E10.mkv",
+      "size": 1022956412,
+      "modify": "20260120050221",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E11.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E11.mkv",
+      "size": 1023898641,
+      "modify": "20260120050437",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E12.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E12.mkv",
+      "size": 1023278612,
+      "modify": "20260120050257",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E13.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E13.mkv",
+      "size": 1024355844,
+      "modify": "20260120050657",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E14.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E14.mkv",
+      "size": 1023684919,
+      "modify": "20260120050736",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E15.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E15.mkv",
+      "size": 1023831157,
+      "modify": "20260120051045",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E16.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E16.mkv",
+      "size": 1023376129,
+      "modify": "20260120050305",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E17.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E17.mkv",
+      "size": 1025189945,
+      "modify": "20260120050233",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E18.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E18.mkv",
+      "size": 1023342166,
+      "modify": "20260120051140",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E19.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E19.mkv",
+      "size": 1023588784,
+      "modify": "20260120050706",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E20.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E20.mkv",
+      "size": 1023880282,
+      "modify": "20260120050851",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E21.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E21.mkv",
+      "size": 1022077751,
+      "modify": "20260120050822",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E22.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E22.mkv",
+      "size": 1022875214,
+      "modify": "20260120050927",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E23.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E23.mkv",
+      "size": 1024057933,
+      "modify": "20260120050125",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E24.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E24.mkv",
+      "size": 1023483534,
+      "modify": "20260120050121",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E25.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E25.mkv",
+      "size": 1024639470,
+      "modify": "20260120050437",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S01 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S01E26.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E26.mkv",
+      "size": 1024093114,
+      "modify": "20260120050221",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E01.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E01.mkv",
+      "size": 981792144,
+      "modify": "20260120050204",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E02.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E02.mkv",
+      "size": 983919624,
+      "modify": "20260120050437",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E03.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E03.mkv",
+      "size": 983782913,
+      "modify": "20260120050437",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E04.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E04.mkv",
+      "size": 979782626,
+      "modify": "20260120045921",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E05.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E05.mkv",
+      "size": 977722210,
+      "modify": "20260120045624",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E06.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E06.mkv",
+      "size": 982222749,
+      "modify": "20260120045636",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E07.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E07.mkv",
+      "size": 975259288,
+      "modify": "20260120045926",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E08.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E08.mkv",
+      "size": 980272762,
+      "modify": "20260120045550",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E09.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E09.mkv",
+      "size": 981837959,
+      "modify": "20260120045813",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E11.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E11.mkv",
+      "size": 981490435,
+      "modify": "20260120045803",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E12.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E12.mkv",
+      "size": 980369028,
+      "modify": "20260120045839",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E13.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E13.mkv",
+      "size": 980608338,
+      "modify": "20260120050054",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E14.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E14.mkv",
+      "size": 978819732,
+      "modify": "20260120045835",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E15.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E15.mkv",
+      "size": 977349161,
+      "modify": "20260120045835",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E16.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E16.mkv",
+      "size": 977860251,
+      "modify": "20260120045814",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E17.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E17.mkv",
+      "size": 978516159,
+      "modify": "20260120045819",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E18.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E18.mkv",
+      "size": 978796963,
+      "modify": "20260120045823",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E19.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E19.mkv",
+      "size": 978888463,
+      "modify": "20260120045828",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E20.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E20.mkv",
+      "size": 981409749,
+      "modify": "20260120050322",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E21.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E21.mkv",
+      "size": 980470016,
+      "modify": "20260120051052",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S02 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S02E22.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E22.mkv",
+      "size": 979950469,
+      "modify": "20260120050338",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E01.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E01.mkv",
+      "size": 982587792,
+      "modify": "20260120050543",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E02.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E02.mkv",
+      "size": 982950090,
+      "modify": "20260120050543",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E03.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E03.mkv",
+      "size": 982932208,
+      "modify": "20260120050333",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E04.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E04.mkv",
+      "size": 980787967,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E05.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E05.mkv",
+      "size": 982031106,
+      "modify": "20260120051110",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E06.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E06.mkv",
+      "size": 982678500,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E07.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E07.mkv",
+      "size": 981949877,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E08.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E08.mkv",
+      "size": 983094920,
+      "modify": "20260120050056",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E09.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E09.mkv",
+      "size": 982806234,
+      "modify": "20260120051120",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E10.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E10.mkv",
+      "size": 983449289,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E11.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E11.mkv",
+      "size": 981933442,
+      "modify": "20260120050102",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E12.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E12.mkv",
+      "size": 984688238,
+      "modify": "20260120050109",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E13.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E13.mkv",
+      "size": 982790808,
+      "modify": "20260120051136",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E14.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E14.mkv",
+      "size": 981602394,
+      "modify": "20260120050100",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E15.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E15.mkv",
+      "size": 985936744,
+      "modify": "20260120050052",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E16.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E16.mkv",
+      "size": 984417579,
+      "modify": "20260120051126",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E17.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E17.mkv",
+      "size": 985659217,
+      "modify": "20260120051128",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E18.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E18.mkv",
+      "size": 982311037,
+      "modify": "20260120045845",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E19.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E19.mkv",
+      "size": 984136582,
+      "modify": "20260120050610",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E20.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E20.mkv",
+      "size": 984489358,
+      "modify": "20260120050601",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E21.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E21.mkv",
+      "size": 984019123,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E22.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E22.mkv",
+      "size": 982049416,
+      "modify": "20260120050257",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E23.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E23.mkv",
+      "size": 982498147,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E24.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E24.mkv",
+      "size": 982303972,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
+    },
+    {
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E25.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E25.mkv",
+      "size": 981733678,
+      "modify": "20260120051056",
+      "reason": "Verified Star Trek The Next Generation episode from season-complete set; preserve two-part S01 premiere where applicable"
     }
   ]
 }
