@@ -1,0 +1,26 @@
+name: Night Court whole-episode independent ASR pilot offline QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/probe_s01e01_full_dual_asr.py'
+      - 'Night Court/tools/test_s01e01_full_dual_asr.py'
+      - 'Night Court/tools/compare_independent_asr.py'
+      - 'Night Court/FULL-EPISODE-INDEPENDENT-ASR-PILOT.md'
+      - '.github/workflows/night-court-whole-dual-asr-ci.yml'
+      - '.github/workflows/night-court-trusted-whole-dual-asr.yml'
+permissions:
+  contents: read
+jobs:
+  source-free:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-full-episode-independent-asr-benchmark'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate no-network original-source and two distinct model tests
+        run: |
+          python 'Night Court/tools/test_s01e01_full_dual_asr.py'
+          python 'Night Court/tools/test_compare_independent_asr.py'
+          python -m py_compile 'Night Court/tools/probe_s01e01_full_dual_asr.py'
