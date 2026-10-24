@@ -11,6 +11,7 @@ on:
     paths:
       - 'media-organizer/trek_probe.py'
       - 'media-organizer/trek-probe-targets.json'
+      - '.github/workflows/ftp-media-trek-stream-probe.yml'
   workflow_dispatch:
 permissions:
   contents: read
