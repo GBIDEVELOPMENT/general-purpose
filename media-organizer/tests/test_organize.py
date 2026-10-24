@@ -62,6 +62,7 @@ class OrganizerTests(unittest.TestCase):
         result=m.scan(FakeFTP(),max_depth=0)
         self.assertEqual(result["folders"][0]["entries"],2)
         self.assertEqual(result["folders"][0]["hidden_entries"],1)
+        self.assertEqual(result["folders"][0]["hidden_name_samples"],[".private"])
         self.assertEqual(result["folders"][0]["file_entries"],2)
         self.assertEqual(len(result["files"]),1)
     def test_empty_directory_is_explicitly_recorded(self):
