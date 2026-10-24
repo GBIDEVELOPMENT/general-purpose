@@ -1,0 +1,56 @@
+name: Night Court trusted full S01E01 independent ASR versus original SRT
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-whole-asr-caption-check.txt'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: night-court-original-s01e01-whole-asr-srt-comparison
+  cancel-in-progress: false
+jobs:
+  original-only:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-whole-asr-caption-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Checkout trusted base main only, not pull request head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Run source-free original caption correspondence tests
+        run: python 'Night Court/tools/test_triangulate_whole_s01e01_asr_with_srt.py'
+      - name: Recover exactly SHA-pinned original text-only independent recognizer artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/source-consensus"
+          gh api "repos/${{ github.repository }}/actions/artifacts/12551588072/zip" \
+            > "${{ runner.temp }}/source-consensus/pinned.zip"
+          echo '69cbb9f2f07036053c8c58912c90f38288b680bb3943548bd47b4fdbb7e30e7a  ${{ runner.temp }}/source-consensus/pinned.zip' | sha256sum -c -
+          unzip -p "${{ runner.temp }}/source-consensus/pinned.zip" benchmark-and-consensus.json \
+            > "${{ runner.temp }}/source-consensus/original-two-model.json"
+          echo '197404e41a68b4c373770e1771d7059d23b993efcdc38e6cee0db1fe8f8c666b  ${{ runner.temp }}/source-consensus/original-two-model.json' | sha256sum -c -
+      - name: Join full original original-series source caption witness with distinct recognizers
+        run: |
+          python 'Night Court/tools/triangulate_whole_s01e01_asr_with_srt.py' \
+            --source-two-model-json "${{ runner.temp }}/source-consensus/original-two-model.json" \
+            --output "${{ runner.temp }}/source-consensus/three-text-witness-review.json"
+      - name: Private temporary text comparison, not production script
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-fully-independent-asr-plus-original-srt-review
+          path: ${{ runner.temp }}/source-consensus/three-text-witness-review.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Remove all temporary original text artifact scratch
+        if: always()
+        run: rm -rf "${{ runner.temp }}/source-consensus"
