@@ -15,6 +15,7 @@ import tempfile
 import time
 
 from compare_independent_asr import compare
+from rejected_asr_word_diagnostics import add_independent_context
 from extract_fast_visual_plan import extract, sha
 from summarize_motion_triplets import summarize
 from ftp_research_intake import connect
@@ -120,7 +121,10 @@ def profile(media:Path, scratch:Path, transfer:float):
     vosk_words,vosk_rejected,vosk_reasons=vosk_free_decode(wav,model_dir,audio_duration)
     timings['kaldi_wfst_full_episode_inference_seconds']=round(time.monotonic()-t,3)
     t=time.monotonic()
-    whisper_words,whisper_rejected,whisper_segments,whisper_reasons=whisper_free_decode(wav,scratch/'whisper-cache',audio_duration)
+    rejected_details=[]
+    whisper_words,whisper_rejected,whisper_segments,whisper_reasons=whisper_free_decode(
+        wav,scratch/'whisper-cache',audio_duration,rejected_details=rejected_details)
+    add_independent_context(rejected_details,vosk_words,audio_duration)
     timings['whisper_tiny_full_episode_inference_seconds']=round(time.monotonic()-t,3)
     t=time.monotonic()
     comparison=compare({'schema':'night-court-two-independent-asr-words/1',
@@ -176,6 +180,13 @@ def profile(media:Path, scratch:Path, transfer:float):
        'model_word_counts':{'whisper':len(whisper_words),'vosk':len(vosk_words)},
        'model_invalid_word_time_counts':{'whisper':whisper_rejected,'vosk':vosk_rejected},
        'model_rejection_reasons':{'whisper':whisper_reasons,'vosk':vosk_reasons},
+       'whisper_rejected_word_time_review':{
+          'total_invalid_word_intervals':whisper_rejected,
+          'retained_bounded_invalid_time_proposals':len(rejected_details),
+          'unretained_diagnostics_over_cap':max(0,whisper_rejected-len(rejected_details)),
+          'rejection_details_no_source_time_promotion':rejected_details,
+          'original_soundtrack_listened':False,
+          'separate_model_context_human_verified':False},
        'source_consensus_word_counts':comparison['counts'],
        'reviewed_untimed_source_lexical_probe_count':len(paragraph_matches),
        'untimed_paragraph_lexical_candidates':paragraph_matches,
