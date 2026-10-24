@@ -12,7 +12,7 @@ import zipfile
 from compare_independent_asr import compare, ALLOWED_FAMILIES
 from probe_s01e01_full_dual_asr import (
     SHA,SIZE,VOSK_ZIP_SHA256,VOSK_ROOT,MAX_ASR_WORDS,
-    decode_audio, unpack_pinned_model, preserve_word
+    decode_audio, unpack_pinned_model, preserve_word, word_rejection_reason
 )
 
 
@@ -49,6 +49,20 @@ class DistinctModelSourceAcceptance(unittest.TestCase):
         self.assertIsNone(preserve_word('wrong',2.9,3.1,3000))
         self.assertIsNone(preserve_word('reversed',1.1,1.0,3000))
         self.assertIsNone(preserve_word('oversize'*40,1,2,3000))
+
+    def test_all_rejection_reasons_preserve_original_source_boundaries(self):
+        self.assertEqual(word_rejection_reason('x',0.1,0.1,3000),
+                         'zero_or_reversed_rounded_word_time')
+        self.assertEqual(word_rejection_reason('x',-0.1,0.1,3000),
+                         'negative_original_time')
+        self.assertEqual(word_rejection_reason('x',2.9,3.1,3000),
+                         'beyond_decoded_original_soundtrack')
+        self.assertEqual(word_rejection_reason('x',float('nan'),0.1,3000),
+                         'nonfinite_or_missing_model_time')
+        self.assertEqual(word_rejection_reason('',0,1,3000),
+                         'missing_empty_or_long_word')
+        self.assertIsNone(word_rejection_reason('genuinely spoken',0.1,0.2,3000))
+        self.assertIsNone(preserve_word('x',0.1,0.1,3000))
 
     def test_model_zip_rejects_traversal_and_symlink(self):
         with tempfile.TemporaryDirectory() as tmp:
