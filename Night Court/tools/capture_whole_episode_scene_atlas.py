@@ -98,7 +98,7 @@ def make_scene_atlas(media,out,episode):
         destination=frames_dir/f'frame-{i+1:03d}.jpg'
         run_cmd(['ffmpeg','-hide_banner','-nostdin','-loglevel','error',
                  '-ss',f'{when/1000:.3f}','-i',str(media),'-an',
-                 '-frames:v','1','-vf','scale=320:-2','-q:v','6',
+                 '-frames:v','1','-vf','scale=320:180:force_original_aspect_ratio=decrease,pad=320:180:(ow-iw)/2:(oh-ih)/2','-q:v','6',
                  '-y',str(destination)],timeout=50)
         n=destination.stat().st_size
         if not 100<n<MAX_JPEG_BYTES:raise ValueError('Oversized or empty original source thumbnail')
@@ -120,7 +120,7 @@ def make_scene_atlas(media,out,episode):
         for offset,f in enumerate(block):
             p=frames_dir/Path(f['file']).name
             with Image.open(p) as img:
-                if img.size[0]!=320 or img.size[1]>184:
+                if img.size!=(320,180):
                     raise ValueError('Unexpected original source video thumbnail dimensions')
                 x=(offset%5)*tile_w
                 y=(offset//5)*tile_h
