@@ -19,15 +19,23 @@ The read-only source selection, checksum checks, source timestamp-null checks an
 
 The next task after a successful real run is to preflight the compact JSON artifact against the held 347-paragraph SHA and discovered AVI fingerprint, retain it under `seasons/S09/S09E19/derived/source-timing-review-v1/`, and create a prioritized listening/word-alignment queue. Any transcript paragraph promoted to timing requires **actual audio review**, preferably across multiple anchored passages with speaker overlap checks. Until then its original text remains untimed. Failure to match is useful evidence and must not trigger automatic replacement of the original source.
 
+## Real source acquisition success and first independent content correspondence
+
+Owner-triggered [PR #218](https://github.com/gamesbyian/general-purpose/pull/218) launched trusted [run #40054051699](https://github.com/gamesbyian/general-purpose/actions/runs/40054051699), which **completed successfully**, from the reviewed [PR #217](https://github.com/gamesbyian/general-purpose/pull/217) toolchain. Actual S09E19 AVI is 183,377,920 bytes, MPEG-4/MP3 media with actual runtime **1320.144 seconds (22m 0.144s)**, SHA-256 `51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649`. The original AVI and five WAV excerpts were removed after processing; only source-hashed JSON artifact **#12544941126** was retained for in-repo import.
+
+The independent speech model produced **50 ASR segments** across five 25-second excerpts, and the conservative whole-document paragraph matcher found **15 distinctive high-lexical-match candidates** (3, 2, 1, 5, 4 by source window). Proposed paragraph IDs progress in source order: **49–54**, **117–120**, **190**, **240–253** and **324–331**, respectively. Some have similarity 1.0 after normalization; others are below 1.0 but above the explicit threshold with a distinct alternative margin. All source paragraph timing fields remain **null**. The matching is preliminary evidence of episode content/cut compatibility, **not independently audited audio, a full source-to-video time map, speaker identity, verified screen action or a complete screenplay**.
+
+A strict importer `tools/import_s09e19_source_anchors.py` re-evaluates every one of these candidate matches against the 347 original source paragraphs and rejects any altered AVI/text fingerprints, audio bounds, source-timecode invention, unverifiable speaker claims or mismatched candidate counts. Its CI preserves only the compact derived JSON and an episode-local review report. The five audio sample windows total **125 seconds**, so **1195 seconds of this video cut have not been sampled by this experiment**.
+
 ## Independent acceptance ledger
 
 | Requirement | Current state |
 |---|---|
 | Original S09E19 owner-specific 347 untimed paragraphs and immutable source SHA | Held and indexed |
 | Exact FTP S09E19 AVI candidate (filename/size only) | Inventoried; AV content not verified |
-| Original AVI bytes SHA, actual runtime and audio stream | Pending real run |
-| Five 25-second source-video audio excerpts | Pending real run |
-| Independent ASR vs all original untimed paragraphs | Pending real run |
+| Original AVI bytes SHA, actual runtime and audio stream | **Confirmed by run #40054051699, source SHA pinned** |
+| Five 25-second source-video audio excerpts | **Completed, 125 seconds processed, AVI/WAV deleted** |
+| Independent ASR vs all original untimed paragraphs | **50 segments, 15 unique high-lexical proposed anchors, pending listener acceptance** |
 | Human-confirmed utterance-to-paragraph time alignment | Not done |
 | Full episode subtitle timestamp reconstruction | Not done |
 | Character speaker identities and scene/action/inflection analysis | Not done |
