@@ -60,7 +60,7 @@ def features(signal,sample_rate):
     pitch=np.asarray(librosa.yin(signal,sr=sample_rate,
         fmin=65,fmax=550,frame_length=2048,hop_length=256),dtype=np.float64)
     frame_rms=np.asarray(librosa.feature.rms(y=signal,frame_length=2048,
-        hop_length=256,center=True))[0],dtype=np.float64)
+        hop_length=256,center=True)[0],dtype=np.float64)
     frames=min(len(pitch),len(frame_rms))
     # Gate synthetic F0 guesses produced on very quiet frames. Still not VAD.
     valid=pitch[:frames][(frame_rms[:frames]>.012)&np.isfinite(pitch[:frames])&
