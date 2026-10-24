@@ -1,0 +1,53 @@
+name: Night Court trusted S01E01 sparse video-cut drift study
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-sparse-sync.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-trusted-s01e01-sparse-sync
+  cancel-in-progress: false
+jobs:
+  source-compare:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-sparse-sync-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      OMP_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install FFmpeg and bounded pretrained independent ASR
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python -m pip install 'faster-whisper>=1.1,<2'
+      - name: Validate exact trusted original-series source sample schedule
+        run: |
+          python "Night Court/tools/test_s01e01_sparse_asr_drift_study.py"
+          python "Night Court/tools/test_pilot_ftp_video_acoustics.py"
+      - name: Source-verify one AVI, sample five disjoint 30s windows
+        run: |
+          python "Night Court/tools/s01e01_sparse_asr_drift_study.py" --ftp \
+            --output "${{ runner.temp }}/s01e01-source-cut-drift.json"
+      - name: Preserve only compact inferred original-episode text and timing metadata
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-source-cut-drift-review
+          path: ${{ runner.temp }}/s01e01-source-cut-drift.json
+          if-no-files-found: error
+          retention-days: 7
