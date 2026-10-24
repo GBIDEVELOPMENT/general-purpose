@@ -1,469 +1,532 @@
 {
   "root": "/downloads",
-  "batch_id": "series_seven_066",
-  "description": "Move 66 verified episodic files from The Looming Tower, True Detective, Legion, Masters of the Air, Silo, Poker Face and Shrinking into canonical show and season folders under mixed Downloads.",
+  "batch_id": "star_trek_tng_ds9_075",
+  "description": "Group 50 The Next Generation seasons 4 and 5 episodes plus 25 Deep Space Nine season 7 episodes under existing Star Trek franchise root; exclude cross-season TNG S03E26S04E01 which remains for separate handling.",
   "moves": [
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E01.Now.It.Begins.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E01 - Now It Begins.mkv",
-      "size": 2255685673,
-      "modify": "20260913012141",
-      "reason": "Verified The Looming Tower (2018) S01E01 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E01.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E01.mkv",
+      "size": 1006816501,
+      "modify": "20260120050111",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E02.Losing.My.Religion.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E02 - Losing My Religion.mkv",
-      "size": 2279139009,
-      "modify": "20260913012145",
-      "reason": "Verified The Looming Tower (2018) S01E02 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E02.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E02.mkv",
+      "size": 1007877006,
+      "modify": "20260120050324",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E03.Mistakes.Were.Made.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E03 - Mistakes Were Made.mkv",
-      "size": 2243727041,
-      "modify": "20260913012149",
-      "reason": "Verified The Looming Tower (2018) S01E03 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E03.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E03.mkv",
+      "size": 1007215253,
+      "modify": "20260120050329",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E04.Mercury.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E04 - Mercury.mkv",
-      "size": 2248598873,
-      "modify": "20260913012049",
-      "reason": "Verified The Looming Tower (2018) S01E04 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E04.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E04.mkv",
+      "size": 1007556346,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E05.Y2K.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E05 - Y2K.mkv",
-      "size": 2075051847,
-      "modify": "20260913012134",
-      "reason": "Verified The Looming Tower (2018) S01E05 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E05.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E05.mkv",
+      "size": 1007320984,
+      "modify": "20260120045803",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E06.Boys.at.War.1080p.BluRay10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E06 - Boys at War.mkv",
-      "size": 2198111068,
-      "modify": "20260913012137",
-      "reason": "Verified The Looming Tower (2018) S01E06 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E06.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E06.mkv",
+      "size": 1006741369,
+      "modify": "20260120050053",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E07.The.General.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E07 - The General.mkv",
-      "size": 2271445659,
-      "modify": "20260913012147",
-      "reason": "Verified The Looming Tower (2018) S01E07 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E07.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E07.mkv",
+      "size": 1010439369,
+      "modify": "20260120050057",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E08.A.Very.Special.Relationship.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E08 - A Very Special Relationship.mkv",
-      "size": 2210080187,
-      "modify": "20260913012147",
-      "reason": "Verified The Looming Tower (2018) S01E08 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E08.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E08.mkv",
+      "size": 1011274894,
+      "modify": "20260120050555",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E09.Tuesday.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E09 - Tuesday.mkv",
-      "size": 2169049152,
-      "modify": "20260913012126",
-      "reason": "Verified The Looming Tower (2018) S01E09 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E09.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E09.mkv",
+      "size": 1007547253,
+      "modify": "20260120045403",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/The Looming Tower S01 br 10bit ddp5 hevc-d3g/The.Looming.Tower.S01E10.9.11.1080p.BluRay.10Bit.DDP5.1.HEVC-d3g.mkv",
-      "to": "/downloads/The Looming Tower (2018)/Season 01/The Looming Tower (2018) - S01E10 - 9 11.mkv",
-      "size": 2232334812,
-      "modify": "20260913012136",
-      "reason": "Verified The Looming Tower (2018) S01E10 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E10.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E10.mkv",
+      "size": 1006346047,
+      "modify": "20260120051107",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E01.mkv",
-      "size": 2998419528,
-      "modify": "20250302020835",
-      "reason": "Verified True Detective (2014) S01E01 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E11.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E11.mkv",
+      "size": 1004866002,
+      "modify": "20260120045804",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E02 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E02.mkv",
-      "size": 2941636597,
-      "modify": "20250302020846",
-      "reason": "Verified True Detective (2014) S01E02 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E12.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E12.mkv",
+      "size": 1006477299,
+      "modify": "20260120045745",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E03 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E03.mkv",
-      "size": 2937822947,
-      "modify": "20250302020905",
-      "reason": "Verified True Detective (2014) S01E03 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E13.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E13.mkv",
+      "size": 1006683721,
+      "modify": "20260120045748",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E04 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E04.mkv",
-      "size": 2609475488,
-      "modify": "20250302020910",
-      "reason": "Verified True Detective (2014) S01E04 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E14.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E14.mkv",
+      "size": 1007501374,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E05 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E05.mkv",
-      "size": 3073099913,
-      "modify": "20250302020840",
-      "reason": "Verified True Detective (2014) S01E05 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E15.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E15.mkv",
+      "size": 1006598673,
+      "modify": "20260120045916",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E06 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E06.mkv",
-      "size": 3260242162,
-      "modify": "20250302020841",
-      "reason": "Verified True Detective (2014) S01E06 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E16.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E16.mkv",
+      "size": 1010432579,
+      "modify": "20260120050050",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E07 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E07.mkv",
-      "size": 3095310688,
-      "modify": "20250302020841",
-      "reason": "Verified True Detective (2014) S01E07 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E17.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E17.mkv",
+      "size": 1008349405,
+      "modify": "20260120050846",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/True Detective (2014) S01 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE)/True Detective (2014) S01E08 (1080p AMZN WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/True Detective (2014)/Season 01/True Detective (2014) - S01E08.mkv",
-      "size": 2938643959,
-      "modify": "20250302020841",
-      "reason": "Verified True Detective (2014) S01E08 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E19.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E19.mkv",
+      "size": 1005758315,
+      "modify": "20260120050638",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E01.Chapter.1.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
-      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E01 - Chapter 1.mkv",
-      "size": 7868158773,
-      "modify": "20260512055431",
-      "reason": "Verified Legion (2017) S01E01 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E20.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E20.mkv",
+      "size": 1006248298,
+      "modify": "20260120050631",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E02.Chapter.2.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
-      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E02 - Chapter 2.mkv",
-      "size": 5403168411,
-      "modify": "20260512055424",
-      "reason": "Verified Legion (2017) S01E02 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E21.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E21.mkv",
+      "size": 1011580859,
+      "modify": "20260120050550",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E03.Chapter.3.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
-      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E03 - Chapter 3.mkv",
-      "size": 5012124147,
-      "modify": "20260512055425",
-      "reason": "Verified Legion (2017) S01E03 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E22.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E22.mkv",
+      "size": 1008473649,
+      "modify": "20260120050540",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E04.Chapter.4.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
-      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E04 - Chapter 4.mkv",
-      "size": 6280839971,
-      "modify": "20260512055423",
-      "reason": "Verified Legion (2017) S01E04 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E23.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E23.mkv",
+      "size": 1009726455,
+      "modify": "20260120050743",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E05.Chapter.5.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
-      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E05 - Chapter 5.mkv",
-      "size": 5972613164,
-      "modify": "20260512055425",
-      "reason": "Verified Legion (2017) S01E05 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E24.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E24.mkv",
+      "size": 1005611270,
+      "modify": "20260120045229",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E06.Chapter.6.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
-      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E06 - Chapter 6.mkv",
-      "size": 5804968226,
-      "modify": "20260512055425",
-      "reason": "Verified Legion (2017) S01E06 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E25.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E25.mkv",
+      "size": 1008532003,
+      "modify": "20260120050025",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E07.Chapter.7.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
-      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E07 - Chapter 7.mkv",
-      "size": 5203053795,
-      "modify": "20260512055302",
-      "reason": "Verified Legion (2017) S01E07 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S05 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S05E26.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E26.mkv",
+      "size": 1005065737,
+      "modify": "20260120050259",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Legion.S01.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX/Legion.S01E08.Chapter.8.2160p.HULU.WEB-DL.DDP5.1.H.265-FLUX.mkv",
-      "to": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E08 - Chapter 8.mkv",
-      "size": 5592973649,
-      "modify": "20260512055302",
-      "reason": "Verified Legion (2017) S01E08 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E02.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E02.mkv",
+      "size": 1003190547,
+      "modify": "20260120050851",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E01.mkv",
-      "size": 11243966837,
-      "modify": "20250630003153",
-      "reason": "Verified Masters of the Air (2024) S01E01 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E03.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E03.mkv",
+      "size": 1005437850,
+      "modify": "20260120050733",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E02.mkv",
-      "size": 9915841967,
-      "modify": "20250630003114",
-      "reason": "Verified Masters of the Air (2024) S01E02 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E04.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E04.mkv",
+      "size": 1005048081,
+      "modify": "20260120050736",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E03 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E03.mkv",
-      "size": 8591898595,
-      "modify": "20250630003150",
-      "reason": "Verified Masters of the Air (2024) S01E03 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E05.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E05.mkv",
+      "size": 1006533141,
+      "modify": "20260120045942",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E04 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E04.mkv",
-      "size": 9169988612,
-      "modify": "20250630003151",
-      "reason": "Verified Masters of the Air (2024) S01E04 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E06.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E06.mkv",
+      "size": 1005830969,
+      "modify": "20260120050638",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E05 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E05.mkv",
-      "size": 9571208073,
-      "modify": "20250630003028",
-      "reason": "Verified Masters of the Air (2024) S01E05 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E07.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E07.mkv",
+      "size": 1005736279,
+      "modify": "20260120050638",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E06 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E06.mkv",
-      "size": 11035101340,
-      "modify": "20250630003056",
-      "reason": "Verified Masters of the Air (2024) S01E06 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E08.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E08.mkv",
+      "size": 1006899551,
+      "modify": "20260120050053",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E07 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E07.mkv",
-      "size": 8659256457,
-      "modify": "20250630003153",
-      "reason": "Verified Masters of the Air (2024) S01E07 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E09.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E09.mkv",
+      "size": 1011340919,
+      "modify": "20260120050436",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E08 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E08.mkv",
-      "size": 9128624404,
-      "modify": "20250630003027",
-      "reason": "Verified Masters of the Air (2024) S01E08 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E10.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E10.mkv",
+      "size": 1005223520,
+      "modify": "20260120050354",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Masters of the Air (2024) S01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Masters of the Air (2024) S01E09 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E09.mkv",
-      "size": 14054061890,
-      "modify": "20250630003151",
-      "reason": "Verified Masters of the Air (2024) S01E09 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E11.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E11.mkv",
+      "size": 1004024493,
+      "modify": "20260120050441",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E01 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E01.mkv",
-      "size": 8522958006,
-      "modify": "20251013054249",
-      "reason": "Verified Silo (2023) S02E01 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E12.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E12.mkv",
+      "size": 1009869295,
+      "modify": "20260120050638",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E02.mkv",
-      "size": 7717178643,
-      "modify": "20251013054111",
-      "reason": "Verified Silo (2023) S02E02 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E13.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E13.mkv",
+      "size": 1005983022,
+      "modify": "20260120050638",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E03 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E03.mkv",
-      "size": 10085098969,
-      "modify": "20251013054210",
-      "reason": "Verified Silo (2023) S02E03 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E14.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E14.mkv",
+      "size": 1005517035,
+      "modify": "20260120045528",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E04 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E04.mkv",
-      "size": 10390847682,
-      "modify": "20251013054245",
-      "reason": "Verified Silo (2023) S02E04 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E15.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E15.mkv",
+      "size": 1004814447,
+      "modify": "20260120051140",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E05 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E05.mkv",
-      "size": 9348800998,
-      "modify": "20251013054249",
-      "reason": "Verified Silo (2023) S02E05 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E16.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E16.mkv",
+      "size": 1005193108,
+      "modify": "20260120050257",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E06 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E06.mkv",
-      "size": 8033036466,
-      "modify": "20251013054102",
-      "reason": "Verified Silo (2023) S02E06 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E17.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E17.mkv",
+      "size": 1007533307,
+      "modify": "20260120045730",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E07 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E07.mkv",
-      "size": 9615320667,
-      "modify": "20251013054105",
-      "reason": "Verified Silo (2023) S02E07 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E18.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E18.mkv",
+      "size": 1009488430,
+      "modify": "20260120045936",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E08 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E08.mkv",
-      "size": 8952501205,
-      "modify": "20251013053938",
-      "reason": "Verified Silo (2023) S02E08 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E19.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E19.mkv",
+      "size": 1005078210,
+      "modify": "20260120045726",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E09 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E09.mkv",
-      "size": 11211790351,
-      "modify": "20251013053923",
-      "reason": "Verified Silo (2023) S02E09 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E20.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E20.mkv",
+      "size": 1006446277,
+      "modify": "20260120051141",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Silo (2023) S02 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE)/Silo (2023) S02E10 (2160p ATVP WEB-DL Hybrid H265 DV HDR10+ DDP Atmos 5.1 English - HONE).mkv",
-      "to": "/downloads/Silo (2023)/Season 02/Silo (2023) - S02E10.mkv",
-      "size": 11201659402,
-      "modify": "20251013053940",
-      "reason": "Verified Silo (2023) S02E10 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E21.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E21.mkv",
+      "size": 1010869525,
+      "modify": "20260120051142",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E01.mkv",
-      "size": 3008616112,
-      "modify": "20260820204803",
-      "reason": "Verified Poker Face (2023) S01E01 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E22.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E22.mkv",
+      "size": 1006496457,
+      "modify": "20260120051133",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E02 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E02.mkv",
-      "size": 2817081728,
-      "modify": "20260820204806",
-      "reason": "Verified Poker Face (2023) S01E02 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E23.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E23.mkv",
+      "size": 1009751780,
+      "modify": "20260120045932",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E03 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E03.mkv",
-      "size": 2471061583,
-      "modify": "20260820204809",
-      "reason": "Verified Poker Face (2023) S01E03 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E24.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E24.mkv",
+      "size": 1006536722,
+      "modify": "20260120051130",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E04 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E04.mkv",
-      "size": 2137322496,
-      "modify": "20260820204812",
-      "reason": "Verified Poker Face (2023) S01E04 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E25.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E25.mkv",
+      "size": 1007797909,
+      "modify": "20260120051133",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E05 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E05.mkv",
-      "size": 2266050502,
-      "modify": "20260820204829",
-      "reason": "Verified Poker Face (2023) S01E05 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Strek TNG S04 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S04E26.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
+      "to": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E26.mkv",
+      "size": 1005351776,
+      "modify": "20260120050725",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E06 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E06.mkv",
-      "size": 2109492695,
-      "modify": "20260820204827",
-      "reason": "Verified Poker Face (2023) S01E06 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E01 - Image in the Sand [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E01.mkv",
+      "size": 804082651,
+      "modify": "20260411032938",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E07 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E07.mkv",
-      "size": 2147789208,
-      "modify": "20260820204832",
-      "reason": "Verified Poker Face (2023) S01E07 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E02 - Shadows and Symbols [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E02.mkv",
+      "size": 988096233,
+      "modify": "20260411034239",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E08 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E08.mkv",
-      "size": 2535049945,
-      "modify": "20260820204830",
-      "reason": "Verified Poker Face (2023) S01E08 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E03 - Afterimage [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E03.mkv",
+      "size": 740220876,
+      "modify": "20260411034420",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E09 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E09.mkv",
-      "size": 2656564572,
-      "modify": "20260820204802",
-      "reason": "Verified Poker Face (2023) S01E09 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E04 - Take Me Out to the Holosuite [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E04.mkv",
+      "size": 1292133865,
+      "modify": "20260411034420",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Poker Face (2023) S01 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE)/Poker Face (2023) S01E10 (1080p PCOK WEB-DL H265 SDR DDP 5.1 English - HONE).mkv",
-      "to": "/downloads/Poker Face (2023)/Season 01/Poker Face (2023) - S01E10.mkv",
-      "size": 2530364300,
-      "modify": "20260820204803",
-      "reason": "Verified Poker Face (2023) S01E10 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E05 - Chrysalis [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E05.mkv",
+      "size": 812144758,
+      "modify": "20260411033718",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E01.My.Bad.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E01 - My Bad.mkv",
-      "size": 3883184031,
-      "modify": "20260805215809",
-      "reason": "Verified Shrinking (2023) S03E01 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E06 - Treachery Faith and the Great River [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E06.mkv",
+      "size": 795621433,
+      "modify": "20260411034420",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E02.Happiness.Mission.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E02 - Happiness Mission.mkv",
-      "size": 2098976984,
-      "modify": "20260805215927",
-      "reason": "Verified Shrinking (2023) S03E02 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E07 - Once More Unto the Breach [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E07.mkv",
+      "size": 807247658,
+      "modify": "20260411034141",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E03.D-Day.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E03 - D-Day.mkv",
-      "size": 2047072245,
-      "modify": "20260805215928",
-      "reason": "Verified Shrinking (2023) S03E03 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E08 - The Siege of AR-558 [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E08.mkv",
+      "size": 650320765,
+      "modify": "20260411032632",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E04.The.Field.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E04 - The Field.mkv",
-      "size": 2085927397,
-      "modify": "20260805215932",
-      "reason": "Verified Shrinking (2023) S03E04 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E09 - Covenant [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E09.mkv",
+      "size": 646976063,
+      "modify": "20260411032639",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E05.Hold.Your.Horsies.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E05 - Hold Your Horsies.mkv",
-      "size": 1995785487,
-      "modify": "20260805215932",
-      "reason": "Verified Shrinking (2023) S03E05 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E10 - It's Only a Paper Moon [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E10.mkv",
+      "size": 726619033,
+      "modify": "20260411032840",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E06.Dereks.Dont.Die.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E06 - Dereks Dont Die.mkv",
-      "size": 1894459897,
-      "modify": "20260805215932",
-      "reason": "Verified Shrinking (2023) S03E06 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E11 - Prodigal Daughter [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E11.mkv",
+      "size": 662075181,
+      "modify": "20260411032644",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E07.I.Will.Be.Grape.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E07 - I Will Be Grape.mkv",
-      "size": 1881419445,
-      "modify": "20260805215816",
-      "reason": "Verified Shrinking (2023) S03E07 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E12 - The Emperor's New Cloak [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E12.mkv",
+      "size": 756846945,
+      "modify": "20260411033343",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E08.Depression.Diet.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E08 - Depression Diet.mkv",
-      "size": 1761182542,
-      "modify": "20260805215753",
-      "reason": "Verified Shrinking (2023) S03E08 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E13 - Field of Fire [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E13.mkv",
+      "size": 731324634,
+      "modify": "20260411033709",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E09.Daddy.Issues.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E09 - Daddy Issues.mkv",
-      "size": 1847757460,
-      "modify": "20260805215803",
-      "reason": "Verified Shrinking (2023) S03E09 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E14 - Chimera [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E14.mkv",
+      "size": 711778363,
+      "modify": "20260411033909",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E10.The.Bodyguard.of.Sadness.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E10 - The Bodyguard of Sadness.mkv",
-      "size": 2141995597,
-      "modify": "20260805215753",
-      "reason": "Verified Shrinking (2023) S03E10 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E15 - Badda-Bing Badda-Bang [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E15.mkv",
+      "size": 834693762,
+      "modify": "20260411033900",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     },
     {
-      "from": "/downloads/Shrinking 2023 S03 2160p ATVP WEB-DL x265 HEVC 10bit DDP 5 1-Vyndros/Shrinking.S03E11.And.Thats.Our.Time.2160p.10bit.ATVP.WEB-DL.DDP5.1.HEVC-Vyndros.mkv",
-      "to": "/downloads/Shrinking (2023)/Season 03/Shrinking (2023) - S03E11 - And Thats Our Time.mkv",
-      "size": 1831056241,
-      "modify": "20260805215753",
-      "reason": "Verified Shrinking (2023) S03E11 episode, named for Plex without changing the video"
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E16 - Inter Arma Enim Silent Leges [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E16.mkv",
+      "size": 382205952,
+      "modify": "20260411034040",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
+    },
+    {
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E17 - Penumbra [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E17.mkv",
+      "size": 758793194,
+      "modify": "20260411034109",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
+    },
+    {
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E18 - Til Death Do Us Part [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E18.mkv",
+      "size": 694168278,
+      "modify": "20260411034420",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
+    },
+    {
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E19 - Strange Bedfellows [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E19.mkv",
+      "size": 739462576,
+      "modify": "20260411032638",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
+    },
+    {
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E20 - The Changing Face of Evil [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E20.mkv",
+      "size": 806304964,
+      "modify": "20260411033441",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
+    },
+    {
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E21 - When it Rains... [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E21.mkv",
+      "size": 727559600,
+      "modify": "20260411034422",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
+    },
+    {
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E22 - Tacking Into the Wind [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E22.mkv",
+      "size": 763863084,
+      "modify": "20260411034423",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
+    },
+    {
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E23 - Extreme Measures [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E23.mkv",
+      "size": 693689309,
+      "modify": "20260411033139",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
+    },
+    {
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E24 - The Dogs of War [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E24.mkv",
+      "size": 852060476,
+      "modify": "20260411033139",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
+    },
+    {
+      "from": "/downloads/Star Trek DS9 Season 7 [2160p]/Star Trek Deep Space Nine S07E25E26 - What You Leave Behind [2160p].mkv",
+      "to": "/downloads/Star Trek/Star Trek Deep Space Nine/Season 07/Star Trek Deep Space Nine - S07E25-E26.mkv",
+      "size": 1711512050,
+      "modify": "20260411033738",
+      "reason": "Verified Star Trek episode and explicit same-season multipart token; grouping under existing Star Trek franchise"
     }
   ]
 }
