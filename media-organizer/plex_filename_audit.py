@@ -7,16 +7,16 @@ from pathlib import Path, PurePosixPath
 
 ROOT="/downloads"
 VIDEO={".mkv",".mp4",".avi",".m4v",".mov",".wmv",".ts",".mpg",".mpeg"}
-STANDARD=re.compile(r"(?i)(?<![a-z0-9])S(\\d{1,2})[ ._-]*E(\\d{1,3})(?!\\d)")
-LEGACY=re.compile(r"(?i)(?<![a-z0-9])(\\d{1,2})x(\\d{2,3})(?!\\d)")
-CROSS=re.compile(r"(?i)S\\d{1,2}E\\d{1,3}S\\d{1,2}E\\d{1,3}")
-MULTIPART=re.compile(r"(?i)S\\d{1,2}E\\d{1,3}(?:[ ._-]*E\\d{1,3})(?!\\d)")
-DISC=re.compile(r"(?i)S\\d{1,2}D\\d{1,2}")
-YEAR=re.compile(r"(?<!\\d)(?:19|20)\\d{2}(?!\\d)")
-RELEASE=re.compile(r"(?i)(?:1080p|2160p|720p|480p|x26[45]|H[ ._-]*26[45]|HEVC|WEB[ ._-]*DL|WEBRip|BluRay|DVDRip|HDR|DDP\\d)")
-SEASON_DIR=re.compile(r"(?i)^(?:Season[ ._-]*|S)(\\d{1,2})$")
-SAMPLE=re.compile(r"(?i)^(?:sample|proof|screenshots?|preview)(?:[ ._-]|\\.)")
-MISMATCH_YEAR=re.compile(r"(?i)S\\d{1,2}E\\d{1,3}[ ._-]+(?:19|20)\\d{2}(?:[ ._-]|$)")
+STANDARD=re.compile(r"(?i)(?<![a-z0-9])S(\d{1,2})[ ._-]*E(\d{1,3})(?!\d)")
+LEGACY=re.compile(r"(?i)(?<![a-z0-9])(\d{1,2})x(\d{2,3})(?!\d)")
+CROSS=re.compile(r"(?i)S\d{1,2}E\d{1,3}S\d{1,2}E\d{1,3}")
+MULTIPART=re.compile(r"(?i)S\d{1,2}E\d{1,3}(?:[ ._-]*E\d{1,3})(?!\d)")
+DISC=re.compile(r"(?i)S\d{1,2}D\d{1,2}")
+YEAR=re.compile(r"(?<!\d)(?:19|20)\d{2}(?!\d)")
+RELEASE=re.compile(r"(?i)(?:1080p|2160p|720p|480p|x26[45]|H[ ._-]*26[45]|HEVC|WEB[ ._-]*DL|WEBRip|BluRay|DVDRip|HDR|DDP\d)")
+SEASON_DIR=re.compile(r"(?i)^(?:Season[ ._-]*|S)(\d{1,2})$")
+SAMPLE=re.compile(r"(?i)^(?:sample|proof|screenshots?|preview)(?:[ ._-]|\.)")
+MISMATCH_YEAR=re.compile(r"(?i)S\d{1,2}E\d{1,3}[ ._-]+(?:19|20)\d{2}(?:[ ._-]|$)")
 PRIORITY={"high":0,"medium":1,"review":2,"info":3}
 
 def scan_inventory(inventory):
@@ -67,13 +67,13 @@ def scan_inventory(inventory):
                 add("review","release_tokens_in_series_prefix",path,
                     "Codec/resolution/source token occurs before episode marker; may obscure show title")
         elif not legacy:
-            if SEASON_DIR.fullmatch(parent) or re.search(r"(?i)S\\d{1,2}(?:[ ._-]|$)",parent):
+            if SEASON_DIR.fullmatch(parent) or re.search(r"(?i)S\d{1,2}(?:[ ._-]|$)",parent):
                 add("medium","episode_unrecognized_in_season",path,
                     "TV season container but media name lacks standard SxxEyy identification")
             elif not YEAR.search(stem) and YEAR.search(parent):
                 add("medium","movie_year_only_in_folder",path,
                     "Likely film lacks title/year in its own basename; review with Plex film rules")
-        if re.search(r"(?i)(?:S\\d{2}E\\d{2})[ ._-]+(?:H[ ._-]?26[45]|x[ ._-]?26[45])",stem):
+        if re.search(r"(?i)(?:S\d{2}E\d{2})[ ._-]+(?:H[ ._-]?26[45]|x[ ._-]?26[45])",stem):
             add("info","codec_immediately_after_episode",path,
                 "Codec label follows episode number; normal release tag, not independently verified metadata")
     issues.sort(key=lambda row:(PRIORITY[row["severity"]],row["category"],row["path"].casefold()))
