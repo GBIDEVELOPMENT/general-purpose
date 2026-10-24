@@ -71,6 +71,18 @@ class OrganizerTests(unittest.TestCase):
             def mlsd(self):return iter([])
         result=m.scan(FakeFTP(),max_depth=0)
         self.assertEqual(result["folders"][0]["entries"],0)
+    def test_deleted_folder_during_listing_is_recorded_not_crash(self):
+        import ftplib
+        class FakeFTP:
+            def cwd(self,p):self.path=p
+            def mlsd(self):
+                if self.path=="/downloads":
+                    return iter([("just-removed",{"type":"dir"})])
+                raise ftplib.error_perm("550 no such file or directory")
+        report=m.scan(FakeFTP(),max_seconds=2,max_depth=2)
+        self.assertEqual(len(report["failures"]),1)
+        self.assertEqual(report["failures"][0]["directory"],"/downloads/just-removed")
+        self.assertEqual(report["failures"][0]["error_type"],"error_perm")
     def test_depth_limit_is_reported(self):
         class FakeFTP:
             def cwd(self,p):self.path=p
