@@ -1,6 +1,14 @@
 # S01E01: evidence-linked scene reconstruction pilot
 
-Status **implemented/CI pending**, October 23, 2026. This is a deliberately bounded 60–90s excerpt, not a complete episode and not a transcript accuracy certificate.
+Status **real 30-second source-evidence packet acquired, reviewed and retained**, October 23, 2026. This is a deliberately bounded 60–90s excerpt, not a complete episode and not a transcript accuracy certificate.
+
+## Accepted first source-grounded scene evidence (owner-controlled run #40044673687)
+
+Merged [PR #112](https://github.com/gamesbyian/general-purpose/pull/112) installed the fixed SHA-verified 60–90 second capture; an inert [PR #114](https://github.com/gamesbyian/general-purpose/pull/114) triggered it with trusted main code and was closed after the successful run. [PR #115](https://github.com/gamesbyian/general-purpose/pull/115) permanently imported the resulting actual JPEGs, nine original caption cues C19–C27 and five source-mix acoustic windows. CI validated individual JPEG digests and matching original AVI/SRT digests.
+
+Saved episode location: [S01E01 derived scene-review-v1](seasons/S01/S01E01/derived/scene-review-v1/). Read `visual-observations.json` for evidence-linked image observations and `scene-script-review.md` for a limited screenplay-style setting and comic-context draft. Observable details include law-book shelving, wood trim, a desk and landline, papers, a person in lavender formal clothing, a uniformed officer, and the officer holding a telephone receiver in the sampled frame at 87s. Actual individual character identity, spoken-line alignment, the moment the phone was lifted and the intervening movement are **not** established.
+
+We have now achieved **first reviewed static-frame setting and prop annotations from actual source media**. The stronger goal of audiovisual stage directions and spoken performance annotation is still not accepted. The separate [S01E01 ASR/prosody phase](S01E01-ASR-PROSODY-PILOT.md) is to supply candidate caption/audio anchors, not automatic truth.
 
 ## Media and subtitle provenance
 
@@ -28,10 +36,10 @@ Status **implemented/CI pending**, October 23, 2026. This is a deliberately boun
 |---|---|
 | 193 source video candidates matched by filename | Confirmed in PR #88 |
 | S01E01 source hash from real FTP AVI | Confirmed run #40042590948 |
-| 30-second exact source read with 10 JPEG hashes and 5 acoustic windows | Workflow pending |
-| Relevant source subtitle cues preserved by ID/source hash | Offline test pending |
+| 30-second exact source read with 10 JPEG hashes and 5 acoustic windows | **Completed, GHA #40044673687 and merged PR #115** |
+| Relevant source subtitle cues preserved by ID/source hash | **Completed, nine original SRT cues C19–C27, PR #115** |
 | Caption/video speech offset verified independently | Not yet |
-| Real persons/characters visible in JPEGs identified with evidence | Not yet |
+| Observed appearance and set objects recorded from source frames | **Completed, ten frames, SHA-verified; visual character IDs unresolved** |
 | Continuous motion and meaningful stage directions grounded in reviewed clip | Not yet |
 | Final first scene screenplay accepted | Not yet |
 | Full episode audiovisual completeness certified | Not yet |
