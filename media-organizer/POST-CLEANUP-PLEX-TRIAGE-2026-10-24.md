@@ -23,3 +23,14 @@ Source: latest **complete** read-only inventory, Actions [40061383643](https://g
 ## Workflow and isolation
 
 Continue to use private main-only secret-bearing FTP workflows with exact source size/mtime preflight and per-file journals. PR checks are offline, the `/downloads` root stays mixed, and moving active seeding paths may affect torrent jobs. Avoid modifying the Night Court production pipeline or rTorrent working directories in the FTP cleanup lane. Full post-change read-only inventory is necessary before closure.
+
+## Exact risk-flag disposition from full inventory
+
+The full audit JSON on `reports/ftp-media-inventory` narrows the non-Night-Court flags substantially:
+
+- **False-positive season-context risk:** `/downloads/star-trek-ds9-laserdisc-720p-24/Star Trek DS9 - Behind The Scenes - Laserdisc 720p30 hevc aac20.mkv` is explicitly labeled a behind-the-scenes extra. Its missing episode number is appropriate; preserve as an extra, not rename to a fabricated episode.
+- **Date suffix:** `/downloads/Dateline NBC/Dateline.NBC.s33e34.2025.09.12.The.Night.of.the.Audition.1080p.WEB.h264-EDITH.mkv` appears to carry an airdate; retain unchanged pending authoritative schedule matching. Filename alone is not evidence of wrong episode identity.
+- **Ten multi-episode flags:** seven have the standard span format `SxxEyy-Ezz` (30 Rock S07 finale, Green Lantern S01 premiere, Voyager S01 premiere, DS9 S07 finale, Enterprise S01 premiere, TNG S01 premiere and S07 finale); keep intact. Three additional `SxxEyyEzz` names are within the `star-trek-ds9-laserdisc-720p-24` alternate-edition folder, for DS9 S01E01-E02 `Emissary`, S04E01-E02 `The Way Of The Warrior`, and S07E25-E26 `What You Leave Behind`. Those three are **potential formatting-only Plex corrections**, not duplicate deletions or episode splits; require exact source size and timestamp plus sidecar/collision checks before any FTP rename.
+- **Cross-season TNG S03E26S04E01** remains a hold: do not silently map away S04E01.
+
+Risk flag count is not an actionable move count: at least eight are benign as-is; the three DS9 span-format candidates still require a reviewed transaction manifest.
