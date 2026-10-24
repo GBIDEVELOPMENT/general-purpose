@@ -10,7 +10,7 @@ from organize import ROOT, VIDEO, connect, safe
 IMAGE={".jpg",".jpeg",".png",".webp",".bmp",".gif"}
 ARCHIVE=re.compile(r"(?i)(?:\.rar|\.r\d\d|\.part\d+\.rar|\.7z|\.zip)$")
 SCREEN_FOLDER={"screens","screenshots","screen shots","screen caps","screencaps"}
-SCREEN_FILE=re.compile(r"(?i)^(?:screen(?:shot)?[\s._-]*\d+|mpv-shot\d+|vlcsnap[-\d]+|thumbs?[-_ ]?\d+)\.(?:png|jpe?g|webp)$")
+SCREEN_FILE=re.compile(r"(?i)^(?:screen(?:shot)?[\s._-]*\d+|mpv-shot\d+|vlcsnap[-\d]+|thumbs?[-_ ]?\d+|.+[ ._-]screenshots?)\.(?:png|jpe?g|webp)$")
 def category(path):
     p=PurePosixPath(path)
     if p.suffix.lower()==".nfo":return "nfo"
