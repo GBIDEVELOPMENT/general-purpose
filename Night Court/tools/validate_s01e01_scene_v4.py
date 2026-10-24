@@ -31,11 +31,11 @@ def validate(version=None,script=None):
     pts=json.loads(CUTS.read_text("utf-8"))
     if any(s!=EXPECTED_AVI for s in (
        meta.get("source_media_sha256"),v3.get("source_media_sha256"),
-       images.get("source_original_video_sha256"),pts.get("source_original_video_sha256")):
+       images.get("source_original_video_sha256"),pts.get("source_original_video_sha256"))):
        raise ValueError("Episode v4 source AVI fingerprint is inconsistent")
     if any(s!=EXPECTED_SRT for s in (
        meta.get("source_original_srt_sha256"),v3.get("original_subtitle_sha256"),
-       images.get("source_original_caption_sha256"),pts.get("source_original_caption_sha256")):
+       images.get("source_original_caption_sha256"),pts.get("source_original_caption_sha256"))):
        raise ValueError("Episode v4 original SRT source fingerprint is inconsistent")
     if (meta.get("schema")!="night-court-integrated-evidence-script/4"
        or meta.get("episode_id")!="S01E01"
