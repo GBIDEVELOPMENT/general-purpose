@@ -116,10 +116,10 @@ def profile(media:Path, scratch:Path, transfer:float):
     model_dir=unpack_pinned_model(model_archive,scratch/'vosk-root')
     timings['pinned_vosk_download_unpack_seconds']=round(time.monotonic()-t,3)
     t=time.monotonic()
-    vosk_words,vosk_rejected=vosk_free_decode(wav,model_dir,audio_duration)
+    vosk_words,vosk_rejected,vosk_reasons=vosk_free_decode(wav,model_dir,audio_duration)
     timings['kaldi_wfst_full_episode_inference_seconds']=round(time.monotonic()-t,3)
     t=time.monotonic()
-    whisper_words,whisper_rejected,whisper_segments=whisper_free_decode(wav,scratch/'whisper-cache',audio_duration)
+    whisper_words,whisper_rejected,whisper_segments,whisper_reasons=whisper_free_decode(wav,scratch/'whisper-cache',audio_duration)
     timings['whisper_tiny_full_episode_inference_seconds']=round(time.monotonic()-t,3)
     t=time.monotonic()
     comparison=compare({'schema':'night-court-two-independent-asr-words/1',
@@ -170,6 +170,7 @@ def profile(media:Path, scratch:Path, transfer:float):
        'model_was_primed_by_original_text':False,
        'model_word_counts':{'whisper':len(whisper_words),'vosk':len(vosk_words)},
        'model_invalid_word_time_counts':{'whisper':whisper_rejected,'vosk':vosk_rejected},
+       'model_rejection_reasons':{'whisper':whisper_reasons,'vosk':vosk_reasons},
        'source_consensus_word_counts':comparison['counts'],
        'reviewed_untimed_source_lexical_probe_count':len(paragraph_matches),
        'untimed_paragraph_lexical_candidates':paragraph_matches,
