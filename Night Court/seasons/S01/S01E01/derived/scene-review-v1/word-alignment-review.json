@@ -1,0 +1,855 @@
+{
+  "schema": "night-court-source-caption-asr-word-review/1",
+  "episode_id": "S01E01",
+  "media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+  "asr_model": "faster-whisper tiny.en",
+  "source_asr_evidence": "scene-review-v1/asr-prosody-hypotheses.json",
+  "source_window_ms": [
+    60000,
+    90000
+  ],
+  "source_caption_cues": 9,
+  "asr_segments": 10,
+  "cue_turn_packets": [
+    {
+      "cue": 19,
+      "original_caption_interval_ms": [
+        58912,
+        62541
+      ],
+      "source_cue_text": "- Did you say \"mercurial\"?\n- I'm trying to make up for lack of education.",
+      "source_turns": [
+        {
+          "source_turn_index": 0,
+          "text": "Did you say \"mercurial\"?",
+          "turn_split_evidence": "explicit_source_leading_hyphen",
+          "speaker_identity": null,
+          "asr_segment_index": null,
+          "exact_word_time_candidates": [],
+          "unanchored_caption_words": [
+            "did",
+            "you",
+            "say",
+            "mercurial"
+          ],
+          "candidate_alignment_status": "no_reliable_ASR_turn_match"
+        },
+        {
+          "source_turn_index": 1,
+          "text": "I'm trying to make up for lack of education.",
+          "turn_split_evidence": "explicit_source_leading_hyphen",
+          "speaker_identity": null,
+          "asr_segment_index": 0,
+          "lexical_similarity": 0.9474,
+          "exact_word_time_candidates": [
+            {
+              "source_caption_word_index": 0,
+              "source_word": "i'm",
+              "asr_word_index": 0,
+              "proposed_audio_interval_ms": [
+                60640,
+                61120
+              ],
+              "model_word_probability": 0.2979,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "low_probability"
+            },
+            {
+              "source_caption_word_index": 1,
+              "source_word": "trying",
+              "asr_word_index": 1,
+              "proposed_audio_interval_ms": [
+                61120,
+                61240
+              ],
+              "model_word_probability": 0.9645,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 2,
+              "source_word": "to",
+              "asr_word_index": 2,
+              "proposed_audio_interval_ms": [
+                61240,
+                61440
+              ],
+              "model_word_probability": 0.9787,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 4,
+              "source_word": "up",
+              "asr_word_index": 4,
+              "proposed_audio_interval_ms": [
+                61440,
+                61580
+              ],
+              "model_word_probability": 0.9936,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 5,
+              "source_word": "for",
+              "asr_word_index": 5,
+              "proposed_audio_interval_ms": [
+                61580,
+                61720
+              ],
+              "model_word_probability": 0.9663,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 6,
+              "source_word": "lack",
+              "asr_word_index": 7,
+              "proposed_audio_interval_ms": [
+                61840,
+                62020
+              ],
+              "model_word_probability": 0.9855,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 7,
+              "source_word": "of",
+              "asr_word_index": 8,
+              "proposed_audio_interval_ms": [
+                62020,
+                62200
+              ],
+              "model_word_probability": 0.9988,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 8,
+              "source_word": "education",
+              "asr_word_index": 9,
+              "proposed_audio_interval_ms": [
+                62200,
+                62800
+              ],
+              "model_word_probability": 0.9962,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            }
+          ],
+          "unanchored_caption_words": [
+            "make"
+          ],
+          "candidate_alignment_status": "partial_model_alignment_requires_listening",
+          "asr_text_divergence_review": false
+        }
+      ],
+      "unassigned_asr_segments": [],
+      "caption_boundary_status": "source_SRT_unverified_against_this_video",
+      "first_utterance_may_precede_window": true,
+      "last_utterance_may_follow_window": false
+    },
+    {
+      "cue": 20,
+      "original_caption_interval_ms": [
+        62716,
+        65742
+      ],
+      "source_cue_text": "So every month, I pick a word\nat random out of the dictionary...",
+      "source_turns": [
+        {
+          "source_turn_index": 0,
+          "text": "So every month, I pick a word at random out of the dictionary...",
+          "turn_split_evidence": "single_cue_or_continuation",
+          "speaker_identity": null,
+          "asr_segment_index": 1,
+          "lexical_similarity": 1.0,
+          "exact_word_time_candidates": [
+            {
+              "source_caption_word_index": 0,
+              "source_word": "so",
+              "asr_word_index": 0,
+              "proposed_audio_interval_ms": [
+                63340,
+                63460
+              ],
+              "model_word_probability": 0.8915,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 1,
+              "source_word": "every",
+              "asr_word_index": 1,
+              "proposed_audio_interval_ms": [
+                63460,
+                63640
+              ],
+              "model_word_probability": 0.9449,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 2,
+              "source_word": "month",
+              "asr_word_index": 2,
+              "proposed_audio_interval_ms": [
+                63640,
+                63920
+              ],
+              "model_word_probability": 0.9998,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 3,
+              "source_word": "i",
+              "asr_word_index": 3,
+              "proposed_audio_interval_ms": [
+                63940,
+                64080
+              ],
+              "model_word_probability": 0.9978,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 4,
+              "source_word": "pick",
+              "asr_word_index": 4,
+              "proposed_audio_interval_ms": [
+                64080,
+                64240
+              ],
+              "model_word_probability": 0.9706,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 5,
+              "source_word": "a",
+              "asr_word_index": 5,
+              "proposed_audio_interval_ms": [
+                64240,
+                64420
+              ],
+              "model_word_probability": 0.9943,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 6,
+              "source_word": "word",
+              "asr_word_index": 6,
+              "proposed_audio_interval_ms": [
+                64420,
+                64560
+              ],
+              "model_word_probability": 0.9955,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 7,
+              "source_word": "at",
+              "asr_word_index": 7,
+              "proposed_audio_interval_ms": [
+                64560,
+                64780
+              ],
+              "model_word_probability": 0.3369,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "low_probability"
+            },
+            {
+              "source_caption_word_index": 8,
+              "source_word": "random",
+              "asr_word_index": 8,
+              "proposed_audio_interval_ms": [
+                64780,
+                65060
+              ],
+              "model_word_probability": 0.9518,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 9,
+              "source_word": "out",
+              "asr_word_index": 9,
+              "proposed_audio_interval_ms": [
+                65060,
+                65300
+              ],
+              "model_word_probability": 0.9742,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 10,
+              "source_word": "of",
+              "asr_word_index": 10,
+              "proposed_audio_interval_ms": [
+                65300,
+                65420
+              ],
+              "model_word_probability": 0.9919,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 11,
+              "source_word": "the",
+              "asr_word_index": 11,
+              "proposed_audio_interval_ms": [
+                65420,
+                65500
+              ],
+              "model_word_probability": 0.9896,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 12,
+              "source_word": "dictionary",
+              "asr_word_index": 12,
+              "proposed_audio_interval_ms": [
+                65500,
+                65900
+              ],
+              "model_word_probability": 0.9948,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            }
+          ],
+          "unanchored_caption_words": [],
+          "candidate_alignment_status": "partial_model_alignment_requires_listening",
+          "asr_text_divergence_review": false
+        }
+      ],
+      "unassigned_asr_segments": [],
+      "caption_boundary_status": "source_SRT_unverified_against_this_video",
+      "first_utterance_may_precede_window": false,
+      "last_utterance_may_follow_window": false
+    },
+    {
+      "cue": 21,
+      "original_caption_interval_ms": [
+        65919,
+        67887
+      ],
+      "source_cue_text": "...and use it all that month.",
+      "source_turns": [
+        {
+          "source_turn_index": 0,
+          "text": "...and use it all that month.",
+          "turn_split_evidence": "single_cue_or_continuation",
+          "speaker_identity": null,
+          "asr_segment_index": 2,
+          "lexical_similarity": 1.0,
+          "exact_word_time_candidates": [
+            {
+              "source_caption_word_index": 0,
+              "source_word": "and",
+              "asr_word_index": 0,
+              "proposed_audio_interval_ms": [
+                65900,
+                66540
+              ],
+              "model_word_probability": 0.7551,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 1,
+              "source_word": "use",
+              "asr_word_index": 1,
+              "proposed_audio_interval_ms": [
+                66540,
+                66740
+              ],
+              "model_word_probability": 0.9967,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 2,
+              "source_word": "it",
+              "asr_word_index": 2,
+              "proposed_audio_interval_ms": [
+                66740,
+                66920
+              ],
+              "model_word_probability": 0.9952,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 3,
+              "source_word": "all",
+              "asr_word_index": 3,
+              "proposed_audio_interval_ms": [
+                66920,
+                67140
+              ],
+              "model_word_probability": 0.9992,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 4,
+              "source_word": "that",
+              "asr_word_index": 4,
+              "proposed_audio_interval_ms": [
+                67140,
+                67360
+              ],
+              "model_word_probability": 0.5528,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "low_probability"
+            },
+            {
+              "source_caption_word_index": 5,
+              "source_word": "month",
+              "asr_word_index": 5,
+              "proposed_audio_interval_ms": [
+                67360,
+                68080
+              ],
+              "model_word_probability": 0.9537,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            }
+          ],
+          "unanchored_caption_words": [],
+          "candidate_alignment_status": "partial_model_alignment_requires_listening",
+          "asr_text_divergence_review": false
+        }
+      ],
+      "unassigned_asr_segments": [],
+      "caption_boundary_status": "source_SRT_unverified_against_this_video",
+      "first_utterance_may_precede_window": false,
+      "last_utterance_may_follow_window": false
+    },
+    {
+      "cue": 22,
+      "original_caption_interval_ms": [
+        69689,
+        73147
+      ],
+      "source_cue_text": "- My, how...\n- Minimifidian?",
+      "source_turns": [
+        {
+          "source_turn_index": 0,
+          "text": "My, how...",
+          "turn_split_evidence": "explicit_source_leading_hyphen",
+          "speaker_identity": null,
+          "asr_segment_index": 3,
+          "lexical_similarity": 0.8,
+          "exact_word_time_candidates": [
+            {
+              "source_caption_word_index": 0,
+              "source_word": "my",
+              "asr_word_index": 0,
+              "proposed_audio_interval_ms": [
+                70640,
+                71120
+              ],
+              "model_word_probability": 0.242,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "low_probability"
+            },
+            {
+              "source_caption_word_index": 1,
+              "source_word": "how",
+              "asr_word_index": 1,
+              "proposed_audio_interval_ms": [
+                71120,
+                71600
+              ],
+              "model_word_probability": 0.9436,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            }
+          ],
+          "unanchored_caption_words": [],
+          "candidate_alignment_status": "partial_model_alignment_requires_listening",
+          "asr_text_divergence_review": true
+        },
+        {
+          "source_turn_index": 1,
+          "text": "Minimifidian?",
+          "turn_split_evidence": "explicit_source_leading_hyphen",
+          "speaker_identity": null,
+          "asr_segment_index": null,
+          "exact_word_time_candidates": [],
+          "unanchored_caption_words": [
+            "minimifidian"
+          ],
+          "candidate_alignment_status": "no_reliable_ASR_turn_match"
+        }
+      ],
+      "unassigned_asr_segments": [
+        4
+      ],
+      "caption_boundary_status": "source_SRT_unverified_against_this_video",
+      "first_utterance_may_precede_window": false,
+      "last_utterance_may_follow_window": false
+    },
+    {
+      "cue": 23,
+      "original_caption_interval_ms": [
+        74628,
+        76357
+      ],
+      "source_cue_text": "Is that a real word?",
+      "source_turns": [
+        {
+          "source_turn_index": 0,
+          "text": "Is that a real word?",
+          "turn_split_evidence": "single_cue_or_continuation",
+          "speaker_identity": null,
+          "asr_segment_index": 5,
+          "lexical_similarity": 1.0,
+          "exact_word_time_candidates": [
+            {
+              "source_caption_word_index": 0,
+              "source_word": "is",
+              "asr_word_index": 0,
+              "proposed_audio_interval_ms": [
+                74880,
+                75360
+              ],
+              "model_word_probability": 0.8606,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 1,
+              "source_word": "that",
+              "asr_word_index": 1,
+              "proposed_audio_interval_ms": [
+                75360,
+                75600
+              ],
+              "model_word_probability": 0.9976,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 2,
+              "source_word": "a",
+              "asr_word_index": 2,
+              "proposed_audio_interval_ms": [
+                75600,
+                75860
+              ],
+              "model_word_probability": 0.9966,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 3,
+              "source_word": "real",
+              "asr_word_index": 3,
+              "proposed_audio_interval_ms": [
+                75860,
+                76220
+              ],
+              "model_word_probability": 0.9979,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 4,
+              "source_word": "word",
+              "asr_word_index": 4,
+              "proposed_audio_interval_ms": [
+                76220,
+                76740
+              ],
+              "model_word_probability": 0.994,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            }
+          ],
+          "unanchored_caption_words": [],
+          "candidate_alignment_status": "partial_model_alignment_requires_listening",
+          "asr_text_divergence_review": false
+        }
+      ],
+      "unassigned_asr_segments": [],
+      "caption_boundary_status": "source_SRT_unverified_against_this_video",
+      "first_utterance_may_precede_window": false,
+      "last_utterance_may_follow_window": false
+    },
+    {
+      "cue": 24,
+      "original_caption_interval_ms": [
+        76663,
+        79894
+      ],
+      "source_cue_text": "Does a bear extravasate in the forest?",
+      "source_turns": [
+        {
+          "source_turn_index": 0,
+          "text": "Does a bear extravasate in the forest?",
+          "turn_split_evidence": "single_cue_or_continuation",
+          "speaker_identity": null,
+          "asr_segment_index": 6,
+          "lexical_similarity": 0.6667,
+          "exact_word_time_candidates": [
+            {
+              "source_caption_word_index": 1,
+              "source_word": "a",
+              "asr_word_index": 1,
+              "proposed_audio_interval_ms": [
+                77400,
+                77600
+              ],
+              "model_word_probability": 0.9983,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 2,
+              "source_word": "bear",
+              "asr_word_index": 2,
+              "proposed_audio_interval_ms": [
+                77600,
+                77900
+              ],
+              "model_word_probability": 0.9244,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 4,
+              "source_word": "in",
+              "asr_word_index": 5,
+              "proposed_audio_interval_ms": [
+                78600,
+                78720
+              ],
+              "model_word_probability": 0.9653,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 5,
+              "source_word": "the",
+              "asr_word_index": 6,
+              "proposed_audio_interval_ms": [
+                78720,
+                78920
+              ],
+              "model_word_probability": 0.9929,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 6,
+              "source_word": "forest",
+              "asr_word_index": 7,
+              "proposed_audio_interval_ms": [
+                78920,
+                79420
+              ],
+              "model_word_probability": 0.9986,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            }
+          ],
+          "unanchored_caption_words": [
+            "does",
+            "extravasate"
+          ],
+          "candidate_alignment_status": "partial_model_alignment_requires_listening",
+          "asr_text_divergence_review": true
+        }
+      ],
+      "unassigned_asr_segments": [],
+      "caption_boundary_status": "source_SRT_unverified_against_this_video",
+      "first_utterance_may_precede_window": false,
+      "last_utterance_may_follow_window": false
+    },
+    {
+      "cue": 25,
+      "original_caption_interval_ms": [
+        83136,
+        84501
+      ],
+      "source_cue_text": "What?",
+      "source_turns": [
+        {
+          "source_turn_index": 0,
+          "text": "What?",
+          "turn_split_evidence": "single_cue_or_continuation",
+          "speaker_identity": null,
+          "asr_segment_index": 7,
+          "lexical_similarity": 1.0,
+          "exact_word_time_candidates": [
+            {
+              "source_caption_word_index": 0,
+              "source_word": "what",
+              "asr_word_index": 0,
+              "proposed_audio_interval_ms": [
+                83300,
+                83780
+              ],
+              "model_word_probability": 0.7314,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            }
+          ],
+          "unanchored_caption_words": [],
+          "candidate_alignment_status": "partial_model_alignment_requires_listening",
+          "asr_text_divergence_review": false
+        }
+      ],
+      "unassigned_asr_segments": [],
+      "caption_boundary_status": "source_SRT_unverified_against_this_video",
+      "first_utterance_may_precede_window": false,
+      "last_utterance_may_follow_window": false
+    },
+    {
+      "cue": 26,
+      "original_caption_interval_ms": [
+        86339,
+        87738
+      ],
+      "source_cue_text": "No.",
+      "source_turns": [
+        {
+          "source_turn_index": 0,
+          "text": "No.",
+          "turn_split_evidence": "single_cue_or_continuation",
+          "speaker_identity": null,
+          "asr_segment_index": 8,
+          "lexical_similarity": 1.0,
+          "exact_word_time_candidates": [
+            {
+              "source_caption_word_index": 0,
+              "source_word": "no",
+              "asr_word_index": 0,
+              "proposed_audio_interval_ms": [
+                86720,
+                87200
+              ],
+              "model_word_probability": 0.9102,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            }
+          ],
+          "unanchored_caption_words": [],
+          "candidate_alignment_status": "partial_model_alignment_requires_listening",
+          "asr_text_divergence_review": false
+        }
+      ],
+      "unassigned_asr_segments": [],
+      "caption_boundary_status": "source_SRT_unverified_against_this_video",
+      "first_utterance_may_precede_window": false,
+      "last_utterance_may_follow_window": false
+    },
+    {
+      "cue": 27,
+      "original_caption_interval_ms": [
+        88742,
+        91074
+      ],
+      "source_cue_text": "Tell the judge the mayor called.",
+      "source_turns": [
+        {
+          "source_turn_index": 0,
+          "text": "Tell the judge the mayor called.",
+          "turn_split_evidence": "single_cue_or_continuation",
+          "speaker_identity": null,
+          "asr_segment_index": 9,
+          "lexical_similarity": 0.7273,
+          "exact_word_time_candidates": [
+            {
+              "source_caption_word_index": 0,
+              "source_word": "tell",
+              "asr_word_index": 0,
+              "proposed_audio_interval_ms": [
+                89100,
+                89420
+              ],
+              "model_word_probability": 0.0243,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "low_probability"
+            },
+            {
+              "source_caption_word_index": 1,
+              "source_word": "the",
+              "asr_word_index": 1,
+              "proposed_audio_interval_ms": [
+                89420,
+                89580
+              ],
+              "model_word_probability": 0.5875,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "low_probability"
+            },
+            {
+              "source_caption_word_index": 2,
+              "source_word": "judge",
+              "asr_word_index": 2,
+              "proposed_audio_interval_ms": [
+                89580,
+                89740
+              ],
+              "model_word_probability": 0.9631,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "standard"
+            },
+            {
+              "source_caption_word_index": 4,
+              "source_word": "mayor",
+              "asr_word_index": 4,
+              "proposed_audio_interval_ms": [
+                89920,
+                89980
+              ],
+              "model_word_probability": 0.5714,
+              "status": "text-exact-ASR-time-candidate_not_forced_alignment",
+              "review_priority": "low_probability"
+            }
+          ],
+          "unanchored_caption_words": [
+            "the",
+            "called"
+          ],
+          "candidate_alignment_status": "partial_model_alignment_requires_listening",
+          "asr_text_divergence_review": true
+        }
+      ],
+      "unassigned_asr_segments": [],
+      "caption_boundary_status": "source_SRT_unverified_against_this_video",
+      "first_utterance_may_precede_window": false,
+      "last_utterance_may_follow_window": true
+    }
+  ],
+  "strong_segment_start_difference_ms": {
+    "count": 5,
+    "median": 252,
+    "meaning": "descriptive start-boundary differences only; NOT a global sync correction"
+  },
+  "review_notes": [
+    "Cue C19 begins before the extracted 60-second audio; its first voice cannot be independently verified here.",
+    "Cue C22 has two hyphen-separated speech turns, including a deliberately unusual word that tiny.en misrecognizes; retain source spelling and manually review.",
+    "Cue C24's unusual vocabulary and potential grammar mismatch require listening, not automatic subtitle replacement.",
+    "Cue C27 extends beyond 90 seconds; model speech is truncated at window boundary.",
+    "Word starts/ends come from tiny.en hypotheses, not a forced aligner. Zero-length and out-of-range word estimates are discarded.",
+    "Words not exactly recognized are explicitly unanchored; never interpolate them or infer performer/speaker identities."
+  ],
+  "verified_source_video_speech_alignment": false,
+  "verified_word_alignment": false,
+  "verified_speaker_identity": false,
+  "verified_edition_complete": false,
+  "raw_caption_modified": false
+}
