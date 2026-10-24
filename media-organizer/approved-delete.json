@@ -1,25 +1,19 @@
 {
   "root": "/downloads",
-  "batch_id": "studio_txt_cleanup_003",
-  "description": "Remove all three explicitly owner-approved plain-text Studio 60 release and DVD notes sidecars after their metadata has already informed canonical episode title organization; preserve 88 videos and all subtitle pairs.",
+  "batch_id": "durrells_vob_samples_002",
+  "description": "Delete exactly two owner-authorized distribution-only sample VOBs under the two original The Durrells DVD-R Sample folders; preserve DVD programme VOBs.",
   "entries": [
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/1080p Release Read Me.txt",
-      "size": 1550,
-      "modify": "20250908072141",
-      "category": "txt"
+      "from": "/downloads/The.Durrells.S01.PAL.DVDR-WaLMaRT/The.Durrells.S01D01.PAL.DVDR-WaLMaRT/Sample/wmt-the.durrells.s01d01-dvdr.sample.VOB",
+      "size": 38340608,
+      "modify": "20260604224415",
+      "category": "sample"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/720p Release Read Me.txt",
-      "size": 1550,
-      "modify": "20250908073052",
-      "category": "txt"
-    },
-    {
-      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/DVD Typical Episode Notes.txt",
-      "size": 9820,
-      "modify": "20261001104816",
-      "category": "txt"
+      "from": "/downloads/The.Durrells.S01.PAL.DVDR-WaLMaRT/The.Durrells.S01D02.PAL.DVDR-WaLMaRT/Sample/wmt-the.durrells.s01d02-dvdr.sample.vob",
+      "size": 34328576,
+      "modify": "20260604224335",
+      "category": "sample"
     }
   ]
 }
