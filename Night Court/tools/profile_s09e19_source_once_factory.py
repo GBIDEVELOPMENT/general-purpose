@@ -16,6 +16,7 @@ import time
 
 from compare_independent_asr import compare
 from extract_fast_visual_plan import extract, sha
+from summarize_motion_triplets import summarize
 from ftp_research_intake import connect
 from match_s09e19_untimed_paragraphs import assess, candidates
 from pilot_ftp_video_acoustics import retrieve
@@ -148,8 +149,12 @@ def profile(media:Path, scratch:Path, transfer:float):
     timings['bounded_visual_plan_seconds']=round(time.monotonic()-t,3)
     t=time.monotonic()
     with tempfile.TemporaryDirectory(prefix='nc-s09e19-private-jpegs-') as image_tmp:
-        image_report=extract(media,plan,Path(image_tmp)/'source-frames',expected_media_bytes=BYTES)
-    timings['one_pass_source_frame_jpeg_extraction_seconds']=round(time.monotonic()-t,3)
+        location=Path(image_tmp)/'source-frames'
+        image_report=extract(media,plan,location,expected_media_bytes=BYTES)
+        timings['one_pass_source_frame_jpeg_extraction_seconds']=round(time.monotonic()-t,3)
+        t=time.monotonic()
+        pixel_review=summarize(plan,image_report,location/'frames')
+        timings['ephemeral_three_frame_pixel_difference_seconds']=round(time.monotonic()-t,3)
     if not image_report['all_samples_within_source_pts_tolerance']:
         raise ValueError('Image source PTS drift; no source screenshot labels accepted')
     t=time.monotonic()
@@ -179,6 +184,10 @@ def profile(media:Path, scratch:Path, transfer:float):
        'source_sample_plan_counts':plan['counts'],
        'actual_source_frames_selected':image_report['extraction_frame_count'],
        'actual_source_jpegs_bytes_ephemeral':image_report['total_image_bytes'],
+       'source_triads_with_pixel_change_features':pixel_review['analyzed_three_frame_groups'],
+       'source_triads_abstaining_for_pts_order':pixel_review['pts_order_abstentions'],
+       'pixel_change_candidate_reviews':pixel_review['review_priority'][:12],
+       'pixel_change_is_verified_physical_action':False,
        'sampled_frames_original_pts_checked':image_report['all_samples_within_source_pts_tolerance'],
        'component_measured_seconds':timings,
        'source_processing_wall_seconds_excluding_job_startup_and_dependency_install':full_wall,

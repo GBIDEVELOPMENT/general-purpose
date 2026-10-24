@@ -1,0 +1,39 @@
+name: Night Court ephemeral original-source motion triplet evidence QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/summarize_motion_triplets.py'
+      - 'Night Court/tools/test_summarize_motion_triplets.py'
+      - 'Night Court/tools/profile_s01e01_whole_visual_pass.py'
+      - 'Night Court/tools/profile_s09e19_source_once_factory.py'
+      - 'Night Court/tools/profile_s01e01_one_source_factory.py'
+      - 'Night Court/EPHEMERAL-MOTION-TRIPLET-REVIEW.md'
+      - '.github/workflows/night-court-motion-triplet-ci.yml'
+      - '.github/workflows/night-court-trusted-one-source-factory.yml'
+      - '.github/workflows/night-court-trusted-s09e19-source-once.yml'
+permissions:
+  contents: read
+jobs:
+  source-free:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned tiny pixel decoder and synthetic video decoder
+        run: |
+          python -m pip install 'Pillow==11.3.0'
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Bound and verify three-frame image comparisons on synthetic independent source
+        run: |
+          python 'Night Court/tools/test_summarize_motion_triplets.py'
+          python 'Night Court/tools/test_extract_fast_visual_plan.py'
+          python 'Night Court/tools/test_fast_visual_pass.py'
+          python 'Night Court/tools/test_profile_s09e19_source_once_factory.py'
+          python 'Night Court/tools/test_s01e01_one_source_factory.py'
+          python -m py_compile 'Night Court/tools/summarize_motion_triplets.py' 'Night Court/tools/profile_s09e19_source_once_factory.py' 'Night Court/tools/profile_s01e01_whole_visual_pass.py'
