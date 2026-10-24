@@ -1,5 +1,10 @@
 # Night Court audiovisual script-generation factory
 
+## Nine-season reading-script preparation
+
+[Source reading-script scaffold handoff](SOURCE-SCRIPT-SCAFFOLDS-HANDOFF.md) describes the deterministic `build_source_script_scaffolds.py` stage. It converts each of the 193 physically held dialogue witnesses into an episode-local reading transcript, retaining original cue IDs and unverified speaker labels. All inferred dialogue blocks are marked as caption-gap hypotheses, not actual scenes, and S09E19 remains untimed. **The workflow is pending its independent all-episode CI acceptance in this PR.** These are not production scripts and do not replace the complete audiovisual scene-reconstruction pipeline.
+
+
 ## Next implementation lane: independent CTC source alignment
 
 The first source-traceable 60–90s S01E01 script and separately retained audio measurements are in `scene-review-v3`, but Whisper word timing is not an independently verified transcript alignment. [S01E01-CTC-ALIGNMENT-HANDOFF.md](S01E01-CTC-ALIGNMENT-HANDOFF.md) specifies a second acoustic-model experiment: Wav2Vec2 CTC constrained to the exact original subtitle text, explicit abstentions for unsupported or clipped turns, and strict source-media SHA preservation. **CI and owner-controlled real source evidence are acceptance prerequisites; no real-word validation is currently claimed.** Its output will be used to prioritize audio listening, not to manufacture confirmed speaker identities or stage inflection.
