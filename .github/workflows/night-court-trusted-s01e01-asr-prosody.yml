@@ -1,0 +1,54 @@
+name: Night Court trusted S01E01 ASR and prosody pilot
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-asr-prosody.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-s01e01-asr-prosody-owner-only
+  cancel-in-progress: false
+jobs:
+  trusted-audio:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-asr-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      HF_HUB_DISABLE_TELEMETRY: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate pinned source, no model or FTP in PR
+        run: |
+          python 'Night Court/tools/test_s01e01_asr_alignment.py'
+          python 'Night Court/tools/test_pilot_ftp_video_acoustics.py'
+      - name: Install FFmpeg, offline-capable acoustic and ASR software
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python -m pip install -r 'Night Court/tools/vocal-requirements-acoustics.txt' -r 'Night Court/tools/vocal-requirements-asr.txt'
+      - name: Perform one fixed S01E01 source ASR/F0/eGeMAPS study
+        run: |
+          python 'Night Court/tools/pilot_ftp_s01e01_asr_prosody.py' \
+            --output "${{ runner.temp }}/s01e01-asr-prosody.json"
+      - name: Archive JSON evidence only, no model/audio/video bytes
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-source-asr-prosody
+          path: ${{ runner.temp }}/s01e01-asr-prosody.json
+          retention-days: 7
+          if-no-files-found: error
