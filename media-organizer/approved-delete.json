@@ -1,43 +1,127 @@
 {
   "root": "/downloads",
-  "batch_id": "residual_txt_006",
-  "description": "Owner-authorized exact-file deletion of all six TXT media release sidecars in latest complete FTP inventory; executor safely skips files already deleted and preserves videos and artwork.",
+  "batch_id": "incidental_torrent_001",
+  "description": "Remove exact-pinned obsolete SFV checksum lists only where no multipart archives remain, plus torrent ad-stub executable and shortcut/link/log detritus; retain multipart archive verification metadata and meaningful .bin or ISO checksum files.",
   "entries": [
     {
-      "from": "/downloads/Now.You.See.Me.Now.You.Don't.2025.1080p.TS.TR.EN-RGB/Info.txt",
-      "size": 194,
-      "modify": "20251118193116",
-      "category": "txt"
+      "from": "/downloads/Friends.S09E04.2160p.UHD.BluRay.H265-PRiSTiNE/friends.s09e04.2160p.uhd.bluray.h265-pristine.sfv",
+      "size": 5520,
+      "modify": "20260819044358",
+      "category": "detritus"
     },
     {
-      "from": "/downloads/Star Trek Voyager 1995.S01.1080p.NTSC DVD Upscale.H265.10bit.DDP5.1-Zero00/info-readme.txt",
-      "size": 1063,
-      "modify": "20251003062853",
-      "category": "txt"
+      "from": "/downloads/Friends.S09E04.2160p.WEB.H265-JoeyTribbiani/friends.s09e04.2160p.web.h265-joeytribbiani.sfv",
+      "size": 627,
+      "modify": "20260819040414",
+      "category": "detritus"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/1080p Release Read Me.txt",
-      "size": 1550,
-      "modify": "20250908072141",
-      "category": "txt"
+      "from": "/downloads/Kill.Bill.The.Whole.Bloody.Affair.2006.HDR.2160p.WEB.h265-EDITH/kill.bill.the.whole.bloody.affair.2006.hdr.2160p.web.h265-edith.sfv",
+      "size": 6162,
+      "modify": "20260418033203",
+      "category": "detritus"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/720p Release Read Me.txt",
-      "size": 1550,
-      "modify": "20250908073052",
-      "category": "txt"
+      "from": "/downloads/Landline.2025.2160p.WEB.H265-JAVLAR/landline.2025.2160p.web.h265-javlar.sfv",
+      "size": 950,
+      "modify": "20250429144454",
+      "category": "detritus"
     },
     {
-      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/DVD Typical Episode Notes.txt",
-      "size": 9820,
-      "modify": "20261001104816",
-      "category": "txt"
+      "from": "/downloads/Prospect.2018.2160p.UHD.BluRay.x265-JustWatch/prospect.2018.2160p.uhd.bluray.x265-justwatch.sfv",
+      "size": 4920,
+      "modify": "20250310014432",
+      "category": "detritus"
     },
     {
-      "from": "/downloads/The.Boys.and.Girl.from.County.Clare.2003.1080p.WEBRip.x264-RARBG/RARBG.txt",
-      "size": 30,
+      "from": "/downloads/Relay.2024.HDR.2160p.WEB.h265-ETHEL/relay.2024.hdr.2160p.web.h265-ethel.sfv",
+      "size": 1250,
+      "modify": "20250916060415",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Southland.Tales.2006.1080p.Bluray.x264-SECTOR7/sector7-southland.tales.1080p-x264.sfv",
+      "size": 4606,
+      "modify": "20260908033436",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Star Trek/Star.Trek.Discovery.S02E10.1080p.BluRay.x264-ROVERS/star.trek.discovery.s02e10.1080p.bluray.x264-rovers.sfv",
+      "size": 6204,
+      "modify": "20250726042120",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E01.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e01.hdr.2160p.web.h265-successfulcrab.sfv",
+      "size": 913,
+      "modify": "20250717041826",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E02.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e02.hdr.2160p.web.h265-successfulcrab.sfv",
+      "size": 830,
+      "modify": "20250717041859",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E03.DV.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e03.dv.2160p.web.h265-successfulcrab.sfv",
+      "size": 830,
+      "modify": "20250724041318",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E03.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e03.hdr.2160p.web.h265-successfulcrab.sfv",
+      "size": 913,
+      "modify": "20250724041455",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E04.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e04.2160p.web.h265-successfulcrab.sfv",
+      "size": 880,
+      "modify": "20250731040712",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E06.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e06.2160p.web.h265-successfulcrab.sfv",
+      "size": 869,
+      "modify": "20250814041623",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E09.HDR.2160p.WEB.H265-SuccessfulCrab/star.trek.strange.new.worlds.s03e09.hdr.2160p.web.h265-successfulcrab.sfv",
+      "size": 924,
+      "modify": "20250904041103",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/Star Trek/Star.Trek.Strange.New.Worlds.S03E10.HDR.2160p.WEB.h265-ETHEL/star.trek.strange.new.worlds.s03e10.hdr.2160p.web.h265-ethel.sfv",
+      "size": 1275,
+      "modify": "20250911041517",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/The.Boys.and.Girl.from.County.Clare.2003.1080p.WEBRip.x264-RARBG/RARBG_DO_NOT_MIRROR.exe",
+      "size": 99,
       "modify": "20260819093725",
-      "category": "txt"
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/The.Copenhagen.Test.S01E01.HDR.2160p.WEB.h265-ETHEL/the.copenhagen.test.s01e01.hdr.2160p.web.h265-ethel.sfv",
+      "size": 1254,
+      "modify": "20251229030254",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/The.Northman.2022.HDR.2160p.WEB.H265-SLOT/the.northman.2022.hdr.2160p.web.h265-slot.sfv",
+      "size": 2520,
+      "modify": "20250302030021",
+      "category": "detritus"
+    },
+    {
+      "from": "/downloads/The.Studio.2025.S01E01.HDR.2160p.WEB.H265-SuccessfulCrab/the.studio.2025.s01e01.hdr.2160p.web.h265-successfulcrab.sfv",
+      "size": 994,
+      "modify": "20250502041903",
+      "category": "detritus"
     }
   ]
 }
