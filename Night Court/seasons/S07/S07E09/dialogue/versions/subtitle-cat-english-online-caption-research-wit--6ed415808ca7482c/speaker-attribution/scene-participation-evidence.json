@@ -1,0 +1,369 @@
+{
+  "character_to_scene_evidence_status": "participant_hypotheses_only_not_attributed_speakers",
+  "credit_roster_count": 20,
+  "episode_id": "S07E09",
+  "provisional_scene_count": 2,
+  "scenes": [
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Matthew Labyorteaux",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003849",
+          "character_name": "Bobby Johnson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "James MacNerland",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003851",
+          "character_name": "Clerk",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Michael Fairman",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003847",
+          "character_name": "Judge Casement",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "William Utay",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:695688",
+          "character_name": "Phil Sanders",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Ingle",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003848",
+          "character_name": "Theodore Wood",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Arlene Lorre",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003850",
+          "character_name": "Tina",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S07E09:C00001:1",
+      "first_start_ms": 2019,
+      "last_end_ms": 143870,
+      "last_source_turn_id": "S07E09:C00046:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 1,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 46,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Harry Anderson",
+          "addressed_by_name_turn_ids": [
+            "S07E09:C00002:1"
+          ],
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 46,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Matthew Labyorteaux",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003849",
+          "character_name": "Bobby Johnson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "James MacNerland",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003851",
+          "character_name": "Clerk",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Michael Fairman",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003847",
+          "character_name": "Judge Casement",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "William Utay",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:695688",
+          "character_name": "Phil Sanders",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Ingle",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003848",
+          "character_name": "Theodore Wood",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Arlene Lorre",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1003850",
+          "character_name": "Tina",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S07E09:C00047:1",
+      "first_start_ms": 236620,
+      "last_end_ms": 1392850,
+      "last_source_turn_id": "S07E09:C00339:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 2,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 293,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "John Larroquette",
+          "addressed_by_name_turn_ids": [
+            "S07E09:C00131:1",
+            "S07E09:C00139:1",
+            "S07E09:C00170:1",
+            "S07E09:C00256:1"
+          ],
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "addressed_by_name_turn_ids": [
+            "S07E09:C00205:1",
+            "S07E09:C00267:1",
+            "S07E09:C00274:1"
+          ],
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S07E09:C00127:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 293,
+      "uncredited_participants_must_remain_possible": true
+    }
+  ],
+  "source_caption_turns": 339,
+  "source_manifest": "seasons/S07/S07E09/dialogue/versions/subtitle-cat-english-online-caption-research-wit--6ed415808ca7482c/manifest.json",
+  "source_sha256": "6ed415808ca7482c2583db0062add8fff3c02b108807c863c1987e792eb49e4b",
+  "version_id": "subtitle-cat-english-online-caption-research-wit--6ed415808ca7482c"
+}

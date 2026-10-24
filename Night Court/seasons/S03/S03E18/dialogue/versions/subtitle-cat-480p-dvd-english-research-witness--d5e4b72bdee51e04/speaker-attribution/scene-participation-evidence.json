@@ -1,0 +1,513 @@
+{
+  "character_to_scene_evidence_status": "participant_hypotheses_only_not_attributed_speakers",
+  "credit_roster_count": 19,
+  "episode_id": "S03E18",
+  "provisional_scene_count": 3,
+  "scenes": [
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Charlotte Portney",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:943048",
+          "character_name": "Court Stenographer",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joe Alfasa",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1205460",
+          "character_name": "David Evans",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Carl Ballantine",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204400",
+          "character_name": "Phillip Falcone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Fred Applegate",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1205459",
+          "character_name": "Robert Marks",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joyce Mandel",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1205463",
+          "character_name": "Woman with Falcone",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S03E18:C00001:1",
+      "first_start_ms": 7970,
+      "last_end_ms": 168060,
+      "last_source_turn_id": "S03E18:C00057:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 1,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 57,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S03E18:C00016:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 57,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Charlotte Portney",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:943048",
+          "character_name": "Court Stenographer",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Carl Ballantine",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204400",
+          "character_name": "Phillip Falcone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Fred Applegate",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1205459",
+          "character_name": "Robert Marks",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joyce Mandel",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1205463",
+          "character_name": "Woman with Falcone",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S03E18:C00058:1",
+      "first_start_ms": 214210,
+      "last_end_ms": 1087780,
+      "last_source_turn_id": "S03E18:C00356:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 2,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 299,
+      "textually_signaled_possible_participants": [
+        {
+          "actor_name": "John Larroquette",
+          "addressed_by_name_turn_ids": [
+            "S03E18:C00180:1",
+            "S03E18:C00213:1"
+          ],
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "addressed_by_name_turn_ids": [
+            "S03E18:C00190:1"
+          ],
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Joe Alfasa",
+          "addressed_by_name_turn_ids": [
+            "S03E18:C00221:1"
+          ],
+          "character_id": "tvmaze:1205460",
+          "character_name": "David Evans",
+          "credit_scope": "episode_specific_guest_credit",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "addressed_by_name_turn_ids": [
+            "S03E18:C00106:1"
+          ],
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "credit_scope": "series_wide_cast_only",
+          "evidence_note": "An addressed person is a possible listener, not the speaker of that turn.",
+          "explicit_source_speaker_label_turn_ids": [],
+          "reported_scene_presence": "uncertain_from_text_only",
+          "speaker_hypothesis_strength": "addressee_only_not_a_speaker"
+        }
+      ],
+      "turns_with_no_unique_speaker_label": 299,
+      "uncredited_participants_must_remain_possible": true
+    },
+    {
+      "credited_guest_roles_without_textual_scene_signal": [
+        {
+          "actor_name": "Charlotte Portney",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:943048",
+          "character_name": "Court Stenographer",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joe Alfasa",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1205460",
+          "character_name": "David Evans",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Carl Ballantine",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1204400",
+          "character_name": "Phillip Falcone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Fred Applegate",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1205459",
+          "character_name": "Robert Marks",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joyce Mandel",
+          "basis": "episode_specific_guest_credit_only",
+          "character_id": "tvmaze:1205463",
+          "character_name": "Woman with Falcone",
+          "scene_presence": "unverified"
+        }
+      ],
+      "first_source_turn_id": "S03E18:C00357:1",
+      "first_start_ms": 1140700,
+      "last_end_ms": 1397150,
+      "last_source_turn_id": "S03E18:C00447:1",
+      "limits": [
+        "A name spoken in direct address is a listener hypothesis, not a speaker label.",
+        "Episode guest cast credits prove credited role only, not participation in this particular scene.",
+        "Show-wide cast credit does not establish an episode appearance.",
+        "A timestamp gap does not identify an actual scene boundary.",
+        "UNKNOWN, UNIDENTIFIED_GUEST and OFFSCREEN_OR_CROWD must remain candidate classes."
+      ],
+      "scene_ordinal": 3,
+      "scene_status": "time_gap_hypothesis_not_screen_verified",
+      "series_cast_without_textual_scene_signal": [
+        {
+          "actor_name": "Ellen Foley",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99645",
+          "character_name": "Billie Young",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Richard Moll",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99642",
+          "character_name": "Bull Shannon",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Markie Post",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99648",
+          "character_name": "Christine Sullivan",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "John Larroquette",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99641",
+          "character_name": "Dan Fielding",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Florence Halop",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99647",
+          "character_name": "Florence Kleiner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Harry Anderson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99640",
+          "character_name": "Harold T. Stone",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "S. Marc Jordan",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:443901",
+          "character_name": "Jack Griffin",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Karen Austin",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99643",
+          "character_name": "Lana Wagner",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Joleen Lutz",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:238402",
+          "character_name": "Lisette Hocheiser",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Charlie Robinson",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99646",
+          "character_name": "Mac Robinson",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Paula Kelly",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:225581",
+          "character_name": "Public Defender Liz Williams",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Marsha Warfield",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99649",
+          "character_name": "Rosalind \"Roz\" Russell",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Selma Diamond",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99644",
+          "character_name": "Selma Hacker",
+          "scene_presence": "unverified"
+        },
+        {
+          "actor_name": "Gail Strickland",
+          "basis": "series_wide_cast_credit_only",
+          "character_id": "tvmaze:99650",
+          "character_name": "Sheila Gardner",
+          "scene_presence": "unverified"
+        }
+      ],
+      "source_turn_count": 91,
+      "textually_signaled_possible_participants": [],
+      "turns_with_no_unique_speaker_label": 91,
+      "uncredited_participants_must_remain_possible": true
+    }
+  ],
+  "source_caption_turns": 447,
+  "source_manifest": "seasons/S03/S03E18/dialogue/versions/subtitle-cat-480p-dvd-english-research-witness--d5e4b72bdee51e04/manifest.json",
+  "source_sha256": "d5e4b72bdee51e0413077d444ac1eb32e398887f11059935bd0f953588c56f12",
+  "version_id": "subtitle-cat-480p-dvd-english-research-witness--d5e4b72bdee51e04"
+}
