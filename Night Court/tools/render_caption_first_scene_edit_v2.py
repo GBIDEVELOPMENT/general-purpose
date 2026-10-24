@@ -181,7 +181,7 @@ def edit(episode,root=ROOT):
         "draft_status":"SOURCE_DIALOGUE_COMPLETE_VISUAL_SETTING_OUTLINE_REAL_ACTIONS_AND_SPEAKERS_IN_PROGRESS",
         "private_visual_evidence_artifact_id":source["private_thumbnail_artifact_id"]
     }
-    return script+"\n",report
+    return script.rstrip()+"\n",report
 
 
 def main():
