@@ -1,0 +1,243 @@
+{
+  "schema": "night-court-s01e01-expanded-sampled-visual-observations/1",
+  "episode_id": "S01E01",
+  "source_original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_evidence_run": 40065126174,
+  "source_artifact_id": 12549082053,
+  "source_artifact_sha256": "a29f7bdbb869cacc81bcc13f26e35678fcdaee84ac3dc48dd3a4ebd20d367f28",
+  "source_frame_index_sha256": "d041fc452cd1a8a2f97f95b92bd3313cdd6931c60b185f699c0bc8f66cd63347",
+  "source_window_ms": [
+    56912,
+    93074
+  ],
+  "padded_visual_sampling_window_ms": [
+    56912,
+    93162
+  ],
+  "sample_count": 145,
+  "original_evidence_task_count": 17,
+  "contact_sheets": [
+    {
+      "file": "contact-01.jpg",
+      "sha256": "669fa0fc9fc48f81bf913c00fbab1210d907d04962bdd08ded64fe97aab84b91"
+    },
+    {
+      "file": "contact-02.jpg",
+      "sha256": "2d9e523823c3f8c52d45abecd636b555f0ff59d3317aeefde6b402d5d9482fe9"
+    },
+    {
+      "file": "contact-03.jpg",
+      "sha256": "22ce3b6d46f992ae212fb5631996fdd3c60577a48bdc4e5e2e8331f9480253e1"
+    },
+    {
+      "file": "contact-04.jpg",
+      "sha256": "7bffb3e095bdf0cbebe276866990c1f045a0406942ff4da57660af0d8ac68cd8"
+    }
+  ],
+  "observation_status": "AI_inspection_of_contact_sheets_and_source_stills_not_original_full_motion",
+  "notes": "Six new observations supplement, but do not overwrite, the earlier S01E01 v1/v2/v3 evidence-linked script. No audio was available to this inspection. All observations describe source JPEG states; motion onset, actor or character identity, vocal inflection, precise shot boundaries and authentic full-episode script completeness remain unverified.",
+  "observations": [
+    {
+      "observation_id": "S01-V3-01",
+      "nominal_interval_ms": [
+        58662,
+        58912
+      ],
+      "class": "change_between_adjacent_sampled_views",
+      "description": "The sampled view changes from the tall dark-uniformed adult facing a lavender-clad person to a closer front view of the lavender-clad person by a cardboard box at the desk.",
+      "frame_evidence": [
+        {
+          "sample_index": 8,
+          "nominal_video_time_ms": 58662,
+          "sha256": "3df3719d2a44afb42ac29b6773cd1a365ed162f72e5d7401acdbd81b24775cbf",
+          "file": "frames/frame-008.jpg"
+        },
+        {
+          "sample_index": 9,
+          "nominal_video_time_ms": 58912,
+          "sha256": "c5ef5465da0d88607692aa8a908716b08872b549353bad613d714d7d15e6d50b",
+          "file": "frames/frame-009.jpg"
+        }
+      ],
+      "speaker_identity_verified": false,
+      "continuous_original_video_reviewed": false,
+      "exact_action_onset_verified": false,
+      "source_subtitle_synchronization_verified": false,
+      "reviewer_state": "ai_reviewed_sampled_frames_only"
+    },
+    {
+      "observation_id": "S01-V3-02",
+      "nominal_interval_ms": [
+        58912,
+        60662
+      ],
+      "class": "sampled_stages_not_continuous_action",
+      "description": "In repeated views, the lavender-clad adult stands beside an open brown cardboard box, looks down toward its contents or the desk, then looks up. The uniformed person's dark clothing remains partly visible at the right edge.",
+      "frame_evidence": [
+        {
+          "sample_index": 9,
+          "nominal_video_time_ms": 58912,
+          "sha256": "c5ef5465da0d88607692aa8a908716b08872b549353bad613d714d7d15e6d50b",
+          "file": "frames/frame-009.jpg"
+        },
+        {
+          "sample_index": 16,
+          "nominal_video_time_ms": 60662,
+          "sha256": "d4fb1eedd98790ae0fe91e4d3b607d70268cd76f54628c95fb08ce496a8b2348",
+          "file": "frames/frame-016.jpg"
+        }
+      ],
+      "speaker_identity_verified": false,
+      "continuous_original_video_reviewed": false,
+      "exact_action_onset_verified": false,
+      "source_subtitle_synchronization_verified": false,
+      "reviewer_state": "ai_reviewed_sampled_frames_only"
+    },
+    {
+      "observation_id": "S01-V3-03",
+      "nominal_interval_ms": [
+        60662,
+        60912
+      ],
+      "class": "change_between_adjacent_sampled_views",
+      "description": "The view changes back from a closer image of the lavender-clad person and box to the uniformed adult, with the lavender-clad person's hair in the foreground.",
+      "frame_evidence": [
+        {
+          "sample_index": 16,
+          "nominal_video_time_ms": 60662,
+          "sha256": "d4fb1eedd98790ae0fe91e4d3b607d70268cd76f54628c95fb08ce496a8b2348",
+          "file": "frames/frame-016.jpg"
+        },
+        {
+          "sample_index": 17,
+          "nominal_video_time_ms": 60912,
+          "sha256": "2a5447b604e496a6fe44e4cacb899176af04d766c9fe86cd645ff68db50e7e59",
+          "file": "frames/frame-017.jpg"
+        }
+      ],
+      "speaker_identity_verified": false,
+      "continuous_original_video_reviewed": false,
+      "exact_action_onset_verified": false,
+      "source_subtitle_synchronization_verified": false,
+      "reviewer_state": "ai_reviewed_sampled_frames_only"
+    },
+    {
+      "observation_id": "S01-V3-04",
+      "nominal_interval_ms": [
+        67912,
+        68412
+      ],
+      "class": "overlapped_images_near_transition",
+      "description": "Between a tighter view of the uniformed adult and a wider two-person view of the desk, a sampled frame shows superimposed imagery from both compositions. This suggests a video transition but does not establish the editing mechanism or exact cut point.",
+      "frame_evidence": [
+        {
+          "sample_index": 45,
+          "nominal_video_time_ms": 67912,
+          "sha256": "6f05388cf454966a1859b4a7e90e16f6567555039e7ff35d6962a5586cc33755",
+          "file": "frames/frame-045.jpg"
+        },
+        {
+          "sample_index": 46,
+          "nominal_video_time_ms": 68162,
+          "sha256": "6af65924f04ea80d105dc6270b6a80dfeb718a6e97968ff4a47ec2c49a7ec2e9",
+          "file": "frames/frame-046.jpg"
+        },
+        {
+          "sample_index": 47,
+          "nominal_video_time_ms": 68412,
+          "sha256": "e94ed56461b2fc7240d1888b4f0a0eb7475c4de1711c2b1f9064496769f0e8ef",
+          "file": "frames/frame-047.jpg"
+        }
+      ],
+      "speaker_identity_verified": false,
+      "continuous_original_video_reviewed": false,
+      "exact_action_onset_verified": false,
+      "source_subtitle_synchronization_verified": false,
+      "reviewer_state": "ai_reviewed_sampled_frames_only"
+    },
+    {
+      "observation_id": "S01-V3-05",
+      "nominal_interval_ms": [
+        88912,
+        90912
+      ],
+      "class": "sequential_sampled_poses",
+      "description": "After the handset is down on the desk, the dark-uniformed adult stands beside the desk and shifts orientation toward the room's right-hand side while the lavender-clad adult remains near the desk and papers.",
+      "frame_evidence": [
+        {
+          "sample_index": 129,
+          "nominal_video_time_ms": 88912,
+          "sha256": "fabc6b6d894a3d18d4a4369800e3983b317518e859bf68f30a1c05fc4065e451",
+          "file": "frames/frame-129.jpg"
+        },
+        {
+          "sample_index": 131,
+          "nominal_video_time_ms": 89412,
+          "sha256": "6fd793560505ec2612e05b806f222f05638a412fcb5a52c96978bc3c0e364316",
+          "file": "frames/frame-131.jpg"
+        },
+        {
+          "sample_index": 136,
+          "nominal_video_time_ms": 90662,
+          "sha256": "cd2fbf94e56a8cfc476b8f46c15f712cab4deab6d36f75c6f2b476b394f98a58",
+          "file": "frames/frame-136.jpg"
+        },
+        {
+          "sample_index": 137,
+          "nominal_video_time_ms": 90912,
+          "sha256": "9eb7bb12ecbb3ef320273f8cf307ca25fc0c4d25849fa33ff59a755881d630e0",
+          "file": "frames/frame-137.jpg"
+        }
+      ],
+      "speaker_identity_verified": false,
+      "continuous_original_video_reviewed": false,
+      "exact_action_onset_verified": false,
+      "source_subtitle_synchronization_verified": false,
+      "reviewer_state": "ai_reviewed_sampled_frames_only"
+    },
+    {
+      "observation_id": "S01-V3-06",
+      "nominal_interval_ms": [
+        90912,
+        92912
+      ],
+      "class": "sequential_sampled_positions_at_excerpt_end",
+      "description": "Successive sampled images show the dark-uniformed adult moving farther away from the desk toward a doorway and finally partly through it; the lavender-clad adult remains beside the desk and paperwork.",
+      "frame_evidence": [
+        {
+          "sample_index": 137,
+          "nominal_video_time_ms": 90912,
+          "sha256": "9eb7bb12ecbb3ef320273f8cf307ca25fc0c4d25849fa33ff59a755881d630e0",
+          "file": "frames/frame-137.jpg"
+        },
+        {
+          "sample_index": 140,
+          "nominal_video_time_ms": 91662,
+          "sha256": "70f5f7eee38338609f6750e6137be9495b8f0108cff8edcc921ff0741bf659b4",
+          "file": "frames/frame-140.jpg"
+        },
+        {
+          "sample_index": 144,
+          "nominal_video_time_ms": 92662,
+          "sha256": "74354832df3a87c43342c2c25604d777ccb768f743bd40165592238a5869e70d",
+          "file": "frames/frame-144.jpg"
+        },
+        {
+          "sample_index": 145,
+          "nominal_video_time_ms": 92912,
+          "sha256": "9cd52bfbce92e1be062dbe8286fce63beefca4482841b88e38a9d36b7a392c85",
+          "file": "frames/frame-145.jpg"
+        }
+      ],
+      "speaker_identity_verified": false,
+      "continuous_original_video_reviewed": false,
+      "exact_action_onset_verified": false,
+      "source_subtitle_synchronization_verified": false,
+      "reviewer_state": "ai_reviewed_sampled_frames_only"
+    }
+  ],
+  "independent_continuous_video_acceptances": 0,
+  "independently_listened_voice_turns": 0,
+  "finished_production_script": false
+}
