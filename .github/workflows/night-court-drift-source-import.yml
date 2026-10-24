@@ -1,0 +1,55 @@
+name: Night Court S01E01 independently checked sparse source-cut review
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/import_s01e01_drift_qa.py'
+      - 'Night Court/S01E01-SPARSE-DRIFT-QA-HANDOFF.md'
+      - '.github/workflows/night-court-drift-source-import.yml'
+permissions:
+  actions: read
+  contents: write
+jobs:
+  retain:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'data/night-court-s01e01-drift-qa-source'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/night-court-s01e01-drift-qa-source
+          persist-credentials: true
+      - name: Recover owner-authorized completed real-video sparse ASR artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/s01e01-sparse"
+          gh run download 40050642750 --repo gamesbyian/general-purpose \
+             --name night-court-s01e01-source-cut-drift-review \
+             --dir "${{ runner.temp }}/s01e01-sparse"
+      - name: Validate exact video/subtitle sources and reject duplicate-caption drift
+        run: |
+          python "Night Court/tools/import_s01e01_drift_qa.py" \
+             "${{ runner.temp }}/s01e01-sparse/s01e01-source-cut-drift.json"
+          python "Night Court/tools/validate_dialogue.py"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("Night Court/seasons/S01/S01E01/derived/source-sync-review-v1")
+          j=json.loads((p/"drift-acceptance-triage.json").read_text())
+          assert len(j["source_windows"])==5
+          assert j["sampled_audio_total_ms"]==150000
+          assert j["global_source_to_subtitle_offset_ms"] is None
+          assert not j["reliable_global_drift_fitted"]
+          assert "repeat_caption_match_possible_ASR_hallucination_or_repeated_line" in j["source_windows"][0]["warnings"]
+          assert j["source_windows"][0]["candidate_median_ms_for_listening"] is None
+          print("Source SHA / clipped segment / duplicate match drift safety verified")
+          PY
+      - name: Preserve strictly compact private source text and triage evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/S01/S01E01/derived/source-sync-review-v1/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): archive five source-drift sample windows with reliable abstentions"
+            git push origin HEAD:data/night-court-s01e01-drift-qa-source
+          fi
