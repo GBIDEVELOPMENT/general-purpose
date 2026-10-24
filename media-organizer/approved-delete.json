@@ -1,19 +1,43 @@
 {
   "root": "/downloads",
-  "batch_id": "durrells_vob_samples_002",
-  "description": "Delete exactly two owner-authorized distribution-only sample VOBs under the two original The Durrells DVD-R Sample folders; preserve DVD programme VOBs.",
+  "batch_id": "residual_txt_006",
+  "description": "Owner-authorized exact-file deletion of all six TXT media release sidecars in latest complete FTP inventory; executor safely skips files already deleted and preserves videos and artwork.",
   "entries": [
     {
-      "from": "/downloads/The.Durrells.S01.PAL.DVDR-WaLMaRT/The.Durrells.S01D01.PAL.DVDR-WaLMaRT/Sample/wmt-the.durrells.s01d01-dvdr.sample.VOB",
-      "size": 38340608,
-      "modify": "20260604224415",
-      "category": "sample"
+      "from": "/downloads/Now.You.See.Me.Now.You.Don't.2025.1080p.TS.TR.EN-RGB/Info.txt",
+      "size": 194,
+      "modify": "20251118193116",
+      "category": "txt"
     },
     {
-      "from": "/downloads/The.Durrells.S01.PAL.DVDR-WaLMaRT/The.Durrells.S01D02.PAL.DVDR-WaLMaRT/Sample/wmt-the.durrells.s01d02-dvdr.sample.vob",
-      "size": 34328576,
-      "modify": "20260604224335",
-      "category": "sample"
+      "from": "/downloads/Star Trek Voyager 1995.S01.1080p.NTSC DVD Upscale.H265.10bit.DDP5.1-Zero00/info-readme.txt",
+      "size": 1063,
+      "modify": "20251003062853",
+      "category": "txt"
+    },
+    {
+      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/1080p Release Read Me.txt",
+      "size": 1550,
+      "modify": "20250908072141",
+      "category": "txt"
+    },
+    {
+      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/720p Release Read Me.txt",
+      "size": 1550,
+      "modify": "20250908073052",
+      "category": "txt"
+    },
+    {
+      "from": "/downloads/Studio 60 on the Sunset Strip (2006)/Production Notes/DVD Typical Episode Notes.txt",
+      "size": 9820,
+      "modify": "20261001104816",
+      "category": "txt"
+    },
+    {
+      "from": "/downloads/The.Boys.and.Girl.from.County.Clare.2003.1080p.WEBRip.x264-RARBG/RARBG.txt",
+      "size": 30,
+      "modify": "20260819093725",
+      "category": "txt"
     }
   ]
 }
