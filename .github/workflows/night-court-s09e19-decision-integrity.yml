@@ -1,0 +1,25 @@
+name: Night Court S09E19 editorial reviewer attestation integrity
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/validate_s09e19_review_decisions.py'
+      - 'Night Court/tools/test_s09e19_review_decisions.py'
+      - 'Night Court/seasons/S09/S09E19/derived/editorial-review-v1/review-decisions-template.json'
+      - 'Night Court/S09E19-EDITORIAL-REVIEW-HANDOFF.md'
+      - '.github/workflows/night-court-s09e19-decision-integrity.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s09e19-review-decisions'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate source-linked review, rejects fake speaker and original timecodes
+        run: |
+          python 'Night Court/tools/test_s09e19_review_decisions.py'
+          python 'Night Court/tools/validate_s09e19_review_decisions.py' --validate \
+             'Night Court/seasons/S09/S09E19/derived/editorial-review-v1/review-decisions-template.json'
