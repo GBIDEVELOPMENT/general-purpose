@@ -103,24 +103,50 @@ def match_consensus_to_srt(two_model_result,original_source_text):
         last=bisect_right(starts,timecode[1]+MARGIN_MS)
         pool=[c for c in cue_entries[first:last]
               if c['source_caption_interval_ms'][1]>=timecode[0]-MARGIN_MS]
+        # ASR independent spans often cross adjacent subtitle cue boundaries.
+        # Compare ordered source tokens from 1-4 tightly adjacent original
+        # cues before calling a model agreement a source-text contradiction.
+        # This is ONLY textual candidate correlation, never spoken-word truth.
         best=None
-        for c in pool:
-            common=SequenceMatcher(None,tokens,c['normalized_tokens'],autojunk=False).find_longest_match()
-            fraction=common.size/len(tokens)
-            if not best or (fraction,-abs(c['source_caption_interval_ms'][0]-timecode[0])) > (best[0],best[1]):
-                best=(fraction,-abs(c['source_caption_interval_ms'][0]-timecode[0]),c)
-        fraction=round(best[0],4) if best else 0.0
-        cue=best[2] if best else None
+        for start_ix in range(len(pool)):
+            group=[]
+            for cue in pool[start_ix:start_ix+4]:
+                if group and cue['source_caption_interval_ms'][0]-group[-1]['source_caption_interval_ms'][1]>2000:
+                    break
+                group.append(cue)
+                a=group[0]['source_caption_interval_ms'][0]
+                b=group[-1]['source_caption_interval_ms'][1]
+                if b-a>30000 or b<timecode[0]-MARGIN_MS or a>timecode[1]+MARGIN_MS:
+                    continue
+                combined=[token for entry in group for token in entry['normalized_tokens']]
+                matcher=SequenceMatcher(None,tokens,combined,autojunk=False)
+                blocks=matcher.get_matching_blocks()
+                covered=sum(block.size for block in blocks)
+                longest=max(block.size for block in blocks)
+                ordered_fraction=covered/len(tokens)
+                # Tie-breaker favors a smaller number of original cues and
+                # source clock proximity; do not blindly merge whole scenes.
+                quality=(ordered_fraction,longest,-len(group),-abs(a-timecode[0]))
+                if best is None or quality>best[0]:
+                    best=(quality,list(group),longest/len(tokens))
+        group=best[1] if best else []
+        fraction=round(best[2],4) if best else 0.0
+        ordered=round(best[0][0],4) if best else 0.0
         cls=('no_original_caption_in_candidate_interval'
-             if not cue else 'three_text_witness_correspondence_candidate'
-             if fraction>=.8 else 'two_model_agreement_caption_lexical_disagreement')
+             if not group else 'three_text_witness_correspondence_candidate'
+             if ordered>=.8 and best[0][1]>=MIN_WORDS
+             else 'two_model_agreement_caption_lexical_disagreement')
         results.append({'span_index':i,'model_agreed_text_candidate':dialogue,
             'model_word_count':span['word_count'],
             'model_consensus_interval_ms':timecode,
-            'nearest_source_caption_cue_id':cue['cue_id'] if cue else None,
-            'source_caption_interval_ms':cue['source_caption_interval_ms'] if cue else None,
-            'source_caption_verbatim':cue['source_text'] if cue else None,
+            'nearest_source_caption_cue_id':group[0]['cue_id'] if group else None,
+            'source_caption_cue_ids':[c['cue_id'] for c in group],
+            'source_caption_interval_ms':[group[0]['source_caption_interval_ms'][0],
+                                           group[-1]['source_caption_interval_ms'][1]] if group else None,
+            'source_caption_verbatim':' '.join(c['source_text'] for c in group) if group else None,
             'longest_contiguous_token_coverage':fraction,
+            'ordered_matched_model_token_fraction':ordered,
+            'cue_window_count':len(group),
             'review_tier':cls,
             'original_srt_changed':False,
             'source_audio_human_listened':False,
