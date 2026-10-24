@@ -1,0 +1,21 @@
+# S01E01: original SRT compared with two independent full-episode ASR models
+
+**Latest successful source comparison:** [run #40116865728](https://github.com/gamesbyian/general-purpose/actions/runs/40116865728), private text-only artifact #12569465735, expires October 31, 2026. Original source archive ZIP SHA-256 `5130d3b61375e94b08165e7dec2dc9aa74423a9a13de6d499e32cd4d3fc1cd6d`. The original report `three-text-witness-review.json` SHA-256 is `4203b5550bad8e0a56bc9316144011f53e3e677fea3545dd3eab868a2f0019e5`.
+
+The original S01E01 SHA-pinned 1448.256s MPEG-4 AVI was previously decoded once into mono audio. The two already independently decoded sources were Whisper tiny.en and Vosk Kaldi small English, **without original subtitle prompts**. The retained original episode SRT (SHA `aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496`, CP1252 source byte encoding) remains immutable. Offline comparison of **200 model-model agreement spans against 336 original SRT cues** found **184 three-witness substantial textual correspondence candidates**, **16 lexical mismatch candidates** and **zero windows without an SRT candidate**. The 184/200 fraction is *span-level textual correspondence under the current ordered-token and ±2-second window rules*, not word accuracy, original-audio human verification or independence of training errors.
+
+The 16 model-consensus-versus-original-SRT differences include short fragments of larger captions. They may reflect true edition differences, common model errors, original-caption omissions, cue-boundary mismatch, punctuation or unusual vocabulary; class membership cannot adjudicate their source without listening.
+
+## Source-honest preservation and targeted review
+
+`tools/preserve_s01e01_three_witness.py` checks exact downloaded original derived report SHA, the immutable SRT original source SHA, AVI and PCM identities, the complete 200 indexed source-time ranges, 184/16/0 classification counts and explicit non-acceptance flags. It creates a verbatim source-derived research report, compact factual summary, **16-entry original-audio review queue** sorted by least source-caption token correspondence, and a readable timecoded agenda. It does **not** rewrite an SRT, accept voices/actors, certify cuts, or finalize a screenplay.
+
+One verified original source import must be done before the private artifact expires: merge the focused offline CI PR, then open an owner-authored one-shot trigger PR from branch `research/night-court-three-witness-import-trigger` changing only `Night Court/research/trigger-s01e01-three-witness-import.txt`. The guarded workflow `.github/workflows/night-court-trusted-three-witness-import.yml` checks out **trusted base SHA only**, downloads exactly artifact #12569465735 with both ZIP and original JSON hash checks, runs the previously merged importer and pushes the **only four permitted original text/metadata files** to a separate branch `data/night-court-s01e01-source-three-witness-review`. Inspect the resulting PR branch and validate before merging. Do not merge the trigger PR. No FTP credentials, original AVI/audio or model weights are used by this archival job.
+
+## Speed and next work
+
+The previously merged [integrated source-once first pass](FAST-EPISODE-FACTORY-THROUGHPUT.md) took **239.826 seconds** of real source work for original audio decoding, two distinct ASR models, full 29.97fps AVI scan and 212 native-PTS-checked JPEG samples. The third textual SRT witness comparison is a cheap post-processing stage, not another model decode. It should remain automatic for 192 SRT-covered original-series episodes. S09E19 lacks original SRT timing and requires separate untimed paragraph alignment, not invented timecodes.
+
+Next accuracy work is a selective original-audio adjudication of the 16 flagged text windows and rare joke words, followed by sampled video/action/voice evidence review. Do not automatically re-run expensive models or process the entire episode with a visual-language model simply because some dialogue remains ambiguous.
+
+**Acceptance:** independently human-reviewed dialogue and performances 0/17 currently for bounded S01E01 worklist, S09E19 0/11, original-series AV-complete screenplays 0/193.
