@@ -55,28 +55,44 @@ def video_properties(media:Path, *, require_episode_duration=True):
     return result
 
 
+def summarize_presentation_times(times, rate:Fraction):
+    """Report actual frame PTS even when decoder/demux order includes B-frame reorder.
+
+    A sorted unique list is used only to estimate the display-time cadence.
+    Raw-order inversions and duplicate PTS remain explicit, not silently fixed.
+    """
+    if not 20 <= len(times) <= 150:
+        raise ValueError('Unexpected number of PTS probe frames')
+    inversions=sum(times[i]<=times[i-1] for i in range(1,len(times)))
+    presented=sorted(set(times))
+    duplicates=len(times)-len(presented)
+    if len(presented)<20:
+        raise ValueError('Insufficient unique presentation timestamps')
+    deltas=[(presented[i]-presented[i-1])*1000 for i in range(1,len(presented))]
+    med=statistics.median(deltas)
+    target=Fraction(1000,1)/rate
+    return {'pts_sample_count':len(times),
+            'unique_pts_count':len(presented),
+            'out_of_order_or_tied_adjacent_pts_count':inversions,
+            'duplicate_pts_count':duplicates,
+            'sampled_video_pts_start_ms':round(presented[0]*1000),
+            'sampled_video_pts_end_ms':round(presented[-1]*1000),
+            'median_sampled_frame_interval_ms':round(float(med),4),
+            'nominal_interval_ms':round(float(target),4),
+            'sample_interval_within_1pct_nominal':abs(med-target)/target<=Fraction(1,100),
+            'decoded_frame_order_strictly_monotonic':inversions==0,
+            'whole_episode_cadence_verified':False}
+
+
 def sample_frame_cadence(media:Path, rate:Fraction, *, start_seconds=700):
-    # ffprobe may seek to an earlier keyframe. This samples local presentation
-    # timestamps; it does not assert whole-episode constant frame cadence.
+    # The real AVI can expose display-order PTS out of decode/demux order.
+    # Preserve that anomaly, then sort unique PTS for display cadence statistics.
     data=ffprobe(media,'-read_intervals',f'{start_seconds}%+3','-select_streams','v:0',
                  '-show_entries','frame=best_effort_timestamp_time')
     frames=data.get('frames',[])
     times=[Fraction(str(row['best_effort_timestamp_time'])) for row in frames
            if row.get('best_effort_timestamp_time') is not None]
-    if not 20 <= len(times) <= 150:
-        raise ValueError('Unexpected number of PTS probe frames')
-    if any(times[i]<=times[i-1] for i in range(1,len(times))):
-        raise ValueError('Non-monotonic presentation timestamps in sampled original video')
-    deltas=[(times[i]-times[i-1])*1000 for i in range(1,len(times))]
-    med=statistics.median(deltas)
-    target=Fraction(1000,1)/rate
-    return {'pts_sample_count':len(times),
-            'sampled_video_pts_start_ms':round(times[0]*1000),
-            'sampled_video_pts_end_ms':round(times[-1]*1000),
-            'median_sampled_frame_interval_ms':round(float(med),4),
-            'nominal_interval_ms':round(float(target),4),
-            'sample_interval_within_1pct_nominal':abs(med-target)/target<=Fraction(1,100),
-            'whole_episode_cadence_verified':False}
+    return summarize_presentation_times(times, rate)
 
 
 def research_probe(media:Path):
