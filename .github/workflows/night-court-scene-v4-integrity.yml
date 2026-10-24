@@ -1,0 +1,23 @@
+name: Night Court original S01E01 integrated research scene v4 QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/seasons/S01/S01E01/derived/scene-review-v4/**'
+      - 'Night Court/tools/validate_s01e01_scene_v4.py'
+      - 'Night Court/tools/test_s01e01_scene_v4.py'
+      - '.github/workflows/night-court-scene-v4-integrity.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s01e01-integrated-scene-v4'
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Original caption fidelity across all observed actions and edit candidates
+        run: |
+          python 'Night Court/tools/test_s01e01_scene_v4.py'
+          python 'Night Court/tools/validate_s01e01_scene_v4.py'
