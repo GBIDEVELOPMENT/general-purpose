@@ -1,0 +1,324 @@
+{
+  "schema": "night-court-s01e01-scene-evidence/1",
+  "series": "night-court-1984",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_media_bytes": 183386112,
+  "source_duration_ms": 1448256,
+  "source_audio_wav_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+  "source_audio_window_ms": [
+    60000,
+    90000
+  ],
+  "dialogue_source_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "dialogue_version_id": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+  "caption_audio_alignment_status": "unverified_time_match_do_not_claim_synchronized",
+  "source_identity_status": "filename_and_prior_media_sha_confirmed_video_not_independently_identified",
+  "source_cues": [
+    {
+      "cue": 19,
+      "start_ms": 58912,
+      "end_ms": 62541,
+      "text": "- Did you say \"mercurial\"?\n- I'm trying to make up for lack of education.",
+      "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "offset_status": "not_audio_verified"
+    },
+    {
+      "cue": 20,
+      "start_ms": 62716,
+      "end_ms": 65742,
+      "text": "So every month, I pick a word\nat random out of the dictionary...",
+      "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "offset_status": "not_audio_verified"
+    },
+    {
+      "cue": 21,
+      "start_ms": 65919,
+      "end_ms": 67887,
+      "text": "...and use it all that month.",
+      "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "offset_status": "not_audio_verified"
+    },
+    {
+      "cue": 22,
+      "start_ms": 69689,
+      "end_ms": 73147,
+      "text": "- My, how...\n- Minimifidian?",
+      "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "offset_status": "not_audio_verified"
+    },
+    {
+      "cue": 23,
+      "start_ms": 74628,
+      "end_ms": 76357,
+      "text": "Is that a real word?",
+      "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "offset_status": "not_audio_verified"
+    },
+    {
+      "cue": 24,
+      "start_ms": 76663,
+      "end_ms": 79894,
+      "text": "Does a bear extravasate in the forest?",
+      "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "offset_status": "not_audio_verified"
+    },
+    {
+      "cue": 25,
+      "start_ms": 83136,
+      "end_ms": 84501,
+      "text": "What?",
+      "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "offset_status": "not_audio_verified"
+    },
+    {
+      "cue": 26,
+      "start_ms": 86339,
+      "end_ms": 87738,
+      "text": "No.",
+      "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "offset_status": "not_audio_verified"
+    },
+    {
+      "cue": 27,
+      "start_ms": 88742,
+      "end_ms": 91074,
+      "text": "Tell the judge the mayor called.",
+      "caption_edition": "s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6",
+      "offset_status": "not_audio_verified"
+    }
+  ],
+  "frame_evidence": [
+    {
+      "video_time_ms": 60000,
+      "file": "frames/source-0060s.jpg",
+      "sha256": "71c2bcac2293accfd2d772d5b5911b92a1a344edf5da3a97f29644f489aeac9b",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    },
+    {
+      "video_time_ms": 63000,
+      "file": "frames/source-0063s.jpg",
+      "sha256": "a5909df61bf9ca3171c7cf0257bca85c1a1d25cabfd89626df153d2d7996c908",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    },
+    {
+      "video_time_ms": 66000,
+      "file": "frames/source-0066s.jpg",
+      "sha256": "5103fc66e5d236a0b387ff3fb7344ee13da1eaa27ed8b2479c76ae25e46afc21",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    },
+    {
+      "video_time_ms": 69000,
+      "file": "frames/source-0069s.jpg",
+      "sha256": "4aa34945fad8f2fddfdf2c9bb1928ea5f97740f3620f4d2ced3ca8d5e7de4d01",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    },
+    {
+      "video_time_ms": 72000,
+      "file": "frames/source-0072s.jpg",
+      "sha256": "06198ac4dec82f8e728900d9e4eb80e082aedb71e4131a324dc9e687a324e2a9",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    },
+    {
+      "video_time_ms": 75000,
+      "file": "frames/source-0075s.jpg",
+      "sha256": "21939df782c84a44a6495fbb5637281d2aedd18de562b651a3223b84ee750623",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    },
+    {
+      "video_time_ms": 78000,
+      "file": "frames/source-0078s.jpg",
+      "sha256": "3a43a8a8c591321a65f2d110376fbe3e1b1b479e92286b16a0d88a842c2aa9cd",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    },
+    {
+      "video_time_ms": 81000,
+      "file": "frames/source-0081s.jpg",
+      "sha256": "0c24bc063168305c53ef7e09c1598f3c5b67529da6361fb4a19e326703ac4dd6",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    },
+    {
+      "video_time_ms": 84000,
+      "file": "frames/source-0084s.jpg",
+      "sha256": "1270bd89095f17770e33e018459d64738b4d32b4a49892339f28e6c1b5b15d73",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    },
+    {
+      "video_time_ms": 87000,
+      "file": "frames/source-0087s.jpg",
+      "sha256": "af95545d995b029c5766d071a5521d77dc88f7f0364fe8a38735fb5fab972f75",
+      "observation_status": "not_reviewed",
+      "evidence_kind": "single_video_frame"
+    }
+  ],
+  "mixed_audio_windows": [
+    {
+      "schema": "night-court-vocal-acoustic-baseline/1",
+      "episode_id": "S01E01",
+      "source_cue_or_window_id": "source-mix-60-66s",
+      "wav_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+      "segment_pcm_sha256": "355346bda395105a5163c6baeb991255f6150424e367c5d35480ed7e9d74c029",
+      "start_ms": 0,
+      "end_ms": 6000,
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "features": {
+        "rms_dbfs": -20.15,
+        "peak_dbfs": -4.04,
+        "mix_activity_fraction_above_minus_40_dbfs": 0.8333,
+        "f0_median_hz": null,
+        "emotion_label": null,
+        "speaker_id": null
+      },
+      "status": "unreviewed_mix_level_metrics_only",
+      "limitations": [
+        "audience_laughter_music_and_mixed_speakers_contaminate_features",
+        "not_a_voice_activity_detector",
+        "not_pitch_or_emotion_recognition",
+        "not_source_edition_or_caption_alignment_verification"
+      ],
+      "source_video_interval_ms": [
+        60000,
+        66000
+      ]
+    },
+    {
+      "schema": "night-court-vocal-acoustic-baseline/1",
+      "episode_id": "S01E01",
+      "source_cue_or_window_id": "source-mix-66-72s",
+      "wav_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+      "segment_pcm_sha256": "05d771cfabe903dbc43b3803e80baeba3b6d344af3b5a1c75443fc1133b418a5",
+      "start_ms": 6000,
+      "end_ms": 12000,
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "features": {
+        "rms_dbfs": -19.93,
+        "peak_dbfs": -3.97,
+        "mix_activity_fraction_above_minus_40_dbfs": 0.7333,
+        "f0_median_hz": null,
+        "emotion_label": null,
+        "speaker_id": null
+      },
+      "status": "unreviewed_mix_level_metrics_only",
+      "limitations": [
+        "audience_laughter_music_and_mixed_speakers_contaminate_features",
+        "not_a_voice_activity_detector",
+        "not_pitch_or_emotion_recognition",
+        "not_source_edition_or_caption_alignment_verification"
+      ],
+      "source_video_interval_ms": [
+        66000,
+        72000
+      ]
+    },
+    {
+      "schema": "night-court-vocal-acoustic-baseline/1",
+      "episode_id": "S01E01",
+      "source_cue_or_window_id": "source-mix-72-78s",
+      "wav_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+      "segment_pcm_sha256": "03b1a2ec44dfe23fd69b535ba7587842d3e39950e934c8c130ece948922119a6",
+      "start_ms": 12000,
+      "end_ms": 18000,
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "features": {
+        "rms_dbfs": -21.66,
+        "peak_dbfs": -3.89,
+        "mix_activity_fraction_above_minus_40_dbfs": 0.7367,
+        "f0_median_hz": null,
+        "emotion_label": null,
+        "speaker_id": null
+      },
+      "status": "unreviewed_mix_level_metrics_only",
+      "limitations": [
+        "audience_laughter_music_and_mixed_speakers_contaminate_features",
+        "not_a_voice_activity_detector",
+        "not_pitch_or_emotion_recognition",
+        "not_source_edition_or_caption_alignment_verification"
+      ],
+      "source_video_interval_ms": [
+        72000,
+        78000
+      ]
+    },
+    {
+      "schema": "night-court-vocal-acoustic-baseline/1",
+      "episode_id": "S01E01",
+      "source_cue_or_window_id": "source-mix-78-84s",
+      "wav_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+      "segment_pcm_sha256": "3b3b958e1ff9ecab625f9eeac99ae4b273857131ebf8eaeb1f8ea5a4389bb39e",
+      "start_ms": 18000,
+      "end_ms": 24000,
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "features": {
+        "rms_dbfs": -20.8,
+        "peak_dbfs": -4.36,
+        "mix_activity_fraction_above_minus_40_dbfs": 0.81,
+        "f0_median_hz": null,
+        "emotion_label": null,
+        "speaker_id": null
+      },
+      "status": "unreviewed_mix_level_metrics_only",
+      "limitations": [
+        "audience_laughter_music_and_mixed_speakers_contaminate_features",
+        "not_a_voice_activity_detector",
+        "not_pitch_or_emotion_recognition",
+        "not_source_edition_or_caption_alignment_verification"
+      ],
+      "source_video_interval_ms": [
+        78000,
+        84000
+      ]
+    },
+    {
+      "schema": "night-court-vocal-acoustic-baseline/1",
+      "episode_id": "S01E01",
+      "source_cue_or_window_id": "source-mix-84-90s",
+      "wav_sha256": "234eae34fc5d9ec3a2366a7c26676be1ba4dbb0d5abd97942ba9e93fd0b6409b",
+      "segment_pcm_sha256": "3e0528b5aaac93d5ce8a014cfe9ab634c6858fe14ca869d2081736d45a1c228c",
+      "start_ms": 24000,
+      "end_ms": 30000,
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "features": {
+        "rms_dbfs": -21.15,
+        "peak_dbfs": -3.85,
+        "mix_activity_fraction_above_minus_40_dbfs": 0.6367,
+        "f0_median_hz": null,
+        "emotion_label": null,
+        "speaker_id": null
+      },
+      "status": "unreviewed_mix_level_metrics_only",
+      "limitations": [
+        "audience_laughter_music_and_mixed_speakers_contaminate_features",
+        "not_a_voice_activity_detector",
+        "not_pitch_or_emotion_recognition",
+        "not_source_edition_or_caption_alignment_verification"
+      ],
+      "source_video_interval_ms": [
+        84000,
+        90000
+      ]
+    }
+  ],
+  "candidate_scene_title": "unassigned_pending_visual_review",
+  "confirmed_speakers": [],
+  "stage_directions": [],
+  "visual_observations_status": "awaiting_frame_review_and_bounded_motion_evidence",
+  "speaker_diarization_status": "not_run",
+  "emotion_annotation_status": "not_run",
+  "completeness_verified": false,
+  "licensing": "private_owner_directed_research_no_republication_rights_asserted",
+  "media_and_wav_in_artifact": false
+}
