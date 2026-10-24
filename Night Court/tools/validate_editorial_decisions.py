@@ -84,6 +84,15 @@ def validate(packet,tasks,decisions):
                 not isinstance(d.get("review_note"),str) or not d["review_note"].strip()
                 or d.get("reviewer_attested") is not True):
                 raise ValueError("Nonpending claims require identified review and self-attestation")
+        # Each accepted method must actually cover the task being certified.
+        # A valid AVI checksum with a completely unrelated time window is not
+        # evidence for the original subtitle turn or sampled visual action.
+        source_span=(task["source_caption_interval_ms"] if kind=="voice"
+                     else task["source_interval_ms"])
+        if (not isinstance(source_span,list) or len(source_span)!=2 or
+            any(type(x) is not int for x in source_span) or
+            not 0<=source_span[0]<source_span[1]<=1448256):
+            raise ValueError("Original editorial task interval is invalid")
         methods=set()
         for ev in evid:
             if not isinstance(ev,dict) or ev.get("method") not in MODES:
@@ -93,9 +102,11 @@ def validate(packet,tasks,decisions):
             if not isinstance(ev.get("interval_ms"),list) or len(ev["interval_ms"])!=2:
                 raise ValueError("Evidence source time range missing")
             a,b=ev["interval_ms"]
-            if (not isinstance(a,int) or not isinstance(b,int)
+            if (type(a) is not int or type(b) is not int
                 or a<0 or b<=a or b>1448256):
                 raise ValueError("Evidence range outside original episode duration")
+            if state=="accepted_by_reviewer" and (a>source_span[0] or b<source_span[1]):
+                raise ValueError("Accepted evidence interval does not cover its source task")
             methods.add(ev["method"])
         if state=="accepted_by_reviewer":
             if kind=="voice":
