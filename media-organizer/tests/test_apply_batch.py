@@ -1,7 +1,7 @@
 import sys, unittest, tempfile, json
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from apply_batch import plan_validate, execute
+from apply_batch import plan_validate, execute, parse_episode_identity
 def plan(moves):
     return {"root":"/downloads","batch_id":"batch_0001",
       "description":"Plex naming only, no media content touched","moves":moves}
@@ -15,6 +15,22 @@ class BatchSafetyTests(unittest.TestCase):
         with self.assertRaises(ValueError):plan_validate(plan([op(dst="/downloads/S/S - S01E01.avi")]))
     def test_no_episode_loss(self):
         with self.assertRaises(ValueError):plan_validate(plan([op(dst="/downloads/S/Filename.mkv")]))
+    def test_multi_episode_retained(self):
+        x=op(src="/downloads/S.S01E01E02.mkv",dst="/downloads/S/Season 01/S - S01E01-E02.mkv")
+        self.assertEqual(len(plan_validate(plan([x]))),1)
+    def test_multi_episode_drop_refused(self):
+        x=op(src="/downloads/S.S01E01E02.mkv",dst="/downloads/S/Season 01/S - S01E01.mkv")
+        with self.assertRaisesRegex(ValueError,"episode identity"):plan_validate(plan([x]))
+    def test_cross_season_source_refused(self):
+        x=op(src="/downloads/Show.S03E26S04E01.mkv",dst="/downloads/Show/Season 03/Show - S03E26.mkv")
+        with self.assertRaisesRegex(ValueError,"Cross-season"):plan_validate(plan([x]))
+    def test_wrong_episode_refused(self):
+        with self.assertRaisesRegex(ValueError,"episode identity"):
+            plan_validate(plan([op(dst="/downloads/S/Season 01/S - S01E02.mkv")]))
+    def test_parser_various_sequences(self):
+        self.assertEqual(parse_episode_identity("A.S01E01E02.mkv"),{(1,1),(1,2)})
+        self.assertEqual(parse_episode_identity("A.S07E25-E26.mkv"),{(7,25),(7,26)})
+        self.assertEqual(parse_episode_identity("A.S03E26S04E01.mkv"),{(3,26),(4,1)})
     def test_no_duplicate_destinations(self):
         with self.assertRaises(ValueError):plan_validate(plan([op(),op(src="/downloads/S.S01E02.mkv")]))
     def test_no_move_chains(self):
