@@ -34,3 +34,7 @@ The existing `S01E01` 60–90s integrated scene is the first worked audiovisual 
 ## Repository-wide caption-turn cache catch-up
 
 The accepted scripts were derived on the fly because `catalog/caption-turn-coverage.json` previously indexed only 35 episodes. A separate bounded CI batch regenerates the existing `candidate-turns.jsonl` and `conversation-packets.jsonl` per every original subtitle witness. It must reconcile **193 episodes, 70,804 source cues, 72,733 candidate dialogue units and 1,173 gap packets** against the immutable source-only reading-script catalog. This is purely source preparation: it does not detect actual scenes, certify speakers or touch FTP audio/video.
+
+## Full-series unattributed speaker work preparation
+
+The existing `prepare_speaker_attribution.py` has remained frozen at the old 35-episode materialized index, despite the full 193-episode source corpus. A dedicated CI pass now regenerates per-episode `speaker-attribution/candidate-roster.json`, `turns.jsonl` and bounded `agent-packets.jsonl` for **all 193 episodes**. It uses actual TVmaze credits only as candidate roles, never as proof of scene presence or speaker identity, and preserves every unattributed subtitle turn. Acceptance requires 70,804 cues, 193 separate episode source witnesses, and **zero** authoritative or merely guessed character-to-line assignments. These packets are infrastructure for subsequent voice/video agents, not reconstructed performance scripts.
