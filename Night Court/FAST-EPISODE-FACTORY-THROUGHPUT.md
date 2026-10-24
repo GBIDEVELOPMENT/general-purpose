@@ -119,3 +119,25 @@ The older S09E19 original source 215.140s benchmark is preserved unchanged; olde
 ### Shot-bounded review packet added to the fast episode path
 
 Both source-once workers now generate a tiny candidate-shot-bounded *playback request* from existing scored cut timestamps, native-PTS triplets and source SHA. The manifest is capped at 12 video windows, each clipped to the candidate shot interior using a 150ms guard with at most ±1200ms context, and deliberately includes two low-scoring control excerpts when possible. Full scene recognition remains absent. This additional metadata planning stage uses `shot_candidate_bounded_review_planning_seconds`, a **newly instrumented** cost not yet present in the 170.522s source run. Neither the existing whole-episode source benchmark nor the unproved ≤30-minute p95 goal changes. No extra AVI decode happens for the planner. See [review contract](SHOT-BOUNDED-CONTINUOUS-REVIEW.md).
+
+## October 24 bounded parallel AV source and multi-goal review implementation
+
+[Parallel AV/multi-goal execution contract](PARALLEL-AV-MULTIGOAL-EXECUTION.md)
+and [issue #302](https://github.com/gamesbyian/general-purpose/issues/302)
+describe the now-executable serial-versus-parallel pilot switch and joint
+source-linked reviewer packets. The source-once S01E01 worker can run one
+whole-audio worker and one full-video worker concurrently using the same
+SHA-verified AVI. S09E19 can overlap its original-video scan with the
+original-audio work. Original media, independent ASR models, unchanged
+subtitle/untimed paragraph witnesses, source-PTS checks and 240-image limit
+remain protected. The existing trusted-owner workflows will test parallel
+source execution and emit one pending multi-goal packet per original passage.
+
+**No original-AVI parallel speedup has yet been measured or independently
+accepted in a scene.** Historical serial baselines and the 0/193 gate remain
+unchanged. Inference/model contention might negate CPU overlap; compare actual
+source wall clocks and revert to serial if slower. The multi-goal packet is
+*review instructions with source references*, not a vision model, a source
+listening result or verified physical action. Full-video understanding and
+whole-scene coverage are still blockers.
+
