@@ -38,6 +38,12 @@ A source-preserving [word evidence review](S01E01-WORD-ALIGNMENT-HANDOFF.md) is 
 
 A second, narrowly scoped 75–90s frame-sequence extractor is described in [S01E01-DENSE-VISUAL-HANDOFF.md](S01E01-DENSE-VISUAL-HANDOFF.md). It will capture 60 small source-hashed JPEGs at nominal four frames per second and a contact sheet for time-sequence review. This follows the accepted ten sparse frames without revising their immutable observations. Still evidence remains distinct from observed continuous movement.
 
+## Latest source-frame motion acceptance
+
+Owner-controlled run [#40047395721](https://github.com/gamesbyian/general-purpose/actions/runs/40047395721) captured the SHA-pinned original AVI at nominal 4fps over 75–90 seconds. The 60 frames, contact sheet, evidence indexes and six visually reviewed phone/shot observations are permanently retained under [scene-review-v2](seasons/S01/S01E01/derived/scene-review-v2/) in merged [PR #140](https://github.com/gamesbyian/general-purpose/pull/140). The screenshot review supports a uniformed person raising the telephone receiver to the ear and later lowering it toward the desk across successive frames. It does **not** validate which character spoke, scene-wide continuity, phoneme timestamps, comic intention or emotional state.
+
+The exact-token [word review](S01E01-WORD-ALIGNMENT-HANDOFF.md) contains 45 tentative word-time anchors, still requiring audio review. Both source products maintain SHA provenance and are kept separate from the original SRT.
+
 ## Acceptance ledger
 
 | Gate | Status |
@@ -48,7 +54,7 @@ A second, narrowly scoped 75–90s frame-sequence extractor is described in [S01
 | Relevant source subtitle cues preserved by ID/source hash | **Completed, nine original SRT cues C19–C27, PR #115** |
 | Caption/video speech offset verified independently | **Local audio-caption content corroborated by 10 ASR segments in run #40045128799; exact word alignment, drift and independent verification remain open** |
 | Observed appearance and set objects recorded from source frames | **Completed, ten frames, SHA-verified; visual character IDs unresolved** |
-| Continuous motion and meaningful stage directions grounded in reviewed clip | Not yet |
+| Time-bounded physical actions derived from four-frame-per-second sequence | **Six reviewed source-frame observations committed in PR #140; full continuous video review still open** |
 | Final first scene screenplay accepted | Not yet |
 | Full episode audiovisual completeness certified | Not yet |
 
