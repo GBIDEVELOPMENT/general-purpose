@@ -52,7 +52,7 @@ def scan(ftp,max_dirs=1200,max_files=25000,max_depth=7,max_seconds=960):
         if len(seen)%25==0:print(f"FTP_SCAN_PROGRESS directories={len(seen)} files={len(out)} elapsed_seconds={int(time.monotonic()-started)}",flush=True)
         try:
             ftp.cwd(path); rows=list(ftp.mlsd())
-        except (ftplib.all_errors, OSError) as err:
+        except ftplib.all_errors as err:
             failures.append({"directory":path,"error_type":type(err).__name__});continue
         visible=[(n,f) for n,f in rows if n not in (".","..")]
         folder_records.append({"path":path,"entries":len(visible),
