@@ -71,32 +71,43 @@ def validate(manifest):
         if entry["modify"] is not None and not re.fullmatch(r"\d{14}",entry["modify"]):raise ValueError("Invalid date")
     return entries
 def lookup(ftp,path):
-    p=PurePosixPath(path);ftp.cwd(str(p.parent))
+    p=PurePosixPath(path)
+    try:ftp.cwd(str(p.parent))
+    except ftplib.error_perm as err:
+        if str(err).startswith("550"):return None
+        raise
     matches=[facts for name,facts in ftp.mlsd() if name==p.name]
-    if len(matches)!=1:raise ValueError("Path missing or ambiguous")
+    if not matches:return None
+    if len(matches)!=1:raise ValueError("Ambiguous exact FTP source")
     return matches[0]
 def execute(ftp,manifest,audit_path):
     batch=validate(manifest)
     audit_path.parent.mkdir(parents=True,exist_ok=True)
-    completed=[]
+    completed=[];skipped=[]
     def save(status):
         with audit_path.open("w") as f:
-            json.dump({"batch_id":manifest["batch_id"],"status":status,"completed":completed},f,indent=2)
+            json.dump({"batch_id":manifest["batch_id"],"status":status,"completed":completed,"skipped":skipped},f,indent=2)
             f.flush();os.fsync(f.fileno())
+    active=[]
     for item in batch:
         facts=lookup(ftp,item["from"])
+        if facts is None:
+            skipped.append({"from":item["from"],"reason":"already absent"})
+            continue
         if facts.get("type")!="file" or str(facts.get("size"))!=str(item["size"]) or (item["modify"] and facts.get("modify")!=item["modify"]):
             raise ValueError("Preflight refused changed file")
+        active.append(item)
     save("preflight_passed")
     try:
-        for item in batch:
+        for item in active:
             facts=lookup(ftp,item["from"])
             if facts.get("type")!="file" or str(facts.get("size"))!=str(item["size"]) or (item["modify"] and facts.get("modify")!=item["modify"]):
                 raise ValueError("Changed between preflight and deletion")
             ftp.delete(item["from"])
             completed.append(item)
             save("in_progress")
-    finally:save("complete" if len(completed)==len(batch) else "partial")
+    finally:save("complete_with_skips" if len(completed)==len(active) and skipped else
+                 "complete" if len(completed)==len(batch) else "partial")
 def main():
     p=argparse.ArgumentParser();p.add_argument("--inventory");p.add_argument("--report");p.add_argument("--manifest");p.add_argument("--apply",action="store_true")
     a=p.parse_args()
