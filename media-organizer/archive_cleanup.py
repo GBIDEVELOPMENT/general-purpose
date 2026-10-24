@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""Remove one exact RAR volume set only when the extracted video is verified."""
+import argparse, json, os, re
+from pathlib import Path, PurePosixPath
+from organize import connect, ROOT, safe
+
+RAR_EXT=re.compile(r"(?i)\.(?:rar|r\d{2,3})$")
+MAX_PARTS=110
+def check(manifest):
+    if set(manifest)!={"root","batch_id","description","video","volumes"} or manifest["root"]!=ROOT:
+        raise ValueError("Unexpected archive approval structure")
+    if not re.fullmatch("[A-Za-z0-9_-]{5,48}",manifest["batch_id"]):raise ValueError("Invalid batch id")
+    if len(manifest["description"])<20:raise ValueError("Missing justification")
+    vid=manifest["video"]
+    if set(vid)!={"path","size","modify"}:raise ValueError("Bad video provenance")
+    safe(vid["path"])
+    if PurePosixPath(vid["path"]).suffix.lower() not in (".mkv",".mp4",".avi",".m4v"):
+        raise ValueError("Extracted video not recognized")
+    if not isinstance(vid["size"],int) or vid["size"]<50000000:raise ValueError("Video too small")
+    vols=manifest["volumes"]
+    if not isinstance(vols,list) or not 2<=len(vols)<=MAX_PARTS:raise ValueError("Archive set must be bounded")
+    seen=set()
+    for item in vols:
+        if set(item)!={"path","size","modify"}:raise ValueError("Bad volume metadata")
+        safe(item["path"])
+        p=PurePosixPath(item["path"])
+        if str(p.parent)!=str(PurePosixPath(vid["path"]).parent):raise ValueError("Not co-located")
+        if not RAR_EXT.search(p.name):raise ValueError("Not RAR volume")
+        if p.name.lower() in seen:raise ValueError("Duplicate")
+        seen.add(p.name.lower())
+        if not isinstance(item["size"],int) or item["size"]<100:raise ValueError("Invalid volume size")
+    if len({re.sub(r"(?i)\.(?:rar|r\d{2,3})$","",PurePosixPath(x["path"]).name).casefold() for x in vols})!=1:
+        raise ValueError("Multiple unrelated archive stems")
+    names=[PurePosixPath(x["path"]).suffix.lower() for x in vols]
+    if ".rar" not in names:raise ValueError("First .rar volume missing")
+    indices=sorted(int(n[2:]) for n in names if re.fullmatch(r"\.r\d{2,3}",n))
+    if indices!=list(range(len(indices))):raise ValueError("Volume sequence incomplete")
+    total=sum(x["size"] for x in vols)
+    delta=total-vid["size"]
+    if not 0<=delta<=1024*1024:raise ValueError("Archive sum not consistent with extracted video")
+    return total
+def listing(ftp,where):
+    ftp.cwd(where)
+    rows=list(ftp.mlsd())
+    names={}
+    for name,facts in rows:names.setdefault(name.casefold(),[]).append((name,facts))
+    return names
+def live(ftp,manifest):
+    where=str(PurePosixPath(manifest["video"]["path"]).parent)
+    rows=listing(ftp,where)
+    def verify(obj):
+        name=PurePosixPath(obj["path"]).name
+        matches=rows.get(name.casefold(),[])
+        if len(matches)!=1 or matches[0][0]!=name:raise ValueError("Missing or case-conflicted source")
+        facts=matches[0][1]
+        if facts.get("type")!="file" or str(facts.get("size"))!=str(obj["size"]) or (obj["modify"] and facts.get("modify")!=obj["modify"]):
+            raise ValueError("Source size/date/type changed")
+    verify(manifest["video"])
+    for entry in manifest["volumes"]:verify(entry)
+    # No additional unapproved archive volume can exist in this source directory.
+    approved={PurePosixPath(v["path"]).name.casefold() for v in manifest["volumes"]}
+    stem=re.sub(r"(?i)\.(?:rar|r\d{2,3})$","",PurePosixPath(manifest["volumes"][0]["path"]).name).casefold()
+    for name,fs in rows.items():
+        if re.sub(r"(?i)\.(?:rar|r\d{2,3})$","",name)==stem and RAR_EXT.search(name) and name not in approved:
+            raise ValueError("Archive volume absent from approved manifest")
+def execute(ftp,manifest,path):
+    check(manifest)
+    path.parent.mkdir(parents=True,exist_ok=True);completed=[]
+    def save(state):
+        with path.open("w") as output:
+            json.dump({"batch_id":manifest["batch_id"],"status":state,"completed":completed},output,indent=2)
+            output.flush();os.fsync(output.fileno())
+    live(ftp,manifest);save("preflight_passed")
+    try:
+        for item in manifest["volumes"]:
+            # Verify the extracted video and all as-yet-unremoved volumes every time;
+            # the full-set guard applies only to the initial preflight.
+            rows=listing(ftp,str(PurePosixPath(item["path"]).parent))
+            movie=manifest["video"]
+            name=PurePosixPath(movie["path"]).name
+            actual=rows.get(name.casefold(),[])
+            if len(actual)!=1 or actual[0][0]!=name or str(actual[0][1].get("size"))!=str(movie["size"]):
+                raise ValueError("Extracted video disappeared or changed")
+            name=PurePosixPath(item["path"]).name
+            actual=rows.get(name.casefold(),[])
+            if len(actual)!=1 or actual[0][0]!=name or str(actual[0][1].get("size"))!=str(item["size"]) or (item["modify"] and actual[0][1].get("modify")!=item["modify"]):
+                raise ValueError("Volume modified before deletion")
+            ftp.delete(item["path"]);completed.append(item["path"]);save("partial")
+    finally:save("complete" if len(completed)==len(manifest["volumes"]) else "partial")
+def main():
+    ap=argparse.ArgumentParser();ap.add_argument("--manifest",default="media-organizer/approved-archive-delete.json");ap.add_argument("--apply",action="store_true")
+    args=ap.parse_args();m=json.loads(Path(args.manifest).read_text());size=check(m)
+    print("Validated extracted RAR set",m["batch_id"],len(m["volumes"]),"volumes",size,"bytes")
+    if args.apply:
+        with connect() as ftp:execute(ftp,m,Path("media-organizer/archive-delete-output/completed.json"))
+if __name__=="__main__":main()
