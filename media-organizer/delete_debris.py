@@ -55,7 +55,8 @@ def validate(manifest):
         p=safe(entry["from"])
         if category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot"):
             raise ValueError("Not an exact approved debris class")
-        if p.casefold() in seen:raise ValueError("Duplicate delete");seen.add(p.casefold())
+        if p.casefold() in seen:raise ValueError("Duplicate delete")
+        seen.add(p.casefold())
         if not isinstance(entry["size"],int) or isinstance(entry["size"],bool) or entry["size"]<0:raise ValueError("Invalid size")
         if entry["modify"] is not None and not re.fullmatch(r"\d{14}",entry["modify"]):raise ValueError("Invalid date")
     return entries
