@@ -1,3 +1,68 @@
+## October 24: full-source pilot screenplays revised with real motion and contextual roles
+
+**Five distinct product stages exist. Do not conflate their counters.**
+The held dialogue source archive still has 193/193 episodes, and the
+source-only initial dialogue scaffolds remain 193/193. Actual generated
+and checked-in working scripts exist for the two current pilots, not
+yet the rest of the series.
+
+After source-only, scene-photo and caption-first draft improvements,
+the original SHA-pinned source-video motion run
+[#40139082891](https://github.com/gamesbyian/general-purpose/actions/runs/40139082891)
+succeeded for **both** episodes, extracting **410 5fps original-picture
+frames across four targeted windows totaling 82 seconds**. The
+source image sequences were directly inspected, and source-supported
+physical-business writing was recorded with exact original AVI, source
+text, JPEG/contact-sheet, evidence-report and temporary artifact hashes:
+[S01 original motion observation ledger](seasons/S01/S01E01/derived/physical-motion-original-v1/observations.json)
+and [S09 original motion observation ledger](seasons/S09/S09E19/derived/physical-motion-original-v1/observations.json).
+The original image artifacts are temporary/private. This is a bounded
+*picture-only* performance review, not synchronized audio/listening or
+complete source-video examination.
+
+The tested physical-action renderer and ledgers merged through
+[PR #326](https://github.com/gamesbyian/general-purpose/pull/326);
+the real generated screenplay files from trusted source-only run
+[#40140316952](https://github.com/gamesbyian/general-purpose/actions/runs/40140316952)
+passed source-rebuild CI and merged in
+[PR #328](https://github.com/gamesbyian/general-purpose/pull/328).
+The script now describes observed office-window gesturing, a near-empty
+courtroom/bench reveal, a floor-level sparking and smoke effect with
+people sheltering behind courtroom furniture, and the restaurant
+couple's close dancing and separation. These are grounded in the
+original 5fps samples. The exact staging and causal timing still need
+full motion-with-sound review before independent certification.
+
+To avoid leaving every line anonymous, editorial reading of captions
+produced **38 clearly provisional textual speaker proposals**: 18 S01
+and 20 S09, documented with exact source cue, source phrase and
+contextual evidence references, not face recognition or unreviewed
+ASR. The editor and ledgers merged through
+[PR #329](https://github.com/gamesbyian/general-purpose/pull/329);
+both resulting v4 screenplay documents were compiled by trusted
+source-only run
+[#40140734663](https://github.com/gamesbyian/general-purpose/actions/runs/40140734663)
+and merged in
+[PR #331](https://github.com/gamesbyian/general-purpose/pull/331):
+
+- [**Latest S01E01 working screenplay: 336/336 original timed cues, real source motion action and 18 added provisional contextual speakers**](seasons/S01/S01E01/derived/caption-first-speaker-context-v4/screenplay-dialogue-context-edit.md).
+- [**Latest S09E19 working screenplay: 347/347 original untimed paragraphs, real source motion action and 20 added provisional contextual speakers**](seasons/S09/S09E19/derived/caption-first-speaker-context-v4/screenplay-dialogue-context-edit.md).
+
+Their exact source manifests and editorial cue-proposal ledgers reside
+beside the script output files. The earlier complete v1/v2/v3 drafts
+remain untouched for comparison. Original wording was never rewritten
+by ASR. The S09 original paragraphs were never given fictional times.
+
+**Status: 2 complete original-held-dialogue scene-and-action-enriched
+working pilot scripts; 38 additional provisional source-text speaker
+labels; 0 full editor-ready screenplays; 0 independently whole-original-AV
+certified screenplays.** The largest remaining bottleneck is not another
+ASR contest, but source-video-plus-sound scene observation and
+resolving dialogue roles throughout the *rest* of each episode.
+Do not report 38 proposed labels as verified, or a small set of
+motion clips as complete physical-comedy coverage. Next engineering
+should deliver more finished scenes rather than only archival metadata.
+
 ## Actual original-video scene editing delivered, 2026-10-24
 
 **This is screenplay content progress, not merely a pipeline benchmark.**
