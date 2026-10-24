@@ -67,6 +67,52 @@ class OneOwnerEpisode(unittest.TestCase):
             with self.subTest(mutated=mutated),self.assertRaises(ValueError):
                 compose_summary(a,v,4.0,185.0)
 
+
+    def test_invalid_word_review_survives_compact_source_export_without_repair(self):
+        a,v=samples()
+        rows=[]
+        for index in range(130):
+            start=1.0+index*4
+            rows.append({
+                'model_hypothesis_text':'uncertain',
+                'rejection_reason':'zero_or_reversed_rounded_word_time',
+                'untrusted_raw_model_start_seconds':start,
+                'untrusted_raw_model_end_seconds':start,
+                'model_segment_interval_ms_proposal':[round(start*1000),round((start+.5)*1000)],
+                'model_proposed_original_source_word_interval_valid':False,
+                'original_soundtrack_word_human_verified':False,
+                'same_time_other_model_context_unverified':[]
+            })
+        a['whisper_rejected_word_time_review']={
+            'total_invalid_word_intervals':343,
+            'retained_bounded_invalid_time_proposals':130,
+            'rejection_details_no_source_time_promotion':rows,
+            'original_soundtrack_listened':False,
+            'separate_model_context_human_verified':False
+        }
+        result=compose_summary(a,v,4.0,190.0)['whisper_invalid_word_targeted_review']
+        self.assertEqual(result['source_model_total_invalid_word_proposals'],343)
+        self.assertEqual(result['exported_review_pointer_count'],64)
+        self.assertEqual(result['source_model_invalid_proposals_not_exported'],279)
+        self.assertEqual(result['cases'][0]['original_invalid_hypothesis_index'],0)
+        self.assertEqual(result['cases'][-1]['original_invalid_hypothesis_index'],129)
+        self.assertFalse(result['source_word_times_repaired_or_verified'])
+        self.assertFalse(result['source_human_listening_completed'])
+
+    def test_invalid_word_review_rejects_fake_source_verified_word(self):
+        a,v=samples()
+        a['whisper_rejected_word_time_review']={
+            'total_invalid_word_intervals':1,
+            'rejection_details_no_source_time_promotion':[{
+              'original_soundtrack_word_human_verified':True,
+              'model_proposed_original_source_word_interval_valid':False,
+              'same_time_other_model_context_unverified':[]}],
+            'original_soundtrack_listened':False,
+            'separate_model_context_human_verified':False
+        }
+        with self.assertRaisesRegex(ValueError,'source truth'):
+            compose_summary(a,v,4.0,190.0)
+
     def test_reject_bad_clock_or_machine_claim(self):
         a,v=samples()
         with self.assertRaisesRegex(ValueError,'monotonic'):

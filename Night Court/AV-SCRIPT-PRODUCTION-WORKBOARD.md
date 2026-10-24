@@ -117,3 +117,8 @@ Trusted [S09E19 original full-source run #40128021777](https://github.com/gamesb
 [PR #295](https://github.com/gamesbyian/general-purpose/pull/295) merged bounded rejected Whisper word-time research packets for **future** original source passes with original invalid timestamps and nearest independent Vosk timing hypotheses; it did not retroactively recover 223 invalid word hypotheses from run #40128021777. This source run preceded PR #295's merger. The one-shot source trigger [PR #294](https://github.com/gamesbyian/general-purpose/pull/294) is **closed unmerged**.
 
 **No new theatrical truth accepted:** 0/17 S01E01 editorial decisions; 0/11 S09E19; **0/193** complete original-series AV screenplays. Pixel changes are review priorities, not actions, independent camera edits or confirmed shots.
+
+
+### Follow-up: S01E01 combined rejected-word retention
+
+After PR #295 introduced optional source-model rejected Whisper timing packets, the S01E01 integrated summary composer was found to drop them. The incremental source-once composer fix now exports up to **64 evenly distributed original invalid-model word review cases**, counts all unretained cases and retains the existing 100KB output cap. No human audio listening, model word-time repair or source dialog text alteration is performed. The historical S01E01 239.826s run predates this feature and cannot be retrospectively enriched. Future actual source experiments are required to populate it.
