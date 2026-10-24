@@ -89,8 +89,30 @@ def execute(ftp,manifest,path):
     finally:save("complete" if len(completed)==len(manifest["volumes"]) else "partial")
 def main():
     ap=argparse.ArgumentParser();ap.add_argument("--manifest",default="media-organizer/approved-archive-delete.json");ap.add_argument("--apply",action="store_true")
-    args=ap.parse_args();m=json.loads(Path(args.manifest).read_text());size=check(m)
-    print("Validated extracted RAR set",m["batch_id"],len(m["volumes"]),"volumes",size,"bytes")
+    args=ap.parse_args();document=json.loads(Path(args.manifest).read_text())
+    if "groups" in document:
+        if set(document)!={"root","batch_id","description","groups"} or document["root"]!=ROOT:
+            raise ValueError("Invalid archive group batch")
+        groups=document["groups"]
+        if not isinstance(groups,list) or not 1<=len(groups)<=25:
+            raise ValueError("Only 1..25 exact reviewed archive groups")
+        paths=set()
+        for group in groups:
+            check(group)
+            key=str(PurePosixPath(group["video"]["path"]).parent).casefold()
+            if key in paths:raise ValueError("Duplicate archive directory")
+            paths.add(key)
+        total=sum(len(g["volumes"]) for g in groups)
+        if total>850:raise ValueError("Too many archive volumes in one batch")
+        print("Validated archive group batch",document["batch_id"],len(groups),"sets",total,"volumes",flush=True)
+    else:
+        check(document);groups=[document]
+        print("Validated extracted RAR set",document["batch_id"],len(document["volumes"]),"volumes",flush=True)
     if args.apply:
-        with connect() as ftp:execute(ftp,m,Path("media-organizer/archive-delete-output/completed.json"))
+        with connect() as ftp:
+            # Verify every group's extraction evidence before deleting any volumes.
+            for group in groups:live(ftp,group)
+            for i,group in enumerate(groups):
+                print("Deleting approved archive group",i+1,"of",len(groups),group["batch_id"],flush=True)
+                execute(ftp,group,Path("media-organizer/archive-delete-output")/f"group-{i+1:03d}.json")
 if __name__=="__main__":main()

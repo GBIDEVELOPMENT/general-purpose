@@ -16,6 +16,9 @@ class ArchiveChecks(unittest.TestCase):
     def test_unmatched_content_size(self):
         x=plan();x["volumes"][0]["size"]=25000100
         with self.assertRaises(ValueError):check(x)
+    def test_reject_nonmatching_parity(self):
+        x=plan();x["video"]["size"]=x["video"]["size"]+2000000
+        with self.assertRaises(ValueError):check(x)
     def test_unrelated_stem(self):
         x=plan();x["volumes"][1]["path"]="/downloads/Show/b.r00"
         with self.assertRaises(ValueError):check(x)
