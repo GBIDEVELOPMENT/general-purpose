@@ -1,0 +1,74 @@
+{
+  "schema": "night-court-original-one-source-integrated-first-pass-summary/1",
+  "episode_id": "S01E01",
+  "original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_video_bytes": 183386112,
+  "decoded_audio_sha256": "7fd284e99af1d69ca429496060c876241f181738666a86e8cb1335d5b869861a",
+  "source_audio_video_duration_ms": 1448256,
+  "fps_source_encoded": "30000/1001",
+  "trusted_source_workflow_run_id": 40115701804,
+  "private_artifact_id": 12567609259,
+  "private_artifact_expires_at": "2026-10-31T17:25:41Z",
+  "private_zip_sha256": "a0964a640c28814aeb18e89fcab9ce8d892fa3cc8f80d5e7e3aaa62d8b214033",
+  "original_json_sha256": "c45b85e9bb17193cb0eeb6d60e86524349c00ea6e8d39d34bb01ea95989bd67d",
+  "original_source_video_download_count": 1,
+  "original_audio_pcm_decode_count": 1,
+  "model_architecture_families": [
+    "kaldi_hmm_wfst",
+    "whisper"
+  ],
+  "measured_seconds": {
+    "ftp_source_verify": 5.275,
+    "one_pcm_decode": 5.985,
+    "vosk_weight_download_and_unpack": 32.29,
+    "kaldi_wfst_vosk_inference": 87.384,
+    "whisper_tiny_en_inference": 57.268,
+    "two_model_word_time_reconciliation": 0.019,
+    "ffprobe_video_metadata": 0.065,
+    "full_video_low_res_change_scan": 27.576,
+    "shot_aware_visual_plan": 0.01,
+    "one_pass_source_pts_JPEG_extraction": 23.687
+  },
+  "measured_stage_sum_seconds": 239.559,
+  "measured_one_source_continuous_wall_seconds": 239.826,
+  "audio_model_word_counts": {
+    "whisper_retained": 2358,
+    "vosk_retained": 2205
+  },
+  "consensus": {
+    "paired_words": 1617,
+    "corroborated_words": 1417,
+    "corroborated_spans": 198,
+    "unresolved_word_candidates": 1729
+  },
+  "model_rejection_diagnostics": {
+    "vosk_rejected": 0,
+    "whisper_rejected": 343,
+    "whisper_rejection_reasons": {
+      "zero_or_reversed_rounded_word_time": 343
+    }
+  },
+  "source_image_change_candidate_count": 212,
+  "source_pts_verified_JPEG_frames": 212,
+  "source_ephemeral_JPEG_bytes": 908395,
+  "source_frame_pts_all_matched": true,
+  "source_video_image_audio_exported": false,
+  "entire_episode_dual_free_decoding_completed": true,
+  "entire_video_frame_scored": true,
+  "full_episode_visual_language_model_inference_completed": false,
+  "actual_shot_boundaries_verified": false,
+  "actual_scene_boundaries_verified": false,
+  "original_audio_human_reviewed": false,
+  "speaking_characters_verified": false,
+  "physical_actions_independently_verified": false,
+  "complete_original_series_script_accepted": false,
+  "p95_193_episode_factory_under_30_minutes_verified": false,
+  "notes": [
+    "One original AVI SHA verified, one original soundtrack decoded once, two genuinely architecturally distinct free-decoders, full video cut-candidate scan and limited original PTS-checked JPEG selection.",
+    "Measured combined wall clock includes source processing and model download, not GitHub Actions runner startup, operating-system dependency installation, visual-language interpretation, manual performance analysis or editorial acceptance.",
+    "343 invalid Whisper words all had zero/reversed duration after millisecond rounding; no automatic recovery. Previous invalid diagnostics #40114931042 suffered scalar-type regression and must not be treated as real ASR consensus.",
+    "Model-model agreement is affirmative research dialogue corroboration, but does not prove statistically independent model errors or human original-soundtrack listening.",
+    "212 FFmpeg scored image changes remain hypotheses, and candidate in-shot triads were selected for coverage rather than confirmed physical-action recognition.",
+    "Single success at 239.826s cannot establish 193-episode p95, although it is well under 30 minutes for this original S01E01 first pass."
+  ]
+}
