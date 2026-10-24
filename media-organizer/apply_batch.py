@@ -56,20 +56,27 @@ def plan_validate(plan):
 
 def entries(ftp,directory):
     ftp.cwd(directory)
-    return {name.casefold():(name,facts) for name,facts in ftp.mlsd()}
+    result={}
+    for name,facts in ftp.mlsd():
+        result.setdefault(name.casefold(),[]).append((name,facts))
+    return result
+def exact_entry(ftp,directory,name):
+    matches=entries(ftp,directory).get(name.casefold(),[])
+    if not matches:return None
+    if len(matches)!=1 or matches[0][0]!=name:
+        validation_error("Ambiguous or case-colliding FTP path")
+    return matches[0][1]
 def stat_existing(ftp,path):
-    p=PurePosixPath(path); info=entries(ftp,str(p.parent)).get(p.name.casefold())
-    if info is None:return None
-    return info[1]
+    p=PurePosixPath(path)
+    return exact_entry(ftp,str(p.parent),p.name)
 def ensure_folder(ftp,path):
     current=ROOT
     for part in PurePosixPath(path).parts[2:]:
         if part.startswith("."):validation_error("Hidden target directory")
-        listing=entries(ftp,current)
-        existing=listing.get(part.casefold())
+        existing=exact_entry(ftp,current,part)
         child=current.rstrip("/")+"/"+part
         if existing:
-            if existing[1].get("type")!="dir":validation_error("Target parent not an ordinary directory")
+            if existing.get("type")!="dir":validation_error("Target parent not an ordinary directory")
         else:
             ftp.mkd(child)
         current=child
