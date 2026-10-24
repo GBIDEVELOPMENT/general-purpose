@@ -46,6 +46,12 @@ The AVI is MPEG-4 video plus stereo 48-kHz MP3, duration **1448.256 seconds**. A
 
 This is genuine **audio-processing infrastructure acceptance**, not speaker recognition, expressive delivery, original audio verification, source-caption time alignment, physical-stage-direction production or full-episode transcription. The remaining active task is to develop exact source-to-subtitle time mapping, candidate speaker diarization, optional acoustic pitch/eGeMAPS measurements on truly separated/clear speech, and scene-video evidence capture for a small cut-aligned sample.
 
+## Latest stage, October 23, 2026
+
+The S01E01 60–90s mixed-audio ASR pass [#40045128799](https://github.com/gamesbyian/general-purpose/actions/runs/40045128799) produced ten candidate ASR speech segments and pitch/eGeMAPS mix features. The exact-token word-review [PR #133](https://github.com/gamesbyian/general-purpose/pull/133) aligned **45 source words** to ASR-timestamp candidate words, explicitly leaving uncommon comic vocabulary and mixed speaker turns unresolved. It did **not** establish a global SRT offset, speaker identity or vocal tone.
+
+The owner-triggered dense frame run [#40047395721](https://github.com/gamesbyian/general-purpose/actions/runs/40047395721) captured 60 source-hashed 4-fps stills from 75–90s. They were imported into `scene-review-v2` in [PR #140](https://github.com/gamesbyian/general-purpose/pull/140) with six visually reviewed temporally bounded observations, including a uniformed person's telephone handset movement and return. Its [scene-source-motion-v2.md](seasons/S01/S01E01/derived/scene-review-v2/scene-source-motion-v2.md) is the first motion-grounded limited passage, not a full screenplay or independent audiovisual acceptance. It avoids unverified identities, physical motivations and acting emotions.
+
 ## QA/acceptance ledger
 
 | Gate | Result |
@@ -58,8 +64,8 @@ This is genuine **audio-processing infrastructure acceptance**, not speaker reco
 | Actual authorized S01E01 audio excerpt obtained and acoustically measured | **Completed, real pilot #40042590948** |
 | Caption/audio offset and drift map | **Source-only 60–90s word-timing hypotheses exist; global offset/drift unverified** |
 | Speaker diarization and identity validation | **Not yet** |
-| Vocal delivery observations vs laughter/music contamination | **Not yet** |
-| Scene, physical action, and full episode AV script | **First source-linked static-frame scene passage rendered; dense 75–90s motion-review sampling in progress, complete production script not yet accepted** |
+| Vocal delivery observations vs laughter/music contamination | **Mixed pitch/eGeMAPS data captured; individual speaker delivery verification not yet** |
+| Scene, physical action, and full episode AV script | **First source-linked dense visual scene passage rendered (60 frames, six reviewed motion observations, PR #140); complete production script and video-speaker verification not yet accepted** |
 
 ## Next engineering lanes
 
