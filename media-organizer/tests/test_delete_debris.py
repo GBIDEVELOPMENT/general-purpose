@@ -1,11 +1,32 @@
-import unittest,sys
+import unittest,sys,tempfile,json
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from delete_debris import category,assess,validate
+from delete_debris import category,assess,validate,execute
 class DebrisTests(unittest.TestCase):
     def test_user_approved_plaintext(self):
         self.assertEqual(category("/downloads/Release/readme.txt"),"txt")
         self.assertIsNone(category("/downloads/Release/readme.md"))
+    def test_absent_exact_file_skipped_but_other_file_removed(self):
+        class FTP:
+            def __init__(self):self.cwd_path=None;self.deleted=[]
+            def cwd(self,p):self.cwd_path=p
+            def mlsd(self):
+                if self.cwd_path=="/downloads/Release":
+                    return iter([("Info.txt",{"type":"file","size":"100","modify":"20261023000000"})])
+                return iter([])
+            def delete(self,p):self.deleted.append(p)
+        ftp=FTP()
+        entries=[
+          {"from":"/downloads/Release/Missing.txt","size":20,"modify":None,"category":"txt"},
+          {"from":"/downloads/Release/Info.txt","size":100,"modify":"20261023000000","category":"txt"}]
+        doc={"root":"/downloads","batch_id":"missing_01","description":"Exact owner-approved text cleanup with missing file","entries":entries}
+        with tempfile.TemporaryDirectory() as d:
+            out=Path(d)/"audit.json"
+            execute(ftp,doc,out)
+            data=json.loads(out.read_text())
+            self.assertEqual(data["status"],"complete_with_skips")
+            self.assertEqual(len(data["skipped"]),1)
+            self.assertEqual(ftp.deleted,["/downloads/Release/Info.txt"])
     def test_nfo(self):self.assertEqual(category("/downloads/Movie/info.nfo"),"nfo")
     def test_screens(self):self.assertEqual(category("/downloads/Movie/Screens/mpv-shot0001.jpg"),"screenshot")
     def test_named_screenshot_file_outside_screens_dir(self):
