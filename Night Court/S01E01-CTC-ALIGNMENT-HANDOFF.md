@@ -18,6 +18,10 @@ A CTC forced alignment is a **hypothesis that the text was spoken**; it can alig
 
 Next: independent listening and speaker turns (including difficult mixed cue C22); visual mouth/voice corroboration; full-scene cut alignment with a start/end drift check; then longer episode passes.
 
+## Two-model review completion
+
+The [word timing comparison handoff](S01E01-WORD-MODEL-COMPARISON-HANDOFF.md) introduces deterministic matching of the CTC word spans to tiny.en candidate starts by exact original source word index. Its preflight cross-check finds **37 of 39 shared source words within 300 milliseconds**, but notes that CTC analyzed speech windows provided by tiny.en. This is a manual review priority signal, not independent AV verification. The comparison report is produced by a separate PR workflow and does not alter original dialogue.
+
 ## Durable acquisition and acceptance requirements
 
 `tools/import_s01e01_ctc_source_evidence.py` re-reads the existing original-text turn packet; it will reject any CTC result with a changed AVI/SRT SHA, missing/duplicate cue turn, changed original source words, missing model revision, out-of-range/nonmonotonic candidate timestamps or a claim of verified speakers/emotions. Successful importer CI regenerates `derived/scene-review-v3/ctc-source-word-review.md` and preserves exact acoustic model predictions separately as JSON. These remain review-only hypotheses and do **not** edit the previously approved screenplay excerpt or source captions.

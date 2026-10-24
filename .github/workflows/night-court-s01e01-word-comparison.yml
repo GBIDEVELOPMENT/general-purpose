@@ -1,0 +1,34 @@
+name: Night Court S01E01 two-model source word review
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/compare_s01e01_word_models.py'
+      - 'Night Court/tools/test_compare_s01e01_word_models.py'
+      - '.github/workflows/night-court-s01e01-word-comparison.yml'
+permissions:
+  contents: write
+jobs:
+  qa:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'qa/night-court-s01e01-cross-model-word-consensus'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: qa/night-court-s01e01-cross-model-word-consensus
+          persist-credentials: true
+      - name: Verify exact original 193-episode corpus and two-model S01E01 word review
+        run: |
+          python "Night Court/tools/test_compare_s01e01_word_models.py"
+          python "Night Court/tools/compare_s01e01_word_models.py"
+          python "Night Court/tools/validate_dialogue.py"
+      - name: Preserve only derived comparison JSON and readable review
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Night Court/seasons/S01/S01E01/derived/scene-review-v3/word-timing-model-comparison.json" \
+                     "Night Court/seasons/S01/S01E01/derived/scene-review-v3/word-timing-model-comparison.md"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): preserve S01E01 CTC vs tiny original-word triage"
+            git push origin HEAD:qa/night-court-s01e01-cross-model-word-consensus
+          fi
