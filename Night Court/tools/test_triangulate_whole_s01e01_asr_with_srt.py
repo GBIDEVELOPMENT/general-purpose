@@ -73,6 +73,50 @@ class OriginalSRTTriangulation(unittest.TestCase):
         self.assertFalse(out['source_character_speaker_identity_confirmed'])
         self.assertFalse(out['full_production_script_verified'])
 
+    def test_adjacent_original_cues_are_compared_as_source_window(self):
+        text='''1
+00:00:01,000 --> 00:00:03,000
+The judge will be here any minute.
+
+2
+00:00:03,100 --> 00:00:05,000
+- Are you finished painting?
+- Yeah.
+
+3
+00:00:05,100 --> 00:00:07,000
+Then what are you doing?
+'''
+        data=fixture()
+        data['comparison']['corroborated_spans']=[
+            {'word_count':19,
+             'model_a_verbatim_candidate':'The judge will be here any minute. Are you finished painting? Yeah. Well then what are you doing?',
+             'time_interval_ms':[1200,6900]}]
+        result=match_consensus_to_srt(data,text)
+        self.assertEqual(result['classification_counts']['three_text_witness_correspondence_candidate'],1)
+        item=result['review_spans'][0]
+        self.assertEqual(item['source_caption_cue_ids'],[1,2,3])
+        self.assertEqual(item['cue_window_count'],3)
+        self.assertGreaterEqual(item['ordered_matched_model_token_fraction'],.8)
+
+    def test_nonadjacent_scenes_are_not_stitched_for_fake_agreement(self):
+        text='''1
+00:00:01,000 --> 00:00:02,000
+The judge will be here.
+
+2
+00:00:12,000 --> 00:00:13,000
+Did you see him?
+'''
+        data=fixture()
+        data['comparison']['corroborated_spans']=[
+            {'word_count':9,
+             'model_a_verbatim_candidate':'The judge will be here Did you see him',
+             'time_interval_ms':[1000,13000]}]
+        result=match_consensus_to_srt(data,text)
+        self.assertEqual(result['classification_counts']['three_text_witness_correspondence_candidate'],0)
+        self.assertLessEqual(result['review_spans'][0]['cue_window_count'],1)
+
     def test_reject_prompted_models_and_mismatched_source_audio(self):
         for flag in ('prompt','video','audio','span','family'):
             data=fixture()
