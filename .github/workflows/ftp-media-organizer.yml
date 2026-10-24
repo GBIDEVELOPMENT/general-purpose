@@ -61,6 +61,15 @@ jobs:
         run: python media-organizer/organize.py --mode inventory
       - name: Produce independent offline folder suggestions
         run: python media-organizer/folder_plan.py --inventory media-organizer/output/inventory.json --output media-organizer/output/folder-plan.json
+      - name: Independently reconcile current reviewed batch against live FTP files
+        shell: bash
+        run: |
+          if [ -f media-organizer/approved-batch.json ]; then
+            python media-organizer/reconcile.py \
+              --inventory media-organizer/output/inventory.json \
+              --manifest media-organizer/approved-batch.json \
+              --output media-organizer/output/current-batch-reconciliation.json
+          fi
       - name: Upload private audit artifact
         uses: actions/upload-artifact@v4
         with:
