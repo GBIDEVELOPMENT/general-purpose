@@ -1,0 +1,66 @@
+{
+  "schema": "night-court-s01e01-vocal-pilot/1",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_media_bytes": 183386112,
+  "source_duration_seconds": 1448.256,
+  "source_streams": [
+    {
+      "index": 0,
+      "codec_name": "mpeg4",
+      "codec_type": "video"
+    },
+    {
+      "index": 1,
+      "codec_name": "mp3",
+      "codec_type": "audio",
+      "sample_rate": "48000",
+      "channels": 2
+    }
+  ],
+  "excerpt_source_start_seconds": 60,
+  "excerpt_requested_duration_seconds": 15,
+  "excerpt_actual_duration_ms": 15000,
+  "audio_features": {
+    "schema": "night-court-vocal-acoustic-baseline/1",
+    "episode_id": "S01E01",
+    "source_cue_or_window_id": "unaligned-media-excerpt",
+    "wav_sha256": "157680814636d4af5beac9d119d4096cf7ee39444b95a7b87e2ae502dc913636",
+    "segment_pcm_sha256": "20f233b417424584e038bc8f6b6115c74f22751ff50e44c6251df20bc6a596f6",
+    "start_ms": 0,
+    "end_ms": 15000,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "features": {
+      "rms_dbfs": -20.35,
+      "peak_dbfs": -3.97,
+      "mix_activity_fraction_above_minus_40_dbfs": 0.7773,
+      "f0_median_hz": null,
+      "emotion_label": null,
+      "speaker_id": null
+    },
+    "status": "unreviewed_mix_level_metrics_only",
+    "limitations": [
+      "audience_laughter_music_and_mixed_speakers_contaminate_features",
+      "not_a_voice_activity_detector",
+      "not_pitch_or_emotion_recognition",
+      "not_source_edition_or_caption_alignment_verification"
+    ]
+  },
+  "source_video_identity_status": "owner_asserted_not_av_verified",
+  "subtitle_alignment_status": "not_done",
+  "speaker_identity_status": "unknown",
+  "emotion_status": "not_measured",
+  "scene_and_visual_annotation_status": "not_done",
+  "source_media_not_exported": true,
+  "review_status": "unreviewed_acoustic_first_pass",
+  "owner_inventory_workflow_run": 40041061527,
+  "ftp_manifest_size_bytes": 183386112,
+  "source_edition_filename": "Night Court - 1x01 - All You Need Is Love.avi",
+  "credential_use": "manual_dispatch_only_existing_repo_secret",
+  "media_bytes_retained_in_artifact": false,
+  "external_transcript_alignment": "not_done",
+  "audiovisual_identity_verification": "not_done",
+  "evidence_workflow_run": 40042590948,
+  "evidence_artifact_id": 12538929750
+}

@@ -38,6 +38,14 @@ The workflow must be triggered deliberately from the default branch after its CI
 
 This limited proof gets us real source-derived **mix-level RMS/peak/activity** and media stream metadata; it does not yet run Whisper, eGeMAPS, diarization, subtitle synchronization, visual observation or script reconstruction. After the manual run completes, review its artifact's hash, duration and stream information before accepting the episode's source cut.
 
+## First actual S01E01 FTP media pilot succeeded (October 23, 2026)
+
+The owner-controlled, base-code-only PR trigger [PR #93](https://github.com/gamesbyian/general-purpose/pull/93) launched trusted [workflow run #40042590948](https://github.com/gamesbyian/general-purpose/actions/runs/40042590948). The run **completed successfully**, including the 183,386,112-byte source AVI read, FFmpeg extraction and small JSON artifact. Permanent small result: [research/s01e01-real-ftp-acoustic-pilot.json](research/s01e01-real-ftp-acoustic-pilot.json). The source file SHA-256 is `5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962`; audiovisual identity beyond owner's filename assertion is still unverified.
+
+The AVI is MPEG-4 video plus stereo 48-kHz MP3, duration **1448.256 seconds**. A **15-second mixed-soundtrack excerpt from 60 to 75 seconds** was converted to temporary 16-kHz mono PCM, measured (RMS **-20.35 dBFS**, peak **-3.97 dBFS**, sample activity over -40 dBFS **0.7773**), and then deleted from the runner. Source AVI and intermediate PCM were not included in the artifact. The original FTP read is still subject to the existing transport warning for plain FTP.
+
+This is genuine **audio-processing infrastructure acceptance**, not speaker recognition, expressive delivery, original audio verification, source-caption time alignment, physical-stage-direction production or full-episode transcription. The remaining active task is to develop exact source-to-subtitle time mapping, candidate speaker diarization, optional acoustic pitch/eGeMAPS measurements on truly separated/clear speech, and scene-video evidence capture for a small cut-aligned sample.
+
 ## QA/acceptance ledger
 
 | Gate | Result |
@@ -47,7 +55,7 @@ This limited proof gets us real source-derived **mix-level RMS/peak/activity** a
 | Acoustic tools and optional eGeMAPS/F0 packages installed/tested on synthetic audio | Completed, CI #40040579138 |
 | FFmpeg/ffprobe single-episode bounded orchestration | Implemented here, synthetic CI pending |
 | Actual S01E01 video-file identity and edition verified | **Not yet** |
-| Actual authorized S01E01 audio excerpt obtained and acoustically measured | **Not yet** |
+| Actual authorized S01E01 audio excerpt obtained and acoustically measured | **Completed, real pilot #40042590948** |
 | Caption/audio offset and drift map | **Not yet** |
 | Speaker diarization and identity validation | **Not yet** |
 | Vocal delivery observations vs laughter/music contamination | **Not yet** |

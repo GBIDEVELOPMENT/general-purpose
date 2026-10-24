@@ -1,5 +1,11 @@
 # Night Court audiovisual script-generation factory
 
+## First real source-audio checkpoint: 23 October 2026
+
+The trusted-base, owner-PR-triggered [S01E01 acoustic run #40042590948](https://github.com/gamesbyian/general-purpose/actions/runs/40042590948) **succeeded**. Source AVI SHA-256 and stream/runtime metadata, plus 15 seconds of mixed-audio RMS/peak/activity diagnostics, are retained as compact, private [pilot evidence](research/s01e01-real-ftp-acoustic-pilot.json). The FTP-to-ephemeral-runner-to-FFmpeg pipeline is now empirically proven with one real source. No voice identity, ASR, pitch, emotional delivery or visual-stage annotations were yet inferred, and the source remains not AV-verified.
+
+Next implementation should extract test-aligned candidate caption timings using this cut, and only then run richer voice/video tools. Keep the same bounded PR-triggered trusted-base pattern and store only verified small derived evidence, not raw media.
+
 ## Confirmed source-video inventory checkpoint: October 23, 2026
 
 The owner ran the existing FTP metadata workflow successfully ([run #40041061527](https://github.com/gamesbyian/general-purpose/actions/runs/40041061527)). Its 193 AVI files were all unrecognized initially because filenames use `1x01` notation. The reconciled [193-file inventory](catalog/ftp-video-inventory-2026-10-23.json) maps all expected episode IDs one-to-one. The exact S01E01 183,386,112-byte AVI file is identified by filename and path; source identity, duration, streams and content remain **unverified until audiovisual processing**. Do not re-run the network inventory solely to fix filenames.
