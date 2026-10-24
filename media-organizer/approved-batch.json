@@ -1,0 +1,21 @@
+{
+  "root": "/downloads",
+  "batch_id": "media_pilot_001",
+  "description": "Two loose, verified film title-and-year filename repairs at downloads root; no folder reorganization, content transfer, deletion or companion assets.",
+  "moves": [
+    {
+      "from": "/downloads/Brief.Interviews.with.Hideous.Men.2009.1080p.BluRay.REMUX.AVC.DTS-HD.MA.5.1-TRiToN.mkv",
+      "to": "/downloads/Brief Interviews with Hideous Men (2009).mkv",
+      "size": 14246741802,
+      "modify": "20250303221023",
+      "reason": "Confirmed 2009 film; remove release metadata for Plex movie matching"
+    },
+    {
+      "from": "/downloads/Do.Revenge.2022.2160p.NF.WEB-DL.DDP5.1.Atmos.DV.HDR.H.265-APEX.mkv",
+      "to": "/downloads/Do Revenge (2022).mkv",
+      "size": 14400763270,
+      "modify": "20250306034401",
+      "reason": "Confirmed 2022 Netflix film; use canonical Plex title and year"
+    }
+  ]
+}
