@@ -56,8 +56,11 @@ class ContinuousVideoReview(unittest.TestCase):
         events=[{'event_id':'safe','time_ms':3400,'priority':5}]
         plan,pixels=synthetic(events,cuts,10000)
         pixels['review_priority'][0]['source_frame_pts_ms_actual']=[4900,5000,5100]
-        with self.assertRaisesRegex(ValueError,'cross planned source shot'):
-            plan_continuous_review(plan,pixels,cuts)
+        out=plan_continuous_review(plan,pixels,cuts)
+        self.assertEqual(out['requested_video_excerpt_count'],0)
+        self.assertEqual(out['source_triads_deferred_actual_pts_cross_candidate_cut'],1)
+        self.assertEqual(out['deferred_review_requests'][0]['reason'],
+                         'actual_source_pts_cross_candidate_cut')
 
     def test_do_not_extend_narrow_visual_probe_across_candidate_cut(self):
         cuts=[{'time_ms':5000,'image_change_score':.9}]
