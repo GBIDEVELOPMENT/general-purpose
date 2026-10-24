@@ -1,0 +1,57 @@
+name: Night Court trusted source three-witness archive publication
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-three-witness-import.txt'
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: night-court-trusted-three-witness-source-publication
+  cancel-in-progress: false
+jobs:
+  import-source:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-three-witness-import-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout trusted workflow base commit, never unreviewed PR-head code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Verify exact original SRT and offline importer gate
+        run: python 'Night Court/tools/test_preserve_s01e01_three_witness.py'
+      - name: Read only one SHA-pinned previous machine dialogue artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "${{ runner.temp }}/night-court-three-witness"
+          gh api "repos/${{ github.repository }}/actions/artifacts/12569465735/zip" \
+            > "${{ runner.temp }}/night-court-three-witness/pinned.zip"
+          echo "5130d3b61375e94b08165e7dec2dc9aa74423a9a13de6d499e32cd4d3fc1cd6d  ${{ runner.temp }}/night-court-three-witness/pinned.zip" | sha256sum -c -
+          unzip -p "${{ runner.temp }}/night-court-three-witness/pinned.zip" three-text-witness-review.json \
+            > "${{ runner.temp }}/night-court-three-witness/original.json"
+          echo "4203b5550bad8e0a56bc9316144011f53e3e677fea3545dd3eab868a2f0019e5  ${{ runner.temp }}/night-court-three-witness/original.json" | sha256sum -c -
+      - name: Generate untouched original source-derived full witness and prioritized review queue
+        run: |
+          python 'Night Court/tools/preserve_s01e01_three_witness.py' \
+            --input "${{ runner.temp }}/night-court-three-witness/original.json" \
+            --output-dir 'Night Court/seasons/S01/S01E01/derived/three-witness-v1'
+      - name: Commit solely verified text evidence to new review branch, not main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-s01e01-source-three-witness-review'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/three-witness-v1'
+          git diff --cached --check
+          git commit -m 'Night Court: preserve exact full original three-witness S01E01 evidence and 16 review tasks'
+          git push origin HEAD:refs/heads/data/night-court-s01e01-source-three-witness-review
+      - name: Clear temporary derived import files
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-three-witness"
