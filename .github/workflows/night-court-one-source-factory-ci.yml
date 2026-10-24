@@ -4,6 +4,8 @@ on:
     paths:
       - 'Night Court/tools/profile_s01e01_one_source_factory.py'
       - 'Night Court/tools/test_s01e01_one_source_factory.py'
+      - 'Night Court/tools/source_once_av_lanes.py'
+      - 'Night Court/tools/test_source_once_av_lanes.py'
       - '.github/workflows/night-court-one-source-factory-ci.yml'
       - '.github/workflows/night-court-trusted-one-source-factory.yml'
 permissions:
