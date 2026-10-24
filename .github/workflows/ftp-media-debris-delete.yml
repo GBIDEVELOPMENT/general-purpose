@@ -1,0 +1,54 @@
+name: FTP remove confirmed NFO and screenshots
+on:
+  pull_request:
+    paths:
+      - 'media-organizer/delete_debris.py'
+      - 'media-organizer/tests/test_delete_debris.py'
+      - 'media-organizer/approved-delete.json'
+      - '.github/workflows/ftp-media-debris-delete.yml'
+  push:
+    branches: [main]
+    paths: ['media-organizer/approved-delete.json']
+permissions:
+  contents: read
+concurrency:
+  group: ftp-media-debris-deletion
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python -m py_compile media-organizer/delete_debris.py
+          python -m unittest discover -s media-organizer/tests -v
+          if [ -f media-organizer/approved-delete.json ]; then
+            python media-organizer/delete_debris.py --manifest media-organizer/approved-delete.json
+          fi
+  delete:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: ftp-media-changes
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ftp
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate and execute one exact deletion batch
+        run: |
+          test -n "$FTP_PASSWORD"
+          python media-organizer/delete_debris.py --manifest media-organizer/approved-delete.json --apply
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ftp-debris-deletion-audit
+          path: media-organizer/delete-output/
+          if-no-files-found: warn
+          retention-days: 90
