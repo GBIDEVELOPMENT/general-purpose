@@ -1,0 +1,13 @@
+# S01E01 original AVI cadence and throughput measurement
+
+**Status: implementation awaiting source run (October 24, 2026).** Existing original AVI is exactly 183,386,112 bytes with SHA-256 `5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962`; previous acoustic metadata measured 1448.256s MPEG-4 video and stereo MP3 audio, but did **not** retain the video stream rate. Our prior FFmpeg 24fps test was **synthetic**, not evidence of source 24fps.
+
+The new `tools/probe_s01e01_cadence_and_cost.py` makes one authenticated original-AVI transfer, verifies original size and SHA, records FFprobe stream `avg_frame_rate`, `r_frame_rate`, `time_base`, start PTS, frame count if known, field order, duration and dimensions. A separate 3-second video-frame PTS sample from around original video 11m40s compares actual median frame intervals against the nominal stream rate. It does **not** claim all-episode constant-rate proof.
+
+The same ephemeral source runs the **already tested original FFmpeg full-frame-scored 36.162s shot-boundary window** and records elapsed wall time for FTP transfer, metadata probe, PTS sample, and original shot detection. The seven historical proposal times are independently cross-compared against any new proposals without demanding that different FFmpeg builds score every frame identically. The source rate replaces the explicitly synthetic `24` from the fast visual sample fixture, yielding actual-source-rate **planned frame counts**, not actual images. The report flags that no dual-ASR, whole-episode shot scan, or visual-model pass has been benchmarked yet.
+
+Offline synthetic stream regression tests generate true 24fps and `24000/1001` 160x90 AVI files and verify ffprobe plus decoded presentation timestamps with zero private source access.
+
+After this PR is green and merged, a separate owner-only same-repo trigger PR adding `Night Court/research/trigger-s01e01-cadence-probe.txt` to branch `research/night-court-s01e01-cadence-trigger` invokes [trusted cadence workflow](../.github/workflows/night-court-trusted-s01e01-cadence.yml). The workflow checks out **trusted base `github.sha`**, tests synthetic streams before exposing the existing FTP secret to the reviewed main tool, writes only a small JSON private seven-day artifact and deletes original AVI with its temporary directory. It does not commit or upload original media or perform any full-episode speech recognition.
+
+**Next:** source-verify the JSON and add numeric timing/cadence to `FAST-EPISODE-FACTORY-THROUGHPUT.md`, followed by a measured full-episode single-transfer dual-free-decoding ASR experiment. No speed target is accepted just because a stage is expected to run quickly.

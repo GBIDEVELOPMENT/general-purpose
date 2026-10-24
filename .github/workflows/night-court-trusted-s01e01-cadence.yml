@@ -1,0 +1,51 @@
+name: Night Court trusted original S01E01 cadence and costs
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s01e01-cadence-probe.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-source-avi-cadence-cost-once
+  cancel-in-progress: false
+jobs:
+  source-cadence:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s01e01-cadence-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout trusted main rather than any PR-head code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Install FFmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Source-free native cadence and fast planner tests
+        run: |
+          python 'Night Court/tools/test_s01e01_cadence_and_cost.py'
+          python 'Night Court/tools/test_fast_visual_pass.py'
+      - name: Retrieve one original hash-pinned source and measure cadence and processing stages
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python 'Night Court/tools/probe_s01e01_cadence_and_cost.py' --ftp \
+            --output "${{ runner.temp }}/night-court-cadence/cadence-and-cost.json"
+      - name: Preserve only small numeric source-verified metadata, never media
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-native-cadence-and-cost
+          path: ${{ runner.temp }}/night-court-cadence/cadence-and-cost.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Delete temporary metadata
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-cadence"
