@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """No-media, no-model unit checks for 3 independent research text witnesses."""
 import copy
+import hashlib
 import unittest
 
-from triangulate_whole_s01e01_asr_with_srt import srt_cues,parse_time,match_consensus_to_srt
+from triangulate_whole_s01e01_asr_with_srt import srt_cues,parse_time,match_consensus_to_srt,SRT_SOURCE_BYTE_ENCODING,SOURCE_SRT,SRT_SHA
 
 
 def fixture():
@@ -40,6 +41,16 @@ Did you say Mercurial?
 
 
 class OriginalSRTTriangulation(unittest.TestCase):
+    def test_immutable_original_DVD_caption_legacy_charset(self):
+        original=SOURCE_SRT.read_bytes()
+        self.assertEqual(hashlib.sha256(original).hexdigest(),SRT_SHA)
+        self.assertEqual(SRT_SOURCE_BYTE_ENCODING,'cp1252')
+        with self.assertRaises(UnicodeDecodeError):
+            original.decode('utf-8-sig')
+        decoded=original.decode(SRT_SOURCE_BYTE_ENCODING)
+        self.assertGreater(len(srt_cues(decoded)),100)
+        self.assertEqual(bytes([0xe0]).decode(SRT_SOURCE_BYTE_ENCODING),'à')
+
     def test_parser_strict_source_cues_and_timecodes(self):
         cues=srt_cues(SMALL)
         self.assertEqual(len(cues),2)
