@@ -1,0 +1,33 @@
+name: Night Court S01E01 integrated evidence scene v3
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/render_s01e01_integrated_scene_v3.py'
+      - 'Night Court/tools/test_s01e01_integrated_scene_v3.py'
+      - '.github/workflows/night-court-s01e01-integrated-scene-v3.yml'
+permissions:
+  contents: write
+jobs:
+  render:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'feature/night-court-s01e01-integrated-scene-v3'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/night-court-s01e01-integrated-scene-v3
+          persist-credentials: true
+      - name: Check claims, verified hashes and source-cue coverage
+        run: |
+          python "Night Court/tools/test_s01e01_integrated_scene_v3.py"
+          python "Night Court/tools/render_s01e01_integrated_scene_v3.py"
+          python "Night Court/tools/validate_dialogue.py"
+      - name: Commit source-derived bounded script and machine-readable evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Night Court/seasons/S01/S01E01/derived/scene-review-v3/"
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): render integrated source-grounded S01E01 script excerpt v3"
+            git push origin HEAD:feature/night-court-s01e01-integrated-scene-v3
+          fi
