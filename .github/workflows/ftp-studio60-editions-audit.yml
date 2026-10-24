@@ -1,0 +1,53 @@
+name: Studio 60 FTP edition integrity audit
+on:
+  pull_request:
+    paths:
+      - 'media-organizer/studio60_verify.py'
+      - 'media-organizer/tests/test_studio60_verify.py'
+      - '.github/workflows/ftp-studio60-editions-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'media-organizer/studio60_verify.py'
+      - '.github/workflows/ftp-studio60-editions-audit.yml'
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('studio60-pr-{0}',github.event.pull_request.number) || 'studio60-trusted-audit' }}
+  cancel-in-progress: false
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate episode/edition parsing without FTP access
+        run: |
+          python -m py_compile media-organizer/studio60_verify.py
+          python -m unittest discover -s media-organizer/tests -v
+  ftp-readonly:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: offline
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      FTP_HOST: wood.seedhost.eu
+      FTP_USER: ianseeds
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PROTOCOL: ftp
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify all 22 episodes x four editions and DVD VobSub integrity
+        run: |
+          test -n "$FTP_PASSWORD"
+          python media-organizer/studio60_verify.py
+      - name: Preserve per-episode evidence and legacy directory occupancy
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio60-ftp-readonly-audit
+          path: media-organizer/studio60-output/
+          if-no-files-found: warn
+          retention-days: 90
