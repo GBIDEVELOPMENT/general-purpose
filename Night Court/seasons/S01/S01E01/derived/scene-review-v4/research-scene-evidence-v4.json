@@ -1,0 +1,29 @@
+{
+  "schema": "night-court-integrated-evidence-script/4",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_original_srt_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_source_video_review_window_ms": [
+    56912,
+    93074
+  ],
+  "source_reading_edition": "v3 original source captions C19-C27, augmented by new sampled video scene notes",
+  "dialogue_source_path": "scene-review-v3/scene-evidence-map.json",
+  "new_source_frame_path": "visual-review-v3/expanded-sampled-observations.json",
+  "source_avi_shot_pts_path": "shot-change-pts-v1/scene-candidates.json",
+  "original_caption_cues": 9,
+  "original_source_speaking_turns": 11,
+  "earlier_static_source_observations": 5,
+  "earlier_sampled_sequence_observations": 6,
+  "expanded_sampled_source_observations": 6,
+  "machine_image_change_candidates": 7,
+  "total_timeline_events": 28,
+  "timeline_includes_source_turns_from_original_untimed_transcript": false,
+  "source_AVI_video_to_SRT_synchronization_verified": false,
+  "speaker_and_character_identity_verified": false,
+  "continuous_stage_action_verified": false,
+  "spoken_delivery_verified": false,
+  "complete_episode_production_screenplay_verified": false,
+  "research_script_status": "SOURCE_LINKED_EDITION_NOT_INDEPENDENT_AV_ACCEPTANCE",
+  "video_and_audio_source_bytes_in_repo": false
+}
