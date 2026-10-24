@@ -17,7 +17,7 @@ from pathlib import Path
 WINDOW_TOLERANCE_MS=600
 MAX_WORDS=15000
 MIN_SPAN_WORDS=3
-ALLOWED_FAMILIES={'whisper','ctc','conformer_ctc','rnnt','seq2seq_other'}
+ALLOWED_FAMILIES={'whisper','ctc','conformer_ctc','rnnt','seq2seq_other','kaldi_hmm_wfst'}
 
 
 def normalized(text):
