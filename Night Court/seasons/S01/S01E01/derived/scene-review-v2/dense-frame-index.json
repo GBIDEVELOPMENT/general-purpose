@@ -1,0 +1,562 @@
+{
+  "schema": "night-court-s01e01-dense-visual-sampling/1",
+  "episode_id": "S01E01",
+  "source_media_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_time_window_ms": [
+    75000,
+    90000
+  ],
+  "sampling_frames_per_second": 4,
+  "frames_expected": 60,
+  "frames_actual": 60,
+  "frame_evidence": [
+    {
+      "frame": 1,
+      "approximate_video_time_ms": 75000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-001.jpg",
+      "sha256": "6a4d5a0ff95638330bd0622f0fa424a7c669925bfad3537f59f192bde286fa3e",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 2,
+      "approximate_video_time_ms": 75250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-002.jpg",
+      "sha256": "ed84ce1f2bddaaadb2c48034b35198127f1144a38ca505c3b666fe0599439e67",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 3,
+      "approximate_video_time_ms": 75500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-003.jpg",
+      "sha256": "9a335fbf7140ad6d4e07b77a0d43b842acf15ab6fef49d55dd174959938a06f4",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 4,
+      "approximate_video_time_ms": 75750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-004.jpg",
+      "sha256": "c132a114ff803d2d766809a39debcf5a80452f241caaf25fd58d367a2297277b",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 5,
+      "approximate_video_time_ms": 76000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-005.jpg",
+      "sha256": "4646d68162b9c9701157286a487567a280efb1e57814d825ea55e3767aac2f57",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 6,
+      "approximate_video_time_ms": 76250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-006.jpg",
+      "sha256": "dbe7ba1379231326d0e3dcc60713b6a32f7f9e78ced5ae74cdc13d8efeb9c960",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 7,
+      "approximate_video_time_ms": 76500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-007.jpg",
+      "sha256": "e12f283a8eab60c74fd0155ecc17cdf3426f74578d6d002c75752774fa07afe9",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 8,
+      "approximate_video_time_ms": 76750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-008.jpg",
+      "sha256": "aa2ae8bf08030078da3ca716f866fa964d4f0fcbf918c5903c85b9fc357a750a",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 9,
+      "approximate_video_time_ms": 77000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-009.jpg",
+      "sha256": "7b2a502ea10c625d759a89d460b867c2ed1b946d7062c5bb74e2bf730cb8cdb7",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 10,
+      "approximate_video_time_ms": 77250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-010.jpg",
+      "sha256": "f4a24359ee8bbb64f0d50166d1a29e93264683c87e128cde0f69a30f25bfb802",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 11,
+      "approximate_video_time_ms": 77500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-011.jpg",
+      "sha256": "f5f64b4e6c49f121a7bc389928ef7789d0b56c4a9240424bbcb7a6cfb3b01ab5",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 12,
+      "approximate_video_time_ms": 77750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-012.jpg",
+      "sha256": "3ee6d622397866d5e4ba6feab6f93626fc2d00a830610986a03e93e88f764000",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 13,
+      "approximate_video_time_ms": 78000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-013.jpg",
+      "sha256": "52ab81f0d054fea301b134bb9b96afe4f93d03da3eb8d097cf46bd1f2f323b4b",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 14,
+      "approximate_video_time_ms": 78250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-014.jpg",
+      "sha256": "8fd1a55ccfdfe2935a19789b5b4947bf205618061608e9f293153846552d8cf5",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 15,
+      "approximate_video_time_ms": 78500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-015.jpg",
+      "sha256": "44bdfe3385db403b43c46fd474fe01a0a9f356621dff272fb5e8a9030b6abc5c",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 16,
+      "approximate_video_time_ms": 78750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-016.jpg",
+      "sha256": "51f983a3624c6ab182739b7c02cccb63418ecf7019c577e7d7a32c1c2e43e1fa",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 17,
+      "approximate_video_time_ms": 79000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-017.jpg",
+      "sha256": "6ba34dd51777936f003337d8859fed426f66eb231a3028ce454f0400e6776eec",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 18,
+      "approximate_video_time_ms": 79250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-018.jpg",
+      "sha256": "65d9aa8cc782c2962a177733420fa315fecbc9182f110f6db7ca97c9265c9683",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 19,
+      "approximate_video_time_ms": 79500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-019.jpg",
+      "sha256": "4b70d6a423dc24f98c45615562db8feab46c8cec2101f74fe3e3cdbc06f297ab",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 20,
+      "approximate_video_time_ms": 79750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-020.jpg",
+      "sha256": "db0f9924c4dc294609436dfbc98446c3f18292e3bc80bbe6cfab69f47f74fe6c",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 21,
+      "approximate_video_time_ms": 80000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-021.jpg",
+      "sha256": "cccb1508ad1354313f8c23dd47ac4cbe5460d784c9985cf837d97853ca227201",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 22,
+      "approximate_video_time_ms": 80250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-022.jpg",
+      "sha256": "819568216fbc14ffbf90dcef433246430951ba5b79b4d33198060298a92a48c1",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 23,
+      "approximate_video_time_ms": 80500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-023.jpg",
+      "sha256": "bdb2a14e30092ba939f9c760136b284a198e17af28ec3b4f97ba584f578fd5d7",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 24,
+      "approximate_video_time_ms": 80750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-024.jpg",
+      "sha256": "7dd8935cde6063c7fc1bbac3f68fe4859b3c1a8730a41ef00846511b8a743b0c",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 25,
+      "approximate_video_time_ms": 81000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-025.jpg",
+      "sha256": "73c41740012839add8c409ac2c22cbd7fa4db7e4464889eef730bbca22cf36fe",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 26,
+      "approximate_video_time_ms": 81250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-026.jpg",
+      "sha256": "cd53fcfa71bc6ea397505f07d6824b5d9dd175adda566a13a0b7b45e8a9bfa52",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 27,
+      "approximate_video_time_ms": 81500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-027.jpg",
+      "sha256": "e2d9783a62f18103c2ed0219fc8d508c82d8f2665958b5478b837ae4b34ca036",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 28,
+      "approximate_video_time_ms": 81750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-028.jpg",
+      "sha256": "abaf792f29085a8147da50ef0fcd28d188820b4c4a6837f57ac460c0807fb896",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 29,
+      "approximate_video_time_ms": 82000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-029.jpg",
+      "sha256": "8c55408de3d68ab653f2ad3883e72b3a6d041c9eae0c30ef0ceb493eee68aa25",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 30,
+      "approximate_video_time_ms": 82250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-030.jpg",
+      "sha256": "e91262296e2d2f3743922227e42a62f06ca72c4ecb128d1883d24e6a5866fa43",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 31,
+      "approximate_video_time_ms": 82500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-031.jpg",
+      "sha256": "7d621462b0e83d61ad3ef13b7e81848ff5997d7e6fe1a339e2ac8aa997e36acd",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 32,
+      "approximate_video_time_ms": 82750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-032.jpg",
+      "sha256": "7bbc1ab0746b350f1e3268254d48e9ade78249f68fd2b2afbf73d259aa2c579a",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 33,
+      "approximate_video_time_ms": 83000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-033.jpg",
+      "sha256": "b6c3ea9c4c811bf2d37883b94e4334e36d4ab872d19cb1caaec5bd40c930ffd4",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 34,
+      "approximate_video_time_ms": 83250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-034.jpg",
+      "sha256": "342b70cf9fd847d8d2b954dd7a1f3d745473816dbfb3c100891784c19f85848e",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 35,
+      "approximate_video_time_ms": 83500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-035.jpg",
+      "sha256": "8dcede0e5e2a0941948bea303fa6df92c458cf094cf232fd63678a8493cc74c3",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 36,
+      "approximate_video_time_ms": 83750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-036.jpg",
+      "sha256": "b713a2a5e553c3d813cc4496ed4652fa99c837a8bd9b0cac865eb1e37dc4dee2",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 37,
+      "approximate_video_time_ms": 84000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-037.jpg",
+      "sha256": "05c54a9ef63f2a632c88adc9d69a418ae55c07b7504ef6ec324749a486418555",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 38,
+      "approximate_video_time_ms": 84250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-038.jpg",
+      "sha256": "3a24f6fb86e5db3e30f7c66dd9c707a8a6d5dfedb0d46e26aa14e9f6b5bde3af",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 39,
+      "approximate_video_time_ms": 84500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-039.jpg",
+      "sha256": "8c6666abc845988efce1b10afbc94b2355ee6f06d5720526a371f650ca5bc704",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 40,
+      "approximate_video_time_ms": 84750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-040.jpg",
+      "sha256": "903ecee2571c6e6fbb004d0bbd891bec5d391cc6eb81875f3a37a718678b0d84",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 41,
+      "approximate_video_time_ms": 85000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-041.jpg",
+      "sha256": "6a6218507b835dcb7ca8865f68db9ee4d15e3d5b4130c89fc3933e37811d3d69",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 42,
+      "approximate_video_time_ms": 85250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-042.jpg",
+      "sha256": "27b947786426bb2adf2803c1dba813a16b88b587715bac4c8db7ccf8a1990d6a",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 43,
+      "approximate_video_time_ms": 85500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-043.jpg",
+      "sha256": "4e65f1dc82d0aa7bd1fb9c39328332d51c8033041cf4296439cc0926f78c03e3",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 44,
+      "approximate_video_time_ms": 85750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-044.jpg",
+      "sha256": "8ceb42e9f0d69466bc666baa82c69dbad171cefac33fc01c70a1dfd78b5bbaa7",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 45,
+      "approximate_video_time_ms": 86000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-045.jpg",
+      "sha256": "9799f3cdf1f9e309ff11bfca2eb39df6ec7071eaf4a777c78c7fd30eba6ce87c",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 46,
+      "approximate_video_time_ms": 86250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-046.jpg",
+      "sha256": "8d11b563e8a02d464c55a353f4548508b484755e90ff8fd72cf2a7457b3da413",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 47,
+      "approximate_video_time_ms": 86500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-047.jpg",
+      "sha256": "70d85d055f76010161e6407b631e92007fe9a16273b99dbe565de3fffaee8c0e",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 48,
+      "approximate_video_time_ms": 86750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-048.jpg",
+      "sha256": "577a6c528dbc1ebb93fb9d26e5618eea69ac749cb1199428775998841806bd73",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 49,
+      "approximate_video_time_ms": 87000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-049.jpg",
+      "sha256": "f63d0346e9babe64a2b95575571ff1aeccb1671a47e8514ec5c02fda8a73ce98",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 50,
+      "approximate_video_time_ms": 87250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-050.jpg",
+      "sha256": "2f0ea684dc1d1095173a55f2266f6b024c84e01cb95312fc6c6f6d27f821c385",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 51,
+      "approximate_video_time_ms": 87500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-051.jpg",
+      "sha256": "fcf09f971d6f54aca21a49b26f2abb5406acd47cb023ca85441fe9160f8828f1",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 52,
+      "approximate_video_time_ms": 87750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-052.jpg",
+      "sha256": "462a69834ffe42a761c4d51bae7fc4d0d48caf5dcd412085983235f5b196972f",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 53,
+      "approximate_video_time_ms": 88000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-053.jpg",
+      "sha256": "32c1f85a805b40593562c2398a8fb280dd6b24bd4d43f6e9744526b13f5da51a",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 54,
+      "approximate_video_time_ms": 88250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-054.jpg",
+      "sha256": "741f3a68967ac09bb9c9682e21dbb9611663a0e595cb4e5493b9262f89326733",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 55,
+      "approximate_video_time_ms": 88500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-055.jpg",
+      "sha256": "43b407f91451234501155cac854e343a875f8e4ac346f1b3ae681ee3f38ad9a9",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 56,
+      "approximate_video_time_ms": 88750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-056.jpg",
+      "sha256": "0069cb4ebb32f89dc926a0310cf0d73864c807d51541d1e5e892f247a2817f25",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 57,
+      "approximate_video_time_ms": 89000,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-057.jpg",
+      "sha256": "f29b058c80f75937d5d758417c1455e26ab5cfe4a01b3c0dc76bfdf347d3b8b8",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 58,
+      "approximate_video_time_ms": 89250,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-058.jpg",
+      "sha256": "383349d8f2ed3552d806fa58336c1ee2c24631827d231b6767429fd18335331c",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 59,
+      "approximate_video_time_ms": 89500,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-059.jpg",
+      "sha256": "68748e66ac8c4a82f1f41785c0e07e85cfe4273c860aefdf25c4dd0c2bc30715",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    },
+    {
+      "frame": 60,
+      "approximate_video_time_ms": 89750,
+      "timestamp_qualification": "nominal_four_hz_filter_index_not_independently_frame_PTS_verified",
+      "file": "sampled-frames/frame-060.jpg",
+      "sha256": "30b46e70fa1cabb0957404fdebdf0563df61627cee45976359b4b36307527960",
+      "observation_status": "not_reviewed",
+      "continuous_motion_proven": false
+    }
+  ],
+  "contact_sheet_sha256": "c72bb3a8b5da1cec71a88c3a20faead657fb16cb2698aeddbfa5bc3b6b22e737",
+  "source_video_audio_bytes_in_artifact": false,
+  "scene_action_observations": [],
+  "character_speaker_identities_confirmed": false,
+  "source_SRT_audio_alignment_confirmed": false,
+  "pose_to_pose_interpretation": "requires_a_separate_frame_review",
+  "visual_continuity_limitation": "sampling_4fps_can_miss_fast_entrances_gestures_and_reactions",
+  "audiovisual_episode_completeness_verified": false
+}
