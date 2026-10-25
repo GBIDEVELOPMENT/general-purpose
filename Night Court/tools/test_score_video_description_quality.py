@@ -80,7 +80,7 @@ class QualityMetricTests(unittest.TestCase):
         self.assertEqual(report["confusion_counts"]["true_negative"], 1)
         self.assertEqual(report["metrics"]["false_positive_rate_negative_controls"], 0.666667)
         self.assertEqual(report["metrics"]["recall_explicit_claims"], 0.0)
-        self.assertIsNone(report["metrics"]["precision_explicit_claims"])
+        self.assertEqual(report["metrics"]["precision_explicit_claims"], 0.0)
         self.assertEqual(report["structured_json_success_fraction"], 0.5)
         self.assertEqual(report["total_inference_seconds"], 9.6)
         self.assertFalse(report["whole_episode_visual_coverage_certified"])
