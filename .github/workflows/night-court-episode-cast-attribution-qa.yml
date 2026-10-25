@@ -1,0 +1,35 @@
+name: Night Court original credited-episode speaker screenplay QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_cast_context_reading_screenplays.py'
+      - 'Night Court/tools/test_build_cast_context_reading_screenplays.py'
+      - 'Night Court/research/pilot-episode-credited-cast-v1.json'
+      - 'Night Court/seasons/S01/S01E01/derived/cast-grounded-speaker-context-v1/**'
+      - 'Night Court/seasons/S09/S09E19/derived/cast-grounded-speaker-context-v1/**'
+      - 'Night Court/seasons/S01/S01E01/derived/cast-context-reading-screenplay-v2/**'
+      - 'Night Court/seasons/S09/S09E19/derived/cast-context-reading-screenplay-v2/**'
+      - '.github/workflows/night-court-episode-cast-attribution-qa.yml'
+      - '.github/workflows/night-court-trusted-cast-attribution-publish.yml'
+permissions:
+  contents: read
+jobs:
+  source-only-attribution:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Assert exact source text role roster and abstention from face/voice identification
+        run: |
+          python 'Night Court/tools/test_build_cast_context_reading_screenplays.py'
+          python 'Night Court/tools/build_cast_context_reading_screenplays.py' --episode S01E01 --output-root "${{ runner.temp }}/cast-manuscripts"
+          python 'Night Court/tools/build_cast_context_reading_screenplays.py' --episode S09E19 --output-root "${{ runner.temp }}/cast-manuscripts"
+          if test -f 'Night Court/seasons/S01/S01E01/derived/cast-context-reading-screenplay-v2/screenplay-cast-aware.md'; then
+            python 'Night Court/tools/build_cast_context_reading_screenplays.py' --episode S01E01 --check
+          fi
+          if test -f 'Night Court/seasons/S09/S09E19/derived/cast-context-reading-screenplay-v2/screenplay-cast-aware.md'; then
+            python 'Night Court/tools/build_cast_context_reading_screenplays.py' --episode S09E19 --check
+          fi
