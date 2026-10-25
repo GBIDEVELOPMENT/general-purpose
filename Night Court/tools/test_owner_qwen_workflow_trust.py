@@ -40,7 +40,7 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         self.assertIn("Night Court/research/trigger-owner-qwen-compact-action.txt", self.workflow)
         self.assertIn("research/night-court-qwen-compact-action-trigger", self.workflow)
         self.assertIn("&& 'action_compact' || 'standard'", self.workflow)
-        self.assertIn("--prompt-profile '${{ github.event.pull_request.head.ref", self.workflow)
+        self.assertIn("--prompt-profile '${{ (github.event.pull_request.head.ref", self.workflow)
         self.assertIn("github.event.pull_request.user.login == 'gamesbyian'", self.workflow)
         self.assertIn("github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose'", self.workflow)
         self.assertIn("github.event.pull_request.base.ref == 'main'", self.workflow)
