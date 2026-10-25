@@ -96,7 +96,7 @@ class ReviewPacketTests(unittest.TestCase):
         escaped = escape_untrusted_markdown(raw)
         self.assertNotIn("![", escaped)
         self.assertNotIn("<script>", escaped)
-        self.assertIn(r"\\![", escaped)
+        self.assertIn(r"\!\[", escaped)
         m = model()
         m["windows"][0]["model_hypothesis"]["props"] = raw
         out,windows = prepare(m,digest(m))
