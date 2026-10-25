@@ -102,3 +102,18 @@ python 'Night Court/tools/search_fan_corpus.py' \
 The combined search returns **two noninterchangeable groups**: (1) original direct script passages with same-episode neighbors and source-edition hashes, (2) interpretive fan cards linked to original caption cues. If a card suggests a compelling comparison, read the direct evidence before treating any concrete fact as established. Neither group validates all filmed physical movement or performance. Do not automatically export combined search results to an external inference provider; the script hits contain held dialogue text.
 
 The 21 cards are a grounded first seed, **not comprehensive coverage of every joke, a verified comedy classification, or all 193 episodes**. Expand only from source-checked excerpts and retain abstentions. The next useful enrichment is validating pilot speaker-turn merges and then cross-episode character/prop/callback connections.
+
+## Reversible pilot character evidence and P0 continuation review
+
+The original held subtitle/caption speaking-unit provenance now supports an optional **private character evidence export**:
+
+```sh
+python 'Night Court/tools/build_pilot_character_evidence.py' \
+  --output /tmp/night-court-private-character-evidence
+```
+
+It joins the existing S01E01 v4 quote-corrected and S09E19 v4 impostor-role editorial speaker ledgers with the **unchanged original source cues**. The output produces role-labeled source quotation blocks, initial role-specific dossier seeds, and adjacent same-role speech-continuation **review candidates**. The result is useful for questions about which material is *provisionally* associated with a role, including two-voice original captions and S09's 36 joined continuation paragraphs.
+
+S01 authentic SRT cue parts remain reversible and timed. S09's 347 original paragraph references are retained across 311 editorial reading blocks, **without inventing source timecodes**. Every source text block is reassembled and matched to the existing byte-identical SHA-256; missing/duplicate cue-part coverage or altered speaker-ledger source fails closed. The canonical pilot counts are 751 original speaking units, 487 provisionally named, and 264 unidentified. **None of those provisional attributions is an independent original-audio voice identification**, and proposed adjacent-same-role continuations must not silently become authoritative performance turns.
+
+The fan assistant should prefer direct source-backed character evidence over inference from dialogue semantics alone, while retrieving adjacent evidence when a line is split across caption cues. A candidate speaker's identity remains uncertain wherever the held editorial annotations mark it as provisional. Real P0/P1 verification still requires source audio/visual comparison; the next step is benchmarked speaker inference or targeted listening that actually reduces the unresolved count and false turns.
