@@ -5,6 +5,8 @@ on:
     paths:
       - 'Night Court/tools/export_fan_retrieval_chunks.py'
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
+      - 'Night Court/tools/search_fan_retrieval_chunks.py'
+      - 'Night Court/tools/test_search_fan_retrieval_chunks.py'
       - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
       - 'Night Court/seasons/S09/S09E19/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
       - 'Night Court/FAN-OBSESSION-DELIVERABLE-2026-10-25.md'
@@ -24,7 +26,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks
       - name: Both pilot working scripts
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -52,4 +54,27 @@ jobs:
           assert sum(r['evidence_tier']=='source_only_dialogue_scaffold' for r in m['episodes'])==191
           assert sum(r['evidence_tier']=='provisional_filmed_staging_working_script' for r in m['episodes'])==2
           print('193 source-SHA-checked episodes indexed; no dialogue printed or artifacts uploaded')
+          PY
+      - name: Private original-series lexical search smoke
+        run: |
+          python 'Night Court/tools/search_fan_retrieval_chunks.py' \
+            --corpus /tmp/night-court-private-fan-all/fan-retrieval-chunks.jsonl \
+            --query 'Roz pen pal Alex' --episode S09E19 \
+            --output /tmp/night-court-private-fan-search-roz.json
+          python 'Night Court/tools/search_fan_retrieval_chunks.py' \
+            --corpus /tmp/night-court-private-fan-all/fan-retrieval-chunks.jsonl \
+            --query 'painting painter' --episode S01E01 \
+            --output /tmp/night-court-private-fan-search-painter.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          samples = [
+             ('S01E01', '/tmp/night-court-private-fan-search-painter.json'),
+             ('S09E19', '/tmp/night-court-private-fan-search-roz.json'),
+          ]
+          for episode, filename in samples:
+              result = json.loads(Path(filename).read_text('utf-8'))
+              assert result['hits'] and all(h['episode_id']==episode for h in result['hits'])
+              assert all(not h['speaker_names_verified'] for h in result['hits'])
+          print('Both original pilot lexical search queries passed; no dialogue printed or uploaded')
           PY
