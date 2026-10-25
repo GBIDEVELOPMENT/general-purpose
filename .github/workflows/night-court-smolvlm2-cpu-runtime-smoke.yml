@@ -1,0 +1,81 @@
+name: Night Court SmolVLM2 real CPU smoke (synthetic only)
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/night-court-smolvlm2-cpu-runtime-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: night-court-smol-runtime-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  local-headless-model-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HOME: ${{ runner.temp }}/hf-night-court-synthetic
+      OMP_NUM_THREADS: '2'
+      TOKENIZERS_PARALLELISM: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install bounded local CPU inference and FFmpeg tools
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            timeout 180 sudo apt-get update -qq
+            timeout 180 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
+          fi
+          python -m venv /tmp/nc-smol-env
+          /tmp/nc-smol-env/bin/pip install -q --disable-pip-version-check 'torch==2.7.1' --index-url https://download.pytorch.org/whl/cpu
+          /tmp/nc-smol-env/bin/pip install -q --disable-pip-version-check 'transformers==4.57.1' 'accelerate>=1.0,<2' 'decord==0.6.0' 'num2words' 'pillow'
+      - name: Make original-free two-second test video and immutable source manifest
+        run: |
+          ffmpeg -hide_banner -loglevel error -f lavfi -i testsrc2=size=160x120:rate=2:duration=2 -an -c:v mpeg4 -q:v 9 -y /tmp/nc-synthetic-only.mp4
+          /tmp/nc-smol-env/bin/python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('/tmp/nc-synthetic-only.mp4')
+          sh=hashlib.sha256(p.read_bytes()).hexdigest()
+          Path('/tmp/nc-smol-manifest.json').write_text(json.dumps({
+              'schema':'night-court-video-benchmark-windows/1',
+              'episode_id':'S01E01',
+              'source_video_sha256':sh,
+              'duration_ms':2000,
+              'caption_source_sha256':'a'*64,
+              'windows':[{'id':'synthetic-clip-01','start_ms':0,'end_ms':1500,
+                          'candidate_cut_crossing':False,'selection_reason':'synthetic_smoke'}]}))
+          PY
+      - name: Real local model-video inference (no network service, no original AV)
+        run: |
+          set -euo pipefail
+          REVISION=$(/tmp/nc-smol-env/bin/python - <<'PY'
+          from huggingface_hub import model_info
+          print(model_info('HuggingFaceTB/SmolVLM2-500M-Video-Instruct').sha)
+          PY
+          )
+          echo "Model pinned at ${REVISION:0:12}; downloaded weights remain ephemeral"
+          timeout 720 /tmp/nc-smol-env/bin/python 'Night Court/tools/run_headless_video_description.py' \
+            --manifest /tmp/nc-smol-manifest.json --output /tmp/nc-smol-evidence.json \
+            --backend smolvlm2 --media /tmp/nc-synthetic-only.mp4 \
+            --model-revision "$REVISION" --fps 1 --width 256 --device cpu --confirm-owner-media
+          /tmp/nc-smol-env/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('/tmp/nc-smol-evidence.json').read_text())
+          assert d['verified_source_sha256']==d['source_video_sha256']
+          assert len(d['windows'])==1 and not d['script_or_claim_independently_accepted']
+          row=d['windows'][0]
+          assert row['status'] in ('machine_proposed','requires_review')
+          assert row['inference_seconds']>=0
+          print('ACTUAL_LOCAL_MODEL_INFERENCE_COMPLETED',{'seconds':row['inference_seconds'],
+                'decoded_clip_seconds':row['decode_seconds'],'parse_status':row['status'],
+                'whole_benchmark_seconds':d['wall_seconds']})
+          PY
