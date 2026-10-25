@@ -1,3 +1,7 @@
+## P0 review-validator implementation checkpoint
+
+`tools/validate_speaker_turn_reviews.py` now exports an unreviewed template from a proposal JSON (`--proposals <file> --output-template <new-file>`) and strictly validates a completed-or-partially-unresolved review file (`--proposals <file> --reviews <file>`). Every boundary must be present exactly once; attested same-speaker/speaker-change/overlap decisions require original audio/AV evidence kind, nonempty source location, matching original SHA and reviewer attestation. Unresolved boundaries remain explicit; this validator cannot mark a whole episode AV-certified. Synthetic tests are in `tools/test_validate_speaker_turn_reviews.py`. This is **a validator and template**, not proof that source listening occurred. Run both new test modules with `cd 'Night Court/tools' && python -m unittest test_propose_speaker_turns test_validate_speaker_turn_reviews` and retain observed results.
+
 # Current Night Court two-pilot execution handoff (2026-10-25)
 
 **Scope:** original 1984–1992 series. Work only in `Night Court/` unless a precise trusted workflow change is needed. Never change the Shaw, Glimpse or unrelated media applications. Reconcile latest main, issues, PRs and source hashes at start, not historical SHAs.
