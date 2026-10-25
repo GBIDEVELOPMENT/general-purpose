@@ -75,8 +75,17 @@ def records_for_episode(root: Path, ep: str) -> list[dict]:
         if not all(u["source_sha256"] == meta["sha256"] for u in units):
             raise ValueError("Source SHA mismatch for reading block")
         recovered = " ".join(u["source_text"].strip() for u in units)
-        if checksum(recovered.encode("utf-8")) != line["source_text_sha256"]:
-            raise ValueError("Original reading block cannot be reconstructed from unchanged captions")
+        full_text_sha = checksum(recovered.encode("utf-8"))
+        # The legacy reader index hashes ONLY its first *displayed line*
+        # for a multiline SRT cue; a continuation-joined S09 paragraph may
+        # instead consist of one rendered line. Always keep the full SHA
+        # as a separate stronger source-text invariant in our own output.
+        first_line_sha = checksum(recovered.splitlines()[0].encode("utf-8"))
+        if line["source_text_sha256"] not in (full_text_sha, first_line_sha):
+            raise ValueError(
+                "Existing reader first-line evidence mismatch at "
+                + ep + ":" + line["source_ref"]
+            )
         speaker = line["speaker"].split(" · ", 1)[0].strip()
         unknown = speaker.startswith("UNIDENTIFIED")
         if not unknown and not speaker:
@@ -88,7 +97,8 @@ def records_for_episode(root: Path, ep: str) -> list[dict]:
             "source_reading_ref": line["source_ref"],
             "original_source_part_refs": refs,
             "original_source_sha256": meta["sha256"],
-            "original_reading_block_sha256": line["source_text_sha256"],
+            "original_reading_block_sha256": full_text_sha,
+            "legacy_reading_first_line_sha256": line["source_text_sha256"],
             "reading_index_sha256": checksum(raw),
             "caption_text": recovered,
             "candidate_role": None if unknown else speaker,
