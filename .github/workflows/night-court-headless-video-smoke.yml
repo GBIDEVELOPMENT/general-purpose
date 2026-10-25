@@ -36,7 +36,9 @@ concurrency:
 jobs:
   synthetic-source-video:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    # Regression: 2026-10-25 #420 hit the original 8m job deadline (exit 124),
+    # while no failed test was reported. Preserve complete source-free suite.
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - name: Assert no secrets, network models or original episode source

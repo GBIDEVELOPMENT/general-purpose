@@ -99,6 +99,23 @@ class TrustedOriginalModelContracts(unittest.TestCase):
         with self.assertRaises(ValueError):
             require_compact_matched_window("S01E01", "physical_comedy", 846000, "user_paste")
 
+    def test_twofps_temporal_trial_changes_only_frame_sampling(self):
+        for episode, allowed in (("S01E01", 846000), ("S09E19", 555800)):
+            require_compact_matched_window(episode, "physical_comedy", allowed,
+                                           "action_compact", 2)
+            with self.assertRaisesRegex(ValueError, "Two FPS requires"):
+                require_compact_matched_window(episode, "physical_comedy", allowed,
+                                               "standard", 2)
+            with self.assertRaisesRegex(ValueError, "identical original source"):
+                require_compact_matched_window(episode, "physical_comedy", allowed+200,
+                                               "action_compact", 2)
+            with self.assertRaisesRegex(ValueError, "Two FPS requires"):
+                require_compact_matched_window(episode, "observational", allowed,
+                                               "action_compact", 2)
+            with self.assertRaisesRegex(ValueError, "Video FPS outside"):
+                require_compact_matched_window(episode, "physical_comedy", allowed,
+                                               "action_compact", 3)
+
     def test_privileged_source_path_requires_password_and_never_accepts_override(self):
         with mock.patch.dict(os.environ, {"FTP_PASSWORD": ""}):
             with self.assertRaisesRegex(ValueError, "Owner-secret source mode"):

@@ -1,0 +1,22 @@
+# Fixed-action Qwen temporal sampling test: source-identical 1fps vs 2fps
+
+**Pre-registered before the two-FPS model run, 2026-10-25.** After two exact original source film A/B prompts (same clip byte hash per episode) showed that a compact actor/recipient prompt improves ten-field JSON structure but **still reverses the original face-touch actor**, the next genuinely discriminating model factor is *temporal input sampling*. A twice-as-dense two-second Qwen input could show intermediate movement direction more clearly. **This is a hypothesis, NOT a claim that more frames fix action recognition.**
+
+## Held fixed vs variable
+
+Hold the original film SHA and exact clip start/end fixed: `S01E01` AVI `5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962` at **846000–848000ms**, and `S09E19` AVI `51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649` at **555800–557800ms**. Same source-owning repository, source movies and authorized FTP secret isolation, model `Qwen/Qwen3-VL-2B-Instruct` immutable revision `89644892e4d85e24eaac8bacfd4f463576704203`, `action_compact` exact immutable prompt SHA `f1a23742daf684244dd00a800bc7e5d58a9733c67ec1d43b3c3fc8d991442e2d`, 256px video and maximum 256 generated tokens; original audio remains silent to the model.
+
+**Only change** original source temporary video frame selection from **1fps to 2fps**. On these two-second clips the nominal 1fps input samples ~2 video frames, and 2fps ~4 frames. FFmpeg and Qwen video decoding semantics may affect precise frame timestamps, so log exact final clip SHA and treat source PTS as unverified until independently inspected. The decoded clip SHA will naturally differ because the sampling differs, and that is expected: unlike prompt-only A/B, byte-identical clips are not the invariant. Require original full AVI SHA and source window match.
+
+`owner_qwen_original_video_pilot.py` has an explicit `--video-fps 1|2` switch with default 1. Any 2fps invocation **fails closed** unless `--focus physical_comedy --prompt-profile action_compact` and the chosen original video window is precisely one of the two above. The broader video runner still has separate 1/2/3fps capability for synthetic/offline research; this privileged source test deliberately allows only the one specified 2fps treatment, never arbitrary original episode offsets.
+
+Owner workflow reviewed `main` only, exact same-repo owner head `research/night-court-qwen-compact-twofps-trigger` and harmless PR marker `Night Court/research/trigger-owner-qwen-compact-twofps.txt`; `pull_request_target` never checks out PR-head source and uses only fixed original AVI full SHA and pinned model. Video, original audio, thumbnails, transcripts, model weights and FTP credentials remain out of repo or artifacts. The private seven-day artifact has only unaccepted Qwen proposals, ten all-deferred review decisions and sanitized numeric metrics. The active one-shot PR must close unmerged after outputs are independently SHA verified.
+
+## How to evaluate
+
+- Confirm source AVI SHA, exact episode/window, pinned model/prompt SHA, width=256, token cap=256, `source_focus=physical_comedy`, and `video_sampling_fps=2`. Compare against the earlier identical-source **compact 1fps** run #40235589077, **not** the standard prompt control.
+- Compare machine ten-field JSON success, actual wall/inference seconds and sampled-image actor/recipient agreement. Specifically, review the person initiating the S01 cheek-touch and recipient; in S09 distinguish owner of the small handheld object and hand gesture from plot interpretation.
+- A successful well-formed JSON alone does not prove film action accuracy. 5fps private original-SHA-linked sampled stills can flag potential left/right reversal, but **only direct moving original movie and synchronized soundtrack review** may make an independently AV-attested stage direction. Do not automate stage prose into screenplay or claim native PTS certification.
+- If 2fps still reverses the actor/recipient, do not launch 3fps or 193-episode bulk work reflexively; consider source-grounded human staged action extraction or a pose/temporal relationship model and validate actual editorial benefit per CPU minute.
+
+Source-preserving dialogue witnesses and all complete episode AV acceptance counts remain untouched (0/193). The cost of this controlled experiment is one authorized AVI download and at most one short Qwen inference per episode, with model time and stage quality measured independently.
