@@ -5,6 +5,8 @@ on:
     paths:
       - 'Night Court/tools/run_headless_video_description.py'
       - 'Night Court/tools/test_run_headless_video_description.py'
+      - 'Night Court/tools/review_video_stage_directions.py'
+      - 'Night Court/tools/test_review_video_stage_directions.py'
       - '.github/workflows/night-court-headless-video-smoke.yml'
   workflow_dispatch:
 
@@ -31,3 +33,4 @@ jobs:
           ffprobe -version | head -1
           python3 -m py_compile 'Night Court/tools/run_headless_video_description.py' 'Night Court/tools/test_run_headless_video_description.py'
           python3 'Night Court/tools/test_run_headless_video_description.py' -v
+          python3 'Night Court/tools/test_review_video_stage_directions.py' -v
