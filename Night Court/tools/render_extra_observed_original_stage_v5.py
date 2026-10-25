@@ -172,6 +172,18 @@ def render(ep,root=ROOT):
                 "visual_hypothesis_observed":item["hypothesis_supported"],
                 "original_text_paragraph_time_ms":None,
                 "spoken_source_alignment_verified":False})
+    if ep == "S01E01":
+        # Fix copied S09 boilerplate in the FINAL generated reader only.
+        # Do this after cue-line insertions so upstream source-index line
+        # offsets and the existing proof ledger remain unchanged.
+        wrong = ("unidentified speakers remain explicitly unidentified. The S09 original\n"
+                 "transcript is UNTIMED.")
+        correct = ("unidentified speakers remain explicitly unidentified. The S01 original\n"
+                   "subtitle witness has genuine SRT cue times; these may not be perfectly\n"
+                   "synchronized with the pictured source edition.")
+        if generated.count(wrong) != 1:
+            raise ValueError("Expected exactly one legacy S01 timing preamble")
+        generated = generated.replace(wrong, correct)
     generated=generated.rstrip()+"\n"
     report={"schema":"night-court-actual-source-video-stage-reader/5",
        "episode_id":ep,"original_caption_sha256":SOURCE_SHA[ep],
