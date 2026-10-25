@@ -48,6 +48,16 @@ def manifest(sha="a" * 64, duration=6000):
 
 
 class ManifestTests(unittest.TestCase):
+    def test_generation_budget_and_load_metrics_remain_bounded(self):
+        p = normalize(manifest())
+        result = benchmark(p, "plan", max_new_tokens=64)
+        self.assertEqual(result["max_generated_tokens"], 64)
+        with self.assertRaisesRegex(ValueError, "bounded token budget"):
+            # The real-source case is covered by the 6-second synthetic video
+            # fixture below; plan mode is intentionally source-free.
+            benchmark(p, "smolvlm2", max_new_tokens=5000, model=FakeModel(),
+                      media=Path("/nonexistent-original.avi"))
+
     def test_normalized_plan_is_only_unreviewed(self):
         result = benchmark(normalize(manifest()), "plan")
         self.assertEqual(result["schema"], SCHEMA)
