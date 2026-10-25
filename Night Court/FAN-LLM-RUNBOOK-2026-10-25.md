@@ -117,3 +117,26 @@ It joins the existing S01E01 v4 quote-corrected and S09E19 v4 impostor-role edit
 S01 authentic SRT cue parts remain reversible and timed. S09's 347 original paragraph references are retained across 311 editorial reading blocks, **without inventing source timecodes**. Every source text block is reassembled and matched to the existing byte-identical SHA-256; missing/duplicate cue-part coverage or altered speaker-ledger source fails closed. The canonical pilot counts are 751 original speaking units, 487 provisionally named, and 264 unidentified. **None of those provisional attributions is an independent original-audio voice identification**, and proposed adjacent-same-role continuations must not silently become authoritative performance turns.
 
 The fan assistant should prefer direct source-backed character evidence over inference from dialogue semantics alone, while retrieving adjacent evidence when a line is split across caption cues. A candidate speaker's identity remains uncertain wherever the held editorial annotations mark it as provisional. Real P0/P1 verification still requires source audio/visual comparison; the next step is benchmarked speaker inference or targeted listening that actually reduces the unresolved count and false turns.
+
+## One practical private full-text retrieval database (SQLite FTS5)
+
+The 193-episode script source, 21 editorial pilot comedy/story cards and source-verified 715 pilot character reading blocks now share one optional **offline, local SQLite FTS5 index**, suitable for quick fan-facing queries. It uses Python's standard-library SQLite, **not a hosted embedding service, vector database, LLM API, new model-training pipeline or video analysis run**.
+
+Build only after producing the three private source outputs above:
+
+```sh
+python 'Night Court/tools/fan_sqlite_index.py' build \
+  --corpus /tmp/night-court-fan-193/fan-retrieval-chunks.jsonl \
+  --cards /tmp/night-court-fan-beats/pilot-fan-beat-cards.jsonl \
+  --roles /tmp/night-court-private-character-evidence/pilot-character-reading-blocks.jsonl \
+  --database /tmp/night-court-original-193.sqlite
+
+python 'Night Court/tools/fan_sqlite_index.py' query \
+  --database /tmp/night-court-original-193.sqlite \
+  --query 'Bull word dictionary' --episode S01E01 \
+  --output /tmp/night-court-query-bull.json
+```
+
+A query independently ranks three evidence groups: `script_witness` (original held dialogue and provisional v5 staging), `provisional_character_dialogue` (source-hash-backed reading blocks with unverified role attribution), and `editorial_comedy_and_story` (explicitly interpretive cards with original cue anchors). This is preferable to artificially averaging the confidence of claims with very different evidentiary standards. Episode-filter and exact provisional character-role filters work. Search uses SQLite's built-in BM25 and Porter stemming; it is lexical and inexpensive, not a guarantee of semantic recall. The private database includes the full source dialogue, so **do not commit or upload it**. Build refuses to overwrite an existing database and checks the exact all-episode/pilot source coverage by default.
+
+The fan application can immediately use this as a private retrieval backend; **it does not yet include a hosted chat frontend, embedding index, or independent quality score for model-generated answers**. Evaluate grounded fandom answers before adding expensive infrastructure. The same source IDs and evidence-state separation should carry forward if a semantic-search layer is eventually useful.
