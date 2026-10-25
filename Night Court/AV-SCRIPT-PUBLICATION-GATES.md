@@ -1,3 +1,7 @@
+## Ranked editorial readiness criteria (owner directive, 2026-10-25)
+
+Use [the authoritative script contract](SCRIPT-PRIORITIES-AND-ACCEPTANCE-2026-10-25.md). A passage with incorrect dialogue speaker-turn division or a known wrong named speaker cannot satisfy editorial readiness. Evaluate delivery, wardrobe/props and movement/staging separately with observed evidence, abstention on uncertainty and targeted physical-comedy escalation. Word/frame-accurate timestamps are not a publication requirement; approximate provenance remains essential. Do not weaken this document's existing independent original-source audiovisual certification requirements or promote any working draft by changing a status field alone.
+
 ## Separate fast editing milestone (2026-10-24)
 
 The independent whole-episode AV-certification gates above continue
