@@ -253,6 +253,8 @@ class LocalVideoModel:
 
 def benchmark(manifest, backend, media=None, revision=None, device="cpu",
               fps=2, width=320, model=None, max_new_tokens=384):
+    if type(max_new_tokens) is not int or not 32 <= max_new_tokens <= 512:
+        raise ValueError('Model generation exceeds bounded token budget')
     started = time.perf_counter()
     output = {
         "schema": SCHEMA, **{k: manifest[k] for k in (
@@ -285,8 +287,6 @@ def benchmark(manifest, backend, media=None, revision=None, device="cpu",
     output["verified_source_sha256"] = actual
     output["source_ffprobe"] = info
     output["verify_seconds"] = round(time.perf_counter() - t, 3)
-    if type(max_new_tokens) is not int or not 32 <= max_new_tokens <= 512:
-        raise ValueError('Model generation exceeds bounded token budget')
     load_start = time.perf_counter()
     if model is None:
         model = LocalVideoModel(backend, revision, device, fps, max_new_tokens)
