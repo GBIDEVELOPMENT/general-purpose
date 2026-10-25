@@ -1,3 +1,16 @@
+## Current screenplay deliverables and live editorial quality
+
+**Start here:** [CURRENT-PRACTICAL-SCREENPLAY-DELIVERY.md](CURRENT-PRACTICAL-SCREENPLAY-DELIVERY.md).
+The newest original-source-caption reading editions are S01E01 v6
+(inline original timed picture stage notes) and S09E19 v5
+(untimed dialogue, observed video in separate chronological appendix).
+Both contain complete *held-source* dialogue, 195 provisional named
+units combined, and 556 still anonymous units. The project currently
+has **two source-dialogue complete working drafts, zero editor-ready
+full visual scripts and zero independently original-AV-certified
+screenplays**. S09 has a 15-pointer/3-abstention picture-to-source-
+paragraph reviewer map, not invented subtitle timestamps.
+
 ## October 24: full-source pilot screenplays revised with real motion and contextual roles
 
 **Five distinct product stages exist. Do not conflate their counters.**
