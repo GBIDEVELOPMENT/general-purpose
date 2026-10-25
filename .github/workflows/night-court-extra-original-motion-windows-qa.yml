@@ -1,0 +1,21 @@
+name: Night Court bounded original extra physical-action windows QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/capture_extra_original_physical_beats.py'
+      - 'Night Court/tools/test_capture_extra_original_physical_beats.py'
+      - '.github/workflows/night-court-extra-original-motion-windows-qa.yml'
+      - '.github/workflows/night-court-trusted-extra-original-motion-windows.yml'
+permissions:
+  contents: read
+jobs:
+  fixed-original-episode-action-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          python 'Night Court/tools/test_capture_original_physical_beats.py'
+          python 'Night Court/tools/test_capture_extra_original_physical_beats.py'
