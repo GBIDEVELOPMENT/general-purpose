@@ -11,6 +11,7 @@ on:
     types: [opened, reopened, synchronize]
     paths:
       - 'Night Court/research/trigger-owner-qwen-original-video.txt'
+      - 'Night Court/research/trigger-owner-qwen-physical-comedy.txt'
 
 permissions:
   contents: read
@@ -44,7 +45,8 @@ jobs:
       github.event_name == 'pull_request_target' &&
       github.event.pull_request.user.login == 'gamesbyian' &&
       github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
-      github.event.pull_request.head.ref == 'research/night-court-qwen-real-original-trigger' &&
+      (github.event.pull_request.head.ref == 'research/night-court-qwen-real-original-trigger' ||
+       github.event.pull_request.head.ref == 'research/night-court-qwen-physical-comedy-trigger') &&
       github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -68,7 +70,8 @@ jobs:
       github.event_name == 'pull_request_target' &&
       github.event.pull_request.user.login == 'gamesbyian' &&
       github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
-      github.event.pull_request.head.ref == 'research/night-court-qwen-real-original-trigger' &&
+      (github.event.pull_request.head.ref == 'research/night-court-qwen-real-original-trigger' ||
+       github.event.pull_request.head.ref == 'research/night-court-qwen-physical-comedy-trigger') &&
       github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 18
@@ -119,6 +122,7 @@ jobs:
             'Night Court/tools/owner_qwen_original_video_pilot.py' \
             --owner-confirm-original-source \
             --episode '${{ matrix.episode }}' \
+            --focus '${{ github.event.pull_request.head.ref == 'research/night-court-qwen-physical-comedy-trigger' && 'physical_comedy' || 'observational' }}' \
             --output '${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json'
       - name: Convert original-source model inference into deferred editor questions and safe metrics
         # No original movie/audio/credential is needed by these small tools.
