@@ -82,7 +82,9 @@ jobs:
       - name: Checkout trusted reviewed base only, never PR-head source code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.sha }}
+          # pull_request_target github.sha is the reviewed current base-branch commit
+          # for THIS trigger, rather than a stale base SHA held by the PR.
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
