@@ -1,3 +1,20 @@
+## S01E01 opening attributed-dialogue sequence (2026-10-25)
+
+First nine original timed SRT cues provide a useful P0 adversarial case: caption C2 contains two dash-marked voices, the other captions include several alternating Lana/Painter lines. IMDb's pilot quote page labels the conversation. The [minimal external attribution registry](research/s01e01-opening-attributed-sequence-v1.json) links **ten caption parts** to ten external character labels, with source SHA and small lexical guardrail fragments. This is an **attribution proposal**, not audiovisual identification. Page: https://www.imdb.com/title/tt0660578/quotes/
+
+New `tools/align_attributed_quote_sequence.py` compares all attributed source parts in order against `build_caption_turns.parse_caption` (source cue + part lineage), checks short fragment containment, and reports adjacent same/different speaker hypotheses. The tool does **not** mutate scripts or accept identities. For S01E01:
+
+```sh
+python 'Night Court/tools/align_attributed_quote_sequence.py' \
+  --registry 'Night Court/research/s01e01-opening-attributed-sequence-v1.json' \
+  --output /tmp/night-court-opening-attribution.json
+python 'Night Court/tools/test_align_attributed_quote_sequence.py'
+```
+
+The current P0 delimiter is conservative and will not automatically combine separate unlabeled same-speaker cues. The external sequence directly proposes which ones deserve source-original listening. Before adopting any proposed merge/character label, examine original audio and complete `validate_speaker_turn_reviews.py` with true attestation. Voice embeddings and cross-episode speaker propagation remain future work. The rest of the episode and S09E19 have **not** been seeded or reviewed by this narrow pilot.
+
+Run actual source-linked CLI and tests before quoting any match counts as verified; GitHub file commits are not test execution. Preserve the latest cast/scene readers rather than overwriting with old caption-first outputs.
+
 # Third-party attributed dialogue anchoring: initial executable lane
 
 Status 2026-10-25: preliminary quote-to-caption matching infrastructure, not accepted speaker identification.
