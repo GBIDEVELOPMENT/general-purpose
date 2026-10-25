@@ -104,7 +104,7 @@ jobs:
             'Night Court/tools/run_headless_video_description.py' \
             --manifest /tmp/nc-synthetic-manifest.json --backend smolvlm2 \
             --media /tmp/nc-synthetic.mp4 --model-revision "$MODEL_SHA" \
-            --fps 1 --width 256 --max-new-tokens 64 \
+            --fps 1 --width 256 --max-new-tokens 256 \
             --device cpu --confirm-owner-media \
             --output /tmp/nc-synthetic-model-evidence.json
           /tmp/nc-vision-cpu/bin/python - <<'PY'
@@ -118,6 +118,8 @@ jobs:
           assert w['status'] in ('machine_proposed', 'requires_review')
           assert w['inference_seconds'] >= 0
           print('Real weight-loaded local model inference completed on synthetic test film')
+          print('MODEL_FULL_REVISION', x['model_revision'])
+          print('SYNTHETIC_MODEL_TEXT_EXCERPT', json.dumps((w.get('model_response_excerpt') or '')[:700]))
           print('MEASURED_CPU_SECONDS', json.dumps({
             'model_load':x['model_load_seconds'],
             'inference':w['inference_seconds'],
