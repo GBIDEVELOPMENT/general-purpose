@@ -40,7 +40,7 @@ class PilotReadable(unittest.TestCase):
         self.assertEqual(metadata["new_provisional_context_label_count"],56)
         self.assertIn("C007.1–C008.1",text)
         self.assertIn("C175.1–C177.1",text)
-        self.assertIn("source-caption",text.casefold())
+        self.assertIn("readable original-caption screenplay",text.casefold())
         self.assertIn("UNTIMED original source",text)
         self.assertNotIn("AV certified",metadata["quality_state"])
         self.assertEqual(review["source_audio_listened_for_these_roles"],False)
