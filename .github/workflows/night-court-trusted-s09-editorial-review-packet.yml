@@ -1,0 +1,39 @@
+name: Night Court trusted S09 integrated untimed screenplay editor guide
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s09-integrated-editor-packet.txt'
+permissions:
+  contents: write
+concurrency:
+  group: night-court-s09-integrated-editorial-packet
+  cancel-in-progress: false
+jobs:
+  publish-source-only-editorial-packet:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s09-editor-packet-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Validate existing original untimed dialogue and append bounded reviewer hints
+        run: |
+          python 'Night Court/tools/test_build_s09_editorial_review_packet_v7.py'
+          python 'Night Court/tools/build_s09_editorial_review_packet_v7.py'
+          python 'Night Court/tools/build_s09_editorial_review_packet_v7.py' --check
+      - name: Publish only derived original-source script and provisional research manifest
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-s09-unified-review-screenplay-v7-20261024'
+          git add -- 'Night Court/seasons/S09/S09E19/derived/caption-first-editor-review-v7'
+          git diff --cached --check
+          git commit -m 'Night Court: complete untimed dialogue screenplay with original video review-location appendix'
+          git push origin HEAD:refs/heads/data/night-court-s09-unified-review-screenplay-v7-20261024
