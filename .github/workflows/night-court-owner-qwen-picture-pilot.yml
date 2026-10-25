@@ -16,8 +16,10 @@ permissions:
   contents: read
 
 concurrency:
-  group: night-court-owner-qwen-original-source-20261025
-  cancel-in-progress: false
+  # Privileged media replays are serialized; cheap unprivileged PR tests are
+  # independently schedulable and can cancel obsolete branch revisions.
+  group: night-court-owner-qwen-${{ github.event_name == 'pull_request_target' && 'trusted-source' || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   offline-original-source-contracts:
