@@ -59,7 +59,9 @@ def build(ep,root=ROOT):
     output="\n".join(rendered).rstrip()+"\n"
     # Include a lightweight up-front reader notice, not hundreds of inline
     # provenance footnotes; separately ship per-line exact source index.
-    title="All You Need Is Love" if ep=="S01E01" else "P.S. Do I Know You?"\n    output=(f"# {ep} · {title}\\n\\n"\n            "**Working screenplay · editorial reading copy.** "
+    title="All You Need Is Love" if ep=="S01E01" else "P.S. Do I Know You?"
+    output=(f"# {ep} · {title}\\n\\n"
+            "**Working screenplay · editorial reading copy.** "
             "Character labels are provisional; observed video passages may "
             "not be synchronized with dialogue. Original source wording and "
             "cue references are retained in the adjacent reading index.\n\n"+output)
