@@ -1,0 +1,39 @@
+name: Night Court trusted original S09 picture-to-untimed-paragraph review hints
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-coarse-picture-dialogue-review.txt'
+permissions:
+  contents: write
+concurrency:
+  group: night-court-s09-original-text-photo-review
+  cancel-in-progress: false
+jobs:
+  source-only-hints:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s09-coarse-review-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Build source-pinned review location hints, no media or ASR
+        run: |
+          python 'Night Court/tools/test_plan_s09e19_coarse_picture_dialogue_review.py'
+          python 'Night Court/tools/plan_s09e19_coarse_picture_dialogue_review.py'
+          python 'Night Court/tools/plan_s09e19_coarse_picture_dialogue_review.py' --check
+      - name: Save only derived original-episode candidate search map for review
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-s09-untimed-visual-coarse-review-20261025'
+          git add -- 'Night Court/seasons/S09/S09E19/derived/source-coarse-picture-dialogue-review-v1'
+          git diff --cached --check
+          git commit -m 'Night Court: source-cited original video picture to untimed transcript reviewer suggestions'
+          git push origin HEAD:refs/heads/data/night-court-s09-untimed-visual-coarse-review-20261025
