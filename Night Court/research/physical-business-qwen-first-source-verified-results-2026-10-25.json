@@ -91,12 +91,12 @@
   "production_notes": {
     "model_invalid_excerpt_capped_at_characters": 800,
     "private_artifact_retention_days": 7,
-    "source_moviers_audio_or_frames_uploaded": false,
     "model_prose_copied_into_repo": false,
     "source_clip_selected_by_low_res_grayscale_candidate_only": true,
     "shot_continuity_independently_verified": false,
     "stage_truth_source": "original continuous synchronized audiovisual video review required",
-    "inference_token_cap_causality_unverified": true
+    "inference_token_cap_causality_unverified": true,
+    "source_movie_audio_or_frames_uploaded": false
   },
   "limitations": "Sampled stills can reveal an apparent left/right action reversal and visible object handling, but cannot prove unseen frames, original audio, physical joke timing, character intent, or full scene truth. One valid and one invalid JSON at two samples does not calibrate a population rate."
 }
