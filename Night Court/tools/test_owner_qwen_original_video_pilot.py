@@ -10,7 +10,7 @@ from unittest import mock
 from owner_qwen_original_video_pilot import (
     SOURCES, MODEL_ID, MODEL_SHA, CLIP_MS,
     source_benchmark_manifest, select_bounded_candidate, candidate_cut_check,
-    sample_source, trusted_owner_run,
+    sample_source, trusted_owner_run, candidate_offsets,
 )
 
 
@@ -59,6 +59,32 @@ class TrustedOriginalModelContracts(unittest.TestCase):
                         side_effect=[1] * len(SOURCES['S09E19']['candidate_starts_ms'])):
             with self.assertRaisesRegex(ValueError, "No proposed source-shot-safe"):
                 select_bounded_candidate(Path("/synthetic.avi"), "S09E19")
+
+    def test_fixed_source_sampled_physical_business_focus(self):
+        self.assertEqual(candidate_offsets("S01E01", "physical_comedy")[0], 845800)
+        self.assertEqual(candidate_offsets("S09E19", "physical_comedy")[0], 555800)
+        for episode, source in SOURCES.items():
+            offsets = candidate_offsets(episode, "physical_comedy")
+            self.assertLessEqual(len(offsets), 5)
+            self.assertTrue(all(type(offset) is int and offset + CLIP_MS < source["duration_ms"] for offset in offsets))
+            self.assertFalse(set(offsets) & set(source["candidate_starts_ms"]))
+            manifest = source_benchmark_manifest(episode, offsets[0], "physical_comedy")
+            self.assertEqual(manifest["source_video_sha256"], source["sha256"])
+            self.assertIsNone(manifest["caption_source_sha256"])
+            self.assertIn("source-sampled", manifest["windows"][0]["selection_reason"])
+            self.assertFalse(manifest["windows"][0]["shot_partition_verified"])
+            with self.assertRaises(ValueError):
+                source_benchmark_manifest(episode, source["candidate_starts_ms"][0], "physical_comedy")
+        with mock.patch("owner_qwen_original_video_pilot.candidate_cut_check",
+                        side_effect=[2, 0]) as scan:
+            selected, checked = select_bounded_candidate(Path("/synthetic.avi"), "S01E01", "physical_comedy")
+            self.assertEqual(selected, 846000)
+            self.assertEqual(len(checked), 2)
+            self.assertEqual(scan.call_count, 2)
+        with self.assertRaises(ValueError):
+            candidate_offsets("S01E01", "unreviewed")
+        with self.assertRaises(ValueError):
+            candidate_offsets("S01E02", "physical_comedy")
 
     def test_privileged_source_path_requires_password_and_never_accepts_override(self):
         with mock.patch.dict(os.environ, {"FTP_PASSWORD": ""}):
