@@ -88,6 +88,22 @@ class SourceActionEvidenceTests(unittest.TestCase):
         self.assertEqual(score["action_status_counts"]["uncertain"],1)
         self.assertFalse(score["source_action_review_complete"])
 
+    def test_empty_actions_valid_only_after_source_review_completion(self):
+        m,r=reviewed()
+        r["actions"]=[]
+        with self.assertRaisesRegex(ValueError,"Empty action list"):
+            summarize(m,digest(m),r,"b"*64)
+        r["source_action_review_complete"]=True
+        with self.assertRaisesRegex(ValueError,"without source moving video"):
+            summarize(m,digest(m),r,"b"*64)
+        r["original_continuous_video_viewed"]=True
+        r["original_synchronized_sound_reviewed"]=True
+        summary=summarize(m,digest(m),r,"b"*64)
+        self.assertTrue(summary["source_action_review_complete"])
+        self.assertEqual(summary["directed_actions_reviewed"],0)
+        self.assertEqual(summary["action_status_counts"]["pending"],0)
+        self.assertFalse(summary["complete_original_episode_certified"])
+
     def test_cli_source_safe_roundtrip_and_refuse_overwrite(self):
         m,r=reviewed()
         with tempfile.TemporaryDirectory() as td:
