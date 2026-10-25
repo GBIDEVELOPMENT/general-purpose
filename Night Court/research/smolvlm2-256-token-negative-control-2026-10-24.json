@@ -1,0 +1,60 @@
+{
+  "schema": "night-court-synthetic-video-description-negative-control/1",
+  "recorded_date": "2026-10-24",
+  "episode_media_processed": false,
+  "synthetic_input": {
+    "kind": "FFmpeg procedural testsrc2 video (no human participants)",
+    "file_retained": false,
+    "generated_movie_seconds": 2,
+    "sampled_excerpt_seconds": 1.5,
+    "width_pixels": 256,
+    "sampling_fps": 1
+  },
+  "model": {
+    "id": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+    "full_revision_sha": "7b375e1b73b11138ff12fe22c8f2822d8fe03467",
+    "generated_tokens_cap": 256,
+    "device": "cpu",
+    "direct_local_inference": true,
+    "cloud_inference_api_used": false
+  },
+  "workflow": {
+    "run_id": 40168321352,
+    "url": "https://github.com/gamesbyian/general-purpose/actions/runs/40168321352",
+    "outcome": "success",
+    "trigger_pr": "https://github.com/gamesbyian/general-purpose/pull/386",
+    "trigger_pr_closed_unmerged": true
+  },
+  "measured_seconds_excluding_job_cold_start": {
+    "model_load": 15.485,
+    "decode_temporary_video_excerpt": 0.057,
+    "local_model_inference": 29.636,
+    "total_model_tool": 45.234
+  },
+  "quality_probe": {
+    "strict_ten_field_json_accepted": false,
+    "parser_status": "requires_review",
+    "observed_model_output_format": "malformed and repetitive JSON with repeated visual fields and an additional unrequested stage_direction key; 256-token output excerpt ended incomplete",
+    "example_false_visual_claim": "A person in a suit and tie standing in front of a window",
+    "source_visual_truth": "Procedurally generated abstract test pattern with no actual person or window",
+    "hallucination_in_negative_control": true,
+    "field_based_screenplay_annotation_accepted": false,
+    "video_model_accuracy_on_original_night_court_unmeasured": true
+  },
+  "comparison_to_first_64_token_smoke": {
+    "initial_run_id": 40168003930,
+    "initial_model_load_seconds": 17.321,
+    "initial_inference_seconds": 14.23,
+    "initial_model_tool_total_seconds": 31.726,
+    "initial_structured_output": false,
+    "no_causal_speedup_or_p95_claim": true
+  },
+  "flags": {
+    "original_source_av_independently_reviewed": false,
+    "production_episode_script_certified": false,
+    "stage_directions_published": false,
+    "source_media_committed": false,
+    "model_weights_committed": false,
+    "recommend_automatic_v1_rollout": false
+  }
+}
