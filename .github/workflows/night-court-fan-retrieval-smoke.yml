@@ -13,6 +13,8 @@ on:
       - 'Night Court/tools/test_search_fan_corpus.py'
       - 'Night Court/tools/build_pilot_character_evidence.py'
       - 'Night Court/tools/test_build_pilot_character_evidence.py'
+      - 'Night Court/tools/fan_sqlite_index.py'
+      - 'Night Court/tools/test_fan_sqlite_index.py'
       - 'Night Court/research/pilot-fan-beat-seeds-v1.json'
       - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
       - 'Night Court/seasons/S09/S09E19/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
@@ -33,7 +35,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index
       - name: Both pilot working scripts
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -139,4 +141,37 @@ jobs:
           assert summary['reading_blocks']==715
           assert summary['original_audio_voice_identifications_verified']==0
           print('All 751 original source units and 487 provisional labels reconciled; no dialogue logged')
+          PY
+      - name: Build and query one private SQLite index for every evidence type
+        run: |
+          python 'Night Court/tools/fan_sqlite_index.py' build \
+            --corpus /tmp/night-court-private-fan-all/fan-retrieval-chunks.jsonl \
+            --cards /tmp/night-court-private-fan-beats/pilot-fan-beat-cards.jsonl \
+            --roles /tmp/night-court-private-character-evidence/pilot-character-reading-blocks.jsonl \
+            --database /tmp/night-court-all-private-fan.sqlite
+          python 'Night Court/tools/fan_sqlite_index.py' query \
+            --database /tmp/night-court-all-private-fan.sqlite \
+            --query 'Harry double-headed coin' --episode S01E01 \
+            --output /tmp/night-court-private-fts-coin.json
+          python 'Night Court/tools/fan_sqlite_index.py' query \
+            --database /tmp/night-court-all-private-fan.sqlite \
+            --query 'Roz Alex impersonator' --episode S09E19 \
+            --output /tmp/night-court-private-fts-roz.json
+          python - <<'PY'
+          import json,sqlite3
+          from pathlib import Path
+          db=sqlite3.connect('/tmp/night-court-all-private-fan.sqlite')
+          assert db.execute("SELECT COUNT(DISTINCT episode_id) FROM documents WHERE kind='script_witness'").fetchone()[0]==193
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue'").fetchone()[0]==715
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='editorial_comedy_and_story'").fetchone()[0]==21
+          for episode,path in [
+            ('S01E01','/tmp/night-court-private-fts-coin.json'),
+            ('S09E19','/tmp/night-court-private-fts-roz.json')
+          ]:
+            q=json.loads(Path(path).read_text('utf-8'))
+            assert q['results_by_evidence_kind']['script_witness']
+            assert q['results_by_evidence_kind']['editorial_comedy_and_story']
+            assert all(x['evidence']['episode_id']==episode for group in
+                q['results_by_evidence_kind'].values() for x in group)
+          print('All-episode private SQLite search passed with distinct evidence categories; no text logged')
           PY
