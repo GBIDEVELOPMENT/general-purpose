@@ -100,7 +100,7 @@ def scenedetect_cuts(media, detector):
     scenes = detect(str(media), instance, show_progress=False)
     # Returned FrameTimecode represents nominal frame-rate time. The source
     # pipeline must independently check native PTS before accepting any cut.
-    candidates = [round(pair[0].get_seconds() * 1000) for pair in scenes[1:]]
+    candidates = [round(pair[0].seconds * 1000) for pair in scenes[1:]]
     return sorted(set(candidates))
 
 
