@@ -9,6 +9,8 @@ on:
       - 'Night Court/tools/test_review_video_stage_directions.py'
       - 'Night Court/tools/score_video_description_quality.py'
       - 'Night Court/tools/test_score_video_description_quality.py'
+      - 'Night Court/tools/compare_visual_review_yield.py'
+      - 'Night Court/tools/test_compare_visual_review_yield.py'
       - '.github/workflows/night-court-headless-video-smoke.yml'
   workflow_dispatch:
 
@@ -37,6 +39,7 @@ jobs:
           python3 'Night Court/tools/test_run_headless_video_description.py' -v
           python3 'Night Court/tools/test_review_video_stage_directions.py' -v
           python3 'Night Court/tools/test_score_video_description_quality.py' -v
+          python3 'Night Court/tools/test_compare_visual_review_yield.py' -v
 
   actual-smolvlm2-cpu-opt-in:
     # Heavy job requires an explicit, owner-created PR title. No secrets.
