@@ -10,11 +10,11 @@
   "source_original_cues": 336,
   "source_original_speaking_units": 404,
   "original_source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
-  "additional_speaker_role_proposals": 85,
+  "additional_speaker_role_proposals": 82,
   "proposal_identity_status": "UNVERIFIED_SOURCE_CONTEXT_ONLY",
   "no_actor_or_character_identity_claimed_from_images": true,
   "not_whole_episode_av_certified": true,
-  "caution": "Episode cast credits limit possible named speakers. A cast credit or visual similarity never proves a specific dialogue turn. Treat all generated role names as hypotheses until original soundtrack review.",
+  "caution": "Episode cast credits limit possible named speakers. A cast credit or visual similarity never proves a specific dialogue turn. Treat all generated role names as hypotheses until original soundtrack review. The office-handling lines C061/C062/C066 are deliberately left unidentified because cast presence does not resolve their actual voices.",
   "proposals": [
     {
       "source_ref": "C001.1",
@@ -707,26 +707,6 @@
       "image_identity_claimed": false
     },
     {
-      "source_ref": "C061.1",
-      "role": "HARRY STONE",
-      "expected_original_reading_label": "UNIDENTIFIED SPEAKER · unresolved source voice",
-      "original_dialogue_block_sha256": "cf91d1a37895e00d289d324f73d58fc39f81e1a283aec43a0f191393688a6f24",
-      "basis": "source_role_reply_context_plus_episode_credits",
-      "episode_cast_credited": true,
-      "original_audio_voice_independently_verified": false,
-      "image_identity_claimed": false
-    },
-    {
-      "source_ref": "C062.1",
-      "role": "HARRY STONE",
-      "expected_original_reading_label": "UNIDENTIFIED SPEAKER · unresolved source voice",
-      "original_dialogue_block_sha256": "01ded3fbc9ba4b983d97c5a8e9a0fd834ce2ede21b710535fb852677e435b8f0",
-      "basis": "source_role_reply_context_plus_episode_credits",
-      "episode_cast_credited": true,
-      "original_audio_voice_independently_verified": false,
-      "image_identity_claimed": false
-    },
-    {
       "source_ref": "C063.1",
       "role": "HARRY STONE",
       "expected_original_reading_label": "UNIDENTIFIED SPEAKER · unresolved source voice",
@@ -751,16 +731,6 @@
       "role": "HARRY STONE",
       "expected_original_reading_label": "UNIDENTIFIED SPEAKER · unresolved source voice",
       "original_dialogue_block_sha256": "49601faa92d44f4531eb5e4ecf08409b181d241696c1b142fbb3f3f40fa86834",
-      "basis": "source_role_reply_context_plus_episode_credits",
-      "episode_cast_credited": true,
-      "original_audio_voice_independently_verified": false,
-      "image_identity_claimed": false
-    },
-    {
-      "source_ref": "C066.1",
-      "role": "HARRY STONE",
-      "expected_original_reading_label": "UNIDENTIFIED SPEAKER · unresolved source voice",
-      "original_dialogue_block_sha256": "d4e5ad8f1ec1c3906cf099bf73600112323fd441a7393e82589ad0fbf467990b",
       "basis": "source_role_reply_context_plus_episode_credits",
       "episode_cast_credited": true,
       "original_audio_voice_independently_verified": false,
