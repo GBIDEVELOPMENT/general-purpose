@@ -27,6 +27,23 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         ):
             self.assertIn(required, self.workflow)
 
+    def test_one_original_model_pass_produces_deferred_review_and_safe_metrics(self):
+        self.assertIn("prepare_video_stage_review.py", self.workflow)
+        self.assertIn("summarize_original_qwen_pilot_metrics.py", self.workflow)
+        self.assertIn("--reviewer-id original-film-pending", self.workflow)
+        self.assertIn("nc-qwen-pending-", self.workflow)
+        self.assertIn("nc-qwen-review-", self.workflow)
+        self.assertIn("nc-qwen-safe-metrics-", self.workflow)
+        self.assertIn("retention-days: 7", self.workflow)
+        self.assertIn("if: success()", self.workflow)
+        # All report files are generated *after* source data is acquired, and
+        # credential-scoped FTP_PASSWORD must not be declared at job scope.
+        self.assertNotIn("\n      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}", self.workflow)
+
+    def test_cheap_ci_lane_does_not_block_source_jobs(self):
+        self.assertIn("github.event_name == 'pull_request_target' && 'trusted-source' || github.ref", self.workflow)
+        self.assertIn("cancel-in-progress: ${{ github.event_name == 'pull_request' }}", self.workflow)
+
     def test_comment_writer_is_separate_job(self):
         self.assertIn("announce-trusted-owner-run-locator:", self.workflow)
         self.assertIn("pull-requests: write", self.workflow)

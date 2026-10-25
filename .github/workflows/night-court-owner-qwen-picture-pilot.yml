@@ -16,8 +16,10 @@ permissions:
   contents: read
 
 concurrency:
-  group: night-court-owner-qwen-original-source-20261025
-  cancel-in-progress: false
+  # Privileged media replays are serialized; cheap unprivileged PR tests are
+  # independently schedulable and can cancel obsolete branch revisions.
+  group: night-court-owner-qwen-${{ github.event_name == 'pull_request_target' && 'trusted-source' || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   offline-original-source-contracts:
@@ -118,16 +120,33 @@ jobs:
             --owner-confirm-original-source \
             --episode '${{ matrix.episode }}' \
             --output '${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json'
+      - name: Convert original-source model inference into deferred editor questions and safe metrics
+        # No original movie/audio/credential is needed by these small tools.
+        # Every decision remains deferred and independently unaccepted.
+        run: |
+          set -euo pipefail
+          python3 'Night Court/tools/prepare_video_stage_review.py' \
+            --model-report '${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json' \
+            --decisions '${{ runner.temp }}/nc-qwen-pending-${{ matrix.episode }}.json' \
+            --review-packet '${{ runner.temp }}/nc-qwen-review-${{ matrix.episode }}.md' \
+            --reviewer-id original-film-pending
+          python3 'Night Court/tools/summarize_original_qwen_pilot_metrics.py' \
+            --report '${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json' \
+            --output '${{ runner.temp }}/nc-qwen-safe-metrics-${{ matrix.episode }}.json'
       - name: Retain only small original-source-SHA-linked model proposals for private review
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: night-court-owner-original-qwen-proposals-${{ matrix.episode }}
-          path: ${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json
+          path: |
+            ${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json
+            ${{ runner.temp }}/nc-qwen-pending-${{ matrix.episode }}.json
+            ${{ runner.temp }}/nc-qwen-review-${{ matrix.episode }}.md
+            ${{ runner.temp }}/nc-qwen-safe-metrics-${{ matrix.episode }}.json
           if-no-files-found: error
           retention-days: 7
       - name: Destroy model weights cache, derived report and temporary environment
         if: always()
         run: |
           rm -rf /tmp/night-court-qwen-env /tmp/night-court-original-qwen-model-cache
-          rm -f '${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json'
+          rm -f '${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json' '${{ runner.temp }}/nc-qwen-pending-${{ matrix.episode }}.json' '${{ runner.temp }}/nc-qwen-review-${{ matrix.episode }}.md' '${{ runner.temp }}/nc-qwen-safe-metrics-${{ matrix.episode }}.json'
