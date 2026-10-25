@@ -18,6 +18,10 @@ The secret `FTP_PASSWORD` is scoped only to the fixed-download Python invocation
 
 Runs are matrix-sharded across the two pilots, with an 18-minute job limit, fixed exact source size/hash allowlist, disposable original AVI scratch, deterministic alternative sub-window list, bounded model dependencies and seven-day private **JSON-only** GitHub Actions artifacts. The artifact expiry means the source film/model report cannot be treated as permanently archived; retain only reviewed compact provenance/metrics after quality checks. The QA tests never download original media. CPU-only Qwen was measured on a tiny synthetic clip at ~181 seconds model-tool time (256-token run), but **real episode complexity and cold start require new measurement**. Two successful samples cannot prove fleet 30-minute p95.
 
+## Run locator without exposing owner FTP credentials
+
+An independent `announce-trusted-owner-run-locator` job requests **`pull-requests: write` only** and posts this source workflow's actual run URL as a comment on the strictly allowlisted owner trigger PR. It has **no checkout, media or FTP secret access**, and cannot edit the source or stage directions. The separate source/model matrix continues with only `contents: read` and scoped FTP access. A commented run URL is an observable audit pointer, **not** evidence that an AVI was actually analyzed or that the job succeeded. Follow the exact GitHub Actions run link to inspect each matrix result and any private short-lived JSON artifact.
+
 ## After trusted source inference succeeds
 
 1. Inspect each report for source SHA, excerpt offsets, image-change candidate scan list, actual model revision, input duration, model errors, total wall time and any malformed or exaggerated claims.
