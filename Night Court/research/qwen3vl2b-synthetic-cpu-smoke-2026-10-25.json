@@ -1,0 +1,55 @@
+{
+  "schema": "night-court-source-free-qwen3vl2b-cpu-runtime/1",
+  "measurement_date": "2026-10-25",
+  "workflow_run_id": 40169276648,
+  "workflow_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40169276648",
+  "source_pull_request": "https://github.com/gamesbyian/general-purpose/pull/393",
+  "synthetic_video_only": true,
+  "original_series_episode_video_processed": false,
+  "original_audio_or_subtitles_used": false,
+  "model": {
+    "id": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision_sha": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "backend": "qwen3vl",
+    "runtime": "torch CPU / Transformers",
+    "torch_version": "2.7.1",
+    "transformers_version": "4.57.1",
+    "device": "cpu",
+    "cpu_threads_env_limit": 2,
+    "max_new_tokens": 64
+  },
+  "synthetic_input": {
+    "source": "FFmpeg testsrc2 procedural video (no human participants)",
+    "generated_duration_seconds": 2,
+    "model_excerpt_seconds": 1.5,
+    "sampled_fps": 1,
+    "output_width_pixels": 256,
+    "source_picture_stored_in_git": false,
+    "clips_uploaded": false
+  },
+  "measured_seconds_excluding_runner_setup_install": {
+    "model_load": 28.157,
+    "temporary_excerpt_decode": 0.168,
+    "local_model_inference": 87.837,
+    "total_tool_wall": 116.215
+  },
+  "response": {
+    "structured_ten_field_json_valid": false,
+    "source_observed_stage_direction_accepted": false,
+    "original_episode_visual_accuracy_measured": false,
+    "model_response_archived": false,
+    "no_person_hallucination_rate_established": false,
+    "output_status": "requires_review"
+  },
+  "operations": {
+    "original_video_ftp_access": false,
+    "actions_secrets_used": false,
+    "GPU_used": false,
+    "pinned_model_commit": true,
+    "source_media_or_model_weights_committed": false,
+    "single_sample_only": true,
+    "p95_episode_runtime_established": false,
+    "production_rollout_recommended": false
+  },
+  "interpretation": "Full 2B model loads and runs headlessly on a standard CPU runner in a tiny synthetic video probe, but 87.837 seconds of inference for a 1.5-second excerpt with a 64-token cap makes broad CPU-only semantic analysis impractical without substantial selective sampling or faster hardware. This is not an accuracy comparison; structured JSON failed under a deliberately short token limit."
+}
