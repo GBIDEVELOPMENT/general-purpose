@@ -1,4 +1,5 @@
 name: Night Court SmolVLM2 real CPU smoke (synthetic only)
+# Optional heavy smoke: no real episode media, no owner secrets, no uploads.
 
 on:
   pull_request:
