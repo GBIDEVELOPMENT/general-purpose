@@ -1,0 +1,19 @@
+# Night Court: bounded, real-model synthetic CPU compatibility gate
+
+**Status: executable opt-in workflow, not yet demonstrated model inference.** This job intentionally loads actual SmolVLM2-500M weights, unlike the previous mocked inference tests, **but only on a generated 2-second silent synthetic film**. It does not touch the owner FTP server, original episodes, credentials, captions, actors, or scripts. Related: [headless video benchmark](HEADLESS-VIDEO-DESCRIPTION-BENCHMARK.md), [editorial stage review](VISUAL-STAGE-EDITORIAL-REVIEW.md), [issue #302](https://github.com/gamesbyian/general-purpose/issues/302).
+
+## Why the heavy job is opt-in
+
+Previous [one-shot PR #382](https://github.com/gamesbyian/general-purpose/pull/382) had no accessible run ID and was closed unmerged. The repository's normal source-free smoke path, `.github/workflows/night-court-headless-video-smoke.yml`, **has** successfully executed real FFmpeg plus mocked video-model tests. It now contains a second job gated by *all* of the following: (1) a PR created inside this same repository; (2) PR opener exactly `gamesbyian`; (3) an exact, deliberate `[nc-model-cpu-smoke]` marker anywhere in the PR title. Default PRs only execute the ordinary eight+ source-free tests.
+
+This temporary option downloads external open model weights only onto a disposable GitHub-hosted runner, resolves the model SHA via the public Hugging Face registry, passes the **full immutable SHA** to the existing source-verified runner, creates a 128×96 2-second synthetic AVI and measures decoding/model-loading/inference at 1fps, maximum 64 generated tokens. Neither the model, generated movie, nor runtime JSON is uploaded as an artifact or committed. Original AV and GitHub secrets are never present. The container/worker environment is discarded after execution.
+
+Python CPU runtime is isolated with PyTorch 2.7.1 CPU and Transformers 4.57.1, with 2-thread caps, 18-minute job, 12-minute model inference and bounded installer timeouts. Real cache/memory consumption and model output may still cause an environment failure: **a failure is evidence for targeted debugging, not a claim of model compatibility.** The 64-token generation budget only checks a successful *model invocation*, not complete 10-field structured screenplay annotations. A real 384-token structured-output test and small model comparison are separate later gates.
+
+## How to trigger or repeat without granting secrets
+
+Open a bounded PR against `main` from the owner account, touching `Night Court/tools/test_run_headless_video_description.py` or the existing smoke workflow, and include exactly `[nc-model-cpu-smoke]` in the title. GitHub's ordinary smoke will then run plus a *single* CPU-model trial. This is not a recurring task, and never runs on pull requests lacking the marker. Check Actions under `Night Court headless video description (offline smoke)`. An agent may create such a one-shot PR, inspect its logs, then close the trigger unmerged; this avoids leaking an expensive job into release CI.
+
+**Interpret only the validated log summary**: actual model revision, model load seconds, clip decode seconds, inference seconds, total elapsed, parser status. A successful 64-token response need not be JSON; it can be `requires_review` while proving local inference. Reject any output asserting an observed Night Court action because this test film is synthetic. The output script and source-gate statuses remain unaccepted.
+
+Once the actual synthetic CPU model is demonstrated, use the existing **trusted reviewed-main owner source-once pipeline** to process a few privately held original scene clips, then compare against directly reviewed physical-comedy stage evidence. The model CLI never downloads original FTP media. Do not trigger whole-series jobs, Qwen3VL GPU work or third-party hosted video inference just to satisfy this smoke.
