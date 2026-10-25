@@ -125,7 +125,7 @@ def normalize(raw):
             "id": ident, "start_ms": a, "end_ms": b,
             "selection_reason": str(row.get("selection_reason") or "unspecified")[:100],
             "candidate_cut_crossing": False,
-            "shot_partition_verified": row.get("shot_partition_verified") is True,
+            "shot_partition_verified": False,
         })
     if total > MAX_TOTAL_MS:
         raise ValueError("Excessive original clip sampling requested")
