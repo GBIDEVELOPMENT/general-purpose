@@ -1,0 +1,161 @@
+{
+  "schema": "night-court-sampled-frame-triage-two-pilot-summary/1",
+  "episodes": [
+    {
+      "episode_id": "S01E01",
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "exact_private_model_report_sha256": "4cd38b9a833f769f171ffd1666d5f433cfc743796bf9c3c308373cae68ff8e87",
+      "source_sample_material_sha256": "4bdeeebb64b3f33c1c4dff50354266f7655546ece23fa713c7b3b59818b237d7",
+      "nominal_model_window_ms": [
+        77000,
+        79000
+      ],
+      "nominal_frames_examined": 8,
+      "nominal_sampling_fps": 4,
+      "sampled_still_reviewer_id": "chatgpt-sampled-image-analysis-20261025",
+      "field_counts": {
+        "visibly_consistent": 2,
+        "mixed_claim": 4,
+        "contradicted_in_samples": 0,
+        "unsupported_interpretation": 2,
+        "not_resolvable": 2,
+        "model_absent": 0
+      },
+      "schema": "night-court-sampled-frame-model-triage/1",
+      "field_count": 10,
+      "field_statuses": [
+        {
+          "field": "setting",
+          "sampled_frame_status": "mixed_claim"
+        },
+        {
+          "field": "camera",
+          "sampled_frame_status": "visibly_consistent"
+        },
+        {
+          "field": "people_and_positions",
+          "sampled_frame_status": "mixed_claim"
+        },
+        {
+          "field": "actions",
+          "sampled_frame_status": "mixed_claim"
+        },
+        {
+          "field": "props",
+          "sampled_frame_status": "mixed_claim"
+        },
+        {
+          "field": "entrances_exits",
+          "sampled_frame_status": "not_resolvable"
+        },
+        {
+          "field": "physical_comedy",
+          "sampled_frame_status": "not_resolvable"
+        },
+        {
+          "field": "reactions",
+          "sampled_frame_status": "unsupported_interpretation"
+        },
+        {
+          "field": "uncertainty",
+          "sampled_frame_status": "visibly_consistent"
+        },
+        {
+          "field": "proposed_stage_direction",
+          "sampled_frame_status": "unsupported_interpretation"
+        }
+      ],
+      "reference_is_original_full_motion_video": false,
+      "native_frame_pts_independently_verified": false,
+      "source_video_editorial_staging_approved": false,
+      "quality_accuracy_or_model_recall_established": false,
+      "no_model_or_reviewer_prose_copied": true,
+      "note": "Partial visual-support triage from nominally timed source-derived sampled stills; unseen content is NOT proven absent between frames, no sound/motion validation, no source-video acceptance or episode certification."
+    },
+    {
+      "episode_id": "S09E19",
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "exact_private_model_report_sha256": "ca096f5df0d7292c9362d401ff75482fcfaf05ec4d8e37663905f54caae7b4b3",
+      "source_sample_material_sha256": "2e5e906b71fcd1e8ec1debdb1b2a87ae0a55c4cdd1042742a1007673e5051037",
+      "nominal_model_window_ms": [
+        812000,
+        814000
+      ],
+      "nominal_frames_examined": 10,
+      "nominal_sampling_fps": 5,
+      "sampled_still_reviewer_id": "chatgpt-sampled-image-analysis-20261025",
+      "field_counts": {
+        "visibly_consistent": 3,
+        "mixed_claim": 3,
+        "contradicted_in_samples": 0,
+        "unsupported_interpretation": 2,
+        "not_resolvable": 2,
+        "model_absent": 0
+      },
+      "schema": "night-court-sampled-frame-model-triage/1",
+      "field_count": 10,
+      "field_statuses": [
+        {
+          "field": "setting",
+          "sampled_frame_status": "mixed_claim"
+        },
+        {
+          "field": "camera",
+          "sampled_frame_status": "visibly_consistent"
+        },
+        {
+          "field": "people_and_positions",
+          "sampled_frame_status": "visibly_consistent"
+        },
+        {
+          "field": "actions",
+          "sampled_frame_status": "mixed_claim"
+        },
+        {
+          "field": "props",
+          "sampled_frame_status": "mixed_claim"
+        },
+        {
+          "field": "entrances_exits",
+          "sampled_frame_status": "not_resolvable"
+        },
+        {
+          "field": "physical_comedy",
+          "sampled_frame_status": "not_resolvable"
+        },
+        {
+          "field": "reactions",
+          "sampled_frame_status": "unsupported_interpretation"
+        },
+        {
+          "field": "uncertainty",
+          "sampled_frame_status": "visibly_consistent"
+        },
+        {
+          "field": "proposed_stage_direction",
+          "sampled_frame_status": "unsupported_interpretation"
+        }
+      ],
+      "reference_is_original_full_motion_video": false,
+      "native_frame_pts_independently_verified": false,
+      "source_video_editorial_staging_approved": false,
+      "quality_accuracy_or_model_recall_established": false,
+      "no_model_or_reviewer_prose_copied": true,
+      "note": "Partial visual-support triage from nominally timed source-derived sampled stills; unseen content is NOT proven absent between frames, no sound/motion validation, no source-video acceptance or episode certification."
+    }
+  ],
+  "totals": {
+    "fields": 20,
+    "visibly_consistent": 5,
+    "mixed_claim": 7,
+    "contradicted_in_samples": 0,
+    "unsupported_interpretation": 4,
+    "not_resolvable": 4,
+    "model_absent": 0
+  },
+  "original_moving_video_stage_review_complete": false,
+  "independent_av_certified_episodes": 0,
+  "review_method": "Manual inspection of prior source-sha-linked nominal frame samples, not source movie audio or full original video in motion",
+  "source_frames_committed": false,
+  "model_prose_committed": false
+}
