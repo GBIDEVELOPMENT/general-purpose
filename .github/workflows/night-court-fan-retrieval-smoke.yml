@@ -11,6 +11,8 @@ on:
       - 'Night Court/tools/test_build_pilot_fan_beat_cards.py'
       - 'Night Court/tools/search_fan_corpus.py'
       - 'Night Court/tools/test_search_fan_corpus.py'
+      - 'Night Court/tools/build_pilot_character_evidence.py'
+      - 'Night Court/tools/test_build_pilot_character_evidence.py'
       - 'Night Court/research/pilot-fan-beat-seeds-v1.json'
       - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
       - 'Night Court/seasons/S09/S09E19/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
@@ -31,7 +33,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence
       - name: Both pilot working scripts
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -120,4 +122,21 @@ jobs:
               assert all(x['episode_id']==episode and not x['film_staging_verified']
                          for x in r['editorial_fan_beat_candidates'])
           print('Joint source-and-interpretation pilot retrieval passed without text publication')
+          PY
+      - name: Reversible per-character original source evidence pilot
+        run: |
+          python 'Night Court/tools/build_pilot_character_evidence.py' \
+            --output /tmp/night-court-private-character-evidence
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('/tmp/night-court-private-character-evidence')
+          summary=json.loads((root/'pilot-character-evidence-manifest.json').read_text('utf-8'))
+          assert summary['episodes']==2
+          assert summary['original_speaking_units']==751
+          assert summary['provisionally_named_source_units']==487
+          assert summary['unidentified_source_units']==264
+          assert summary['reading_blocks']==715
+          assert summary['original_audio_voice_identifications_verified']==0
+          print('All 751 original source units and 487 provisional labels reconciled; no dialogue logged')
           PY
