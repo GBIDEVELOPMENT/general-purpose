@@ -1,0 +1,36 @@
+name: Night Court trusted exact original-unit pilot attribution coverage
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-source-speaking-unit-coverage.txt'
+permissions:
+  contents: write
+jobs:
+  original-caption-sources-only:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-source-unit-coverage-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Count 751 original source speech units, never 715 joined reading blocks
+        run: |
+          python 'Night Court/tools/test_summarize_exact_current_source_speaker_coverage.py'
+          python 'Night Court/tools/summarize_exact_current_source_speaker_coverage.py'
+          python 'Night Court/tools/summarize_exact_current_source_speaker_coverage.py' --check
+      - name: Publish accurate source-unit completion and remaining 264 original voice review tasks
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-current-original-source-unit-coverage-20261024'
+          git add -- 'Night Court/catalog/current-night-court-original-speaking-unit-coverage.json'
+          git diff --cached --check
+          git commit -m 'Night Court: authoritative 487 of 751 original-source provisional speaker coverage and 264-review queue'
+          git push origin HEAD:refs/heads/data/night-court-current-original-source-unit-coverage-20261024
