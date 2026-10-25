@@ -50,11 +50,13 @@ class TrustedOriginalModelContracts(unittest.TestCase):
         with mock.patch("owner_qwen_original_video_pilot.candidate_cut_check",
                         side_effect=[2, 1, 0]) as scanner:
             offset, scans = select_bounded_candidate(Path("/synthetic-not-opened.avi"), "S01E01")
-            self.assertEqual(offset, 84000)
+            self.assertEqual(offset, 77000)
             self.assertEqual([s["candidate_image_changes"] for s in scans], [2, 1, 0])
             self.assertEqual(scanner.call_count, 3)
+            self.assertEqual(len(SOURCES["S01E01"]["candidate_starts_ms"]), 14)
+            self.assertEqual(len(SOURCES["S09E19"]["candidate_starts_ms"]), 19)
         with mock.patch("owner_qwen_original_video_pilot.candidate_cut_check",
-                        side_effect=[1] * 5):
+                        side_effect=[1] * len(SOURCES['S09E19']['candidate_starts_ms'])):
             with self.assertRaisesRegex(ValueError, "No proposed source-shot-safe"):
                 select_bounded_candidate(Path("/synthetic.avi"), "S09E19")
 
