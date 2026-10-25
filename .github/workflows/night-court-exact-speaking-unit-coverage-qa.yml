@@ -1,0 +1,25 @@
+name: Night Court original source speaking units versus reading blocks metric QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/summarize_exact_current_source_speaker_coverage.py'
+      - 'Night Court/tools/test_summarize_exact_current_source_speaker_coverage.py'
+      - 'Night Court/catalog/current-night-court-original-speaking-unit-coverage.json'
+      - '.github/workflows/night-court-exact-speaking-unit-coverage-qa.yml'
+      - '.github/workflows/night-court-trusted-speaking-unit-coverage-publish.yml'
+permissions:
+  contents: read
+jobs:
+  source-ref-order-word-sha-consistency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          python 'Night Court/tools/test_summarize_exact_current_source_speaker_coverage.py'
+          python 'Night Court/tools/summarize_exact_current_source_speaker_coverage.py' --output-root "${{ runner.temp }}/metric"
+          if test -f 'Night Court/catalog/current-night-court-original-speaking-unit-coverage.json'; then
+            python 'Night Court/tools/summarize_exact_current_source_speaker_coverage.py' --check
+          fi
