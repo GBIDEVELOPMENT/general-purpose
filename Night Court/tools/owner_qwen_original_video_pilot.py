@@ -28,12 +28,16 @@ SOURCES = {
         "duration_ms": 1448256,
         "candidate_starts_ms": tuple(range(75000, 88001, 1000)),
         "picture_context": "court-office-phone-original-reviewed-neighborhood",
+        "physical_comedy_candidate_starts_ms": (845800, 846000, 845600, 846200, 847000),
+        "physical_comedy_context": "court-bench-visible-hand-motion-source-sampled-neighborhood",
     },
     "S09E19": {
         "sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
         "duration_ms": 1320144,
         "candidate_starts_ms": tuple(range(812000, 830001, 1000)),
         "picture_context": "restaurant-seated-guests-original-reviewed-neighborhood",
+        "physical_comedy_candidate_starts_ms": (555800, 556000, 555600, 556200, 559000),
+        "physical_comedy_context": "court-bench-object-handling-source-sampled-neighborhood",
     },
 }
 CLIP_MS = 2000
@@ -101,12 +105,20 @@ def candidate_cut_check(media: Path, start_ms: int, duration_ms: int = CLIP_MS):
             changes += 1
     return changes
 
-def select_bounded_candidate(media: Path, episode: str):
+def candidate_offsets(episode: str, focus: str):
+    if episode not in SOURCES or focus not in ("observational", "physical_comedy"):
+        raise ValueError("Only two source-verified original pilot modes permitted")
+    key = "candidate_starts_ms" if focus == "observational" else "physical_comedy_candidate_starts_ms"
+    return SOURCES[episode][key]
+
+
+def select_bounded_candidate(media: Path, episode: str, focus: str = "observational"):
     if episode not in SOURCES:
         raise ValueError("Unrecognized episode")
+    offsets = candidate_offsets(episode, focus)
     report = []
     selected = None
-    for start in SOURCES[episode]["candidate_starts_ms"]:
+    for start in offsets:
         count = candidate_cut_check(media, start)
         report.append({"start_ms": start, "candidate_image_changes": count})
         if count == 0:
@@ -118,9 +130,9 @@ def select_bounded_candidate(media: Path, episode: str):
     return selected, report
 
 
-def source_benchmark_manifest(episode: str, start_ms: int):
+def source_benchmark_manifest(episode: str, start_ms: int, focus: str = "observational"):
     source = SOURCES.get(episode)
-    if source is None or start_ms not in source["candidate_starts_ms"]:
+    if source is None or start_ms not in candidate_offsets(episode, focus):
         raise ValueError("Only fixed pilot original-picture region is permitted")
     return normalize({
         "schema": "night-court-video-benchmark-windows/1",
@@ -132,13 +144,13 @@ def source_benchmark_manifest(episode: str, start_ms: int):
             "id": f"{episode}-REAL-PICTURE-CANDIDATE-01",
             "start_ms": start_ms,
             "end_ms": start_ms + CLIP_MS,
-            "selection_reason": source["picture_context"],
+            "selection_reason": source["picture_context"] if focus == "observational" else source["physical_comedy_context"],
             "candidate_cut_crossing": False,  # FFmpeg scan checked only.
         }],
     })
 
 
-def trusted_owner_run(episode: str, output: Path):
+def trusted_owner_run(episode: str, output: Path, focus: str = "observational"):
     expected, item = sample_source(episode)
     password = os.environ.get("FTP_PASSWORD")
     if not password:
@@ -164,8 +176,8 @@ def trusted_owner_run(episode: str, output: Path):
         if actual != expected["sha256"]:
             raise ValueError("Original source SHA mismatch, no visual inference")
         elapsed_fetch = perf_counter() - started
-        clip_start, scan = select_bounded_candidate(video, episode)
-        selected = source_benchmark_manifest(episode, clip_start)
+        clip_start, scan = select_bounded_candidate(video, episode, focus)
+        selected = source_benchmark_manifest(episode, clip_start, focus)
         result = benchmark(selected, "qwen3vl", media=video,
                            revision=MODEL_SHA, device="cpu",
                            fps=1, width=256, max_new_tokens=256)
@@ -173,6 +185,7 @@ def trusted_owner_run(episode: str, output: Path):
             "owner_source_pilot_schema": "night-court-original-qwen-picture-pilot/1",
             "source_reference_model_schema": "night-court-headless-video-description/1",
             "original_avi_download_count": 1,
+            "source_focus": focus,
             "original_avi_sha256_verified": actual,
             "original_source_retrieval_wall_seconds": round(elapsed_fetch, 3),
             "pre_model_original_cut_candidate_checks": scan,
@@ -204,12 +217,13 @@ def trusted_owner_run(episode: str, output: Path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--episode", choices=sorted(SOURCES), required=True)
+    parser.add_argument("--focus", choices=("observational", "physical_comedy"), default="observational")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--owner-confirm-original-source", action="store_true")
     args = parser.parse_args()
     if not args.owner_confirm_original_source:
         parser.error("This job requires explicit trusted original-series source confirmation")
-    trusted_owner_run(args.episode, args.output)
+    trusted_owner_run(args.episode, args.output, args.focus)
 
 
 if __name__ == "__main__":
