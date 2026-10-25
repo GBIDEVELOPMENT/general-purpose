@@ -7,6 +7,11 @@ on:
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
       - 'Night Court/tools/search_fan_retrieval_chunks.py'
       - 'Night Court/tools/test_search_fan_retrieval_chunks.py'
+      - 'Night Court/tools/build_pilot_fan_beat_cards.py'
+      - 'Night Court/tools/test_build_pilot_fan_beat_cards.py'
+      - 'Night Court/tools/search_fan_corpus.py'
+      - 'Night Court/tools/test_search_fan_corpus.py'
+      - 'Night Court/research/pilot-fan-beat-seeds-v1.json'
       - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
       - 'Night Court/seasons/S09/S09E19/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
       - 'Night Court/FAN-OBSESSION-DELIVERABLE-2026-10-25.md'
@@ -26,7 +31,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus
       - name: Both pilot working scripts
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -77,4 +82,42 @@ jobs:
               assert result['hits'] and all(h['episode_id']==episode for h in result['hits'])
               assert all(not h['speaker_names_verified'] for h in result['hits'])
           print('Both original pilot lexical search queries passed; no dialogue printed or uploaded')
+          PY
+      - name: Validate original caption anchored fan interpretation cards
+        run: |
+          python 'Night Court/tools/build_pilot_fan_beat_cards.py' \
+            --output /tmp/night-court-private-fan-beats
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('/tmp/night-court-private-fan-beats/pilot-fan-beat-manifest.json').read_text('utf-8'))
+          assert m['card_count']==21 and m['episode_counts']=={'S01E01':10,'S09E19':11}
+          assert m['original_media_reviewed_by_this_export'] is False
+          print('21 source-anchored pilot cards validated; no original dialogue printed')
+          PY
+      - name: Join source scripts and explanatory fan beats in private search
+        run: |
+          python 'Night Court/tools/search_fan_corpus.py' \
+            --corpus /tmp/night-court-private-fan-all/fan-retrieval-chunks.jsonl \
+            --cards /tmp/night-court-private-fan-beats/pilot-fan-beat-cards.jsonl \
+            --query 'Harry double-headed coin justice' --episode S01E01 \
+            --output /tmp/night-court-private-joined-coin.json
+          python 'Night Court/tools/search_fan_corpus.py' \
+            --corpus /tmp/night-court-private-fan-all/fan-retrieval-chunks.jsonl \
+            --cards /tmp/night-court-private-fan-beats/pilot-fan-beat-cards.jsonl \
+            --query 'Roz Alex substitute impostor' --episode S09E19 \
+            --output /tmp/night-court-private-joined-impostors.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for episode,name in [
+            ('S01E01','/tmp/night-court-private-joined-coin.json'),
+            ('S09E19','/tmp/night-court-private-joined-impostors.json')
+          ]:
+              r=json.loads(Path(name).read_text('utf-8'))
+              assert r['script_witness_hits'] and r['editorial_fan_beat_candidates']
+              assert all(x['episode_id']==episode for x in r['script_witness_hits'])
+              assert all(x['episode_id']==episode and not x['film_staging_verified']
+                         for x in r['editorial_fan_beat_candidates'])
+          print('Joint source-and-interpretation pilot retrieval passed without text publication')
           PY
