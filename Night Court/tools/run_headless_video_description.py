@@ -82,12 +82,19 @@ def normalize(raw):
             if row.get("independently_accepted") is not False or row.get("original_continuous_AV_review_done") is not False:
                 raise ValueError("Review status cannot be promoted")
             times = row.get("source_window_ms")
+            partition = row.get("candidate_shot_partition_not_verified")
+            # Existing source-once planner exports *numeric candidate shot IDs*.
+            # A partition index means cut-safe only according to an unreviewed
+            # FFmpeg threshold; it never certifies an actual camera edit.
+            if type(partition) is not int or not 0 <= partition <= 5001:
+                raise ValueError("Missing numeric candidate shot partition provenance")
             windows.append({
                 "id": row.get("id"), "start_ms": times[0] if isinstance(times, list) and len(times) == 2 else None,
                 "end_ms": times[1] if isinstance(times, list) and len(times) == 2 else None,
                 "selection_reason": row.get("selection_reason"),
-                "candidate_cut_crossing": False if row.get("candidate_shot_partition_not_verified") is True else None,
+                "candidate_cut_crossing": False,
                 "shot_partition_verified": False,
+                "candidate_shot_partition_id_unverified": partition,
             })
         caption_digest = None
     elif schema == INPUT_SCHEMA:
@@ -126,6 +133,7 @@ def normalize(raw):
             "selection_reason": str(row.get("selection_reason") or "unspecified")[:100],
             "candidate_cut_crossing": False,
             "shot_partition_verified": False,
+            "candidate_shot_partition_id_unverified": row.get("candidate_shot_partition_id_unverified"),
         })
     if total > MAX_TOTAL_MS:
         raise ValueError("Excessive original clip sampling requested")
