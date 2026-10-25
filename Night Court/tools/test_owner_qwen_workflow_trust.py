@@ -47,6 +47,14 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         self.assertIn("ref: ${{ github.sha }}", self.workflow)
         self.assertNotIn("ref: ${{ github.event.pull_request.head.sha }}", self.workflow)
 
+    def test_only_owner_temporal_sampling_branch_can_raise_fps(self):
+        self.assertIn("Night Court/research/trigger-owner-qwen-compact-twofps.txt", self.workflow)
+        self.assertIn("research/night-court-qwen-compact-twofps-trigger", self.workflow)
+        self.assertIn("--video-fps '${{ github.event.pull_request.head.ref", self.workflow)
+        self.assertIn("&& '2' || '1'", self.workflow)
+        self.assertIn("ref: ${{ github.sha }}", self.workflow)
+        self.assertNotIn("ref: ${{ github.event.pull_request.head.sha }}", self.workflow)
+
     def test_one_original_model_pass_produces_deferred_review_and_safe_metrics(self):
         self.assertIn("prepare_video_stage_review.py", self.workflow)
         self.assertIn("summarize_original_qwen_pilot_metrics.py", self.workflow)
