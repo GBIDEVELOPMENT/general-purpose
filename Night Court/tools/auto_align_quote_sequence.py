@@ -27,7 +27,7 @@ def propose(meta, cues, sequence, threshold=.84):
             target=norm(u["source_text"])
             snippet=" ".join(words)
             score=SequenceMatcher(None,snippet,target,autojunk=False).ratio()
-            if len(words)>=3 and snippet in target:
+            if len(words)>=2 and snippet in target:
                 score=max(score,.96)
             if score>=threshold:
                 ranking.append((j,round(score,4)))
