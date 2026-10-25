@@ -95,6 +95,34 @@ def prepare(model, model_sha, reviewer_id="editor-unassigned"):
     return output, ordered
 
 
+def review_priority_hints(field: str, claim: str):
+    """Heuristic reviewer QUEUE labels only, never source-truth decisions."""
+    if field not in FIELDS or not isinstance(claim, str):
+        raise ValueError("Unknown field or model claim")
+    if not claim.strip():
+        return ["missing_model_observation"]
+    text = claim.lower()
+    flags = []
+    if re.search(r"\b(may|might|possibly|perhaps|probably|likely|appears? to|seems? to)\b", text):
+        flags.append("speculative_wording")
+    if re.search(r"\b(listening|speaking|conversation|confrontation|tension|emotion|intently|preparing to|social gathering|motive|intent)\b", text):
+        flags.append("motive_or_unverified_audio")
+    if field == "props" or re.search(r"\b(pocket square|hairpin|glass of water|badge|ring|coin)\b", text):
+        flags.append("inspect_fine_prop_identity")
+    if re.search(r"\b(none|no one|no physical comedy|no one enters|no one exits|nothing happens)\b", text):
+        flags.append("absence_requires_full_clip_review")
+    # A stage direction is never mechanically accepted even without flags.
+    if field == "proposed_stage_direction":
+        flags.append("never_copy_model_stage_prose_without_source_review")
+    return flags if flags else ["normal_original_video_check"]
+
+
+def escape_untrusted_markdown(text: str):
+    """Render external model prose as plain words, never active MD/HTML links."""
+    escaped = html.escape(str(text), quote=True)
+    return re.sub(r"([\\`*_{}\[\]()#+!>|-])", r"\\\1", escaped)
+
+
 def render_packet(model, ordered, template):
     lines = [
         "# Night Court source-video visual review packet",
@@ -123,13 +151,16 @@ def render_packet(model, ordered, template):
             lines.extend([
                 "Model response was invalid or incomplete, so no structured assertions were accepted.",
                 "",
-                "Untrusted model excerpt: " + html.escape(str(w.get("model_response_excerpt") or "")[:800]),
+                "Untrusted model excerpt: " + escape_untrusted_markdown(str(w.get("model_response_excerpt") or "")[:800]),
                 "",
             ])
         else:
             data = w.get("model_hypothesis") or {}
             for field in FIELDS:
-                lines.append(f"- **{field}:** {html.escape(data.get(field) or '[model did not describe]')}")
+                claim = data.get(field) or ""
+                lines.append(f"- **{field}:** {escape_untrusted_markdown(claim or '[model did not describe]')}")
+                lines.append("  - Review priorities (heuristic, not verdicts): " +
+                             ", ".join(review_priority_hints(field, claim)))
             lines.append("")
         lines.append("Source-review tasks: confirm visible actions, omitted prop business, "
                      "entrances/exits, camera cuts, reactions and whether a proposed "

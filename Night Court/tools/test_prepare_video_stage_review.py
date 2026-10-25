@@ -10,7 +10,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from prepare_video_stage_review import prepare, render_packet
+from prepare_video_stage_review import prepare, render_packet, review_priority_hints, escape_untrusted_markdown
 from review_video_stage_directions import adjudicate
 from run_headless_video_description import FIELDS
 
@@ -71,6 +71,40 @@ class ReviewPacketTests(unittest.TestCase):
         self.assertNotIn("<script>", report)
         self.assertIn("invalid or incomplete", report)
         self.assertNotIn("accepted stage direction", json.dumps(output).lower())
+
+    def test_model_speculation_propagates_only_as_review_priority_not_acceptance(self):
+        self.assertIn("motive_or_unverified_audio",
+                      review_priority_hints("proposed_stage_direction",
+                          "The scene may be a confrontation while he listens intently."))
+        self.assertIn("speculative_wording",
+                      review_priority_hints("proposed_stage_direction",
+                          "The scene may be a confrontation while he listens intently."))
+        self.assertIn("never_copy_model_stage_prose_without_source_review",
+                      review_priority_hints("proposed_stage_direction", "He raises his hand."))
+        self.assertIn("inspect_fine_prop_identity",
+                      review_priority_hints("props", "Possibly a red pocket square and a glass of water."))
+        self.assertIn("absence_requires_full_clip_review",
+                      review_priority_hints("physical_comedy", "None."))
+        self.assertEqual(review_priority_hints("camera", ""), ["missing_model_observation"])
+        self.assertEqual(review_priority_hints("camera", "The camera is steady."),
+                         ["normal_original_video_check"])
+        with self.assertRaises(ValueError):
+            review_priority_hints("arbitrary", "Some guessed action")
+
+    def test_malicious_markdown_prose_cannot_embed_active_image_link(self):
+        raw = "![download this](https://bad.invalid/frame?secret=123)<script>alert(1)</script>"
+        escaped = escape_untrusted_markdown(raw)
+        self.assertNotIn("![", escaped)
+        self.assertNotIn("<script>", escaped)
+        self.assertIn(r"\!\[", escaped)
+        m = model()
+        m["windows"][0]["model_hypothesis"]["props"] = raw
+        out,windows = prepare(m,digest(m))
+        packet = render_packet(m,windows,out)
+        self.assertNotIn("![download this]", packet)
+        self.assertNotIn("<script>", packet)
+        self.assertIn("Review priorities (heuristic, not verdicts)", packet)
+        self.assertTrue(all(d["verdict"] == "deferred" for d in out["decisions"]))
 
     def test_no_automatic_source_acceptance_or_actor_identity(self):
         m = model()
