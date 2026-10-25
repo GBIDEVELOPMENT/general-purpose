@@ -21,6 +21,8 @@ on:
       - 'Night Court/tools/test_compare_original_qwen_prompt_ab.py'
       - 'Night Court/tools/compare_original_qwen_temporal_ab.py'
       - 'Night Court/tools/test_compare_original_qwen_temporal_ab.py'
+      - 'Night Court/tools/source_first_action_review.py'
+      - 'Night Court/tools/test_source_first_action_review.py'
       - 'Night Court/tools/triage_video_model_sampled_stills.py'
       - 'Night Court/tools/test_triage_video_model_sampled_stills.py'
       - '.github/workflows/night-court-headless-video-smoke.yml'
@@ -59,6 +61,7 @@ jobs:
           python3 'Night Court/tools/test_summarize_original_qwen_pilot_metrics.py' -v
           python3 'Night Court/tools/test_compare_original_qwen_prompt_ab.py' -v
           python3 'Night Court/tools/test_compare_original_qwen_temporal_ab.py' -v
+          python3 'Night Court/tools/test_source_first_action_review.py' -v
           python3 'Night Court/tools/test_triage_video_model_sampled_stills.py' -v
 
   actual-smolvlm2-cpu-opt-in:
