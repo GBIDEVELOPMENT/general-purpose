@@ -40,6 +40,10 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         # credential-scoped FTP_PASSWORD must not be declared at job scope.
         self.assertNotIn("      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}", self.workflow)
 
+    def test_cheap_ci_lane_does_not_block_source_jobs(self):
+        self.assertIn("github.event_name == 'pull_request_target' && 'trusted-source' || github.ref", self.workflow)
+        self.assertIn("cancel-in-progress: ${{ github.event_name == 'pull_request' }}", self.workflow)
+
     def test_comment_writer_is_separate_job(self):
         self.assertIn("announce-trusted-owner-run-locator:", self.workflow)
         self.assertIn("pull-requests: write", self.workflow)
