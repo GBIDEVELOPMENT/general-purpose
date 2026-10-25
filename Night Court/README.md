@@ -1,3 +1,14 @@
+## Executable headless video/shot benchmark foundations (2026-10-24)
+
+Two new **synthetic-CI-accepted** engineering lanes are now on `main`, coordinated under [AV throughput and evidence issue #302](https://github.com/gamesbyian/general-purpose/issues/302):
+
+- [PR #376](https://github.com/gamesbyian/general-purpose/pull/376) delivered [`tools/run_headless_video_description.py`](tools/run_headless_video_description.py) and a synthetic-video CI suite. It ingests the project's existing multi-goal review packets; verifies original local video SHA/duration; cuts bounded **temporary, silent** original-source video windows; and has optional local SmolVLM2-500M and Qwen3-VL-2B inference adapters with immutable model revision pins. Any output is a **machine-proposed, independently unaccepted** visible-action/shot/setting/prop/stage-direction candidate.
+- [PR #380](https://github.com/gamesbyian/general-purpose/pull/380) delivered [`tools/compare_shot_detectors.py`](tools/compare_shot_detectors.py) with source-verified comparison of the existing FFmpeg candidate cuts against PySceneDetect 0.7.2. Its synthetic video CI confirmed two hard cuts at 2s/4s and rejects bad hashes. Detector frame times remain **nominal** until independently source-PTS checked; cut detection cannot by itself identify dramatic scenes.
+
+Both tools work headlessly on approved locally accessible media, **do not fetch the owner's FTP files or require any privileged CI secrets**, and leave original dialogue and publication gates intact. **Neither original Night Court pilot AVI has yet been run through these new detectors/vision models; no actual video-model inference quality, speed advantage, physical-comedy coverage or screenplay AV acceptance is claimed.**
+
+Start with the [headless video benchmark and execution quickstart](HEADLESS-VIDEO-DESCRIPTION-BENCHMARK.md), [PySceneDetect benchmark quickstart](SHOT-DETECTOR-IMPLEMENTATION-2026-10-24.md) and [broader tooling/workflow audit](MODERN-TOOLING-AND-WORKFLOW-REVIEW-2026-10-24.md). Reuse the latest original picture source from [physical-comedy capture #370/#371](https://github.com/gamesbyian/general-purpose/pull/370) instead of duplicate owner-media downloads. Next acceptance gate is **real two-pilot footage, source-attested shot truth, measured visual model inference and source-video-reviewed stage directions**.
+
 ## Current episode-credited screenplay readers and cast evidence (2026-10-24)
 
 **The working scripts have advanced beyond the last clean-reader release:**
