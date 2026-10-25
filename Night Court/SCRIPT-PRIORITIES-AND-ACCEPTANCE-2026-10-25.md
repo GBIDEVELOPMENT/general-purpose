@@ -1,3 +1,7 @@
+## First executable P0 implementation (2026-10-25)
+
+`tools/propose_speaker_turns.py` creates a **non-destructive, source-preserving candidate turn sidecar** and adjacent-boundary review decisions from the existing caption-unit parser. Command: `python 'Night Court/tools/propose_speaker_turns.py' --episode S01E01 --output /tmp/night-court-s01e01-p0.json`. Synthetic unit tests: `python 'Night Court/tools/test_propose_speaker_turns.py'` from the tools directory, or `PYTHONPATH='Night Court/tools' python -m unittest test_propose_speaker_turns` when run there. Only matching explicit source speaker labels within adjacent cues and the conservative gap budget are *provisionally merged*. Unknown speakers are **not** blindly merged or independently split by source truth: they remain separate candidate parts with a required boundary-review decision. Caption-internal multi-dash splits are likewise preserved. Review must decide whether to merge, split or annotate overlap before declaring verified dialogue turns. No episode-level result is certified and the existing reader generator is unchanged until reviewed decisions can be applied safely.
+
 # Authoritative script priorities and production acceptance contract
 
 **Owner direction: 2026-10-25. Status: authoritative for original-series Night Court screenplay generation.**
