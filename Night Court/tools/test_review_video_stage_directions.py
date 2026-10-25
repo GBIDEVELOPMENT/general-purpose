@@ -133,8 +133,8 @@ class ReviewGateTests(unittest.TestCase):
 
     def test_rejects_cross_cut_and_duplicate_reviews(self):
         model = model_report()
-        d = decisions(model)
         model["windows"][0]["candidate_cut_crossing"] = True
+        d = decisions(model)
         with self.assertRaisesRegex(ValueError, "Cross-cut"):
             adjudicate(model, d, hash_for(model))
         model = model_report()
