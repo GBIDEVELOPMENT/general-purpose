@@ -81,3 +81,24 @@ python 'Night Court/tools/search_fan_retrieval_chunks.py' \
 ```
 
 The JSON output holds full matched private script passages and neighboring chunks for continuity and is **not suitable for public CI logs**. Stdout prints counts only. Use the returned IDs, script/caption source SHAs, episode title and evidence tier to ground the final LLM answer; do not reclassify source-only chunks as visual stage truth or conflate adjacent chunks with independent confirmation. Repeat queries with known character aliases or episode filters when natural-language matches are weak. The current interface is token-based retrieval, not semantic embeddings or a continuously hosted RAG chatbot. A future fan-dossier index should expose character aliases, beat/card IDs and cross-episode continuity through the same retrieval contract. The smoke workflow tests original-source examples without exposing the text.
+
+## First source-anchored fan-knowledge layer: pilot comedy and storyline cards
+
+The source-preserving scripts remain the canonical witness. A **separate** set of 21 editorial reading cards makes the stories and jokes more legible to a fan-oriented LLM: S01E01 (10 cards: the painter, Bull's vocabulary, the new judge, the Kerr case and coin, Harry's music obsession); S09E19 (11 cards: Christine's campaign, Roz's letters, the old safe, the impostor scene and the ad-related setup). Each human-written card is tagged with *short original caption fragments and exact original cue positions*. Those captions are rechecked against unchanged source SHA and source text on every build. Card prose expresses an interpretation, **not independently witnessed delivery, shot direction, character voice identification or objective comic intention**.
+
+Run after the all-episode source retrieval export:
+
+```sh
+python 'Night Court/tools/build_pilot_fan_beat_cards.py' \
+  --output /tmp/night-court-fan-beats
+
+python 'Night Court/tools/search_fan_corpus.py' \
+  --corpus /tmp/night-court-fan-193/fan-retrieval-chunks.jsonl \
+  --cards /tmp/night-court-fan-beats/pilot-fan-beat-cards.jsonl \
+  --query 'Harry double-headed coin justice' --episode S01E01 \
+  --output /tmp/night-court-fan-doubleheaded.json
+```
+
+The combined search returns **two noninterchangeable groups**: (1) original direct script passages with same-episode neighbors and source-edition hashes, (2) interpretive fan cards linked to original caption cues. If a card suggests a compelling comparison, read the direct evidence before treating any concrete fact as established. Neither group validates all filmed physical movement or performance. Do not automatically export combined search results to an external inference provider; the script hits contain held dialogue text.
+
+The 21 cards are a grounded first seed, **not comprehensive coverage of every joke, a verified comedy classification, or all 193 episodes**. Expand only from source-checked excerpts and retain abstentions. The next useful enrichment is validating pilot speaker-turn merges and then cross-episode character/prop/callback connections.
