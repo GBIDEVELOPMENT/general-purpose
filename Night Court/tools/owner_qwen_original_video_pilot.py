@@ -147,7 +147,7 @@ def trusted_owner_run(episode: str, output: Path):
                            revision=MODEL_SHA, device="cpu",
                            fps=1, width=256, max_new_tokens=256)
         result.update({
-            "schema": "night-court-original-qwen-picture-pilot/1",
+            "owner_source_pilot_schema": "night-court-original-qwen-picture-pilot/1",
             "source_reference_model_schema": "night-court-headless-video-description/1",
             "original_avi_download_count": 1,
             "original_avi_sha256_verified": actual,
