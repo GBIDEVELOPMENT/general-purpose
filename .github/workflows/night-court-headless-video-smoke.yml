@@ -34,3 +34,101 @@ jobs:
           python3 -m py_compile 'Night Court/tools/run_headless_video_description.py' 'Night Court/tools/test_run_headless_video_description.py'
           python3 'Night Court/tools/test_run_headless_video_description.py' -v
           python3 'Night Court/tools/test_review_video_stage_directions.py' -v
+
+  actual-smolvlm2-cpu-opt-in:
+    # Heavy job requires an explicit, owner-created PR title. No secrets.
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      contains(github.event.pull_request.title, '[nc-model-cpu-smoke]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HOME: /tmp/night-court-smolvlm2-synthetic-only
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install bounded synthetic-only CPU runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            timeout 180 sudo apt-get update -qq
+            timeout 180 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
+          fi
+          python -m venv /tmp/nc-vision-cpu
+          timeout 360 /tmp/nc-vision-cpu/bin/pip install --disable-pip-version-check -q \
+            'torch==2.7.1' 'torchvision==0.22.1' --index-url https://download.pytorch.org/whl/cpu
+          timeout 180 /tmp/nc-vision-cpu/bin/pip install --disable-pip-version-check -q \
+            'transformers==4.57.1' 'accelerate>=1.0,<2' 'decord==0.6.0' 'pillow>=10,<13' 'num2words==0.5.14' 'av==15.0.0'
+          /tmp/nc-vision-cpu/bin/python -c 'import torchvision; from transformers import AutoProcessor, AutoModelForImageTextToText; from transformers.models.smolvlm.processing_smolvlm import SmolVLMProcessor; import num2words, av; print("SmolVLM2 real video processor imports:", torchvision.__version__, av.__version__)'
+      - name: Verify and generate a transient synthetic-only film and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          ffmpeg -hide_banner -loglevel error -f lavfi \
+            -i testsrc2=size=128x96:rate=2:duration=2 \
+            -c:v mpeg4 -q:v 12 -pix_fmt yuv420p -an -y /tmp/nc-synthetic.mp4
+          /tmp/nc-vision-cpu/bin/python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('/tmp/nc-synthetic.mp4')
+          sha=hashlib.sha256(p.read_bytes()).hexdigest()
+          Path('/tmp/nc-synthetic-manifest.json').write_text(json.dumps({
+            'schema':'night-court-video-benchmark-windows/1',
+            'episode_id':'S01E01','source_video_sha256':sha,'duration_ms':2000,
+            'caption_source_sha256':'0'*64,
+            'windows':[{'id':'synthetic-model-compatibility','start_ms':0,'end_ms':1500,
+                        'selection_reason':'synthetic_runtime_probe',
+                        'candidate_cut_crossing':False}]
+          }))
+          PY
+      - name: Load real model and perform actual silent clip CPU inference
+        shell: bash
+        run: |
+          set -euo pipefail
+          MODEL_SHA=$(/tmp/nc-vision-cpu/bin/python - <<'PY'
+          from huggingface_hub import model_info
+          print(model_info('HuggingFaceTB/SmolVLM2-500M-Video-Instruct').sha)
+          PY
+          )
+          echo "Model immutable revision obtained from model registry"
+          timeout 720 /tmp/nc-vision-cpu/bin/python \
+            'Night Court/tools/run_headless_video_description.py' \
+            --manifest /tmp/nc-synthetic-manifest.json --backend smolvlm2 \
+            --media /tmp/nc-synthetic.mp4 --model-revision "$MODEL_SHA" \
+            --fps 1 --width 256 --max-new-tokens 64 \
+            --device cpu --confirm-owner-media \
+            --output /tmp/nc-synthetic-model-evidence.json
+          /tmp/nc-vision-cpu/bin/python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('/tmp/nc-synthetic-model-evidence.json').read_text())
+          assert x['verified_source_sha256'] == x['source_video_sha256']
+          assert x['script_or_claim_independently_accepted'] is False
+          assert len(x['windows']) == 1
+          w=x['windows'][0]
+          assert w['status'] in ('machine_proposed', 'requires_review')
+          assert w['inference_seconds'] >= 0
+          print('Real weight-loaded local model inference completed on synthetic test film')
+          print('MEASURED_CPU_SECONDS', json.dumps({
+            'model_load':x['model_load_seconds'],
+            'inference':w['inference_seconds'],
+            'clip_decode':w['decode_seconds'],
+            'total':x['wall_seconds'],
+            'structured_output':w['status']=='machine_proposed'
+          },sort_keys=True))
+          PY
+      - name: Destroy temporary model cache and synthetic video
+        if: always()
+        shell: bash
+        run: |
+          rm -rf /tmp/nc-vision-cpu /tmp/night-court-smolvlm2-synthetic-only
+          rm -f /tmp/nc-synthetic.mp4 /tmp/nc-synthetic-manifest.json /tmp/nc-synthetic-model-evidence.json
