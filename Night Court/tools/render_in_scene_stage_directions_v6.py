@@ -104,7 +104,7 @@ def render(episode,root=ROOT):
         raise ValueError("A held source dialogue cue vanished")
     if old_manifest["source_original_cues"]!=len(cues):
         raise ValueError("Source dialogue version drift")
-    text=text.rstrip()+"\n"
+    text=text.replace("\\`","`").rstrip()+"\n"
     manifest={
       "schema":"night-court-sourced-stage-directions-in-readable-screenplay/6",
       "episode_id":episode,
