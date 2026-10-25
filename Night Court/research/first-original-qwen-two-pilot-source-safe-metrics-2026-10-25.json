@@ -1,0 +1,70 @@
+{
+  "schema": "night-court-original-qwen-source-safe-metrics/1",
+  "pilot_episodes_with_verified_source_and_model": 2,
+  "episodes": [
+    {
+      "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "model_revision_sha": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "selected_cut_candidate_count": 0,
+      "inference_schema_valid": true,
+      "original_source_human_stage_reviewed": false,
+      "independently_verified_shot_or_gag": false,
+      "original_source_video_download_count": 1,
+      "source_media_copied_to_git": false,
+      "factual_stage_direction_published": false,
+      "episode_id": "S01E01",
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "exact_private_owner_model_report_sha256": "4cd38b9a833f769f171ffd1666d5f433cfc743796bf9c3c308373cae68ff8e87",
+      "original_excerpt_start_ms": 77000,
+      "original_excerpt_end_ms": 79000,
+      "cut_candidate_windows_tested": 3,
+      "processing_seconds": {
+        "original_source_retrieval": 3.456,
+        "model_load": 28.796,
+        "temporary_clip_decode": 0.256,
+        "visual_model_inference": 159.346,
+        "model_tool": 188.598
+      }
+    },
+    {
+      "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "model_revision_sha": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "selected_cut_candidate_count": 0,
+      "inference_schema_valid": true,
+      "original_source_human_stage_reviewed": false,
+      "independently_verified_shot_or_gag": false,
+      "original_source_video_download_count": 1,
+      "source_media_copied_to_git": false,
+      "factual_stage_direction_published": false,
+      "episode_id": "S09E19",
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "exact_private_owner_model_report_sha256": "ca096f5df0d7292c9362d401ff75482fcfaf05ec4d8e37663905f54caae7b4b3",
+      "original_excerpt_start_ms": 812000,
+      "original_excerpt_end_ms": 814000,
+      "cut_candidate_windows_tested": 1,
+      "processing_seconds": {
+        "original_source_retrieval": 4.065,
+        "model_load": 53.743,
+        "temporary_clip_decode": 0.626,
+        "visual_model_inference": 96.293,
+        "model_tool": 150.842
+      }
+    }
+  ],
+  "original_source_media_or_audio_retained": false,
+  "machine_video_semantics_independently_accepted": false,
+  "production_screenplay_complete": false,
+  "no_movie_or_inference_prose_embedded": true,
+  "source_truth_limit": "Exact-source-model timing and JSON schema only. Original observed film actions, physical comedy, people and settings require direct synchronized source-video review before any stage direction is accepted.",
+  "provenance": {
+    "workflow_run_id": 40225712304,
+    "workflow_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40225712304",
+    "model_report_artifact_ids": {
+      "S01E01": 12611511530,
+      "S09E19": 12610464398
+    },
+    "private_artifact_retention_days": 7,
+    "frame_change_method": "5fps_gray160x90_mean_absolute_frame_change_gt_9.5_with_one_second_preroll",
+    "generated_by": "independent local source-safe verification against two exact private Actions result JSONs"
+  }
+}
