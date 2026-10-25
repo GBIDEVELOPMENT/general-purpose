@@ -1,0 +1,36 @@
+{
+  "schema": "night-court-external-dialogue-quote-reconciliation/1",
+  "episode_id": "S01E01",
+  "source_original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_ref": "C285.1",
+  "original_witness_short_line": "Oh, yeah?",
+  "original_source_unit_sha256": "cc11c869e1d13df680ddd25f2213ed258d85f4d3580ecbf81cbc349927f1c509",
+  "previous_reading_label": "HARRY STONE · PROVISIONAL CREDITED-EPISODE DIALOGUE CONTEXT",
+  "corrected_role": "BULL SHANNON",
+  "original_episode_character_dialogue_sources": [
+    "https://www.imdb.com/title/tt0660578/quotes/",
+    "https://hallwings.blogspot.com/2010/10/night-court-all-you-need-is-love-oad.html"
+  ],
+  "surrounding_original_cues": [
+    {
+      "cue": "C284.1",
+      "role": "SELMA HACKER",
+      "excerpt": "I had a husband just like that."
+    },
+    {
+      "cue": "C285.1",
+      "role": "BULL SHANNON",
+      "excerpt": "Oh, yeah?"
+    },
+    {
+      "cue": "C286.1",
+      "role": "SELMA HACKER",
+      "excerpt": "Yeah. I had to shoot him too."
+    }
+  ],
+  "original_audio_listened": false,
+  "actor_identified_from_original_frame": false,
+  "original_source_words_modified": false,
+  "change_scope": "correct_prior_provisional_reading_heading_not_original_source",
+  "explanation": "Both IMDb's pilot role-attributed quotes and a separate 2010 episode account independently attribute the middle response to Bull, not Harry. Historical earlier manuscript remains preserved. Character attribution still awaits original soundtrack corroboration."
+}
