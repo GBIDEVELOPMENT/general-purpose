@@ -35,6 +35,30 @@ jobs:
           fi
           python3 'Night Court/tools/test_owner_qwen_original_video_pilot.py' -v
 
+  announce-trusted-owner-run-locator:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-qwen-real-original-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    # This non-media job gets PR-comment rights only. It does not access FTP
+    # credentials, check out source, or share a process with the model jobs.
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Record exact trusted workflow run ID on the owner trigger PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          gh api --method POST "repos/$REPOSITORY/issues/$PR_NUMBER/comments" \
+            -f body="Trusted Night Court owner-source Qwen visual micro-pilot workflow locator: $RUN_URL. This comment identifies a run, not its completion or any audiovisual/script acceptance. Original media remains private and transient."
   trusted-owner-source-visual-inference:
     if: >-
       github.event_name == 'pull_request_target' &&
