@@ -14,9 +14,9 @@ from owner_qwen_original_video_pilot import SOURCES, MODEL_ID, MODEL_SHA
 from summarize_original_qwen_pilot_metrics import source_safe_record, aggregate, OUT_SCHEMA
 
 
-def synthetic(episode="S01E01", valid=True):
+def synthetic(episode="S01E01", valid=True, focus="observational"):
     source = SOURCES[episode]
-    start = source["candidate_starts_ms"][0]
+    start = source["candidate_starts_ms"][0] if focus == "observational" else source["physical_comedy_candidate_starts_ms"][0]
     return {
         "schema": "night-court-headless-video-description/1",
         "owner_source_pilot_schema": "night-court-original-qwen-picture-pilot/1",
@@ -26,6 +26,7 @@ def synthetic(episode="S01E01", valid=True):
         "duration_ms": source["duration_ms"], "model_id": MODEL_ID,
         "model_revision": MODEL_SHA,
         "original_avi_download_count": 1, "no_source_clip_or_still_uploaded": True,
+        "source_focus": focus,
         "script_or_claim_independently_accepted": False,
         "cut_detection_is_editorial_proposal_only": True,
         "original_native_decoded_frame_pts_human_verified": False,
@@ -54,6 +55,20 @@ def synthetic(episode="S01E01", valid=True):
 
 
 class NumericEvidenceContracts(unittest.TestCase):
+    def test_gag_source_focus_and_original_candidate_list_are_preserved(self):
+        for episode in ("S01E01", "S09E19"):
+            x = synthetic(episode, focus="physical_comedy")
+            result = source_safe_record(x, "c"*64)
+            self.assertEqual(result["source_focus"], "physical_comedy")
+            self.assertIn(result["original_excerpt_start_ms"], SOURCES[episode]["physical_comedy_candidate_starts_ms"])
+            self.assertFalse(result["independently_verified_shot_or_gag"])
+            x["source_focus"] = "observational"
+            with self.assertRaises(ValueError):
+                source_safe_record(x, "c"*64)
+            x["source_focus"] = "nonexistent"
+            with self.assertRaises(ValueError):
+                source_safe_record(x, "c"*64)
+
     def test_source_safe_metrics_without_visual_prose(self):
         x = synthetic()
         result = source_safe_record(x, "b"*64)
