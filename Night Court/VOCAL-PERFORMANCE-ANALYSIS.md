@@ -1,3 +1,7 @@
+## Integration with owner-ranked dialogue priorities (2026-10-25)
+
+See [SCRIPT-PRIORITIES-AND-ACCEPTANCE-2026-10-25.md](SCRIPT-PRIORITIES-AND-ACCEPTANCE-2026-10-25.md). P2 delivery inference must operate on P0 reconstructed speaker turns, with P1 identities anchored or explicitly UNKNOWN. A single vocal performance label may apply to only part of a continuous multi-caption turn; retain that internal span even if the published reader does not show timestamps. For delivery tags such as (exasperated), (sarcastic), (confused), (coy) and (hesitantly), distinguish audible manner and supported editorial interpretation; no emotion from subtitle text alone. Do not spend CPU on exact alignment before resolving speaking turns.
+
 # Vocal performance and prosody reconstruction
 
 Status: implementable production contract, 23 October 2026. Original *Night Court* (1984–1992) only.
