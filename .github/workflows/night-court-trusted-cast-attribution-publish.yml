@@ -1,0 +1,42 @@
+name: Night Court trusted credited-episode character screenplay generation
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-credited-episode-cast-speaker-scripts.txt'
+permissions:
+  contents: write
+concurrency:
+  group: night-court-episode-credited-cast-source-drafts
+  cancel-in-progress: false
+jobs:
+  generate-reviewed-episode-cast-manuscripts:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-credited-episode-cast-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout reviewed main only
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Generate credited character scripts with exact source dialogue equality
+        run: |
+          python 'Night Court/tools/test_build_cast_context_reading_screenplays.py'
+          python 'Night Court/tools/build_cast_context_reading_screenplays.py' --episode S01E01
+          python 'Night Court/tools/build_cast_context_reading_screenplays.py' --episode S09E19
+          python 'Night Court/tools/build_cast_context_reading_screenplays.py' --episode S01E01 --check
+          python 'Night Court/tools/build_cast_context_reading_screenplays.py' --episode S09E19 --check
+      - name: Commit only original-series held-source reader text and attribution indexes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-cast-context-pilot-scripts-20261024'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/cast-context-reading-screenplay-v2' 'Night Court/seasons/S09/S09E19/derived/cast-context-reading-screenplay-v2'
+          git diff --cached --check
+          git commit -m 'Night Court: original-episode credited cast context in two clean pilot manuscripts'
+          git push origin HEAD:refs/heads/data/night-court-cast-context-pilot-scripts-20261024
