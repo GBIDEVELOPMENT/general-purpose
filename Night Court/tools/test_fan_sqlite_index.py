@@ -27,6 +27,10 @@ def fixtures():
         "schema": CARD_SCHEMA, "id": episode + ":beat:coin",
         "episode_id": episode, "episode_title": "All You Need Is Love",
         "title": "The double-headed coin",
+        "setup": "The judge proposes a coin flip.",
+        "payoff": "The trick is explained by the heads on both sides.",
+        "interpretation": "A comically rigged judicial procedure.",
+        "mechanisms": ["prop_gag", "callback"],
         "semantic_text": "Coin of justice and a trick with two heads.",
         "source_witness_sha256": witness,
         "source_anchor_evidence": [{"caption_cue": 1, "caption_source_sha256": witness}],
@@ -39,6 +43,7 @@ def fixtures():
     roles = [{
         "schema": ROLE_SCHEMA, "episode_id": episode,
         "reading_block_id": episode + ":speaker-evidence:0001",
+        "source_reading_ref": "C001.1",
         "original_source_part_refs": ["C001.1"],
         "original_source_sha256": witness,
         "speaker_turn_boundary_verified": False,
