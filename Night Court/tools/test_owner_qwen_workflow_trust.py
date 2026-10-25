@@ -38,7 +38,7 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         self.assertIn("if: success()", self.workflow)
         # All report files are generated *after* source data is acquired, and
         # credential-scoped FTP_PASSWORD must not be declared at job scope.
-        self.assertNotIn("      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}", self.workflow)
+        self.assertNotIn("\n      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}", self.workflow)
 
     def test_cheap_ci_lane_does_not_block_source_jobs(self):
         self.assertIn("github.event_name == 'pull_request_target' && 'trusted-source' || github.ref", self.workflow)
