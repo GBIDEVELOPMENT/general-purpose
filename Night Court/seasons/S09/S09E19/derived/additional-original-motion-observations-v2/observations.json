@@ -1,0 +1,93 @@
+{
+  "schema": "night-court-extra-5fps-actually-reviewed-original-physical-observations/1",
+  "episode_id": "S09E19",
+  "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "source_private_gha_run_id": 40161079027,
+  "source_private_gha_artifact_id": 12586156965,
+  "source_private_sample_evidence_report_sha256": "f229ff8aa8b376426384569d973c5868563efe6fb043040c98fb80887f9b3f86",
+  "review_provenance": "Assistant directly visually inspected both original film 50-frame contact sheets per interval; no continuous video viewing or audio listening",
+  "number_of_sampled_original_intervals": 3,
+  "nominal_sampled_frames_per_interval": 100,
+  "nominal_original_source_fps": 5,
+  "images_inspected_total": 300,
+  "original_video_or_stills_committed_to_git": false,
+  "original_synchronized_audio_listened": false,
+  "actors_identified_from_images": false,
+  "native_original_video_pts_verified": false,
+  "continuous_full_episode_action_verified": false,
+  "production_script_editor_ready": false,
+  "original_source_text_or_cue_timing_changed": false,
+  "source_video_nominal_offsets_not_authentic_subtitle_timestamps": true,
+  "observations": [
+    {
+      "label": "hidden-safe-combination-and-warning",
+      "window": [
+        551,
+        571
+      ],
+      "contact_sheet_sha": [
+        "9605ef42b5d6053ea78fc8c7c172a0df7705962c9844e2646d8b1ebb70296783",
+        "1c89abffda8c81d111cd065ee5bbc66f4facd93581ac910ee96e1e05f85b759f"
+      ],
+      "hypothesis_supported": false,
+      "observed_location": "courtroom, not an opened safe",
+      "physical_action": "In the courtroom, a suited adult stands and gestures near the front courtroom table while a black-robed figure remains at the raised bench. A tall uniformed court officer then crosses the area carrying and opening a tan or brown case folder. The pictures do not show a hidden safe or an attempt to open one.",
+      "limitations": [
+        "Reject the planned 'hidden-safe-combination' label as an observed event; it is only the original review-window target.",
+        "No original subtitle timing exists for S09, so do not attach this at a specific dialogue paragraph.",
+        "Motion inferred only from sampled 5fps pictures, without original synchronized sound."
+      ],
+      "frame_count": 100,
+      "source_frame_time_kind": "requested_ffmpeg_source_offset_5fps_not_native_pts_or_spoken_caption_sync",
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "screenplay_action_status": "PICTURE_OBSERVATION_ONLY_UNCERTIFIED"
+    },
+    {
+      "label": "restaurant-two-impostors-entry",
+      "window": [
+        812,
+        832
+      ],
+      "contact_sheet_sha": [
+        "4c70d5ef71a9388f4fdaca5e3d49ef11c4dbb52e35c4b2d7691e2612ff21f1ff",
+        "e9e370517b4cb1fdda820ccce9c845e9ef85ddcfee012980515a95ab3695a2ea"
+      ],
+      "hypothesis_supported": false,
+      "observed_location": "dim, occupied restaurant table, rather than a documented entrance",
+      "physical_action": "A bearded adult in a dark three-piece suit sits at a restaurant table and turns his head while addressing the person opposite. A woman in burgundy patterned clothing with a contrasting pale-gold collar looks down, smiles and raises her gaze in alternating reverse shots. A later wider angle places both together at the same small lamp-lit table amid other diners.",
+      "limitations": [
+        "The sampled interval contains seated restaurant conversation, but no observed first entrance into the room.",
+        "The episode credits and story establish two impostor characters, but these images alone do not establish either depicted person's identity.",
+        "Original held source dialogue is untimed; no precise lip-speech or paragraph-to-frame synchronization was verified."
+      ],
+      "frame_count": 100,
+      "source_frame_time_kind": "requested_ffmpeg_source_offset_5fps_not_native_pts_or_spoken_caption_sync",
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "screenplay_action_status": "PICTURE_OBSERVATION_ONLY_UNCERTIFIED"
+    },
+    {
+      "label": "hidden-safe-final-reveal",
+      "window": [
+        1280,
+        1300
+      ],
+      "contact_sheet_sha": [
+        "f69498b0e5a512fcf8ffed92bd65f8ad53477a487db393d91e63ae2152a006dc",
+        "59b3213b855829c56e62231490e0811960611ae90b37215ecbd5b4732b7cc7bb"
+      ],
+      "hypothesis_supported": false,
+      "observed_location": "law-book-lined office background and end-credit/TV station interstitial overlays",
+      "physical_action": "Three or four adults stand around a table in a book-lined room beneath prominent yellow rolling production credits for the director, writers and producers. The source image then transitions away toward full-screen broadcast or channel interstitial graphics. No safe is visibly opened and no turkey sandwich is visibly revealed during these sampled frames.",
+      "limitations": [
+        "Reject the planned final-safe-reveal action at this source position: credits are already present.",
+        "The shot may be a real episode office image beneath credits, but credits and interstitials must not be transcribed as episode stage action.",
+        "No source caption timecode can be assigned to this television image position."
+      ],
+      "frame_count": 100,
+      "source_frame_time_kind": "requested_ffmpeg_source_offset_5fps_not_native_pts_or_spoken_caption_sync",
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "screenplay_action_status": "PICTURE_OBSERVATION_ONLY_UNCERTIFIED"
+    }
+  ]
+}
