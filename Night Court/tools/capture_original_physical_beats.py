@@ -18,6 +18,16 @@ SOURCES={
  "S09E19":("51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
             [(684,20,"brief-floor-spark"),(951,20,"restaurant-dance-business")])
 }
+# Second-pass story-relevant action windows, separately retained from the original
+# four observed passages. Times are source-video proposals, not scene cuts.
+SECONDARY={
+ "S01E01":[(349,20,"court-first-sitting-introduction"),
+            (833,20,"court-coin-of-justice-action"),
+            (1110,20,"kerr-resolution-business")],
+ "S09E19":[(335,20,"judge-grimm-office-safe"),
+            (812,20,"restaurant-mystery-date-arrival"),
+            (1258,20,"closing-office-safe-payoff")]
+}
 FPS=5
 MAX_FRAMES_PER_WINDOW=115
 
@@ -30,10 +40,12 @@ def digest(path):
     return h.hexdigest()
 
 
-def windows(ep):
+def windows(ep,selection='primary'):
     if ep not in SOURCES:raise ValueError("Only two pinned original episodes")
+    if selection not in ("primary","secondary"):raise ValueError("Unknown original capture plan")
+    source_windows=SOURCES[ep][1] if selection=="primary" else SECONDARY[ep]
     seen=[]
-    for start,duration,label in SOURCES[ep][1]:
+    for start,duration,label in source_windows:
         if (not 0<=start<1430 or duration<5 or duration>25 or
             start+duration>1448 or not label):raise ValueError("Unbounded source excerpt")
         if any(not (start+duration<=a or start>=a+b) for a,b,_ in seen):
@@ -49,13 +61,13 @@ def run(args,timeout=200):
         # Only decoder diagnostics. No credentials or source audio/video.
         raise RuntimeError('Bounded original decoder: '+(error.stderr or 'no detail')[-1000:]) from error
 
-def generate(media,out,ep):
+def generate(media,out,ep,selection='primary'):
     from PIL import Image,ImageDraw
     if digest(media)!=SOURCES[ep][0]:raise ValueError("Original AVI SHA mismatch")
     if out.exists():raise ValueError("Do not overwrite original samples")
     out.mkdir(parents=True)
     groups=[]
-    for start,duration,label in windows(ep):
+    for start,duration,label in windows(ep,selection):
         folder=out/label
         folder.mkdir()
         run(['ffmpeg','-hide_banner','-nostdin','-loglevel','error','-threads','1','-filter_threads','1',
@@ -105,6 +117,7 @@ def generate(media,out,ep):
         })
     report={'schema':'night-court-original-dense-physical-beat-review/1',
       'episode_id':ep,'source_video_sha256':SOURCES[ep][0],
+      'capture_selection':selection,
       'source_episodes_processed':1,'source_avi_stored_in_artifact':False,
       'original_audio_stored_in_artifact':False,
       'windows':groups,'complete_episode_stage_directions_verified':False,
@@ -115,7 +128,7 @@ def generate(media,out,ep):
     return report
 
 
-def ftp_mode(ep,out):
+def ftp_mode(ep,out,selection='primary'):
     item=s01_candidate() if ep=='S01E01' else s09_candidate()
     pw=os.getenv('FTP_PASSWORD')
     if not pw:raise ValueError("Trusted source access only")
@@ -127,7 +140,7 @@ def ftp_mode(ep,out):
             try:ftp.quit()
             except ftplib.all_errors:ftp.close()
         if original_sha!=SOURCES[ep][0]:raise ValueError("Different original edition")
-        return generate(media,out,ep)
+        return generate(media,out,ep,selection)
 
 
 if __name__=='__main__':
@@ -135,6 +148,7 @@ if __name__=='__main__':
     p.add_argument('--episode',choices=SOURCES.keys(),required=True)
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--ftp',action='store_true')
+    p.add_argument('--selection',choices=['primary','secondary'],default='primary')
     a=p.parse_args()
     if not a.ftp:p.error('Trusted owner FTP mode only')
-    ftp_mode(a.episode,a.output)
+    ftp_mode(a.episode,a.output,a.selection)
