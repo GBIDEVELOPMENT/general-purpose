@@ -1,0 +1,662 @@
+{
+  "schema": "night-court-private-editorial-fan-beat-seeds/1",
+  "purpose": "Evidence-anchored, explicitly interpretive comedy/story retrieval cards, not original-film certification",
+  "source_policy": "Each short anchor must match the unchanged held caption cue; captions do not verify speaker names or delivery",
+  "episodes": {
+    "S01E01": {
+      "source_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "source_cue_count": 336,
+      "title": "All You Need Is Love"
+    },
+    "S09E19": {
+      "source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "source_cue_count": 347,
+      "title": "P.S. Do I Know You?"
+    }
+  },
+  "cards": [
+    {
+      "id": "S01E01:beat:painter-window",
+      "episode_id": "S01E01",
+      "kind": "comedic_beat",
+      "title": "The painter's window distraction",
+      "setup": "While the court waits for its new judge, a painter is more interested in the activity across the alley than the work he has been hired to do.",
+      "payoff": "Lana's moral outrage meets a series of literal-minded replies, ending in the painter's bleakly practical remark about his own marriage.",
+      "analysis": "A three-step escalation from voyeurism to deadpan personal disappointment establishes the show's verbal-comedy rhythm before Harry arrives.",
+      "mechanisms": [
+        "deadpan",
+        "literal_reply",
+        "escalation"
+      ],
+      "characters": [
+        "Lana Wagner",
+        "Painter"
+      ],
+      "anchors": [
+        {
+          "cue": 2,
+          "contains": "Are you finished painting"
+        },
+        {
+          "cue": 6,
+          "contains": "Too soon to tell"
+        },
+        {
+          "cue": 8,
+          "contains": "My wife won't do that"
+        }
+      ]
+    },
+    {
+      "id": "S01E01:beat:bull-vocabulary",
+      "episode_id": "S01E01",
+      "kind": "character_beat",
+      "title": "Bull's word-of-the-month experiment",
+      "setup": "Bull explains that he compensates for his education by selecting and using a new dictionary word each month.",
+      "payoff": "The words become increasingly obscure, while his responses confound any straightforward demonstration of learning.",
+      "analysis": "The comedy combines Bull's sincere self-improvement with extravagant vocabulary deployed in baffling contexts. Treat the exact pronunciations and delivery as unresolved until audio review.",
+      "mechanisms": [
+        "character_incongruity",
+        "verbal_absurdity"
+      ],
+      "characters": [
+        "Bull Shannon",
+        "Lana Wagner"
+      ],
+      "anchors": [
+        {
+          "cue": 18,
+          "contains": "I think that's mercurial"
+        },
+        {
+          "cue": 20,
+          "contains": "pick a word"
+        },
+        {
+          "cue": 24,
+          "contains": "extravasate in the forest"
+        }
+      ]
+    },
+    {
+      "id": "S01E01:beat:surprise-judge",
+      "episode_id": "S01E01",
+      "kind": "plot_beat",
+      "title": "Nobody knows who the new judge is",
+      "setup": "Lana explains that last-minute mayoral appointments left the court unsure who would be assigned there.",
+      "payoff": "Harry's eventual arrival confronts the staff with a judge they initially struggle to believe actually holds the office.",
+      "analysis": "The pilot prepares Harry's unorthodox authority by letting uncertainty about the appointment precede his actions.",
+      "mechanisms": [
+        "setup_payoff",
+        "status_reversal"
+      ],
+      "characters": [
+        "Lana Wagner",
+        "Harry Stone"
+      ],
+      "anchors": [
+        {
+          "cue": 17,
+          "contains": "Nobody knows who was appointed"
+        },
+        {
+          "cue": 57,
+          "contains": "You're judge Harold T. Stone"
+        },
+        {
+          "cue": 58,
+          "contains": "really a judge"
+        }
+      ]
+    },
+    {
+      "id": "S01E01:beat:hacksaw",
+      "episode_id": "S01E01",
+      "kind": "character_beat",
+      "title": "A judge with an old friend named Hacksaw",
+      "setup": "Harry's familiarity with a person known as Hacksaw punctures expectations of a conventional courtroom judge.",
+      "payoff": "The exchange emphasizes Harry's ease with the court's unconventional visitors and his personal history.",
+      "analysis": "A quick outsider-insider reversal that helps establish Harry's style. The held captions alone do not explain the complete relationship.",
+      "mechanisms": [
+        "character_reveal",
+        "social_incongruity"
+      ],
+      "characters": [
+        "Harry Stone",
+        "Hacksaw"
+      ],
+      "anchors": [
+        {
+          "cue": 92,
+          "contains": "Hacksaw"
+        },
+        {
+          "cue": 94,
+          "contains": "a friend named Hacksaw"
+        },
+        {
+          "cue": 104,
+          "contains": "Good to see you, Hacksaw"
+        }
+      ]
+    },
+    {
+      "id": "S01E01:beat:kerr-coffee",
+      "episode_id": "S01E01",
+      "kind": "plot_beat",
+      "title": "The Kerr case and a cup of coffee",
+      "setup": "Harry tries an unconventional reconciliation between the people involved in a violent dispute.",
+      "payoff": "A colleague incredulously asks why the parties were sent out for coffee rather than processed in a conventionally punitive manner.",
+      "analysis": "Harry's unconventional faith in reconciliation is contrasted with institutional disbelief. The script alone does not substantiate the physical staging of any offscreen encounter.",
+      "mechanisms": [
+        "institutional_satire",
+        "character_conflict"
+      ],
+      "characters": [
+        "Harry Stone",
+        "Dan Fielding",
+        "Sheila Gardiner"
+      ],
+      "anchors": [
+        {
+          "cue": 167,
+          "contains": "attempted murder"
+        },
+        {
+          "cue": 168,
+          "contains": "cup of coffee"
+        },
+        {
+          "cue": 170,
+          "contains": "They might work"
+        }
+      ]
+    },
+    {
+      "id": "S01E01:beat:dan-shirt",
+      "episode_id": "S01E01",
+      "kind": "comedic_beat",
+      "title": "Dan mourns his shirt",
+      "setup": "The proposed reconciliation appears to have gone disastrously wrong for Dan.",
+      "payoff": "When the others express sympathy, Dan focuses on the ruined shirt.",
+      "analysis": "A character-based deflation of a tense courtroom experiment into Dan's personal vanity.",
+      "mechanisms": [
+        "deflation",
+        "character_incongruity"
+      ],
+      "characters": [
+        "Dan Fielding"
+      ],
+      "anchors": [
+        {
+          "cue": 175,
+          "contains": "No settlement with the Kerrs"
+        },
+        {
+          "cue": 177,
+          "contains": "I loved my shirt"
+        }
+      ]
+    },
+    {
+      "id": "S01E01:beat:coin-of-justice",
+      "episode_id": "S01E01",
+      "kind": "comedic_beat",
+      "title": "The coin of justice",
+      "setup": "Harry's suitability for the bench is in question, and he unexpectedly introduces a coin into the decision.",
+      "payoff": "He proposes resolving whether to remain a judge by a coin flip, which immediately favors him.",
+      "analysis": "The prop turns a serious question about judicial fitness into a knowingly theatrical test of chance.",
+      "mechanisms": [
+        "prop_gag",
+        "institutional_satire"
+      ],
+      "characters": [
+        "Harry Stone",
+        "Lana Wagner"
+      ],
+      "anchors": [
+        {
+          "cue": 208,
+          "contains": "behind your ear"
+        },
+        {
+          "cue": 212,
+          "contains": "Heads, I stay a judge"
+        },
+        {
+          "cue": 213,
+          "contains": "I'm still a judge"
+        }
+      ]
+    },
+    {
+      "id": "S01E01:beat:double-headed-coin",
+      "episode_id": "S01E01",
+      "kind": "comedic_beat",
+      "title": "The rigged coin pays off",
+      "setup": "The same coin is proposed again as an arbiter of the Kerr case.",
+      "payoff": "The coin's apparently consistent luck is explained by its having heads on both sides.",
+      "analysis": "A delayed reveal reinterprets the earlier coin trick and signals Harry's use of purposeful showmanship rather than chance.",
+      "mechanisms": [
+        "callback",
+        "prop_gag",
+        "reveal"
+      ],
+      "characters": [
+        "Harry Stone",
+        "Phil Kerr",
+        "Louise Kerr"
+      ],
+      "anchors": [
+        {
+          "cue": 273,
+          "contains": "one more flip"
+        },
+        {
+          "cue": 275,
+          "contains": "comes up heads"
+        },
+        {
+          "cue": 276,
+          "contains": "double-headed coin"
+        }
+      ]
+    },
+    {
+      "id": "S01E01:beat:marriage-reconciliation",
+      "episode_id": "S01E01",
+      "kind": "plot_beat",
+      "title": "Twenty-seven years worth saving",
+      "setup": "The Kerr spouses move from accusation toward acknowledging that they still love one another.",
+      "payoff": "The staff finally recognizes that Harry has helped preserve a marriage with decades of shared history.",
+      "analysis": "An emotional payoff gives substance to Harry's earlier eccentric courtroom approach; the show alternates broad comedy with sincere sentiment.",
+      "mechanisms": [
+        "emotional_payoff",
+        "character_establishment"
+      ],
+      "characters": [
+        "Harry Stone",
+        "Phil Kerr",
+        "Louise Kerr"
+      ],
+      "anchors": [
+        {
+          "cue": 270,
+          "contains": "I love you, Louise"
+        },
+        {
+          "cue": 271,
+          "contains": "I love you, Phil"
+        },
+        {
+          "cue": 329,
+          "contains": "27 years of love and memories"
+        }
+      ]
+    },
+    {
+      "id": "S01E01:beat:mel-torme",
+      "episode_id": "S01E01",
+      "kind": "character_beat",
+      "title": "Harry's Mel Tormé collecting",
+      "setup": "Harry reveals a highly particular enthusiasm for singer Mel Tormé.",
+      "payoff": "He jokes about finding a romantic partner who would be impressed by owning the singer's complete recordings.",
+      "analysis": "An early seed of Harry's musical taste, useful for future cross-episode continuity if separately corroborated in later scripts.",
+      "mechanisms": [
+        "character_detail",
+        "self_deprecation"
+      ],
+      "characters": [
+        "Harry Stone"
+      ],
+      "anchors": [
+        {
+          "cue": 310,
+          "contains": "every record Mel Torme ever made"
+        },
+        {
+          "cue": 311,
+          "contains": "marry the girl"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:campaign-envelope",
+      "episode_id": "S09E19",
+      "kind": "comedic_beat",
+      "title": "Campaign drudgery and Dan's sprained tongue",
+      "setup": "The staff is occupied with a large volume of Sullivan campaign flyers and envelopes.",
+      "payoff": "When asked to lick an envelope, Dan supplies a ridiculous injury-related excuse.",
+      "analysis": "An exaggerated physical excuse punctures the collective enthusiasm for monotonous campaign work.",
+      "mechanisms": [
+        "verbal_absurdity",
+        "character_incongruity"
+      ],
+      "characters": [
+        "Christine Sullivan",
+        "Dan Fielding"
+      ],
+      "anchors": [
+        {
+          "cue": 1,
+          "contains": "Sullivan for Congress flyers"
+        },
+        {
+          "cue": 3,
+          "contains": "monotonous, servile labor"
+        },
+        {
+          "cue": 5,
+          "contains": "I sprained my tongue"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:campaign-commercial",
+      "episode_id": "S09E19",
+      "kind": "comedic_beat",
+      "title": "The campaign ad's stripped-down production",
+      "setup": "Christine explains how an extravagant campaign commercial was reduced after eliminating its musical score and underwater dream sequence.",
+      "payoff": "The resulting ad is dominated by talking, while Dan supplies his predictably sexualized take on what should have appeared.",
+      "analysis": "A satire of political image-making that also provides a compact Dan-and-Christine character exchange.",
+      "mechanisms": [
+        "production_satire",
+        "character_contrast"
+      ],
+      "characters": [
+        "Christine Sullivan",
+        "Dan Fielding"
+      ],
+      "anchors": [
+        {
+          "cue": 10,
+          "contains": "original musical score"
+        },
+        {
+          "cue": 11,
+          "contains": "underwater dream sequence"
+        },
+        {
+          "cue": 15,
+          "contains": "Hope you were naked"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:dan-penpal",
+      "episode_id": "S09E19",
+      "kind": "comedic_beat",
+      "title": "Dan can only imagine one use for correspondence",
+      "setup": "Roz describes having a male pen pal.",
+      "payoff": "Dan speculates about sexually explicit letters and pictures, then questions the value of correspondence without them.",
+      "analysis": "The running contrast between Roz's unexpected tenderness and Dan's one-track innuendo is a useful character-pair dynamic.",
+      "mechanisms": [
+        "character_contrast",
+        "innuendo"
+      ],
+      "characters": [
+        "Roz Russell",
+        "Dan Fielding"
+      ],
+      "anchors": [
+        {
+          "cue": 21,
+          "contains": "his name is Alex"
+        },
+        {
+          "cue": 23,
+          "contains": "explicit boudoir details"
+        },
+        {
+          "cue": 26,
+          "contains": "why waste the stamp"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:penpal-origin",
+      "episode_id": "S09E19",
+      "kind": "plot_beat",
+      "title": "Roz's accidental pen-pal romance",
+      "setup": "Alex's mail continued arriving at Roz's apartment after he moved away.",
+      "payoff": "A threatening forwarding note somehow begins an affectionate and sustained correspondence.",
+      "analysis": "Roz's abrasive introduction becomes the origin of an unexpectedly gentle relationship, reinforcing her tough-exterior comic persona.",
+      "mechanisms": [
+        "reversal",
+        "character_incongruity"
+      ],
+      "characters": [
+        "Roz Russell",
+        "Alex Patterson"
+      ],
+      "anchors": [
+        {
+          "cue": 28,
+          "contains": "had my apartment before I moved in"
+        },
+        {
+          "cue": 31,
+          "contains": "explode in his face"
+        },
+        {
+          "cue": 33,
+          "contains": "started writing to"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:vice-president",
+      "episode_id": "S09E19",
+      "kind": "comedic_beat",
+      "title": "Bull's vice-presidential pen pal",
+      "setup": "Bull mentions having once maintained a correspondence.",
+      "payoff": "He implies that the exchange ended because his correspondent became vice president.",
+      "analysis": "A casual, implausibly high-status connection delivered as personal trivia; any specific real-world vice-president identity would require corroboration.",
+      "mechanisms": [
+        "absurd_reveal",
+        "character_incongruity"
+      ],
+      "characters": [
+        "Bull Shannon"
+      ],
+      "anchors": [
+        {
+          "cue": 35,
+          "contains": "I had a pen pal once"
+        },
+        {
+          "cue": 38,
+          "contains": "became vice president"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:judge-grimm-safe",
+      "episode_id": "S09E19",
+      "kind": "plot_beat",
+      "title": "Judge Grimm's hidden safe",
+      "setup": "A hidden trigger behind old legal books exposes a safe in the judge's office.",
+      "payoff": "The discovery is instantly undercut when someone recognizes it as an old safe with an existing reputation.",
+      "analysis": "A mystery-object setup moves the episode's secondary plot into the world of courthouse history and secrets. Physical trigger operation still requires original-film observation.",
+      "mechanisms": [
+        "mystery_setup",
+        "prop_reveal"
+      ],
+      "characters": [
+        "Harry Stone"
+      ],
+      "anchors": [
+        {
+          "cue": 99,
+          "contains": "A safe"
+        },
+        {
+          "cue": 101,
+          "contains": "hidden trigger"
+        },
+        {
+          "cue": 112,
+          "contains": "Judge Grimm's old safe"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:safe-blackmail",
+      "episode_id": "S09E19",
+      "kind": "plot_beat",
+      "title": "An old court scandal in the safe",
+      "setup": "The characters learn of rumors that a previous judge accumulated illicit leverage over famous and powerful people.",
+      "payoff": "The contents of the safe suddenly suggest a scandalous historical treasure trove.",
+      "analysis": "The dialogue introduces a tantalizing case of institutional corruption as reported rumor, not confirmed in-world historical fact.",
+      "mechanisms": [
+        "exposition",
+        "institutional_satire"
+      ],
+      "characters": [
+        "Judge Grimm"
+      ],
+      "anchors": [
+        {
+          "cue": 114,
+          "contains": "judge was on a take"
+        },
+        {
+          "cue": 115,
+          "contains": "blackmail business"
+        },
+        {
+          "cue": 118,
+          "contains": "even Houdini"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:roz-embellishments",
+      "episode_id": "S09E19",
+      "kind": "character_beat",
+      "title": "Roz's dread of an actual meeting",
+      "setup": "The prospect of meeting Alex threatens a correspondence made safe by physical distance.",
+      "payoff": "Roz finally admits that her letters contain embellishments.",
+      "analysis": "The emotional plot uses the gap between curated written selves and personal vulnerability to complicate Roz's usual confidence.",
+      "mechanisms": [
+        "dramatic_irony",
+        "character_vulnerability"
+      ],
+      "characters": [
+        "Roz Russell",
+        "Alex Patterson"
+      ],
+      "anchors": [
+        {
+          "cue": 172,
+          "contains": "There are no"
+        },
+        {
+          "cue": 175,
+          "contains": "a couple of"
+        },
+        {
+          "cue": 177,
+          "contains": "embellished"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:impostor-reveal",
+      "episode_id": "S09E19",
+      "kind": "plot_beat",
+      "title": "Both pen pals send substitutes",
+      "setup": "The real Roz and Alex have built inflated versions of themselves in their letters.",
+      "payoff": "Each discovers the other has sent a stand-in to their first meeting, followed by an absurd identity exchange.",
+      "analysis": "A symmetrical deception payoff where both characters have committed the same act; the manuscript's individual speaker labels and physical blocking remain provisional.",
+      "mechanisms": [
+        "symmetry",
+        "reveal",
+        "farce"
+      ],
+      "characters": [
+        "Roz Russell",
+        "Alex Patterson",
+        "Lisette Hocheiser",
+        "The Guy"
+      ],
+      "anchors": [
+        {
+          "cue": 291,
+          "contains": "He was me"
+        },
+        {
+          "cue": 293,
+          "contains": "She was me"
+        },
+        {
+          "cue": 296,
+          "contains": "I paid $400 for that actor"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:impostor-honesty",
+      "episode_id": "S09E19",
+      "kind": "plot_beat",
+      "title": "Honesty finally makes a real date possible",
+      "setup": "After the impostor incident, Roz and Alex exchange apologies and compliments about their invented selves.",
+      "payoff": "They choose to dine together despite admitting that even mundane letter preferences were false.",
+      "analysis": "A character-driven resolution in which mutual dishonesty creates an opportunity for sincerity; the final food preference is a miniature callback to the false correspondence.",
+      "mechanisms": [
+        "reconciliation",
+        "callback",
+        "character_growth"
+      ],
+      "characters": [
+        "Roz Russell",
+        "Alex Patterson"
+      ],
+      "anchors": [
+        {
+          "cue": 300,
+          "contains": "embarrassed about all of this"
+        },
+        {
+          "cue": 302,
+          "contains": "Me too, Roz"
+        },
+        {
+          "cue": 314,
+          "contains": "I lied"
+        }
+      ]
+    },
+    {
+      "id": "S09E19:beat:ad-vs-reception",
+      "episode_id": "S09E19",
+      "kind": "plot_beat",
+      "title": "The campaign ad has unexpected consequences",
+      "setup": "The finished political commercial produces reactions inconsistent with Christine's expectations of its presentation.",
+      "payoff": "A discussion of the duplicated commercial suggests a technical explanation for the public response.",
+      "analysis": "A production-related twist is being set up, but the selected held-text anchors alone do not establish the exact technical failure. Do not fill in the missing explanation from a guess.",
+      "mechanisms": [
+        "miscommunication",
+        "delayed_reveal"
+      ],
+      "characters": [
+        "Christine Sullivan",
+        "Dan Fielding"
+      ],
+      "anchors": [
+        {
+          "cue": 213,
+          "contains": "Five days of shooting"
+        },
+        {
+          "cue": 318,
+          "contains": "duplicated your commercial"
+        },
+        {
+          "cue": 320,
+          "contains": "What is it"
+        }
+      ]
+    }
+  ]
+}
