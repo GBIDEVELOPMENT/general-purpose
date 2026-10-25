@@ -13,7 +13,7 @@ import json
 import math
 from pathlib import Path
 
-from owner_qwen_original_video_pilot import SOURCES, MODEL_SHA, MODEL_ID, CLIP_MS
+from owner_qwen_original_video_pilot import SOURCES, MODEL_SHA, MODEL_ID, CLIP_MS, candidate_offsets
 
 IN_SCHEMA = "night-court-headless-video-description/1"
 ORIGINAL_PILOT = "night-court-original-qwen-picture-pilot/1"
@@ -71,8 +71,10 @@ def source_safe_record(source: dict, raw_sha: str):
         raise ValueError("Only one owner Qwen original clip was authorized")
     win = windows[0]
     start, end = win.get("start_ms"), win.get("end_ms")
+    focus = source.get("source_focus", "observational")
+    offsets = candidate_offsets(episode, focus)
     if (type(start) is not int or type(end) is not int
-        or end-start != CLIP_MS or start not in spec["candidate_starts_ms"]):
+        or end-start != CLIP_MS or start not in offsets):
         raise ValueError("Source clip is not one authorized 2-second candidate")
     if win.get("candidate_cut_crossing") is not False or win.get("shot_partition_verified") is not False:
         raise ValueError("Source shot continuity must remain candidate-only")
@@ -86,7 +88,7 @@ def source_safe_record(source: dict, raw_sha: str):
         raise ValueError("No bounded original cut scans")
     for i, item in enumerate(scans):
         if (not isinstance(item, dict)
-            or item.get("start_ms") != spec["candidate_starts_ms"][i]
+            or item.get("start_ms") != offsets[i]
             or type(item.get("candidate_image_changes")) is not int
             or not 0 <= item["candidate_image_changes"] <= 100):
             raise ValueError("Source cut check sequence invalid")
@@ -110,6 +112,7 @@ def source_safe_record(source: dict, raw_sha: str):
         "exact_private_owner_model_report_sha256": raw_sha,
         "model_id": MODEL_ID,
         "model_revision_sha": MODEL_SHA,
+        "source_focus": focus,
         "original_excerpt_start_ms": start,
         "original_excerpt_end_ms": end,
         "cut_candidate_windows_tested": len(scans),
