@@ -94,6 +94,8 @@ def chunk_section(section: str, maximum: int) -> list[str]:
 def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int = 3600) -> dict:
     if max_chars < 200:
         raise ValueError("Chunk size must be >= 200 characters")
+    if out_dir.resolve().is_relative_to(root.resolve()):
+        raise ValueError("Private retrieval output must be outside the Night Court source tree")
     rows = read_queue(root)
     if pilot_only:
         rows = [e for e in rows if e["episode_id"] in PILOT_SCRIPTS]
