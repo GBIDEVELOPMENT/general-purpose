@@ -15,6 +15,8 @@ on:
       - 'Night Court/tools/test_build_pilot_character_evidence.py'
       - 'Night Court/tools/fan_sqlite_index.py'
       - 'Night Court/tools/test_fan_sqlite_index.py'
+      - 'Night Court/tools/build_fan_answer_packet.py'
+      - 'Night Court/tools/test_build_fan_answer_packet.py'
       - 'Night Court/research/pilot-fan-beat-seeds-v1.json'
       - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
       - 'Night Court/seasons/S09/S09E19/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
@@ -35,7 +37,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet
       - name: Both pilot working scripts
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -174,4 +176,21 @@ jobs:
             assert all(x['evidence']['episode_id']==episode for group in
                 q['results_by_evidence_kind'].values() for x in group)
           print('All-episode private SQLite search passed with distinct evidence categories; no text logged')
+          PY
+      - name: Assemble a grounded private LLM superfandom answer context
+        run: |
+          python 'Night Court/tools/build_fan_answer_packet.py' \
+            --database /tmp/night-court-all-private-fan.sqlite \
+            --question 'How does Harry use his double-headed coin in the Kerr case?' \
+            --episode S01E01 \
+            --output /tmp/night-court-private-superfan-question.md
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('/tmp/night-court-private-superfan-question.md').read_text('utf-8')
+          assert "Original dialogue and working-script witness" in p
+          assert "Provisional role-specific source dialogue" in p
+          assert "Interpretation grounded to source cue anchors" in p
+          assert "How does Harry use his double-headed coin" in p
+          assert len(p)<16000
+          print('Real-pilot fan response context packet assembled without logging or transmitting original dialogue')
           PY
