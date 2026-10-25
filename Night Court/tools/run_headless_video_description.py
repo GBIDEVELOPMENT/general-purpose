@@ -214,9 +214,10 @@ def video_model_messages(backend: str, clip: Path, fps: int):
 class LocalVideoModel:
     """Actual Transformers local-video inference, lazily initialized; no remote API."""
 
-    def __init__(self, backend: str, revision: str, device: str, fps: int):
+    def __init__(self, backend: str, revision: str, device: str, fps: int, max_new_tokens: int = 384):
         self.backend = backend
         self.fps = fps
+        self.max_new_tokens = max_new_tokens
         import torch
         from transformers import AutoProcessor
         model_id = MODELS[backend]
@@ -243,7 +244,7 @@ class LocalVideoModel:
             return_dict=True, return_tensors="pt",
         ).to(self.model.device)
         with self.torch.inference_mode():
-            out = self.model.generate(**inputs, do_sample=False, max_new_tokens=384)
+            out = self.model.generate(**inputs, do_sample=False, max_new_tokens=self.max_new_tokens)
         trimmed = [
             row[len(prompt):] for prompt, row in zip(inputs["input_ids"], out)
         ]
@@ -251,7 +252,7 @@ class LocalVideoModel:
 
 
 def benchmark(manifest, backend, media=None, revision=None, device="cpu",
-              fps=2, width=320, model=None):
+              fps=2, width=320, model=None, max_new_tokens=384):
     started = time.perf_counter()
     output = {
         "schema": SCHEMA, **{k: manifest[k] for k in (
@@ -261,6 +262,7 @@ def benchmark(manifest, backend, media=None, revision=None, device="cpu",
         "backend": backend, "model_id": MODELS.get(backend),
         "model_revision": revision, "prompt_sha256": hashlib.sha256(PROMPT.encode()).hexdigest(),
         "video_sampling_fps": fps, "video_width_pixels": width,
+        "max_generated_tokens": max_new_tokens, "runner_logical_cpu_count": os.cpu_count(),
         "source_original_media_is_ephemeral": True, "script_or_claim_independently_accepted": False,
         "source_frame_pts_independently_verified": False,
         "windows": [],
@@ -283,8 +285,12 @@ def benchmark(manifest, backend, media=None, revision=None, device="cpu",
     output["verified_source_sha256"] = actual
     output["source_ffprobe"] = info
     output["verify_seconds"] = round(time.perf_counter() - t, 3)
+    if type(max_new_tokens) is not int or not 32 <= max_new_tokens <= 512:
+        raise ValueError('Model generation exceeds bounded token budget')
+    load_start = time.perf_counter()
     if model is None:
-        model = LocalVideoModel(backend, revision, device, fps)
+        model = LocalVideoModel(backend, revision, device, fps, max_new_tokens)
+    output['model_load_seconds'] = round(time.perf_counter() - load_start, 3)
     with tempfile.TemporaryDirectory(prefix="night-court-video-") as tmp:
         for index, window in enumerate(manifest["windows"]):
             name = Path(tmp) / f"window_{index:02d}.mp4"
@@ -320,10 +326,13 @@ def main():
     parser.add_argument("--device", choices=["cpu", "cuda"], default="cpu")
     parser.add_argument("--fps", type=int, choices=[1, 2, 3], default=2)
     parser.add_argument("--width", type=int, choices=[256, 320, 448], default=320)
+    parser.add_argument("--max-new-tokens", type=int, default=384, help="Bounded 32-512; 64 is enough for runtime smoke, not structured stage quality")
     parser.add_argument("--confirm-owner-media", action="store_true")
     args = parser.parse_args()
     if args.output.exists() or args.output.resolve() == args.manifest.resolve():
         parser.error("Refusing to overwrite existing evidence")
+    if not 32 <= args.max_new_tokens <= 512:
+        parser.error('Maximum generated tokens must be 32-512')
     if args.backend != "plan":
         if not args.confirm_owner_media or not args.media:
             parser.error("Local model inference requires explicit owner media consent")
@@ -336,7 +345,7 @@ def main():
         parser.error("Manifest exceeds budget")
     manifest = normalize(json.loads(raw))
     result = benchmark(manifest, args.backend, args.media, args.model_revision,
-                       args.device, args.fps, args.width)
+                       args.device, args.fps, args.width, max_new_tokens=args.max_new_tokens)
     result["source_manifest_sha256"] = hashlib.sha256(raw).hexdigest()
     encoded = (json.dumps(result, indent=2, sort_keys=True) + "\n").encode()
     if len(encoded) > 100000:
