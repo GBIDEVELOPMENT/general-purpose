@@ -11,6 +11,7 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from run_headless_video_description import (
     SCHEMA, benchmark, normalize, parse_hypothesis, sha_file, ffprobe_info,
+    video_model_messages,
 )
 
 
@@ -106,6 +107,46 @@ class ManifestTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             normalize(packet)
 
+    def test_vlm_message_formats_are_backend_specific(self):
+        with tempfile.TemporaryDirectory() as folder:
+            clip = Path(folder) / 'transient.mp4'
+            clip.write_bytes(b'fake-only-for-message-test')
+            smol = video_model_messages('smolvlm2', clip, 2)
+            qwen = video_model_messages('qwen3vl', clip, 3)
+            sv = smol[0]['content'][0]
+            qv = qwen[0]['content'][0]
+            self.assertEqual(sv, {'type': 'video', 'path': str(clip)})
+            self.assertEqual(qv, {'type': 'video', 'video': str(clip), 'fps': 3.0})
+            self.assertNotIn('video', sv)
+            self.assertNotIn('path', qv)
+            self.assertEqual(smol[0]['content'][1], qwen[0]['content'][1])
+            with self.assertRaises(ValueError):
+                video_model_messages('unknown', clip, 2)
+            with self.assertRaises(ValueError):
+                video_model_messages('qwen3vl', clip, 30)
+            with self.assertRaises(ValueError):
+                video_model_messages('smolvlm2', Path(folder) / 'missing', 2)
+
+    def test_packet_cut_safety_is_only_candidate_not_verified(self):
+        packet = {
+            'schema': 'night-court-multigoal-original-AV-review/1',
+            'episode_id': 'S09E19', 'original_video_sha256': 'c' * 64,
+            'original_duration_ms': 1320144,
+            'script_or_claim_independently_accepted': False,
+            'requests': [{
+                'id': 'S09E19-AV-01', 'source_window_ms': [1000, 2000],
+                'selection_reason': 'editorial',
+                'candidate_shot_partition_not_verified': True,
+                'independently_accepted': False,
+                'original_continuous_AV_review_done': False,
+            }],
+        }
+        window = normalize(packet)['windows'][0]
+        self.assertFalse(window['candidate_cut_crossing'])
+        self.assertFalse(window['shot_partition_verified'])
+        packet['requests'][0]['candidate_shot_partition_not_verified'] = None
+        with self.assertRaises(ValueError):
+            normalize(packet)
     def test_model_text_requires_exact_safe_json_fields(self):
         obj = {k: "" for k in (
             "setting", "camera", "people_and_positions", "actions", "props",
