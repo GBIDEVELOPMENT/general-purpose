@@ -1,0 +1,93 @@
+{
+  "schema": "night-court-extra-5fps-actually-reviewed-original-physical-observations/1",
+  "episode_id": "S01E01",
+  "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_private_gha_run_id": 40161079027,
+  "source_private_gha_artifact_id": 12585988324,
+  "source_private_sample_evidence_report_sha256": "cafd8cc45292f26f72683a0140dfc3c538421219bfbfea53e1e41efa33aede09",
+  "review_provenance": "Assistant directly visually inspected both original film 50-frame contact sheets per interval; no continuous video viewing or audio listening",
+  "number_of_sampled_original_intervals": 3,
+  "nominal_sampled_frames_per_interval": 100,
+  "nominal_original_source_fps": 5,
+  "images_inspected_total": 300,
+  "original_video_or_stills_committed_to_git": false,
+  "original_synchronized_audio_listened": false,
+  "actors_identified_from_images": false,
+  "native_original_video_pts_verified": false,
+  "continuous_full_episode_action_verified": false,
+  "production_script_editor_ready": false,
+  "original_source_text_or_cue_timing_changed": false,
+  "source_video_nominal_offsets_not_authentic_subtitle_timestamps": true,
+  "observations": [
+    {
+      "label": "opening-painter-window-business",
+      "window": [
+        0,
+        20
+      ],
+      "contact_sheet_sha": [
+        "380fc5f32e79bcc9375b2146cf3d1c7041612ba99ab359776c3937cb1dca1f7a",
+        "44407576430d77c5913eb946ba02cfbed596413db91df30c755a32143e04ff27"
+      ],
+      "hypothesis_supported": true,
+      "observed_location": "book-lined courthouse office and window",
+      "physical_action": "A woman wearing a light lavender jacket crosses the cluttered law-book-lined office to a desk, adjusts papers and bends over the work surface. A man in bright yellow sleeves and white work overalls stands at the tall window with a small painter's implement in one hand, looking outside rather than attending to the desk. Reverse angles alternate their positions as the woman faces him.",
+      "limitations": [
+        "The first few decoded source pictures have blocky gray video artifacts; they are not part of the intended scene.",
+        "No external naked couple is actually shown or independently verified.",
+        "No clear painting stroke or audio/speaker alignment has been certified."
+      ],
+      "frame_count": 100,
+      "source_frame_time_kind": "requested_ffmpeg_source_offset_5fps_not_native_pts_or_spoken_caption_sync",
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "screenplay_action_status": "PICTURE_OBSERVATION_ONLY_UNCERTIFIED"
+    },
+    {
+      "label": "judge-ear-coin-conjuring",
+      "window": [
+        838,
+        858
+      ],
+      "contact_sheet_sha": [
+        "b63f0e541622848b5202bf5afb41f57f7d41dd4a8dd478fabdff31abda702ad2",
+        "cb0b9ded444805a04285ff2ddf31cf5a9e071148309a23e21ce397f7e9109504"
+      ],
+      "hypothesis_supported": true,
+      "observed_location": "front of the courtroom at the judge's raised bench",
+      "physical_action": "A lavender-jacketed woman stands close beside the raised bench. The black-robed judge figure reaches his hand toward the area beside her head, then holds his fingers up with a small pale round object between them. He gestures with that raised hand while she leans over his shoulder toward the desk, then he lowers and raises his hand again as they exchange looks.",
+      "limitations": [
+        "The held SRT calls the little object a coin, but the images alone cannot establish its markings or the trick mechanics.",
+        "The model did not listen to synchronized original audio.",
+        "A 5fps source still sequence cannot establish exactly where any shot change falls."
+      ],
+      "frame_count": 100,
+      "source_frame_time_kind": "requested_ffmpeg_source_offset_5fps_not_native_pts_or_spoken_caption_sync",
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "screenplay_action_status": "PICTURE_OBSERVATION_ONLY_UNCERTIFIED"
+    },
+    {
+      "label": "double-headed-coin-kerr-reconciliation",
+      "window": [
+        1094,
+        1114
+      ],
+      "contact_sheet_sha": [
+        "dd77346d7d65f42a86850435bfa10953749967216a4fdabfec1c6fc6a7ef5171",
+        "365250b8d66409623bee991cfe3dca6b680e6d4260504e9a07b4b6c22456ae2b"
+      ],
+      "hypothesis_supported": true,
+      "observed_location": "courtroom bench and crowded gallery",
+      "physical_action": "The view alternates among a woman in a dark red cardigan, a broad-built man in a yellow top under a blue jacket and a dark-robed figure seated at the bench. The seated figure raises and manipulates a small light-colored circular object between his fingers while gesturing toward the gallery. In the later frames the man bends forward and the woman turns and leans toward the foreground court desk.",
+      "limitations": [
+        "The small object is visually consistent with the subtitle's coin but its double-headed sides cannot be seen.",
+        "No speaker's face was independently matched to a credited character.",
+        "These picture observations do not prove exact dialogue timing or the successful resolution of the couple's case."
+      ],
+      "frame_count": 100,
+      "source_frame_time_kind": "requested_ffmpeg_source_offset_5fps_not_native_pts_or_spoken_caption_sync",
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "screenplay_action_status": "PICTURE_OBSERVATION_ONLY_UNCERTIFIED"
+    }
+  ]
+}
