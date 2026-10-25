@@ -177,6 +177,11 @@ class ManifestTests(unittest.TestCase):
         self.assertEqual(data, obj)
         self.assertEqual(parse_hypothesis("not json")[1], "non_json_model_output")
         self.assertEqual(parse_hypothesis('{"setting":"office"}')[1], "bad_model_fields")
+        repeated = json.dumps(obj).replace('"setting": ""', '"setting": "", "setting": "injected person"')
+        self.assertEqual(parse_hypothesis(repeated)[1], "duplicate_model_json_key")
+        extra = dict(obj)
+        extra["stage_direction"] = "unsourced claim"
+        self.assertEqual(parse_hypothesis(json.dumps(extra))[1], "bad_model_fields")
         self.assertEqual(parse_hypothesis('{"setting":' )[1], "non_json_model_output")
 
 

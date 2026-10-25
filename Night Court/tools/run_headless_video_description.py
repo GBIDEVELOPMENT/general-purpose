@@ -187,8 +187,21 @@ def parse_hypothesis(text):
     match = re.search(r"\{[\s\S]*\}", raw)
     if not match:
         return None, "non_json_model_output"
+    class DuplicateModelKey(ValueError):
+        pass
+
+    def reject_duplicate_keys(pairs):
+        obj = {}
+        for key, value in pairs:
+            if key in obj:
+                raise DuplicateModelKey(f"Duplicate key: {key}")
+            obj[key] = value
+        return obj
+
     try:
-        item = json.loads(match.group(0))
+        item = json.loads(match.group(0), object_pairs_hook=reject_duplicate_keys)
+    except DuplicateModelKey:
+        return None, "duplicate_model_json_key"
     except (ValueError, TypeError):
         return None, "malformed_model_json"
     if not isinstance(item, dict) or set(item) != set(FIELDS) or any(not isinstance(item[k], str) or len(item[k]) > 1200 for k in FIELDS):

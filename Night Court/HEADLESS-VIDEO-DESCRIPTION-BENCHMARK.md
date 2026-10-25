@@ -1,3 +1,9 @@
+## Tested model feasibility and negative-control outcome (October 24, 2026)
+
+Real **SmolVLM2-500M** CPU inference has executed successfully in standard GitHub Actions on **synthetic** video: [64-token run #40168003930](https://github.com/gamesbyian/general-purpose/actions/runs/40168003930), 17.321s load + 14.230s inference, and [256-token run #40168321352](https://github.com/gamesbyian/general-purpose/actions/runs/40168321352), 15.485s load + 29.636s inference. Both omit dependency setup. The 256-token model invented a human in front of a window on a test pattern without humans and produced malformed/repeated JSON. **Structured screenplay-stage inference has therefore not passed** even synthetic negative controls; no real episode model-description quality is established. The strict parser now rejects duplicate JSON keys. See [model runtime decision](MODEL-RUNTIME-SMOKE.md) and [negative-control source-free evidence](research/smolvlm2-256-token-negative-control-2026-10-24.json).
+
+The main current bottleneck is validated video semantics, not basic model loading. Use real original episode source-verified packet adapter only with separate source AV editorial review and include low-motion/absent-person holdouts; investigate a stronger model before relying on SmolVLM2 for unattended first-pass staging. Model agreement is never human acceptance. **No 193-episode inference rollout authorized by these tests.**
+
 ## First executable implementation checkpoint (2026-10-24)
 
 The first headless implementation is in **Night Court/tools/run_headless_video_description.py**, with its source-free test `tools/test_run_headless_video_description.py` and PR-only synthetic video workflow `.github/workflows/night-court-headless-video-smoke.yml`. This checkpoint adds:
