@@ -17,6 +17,9 @@ on:
       - 'Night Court/tools/test_fan_sqlite_index.py'
       - 'Night Court/tools/build_fan_answer_packet.py'
       - 'Night Court/tools/test_build_fan_answer_packet.py'
+      - 'Night Court/tools/auto_align_quote_sequence.py'
+      - 'Night Court/tools/test_auto_align_quote_sequence.py'
+      - 'Night Court/AUTOMATIC-QUOTE-SEQUENCE-2026-10-25.md'
       - 'Night Court/research/pilot-fan-beat-seeds-v1.json'
       - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
       - 'Night Court/seasons/S09/S09E19/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
@@ -37,7 +40,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence
       - name: Both pilot working scripts
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -193,4 +196,20 @@ jobs:
           assert "How does Harry use his double-headed coin" in p
           assert len(p)<16000
           print('Real-pilot fan response context packet assembled without logging or transmitting original dialogue')
+          PY
+      - name: Check original S01E01 external quote anchor alignment without character promotion
+        run: |
+          python 'Night Court/tools/auto_align_quote_sequence.py' \
+            --registry 'Night Court/research/s01e01-opening-attributed-sequence-v1.json' \
+            --output /tmp/night-court-ordered-quote-alignment.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('/tmp/night-court-ordered-quote-alignment.json').read_text('utf-8'))
+          assert m['episode_id']=='S01E01'
+          assert m['matched_count']>=6
+          assert len(m['anchors'])==10
+          assert all(x['speaker_identity_accepted'] is False for x in m['anchors'])
+          assert m['independently_verified'] is False
+          print('Pilot original captions aligned to external quote fragments with no audio/identity approval')
           PY
