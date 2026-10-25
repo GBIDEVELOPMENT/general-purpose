@@ -172,3 +172,4 @@ class SyntheticRealDecodeTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+# One-shot synthetic actual model load trigger; do not merge into main.
