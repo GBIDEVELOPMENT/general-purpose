@@ -1,3 +1,17 @@
+## Automated first draft of the review *questions*, not answers (2026-10-25)
+
+The new [`tools/prepare_video_stage_review.py`](tools/prepare_video_stage_review.py) takes an **actual SHA-verified source-video model report**, including reports whose model generated malformed JSON, and creates both an edit-ready JSON decision template and optional human-readable clip-by-clip review packet. **All ten visual/staging questions per clip start `deferred`, with `direct_original_video_review_attested: false`; zero claims or gags are promoted.** This is designed to avoid manually rebuilding a 120-field reviewer queue for every 12-window comparison.
+
+```bash
+python3 'Night Court/tools/prepare_video_stage_review.py' \
+  --model-report /private/s01-source-model.json \
+  --decisions /private/s01-pending-review-decisions.json \
+  --review-packet /private/s01-review-packet.md \
+  --reviewer-id editor-unassigned
+```
+
+A reviewer plays the **actual SHA-matched original picture and audio**, updates `verdict` / `reviewer_text` / `reason` in the JSON, sets `direct_original_video_review_attested` only after direct inspection, and then runs the reviewed stage tool documented below. The Markdown report escapes untrusted model text, surfaces missed-action fields even when the model returned none, and stores **no movie, still frames or soundtrack**. Generating a template is not human review or original-series screenplay completion.
+
 # Night Court: video-model proposals to reviewed screenplay-stage notes
 
 **2026-10-24, executable editorial bridge, synthetic test scope only.** Related: [headless video understanding](HEADLESS-VIDEO-DESCRIPTION-BENCHMARK.md), [two-pilot scripts](CURRENT-PRACTICAL-SCREENPLAY-DELIVERY.md), [publication gates](AV-SCRIPT-PUBLICATION-GATES.md), [source-once multi-goal reviewer packet](PARALLEL-AV-MULTIGOAL-EXECUTION.md) and issue [#302](https://github.com/gamesbyian/general-purpose/issues/302).
