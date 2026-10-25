@@ -31,10 +31,21 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         self.assertIn("Night Court/research/trigger-owner-qwen-physical-comedy.txt", self.workflow)
         self.assertIn("github.event.pull_request.head.ref == 'research/night-court-qwen-physical-comedy-trigger'", self.workflow)
         self.assertIn("&& 'physical_comedy' || 'observational'", self.workflow)
-        self.assertIn("--focus '${{ github.event.pull_request.head.ref", self.workflow)
+        self.assertIn("--focus '${{ (github.event.pull_request.head.ref", self.workflow)
         self.assertIn("ref: ${{ github.sha }}", self.workflow)
         self.assertNotIn("ref: ${{ github.event.pull_request.head.sha }}", self.workflow)
         self.assertIn("persist-credentials: false", self.workflow)
+
+    def test_compact_prompt_trial_is_strictly_owner_only(self):
+        self.assertIn("Night Court/research/trigger-owner-qwen-compact-action.txt", self.workflow)
+        self.assertIn("research/night-court-qwen-compact-action-trigger", self.workflow)
+        self.assertIn("&& 'action_compact' || 'standard'", self.workflow)
+        self.assertIn("--prompt-profile '${{ github.event.pull_request.head.ref", self.workflow)
+        self.assertIn("github.event.pull_request.user.login == 'gamesbyian'", self.workflow)
+        self.assertIn("github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose'", self.workflow)
+        self.assertIn("github.event.pull_request.base.ref == 'main'", self.workflow)
+        self.assertIn("ref: ${{ github.sha }}", self.workflow)
+        self.assertNotIn("ref: ${{ github.event.pull_request.head.sha }}", self.workflow)
 
     def test_one_original_model_pass_produces_deferred_review_and_safe_metrics(self):
         self.assertIn("prepare_video_stage_review.py", self.workflow)

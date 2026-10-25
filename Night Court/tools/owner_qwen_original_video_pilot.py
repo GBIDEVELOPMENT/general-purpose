@@ -150,7 +150,19 @@ def source_benchmark_manifest(episode: str, start_ms: int, focus: str = "observa
     })
 
 
-def trusted_owner_run(episode: str, output: Path, focus: str = "observational"):
+def require_compact_matched_window(episode: str, focus: str, start_ms: int,
+                                   prompt_profile: str) -> None:
+    """Fail closed before model inference if any A/B input dimension drifts."""
+    if episode not in SOURCES or prompt_profile not in ("standard", "action_compact"):
+        raise ValueError("Invalid source episode or model prompt profile")
+    if prompt_profile == "action_compact":
+        expected = {"S01E01": 846000, "S09E19": 555800}
+        if focus != "physical_comedy" or start_ms != expected[episode]:
+            raise ValueError("Compact prompt comparison must use identical original source windows")
+
+
+def trusted_owner_run(episode: str, output: Path, focus: str = "observational",
+                      prompt_profile: str = "standard"):
     expected, item = sample_source(episode)
     password = os.environ.get("FTP_PASSWORD")
     if not password:
@@ -177,10 +189,12 @@ def trusted_owner_run(episode: str, output: Path, focus: str = "observational"):
             raise ValueError("Original source SHA mismatch, no visual inference")
         elapsed_fetch = perf_counter() - started
         clip_start, scan = select_bounded_candidate(video, episode, focus)
+        require_compact_matched_window(episode, focus, clip_start, prompt_profile)
         selected = source_benchmark_manifest(episode, clip_start, focus)
         result = benchmark(selected, "qwen3vl", media=video,
                            revision=MODEL_SHA, device="cpu",
-                           fps=1, width=256, max_new_tokens=256)
+                           fps=1, width=256, max_new_tokens=256,
+                           prompt_profile=prompt_profile)
         result.update({
             "owner_source_pilot_schema": "night-court-original-qwen-picture-pilot/1",
             "source_reference_model_schema": "night-court-headless-video-description/1",
@@ -218,12 +232,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--episode", choices=sorted(SOURCES), required=True)
     parser.add_argument("--focus", choices=("observational", "physical_comedy"), default="observational")
+    parser.add_argument("--prompt-profile", choices=("standard", "action_compact"),
+                        default="standard")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--owner-confirm-original-source", action="store_true")
     args = parser.parse_args()
     if not args.owner_confirm_original_source:
         parser.error("This job requires explicit trusted original-series source confirmation")
-    trusted_owner_run(args.episode, args.output, args.focus)
+    trusted_owner_run(args.episode, args.output, args.focus, args.prompt_profile)
 
 
 if __name__ == "__main__":

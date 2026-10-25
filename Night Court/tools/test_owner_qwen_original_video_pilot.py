@@ -10,7 +10,7 @@ from unittest import mock
 from owner_qwen_original_video_pilot import (
     SOURCES, MODEL_ID, MODEL_SHA, CLIP_MS,
     source_benchmark_manifest, select_bounded_candidate, candidate_cut_check,
-    sample_source, trusted_owner_run, candidate_offsets,
+    sample_source, trusted_owner_run, candidate_offsets, require_compact_matched_window,
 )
 
 
@@ -85,6 +85,19 @@ class TrustedOriginalModelContracts(unittest.TestCase):
             candidate_offsets("S01E01", "unreviewed")
         with self.assertRaises(ValueError):
             candidate_offsets("S01E02", "physical_comedy")
+
+    def test_compact_prompt_requires_same_original_short_clips_as_control(self):
+        for episode, allowed in (("S01E01", 846000), ("S09E19", 555800)):
+            require_compact_matched_window(episode, "physical_comedy", allowed, "action_compact")
+            with self.assertRaisesRegex(ValueError, "identical original source"):
+                require_compact_matched_window(episode, "observational", allowed, "action_compact")
+            with self.assertRaisesRegex(ValueError, "identical original source"):
+                require_compact_matched_window(episode, "physical_comedy", allowed + 200, "action_compact")
+            require_compact_matched_window(episode, "physical_comedy", allowed + 200, "standard")
+        with self.assertRaises(ValueError):
+            require_compact_matched_window("S01E02", "physical_comedy", 100000, "action_compact")
+        with self.assertRaises(ValueError):
+            require_compact_matched_window("S01E01", "physical_comedy", 846000, "user_paste")
 
     def test_privileged_source_path_requires_password_and_never_accepts_override(self):
         with mock.patch.dict(os.environ, {"FTP_PASSWORD": ""}):

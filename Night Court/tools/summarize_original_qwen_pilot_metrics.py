@@ -14,6 +14,7 @@ import math
 from pathlib import Path
 
 from owner_qwen_original_video_pilot import SOURCES, MODEL_SHA, MODEL_ID, CLIP_MS, candidate_offsets
+from run_headless_video_description import PROMPTS
 
 IN_SCHEMA = "night-court-headless-video-description/1"
 ORIGINAL_PILOT = "night-court-original-qwen-picture-pilot/1"
@@ -46,6 +47,12 @@ def source_safe_record(source: dict, raw_sha: str):
         raise ValueError("Source film duration changed")
     if source.get("model_id") != MODEL_ID or source.get("model_revision") != MODEL_SHA:
         raise ValueError("Video model identity/revision does not match verified pilot")
+    profile = source.get("prompt_profile", "standard")
+    if profile not in PROMPTS:
+        raise ValueError("Unrecognized fixed original-video prompt profile")
+    prompt_sha = hashlib.sha256(PROMPTS[profile].encode()).hexdigest()
+    if source.get("prompt_sha256") != prompt_sha:
+        raise ValueError("Model prompt hash differs from approved immutable profile")
     required_false = (
         "script_or_claim_independently_accepted",
         "cut_detection_is_editorial_proposal_only",  # must be True; checked separately
@@ -113,6 +120,8 @@ def source_safe_record(source: dict, raw_sha: str):
         "model_id": MODEL_ID,
         "model_revision_sha": MODEL_SHA,
         "source_focus": focus,
+        "prompt_profile": profile,
+        "prompt_sha256": prompt_sha,
         "original_excerpt_start_ms": start,
         "original_excerpt_end_ms": end,
         "cut_candidate_windows_tested": len(scans),
