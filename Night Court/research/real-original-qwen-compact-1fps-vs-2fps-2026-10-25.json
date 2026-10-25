@@ -1,0 +1,97 @@
+{
+  "schema": "night-court-original-action-compact-1vs2fps/1",
+  "date": "2026-10-25",
+  "source_run_1fps": "https://github.com/gamesbyian/general-purpose/actions/runs/40235589077",
+  "source_run_2fps": "https://github.com/gamesbyian/general-purpose/actions/runs/40237088693",
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "prompt_profile": "action_compact",
+  "prompt_sha256": "f1a23742daf684244dd00a800bc7e5d58a9733c67ec1d43b3c3fc8d991442e2d",
+  "video_width_pixels": 256,
+  "max_generated_tokens": 256,
+  "original_audio_to_model": false,
+  "episodes": [
+    {
+      "episode_id": "S01E01",
+      "original_movie_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "exact_source_interval_ms": [
+        846000,
+        848000
+      ],
+      "frame_sampled_reference_sha256": "cafd8cc45292f26f72683a0140dfc3c538421219bfbfea53e1e41efa33aede09",
+      "control": {
+        "fps": 1,
+        "private_model_report_sha256": "5e9d841fc4a5169ce885f99b033cd073ed5e59b31b76adbd680931ed8f21c29a",
+        "clip_sha256": "4f3e79fb912d9cf82870ca6f7ef736bd4cda02a6744784ecaafa1ce0b6236da4",
+        "json_valid": true,
+        "model_inference_seconds": 120.394,
+        "model_load_seconds": 36.977,
+        "model_tool_seconds": 157.954
+      },
+      "treatment": {
+        "fps": 2,
+        "private_model_report_sha256": "fa7c140c2e7cb3673256bfc7fa9509deb441a5ed826f7931b1eda95746f11da7",
+        "private_artifact_id": 12615223120,
+        "clip_sha256": "e019dc9ff7f0e01137c19531c24770c01638fa28e3d4677645d10610d39234eb",
+        "json_valid": true,
+        "model_inference_seconds": 52.106,
+        "model_load_seconds": 54.672,
+        "model_tool_seconds": 107.256
+      },
+      "inference_delta_seconds": -68.288,
+      "tool_delta_seconds": -50.698,
+      "sampled_still_actor_direction_review": "standing_person_initiator_still_inconsistent_with_seated_judge_initiator",
+      "sampled_still_contact_location_review": "model_claims_arm_contact_where_images_support_cheek_contact"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_movie_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "exact_source_interval_ms": [
+        555800,
+        557800
+      ],
+      "frame_sampled_reference_sha256": "f229ff8aa8b376426384569d973c5868563efe6fb043040c98fb80887f9b3f86",
+      "control": {
+        "fps": 1,
+        "private_model_report_sha256": "148da57f903c164306e9f29ecbf3a0d244f411c33a962832e103e1086779cc6e",
+        "clip_sha256": "6555673621e0fd03e12a4ea32ea6c68db0123c5cc4f6db065d65ae747cc60373",
+        "json_valid": true,
+        "model_inference_seconds": 134.147,
+        "model_load_seconds": 29.185,
+        "model_tool_seconds": 163.885
+      },
+      "treatment": {
+        "fps": 2,
+        "private_model_report_sha256": "a406067af33998fa2b48fd09ad469f3d3227d4d38f6aa50c499a046f0fec0dbe",
+        "private_artifact_id": 12615193382,
+        "clip_sha256": "3048aafc3db8cb1486bb2e4f010dfa08996b426d298b8af94ab02ea8be20f326",
+        "json_valid": true,
+        "model_inference_seconds": 34.912,
+        "model_load_seconds": 51.9,
+        "model_tool_seconds": 87.171
+      },
+      "inference_delta_seconds": -99.235,
+      "tool_delta_seconds": -76.714,
+      "sampled_still_actor_direction_review": "model_object_and_hand_interaction_unverified",
+      "sampled_still_contact_location_review": "model_pen_document_identity_not_independently_confirmed"
+    }
+  ],
+  "comparison": {
+    "clips_per_arm": 2,
+    "strict_json_valid_1fps": 2,
+    "strict_json_valid_2fps": 2,
+    "source_and_prompt_and_model_matched": true,
+    "clip_bytes_expected_to_differ_due_to_fps": true,
+    "original_movie_continuous_AV_independently_reviewed": false,
+    "original_stage_claims_approved": 0,
+    "episodes_fully_AV_certified": 0,
+    "causal_2fps_latency_improvement_proven": false,
+    "unattended_physical_business_model_approved": false
+  },
+  "privacy": {
+    "source_video_audio_frames_copied_to_git": false,
+    "model_prose_copied_to_git": false,
+    "private_artifacts_ttl_days": 7
+  },
+  "interpretation": "In both two-second source-verified episodes, 2fps Qwen outputs were valid and faster in these individual runs. S01 still materially reverses original-source sampled contact direction and appears to mislocate contact. Model-inference time depends on decoding, output length, setup and runtime variation; not a population speedup. Direct continuous original AV review is required for screenplay claims."
+}
