@@ -178,6 +178,10 @@ def trusted_owner_run(episode: str, output: Path, focus: str = "observational",
             raise ValueError("Original source SHA mismatch, no visual inference")
         elapsed_fetch = perf_counter() - started
         clip_start, scan = select_bounded_candidate(video, episode, focus)
+        if prompt_profile == "action_compact":
+            matched_standard_window_ms = {"S01E01": 846000, "S09E19": 555800}
+            if focus != "physical_comedy" or clip_start != matched_standard_window_ms[episode]:
+                raise ValueError("Compact prompt comparison must use the identical original source window")
         selected = source_benchmark_manifest(episode, clip_start, focus)
         result = benchmark(selected, "qwen3vl", media=video,
                            revision=MODEL_SHA, device="cpu",
