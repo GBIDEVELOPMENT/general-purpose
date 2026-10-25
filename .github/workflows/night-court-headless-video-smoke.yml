@@ -108,7 +108,7 @@ jobs:
           echo "Verified public Qwen3-VL immutable model revision: $MODEL_SHA"
           timeout 720 /tmp/nc-vision-cpu/bin/python \
             'Night Court/tools/run_headless_video_description.py' \
-            --manifest /tmp/nc-synthetic-manifest.json --backend qwen3vl2b \
+            --manifest /tmp/nc-synthetic-manifest.json --backend qwen3vl \
             --media /tmp/nc-synthetic.mp4 --model-revision "$MODEL_SHA" \
             --fps 1 --width 256 --max-new-tokens 64 \
             --device cpu --confirm-owner-media \
