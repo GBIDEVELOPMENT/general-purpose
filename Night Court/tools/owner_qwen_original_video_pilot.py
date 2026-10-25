@@ -150,6 +150,17 @@ def source_benchmark_manifest(episode: str, start_ms: int, focus: str = "observa
     })
 
 
+def require_compact_matched_window(episode: str, focus: str, start_ms: int,
+                                   prompt_profile: str) -> None:
+    """Fail closed before model inference if any A/B input dimension drifts."""
+    if episode not in SOURCES or prompt_profile not in ("standard", "action_compact"):
+        raise ValueError("Invalid source episode or model prompt profile")
+    if prompt_profile == "action_compact":
+        expected = {"S01E01": 846000, "S09E19": 555800}
+        if focus != "physical_comedy" or start_ms != expected[episode]:
+            raise ValueError("Compact prompt comparison must use identical original source windows")
+
+
 def trusted_owner_run(episode: str, output: Path, focus: str = "observational",
                       prompt_profile: str = "standard"):
     expected, item = sample_source(episode)
@@ -178,10 +189,7 @@ def trusted_owner_run(episode: str, output: Path, focus: str = "observational",
             raise ValueError("Original source SHA mismatch, no visual inference")
         elapsed_fetch = perf_counter() - started
         clip_start, scan = select_bounded_candidate(video, episode, focus)
-        if prompt_profile == "action_compact":
-            matched_standard_window_ms = {"S01E01": 846000, "S09E19": 555800}
-            if focus != "physical_comedy" or clip_start != matched_standard_window_ms[episode]:
-                raise ValueError("Compact prompt comparison must use the identical original source window")
+        require_compact_matched_window(episode, focus, clip_start, prompt_profile)
         selected = source_benchmark_manifest(episode, clip_start, focus)
         result = benchmark(selected, "qwen3vl", media=video,
                            revision=MODEL_SHA, device="cpu",
