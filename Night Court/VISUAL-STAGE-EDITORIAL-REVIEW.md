@@ -1,3 +1,11 @@
+## Reviewer attention flags from actual Qwen failure modes (2026-10-25)
+
+The source-free [`prepare_video_stage_review.py`](tools/prepare_video_stage_review.py) now adds **heuristic review-priority flags** to each model field in the private Markdown review packet. Every underlying JSON verdict **remains `deferred`** until a reviewer checks the exact original continuous video. This is a reviewer workflow hint, **not a model error detector or an automatically corrected screenplay**.
+
+Rules deliberately focus on patterns observed in the two actual source-video Qwen output reports: speculative words (`may`, `possibly`, `appears to`), supposed unheard conversation or listening/feelings, fine props such as hairpins or pocket squares, and absolute absence claims such as `None` for physical comedy or entrances. A model stage-direction field is **always** marked for source-review rather than safe to copy. Empty fields get a missing-observation warning. The static flags do **not** say that any hypothesized object is absent from original film; they only suggest what to inspect first.
+
+The readable packet also escapes **model-controlled Markdown and HTML syntax**, including inline image/link constructions, so untrusted model output cannot quietly become an executable or externally fetched Markdown attachment in the private reviewer report. The private model JSON itself is untouched and remains usable for exact-SHA audit. No source movie, screenshot or original audio is introduced to PR CI. These changes reduce editorial navigation cost and exposure to untrusted model prose without changing the independent source audiovisual evidence requirements.
+
 ## Automated first draft of the review *questions*, not answers (2026-10-25)
 
 The new [`tools/prepare_video_stage_review.py`](tools/prepare_video_stage_review.py) takes an **actual SHA-verified source-video model report**, including reports whose model generated malformed JSON, and creates both an edit-ready JSON decision template and optional human-readable clip-by-clip review packet. **All ten visual/staging questions per clip start `deferred`, with `direct_original_video_review_attested: false`; zero claims or gags are promoted.** This is designed to avoid manually rebuilding a 120-field reviewer queue for every 12-window comparison.
