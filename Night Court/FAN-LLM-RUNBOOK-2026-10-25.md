@@ -68,3 +68,16 @@ On every answer record `retrieved_sources`, `factual_error`, `source_confusion`,
 2. Next extract the key comic premise, response, payoff and character context as *source-linked cards* from the same existing text and reviewed AV windows.
 3. Maintain author/episode credits, interpretive notes and production trivia in separate externally sourced records, not as invented additions to a filmed scene.
 4. Add continual cross-episode recall testing once the 193-episode text retrieval baseline is proven; enhance high-impact examples where the assistant gets stuck instead of uniformly reprocessing every frame.
+
+## Local searchable retrieval, no model service
+
+After the above all-episode seed export, a fully local BM25-style lexical search provides ranked exact-witness context without infrastructure, model weights, web/API uploads or embedding costs:
+
+```sh
+python 'Night Court/tools/search_fan_retrieval_chunks.py' \
+  --corpus /tmp/night-court-fan-193/fan-retrieval-chunks.jsonl \
+  --query 'Roz pen pal Alex' --episode S09E19 \
+  --output /tmp/night-court-fan-roz-search.json
+```
+
+The JSON output holds full matched private script passages and neighboring chunks for continuity and is **not suitable for public CI logs**. Stdout prints counts only. Use the returned IDs, script/caption source SHAs, episode title and evidence tier to ground the final LLM answer; do not reclassify source-only chunks as visual stage truth or conflate adjacent chunks with independent confirmation. Repeat queries with known character aliases or episode filters when natural-language matches are weak. The current interface is token-based retrieval, not semantic embeddings or a continuously hosted RAG chatbot. A future fan-dossier index should expose character aliases, beat/card IDs and cross-episode continuity through the same retrieval contract. The smoke workflow tests original-source examples without exposing the text.
