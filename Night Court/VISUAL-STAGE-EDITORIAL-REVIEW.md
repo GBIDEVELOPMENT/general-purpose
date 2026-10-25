@@ -1,3 +1,11 @@
+## Action direction and parser failure priorities after second real video trial (2026-10-25)
+
+The second exact original-source [Qwen physical-business run](ORIGINAL-QWEN-PHYSICAL-BUSINESS-RESULTS-2026-10-25.md) revealed two expensive failure modes: **a ten-field-JSON-valid model description reversed which participant touched the other's face**, and another expensive two-second source inference returned `non_json_model_output` at its 256-token limit. Existing sampled-image sequences suggest the directional reversal, but **do not substitute for watching the original moving movie with audio**.
+
+The reviewer packet now adds `verify_action_actor_and_recipient_from_original_moving_video` when any `actions`, `physical_comedy` or `proposed_stage_direction` field mentions reach/touch/give/hand/pass/grab/raise/push/pull/point and similar visible interactions. This is a **review request**, never an automatic reverse edit or acceptance. It also surfaces the model's video sampling rate, original parser error code, and generation-token cap, explicitly warning that an incomplete response **alone cannot prove token-cap truncation**. Even if all ten JSON fields parsed, an apparent left/right actor inversion is a serious screenplay quality defect.
+
+These small changes use the **existing single-pass source-once private reviewer packet**, with no new FTP/model downloads, and do not modify actual dialogue or privacy/acceptance gates. Any model claim must remain `deferred` until independently observed in the synchronized original movie.
+
 ## Reviewer attention flags from actual Qwen failure modes (2026-10-25)
 
 The source-free [`prepare_video_stage_review.py`](tools/prepare_video_stage_review.py) now adds **heuristic review-priority flags** to each model field in the private Markdown review packet. Every underlying JSON verdict **remains `deferred`** until a reviewer checks the exact original continuous video. This is a reviewer workflow hint, **not a model error detector or an automatically corrected screenplay**.

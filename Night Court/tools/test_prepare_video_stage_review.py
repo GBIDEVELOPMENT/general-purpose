@@ -106,6 +106,39 @@ class ReviewPacketTests(unittest.TestCase):
         self.assertIn("Review priorities (heuristic, not verdicts)", packet)
         self.assertTrue(all(d["verdict"] == "deferred" for d in out["decisions"]))
 
+    def test_real_physical_action_role_reversal_gets_high_priority_review(self):
+        for field in ("actions", "physical_comedy", "proposed_stage_direction"):
+            with self.subTest(field=field):
+                flags = review_priority_hints(field, "The woman reaches across and touches the judge's face.")
+                self.assertIn("verify_action_actor_and_recipient_from_original_moving_video", flags)
+        flags = review_priority_hints("props", "The glass stays on the desk.")
+        self.assertNotIn("verify_action_actor_and_recipient_from_original_moving_video", flags)
+
+        m = model()
+        m["video_sampling_fps"] = 1
+        m["max_generated_tokens"] = 256
+        m["windows"][0]["model_hypothesis"]["actions"] = "The woman touches the judge."
+        out, windows = prepare(m, digest(m))
+        packet = render_packet(m, windows, out)
+        self.assertIn("Model temporal sampling: 1 fps", packet)
+        self.assertIn("verify_action_actor_and_recipient_from_original_moving_video", packet)
+        self.assertTrue(all(row["verdict"] == "deferred" for row in out["decisions"]))
+        self.assertTrue(all(row["direct_original_video_review_attested"] is False for row in out["decisions"]))
+
+    def test_incomplete_original_model_json_surfaces_exact_parser_code_without_promoting_claim(self):
+        m = model()
+        m["max_generated_tokens"] = 256
+        m["windows"][0]["status"] = "requires_review"
+        m["windows"][0]["model_output_error"] = "non_json_model_output"
+        m["windows"][0]["model_hypothesis"] = None
+        m["windows"][0]["model_response_excerpt"] = "An unfinished speculative action"
+        audit, windows = prepare(m, digest(m))
+        packet = render_packet(m, windows, audit)
+        self.assertIn(r"non\_json\_model\_output", packet)
+        self.assertIn("Model output token limit: 256", packet)
+        self.assertIn("do not assume token truncation", packet)
+        self.assertEqual({d["verdict"] for d in audit["decisions"]}, {"deferred"})
+
     def test_no_automatic_source_acceptance_or_actor_identity(self):
         m = model()
         m["script_or_claim_independently_accepted"] = True

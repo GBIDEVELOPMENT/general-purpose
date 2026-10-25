@@ -111,6 +111,14 @@ def review_priority_hints(field: str, claim: str):
         flags.append("inspect_fine_prop_identity")
     if re.search(r"\b(none|no one|no physical comedy|no one enters|no one exits|nothing happens)\b", text):
         flags.append("absence_requires_full_clip_review")
+    if field in ("actions", "physical_comedy", "proposed_stage_direction") and re.search(
+        r"\b(touch(?:es|ed|ing)?|reach(?:es|ed|ing)?|hand(?:s|ed|ing)?|"
+        r"pass(?:es|ed|ing)?|give(?:s|n|ing)?|take(?:s|n|ing)?|"
+        r"point(?:s|ed|ing)?|push(?:es|ed|ing)?|pull(?:s|ed|ing)?|"
+        r"grab(?:s|bed|bing)?|place(?:s|d|ing)?|strike(?:s|n)?|"
+        r"hold(?:s|ing)?|raise(?:s|d|ing)?)\b", text
+    ):
+        flags.append("verify_action_actor_and_recipient_from_original_moving_video")
     # A stage direction is never mechanically accepted even without flags.
     if field == "proposed_stage_direction":
         flags.append("never_copy_model_stage_prose_without_source_review")
@@ -145,10 +153,15 @@ def render_packet(model, ordered, template):
             f"Selection reason: {html.escape(str(w.get('selection_reason') or 'unclassified'))}",
             "",
             "Boundary is only a **candidate** cut-safe window, not an independently confirmed shot or dramatic scene.",
+            ("Model temporal sampling: " + str(model.get("video_sampling_fps", "unknown"))
+             + " fps (not full original source continuity); verify who initiates every gesture in the actual moving clip."),
             "",
         ])
         if w.get("status") == "requires_review":
             lines.extend([
+                "Model output parser status: " + escape_untrusted_markdown(str(w.get("model_output_error") or "unknown")),
+                "Model output token limit: " + str(model.get("max_generated_tokens", "unknown")) +
+                "; do not assume token truncation without full generated-output evidence.",
                 "Model response was invalid or incomplete, so no structured assertions were accepted.",
                 "",
                 "Untrusted model excerpt: " + escape_untrusted_markdown(str(w.get("model_response_excerpt") or "")[:800]),
