@@ -135,28 +135,14 @@ def render(ep,root=ROOT):
             # explicitly picture-only paragraph at existing speaker heading.
             lines=generated.splitlines()
             old_header=row["speaker"].upper()
-            matches=[i for i,line in enumerate(lines) if line==old_header]
-            # Repeated character names require locating the dialogue by
-            # stable base reading_line, not a matching label alone.
+            # Reverse chronological insertion keeps all earlier SRT
+            # reading-line offsets unchanged, even with repeated speakers.
             base_line=row["reading_line"]+3
-            if base_line>=len(body.splitlines()) or body.splitlines()[base_line]!=old_header:
+            original_lines=body.splitlines()
+            if base_line>=len(original_lines) or original_lines[base_line]!=old_header:
                 raise ValueError("Original source SRT dialogue reading index drift")
-            original_prefix="\n".join(body.splitlines()[:base_line])
-            original_heading=body.splitlines()[base_line]
-            # Find original heading at exact offset, adjusting for previously
-            # inserted notes with earlier source positions.
-            hpos=generated.find("\n"+original_heading+"\n",len(original_prefix)-50)
-            if hpos<0:
-                # Safer line-relative index, counting only insertions that
-                # have occurred before this cue.
-                line_index=base_line+sum(6 for event in inserts
-                    if event["original_source_srt_cue"]<candidate["cue"])
-                if line_index>=len(lines) or lines[line_index]!=old_header:
-                    raise ValueError("Cannot safely anchor picture note")
-            # Use immutable original script starting block offset and add notes
-            # in descending source order: earlier offsets not shifted.
             line_index=base_line
-            if lines[line_index]!=old_header:
+            if line_index>=len(lines) or lines[line_index]!=old_header:
                 raise ValueError("Source picture insertion offset drift")
             passage=wrap_event(item,ep)
             lines[line_index:line_index]=["",passage,
