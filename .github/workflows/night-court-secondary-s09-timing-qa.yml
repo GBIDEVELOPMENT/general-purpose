@@ -1,0 +1,25 @@
+name: Night Court conservative S09 external timed-subtitle witness QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/probe_original_s09_public_srt_timing.py'
+      - 'Night Court/tools/test_probe_original_s09_public_srt_timing.py'
+      - 'Night Court/seasons/S09/S09E19/derived/public-timecoded-secondary-witness-v1/**'
+      - '.github/workflows/night-court-secondary-s09-timing-qa.yml'
+      - '.github/workflows/night-court-trusted-s09-timing-probe.yml'
+permissions:
+  contents: read
+jobs:
+  original-source-fail-closed-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test exact-347 matching, modified line refusal and synthetic timestamp boundaries
+        run: |
+          python 'Night Court/tools/test_probe_original_s09_public_srt_timing.py'
+          if test -f 'Night Court/seasons/S09/S09E19/derived/public-timecoded-secondary-witness-v1/probe-report.json'; then
+            python 'Night Court/tools/validate_s09_secondary_timing_report.py' || exit 1
+          fi

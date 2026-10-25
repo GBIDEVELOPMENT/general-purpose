@@ -1,0 +1,40 @@
+name: Night Court trusted public S09 original-source subtitle timing probe
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-s09-secondary-timing-probe.txt'
+permissions:
+  contents: write
+concurrency:
+  group: night-court-secondary-timing-once-20261024
+  cancel-in-progress: false
+jobs:
+  source-only-public-web-probe:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-s09-timing-probe-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Offline source integrity test
+        run: python 'Night Court/tools/test_probe_original_s09_public_srt_timing.py'
+      - name: Download ONLY existing public subtitle HTML, compare each of 347 source paragraphs
+        run: |
+          python 'Night Court/tools/probe_original_s09_public_srt_timing.py' --output 'Night Court/seasons/S09/S09E19/derived/public-timecoded-secondary-witness-v1/probe-report.json'
+          python 'Night Court/tools/validate_s09_secondary_timing_report.py'
+      - name: Commit bounded secondary evidence only to an independent review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-s09-secondary-srt-times-20261024'
+          git add -- 'Night Court/seasons/S09/S09E19/derived/public-timecoded-secondary-witness-v1/probe-report.json'
+          git diff --cached --check
+          git commit -m 'Night Court: external S09 timing witness probe with full held-source line matching or abstention'
+          git push origin HEAD:refs/heads/data/night-court-s09-secondary-srt-times-20261024
