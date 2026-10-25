@@ -95,6 +95,13 @@ class RetrievalExportTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "expected original caption SHA"):
                 export(root, Path(folder) / "private", pilot_only=True)
 
+    def test_private_output_cannot_be_written_under_source_root(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / "Night Court"
+            fixture(root)
+            with self.assertRaisesRegex(ValueError, "outside the Night Court source tree"):
+                export(root, root / "generated", pilot_only=True)
+
     def test_unknown_script_not_substituted_silently(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder) / "Night Court"
