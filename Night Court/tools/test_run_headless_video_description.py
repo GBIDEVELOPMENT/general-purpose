@@ -71,7 +71,7 @@ class ManifestTests(unittest.TestCase):
             "requests": [{
                 "id": "S09E19-AV-01", "source_window_ms": [1000, 2000],
                 "selection_reason": "low_pixel_change_control",
-                "candidate_shot_partition_not_verified": True,
+                "candidate_shot_partition_not_verified": 2,
                 "independently_accepted": False,
                 "original_continuous_AV_review_done": False,
             }],
@@ -80,6 +80,17 @@ class ManifestTests(unittest.TestCase):
         self.assertEqual(m["episode_id"], "S09E19")
         self.assertIsNone(m["caption_source_sha256"])
         self.assertEqual(m["windows"][0]["start_ms"], 1000)
+
+    def test_exact_existing_multigoal_packet_builder_contract(self):
+        from build_multigoal_review_packet import build
+        from test_build_multigoal_review_packet import fixture
+        for episode in ("S01E01", "S09E19"):
+            packet = build(fixture(episode))
+            normalized = normalize(packet)
+            self.assertEqual(normalized["episode_id"], episode)
+            self.assertEqual(normalized["windows"][0]["candidate_shot_partition_id_unverified"], 2)
+            self.assertFalse(normalized["windows"][0]["shot_partition_verified"])
+            self.assertFalse(normalized["windows"][0]["candidate_cut_crossing"])
 
     def test_bad_source_and_status_rejected(self):
         bad = manifest()
@@ -143,7 +154,7 @@ class ManifestTests(unittest.TestCase):
             'requests': [{
                 'id': 'S09E19-AV-01', 'source_window_ms': [1000, 2000],
                 'selection_reason': 'editorial',
-                'candidate_shot_partition_not_verified': True,
+                'candidate_shot_partition_not_verified': 2,
                 'independently_accepted': False,
                 'original_continuous_AV_review_done': False,
             }],
@@ -151,6 +162,7 @@ class ManifestTests(unittest.TestCase):
         window = normalize(packet)['windows'][0]
         self.assertFalse(window['candidate_cut_crossing'])
         self.assertFalse(window['shot_partition_verified'])
+        self.assertEqual(window['candidate_shot_partition_id_unverified'], 2)
         packet['requests'][0]['candidate_shot_partition_not_verified'] = None
         with self.assertRaises(ValueError):
             normalize(packet)
