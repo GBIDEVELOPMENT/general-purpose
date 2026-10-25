@@ -1,3 +1,28 @@
+## First executable implementation checkpoint (2026-10-24)
+
+The first headless implementation is in **Night Court/tools/run_headless_video_description.py**, with its source-free test `tools/test_run_headless_video_description.py` and PR-only synthetic video workflow `.github/workflows/night-court-headless-video-smoke.yml`. This checkpoint adds:
+- `--backend plan` from a SHA-bearing explicit window manifest **or** the existing `night-court-multigoal-original-AV-review/1` packet; no model/media is needed, zero claims promoted.
+- Actual local original-video source hash and ffprobe duration verification before any inference, bounded temporary silent clips (≤12 windows, each ≤15s, total ≤120s, frame and bytes ceilings), and guaranteed temp directory cleanup.
+- Lazy local Transformers **SmolVLM2-500M** / **Qwen3-VL-2B** adapters with immutable model revision requirement. These are *implemented interfaces but have NOT been run against owner original video or weights yet*; model/library compatibility and accuracy are still experimental.
+- One constrained multi-goal per-clip prompt, strict 10-field JSON proposal parsing, abstention/review routing, per-stage timing and independently-unaccepted results. No actor identification or source dialogue overwrite.
+
+**Offline CI only proves schema safety, reject-by-SHA and real synthetic FFmpeg clip processing with an injected model double.** It is not evidence of real SmolVLM2 or Qwen performance. See the below command examples after the implementation is merged.
+
+```bash
+python3 "Night Court/tools/run_headless_video_description.py" \
+  --manifest /private/S01E01-review-packet.json \
+  --backend plan --output /tmp/nc-vision-planned.json
+
+# On a trusted local worker, after acquiring approved model weights/dependencies
+python3 "Night Court/tools/run_headless_video_description.py" \
+  --manifest /private/S01E01-review-packet.json \
+  --media /private/S01E01-original.avi \
+  --backend smolvlm2 --model-revision <40-character-immutable-huggingface-commit> \
+  --device cpu --confirm-owner-media --output /private/S01E01-smol-vision.json
+```
+
+Substitute `--backend qwen3vl` on appropriate provisioned hardware. Install compatible Torch/Transformers/Decord and the documented per-model codecs **in an isolated, explicitly authorized worker**, not in default PR CI. Use the verified original file from the existing trusted owner workflow once integrated; **do not** have this tool fetch FTP content or place any media in Git. Use private transient report paths until output has been reviewed for sensitive content, unsupported claims and provenance.
+
 # Headless video understanding for Night Court: benchmark and production plan
 
 **2026-10-24 · proposal, not a deployed model or accepted video description.**
