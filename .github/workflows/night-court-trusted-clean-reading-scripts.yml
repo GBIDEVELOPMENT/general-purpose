@@ -1,0 +1,36 @@
+name: Night Court trusted clean screenplay reading copies
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-clean-screenplay-readers.txt'
+permissions:
+  contents: write
+jobs:
+  source-only-reader:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-clean-readers-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Verify all source dialogue and make two clean reading files
+        run: |
+          python 'Night Court/tools/test_build_clean_reading_screenplay.py'
+          python 'Night Court/tools/build_clean_reading_screenplay.py' --episode S01E01
+          python 'Night Court/tools/build_clean_reading_screenplay.py' --episode S09E19
+      - name: Put reading copies and exact source citation index on review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-clean-reading-scripts-20261024'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/clean-reading-screenplay-v1' 'Night Court/seasons/S09/S09E19/derived/clean-reading-screenplay-v1'
+          git diff --cached --check
+          git commit -m 'Night Court: clean pilot reading screenplays with source citation indices'
+          git push origin HEAD:refs/heads/data/night-court-clean-reading-scripts-20261024
