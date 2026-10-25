@@ -1,3 +1,12 @@
+## Actual clean-reading screenplays delivered, October 24
+
+Source free CI and trusted source-owned run [#40155221069](https://github.com/gamesbyian/general-purpose/actions/runs/40155221069) built the two uncluttered working-screenplay reader editions. Code merged via [PR #347](https://github.com/gamesbyian/general-purpose/pull/347), actual output plus exact-regeneration test merged through [PR #349](https://github.com/gamesbyian/general-purpose/pull/349):
+
+- [**Read S01E01 clean screenplay**](seasons/S01/S01E01/derived/clean-reading-screenplay-v1/screenplay-clean.md), [separate original cue/part source index](seasons/S01/S01E01/derived/clean-reading-screenplay-v1/source-reading-index.json), **336 original timed cues / 404 reading dialogue blocks**.
+- [**Read S09E19 clean screenplay**](seasons/S09/S09E19/derived/clean-reading-screenplay-v1/screenplay-clean.md), [separate original cue/part source index](seasons/S09/S09E19/derived/clean-reading-screenplay-v1/source-reading-index.json), **347 original untimed paragraphs / 311 reader dialogue blocks** after 36 audited text continuation joins.
+
+This edition removes repetitive per-line cue/timestamp footnotes from the reader's narrative flow while retaining full provenance in the adjacent index and keeping source-supported picture directions. The full tagged originals and v6/v7 evidence-rich editions stay unchanged. It is a readability milestone rather than a source-audio speaker verification, completely staged filmed screenplay, or an independently AV-accepted product. **Still 2 working source-complete pilot scripts, zero editor-ready episodes, zero independently AV-certified episodes.**
+
 ## Recovered and integrated S09E19 picture-to-dialogue editorial packet (October 24, 2026)
 
 Recovered live repo after interruption; the existing practical screenplay
