@@ -151,10 +151,14 @@ def source_benchmark_manifest(episode: str, start_ms: int, focus: str = "observa
 
 
 def require_compact_matched_window(episode: str, focus: str, start_ms: int,
-                                   prompt_profile: str) -> None:
+                                   prompt_profile: str, video_fps: int = 1) -> None:
     """Fail closed before model inference if any A/B input dimension drifts."""
     if episode not in SOURCES or prompt_profile not in ("standard", "action_compact"):
         raise ValueError("Invalid source episode or model prompt profile")
+    if type(video_fps) is not int or video_fps not in (1, 2):
+        raise ValueError("Video FPS outside targeted control and 2fps action experiment")
+    if video_fps == 2 and (prompt_profile != "action_compact" or focus != "physical_comedy"):
+        raise ValueError("Two FPS requires source-matched compact physical-action experiment")
     if prompt_profile == "action_compact":
         expected = {"S01E01": 846000, "S09E19": 555800}
         if focus != "physical_comedy" or start_ms != expected[episode]:
@@ -162,7 +166,7 @@ def require_compact_matched_window(episode: str, focus: str, start_ms: int,
 
 
 def trusted_owner_run(episode: str, output: Path, focus: str = "observational",
-                      prompt_profile: str = "standard"):
+                      prompt_profile: str = "standard", video_fps: int = 1):
     expected, item = sample_source(episode)
     password = os.environ.get("FTP_PASSWORD")
     if not password:
@@ -189,11 +193,11 @@ def trusted_owner_run(episode: str, output: Path, focus: str = "observational",
             raise ValueError("Original source SHA mismatch, no visual inference")
         elapsed_fetch = perf_counter() - started
         clip_start, scan = select_bounded_candidate(video, episode, focus)
-        require_compact_matched_window(episode, focus, clip_start, prompt_profile)
+        require_compact_matched_window(episode, focus, clip_start, prompt_profile, video_fps)
         selected = source_benchmark_manifest(episode, clip_start, focus)
         result = benchmark(selected, "qwen3vl", media=video,
                            revision=MODEL_SHA, device="cpu",
-                           fps=1, width=256, max_new_tokens=256,
+                           fps=video_fps, width=256, max_new_tokens=256,
                            prompt_profile=prompt_profile)
         result.update({
             "owner_source_pilot_schema": "night-court-original-qwen-picture-pilot/1",
@@ -234,12 +238,13 @@ def main():
     parser.add_argument("--focus", choices=("observational", "physical_comedy"), default="observational")
     parser.add_argument("--prompt-profile", choices=("standard", "action_compact"),
                         default="standard")
+    parser.add_argument("--video-fps", type=int, choices=(1, 2), default=1)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--owner-confirm-original-source", action="store_true")
     args = parser.parse_args()
     if not args.owner_confirm_original_source:
         parser.error("This job requires explicit trusted original-series source confirmation")
-    trusted_owner_run(args.episode, args.output, args.focus, args.prompt_profile)
+    trusted_owner_run(args.episode, args.output, args.focus, args.prompt_profile, args.video_fps)
 
 
 if __name__ == "__main__":
