@@ -248,7 +248,7 @@ def render(episode,root=ROOT):
        "and every ambiguous caption collision remain editor tasks.",
        "All speaker proposals are EDITABLE and NOT independently AV-certified.",
        ""])
-    output="\n".join(body).rstrip()+"\n"
+    output="\n".join(body).replace("\\`","`").rstrip()+"\n"
     manifest={
       "schema":"night-court-readable-source-preserving-script/5",
       "episode_id":episode,"source_caption_sha256":SOURCE_SHA[episode],
