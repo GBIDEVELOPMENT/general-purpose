@@ -1,0 +1,91 @@
+{
+  "schema": "night-court-real-original-qwen-standard-vs-compact-matched-ab/1",
+  "recorded_date": "2026-10-25",
+  "owner_source_control_run_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40230163151",
+  "owner_source_compact_run_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40235589077",
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "sampling_fps": 1,
+  "width_px": 256,
+  "max_generated_tokens": 256,
+  "original_source_audio_supplied_to_model": false,
+  "control_prompt_sha256": "085fd62695d680ec1ba1f8ec602c431e99c77313b82c1d4e0bb1bc4e5b93c9e8",
+  "treatment_prompt_sha256": "f1a23742daf684244dd00a800bc7e5d58a9733c67ec1d43b3c3fc8d991442e2d",
+  "clips": [
+    {
+      "episode_id": "S01E01",
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "source_image_index_sha256": "cafd8cc45292f26f72683a0140dfc3c538421219bfbfea53e1e41efa33aede09",
+      "exact_window_ms": [
+        846000,
+        848000
+      ],
+      "exact_ephemeral_encoded_clip_sha256": "4f3e79fb912d9cf82870ca6f7ef736bd4cda02a6744784ecaafa1ce0b6236da4",
+      "control": {
+        "report_sha256": "3068fd52421a91f98195784fadee820b0f5ffe2fc829fdb3ad1fcc96eb5fc986",
+        "artifact_id": 12611679803,
+        "model_load_seconds": 29.876,
+        "inference_seconds": 160.659,
+        "model_tool_seconds": 191.077,
+        "strict_ten_field_json_valid": true
+      },
+      "treatment": {
+        "report_sha256": "5e9d841fc4a5169ce885f99b033cd073ed5e59b31b76adbd680931ed8f21c29a",
+        "artifact_id": 12615290184,
+        "model_load_seconds": 36.977,
+        "inference_seconds": 120.394,
+        "model_tool_seconds": 157.954,
+        "strict_ten_field_json_valid": true
+      },
+      "treatment_minus_control_inference_seconds": -40.265,
+      "treatment_minus_control_tool_seconds": -33.123,
+      "sampled_image_action_direction_check": "both_models_reverse_actor_and_recipient_relative_to_ten_original_source_derived_stills",
+      "independent_original_moving_video_and_audio_review_done": false,
+      "stage_directions_independently_accepted": 0
+    },
+    {
+      "episode_id": "S09E19",
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_image_index_sha256": "f229ff8aa8b376426384569d973c5868563efe6fb043040c98fb80887f9b3f86",
+      "exact_window_ms": [
+        555800,
+        557800
+      ],
+      "exact_ephemeral_encoded_clip_sha256": "6555673621e0fd03e12a4ea32ea6c68db0123c5cc4f6db065d65ae747cc60373",
+      "control": {
+        "report_sha256": "ab039750f07780c540205626284159e30278709b7bf90c15546f954bb0f73602",
+        "artifact_id": 12611959422,
+        "model_load_seconds": 29.322,
+        "inference_seconds": 163.603,
+        "model_tool_seconds": 193.49,
+        "strict_ten_field_json_valid": false,
+        "model_output_error": "non_json_model_output"
+      },
+      "treatment": {
+        "report_sha256": "148da57f903c164306e9f29ecbf3a0d244f411c33a962832e103e1086779cc6e",
+        "artifact_id": 12615081132,
+        "model_load_seconds": 29.185,
+        "inference_seconds": 134.147,
+        "model_tool_seconds": 163.885,
+        "strict_ten_field_json_valid": true,
+        "model_output_error": null
+      },
+      "treatment_minus_control_inference_seconds": -29.456,
+      "treatment_minus_control_tool_seconds": -29.605,
+      "sampled_image_object_handler_review": "uncertain_model_agent_object_relation_and_object_identity_not_verified",
+      "independent_original_moving_video_and_audio_review_done": false,
+      "stage_directions_independently_accepted": 0
+    }
+  ],
+  "matched_original_source_editions_and_clip_byte_sha256": true,
+  "strict_ten_field_json_valid_counts": {
+    "standard": 1,
+    "compact": 2,
+    "total_clips_per_profile": 2
+  },
+  "factual_action_model_accuracy_improvement_established": false,
+  "prompt_effect_on_population_accuracy_or_latency_established": false,
+  "source_movies_frames_audio_transcripts_or_generated_stage_prose_in_repository": false,
+  "whole_original_episodes_independently_av_certified": 0,
+  "limitations": "This is a two-window prompt A/B with original AVI SHA, exact encoded temporary clip SHA and model parameters matched, not a general performance confidence interval or a source-AV accepted dramatic scene. The sampled-image actor/recipient comparison does not substitute for full original motion and synchronized audio."
+}

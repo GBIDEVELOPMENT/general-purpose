@@ -1,0 +1,25 @@
+# Actual original-video Qwen prompt comparison: concise JSON helps, actor direction still wrong
+
+**2026-10-25.** Two source-verified original-series pilot excerpt comparisons are now complete. Both fixed original AVI source SHA-256s, the exact **temporary encoded video byte hashes**, start/end offsets, Qwen3-VL-2B immutable weights revision, 1fps/256px frame sampling and 256-token output cap match between control [source run #40230163151](https://github.com/gamesbyian/general-purpose/actions/runs/40230163151) and opt-in `action_compact` [source run #40235589077](https://github.com/gamesbyian/general-purpose/actions/runs/40235589077). The *only intentionally changed inference input* is the SHA-pinned model prompt. Both jobs produced only private unaccepted model reports, ten deferred reviewer decisions and sanitized source-only numeric metrics. No original AVI/audio/JPEG/model weight/secret/movie dialogue committed or uploaded to the source repository.
+
+## Paired results
+
+| Exact original excerpt | Standard 10-field output | Compact 10-field output | Standard inference | Compact inference | Standard model tool | Compact model tool |
+|---|---|---|---:|---:|---:|---:|
+| S01E01 846–848s | Valid | Valid | 160.659s | **120.394s** | 191.077s | **157.954s** |
+| S09E19 555.8–557.8s | **Invalid** (`non_json_model_output`) | Valid | 163.603s | **134.147s** | 193.490s | **163.885s** |
+
+**Structural benefit:** ten-field JSON success improved from 1/2 to 2/2 on these two specific movie excerpts, with measured inference savings of **40.265s and 29.456s** and tool savings of **33.123s and 29.605s** respectively. Two observations are not a confidence interval or guaranteed production speed-up. The compact prompt SHA is `f1a23742daf684244dd00a800bc7e5d58a9733c67ec1d43b3c3fc8d991442e2d`, standard SHA `085fd62695d680ec1ba1f8ec602c431e99c77313b82c1d4e0bb1bc4e5b93c9e8`. Numeric SHA, timing and category-only [actual A/B ledger](research/real-original-qwen-standard-vs-compact-prompt-ab-2026-10-25.json) is the durable source truth for these process measurements. Privately retained exact model bytes have separate SHA256 each.
+
+**Crucial action-fidelity failure persisted:** in S01E01, the original-source-derived 5fps stills across 846–848s show a seated judge's hand on the standing woman's face. The *standard* and *compact* model reports both assign the face-touch initiation to the standing woman instead of the seated judge. This is a sampled-image actor/patient reversal even when the compact model confidently emits valid and concise JSON. It would materially falsify a stage direction. The sampled reference does not certify native full-frame video time, unseen events between samples, character identity or the accompanying sound. In S09E19, the compact model made complete JSON for a small-object/gesture interaction that the standard prompt failed to structure, but identity of the object and which hand controls it remain uncertain from the sampled frames. **No field has been independently verified through continuous synchronized original video.**
+
+**Decision:** adopt neither prompt as an unattended factual action-narrator. The compact profile is a useful **optional format/cost optimization**, not an action-accuracy solution. For practical staged scripts, require an explicit subject→verb→recipient original-motion reviewer check, especially for touch, passing objects, pointing and physical comedy. No source subtitle/untimed paragraph witness is changed, no stage direction auto-accepted, 0/193 independently original AV-certified complete episodes.
+
+## What to implement/test next
+
+1. **Single-variable temporal sampling trial**, only on these two original source SHA-matched windows: hold **compact prompt**, Qwen revision, output token budget and source movie identical; change only 1fps→2fps or 3fps. A mere extra frame could be enough to reveal direction, but this is **untested** and must not be assumed.
+2. Independently original **moving video + audio** reviewer-annotated physical action and recipient labels must be the quality denominator. Sparse 5fps stills provide useful suspicion and private review targeting, but not full audio/timing acceptance.
+3. Compare readable but potentially inaccurate Qwen outputs against simple manual 5fps inspection as a cost baseline. Measured CPU was about **two to three minutes for 2 seconds of video per Qwen inference**; do not launch series-wide CPU inferences until usable staged action per episode/minute is demonstrated.
+4. Use the existing [exact-video-pair comparison tool](tools/compare_original_qwen_prompt_ab.py) to create numeric-only evidence and [strict stage review](VISUAL-STAGE-EDITORIAL-REVIEW.md) to accept/correct original on-screen motion. Never infer a full episode completeness certificate from two selective excerpts.
+
+One-shot owner source marker [#417](https://github.com/gamesbyian/general-purpose/pull/417) is closed **unmerged**. Original source clips and private Qwen stage prose remain outside Git.
