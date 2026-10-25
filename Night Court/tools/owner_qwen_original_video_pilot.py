@@ -59,20 +59,33 @@ def sample_source(episode: str):
 def candidate_cut_check(media: Path, start_ms: int, duration_ms: int = CLIP_MS):
     """Full native frame-rate low-resolution cut-candidate scan on source AVI.
 
-    This does NOT prove there is no true shot cut. It only rejects detected
-    large image changes so inferred continuous action is less misleading.
+    This does NOT prove there is no true shot cut. It rejects detected large
+    changes inside the requested interval after a one-second decoder pre-roll,
+    so each source excerpt has a preceding frame to compare against.
     """
     if type(start_ms) is not int or not 0 <= start_ms <= 7_200_000:
         raise ValueError("Invalid original-source time")
     if duration_ms != CLIP_MS:
         raise ValueError("Only two-second candidate windows allowed")
+    # IMPORTANT: The source MPEG-4/AVI decoder showed one image-change
+    # candidate at the beginning of EVERY sampled excerpt, including clearly
+    # same-shot 4fps samples. Scan with a one-second decoded pre-roll to seed
+    # FFmpeg's inter-frame scene reference, then count cuts only in the *actual*
+    # requested [start, end] interval. Never discard internal source cuts.
+    preroll_ms = 1000
+    if start_ms < preroll_ms:
+        raise ValueError("Original film cut scan needs one-second pre-roll")
+    duration_with_preroll_ms = duration_ms + preroll_ms
     result = subprocess.run([
         "ffmpeg", "-hide_banner", "-nostdin", "-loglevel", "info",
         "-threads", "1", "-filter_threads", "1",
-        "-ss", f"{start_ms/1000:.3f}", "-i", str(media),
-        "-t", f"{duration_ms/1000:.3f}", "-map", "0:v:0",
+        "-ss", f"{(start_ms-preroll_ms)/1000:.3f}", "-i", str(media),
+        "-t", f"{duration_with_preroll_ms/1000:.3f}", "-map", "0:v:0",
         "-an", "-sn", "-dn",
-        "-vf", f"scale=160:-2,select='gt(scene,{CUT_THRESHOLD})',showinfo",
+        "-vf", (
+            "scale=160:-2,setpts=PTS-STARTPTS,"
+            f"select='gte(t,{preroll_ms/1000:.3f})*gt(scene,{CUT_THRESHOLD})',showinfo"
+        ),
         "-f", "null", "-"
     ], capture_output=True, text=True, timeout=90, check=True)
     # showinfo processes only selected image-change frames after the select.
