@@ -102,6 +102,16 @@ class RetrievalExportTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "outside the Night Court source tree"):
                 export(root, root / "generated", pilot_only=True)
 
+    def test_cross_episode_template_preamble_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / "Night Court"
+            fixture(root)
+            target = root / PILOT_SCRIPTS["S01E01"]
+            target.write_text(target.read_text("utf-8").replace(
+                "Original source SHA:", "The S09 original source SHA:"), "utf-8")
+            with self.assertRaisesRegex(ValueError, "Wrong-season pilot prose"):
+                export(root, Path(folder) / "private", pilot_only=True)
+
     def test_unknown_script_not_substituted_silently(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder) / "Night Court"

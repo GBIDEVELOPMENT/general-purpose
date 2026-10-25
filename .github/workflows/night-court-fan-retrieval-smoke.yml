@@ -5,6 +5,8 @@ on:
     paths:
       - 'Night Court/tools/export_fan_retrieval_chunks.py'
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
+      - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
+      - 'Night Court/seasons/S09/S09E19/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
       - 'Night Court/FAN-OBSESSION-DELIVERABLE-2026-10-25.md'
       - 'Night Court/FAN-LLM-RUNBOOK-2026-10-25.md'
       - '.github/workflows/night-court-fan-retrieval-smoke.yml'

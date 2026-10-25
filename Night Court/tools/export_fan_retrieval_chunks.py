@@ -117,6 +117,9 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
             raise ValueError(f"Script not linked to expected original caption SHA: {episode}")
         if not document.lstrip().startswith("# " + episode):
             raise ValueError(f"Wrong episode script: {episode}")
+        for named_season in re.findall(r"\bThe (S\d{2}) original\b", document[:1800]):
+            if named_season != episode[:3]:
+                raise ValueError(f"Wrong-season pilot prose in {episode} reader header: {named_season}")
         if episode == "S09E19" and entry["source_metadata"]["timed"]:
             raise ValueError("Untimed S09 original witness erroneously marked timed")
         rel_path = path.relative_to(root.resolve()).as_posix()
