@@ -1,0 +1,105 @@
+name: Night Court Qwen original AVI one-clip owner pilot
+
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/owner_qwen_original_video_pilot.py'
+      - 'Night Court/tools/test_owner_qwen_original_video_pilot.py'
+      - '.github/workflows/night-court-owner-qwen-picture-pilot.yml'
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-owner-qwen-original-video.txt'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: night-court-owner-qwen-original-source-20261025
+  cancel-in-progress: false
+
+jobs:
+  offline-original-source-contracts:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate owner allowlist, bounded clip selection and synthetic cut scan without credentials
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            timeout 180 sudo apt-get update -qq
+            timeout 180 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
+          fi
+          python3 'Night Court/tools/test_owner_qwen_original_video_pilot.py' -v
+
+  trusted-owner-source-visual-inference:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-qwen-real-original-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        episode: [S01E01, S09E19]
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      HF_HOME: /tmp/night-court-original-qwen-model-cache
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '2'
+      MKL_NUM_THREADS: '2'
+    steps:
+      - name: Checkout trusted reviewed base only, never PR-head source code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate immutable original source allowlist before secret-scoped operation
+        run: |
+          python 'Night Court/tools/test_owner_qwen_original_video_pilot.py' -v
+      - name: Install pinned local CPU Qwen inference runtime
+        run: |
+          set -euo pipefail
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            timeout 180 sudo apt-get update -qq
+            timeout 180 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
+          fi
+          python -m venv /tmp/night-court-qwen-env
+          timeout 360 /tmp/night-court-qwen-env/bin/pip install --disable-pip-version-check -q \
+            'torch==2.7.1' 'torchvision==0.22.1' --index-url https://download.pytorch.org/whl/cpu
+          timeout 180 /tmp/night-court-qwen-env/bin/pip install --disable-pip-version-check -q \
+            'transformers==4.57.1' 'accelerate>=1.0,<2' 'decord==0.6.0' 'pillow>=10,<13' 'num2words==0.5.14' 'av==15.0.0'
+      - name: Read one exact owner-original AVI and write compact UNREVIEWED Qwen text evidence
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          set -euo pipefail
+          timeout 720 /tmp/night-court-qwen-env/bin/python -u \
+            'Night Court/tools/owner_qwen_original_video_pilot.py' \
+            --owner-confirm-original-source \
+            --episode '${{ matrix.episode }}' \
+            --output '${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json'
+      - name: Retain only small original-source-SHA-linked model proposals for private review
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-owner-original-qwen-proposals-${{ matrix.episode }}
+          path: ${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Destroy model weights cache, derived report and temporary environment
+        if: always()
+        run: |
+          rm -rf /tmp/night-court-qwen-env /tmp/night-court-original-qwen-model-cache
+          rm -f '${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json'
