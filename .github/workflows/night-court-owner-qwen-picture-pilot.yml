@@ -5,6 +5,7 @@ on:
     paths:
       - 'Night Court/tools/owner_qwen_original_video_pilot.py'
       - 'Night Court/tools/test_owner_qwen_original_video_pilot.py'
+      - 'Night Court/tools/test_owner_qwen_workflow_trust.py'
       - '.github/workflows/night-court-owner-qwen-picture-pilot.yml'
   pull_request_target:
     types: [opened, reopened, synchronize]
@@ -34,6 +35,7 @@ jobs:
             timeout 180 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
           fi
           python3 'Night Court/tools/test_owner_qwen_original_video_pilot.py' -v
+          python3 'Night Court/tools/test_owner_qwen_workflow_trust.py' -v
 
   announce-trusted-owner-run-locator:
     if: >-
@@ -82,7 +84,9 @@ jobs:
       - name: Checkout trusted reviewed base only, never PR-head source code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.sha }}
+          # pull_request_target github.sha is the reviewed current base-branch commit
+          # for THIS trigger, rather than a stale base SHA held by the PR.
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
