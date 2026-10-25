@@ -5,6 +5,7 @@ on:
     paths:
       - 'Night Court/tools/owner_qwen_original_video_pilot.py'
       - 'Night Court/tools/test_owner_qwen_original_video_pilot.py'
+      - 'Night Court/tools/test_owner_qwen_workflow_trust.py'
       - '.github/workflows/night-court-owner-qwen-picture-pilot.yml'
   pull_request_target:
     types: [opened, reopened, synchronize]
@@ -34,6 +35,7 @@ jobs:
             timeout 180 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
           fi
           python3 'Night Court/tools/test_owner_qwen_original_video_pilot.py' -v
+          python3 'Night Court/tools/test_owner_qwen_workflow_trust.py' -v
 
   announce-trusted-owner-run-locator:
     if: >-
