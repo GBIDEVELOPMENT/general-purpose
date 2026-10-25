@@ -1,0 +1,23 @@
+name: Night Court clean original-caption screenplay source index QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_clean_reading_screenplay.py'
+      - 'Night Court/tools/test_build_clean_reading_screenplay.py'
+      - 'Night Court/seasons/S01/S01E01/derived/clean-reading-screenplay-v1/**'
+      - 'Night Court/seasons/S09/S09E19/derived/clean-reading-screenplay-v1/**'
+      - '.github/workflows/night-court-clean-reading-screenplay-qa.yml'
+permissions:
+  contents: read
+jobs:
+  source-free:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          python 'Night Court/tools/test_build_clean_reading_screenplay.py'
+          python 'Night Court/tools/build_clean_reading_screenplay.py' --episode S01E01 --output-root "${{ runner.temp }}/reader"
+          python 'Night Court/tools/build_clean_reading_screenplay.py' --episode S09E19 --output-root "${{ runner.temp }}/reader"
