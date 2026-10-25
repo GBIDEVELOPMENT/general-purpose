@@ -7,3 +7,5 @@ Re-dispatch trusted main code after expanded, conservative candidate-shot profil
 Rerun 2026-10-25 after trusted event-base checkout fix PR #403. The trigger branch contains only this inert marker; use reviewed main SHA in the privileged job.
 
 2026-10-25 owner rerun after reviewed-main #404 decoder one-second pre-roll fix. This inert source marker requests no untrusted code execution.
+
+2026-10-25 source-run retry after reviewed-main PR #405's calibrated grayscale frame difference candidate scanner. No trigger-head code is executed.
