@@ -1,3 +1,9 @@
+## Purpose: build an LLM-ready Night Court obsession corpus (owner directive, 2026-10-25)
+
+The actual consumer is an LLM performing deep, well-grounded *Night Court* fandom, not a video-understanding research benchmark. See the [fan-corpus product contract](FAN-OBSESSION-DELIVERABLE-2026-10-25.md) and [borrow-first upstream adoption review](UPSTREAM-REUSE-FOR-FAN-CORPUS-2026-10-25.md). Respect the ranked P0 turn → P1 speaker → P2 delivery → P3 props/wardrobe → P4 action priorities and retain the separate independent AV-certification ledger (still 0/193) without blocking provisional fan-use products.
+
+**Immediate reproducible retrieval seed:** `python 'Night Court/tools/export_fan_retrieval_chunks.py' --output /tmp/night-court-fan-retrieval` yields local/private episode/source-SHA-tagged JSONL chunks from the two richer v5 pilots plus 191 source-only scaffolds. `--pilot-only` restricts to both pilots. This export does not add factual annotations, authenticate speakers, publish copyright text or contact any model/API; source-only chunks must not be presented as filmed scenes. Run the offline synthetic test: `PYTHONPATH='Night Court/tools' python -m unittest test_export_fan_retrieval_chunks`.
+
 ## Authoritative screenplay priorities (owner direction, 2026-10-25)
 
 Read [SCRIPT-PRIORITIES-AND-ACCEPTANCE-2026-10-25.md](SCRIPT-PRIORITIES-AND-ACCEPTANCE-2026-10-25.md) before any script reconstruction or agent dispatch. Rank 0 turn segmentation (including consecutive same-speaker caption merging and intra-cue switches), 1 character attribution, 2 tone/delivery, 3 wardrobe/props, 4 physical stage directions, 5 timestamp accuracy. Preserve original cue evidence and approximate offsets, but do **not** optimize for precise timestamps ahead of script comprehension. Historical pilots are not independently AV certified.

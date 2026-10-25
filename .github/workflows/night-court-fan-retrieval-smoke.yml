@@ -1,0 +1,53 @@
+name: Night Court private fan retrieval smoke
+
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/export_fan_retrieval_chunks.py'
+      - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
+      - 'Night Court/FAN-OBSESSION-DELIVERABLE-2026-10-25.md'
+      - 'Night Court/FAN-LLM-RUNBOOK-2026-10-25.md'
+      - '.github/workflows/night-court-fan-retrieval-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-only-retrieval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python and offline synthetic tests
+        run: |
+          python --version
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks
+      - name: Both pilot working scripts
+        run: |
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --pilot-only --output /tmp/night-court-private-fan-pilots
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          output=Path('/tmp/night-court-private-fan-pilots/fan-retrieval-manifest.json')
+          m=json.loads(output.read_text('utf-8'))
+          assert m['episode_count']==2 and m['chunk_count']>=2
+          assert {r['episode_id'] for r in m['episodes']}=={'S01E01','S09E19'}
+          assert all(r['evidence_tier']=='provisional_filmed_staging_working_script' for r in m['episodes'])
+          print('Pilot source-SHA-checked retrieval export passed; no dialogue printed')
+          PY
+      - name: All 193 source witnesses with pilot v5 substitutions
+        run: |
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --output /tmp/night-court-private-fan-all
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          output=Path('/tmp/night-court-private-fan-all/fan-retrieval-manifest.json')
+          m=json.loads(output.read_text('utf-8'))
+          assert m['episode_count']==193 and m['chunk_count']>=193
+          assert sum(r['evidence_tier']=='source_only_dialogue_scaffold' for r in m['episodes'])==191
+          assert sum(r['evidence_tier']=='provisional_filmed_staging_working_script' for r in m['episodes'])==2
+          print('193 source-SHA-checked episodes indexed; no dialogue printed or artifacts uploaded')
+          PY
