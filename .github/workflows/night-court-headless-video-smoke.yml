@@ -1,0 +1,29 @@
+name: Night Court headless video description (offline smoke)
+
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/run_headless_video_description.py'
+      - 'Night Court/tools/test_run_headless_video_description.py'
+      - '.github/workflows/night-court-headless-video-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: night-court-video-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  synthetic-source-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assert no secrets, network models or original episode source
+        run: |
+          command -v ffmpeg
+          command -v ffprobe
+          python3 -m py_compile 'Night Court/tools/run_headless_video_description.py' 'Night Court/tools/test_run_headless_video_description.py'
+          python3 'Night Court/tools/test_run_headless_video_description.py' -v
