@@ -1,0 +1,57 @@
+{
+  "schema": "night-court-synthetic-qwen3vl2b-structured-control/1",
+  "recorded_date": "2026-10-25",
+  "workflow_run_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40169657224",
+  "workflow_run_id": 40169657224,
+  "one_shot_pr": "https://github.com/gamesbyian/general-purpose/pull/395",
+  "one_shot_pr_closed_unmerged": true,
+  "media_kind": "FFmpeg testsrc2 procedural generated moving video; no humans or film",
+  "original_series_media_processed": false,
+  "model": {
+    "id": "Qwen/Qwen3-VL-2B-Instruct",
+    "full_revision_sha": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "cpu_only": true,
+    "transformers_version": "4.57.1",
+    "torch_version": "2.7.1",
+    "generated_tokens_limit": 256
+  },
+  "sample": {
+    "procedural_video_seconds": 2,
+    "model_excerpt_seconds": 1.5,
+    "sampling_fps": 1,
+    "excerpt_width_pixels": 256,
+    "bytes_or_frames_committed": false
+  },
+  "measured_seconds_excludes_runner_bootstrap_dependencies": {
+    "model_load": 27.881,
+    "clip_decode": 0.177,
+    "inference": 152.833,
+    "total_tool": 180.962
+  },
+  "observed_output": {
+    "strict_ten_field_json_parsed": true,
+    "declared_people_and_positions": "There are no people visible in the frame.",
+    "visible_no_person_ground_truth_consistent": true,
+    "additional_description": "Model described a static camera/test-pattern-like screen and a time counter, but also speculated a broadcasting malfunction.",
+    "unsupported_stage_interpretation_example": "The video appears to be a test pattern, possibly indicating a technical issue or a malfunction in the broadcasting system.",
+    "reviewer_accepted_source_staging": false,
+    "original_series_visual_accuracy_established": false,
+    "no_person_false_positive_population_rate_established": false
+  },
+  "comparison": {
+    "prior_64_token_run_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40169276648",
+    "prior_64_token_inference_seconds": 87.837,
+    "prior_64_token_json_valid": false,
+    "no_population_speed_scaling_claim": true
+  },
+  "release_gates": {
+    "human_film_review_completed": false,
+    "original_picture_shot_boundaries_verified": false,
+    "production_screenplay_accepted": false,
+    "gpu_usage": false,
+    "no_original_source_export": true,
+    "no_workflow_change_merged": true,
+    "full_193_episode_scale_run_ready": false
+  },
+  "interpretation": "Model inference and strict structured output work locally without a GPU on a 2vCPU private-repo runner, at ~3 minutes per single 1.5-second clip/tool excluding installation. Its person-free negative-control response avoided the previous SmolVLM2 false person but introduced an unsupported interpretation about a broadcasting malfunction. A single synthetic control does not establish dependable physical-comedy recognition, and CPU costs favor short selectively chosen clips or faster approved hardware."
+}
