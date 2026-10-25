@@ -1,0 +1,42 @@
+name: Night Court trusted readable two-pilot source manuscript delivery
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-original-caption-readable-scripts-v5.txt'
+permissions:
+  contents: write
+concurrency:
+  group: night-court-owner-caption-readable-scripts-v5
+  cancel-in-progress: false
+jobs:
+  render-safe-original-source-manuscripts:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-original-readable-script-v5-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout trusted reviewed base SHA only
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - name: Render source-reconciled two episode reading drafts and review queues
+        run: |
+          python 'Night Court/tools/test_render_readable_caption_screenplay_v5.py'
+          python 'Night Court/tools/render_readable_caption_screenplay_v5.py' --episode S01E01
+          python 'Night Court/tools/render_readable_caption_screenplay_v5.py' --episode S09E19
+          python 'Night Court/tools/render_readable_caption_screenplay_v5.py' --episode S01E01 --check
+          python 'Night Court/tools/render_readable_caption_screenplay_v5.py' --episode S09E19 --check
+      - name: Commit only original source derived text reading editions to isolated data PR
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -c 'data/night-court-readable-pilot-scripts-v5-20261025'
+          git add -- 'Night Court/seasons/S01/S01E01/derived/caption-first-readable-screenplay-v5' 'Night Court/seasons/S09/S09E19/derived/caption-first-readable-screenplay-v5'
+          git diff --cached --check
+          git commit -m 'Night Court: two complete readable original-caption scene and character scripts'
+          git push origin HEAD:refs/heads/data/night-court-readable-pilot-scripts-v5-20261025
