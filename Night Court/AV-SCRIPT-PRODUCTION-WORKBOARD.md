@@ -1,3 +1,35 @@
+## Recovered and integrated S09E19 picture-to-dialogue editorial packet (October 24, 2026)
+
+Recovered live repo after interruption; the existing practical screenplay
+scorecard had already landed, so no duplicate handoff was created.
+[PR #343](https://github.com/gamesbyian/general-purpose/pull/343)
+merged a validated source-only editor-packet generator.
+Trusted-base source compilation
+[run #40154714246](https://github.com/gamesbyian/general-purpose/actions/runs/40154714246)
+succeeded. [PR #345](https://github.com/gamesbyian/general-purpose/pull/345)
+then passed exact source-free CI and merged the actual
+[**S09E19 complete screenplay plus picture-to-dialogue reviewer appendix**](seasons/S09/S09E19/derived/caption-first-editor-review-v7/screenplay-and-review-guide.md)
+and [source-preservation manifest](seasons/S09/S09E19/derived/caption-first-editor-review-v7/editorial-manifest.json).
+
+This is a concrete editorial convenience: the original 347 **untimed**
+S09 dialogue paragraphs remain unchanged from the source-complete
+v6 screenplay and are followed by **15 unverified, broad picture-to-paragraph
+search suggestions plus 3 explicit abstentions**, derived from 13 archived
+unverified lexical model anchors and previously inspected original film
+frames/motion windows. It does **not** assign original paragraph
+timestamps, connect names to faces/voices, or assert visual-comedy
+completion. Source v6 manuscript hash and the exact review-map
+SHA are recorded in the v7 manifest. The trusted one-shot
+trigger [PR #344](https://github.com/gamesbyian/general-purpose/pull/344)
+was closed unmerged. Original source AV was not downloaded or processed again.
+
+**Current counters stay honest:** two complete held-source-dialogue
+working pilot scripts, zero whole-episode editor-ready screenplays,
+zero independently audiovisual-certified scripts. Next substantive
+work is reviewing original S09 source dialogue with the corresponding
+video and soundtrack, resolving anonymous speakers and action continuity,
+and advancing actual finished scene-level screenplay quality.
+
 ## Current screenplay deliverables and live editorial quality
 
 **Start here:** [CURRENT-PRACTICAL-SCREENPLAY-DELIVERY.md](CURRENT-PRACTICAL-SCREENPLAY-DELIVERY.md).
