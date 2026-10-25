@@ -140,3 +140,21 @@ python 'Night Court/tools/fan_sqlite_index.py' query \
 A query independently ranks three evidence groups: `script_witness` (original held dialogue and provisional v5 staging), `provisional_character_dialogue` (source-hash-backed reading blocks with unverified role attribution), and `editorial_comedy_and_story` (explicitly interpretive cards with original cue anchors). This is preferable to artificially averaging the confidence of claims with very different evidentiary standards. Episode-filter and exact provisional character-role filters work. Search uses SQLite's built-in BM25 and Porter stemming; it is lexical and inexpensive, not a guarantee of semantic recall. The private database includes the full source dialogue, so **do not commit or upload it**. Build refuses to overwrite an existing database and checks the exact all-episode/pilot source coverage by default.
 
 The fan application can immediately use this as a private retrieval backend; **it does not yet include a hosted chat frontend, embedding index, or independent quality score for model-generated answers**. Evaluate grounded fandom answers before adding expensive infrastructure. The same source IDs and evidence-state separation should carry forward if a semantic-search layer is eventually useful.
+
+## Ask an actual Night Court fan question: local LLM-ready packet
+
+Once the private SQLite fan index exists, make a single bounded evidence packet:
+
+```sh
+python 'Night Court/tools/build_fan_answer_packet.py' \
+  --database /tmp/night-court-original-193.sqlite \
+  --question 'How does Harry use his double-headed coin in the Kerr case?' \
+  --episode S01E01 \
+  --output /tmp/night-court-superfan-answer-context.md
+```
+
+This produces a *private, copyable LLM prompt* containing the fan persona instructions, the question, source-witness script excerpts, provisional role dialogue and separately labeled commentary about the joke. It includes episode and cue/caption provenance so an LLM can answer without guessing where the evidence came from. The three evidence groups are kept separate and each passage is bounded so prompt construction does not require dumping an entire episode script. Optional `--role`, `--hits` and `--max-chars` support focused review.
+
+**This prepares the answer context but does not itself call an LLM, validate the LLM's eventual answer or establish missing audiovisual facts.** Supplying the private packet to a cloud LLM necessarily involves disclosing the included source excerpts to that provider, so keep it local until the owner chooses where to submit it. The command logs only the size and saves no output inside the repository.
+
+Expected workflow now: export held sources and three evidence categories → build the offline SQLite index once → retrieve and assemble a focused question packet → provide it to a chosen LLM → fact-check against the provenance → improve incorrect speaker or stage evidence in the canonical pilot scripts. That is a functioning path from existing *Night Court* sources to informed superfan conversation.
