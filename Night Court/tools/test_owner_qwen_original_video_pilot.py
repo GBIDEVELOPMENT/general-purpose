@@ -69,19 +69,38 @@ class TrustedOriginalModelContracts(unittest.TestCase):
         ["bash", "-lc", "command -v ffmpeg && command -v ffprobe"],
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
     ).returncode == 0, "FFmpeg missing")
-    def test_real_synthetic_no_cut_window_has_no_candidate_changes(self):
+    def test_synthetic_no_cut_window_and_change_inside_vs_preroll(self):
         with tempfile.TemporaryDirectory() as root:
-            clip = Path(root) / "steady.mp4"
+            clip = Path(root) / "steady.avi"
             subprocess.run([
                 "ffmpeg", "-hide_banner", "-loglevel", "error",
-                "-f", "lavfi", "-i", "color=c=blue:size=160x120:rate=12:duration=3",
+                "-f", "lavfi", "-i", "color=c=blue:size=160x120:rate=30:duration=5",
                 "-c:v", "mpeg4", "-q:v", "5", "-y", str(clip),
             ], capture_output=True, text=True, check=True, timeout=30)
-            self.assertEqual(candidate_cut_check(clip, 0), 0)
+            # The scan needs 1 second of previous decoded picture.
+            self.assertEqual(candidate_cut_check(clip, 1000), 0)
+            with self.assertRaises(ValueError):
+                candidate_cut_check(clip, 0)
             with self.assertRaises(ValueError):
                 candidate_cut_check(clip, -1)
             with self.assertRaises(ValueError):
-                candidate_cut_check(clip, 0, duration_ms=50000)
+                candidate_cut_check(clip, 1000, duration_ms=50000)
+
+            # True hard cut from red to blue exactly two seconds into
+            # the original, which lies inside the [1s,3s] scanned window.
+            cut = Path(root) / "genuine-cut.avi"
+            subprocess.run([
+                "ffmpeg", "-hide_banner", "-loglevel", "error",
+                "-f", "lavfi", "-i", "color=c=red:size=160x120:rate=30:duration=2",
+                "-f", "lavfi", "-i", "color=c=blue:size=160x120:rate=30:duration=3",
+                "-filter_complex", "[0:v][1:v]concat=n=2:v=1:a=0[clip]",
+                "-map", "[clip]", "-c:v", "mpeg4", "-q:v", "5",
+                "-y", str(cut),
+            ], capture_output=True, text=True, check=True, timeout=30)
+            self.assertGreaterEqual(candidate_cut_check(cut, 1000), 1)
+            # Same actual movie, but its hard cut is entirely before
+            # the selected [3s,5s] original-source interval.
+            self.assertEqual(candidate_cut_check(cut, 3000), 0)
 
 
 if __name__ == "__main__":
