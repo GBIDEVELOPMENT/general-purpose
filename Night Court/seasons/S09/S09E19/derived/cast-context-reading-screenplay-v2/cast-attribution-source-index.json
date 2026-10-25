@@ -1,0 +1,3041 @@
+{
+  "schema": "night-court-original-episode-cast-contextual-reading-manuscript/2",
+  "episode_id": "S09E19",
+  "original_source_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "base_clean_reader_sha256": "0e570173a1ae93b910b8a03ce8ac1cd5e7aa612c9053842a82299f74065abee5",
+  "episode_role_ledger_sha256": "f93a6bf1ba2672589d6d68ab85bbf1446c0410b63fc21111270ceebb7dd00a73",
+  "source_original_cues": 347,
+  "source_original_speaking_units": 347,
+  "source_original_unit_text_hashes": [
+    "3832355f8f97409f5437c3f0deaa4c912085841241afe1bc432d1ebb0042ecf7",
+    "082cb158de32f2d90ad813145d491221d8719732f1f65a7f6f385692b99ab159",
+    "b6724a11bdd7b455318e7840eb5bc40f35b2bd06d0b96029709267ae6fdc796d",
+    "774a750aa31a519e512656526e9869338139335434b1d5dfb7cb02f8cf4f82a3",
+    "f6a44e05269fa337e9f4ae8d4ad7865c9a7a691d7a924729285aa4498dc6d502",
+    "faed4109a45cbe31a5b1daedc96c81c244920c42ccfdaf3fd8d8028f35160948",
+    "a83d424cfa36540c269fa957a080dd899aabfebbc4053531a818c0e1d8fd4128",
+    "a585cf068e45c7ec4e66c519d7adf26f0da47ea9a1a22b0ecb9873186e76f821",
+    "94cd99cc22a8e77200cf89ed2d049e9766f34fb2d442d602776232b81c5bfc9e",
+    "da28998f9ff11074eb1999b8975e386654f0d3bcfbe165defeb7b92f66c3f16a",
+    "01b9d8858919fd6f510d47b1f96de5b3c3a09c2bf2c000169e0d1e940d132ad0",
+    "9773143d7b12b270b0e8c741bb3ab99e09a6ffa8eda867ae0f982b8a78e45ed9",
+    "362cd26571d5833819f0d17b12307e1f480f124c92042773f76f0216e8652042",
+    "1048dbdfd0db877775b84beb969eca2283887aff8a0701233a7e42bdc7cd8c7b",
+    "fd7ea76d56ecf7193cb3edcaa398ee1c382da7371d7fd11d0a978dcbe4f420f0",
+    "f35fb8d3913dee38d4fb495d11f75f1d5f85fc2e1ab1aa6c2b7ecf11196a9fa0",
+    "faa016e71e00de8229d8f8f2264597bc008caa14735af6d188b4b357cbeb4e78",
+    "e2c59e4dbc16cca451f251e469808daa7161b742fb46c403836a8f534b4e7fa7",
+    "f231c80a141ca0143d9656a90094f1668e20146b4778ce7fa6c8ec781c6a33d4",
+    "9df7d0547e957033a87f2f1eea9262f622ca2cda37a188fb5e9606f57f1f5976",
+    "919e57cba50844579de924d9d940066c798bf3b713f02c08902640a6d8577f88",
+    "8cab60e7ee610e842d2f65fc96b37d438342934743e7bb1b3b37fd98c07c7596",
+    "c28bd832b5eebe2cb8fd4c01543b21706bcbbea816a8f1c2d923b09d4d5eefe3",
+    "77d0458f67aff306b47cfa7a707cd3675f38ee4b53d39e1e7b80bd783e6196fd",
+    "63e253b7800e5f697835b1e83e4967e1eec5be89a57c3ef385efa72bcd679d24",
+    "c78713111698ca563f2975edaa20086bfaccb4f6bd9db905db8030e821362837",
+    "82d5656dfa76753d85f1fa482ec0ed002709d20e9276d865308343a29fcb9411",
+    "6fb1925de683f0b53a1196fead3b89de8c94bb18eacf97570548234c68dd9020",
+    "c35e63461d8f3794cc80c6a26aedfe327e28ff5ddbc8ec71eb810373f8f733fd",
+    "3cd41ab8d620d9c152c6bdedc9485d463dea15028825c894cf05908c82d80f57",
+    "5a64d295fe9849f14d22f3f33a936b87cf117478f0fc6ac25c762812ab1e0f3d",
+    "93f414446baaffc3e1846fac92c8651bfc96cb9cb3dc20430025749ab6428126",
+    "69522ecbd46dbd0d0d8708c00252a3a887212abc69e7d442d886c34d88480e02",
+    "e02cd28ea1c9da6c879eb36fdf50ecfff9baf6e64d0becd9a367cef12e9dc0b5",
+    "0c4284301db4971f1008ed0818cad020996de7f5562a8f0093a2053392023d42",
+    "09329e07daf2fa1f4c00753006ef910498a017d131392981f9d27e009adf01e6",
+    "efe0b5d7c4664576693a6558e8d26f3dbec5030c97e11dc756d83b97b92f0398",
+    "3b586c168cf86bc1497fa7a0bc3cde57758de87baf1c27d6330cbb7bead610e8",
+    "1e0de6953696bb4717be0f4f91de01982e8dedcd05514d35311685ee21f95f0e",
+    "04ec4ed32b4633b6c9550682d4b9e2b14d09d5cbf015564e1738984a3616c604",
+    "53ffbc7b99e838ed4ca3c8020935ce8760c3ee0e482474c769d6dc5100cb8027",
+    "3971ed10d0f7019fe22ced011ffcc173ad88ffe636ae6cf969695b8aa80c6d53",
+    "c67a4f1b7f2d03c60ae0f43d44a27809165f09d89be6f669009a8cadd45a6634",
+    "492b02d270fc889157e2ea516397a4ba3e4fb18930a8bf28a2b85b0d38827a6c",
+    "59506b8a14ec177e79b68bf2545bef3415981bd14d4a68a36b85e7d59ce59a30",
+    "77c5c76b4b6f43fbd89f4a1360bf0647761c5ca2fd2280e329ff8748d8a774bd",
+    "c96bff8e2ebfaeff920aeb3e8c52c88c617f5fdefd8ff7a4aceb9c260a72e021",
+    "7725873ba4da2255f869ea1cb254e4182c99a63ef8a1641c316064caca9aa46d",
+    "53237630fe37bca9c3260d8b961ca3f4962cea2d72e87819dccd18a299b9bcc9",
+    "007abd005be133a5c6c186e5b525db08e232f1ad3e69fd8b7e25c03a170b7fe4",
+    "9fcf8aff1b207e9b9cfed631100a641cd87881e66493c13e77fc380b2c965d24",
+    "06f553e7d35c8a493a7c7a9ab7e685b65012e7a6283183a934649a7c7b1182f0",
+    "48f51b93ed0f28b3d735a6afe5023d4ebaad93c9b0be0373ad57400b18e93711",
+    "7b0c3dd7371ce70ba4b51f45ade04d3b99a485cb0ba8e3d113a1bcc72a61d6e5",
+    "187cf1b6e53f697480935a12bdcc35fc4df9e35d75078660748a4f8b5f98e17a",
+    "1d1ca23111cd498b93513c4c60a4d5539e0a67c7c9ffff9ff6c172cb7d4d4d9a",
+    "9d7839a03c2da746561c208f7ab28d8723208f684edb15a1a2aa6d5c37236cf3",
+    "7ff6aa93859bbfb161f9a550d1eed22bd1b2a8a127ef47ca486b79cee2e1c991",
+    "68411e3eb39ed51093956c0ab2e7eb2368612dba378505e674018e13e6b6fb3c",
+    "4bdf15b75754654b55659714ad862f1c9ded77f8a109f8c591ffca64f54d4f4b",
+    "60ab4e9b8c2c5958a044d626c8f9c3027be73d9b8efe2e09ff6ecfea38154094",
+    "d1b932089f43b448af33eea9cea9e2cc94df09dbfeb6dbe2b3292dc33ad2f75e",
+    "12abb0c00c020fbe628aeaef1674b4fdbdaba38998da016a4bed89c7b8f7323f",
+    "9cf71592ff76906dc49b4848ef4efc45d6e6d510c9578daa01d8fce4baeec75a",
+    "ba45505e1e52c57c9fe2d3084330c8e97c869bcfc1167b8bc780068528964182",
+    "b8e9dbfa382cb1d5ef38c8de3d698a81decb2b9eb2782de62921eeefdb2db5e6",
+    "49d6d1e80c7972b6ac6a5e56995c415e8567e1fd171ee3dedcdb520292f1dda4",
+    "2c315c0a5474ed9ba88d61458e2f8b2eedee4075e4bf080576347692535ebaea",
+    "7f810566ef9767424849b29eda7f0b1500185bf21b30ff558d7ef8f5c5322459",
+    "a92cbe0d129aadc79db752f70e83804091933ef5a4acc5e8cbccc5bfd31a17d1",
+    "b2645687769ed4a89986b9577a43af2055d8ae62c826c9b8fd549e0d61e99546",
+    "24655c091affa072e9b046cfd01ea349ce165e2b94aa1549fc13694f2dc03ac7",
+    "b88d673bd64ad154319a8f506240cacafbdb222b00aa36336b7b2bae03e8faa4",
+    "3e76a5af3b687af746ffa352aacd62a36bc6812626e44b0bcfe71b79c3547110",
+    "7ec92813002c76b75402fef34b7b2d5178d53408355f7f8bcb29ff5df0f68a6c",
+    "3759304ab58d0463e660fe8f645d16ccef44fa3004042771a229da619539791e",
+    "264505fbe10da6a321112adc6b6db68c67319ef9fecd5f0666d61797330454cc",
+    "155ec716df4ece5c49130dd70d32e664dae5353c4426899f795ce3f7599bc216",
+    "1261d1f25a81a76e42311b375460ee160a3e926005f7eff664c1d6366cea9a58",
+    "5b5e416578c1d97822d46d378111ba13e4031359b704b7e74cd095a6097ba9fb",
+    "aed4b195596e8da92c9692f8f3f77011a3d73f5580dee7507d7b53760170b054",
+    "dd8a4c28e372ed3408a310f2f09f780f5777893909777ff45090b89b5b4e7b7a",
+    "a870805a334ecd29f5948b5a9ad4646866e49c7a6035463fb2ebb7aaea05cca7",
+    "2e44a0ae9d7bd5c28a1d0e51f79ad9a057a9f2a146ca131f32c4c6aa783bcc70",
+    "abf0b1900f1fc486c7c34d3c2bdb5976055bb65b299e353b3875db10c02ac1c5",
+    "12cb9a5c5fd0a709691b8b77fc13e03786dfdf69074dae4f80bc372de281d97b",
+    "18984ae440bd87e32ba2dda89dd50c2b405b665ff1f460bb44a025a5fb9d95af",
+    "6eeab484b885033840d8271bed6863a4eac0e789769730f1195a6be2e1235797",
+    "b281a84c7c62a0f93288337589a961683435cf53edf887c7824b795168f3b5b8",
+    "6ae163899687858efe419a15aace69c1fb1c26d19f98e47836e68e946ed644d9",
+    "5747295e5c476e05fe051ed94e53d14668ff6ef39b86b5e58a3686f35b8ff335",
+    "5d10d861590a74bea7ec3788bdda66f3788eda8013380bc19fad65a3009af161",
+    "4a33acf51f276cac727ccdffcec43de14f5d3b34348a993f03ec84cad4a5fce9",
+    "71d9567bb96180258e96c047c1830cd38f350601d6925f79d0c4166f0f9aa7aa",
+    "ad21b30d5a3acc9e6fc6d0e2c2f97abd68a89b24c7248375c5f966599e838a28",
+    "b58da8c52f88cc48ab2f69417b8066d1bc93467277a2a2c101c117c20c9ea1a7",
+    "b39bad84a899b08e37fe414d2b88753f430f0a13d709e40604af3e4543825dde",
+    "24991435f571073243ae6f7c86cdc355d8eb22881d3d806a897ab39636f5ed6b",
+    "a199691db5e18056dee9dc180100633964c88fbd3b2aae46c2ea29256ca3fec8",
+    "f8b73fecd428624858a4fc0e2599171dd1c6f2cc42f2517c71a85988cb12f36d",
+    "71f44f1b2e835648695858348bc46002981d9802f629950b5269526ce886ff73",
+    "20ec8f87599d849df5bc56883c9f219ad1c471082e658f9bc21f11b43105d850",
+    "d0a45350e486f7bade02cd09f82d983ba1208f66aa14843c12c5d165d77bcad5",
+    "3aa1509cb9348475604f71695083f4a28fbc873d2ad3f767e496e85f616b021c",
+    "2492769de7e5b51ecd0331a76411e558374ea41af2013b43310ba2dc7094b5a8",
+    "c86a12a1608524346c6e438dec6d758eeae2abaff37bae59d1d19ac64e3152d6",
+    "afe4efe9b8eaa27d0b40333ce4a35b9eb3eaa863485a03d95afdee7c2d6ef12b",
+    "fbd683a1a1c543f6490252e131a9e45d7f2dcf1cd85a4f9914a4d119c295672b",
+    "6dbf7933cf257d8e8fb4ba823ad3598af8833123a67a3a01c5ce14bab0dc8837",
+    "31840a7721e1e070c741b476b0985a0f1ad195fd2e29a5fae53677c8375d3d90",
+    "c80b7360b98c9125240e058173d9a1509169dfd022144dc48754ba6b4fecbbf9",
+    "5d8f9732915cd9dbe2838b0d0ad8be3c847f12d0f2fc7902810cfb7854f7503e",
+    "d9ca9bfd28afcf2bc90b9703c67237ee03234f859441bb884f38f6db98ff39c2",
+    "1b0d0a8a6c0742720d6057c3e73309b10ceffca41094ad725354c7b43752b6ec",
+    "c7cf4e749dcf63f05f80cb1a66b8a304383a40d9e88d8a93b5e23a46820f714a",
+    "b356a126e4318643dbf54db33635cfdeb6f432960fe14752ab6caeec04b5dbfe",
+    "407ed67270111fd158c42eb561159b0dc64ffdc5a6c7a3a7df08fb864756b3da",
+    "a451626b4be6855a761f7e72bb954962efd63eb244eaddd5ffbc992bec0e599e",
+    "b356a126e4318643dbf54db33635cfdeb6f432960fe14752ab6caeec04b5dbfe",
+    "f9122d15a05574cda075e39e737242fd85523c97efb1d132b8c7bceb77412836",
+    "2be36eab0eaa77d97a1ba268c33aedbd846426900c05bb204cb4086c512868a5",
+    "aefd64770b5d23ad1b0942ce9a46cf3ea77e08c21f562cf516cdede5aa9bd94a",
+    "6c859f5ebdd1f04104a174878f5e4ee01e50161c4db578427fa2ec09c61bd6b3",
+    "dc36142bdd26b81556ba3e9ef2a290a0cdcc33db25a663afb6620fa807329b04",
+    "7b91f716d7934930414f3490fc3fdb59da994f1854aa429f3b441638e8450115",
+    "d587e32ac8cf8f728341a8a005e734258c5b8ee8a787910630efb24a369f937b",
+    "6b23f94cda6833fd2b87733e353a67a94a2ac06853ca38a2e70a2a8ac697f6f5",
+    "3d9a3ca57cf8ba392be90c6349af135f9a93cd788e1bdc13f655151ecb8a7866",
+    "a50c5a5a14c1f8eea8dfa963a7d382f50365492063fc32c0c95d1564592dec10",
+    "6e478e92dc338bcee420b66ae731e28f07815eab72dfddc5f98c2281a73028fa",
+    "0e6d52f2823204a815779046d5f721e9cbdd90dcbb534245597ac8168795fb5c",
+    "d5d3192a1f6498f9ad45de77ab8c46293fbd270e20c9fba90c8f7da40306e59f",
+    "82e521df5345c9940cfb149a118a75cfd8ec83603f3a4872e630b77755e6f824",
+    "9783897a1f8787044e830af0bf25f83442e36e05fd563c56828f26f81371f292",
+    "bd04a219be13b8f1fc8261febbbf195249a1831dd5765767b6d70f847948d957",
+    "a79371b7f531c4fd02d1a56656b432a24135725a37966add81a7ceda712d54b4",
+    "2fa0a663db11050aa50a50887861ef41d9fec74a0f3dd733563e13133e89e2d7",
+    "e5e9a6e26f5c9fe4a56103de5de9be6c7949fa184a8e5651e54bc1bdc01c56b6",
+    "87c493106dd84f16a58b45279001604907309676f961441a206fd2001a47d0df",
+    "3cdc150417901ec72839e1b9e5246095dc90ae07f1668af1fd589180285e454b",
+    "48d4f6f2be82d85690abbb3e38d4b86dc110e23f9a149c480ef868613ce37d30",
+    "6263af8321e108bb503394e5a2f81c90af17eb6df2e0a713e33220e77f05f271",
+    "2042e8165cf8c165d8142dc6fe0e0c4cea774bf698046f29f768b365962a660e",
+    "07ade28da2038d4673b4bc1fa9c91d1fb5e0a2ae30597f3170b42cf614b6d774",
+    "376e244f92e199cd6efe2f2072313a9b8e5f806883ca46d3513e2df316597ec2",
+    "c6c97e3a3e3339400ef6541256d115dc349599314e2c8f42c0b4b476a0683ec3",
+    "167f2e998306606ac60af64cc1e383f896d1cc8aa38b47d70aa2595db2b90df7",
+    "001063e352210a56d7023a14697ea6ef0c7364e2413a4306e15860ee2df04345",
+    "8b3017a355a88819f04cf6d336fdd35cc179126c966bab117cc9518d5de53d5f",
+    "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+    "f393db63d64dc84ff216a3660c307e712e7bcd48b9fce912121dd939b1f47c3b",
+    "d67b5c2ebf54bc9db7d7f2c003223cc55cd0a340a1bf4357ccfbfd1f40854fc0",
+    "a0078af4418883e47ea466862e2a05ae6249ec01e35d8853d241d3b56ea68c71",
+    "6988870eb1434e181a1d175402ebf173255d2e4145030adc36b76a0a6d26119c",
+    "f133ee290e783afc7a83a4df38b72ccadc8d507c4178728652bab21879129cd5",
+    "d88cf9708b58bb6f73a19e121487607e58324fa7950bd9b0c6f7fcab601a1c6d",
+    "3162e76026c0608b4afff0de9f6587ebaff00c5e726714449c3c1ab40d801bcd",
+    "36e42c28610b4000f50350ee6891dbd181014206a2c50f242771064fc42432bf",
+    "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+    "ad19b8cc2deb82c31378eef9b6262d5f620332381cdc995f470ec3a2c82585f2",
+    "ba6fe5f38fe243adbbb8f3cde35bc2ef311ae7f5d88c06e1c0d7609ca33b5666",
+    "a94f6c7875f452c2618c87394d61064d9a913b878818ada10abcaab7832fcac3",
+    "79a40620cfbd5eaa4b66b2e583fb33a1a1694e9f1548d97c134879fb228220c1",
+    "064eb6589ebefeecb30099ca94d4a1d346d454fe357ab60a4a001d959aa8cf4e",
+    "f8e6ac6cc9a1c9cf88a6932edfd45a4e2ea6eee1621903e91022e306c22c7061",
+    "952e358ca0f9f834050cf0988a5ec8521e20d7adb3cf86e60f63d9394e0061a6",
+    "c6fcd92ee22f553de67ebc7593786e1eeab1e95243bb6c8fa2dcbac3e977127b",
+    "0a5ee0813679d81e94b177a9432ecad2f9c0d007e41279e29a27c22646c9d538",
+    "b2ce2d5545bcef52c2fdeb5f4d0f65441aae283b763281779e633c67deedf6aa",
+    "532db7ca7d54e86200f81d16260e3acdf1883f7d3d9a3c1d2eed3513ededab9d",
+    "db0fce41103dadc17ede239be1afcf4887e0b729ae4f9fbaa877525ccc1d16f4",
+    "24a75adfb0ac6d66ea058c1ad140d87e32185165b00cd0062e2f88ed9d4f91b9",
+    "7f20e6549be21eb9716c082ce4027c5bd78e61d201a652e0234cfafaec5cf6da",
+    "f677e4b6f898b73a7d8522af203903def9925df4d9f989edc6a18f6aefb481fc",
+    "123e43d2b2b165322ae7911b77ee80c5b0c6fa8b8f63f20b70a8e1654a96b8cf",
+    "a7d60c04b60571c21fd57f3afafa9b15dea343ead763443b54457cb2def74bb3",
+    "736b401d7b25e2ac0aebf8732d439c711b5d3306f0e44db91b8180ec92b0c405",
+    "46097dabdd4cbbef38d4dbe3f415757560a8ecb382bc5e621a28ecd3e8ed2e08",
+    "cdae46d007292f9decdf125bad371ba9eb60611fa315902a8ce7dea2c61df0d1",
+    "c60aa8387c94cc8359b51f85d57b661bf601201e1a52c6b99c595dd08148c238",
+    "bf4313168db49fcee59608a1c4b1d0032c011804aea2716a7c3a5eb2c3177f9f",
+    "3713779d037c4a9c23c0e1ff48ef812ae794ff02bc1580f059fdd07c3906b26d",
+    "0ab08e00b57f3dcccb50366a3c9d5889b8802bfd1819feaa571f35fb77673e1c",
+    "554e6ec0bec97ecc209b48546b45280204074b5fb33144fa949856ab16fada6f",
+    "b62321612520107f1ae2733fc8f3981c378d751104ccca357a5d14b5d80ca3ea",
+    "7be324826a394362b696e7e3f46e5087169c0818bd2695fbfa5e2458cf95bb7f",
+    "5ce268fbb69338a107b582f6dd0d2d324d94a84ea60c376ffd4f8fa99a370d83",
+    "e485577a774b94cb58102fb3b587503d4da8d352be1d0c7fa7a02ef61d9091f5",
+    "d8122c3bdb93794bf0659c616d3e18243556cf892394f40b4e0a343f59ddac7f",
+    "aeb77450934123dbbbe5ead742e48ff7ce2d8494ba7045b0b09d7ab4f2146a66",
+    "e2b5af338ddfe4cc88bba7620bf2810045374d7c5aeba94a0de387610d4deca1",
+    "0c4dd8a6c28a1de908046de6b3560d1cc904af60bd295d8f30f94abe07a1607f",
+    "0dac18b13b5c2731487c58cf83e0b97322b343034a453afd5d77576ec5517b03",
+    "fa3d6c2f8e8e470c1c00ee216e185a2c311d8c216b5ace92e8a3e50dac61024d",
+    "372064026ae3be5eb4af798ee17f20c208b7d9143804f5e8c7e9756992d96c09",
+    "8ed6b31c9db193e5e843860312c0b4e9ea8ab3ca56c339a4219041c6461a6d6f",
+    "991499ad5549b974aac240379ee0003146be99ea9984a075fa57f1b4d586e578",
+    "fe40a4db9427f04be1a2dca9dde9a5aa7ef48de56f744832d8776eaac784ca16",
+    "6fa27f53d00b2f3bc566254196b944ca710b25f3cd115166c2cd0a65d911e606",
+    "9135c041ca2eb3b01e0c29e5ddc58f41c1fbc27661ebd6cd4ac0b64ec4fe28f0",
+    "75ae2dc81bad72b7e593cc04c00d17ecaa14b5ff27005bc92753ea59ca8b48a9",
+    "bf73ac1ed96b130e92f2d36546e4551626061ad41916a0f8c0691edf13556baf",
+    "83f3c8f3b67c423e558e7427560cbed450cc92237a7ccfff686137f4412eab3a",
+    "a2cff6dd7022da58a12988424c80943703ec5301f59666403d3ef6a11b2ac4c4",
+    "59ebad37bf5d4cdbbb012e88c52e069cf95bfdd3a248dbdbbe5696f73ef52f8a",
+    "eb8537579c855cab769486f0469e2434787dfb8c2d548239525ac2e4bd4db487",
+    "da4b3454dafddd39999d342eabf3654925cd097a3781c9ce0ee01505603b2f90",
+    "95adb97f61db0ce9079ddc81270478d497fbb1dda5aecf5cf1e5a1a5acaa3668",
+    "569adb114d9999807f2ef2d907e2c7e727db42a8f137c4090e36a48442ec3b06",
+    "962642d85d621e812aadcc748e1f47662c3d0024617414f2890565979ee3e8ac",
+    "76eb1709a167f83658ffaa8ed6539ededfcbf5781985819f31840848b398f889",
+    "a906c0b38475f4ccceb0a22f47b1b991a301934ec4f56575f330b0c63679e0d5",
+    "36bce4657c8865650bc6872e9b268002881080fe3415f77e8cea84493ad62a9c",
+    "a4e658f046911ef5718f4c263c49a3c3334e35c9aa3c18e0a18efd4d7a1071e4",
+    "d78e6a0265dc8caf8ec5bd415c87465e29cf9092ea6bb504452e5d0a0cbb64f3",
+    "aa208828bce7172e8a6f7d9347f9ee69f78c213b9445b6d66b2270a61dd71473",
+    "8df4f18a251d24a870840266f9a43772693c11ea093f6113676c8a0cb3158d22",
+    "49730edbad6f7dacf7e52f3dbf6eb8a9e7c5ae0195127ba6d5da49abbf7b6620",
+    "e4383805755ee2964afa1ed2f1a063dd06168fb07d45f8dcbdc7b9f51f229030",
+    "76a4792d0135127cc863c8fd5ca591e19898f67c7ead535db455f46b81bf9331",
+    "379c9f9f7437bd42e41e64c1e676ec9144f064a40b5c880281f500843151a124",
+    "828b7ef0f651c5cf7bba9e2dfb830d803e75f0352bb64571994d330f72e31672",
+    "a521171d7eeced1b87ef70ec31fdd8aefdb1a5197db3236da02c5266dd26ed3b",
+    "d0e2c90b226f565b4e630b66f95ab2483e281748a6486323b97e587f37c50be3",
+    "eccdc098cc44d9e055e6384c392cb71bc17cd4464c9436ee0dc50c52715788a6",
+    "48a8d39162f74ca1ce9cd8ace8d75660277e94f1108d96277d56837c12744225",
+    "ab9a31341b17dc8a8423c52c3f6162a88630ade94a48e40593e32ebaa7977bff",
+    "51db942ffabb6b8e9ec87d7cbfac45a6c408856bdd32ef4211b34b39424279be",
+    "5af35db6f8fe39ad7419a02803f002172cf4eb9530b21188e2c81497136783d2",
+    "cbeadc1a5d2ebe78d1a58eb47937c6bdc6ca4db640b340563fc9088ffd8327f6",
+    "ebd9bbf4ad5f2f0995ee583a7f47fa0eaebf096b9bfa123cb596d937c62a34f7",
+    "b62321612520107f1ae2733fc8f3981c378d751104ccca357a5d14b5d80ca3ea",
+    "fb6f23aa4ab009188872006fde7851a59fce75cbfa4eff2bd18f87636cbfac10",
+    "11c6248ffecb3f1c691dbf61f92a567410b48fa8a88437dee7232b4c56af9d18",
+    "93b0e3b2a2685d14fc0fd8ef34478eb7445d29df8ec5eacab0d23eaa8aa57171",
+    "032736d3c8442502013f4020e82a8c1c23ae8eb9741db0162cdafdb91c7cc5b5",
+    "cb39dec7e0e96532ee5c39e25d3727e5b9bd35b50a6c8107ae486c11145eecf5",
+    "7e287f455337ceff02e8c29f39a81ac07f110eaef971d34af46fee0ab0950dc3",
+    "05aa4c134b9414e389ba4110e7303586700bfce0c1a1951653d11847c219a97f",
+    "2294b37efc0e117ff8d9b8d570ee6e2df1300353f279c6743e00e7cd46db82b7",
+    "784242b756513177ec332d80f8ad8923a6b600b0a3975c07fe9c25fae9ff585d",
+    "a0d0a223b061e45939827d4a23ad58c95161db31de585ea003ba1cd742ad0cff",
+    "1219b3dbe3525e8162ee7ff9c59caa9fffd57485456650b97b2357572cd1a387",
+    "9613600a736294da15f85a8ecd88fdac2ec9392f923be0d31a7fab78b97df14b",
+    "31f9ef2be0cb0b48123c524402b9b9e862bf05aa7dd21d834e4d83efab6672d8",
+    "3f5730f69ceb79ea540818c28f695c42cfe74aead2ddc5085d2c3386975040ce",
+    "8e35886bc7d997b5e2baa03659ac03d32164f077ccfea8d50ecedbb180154c78",
+    "c28e7eef60c34a2f633ccee313fffee46e4895d1e8fcd2bf380a3634d6a11ce8",
+    "ff7b7167a3c97757e0978b099895dcd4bee8aff426798ab4b95663c7b6e4a8c5",
+    "2c5a7a742d9fde7e8e0493c4affb6b2fdd56dde583cc89c5fe35fae85cc0ee40",
+    "6fb00029f5a6399d6363c8004817c7b2912079513256dfe628998b702641c85f",
+    "8d4e275608e05d1f55d422b1b24f2a1d452675b1050f16c35f61e759d77d7eed",
+    "b764438c25b620927cb2c3b3c7188e3e917de417448eac0e1d0fe994ec11bde8",
+    "1c056df8e12d0eff27e7832e61cf4a9d5e5cd1dcb70acb6607d0fde9b80aa6fb",
+    "61a27d9ea75d01c77585ac281df08a33326c0e9cc099dfda0948842627bfa835",
+    "b39bad84a899b08e37fe414d2b88753f430f0a13d709e40604af3e4543825dde",
+    "9a3eade949754d1ced2da2cb8a079227bec84b97a05d984671d46767df037b0d",
+    "eed48a218d3c32c987723fc50fea9fc9d1a97e789c7b31bcf50d614e9d884638",
+    "5a5e8cd789f4b81236065bc1d434ef1e92d8e6258f517b5c06b0f1298aaecd9f",
+    "b560704ec0f184af6a72e8be91d8b4107b42d4c30e111bae25b5c3cec3f4ac63",
+    "dc9593f26a5f07aa7f8e031ba22b37f30230806fa36473417f27e04722a5798b",
+    "b02c3783705ba328effbfff531ad708b72c1be41b8882d4aa49cf594bd175336",
+    "13894d0d4022fd3873940333c515b447a5e7c04e9aec2613dcb7552ad5dac794",
+    "826e8cd945206b2c59cbd52203e6d74f05a7cf9e6b50de990ce9897168e848fb",
+    "8417f7904601b030821170fcdf03f40df5d7d662691d3b5eb6cf52ae8321e99f",
+    "216055b4d898c627f1b45a1617a806453074581a9d79ae1f82e436faf41a1e1a",
+    "4eea993d9552527bd0d4ff68df1c666190b02a1684a04c8e062b4ad0e24f1b72",
+    "7341c61b6ecd80e66461e0f911c9475c59abf30a90e0e7af52699afed790efa9",
+    "4346d8d25edf7fb5e8486df6c7a43bde52af30fa4a26b18f46ce08081a0cd8b0",
+    "5b6e197410ab2f0fabe042a387829d1c0d522e0edb947ea28211e34d03bf0486",
+    "91d1776c4bc002d06f60dea07642a6c06c003939054849d78ead49626f7e05fc",
+    "ac4d9410b2207231270d58fcf27dd92eab0f485fce67b476d35191006d88f0d5",
+    "3b0e6bbc99717c2453979dd7bad6642eb2fc8810df381774e634eb3545425ad0",
+    "33e5018dac920b0e8b2fc9de1f08e529469b489d4c6fa1a21b5fda9003f1520f",
+    "9276ea83937dc25660eed27c55bdb9ed45514320a1c514b7a85a108df4469b6b",
+    "dc252dc3b436cdb7f5999b64019ec2e547f2c0eee01328abb5b9d2a64387f1be",
+    "25dbf59d7e841a3464f890ab27282cd8bfba9fae7b4f92a7d740aa4a38733d31",
+    "54f23abaa0d073625291d213665d5c0b794c877c8827658444ddd4deec4c5ea2",
+    "e27b1b188498d1171bd1b06455365092b76f5e510e3eb821e6e19335f9a0c4c6",
+    "9f3ebb248a042b8b3ce0d5a6793b71fe979a250ec3938d1607e2d2a71a1b03ad",
+    "41f0b52330d1426ec68cc4a989002e6e6b6d228d34b1ab0ceca1d46b75a54556",
+    "9069248c87f6b106d1e0de3b249050316c5d668cc23af321188647b35f40bd7a",
+    "a01c784864d1ca44382ebef0f92e07d304baa08a61818630a9107b590fd24e2c",
+    "b9f4613abd57fe0f7033b28f8693e08c60cca55f159b10836a1ac1462b2451d7",
+    "5e700d74430c904cbef82720fa95165a7389ed2b30f085e2b83c99433da59173",
+    "3bb339ebd7db50dc632334bc1d13603f827fec667787fb083e9e17904440ce5f",
+    "fc0010ecdc76be1322b9e1b14d84609486ced6e5e0095d33f57dcd57a9b3be04",
+    "9688cb1b3baca126afdec7a9e83e81154b7b0d98d8354d5eeb04a3bc3d483bde",
+    "d04aeafd5a8eda21e9418560768bb69c12bef6757f7eb7b6a7ad32194b180983",
+    "5469012ac3a4266fa098c43764ca4472dcd8d0481ff88ea65e17ba564871198a",
+    "3d68e9d33b9f0596d4dfb593a734297ba3ae4246252f3469009c36bab2022a81",
+    "d2a882bd794658846f3388349df47be16670f8a36ff1dc73b120a40bf5c0ef22",
+    "fd7d9abbe055669a826e379612918464db9f616127589a2d799c907fa0902363",
+    "c64532809c6b45130d3602cf467b9dc49d3ce21064fb8dbc7f3b9b3d592403e6",
+    "ff8393dbb61372254aaee77a3adbe32b35fd037c1de5b180a76b557ed62ad85f",
+    "ca3f3910e5853ca60e9cb2c245286f0c76d39d2c81485db19c71a4e217099a4f",
+    "6a00de19aa27cf9c0a1a0e90c758e0ae0bf091106694208b88e1dd849769cb9e",
+    "ba2ead49ffd079111167ce529f6ac904d9fb827c6d08f2b13641bf40b14c0bba",
+    "29d83cbfdb8e5bc324ef2c9472466ce50e390d06e92491bad3aab90d994a8efd",
+    "2f8462d0b26cf7dc33875eb0a2074b005c8639bb6fe60429f399bd6c8c91434e",
+    "17f6d445f2edb657e72265a48c1ebe6255238f69e89a5677a5a5e1d842f86e55",
+    "3fe4bec64820c94a4a2b956bceaa0819ae23187715705f7db89b3063177df440",
+    "23f21e84bb35e0a6f50d1fa265968be1586c228ed82c9c3911e5bb5b20cf24f8",
+    "61978158f75b456d00f082e5ecfd93122ed18b1fa2e62cf845f4a17545e97fbc",
+    "9baac9c1ea21595fa5c5adaa14e2376791443e45f4726cbf3d09fc31a6dfb4c5",
+    "83b2f942da6cd0cad8b1ac53e1cbeb3570c794e77b54d25b39c396ae75dedea0",
+    "b357a2639f8c0870a5c4d4d83799b20a50afa9f2493a8a7846c2d122b4046b85",
+    "75a69e2acf620916785d293a13ab595f0195a175a258d106f2eca295ca19e19a",
+    "d35083c931ac17bcaf2bbc3a9bb6107b3214142cae3f9e25914ceabfbf2ef912",
+    "2e7f0bd13fea11ad5922150be9c9758fe154ba6d65d9170b321af13e4e9696fa",
+    "e994d2460966f02b507ddb6b9e71aa9ec070c41520e4f7044dc068282d435071",
+    "1b5e5c4ee9d6a988e1fe6f552d0d63d0343edc922a66f2c1d62957c5f1f343e2",
+    "b711079fa6ae4a0714f059348f92d3a1f11a777a4a8a2b52cdce797fc4586a16",
+    "dc91d815632b925f352eff6e27569fb8eaa17ebae151cfe2ada4264a6bfa40db",
+    "77925552e72d37ba3b64be490884ae877f5c16bd042084f16b48d483991a53e8",
+    "54b6177a82dfd1b5b9cfa1ac303981650351fdd38b3de2b66eb664c8c81c33b3",
+    "7837be81885c529b9713bfada41f55ee5343357f6aae1e37d6ff592068aa122b",
+    "bcc691e447636f472b2f1b9dac33c497c6cce555872c95236b9e31751fcd11c6",
+    "2c58a82a715c551fb3d47afdd72b29eb29ea991ca3e10e8574814bac980f64ba",
+    "bbff7b98d6da70612cb94badd2dde68a4dbe1107104b55f330a2225c8ebf55b2",
+    "e9566496187110ccbad06a411a454be1ee63e4b476d182ba4d53946748731cc9",
+    "4246b7bdb06c97111ff785e968ce9b39d202ef544511bfa4d914f25b14aa058a",
+    "033aa4ec8132f0886e65b046c360b1680762d3c288ef14bbcc89a2cc22aff108",
+    "ca98cb8fac64c240422cadf91ea6f2a6b5b23abb09f3b26d04eaebb60895810b",
+    "d20743be8bf894ac8da5ee746e5f8961e24994c379909fd9502bbecacbac0c48",
+    "3aad487dedd8bb89c7747ddaab0744c3dbca5133f6a4f8d2b9bd90159f502fec",
+    "21fc9fadc2d6448c1f72bb710a5e202f997ccfdd239136e0733ac2488785f81b",
+    "c3d321702325059a32c1a19ccaba77e17dbcd6e320650fe23e1a1f3aa266116d",
+    "0148aa0058dcccade1bc612cc3b3a76adbb7c1ca1b148a7e552ce9832b7feaa8",
+    "aea2092e3a1074f4a0a9ed0db047a613bdac33fc436c2bd6f1c5ab293b131b2a",
+    "3da3a77980cb9eb9a2be45f9866e4ed3f00a8491bad6497ceffe881fe8af929b",
+    "d3395e01a5492e224b9f704aea448b54881a70d3b399e64f57bd3e70c167a4f1",
+    "48a44d121bf1dcb544c9b8952d746e0c9ffc9d4625461d98941ea76e16e970b0",
+    "a9ca93c7d6a3212674d70864bddf2d223f567d3a1b4ef12557c7ced4af7fd862",
+    "5a39896f3175ad76e5869b02723ee50ee63a36c861316866aa0d36092b5417ab",
+    "23e081f80575fbdc4d213e105c5f680ac124be9d3fc927b8a9e83cea3f31cff6",
+    "52a615ee5aaaab4db17c62ad642225f3a4b0eb8483e6a810aff2311bf5bc987f",
+    "f728896f3cdb100e266276125c7e98311fac2b08e0bfb242a0fa31af3ab5b04f",
+    "3b3af66f87e3097ffea7fc29a4f4f1dff11bd52797c4bdc0ece4bff96f5a67a3",
+    "af86eea32b797f04f9c06d86cf9f10a61aa4f57616e4a295a29d585861f021f7",
+    "df39402cc1059efc2871ec971e00c78b845c6201e3269122bcf0e3df41a7f974",
+    "61f2ec68c22c76e02d005065a19737032ef396768df5e45dfa9ad982ab8cd555",
+    "a8ad70f9eb31ffcbb1fc58335603f78f57885b241d2081bef7b33d24e55f3d3d",
+    "56723edcd935d4765276b152e8e4c03990edd9dd87863122cd85cddd74eb37ea",
+    "8f682c95cb03b407156c9228df988314ffb563473b86381f7987c7fbb68133d4",
+    "8f682c95cb03b407156c9228df988314ffb563473b86381f7987c7fbb68133d4",
+    "63b0bbac06b51610f218248a36bae1e826b811c469cfdd7d7d10ccd18b080ee5"
+  ],
+  "original_source_words_changed": false,
+  "newly_named_previously_unknown_dialogue_blocks": 17,
+  "provisional_cast_attribution_edits": 18,
+  "original_episode_cast_credits_not_spoken_turn_proof": true,
+  "known_distinct_guest_characters_alex_and_the_guy": true,
+  "identities_identified_from_images": false,
+  "original_audio_or_lips_verified": false,
+  "whole_episode_speaker_complete": false,
+  "whole_episode_editor_ready": false,
+  "independently_av_certified": false,
+  "character_appearance_and_dialogue_confidence": "PROVISIONAL",
+  "additional_cast_dialogue_assessments": [
+    {
+      "source_ref": "C018.1",
+      "proposed_character": "ROZ RUSSELL",
+      "original_reading_block_sha256": "e2c59e4dbc16cca451f251e469808daa7161b742fb46c403836a8f534b4e7fa7",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C035.1",
+      "proposed_character": "BULL SHANNON",
+      "original_reading_block_sha256": "0c4284301db4971f1008ed0818cad020996de7f5562a8f0093a2053392023d42",
+      "original_text_role_basis": "character_attributed_external_episodic_dialogue",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C036.1",
+      "proposed_character": "BULL SHANNON",
+      "original_reading_block_sha256": "09329e07daf2fa1f4c00753006ef910498a017d131392981f9d27e009adf01e6",
+      "original_text_role_basis": "character_attributed_external_episodic_dialogue",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C038.1",
+      "proposed_character": "BULL SHANNON",
+      "original_reading_block_sha256": "3b586c168cf86bc1497fa7a0bc3cde57758de87baf1c27d6330cbb7bead610e8",
+      "original_text_role_basis": "character_attributed_external_episodic_dialogue",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C037.1",
+      "proposed_character": "HARRY STONE",
+      "original_reading_block_sha256": "efe0b5d7c4664576693a6558e8d26f3dbec5030c97e11dc756d83b97b92f0398",
+      "original_text_role_basis": "character_attributed_external_episodic_dialogue",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C062.1",
+      "proposed_character": "HARRY STONE",
+      "original_reading_block_sha256": "d1b932089f43b448af33eea9cea9e2cc94df09dbfeb6dbe2b3292dc33ad2f75e",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C065.1",
+      "proposed_character": "HARRY STONE",
+      "original_reading_block_sha256": "ba45505e1e52c57c9fe2d3084330c8e97c869bcfc1167b8bc780068528964182",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C067.1",
+      "proposed_character": "HARRY STONE",
+      "original_reading_block_sha256": "49d6d1e80c7972b6ac6a5e56995c415e8567e1fd171ee3dedcdb520292f1dda4",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C015.1",
+      "proposed_character": "DAN FIELDING",
+      "original_reading_block_sha256": "fd7ea76d56ecf7193cb3edcaa398ee1c382da7371d7fd11d0a978dcbe4f420f0",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C022.1",
+      "proposed_character": "DAN FIELDING",
+      "original_reading_block_sha256": "8cab60e7ee610e842d2f65fc96b37d438342934743e7bb1b3b37fd98c07c7596",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C026.1",
+      "proposed_character": "DAN FIELDING",
+      "original_reading_block_sha256": "c78713111698ca563f2975edaa20086bfaccb4f6bd9db905db8030e821362837",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C032.1",
+      "proposed_character": "DAN FIELDING",
+      "original_reading_block_sha256": "93f414446baaffc3e1846fac92c8651bfc96cb9cb3dc20430025749ab6428126",
+      "original_text_role_basis": "character_attributed_external_episodic_dialogue",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C053.1",
+      "proposed_character": "DAN FIELDING",
+      "original_reading_block_sha256": "48f51b93ed0f28b3d735a6afe5023d4ebaad93c9b0be0373ad57400b18e93711",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C063.1–C064.1",
+      "proposed_character": "FINGERS KIRBY",
+      "original_reading_block_sha256": "2d1c400b2f3a09993d641ef03788fe558ec12350d5140cfb4bab1fcdeb6a6a21",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C074.1",
+      "proposed_character": "CHRISTINE SULLIVAN",
+      "original_reading_block_sha256": "3e76a5af3b687af746ffa352aacd62a36bc6812626e44b0bcfe71b79c3547110",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C328.1",
+      "proposed_character": "CHRISTINE SULLIVAN",
+      "original_reading_block_sha256": "c3d321702325059a32c1a19ccaba77e17dbcd6e320650fe23e1a1f3aa266116d",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C331.1",
+      "proposed_character": "CHRISTINE SULLIVAN",
+      "original_reading_block_sha256": "3da3a77980cb9eb9a2be45f9866e4ed3f00a8491bad6497ceffe881fe8af929b",
+      "original_text_role_basis": "source_role_reply_context_plus_episode_credits",
+      "independent_voice_or_face_identification": false
+    },
+    {
+      "source_ref": "C283.1",
+      "proposed_character": "ALEX",
+      "original_reading_block_sha256": "a01c784864d1ca44382ebef0f92e07d304baa08a61818630a9107b590fd24e2c",
+      "original_text_role_basis": "original_dialogue_self_identification_and_distinct_credited_role",
+      "independent_voice_or_face_identification": false
+    }
+  ],
+  "source_reading_index": [
+    {
+      "number": 1,
+      "reading_line": 17,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C001.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3832355f8f97409f5437c3f0deaa4c912085841241afe1bc432d1ebb0042ecf7"
+    },
+    {
+      "number": 2,
+      "reading_line": 20,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C002.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "082cb158de32f2d90ad813145d491221d8719732f1f65a7f6f385692b99ab159"
+    },
+    {
+      "number": 3,
+      "reading_line": 23,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C003.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b6724a11bdd7b455318e7840eb5bc40f35b2bd06d0b96029709267ae6fdc796d"
+    },
+    {
+      "number": 4,
+      "reading_line": 26,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C004.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "774a750aa31a519e512656526e9869338139335434b1d5dfb7cb02f8cf4f82a3"
+    },
+    {
+      "number": 5,
+      "reading_line": 29,
+      "speaker": "DAN FIELDING · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C005.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f6a44e05269fa337e9f4ae8d4ad7865c9a7a691d7a924729285aa4498dc6d502"
+    },
+    {
+      "number": 6,
+      "reading_line": 32,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C006.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "faed4109a45cbe31a5b1daedc96c81c244920c42ccfdaf3fd8d8028f35160948"
+    },
+    {
+      "number": 7,
+      "reading_line": 35,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C007.1–C008.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "348c55ae850ce4f5b7ecdae7b010987a06dc5c77f5d3454121bc38ed55960676"
+    },
+    {
+      "number": 8,
+      "reading_line": 38,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C009.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "94cd99cc22a8e77200cf89ed2d049e9766f34fb2d442d602776232b81c5bfc9e"
+    },
+    {
+      "number": 9,
+      "reading_line": 41,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C010.1–C011.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "4e68637c33e4594770ad89cb65b9935c430ecaedca52176c051a1f69d55354de"
+    },
+    {
+      "number": 10,
+      "reading_line": 44,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C012.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9773143d7b12b270b0e8c741bb3ab99e09a6ffa8eda867ae0f982b8a78e45ed9"
+    },
+    {
+      "number": 11,
+      "reading_line": 47,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C013.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "362cd26571d5833819f0d17b12307e1f480f124c92042773f76f0216e8652042"
+    },
+    {
+      "number": 12,
+      "reading_line": 50,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C014.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "1048dbdfd0db877775b84beb969eca2283887aff8a0701233a7e42bdc7cd8c7b"
+    },
+    {
+      "number": 13,
+      "reading_line": 53,
+      "speaker": "DAN FIELDING · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C015.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "fd7ea76d56ecf7193cb3edcaa398ee1c382da7371d7fd11d0a978dcbe4f420f0",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 14,
+      "reading_line": 56,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C016.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f35fb8d3913dee38d4fb495d11f75f1d5f85fc2e1ab1aa6c2b7ecf11196a9fa0"
+    },
+    {
+      "number": 15,
+      "reading_line": 59,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C017.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "faa016e71e00de8229d8f8f2264597bc008caa14735af6d188b4b357cbeb4e78"
+    },
+    {
+      "number": 16,
+      "reading_line": 62,
+      "speaker": "ROZ RUSSELL · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C018.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "e2c59e4dbc16cca451f251e469808daa7161b742fb46c403836a8f534b4e7fa7",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 17,
+      "reading_line": 65,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C019.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f231c80a141ca0143d9656a90094f1668e20146b4778ce7fa6c8ec781c6a33d4"
+    },
+    {
+      "number": 18,
+      "reading_line": 68,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C020.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9df7d0547e957033a87f2f1eea9262f622ca2cda37a188fb5e9606f57f1f5976"
+    },
+    {
+      "number": 19,
+      "reading_line": 71,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C021.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "919e57cba50844579de924d9d940066c798bf3b713f02c08902640a6d8577f88"
+    },
+    {
+      "number": 20,
+      "reading_line": 74,
+      "speaker": "DAN FIELDING · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C022.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "8cab60e7ee610e842d2f65fc96b37d438342934743e7bb1b3b37fd98c07c7596",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 21,
+      "reading_line": 77,
+      "speaker": "DAN FIELDING · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C023.1–C024.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "96f82ac1784ca0fa754ec924c0c80285f17378a6d97f31b93fcc537969694301"
+    },
+    {
+      "number": 22,
+      "reading_line": 80,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C025.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "63e253b7800e5f697835b1e83e4967e1eec5be89a57c3ef385efa72bcd679d24"
+    },
+    {
+      "number": 23,
+      "reading_line": 83,
+      "speaker": "DAN FIELDING · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C026.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c78713111698ca563f2975edaa20086bfaccb4f6bd9db905db8030e821362837",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 24,
+      "reading_line": 86,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C027.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "82d5656dfa76753d85f1fa482ec0ed002709d20e9276d865308343a29fcb9411"
+    },
+    {
+      "number": 25,
+      "reading_line": 89,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C028.1–C029.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "93a47c6ea92dcf4896ac82daf3166a8865d9d919b7db824836d0b545bea0e8a8"
+    },
+    {
+      "number": 26,
+      "reading_line": 92,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C030.1–C031.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "82e9bbb43da9f5da61663e83edcc7c089ef151923c29160cb71ad7bf1c60fc2f"
+    },
+    {
+      "number": 27,
+      "reading_line": 95,
+      "speaker": "DAN FIELDING · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C032.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "93f414446baaffc3e1846fac92c8651bfc96cb9cb3dc20430025749ab6428126",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "character_attributed_external_episodic_dialogue"
+    },
+    {
+      "number": 28,
+      "reading_line": 98,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C033.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "69522ecbd46dbd0d0d8708c00252a3a887212abc69e7d442d886c34d88480e02"
+    },
+    {
+      "number": 29,
+      "reading_line": 101,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C034.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "e02cd28ea1c9da6c879eb36fdf50ecfff9baf6e64d0becd9a367cef12e9dc0b5"
+    },
+    {
+      "number": 30,
+      "reading_line": 104,
+      "speaker": "BULL SHANNON · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C035.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "0c4284301db4971f1008ed0818cad020996de7f5562a8f0093a2053392023d42",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "character_attributed_external_episodic_dialogue"
+    },
+    {
+      "number": 31,
+      "reading_line": 107,
+      "speaker": "BULL SHANNON · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C036.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "09329e07daf2fa1f4c00753006ef910498a017d131392981f9d27e009adf01e6",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "character_attributed_external_episodic_dialogue"
+    },
+    {
+      "number": 32,
+      "reading_line": 110,
+      "speaker": "HARRY STONE · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C037.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "efe0b5d7c4664576693a6558e8d26f3dbec5030c97e11dc756d83b97b92f0398",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "character_attributed_external_episodic_dialogue"
+    },
+    {
+      "number": 33,
+      "reading_line": 113,
+      "speaker": "BULL SHANNON · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C038.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3b586c168cf86bc1497fa7a0bc3cde57758de87baf1c27d6330cbb7bead610e8",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "character_attributed_external_episodic_dialogue"
+    },
+    {
+      "number": 34,
+      "reading_line": 116,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C039.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "1e0de6953696bb4717be0f4f91de01982e8dedcd05514d35311685ee21f95f0e"
+    },
+    {
+      "number": 35,
+      "reading_line": 119,
+      "speaker": "HARRY STONE · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C040.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "04ec4ed32b4633b6c9550682d4b9e2b14d09d5cbf015564e1738984a3616c604"
+    },
+    {
+      "number": 36,
+      "reading_line": 122,
+      "speaker": "MAC ROBINSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C041.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "53ffbc7b99e838ed4ca3c8020935ce8760c3ee0e482474c769d6dc5100cb8027"
+    },
+    {
+      "number": 37,
+      "reading_line": 125,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C042.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3971ed10d0f7019fe22ced011ffcc173ad88ffe636ae6cf969695b8aa80c6d53"
+    },
+    {
+      "number": 38,
+      "reading_line": 128,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C043.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c67a4f1b7f2d03c60ae0f43d44a27809165f09d89be6f669009a8cadd45a6634"
+    },
+    {
+      "number": 39,
+      "reading_line": 131,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C044.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "492b02d270fc889157e2ea516397a4ba3e4fb18930a8bf28a2b85b0d38827a6c"
+    },
+    {
+      "number": 40,
+      "reading_line": 134,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C045.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "59506b8a14ec177e79b68bf2545bef3415981bd14d4a68a36b85e7d59ce59a30"
+    },
+    {
+      "number": 41,
+      "reading_line": 137,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C046.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "77c5c76b4b6f43fbd89f4a1360bf0647761c5ca2fd2280e329ff8748d8a774bd"
+    },
+    {
+      "number": 42,
+      "reading_line": 140,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C047.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c96bff8e2ebfaeff920aeb3e8c52c88c617f5fdefd8ff7a4aceb9c260a72e021"
+    },
+    {
+      "number": 43,
+      "reading_line": 143,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C048.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7725873ba4da2255f869ea1cb254e4182c99a63ef8a1641c316064caca9aa46d"
+    },
+    {
+      "number": 44,
+      "reading_line": 146,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C049.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "53237630fe37bca9c3260d8b961ca3f4962cea2d72e87819dccd18a299b9bcc9"
+    },
+    {
+      "number": 45,
+      "reading_line": 149,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C050.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "007abd005be133a5c6c186e5b525db08e232f1ad3e69fd8b7e25c03a170b7fe4"
+    },
+    {
+      "number": 46,
+      "reading_line": 152,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C051.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9fcf8aff1b207e9b9cfed631100a641cd87881e66493c13e77fc380b2c965d24"
+    },
+    {
+      "number": 47,
+      "reading_line": 155,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C052.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "06f553e7d35c8a493a7c7a9ab7e685b65012e7a6283183a934649a7c7b1182f0"
+    },
+    {
+      "number": 48,
+      "reading_line": 158,
+      "speaker": "DAN FIELDING · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C053.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "48f51b93ed0f28b3d735a6afe5023d4ebaad93c9b0be0373ad57400b18e93711",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 49,
+      "reading_line": 161,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C054.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7b0c3dd7371ce70ba4b51f45ade04d3b99a485cb0ba8e3d113a1bcc72a61d6e5"
+    },
+    {
+      "number": 50,
+      "reading_line": 164,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C055.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "187cf1b6e53f697480935a12bdcc35fc4df9e35d75078660748a4f8b5f98e17a"
+    },
+    {
+      "number": 51,
+      "reading_line": 167,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C056.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "1d1ca23111cd498b93513c4c60a4d5539e0a67c7c9ffff9ff6c172cb7d4d4d9a"
+    },
+    {
+      "number": 52,
+      "reading_line": 170,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C057.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9d7839a03c2da746561c208f7ab28d8723208f684edb15a1a2aa6d5c37236cf3"
+    },
+    {
+      "number": 53,
+      "reading_line": 173,
+      "speaker": "MAC ROBINSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C058.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7ff6aa93859bbfb161f9a550d1eed22bd1b2a8a127ef47ca486b79cee2e1c991"
+    },
+    {
+      "number": 54,
+      "reading_line": 180,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C059.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "68411e3eb39ed51093956c0ab2e7eb2368612dba378505e674018e13e6b6fb3c"
+    },
+    {
+      "number": 55,
+      "reading_line": 183,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C060.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "4bdf15b75754654b55659714ad862f1c9ded77f8a109f8c591ffca64f54d4f4b"
+    },
+    {
+      "number": 56,
+      "reading_line": 186,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C061.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "60ab4e9b8c2c5958a044d626c8f9c3027be73d9b8efe2e09ff6ecfea38154094"
+    },
+    {
+      "number": 57,
+      "reading_line": 189,
+      "speaker": "HARRY STONE · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C062.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d1b932089f43b448af33eea9cea9e2cc94df09dbfeb6dbe2b3292dc33ad2f75e",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 58,
+      "reading_line": 192,
+      "speaker": "FINGERS KIRBY · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C063.1–C064.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2d1c400b2f3a09993d641ef03788fe558ec12350d5140cfb4bab1fcdeb6a6a21",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 59,
+      "reading_line": 195,
+      "speaker": "HARRY STONE · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C065.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ba45505e1e52c57c9fe2d3084330c8e97c869bcfc1167b8bc780068528964182",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 60,
+      "reading_line": 198,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C066.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b8e9dbfa382cb1d5ef38c8de3d698a81decb2b9eb2782de62921eeefdb2db5e6"
+    },
+    {
+      "number": 61,
+      "reading_line": 201,
+      "speaker": "HARRY STONE · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C067.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "49d6d1e80c7972b6ac6a5e56995c415e8567e1fd171ee3dedcdb520292f1dda4",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 62,
+      "reading_line": 204,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C068.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2c315c0a5474ed9ba88d61458e2f8b2eedee4075e4bf080576347692535ebaea"
+    },
+    {
+      "number": 63,
+      "reading_line": 207,
+      "speaker": "HARRY STONE · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C069.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7f810566ef9767424849b29eda7f0b1500185bf21b30ff558d7ef8f5c5322459"
+    },
+    {
+      "number": 64,
+      "reading_line": 210,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C070.1–C071.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a5decff9655728e0ed7de897e5c02dadf66fac4e392ccc9490d477fc47d2e831"
+    },
+    {
+      "number": 65,
+      "reading_line": 213,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C072.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "24655c091affa072e9b046cfd01ea349ce165e2b94aa1549fc13694f2dc03ac7"
+    },
+    {
+      "number": 66,
+      "reading_line": 216,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C073.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b88d673bd64ad154319a8f506240cacafbdb222b00aa36336b7b2bae03e8faa4"
+    },
+    {
+      "number": 67,
+      "reading_line": 219,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C074.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3e76a5af3b687af746ffa352aacd62a36bc6812626e44b0bcfe71b79c3547110",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 68,
+      "reading_line": 222,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C075.1–C076.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "db581044b51fe38116c80f517a696ce0d0258ee7e197de59d0d135c9675d4fed"
+    },
+    {
+      "number": 69,
+      "reading_line": 225,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C077.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "264505fbe10da6a321112adc6b6db68c67319ef9fecd5f0666d61797330454cc"
+    },
+    {
+      "number": 70,
+      "reading_line": 228,
+      "speaker": "MAC ROBINSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C078.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "155ec716df4ece5c49130dd70d32e664dae5353c4426899f795ce3f7599bc216"
+    },
+    {
+      "number": 71,
+      "reading_line": 231,
+      "speaker": "MAC ROBINSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C079.1–C080.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f19f0458cca66bdf3af779f2527e6b62d927752d981b58bf5a53e4d50e2c4e20"
+    },
+    {
+      "number": 72,
+      "reading_line": 234,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C081.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "aed4b195596e8da92c9692f8f3f77011a3d73f5580dee7507d7b53760170b054"
+    },
+    {
+      "number": 73,
+      "reading_line": 237,
+      "speaker": "DAN FIELDING · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C082.1–C083.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7dc6482de4568305ddd1616eccd4593a87e549ee26d76161f78b8102f72c7d59"
+    },
+    {
+      "number": 74,
+      "reading_line": 240,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C084.1–C086.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "02d5e550e5276678233aafca9c1718585b5cb041ebc0d295399bbfad689008c4"
+    },
+    {
+      "number": 75,
+      "reading_line": 243,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C087.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "18984ae440bd87e32ba2dda89dd50c2b405b665ff1f460bb44a025a5fb9d95af"
+    },
+    {
+      "number": 76,
+      "reading_line": 246,
+      "speaker": "DAN FIELDING · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C088.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "6eeab484b885033840d8271bed6863a4eac0e789769730f1195a6be2e1235797"
+    },
+    {
+      "number": 77,
+      "reading_line": 249,
+      "speaker": "DAN FIELDING · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C089.1–C090.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2d4c0fc3ce551371031b2aa6772f58ec3018646d19c89f87113c2f3aad538ae0"
+    },
+    {
+      "number": 78,
+      "reading_line": 252,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C091.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5747295e5c476e05fe051ed94e53d14668ff6ef39b86b5e58a3686f35b8ff335"
+    },
+    {
+      "number": 79,
+      "reading_line": 255,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C092.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5d10d861590a74bea7ec3788bdda66f3788eda8013380bc19fad65a3009af161"
+    },
+    {
+      "number": 80,
+      "reading_line": 258,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C093.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "4a33acf51f276cac727ccdffcec43de14f5d3b34348a993f03ec84cad4a5fce9"
+    },
+    {
+      "number": 81,
+      "reading_line": 261,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C094.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "71d9567bb96180258e96c047c1830cd38f350601d6925f79d0c4166f0f9aa7aa"
+    },
+    {
+      "number": 82,
+      "reading_line": 264,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C095.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ad21b30d5a3acc9e6fc6d0e2c2f97abd68a89b24c7248375c5f966599e838a28"
+    },
+    {
+      "number": 83,
+      "reading_line": 271,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C096.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b58da8c52f88cc48ab2f69417b8066d1bc93467277a2a2c101c117c20c9ea1a7"
+    },
+    {
+      "number": 84,
+      "reading_line": 274,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C097.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b39bad84a899b08e37fe414d2b88753f430f0a13d709e40604af3e4543825dde"
+    },
+    {
+      "number": 85,
+      "reading_line": 277,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C098.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "24991435f571073243ae6f7c86cdc355d8eb22881d3d806a897ab39636f5ed6b"
+    },
+    {
+      "number": 86,
+      "reading_line": 280,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C099.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a199691db5e18056dee9dc180100633964c88fbd3b2aae46c2ea29256ca3fec8"
+    },
+    {
+      "number": 87,
+      "reading_line": 283,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C100.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f8b73fecd428624858a4fc0e2599171dd1c6f2cc42f2517c71a85988cb12f36d"
+    },
+    {
+      "number": 88,
+      "reading_line": 286,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C101.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "71f44f1b2e835648695858348bc46002981d9802f629950b5269526ce886ff73"
+    },
+    {
+      "number": 89,
+      "reading_line": 289,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C102.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "20ec8f87599d849df5bc56883c9f219ad1c471082e658f9bc21f11b43105d850"
+    },
+    {
+      "number": 90,
+      "reading_line": 292,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C103.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d0a45350e486f7bade02cd09f82d983ba1208f66aa14843c12c5d165d77bcad5"
+    },
+    {
+      "number": 91,
+      "reading_line": 295,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C104.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3aa1509cb9348475604f71695083f4a28fbc873d2ad3f767e496e85f616b021c"
+    },
+    {
+      "number": 92,
+      "reading_line": 298,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C105.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2492769de7e5b51ecd0331a76411e558374ea41af2013b43310ba2dc7094b5a8"
+    },
+    {
+      "number": 93,
+      "reading_line": 301,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C106.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c86a12a1608524346c6e438dec6d758eeae2abaff37bae59d1d19ac64e3152d6"
+    },
+    {
+      "number": 94,
+      "reading_line": 304,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C107.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "afe4efe9b8eaa27d0b40333ce4a35b9eb3eaa863485a03d95afdee7c2d6ef12b"
+    },
+    {
+      "number": 95,
+      "reading_line": 307,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C108.1–C109.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f12bbafa36eeaca0292a8a0a0ab1144fff83332933b14ee0beb90e86825b2f28"
+    },
+    {
+      "number": 96,
+      "reading_line": 310,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C110.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "31840a7721e1e070c741b476b0985a0f1ad195fd2e29a5fae53677c8375d3d90"
+    },
+    {
+      "number": 97,
+      "reading_line": 313,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C111.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c80b7360b98c9125240e058173d9a1509169dfd022144dc48754ba6b4fecbbf9"
+    },
+    {
+      "number": 98,
+      "reading_line": 316,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C112.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5d8f9732915cd9dbe2838b0d0ad8be3c847f12d0f2fc7902810cfb7854f7503e"
+    },
+    {
+      "number": 99,
+      "reading_line": 319,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C113.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d9ca9bfd28afcf2bc90b9703c67237ee03234f859441bb884f38f6db98ff39c2"
+    },
+    {
+      "number": 100,
+      "reading_line": 322,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C114.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "1b0d0a8a6c0742720d6057c3e73309b10ceffca41094ad725354c7b43752b6ec"
+    },
+    {
+      "number": 101,
+      "reading_line": 325,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C115.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c7cf4e749dcf63f05f80cb1a66b8a304383a40d9e88d8a93b5e23a46820f714a"
+    },
+    {
+      "number": 102,
+      "reading_line": 328,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C116.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b356a126e4318643dbf54db33635cfdeb6f432960fe14752ab6caeec04b5dbfe"
+    },
+    {
+      "number": 103,
+      "reading_line": 331,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C117.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "407ed67270111fd158c42eb561159b0dc64ffdc5a6c7a3a7df08fb864756b3da"
+    },
+    {
+      "number": 104,
+      "reading_line": 334,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C118.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a451626b4be6855a761f7e72bb954962efd63eb244eaddd5ffbc992bec0e599e"
+    },
+    {
+      "number": 105,
+      "reading_line": 337,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C119.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b356a126e4318643dbf54db33635cfdeb6f432960fe14752ab6caeec04b5dbfe"
+    },
+    {
+      "number": 106,
+      "reading_line": 340,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C120.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f9122d15a05574cda075e39e737242fd85523c97efb1d132b8c7bceb77412836"
+    },
+    {
+      "number": 107,
+      "reading_line": 343,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C121.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2be36eab0eaa77d97a1ba268c33aedbd846426900c05bb204cb4086c512868a5"
+    },
+    {
+      "number": 108,
+      "reading_line": 346,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C122.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "aefd64770b5d23ad1b0942ce9a46cf3ea77e08c21f562cf516cdede5aa9bd94a"
+    },
+    {
+      "number": 109,
+      "reading_line": 349,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C123.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "6c859f5ebdd1f04104a174878f5e4ee01e50161c4db578427fa2ec09c61bd6b3"
+    },
+    {
+      "number": 110,
+      "reading_line": 352,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C124.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "dc36142bdd26b81556ba3e9ef2a290a0cdcc33db25a663afb6620fa807329b04"
+    },
+    {
+      "number": 111,
+      "reading_line": 355,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C125.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7b91f716d7934930414f3490fc3fdb59da994f1854aa429f3b441638e8450115"
+    },
+    {
+      "number": 112,
+      "reading_line": 362,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C126.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d587e32ac8cf8f728341a8a005e734258c5b8ee8a787910630efb24a369f937b"
+    },
+    {
+      "number": 113,
+      "reading_line": 365,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C127.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "6b23f94cda6833fd2b87733e353a67a94a2ac06853ca38a2e70a2a8ac697f6f5"
+    },
+    {
+      "number": 114,
+      "reading_line": 368,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C128.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3d9a3ca57cf8ba392be90c6349af135f9a93cd788e1bdc13f655151ecb8a7866"
+    },
+    {
+      "number": 115,
+      "reading_line": 371,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C129.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a50c5a5a14c1f8eea8dfa963a7d382f50365492063fc32c0c95d1564592dec10"
+    },
+    {
+      "number": 116,
+      "reading_line": 374,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C130.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "6e478e92dc338bcee420b66ae731e28f07815eab72dfddc5f98c2281a73028fa"
+    },
+    {
+      "number": 117,
+      "reading_line": 377,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C131.1–C132.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "056fce5b7fe551243e86bff95561293c366e956824e1190f7eb5b30eebf540ee"
+    },
+    {
+      "number": 118,
+      "reading_line": 380,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C133.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "82e521df5345c9940cfb149a118a75cfd8ec83603f3a4872e630b77755e6f824"
+    },
+    {
+      "number": 119,
+      "reading_line": 383,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C134.1–C135.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d8b05a33c217deecaaf47869466501e11f76144b2945e625c611882b2729c966"
+    },
+    {
+      "number": 120,
+      "reading_line": 386,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C136.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a79371b7f531c4fd02d1a56656b432a24135725a37966add81a7ceda712d54b4"
+    },
+    {
+      "number": 121,
+      "reading_line": 389,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C137.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2fa0a663db11050aa50a50887861ef41d9fec74a0f3dd733563e13133e89e2d7"
+    },
+    {
+      "number": 122,
+      "reading_line": 392,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C138.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "e5e9a6e26f5c9fe4a56103de5de9be6c7949fa184a8e5651e54bc1bdc01c56b6"
+    },
+    {
+      "number": 123,
+      "reading_line": 395,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C139.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "87c493106dd84f16a58b45279001604907309676f961441a206fd2001a47d0df"
+    },
+    {
+      "number": 124,
+      "reading_line": 398,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C140.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3cdc150417901ec72839e1b9e5246095dc90ae07f1668af1fd589180285e454b"
+    },
+    {
+      "number": 125,
+      "reading_line": 401,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C141.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "48d4f6f2be82d85690abbb3e38d4b86dc110e23f9a149c480ef868613ce37d30"
+    },
+    {
+      "number": 126,
+      "reading_line": 404,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C142.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "6263af8321e108bb503394e5a2f81c90af17eb6df2e0a713e33220e77f05f271"
+    },
+    {
+      "number": 127,
+      "reading_line": 407,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C143.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2042e8165cf8c165d8142dc6fe0e0c4cea774bf698046f29f768b365962a660e"
+    },
+    {
+      "number": 128,
+      "reading_line": 410,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C144.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "07ade28da2038d4673b4bc1fa9c91d1fb5e0a2ae30597f3170b42cf614b6d774"
+    },
+    {
+      "number": 129,
+      "reading_line": 413,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C145.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "376e244f92e199cd6efe2f2072313a9b8e5f806883ca46d3513e2df316597ec2"
+    },
+    {
+      "number": 130,
+      "reading_line": 416,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C146.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c6c97e3a3e3339400ef6541256d115dc349599314e2c8f42c0b4b476a0683ec3"
+    },
+    {
+      "number": 131,
+      "reading_line": 419,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C147.1–C148.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "0d27f560875aee1407077de90a239c34c2ba120c5925fa6d271ccdc2303dc0a5"
+    },
+    {
+      "number": 132,
+      "reading_line": 422,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C149.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "8b3017a355a88819f04cf6d336fdd35cc179126c966bab117cc9518d5de53d5f"
+    },
+    {
+      "number": 133,
+      "reading_line": 425,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C150.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "number": 134,
+      "reading_line": 428,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C151.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f393db63d64dc84ff216a3660c307e712e7bcd48b9fce912121dd939b1f47c3b"
+    },
+    {
+      "number": 135,
+      "reading_line": 435,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C152.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d67b5c2ebf54bc9db7d7f2c003223cc55cd0a340a1bf4357ccfbfd1f40854fc0"
+    },
+    {
+      "number": 136,
+      "reading_line": 438,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C153.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a0078af4418883e47ea466862e2a05ae6249ec01e35d8853d241d3b56ea68c71"
+    },
+    {
+      "number": 137,
+      "reading_line": 441,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C154.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "6988870eb1434e181a1d175402ebf173255d2e4145030adc36b76a0a6d26119c"
+    },
+    {
+      "number": 138,
+      "reading_line": 444,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C155.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f133ee290e783afc7a83a4df38b72ccadc8d507c4178728652bab21879129cd5"
+    },
+    {
+      "number": 139,
+      "reading_line": 447,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C156.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d88cf9708b58bb6f73a19e121487607e58324fa7950bd9b0c6f7fcab601a1c6d"
+    },
+    {
+      "number": 140,
+      "reading_line": 450,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C157.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3162e76026c0608b4afff0de9f6587ebaff00c5e726714449c3c1ab40d801bcd"
+    },
+    {
+      "number": 141,
+      "reading_line": 453,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C158.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "36e42c28610b4000f50350ee6891dbd181014206a2c50f242771064fc42432bf"
+    },
+    {
+      "number": 142,
+      "reading_line": 456,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C159.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "number": 143,
+      "reading_line": 459,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C160.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ad19b8cc2deb82c31378eef9b6262d5f620332381cdc995f470ec3a2c82585f2"
+    },
+    {
+      "number": 144,
+      "reading_line": 462,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C161.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ba6fe5f38fe243adbbb8f3cde35bc2ef311ae7f5d88c06e1c0d7609ca33b5666"
+    },
+    {
+      "number": 145,
+      "reading_line": 465,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C162.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a94f6c7875f452c2618c87394d61064d9a913b878818ada10abcaab7832fcac3"
+    },
+    {
+      "number": 146,
+      "reading_line": 468,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C163.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "79a40620cfbd5eaa4b66b2e583fb33a1a1694e9f1548d97c134879fb228220c1"
+    },
+    {
+      "number": 147,
+      "reading_line": 471,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C164.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "064eb6589ebefeecb30099ca94d4a1d346d454fe357ab60a4a001d959aa8cf4e"
+    },
+    {
+      "number": 148,
+      "reading_line": 474,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C165.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f8e6ac6cc9a1c9cf88a6932edfd45a4e2ea6eee1621903e91022e306c22c7061"
+    },
+    {
+      "number": 149,
+      "reading_line": 477,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C166.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "952e358ca0f9f834050cf0988a5ec8521e20d7adb3cf86e60f63d9394e0061a6"
+    },
+    {
+      "number": 150,
+      "reading_line": 480,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C167.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c6fcd92ee22f553de67ebc7593786e1eeab1e95243bb6c8fa2dcbac3e977127b"
+    },
+    {
+      "number": 151,
+      "reading_line": 483,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C168.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "0a5ee0813679d81e94b177a9432ecad2f9c0d007e41279e29a27c22646c9d538"
+    },
+    {
+      "number": 152,
+      "reading_line": 486,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C169.1–C170.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "83a339771326d23c79319240005fbcac8b2838f88113040ade96dd9dfee5e26a"
+    },
+    {
+      "number": 153,
+      "reading_line": 489,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C171.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "db0fce41103dadc17ede239be1afcf4887e0b729ae4f9fbaa877525ccc1d16f4"
+    },
+    {
+      "number": 154,
+      "reading_line": 492,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C172.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "24a75adfb0ac6d66ea058c1ad140d87e32185165b00cd0062e2f88ed9d4f91b9"
+    },
+    {
+      "number": 155,
+      "reading_line": 495,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C173.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7f20e6549be21eb9716c082ce4027c5bd78e61d201a652e0234cfafaec5cf6da"
+    },
+    {
+      "number": 156,
+      "reading_line": 498,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C174.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f677e4b6f898b73a7d8522af203903def9925df4d9f989edc6a18f6aefb481fc"
+    },
+    {
+      "number": 157,
+      "reading_line": 501,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C175.1–C177.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "acc55f26835626a3cb3db92161d16a191f06bf36819aca7792a49e3de8af4169"
+    },
+    {
+      "number": 158,
+      "reading_line": 504,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C178.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "46097dabdd4cbbef38d4dbe3f415757560a8ecb382bc5e621a28ecd3e8ed2e08"
+    },
+    {
+      "number": 159,
+      "reading_line": 507,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C179.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "cdae46d007292f9decdf125bad371ba9eb60611fa315902a8ce7dea2c61df0d1"
+    },
+    {
+      "number": 160,
+      "reading_line": 510,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C180.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c60aa8387c94cc8359b51f85d57b661bf601201e1a52c6b99c595dd08148c238"
+    },
+    {
+      "number": 161,
+      "reading_line": 513,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C181.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "bf4313168db49fcee59608a1c4b1d0032c011804aea2716a7c3a5eb2c3177f9f"
+    },
+    {
+      "number": 162,
+      "reading_line": 516,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C182.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3713779d037c4a9c23c0e1ff48ef812ae794ff02bc1580f059fdd07c3906b26d"
+    },
+    {
+      "number": 163,
+      "reading_line": 519,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C183.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "0ab08e00b57f3dcccb50366a3c9d5889b8802bfd1819feaa571f35fb77673e1c"
+    },
+    {
+      "number": 164,
+      "reading_line": 522,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C184.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "554e6ec0bec97ecc209b48546b45280204074b5fb33144fa949856ab16fada6f"
+    },
+    {
+      "number": 165,
+      "reading_line": 525,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C185.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b62321612520107f1ae2733fc8f3981c378d751104ccca357a5d14b5d80ca3ea"
+    },
+    {
+      "number": 166,
+      "reading_line": 528,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C186.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7be324826a394362b696e7e3f46e5087169c0818bd2695fbfa5e2458cf95bb7f"
+    },
+    {
+      "number": 167,
+      "reading_line": 531,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C187.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5ce268fbb69338a107b582f6dd0d2d324d94a84ea60c376ffd4f8fa99a370d83"
+    },
+    {
+      "number": 168,
+      "reading_line": 534,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C188.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "e485577a774b94cb58102fb3b587503d4da8d352be1d0c7fa7a02ef61d9091f5"
+    },
+    {
+      "number": 169,
+      "reading_line": 537,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C189.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d8122c3bdb93794bf0659c616d3e18243556cf892394f40b4e0a343f59ddac7f"
+    },
+    {
+      "number": 170,
+      "reading_line": 540,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C190.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "aeb77450934123dbbbe5ead742e48ff7ce2d8494ba7045b0b09d7ab4f2146a66"
+    },
+    {
+      "number": 171,
+      "reading_line": 543,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C191.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "e2b5af338ddfe4cc88bba7620bf2810045374d7c5aeba94a0de387610d4deca1"
+    },
+    {
+      "number": 172,
+      "reading_line": 546,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C192.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "0c4dd8a6c28a1de908046de6b3560d1cc904af60bd295d8f30f94abe07a1607f"
+    },
+    {
+      "number": 173,
+      "reading_line": 549,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C193.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "0dac18b13b5c2731487c58cf83e0b97322b343034a453afd5d77576ec5517b03"
+    },
+    {
+      "number": 174,
+      "reading_line": 552,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C194.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "fa3d6c2f8e8e470c1c00ee216e185a2c311d8c216b5ace92e8a3e50dac61024d"
+    },
+    {
+      "number": 175,
+      "reading_line": 555,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C195.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "372064026ae3be5eb4af798ee17f20c208b7d9143804f5e8c7e9756992d96c09"
+    },
+    {
+      "number": 176,
+      "reading_line": 558,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C196.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "8ed6b31c9db193e5e843860312c0b4e9ea8ab3ca56c339a4219041c6461a6d6f"
+    },
+    {
+      "number": 177,
+      "reading_line": 561,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C197.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "991499ad5549b974aac240379ee0003146be99ea9984a075fa57f1b4d586e578"
+    },
+    {
+      "number": 178,
+      "reading_line": 564,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C198.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "fe40a4db9427f04be1a2dca9dde9a5aa7ef48de56f744832d8776eaac784ca16"
+    },
+    {
+      "number": 179,
+      "reading_line": 567,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C199.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "6fa27f53d00b2f3bc566254196b944ca710b25f3cd115166c2cd0a65d911e606"
+    },
+    {
+      "number": 180,
+      "reading_line": 570,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C200.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9135c041ca2eb3b01e0c29e5ddc58f41c1fbc27661ebd6cd4ac0b64ec4fe28f0"
+    },
+    {
+      "number": 181,
+      "reading_line": 573,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C201.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "75ae2dc81bad72b7e593cc04c00d17ecaa14b5ff27005bc92753ea59ca8b48a9"
+    },
+    {
+      "number": 182,
+      "reading_line": 576,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C202.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "bf73ac1ed96b130e92f2d36546e4551626061ad41916a0f8c0691edf13556baf"
+    },
+    {
+      "number": 183,
+      "reading_line": 579,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C203.1–C204.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "dbf1bb33bcc3f1c6bd70670677e92ef921627a86ed174c0cb589a31b3373dc64"
+    },
+    {
+      "number": 184,
+      "reading_line": 582,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C205.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "59ebad37bf5d4cdbbb012e88c52e069cf95bfdd3a248dbdbbe5696f73ef52f8a"
+    },
+    {
+      "number": 185,
+      "reading_line": 585,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C206.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "eb8537579c855cab769486f0469e2434787dfb8c2d548239525ac2e4bd4db487"
+    },
+    {
+      "number": 186,
+      "reading_line": 588,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C207.1–C208.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "183fbbedc8747244cf315f26f2568d0f08cfec6b456f4d8cdfbbd35384a11355"
+    },
+    {
+      "number": 187,
+      "reading_line": 591,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C209.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "569adb114d9999807f2ef2d907e2c7e727db42a8f137c4090e36a48442ec3b06"
+    },
+    {
+      "number": 188,
+      "reading_line": 594,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C210.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "962642d85d621e812aadcc748e1f47662c3d0024617414f2890565979ee3e8ac"
+    },
+    {
+      "number": 189,
+      "reading_line": 597,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C211.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "76eb1709a167f83658ffaa8ed6539ededfcbf5781985819f31840848b398f889"
+    },
+    {
+      "number": 190,
+      "reading_line": 600,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C212.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a906c0b38475f4ccceb0a22f47b1b991a301934ec4f56575f330b0c63679e0d5"
+    },
+    {
+      "number": 191,
+      "reading_line": 603,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C213.1–C214.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "02f3f3a342fa32e7010aa6330d67ae890b9f19aea4311b43c38609509c7f97be"
+    },
+    {
+      "number": 192,
+      "reading_line": 606,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C215.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d78e6a0265dc8caf8ec5bd415c87465e29cf9092ea6bb504452e5d0a0cbb64f3"
+    },
+    {
+      "number": 193,
+      "reading_line": 613,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C216.1–C217.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "366ce019e87070bf26daa7e745b3b5efbe2ff92b6aa687e596f6447bf927a399"
+    },
+    {
+      "number": 194,
+      "reading_line": 616,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C218.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "49730edbad6f7dacf7e52f3dbf6eb8a9e7c5ae0195127ba6d5da49abbf7b6620"
+    },
+    {
+      "number": 195,
+      "reading_line": 619,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C219.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "e4383805755ee2964afa1ed2f1a063dd06168fb07d45f8dcbdc7b9f51f229030"
+    },
+    {
+      "number": 196,
+      "reading_line": 622,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C220.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "76a4792d0135127cc863c8fd5ca591e19898f67c7ead535db455f46b81bf9331"
+    },
+    {
+      "number": 197,
+      "reading_line": 625,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C221.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "379c9f9f7437bd42e41e64c1e676ec9144f064a40b5c880281f500843151a124"
+    },
+    {
+      "number": 198,
+      "reading_line": 628,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C222.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "828b7ef0f651c5cf7bba9e2dfb830d803e75f0352bb64571994d330f72e31672"
+    },
+    {
+      "number": 199,
+      "reading_line": 631,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C223.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a521171d7eeced1b87ef70ec31fdd8aefdb1a5197db3236da02c5266dd26ed3b"
+    },
+    {
+      "number": 200,
+      "reading_line": 634,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C224.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d0e2c90b226f565b4e630b66f95ab2483e281748a6486323b97e587f37c50be3"
+    },
+    {
+      "number": 201,
+      "reading_line": 637,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C225.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "eccdc098cc44d9e055e6384c392cb71bc17cd4464c9436ee0dc50c52715788a6"
+    },
+    {
+      "number": 202,
+      "reading_line": 640,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C226.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "48a8d39162f74ca1ce9cd8ace8d75660277e94f1108d96277d56837c12744225"
+    },
+    {
+      "number": 203,
+      "reading_line": 643,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C227.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ab9a31341b17dc8a8423c52c3f6162a88630ade94a48e40593e32ebaa7977bff"
+    },
+    {
+      "number": 204,
+      "reading_line": 646,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C228.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "51db942ffabb6b8e9ec87d7cbfac45a6c408856bdd32ef4211b34b39424279be"
+    },
+    {
+      "number": 205,
+      "reading_line": 649,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C229.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5af35db6f8fe39ad7419a02803f002172cf4eb9530b21188e2c81497136783d2"
+    },
+    {
+      "number": 206,
+      "reading_line": 652,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C230.1–C231.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "1adecf3e951fd3029635a5caf7a86165e4654bb4f15ab6e8921f5386e5178182"
+    },
+    {
+      "number": 207,
+      "reading_line": 655,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C232.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b62321612520107f1ae2733fc8f3981c378d751104ccca357a5d14b5d80ca3ea"
+    },
+    {
+      "number": 208,
+      "reading_line": 658,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C233.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "fb6f23aa4ab009188872006fde7851a59fce75cbfa4eff2bd18f87636cbfac10"
+    },
+    {
+      "number": 209,
+      "reading_line": 661,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C234.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "11c6248ffecb3f1c691dbf61f92a567410b48fa8a88437dee7232b4c56af9d18"
+    },
+    {
+      "number": 210,
+      "reading_line": 664,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C235.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "93b0e3b2a2685d14fc0fd8ef34478eb7445d29df8ec5eacab0d23eaa8aa57171"
+    },
+    {
+      "number": 211,
+      "reading_line": 667,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C236.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "032736d3c8442502013f4020e82a8c1c23ae8eb9741db0162cdafdb91c7cc5b5"
+    },
+    {
+      "number": 212,
+      "reading_line": 670,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C237.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "cb39dec7e0e96532ee5c39e25d3727e5b9bd35b50a6c8107ae486c11145eecf5"
+    },
+    {
+      "number": 213,
+      "reading_line": 673,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C238.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7e287f455337ceff02e8c29f39a81ac07f110eaef971d34af46fee0ab0950dc3"
+    },
+    {
+      "number": 214,
+      "reading_line": 676,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C239.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "05aa4c134b9414e389ba4110e7303586700bfce0c1a1951653d11847c219a97f"
+    },
+    {
+      "number": 215,
+      "reading_line": 679,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C240.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2294b37efc0e117ff8d9b8d570ee6e2df1300353f279c6743e00e7cd46db82b7"
+    },
+    {
+      "number": 216,
+      "reading_line": 682,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C241.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "784242b756513177ec332d80f8ad8923a6b600b0a3975c07fe9c25fae9ff585d"
+    },
+    {
+      "number": 217,
+      "reading_line": 685,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C242.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a0d0a223b061e45939827d4a23ad58c95161db31de585ea003ba1cd742ad0cff"
+    },
+    {
+      "number": 218,
+      "reading_line": 688,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C243.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "1219b3dbe3525e8162ee7ff9c59caa9fffd57485456650b97b2357572cd1a387"
+    },
+    {
+      "number": 219,
+      "reading_line": 691,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C244.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9613600a736294da15f85a8ecd88fdac2ec9392f923be0d31a7fab78b97df14b"
+    },
+    {
+      "number": 220,
+      "reading_line": 694,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C245.1–C246.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5fa36dcc94734f2fbeb596f66dd7ebe73ad0fd4b6c4dbbda42f9e12d3cd7af38"
+    },
+    {
+      "number": 221,
+      "reading_line": 697,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C247.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "8e35886bc7d997b5e2baa03659ac03d32164f077ccfea8d50ecedbb180154c78"
+    },
+    {
+      "number": 222,
+      "reading_line": 700,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C248.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c28e7eef60c34a2f633ccee313fffee46e4895d1e8fcd2bf380a3634d6a11ce8"
+    },
+    {
+      "number": 223,
+      "reading_line": 703,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C249.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ff7b7167a3c97757e0978b099895dcd4bee8aff426798ab4b95663c7b6e4a8c5"
+    },
+    {
+      "number": 224,
+      "reading_line": 706,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C250.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2c5a7a742d9fde7e8e0493c4affb6b2fdd56dde583cc89c5fe35fae85cc0ee40"
+    },
+    {
+      "number": 225,
+      "reading_line": 709,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C251.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "6fb00029f5a6399d6363c8004817c7b2912079513256dfe628998b702641c85f"
+    },
+    {
+      "number": 226,
+      "reading_line": 712,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C252.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "8d4e275608e05d1f55d422b1b24f2a1d452675b1050f16c35f61e759d77d7eed"
+    },
+    {
+      "number": 227,
+      "reading_line": 715,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C253.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b764438c25b620927cb2c3b3c7188e3e917de417448eac0e1d0fe994ec11bde8"
+    },
+    {
+      "number": 228,
+      "reading_line": 718,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C254.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "1c056df8e12d0eff27e7832e61cf4a9d5e5cd1dcb70acb6607d0fde9b80aa6fb"
+    },
+    {
+      "number": 229,
+      "reading_line": 721,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C255.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "61a27d9ea75d01c77585ac281df08a33326c0e9cc099dfda0948842627bfa835"
+    },
+    {
+      "number": 230,
+      "reading_line": 724,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C256.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b39bad84a899b08e37fe414d2b88753f430f0a13d709e40604af3e4543825dde"
+    },
+    {
+      "number": 231,
+      "reading_line": 727,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C257.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9a3eade949754d1ced2da2cb8a079227bec84b97a05d984671d46767df037b0d"
+    },
+    {
+      "number": 232,
+      "reading_line": 730,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C258.1–C259.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "463afc66cd0db94d0446f3aa0923ad06a758c18872d0a03343bca06e7517be80"
+    },
+    {
+      "number": 233,
+      "reading_line": 733,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C260.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b560704ec0f184af6a72e8be91d8b4107b42d4c30e111bae25b5c3cec3f4ac63"
+    },
+    {
+      "number": 234,
+      "reading_line": 736,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C261.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "dc9593f26a5f07aa7f8e031ba22b37f30230806fa36473417f27e04722a5798b"
+    },
+    {
+      "number": 235,
+      "reading_line": 739,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C262.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b02c3783705ba328effbfff531ad708b72c1be41b8882d4aa49cf594bd175336"
+    },
+    {
+      "number": 236,
+      "reading_line": 742,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C263.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "13894d0d4022fd3873940333c515b447a5e7c04e9aec2613dcb7552ad5dac794"
+    },
+    {
+      "number": 237,
+      "reading_line": 745,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C264.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "826e8cd945206b2c59cbd52203e6d74f05a7cf9e6b50de990ce9897168e848fb"
+    },
+    {
+      "number": 238,
+      "reading_line": 748,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C265.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "8417f7904601b030821170fcdf03f40df5d7d662691d3b5eb6cf52ae8321e99f"
+    },
+    {
+      "number": 239,
+      "reading_line": 751,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C266.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "216055b4d898c627f1b45a1617a806453074581a9d79ae1f82e436faf41a1e1a"
+    },
+    {
+      "number": 240,
+      "reading_line": 754,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C267.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "4eea993d9552527bd0d4ff68df1c666190b02a1684a04c8e062b4ad0e24f1b72"
+    },
+    {
+      "number": 241,
+      "reading_line": 757,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C268.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7341c61b6ecd80e66461e0f911c9475c59abf30a90e0e7af52699afed790efa9"
+    },
+    {
+      "number": 242,
+      "reading_line": 760,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C269.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "4346d8d25edf7fb5e8486df6c7a43bde52af30fa4a26b18f46ce08081a0cd8b0"
+    },
+    {
+      "number": 243,
+      "reading_line": 763,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C270.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5b6e197410ab2f0fabe042a387829d1c0d522e0edb947ea28211e34d03bf0486"
+    },
+    {
+      "number": 244,
+      "reading_line": 766,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C271.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "91d1776c4bc002d06f60dea07642a6c06c003939054849d78ead49626f7e05fc"
+    },
+    {
+      "number": 245,
+      "reading_line": 769,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C272.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ac4d9410b2207231270d58fcf27dd92eab0f485fce67b476d35191006d88f0d5"
+    },
+    {
+      "number": 246,
+      "reading_line": 772,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C273.1–C274.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9bc42d444b7d996ec7ff6d3a451d933d3c8200d6a4e7eed579dcca412873c141"
+    },
+    {
+      "number": 247,
+      "reading_line": 775,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C275.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9276ea83937dc25660eed27c55bdb9ed45514320a1c514b7a85a108df4469b6b"
+    },
+    {
+      "number": 248,
+      "reading_line": 778,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C276.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "dc252dc3b436cdb7f5999b64019ec2e547f2c0eee01328abb5b9d2a64387f1be"
+    },
+    {
+      "number": 249,
+      "reading_line": 781,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C277.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "25dbf59d7e841a3464f890ab27282cd8bfba9fae7b4f92a7d740aa4a38733d31"
+    },
+    {
+      "number": 250,
+      "reading_line": 784,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C278.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "54f23abaa0d073625291d213665d5c0b794c877c8827658444ddd4deec4c5ea2"
+    },
+    {
+      "number": 251,
+      "reading_line": 787,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C279.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "e27b1b188498d1171bd1b06455365092b76f5e510e3eb821e6e19335f9a0c4c6"
+    },
+    {
+      "number": 252,
+      "reading_line": 790,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C280.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9f3ebb248a042b8b3ce0d5a6793b71fe979a250ec3938d1607e2d2a71a1b03ad"
+    },
+    {
+      "number": 253,
+      "reading_line": 793,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C281.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "41f0b52330d1426ec68cc4a989002e6e6b6d228d34b1ab0ceca1d46b75a54556"
+    },
+    {
+      "number": 254,
+      "reading_line": 800,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C282.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9069248c87f6b106d1e0de3b249050316c5d668cc23af321188647b35f40bd7a"
+    },
+    {
+      "number": 255,
+      "reading_line": 803,
+      "speaker": "ALEX · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C283.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a01c784864d1ca44382ebef0f92e07d304baa08a61818630a9107b590fd24e2c",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "original_dialogue_self_identification_and_distinct_credited_role"
+    },
+    {
+      "number": 256,
+      "reading_line": 806,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C284.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b9f4613abd57fe0f7033b28f8693e08c60cca55f159b10836a1ac1462b2451d7"
+    },
+    {
+      "number": 257,
+      "reading_line": 809,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C285.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5e700d74430c904cbef82720fa95165a7389ed2b30f085e2b83c99433da59173"
+    },
+    {
+      "number": 258,
+      "reading_line": 812,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C286.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3bb339ebd7db50dc632334bc1d13603f827fec667787fb083e9e17904440ce5f"
+    },
+    {
+      "number": 259,
+      "reading_line": 815,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C287.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "fc0010ecdc76be1322b9e1b14d84609486ced6e5e0095d33f57dcd57a9b3be04"
+    },
+    {
+      "number": 260,
+      "reading_line": 818,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C288.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9688cb1b3baca126afdec7a9e83e81154b7b0d98d8354d5eeb04a3bc3d483bde"
+    },
+    {
+      "number": 261,
+      "reading_line": 821,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C289.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d04aeafd5a8eda21e9418560768bb69c12bef6757f7eb7b6a7ad32194b180983"
+    },
+    {
+      "number": 262,
+      "reading_line": 824,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C290.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5469012ac3a4266fa098c43764ca4472dcd8d0481ff88ea65e17ba564871198a"
+    },
+    {
+      "number": 263,
+      "reading_line": 827,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C291.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3d68e9d33b9f0596d4dfb593a734297ba3ae4246252f3469009c36bab2022a81"
+    },
+    {
+      "number": 264,
+      "reading_line": 830,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C292.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d2a882bd794658846f3388349df47be16670f8a36ff1dc73b120a40bf5c0ef22"
+    },
+    {
+      "number": 265,
+      "reading_line": 833,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C293.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "fd7d9abbe055669a826e379612918464db9f616127589a2d799c907fa0902363"
+    },
+    {
+      "number": 266,
+      "reading_line": 836,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C294.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c64532809c6b45130d3602cf467b9dc49d3ce21064fb8dbc7f3b9b3d592403e6"
+    },
+    {
+      "number": 267,
+      "reading_line": 839,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C295.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ff8393dbb61372254aaee77a3adbe32b35fd037c1de5b180a76b557ed62ad85f"
+    },
+    {
+      "number": 268,
+      "reading_line": 842,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C296.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ca3f3910e5853ca60e9cb2c245286f0c76d39d2c81485db19c71a4e217099a4f"
+    },
+    {
+      "number": 269,
+      "reading_line": 845,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C297.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "6a00de19aa27cf9c0a1a0e90c758e0ae0bf091106694208b88e1dd849769cb9e"
+    },
+    {
+      "number": 270,
+      "reading_line": 848,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C298.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ba2ead49ffd079111167ce529f6ac904d9fb827c6d08f2b13641bf40b14c0bba"
+    },
+    {
+      "number": 271,
+      "reading_line": 851,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C299.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "29d83cbfdb8e5bc324ef2c9472466ce50e390d06e92491bad3aab90d994a8efd"
+    },
+    {
+      "number": 272,
+      "reading_line": 854,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C300.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2f8462d0b26cf7dc33875eb0a2074b005c8639bb6fe60429f399bd6c8c91434e"
+    },
+    {
+      "number": 273,
+      "reading_line": 857,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C301.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "17f6d445f2edb657e72265a48c1ebe6255238f69e89a5677a5a5e1d842f86e55"
+    },
+    {
+      "number": 274,
+      "reading_line": 860,
+      "speaker": "ALEX PATTERSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C302.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3fe4bec64820c94a4a2b956bceaa0819ae23187715705f7db89b3063177df440"
+    },
+    {
+      "number": 275,
+      "reading_line": 863,
+      "speaker": "ALEX PATTERSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C303.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "23f21e84bb35e0a6f50d1fa265968be1586c228ed82c9c3911e5bb5b20cf24f8"
+    },
+    {
+      "number": 276,
+      "reading_line": 866,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C304.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "61978158f75b456d00f082e5ecfd93122ed18b1fa2e62cf845f4a17545e97fbc"
+    },
+    {
+      "number": 277,
+      "reading_line": 869,
+      "speaker": "ALEX PATTERSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C305.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "9baac9c1ea21595fa5c5adaa14e2376791443e45f4726cbf3d09fc31a6dfb4c5"
+    },
+    {
+      "number": 278,
+      "reading_line": 872,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C306.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "83b2f942da6cd0cad8b1ac53e1cbeb3570c794e77b54d25b39c396ae75dedea0"
+    },
+    {
+      "number": 279,
+      "reading_line": 875,
+      "speaker": "ALEX PATTERSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C307.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b357a2639f8c0870a5c4d4d83799b20a50afa9f2493a8a7846c2d122b4046b85"
+    },
+    {
+      "number": 280,
+      "reading_line": 878,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C308.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "75a69e2acf620916785d293a13ab595f0195a175a258d106f2eca295ca19e19a"
+    },
+    {
+      "number": 281,
+      "reading_line": 881,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C309.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d35083c931ac17bcaf2bbc3a9bb6107b3214142cae3f9e25914ceabfbf2ef912"
+    },
+    {
+      "number": 282,
+      "reading_line": 884,
+      "speaker": "ALEX PATTERSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C310.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "2e7f0bd13fea11ad5922150be9c9758fe154ba6d65d9170b321af13e4e9696fa"
+    },
+    {
+      "number": 283,
+      "reading_line": 887,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C311.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "e994d2460966f02b507ddb6b9e71aa9ec070c41520e4f7044dc068282d435071"
+    },
+    {
+      "number": 284,
+      "reading_line": 890,
+      "speaker": "ALEX PATTERSON · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C312.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "1b5e5c4ee9d6a988e1fe6f552d0d63d0343edc922a66f2c1d62957c5f1f343e2"
+    },
+    {
+      "number": 285,
+      "reading_line": 893,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C313.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "b711079fa6ae4a0714f059348f92d3a1f11a777a4a8a2b52cdce797fc4586a16"
+    },
+    {
+      "number": 286,
+      "reading_line": 900,
+      "speaker": "ROZ RUSSELL · PROVISIONAL TEXT-CONTEXT ASSIGNMENT",
+      "source_ref": "C314.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "dc91d815632b925f352eff6e27569fb8eaa17ebae151cfe2ada4264a6bfa40db"
+    },
+    {
+      "number": 287,
+      "reading_line": 903,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C315.1–C316.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c675135aadb5e3219892a6b336077793f3a4fb16163093124ff08cecc0747677"
+    },
+    {
+      "number": 288,
+      "reading_line": 906,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C317.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "7837be81885c529b9713bfada41f55ee5343357f6aae1e37d6ff592068aa122b"
+    },
+    {
+      "number": 289,
+      "reading_line": 909,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C318.1–C319.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "1e8338b858a7835407a43697c21bb512dddd4e7d991dfaf22b46fb2048ae3b5b"
+    },
+    {
+      "number": 290,
+      "reading_line": 912,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C320.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "bbff7b98d6da70612cb94badd2dde68a4dbe1107104b55f330a2225c8ebf55b2"
+    },
+    {
+      "number": 291,
+      "reading_line": 915,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C321.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "e9566496187110ccbad06a411a454be1ee63e4b476d182ba4d53946748731cc9"
+    },
+    {
+      "number": 292,
+      "reading_line": 918,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C322.1–C324.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "be7d66ace3c83415ec01e847445c6b9ed7c68089284b14901e86faafa58b2e01"
+    },
+    {
+      "number": 293,
+      "reading_line": 921,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C325.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d20743be8bf894ac8da5ee746e5f8961e24994c379909fd9502bbecacbac0c48"
+    },
+    {
+      "number": 294,
+      "reading_line": 924,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C326.1–C327.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "ea6ab18f5cad8d99eef74bc4a2fbc3431d6d134845e47394fd3191e63ab08bf2"
+    },
+    {
+      "number": 295,
+      "reading_line": 927,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C328.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "c3d321702325059a32c1a19ccaba77e17dbcd6e320650fe23e1a1f3aa266116d",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 296,
+      "reading_line": 930,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C329.1–C330.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "845b9b64cc9ac0d1a4cfeb74c939a9d271fc83b4bf3f09cc7426ef4656ecdf23"
+    },
+    {
+      "number": 297,
+      "reading_line": 933,
+      "speaker": "CHRISTINE SULLIVAN · PROVISIONAL EPISODE-CAST AND DIALOGUE",
+      "source_ref": "C331.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3da3a77980cb9eb9a2be45f9866e4ed3f00a8491bad6497ceffe881fe8af929b",
+      "source_actor_credibility": "episode_cast_exists_not_identified_by_image",
+      "speaker_identity_original_audio_verified": false,
+      "evidence_tier": "source_role_reply_context_plus_episode_credits"
+    },
+    {
+      "number": 298,
+      "reading_line": 936,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C332.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "d3395e01a5492e224b9f704aea448b54881a70d3b399e64f57bd3e70c167a4f1"
+    },
+    {
+      "number": 299,
+      "reading_line": 939,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C333.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "48a44d121bf1dcb544c9b8952d746e0c9ffc9d4625461d98941ea76e16e970b0"
+    },
+    {
+      "number": 300,
+      "reading_line": 942,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C334.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a9ca93c7d6a3212674d70864bddf2d223f567d3a1b4ef12557c7ced4af7fd862"
+    },
+    {
+      "number": 301,
+      "reading_line": 945,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C335.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "5a39896f3175ad76e5869b02723ee50ee63a36c861316866aa0d36092b5417ab"
+    },
+    {
+      "number": 302,
+      "reading_line": 948,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C336.1–C337.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "06844431a6e7cad9c28af10cb9670662eba99ad6657d17202c478963e204822b"
+    },
+    {
+      "number": 303,
+      "reading_line": 951,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C338.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "f728896f3cdb100e266276125c7e98311fac2b08e0bfb242a0fa31af3ab5b04f"
+    },
+    {
+      "number": 304,
+      "reading_line": 954,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C339.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "3b3af66f87e3097ffea7fc29a4f4f1dff11bd52797c4bdc0ece4bff96f5a67a3"
+    },
+    {
+      "number": 305,
+      "reading_line": 957,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C340.1–C341.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "142bcf540ea5dae7692f51f0858239355df920011c161707202d872224423ee9"
+    },
+    {
+      "number": 306,
+      "reading_line": 960,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C342.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "61f2ec68c22c76e02d005065a19737032ef396768df5e45dfa9ad982ab8cd555"
+    },
+    {
+      "number": 307,
+      "reading_line": 963,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C343.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "a8ad70f9eb31ffcbb1fc58335603f78f57885b241d2081bef7b33d24e55f3d3d"
+    },
+    {
+      "number": 308,
+      "reading_line": 966,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C344.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "56723edcd935d4765276b152e8e4c03990edd9dd87863122cd85cddd74eb37ea"
+    },
+    {
+      "number": 309,
+      "reading_line": 969,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C345.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "8f682c95cb03b407156c9228df988314ffb563473b86381f7987c7fbb68133d4"
+    },
+    {
+      "number": 310,
+      "reading_line": 972,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C346.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "8f682c95cb03b407156c9228df988314ffb563473b86381f7987c7fbb68133d4"
+    },
+    {
+      "number": 311,
+      "reading_line": 975,
+      "speaker": "UNIDENTIFIED SPEAKER · unresolved source voice",
+      "source_ref": "C347.1",
+      "source_time_kind": "UNTIMED original source",
+      "source_text_sha256": "63b0bbac06b51610f218248a36bae1e826b811c469cfdd7d7d10ccd18b080ee5"
+    }
+  ]
+}
