@@ -12,9 +12,10 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from owner_qwen_original_video_pilot import SOURCES, MODEL_ID, MODEL_SHA
 from summarize_original_qwen_pilot_metrics import source_safe_record, aggregate, OUT_SCHEMA
+from run_headless_video_description import PROMPTS
 
 
-def synthetic(episode="S01E01", valid=True, focus="observational"):
+def synthetic(episode="S01E01", valid=True, focus="observational", prompt_profile="standard"):
     source = SOURCES[episode]
     start = source["candidate_starts_ms"][0] if focus == "observational" else source["physical_comedy_candidate_starts_ms"][0]
     return {
@@ -27,6 +28,8 @@ def synthetic(episode="S01E01", valid=True, focus="observational"):
         "model_revision": MODEL_SHA,
         "original_avi_download_count": 1, "no_source_clip_or_still_uploaded": True,
         "source_focus": focus,
+        "prompt_profile": prompt_profile,
+        "prompt_sha256": hashlib.sha256(PROMPTS[prompt_profile].encode()).hexdigest(),
         "script_or_claim_independently_accepted": False,
         "cut_detection_is_editorial_proposal_only": True,
         "original_native_decoded_frame_pts_human_verified": False,
@@ -68,6 +71,20 @@ class NumericEvidenceContracts(unittest.TestCase):
             x["source_focus"] = "nonexistent"
             with self.assertRaises(ValueError):
                 source_safe_record(x, "c"*64)
+
+    def test_compact_action_prompt_has_distinct_immutable_source_provenance(self):
+        control = source_safe_record(synthetic("S01E01", focus="physical_comedy"), "a"*64)
+        focused = source_safe_record(synthetic("S01E01", focus="physical_comedy",
+                                              prompt_profile="action_compact"), "b"*64)
+        self.assertEqual(control["original_excerpt_start_ms"], focused["original_excerpt_start_ms"])
+        self.assertEqual(control["source_video_sha256"], focused["source_video_sha256"])
+        self.assertNotEqual(control["prompt_sha256"], focused["prompt_sha256"])
+        self.assertEqual(focused["prompt_profile"], "action_compact")
+        self.assertEqual(focused["source_focus"], "physical_comedy")
+        x = synthetic("S01E01", focus="physical_comedy", prompt_profile="action_compact")
+        x["prompt_sha256"] = "c"*64
+        with self.assertRaisesRegex(ValueError, "prompt hash"):
+            source_safe_record(x, "b"*64)
 
     def test_source_safe_metrics_without_visual_prose(self):
         x = synthetic()
