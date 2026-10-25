@@ -16,6 +16,7 @@ from test_prepare_video_stage_review import model,digest
 
 def reviewed():
     m=model()
+    m["windows"][0]["shot_partition_verified"] = False
     record=template(m,digest(m))
     record["reviewer_id"]="film-editor"
     return m,record
