@@ -7,8 +7,9 @@
 Complete held-source dialogue, editorial character labels and visible
 picture-supported scene research, NOT a finalized production screenplay.
 Named voices are provisional unless independently authenticated;
-unidentified speakers remain explicitly unidentified. The S09 original
-transcript is UNTIMED. Scene headings from source text or widely spaced
+unidentified speakers remain explicitly unidentified. The S01 original
+subtitle witness has genuine SRT cue times; these may not be perfectly
+synchronized with the pictured source edition. Scene headings from source text or widely spaced
 sampled frames are editorial reading aids, not verified shot boundaries.
 
 Original subtitle/transcript SHA-256: `aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496`
