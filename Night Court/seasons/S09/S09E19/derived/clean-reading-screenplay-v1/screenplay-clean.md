@@ -1,4 +1,6 @@
-# S09E19 · P.S. Do I Know You?\n\n**Working screenplay · editorial reading copy.** Character labels are provisional; observed video passages may not be synchronized with dialogue. Original source wording and cue references are retained in the adjacent reading index.
+# S09E19 · P.S. Do I Know You?
+
+**Working screenplay · editorial reading copy.** Character labels are provisional; observed video passages may not be synchronized with dialogue. Original source wording and cue references are retained in the adjacent reading index.
 
 ## Readable original-caption screenplay · editorial draft 5
 
