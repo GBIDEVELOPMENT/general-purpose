@@ -1,3 +1,7 @@
+## Priority-aware performance budget (2026-10-25)
+
+The [owner-ranked script contract](SCRIPT-PRIORITIES-AND-ACCEPTANCE-2026-10-25.md) governs throughput decisions: P0 same-speaker cue merge and real speaker-turn boundaries first, P1 character identity, P2 performance tags, P3 props/wardrobe, P4 blocking, P5 exact timestamps last. The existing proposed 30-minute p95 initial pass target still applies, but spend time on targeted boundary/identity ambiguities before forced word alignment, repeated whole-episode ASR or blanket image inference. Retain coarse timing and full source cue provenance. Measure P0/P1 correctness and misses alongside wall-clock speed; no speed improvement may silently conflate speakers.
+
 # Fast episode factory: bounded, measurable design
 
 **Status (2026-10-24):** the first **offline planning implementation**, not a completed end-to-end runtime benchmark. The original-series source inventory has 193 episodes, 192 timed subtitle witnesses and one untimed S09E19 witness. No complete episode script has been accepted. This document is a performance contract and pilot plan, not proof the targets have been met.
