@@ -27,6 +27,15 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         ):
             self.assertIn(required, self.workflow)
 
+    def test_new_physical_business_trigger_is_exact_owner_and_untrusted_head_never_executed(self):
+        self.assertIn("Night Court/research/trigger-owner-qwen-physical-comedy.txt", self.workflow)
+        self.assertIn("github.event.pull_request.head.ref == 'research/night-court-qwen-physical-comedy-trigger'", self.workflow)
+        self.assertIn("&& 'physical_comedy' || 'observational'", self.workflow)
+        self.assertIn("--focus '${{ github.event.pull_request.head.ref", self.workflow)
+        self.assertIn("ref: ${{ github.sha }}", self.workflow)
+        self.assertNotIn("ref: ${{ github.event.pull_request.head.sha }}", self.workflow)
+        self.assertIn("persist-credentials: false", self.workflow)
+
     def test_one_original_model_pass_produces_deferred_review_and_safe_metrics(self):
         self.assertIn("prepare_video_stage_review.py", self.workflow)
         self.assertIn("summarize_original_qwen_pilot_metrics.py", self.workflow)

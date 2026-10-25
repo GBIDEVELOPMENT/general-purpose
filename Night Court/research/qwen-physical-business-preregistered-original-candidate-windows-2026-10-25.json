@@ -1,0 +1,65 @@
+{
+  "schema": "night-court-preregistered-physical-business-qwen-windows/1",
+  "recorded_date": "2026-10-25",
+  "original_full_motion_review_completed": false,
+  "pre_model_source_hypothesis_only": true,
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "inference_frames_per_second": 1,
+  "model_excerpt_ms": 2000,
+  "generated_token_cap": 256,
+  "source_sample_method": "Existing SHA-verified original AVI derived JPEGs nominal 5fps; resized 160x90 grayscale, adjacent JPEG mean absolute pixel difference. These are compressed JPEG proxies and are NOT full original AVI decoder metrics or authoritative cut times.",
+  "episodes": [
+    {
+      "episode_id": "S01E01",
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "sampled_contact_index_sha256": "cafd8cc45292f26f72683a0140dfc3c538421219bfbfea53e1e41efa33aede09",
+      "original_sample_region_ms": [
+        838000,
+        858000
+      ],
+      "visual_trial_cohort": "court-bench person-to-person hand motion, physical comedy not certified",
+      "candidate_starts_ms": [
+        845800,
+        846000,
+        845600,
+        846200,
+        847000
+      ],
+      "jpeg_proxy_peak_luma_differences": [
+        8.858,
+        5.455,
+        9.151,
+        3.03,
+        2.491
+      ],
+      "source_decoder_gate_threshold": 9.5
+    },
+    {
+      "episode_id": "S09E19",
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "sampled_contact_index_sha256": "f229ff8aa8b376426384569d973c5868563efe6fb043040c98fb80887f9b3f86",
+      "original_sample_region_ms": [
+        551000,
+        571000
+      ],
+      "visual_trial_cohort": "court-bench object handling, physical comedy not certified",
+      "candidate_starts_ms": [
+        555800,
+        556000,
+        555600,
+        556200,
+        559000
+      ],
+      "jpeg_proxy_peak_luma_differences": [
+        6.19,
+        6.628,
+        7.026,
+        6.628,
+        5.176
+      ],
+      "source_decoder_gate_threshold": 9.5
+    }
+  ],
+  "benchmark_truth_limit": "These offsets and differences were fixed before the second original-film VLM run. JPEG proxy change scores do not prove shot safety; original decoded low-res scan may reject all candidate clips. Neither appearance of a coin nor a safe combination nor spoken dialogue is established by images. Direct original source video review is required before visual event accuracy or screenplay stage acceptance."
+}
