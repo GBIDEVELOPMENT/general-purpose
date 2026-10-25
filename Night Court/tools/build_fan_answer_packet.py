@@ -68,7 +68,7 @@ def build_packet(db: Path, question: str, episode: str | None = None,
                 passage = data["retrieval_text"]
             elif kind == "provisional_character_dialogue":
                 provenance = (
-                    data["reading_block_id"] + " · " + data["source_reading_ref"] +
+                    data["reading_block_id"] + " · " + (data.get("source_reading_ref") or ", ".join(data.get("original_source_part_refs", []))) +
                     " · role: " + (data["candidate_role"] or "UNIDENTIFIED") +
                     " · " + data["role_attribution_status"] +
                     " · original source SHA256 " + data["original_source_sha256"]
