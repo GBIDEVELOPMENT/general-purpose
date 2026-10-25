@@ -57,40 +57,49 @@ def sample_source(episode: str):
 
 
 def candidate_cut_check(media: Path, start_ms: int, duration_ms: int = CLIP_MS):
-    """Full native frame-rate low-resolution cut-candidate scan on source AVI.
+    """Count *candidate* discontinuities in five-Hz low-resolution source video.
 
-    This does NOT prove there is no true shot cut. It rejects detected large
-    changes inside the requested interval after a one-second decoder pre-roll,
-    so each source excerpt has a preceding frame to compare against.
+    FFmpeg's built-in scene expression reproducibly emitted a spurious change
+    in every source-AVI excerpt (33/33 original windows), despite stable
+    source-hashed 4/5-Hz source thumbnails. Compare neighboring decoded
+    luminance frames instead, with 1 second of decoder pre-roll. This is an
+    inexpensive selector, NEVER native-PTS or shot-continuity certification.
     """
-    if type(start_ms) is not int or not 0 <= start_ms <= 7_200_000:
-        raise ValueError("Invalid original-source time")
+    if type(start_ms) is not int or not 1000 <= start_ms <= 7_200_000:
+        raise ValueError("Invalid original-source time or missing decoder pre-roll")
     if duration_ms != CLIP_MS:
         raise ValueError("Only two-second candidate windows allowed")
-    # IMPORTANT: The source MPEG-4/AVI decoder showed one image-change
-    # candidate at the beginning of EVERY sampled excerpt, including clearly
-    # same-shot 4fps samples. Scan with a one-second decoded pre-roll to seed
-    # FFmpeg's inter-frame scene reference, then count cuts only in the *actual*
-    # requested [start, end] interval. Never discard internal source cuts.
-    preroll_ms = 1000
-    if start_ms < preroll_ms:
-        raise ValueError("Original film cut scan needs one-second pre-roll")
-    duration_with_preroll_ms = duration_ms + preroll_ms
+    fps, width, height, prior_ms = 5, 160, 90, 1000
+    frame_bytes = width * height
+    # A 5fps monochrome scan uses only 216KB of decoded temporary frame
+    # bytes; no frame, soundtrack or source movie is stored as an artifact.
     result = subprocess.run([
-        "ffmpeg", "-hide_banner", "-nostdin", "-loglevel", "info",
+        "ffmpeg", "-hide_banner", "-nostdin", "-loglevel", "error",
         "-threads", "1", "-filter_threads", "1",
-        "-ss", f"{(start_ms-preroll_ms)/1000:.3f}", "-i", str(media),
-        "-t", f"{duration_with_preroll_ms/1000:.3f}", "-map", "0:v:0",
+        "-ss", f"{(start_ms-prior_ms)/1000:.3f}", "-i", str(media),
+        "-t", f"{(duration_ms+prior_ms)/1000:.3f}", "-map", "0:v:0",
         "-an", "-sn", "-dn",
-        "-vf", (
-            "scale=160:-2,setpts=PTS-STARTPTS,"
-            f"select='gte(t,{preroll_ms/1000:.3f})*gt(scene,{CUT_THRESHOLD})',showinfo"
-        ),
-        "-f", "null", "-"
-    ], capture_output=True, text=True, timeout=90, check=True)
-    # showinfo processes only selected image-change frames after the select.
-    return len(re.findall(r"Parsed_showinfo[^\n]*\bn:\s*\d+", result.stderr))
-
+        "-vf", f"fps={fps},scale={width}:{height}:flags=bilinear,format=gray",
+        "-pix_fmt", "gray", "-f", "rawvideo", "-"
+    ], capture_output=True, timeout=90, check=True)
+    raw = result.stdout
+    if len(raw) != frame_bytes * 15:
+        raise ValueError("Original cut scan frame-count mismatch; abstain")
+    frames = [memoryview(raw)[i:i + frame_bytes]
+              for i in range(0, len(raw), frame_bytes)]
+    # Frames 0-4 seed the decoder/reference; consecutive pairs ending at
+    # indices 5..14 correspond to the requested two-second source region.
+    # Using all pixels is deterministic and much less brittle on compressed
+    # legacy AVI than FFmpeg's uncalibrated scene score at an arbitrary seek.
+    # Historical source-SHA-backed stills: low-motion S01 spans ~1-3 mean
+    # 8-bit luma units, abrupt visual changes ~17-33; S09 jumps ~10-17.
+    threshold = 9.5
+    changes = 0
+    for i in range(5, len(frames)):
+        mean_abs = sum(abs(b - a) for a, b in zip(frames[i-1], frames[i])) / frame_bytes
+        if mean_abs > threshold:
+            changes += 1
+    return changes
 
 def select_bounded_candidate(media: Path, episode: str):
     if episode not in SOURCES:
@@ -167,6 +176,8 @@ def trusted_owner_run(episode: str, output: Path):
             "original_avi_sha256_verified": actual,
             "original_source_retrieval_wall_seconds": round(elapsed_fetch, 3),
             "pre_model_original_cut_candidate_checks": scan,
+            "cut_candidate_detector": "5fps_gray160x90_mean_absolute_frame_change_gt_9.5_with_one_second_preroll",
+            "cut_detector_method_not_source_PTS_verified": True,
             "cut_detection_is_editorial_proposal_only": True,
             "original_native_decoded_frame_pts_human_verified": False,
             "original_srt_or_dialogue_modified": False,
