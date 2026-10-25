@@ -1,0 +1,34 @@
+name: Night Court directly inspected extra original-source movie stage QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/render_extra_observed_original_stage_v5.py'
+      - 'Night Court/tools/test_render_extra_observed_original_stage_v5.py'
+      - 'Night Court/seasons/S01/S01E01/derived/additional-original-motion-observations-v2/**'
+      - 'Night Court/seasons/S09/S09E19/derived/additional-original-motion-observations-v2/**'
+      - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/**'
+      - 'Night Court/seasons/S09/S09E19/derived/additional-original-film-staged-reader-v5/**'
+      - '.github/workflows/night-court-extra-source-film-stage-qa.yml'
+      - '.github/workflows/night-court-trusted-extra-source-film-stage-output.yml'
+permissions:
+  contents: read
+jobs:
+  actual-source-sampled-picture-and-dialogue-regression:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Guard original source captions and count every S09 underlying paragraph
+        run: |
+          python 'Night Court/tools/test_render_extra_observed_original_stage_v5.py'
+          python 'Night Court/tools/render_extra_observed_original_stage_v5.py' --episode S01E01 --output-root "${{ runner.temp }}/full-source"
+          python 'Night Court/tools/render_extra_observed_original_stage_v5.py' --episode S09E19 --output-root "${{ runner.temp }}/full-source"
+          if test -f 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'; then
+            python 'Night Court/tools/render_extra_observed_original_stage_v5.py' --episode S01E01 --check
+          fi
+          if test -f 'Night Court/seasons/S09/S09E19/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'; then
+            python 'Night Court/tools/render_extra_observed_original_stage_v5.py' --episode S09E19 --check
+          fi
