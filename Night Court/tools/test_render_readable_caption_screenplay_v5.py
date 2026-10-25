@@ -37,7 +37,7 @@ class PilotReadable(unittest.TestCase):
         self.assertEqual(metadata["paragraph_soft_wrapped_original_text_records_joined"],expected)
         self.assertGreater(expected,30)
         self.assertTrue(metadata["original_source_untimed_paragraphs_still_untimed"])
-        self.assertIn("7",str(metadata["new_provisional_context_label_count"]))
+        self.assertEqual(metadata["new_provisional_context_label_count"],56)
         self.assertIn("C007.1–C008.1",text)
         self.assertIn("C175.1–C177.1",text)
         self.assertIn("source-caption",text.casefold())
