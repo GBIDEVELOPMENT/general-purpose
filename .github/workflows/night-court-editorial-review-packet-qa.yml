@@ -1,0 +1,24 @@
+name: Night Court S09 original untimed dialogue editorial appendix QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/build_s09_editorial_review_packet_v7.py'
+      - 'Night Court/tools/test_build_s09_editorial_review_packet_v7.py'
+      - 'Night Court/seasons/S09/S09E19/derived/caption-first-editor-review-v7/**'
+      - '.github/workflows/night-court-editorial-review-packet-qa.yml'
+permissions:
+  contents: read
+jobs:
+  source-preservation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          python 'Night Court/tools/test_build_s09_editorial_review_packet_v7.py'
+          python 'Night Court/tools/build_s09_editorial_review_packet_v7.py' --output-root "${{ runner.temp }}/review"
+          if test -f 'Night Court/seasons/S09/S09E19/derived/caption-first-editor-review-v7/screenplay-and-review-guide.md'; then
+            python 'Night Court/tools/build_s09_editorial_review_packet_v7.py' --check
+          fi
