@@ -56,7 +56,7 @@ class PilotCharacterTests(unittest.TestCase):
                 self.assertFalse(rows[0]["speaker_turn_boundary_verified"])
                 source["source_reading_index"][0]["source_text_sha256"] = "a" * 64
                 target.write_text(json.dumps(source), "utf-8")
-                with self.assertRaisesRegex(ValueError, "cannot be reconstructed"):
+                with self.assertRaisesRegex(ValueError, "first-line evidence mismatch"):
                     module.records_for_episode(root, "S09E19")
 
     def test_no_incorrect_named_voice_from_ambiguous_source(self):
