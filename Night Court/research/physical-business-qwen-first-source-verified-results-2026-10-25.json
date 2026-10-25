@@ -1,0 +1,102 @@
+{
+  "schema": "night-court-original-qwen-physical-business-two-pilot-metrics/1",
+  "date": "2026-10-25",
+  "actions_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40230163151",
+  "original_source_episode_runs": 2,
+  "original_series_sources_verified_by_full_file_sha256": true,
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_revision_sha": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "model_sampling_fps": 1,
+  "model_max_generated_tokens": 256,
+  "clip_duration_ms": 2000,
+  "observations": [
+    {
+      "episode_id": "S01E01",
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+      "private_model_report_sha256": "3068fd52421a91f98195784fadee820b0f5ffe2fc829fdb3ad1fcc96eb5fc986",
+      "original_source_image_index_sha256": "cafd8cc45292f26f72683a0140dfc3c538421219bfbfea53e1e41efa33aede09",
+      "private_actions_artifact_id": 12611679803,
+      "excerpt_ms": [
+        846000,
+        848000
+      ],
+      "tested_candidate_starts_ms": [
+        845800,
+        846000
+      ],
+      "candidate_image_change_counts": [
+        1,
+        0
+      ],
+      "original_source_retrieval_seconds": 3.399,
+      "model_load_seconds": 29.876,
+      "clip_decode_seconds": 0.34,
+      "model_inference_seconds": 160.659,
+      "model_tool_seconds": 191.077,
+      "strict_ten_field_json_valid": true,
+      "model_output_error": null,
+      "sampled_frame_nominal_fps": 5,
+      "sampled_frames_inspected": 10,
+      "sampled_image_review_categories": [
+        "directional_subject_object_reversal",
+        "speculative_emotional_context",
+        "small_prop_identity_requires_movie_review"
+      ],
+      "direct_original_continuous_video_and_sound_review_attested": false,
+      "independent_visual_event_metrics_eligible": false,
+      "reviewer_approved_stage_directions": 0
+    },
+    {
+      "episode_id": "S09E19",
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "private_model_report_sha256": "ab039750f07780c540205626284159e30278709b7bf90c15546f954bb0f73602",
+      "original_source_image_index_sha256": "f229ff8aa8b376426384569d973c5868563efe6fb043040c98fb80887f9b3f86",
+      "private_actions_artifact_id": 12611959422,
+      "excerpt_ms": [
+        555800,
+        557800
+      ],
+      "tested_candidate_starts_ms": [
+        555800
+      ],
+      "candidate_image_change_counts": [
+        0
+      ],
+      "original_source_retrieval_seconds": 3.413,
+      "model_load_seconds": 29.322,
+      "clip_decode_seconds": 0.364,
+      "model_inference_seconds": 163.603,
+      "model_tool_seconds": 193.49,
+      "strict_ten_field_json_valid": false,
+      "model_output_error": "non_json_model_output",
+      "sampled_frame_nominal_fps": 5,
+      "sampled_frames_inspected": 10,
+      "sampled_image_review_categories": [
+        "model_output_unparseable",
+        "object_handler_orientation_uncertain",
+        "small_object_identity_not_verified"
+      ],
+      "direct_original_continuous_video_and_sound_review_attested": false,
+      "independent_visual_event_metrics_eligible": false,
+      "reviewer_approved_stage_directions": 0
+    }
+  ],
+  "metrics": {
+    "machine_inference_completed": 2,
+    "strict_json_valid": 1,
+    "strict_json_invalid": 1,
+    "reviewer_approved_stage_directions": 0,
+    "full_episodes_independently_av_certified": 0
+  },
+  "production_notes": {
+    "model_invalid_excerpt_capped_at_characters": 800,
+    "private_artifact_retention_days": 7,
+    "model_prose_copied_into_repo": false,
+    "source_clip_selected_by_low_res_grayscale_candidate_only": true,
+    "shot_continuity_independently_verified": false,
+    "stage_truth_source": "original continuous synchronized audiovisual video review required",
+    "inference_token_cap_causality_unverified": true,
+    "source_movie_audio_or_frames_uploaded": false
+  },
+  "limitations": "Sampled stills can reveal an apparent left/right action reversal and visible object handling, but cannot prove unseen frames, original audio, physical joke timing, character intent, or full scene truth. One valid and one invalid JSON at two samples does not calibrate a population rate."
+}
