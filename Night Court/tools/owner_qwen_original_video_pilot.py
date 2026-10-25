@@ -26,13 +26,13 @@ SOURCES = {
     "S01E01": {
         "sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
         "duration_ms": 1448256,
-        "candidate_starts_ms": (86000, 82000, 84000, 88000, 80000),
+        "candidate_starts_ms": tuple(range(75000, 88001, 1000)),
         "picture_context": "court-office-phone-original-reviewed-neighborhood",
     },
     "S09E19": {
         "sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
         "duration_ms": 1320144,
-        "candidate_starts_ms": (820000, 816000, 818000, 824000, 826000),
+        "candidate_starts_ms": tuple(range(812000, 830001, 1000)),
         "picture_context": "restaurant-seated-guests-original-reviewed-neighborhood",
     },
 }
@@ -91,7 +91,8 @@ def select_bounded_candidate(media: Path, episode: str):
             selected = start
             break
     if selected is None:
-        raise ValueError("No proposed source-shot-safe interval from bounded candidate set")
+        # Safe numeric probe: no film pixels or model captions in exception.
+        raise ValueError("No proposed source-shot-safe interval: " + json.dumps(report, separators=(',', ':')))
     return selected, report
 
 
