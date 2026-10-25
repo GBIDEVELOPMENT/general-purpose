@@ -1,0 +1,60 @@
+name: Night Court trusted original extra scene-comedy source capture
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-extra-original-physical-beats.txt'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-original-extra-action-review-20261024
+  cancel-in-progress: false
+jobs:
+  private-one-source-per-episode-physical-review:
+    if: >-
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-extra-motion-review-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    strategy:
+      fail-fast: false
+      matrix:
+        episode: [S01E01,S09E19]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Validate known original video hash and all six nonoverlapping 20-second review windows without FTP
+        run: |
+          python 'Night Court/tools/test_capture_original_physical_beats.py'
+          python 'Night Court/tools/test_capture_extra_original_physical_beats.py'
+      - name: Install bounded contact-sheet image decoder
+        run: |
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            timeout 120s sudo apt-get update -qq
+            timeout 180s sudo apt-get install -y -qq ffmpeg
+          fi
+          python -m pip install --disable-pip-version-check --retries 2 --timeout 30 'Pillow==11.3.0'
+      - name: Download original AVI exactly once, decode only 60 seconds of novel source motion
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python -u 'Night Court/tools/capture_extra_original_physical_beats.py' --ftp \
+            --episode "${{ matrix.episode }}" \
+            --output "${{ runner.temp }}/night-court-extra-action/${{ matrix.episode }}"
+      - name: Keep contact sheets private and evidence with actual source SHA
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-original-extra-comedy-photos-${{ matrix.episode }}
+          path: ${{ runner.temp }}/night-court-extra-action/${{ matrix.episode }}/
+          if-no-files-found: error
+          retention-days: 7
+      - name: Delete temporary private image sheets and original AVI scratch
+        if: always()
+        run: rm -rf "${{ runner.temp }}/night-court-extra-action"
