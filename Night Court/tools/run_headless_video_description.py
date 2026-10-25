@@ -86,7 +86,8 @@ def normalize(raw):
                 "id": row.get("id"), "start_ms": times[0] if isinstance(times, list) and len(times) == 2 else None,
                 "end_ms": times[1] if isinstance(times, list) and len(times) == 2 else None,
                 "selection_reason": row.get("selection_reason"),
-                "candidate_cut_crossing": False if row.get("candidate_shot_partition_not_verified") is not None else None,
+                "candidate_cut_crossing": False if row.get("candidate_shot_partition_not_verified") is True else None,
+                "shot_partition_verified": False,
             })
         caption_digest = None
     elif schema == INPUT_SCHEMA:
@@ -124,6 +125,7 @@ def normalize(raw):
             "id": ident, "start_ms": a, "end_ms": b,
             "selection_reason": str(row.get("selection_reason") or "unspecified")[:100],
             "candidate_cut_crossing": False,
+            "shot_partition_verified": row.get("shot_partition_verified") is True,
         })
     if total > MAX_TOTAL_MS:
         raise ValueError("Excessive original clip sampling requested")
@@ -186,10 +188,35 @@ def parse_hypothesis(text):
     return {field: item[field] for field in FIELDS}, None
 
 
+def video_model_messages(backend: str, clip: Path, fps: int):
+    """Use the *different* official Hugging Face video message formats.
+
+    SmolVLM2 uses type=video/path; Qwen3-VL uses type=video/video.
+    The excerpt has already been resampled by our bounded FFmpeg stage, so
+    Qwen receives that exact cadence rather than silently resampling at 2fps.
+    This function deliberately carries no captions, character names or URLs.
+    """
+    if backend not in MODELS:
+        raise ValueError("Unknown video model backend")
+    if not isinstance(clip, Path) or not clip.is_absolute() or not clip.is_file():
+        raise ValueError("Video model needs an existing local clip path")
+    if type(fps) is not int or fps not in (1, 2, 3):
+        raise ValueError("Unbounded inference video sample rate")
+    if backend == "smolvlm2":
+        video = {"type": "video", "path": str(clip)}
+    else:
+        video = {"type": "video", "video": str(clip), "fps": float(fps)}
+    return [{"role": "user", "content": [
+        video, {"type": "text", "text": PROMPT}
+    ]}]
+
+
 class LocalVideoModel:
     """Actual Transformers local-video inference, lazily initialized; no remote API."""
 
-    def __init__(self, backend: str, revision: str, device: str):
+    def __init__(self, backend: str, revision: str, device: str, fps: int):
+        self.backend = backend
+        self.fps = fps
         import torch
         from transformers import AutoProcessor
         model_id = MODELS[backend]
@@ -210,9 +237,7 @@ class LocalVideoModel:
         self.torch = torch
 
     def describe(self, clip: Path) -> str:
-        messages = [{"role": "user", "content": [
-            {"type": "video", "path": str(clip)}, {"type": "text", "text": PROMPT}
-        ]}]
+        messages = video_model_messages(self.backend, clip, self.fps)
         inputs = self.processor.apply_chat_template(
             messages, add_generation_prompt=True, tokenize=True,
             return_dict=True, return_tensors="pt",
@@ -237,6 +262,7 @@ def benchmark(manifest, backend, media=None, revision=None, device="cpu",
         "model_revision": revision, "prompt_sha256": hashlib.sha256(PROMPT.encode()).hexdigest(),
         "video_sampling_fps": fps, "video_width_pixels": width,
         "source_original_media_is_ephemeral": True, "script_or_claim_independently_accepted": False,
+        "source_frame_pts_independently_verified": False,
         "windows": [],
     }
     if backend == "plan":
@@ -258,7 +284,7 @@ def benchmark(manifest, backend, media=None, revision=None, device="cpu",
     output["source_ffprobe"] = info
     output["verify_seconds"] = round(time.perf_counter() - t, 3)
     if model is None:
-        model = LocalVideoModel(backend, revision, device)
+        model = LocalVideoModel(backend, revision, device, fps)
     with tempfile.TemporaryDirectory(prefix="night-court-video-") as tmp:
         for index, window in enumerate(manifest["windows"]):
             name = Path(tmp) / f"window_{index:02d}.mp4"
