@@ -67,8 +67,8 @@ jobs:
           timeout 360 /tmp/nc-vision-cpu/bin/pip install --disable-pip-version-check -q \
             'torch==2.7.1' 'torchvision==0.22.1' --index-url https://download.pytorch.org/whl/cpu
           timeout 180 /tmp/nc-vision-cpu/bin/pip install --disable-pip-version-check -q \
-            'transformers==4.57.1' 'accelerate>=1.0,<2' 'decord==0.6.0' 'pillow>=10,<13' 'num2words==0.5.14'
-          /tmp/nc-vision-cpu/bin/python -c 'import torchvision; from transformers import AutoProcessor, AutoModelForImageTextToText; from transformers.models.smolvlm.processing_smolvlm import SmolVLMProcessor; import num2words; print("SmolVLM2 real video processor imports:", torchvision.__version__)'
+            'transformers==4.57.1' 'accelerate>=1.0,<2' 'decord==0.6.0' 'pillow>=10,<13' 'num2words==0.5.14' 'av==15.0.0'
+          /tmp/nc-vision-cpu/bin/python -c 'import torchvision; from transformers import AutoProcessor, AutoModelForImageTextToText; from transformers.models.smolvlm.processing_smolvlm import SmolVLMProcessor; import num2words, av; print("SmolVLM2 real video processor imports:", torchvision.__version__, av.__version__)'
       - name: Verify and generate a transient synthetic-only film and manifest
         shell: bash
         run: |
