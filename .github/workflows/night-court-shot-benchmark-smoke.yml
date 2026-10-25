@@ -1,0 +1,34 @@
+name: Night Court shot detector comparison (synthetic)
+
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/compare_shot_detectors.py'
+      - 'Night Court/tools/test_compare_shot_detectors.py'
+      - '.github/workflows/night-court-shot-benchmark-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: night-court-shot-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cut-detector-synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install synthetic test runtime only
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            timeout 180 sudo apt-get update -qq
+            timeout 180 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
+          fi
+          python3 -m pip install --disable-pip-version-check 'scenedetect==0.7.2' 'opencv-python-headless>=4.8,<5'
+      - name: Compare nominal cut detection to synthetic 2s+4s truth
+        run: |
+          python3 -m py_compile 'Night Court/tools/compare_shot_detectors.py' 'Night Court/tools/test_compare_shot_detectors.py'
+          python3 'Night Court/tools/test_compare_shot_detectors.py' -v
