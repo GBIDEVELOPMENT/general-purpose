@@ -1,0 +1,27 @@
+name: Night Court original S09 untimed paragraph coarse visual search QA
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/plan_s09e19_coarse_picture_dialogue_review.py'
+      - 'Night Court/tools/test_plan_s09e19_coarse_picture_dialogue_review.py'
+      - 'Night Court/seasons/S09/S09E19/derived/source-coarse-picture-dialogue-review-v1/**'
+      - '.github/workflows/night-court-coarse-original-audio-picture-qa.yml'
+      - '.github/workflows/night-court-trusted-coarse-review-map.yml'
+permissions:
+  contents: read
+jobs:
+  source-free:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate original AVI and untimed report SHA, 13 distinct probes and abstentions
+        run: |
+          python 'Night Court/tools/test_plan_s09e19_coarse_picture_dialogue_review.py'
+          python 'Night Court/tools/plan_s09e19_coarse_picture_dialogue_review.py' --output-root "${{ runner.temp }}/review"
+          if test -f 'Night Court/seasons/S09/S09E19/derived/source-coarse-picture-dialogue-review-v1/review-map.json'; then
+            python 'Night Court/tools/plan_s09e19_coarse_picture_dialogue_review.py' --check
+          fi
