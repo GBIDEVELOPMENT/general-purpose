@@ -1,0 +1,53 @@
+{
+  "schema": "night-court-actual-source-video-stage-reader/5",
+  "episode_id": "S01E01",
+  "original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "input_original_reading_script_sha256": "83175648d9b7cfdcb7888b270c47e1c2619adf077b6a9cba1b078a7a1c5e6d0a",
+  "new_source_observation_ledger_sha256": "5a31a4d54929d38beafa1e8f6b185979d760588edaf9a25eab26acf542f74e32",
+  "source_original_cues": 336,
+  "source_original_speaking_units": 404,
+  "original_reading_blocks": 404,
+  "source_speaking_units_attributed_provisionally": 306,
+  "source_speaking_units_unidentified": 98,
+  "directly_inspected_new_5fps_frames": 300,
+  "new_original_picture_stage_windows": 3,
+  "source_movie_frame_windows_proving_original_target": 3,
+  "source_movie_frame_windows_rejecting_review_target": 0,
+  "source_picture_insertions_or_chronology_entries": [
+    {
+      "window_label": "double-headed-coin-kerr-reconciliation",
+      "original_source_srt_cue": 273,
+      "picture_time_ms_requested": 1094000,
+      "original_srt_source_start_ms": 1096849,
+      "visual_hypothesis_observed": true,
+      "original_source_cue_time_replaced": false,
+      "spoken_source_alignment_verified": false
+    },
+    {
+      "window_label": "judge-ear-coin-conjuring",
+      "original_source_srt_cue": 207,
+      "picture_time_ms_requested": 838000,
+      "original_srt_source_start_ms": 838925,
+      "visual_hypothesis_observed": true,
+      "original_source_cue_time_replaced": false,
+      "spoken_source_alignment_verified": false
+    },
+    {
+      "window_label": "opening-painter-window-business",
+      "original_source_srt_cue": 1,
+      "picture_time_ms_requested": 0,
+      "original_srt_source_start_ms": 3824,
+      "visual_hypothesis_observed": true,
+      "original_source_cue_time_replaced": false,
+      "spoken_source_alignment_verified": false
+    }
+  ],
+  "speaker_and_actor_identity_from_photographs_claimed": false,
+  "original_dialogue_words_edited": false,
+  "source_untimed_captions_given_timecodes": false,
+  "original_synchronized_audio_listened": false,
+  "continuous_whole_episode_video_reviewed": false,
+  "full_episode_editor_ready": false,
+  "independently_av_certified": false
+}

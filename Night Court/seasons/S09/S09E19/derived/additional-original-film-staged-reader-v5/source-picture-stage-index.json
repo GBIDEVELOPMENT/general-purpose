@@ -1,0 +1,47 @@
+{
+  "schema": "night-court-actual-source-video-stage-reader/5",
+  "episode_id": "S09E19",
+  "original_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "input_original_reading_script_sha256": "20306d17c4fcc0940a8bb67d191ca898d68df728b89dcb0ca3d0a3b1227a00fb",
+  "new_source_observation_ledger_sha256": "a65656b389fefa7ce6e0ec0d37460ef08befd95e45d0f72ae50a15ed2fc85297",
+  "source_original_cues": 347,
+  "source_original_speaking_units": 347,
+  "original_reading_blocks": 311,
+  "source_speaking_units_attributed_provisionally": 181,
+  "source_speaking_units_unidentified": 166,
+  "directly_inspected_new_5fps_frames": 300,
+  "new_original_picture_stage_windows": 3,
+  "source_movie_frame_windows_proving_original_target": 0,
+  "source_movie_frame_windows_rejecting_review_target": 3,
+  "source_picture_insertions_or_chronology_entries": [
+    {
+      "window_label": "hidden-safe-combination-and-warning",
+      "picture_time_ms_requested": 551000,
+      "visual_hypothesis_observed": false,
+      "original_text_paragraph_time_ms": null,
+      "spoken_source_alignment_verified": false
+    },
+    {
+      "window_label": "restaurant-two-impostors-entry",
+      "picture_time_ms_requested": 812000,
+      "visual_hypothesis_observed": false,
+      "original_text_paragraph_time_ms": null,
+      "spoken_source_alignment_verified": false
+    },
+    {
+      "window_label": "hidden-safe-final-reveal",
+      "picture_time_ms_requested": 1280000,
+      "visual_hypothesis_observed": false,
+      "original_text_paragraph_time_ms": null,
+      "spoken_source_alignment_verified": false
+    }
+  ],
+  "speaker_and_actor_identity_from_photographs_claimed": false,
+  "original_dialogue_words_edited": false,
+  "source_untimed_captions_given_timecodes": false,
+  "original_synchronized_audio_listened": false,
+  "continuous_whole_episode_video_reviewed": false,
+  "full_episode_editor_ready": false,
+  "independently_av_certified": false
+}
