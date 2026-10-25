@@ -48,6 +48,23 @@ def manifest(sha="a" * 64, duration=6000):
 
 
 class ManifestTests(unittest.TestCase):
+    def test_action_compact_profile_is_explicit_sha_pinned_and_never_default(self):
+        from run_headless_video_description import PROMPT, PROMPTS
+        src = normalize(manifest())
+        default = benchmark(src, "plan", max_new_tokens=256)
+        focused = benchmark(src, "plan", max_new_tokens=256, prompt_profile="action_compact")
+        self.assertEqual(PROMPTS["standard"], PROMPT)
+        self.assertEqual(default["prompt_profile"], "standard")
+        self.assertEqual(focused["prompt_profile"], "action_compact")
+        self.assertNotEqual(default["prompt_sha256"], focused["prompt_sha256"])
+        self.assertEqual(focused["prompt_sha256"], hashlib.sha256(PROMPTS["action_compact"].encode()).hexdigest())
+        self.assertIn("INITIATES", PROMPTS["action_compact"])
+        self.assertIn("RECEIVES", PROMPTS["action_compact"])
+        self.assertIn("exactly", PROMPTS["action_compact"])
+        self.assertNotIn("Night Court", PROMPTS["action_compact"])
+        with self.assertRaisesRegex(ValueError, "Unknown model prompt profile"):
+            benchmark(src, "plan", prompt_profile="unbounded-arbitrary-prompt")
+
     def test_generation_budget_and_load_metrics_remain_bounded(self):
         p = normalize(manifest())
         result = benchmark(p, "plan", max_new_tokens=64)
@@ -219,6 +236,23 @@ class SyntheticRealDecodeTests(unittest.TestCase):
         self.assertFalse(result["windows"][0]["independently_accepted"])
         self.assertNotIn(str(self.media), json.dumps(result))
         self.assertLess(result["wall_seconds"], 45)
+
+    def test_same_source_fake_video_model_can_compare_fixed_prompt_profiles(self):
+        sha = sha_file(self.media)
+        src = normalize(manifest(sha))
+        standard = benchmark(src, "qwen3vl", media=self.media,
+                             revision="a"*40, model=FakeModel(), fps=2,
+                             prompt_profile="standard")
+        compact = benchmark(src, "qwen3vl", media=self.media,
+                            revision="a"*40, model=FakeModel(), fps=2,
+                            prompt_profile="action_compact")
+        self.assertEqual(standard["verified_source_sha256"], compact["verified_source_sha256"])
+        self.assertEqual([w["start_ms"] for w in standard["windows"]],
+                         [w["start_ms"] for w in compact["windows"]])
+        self.assertNotEqual(standard["prompt_sha256"], compact["prompt_sha256"])
+        self.assertEqual([w["status"] for w in compact["windows"]],
+                         ["machine_proposed", "machine_proposed"])
+        self.assertTrue(all(w["independently_accepted"] is False for w in compact["windows"]))
 
     def test_wrong_original_sha_fails_closed_before_model(self):
         fake = FakeModel()
