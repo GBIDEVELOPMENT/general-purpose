@@ -134,7 +134,7 @@ class ReviewPacketTests(unittest.TestCase):
         m["windows"][0]["model_response_excerpt"] = "An unfinished speculative action"
         audit, windows = prepare(m, digest(m))
         packet = render_packet(m, windows, audit)
-        self.assertIn("non_json_model_output", packet)
+        self.assertIn(r"non\_json\_model\_output", packet)
         self.assertIn("Model output token limit: 256", packet)
         self.assertIn("do not assume token truncation", packet)
         self.assertEqual({d["verdict"] for d in audit["decisions"]}, {"deferred"})
