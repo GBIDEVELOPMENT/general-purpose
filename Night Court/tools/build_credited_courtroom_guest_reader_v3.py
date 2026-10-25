@@ -62,7 +62,7 @@ def build(root=ROOT):
         updated[by_ref[ref]]["audio_speaker_identity_verified"]=False
         edits.append({"source_ref":ref,"proposed_character":character,
             "original_source_reading_dialogue_sha256":old["source_text_sha256"],
-            "status":"UNVERIFIED_EDI​​TORIAL_HYPOTHESIS".replace("\u200b","")})
+            "status":"UNVERIFIED_EDITORIAL_HYPOTHESIS"})
     actual=[i for i,(a,b) in enumerate(zip(script.splitlines(),lines)) if a!=b]
     expected={index[by_ref[p["source_ref"]]]["reading_line"]+3 for p in witness["proposals"]}
     if len(actual)!=COUNT or set(actual)!=expected:
