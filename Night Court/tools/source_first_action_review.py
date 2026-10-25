@@ -105,8 +105,10 @@ def summarize(report, model_sha, review, review_sha):
     if pts and not video:
         raise ValueError("Cannot verify native source PTS without video review")
     rows=review.get("actions")
-    if not isinstance(rows,list) or not 1 <= len(rows) <= LIMIT_ACTIONS:
+    if not isinstance(rows,list) or len(rows) > LIMIT_ACTIONS:
         raise ValueError("Invalid number of action records")
+    if len(rows) == 0 and not complete:
+        raise ValueError("Empty action list requires source-review completion")
     ids=set()
     counts={status:0 for status in STATES}
     for entry in rows:
