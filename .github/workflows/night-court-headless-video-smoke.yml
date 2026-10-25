@@ -41,18 +41,18 @@ jobs:
           python3 'Night Court/tools/test_score_video_description_quality.py' -v
           python3 'Night Court/tools/test_compare_visual_review_yield.py' -v
 
-  actual-smolvlm2-cpu-opt-in:
+  actual-qwen3vl2b-256-token-cpu-opt-in:
     # Heavy job requires an explicit, owner-created PR title. No secrets.
     if: >-
       github.event_name == 'pull_request' &&
       github.event.pull_request.head.repo.full_name == github.repository &&
       github.event.pull_request.user.login == 'gamesbyian' &&
-      contains(github.event.pull_request.title, '[nc-model-cpu-smoke]')
+      contains(github.event.pull_request.title, '[nc-qwen-256-smoke]')
     runs-on: ubuntu-latest
     timeout-minutes: 18
     env:
       HF_HUB_DISABLE_TELEMETRY: '1'
-      HF_HOME: /tmp/night-court-smolvlm2-synthetic-only
+      HF_HOME: /tmp/night-court-qwen3vl2b-synthetic-only
       TOKENIZERS_PARALLELISM: 'false'
       OMP_NUM_THREADS: '2'
       MKL_NUM_THREADS: '2'
@@ -74,7 +74,7 @@ jobs:
             'torch==2.7.1' 'torchvision==0.22.1' --index-url https://download.pytorch.org/whl/cpu
           timeout 180 /tmp/nc-vision-cpu/bin/pip install --disable-pip-version-check -q \
             'transformers==4.57.1' 'accelerate>=1.0,<2' 'decord==0.6.0' 'pillow>=10,<13' 'num2words==0.5.14' 'av==15.0.0'
-          /tmp/nc-vision-cpu/bin/python -c 'import torchvision; from transformers import AutoProcessor, AutoModelForImageTextToText; from transformers.models.smolvlm.processing_smolvlm import SmolVLMProcessor; import num2words, av; print("SmolVLM2 real video processor imports:", torchvision.__version__, av.__version__)'
+          /tmp/nc-vision-cpu/bin/python -c 'import torchvision; from transformers import AutoProcessor, Qwen3VLForConditionalGeneration; import num2words, av; print("Qwen3VL real video processor imports:", torchvision.__version__, av.__version__)'
       - name: Verify and generate a transient synthetic-only film and manifest
         shell: bash
         run: |
@@ -102,15 +102,15 @@ jobs:
           set -euo pipefail
           MODEL_SHA=$(/tmp/nc-vision-cpu/bin/python - <<'PY'
           from huggingface_hub import model_info
-          print(model_info('HuggingFaceTB/SmolVLM2-500M-Video-Instruct').sha)
+          print(model_info('Qwen/Qwen3-VL-2B-Instruct').sha)
           PY
           )
-          echo "Model immutable revision obtained from model registry"
+          echo "Verified public Qwen3-VL immutable model revision: $MODEL_SHA"
           timeout 720 /tmp/nc-vision-cpu/bin/python \
             'Night Court/tools/run_headless_video_description.py' \
-            --manifest /tmp/nc-synthetic-manifest.json --backend smolvlm2 \
+            --manifest /tmp/nc-synthetic-manifest.json --backend qwen3vl \
             --media /tmp/nc-synthetic.mp4 --model-revision "$MODEL_SHA" \
-            --fps 1 --width 256 --max-new-tokens 64 \
+            --fps 1 --width 256 --max-new-tokens 256 \
             --device cpu --confirm-owner-media \
             --output /tmp/nc-synthetic-model-evidence.json
           /tmp/nc-vision-cpu/bin/python - <<'PY'
@@ -131,10 +131,13 @@ jobs:
             'total':x['wall_seconds'],
             'structured_output':w['status']=='machine_proposed'
           },sort_keys=True))
+          print('SYNTHETIC_MODEL_RESPONSE_PREVIEW', repr(
+            (w.get('model_response_excerpt') or
+             json.dumps(w.get('model_hypothesis') or {},ensure_ascii=False))[:650]))
           PY
       - name: Destroy temporary model cache and synthetic video
         if: always()
         shell: bash
         run: |
-          rm -rf /tmp/nc-vision-cpu /tmp/night-court-smolvlm2-synthetic-only
+          rm -rf /tmp/nc-vision-cpu /tmp/night-court-qwen3vl2b-synthetic-only
           rm -f /tmp/nc-synthetic.mp4 /tmp/nc-synthetic-manifest.json /tmp/nc-synthetic-model-evidence.json
