@@ -21,6 +21,7 @@ PASSES={
      (812,20,"restaurant-two-impostors-entry"),
      (1280,20,"hidden-safe-final-reveal")]
 }
+PREVIOUS={episode:list(baseline.SOURCES[episode][1]) for episode in PASSES}
 MAX_WINDOWS=3
 MAX_TOTAL_SOURCE_SECONDS_PER_EPISODE=60
 
@@ -29,14 +30,15 @@ def configure(episode):
         raise ValueError("Only original two source-SHA-verified pilots")
     original_sha=baseline.SOURCES[episode][0]
     new=PASSES[episode]
-    prior=baseline.SOURCES[episode][1]
+    prior=PREVIOUS[episode]
     if len(new)!=MAX_WINDOWS or sum(n for _,n,_ in new)>MAX_TOTAL_SOURCE_SECONDS_PER_EPISODE:
         raise ValueError("Review coverage would exceed bounded source action budget")
     spans=[]
     labels=set()
+    limit=1320 if episode=='S09E19' else 1448
     for start,duration,label in new:
         if (type(start) is not int or type(duration) is not int
-            or duration!=20 or start<0 or start+duration>1320 if episode=="S09E19" else False):
+            or duration!=20 or start<0 or start+duration>limit):
             raise ValueError("Invalid source window")
         if label in labels or not label or any(not (start+duration<=a or start>=a+b) for a,b,_ in spans+prior):
             raise ValueError("Duplicate/overlapping old and new source action windows")
