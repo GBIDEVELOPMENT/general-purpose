@@ -1,0 +1,101 @@
+{
+  "schema": "night-court-s09-original-dialogue-split-and-reunion-v13/1",
+  "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "working_source_reader_prior": "v12",
+  "prior_named_original_source_units": 610,
+  "prior_unknown_original_source_units": 141,
+  "original_s09_untimed_source_modified": false,
+  "original_speaker_turns_independently_soundtrack_verified": false,
+  "roles_original_actor_voice_verified": false,
+  "proposals": [
+    {
+      "previous_source_reading_refs": [
+        "C126.1",
+        "C127.1"
+      ],
+      "split_source_ref": "C127.1",
+      "split_before": "Well, thanks, Harriet.",
+      "split_role_groups": [
+        {
+          "provisional_role": "HARRIET",
+          "source_parts": [
+            [
+              "C126.1",
+              "whole"
+            ],
+            [
+              "C127.1",
+              0
+            ]
+          ]
+        },
+        {
+          "provisional_role": "MAC ROBINSON",
+          "source_parts": [
+            [
+              "C127.1",
+              1
+            ]
+          ]
+        }
+      ],
+      "reason": "C126's Harriet endorsement continues into the very first word of C127, followed by Mac explicitly thanking Harriet and explaining the power of advertising. Exact source turn boundary is a dialog-context candidate pending actor/audio review."
+    },
+    {
+      "previous_source_reading_refs": [
+        "C146.1"
+      ],
+      "split_source_ref": "C146.1",
+      "split_before": "Yeah, thanks, Dan.",
+      "split_role_groups": [
+        {
+          "provisional_role": "DAN FIELDING",
+          "source_parts": [
+            [
+              "C146.1",
+              0
+            ]
+          ]
+        },
+        {
+          "provisional_role": "HARRY STONE",
+          "source_parts": [
+            [
+              "C146.1",
+              1
+            ]
+          ]
+        }
+      ],
+      "reason": "Dan instructs Harry to follow him so he can pull Harry's loose tooth; the immediate voice replies thanking Dan. Two different named addressees in one source paragraph imply a P0 split, subject to original cast voice review."
+    },
+    {
+      "previous_source_reading_refs": [
+        "C284.1"
+      ],
+      "split_source_ref": "C284.1",
+      "split_before": "Out of here.",
+      "split_role_groups": [
+        {
+          "provisional_role": "ALEX PATTERSON",
+          "source_parts": [
+            [
+              "C284.1",
+              0
+            ]
+          ]
+        },
+        {
+          "provisional_role": "ROZ RUSSELL",
+          "source_parts": [
+            [
+              "C284.1",
+              1
+            ]
+          ]
+        }
+      ],
+      "reason": "Alex has just introduced himself from Fresno; he asks the other person her name and Roz abruptly answers by leaving. Both parts are source-exact candidate turns, never independently confirmed from original film."
+    }
+  ]
+}
