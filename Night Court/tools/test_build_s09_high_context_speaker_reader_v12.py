@@ -86,7 +86,7 @@ class SourceS09ContextualNamesTests(unittest.TestCase):
             verify_ledger(bad)
         bad=copy.deepcopy(evidence)
         bad["candidates"][1]["original_source_part_refs"]=["C091.1"]
-        with self.assertRaisesRegex(ValueError,"Duplicate original caption"):
+        with self.assertRaisesRegex(ValueError,"Single-cue source speaker record ID differs"):
             verify_ledger(bad)
         bad=copy.deepcopy(evidence)
         bad["candidates"][0]["proposed_role"]=" "
