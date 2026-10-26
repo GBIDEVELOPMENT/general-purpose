@@ -5,6 +5,8 @@ on:
     paths:
       - 'Night Court/tools/compare_s09_original_speaker_embeddings.py'
       - 'Night Court/tools/test_compare_s09_original_speaker_embeddings.py'
+      - 'Night Court/tools/apply_source_role_amendments.py'
+      - 'Night Court/research/source-role-amendments-v1.json'
       - '.github/workflows/night-court-s09-original-speaker-matching.yml'
       - 'Night Court/tools/plan_next_speaker_review_v9.py'
       - 'Night Court/tools/test_plan_next_speaker_review_v9.py'
@@ -160,12 +162,44 @@ jobs:
           assert triage['last_episode_original_untimed_candidate_count']==15
           print('All 132 current UNKNOWN source units now queued with original audio locators, 16 P0 intra-cue review questions and disputed C129 still UNKNOWN')
           PY
+      - name: Compare newest original S09 soundtrack role-bank coverage before expensive acoustic model work
+        env:
+          AUDIO: ${{ runner.temp }}/s09-source-numeric/night-court-s09-original-audio-paragraph-locators.json
+          ROLE_ROOT: ${{ runner.temp }}/s09-source-role-patches
+          REPORT: ${{ runner.temp }}/s09-current-source-voice-plan.json
+        run: |
+          python 'Night Court/tools/compare_s09_original_speaker_embeddings.py' \
+            --source-alignment "$AUDIO" \
+            --speaker-patch-root "$ROLE_ROOT" \
+            --output "$REPORT" --plan-only
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=json.loads(Path(os.environ["REPORT"]).read_text("utf-8"))
+          assert p["original_source_paragraphs_total"]==347
+          assert p["original_audio_paragraphs_with_candidate_windows"]==231
+          assert p["voice_reference_source"]=="latest_619_named_source_role_patches_original_untimed"
+          assert p["original_paragraphs_remain_untimed"] is True
+          assert p["original_speech_identity_human_verified"] is False
+          assert len(p["candidate_reference_role_counts"])>=3
+          assert all(len(x)>=4 for x in p["reference_audio_windows"].values())
+          assert p["potentially_multivoice_or_weak_alignment_rejected_count"]>0
+          assert all(x["original_source_paragraph"] not in
+                     {34,102,121,127,146,188,189,190,191,206,209,211,220,225,240,271,277,284,290,291}
+                     for xs in p["reference_audio_windows"].values() for x in xs)
+          print("Latest source-numeric S09 candidate voice-bank roles:",
+                p["candidate_reference_role_counts"],
+                "unidentified original paragraph audio windows:",
+                len(p["previously_unidentified_audio_windows"]),
+                "actor identification independently accepted: 0")
+          PY
       - name: Erase private source/role-derived text and numeric audio leads
         if: always()
         run: |
           rm -rf '${{ runner.temp }}/s09-v6' '${{ runner.temp }}/s09-v7' '${{ runner.temp }}/s09-v8' '${{ runner.temp }}/s09-source-numeric'
           rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-v12' '${{ runner.temp }}/s09-v13' '${{ runner.temp }}/s09-source-role-patches' '${{ runner.temp }}/s09-next-132-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
           rm -f '${{ runner.temp }}/s09-source-v8-reference-sensitivity-'*.json
+          rm -f '${{ runner.temp }}/s09-current-source-voice-plan.json'
 
   notify-trusted-original-s09-speaker-run:
     if: >-
@@ -222,7 +256,7 @@ jobs:
           run-id: 40253914693
           github-token: ${{ github.token }}
           path: ${{ runner.temp }}/night-court-s09-numeric-audio-locators
-      - name: Rebuild source-checked v8 current 587-role speaker bank from original captions
+      - name: Rebuild current source-SHA-checked 619-name cast candidate bank from original captions
         run: |
           python 'Night Court/tools/build_external_speaker_reader_v6.py' \
             --output '${{ runner.temp }}/night-court-s09-v6'
@@ -232,11 +266,29 @@ jobs:
           python 'Night Court/tools/build_original_audio_speaker_reader_v8.py' \
             --v7 '${{ runner.temp }}/night-court-s09-v7' \
             --output '${{ runner.temp }}/night-court-s09-v8'
-      - name: Reconcile original S09 231-source audio paragraphs against current 587-role speaker bank
+          python 'Night Court/tools/build_s09_source_acoustic_speaker_reader_v9.py' \
+            --current-v8 '${{ runner.temp }}/night-court-s09-v8' \
+            --output '${{ runner.temp }}/night-court-s09-v9'
+          python 'Night Court/tools/build_s09_source_turns_v10.py' \
+            --v9 '${{ runner.temp }}/night-court-s09-v9' \
+            --output '${{ runner.temp }}/night-court-s09-v10'
+          python 'Night Court/tools/build_s09_mixed_voice_turns_v11.py' \
+            --v10 '${{ runner.temp }}/night-court-s09-v10' \
+            --output '${{ runner.temp }}/night-court-s09-v11'
+          python 'Night Court/tools/build_s09_high_context_speaker_reader_v12.py' \
+            --v11 '${{ runner.temp }}/night-court-s09-v11' \
+            --output '${{ runner.temp }}/night-court-s09-v12'
+          python 'Night Court/tools/build_s09_explicit_handoff_turns_v13.py' \
+            --v12 '${{ runner.temp }}/night-court-s09-v12' \
+            --output '${{ runner.temp }}/night-court-s09-v13'
+          python 'Night Court/tools/apply_source_role_amendments.py' \
+            --v13 '${{ runner.temp }}/night-court-s09-v13' \
+            --output '${{ runner.temp }}/night-court-s09-source-role-patches'
+      - name: Reconcile original S09 231-source audio paragraphs against current 619-name source bank
         run: |
           python 'Night Court/tools/compare_s09_original_speaker_embeddings.py' \
             --source-alignment '${{ runner.temp }}/night-court-s09-numeric-audio-locators/night-court-s09-original-audio-paragraph-locators.json' \
-            --v8-source-roles '${{ runner.temp }}/night-court-s09-v8' \
+            --speaker-patch-root '${{ runner.temp }}/night-court-s09-source-role-patches' \
             --minimum-coverage 0.72 \
             --plan-only --output '${{ runner.temp }}/night-court-s09-speaker-reference-plan.json'
           python - <<'PY'
@@ -247,14 +299,14 @@ jobs:
           assert p['original_audio_paragraphs_with_candidate_windows']==231
           assert p['original_paragraphs_remain_untimed'] is True
           assert p['original_speech_identity_human_verified'] is False
-          assert p['voice_reference_source']=='latest_587_named_v8_provisional_originals'
+          assert p['voice_reference_source']=='latest_619_named_source_role_patches_original_untimed'
           assert p['minimum_source_lexical_coverage_for_voice_reference']==0.72
           assert p['candidate_reference_role_counts']=={
-              'CHRISTINE SULLIVAN':10,'DAN FIELDING':5,'MAC ROBINSON':4,'ROZ RUSSELL':7
+              'CHRISTINE SULLIVAN':12,'DAN FIELDING':5,'MAC ROBINSON':4,'ROZ RUSSELL':7
           }
-          assert len(p['previously_unidentified_audio_windows'])==28
-          print('26 original S09 candidate voice reference windows across four source-checked proposed characters;'
-                ' 28 previously unidentified audio candidates, no AV identity accepted')
+          assert len(p['previously_unidentified_audio_windows'])==18
+          print('28 original S09 candidate voice reference windows across four source-checked proposed characters;'
+                ' 18 previously unidentified audio candidates, no AV identity accepted')
           PY
       - name: Install pinned CPU-only local speaker identification runtime
         run: |
@@ -277,7 +329,7 @@ jobs:
           timeout 900 /tmp/night-court-original-s09-voice/bin/python -u \
             'Night Court/tools/compare_s09_original_speaker_embeddings.py' \
             --source-alignment '${{ runner.temp }}/night-court-s09-numeric-audio-locators/night-court-s09-original-audio-paragraph-locators.json' \
-            --v8-source-roles '${{ runner.temp }}/night-court-s09-v8' \
+            --speaker-patch-root '${{ runner.temp }}/night-court-s09-source-role-patches' \
             --minimum-coverage 0.72 \
             --ftp --output '${{ runner.temp }}/night-court-s09-original-speaker-numeric-proposals.json'
       - name: Retain only source-linked numeric comparison and unverified character hypotheses
@@ -293,7 +345,7 @@ jobs:
         run: |
           rm -rf /tmp/night-court-original-s09-voice
           rm -rf '${{ runner.temp }}/night-court-s09-numeric-audio-locators'
-          rm -rf '${{ runner.temp }}/night-court-s09-v6' '${{ runner.temp }}/night-court-s09-v7' '${{ runner.temp }}/night-court-s09-v8'
+          rm -rf '${{ runner.temp }}/night-court-s09-v6' '${{ runner.temp }}/night-court-s09-v7' '${{ runner.temp }}/night-court-s09-v8' '${{ runner.temp }}/night-court-s09-v9' '${{ runner.temp }}/night-court-s09-v10' '${{ runner.temp }}/night-court-s09-v11' '${{ runner.temp }}/night-court-s09-v12' '${{ runner.temp }}/night-court-s09-v13' '${{ runner.temp }}/night-court-s09-source-role-patches'
           rm -f '${{ runner.temp }}/night-court-s09-speaker-reference-plan.json'
           rm -f '${{ runner.temp }}/night-court-s09-original-speaker-numeric-proposals.json'
 
