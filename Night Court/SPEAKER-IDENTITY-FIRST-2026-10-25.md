@@ -270,3 +270,21 @@ Use the updated `tools/plan_next_speaker_review_v9.py` program with `--speaker-v
 The P0 original-source possible internal-voice-switch review list now includes **16 source-exact candidates**: the original 12 and S09 C188, C189, C190, C191. These four contiguous S09 paragraphs have a dense unpunctuated exchange about Roz meeting her correspondent, containing multiple apparent comments/questions/replies in individual source cues. The new source-word split hints are reversible and exact; **none is approved as a true original-audio turn boundary and none is automatically attributed to Roz/Christine/Harry**. These cues remain expressly ineligible as naive single-voice acoustic reference samples. S09 C189/C190 can cross both caption and speaker boundaries; word-continuation logic alone is not speaker evidence.
 
 Lightweight, no-secret real-source CI reconstructs the frozen v6→v10 private corpus, obtains the original earlier S09 numerical audio-locator artifact, proves 591/160 source-unit accounting and all 16 candidate P0 review positions, and checks that the disputed out-of-reference-bank C129 speaker remains UNKNOWN. This is the next stable entrypoint for first-priority source-audio review rather than expensive unspecific multimodal descriptions.
+
+## Provisional rapid Roz/Christine dialogue reconstruction: v11 source spans
+
+An additional high-value P0 source-text anomaly is the five-paragraph S09 C188–C192 exchange: the original held transcript lacks punctuation and places multiple apparent responses in the same paragraph. A scene-context *working hypothesis* separates these five frozen original S09 paragraphs into **six mixed/continuing speaker turns**, using **exact source Unicode character offsets**, source SHA-256 and reversible multi-paragraph grouping. The scene characters are proposed as Roz Russell and Christine Sullivan from text and surrounding scene context, **not independently recognized from the original soundtrack**.
+
+The new `tools/build_s09_mixed_voice_turns_v11.py` requires the validated current v10 exact-source reader, checks original cue role and untimed status, partitions each of C188–C192 without omitting **even whitespace**, rejects repeated or out-of-order spans, and preserves all non-target reading records unchanged. The four previously wholly UNKNOWN source paragraphs C188, C189, C191 and C192 gain **provisional contextual roles**, while C190 is correctly recognized as a mixed-character cue rather than the earlier erroneous whole-cue Christine label. Original C190's roles are now two characters, not one. The five old reader blocks become six new provisional blocks: **716 proposed reader speaking turns** across both pilots, **595 original cue units with provisional named speaker coverage / 156 still UNKNOWN of 751**. The held original 347 S09 source paragraphs are STILL UNTImED; original film/audio character recognition and P0 actor boundaries independently verified here remain **zero**.
+
+These six speaker-turn proposals are useful screenplay context, but some may need splitting/reassigning after actual moving-video and soundtrack inspection. No guessed roles have been promoted to certified performers. The private v11 full-script reader is selectable for all 193-episode lexical retrieval and FTS indexing with the matched v9→v10→v11 source-role evidence overlays. The exact-part-text hashes, original source cue hashes, original JSON role record hashes and no-AV-acceptance gates all run in CI. A future verified original soundtrack pass should first check C188–C192 as a contiguous human-performed exchange, rather than training a single voice on those multi-character original captions.
+
+```sh
+python 'Night Court/tools/build_s09_mixed_voice_turns_v11.py' \
+  --v10 /tmp/night-court-private-speaker-turns-v10 \
+  --output /tmp/night-court-private-speaker-turns-v11
+
+python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+  --speaker-v11-root /tmp/night-court-private-speaker-turns-v11 \
+  --output /tmp/night-court-private-fan-speaker-v11
+```
