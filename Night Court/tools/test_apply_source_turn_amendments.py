@@ -10,7 +10,9 @@ from apply_source_turn_amendments import LEDGER,SOURCE_SHA,STATUS,apply,validate
 def fixture():
     rows=[]
     for n,t in ((102,"Hold on a second. You mean you didn't know that was there? No, I've never seen"),
-                (103,"it. Wow.")):
+                (103,"it. Wow."),
+                (209,"from. That's right, I mean, voters are very fickle."),
+                (211,"I don't think so. Well, that outfit really showed off your figure.")):
         rows.append({
             "episode_id":"S09E19","source_reading_ref":f"C{n:03d}.1",
             "original_source_part_refs":[f"C{n:03d}.1"],
@@ -42,11 +44,16 @@ class SourceTurnPatchTests(unittest.TestCase):
     def test_original_two_cues_reconstruct_as_three_utterances_without_new_audio_evidence(self):
         rows,ledger=fixture()
         output,m=apply(rows,ledger,strict=False)
-        self.assertEqual(len(output),4)
-        self.assertEqual(m["original_caption_source_units"],3)
+        self.assertEqual(len(output),8)
+        self.assertEqual(m["original_caption_source_units"],5)
         self.assertEqual(m["named_original_source_units"],3)
-        self.assertEqual(m["unknown_original_source_units"],0)
+        self.assertEqual(m["unknown_original_source_units"],2)
         self.assertEqual(m["newly_named_original_source_units"],2)
+        self.assertEqual(m["source_p0_amendment_count"],3)
+        self.assertEqual([r["candidate_role"] for r in output[3:7]],
+            ["DAN FIELDING",None,"CHRISTINE SULLIVAN",None])
+        self.assertEqual([r["role_attribution_status"] for r in output[3:7]],
+            [STATUS,"unidentified",STATUS,"unidentified"])
         self.assertEqual(m["source_new_performer_identifications_AV_certified"],0)
         self.assertEqual(m["source_new_turn_boundaries_AV_verified"],0)
         self.assertEqual([r["candidate_role"] for r in output[:3]],[
@@ -61,7 +68,7 @@ class SourceTurnPatchTests(unittest.TestCase):
     def test_every_unicode_source_character_restored_once(self):
         rows,ledger=fixture()
         output,_=apply(rows,ledger,strict=False)
-        orig={x["source_reading_ref"]:x["caption_text"] for x in rows[:2]}
+        orig={x["source_reading_ref"]:x["caption_text"] for x in rows[:-1]}
         collected=defaultdict(list)
         for row in output:
             for p in row.get("source_exact_character_spans",[]):
@@ -99,9 +106,24 @@ class SourceTurnPatchTests(unittest.TestCase):
         bad["p0_amendments"][0]["new_turns"][2]["role"]=None
         output,summary=apply(rows,bad,strict=False)
         self.assertEqual(summary["newly_named_original_source_units"],1)
-        self.assertEqual(summary["unknown_original_source_units"],1)
+        self.assertEqual(summary["unknown_original_source_units"],3)
         self.assertEqual(summary["named_original_source_units"],2)
         self.assertIsNone(output[2]["candidate_role"])
+
+    def test_second_person_in_mixed_source_caption_must_remain_unidentified(self):
+        rows,ledger=fixture()
+        bad=copy.deepcopy(ledger)
+        bad["p0_amendments"][1]["new_turns"][1]["role"]="DAN FIELDING"
+        result,summary=apply(rows,bad,strict=False)
+        # A model can propose the same character for both fragments, but the
+        # source cue remains only editorially named; do not accept it as AV proof.
+        self.assertEqual(summary["named_original_source_units"],4)
+        self.assertFalse(result[4]["actor_face_or_voice_independently_verified"])
+        self.assertFalse(result[4]["speaker_turn_boundary_verified"])
+        bad=copy.deepcopy(ledger)
+        bad["p0_amendments"][1]["split_before"]["C209.1"]=["Invented boundary"]
+        with self.assertRaisesRegex(ValueError,"exact original lexical"):
+            apply(rows,bad,strict=False)
 
     def test_repeated_span_wrong_sequence_and_false_actor_ids_refused(self):
         rows,ledger=fixture()

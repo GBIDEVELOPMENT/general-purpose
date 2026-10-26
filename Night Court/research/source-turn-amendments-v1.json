@@ -64,6 +64,78 @@
       ],
       "reason": "Dan's question about whether Harry knew the wall safe was behind the book is followed by Harry's explicit first-person denial across the C102/C103 boundary and Dan's surprised reaction. Exact source boundaries are lexically anchored but source performer audio identities remain unverified.",
       "original_video_audio_confirmed": false
+    },
+    {
+      "id": "S09E19-C209-DAN-UNKNOWN-COMMENT",
+      "source_refs": [
+        "C209.1"
+      ],
+      "prior_roles": [
+        null
+      ],
+      "split_before": {
+        "C209.1": [
+          "That's right"
+        ]
+      },
+      "new_turns": [
+        {
+          "role": "DAN FIELDING",
+          "source_fragments": [
+            [
+              "C209.1",
+              0
+            ]
+          ]
+        },
+        {
+          "role": null,
+          "source_fragments": [
+            [
+              "C209.1",
+              1
+            ]
+          ]
+        }
+      ],
+      "reason": "The source line begins with the single trailing word of Dan Fielding's immediately preceding C207-C208 statement about attention from a gender; the next speaker agrees that voters are fickle. The agreeing voice remains UNKNOWN pending original source audio/film inspection, rather than copying Dan's role across the turn boundary.",
+      "original_video_audio_confirmed": false
+    },
+    {
+      "id": "S09E19-C211-CHRISTINE-UNKNOWN-COMMENT",
+      "source_refs": [
+        "C211.1"
+      ],
+      "prior_roles": [
+        null
+      ],
+      "split_before": {
+        "C211.1": [
+          "Well, that outfit"
+        ]
+      },
+      "new_turns": [
+        {
+          "role": "CHRISTINE SULLIVAN",
+          "source_fragments": [
+            [
+              "C211.1",
+              0
+            ]
+          ]
+        },
+        {
+          "role": null,
+          "source_fragments": [
+            [
+              "C211.1",
+              1
+            ]
+          ]
+        }
+      ],
+      "reason": "Dan speculates that an Amish girls' group is jealous of Christine; the first reply says she does not think so, followed by a different speaker observing how her outfit showed off her figure. The second voice is intentionally left UNKNOWN until actual original performance review.",
+      "original_video_audio_confirmed": false
     }
   ]
 }

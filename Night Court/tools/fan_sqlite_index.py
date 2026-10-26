@@ -273,7 +273,7 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
         if expected not in source_docs[row["episode_id"]]:
             if (allow_original_source_turn_amendments and
                 row["episode_id"]=="S09E19" and
-                row["source_reading_ref"] in ("C102.1","C103.1")):
+                row["source_reading_ref"] in ("C102.1","C103.1","C209.1","C211.1")):
                 # Only exact source-turn patch receipts may explain this
                 # original paragraph's new internal dialogue segmentation.
                 continue
@@ -732,7 +732,7 @@ def apply_original_source_turn_amendments_to_index(source:list[dict],
     for entry in source:
         snippets[entry["episode_id"]]+=entry["retrieval_text"]
     amended=[r for r in observed if r.get("role_attribution_status")==STATUS]
-    if len(amended)!=3:
+    if len(amended)!=5:
         raise ValueError("Three source-anchored Dan/Harry/Dan turn proposals required")
     for row in amended:
         if (row["episode_id"]!="S09E19"
