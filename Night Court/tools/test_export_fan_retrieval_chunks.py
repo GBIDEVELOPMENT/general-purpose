@@ -88,6 +88,41 @@ class RetrievalExportTests(unittest.TestCase):
                 for r in (json.loads(x) for x in
                 (output / "fan-retrieval-chunks.jsonl").read_text().splitlines())))
 
+    def test_private_speaker_v6_scripts_can_replace_both_pilots_without_source_mutation(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / "Night Court"
+            fixture(root)
+            private = Path(folder) / "generated-speakers-v6"
+            proofs = {}
+            for episode in ("S01E01", "S09E19"):
+                text = (root / PILOT_SCRIPTS[episode]).read_text("utf-8")
+                text += "\nPROVISIONAL SOURCE-ATTESTED SPEAKER CORRECTION\n"
+                target = private / episode / "screenplay-external-speakers-v6.md"
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(text, "utf-8")
+                proofs[episode] = {
+                    "sha256": sha256(text.encode()),
+                    "generated_path": f"{episode}/screenplay-external-speakers-v6.md",
+                }
+            manifest = {
+                "original_source_speaking_units": 751,
+                "new_provisional_named_source_units": 490,
+                "remaining_unidentified_source_units": 261,
+                "original_audio_speaker_identities_verified_by_this_change": 0,
+                "pilot_scripts": proofs,
+            }
+            (private / "speaker-improvement-manifest.json").write_text(json.dumps(manifest), "utf-8")
+            result = export(root, Path(folder)/"retrieval", pilot_only=True, v6_root=private)
+            self.assertEqual(result["episode_count"], 2)
+            self.assertTrue(all(e["evidence_tier"] == "provisional_external_quote_speaker_reader_v6"
+                                for e in result["episodes"]))
+            self.assertTrue(all(e["script_path"].startswith("private-source-speaker-v6/")
+                                for e in result["episodes"]))
+            modified = private / "S09E19" / "screenplay-external-speakers-v6.md"
+            modified.write_text(modified.read_text("utf-8") + "tamper", "utf-8")
+            with self.assertRaisesRegex(ValueError, "SHA mismatch"):
+                export(root, Path(folder)/"retrieval", pilot_only=True, v6_root=private)
+
     def test_sha_mismatch_fails_closed(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder) / "Night Court"

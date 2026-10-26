@@ -19,6 +19,11 @@ on:
       - 'Night Court/tools/test_build_fan_answer_packet.py'
       - 'Night Court/tools/auto_align_quote_sequence.py'
       - 'Night Court/tools/test_auto_align_quote_sequence.py'
+      - 'Night Court/tools/build_external_speaker_reader_v6.py'
+      - 'Night Court/tools/test_build_external_speaker_reader_v6.py'
+      - 'Night Court/tools/triage_unknown_speakers.py'
+      - 'Night Court/tools/test_triage_unknown_speakers.py'
+      - 'Night Court/research/pilot-speaker-external-quote-improvements-v1.json'
       - 'Night Court/AUTOMATIC-QUOTE-SEQUENCE-2026-10-25.md'
       - 'Night Court/research/pilot-fan-beat-seeds-v1.json'
       - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
@@ -40,7 +45,29 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6 test_triage_unknown_speakers
+      - name: Speaker priority one - generate and check real external quote v6 pilots
+        run: |
+          python 'Night Court/tools/build_external_speaker_reader_v6.py' \
+            --output /tmp/night-court-private-speaker-v6
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path('/tmp/night-court-private-speaker-v6')
+          summary=json.loads((base/'speaker-improvement-manifest.json').read_text('utf-8'))
+          assert summary['original_source_speaking_units']==751
+          assert summary['original_provisional_named_source_units']==487
+          assert summary['original_unknown_source_units']==264
+          assert summary['new_provisional_named_source_units']==490
+          assert summary['remaining_unidentified_source_units']==261
+          assert summary['provisional_speaker_segments_from_these_cues']==4
+          assert summary['original_audio_speaker_identities_verified_by_this_change']==0
+          for ep in ('S01E01','S09E19'):
+            assert (base/ep/'screenplay-external-speakers-v6.md').is_file()
+          s09=(base/'S09E19'/'screenplay-external-speakers-v6.md').read_text('utf-8')
+          assert 'ROZ RUSSELL · P0 SOURCE-CONTINUATION PROPOSAL; AUDIO UNVERIFIED\nme.\n\nCHRISTINE SULLIVAN' in s09
+          print('Original-source-anchored S01/S09 speaker v6: 3 new named original units and one restored two-voice split; no media logged')
+          PY
       - name: Both pilot working scripts
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -54,6 +81,43 @@ jobs:
           assert {r['episode_id'] for r in m['episodes']}=={'S01E01','S09E19'}
           assert all(r['evidence_tier']=='provisional_filmed_staging_working_script' for r in m['episodes'])
           print('Pilot source-SHA-checked retrieval export passed; no dialogue printed')
+          PY
+      - name: Speaker-first source-grounded queue for the remaining unknowns
+        run: |
+          python 'Night Court/tools/triage_unknown_speakers.py' \
+            --speaker-v6-root /tmp/night-court-private-speaker-v6 \
+            --output /tmp/night-court-private-speaker-review
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('/tmp/night-court-private-speaker-review/speaker-identity-first-review-summary.json').read_text('utf-8'))
+          assert m['source_units_unidentified']==261
+          assert m['source_units_unidentified_by_episode']=={'S01E01':97,'S09E19':164}
+          assert m['suspected_existing_wrong_labels']==1
+          assert m['automatically_accepted_new_names']==0
+          assert m['independently_audio_confirmed_by_triage']==0
+          print('All 261 unassigned original pilot source units queued for prioritized P0/P1 review; no source dialogue uploaded')
+          PY
+      - name: Speaker-first revised pilot script retrieval with real immutable source text
+        run: |
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --speaker-v6-root /tmp/night-court-private-speaker-v6 \
+            --output /tmp/night-court-private-fan-speaker-v6
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out=Path('/tmp/night-court-private-fan-speaker-v6')
+          m=json.loads((out/'fan-retrieval-manifest.json').read_text('utf-8'))
+          assert m['episode_count']==193
+          assert sum(x['evidence_tier']=='provisional_external_quote_speaker_reader_v6' for x in m['episodes'])==2
+          assert sum(x['evidence_tier']=='source_only_dialogue_scaffold' for x in m['episodes'])==191
+          rows=[json.loads(x) for x in (out/'fan-retrieval-chunks.jsonl').read_text('utf-8').splitlines()]
+          s01=''.join(x['retrieval_text'] for x in rows if x['episode_id']=='S01E01')
+          s09=''.join(x['retrieval_text'] for x in rows if x['episode_id']=='S09E19')
+          assert 'DAN FIELDING · EXTERNALLY QUOTE-ATTRIBUTED; AUDIO UNVERIFIED' in s01
+          assert 'CHRISTINE SULLIVAN · EXTERNALLY QUOTE-ATTRIBUTED; AUDIO UNVERIFIED' in s09
+          assert 'ROZ RUSSELL · P0 SOURCE-CONTINUATION PROPOSAL; AUDIO UNVERIFIED' in s09
+          print('Newly proposed speaker names flow through all-episode retrieval; zero original dialogue printed')
           PY
       - name: All 193 source witnesses with pilot v5 substitutions
         run: |
@@ -150,9 +214,10 @@ jobs:
       - name: Build and query one private SQLite index for every evidence type
         run: |
           python 'Night Court/tools/fan_sqlite_index.py' build \
-            --corpus /tmp/night-court-private-fan-all/fan-retrieval-chunks.jsonl \
+            --corpus /tmp/night-court-private-fan-speaker-v6/fan-retrieval-chunks.jsonl \
             --cards /tmp/night-court-private-fan-beats/pilot-fan-beat-cards.jsonl \
             --roles /tmp/night-court-private-character-evidence/pilot-character-reading-blocks.jsonl \
+            --speaker-overrides /tmp/night-court-private-speaker-v6/speaker-improvement-overrides.jsonl \
             --database /tmp/night-court-all-private-fan.sqlite
           python 'Night Court/tools/fan_sqlite_index.py' query \
             --database /tmp/night-court-all-private-fan.sqlite \
@@ -167,8 +232,10 @@ jobs:
           from pathlib import Path
           db=sqlite3.connect('/tmp/night-court-all-private-fan.sqlite')
           assert db.execute("SELECT COUNT(DISTINCT episode_id) FROM documents WHERE kind='script_witness'").fetchone()[0]==193
-          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue'").fetchone()[0]==715
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue'").fetchone()[0]==716
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='editorial_comedy_and_story'").fetchone()[0]==21
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='DAN FIELDING' AND evidence_state='external_or_context_editorial_proposal'").fetchone()[0]>=1
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='CHRISTINE SULLIVAN' AND evidence_state='external_or_context_editorial_proposal'").fetchone()[0]>=2
           for episode,path in [
             ('S01E01','/tmp/night-court-private-fts-coin.json'),
             ('S09E19','/tmp/night-court-private-fts-roz.json')
