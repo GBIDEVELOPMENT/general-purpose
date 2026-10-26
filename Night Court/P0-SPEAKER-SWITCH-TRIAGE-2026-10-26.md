@@ -24,3 +24,9 @@ There are **six still-unsegmented candidates** from the original sixteen, subjec
 ## Acceptance rule
 
 For each outstanding cue: check source exact SHA, document the unique lexical boundary, reconstruct every original Unicode character with contiguous offsets, and assign UNKNOWN wherever character evidence is insufficient. Distinguish `source turn proposed` from `original moving-source turn independently verified`. Do not inflate named coverage for a cue with an UNKNOWN sub-turn. The next most valuable work is reviewing the six pending cases and comparing source soundtrack windows, not adding further speculative names.
+
+## Subsequent v14 source-turn amendment: five S09 cases now provisionally segmented
+
+The latest generic [source-turn amendment ledger](research/source-turn-amendments-v1.json) adds source-exact **UNKNOWN → UNKNOWN** provisional splits for S09 C121, C206, C271, C290 and C291. Both resulting character fields remain null, because the source dialogue alone does not establish the original performers. The splits retain all original Unicode source characters and untimed source cue statuses, and the source-only tests check every exact split anchor. These five cues have therefore progressed from *boundary specified* to *boundary incorporated into the private provisional reader*, **not** *AV-verified performed speaker turns*.
+
+Consequently the latest private working reader is expected to contain **726 proposed speaking-turn blocks**, while the original source-unit denominator remains 751 and speaker naming coverage remains **621 provisional / 130 UNKNOWN**. **S01 C219** is the remaining original discovery case whose split has a source-exact specification but has not yet been incorporated into the combined private reader. As before, previously proposed boundaries also need actual audiovisual verification.
