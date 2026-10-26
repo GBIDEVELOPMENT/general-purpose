@@ -14,7 +14,7 @@ from render_current_pilot_screenplays import SOURCE,original_reading_order,sha
 from plan_next_speaker_review_v9 import load_s09_locator,make_queue
 from apply_manual_context_pilot_review_v16 import SCHEMA as EDITORIAL_SCHEMA,counts
 
-def build(root:Path,v16:Path,locator:Path,output:Path)->dict:
+def build(root:Path,v16:Path,locator:Path|None,output:Path)->dict:
     if output.resolve().is_relative_to(root.resolve()):
         raise ValueError("Private original dialogue review cannot be committed")
     raw=(v16/"pilot-manual-context-speaker-v16.jsonl").read_bytes()
@@ -36,7 +36,7 @@ def build(root:Path,v16:Path,locator:Path,output:Path)->dict:
         ):
             raise ValueError("Held original pilot witness edition changed")
     internal=json.loads((root/"research/probable-internal-speaker-switches-v1.json").read_text("utf-8"))
-    source_audio=load_s09_locator(locator)
+    source_audio=load_s09_locator(locator) if locator is not None else {}
     review,summary=make_queue(original_reading_order(rows),source_audio,internal,
                                expected_named=651,expected_unknown=100)
     if (summary["remaining_unknown_original_source_units_by_episode"]!={"S01E01":21,"S09E19":79}
@@ -53,6 +53,7 @@ def build(root:Path,v16:Path,locator:Path,output:Path)->dict:
                    x["source_reading_ref"].endswith("SOURCE-TURN-2") for x in review)):
         raise ValueError("Unsafe or incomplete remaining 100 source unit review queue")
     summary["current_v16_source_sha256"]=sha(raw)
+    summary["s09_candidate_audio_locator_loaded"]=locator is not None
     summary["new_automatic_roles_proposed_from_editorial_review"]=0
     summary["prior_contextual_editorial_assignments_unverified"]=32
     summary["preexisting_named_role_corrections_unverified"]=2
@@ -68,7 +69,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--root",type=Path,default=ROOT)
     p.add_argument("--v16-root",type=Path,required=True)
-    p.add_argument("--s09-original-audio-locator",type=Path,required=True)
+    p.add_argument("--s09-original-audio-locator",type=Path,default=None)
     p.add_argument("--output",type=Path,required=True)
     a=p.parse_args()
     m=build(a.root,a.v16_root,a.s09_original_audio_locator,a.output)
