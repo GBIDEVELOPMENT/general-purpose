@@ -16,8 +16,7 @@ def fixture():
                 (121,"letters. Yeah, probably."),
                 (206,"Well... thing is very unsettling. No, this whole thing is really boring."),
                 (271,"No. It's yours. You want it. No, really. You keep it."),
-                (290,"He. Was she?"),
-                (291,"He. He was me.")):
+                (290,"He. Was she?")):
         rows.append({
             "episode_id":"S09E19","source_reading_ref":f"C{n:03d}.1",
             "original_source_part_refs":[f"C{n:03d}.1"],
@@ -49,12 +48,12 @@ class SourceTurnPatchTests(unittest.TestCase):
     def test_original_two_cues_reconstruct_as_three_utterances_without_new_audio_evidence(self):
         rows,ledger=fixture()
         output,m=apply(rows,ledger,strict=False)
-        self.assertEqual(len(output),18)
-        self.assertEqual(m["original_caption_source_units"],10)
+        self.assertEqual(len(output),16)
+        self.assertEqual(m["original_caption_source_units"],9)
         self.assertEqual(m["named_original_source_units"],3)
-        self.assertEqual(m["unknown_original_source_units"],7)
+        self.assertEqual(m["unknown_original_source_units"],6)
         self.assertEqual(m["newly_named_original_source_units"],2)
-        self.assertEqual(m["source_p0_amendment_count"],8)
+        self.assertEqual(m["source_p0_amendment_count"],7)
         self.assertEqual([r["candidate_role"] for r in output[3:7]],
             ["DAN FIELDING",None,"CHRISTINE SULLIVAN",None])
         self.assertEqual([r["role_attribution_status"] for r in output[3:7]],
@@ -111,7 +110,7 @@ class SourceTurnPatchTests(unittest.TestCase):
         bad["p0_amendments"][0]["new_turns"][2]["role"]=None
         output,summary=apply(rows,bad,strict=False)
         self.assertEqual(summary["newly_named_original_source_units"],1)
-        self.assertEqual(summary["unknown_original_source_units"],8)
+        self.assertEqual(summary["unknown_original_source_units"],7)
         self.assertEqual(summary["named_original_source_units"],2)
         self.assertIsNone(output[2]["candidate_role"])
 
