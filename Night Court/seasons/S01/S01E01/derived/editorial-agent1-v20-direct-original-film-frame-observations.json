@@ -1,0 +1,334 @@
+{
+  "schema": "night-court-S01E01-original-80-frame-direct-personal-visual-review-v20/1",
+  "episode_id": "S01E01",
+  "original_source_avi_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_immutable_srt_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_80_frame_archive_zip_sha256": "ac07280d701ec0cc04255724d39f5098e0e907e44d2b392da94bc905b74f5a22",
+  "github_actions_original_artifact_id": 12577216339,
+  "github_actions_original_run_id": 40137223223,
+  "saved_original_frame_source_catalogue_file": "frame-source-catalogue.json in private original Actions artifact",
+  "frame_files_inspected": 80,
+  "contact_sheets_directly_inspected": [
+    "scene-overview-01.jpg",
+    "scene-overview-02.jpg",
+    "scene-overview-03.jpg",
+    "scene-overview-04.jpg"
+  ],
+  "original_frame_files_sha256_verified_count": 80,
+  "original_frame_files_sha256_mismatch_count": 0,
+  "source_picture_sample_interval_ms": 18000,
+  "original_native_pts_verified": false,
+  "entire_1450s_source_film_continuously_watched": false,
+  "original_audio_listened": false,
+  "screen_character_name_from_image_identification_attempted": false,
+  "voice_or_performed_turn_certified": false,
+  "other_original_filmed_staging_annotations_in_v18": 11,
+  "new_distinct_direct_source_frame_annotations": 16,
+  "privacy": "Only observations, frame cryptographic checksums and evidence pointers to prior GitHub Actions private artifact committed; source images/audio/AVI not recommitted.",
+  "observations": [
+    {
+      "id": "PIC-12",
+      "original_source_frame_id": 7,
+      "original_source_frame_file": "frames/frame-007.jpg",
+      "original_exported_frame_sha256": "3ee2caed1d3c1ec22879fe269cec475fe7fa3eebc7279c356b3f424bfc900fdb",
+      "nominal_requested_video_source_ms": 117000,
+      "anchor_after_original_source_reader_ref": "C036.1",
+      "anchor_display_group_id": 33,
+      "cue_envelope_ms": [
+        116536,
+        118026
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "A dark-outerwear adult enters through the wood-framed office doorway carrying a dark shoulder bag; the room's bookcases and desk remain in view.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-13",
+      "original_source_frame_id": 9,
+      "original_source_frame_file": "frames/frame-009.jpg",
+      "original_exported_frame_sha256": "cc5c46a8ff82c5804f6f1d9a5c856c9c5ae269589c4e313fac7fdadd47bc2448",
+      "nominal_requested_video_source_ms": 153000,
+      "anchor_after_original_source_reader_ref": "C048.1",
+      "anchor_display_group_id": 45,
+      "cue_envelope_ms": [
+        153373,
+        155739
+      ],
+      "delta_from_caption_envelope_ms": 373,
+      "picture_observation": "In the crowded book-lined office, a dark-suited person carries a document or folder across the foreground as other people gather around the lavender-clad figure and chairs.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-14",
+      "original_source_frame_id": 13,
+      "original_source_frame_file": "frames/frame-013.jpg",
+      "original_exported_frame_sha256": "5c7d8f8abb9869147bb87bc49a63d09c392b8dec4eb6ed4eb5c19b6aacbac535",
+      "nominal_requested_video_source_ms": 225000,
+      "anchor_after_original_source_reader_ref": "C065.1",
+      "anchor_display_group_id": 63,
+      "cue_envelope_ms": [
+        223710,
+        226838
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "A grey-shirted person perches casually on the office desktop beside stacked boxes, knees drawn up, while another adult in dark outerwear stands facing the desk.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-15",
+      "original_source_frame_id": 21,
+      "original_source_frame_file": "frames/frame-021.jpg",
+      "original_exported_frame_sha256": "dd08f7712aa28ca6f9775d5e8ded3ad79d8717e36568a7b499d64945e46da08c",
+      "nominal_requested_video_source_ms": 369000,
+      "anchor_after_original_source_reader_ref": "C083.1",
+      "anchor_display_group_id": 77,
+      "cue_envelope_ms": [
+        368121,
+        369816
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "At the raised courtroom bench, a robed figure leans sideways with one arm extended, with a high-backed judge's chair and the wall flag visible.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-16",
+      "original_source_frame_id": 25,
+      "original_source_frame_file": "frames/frame-025.jpg",
+      "original_exported_frame_sha256": "0c74d2a3df497d39f08a75093c92709778fad2567bc47840d1691413806d76b4",
+      "nominal_requested_video_source_ms": 441000,
+      "anchor_after_original_source_reader_ref": "C108.1",
+      "anchor_display_group_id": 111,
+      "cue_envelope_ms": [
+        438525,
+        441858
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "The courtroom is congested around the rail: several adults crowd toward a seated adult while a dark-uniformed figure stands over the group.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-17",
+      "original_source_frame_id": 28,
+      "original_source_frame_file": "frames/frame-028.jpg",
+      "original_exported_frame_sha256": "497afb16104686a18488eacf489d743850c99e15a0ebd26694c8ff5658a39815",
+      "nominal_requested_video_source_ms": 495000,
+      "anchor_after_original_source_reader_ref": "C123.1",
+      "anchor_display_group_id": 126,
+      "cue_envelope_ms": [
+        492345,
+        494745
+      ],
+      "delta_from_caption_envelope_ms": 255,
+      "picture_observation": "Near the raised bench, the robed figure leans close to the lavender-jacketed person's head and lifts a hand toward the person's hair, while the lavender-clad figure bends toward the desktop.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-18",
+      "original_source_frame_id": 39,
+      "original_source_frame_file": "frames/frame-039.jpg",
+      "original_exported_frame_sha256": "8d798c22e3e197e07f5014fcd642b52981d94832efec443eb313092059901882",
+      "nominal_requested_video_source_ms": 693000,
+      "anchor_after_original_source_reader_ref": "C173.1",
+      "anchor_display_group_id": 165,
+      "cue_envelope_ms": [
+        689742,
+        693439
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "In the office, a person in a charcoal sleeveless, visibly ragged-looking vest stands by a person wearing dark red or rust clothing, opposite the lavender-suited adult.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-19",
+      "original_source_frame_id": 42,
+      "original_source_frame_file": "frames/frame-042.jpg",
+      "original_exported_frame_sha256": "c4c79ce396d4978399c160f9a8f9ddb31ed0400079adc88a736f8c145d13fca5",
+      "nominal_requested_video_source_ms": 747000,
+      "anchor_after_original_source_reader_ref": "C183.1",
+      "anchor_display_group_id": 175,
+      "cue_envelope_ms": [
+        746499,
+        749297
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "In the busy courtroom, a tall dark-uniformed person holds both arms out across the space between several arguing adults near the rail.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-20",
+      "original_source_frame_id": 47,
+      "original_source_frame_file": "frames/frame-047.jpg",
+      "original_exported_frame_sha256": "46e47f418bfe1393d30e6f0355afe64cdbf772d4825f4bf75531ac6e1a0e93c1",
+      "nominal_requested_video_source_ms": 837000,
+      "anchor_after_original_source_reader_ref": "C206.1",
+      "anchor_display_group_id": 189,
+      "cue_envelope_ms": [
+        834754,
+        837314
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "At the judge's bench, a robed figure sprawls in the high-backed chair, with one foot stretched onto the bench edge and an arm lifted in an expansive gesture beside the desk water glass.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-21",
+      "original_source_frame_id": 52,
+      "original_source_frame_file": "frames/frame-052.jpg",
+      "original_exported_frame_sha256": "7c1469fb1f1a7a003726ab9c2f5b91befc48644b6bf2416c5fc788a13dcd24e6",
+      "nominal_requested_video_source_ms": 927000,
+      "anchor_after_original_source_reader_ref": "C230.1",
+      "anchor_display_group_id": 210,
+      "cue_envelope_ms": [
+        924777,
+        927439
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "In the courtroom audience area, a red-clad woman smiles while a robed adult occupies the edge of the courtroom rail close beside her.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-22",
+      "original_source_frame_id": 53,
+      "original_source_frame_file": "frames/frame-053.jpg",
+      "original_exported_frame_sha256": "ca36e89881912078a6d0ef5e170294f811c6cf696e5b509f2ee26eccbb0ce7a5",
+      "nominal_requested_video_source_ms": 945000,
+      "anchor_after_original_source_reader_ref": "C235.1",
+      "anchor_display_group_id": 215,
+      "cue_envelope_ms": [
+        940826,
+        944956
+      ],
+      "delta_from_caption_envelope_ms": 44,
+      "picture_observation": "A person in a dark sleeveless vest with a pale torn-looking cloth protruding from the arm opening faces a robed figure at the courtroom rail; other spectators sit behind.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-23",
+      "original_source_frame_id": 65,
+      "original_source_frame_file": "frames/frame-065.jpg",
+      "original_exported_frame_sha256": "5eb877bad46d021016fc6ac42c37f78356794efafaf97aafc51e0597aa0e3256",
+      "nominal_requested_video_source_ms": 1161000,
+      "anchor_after_original_source_reader_ref": "C284.1",
+      "anchor_display_group_id": 247,
+      "cue_envelope_ms": [
+        1159745,
+        1162612
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "A towering dark-uniformed adult and a much shorter dark-uniformed adult stand side by side by the courtroom bookcase; the shorter figure tilts the head and smiles.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-24",
+      "original_source_frame_id": 68,
+      "original_source_frame_file": "frames/frame-068.jpg",
+      "original_exported_frame_sha256": "931ded66b1400615e76e1b16026cb5c2450d872fd0ea8c1f6662e51c48906011",
+      "nominal_requested_video_source_ms": 1215000,
+      "anchor_after_original_source_reader_ref": "C298.1",
+      "anchor_display_group_id": 255,
+      "cue_envelope_ms": [
+        1212431,
+        1216492
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "Near the judicial bench, a robed adult leans an arm across the shoulder of another adult wearing a sleeveless grey garment and loosened neckwear; the courtroom audience is in the background.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-25",
+      "original_source_frame_id": 73,
+      "original_source_frame_file": "frames/frame-073.jpg",
+      "original_exported_frame_sha256": "d24b7aab409a81302f5e89d253377b1423a28913e06eabd3374e35a75fb55fc8",
+      "nominal_requested_video_source_ms": 1305000,
+      "anchor_after_original_source_reader_ref": "C310.1",
+      "anchor_display_group_id": 261,
+      "cue_envelope_ms": [
+        1300119,
+        1304021
+      ],
+      "delta_from_caption_envelope_ms": 979,
+      "picture_observation": "In the near-empty late courtroom, a casually dressed man in a light-grey crewneck sweater reclines against the bench with his chin tipped upward while the lavender-suited adult faces him.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-26",
+      "original_source_frame_id": 75,
+      "original_source_frame_file": "frames/frame-075.jpg",
+      "original_exported_frame_sha256": "62ceb4a11a58c776ef3ef5ba75304d1dee3b9235a7dfe27b8051267dc3cc63fd",
+      "nominal_requested_video_source_ms": 1341000,
+      "anchor_after_original_source_reader_ref": "C321.1",
+      "anchor_display_group_id": 268,
+      "cue_envelope_ms": [
+        1338090,
+        1341355
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "A grey-sweatered man braces both hands against the courtroom desk with his body leaning forward; the lavender-suited adult faces him from across the desk.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    },
+    {
+      "id": "PIC-27",
+      "original_source_frame_id": 77,
+      "original_source_frame_file": "frames/frame-077.jpg",
+      "original_exported_frame_sha256": "6393b6cd0c41ccb06a6cc82508d11f2fb62033bdd3f38264c4d5861f8745a5ef",
+      "nominal_requested_video_source_ms": 1377000,
+      "anchor_after_original_source_reader_ref": "C332.1",
+      "anchor_display_group_id": 273,
+      "cue_envelope_ms": [
+        1376028,
+        1378223
+      ],
+      "delta_from_caption_envelope_ms": 0,
+      "picture_observation": "Late in the near-empty courtroom, the lavender-suited adult stands between benches with one hand extending outward; the bench, flag and chairs recede behind.",
+      "source_motion_verified": false,
+      "original_dialogue_speaker_from_picture_verified": false,
+      "exact_cut_or_spoken_word_alignment_verified": false,
+      "confidence": "directly_inspected_original_source_frame_single_static_image"
+    }
+  ]
+}
