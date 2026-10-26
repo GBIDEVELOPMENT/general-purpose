@@ -65,6 +65,33 @@ def load_private_v9(path:Path)->list[dict]:
         raise ValueError("Provisional candidate status suddenly became real AV proof")
     return records
 
+def load_private_v10(path:Path)->list[dict]:
+    """Load the latest reversible v10 source-turn reader, including two cue refs per joined turn."""
+    raw=(path/"pilot-current-source-turns-v10.jsonl").read_bytes()
+    m=json.loads((path/"pilot-current-source-turns-v10-manifest.json").read_text("utf-8"))
+    if (sha(raw)!=m.get("current_source_role_records_sha256")
+        or m.get("original_caption_immutable_source_units")!=751
+        or m.get("current_provisional_character_named_original_units")!=591
+        or m.get("still_unknown_original_source_units")!=160
+        or m.get("reader_speaker_turn_blocks_after")!=715
+        or m.get("one_joined_source_turn_refs")!=["C266.1","C267.1"]
+        or m.get("source_audio_human_actor_identity_confirmations_added")!=0
+        or m.get("original_S09_transcript_still_untimed") is not True):
+        raise ValueError("Source-v10 original 160-UNKNOWN turn provenance failed")
+    rows=[json.loads(x) for x in raw.decode("utf-8").splitlines() if x.strip()]
+    if len(rows)!=715 or any(r.get("actor_face_or_voice_independently_verified") is not False for r in rows):
+        raise ValueError("Source v10 invented human-accepted voice or changed turn count")
+    joins=[r for r in rows if r["episode_id"]=="S09E19"
+           and r["source_reading_ref"]=="C266.1–C267.1"]
+    if (len(joins)!=1 or joins[0]["original_source_part_refs"]!=["C266.1","C267.1"]
+        or joins[0]["candidate_role"]!="ROZ RUSSELL"
+        or joins[0].get("independent_filmed_performance_turn_proven") is not False):
+        raise ValueError("Provisional C266-C267 turn reunion missing")
+    disputed=[r for r in rows if r["episode_id"]=="S09E19" and r["source_reading_ref"]=="C129.1"]
+    if len(disputed)!=1 or disputed[0]["candidate_role"] is not None:
+        raise ValueError("S09 suspicious C129 speaker cannot become accepted")
+    return rows
+
 def load_s09_locator(path:Path)->dict[int,dict]:
     raw=path.read_bytes()
     if sha(raw)!=S09_LOCATOR_SHA:
@@ -103,7 +130,7 @@ def cue_parts(rows:list[dict])->dict[str,set[str]]:
 
 def make_queue(rows:list[dict],s09_times:dict[int,dict],
                internal:dict,strict:bool=True,
-               expected_named:int=590,expected_unknown:int=161)->tuple[list[dict],dict]:
+               expected_named:int=591,expected_unknown:int=160)->tuple[list[dict],dict]:
     roles=cue_parts(rows)
     unknown={k for k,names in roles.items() if None in names}
     marked={(r["episode_id"],r["original_cue"]) for r in internal["cues"]}
@@ -236,9 +263,10 @@ def build(root:Path,role_root:Path,locator:Path,output:Path,
           revision:str="v9")->dict:
     if output.resolve().is_relative_to(root.resolve()):
         raise ValueError("Private source dialogue output must never enter repo")
-    if revision not in ("v8","v9"):
+    if revision not in ("v8","v9","v10"):
         raise ValueError("Unsupported private original speaker source version")
-    rows=(load_private_v9(role_root) if revision=="v9" else load_private_v8(role_root))
+    rows=(load_private_v10(role_root) if revision=="v10" else
+          load_private_v9(role_root) if revision=="v9" else load_private_v8(role_root))
     audio=load_s09_locator(locator)
     internal=json.loads((root/"research/probable-internal-speaker-switches-v1.json").read_text("utf-8"))
     for ep in ("S01E01","S09E19"):
@@ -246,7 +274,8 @@ def build(root:Path,role_root:Path,locator:Path,output:Path,
         for row in rows:
             if row["episode_id"]==ep and row["original_source_sha256"]!=meta["sha256"]:
                 raise ValueError("Original source caption SHA mismatch in private v8 reader")
-    named,unknown=(590,161) if revision=="v9" else (587,164)
+    named,unknown=((591,160) if revision=="v10" else
+                   (590,161) if revision=="v9" else (587,164))
     selected,manifest=make_queue(rows,audio,internal,
                                  expected_named=named,expected_unknown=unknown)
     output.mkdir(parents=True,exist_ok=True)
@@ -262,12 +291,14 @@ def main():
     options=p.add_mutually_exclusive_group(required=True)
     options.add_argument("--speaker-v8-root",type=Path)
     options.add_argument("--speaker-v9-root",type=Path)
+    options.add_argument("--speaker-v10-root",type=Path)
     p.add_argument("--s09-original-audio-locator",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True)
     a=p.parse_args()
-    role_root=a.speaker_v9_root or a.speaker_v8_root
+    role_root=a.speaker_v10_root or a.speaker_v9_root or a.speaker_v8_root
+    version="v10" if a.speaker_v10_root is not None else "v9" if a.speaker_v9_root is not None else "v8"
     result=build(a.root,role_root,a.s09_original_audio_locator,a.output,
-                 revision="v9" if a.speaker_v9_root is not None else "v8")
+                 revision=version)
     print(f"{result['original_source_units_still_unknown']} unresolved original-source "
           f"units organized for P0/P1 review; "
           f"{result['s09_actual_audio_window_leads']} S09 audio-search leads; "
