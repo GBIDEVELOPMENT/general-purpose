@@ -171,7 +171,8 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
                                      source_acoustic_v9: bool = False,
                                      allow_original_s09_v10_turn_reunion: bool = False,
                                      allow_original_s09_v11_mixed_voice: bool = False,
-                                     allow_original_s09_v12_contextual: bool = False
+                                     allow_original_s09_v12_contextual: bool = False,
+                                     allow_original_s09_v13_handoffs: bool = False
                                      ) -> tuple[list[dict], dict]:
     """Verify original speaker records still cover identical caption units.
 
@@ -188,6 +189,8 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
         raise ValueError("S09 mixed-turn candidate overlay must retain earlier source role layers")
     if allow_original_s09_v12_contextual and not allow_original_s09_v11_mixed_voice:
         raise ValueError("New scene-context roles require prior exact source mixed-voice layer")
+    if allow_original_s09_v13_handoffs and not allow_original_s09_v12_contextual:
+        raise ValueError("New original cue actor handoffs require earlier source roles")
     manifest_path = context_path.parent / (
         "pilot-current-speaker-s09-audio-v9-manifest.json" if source_acoustic_v9 else
         "pilot-original-acoustic-speaker-manifest.json" if source_acoustic_v8 else
@@ -262,6 +265,11 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
         expected = ((row["candidate_role"] or "UNIDENTIFIED SPEAKER")
                     + " · " + row["role_attribution_status"] + "\n" + row["caption_text"])
         if expected not in source_docs[row["episode_id"]]:
+            if (allow_original_s09_v13_handoffs and row["episode_id"]=="S09E19"
+                and row["source_reading_ref"] in ("C127.1","C146.1","C284.1")):
+                # Exact v13 original text-span reconciliation is required
+                # later in the build, not a fabricated source cue edit.
+                continue
             if allow_original_s09_v12_contextual and row["episode_id"]=="S09E19":
                 from build_s09_high_context_speaker_reader_v12 import LEDGER,verify_ledger
                 candidate_ids=verify_ledger(json.loads(LEDGER.read_text("utf-8")))
@@ -534,7 +542,8 @@ def apply_original_s09_mixed_turn_v11(source: list[dict],old_roles: list[dict],
 
 
 def apply_original_s09_high_context_v12(source: list[dict],old_roles: list[dict],
-                                       path: Path, full: bool=True)->tuple[list[dict],dict]:
+                                       path: Path, full: bool=True,
+                                       allow_original_s09_v13_handoffs: bool=False)->tuple[list[dict],dict]:
     """Only twelve source-bound scene-context labels on 15 previously UNKNOWN cue parts."""
     import hashlib
     from collections import defaultdict
@@ -571,12 +580,68 @@ def apply_original_s09_high_context_v12(source: list[dict],old_roles: list[dict]
             raise ValueError("A contextual role was wrongly certified or had S09 times invented")
         exact=f'{row["candidate_role"]} · {STATUS}\n{row["caption_text"]}'
         if exact not in docs["S09E19"]:
+            if (allow_original_s09_v13_handoffs
+                and row["source_reading_ref"]=="C126.1"):
+                # Source C126 now continues into the first fragment of C127,
+                # and later source span validator proves full exact text.
+                continue
             raise ValueError("Current source role is absent from latest private v12 screenplay")
     return current,{
         "v12_named_original_source_units":counts["current_provisional_character_named_original_units"],
         "v12_unknown_original_source_units":counts["still_unknown_original_source_units"],
         "v12_new_scene_context_named_source_parts":counts["new_original_caption_parts_with_working_names"],
         "v12_independent_AV_character_acceptances":0
+    }
+
+
+def apply_original_s09_explicit_handoffs_v13(source:list[dict],old_roles:list[dict],
+                                           path:Path,full:bool=True)->tuple[list[dict],dict]:
+    """Prove exact prior-cue speech text preserved across three explicit turn splits."""
+    import hashlib
+    from collections import defaultdict
+    from build_s09_explicit_handoff_turns_v13 import (
+        LEDGER,NEW_MANIFEST,STATUS,transform
+    )
+    manifest=json.loads((path.parent/NEW_MANIFEST).read_text("utf-8"))
+    raw=path.read_bytes()
+    if hashlib.sha256(raw).hexdigest()!=manifest.get("v13_records_sha256"):
+        raise ValueError("Original S09 v13 speaking-turn source text digest differs")
+    expected,computed=transform(old_roles,json.loads(LEDGER.read_text("utf-8")),strict=full)
+    observed=rows_from_jsonl(path)
+    if observed!=expected:
+        raise ValueError("Original S09 cue/actor handoff changed unrelated source speaking block")
+    for field in (
+        "original_held_caption_units","provisionally_named_original_caption_units",
+        "unidentified_original_caption_units","new_provisional_speaking_turns",
+        "source_audio_actor_identities_or_true_turns_independently_verified"
+    ):
+        if manifest.get(field)!=computed[field]:
+            raise ValueError("Original P0 role handoff source accounting drift")
+    if manifest.get("all_source_character_spans_reversible") is not True:
+        raise ValueError("Original audio cue text span conservation not documented")
+    docs=defaultdict(str)
+    for x in source:
+        docs[x["episode_id"]]+=x["retrieval_text"]
+    approved=[
+        x for x in observed if x.get("role_attribution_status")==STATUS
+    ]
+    if len(approved)!=6:
+        raise ValueError("Unexpected number of explicit two-voice P0 speaking-turn candidates")
+    for row in approved:
+        if (row["episode_id"]!="S09E19"
+            or row.get("actor_face_or_voice_independently_verified") is not False
+            or row.get("speaker_turn_boundary_verified") is not False
+            or row.get("human_viewed_film_or_listened_to_actor") is not False
+            or row.get("source_original_times_ms") is not None):
+            raise ValueError("Original actor recognition incorrectly accepted after source turn split")
+        expected_text=(row["candidate_role"]+" · "+STATUS+"\n"+row["caption_text"])
+        if expected_text not in docs["S09E19"]:
+            raise ValueError("Original S09 two-voice line missing from private v13 screenplay")
+    return observed,{
+        "v13_named_original_source_units":computed["provisionally_named_original_caption_units"],
+        "v13_unknown_original_source_units":computed["unidentified_original_caption_units"],
+        "v13_provisional_true_performance_turn_blocks":len(observed),
+        "v13_independently_soundtrack_verified_actor_turns":0,
     }
 
 
@@ -588,7 +653,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                    s09_acoustic_v9_role_path: Path | None = None,
                    source_turn_v10_role_path: Path | None = None,
                    mixed_turn_v11_role_path: Path | None = None,
-                   contextual_v12_role_path: Path | None = None) -> dict:
+                   contextual_v12_role_path: Path | None = None,
+                   handoffs_v13_role_path: Path | None = None) -> dict:
     if db_path.resolve().is_relative_to(ROOT.resolve()):
         raise ValueError("Private indexed dialogue database must be outside the repository")
     if sum(x is not None for x in (
@@ -602,6 +668,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
         raise ValueError("Original S09 v11 text spans require verified v10 source role inputs")
     if contextual_v12_role_path is not None and mixed_turn_v11_role_path is None:
         raise ValueError("Original S09 v12 character inferences require full prior source-turn model")
+    if handoffs_v13_role_path is not None and contextual_v12_role_path is None:
+        raise ValueError("S09 original source explicit speaker handoffs require v12 prior role provenance")
     if db_path.resolve() in {corpus_path.resolve(), card_path.resolve(), role_path.resolve(),
                              speaker_override_path.resolve() if speaker_override_path else None,
                              context_role_path.resolve() if context_role_path else None,
@@ -609,7 +677,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                              s09_acoustic_v9_role_path.resolve() if s09_acoustic_v9_role_path else None,
                              source_turn_v10_role_path.resolve() if source_turn_v10_role_path else None,
                              mixed_turn_v11_role_path.resolve() if mixed_turn_v11_role_path else None,
-                             contextual_v12_role_path.resolve() if contextual_v12_role_path else None}:
+                             contextual_v12_role_path.resolve() if contextual_v12_role_path else None,
+                             handoffs_v13_role_path.resolve() if handoffs_v13_role_path else None}:
         raise ValueError("Refusing to overwrite a source file with the database")
     source = load_records(corpus_path)
     cards = load_cards(card_path, source)
@@ -635,7 +704,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
             s09_acoustic_v9_role_path, full=require_full, source_acoustic_v9=True,
             allow_original_s09_v10_turn_reunion=source_turn_v10_role_path is not None,
             allow_original_s09_v11_mixed_voice=mixed_turn_v11_role_path is not None,
-            allow_original_s09_v12_contextual=contextual_v12_role_path is not None)
+            allow_original_s09_v12_contextual=contextual_v12_role_path is not None,
+            allow_original_s09_v13_handoffs=handoffs_v13_role_path is not None)
         report.update(summary)
     if source_turn_v10_role_path is not None:
         roles, summary = apply_current_source_turn_reunion_v10(
@@ -647,7 +717,12 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
         report.update(summary)
     if contextual_v12_role_path is not None:
         roles, summary = apply_original_s09_high_context_v12(
-            source,roles,contextual_v12_role_path,full=require_full)
+            source,roles,contextual_v12_role_path,full=require_full,
+            allow_original_s09_v13_handoffs=handoffs_v13_role_path is not None)
+        report.update(summary)
+    if handoffs_v13_role_path is not None:
+        roles, summary = apply_original_s09_explicit_handoffs_v13(
+            source,roles,handoffs_v13_role_path,full=require_full)
         report.update(summary)
     if db_path.exists():
         raise FileExistsError("Refuse overwriting an existing fan corpus database")
@@ -787,6 +862,7 @@ def main():
     init.add_argument("--source-turn-v10-roles", type=Path, default=None)
     init.add_argument("--mixed-turn-v11-roles", type=Path, default=None)
     init.add_argument("--contextual-v12-roles", type=Path, default=None)
+    init.add_argument("--handoffs-v13-roles", type=Path, default=None)
     srch = sub.add_parser("query")
     srch.add_argument("--database", type=Path, required=True)
     srch.add_argument("--query", required=True)
@@ -804,7 +880,8 @@ def main():
                                 s09_acoustic_v9_role_path=opts.s09_acoustic_v9_roles,
                                 source_turn_v10_role_path=opts.source_turn_v10_roles,
                                 mixed_turn_v11_role_path=opts.mixed_turn_v11_roles,
-                                contextual_v12_role_path=opts.contextual_v12_roles)
+                                contextual_v12_role_path=opts.contextual_v12_roles,
+                                handoffs_v13_role_path=opts.handoffs_v13_roles)
         print(f"{report['indexed_documents']} private documents indexed across "
               f"{report['source_episodes']} episodes; no dialogue printed")
     else:
