@@ -84,6 +84,27 @@ class RemainingSpeakerReviewTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,"v9 source-role ledger"):
                 load_private_v9(root)
 
+    def test_latest_v10_160_unknowns_and_original_two_source_cue_identity(self):
+        from plan_next_speaker_review_v9 import load_private_v10
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            (root/"pilot-current-source-turns-v10.jsonl").write_text("{}\\n","utf-8")
+            (root/"pilot-current-source-turns-v10-manifest.json").write_text("{}","utf-8")
+            with self.assertRaisesRegex(ValueError,"Source-v10 original"):
+                load_private_v10(root)
+        rows=[
+            row("S09E19","C265.1",None,"As usual."),
+            row("S09E19","C266.1–C267.1","ROZ RUSSELL",
+                "You ever make a huge mistake you knew you were going to end up regretting every minute for the rest of your life?"),
+            row("S09E19","C268.1",None,"Yeah. I bought stock in Earthshoes."),
+        ]
+        rows[1]["original_source_part_refs"]=["C266.1","C267.1"]
+        result,summary=make_queue(rows,{},{"cues":[]},strict=False)
+        self.assertEqual(summary["original_source_units"],4)
+        self.assertEqual(summary["original_units_provisionally_named"],2)
+        self.assertEqual(summary["original_source_units_still_unknown"],2)
+        self.assertTrue(all("C266.1" not in r["unidentified_original_unit_refs"] for r in result))
+
     def test_private_original_audio_numeric_sha_required(self):
         with tempfile.TemporaryDirectory() as folder:
             p=Path(folder)/"real-source.json"
