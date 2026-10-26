@@ -168,6 +168,29 @@ class RemainingSpeakerReviewTests(unittest.TestCase):
         self.assertEqual(q[0]["source_reading_ref"],"C113.1")
         self.assertIsNone(q[0]["model_proposed_character"])
 
+    def test_latest_source_turn_patch_queue_uses_only_fully_unidentified_original_cues(self):
+        from plan_next_speaker_review_v9 import load_private_source_turn_patches
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            (root/"pilot-source-turn-amendments.jsonl").write_text("{}\\n","utf-8")
+            (root/"pilot-source-turn-amendments-manifest.json").write_text("{}","utf-8")
+            with self.assertRaisesRegex(ValueError,"130-UNKNOWN source turn"):
+                load_private_source_turn_patches(root)
+        rows=[
+            row("S09E19","S09-DAN-102-T01","DAN FIELDING","Did you know the safe?"),
+            row("S09E19","S09-HARRY-102-103","HARRY STONE","No I did not."),
+            row("S09E19","S09-DAN-103-T03","DAN FIELDING","Wow."),
+            row("S09E19","C104.1",None,"That is old."),
+        ]
+        rows[0]["original_source_part_refs"]=["C102.1"]
+        rows[1]["original_source_part_refs"]=["C102.1","C103.1"]
+        rows[2]["original_source_part_refs"]=["C103.1"]
+        queue,m=make_queue(rows,{},{"cues":[]},strict=False)
+        self.assertEqual(m["original_source_units"],3)
+        self.assertEqual(m["original_units_provisionally_named"],2)
+        self.assertEqual(m["original_source_units_still_unknown"],1)
+        self.assertEqual(queue[0]["source_reading_ref"],"C104.1")
+
     def test_private_original_audio_numeric_sha_required(self):
         with tempfile.TemporaryDirectory() as folder:
             p=Path(folder)/"real-source.json"

@@ -338,3 +338,21 @@ python 'Night Court/tools/export_fan_retrieval_chunks.py' \
   --speaker-patch-root /tmp/night-court-private-source-role-patches \
   --output /tmp/night-court-private-fan-speaker-patched
 ```
+
+## Reusable P0 true-speaker-turn amendments after 619-name source role ledger
+
+The original S09 source has two adjacent, individually unassigned transcript paragraphs **C102 and C103**, yet the surrounding scene clearly distinguishes three responses: Dan asks whether Harry knew about the safe, Harry denies seeing it, then Dan reacts in surprise. The wording of Harry's answer crosses the original subtitle paragraph boundary. A reader that labels both complete source paragraphs "UNIDENTIFIED" loses two meaningful character roles and represents three performed-utterance candidates as two.
+
+[Source-turn amendments](research/source-turn-amendments-v1.json) introduce a **generic, source-part-preserving P0 split/merge contract**, separate from the existing generic UNKNOWN→named source-role ledger. The [private source-turn interpreter](tools/apply_source_turn_amendments.py) requires an exact held original witness SHA, preserved current provisional role-reader SHA, explicit prior UNKNOWN cue parts, unique literal in-cue split boundaries, proposed speaking-turn membership and character, and exact original Unicode start/end offsets plus per-span SHA-256. Each original transcript character must be consumed exactly once; no prior roles, source cue times, original transcript text or unrelated speaking blocks can be changed. Crucially, **one source cue containing both a named and an UNKNOWN subturn remains UNKNOWN for source-unit coverage calculations**, rather than giving misleading partial credit. This makes the format safe to reuse when only one member of an interaction can be named.
+
+The initial S09 C102→C103 transformation reconstructs three **provisional** Dan/Harry/Dan dialogue turns using the original source sentence boundary and preserves every character from both original transcript paragraphs. The working manuscript would have **621 provisionally named /130 still UNKNOWN original caption-derived source units of 751**, and **719 editorial speaking-turn blocks** across both pilots. **Zero original performer turn boundaries or source actors were independently authenticated from moving-film/audio** by this contextual segmentation. The updated 193-episode LLM corpus and private SQLite fan/speaker index can render/search the three separate actors' lines without mutating original subtitles or putting private script text in Git artifacts. Other uncertain C209/C211/C271 exchanges are intentionally left for original-A/V review instead of being forced into guessed character roles.
+
+```sh
+python 'Night Court/tools/apply_source_turn_amendments.py' \
+  --source-role-patches /private/night-court-current-source-role-patches \
+  --output /private/night-court-current-source-turn-patches
+
+python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+  --source-turn-patch-root /private/night-court-current-source-turn-patches \
+  --output /private/night-court-fan-script-turn-search
+```

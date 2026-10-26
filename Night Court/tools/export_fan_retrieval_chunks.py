@@ -43,8 +43,14 @@ def select_script(root: Path, record: dict, v6_root: Path | None = None,
                   v11_root: Path | None = None,
                   v12_root: Path | None = None,
                   v13_root: Path | None = None,
-                  patched_root: Path | None = None) -> tuple[Path, str]:
+                  patched_root: Path | None = None,
+                  turn_root: Path | None = None) -> tuple[Path, str]:
     episode = record["episode_id"]
+    if turn_root is not None and episode in PILOT_SCRIPTS:
+        path=(turn_root / f"{episode}-source-turn-amendments.md").resolve()
+        if not path.is_relative_to(turn_root.resolve()) or not path.is_file():
+            raise ValueError("Private original source turn-amendment manuscript missing")
+        return path, "provisional_original_source_turn_amendment_reader"
     if patched_root is not None and episode in PILOT_SCRIPTS:
         path=(patched_root / f"{episode}-source-role-patches.md").resolve()
         if not path.is_relative_to(patched_root.resolve()) or not path.is_file():
@@ -154,14 +160,25 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
            v11_root: Path | None = None,
            v12_root: Path | None = None,
            v13_root: Path | None = None,
-           patched_root: Path | None = None) -> dict:
+           patched_root: Path | None = None,
+           turn_root: Path | None = None) -> dict:
     if max_chars < 200:
         raise ValueError("Chunk size must be >= 200 characters")
     if out_dir.resolve().is_relative_to(root.resolve()):
         raise ValueError("Private retrieval output must be outside the Night Court source tree")
-    if sum(x is not None for x in (v6_root,v7_root,v8_root,v9_root,v10_root,v11_root,v12_root,v13_root,patched_root))>1:
+    if sum(x is not None for x in (v6_root,v7_root,v8_root,v9_root,v10_root,v11_root,v12_root,v13_root,patched_root,turn_root))>1:
         raise ValueError("Choose one speaker reader source per pilot")
     rows = read_queue(root)
+    if turn_root is not None:
+        turn_report=json.loads((turn_root/"pilot-source-turn-amendments-manifest.json").read_text("utf-8"))
+        if (turn_report.get("original_caption_source_units")!=751
+            or turn_report.get("named_original_source_units")!=621
+            or turn_report.get("unknown_original_source_units")!=130
+            or turn_report.get("new_provisional_reader_turn_blocks")!=719
+            or turn_report.get("original_source_exact_text_preserved") is not True
+            or turn_report.get("source_new_performer_identifications_AV_certified")!=0
+            or turn_report.get("source_new_turn_boundaries_AV_verified")!=0):
+            raise ValueError("Original source turn amended P0 actor/turn evidence status drift")
     if patched_root is not None:
         patched_report=json.loads((patched_root / "pilot-source-role-amendments-manifest.json").read_text("utf-8"))
         if (patched_report.get("original_held_source_caption_units")!=751
@@ -252,7 +269,7 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         source_sha = entry["source_metadata"]["source_sha256"]
         if not re.fullmatch(r"[0-9a-f]{64}", source_sha):
             raise ValueError(f"Invalid source SHA: {episode}")
-        path, tier = select_script(root, entry, v6_root, v7_root, v8_root, v9_root, v10_root, v11_root, v12_root, v13_root, patched_root)
+        path, tier = select_script(root, entry, v6_root, v7_root, v8_root, v9_root, v10_root, v11_root, v12_root, v13_root, patched_root, turn_root)
         content = path.read_bytes()
         document = content.decode("utf-8")
         if source_sha not in document:
@@ -264,7 +281,12 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
                 raise ValueError(f"Wrong-season pilot prose in {episode} reader header: {named_season}")
         if episode == "S09E19" and entry["source_metadata"]["timed"]:
             raise ValueError("Untimed S09 original witness erroneously marked timed")
-        if patched_root is not None and episode in PILOT_SCRIPTS:
+        if turn_root is not None and episode in PILOT_SCRIPTS:
+            expected_sha = turn_report["private_reader_sha256_by_episode"][episode]
+            if sha256(content)!=expected_sha:
+                raise ValueError("Original speaker turn amendment script SHA differs")
+            rel_path="private-source-turn-amendments/"+path.name
+        elif patched_root is not None and episode in PILOT_SCRIPTS:
             expected_sha = patched_report["manuscripts_sha256_by_episode"][episode]
             if sha256(content)!=expected_sha:
                 raise ValueError("Private original role amendment script source hash mismatch")
@@ -393,13 +415,15 @@ def main() -> None:
                         help="Private exact-original cue Harriet/Mac Dan/Harry Alex/Roz split-turn scripts")
     parser.add_argument("--speaker-patch-root", type=Path, default=None,
                         help="Generic private original-source role amendments, append-only ledger")
+    parser.add_argument("--source-turn-patch-root", type=Path, default=None,
+                        help="Generic exact-source original paragraph speaker turn amendments")
     options = parser.parse_args()
     result = export(options.root, options.output, options.pilot_only, options.max_chars,
                     options.speaker_v6_root, options.speaker_v7_root,
                     options.speaker_v8_root, options.speaker_v9_root,
                     options.speaker_v10_root, options.speaker_v11_root,
                     options.speaker_v12_root, options.speaker_v13_root,
-                    options.speaker_patch_root)
+                    options.speaker_patch_root, options.source_turn_patch_root)
     print(f"Exported {result['chunk_count']} retrieval chunks from {result['episode_count']} episodes")
 
 
