@@ -346,7 +346,32 @@ def make_queue(rows:list[dict],s09_times:dict[int,dict],
         })
     review.sort(key=lambda r:(-r["rank"],r["episode_id"],r["source_reading_ref"]))
     unresolved_units={r["episode_id"]+":"+ref for r in review for ref in r["unidentified_original_unit_refs"]}
+    # Numeric-only planning: which original episode/stretches hold the largest
+    # remaining speaker gaps? Preserve the immutable cue denominator and do
+    # not publish a single word of the owner's caption/source dialogue.
+    unknown_by_episode={}
+    unknown_runs={}
+    for ep in ("S01E01","S09E19"):
+        ids=sorted({int(x.split(":C",1)[1][:3]) for x in unknown
+                    if x.startswith(ep+":C")})
+        unknown_by_episode[ep]=len(ids)
+        runs=[]
+        for n in ids:
+            if runs and runs[-1]["end_source_cue"]+1==n:
+                runs[-1]["end_source_cue"]=n
+                runs[-1]["unknown_source_units"]+=1
+            else:
+                runs.append({"start_source_cue":n,
+                             "end_source_cue":n,
+                             "unknown_source_units":1})
+        unknown_runs[ep]=sorted(runs,
+            key=lambda x:(-x["unknown_source_units"],x["start_source_cue"]))[:10]
+    if sum(unknown_by_episode.values())!=len(unknown):
+        raise ValueError("Unidentified original source part not attributed to one pilot episode")
     outcome={
+        "remaining_unknown_original_source_units_by_episode":unknown_by_episode,
+        "largest_contiguous_unknown_original_source_runs":unknown_runs,
+        "original_source_cue_numbers_only_no_dialogue":True,
         "schema":SCHEMA,
         "original_source_units":len(roles),
         "original_units_provisionally_named":len(roles)-len(unknown),
