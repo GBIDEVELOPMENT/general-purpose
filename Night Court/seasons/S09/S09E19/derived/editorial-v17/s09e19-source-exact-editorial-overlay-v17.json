@@ -1,0 +1,198 @@
+{
+  "schema": "night-court-s09e19-source-exact-editorial-overlay/1",
+  "episode_id": "S09E19",
+  "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "source_original_untimed": true,
+  "source_v16_reader": "Night Court/saved-private/pilot-current/pilot-manual-context-speaker-v16.jsonl",
+  "source_v16_s09_rows": 322,
+  "source_v16_s09_fully_named_units": 268,
+  "source_v16_s09_units_with_unknown": 79,
+  "source_v16_original_source_units": 347,
+  "evidence_status": "text_only_provisional; no independent original audiovisual certification",
+  "actor_identity_verified_count": 0,
+  "turn_boundaries_independently_verified_count": 0,
+  "role_edits": [
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "S09-S09E19-C206-UNVERIFIED-TWO-VOICE-BOUNDARY-T01",
+      "expected_prior_role": null,
+      "new_provisional_role": "CHRISTINE SULLIVAN",
+      "source_text_must_equal": "Well... thing is very unsettling.",
+      "confidence": "medium",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "First voice is distressed about Christine's campaign backlash; Dan immediately rejects that concern in the already-separated second voice. Christine is the most plausible worried first-person party, but the defective wording and unseen cast leave alternatives.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C272.1",
+      "expected_prior_role": null,
+      "new_provisional_role": "BARTENDER",
+      "source_text_must_equal": "I'll tell you what.",
+      "confidence": "high",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "The bartender's next two sourced paragraphs complete this sentence as a proposed compromise: use the disputed five dollars to buy a drink.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "S09E19-C277-MANUAL-SOURCE-TURN-1",
+      "expected_prior_role": null,
+      "new_provisional_role": "BARTENDER",
+      "source_text_must_equal": "And the snacks are free. ",
+      "confidence": "medium",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "Bartender has just urged the pair to buy a drink and adds free snacks as an incentive; patron identity remains conceivable without the soundtrack.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "S09E19-C277-MANUAL-SOURCE-TURN-2",
+      "expected_prior_role": null,
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_equal": "Yeah, but they're not fresh.",
+      "confidence": "high",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "Alex continues this complaint at C279-C280, insisting the nuts have been out of their can for days; the opposite voice asserts freshness.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C278.1",
+      "expected_prior_role": null,
+      "new_provisional_role": "BARTENDER",
+      "source_text_must_equal": "Sure they are.",
+      "confidence": "high",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "Replies defensively to the criticism of the establishment's snacks immediately before Alex challenges their freshness.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C281.1",
+      "expected_prior_role": "ALEX",
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_equal": "When it comes to nuts, I'm an expert.",
+      "confidence": "high",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "The nut-salesman Alex identifies himself at C283, continuing his C279-C280 inspection and complaint; normalize bare alias without conflating with The Guy.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C283.1",
+      "expected_prior_role": "ALEX",
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_equal": "I'm Alex Patterson from Fresno, California.",
+      "confidence": "high",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "Explicit self-identification by the real man who has just argued over the nuts; distinguish from hired stand-in at the restaurant.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C287.1",
+      "expected_prior_role": "ROZ RUSSELL",
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_equal": "Who was she?",
+      "confidence": "high",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "Alex is asking who played Roz; Roz herself hired Lisette and thus already knows the female stand-in. Previous assignment has the questioner as the employer of the questioned stand-in.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C288.1",
+      "expected_prior_role": "ALEX PATTERSON",
+      "new_provisional_role": "ROZ RUSSELL",
+      "source_text_must_equal": "First you tell me. Who was he?",
+      "confidence": "high",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "Roz is asking about The Guy hired by Alex, whom Alex knows and whose paid hiring he acknowledges at C296-C297. The question's referent makes the earlier role reversal suspect.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C296.1",
+      "expected_prior_role": "ALEX",
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_equal": "Cheapened? I paid $400 for that actor.",
+      "confidence": "high",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "Alex, who hired the male stand-in, defends the expense. Normalize bare alias to a unique character name.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C297.1",
+      "expected_prior_role": "ALEX",
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_equal": "He's good. He's died on three soap operas.",
+      "confidence": "high",
+      "reasoning_type": "narrative_dialogue_coreference_not_independent_AV",
+      "rationale": "Direct continuation of Alex's payment claim at C296; the pronoun refers to the hired male actor, not the current speaker.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    }
+  ],
+  "split_proposals": [
+    {
+      "source_reading_ref": "C291.1",
+      "source_text_must_equal": "He. He was me.",
+      "expected_prior_role": "ALEX PATTERSON",
+      "split_before_second_occurrence": "He was me.",
+      "exact_derived_fragments": [
+        "He. ",
+        "He was me."
+      ],
+      "roles": [
+        null,
+        "ALEX PATTERSON"
+      ],
+      "confidence": "medium",
+      "rationale": "The first repeated 'He.' might be a reciprocal correction by Roz or an Alex hesitation; preserve UNKNOWN for it while preserving the pre-existing Alex assignment on the meaningful admission that the hired male actor represented him. Original source characters are conserved, source remains untimed.",
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    }
+  ],
+  "explicit_abstentions": [
+    "C129: role-model acoustic quarantine must remain UNKNOWN",
+    "C121: closing safe speculation versus assent; P0 provisional only",
+    "C271: five-dollar exchange potentially three voices; no forced identification",
+    "C289-C290: he/she referent repartee; leave both P0 proposed voices UNKNOWN",
+    "C291 opening 'He.': no name promoted",
+    "C222-C226 and C235-C265: do not confuse speakers, hired doubles, and people being discussed",
+    "C343-C347: closing safe reaction voices remain UNKNOWN"
+  ],
+  "must_preserve_roles": {
+    "C305.1": "ROZ RUSSELL",
+    "C306.1": "ALEX PATTERSON"
+  },
+  "expected_generated_s09_blocks": 323,
+  "expected_generated_fully_named_units": 271,
+  "expected_generated_units_with_unknown": 76,
+  "source_order_required": true,
+  "original_dialogue_mutation_allowed": false
+}
