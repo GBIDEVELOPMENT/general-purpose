@@ -52,18 +52,15 @@ jobs:
       - name: Reject unexpected committed source-derived manuscripts outside approved private paths
         run: |
           set -euo pipefail
-          # #499 explicitly approved durable private snapshots; both episode
-          # editors preserve source-linked drafts. Other full-dialogue outputs
-          # must remain outside Git, even if synthetic QA exercises produce them.
-          unexpectedly_tracked="$(
-            git ls-files -- ':(glob)Night Court/**/*-working-screenplay.md' \
-                            ':(glob)Night Court/**/*-working-screenplay-provenance.jsonl' \
-                            ':(glob)Night Court/**/working-screenplay-layout-manifest.json' \
-              | grep -Ev '^Night Court/saved-private/pilot-current/|^Night Court/seasons/S09/S09E19/derived/editorial-v17/S09E19-editorial-v17-working-screenplay\\.md
- || true
-          )"
-          if test -n "$unexpectedly_tracked"; then
-            echo "::error::Unexpected full source-derived dialogue outside approved private source-first locations"
-            printf '%s\\n' "$unexpectedly_tracked"
-            exit 1
-          fi
+          # Preserve explicit durable private snapshots under PR #499.
+          tracked="$(git ls-files -- ':(glob)Night Court/**/*-working-screenplay.md' \
+                                    ':(glob)Night Court/**/*-working-screenplay-provenance.jsonl' \
+                                    ':(glob)Night Court/**/working-screenplay-layout-manifest.json')"
+          while IFS= read -r path; do
+            test -n "$path" || continue
+            case "$path" in
+              'Night Court/saved-private/pilot-current/'*) ;;
+              'Night Court/seasons/S09/S09E19/derived/editorial-v17/S09E19-editorial-v17-working-screenplay.md') ;;
+              *) echo "::error::Unexpected full dialogue outside approved paths: $path"; exit 1 ;;
+            esac
+          done <<< "$tracked"
