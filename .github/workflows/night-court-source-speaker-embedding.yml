@@ -47,6 +47,30 @@ jobs:
           print('Real S01E01 anchors and unidentified cues selected; no media requested')
           PY
 
+  announce-trusted-speaker-source-run:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-owner-speaker-embedding-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    # Separate no-secret/no-source PR notifier; only posts a trusted run URL.
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Post trusted source job URL as an auditable owner-trigger locator
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PULL: ${{ github.event.pull_request.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          gh api --method POST "repos/$REPO/issues/$PULL/comments" \
+            -f body="Night Court trusted original S01 speaker embedding run: $RUN_URL. Run locator only; acoustic prediction and original audio character identity are not yet independently accepted."
+
   trusted-original-source-speaker-embedding:
     if: >-
       github.event_name == 'pull_request_target' &&
