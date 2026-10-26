@@ -78,7 +78,7 @@ def check_source(rows, manifest, binary, witnesses):
             raise ValueError("Invented original S09 timing")
         pos=(list(SOURCE).index(ep),numbers[0])
         if pos<last:
-            raise ValueError("Original episode cue order changed")
+            raise ValueError(f"Original episode cue order changed at {row.get('reading_block_id')}: {last} -> {pos}")
         last=pos
         bid=row.get("reading_block_id")
         if not isinstance(bid,str) or not bid or bid in blocks:
