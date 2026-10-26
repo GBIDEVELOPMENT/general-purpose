@@ -6,6 +6,8 @@ on:
       - 'Night Court/tools/compare_s09_original_speaker_embeddings.py'
       - 'Night Court/tools/test_compare_s09_original_speaker_embeddings.py'
       - '.github/workflows/night-court-s09-original-speaker-matching.yml'
+      - 'Night Court/tools/plan_next_speaker_review_v9.py'
+      - 'Night Court/tools/test_plan_next_speaker_review_v9.py'
   pull_request_target:
     types: [opened, reopened, synchronize]
     paths:
@@ -91,10 +93,38 @@ jobs:
                     p["candidate_reference_role_counts"],
                     "unknown source candidate windows:",len(p["previously_unidentified_audio_windows"]))
           PY
+      - name: Reconcile all 161 current speaker UNKNOWNs to original audio and P0 continuity questions
+        run: |
+          python 'Night Court/tools/build_s09_source_acoustic_speaker_reader_v9.py' \
+            --current-v8 '${{ runner.temp }}/s09-v8' \
+            --output '${{ runner.temp }}/s09-v9'
+          python 'Night Court/tools/plan_next_speaker_review_v9.py' \
+            --speaker-v9-root '${{ runner.temp }}/s09-v9' \
+            --s09-original-audio-locator '${{ runner.temp }}/s09-source-numeric/night-court-s09-original-audio-paragraph-locators.json' \
+            --output '${{ runner.temp }}/s09-next-161-private-speaker-review'
+          python - <<'PY'
+          from pathlib import Path
+          import json,os
+          out=Path(os.environ['RUNNER_TEMP'])/'s09-next-161-private-speaker-review'
+          m=json.loads((out/'remaining-161-speaker-review-summary.json').read_text('utf-8'))
+          assert m['original_source_units']==751
+          assert m['original_units_provisionally_named']==590
+          assert m['original_source_units_still_unknown']==161
+          assert m['s09_actual_audio_window_leads']>0
+          assert m['new_speaker_names_automatically_assigned']==0
+          assert m['new_voices_human_accepted']==0
+          assert m['original_untimed_S09_captions_modified'] is False
+          q=[json.loads(x) for x in (out/'remaining-161-speaker-review.jsonl').read_text().splitlines()]
+          c=[x for x in q if x['episode_id']=='S09E19' and x['source_reading_ref']=='C266.1']
+          assert len(c)==1
+          assert c[0]['adjacent_source_sentence_continuation_candidate_not_auto_attributed']['next_provisional_role_not_verified']=='ROZ RUSSELL'
+          print('Source-SHA-verified latest 161 UNKNOWNs, S09 exact original audio pointers, and unverified C266/C267 same-voice review ready; no dialogue printed')
+          PY
       - name: Erase private source/role-derived text and numeric audio leads
         if: always()
         run: |
           rm -rf '${{ runner.temp }}/s09-v6' '${{ runner.temp }}/s09-v7' '${{ runner.temp }}/s09-v8' '${{ runner.temp }}/s09-source-numeric'
+          rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-next-161-private-speaker-review'
           rm -f '${{ runner.temp }}/s09-source-v8-reference-sensitivity-'*.json
 
   notify-trusted-original-s09-speaker-run:
