@@ -1,0 +1,62 @@
+{
+  "schema": "night-court-original-s09-acoustic-role-review/1",
+  "episode_id": "S09E19",
+  "original_series": "night-court-1984",
+  "original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_pcm_sha256": "7f3e3634c99469214360d59faf69c7838301e6ee94d5f08968382a74607b6711",
+  "full_numeric_original_voice_report_sha256": "656ee523b6a2996c3be9a8adf9bdf59a1086226e613d7b3000f38b30bb5657f8",
+  "source_run_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40257892582",
+  "source_2026_10_26": true,
+  "source_asr_paragraph_alignment_report_sha256": "febac6aff2cb01ee36ac1c44b592317011d655628ede2eb83981b98201e3accc",
+  "model": "resemblyzer-0.1.4",
+  "model_audio_reference_bank": "provisional_roles_v8_587_source_units",
+  "known_reference_roles_count": {
+    "CHRISTINE SULLIVAN": 10,
+    "DAN FIELDING": 5,
+    "MAC ROBINSON": 4,
+    "ROZ RUSSELL": 7
+  },
+  "role_holdout_correct": 18,
+  "role_holdout_total": 26,
+  "source_unknown_original_paragraphs_compared": 28,
+  "acoustic_similarity_threshold_proposals": 4,
+  "working_character_proposals_to_add": 3,
+  "quarantined_speaker_suspicions": 1,
+  "original_untimed_cue_timestamps_introduced": 0,
+  "source_soundtrack_human_actor_voice_identifications_accepted": 0,
+  "candidates": [
+    {
+      "source_ref": "C046.1",
+      "proposed_role": "CHRISTINE SULLIVAN",
+      "similarity": 0.8283,
+      "margin": 0.16885,
+      "disposition": "provisional_speaker_working_reader_only",
+      "reason": "Scene-context candidate in Roz correspondence conversation; original voice model positive; independently reviewed cast voice still pending"
+    },
+    {
+      "source_ref": "C057.1",
+      "proposed_role": "CHRISTINE SULLIVAN",
+      "similarity": 0.8113,
+      "margin": 0.13025,
+      "disposition": "provisional_speaker_working_reader_only",
+      "reason": "Distinct short joke following Roz's reply; continuation and voice-model source lead support a Christine review candidate"
+    },
+    {
+      "source_ref": "C129.1",
+      "proposed_role": "CHRISTINE SULLIVAN",
+      "similarity": 0.79153,
+      "margin": 0.18027,
+      "disposition": "quarantine_plausible_out_of_bank_speaker",
+      "reason": "Campaign-ad recording mixup belongs to a conversational participant not independently established as Christine; voice bank omitted Harry/Bull/guest characters, so a positive score can be a forced known-role choice"
+    },
+    {
+      "source_ref": "C267.1",
+      "proposed_role": "ROZ RUSSELL",
+      "similarity": 0.82345,
+      "margin": 0.12164,
+      "disposition": "provisional_speaker_working_reader_only",
+      "reason": "Original paragraph appears syntactically continuous with C266.1, in Roz's pen-pal decision conversation; same-speaker boundary still needs actual soundtrack adjudication"
+    }
+  ]
+}
