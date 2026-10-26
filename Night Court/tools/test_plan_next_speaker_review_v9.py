@@ -127,6 +127,28 @@ class RemainingSpeakerReviewTests(unittest.TestCase):
         self.assertEqual(summary["original_source_units_still_unknown"],1)
         self.assertEqual(queue[0]["source_reading_ref"],"C189.1")
 
+    def test_live_v13_handoff_source_queue_cannot_falsely_certify_actor(self):
+        from plan_next_speaker_review_v9 import load_private_v13
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            (root/"pilot-source-dialogue-turns-v13.jsonl").write_text("{}\\n","utf-8")
+            (root/"pilot-source-dialogue-turns-v13-manifest.json").write_text("{}","utf-8")
+            with self.assertRaisesRegex(ValueError,"source-v13 private"):
+                load_private_v13(root)
+        rows=[
+            row("S09E19","S09-C146.1-TURN-1","DAN FIELDING","Come along Harry"),
+            row("S09E19","S09-C146.1-TURN-2","HARRY STONE","Yeah thanks Dan"),
+            row("S09E19","C147.1",None,"A missing voice nearby"),
+        ]
+        rows[0]["original_source_part_refs"]=["C146.1"]
+        rows[1]["original_source_part_refs"]=["C146.1"]
+        q,m=make_queue(rows,{},{"cues":[{"episode_id":"S09E19","original_cue":146}]},strict=False)
+        self.assertEqual(m["original_source_units"],2)
+        self.assertEqual(m["original_units_provisionally_named"],1)
+        self.assertEqual(m["original_source_units_still_unknown"],1)
+        self.assertEqual(q[0]["source_reading_ref"],"C147.1")
+        self.assertIsNone(q[0]["model_proposed_character"])
+
     def test_private_original_audio_numeric_sha_required(self):
         with tempfile.TemporaryDirectory() as folder:
             p=Path(folder)/"real-source.json"
