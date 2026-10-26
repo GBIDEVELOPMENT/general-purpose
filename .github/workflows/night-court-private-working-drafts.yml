@@ -1,0 +1,93 @@
+name: Night Court private two-pilot working screenplay delivery
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/night-court-private-working-drafts.yml'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/night-court-private-working-drafts.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  generate-private-pilot-reading-scripts:
+    if: >-
+      github.repository == 'gamesbyian/general-purpose' &&
+      github.event.repository.private == true &&
+      (github.event_name == 'pull_request' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build exactly source-pinned provisional roles and both pilot scripts
+        run: |
+          set -euo pipefail
+          T="${RUNNER_TEMP}/night-court-pilot-v15"
+          python 'Night Court/tools/build_external_speaker_reader_v6.py' --output "$T/v6"
+          python 'Night Court/tools/build_contextual_speaker_reader_v7.py' --v6 "$T/v6" --output "$T/v7"
+          python 'Night Court/tools/build_original_audio_speaker_reader_v8.py' --v7 "$T/v7" --output "$T/v8"
+          python 'Night Court/tools/build_s09_source_acoustic_speaker_reader_v9.py' --current-v8 "$T/v8" --output "$T/v9"
+          python 'Night Court/tools/build_s09_source_turns_v10.py' --v9 "$T/v9" --output "$T/v10"
+          python 'Night Court/tools/build_s09_mixed_voice_turns_v11.py' --v10 "$T/v10" --output "$T/v11"
+          python 'Night Court/tools/build_s09_high_context_speaker_reader_v12.py' --v11 "$T/v11" --output "$T/v12"
+          python 'Night Court/tools/build_s09_explicit_handoff_turns_v13.py' --v12 "$T/v12" --output "$T/v13"
+          python 'Night Court/tools/apply_source_role_amendments.py' --v13 "$T/v13" --output "$T/roles"
+          python 'Night Court/tools/apply_source_turn_amendments.py' --source-role-patches "$T/roles" --output "$T/turns"
+          python 'Night Court/tools/apply_s01_c219_source_turn.py' --source-turn-patches "$T/turns" --output "$T/v15"
+          python 'Night Court/tools/render_current_pilot_screenplays.py' \
+            --source-first-v15 "$T/v15" --output "$T/deliverable"
+      - name: Validate private working screenplay digest and source conservation
+        run: |
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          out=Path(os.environ['RUNNER_TEMP'])/'night-court-pilot-v15'/'deliverable'
+          m=json.loads((out/'working-screenplay-layout-manifest.json').read_text('utf-8'))
+          assert m['source_unit_counts']=={'original_source_units':751,'named_provisional':621,'unknown':130}
+          assert m['new_independently_verified_actor_voices']==0
+          assert m['new_independently_verified_performed_turns']==0
+          assert m['scene_review_complete'] is False
+          total=0
+          for ep,n in [('S01E01',405),('S09E19',321)]:
+              draft=out/f'{ep}-working-screenplay.md'
+              side=out/f'{ep}-working-screenplay-provenance.jsonl'
+              assert draft.exists() and side.exists()
+              assert hashlib.sha256(draft.read_bytes()).hexdigest()==m['manuscript_sha256'][ep]
+              rows=[json.loads(x) for x in side.read_text('utf-8').splitlines()]
+              assert len(rows)==n==m['episodes'][ep]['source_blocks']
+              assert all(r['actual_original_av_reviewer_accepted'] is False for r in rows)
+              if ep=='S09E19':
+                  assert all(r['source_cue_times_not_subturn_times_ms'] is None for r in rows)
+              total+=len(rows)
+              print(ep,'source reader blocks',n,'display groups',m['episodes'][ep]['display_groups'])
+          assert total==726
+          print('Both private complete-dialogue working drafts verified; NO AV certifications.')
+          PY
+          cat > "${RUNNER_TEMP}/night-court-pilot-v15/deliverable/READ_ME_FIRST.txt" <<'NOTE'
+          Original Night Court 1984-1992, private EDITORIAL WORKING DRAFTS only.
+          All held original source-derived dialogue retained, with source hashes and
+          provenance JSONL sidecars. Character identities and layout continuations
+          remain provisional, NOT independently audio/video verified.
+          Stage directions, delivery, scene settings and physical gags incomplete.
+          S09 original dialogue remains untimed. No whole episode AV certified.
+          NOTE
+      - name: Upload short-lived artifact accessible through the PRIVATE repository
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-original-pilot-working-screenplays-private
+          path: ${{ runner.temp }}/night-court-pilot-v15/deliverable/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Erase private source-derived and output text
+        if: always()
+        run: rm -rf "${RUNNER_TEMP}/night-court-pilot-v15"
