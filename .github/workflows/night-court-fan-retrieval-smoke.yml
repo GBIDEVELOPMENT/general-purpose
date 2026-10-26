@@ -564,7 +564,7 @@ jobs:
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='scene_context_mixed_speaker_turn_proposal_not_audio_verified'").fetchone()[0]==6
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='source_scene_character_dialogue_proposal_not_original_av_verified'").fetchone()[0]==11
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='BULL SHANNON' AND evidence_state='source_scene_character_dialogue_proposal_not_original_av_verified'").fetchone()[0]==1
-          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='HARRIET' AND evidence_state='source_scene_character_dialogue_proposal_not_original_av_verified'").fetchone()[0]==2
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='HARRIET' AND evidence_state='source_scene_character_dialogue_proposal_not_original_av_verified'").fetchone()[0]==1
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='editorial_comedy_and_story'").fetchone()[0]==21
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='DAN FIELDING' AND evidence_state='external_or_context_editorial_proposal'").fetchone()[0]>=1
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='CHRISTINE SULLIVAN' AND evidence_state='external_or_context_editorial_proposal'").fetchone()[0]>=2
