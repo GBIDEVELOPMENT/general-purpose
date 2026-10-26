@@ -251,6 +251,11 @@ jobs:
           assert new['episodes']['S09E19']['source_blocks']==322
           assert all((private_v16/f'{ep}-working-screenplay.md').is_file() for ep in ('S01E01','S09E19'))
           print('Manual-editorial current v16: 32 new role candidates, 2 corrected labels, one precise unverified two-voice split; 100 source units still have UNKNOWN voices')
+          review100=json.loads((base.parent/'s09-next-100-manual-review'/'remaining-100-speaker-review-summary.json').read_text('utf-8'))
+          assert review100['original_units_provisionally_named']==651
+          assert review100['original_source_units_still_unknown']==100
+          assert review100['remaining_unknown_original_source_units_by_episode']=={'S01E01':21,'S09E19':79}
+          assert review100['new_voices_human_accepted']==0
           retrieval=base.parent/'s09-current-private-fan-retrieval'
           manifest=json.loads((retrieval/'fan-retrieval-manifest.json').read_text('utf-8'))
           assert manifest['episode_count']==193
@@ -298,6 +303,7 @@ jobs:
         run: |
           rm -rf '${{ runner.temp }}/s09-current-private-readable-pilots'
           rm -rf '${{ runner.temp }}/s09-current-private-v16'
+          rm -rf '${{ runner.temp }}/s09-next-100-manual-review'
           rm -rf '${{ runner.temp }}/s09-current-private-fan-retrieval'
           rm -rf '${{ runner.temp }}/s09-v6' '${{ runner.temp }}/s09-v7' '${{ runner.temp }}/s09-v8' '${{ runner.temp }}/s09-source-numeric'
           rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-v12' '${{ runner.temp }}/s09-v13' '${{ runner.temp }}/s09-source-role-patches' '${{ runner.temp }}/s09-source-turn-patches' '${{ runner.temp }}/s09-source-turns-v15' '${{ runner.temp }}/s09-next-130-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
