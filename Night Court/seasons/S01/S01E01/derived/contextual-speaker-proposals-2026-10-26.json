@@ -1,0 +1,71 @@
+{
+  "schema": "night-court-contextual-s01e01-edit-proposals/1",
+  "episode_id": "S01E01",
+  "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "baseline": "v16",
+  "source_cues": 336,
+  "source_units": 404,
+  "v16_named_source_units": 383,
+  "v16_source_units_with_unknown": 21,
+  "v16_proposed_reading_blocks": 405,
+  "original_audio_verified": false,
+  "source_text_modified": false,
+  "proposals": [
+    {
+      "source_ref": "C028.1",
+      "existing_role": "BULL SHANNON",
+      "proposed_role": "LANA WAGNER",
+      "confidence": "high",
+      "evidence_types": [
+        "direct_address",
+        "conversational_structure",
+        "scene_participation",
+        "alternative_exclusion"
+      ],
+      "alternatives": [
+        "BULL SHANNON (self-address/comedic aside)"
+      ],
+      "rationale": "After Lana instructs Bull to pass along the mayor's call, the farewell addresses Bull by name; Bull saying his own name would require extra evidence.",
+      "verification_status": "unverified_editorial_correction_candidate",
+      "promoted": false
+    },
+    {
+      "source_ref": "C219.1:second",
+      "existing_role": null,
+      "proposed_role": null,
+      "candidate_role": "PHIL KERR",
+      "confidence": "low",
+      "evidence_types": [
+        "conversational_structure",
+        "scene_participation"
+      ],
+      "alternatives": [
+        "LOUISE KERR",
+        "OTHER COURT PARTICIPANT"
+      ],
+      "rationale": "Second voice is a source-exact existing intra-cue split after Harry's speech. Content and context do not uniquely distinguish the respondent.",
+      "verification_status": "UNKNOWN_retained",
+      "promoted": false
+    }
+  ],
+  "turn_grouping_notes": [
+    {
+      "source_refs": [
+        "C077.2",
+        "C078.1",
+        "C079.1",
+        "C080.1",
+        "C081.1",
+        "C082.1"
+      ],
+      "speaker": "BULL SHANNON",
+      "type": "adjacent_caption_continuation",
+      "status": "already_recognized_v16_not_new",
+      "rationale": "Single continuous ceremonial court-opening proclamation; separate caption cues are presentation boundaries."
+    }
+  ],
+  "within_caption_new_splits": 0,
+  "source_exact_new_joins": 0,
+  "accepted_prior_role_changes": 0,
+  "independently_verified_actors": 0
+}
