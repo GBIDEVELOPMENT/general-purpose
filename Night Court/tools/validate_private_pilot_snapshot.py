@@ -17,7 +17,59 @@ SOURCE = {
     "S01E01": (404, "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496"),
     "S09E19": (347, "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2"),
 }
+ORIGINAL_CANDIDATE_PARTS = {
+    "S01E01": "seasons/S01/S01E01/dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6/candidate-turns.jsonl",
+    "S09E19": "seasons/S09/S09E19/dialogue/versions/subtitle-cat-s09e19-original-caption-page-untime--659beb9c50fabdd1/candidate-turns.jsonl",
+}
+ROOT = Path(__file__).resolve().parents[1]
+
 PILOT_TIER = "provisional_source_first_chronological_screenplay_layout"
+
+def canonical_dialogue(text: str) -> str:
+    """Compare words and punctuation byte-for-byte except witness layout whitespace."""
+    return "".join(text.split())
+
+
+def reader_chronology_key(row: dict) -> tuple[int, int]:
+    # Same stable original-cue/part ordering as render_current_pilot_screenplays.
+    return min((int(ref[1:4]), int(ref[5])) for ref in row["original_source_part_refs"])
+
+
+def check_exact_original_dialogue(snapshot: Path, layout: dict, source_rows: list[dict],
+                                  by_episode_provenance: dict[str, list[dict]]) -> None:
+    """Reject any insertion, lost word, substitution, punctuation drift or reorder.
+
+    Do not compare timestamps: S09 has none, and S01 original cue timing does
+    not identify intra-cue transitions. This check establishes textual
+    conservation only, not source-caption fidelity to actually heard speech.
+    """
+    for ep, (original_parts, source_sha) in SOURCE.items():
+        original_file = ROOT / ORIGINAL_CANDIDATE_PARTS[ep]
+        original = [json.loads(line) for line in original_file.read_text("utf-8").splitlines()
+                    if line.strip()]
+        assert len(original) == original_parts
+        assert all(row["source_sha256"] == source_sha for row in original)
+        original.sort(key=lambda row: (row["cue"], row["part"]))
+        source_text = "".join(row["source_text"] for row in original)
+
+        rows = [(i, row) for i, row in enumerate(source_rows) if row["episode_id"] == ep]
+        rows.sort(key=lambda pair: (*reader_chronology_key(pair[1]), pair[0]))
+        assert len(rows) == layout["episodes"][ep]["source_blocks"]
+        by_episode_provenance[ep] = rows
+        candidate_text = "".join(row["caption_text"] for _, row in rows)
+        assert canonical_dialogue(candidate_text) == canonical_dialogue(source_text), (
+            ep + " changed original dialogue character sequence (whitespace excluded)"
+        )
+        sidecar = by_episode_provenance[ep]
+        assert len(rows) == len(sidecar)
+        for (_, row), entry in zip(rows, sidecar):
+            assert entry["reading_block_id"] == row["reading_block_id"]
+            assert entry["candidate_role"] == row["candidate_role"]
+            assert entry["original_source_part_refs"] == row["original_source_part_refs"]
+            assert entry["exact_rendered_caption_sha256"] == hashlib.sha256(
+                row["caption_text"].encode("utf-8")
+            ).hexdigest()
+
 
 
 def load_json(path: Path) -> dict:
@@ -34,6 +86,16 @@ def check(snapshot: Path) -> dict:
     assert layout["new_independently_verified_performed_turns"] == 0
     # This existing schema cannot record independent AV reviewer evidence.
     # Certification must not be introduced by a generated status change.
+
+    # The exact current post-editorial reader is itself preserved privately.
+    # Accept successor filenames without freezing the v16 editorial baseline.
+    reader_files = sorted(snapshot.glob("pilot-manual-context-speaker-*.jsonl"))
+    assert len(reader_files) == 1, "Ambiguous or absent current source-first reader"
+    raw = reader_files[0].read_bytes()
+    if "source_manual_v16_reader_sha256" in layout:
+        assert hashlib.sha256(raw).hexdigest() == layout["source_manual_v16_reader_sha256"]
+    source_rows = [json.loads(line) for line in raw.decode("utf-8").splitlines() if line]
+    by_episode_provenance = {}
 
     total_named = total_unknown = total_blocks = 0
     per_episode_unknown = {}
@@ -78,6 +140,8 @@ def check(snapshot: Path) -> dict:
         total_unknown += unnamed
         total_named += expected_source_units - unnamed
         total_blocks += len(rows)
+
+    check_exact_original_dialogue(snapshot, layout, source_rows, by_episode_provenance)
 
     counts = layout["source_unit_counts"]
     assert counts == {
