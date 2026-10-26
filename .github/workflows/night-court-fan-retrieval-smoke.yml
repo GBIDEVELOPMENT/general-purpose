@@ -19,6 +19,9 @@ on:
       - 'Night Court/tools/test_build_fan_answer_packet.py'
       - 'Night Court/tools/auto_align_quote_sequence.py'
       - 'Night Court/tools/test_auto_align_quote_sequence.py'
+      - 'Night Court/tools/build_external_speaker_reader_v6.py'
+      - 'Night Court/tools/test_build_external_speaker_reader_v6.py'
+      - 'Night Court/research/pilot-speaker-external-quote-improvements-v1.json'
       - 'Night Court/AUTOMATIC-QUOTE-SEQUENCE-2026-10-25.md'
       - 'Night Court/research/pilot-fan-beat-seeds-v1.json'
       - 'Night Court/seasons/S01/S01E01/derived/additional-original-film-staged-reader-v5/screenplay-extra-observed-business.md'
@@ -40,7 +43,29 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6
+      - name: Speaker priority one - generate and check real external quote v6 pilots
+        run: |
+          python 'Night Court/tools/build_external_speaker_reader_v6.py' \
+            --output /tmp/night-court-private-speaker-v6
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path('/tmp/night-court-private-speaker-v6')
+          summary=json.loads((base/'speaker-improvement-manifest.json').read_text('utf-8'))
+          assert summary['original_source_speaking_units']==751
+          assert summary['original_provisional_named_source_units']==487
+          assert summary['original_unknown_source_units']==264
+          assert summary['new_provisional_named_source_units']==490
+          assert summary['remaining_unidentified_source_units']==261
+          assert summary['provisional_speaker_segments_from_these_cues']==4
+          assert summary['original_audio_speaker_identities_verified_by_this_change']==0
+          for ep in ('S01E01','S09E19'):
+            assert (base/ep/'screenplay-external-speakers-v6.md').is_file()
+          s09=(base/'S09E19'/'screenplay-external-speakers-v6.md').read_text('utf-8')
+          assert 'ROZ RUSSELL · P0 SOURCE-CONTINUATION PROPOSAL; AUDIO UNVERIFIED\nme.\n\nCHRISTINE SULLIVAN' in s09
+          print('Original-source-anchored S01/S09 speaker v6: 3 new named original units and one restored two-voice split; no media logged')
+          PY
       - name: Both pilot working scripts
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
