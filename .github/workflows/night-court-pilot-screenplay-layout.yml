@@ -67,6 +67,7 @@ jobs:
             case "$path" in
               'Night Court/saved-private/pilot-current/'*) ;;
               'Night Court/seasons/S09/S09E19/derived/editorial-v17/S09E19-editorial-v17-working-screenplay.md') ;;
+              'Night Court/seasons/S09/S09E19/derived/editorial-v18/S09E19-v18-working-screenplay.md') ;;
               *) echo "::error::Unexpected full dialogue outside approved paths: $path"; exit 1 ;;
             esac
           done <<< "$tracked"
