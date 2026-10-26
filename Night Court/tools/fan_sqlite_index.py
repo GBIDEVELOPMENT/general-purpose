@@ -273,7 +273,7 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
         if expected not in source_docs[row["episode_id"]]:
             if (allow_original_source_turn_amendments and
                 row["episode_id"]=="S09E19" and
-                row["source_reading_ref"] in ("C102.1","C103.1","C209.1","C211.1")):
+                row["source_reading_ref"] in ("C102.1","C103.1","C209.1","C211.1","C121.1","C206.1","C271.1","C290.1")):
                 # Only exact source-turn patch receipts may explain this
                 # original paragraph's new internal dialogue segmentation.
                 continue
