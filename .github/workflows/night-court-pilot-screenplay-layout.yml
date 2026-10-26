@@ -7,6 +7,9 @@ on:
       - 'Night Court/tools/test_render_current_pilot_screenplays.py'
       - 'Night Court/tools/export_fan_retrieval_chunks.py'
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
+      - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
+      - 'Night Court/tools/test_apply_manual_context_pilot_review_v16.py'
+      - 'Night Court/research/manual-context-editorial-speaker-review-v16.json'
       - '.github/workflows/night-court-pilot-screenplay-layout.yml'
   push:
     branches: [main]
@@ -15,6 +18,9 @@ on:
       - 'Night Court/tools/test_render_current_pilot_screenplays.py'
       - 'Night Court/tools/export_fan_retrieval_chunks.py'
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
+      - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
+      - 'Night Court/tools/test_apply_manual_context_pilot_review_v16.py'
+      - 'Night Court/research/manual-context-editorial-speaker-review-v16.json'
       - '.github/workflows/night-court-pilot-screenplay-layout.yml'
   workflow_dispatch:
 
@@ -39,8 +45,10 @@ jobs:
             'Night Court/tools/render_current_pilot_screenplays.py' \
             'Night Court/tools/test_render_current_pilot_screenplays.py' \
             'Night Court/tools/export_fan_retrieval_chunks.py' \
-            'Night Court/tools/test_export_fan_retrieval_chunks.py'
-          python -m unittest -v test_render_current_pilot_screenplays test_export_fan_retrieval_chunks
+            'Night Court/tools/test_export_fan_retrieval_chunks.py' \
+            'Night Court/tools/apply_manual_context_pilot_review_v16.py' \
+            'Night Court/tools/test_apply_manual_context_pilot_review_v16.py'
+          python -m unittest -v test_render_current_pilot_screenplays test_export_fan_retrieval_chunks test_apply_manual_context_pilot_review_v16
       - name: Reject accidental committed generated manuscripts
         run: |
           if git ls-files -- ':(glob)Night Court/**/*-working-screenplay.md' \
