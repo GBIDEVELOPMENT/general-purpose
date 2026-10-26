@@ -1,0 +1,116 @@
+{
+  "schema": "night-court-s01e01-5-contextual-unidentified-roles-v19/1",
+  "episode_id": "S01E01",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "underlying_avi_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "base_v18_script_sha256": "c430ad3da4d60d08079d617b53bb4c50e1e1338b1634903bb3ee49283a53fcf5",
+  "base_v18_provenance_sha256": "2c09488487a9ac45dcf8af097b6aad36a7548b54dd1d05facbee20643af1d88b",
+  "confidence_kind": "independent_cross-turn_semantics_and_scene_participation_no_original_audio",
+  "newly_assigned_source_units": 5,
+  "source_srt_cues_unchanged": 336,
+  "source_speaking_units_unchanged": 404,
+  "original_source_AV_replayed_for_these_attributions": false,
+  "no_performed_turn_inferences_or_new_subcue_clocks": true,
+  "role_amendments": [
+    {
+      "ref": "C010.1",
+      "cue": 10,
+      "fragment": "How are you?",
+      "prior": null,
+      "role": "BULL SHANNON",
+      "confidence": "medium_high_contextual",
+      "basis": [
+        "After Lana orders the painter out, a greeting follows immediately before Lana replies 'Hi, Bull'",
+        "Bull's greeting to Lana is locally coherent and C013 continues their exchange"
+      ],
+      "alternative": [
+        "PAINTER addressing Bull",
+        "an unseen entrant"
+      ],
+      "display_group_id": 10
+    },
+    {
+      "ref": "C011.1",
+      "cue": 11,
+      "fragment": "God, I was so close.",
+      "prior": null,
+      "role": "PAINTER",
+      "confidence": "high_contextual",
+      "basis": [
+        "Painter was watching activity across alley in C004–C008 before being expelled at C009",
+        "Painter's lament about missing the culmination of what he was watching has specific discourse referent absent for Bull"
+      ],
+      "alternative": [
+        "a different party referring to something unseen"
+      ],
+      "display_group_id": 11
+    },
+    {
+      "ref": "C084.1",
+      "cue": 84,
+      "fragment": "- Your Honor...",
+      "prior": null,
+      "role": "DAN FIELDING",
+      "confidence": "high_contextual",
+      "basis": [
+        "Following Harry's courtroom stunt C083, the prosecutor repeatedly tries to discuss courtroom procedure",
+        "C085 explicitly Dan continues his interrupted advice, and C086–C088 Dan repeatedly addresses the judge"
+      ],
+      "alternative": [
+        "LANA WAGNER independently beginning an address"
+      ],
+      "display_group_id": 78
+    },
+    {
+      "ref": "C102.1",
+      "cue": 102,
+      "fragment": "- What was the fine?",
+      "prior": null,
+      "role": "LANA WAGNER",
+      "confidence": "high_contextual",
+      "basis": [
+        "Harry C098–C100 instructs court clerk Lana to prepare Hammond's file; she protests case order",
+        "Immediately after fine pronouncement the clerk needs the amount in the court record, followed by clerical case-file handoff"
+      ],
+      "alternative": [
+        "SHEILA GARDINER reviewing her client's penalty"
+      ],
+      "display_group_id": 102
+    },
+    {
+      "ref": "C103.1",
+      "cue": 103,
+      "fragment": "- Thank you. Here's the file.",
+      "prior": null,
+      "role": "LANA WAGNER",
+      "confidence": "high_contextual",
+      "basis": [
+        "C098–C100 specifically asks Lana to prepare Hammond's file",
+        "Administrative exchange C102 then acknowledgment and file handoff C103, followed by Harry's case closure, is the clerk's workflow"
+      ],
+      "alternative": [
+        "SHEILA GARDINER handing client record"
+      ],
+      "display_group_id": 104
+    }
+  ],
+  "retained_unidentified_count": 15,
+  "retained_unidentified_refs": [
+    "C061.1",
+    "C061.2",
+    "C066.1",
+    "C073.1",
+    "C075.1",
+    "C076.1",
+    "C077.1",
+    "C094.1",
+    "C106.1",
+    "C106.2",
+    "C107.1",
+    "C124.1",
+    "C125.1",
+    "S01E01-C219-SOURCE-TURN-2",
+    "C290.1"
+  ],
+  "future_invalidating_evidence": "Original soundtrack/scene inspection contradicting voice, participation or inferred clerical action must overrule these contextual assignments."
+}
