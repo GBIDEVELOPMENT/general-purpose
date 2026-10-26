@@ -168,7 +168,9 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
                                      context_path: Path,
                                      full: bool = True,
                                      source_acoustic_v8: bool = False,
-                                     source_acoustic_v9: bool = False) -> tuple[list[dict], dict]:
+                                     source_acoustic_v9: bool = False,
+                                     allow_original_s09_v10_turn_reunion: bool = False
+                                     ) -> tuple[list[dict], dict]:
     """Verify original speaker records still cover identical caption units.
 
     The v7 reader is a P1-first view, not independently sound-verified.
@@ -178,6 +180,8 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
     from collections import defaultdict
     if source_acoustic_v8 and source_acoustic_v9:
         raise ValueError("Choose one current speaker evidence revision")
+    if allow_original_s09_v10_turn_reunion and not source_acoustic_v9:
+        raise ValueError("Only the S09 v9 role source can support the v10 turn reunion")
     manifest_path = context_path.parent / (
         "pilot-current-speaker-s09-audio-v9-manifest.json" if source_acoustic_v9 else
         "pilot-original-acoustic-speaker-manifest.json" if source_acoustic_v8 else
@@ -252,7 +256,26 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
         expected = ((row["candidate_role"] or "UNIDENTIFIED SPEAKER")
                     + " · " + row["role_attribution_status"] + "\n" + row["caption_text"])
         if expected not in source_docs[row["episode_id"]]:
-            raise ValueError("Contextual named voice not represented in matching source script")
+            # The v10 screenplay joins exactly two otherwise validated
+            # v9 source-reading records. No exceptions for any other text.
+            if (not allow_original_s09_v10_turn_reunion
+                or row["episode_id"] != "S09E19"
+                or row["source_reading_ref"] not in ("C266.1", "C267.1")):
+                raise ValueError("Contextual named voice not represented in matching source script")
+            before=groups.get(("S09E19","C266.1"),[])
+            after=groups.get(("S09E19","C267.1"),[])
+            if (len(before)!=1 or len(after)!=1
+                or before[0]["candidate_role"] is not None
+                or after[0]["candidate_role"]!="ROZ RUSSELL"
+                or before[0]["role_attribution_status"]!="unidentified"
+                or after[0]["role_attribution_status"]!="original_soundtrack_acoustic_context_proposal_not_independent_avi_id"
+                or (before[0]["original_source_part_refs"],
+                    after[0]["original_source_part_refs"])!=(["C266.1"],["C267.1"])):
+                raise ValueError("Original S09 two-cue v10 role source fails prior turn invariants")
+            joined="ROZ RUSSELL · syntactic_and_source_voice_continuation_proposal_not_audio_verified\n"+(
+                before[0]["caption_text"]+" "+after[0]["caption_text"])
+            if joined not in source_docs["S09E19"]:
+                raise ValueError("Joined original S09 two-cue turn missing from v10 source screenplay")
     source_keys = {}
     for row in newer:
         for ref in row["original_source_part_refs"]:
@@ -424,7 +447,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
         report.update(summary)
     if s09_acoustic_v9_role_path is not None:
         roles, summary = use_source_checked_context_roles(source, roles,
-            s09_acoustic_v9_role_path, full=require_full, source_acoustic_v9=True)
+            s09_acoustic_v9_role_path, full=require_full, source_acoustic_v9=True,
+            allow_original_s09_v10_turn_reunion=source_turn_v10_role_path is not None)
         report.update(summary)
     if source_turn_v10_role_path is not None:
         roles, summary = apply_current_source_turn_reunion_v10(
