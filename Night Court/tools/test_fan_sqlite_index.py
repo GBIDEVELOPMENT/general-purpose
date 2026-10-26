@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from fan_sqlite_index import SCHEMA, build_database, query, validate_evidence
+from fan_sqlite_index import SCHEMA, build_database, query, validate_evidence, apply_speaker_improvements
 from build_pilot_character_evidence import SCHEMA as ROLE_SCHEMA
 from build_pilot_fan_beat_cards import CARD_SCHEMA
 from search_fan_retrieval_chunks import SCHEMA as SCRIPT_SCHEMA
@@ -76,6 +76,50 @@ class SqliteFanCorpusTests(unittest.TestCase):
             self.assertTrue(results["results_by_evidence_kind"]["script_witness"])
             with self.assertRaises(FileExistsError):
                 build_database(db, *paths, require_full=False)
+
+    def test_v6_override_replaces_unknown_without_double_indexing(self):
+        from hashlib import sha256
+        src, cards, roles = fixtures()
+        original = "Your Honor, this is highly irregular."
+        role = roles[0]
+        role["candidate_role"] = None
+        role["role_attribution_status"] = "unidentified"
+        role["source_reading_ref"] = "C001.1"
+        role["caption_text"] = original
+        new_label = "DAN FIELDING · EXTERNALLY QUOTE-ATTRIBUTED; AUDIO UNVERIFIED"
+        src[0]["retrieval_text"] += "\n" + new_label + "\n" + original
+        revision = {
+            "schema": "night-court-original-pilot-external-attribution-application/1",
+            "episode_id": "S01E01", "source_ref": "C001.1",
+            "source_witness_sha256": "b" * 64,
+            "source_cue_sha256": sha256(original.encode()).hexdigest(),
+            "start_char": 0, "end_char": len(original),
+            "text": original, "candidate_role": "DAN FIELDING",
+            "reader_label": new_label,
+            "original_soundtrack_verified": False,
+            "character_identity_status": "external_or_context_editorial_proposal",
+            "external_episode_quote_url": "https://example.test/quotes"
+        }
+        mapped = apply_speaker_improvements(src, roles, [revision], require_full=False)
+        self.assertEqual(len(mapped), len(roles))
+        self.assertEqual(mapped[0]["candidate_role"], "DAN FIELDING")
+        self.assertEqual(mapped[0]["role_attribution_status"], "external_or_context_editorial_proposal")
+        self.assertFalse(mapped[0]["speaker_turn_boundary_verified"])
+        changed = dict(revision, text="invented text")
+        with self.assertRaisesRegex(ValueError, "alter or omit source words"):
+            apply_speaker_improvements(src, roles, [changed], require_full=False)
+        with tempfile.TemporaryDirectory() as folder:
+            paths = [Path(folder)/n for n in ("source.jsonl","cards.jsonl","roles.jsonl")]
+            for rows, path in zip((src,cards,roles),paths):
+                path.write_text("".join(json.dumps(x)+"\n" for x in rows), "utf-8")
+            overrides = Path(folder)/"overrides.jsonl"
+            overrides.write_text(json.dumps(revision)+"\n","utf-8")
+            db=Path(folder)/"source-fts.sqlite"
+            report=build_database(db,*paths,require_full=False,speaker_override_path=overrides)
+            self.assertEqual(report["post_speaker_improvement_blocks"],1)
+            result=query(db,"irregular",role="DAN FIELDING")
+            self.assertEqual(len(result["results_by_evidence_kind"]["provisional_character_dialogue"]),1)
+            self.assertEqual(result["results_by_evidence_kind"]["provisional_character_dialogue"][0]["evidence"]["candidate_role"],"DAN FIELDING")
 
     def test_no_false_verified_role_or_mixed_episode(self):
         src, cards, roles = fixtures()
