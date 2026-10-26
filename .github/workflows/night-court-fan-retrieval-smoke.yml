@@ -27,6 +27,8 @@ on:
       - 'Night Court/tools/test_plan_speaker_audio_review.py'
       - 'Night Court/tools/build_contextual_speaker_reader_v7.py'
       - 'Night Court/tools/test_build_contextual_speaker_reader_v7.py'
+      - 'Night Court/tools/align_private_production_script.py'
+      - 'Night Court/tools/test_align_private_production_script.py'
       - 'Night Court/research/pilot-contextual-speaker-proposals-v1.json'
       - 'Night Court/research/pilot-speaker-external-quote-improvements-v1.json'
       - 'Night Court/AUTOMATIC-QUOTE-SEQUENCE-2026-10-25.md'
@@ -50,7 +52,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6 test_triage_unknown_speakers test_plan_speaker_audio_review test_build_contextual_speaker_reader_v7
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6 test_triage_unknown_speakers test_plan_speaker_audio_review test_build_contextual_speaker_reader_v7 test_align_private_production_script
       - name: Speaker priority one - generate and check real external quote v6 pilots
         run: |
           python 'Night Court/tools/build_external_speaker_reader_v6.py' \
