@@ -28,7 +28,7 @@ on:
       - 'Night Court/tools/build_contextual_speaker_reader_v7.py'
       - 'Night Court/tools/test_build_contextual_speaker_reader_v7.py'
       - 'Night Court/tools/align_private_production_script.py'
-      - 'Night Court/tools/test_align_private_production_script test_build_original_audio_speaker_reader_v8 test_triage_internal_speaker_switches test_plan_next_speaker_review_v9.py'
+      - 'Night Court/tools/test_align_private_production_script test_build_original_audio_speaker_reader_v8 test_build_s09_source_acoustic_speaker_reader_v9 test_triage_internal_speaker_switches test_plan_next_speaker_review_v9.py'
       - 'Night Court/tools/build_original_audio_speaker_reader_v8.py'
       - 'Night Court/tools/test_build_original_audio_speaker_reader_v8.py'
       - 'Night Court/tools/triage_internal_speaker_switches.py'
@@ -37,6 +37,9 @@ on:
       - 'Night Court/tools/plan_next_speaker_review_v9.py'
       - 'Night Court/tools/test_plan_next_speaker_review_v9.py'
       - 'Night Court/research/s01e01-source-voice-acoustic-proposals-v1.json'
+      - 'Night Court/research/s09-original-source-acoustic-speaker-proposals-v1.json'
+      - 'Night Court/tools/build_s09_source_acoustic_speaker_reader_v9.py'
+      - 'Night Court/tools/test_build_s09_source_acoustic_speaker_reader_v9.py'
       - 'Night Court/research/pilot-contextual-speaker-proposals-v1.json'
       - 'Night Court/research/pilot-speaker-external-quote-improvements-v1.json'
       - 'Night Court/AUTOMATIC-QUOTE-SEQUENCE-2026-10-25.md'
@@ -239,6 +242,39 @@ jobs:
                      for x in m['episodes'])==2
           print('Current original-audio voice-based provisional speaker scripts retrieved for both pilots; all 193 source editions conserved')
           PY
+      - name: Source-linked three S09 original-audio name suggestions with one rejected false positive
+        run: |
+          python 'Night Court/tools/build_s09_source_acoustic_speaker_reader_v9.py' \
+            --current-v8 /tmp/night-court-private-source-audio-speaker-v8 \
+            --output /tmp/night-court-private-source-audio-speaker-v9
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/night-court-private-source-audio-speaker-v9')
+          m=json.loads((p/'pilot-current-speaker-s09-audio-v9-manifest.json').read_text('utf-8'))
+          assert m['original_source_caption_units']==751
+          assert m['current_working_named_provisional_original_units']==590
+          assert m['unidentified_original_cue_units']==161
+          assert m['original_s09_soundtrack_supported_new_named_proposals']==3
+          assert m['quarantined_suspicious_model_proposals']==1
+          assert m['original_audio_human_identified_characters_added']==0
+          print('590 source-unit provisional names, 161 UNKNOWN, S09 C129 misleading voice-model hint quarantined; no AV actor identity accepted')
+          PY
+      - name: Real-source v9 speaker-first 193-episode private retrieval without stale S09 UNKNOWN labels
+        run: |
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --speaker-v9-root /tmp/night-court-private-source-audio-speaker-v9 \
+            --output /tmp/night-court-private-fan-speaker-v9
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/night-court-private-fan-speaker-v9')
+          m=json.loads((p/'fan-retrieval-manifest.json').read_text('utf-8'))
+          assert m['episode_count']==193
+          assert sum(x['evidence_tier']=='provisional_original_s09_audio_speaker_reader_v9'
+                     for x in m['episodes'])==2
+          print('Pilot true original v9 provisional speaker manuscripts integrated into 193-episode private retrieval, no media or dialogue printed')
+          PY
       - name: All 193 source witnesses with pilot v5 substitutions
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -334,10 +370,10 @@ jobs:
       - name: Build and query one private SQLite index for every evidence type
         run: |
           python 'Night Court/tools/fan_sqlite_index.py' build \
-            --corpus /tmp/night-court-private-fan-speaker-v8/fan-retrieval-chunks.jsonl \
+            --corpus /tmp/night-court-private-fan-speaker-v9/fan-retrieval-chunks.jsonl \
             --cards /tmp/night-court-private-fan-beats/pilot-fan-beat-cards.jsonl \
             --roles /tmp/night-court-private-character-evidence/pilot-character-reading-blocks.jsonl \
-            --acoustic-context-roles /tmp/night-court-private-source-audio-speaker-v8/pilot-original-acoustic-speaker-reads.jsonl \
+            --s09-acoustic-v9-roles /tmp/night-court-private-source-audio-speaker-v9/pilot-current-source-first-s09-audio-v9.jsonl \
             --database /tmp/night-court-all-private-fan.sqlite
           python 'Night Court/tools/fan_sqlite_index.py' query \
             --database /tmp/night-court-all-private-fan.sqlite \
@@ -358,6 +394,8 @@ jobs:
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='CHRISTINE SULLIVAN' AND evidence_state='external_or_context_editorial_proposal'").fetchone()[0]>=2
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='narrative_context_candidate_not_voice_verified'").fetchone()[0]>=85
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='original_soundtrack_embedding_support_not_audio_verified'").fetchone()[0]==4
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='original_soundtrack_acoustic_context_proposal_not_independent_avi_id'").fetchone()[0]==3
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND episode_id='S09E19' AND title='Unidentified voice' AND json_extract(source_data_json,'$.source_reading_ref')='C129.1'").fetchone()[0]==1
           for episode,path in [
             ('S01E01','/tmp/night-court-private-fts-coin.json'),
             ('S09E19','/tmp/night-court-private-fts-roz.json')
