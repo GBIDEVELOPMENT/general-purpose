@@ -1,0 +1,132 @@
+{
+  "schema": "night-court-s09e19-direct-visual-still-sequence-review-v18/1",
+  "episode_id": "S09E19",
+  "original_video_source_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_untimed_dialogue_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_source_workflow": 40139082891,
+  "downloaded_original_still_archive_id": 12577894333,
+  "archive_zip_sha256": "a688341ad55478b8876db523c8100386162fe336c7da1623ea5ad6ea9ad72e7d",
+  "source_frame_index": "sample-evidence.json",
+  "image_sha_coverage": {
+    "indexed_frame_jpegs": 200,
+    "verified_frame_sha256_matches": 200,
+    "mismatches": 0,
+    "review_sheets": 4,
+    "verified_sheet_sha256_matches": 4
+  },
+  "direct_reviewed_media": "all four contact sheets containing 200 ordered original-source-derived sampled stills; individual frames 090 and 100 in spark segment enlarged for motion sequence detail",
+  "original_soundtrack_heard": false,
+  "continuous_original_video_played": false,
+  "voice_identity_verified": false,
+  "actual_person_identity_from_images_claimed": false,
+  "frame_time_semantics": "nominal requested offset, not precise native PTS or synchronized subtitle cue",
+  "observations": [
+    {
+      "id": "SPARK-01",
+      "source_window_s": [
+        684,
+        704
+      ],
+      "source_frames_range": [
+        1,
+        13
+      ],
+      "scope": "static 5fps sampled images",
+      "action": "Book-lined wall and mounted electrical-looking fixture remain visible before the cut to a floor insert. No ignition actor or causal action is captured.",
+      "participants": "no identifiable person in these images",
+      "confidence": "high_visual"
+    },
+    {
+      "id": "SPARK-02",
+      "source_window_s": [
+        684,
+        704
+      ],
+      "source_frames_range": [
+        14,
+        23
+      ],
+      "scope": "sampled original picture",
+      "action": "A bright burning point on a thin dark floor-length line spits sparks and changes apparent flare intensity.",
+      "participants": "no person shown in this insert",
+      "confidence": "high_visual"
+    },
+    {
+      "id": "SPARK-03",
+      "source_window_s": [
+        684,
+        704
+      ],
+      "source_frames_range": [
+        24,
+        77
+      ],
+      "scope": "successive sampled images",
+      "action": "Two suited adults crouch behind a tall wooden partition while smoke crosses the view. One faces toward the other and gestures, then both begin to rise.",
+      "participants": "two visible adults at the partition, no voice assignment",
+      "confidence": "high_visual"
+    },
+    {
+      "id": "SPARK-04",
+      "source_window_s": [
+        684,
+        704
+      ],
+      "source_frames_range": [
+        78,
+        100
+      ],
+      "scope": "successive sampled images",
+      "action": "The view widens. At least two adults emerge from behind the wooden partition into the smoke; one adult moves TOWARD the still-sparking line and bends down very near the glowing point by sampled frame 100. A third dark-dressed person is visible farther back near a doorway. Do NOT narrate the movement as retreat from the sparking object. Exactly what the approaching adult does to it is unobserved.",
+      "participants": "foreground moving adults and a separate distant doorway observer, identities unverified",
+      "confidence": "high_visual_direction_medium_action_purpose"
+    },
+    {
+      "id": "DANCE-01",
+      "source_window_s": [
+        951,
+        971
+      ],
+      "source_frames_range": [
+        1,
+        20
+      ],
+      "scope": "sampled original picture",
+      "action": "In a crowded restaurant, a tall bearded adult in a dark suit and light shirt moves into a close dancing position with a shorter curly-haired adult wearing a burgundy outfit; background couples also move around them.",
+      "participants": "two principal dancers, no original actor/voice certification",
+      "confidence": "high_visual"
+    },
+    {
+      "id": "DANCE-02",
+      "source_window_s": [
+        951,
+        971
+      ],
+      "source_frames_range": [
+        21,
+        90
+      ],
+      "scope": "successive sampled original images",
+      "action": "The pair remain face to face, clasping at shoulder and arm height and shifting weight, smiling intermittently while they sway in a close dance. The man lowers his face toward the other dancer at intervals; contact such as a kiss is not established from these stills.",
+      "participants": "same two principal dancers",
+      "confidence": "high_visual"
+    },
+    {
+      "id": "DANCE-03",
+      "source_window_s": [
+        951,
+        971
+      ],
+      "source_frames_range": [
+        91,
+        100
+      ],
+      "scope": "wider sampled original picture",
+      "action": "Shot widens to the surrounding dance floor and nearby dining tables. The burgundy-clad dancer turns away toward the foreground near the end while the taller suited partner remains in the middle of the floor.",
+      "participants": "principal two dancers and unidentified surrounding diners",
+      "confidence": "medium_visual"
+    }
+  ],
+  "direct_visual_revision_to_previous_ledger": "Prior physical-motion-original-v1 prose says the two adults 'retreat from the still-sparking spot.' Frames 78–100 instead visibly show a foreground adult moving toward the flare and bending close to it. The original ledger is retained as historical; replace only that specific direction in successor stage prose. No source original JPEG or video is committed.",
+  "AV_certification_status": "not_audio_or_continuous_video_certified"
+}
