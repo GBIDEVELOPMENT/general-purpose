@@ -320,3 +320,21 @@ The v12 contextual reader provides 610 provisional names but still treats some o
 The human/film acoustic adjudication remains **pending**, despite unusually strong textual turn and character evidence. All six newly rendered performance/actor labels are **editable source-context hypotheses**, not certified film turns or audiovisual cast IDs. [Explicit source-turn proposals](research/s09-explicit-address-speaker-turns-v13.json) preserve the immutability of the original 347 UNTIMED S09 witness paragraphs. The deterministic [v13 private source reader](tools/build_s09_explicit_handoff_turns_v13.py) reproduces every source cue's original Unicode string exactly and refuses any modified prior named role, missing original cue, duplicated/missing source characters or fake AV acceptance.
 
 This gives **613 provisional named / 138 UNKNOWN of 751 original cue-derived source units** and **718 proposed true-speaking-turn reading blocks** across the two pilots. That higher turn-block count reflects editorial source span regrouping, **not independent verification of a new actor or one-to-one equivalence between subtitle cues and performed turns**. All other prior source and v12 character roles remain unchanged. The all-193 episode fan retrieval and private SQLite index use the latest v13 source-first manuscript and consistent role evidence, while existing frozen v5 rich staged scripts remain untouched.
+
+## Stop rebuilding per-version role readers: generic source-checked speaker amendments
+
+After v13 established the correct reversible mixed-caption turn structure, repeatedly authoring a fresh custom Python reader for each new group of straightforward character assignments is unnecessary overhead. The new [append-only source-role amendment ledger](research/source-role-amendments-v1.json) and generic [apply_source_role_amendments.py](tools/apply_source_role_amendments.py) support any number of small subsequent **UNKNOWN→working-name** patches, without new source-reader code per role. Each ledger record names the exact episode, original cue-part IDs, original source SHA, previously unidentified reading reference, matching source phrase, proposed character role, and the natural-language reason why it is plausible. The engine refuses duplicated original source parts, overwriting a known actor, editing source words/cue memberships, adding S09 subtitle clocks, or claiming false original sound/film verification. Future agents can extend the JSON amendments and rerun the existing read-only generator/tests; P0 genuine split/merge corrections still demand their own source-span review.
+
+The first six append-only source proposals all belong to the **safe-room informant explicitly called Paul** at the end of the conversation. S09 C112 recognizes Judge Grimm's safe, C114/C115 recount the corruption/blackmail story, C117/C118 continue that historical tale, and C122 bids goodnight, immediately before C123/C124 answer **Paul** by name. These are six **guest character dialogue hypotheses** grounded in specific source turns and the named farewell, **not verified performer/voice claims**. Because the source transcript leaves the speaker unnamed and the guest may have no credited character listing, PAUL is a dialogue character label, not an actor identification.
+
+The private patched source-first working script would have **619 source units provisionally named / 132 UNKNOWN out of the same immutable 751**, while preserving 718 proposed performance-reading blocks and **zero** independently original-A/V-verified actor identities. The generic patched reader can be selected into the full-193 source-dialogue LLM retrieval and the SQLite fan-evidence index, without exposing original episode bulk dialogue in Git/Actions logs.
+
+```sh
+python 'Night Court/tools/apply_source_role_amendments.py' \
+  --v13 /tmp/night-court-private-speaker-turns-v13 \
+  --output /tmp/night-court-private-source-role-patches
+
+python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+  --speaker-patch-root /tmp/night-court-private-source-role-patches \
+  --output /tmp/night-court-private-fan-speaker-patched
+```
