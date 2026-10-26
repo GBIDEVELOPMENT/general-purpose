@@ -401,7 +401,7 @@ def integrate(output: Path) -> dict:
         [x for x in old if x["episode_id"]=="S09E19"], old_bytes
     )
     prior_editorial_reader = original_reading_order(first + second)
-    prior_reader_bytes = "".join(json.dumps(row,ensure_ascii=False,sort_keys=True)+"\\n"
+    prior_reader_bytes = "".join(json.dumps(row,ensure_ascii=False,sort_keys=True)+"\n"
                                  for row in prior_editorial_reader).encode("utf-8")
     second, second_side, second_script, second_info = integrate_s09_v18(
         second, sha(prior_reader_bytes)
