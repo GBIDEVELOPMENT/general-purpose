@@ -6,7 +6,7 @@
     "S01E01": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
     "S09E19": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2"
   },
-  "method": "Editor-inferred pilot dialogue participants from neighboring script context and original pilot cast; no new original film/audio listening. Each role should be considered provisional and sent to the listening gate; character labels do not validate source turns or word pronunciation. Guest spectator role is descriptive rather than a cast identity.",
+  "method": "Editor-inferred pilot dialogue participants from neighboring script context and original pilot cast; no new original film/audio listening. Each role should be considered provisional and sent to the listening gate; character labels do not validate source turns or word pronunciation. Guest spectator role is descriptive rather than a cast identity. Subsequent published season-specific Wikiquote comparison explicitly corrected C172.1 from an unsupported Lana guess to Harry and supported Lana at C137.1; published episode quotes can be derived from similar captions and are not independently listened voice truth.",
   "proposals": [
     {
       "episode_id": "S01E01",
@@ -74,11 +74,12 @@
     {
       "episode_id": "S01E01",
       "source_ref": "C172.1",
-      "proposed_role": "LANA WAGNER",
-      "evidence_tier": "narrative_context_proposal",
+      "proposed_role": "HARRY STONE",
+      "evidence_tier": "episode_specific_external_quote_context",
       "confidence_group": "source_context_high_or_medium",
       "original_audio_reviewed": false,
-      "character_verified": false
+      "character_verified": false,
+      "source_url": "https://en.wikiquote.org/wiki/Night_Court_(season_1)"
     },
     {
       "episode_id": "S01E01",
@@ -806,6 +807,16 @@
       "proposed_role": "BULL SHANNON",
       "evidence_tier": "narrative_context_proposal",
       "confidence_group": "source_context_medium",
+      "original_audio_reviewed": false,
+      "character_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_ref": "C137.1",
+      "proposed_role": "LANA WAGNER",
+      "evidence_tier": "episode_specific_external_quote_context",
+      "confidence_group": "published_character_quote_source_dependent",
+      "source_url": "https://en.wikiquote.org/wiki/Night_Court_(season_1)",
       "original_audio_reviewed": false,
       "character_verified": false
     }
