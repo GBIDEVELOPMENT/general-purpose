@@ -95,11 +95,11 @@ def check(snapshot: Path) -> dict:
         assert (snapshot / "pilot-current-editorial-manifest.json").is_file()
         editorial = load_json(snapshot / "pilot-current-editorial-manifest.json")
         assert editorial["current_editorial_reader_sha256"] == layout["current_editorial_reader_sha256"]
-        assert editorial["named_provisional"] == 655
-        assert editorial["units_with_unknown_voice"] == 96
+        assert editorial["named_provisional"] == 657
+        assert editorial["units_with_unknown_voice"] == 94
         assert editorial["AV_accepted_actors"] == editorial["AV_accepted_performed_turns"] == 0
         assert layout["episode_editorial_integrations"] == {
-            "S01E01":"Agent1-v18","S09E19":"Agent2-v17"
+            "S01E01":"Agent1-v18","S09E19":"Agent2-v18"
         }
     else:
         reader_files = sorted(snapshot.glob("pilot-manual-context-speaker-*.jsonl"))
