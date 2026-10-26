@@ -1,0 +1,35 @@
+{
+  "actor_role_identifications_independently_original_audio_verified": 0,
+  "corrected_previously_named_reader_blocks": 2,
+  "current_reader_blocks": 727,
+  "current_v16_reader_sha256": "57dda29307fd9856661a48407f1bd83b6c5ed709fa66ff81f52fab3e63cdf363",
+  "editorial_patch_ledger_sha256": "8173ee45d69d123538676f7900cde71330a0e97f636594c29766d6ef165e0ea1",
+  "new_contextual_role_assignments_in_reader_blocks": 32,
+  "new_contextually_named_complete_source_units": 30,
+  "original_caption_dialogue_changed": false,
+  "performed_turns_independently_AV_verified": 0,
+  "previous_reader_blocks": 726,
+  "previous_source_coverage": {
+    "fully_provisionally_named_source_units": 621,
+    "source_units": 751,
+    "source_units_with_any_unknown_voice": 130,
+    "unknown_source_units_by_episode": {
+      "S01E01": 34,
+      "S09E19": 96
+    }
+  },
+  "reading_block_ids_preserved_except_exact_C277_source_split": true,
+  "role_changes_in_reading_blocks": 34,
+  "schema": "night-court-private-manual-editorial-pilots-v16/1",
+  "source_coverage": {
+    "fully_provisionally_named_source_units": 651,
+    "source_units": 751,
+    "source_units_with_any_unknown_voice": 100,
+    "unknown_source_units_by_episode": {
+      "S01E01": 21,
+      "S09E19": 79
+    }
+  },
+  "source_text_p0_split_unverified": "S09E19:C277.1",
+  "source_v15_reader_sha256": "fc5ce79022622763d9b6d7e0a93e1b3f65fcb4f5a0b1e9bc1a981aafd3fcfc38"
+}

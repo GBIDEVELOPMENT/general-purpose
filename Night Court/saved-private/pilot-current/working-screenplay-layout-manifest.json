@@ -1,0 +1,37 @@
+{
+  "episodes": {
+    "S01E01": {
+      "display_groups": 278,
+      "display_joins_unverified": 127,
+      "full_original_audio_video_accepted": false,
+      "original_caption_timed": true,
+      "source_blocks": 405,
+      "source_units": 404
+    },
+    "S09E19": {
+      "display_groups": 247,
+      "display_joins_unverified": 75,
+      "full_original_audio_video_accepted": false,
+      "original_caption_timed": false,
+      "source_blocks": 322,
+      "source_units": 347
+    }
+  },
+  "manuscript_sha256": {
+    "S01E01": "439f4cd87f708b54d5fcca7accf8b142d04bb587a6cbd8f45463748dc9ffe974",
+    "S09E19": "efcb14ae0011ff94b53e9dff819105f601a2be3410050b39d1c2f6485531438a"
+  },
+  "new_independently_verified_actor_voices": 0,
+  "new_independently_verified_performed_turns": 0,
+  "provisional_contextual_roles_only": true,
+  "scene_review_complete": false,
+  "schema": "night-court-private-pilot-screenplay-layout/2",
+  "source_manual_v16_patch_sha256": "8173ee45d69d123538676f7900cde71330a0e97f636594c29766d6ef165e0ea1",
+  "source_manual_v16_reader_sha256": "57dda29307fd9856661a48407f1bd83b6c5ed709fa66ff81f52fab3e63cdf363",
+  "source_unit_counts": {
+    "named_provisional": 651,
+    "original_source_units": 751,
+    "unknown": 100
+  },
+  "source_v15_reader_sha256": "fc5ce79022622763d9b6d7e0a93e1b3f65fcb4f5a0b1e9bc1a981aafd3fcfc38"
+}
