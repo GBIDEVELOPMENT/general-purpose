@@ -1,0 +1,2470 @@
+{
+  "schema": "night_court_manual_context_speaker_proposals_v1",
+  "episode_id": "S05E05",
+  "title": "Safe",
+  "created_date": "2026-10-26",
+  "source": {
+    "repo_path": "Night Court/seasons/S05/S05E05/dialogue/versions/subtitle-cat-english-online-caption-research-wit--9bdf7ef5e94675cc/original.srt",
+    "source_sha256": "9bdf7ef5e94675ccc55238425c3ccf3dda6e46b92d9138ce0eb80a1837e978a0",
+    "source_caption_units": 300,
+    "cue_ref_format": "Cnnnnn.1",
+    "times": "existing source SRT cue-envelope times only; no performer sub-turn timing"
+  },
+  "method": "Human-readable LLM editorial inference from existing in-repository caption-derived reading scaffold and episode/cast metadata; targeted Wikiquote corroboration; no original AVI/audio or repository software invoked.",
+  "levels": {
+    "high": "Strong contextual identification or episode-specific printed character attribution, still unverified against original soundtrack",
+    "medium": "Plausible character inference with at least one meaningful alternative",
+    "abstain": "Do not assign a named character from the available text"
+  },
+  "cautions": [
+    "Every name is an unverified text-only proposal, never independently certified performer identity",
+    "Source caption cue boundaries are not confirmed performed turns",
+    "Mixed cues list ordered speakers only; exact Unicode source split offsets have NOT been produced or checked",
+    "Characters impersonating spiritual entities or Ed Sullivan should retain the distinct persona layer",
+    "Unknown voice must not be silently filled by adjacent-scene identity",
+    "Do not add this file to the current two-pilot acceptance statistics"
+  ],
+  "counts": {
+    "high_single": 167,
+    "medium_single": 72,
+    "mixed_cues": 7,
+    "abstain_cues": 54
+  },
+  "records": [
+    {
+      "cue_id": "C00001.1",
+      "source_unit_index": 1,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00002.1",
+      "source_unit_index": 2,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00003.1",
+      "source_unit_index": 3,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00004.1",
+      "source_unit_index": 4,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00005.1",
+      "source_unit_index": 5,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00006.1",
+      "source_unit_index": 6,
+      "proposed_speaker": null,
+      "confidence": "high",
+      "basis": "Question about the new object is answered by Harry addressing Miss Sullivan",
+      "status": "proposed_internal_voice_switch_unverified",
+      "proposed_ordered_speaker_parts": [
+        "Christine Sullivan",
+        "Harry Stone"
+      ],
+      "utf8_or_unicode_split_offsets": null
+    },
+    {
+      "cue_id": "C00007.1",
+      "source_unit_index": 7,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00008.1",
+      "source_unit_index": 8,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "high",
+      "basis": "Addresses Harry as sir and invents an excuse to avoid Halloween",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00009.1",
+      "source_unit_index": 9,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00010.1",
+      "source_unit_index": 10,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "high",
+      "basis": "Addresses Harry as sir and invents an excuse to avoid Halloween",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00011.1",
+      "source_unit_index": 11,
+      "proposed_speaker": null,
+      "confidence": "high",
+      "basis": "Christine completes her symptom excuse before Harry replies with a teasing quip",
+      "status": "proposed_internal_voice_switch_unverified",
+      "proposed_ordered_speaker_parts": [
+        "Christine Sullivan",
+        "Harry Stone"
+      ],
+      "utf8_or_unicode_split_offsets": null
+    },
+    {
+      "cue_id": "C00012.1",
+      "source_unit_index": 12,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00013.1",
+      "source_unit_index": 13,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00014.1",
+      "source_unit_index": 14,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00015.1",
+      "source_unit_index": 15,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00016.1",
+      "source_unit_index": 16,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00017.1",
+      "source_unit_index": 17,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00018.1",
+      "source_unit_index": 18,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00019.1",
+      "source_unit_index": 19,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00020.1",
+      "source_unit_index": 20,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00021.1",
+      "source_unit_index": 21,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "medium",
+      "basis": "Probable literal-minded bailiff or anxious colleague; other coworkers could speak this cue",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00022.1",
+      "source_unit_index": 22,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "medium",
+      "basis": "Probable literal-minded bailiff or anxious colleague; other coworkers could speak this cue",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00023.1",
+      "source_unit_index": 23,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Probable defender, compassionate response, or voice organizing the rescue; a coworker alternative remains",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00024.1",
+      "source_unit_index": 24,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00025.1",
+      "source_unit_index": 25,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "medium",
+      "basis": "Probable prosecutor, snide courtroom or explicit contract reading turn, but voice unverified",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00026.1",
+      "source_unit_index": 26,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00027.1",
+      "source_unit_index": 27,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00028.1",
+      "source_unit_index": 28,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00029.1",
+      "source_unit_index": 29,
+      "proposed_speaker": "Mac Robinson",
+      "confidence": "high",
+      "basis": "Clerk announcing the first case and the charges",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00030.1",
+      "source_unit_index": 30,
+      "proposed_speaker": "Mac Robinson",
+      "confidence": "high",
+      "basis": "Clerk announcing the first case and the charges",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00031.1",
+      "source_unit_index": 31,
+      "proposed_speaker": "Leona Cowan",
+      "confidence": "high",
+      "basis": "Defendant describing possession or delivering Darby's self-identification",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00032.1",
+      "source_unit_index": 32,
+      "proposed_speaker": "Leona Cowan",
+      "confidence": "high",
+      "basis": "Defendant describing possession or delivering Darby's self-identification",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00033.1",
+      "source_unit_index": 33,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00034.1",
+      "source_unit_index": 34,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "medium",
+      "basis": "Probable prosecutor, snide courtroom or explicit contract reading turn, but voice unverified",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00035.1",
+      "source_unit_index": 35,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Probable defender, compassionate response, or voice organizing the rescue; a coworker alternative remains",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00036.1",
+      "source_unit_index": 36,
+      "proposed_speaker": null,
+      "confidence": "medium",
+      "basis": "Explanation of trans-channeling gives way to Harry's skepticism; inspect exact sentence boundary",
+      "status": "proposed_internal_voice_switch_unverified",
+      "proposed_ordered_speaker_parts": [
+        "UNKNOWN (courtroom explanation)",
+        "Harry Stone"
+      ],
+      "utf8_or_unicode_split_offsets": null
+    },
+    {
+      "cue_id": "C00037.1",
+      "source_unit_index": 37,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00038.1",
+      "source_unit_index": 38,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00039.1",
+      "source_unit_index": 39,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00040.1",
+      "source_unit_index": 40,
+      "proposed_speaker": "Leona Cowan (speaking as Darby)",
+      "confidence": "medium",
+      "basis": "Speech describing the woman's actions in third person appears to belong to her claimed spirit",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00041.1",
+      "source_unit_index": 41,
+      "proposed_speaker": "Leona Cowan (speaking as Darby)",
+      "confidence": "medium",
+      "basis": "Speech describing the woman's actions in third person appears to belong to her claimed spirit",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00042.1",
+      "source_unit_index": 42,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00043.1",
+      "source_unit_index": 43,
+      "proposed_speaker": "Leona Cowan",
+      "confidence": "high",
+      "basis": "Defendant describing possession or delivering Darby's self-identification",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00044.1",
+      "source_unit_index": 44,
+      "proposed_speaker": "Leona Cowan",
+      "confidence": "high",
+      "basis": "Defendant describing possession or delivering Darby's self-identification",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00045.1",
+      "source_unit_index": 45,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00046.1",
+      "source_unit_index": 46,
+      "proposed_speaker": "Ross Gintz",
+      "confidence": "high",
+      "basis": "Opposing channeler explaining his supposed inability to choose a spirit",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00047.1",
+      "source_unit_index": 47,
+      "proposed_speaker": "Ross Gintz",
+      "confidence": "high",
+      "basis": "Opposing channeler explaining his supposed inability to choose a spirit",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00048.1",
+      "source_unit_index": 48,
+      "proposed_speaker": "Ross Gintz",
+      "confidence": "high",
+      "basis": "Opposing channeler explaining his supposed inability to choose a spirit",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00049.1",
+      "source_unit_index": 49,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00050.1",
+      "source_unit_index": 50,
+      "proposed_speaker": "Ross Gintz (Ed Sullivan persona)",
+      "confidence": "medium",
+      "basis": "New voice/persona appears to perform Ed Sullivan-like introduction and Topo Gigio exchange",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00051.1",
+      "source_unit_index": 51,
+      "proposed_speaker": "Ross Gintz (Ed Sullivan persona)",
+      "confidence": "medium",
+      "basis": "New voice/persona appears to perform Ed Sullivan-like introduction and Topo Gigio exchange",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00052.1",
+      "source_unit_index": 52,
+      "proposed_speaker": "Ross Gintz (Ed Sullivan persona)",
+      "confidence": "medium",
+      "basis": "New voice/persona appears to perform Ed Sullivan-like introduction and Topo Gigio exchange",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00053.1",
+      "source_unit_index": 53,
+      "proposed_speaker": "Ross Gintz (Ed Sullivan persona)",
+      "confidence": "medium",
+      "basis": "New voice/persona appears to perform Ed Sullivan-like introduction and Topo Gigio exchange",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00054.1",
+      "source_unit_index": 54,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00055.1",
+      "source_unit_index": 55,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00056.1",
+      "source_unit_index": 56,
+      "proposed_speaker": "Ross Gintz (Ed Sullivan persona)",
+      "confidence": "medium",
+      "basis": "New voice/persona appears to perform Ed Sullivan-like introduction and Topo Gigio exchange",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00057.1",
+      "source_unit_index": 57,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "high",
+      "basis": "Bailiff asking permission to strike the witness",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00058.1",
+      "source_unit_index": 58,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "medium",
+      "basis": "Probable prosecutor, snide courtroom or explicit contract reading turn, but voice unverified",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00059.1",
+      "source_unit_index": 59,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "medium",
+      "basis": "Probable prosecutor, snide courtroom or explicit contract reading turn, but voice unverified",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00060.1",
+      "source_unit_index": 60,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "medium",
+      "basis": "Probable prosecutor, snide courtroom or explicit contract reading turn, but voice unverified",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00061.1",
+      "source_unit_index": 61,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00062.1",
+      "source_unit_index": 62,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00063.1",
+      "source_unit_index": 63,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "medium",
+      "basis": "Probable literal-minded bailiff or anxious colleague; other coworkers could speak this cue",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00064.1",
+      "source_unit_index": 64,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00065.1",
+      "source_unit_index": 65,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00066.1",
+      "source_unit_index": 66,
+      "proposed_speaker": "Ross Gintz (Ed Sullivan persona)",
+      "confidence": "medium",
+      "basis": "New voice/persona appears to perform Ed Sullivan-like introduction and Topo Gigio exchange",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00067.1",
+      "source_unit_index": 67,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00068.1",
+      "source_unit_index": 68,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00069.1",
+      "source_unit_index": 69,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00070.1",
+      "source_unit_index": 70,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00071.1",
+      "source_unit_index": 71,
+      "proposed_speaker": null,
+      "confidence": "high",
+      "basis": "Dan's interrupted dismissal gives way to the Devil identifying himself",
+      "status": "proposed_internal_voice_switch_unverified",
+      "proposed_ordered_speaker_parts": [
+        "Dan Fielding",
+        "Devil / Stu Blumberg"
+      ],
+      "utf8_or_unicode_split_offsets": null
+    },
+    {
+      "cue_id": "C00072.1",
+      "source_unit_index": 72,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00073.1",
+      "source_unit_index": 73,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00074.1",
+      "source_unit_index": 74,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00075.1",
+      "source_unit_index": 75,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00076.1",
+      "source_unit_index": 76,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00077.1",
+      "source_unit_index": 77,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00078.1",
+      "source_unit_index": 78,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "medium",
+      "basis": "Probable prosecutor, snide courtroom or explicit contract reading turn, but voice unverified",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00079.1",
+      "source_unit_index": 79,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "medium",
+      "basis": "Probable prosecutor, snide courtroom or explicit contract reading turn, but voice unverified",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00080.1",
+      "source_unit_index": 80,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00081.1",
+      "source_unit_index": 81,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00082.1",
+      "source_unit_index": 82,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00083.1",
+      "source_unit_index": 83,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00084.1",
+      "source_unit_index": 84,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00085.1",
+      "source_unit_index": 85,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00086.1",
+      "source_unit_index": 86,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00087.1",
+      "source_unit_index": 87,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00088.1",
+      "source_unit_index": 88,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00089.1",
+      "source_unit_index": 89,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00090.1",
+      "source_unit_index": 90,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00091.1",
+      "source_unit_index": 91,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00092.1",
+      "source_unit_index": 92,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00093.1",
+      "source_unit_index": 93,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00094.1",
+      "source_unit_index": 94,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00095.1",
+      "source_unit_index": 95,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00096.1",
+      "source_unit_index": 96,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00097.1",
+      "source_unit_index": 97,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00098.1",
+      "source_unit_index": 98,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00099.1",
+      "source_unit_index": 99,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00100.1",
+      "source_unit_index": 100,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00101.1",
+      "source_unit_index": 101,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00102.1",
+      "source_unit_index": 102,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00103.1",
+      "source_unit_index": 103,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00104.1",
+      "source_unit_index": 104,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00105.1",
+      "source_unit_index": 105,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00106.1",
+      "source_unit_index": 106,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00107.1",
+      "source_unit_index": 107,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00108.1",
+      "source_unit_index": 108,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00109.1",
+      "source_unit_index": 109,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00110.1",
+      "source_unit_index": 110,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00111.1",
+      "source_unit_index": 111,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00112.1",
+      "source_unit_index": 112,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00113.1",
+      "source_unit_index": 113,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00114.1",
+      "source_unit_index": 114,
+      "proposed_speaker": null,
+      "confidence": "high",
+      "basis": "Devil finishes previous sentence, then Dan responds with a skeptical interjection",
+      "status": "proposed_internal_voice_switch_unverified",
+      "proposed_ordered_speaker_parts": [
+        "Devil / Stu Blumberg",
+        "Dan Fielding"
+      ],
+      "utf8_or_unicode_split_offsets": null
+    },
+    {
+      "cue_id": "C00115.1",
+      "source_unit_index": 115,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00116.1",
+      "source_unit_index": 116,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00117.1",
+      "source_unit_index": 117,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00118.1",
+      "source_unit_index": 118,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00119.1",
+      "source_unit_index": 119,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00120.1",
+      "source_unit_index": 120,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00121.1",
+      "source_unit_index": 121,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00122.1",
+      "source_unit_index": 122,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00123.1",
+      "source_unit_index": 123,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00124.1",
+      "source_unit_index": 124,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00125.1",
+      "source_unit_index": 125,
+      "proposed_speaker": "Biker",
+      "confidence": "medium",
+      "basis": "Crude offer after Dan asks for a man in horns; episode lists a Biker, but attribution is not independently supported",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00126.1",
+      "source_unit_index": 126,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "medium",
+      "basis": "Probable literal-minded bailiff or anxious colleague; other coworkers could speak this cue",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00127.1",
+      "source_unit_index": 127,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "medium",
+      "basis": "Probable literal-minded bailiff or anxious colleague; other coworkers could speak this cue",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00128.1",
+      "source_unit_index": 128,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00129.1",
+      "source_unit_index": 129,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00130.1",
+      "source_unit_index": 130,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00131.1",
+      "source_unit_index": 131,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00132.1",
+      "source_unit_index": 132,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00133.1",
+      "source_unit_index": 133,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00134.1",
+      "source_unit_index": 134,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00135.1",
+      "source_unit_index": 135,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00136.1",
+      "source_unit_index": 136,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00137.1",
+      "source_unit_index": 137,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00138.1",
+      "source_unit_index": 138,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00139.1",
+      "source_unit_index": 139,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "medium",
+      "basis": "Probable literal-minded bailiff or anxious colleague; other coworkers could speak this cue",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00140.1",
+      "source_unit_index": 140,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00141.1",
+      "source_unit_index": 141,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00142.1",
+      "source_unit_index": 142,
+      "proposed_speaker": "Mac Robinson",
+      "confidence": "medium",
+      "basis": "Probable colleague collecting lunch orders, then reading Harry's trapped note",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00143.1",
+      "source_unit_index": 143,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00144.1",
+      "source_unit_index": 144,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Probable defender, compassionate response, or voice organizing the rescue; a coworker alternative remains",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00145.1",
+      "source_unit_index": 145,
+      "proposed_speaker": "Mac Robinson",
+      "confidence": "medium",
+      "basis": "Probable colleague collecting lunch orders, then reading Harry's trapped note",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00146.1",
+      "source_unit_index": 146,
+      "proposed_speaker": "Mac Robinson",
+      "confidence": "medium",
+      "basis": "Probable colleague collecting lunch orders, then reading Harry's trapped note",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00147.1",
+      "source_unit_index": 147,
+      "proposed_speaker": "Mac Robinson",
+      "confidence": "medium",
+      "basis": "Probable colleague collecting lunch orders, then reading Harry's trapped note",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00148.1",
+      "source_unit_index": 148,
+      "proposed_speaker": "Mac Robinson",
+      "confidence": "medium",
+      "basis": "Probable colleague collecting lunch orders, then reading Harry's trapped note",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00149.1",
+      "source_unit_index": 149,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00150.1",
+      "source_unit_index": 150,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00151.1",
+      "source_unit_index": 151,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Probable defender, compassionate response, or voice organizing the rescue; a coworker alternative remains",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00152.1",
+      "source_unit_index": 152,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00153.1",
+      "source_unit_index": 153,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00154.1",
+      "source_unit_index": 154,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00155.1",
+      "source_unit_index": 155,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Probable defender, compassionate response, or voice organizing the rescue; a coworker alternative remains",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00156.1",
+      "source_unit_index": 156,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Probable defender, compassionate response, or voice organizing the rescue; a coworker alternative remains",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00157.1",
+      "source_unit_index": 157,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00158.1",
+      "source_unit_index": 158,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00159.1",
+      "source_unit_index": 159,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Probable defender, compassionate response, or voice organizing the rescue; a coworker alternative remains",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00160.1",
+      "source_unit_index": 160,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00161.1",
+      "source_unit_index": 161,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00162.1",
+      "source_unit_index": 162,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00163.1",
+      "source_unit_index": 163,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00164.1",
+      "source_unit_index": 164,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00165.1",
+      "source_unit_index": 165,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00166.1",
+      "source_unit_index": 166,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00167.1",
+      "source_unit_index": 167,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00168.1",
+      "source_unit_index": 168,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00169.1",
+      "source_unit_index": 169,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00170.1",
+      "source_unit_index": 170,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00171.1",
+      "source_unit_index": 171,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00172.1",
+      "source_unit_index": 172,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00173.1",
+      "source_unit_index": 173,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00174.1",
+      "source_unit_index": 174,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00175.1",
+      "source_unit_index": 175,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00176.1",
+      "source_unit_index": 176,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00177.1",
+      "source_unit_index": 177,
+      "proposed_speaker": null,
+      "confidence": "high",
+      "basis": "Dan summons the Devil, immediately answered by the Devil in the same caption",
+      "status": "proposed_internal_voice_switch_unverified",
+      "proposed_ordered_speaker_parts": [
+        "Dan Fielding",
+        "Devil / Stu Blumberg"
+      ],
+      "utf8_or_unicode_split_offsets": null
+    },
+    {
+      "cue_id": "C00178.1",
+      "source_unit_index": 178,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00179.1",
+      "source_unit_index": 179,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00180.1",
+      "source_unit_index": 180,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00181.1",
+      "source_unit_index": 181,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00182.1",
+      "source_unit_index": 182,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00183.1",
+      "source_unit_index": 183,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00184.1",
+      "source_unit_index": 184,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00185.1",
+      "source_unit_index": 185,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00186.1",
+      "source_unit_index": 186,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00187.1",
+      "source_unit_index": 187,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00188.1",
+      "source_unit_index": 188,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00189.1",
+      "source_unit_index": 189,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00190.1",
+      "source_unit_index": 190,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00191.1",
+      "source_unit_index": 191,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00192.1",
+      "source_unit_index": 192,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00193.1",
+      "source_unit_index": 193,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00194.1",
+      "source_unit_index": 194,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00195.1",
+      "source_unit_index": 195,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00196.1",
+      "source_unit_index": 196,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00197.1",
+      "source_unit_index": 197,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00198.1",
+      "source_unit_index": 198,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00199.1",
+      "source_unit_index": 199,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00200.1",
+      "source_unit_index": 200,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00201.1",
+      "source_unit_index": 201,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00202.1",
+      "source_unit_index": 202,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00203.1",
+      "source_unit_index": 203,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00204.1",
+      "source_unit_index": 204,
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Probable defender, compassionate response, or voice organizing the rescue; a coworker alternative remains",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00205.1",
+      "source_unit_index": 205,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00206.1",
+      "source_unit_index": 206,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00207.1",
+      "source_unit_index": 207,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00208.1",
+      "source_unit_index": 208,
+      "proposed_speaker": null,
+      "confidence": "medium",
+      "basis": "Technician proposes blasting; a different character asks the follow-up",
+      "status": "proposed_internal_voice_switch_unverified",
+      "proposed_ordered_speaker_parts": [
+        "Dave (safe technician)",
+        "UNKNOWN (concerned coworker)"
+      ],
+      "utf8_or_unicode_split_offsets": null
+    },
+    {
+      "cue_id": "C00209.1",
+      "source_unit_index": 209,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00210.1",
+      "source_unit_index": 210,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00211.1",
+      "source_unit_index": 211,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00212.1",
+      "source_unit_index": 212,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00213.1",
+      "source_unit_index": 213,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00214.1",
+      "source_unit_index": 214,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00215.1",
+      "source_unit_index": 215,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00216.1",
+      "source_unit_index": 216,
+      "proposed_speaker": "Harry's imagined conscience",
+      "confidence": "medium",
+      "basis": "Apparent personified inner voice in Harry's safe-delirium conversation; actual acoustic identity unreviewed",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00217.1",
+      "source_unit_index": 217,
+      "proposed_speaker": "Harry's imagined conscience",
+      "confidence": "medium",
+      "basis": "Apparent personified inner voice in Harry's safe-delirium conversation; actual acoustic identity unreviewed",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00218.1",
+      "source_unit_index": 218,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00219.1",
+      "source_unit_index": 219,
+      "proposed_speaker": "Harry's imagined conscience",
+      "confidence": "medium",
+      "basis": "Apparent personified inner voice in Harry's safe-delirium conversation; actual acoustic identity unreviewed",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00220.1",
+      "source_unit_index": 220,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00221.1",
+      "source_unit_index": 221,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00222.1",
+      "source_unit_index": 222,
+      "proposed_speaker": "Harry's imagined conscience",
+      "confidence": "medium",
+      "basis": "Apparent personified inner voice in Harry's safe-delirium conversation; actual acoustic identity unreviewed",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00223.1",
+      "source_unit_index": 223,
+      "proposed_speaker": "Harry's imagined conscience",
+      "confidence": "medium",
+      "basis": "Apparent personified inner voice in Harry's safe-delirium conversation; actual acoustic identity unreviewed",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00224.1",
+      "source_unit_index": 224,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00225.1",
+      "source_unit_index": 225,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00226.1",
+      "source_unit_index": 226,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00227.1",
+      "source_unit_index": 227,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00228.1",
+      "source_unit_index": 228,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00229.1",
+      "source_unit_index": 229,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00230.1",
+      "source_unit_index": 230,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00231.1",
+      "source_unit_index": 231,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00232.1",
+      "source_unit_index": 232,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00233.1",
+      "source_unit_index": 233,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00234.1",
+      "source_unit_index": 234,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00235.1",
+      "source_unit_index": 235,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00236.1",
+      "source_unit_index": 236,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00237.1",
+      "source_unit_index": 237,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00238.1",
+      "source_unit_index": 238,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00239.1",
+      "source_unit_index": 239,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00240.1",
+      "source_unit_index": 240,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00241.1",
+      "source_unit_index": 241,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00242.1",
+      "source_unit_index": 242,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00243.1",
+      "source_unit_index": 243,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00244.1",
+      "source_unit_index": 244,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00245.1",
+      "source_unit_index": 245,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00246.1",
+      "source_unit_index": 246,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00247.1",
+      "source_unit_index": 247,
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "Character supplying technical facts and preparing rescue, using episode-credited Dave as candidate",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00248.1",
+      "source_unit_index": 248,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00249.1",
+      "source_unit_index": 249,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00250.1",
+      "source_unit_index": 250,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00251.1",
+      "source_unit_index": 251,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00252.1",
+      "source_unit_index": 252,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00253.1",
+      "source_unit_index": 253,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00254.1",
+      "source_unit_index": 254,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00255.1",
+      "source_unit_index": 255,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00256.1",
+      "source_unit_index": 256,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00257.1",
+      "source_unit_index": 257,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00258.1",
+      "source_unit_index": 258,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00259.1",
+      "source_unit_index": 259,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00260.1",
+      "source_unit_index": 260,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "high",
+      "basis": "Addressed as Bull, gives the unsafe drop-the-safe plan, or addresses the rescued judge as sir",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00261.1",
+      "source_unit_index": 261,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00262.1",
+      "source_unit_index": 262,
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "medium",
+      "basis": "Probable literal-minded bailiff or anxious colleague; other coworkers could speak this cue",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00263.1",
+      "source_unit_index": 263,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00264.1",
+      "source_unit_index": 264,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00265.1",
+      "source_unit_index": 265,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00266.1",
+      "source_unit_index": 266,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00267.1",
+      "source_unit_index": 267,
+      "proposed_speaker": "Devil / Stu Blumberg",
+      "confidence": "high",
+      "basis": "Identifies himself and bargains for Dan's soul, knows Dan's secrets or promises to collect",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00268.1",
+      "source_unit_index": 268,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00269.1",
+      "source_unit_index": 269,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00270.1",
+      "source_unit_index": 270,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00271.1",
+      "source_unit_index": 271,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00272.1",
+      "source_unit_index": 272,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00273.1",
+      "source_unit_index": 273,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00274.1",
+      "source_unit_index": 274,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00275.1",
+      "source_unit_index": 275,
+      "proposed_speaker": "Dan Fielding",
+      "confidence": "high",
+      "basis": "Dan mocks Harry, bargains with the Devil, recalls his past or attempts to escape his soul contract",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00276.1",
+      "source_unit_index": 276,
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "Probable dry put-downs, rescue instructions, furious insult sequence, or Dan's elevator confidante",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00277.1",
+      "source_unit_index": 277,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00278.1",
+      "source_unit_index": 278,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00279.1",
+      "source_unit_index": 279,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00280.1",
+      "source_unit_index": 280,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00281.1",
+      "source_unit_index": 281,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00282.1",
+      "source_unit_index": 282,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00283.1",
+      "source_unit_index": 283,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00284.1",
+      "source_unit_index": 284,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00285.1",
+      "source_unit_index": 285,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00286.1",
+      "source_unit_index": 286,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00287.1",
+      "source_unit_index": 287,
+      "proposed_speaker": "Ed Sullivan persona / apparition",
+      "confidence": "medium",
+      "basis": "Final safe-trick exchange invokes Ed Sullivan's show; cannot assert identity of performer or supernatural status",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00288.1",
+      "source_unit_index": 288,
+      "proposed_speaker": "Ed Sullivan persona / apparition",
+      "confidence": "medium",
+      "basis": "Final safe-trick exchange invokes Ed Sullivan's show; cannot assert identity of performer or supernatural status",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00289.1",
+      "source_unit_index": 289,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00290.1",
+      "source_unit_index": 290,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00291.1",
+      "source_unit_index": 291,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00292.1",
+      "source_unit_index": 292,
+      "proposed_speaker": "Ed Sullivan persona / apparition",
+      "confidence": "medium",
+      "basis": "Final safe-trick exchange invokes Ed Sullivan's show; cannot assert identity of performer or supernatural status",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00293.1",
+      "source_unit_index": 293,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00294.1",
+      "source_unit_index": 294,
+      "proposed_speaker": "Ed Sullivan persona / apparition",
+      "confidence": "medium",
+      "basis": "Final safe-trick exchange invokes Ed Sullivan's show; cannot assert identity of performer or supernatural status",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00295.1",
+      "source_unit_index": 295,
+      "proposed_speaker": "Ed Sullivan persona / apparition",
+      "confidence": "medium",
+      "basis": "Final safe-trick exchange invokes Ed Sullivan's show; cannot assert identity of performer or supernatural status",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00296.1",
+      "source_unit_index": 296,
+      "proposed_speaker": "Ed Sullivan persona / apparition",
+      "confidence": "medium",
+      "basis": "Final safe-trick exchange invokes Ed Sullivan's show; cannot assert identity of performer or supernatural status",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00297.1",
+      "source_unit_index": 297,
+      "proposed_speaker": "Harry Stone",
+      "confidence": "high",
+      "basis": "Harry directs his safe installation, performs the escape, speaks alone in the safe, or reflects explicitly on his life",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00298.1",
+      "source_unit_index": 298,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00299.1",
+      "source_unit_index": 299,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    },
+    {
+      "cue_id": "C00300.1",
+      "source_unit_index": 300,
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "Text-only review does not establish a unique speaker",
+      "status": "no_source_audio_review"
+    }
+  ]
+}
