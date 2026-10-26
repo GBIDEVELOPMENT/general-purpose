@@ -1,0 +1,461 @@
+{
+  "schema": "night-court-s01e01-editorial-revision-v17/1",
+  "id": "S01E01-AGENT1-20261026-V17",
+  "episode_id": "S01E01",
+  "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "baseline": {
+    "saved_reading_sha_git_blob": "13762f04294451b301b9f122599b6ad1b5742d4a",
+    "saved_provenance_sha_git_blob": "da9aa167fbe28eab7bb5fbc4746f9105680feefa",
+    "saved_manifest_sha_git_blob": "7e2fde81bc0496d28ac6392b3a03cb3a60f875e3",
+    "original_srt_cues": 336,
+    "source_speaking_units": 404,
+    "reader_blocks": 405,
+    "display_groups": 278,
+    "source_units_fully_provisionally_named": 383,
+    "source_units_with_any_unknown": 21,
+    "display_joins_unverified": 127
+  },
+  "source_preservation": {
+    "original_dialogue_modified": false,
+    "original_timestamps_modified": false,
+    "source_character_offsets_modified": false,
+    "original_AV_voice_identity_verifications": 0,
+    "original_AV_performed_turn_verifications": 0
+  },
+  "method": "Whole 278-group chronological current-v16 dialogue reading; context, antecedents, named address, scene membership and contemporaneous public unlabelled transcripts; no actual film or soundtrack played. Proposals do not independently verify performances or scenes.",
+  "accepted_contextual_role_amendments": [
+    {
+      "cue_ref": "C028.1",
+      "prior_role": "BULL SHANNON",
+      "new_role": "LANA WAGNER",
+      "exact_source_text": "Bye, Bull.",
+      "cue_envelope_ms": [
+        92379,
+        94108
+      ],
+      "confidence": "high_contextual",
+      "evidence": [
+        "direct address to Bull",
+        "Lana's preceding instruction to Bull",
+        "Bull self-vocative implausible without a deliberate joke"
+      ],
+      "alternative": "Bull self-address or third-party voice, unsupported by transcript",
+      "original_audio_verified": false
+    },
+    {
+      "cue_ref": "C101.1",
+      "prior_role": null,
+      "new_role": "SHEILA GARDINER",
+      "exact_source_text_fragment": "- Be right there.",
+      "full_source_cue_text": "- Be right there.\n- It'll cost you 50 bucks.",
+      "cue_envelope_ms": [
+        419305,
+        421296
+      ],
+      "confidence": "high_contextual",
+      "evidence": [
+        "Harry directly addresses Miss Gardiner in preceding C100.2",
+        "immediate reply to being summoned",
+        "second voice within C101 already separately assigned Harry"
+      ],
+      "alternative": "Other participant responding to a concurrent unheard request",
+      "original_audio_verified": false
+    }
+  ],
+  "held_named_review": [
+    {
+      "cue_ref": "C044.1",
+      "current_role": "LANA WAGNER",
+      "alternate": "DAN FIELDING",
+      "disposition": "retain_current_provisional_name; direct context does not conclusively differentiate while already-named"
+    },
+    {
+      "cue_ref": "C047.1",
+      "current_role": "LANA WAGNER",
+      "alternate": "DAN FIELDING",
+      "disposition": "retain_current_provisional_name; continuing first-person chess/Shecky exchange supports same speaker, but not which character"
+    },
+    {
+      "cue_ref": "C272.1",
+      "current_role": "PHIL KERR",
+      "disposition": "retain; first-person relevance of reconciled husband, no independent AV"
+    }
+  ],
+  "unresolved_v16": [
+    {
+      "source_reading_ref": "C010.1",
+      "source_part_refs": [
+        "C010.1"
+      ],
+      "cue_envelope_ms": [
+        33720,
+        35244
+      ],
+      "excerpt": "How are you?",
+      "candidates_not_verified": [
+        "PAINTER",
+        "BULL SHANNON"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C011.1",
+      "source_part_refs": [
+        "C011.1"
+      ],
+      "cue_envelope_ms": [
+        35422,
+        37287
+      ],
+      "excerpt": "God, I was so close.",
+      "candidates_not_verified": [
+        "PAINTER",
+        "BULL SHANNON"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C061.1",
+      "source_part_refs": [
+        "C061.1"
+      ],
+      "cue_envelope_ms": [
+        212599,
+        215830
+      ],
+      "excerpt": "In his office?",
+      "candidates_not_verified": [
+        "LANA WAGNER",
+        "SHEILA GARDINER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C061.2",
+      "source_part_refs": [
+        "C061.2"
+      ],
+      "cue_envelope_ms": [
+        212599,
+        215830
+      ],
+      "excerpt": "No, I guess not.",
+      "candidates_not_verified": [
+        "LANA WAGNER",
+        "SHEILA GARDINER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C066.1",
+      "source_part_refs": [
+        "C066.1"
+      ],
+      "cue_envelope_ms": [
+        230850,
+        233250
+      ],
+      "excerpt": "Cover me.",
+      "candidates_not_verified": [
+        "DAN FIELDING",
+        "COURIER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C073.1",
+      "source_part_refs": [
+        "C073.1"
+      ],
+      "cue_envelope_ms": [
+        252739,
+        255503
+      ],
+      "excerpt": "Couldn't you just die?",
+      "candidates_not_verified": [
+        "LANA WAGNER",
+        "SHEILA GARDINER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C075.1",
+      "source_part_refs": [
+        "C075.1"
+      ],
+      "cue_envelope_ms": [
+        319572,
+        322700
+      ],
+      "excerpt": "On you, they look good.",
+      "candidates_not_verified": [
+        "SHEILA GARDINER",
+        "LANA WAGNER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C076.1",
+      "source_part_refs": [
+        "C076.1"
+      ],
+      "cue_envelope_ms": [
+        327180,
+        329045
+      ],
+      "excerpt": "I don't know what's holding the judge up.",
+      "candidates_not_verified": [
+        "DAN FIELDING",
+        "SHEILA GARDINER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C077.1",
+      "source_part_refs": [
+        "C077.1"
+      ],
+      "cue_envelope_ms": [
+        329215,
+        333652
+      ],
+      "excerpt": "Diaper change, perhaps.",
+      "candidates_not_verified": [
+        "DAN FIELDING",
+        "SHEILA GARDINER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C084.1",
+      "source_part_refs": [
+        "C084.1"
+      ],
+      "cue_envelope_ms": [
+        370023,
+        373254
+      ],
+      "excerpt": "Your Honor...",
+      "candidates_not_verified": [
+        "DAN FIELDING",
+        "LANA WAGNER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C094.1",
+      "source_part_refs": [
+        "C094.1"
+      ],
+      "cue_envelope_ms": [
+        400587,
+        402521
+      ],
+      "excerpt": "He has a friend named Hacksaw.",
+      "candidates_not_verified": [
+        "SHEILA GARDINER",
+        "LANA WAGNER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C101.1",
+      "source_part_refs": [
+        "C101.1"
+      ],
+      "cue_envelope_ms": [
+        419305,
+        421296
+      ],
+      "excerpt": "Be right there.",
+      "candidates_not_verified": [
+        "SHEILA GARDINER"
+      ],
+      "disposition": "promote_contextual_Sheila_only",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C102.1",
+      "source_part_refs": [
+        "C102.1"
+      ],
+      "cue_envelope_ms": [
+        421474,
+        423237
+      ],
+      "excerpt": "What was the fine?",
+      "candidates_not_verified": [
+        "LANA WAGNER",
+        "SHEILA GARDINER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C103.1",
+      "source_part_refs": [
+        "C103.1"
+      ],
+      "cue_envelope_ms": [
+        423409,
+        426310
+      ],
+      "excerpt": "Thank you. Here's the file.",
+      "candidates_not_verified": [
+        "LANA WAGNER",
+        "SHEILA GARDINER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C106.1",
+      "source_part_refs": [
+        "C106.1"
+      ],
+      "cue_envelope_ms": [
+        433119,
+        435610
+      ],
+      "excerpt": "I hate you!",
+      "candidates_not_verified": [
+        "LOUISE KERR",
+        "PHIL KERR"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C106.2",
+      "source_part_refs": [
+        "C106.2"
+      ],
+      "cue_envelope_ms": [
+        433119,
+        435610
+      ],
+      "excerpt": "Well, I hate you more!",
+      "candidates_not_verified": [
+        "PHIL KERR",
+        "LOUISE KERR"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C107.1",
+      "source_part_refs": [
+        "C107.1"
+      ],
+      "cue_envelope_ms": [
+        436089,
+        438353
+      ],
+      "excerpt": "We'll talk later.",
+      "candidates_not_verified": [
+        "LOUISE KERR",
+        "PHIL KERR"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C124.1",
+      "source_part_refs": [
+        "C124.1"
+      ],
+      "cue_envelope_ms": [
+        499719,
+        501186
+      ],
+      "excerpt": "Your Honor...",
+      "candidates_not_verified": [
+        "DAN FIELDING",
+        "SHEILA GARDINER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C125.1",
+      "source_part_refs": [
+        "C125.1"
+      ],
+      "cue_envelope_ms": [
+        503256,
+        504689
+      ],
+      "excerpt": "Hi.",
+      "candidates_not_verified": [
+        "PHIL KERR",
+        "LOUISE KERR"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "S01E01-C219-SOURCE-TURN-2",
+      "source_part_refs": [
+        "C219.1"
+      ],
+      "cue_envelope_ms": [
+        879532,
+        882330
+      ],
+      "excerpt": "- Yeah.",
+      "candidates_not_verified": [
+        "PHIL KERR",
+        "LOUISE KERR"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    },
+    {
+      "source_reading_ref": "C290.1",
+      "source_part_refs": [
+        "C290.1"
+      ],
+      "cue_envelope_ms": [
+        1182434,
+        1185835
+      ],
+      "excerpt": "I'll do anything you want.",
+      "candidates_not_verified": [
+        "DAN FIELDING",
+        "SHEILA GARDINER"
+      ],
+      "disposition": "retain_UNKNOWN_pending_original_voice",
+      "performed_turn_verified": false
+    }
+  ],
+  "known_P0": {
+    "source_exact_C219_two_fragments": true,
+    "C219_second_voice": "UNKNOWN",
+    "C219_original_cue_window_ms": [
+      879532,
+      882330
+    ],
+    "post_v16_existing_reader_blocks": 405,
+    "display_group_joins_cannot_be_counted_as_verified_performed_turns": 127,
+    "additional_source_exact_splits_accepted": 0
+  },
+  "visual_evidence_only": {
+    "source_original_avi_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+    "evidence_path": "seasons/S01/S01E01/derived/scene-review-v3/scene-script-v3.md",
+    "limited_observation": "At 01:22.5–01:28.5 in sampled source frames a dark-uniformed person lifts, holds and lowers the receiver of a black desk telephone; speaker identity not authenticated from these stills.",
+    "source_video_original_audio_directly_reviewed_in_this_revision": false
+  },
+  "status": "v17 contextual editorial decision candidate; production source audio/visual, independent complete P0/P1 audit and scene certification pending",
+  "shared_generator_owner": "Agent 3; integrate this source-exact episode role overlay after v16 without editing S09E19"
+}
