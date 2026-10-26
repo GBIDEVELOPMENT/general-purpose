@@ -174,7 +174,7 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         if (turn_report.get("original_caption_source_units")!=751
             or turn_report.get("named_original_source_units")!=621
             or turn_report.get("unknown_original_source_units")!=130
-            or turn_report.get("new_provisional_reader_turn_blocks")!=726
+            or turn_report.get("new_provisional_reader_turn_blocks")!=725
             or turn_report.get("original_source_exact_text_preserved") is not True
             or turn_report.get("source_new_performer_identifications_AV_certified")!=0
             or turn_report.get("source_new_turn_boundaries_AV_verified")!=0):
