@@ -120,3 +120,30 @@ The updated private FTS index checks the SHA of the entire v7 source-role regist
 **Next highest ROI for approaching 751 accurate names:** acquire and align the actual original production scripts. A [1984 pilot screenplay listing at Scrybe](https://scrybe.to/resources/scripts/night-court-s01e01-all-you-need-is-love-script) shows a 54-page file, though login with verified email is required and edition must be checked. [Hollywood Script Shop](https://hollywoodscriptshop.com/television-scripts-n/) identifies the original pilot by its episode title, and [Scriptfly](https://scriptfly.com/searchpage/resultpage.php) lists both 'NIGHT COURT - Pilot' and 'NIGHT COURT - Ps Do I Know You?' for purchase. The user has not supplied those script bytes, so we **cannot claim character headings from them**. Production dialogue may differ from aired dialogue; align scene, sequence and distinctive phrases against the held caption source rather than replacing the real broadcast witnesses or automatically assigning every character on proximity. These source editions could be far more productive than multiplying LLM context guesses.
 
 The first incorrect C172 candidate illustrates the central caution: getting to 751 through plausible but unverified labels would be damaging to a trustworthy fan persona. The remaining 168 are not solved by adding more confidence adjectives. Continue targeted source film listening and verified production script acquisition/ordered alignment; require separate evidence for actual speech identity.
+
+## Direct route to better character evidence: actual production teleplays
+
+Existing held subtitles often contain no speaker names. Instead of extending speculative context labels until the count reaches 751, obtain an **original 1984–1992 production script with explicit speaker headings**, align it to the *held aired dialogue*, identify revision/disagreement, then confirm uncertain material against real episode audio. Production manuscripts are another lexical/editorial witness and may include unused scenes, revised dialogue or cuts.
+
+Public source leads as of 2026-10-25:
+- [Hollywood Script Shop: original Night Court pilot specifically "pilot (all you need is love)"](https://hollywoodscriptshop.com/television-scripts-n/) within an original-series catalog.
+- [Scriptfly: Night Court original "Pilot" and "Ps Do I Know You?" script listings](https://scriptfly.com/searchpage/resultpage.php), priced at approximately US $19.95 and US $14.95 respectively when checked; pricing and edition need rechecking before purchase.
+- [Scrybe: "All You Need is Love" 54-page script listing](https://scrybe.to/resources/scripts/night-court-s01e01-all-you-need-is-love-script) requires an account with verified email. Its page also includes a conflicting **2023 pilot** episode association; **do not ingest without inspecting actual title page, copyright, cast and episode identity**. This may be a metadata collision rather than the correct 1984 production teleplay.
+
+No owner purchase, private downloads, account signup or authentic screenplay content access has happened in this pass. Do not misrepresent these listings as obtained evidence.
+
+A private, no-network plain-text screenplay-to-captions matcher is implemented at `tools/align_private_production_script.py`. With an authorized local **plain text** export of a screenplay which has conventional uppercase character headings:
+
+```sh
+python 'Night Court/tools/align_private_production_script.py' \
+  --episode S01E01 \
+  --script-text /private/Night-Court-1984-pilot-teleplay.txt \
+  --output /private/night-court-pilot-script-lexical-speaker-proposals.json
+
+python 'Night Court/tools/align_private_production_script.py' \
+  --episode S09E19 \
+  --script-text /private/Night-Court-1992-s09e19-teleplay.txt \
+  --output /private/night-court-s09-teleplay-role-proposals.json
+```
+
+The tool maps known original-series character headings, scores nearby consecutive cue-parts in source order, rejects ambiguous repeated quote lines and unrelated revised dialogue, and **separately reports a possible contradiction with an already-named source unit**. Only source fingerprints, short locator IDs and role proposals are emitted, not the complete screenplay. No publication of privately acquired teleplay contents, and **zero automatic promotion to audio-certified dialogue**. Use its output to prioritize real soundtrack listens and to avoid falsely forcing a line from a production draft onto a different final broadcast performance. A PDF would need to be extracted to text separately before running this tool.
