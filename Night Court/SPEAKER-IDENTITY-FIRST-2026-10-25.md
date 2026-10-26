@@ -91,3 +91,32 @@ This planner may reuse a verified original local media checkout from a trusted s
 5. **Block the next layer of tone/physical enrichment** on these pilots until the high-impact character confusion and missed turn switches are dealt with. Archive-level 0/193 audiovisual verification remains a separate stringent release criterion.
 
 No claim of a source-listened blind P1 accuracy measure or an independently confirmed new named speaker is made by this work.
+
+## Larger P1 textual candidate pass: 583/751, 168 UNKNOWN (not AV verified)
+
+[Source-ref-anchored editorial candidate ledger](research/pilot-contextual-speaker-proposals-v1.json) now covers **90 additional original speaking blocks comprising 93 original cue units**, after the three external-quote proposals from v6. These are **contextual name hypotheses** sourced from neighboring drama, character address and explicit episode quotes, *not independently heard voices*. C172.1 was corrected from a mistaken Lana hypothesis to Harry after checking the season-specific [Wikiquote original-episode quotation](https://en.wikiquote.org/wiki/Night_Court_(season_1)). C137.1, previously unidentified, is source-attributed to Lana by the same page. **Revision v7 source-level totals: 583 provisionally named, 168 unknown, zero newly independently confirmed by soundtrack.**
+
+The corrected v7 source-first manuscript contains all 751 original subtitle-derived speaking units, with **716 editorial reading segments** after the previously restored S09 C034.1 internal two-voice turn. Crucially, the v7 manuscript is a *speakers-first* text document and does not pretend to reproduce v5 picture-based stage description. V5 remains available separately. The private v7 complete readers, role source evidence and cryptographic digest manifest are regenerated locally, not committed as bulk dialogue.
+
+```sh
+python 'Night Court/tools/build_contextual_speaker_reader_v7.py' \
+  --v6 /tmp/night-court-private-speaker-v6 \
+  --output /tmp/night-court-private-context-speaker-v7
+
+python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+  --speaker-v7-root /tmp/night-court-private-context-speaker-v7 \
+  --output /tmp/night-court-private-fan-speaker-v7
+
+python 'Night Court/tools/fan_sqlite_index.py' build \
+  --corpus /tmp/night-court-private-fan-speaker-v7/fan-retrieval-chunks.jsonl \
+  --cards /tmp/night-court-private-fan-beats/pilot-fan-beat-cards.jsonl \
+  --roles /tmp/night-court-private-character-evidence/pilot-character-reading-blocks.jsonl \
+  --context-roles /tmp/night-court-private-context-speaker-v7/pilot-provisional-context-character-reads.jsonl \
+  --database /tmp/night-court-private-fan-speaker-v7.sqlite
+```
+
+The updated private FTS index checks the SHA of the entire v7 source-role register and the exact unchanged original cue text for *every* reading block. It permits only one known original speaker split (S09 C034.1); it forbids changing already attributed original speaking units, losing source paragraphs or claiming audio verification. The resulting character retrieval evidence no longer contradicts its speaker-first script view with obsolete UNKNOWN labels at the 93 new candidate cue locations.
+
+**Next highest ROI for approaching 751 accurate names:** acquire and align the actual original production scripts. A [1984 pilot screenplay listing at Scrybe](https://scrybe.to/resources/scripts/night-court-s01e01-all-you-need-is-love-script) shows a 54-page file, though login with verified email is required and edition must be checked. [Hollywood Script Shop](https://hollywoodscriptshop.com/television-scripts-n/) identifies the original pilot by its episode title, and [Scriptfly](https://scriptfly.com/searchpage/resultpage.php) lists both 'NIGHT COURT - Pilot' and 'NIGHT COURT - Ps Do I Know You?' for purchase. The user has not supplied those script bytes, so we **cannot claim character headings from them**. Production dialogue may differ from aired dialogue; align scene, sequence and distinctive phrases against the held caption source rather than replacing the real broadcast witnesses or automatically assigning every character on proximity. These source editions could be far more productive than multiplying LLM context guesses.
+
+The first incorrect C172 candidate illustrates the central caution: getting to 751 through plausible but unverified labels would be damaging to a trustworthy fan persona. The remaining 168 are not solved by adding more confidence adjectives. Continue targeted source film listening and verified production script acquisition/ordered alignment; require separate evidence for actual speech identity.
