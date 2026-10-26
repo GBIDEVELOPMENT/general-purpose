@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from fan_sqlite_index import SCHEMA, build_database, query, validate_evidence, apply_speaker_improvements, use_source_checked_context_roles
+from fan_sqlite_index import SCHEMA, build_database, query, validate_evidence, apply_speaker_improvements, use_source_checked_context_roles, apply_current_source_turn_reunion_v10
 from build_pilot_character_evidence import SCHEMA as ROLE_SCHEMA
 from build_pilot_fan_beat_cards import CARD_SCHEMA
 from search_fan_retrieval_chunks import SCHEMA as SCRIPT_SCHEMA
@@ -162,6 +162,58 @@ class SqliteFanCorpusTests(unittest.TestCase):
             )
             with self.assertRaisesRegex(ValueError,"altered an original spoken text"):
                 use_source_checked_context_roles(src, roles, path, full=False)
+
+    def test_v10_joins_exact_two_source_parts_into_one_fts_speaking_turn(self):
+        import hashlib
+        from build_s09_source_turns_v10 import merge_v9,EXPECTED_FIRST,EXPECTED_SECOND,SHA
+        old=[
+            {"episode_id":"S09E19","source_reading_ref":"C266.1",
+             "original_source_part_refs":["C266.1"],"reading_block_id":"s09:266",
+             "original_source_sha256":SHA,
+             "caption_text":EXPECTED_FIRST,"candidate_role":None,
+             "role_attribution_status":"unidentified",
+             "source_original_times_ms":None,"original_source_untimed":True,
+             "speaker_turn_boundary_verified":False,
+             "actor_face_or_voice_independently_verified":False},
+            {"episode_id":"S09E19","source_reading_ref":"C267.1",
+             "original_source_part_refs":["C267.1"],"reading_block_id":"s09:267",
+             "original_source_sha256":SHA,
+             "caption_text":EXPECTED_SECOND,"candidate_role":"ROZ RUSSELL",
+             "role_attribution_status":"original_soundtrack_acoustic_context_proposal_not_independent_avi_id",
+             "source_original_times_ms":None,"original_source_untimed":True,
+             "speaker_turn_boundary_verified":False,
+             "actor_face_or_voice_independently_verified":False,
+             "speaker_identity_provisional_from_model_and_context":True}
+        ]
+        new,manifest=merge_v9(old,strict=False)
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/"source-v10.jsonl"
+            data="".join(json.dumps(x,sort_keys=True)+"\n" for x in new)
+            path.write_text(data,"utf-8")
+            (path.parent/"pilot-current-source-turns-v10-manifest.json").write_text(
+                json.dumps({"current_source_role_records_sha256":
+                            hashlib.sha256(data.encode()).hexdigest()}),"utf-8")
+            speaker=new[0]
+            script=[{"episode_id":"S09E19",
+                     "retrieval_text":speaker["candidate_role"]+" · "+
+                         speaker["role_attribution_status"]+"\n"+speaker["caption_text"]}]
+            merged,out=apply_current_source_turn_reunion_v10(script,old,path,full=False)
+            self.assertEqual(len(merged),1)
+            self.assertEqual(out["v10_named_original_caption_source_units"],2)
+            self.assertEqual(out["v10_independent_avi_voice_turns_accepted"],0)
+            self.assertEqual(merged[0]["original_source_part_refs"],["C266.1","C267.1"])
+            script[0]["retrieval_text"]="Unsupported replacement words"
+            with self.assertRaisesRegex(ValueError,"missing from actual indexed script"):
+                apply_current_source_turn_reunion_v10(script,old,path,full=False)
+            script[0]["retrieval_text"]=speaker["candidate_role"]+" · "+speaker["role_attribution_status"]+"\n"+speaker["caption_text"]
+            new[0]["caption_text"]="Fabricated source speech"
+            bad="".join(json.dumps(x,sort_keys=True)+"\n" for x in new)
+            path.write_text(bad,"utf-8")
+            (path.parent/"pilot-current-source-turns-v10-manifest.json").write_text(
+                json.dumps({"current_source_role_records_sha256":
+                             hashlib.sha256(bad.encode()).hexdigest()}),"utf-8")
+            with self.assertRaisesRegex(ValueError,"Incorrectly verified/merged"):
+                apply_current_source_turn_reunion_v10(script,old,path,full=False)
 
     def test_no_false_verified_role_or_mixed_episode(self):
         src, cards, roles = fixtures()
