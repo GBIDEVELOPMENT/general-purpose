@@ -500,13 +500,13 @@ jobs:
           assert m['named_original_source_units']==621
           assert m['unknown_original_source_units']==130
           assert m['original_previous_reader_turn_blocks']==718
-          assert m['new_provisional_reader_turn_blocks']==721
+          assert m['new_provisional_reader_turn_blocks']==725
           assert m['newly_named_original_source_units']==2
-          assert m['source_p0_amendment_count']==3
+          assert m['source_p0_amendment_count']==7
           assert m['original_source_exact_text_preserved'] is True
           assert m['source_new_performer_identifications_AV_certified']==0
           assert m['source_new_turn_boundaries_AV_verified']==0
-          print('Two original C102/C103 source paragraphs, three strictly editorial speaking turns, exact original source Unicode and 621/130 provisional name coverage')
+          print('Seven exact-source split operations including four disputed S09 P0 cues now integrated as UNKNOWN/UNKNOWN turns; 621 provisional name coverage / 130 UNKNOWN source units')
           PY
       - name: Export all 193 original-series source scripts from newly corrected private P0 speaking turns
         run: |
@@ -645,7 +645,7 @@ jobs:
           from pathlib import Path
           db=sqlite3.connect('/tmp/night-court-all-private-fan.sqlite')
           assert db.execute("SELECT COUNT(DISTINCT episode_id) FROM documents WHERE kind='script_witness'").fetchone()[0]==193
-          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue'").fetchone()[0]==721
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue'").fetchone()[0]==725
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='original_dialogue_text_turn_split_context_proposal_not_original_AV_verified'").fetchone()[0]==5
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='source_context_named_character_handoff_proposal_not_original_AV_verified'").fetchone()[0]==6
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='PAUL' AND evidence_state='source_role_patch_context_only_not_original_voice_verified'").fetchone()[0]==6
