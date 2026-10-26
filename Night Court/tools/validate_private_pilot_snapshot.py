@@ -55,7 +55,6 @@ def check_exact_original_dialogue(snapshot: Path, layout: dict, source_rows: lis
         rows = [(i, row) for i, row in enumerate(source_rows) if row["episode_id"] == ep]
         rows.sort(key=lambda pair: (*reader_chronology_key(pair[1]), pair[0]))
         assert len(rows) == layout["episodes"][ep]["source_blocks"]
-        by_episode_provenance[ep] = rows
         candidate_text = "".join(row["caption_text"] for _, row in rows)
         assert canonical_dialogue(candidate_text) == canonical_dialogue(source_text), (
             ep + " changed original dialogue character sequence (whitespace excluded)"
@@ -107,6 +106,7 @@ def check(snapshot: Path) -> dict:
         assert hashlib.sha256(text).hexdigest() == layout["manuscript_sha256"][ep]
         assert f"Original caption source SHA-256: {source_sha}".encode() in text
         rows = [json.loads(line) for line in provenance.read_text("utf-8").splitlines() if line]
+        by_episode_provenance[ep] = rows
         assert len(rows) == layout["episodes"][ep]["source_blocks"]
         assert layout["episodes"][ep]["source_units"] == expected_source_units
         assert layout["episodes"][ep]["full_original_audio_video_accepted"] is False
