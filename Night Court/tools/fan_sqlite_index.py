@@ -293,12 +293,100 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
     }
 
 
+def apply_current_source_turn_reunion_v10(source: list[dict],
+                                           older: list[dict], new_path: Path,
+                                           full: bool = True) -> tuple[list[dict], dict]:
+    """Replace exactly two original S09 segments with one reversible reading turn.
+
+    The two source IDs and source text are conserved in a joined read. This
+    does NOT assert performer acceptance or change original untimed cues.
+    """
+    import hashlib
+    from collections import defaultdict
+    manifest=json.loads(
+        (new_path.parent / "pilot-current-source-turns-v10-manifest.json").read_text("utf-8")
+    )
+    raw=new_path.read_bytes()
+    if hashlib.sha256(raw).hexdigest()!=manifest.get("current_source_role_records_sha256"):
+        raise ValueError("Private v10 turn source-role record bytes mismatch")
+    updated=rows_from_jsonl(new_path)
+    old_by_id={r["reading_block_id"]:r for r in older}
+    old_by_ref=defaultdict(list)
+    for row in older:
+        old_by_ref[(row["episode_id"],row["source_reading_ref"])].append(row)
+    starts=old_by_ref[("S09E19","C266.1")]
+    ends=old_by_ref[("S09E19","C267.1")]
+    if len(starts)!=1 or len(ends)!=1:
+        raise ValueError("Original source continuation prior cue parts absent")
+    a,b=starts[0],ends[0]
+    combined=[r for r in updated
+              if r["episode_id"]=="S09E19" and r["source_reading_ref"]=="C266.1–C267.1"]
+    if len(combined)!=1:
+        raise ValueError("P0 corrected source turn is absent or duplicated")
+    joined=combined[0]
+    if (joined["previous_v9_reading_block_ids"]!=[a["reading_block_id"],b["reading_block_id"]]
+        or joined["original_source_part_refs"]!=["C266.1","C267.1"]
+        or joined["caption_text"]!=a["caption_text"]+" "+b["caption_text"]
+        or joined["candidate_role"]!="ROZ RUSSELL"
+        or a["candidate_role"] is not None
+        or b["candidate_role"]!="ROZ RUSSELL"
+        or joined["original_source_sha256"]!=a["original_source_sha256"]
+        or joined["original_source_sha256"]!=b["original_source_sha256"]
+        or joined.get("source_original_times_ms") is not None
+        or joined["role_attribution_status"]!="syntactic_and_source_voice_continuation_proposal_not_audio_verified"
+        or joined.get("independent_filmed_performance_turn_proven") is not False
+        or joined.get("speaker_turn_boundary_verified") is not False
+        or joined.get("actor_face_or_voice_independently_verified") is not False):
+        raise ValueError("Incorrectly verified/merged original S09 speaker sentence")
+    other_old={key:row for key,row in old_by_id.items()
+               if key not in joined["previous_v9_reading_block_ids"]}
+    other_new={r["reading_block_id"]:r for r in updated
+               if r["reading_block_id"]!=joined["reading_block_id"]}
+    if len(other_new)!=len(updated)-1 or other_old!=other_new:
+        raise ValueError("P0 merge unexpectedly modified another source speaking block")
+    if joined["reading_block_id"] in old_by_id:
+        raise ValueError("P0 new source reading ID overwrites previous reading")
+    docs=defaultdict(str)
+    for item in source:
+        docs[item["episode_id"]]+=item["retrieval_text"]
+    if (joined["candidate_role"]+" · "+joined["role_attribution_status"]+"\n"
+        +joined["caption_text"]) not in docs["S09E19"]:
+        raise ValueError("New P0 joined candidate missing from actual indexed script")
+    keys=defaultdict(set)
+    for row in updated:
+        for ref in row["original_source_part_refs"]:
+            keys[(row["episode_id"],ref)].add(row["candidate_role"])
+    old_keys={(row["episode_id"],ref) for row in older
+              for ref in row["original_source_part_refs"]}
+    if set(keys)!=old_keys:
+        raise ValueError("Lost or added original S09 source unit in joining")
+    named=sum(None not in roles for roles in keys.values())
+    if full and (
+        len(older)!=716 or len(updated)!=715 or len(keys)!=751 or named!=591
+        or len(keys)-named!=160
+        or manifest.get("reader_speaker_turn_blocks_after")!=715
+        or manifest.get("current_provisional_character_named_original_units")!=591
+        or manifest.get("still_unknown_original_source_units")!=160
+        or manifest.get("source_audio_human_actor_identity_confirmations_added")!=0
+        or manifest.get("original_S09_transcript_still_untimed") is not True
+    ):
+        raise ValueError("Original source v10 provisional speaker counts or gate drift")
+    return updated,{
+        "v10_provisional_turn_reading_blocks":len(updated),
+        "v10_named_original_caption_source_units":named,
+        "v10_unknown_original_caption_source_units":len(keys)-named,
+        "v10_merged_original_s09_continuation_refs":["C266.1","C267.1"],
+        "v10_independent_avi_voice_turns_accepted":0,
+    }
+
+
 def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                    role_path: Path, require_full: bool = True,
                    speaker_override_path: Path | None = None,
                    context_role_path: Path | None = None,
                    acoustic_context_role_path: Path | None = None,
-                   s09_acoustic_v9_role_path: Path | None = None) -> dict:
+                   s09_acoustic_v9_role_path: Path | None = None,
+                   source_turn_v10_role_path: Path | None = None) -> dict:
     if db_path.resolve().is_relative_to(ROOT.resolve()):
         raise ValueError("Private indexed dialogue database must be outside the repository")
     if sum(x is not None for x in (
@@ -306,11 +394,14 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
         s09_acoustic_v9_role_path
     ))>1:
         raise ValueError("Choose exactly one pilot character-role evidence overlay")
+    if source_turn_v10_role_path is not None and s09_acoustic_v9_role_path is None:
+        raise ValueError("V10 turn reunion must be checked against v9 actor role source")
     if db_path.resolve() in {corpus_path.resolve(), card_path.resolve(), role_path.resolve(),
                              speaker_override_path.resolve() if speaker_override_path else None,
                              context_role_path.resolve() if context_role_path else None,
                              acoustic_context_role_path.resolve() if acoustic_context_role_path else None,
-                             s09_acoustic_v9_role_path.resolve() if s09_acoustic_v9_role_path else None}:
+                             s09_acoustic_v9_role_path.resolve() if s09_acoustic_v9_role_path else None,
+                             source_turn_v10_role_path.resolve() if source_turn_v10_role_path else None}:
         raise ValueError("Refusing to overwrite a source file with the database")
     source = load_records(corpus_path)
     cards = load_cards(card_path, source)
@@ -334,6 +425,10 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
     if s09_acoustic_v9_role_path is not None:
         roles, summary = use_source_checked_context_roles(source, roles,
             s09_acoustic_v9_role_path, full=require_full, source_acoustic_v9=True)
+        report.update(summary)
+    if source_turn_v10_role_path is not None:
+        roles, summary = apply_current_source_turn_reunion_v10(
+            source,roles,source_turn_v10_role_path,full=require_full)
         report.update(summary)
     if db_path.exists():
         raise FileExistsError("Refuse overwriting an existing fan corpus database")
@@ -470,6 +565,7 @@ def main():
     init.add_argument("--context-roles", type=Path, default=None)
     init.add_argument("--acoustic-context-roles", type=Path, default=None)
     init.add_argument("--s09-acoustic-v9-roles", type=Path, default=None)
+    init.add_argument("--source-turn-v10-roles", type=Path, default=None)
     srch = sub.add_parser("query")
     srch.add_argument("--database", type=Path, required=True)
     srch.add_argument("--query", required=True)
@@ -484,7 +580,8 @@ def main():
                                 speaker_override_path=opts.speaker_overrides,
                                 context_role_path=opts.context_roles,
                                 acoustic_context_role_path=opts.acoustic_context_roles,
-                                s09_acoustic_v9_role_path=opts.s09_acoustic_v9_roles)
+                                s09_acoustic_v9_role_path=opts.s09_acoustic_v9_roles,
+                                source_turn_v10_role_path=opts.source_turn_v10_roles)
         print(f"{report['indexed_documents']} private documents indexed across "
               f"{report['source_episodes']} episodes; no dialogue printed")
     else:
