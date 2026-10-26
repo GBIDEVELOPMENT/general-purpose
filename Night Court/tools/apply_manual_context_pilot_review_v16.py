@@ -110,15 +110,17 @@ def apply(rows:list[dict],ledger:dict,strict:bool=True)->tuple[list[dict],dict]:
     }):
         raise ValueError("Private v15 reader baseline changed")
     before=counts(rows)
-    index={(row["episode_id"],row["source_reading_ref"]):i for i,row in enumerate(rows)}
-    if len(index)!=len(rows):
-        raise ValueError("Duplicate original reading block ref")
+    index=defaultdict(list)
+    for i,row in enumerate(rows):
+        index[row["episode_id"],row["source_reading_ref"]].append(i)
+    # Historical v15 C034 has two real source parts sharing a reading ref;
+    # only a *targeted* ambiguous patch is disallowed, not an unaffected row.
     updated=[dict(row) for row in rows]
     for p in edits:
         key=p["episode_id"],p["source_reading_ref"]
-        if key not in index:
-            raise ValueError("Missing exact original reading reference for manual role review")
-        row=updated[index[key]]
+        if len(index.get(key,[]))!=1:
+            raise ValueError("Missing or ambiguous exact original reading reference for manual role review")
+        row=updated[index[key][0]]
         if (row["original_source_part_refs"]!=p["original_source_part_refs"]
             or row["original_source_sha256"]!=p["source_witness_sha256"]
             or row["candidate_role"]!=p["prior_role"]
@@ -135,9 +137,9 @@ def apply(rows:list[dict],ledger:dict,strict:bool=True)->tuple[list[dict],dict]:
         row["contextual_editorial_role_rationale"]=p["rationale"]
         row["original_soundtrack_role_independently_reviewed"]=False
     key=split["episode_id"],split["source_reading_ref"]
-    if key not in index:
-        raise ValueError("Missing unsplit S09 C277 source paragraph")
-    n=index[key]
+    if len(index.get(key,[]))!=1:
+        raise ValueError("Missing or ambiguous unsplit S09 C277 source paragraph")
+    n=index[key][0]
     row=updated[n]
     cue=split["source_text_must_equal"]
     phrase=split["split_before"]
