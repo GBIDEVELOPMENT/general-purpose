@@ -114,7 +114,7 @@ class CurrentPilotScreenplayTests(unittest.TestCase):
         rows,_,manifest,witnesses=fixture()
         # A source-patch pipeline may append an older S01 role change after S09.
         unsorted=rows[404:]+rows[1:404]+rows[:1]
-        scrambled="".join(json.dumps(row,sort_keys=True)+"\\n" for row in unsorted).encode()
+        scrambled="".join(json.dumps(row,sort_keys=True)+"\n" for row in unsorted).encode()
         updated=dict(manifest,source_role_record_sha256=sha(scrambled))
         self.assertEqual(check_source(unsorted,updated,scrambled,witnesses)["original_source_units"],751)
         scripts,sidecars,summary=render(unsorted,compact=False)
