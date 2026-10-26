@@ -23,3 +23,17 @@ PR source-free synthetic tests: `python 'Night Court/tools/test_compare_s09_orig
 After merge, the one-shot owner-only trigger branch `research/night-court-owner-s09-speaker-embedding-trigger` may add `Night Court/research/trigger-original-s09-speaker-embedding.txt` in an **unmerged trigger PR**. The trusted workflow `.github/workflows/night-court-s09-original-speaker-matching.yml` reads *only base main* (no PR source execution), retrieves the existing numerical alignment artifact with action read permission and fully SHA-checks its fields, then performs the locally contained original source audio comparison. The separate no-secret job posts exact workflow run link and numerical counts (models, holdouts, accepted zero), and the private artifact retains only small numerical cue/voice **candidates** for 7 days.
 
 **Followup:** review actual source-local actor/voice identification for high-confidence candidates and short/performance-mixed dialogue; keep original untimed 347 source paragraphs and all 751 original source-unit IDs unchanged. This system is only a pragmatic means to get better at naming actual *Night Court* speakers without gambling on adjacent textual role labels.
+
+## Source-backed reference-bank recovery: current v8 roles, October 26
+
+The first original-S09 model run [#40256897493](https://github.com/gamesbyian/general-purpose/actions/runs/40256897493) found only Christine (8) and Roz (7) with old v4 seed names, yielding **15/15 binary provisional-role holdout matches but 0 qualified actor-role predictions from 39 UNKNOWN audio intervals**, because the model required at least three voices and 20 viable known samples. This is a useful abstention, not a failed audio acquisition.
+
+[Source-only v8 planning workflow #40257668073](https://github.com/gamesbyian/general-purpose/actions/runs/40257668073) rebuilt the **587 provisionally named, source-SHA-checked** pilot role reader and reconciled it to the *same 231 real S09 audio interval leads*, entirely without source media/FTP secret.
+
+| Original lexical source coverage | Character voice-reference candidates with at least four source windows | Previously UNKNOWN single-voice audio candidates |
+| --- | --- | --- |
+| 72% (preferred) | Christine **10**, Roz **7**, Dan **5**, Mac **4** = **26** candidate seed intervals across four characters | **28** |
+| 60% (exploratory) | Christine 11, Roz 8, Dan 5, Mac 5, Alex Patterson 4 = **33** across five characters | **32** |
+| 50% (exploratory) | Same as 60%, no extra seed role | 32 |
+
+These are **pre-embedding windows**, not 26 independently judged clean acoustic reference examples, and the existing contextual character guesses can be wrong. The next trusted original soundtrack pass uses the **unchanged stronger 72% lexical criterion**, with all original S09 paragraphs still untimed, all mixed-voice exclusions enforced, source model holdout still required, and explicit automatic abstention unless the remaining acoustic samples provide at least three distinct cast voices, 20 held-out samples, and 65% recovery of provisional source labels. No character name should be inferred from insufficient role coverage or the apparent 100% two-role holdout number.
