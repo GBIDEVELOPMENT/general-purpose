@@ -7,7 +7,8 @@ on:
       - 'Night Court/research/**'
       - 'Night Court/tools/**'
       - 'Night Court/seasons/**'
-      - 'Night Court/saved-private/editorial-agent1-v18/**'
+      - 'Night Court/saved-private/editorial-agent1-v*/**'
+      - 'Night Court/saved-private/editorial-agent2-v*/**'
   workflow_dispatch:
   push:
     branches: [main]
@@ -16,7 +17,8 @@ on:
       - 'Night Court/research/**'
       - 'Night Court/tools/**'
       - 'Night Court/seasons/**'
-      - 'Night Court/saved-private/editorial-agent1-v18/**'
+      - 'Night Court/saved-private/editorial-agent1-v*/**'
+      - 'Night Court/saved-private/editorial-agent2-v*/**'
 
 concurrency:
   group: night-court-private-pilots-${{ github.ref }}
