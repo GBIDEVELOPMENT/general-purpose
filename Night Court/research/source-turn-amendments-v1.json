@@ -1,0 +1,69 @@
+{
+  "schema": "night-court-original-speaker-turn-amendments/1",
+  "source_episode_id": "S09E19",
+  "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "prior_source_role_ledger": "night-court-source-role-amendment-ledger/1",
+  "prior_named_original_source_units": 619,
+  "prior_remaining_UNKNOWN": 132,
+  "prior_original_source_units": 751,
+  "prior_reading_blocks": 718,
+  "source_original_untimed": true,
+  "source_audio_actor_identifications_independently_accepted": 0,
+  "source_performance_turns_independently_verified": 0,
+  "p0_amendments": [
+    {
+      "id": "S09E19-C102-C103-QUESTION-ANSWER",
+      "source_refs": [
+        "C102.1",
+        "C103.1"
+      ],
+      "prior_roles": [
+        null,
+        null
+      ],
+      "split_before": {
+        "C102.1": [
+          "No, I've never seen"
+        ],
+        "C103.1": [
+          "Wow."
+        ]
+      },
+      "new_turns": [
+        {
+          "role": "DAN FIELDING",
+          "source_fragments": [
+            [
+              "C102.1",
+              0
+            ]
+          ]
+        },
+        {
+          "role": "HARRY STONE",
+          "source_fragments": [
+            [
+              "C102.1",
+              1
+            ],
+            [
+              "C103.1",
+              0
+            ]
+          ]
+        },
+        {
+          "role": "DAN FIELDING",
+          "source_fragments": [
+            [
+              "C103.1",
+              1
+            ]
+          ]
+        }
+      ],
+      "reason": "Dan's question about whether Harry knew the wall safe was behind the book is followed by Harry's explicit first-person denial across the C102/C103 boundary and Dan's surprised reaction. Exact source boundaries are lexically anchored but source performer audio identities remain unverified.",
+      "original_video_audio_confirmed": false
+    }
+  ]
+}
