@@ -21,6 +21,9 @@ on:
       - 'Night Court/tools/build_s09_explicit_handoff_turns_v13.py'
       - 'Night Court/tools/test_build_s09_explicit_handoff_turns_v13.py'
       - 'Night Court/research/s09-explicit-address-speaker-turns-v13.json'
+      - 'Night Court/tools/apply_s01_c219_source_turn.py'
+      - 'Night Court/tools/test_apply_s01_c219_source_turn.py'
+      - 'Night Court/tools/validate_s01_c219_p0_split.py'
       - 'Night Court/tools/apply_source_role_amendments.py'
       - 'Night Court/tools/test_apply_source_role_amendments.py'
       - 'Night Court/research/source-role-amendments-v1.json'
@@ -132,8 +135,11 @@ jobs:
           python 'Night Court/tools/apply_source_turn_amendments.py' \
             --source-role-patches '${{ runner.temp }}/s09-source-role-patches' \
             --output '${{ runner.temp }}/s09-source-turn-patches'
+          python 'Night Court/tools/apply_s01_c219_source_turn.py' \
+            --source-turn-patches '${{ runner.temp }}/s09-source-turn-patches' \
+            --output '${{ runner.temp }}/s09-source-turns-v15'
           python 'Night Court/tools/plan_next_speaker_review_v9.py' \
-            --speaker-turn-patch-root '${{ runner.temp }}/s09-source-turn-patches' \
+            --s01-p0-root '${{ runner.temp }}/s09-source-turns-v15' \
             --s09-original-audio-locator '${{ runner.temp }}/s09-source-numeric/night-court-s09-original-audio-paragraph-locators.json' \
             --output '${{ runner.temp }}/s09-next-130-private-speaker-review'
           python 'Night Court/tools/triage_internal_speaker_switches.py' \
@@ -147,6 +153,7 @@ jobs:
           assert m['original_source_units']==751
           assert m['original_units_provisionally_named']==621
           assert m['original_source_units_still_unknown']==130
+          assert m['unknown_source_unit_review_records']>=131
           assert m['s09_actual_audio_window_leads']>0
           assert m['new_speaker_names_automatically_assigned']==0
           assert m['new_voices_human_accepted']==0
@@ -165,6 +172,12 @@ jobs:
           assert all(ref not in x['unidentified_original_unit_refs'] for x in q if x['episode_id']=='S09E19' for ref in
                      ('C112.1','C114.1','C115.1','C117.1','C118.1','C122.1'))
           assert any(x['source_reading_ref']=='C129.1' and x['model_proposed_character'] is None for x in q)
+          c219=[x for x in q if x['episode_id']=='S01E01' and
+                x['source_reading_ref'].startswith('S01E01-C219-SOURCE-TURN-')]
+          assert len(c219)==2
+          assert all(x['unidentified_original_unit_refs']==['C219.1'] for x in c219)
+          assert all(x['actual_original_voice_actor_name_verified'] is False for x in c219)
+          assert all(x['actual_original_sound_candidate_window_ms']==[878332,883530] for x in c219)
           triage=json.loads((base/'s09-p0-original-internal-turns'/'potential-within-caption-summary.json').read_text('utf-8'))
           assert triage['provisional_inside_original_cue_switch_questions']==16
           assert triage['last_episode_original_untimed_candidate_count']==15
@@ -214,7 +227,7 @@ jobs:
         if: always()
         run: |
           rm -rf '${{ runner.temp }}/s09-v6' '${{ runner.temp }}/s09-v7' '${{ runner.temp }}/s09-v8' '${{ runner.temp }}/s09-source-numeric'
-          rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-v12' '${{ runner.temp }}/s09-v13' '${{ runner.temp }}/s09-source-role-patches' '${{ runner.temp }}/s09-source-turn-patches' '${{ runner.temp }}/s09-next-130-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
+          rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-v12' '${{ runner.temp }}/s09-v13' '${{ runner.temp }}/s09-source-role-patches' '${{ runner.temp }}/s09-source-turn-patches' '${{ runner.temp }}/s09-source-turns-v15' '${{ runner.temp }}/s09-next-130-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
           rm -f '${{ runner.temp }}/s09-source-v8-reference-sensitivity-'*.json
           rm -f '${{ runner.temp }}/s09-current-source-voice-plan.json'
 
