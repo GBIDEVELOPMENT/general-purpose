@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from fan_sqlite_index import SCHEMA, build_database, query, validate_evidence, apply_speaker_improvements
+from fan_sqlite_index import SCHEMA, build_database, query, validate_evidence, apply_speaker_improvements, use_source_checked_context_roles
 from build_pilot_character_evidence import SCHEMA as ROLE_SCHEMA
 from build_pilot_fan_beat_cards import CARD_SCHEMA
 from search_fan_retrieval_chunks import SCHEMA as SCRIPT_SCHEMA
@@ -120,6 +120,48 @@ class SqliteFanCorpusTests(unittest.TestCase):
             result=query(db,"irregular",role="DAN FIELDING")
             self.assertEqual(len(result["results_by_evidence_kind"]["provisional_character_dialogue"]),1)
             self.assertEqual(result["results_by_evidence_kind"]["provisional_character_dialogue"][0]["evidence"]["candidate_role"],"DAN FIELDING")
+
+    def test_private_v7_name_replaces_unknown_only_with_matching_source_text(self):
+        import hashlib
+        src, cards, roles = fixtures()
+        roles[0]["candidate_role"] = None
+        roles[0]["role_attribution_status"] = "unidentified"
+        revised = dict(roles[0])
+        revised.update({
+            "candidate_role": "HARRY STONE",
+            "role_attribution_status": "narrative_context_candidate_not_voice_verified",
+            "actor_face_or_voice_independently_verified": False,
+            "original_audio_reviewed": False,
+        })
+        src[0]["retrieval_text"] += (
+            "\nHARRY STONE · narrative_context_candidate_not_voice_verified\n"
+            + revised["caption_text"]
+        )
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "v7.jsonl"
+            raw = json.dumps(revised) + "\n"
+            path.write_text(raw, "utf-8")
+            (path.parent / "pilot-contextual-speaker-manifest.json").write_text(
+                json.dumps({"reading_record_sha256": hashlib.sha256(raw.encode()).hexdigest()}),
+                "utf-8"
+            )
+            newer, report = use_source_checked_context_roles(src, roles, path, full=False)
+            self.assertEqual(report["v7_provisionally_named_original_units"],1)
+            self.assertEqual(newer[0]["candidate_role"],"HARRY STONE")
+            original=path.read_text()
+            path.write_text(original+" ", "utf-8")
+            with self.assertRaisesRegex(ValueError,"SHA256 mismatch"):
+                use_source_checked_context_roles(src, roles, path, full=False)
+            path.write_text(original, "utf-8")
+            tampered=dict(revised, caption_text="Fabricated source words")
+            tampered_raw=json.dumps(tampered)+"\n"
+            path.write_text(tampered_raw, "utf-8")
+            (path.parent / "pilot-contextual-speaker-manifest.json").write_text(
+                json.dumps({"reading_record_sha256":hashlib.sha256(tampered_raw.encode()).hexdigest()}),
+                "utf-8"
+            )
+            with self.assertRaisesRegex(ValueError,"altered an original spoken text"):
+                use_source_checked_context_roles(src, roles, path, full=False)
 
     def test_no_false_verified_role_or_mixed_episode(self):
         src, cards, roles = fixtures()

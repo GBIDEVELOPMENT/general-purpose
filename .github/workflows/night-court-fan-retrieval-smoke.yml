@@ -161,6 +161,25 @@ jobs:
           assert 'ROZ RUSSELL · P0 SOURCE-CONTINUATION PROPOSAL; AUDIO UNVERIFIED' in s09
           print('Newly proposed speaker names flow through all-episode retrieval; zero original dialogue printed')
           PY
+      - name: Reindex named candidate v7 pilot dialogue into the 193 episode private retrieval
+        run: |
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --speaker-v7-root /tmp/night-court-private-context-speaker-v7 \
+            --output /tmp/night-court-private-fan-speaker-v7
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path('/tmp/night-court-private-fan-speaker-v7')
+          m=json.loads((base/'fan-retrieval-manifest.json').read_text('utf-8'))
+          assert m['episode_count']==193
+          assert sum(x['evidence_tier']=='provisional_original_source_speaker_reader_v7' for x in m['episodes'])==2
+          assert sum(x['evidence_tier']=='source_only_dialogue_scaffold' for x in m['episodes'])==191
+          rows=[json.loads(x) for x in (base/'fan-retrieval-chunks.jsonl').read_text('utf-8').splitlines()]
+          s01=''.join(x['retrieval_text'] for x in rows if x['episode_id']=='S01E01')
+          assert 'HARRY STONE · narrative_context_candidate_not_voice_verified' in s01
+          assert 'LANA WAGNER · narrative_context_candidate_not_voice_verified' in s01
+          print('Contextual v7 episode identity views integrated into private retrieval; no media text logged')
+          PY
       - name: All 193 source witnesses with pilot v5 substitutions
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -256,10 +275,10 @@ jobs:
       - name: Build and query one private SQLite index for every evidence type
         run: |
           python 'Night Court/tools/fan_sqlite_index.py' build \
-            --corpus /tmp/night-court-private-fan-speaker-v6/fan-retrieval-chunks.jsonl \
+            --corpus /tmp/night-court-private-fan-speaker-v7/fan-retrieval-chunks.jsonl \
             --cards /tmp/night-court-private-fan-beats/pilot-fan-beat-cards.jsonl \
             --roles /tmp/night-court-private-character-evidence/pilot-character-reading-blocks.jsonl \
-            --speaker-overrides /tmp/night-court-private-speaker-v6/speaker-improvement-overrides.jsonl \
+            --context-roles /tmp/night-court-private-context-speaker-v7/pilot-provisional-context-character-reads.jsonl \
             --database /tmp/night-court-all-private-fan.sqlite
           python 'Night Court/tools/fan_sqlite_index.py' query \
             --database /tmp/night-court-all-private-fan.sqlite \
@@ -278,6 +297,7 @@ jobs:
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='editorial_comedy_and_story'").fetchone()[0]==21
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='DAN FIELDING' AND evidence_state='external_or_context_editorial_proposal'").fetchone()[0]>=1
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='CHRISTINE SULLIVAN' AND evidence_state='external_or_context_editorial_proposal'").fetchone()[0]>=2
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='narrative_context_candidate_not_voice_verified'").fetchone()[0]>=90
           for episode,path in [
             ('S01E01','/tmp/night-court-private-fts-coin.json'),
             ('S09E19','/tmp/night-court-private-fts-roz.json')

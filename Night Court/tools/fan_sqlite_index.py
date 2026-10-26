@@ -164,13 +164,97 @@ def apply_speaker_improvements(source: list[dict], roles: list[dict],
     return result
 
 
+def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
+                                     context_path: Path,
+                                     full: bool = True) -> tuple[list[dict], dict]:
+    """Verify original speaker records still cover identical caption units.
+
+    The v7 reader is a P1-first view, not independently sound-verified.
+    It *must not* silently promote old known roles or invent new dialogue.
+    """
+    import hashlib
+    from collections import defaultdict
+    manifest_path = context_path.parent / "pilot-contextual-speaker-manifest.json"
+    manifest = json.loads(manifest_path.read_text("utf-8"))
+    raw = context_path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != manifest.get("reading_record_sha256"):
+        raise ValueError("Private character source-index SHA256 mismatch")
+    newer = rows_from_jsonl(context_path)
+    old_map = {(r["episode_id"], r["source_reading_ref"]): r for r in old_roles}
+    groups = defaultdict(list)
+    for row in newer:
+        if row.get("schema") != "night-court-private-character-dialogue-evidence/1":
+            raise ValueError("Unexpected v7 original character evidence record")
+        key = (row["episode_id"], row["source_reading_ref"])
+        if key not in old_map:
+            raise ValueError("V7 invented a new original speaking cue")
+        orig = old_map[key]
+        if (row["original_source_sha256"] != orig["original_source_sha256"]
+            or row["original_source_part_refs"] != orig["original_source_part_refs"]
+            or row.get("speaker_turn_boundary_verified") is not False
+            or row.get("actor_face_or_voice_independently_verified") is not False):
+            raise ValueError("V7 changed original source identity or claimed AV certainty")
+        if (orig["candidate_role"] is not None
+            and orig["candidate_role"] != row["candidate_role"]):
+            raise ValueError("V7 replaced a previously named source role without reviewed evidence")
+        groups[key].append(row)
+    if set(groups) != set(old_map):
+        raise ValueError("V7 dropped an original dialogue speaking block")
+    for key, parts in groups.items():
+        orig = old_map[key]
+        if len(parts) == 1:
+            if parts[0]["caption_text"] != orig["caption_text"]:
+                raise ValueError("V7 altered an original spoken text block")
+        elif (key == ("S09E19", "C034.1") and len(parts) == 2
+              and " ".join(p["caption_text"] for p in parts) == orig["caption_text"]
+              and all(p["candidate_role"] for p in parts)):
+            pass
+        else:
+            raise ValueError("V7 split/duplicated an unsupported original source cue")
+    source_docs = defaultdict(str)
+    for r in source:
+        source_docs[r["episode_id"]] += r["retrieval_text"]
+    for row in newer:
+        if row["role_attribution_status"] == "narrative_context_candidate_not_voice_verified":
+            if (row["candidate_role"] is None
+                or row.get("actor_face_or_voice_independently_verified") is not False
+                or row.get("original_audio_reviewed") is not False):
+                raise ValueError("Contextual identity masquerades as confirmed voice")
+        expected = ((row["candidate_role"] or "UNIDENTIFIED SPEAKER")
+                    + " · " + row["role_attribution_status"] + "\n" + row["caption_text"])
+        if expected not in source_docs[row["episode_id"]]:
+            raise ValueError("Contextual named voice not represented in matching source script")
+    source_keys = {}
+    for row in newer:
+        for ref in row["original_source_part_refs"]:
+            source_keys.setdefault((row["episode_id"], ref), set()).add(row["candidate_role"])
+    accepted = sum(None not in roles for roles in source_keys.values())
+    if full and (len(newer),len(source_keys),accepted,len(source_keys)-accepted)!=(716,751,583,168):
+        raise ValueError("V7 contextual pilot totals no longer match source-backed ledger")
+    if full and (manifest.get("source_units_total") != 751 or
+                 manifest.get("source_units_provisionally_named") != 583 or
+                 manifest.get("source_units_unknown") != 168 or
+                 manifest.get("audio_confirmed_by_this_pass") != 0):
+        raise ValueError("V7 report mismatches actual original pilot coverage")
+    return newer, {
+        "v7_provisional_speaker_record_count":len(newer),
+        "v7_provisionally_named_original_units":accepted,
+        "v7_unidentified_original_units":len(source_keys)-accepted,
+        "v7_audio_confirmed_in_this_pass":0,
+    }
+
+
 def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                    role_path: Path, require_full: bool = True,
-                   speaker_override_path: Path | None = None) -> dict:
+                   speaker_override_path: Path | None = None,
+                   context_role_path: Path | None = None) -> dict:
     if db_path.resolve().is_relative_to(ROOT.resolve()):
         raise ValueError("Private indexed dialogue database must be outside the repository")
+    if speaker_override_path is not None and context_role_path is not None:
+        raise ValueError("V7 character index includes earlier corrections; use one overlay only")
     if db_path.resolve() in {corpus_path.resolve(), card_path.resolve(), role_path.resolve(),
-                             speaker_override_path.resolve() if speaker_override_path else None}:
+                             speaker_override_path.resolve() if speaker_override_path else None,
+                             context_role_path.resolve() if context_role_path else None}:
         raise ValueError("Refusing to overwrite a source file with the database")
     source = load_records(corpus_path)
     cards = load_cards(card_path, source)
@@ -183,6 +267,10 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
         report["speaker_improvement_provisional_source_units"] = len(set(
             (x["episode_id"], x["source_ref"]) for x in revisions))
         report["speaker_improvement_independently_audio_verified"] = 0
+    if context_role_path is not None:
+        roles, summary = use_source_checked_context_roles(source, roles,
+                       context_role_path, full=require_full)
+        report.update(summary)
     if db_path.exists():
         raise FileExistsError("Refuse overwriting an existing fan corpus database")
     db_path.parent.mkdir(parents=True, exist_ok=True)
@@ -315,6 +403,7 @@ def main():
     init.add_argument("--database", type=Path, required=True)
     init.add_argument("--allow-partial", action="store_true")
     init.add_argument("--speaker-overrides", type=Path, default=None)
+    init.add_argument("--context-roles", type=Path, default=None)
     srch = sub.add_parser("query")
     srch.add_argument("--database", type=Path, required=True)
     srch.add_argument("--query", required=True)
@@ -326,7 +415,8 @@ def main():
     if opts.command == "build":
         report = build_database(opts.database, opts.corpus, opts.cards, opts.roles,
                                 require_full=not opts.allow_partial,
-                                speaker_override_path=opts.speaker_overrides)
+                                speaker_override_path=opts.speaker_overrides,
+                                context_role_path=opts.context_roles)
         print(f"{report['indexed_documents']} private documents indexed across "
               f"{report['source_episodes']} episodes; no dialogue printed")
     else:

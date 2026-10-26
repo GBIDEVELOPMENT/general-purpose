@@ -167,9 +167,10 @@ def build(root: Path, previous_v6: Path, proposals_path: Path, out: Path) -> dic
     report["all_identity_statuses_are_provisional"] = True
     report["source_only_character_reader_not_av_staged"] = True
     out.mkdir(parents=True, exist_ok=True)
-    (out / "pilot-provisional-context-character-reads.jsonl").write_text(
-        "".join(json.dumps(x, ensure_ascii=False, sort_keys=True) + "\n" for x in records), "utf-8"
-    )
+    raw_roles = "".join(json.dumps(x, ensure_ascii=False, sort_keys=True) + "\n" for x in records)
+    (out / "pilot-provisional-context-character-reads.jsonl").write_text(raw_roles, "utf-8")
+    report["reading_record_sha256"] = hashlib.sha256(raw_roles.encode("utf-8")).hexdigest()
+    report["generated_reader_sha256_by_episode"] = {}
     for ep in ("S01E01","S09E19"):
         lines = [
             f"# {ep}: private source-first named-character working reader (v7)",
@@ -191,9 +192,10 @@ def build(root: Path, previous_v6: Path, proposals_path: Path, out: Path) -> dic
                 row["caption_text"],
                 "",
             ])
-        (out / f"{ep}-private-speaker-first-v7.md").write_text(
-            "\n".join(lines).rstrip() + "\n", "utf-8"
-        )
+        finished_reader = "\n".join(lines).rstrip() + "\n"
+        (out / f"{ep}-private-speaker-first-v7.md").write_text(finished_reader, "utf-8")
+        report["generated_reader_sha256_by_episode"][ep] = hashlib.sha256(
+            finished_reader.encode("utf-8")).hexdigest()
     (out / "pilot-contextual-speaker-manifest.json").write_text(
         json.dumps(report, sort_keys=True, indent=2) + "\n", "utf-8"
     )

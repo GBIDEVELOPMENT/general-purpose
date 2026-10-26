@@ -35,8 +35,14 @@ def read_queue(root: Path) -> list[dict]:
     return sorted(rows, key=lambda e: e["episode_id"])
 
 
-def select_script(root: Path, record: dict, v6_root: Path | None = None) -> tuple[Path, str]:
+def select_script(root: Path, record: dict, v6_root: Path | None = None,
+                  v7_root: Path | None = None) -> tuple[Path, str]:
     episode = record["episode_id"]
+    if v7_root is not None and episode in PILOT_SCRIPTS:
+        path = (v7_root / f"{episode}-private-speaker-first-v7.md").resolve()
+        if not path.is_relative_to(v7_root.resolve()) or not path.is_file():
+            raise ValueError("Private speaker-v7 source reader unavailable")
+        return path, "provisional_original_source_speaker_reader_v7"
     if v6_root is not None and episode in PILOT_SCRIPTS:
         path = (v6_root / episode / "screenplay-external-speakers-v6.md").resolve()
         if not path.is_relative_to(v6_root.resolve()):
@@ -99,12 +105,22 @@ def chunk_section(section: str, maximum: int) -> list[str]:
 
 
 def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int = 3600,
-           v6_root: Path | None = None) -> dict:
+           v6_root: Path | None = None, v7_root: Path | None = None) -> dict:
     if max_chars < 200:
         raise ValueError("Chunk size must be >= 200 characters")
     if out_dir.resolve().is_relative_to(root.resolve()):
         raise ValueError("Private retrieval output must be outside the Night Court source tree")
+    if v6_root is not None and v7_root is not None:
+        raise ValueError("Choose one speaker reader source per pilot")
     rows = read_queue(root)
+    if v7_root is not None:
+        v7_report = json.loads((v7_root / "pilot-contextual-speaker-manifest.json").read_text("utf-8"))
+        if (v7_report.get("source_units_total") != 751
+            or v7_report.get("source_units_provisionally_named") != 583
+            or v7_report.get("source_units_unknown") != 168
+            or v7_report.get("audio_confirmed_by_this_pass") != 0
+            or v7_report.get("all_identity_statuses_are_provisional") is not True):
+            raise ValueError("Untrusted private speaker-v7 source report")
     if v6_root is not None:
         report = json.loads((v6_root / "speaker-improvement-manifest.json").read_text("utf-8"))
         if (report.get("original_source_speaking_units") != 751
@@ -125,7 +141,7 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         source_sha = entry["source_metadata"]["source_sha256"]
         if not re.fullmatch(r"[0-9a-f]{64}", source_sha):
             raise ValueError(f"Invalid source SHA: {episode}")
-        path, tier = select_script(root, entry, v6_root)
+        path, tier = select_script(root, entry, v6_root, v7_root)
         content = path.read_bytes()
         document = content.decode("utf-8")
         if source_sha not in document:
@@ -137,7 +153,12 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
                 raise ValueError(f"Wrong-season pilot prose in {episode} reader header: {named_season}")
         if episode == "S09E19" and entry["source_metadata"]["timed"]:
             raise ValueError("Untimed S09 original witness erroneously marked timed")
-        if v6_root is not None and episode in PILOT_SCRIPTS:
+        if v7_root is not None and episode in PILOT_SCRIPTS:
+            expected_sha = v7_report["generated_reader_sha256_by_episode"][episode]
+            if sha256(content) != expected_sha:
+                raise ValueError("Private v7 speaker-first script hash mismatch")
+            rel_path = "private-source-speaker-v7/" + path.name
+        elif v6_root is not None and episode in PILOT_SCRIPTS:
             verified = report["pilot_scripts"][episode]
             if (verified["sha256"] != sha256(content)
                 or verified["generated_path"] != f"{episode}/screenplay-external-speakers-v6.md"):
@@ -210,9 +231,11 @@ def main() -> None:
     parser.add_argument("--max-chars", type=int, default=3600)
     parser.add_argument("--speaker-v6-root", type=Path, default=None,
                         help="Locally generated verified private v6 speaker manuscripts")
+    parser.add_argument("--speaker-v7-root", type=Path, default=None,
+                        help="Locally generated source-bound provisional v7 speaker manuscripts")
     options = parser.parse_args()
     result = export(options.root, options.output, options.pilot_only, options.max_chars,
-                    options.speaker_v6_root)
+                    options.speaker_v6_root, options.speaker_v7_root)
     print(f"Exported {result['chunk_count']} retrieval chunks from {result['episode_count']} episodes")
 
 
