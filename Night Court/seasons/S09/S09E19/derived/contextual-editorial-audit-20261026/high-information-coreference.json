@@ -1,0 +1,221 @@
+{
+  "schema": "night-court-high-information-text-coreference/1",
+  "episode": "S09E19",
+  "source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "source_timing": "untimed",
+  "authority": "non-promoting sidecar; previous P0 split hints and v16 role evidence reviewed",
+  "all_parts_sound_verified": false,
+  "source_cue_text_modified": false,
+  "notes": "Quoted fragments are search anchors, not asserted precise performed-turn word boundaries. They may overlap adjacent cues without splitting original text.",
+  "cases": [
+    {
+      "cue": "C188",
+      "voices": [
+        {
+          "role": "ROZ RUSSELL",
+          "anchor": "meet i just got carried away",
+          "confidence": "medium"
+        },
+        {
+          "role": "CHRISTINE SULLIVAN",
+          "anchor": "oh roz there are worse things",
+          "confidence": "medium"
+        }
+      ],
+      "note": "The malformed opening appears to finish Roz's excuse, followed by Christine reassuring Roz; exact onset of first phrase requires audio.",
+      "type": "coreference, reassurance response"
+    },
+    {
+      "cue": "C189",
+      "voices": [
+        {
+          "role": "CHRISTINE SULLIVAN",
+          "anchor": "can't think of any at the moment but there are",
+          "confidence": "medium"
+        },
+        {
+          "role": "ROZ RUSSELL",
+          "anchor": "i can't face him now i lied to",
+          "confidence": "high"
+        }
+      ],
+      "note": "Christine finishes her joking reassurance; Roz switches to first-person concern about meeting Alex. Preserve transcription case and missing punctuation.",
+      "type": "syntax, first-person antecedent"
+    },
+    {
+      "cue": "C190",
+      "voices": [
+        {
+          "role": "ROZ RUSSELL",
+          "anchor": "him",
+          "confidence": "high"
+        },
+        {
+          "role": "CHRISTINE SULLIVAN",
+          "anchor": "i think you're missing a really great opportunity roz",
+          "confidence": "high"
+        },
+        {
+          "role": "ROZ RUSSELL",
+          "anchor": "yeah i",
+          "confidence": "medium"
+        }
+      ],
+      "note": "The first word completes Roz's 'lied to him'; explicit address 'Roz' anchors the intervening second speaker, and Roz likely begins agreement at the end.",
+      "type": "cross-cue continuation, direct addressee"
+    },
+    {
+      "cue": "C191",
+      "voices": [
+        {
+          "role": "ROZ RUSSELL",
+          "anchor": "really would like to get a look at him",
+          "confidence": "medium"
+        },
+        {
+          "role": "CHRISTINE SULLIVAN",
+          "anchor": "there's only one way to do that you",
+          "confidence": "high"
+        }
+      ],
+      "note": "Roz completes her curiosity; Christine responds to the wish with instructions. The next cue C192 completes the instruction.",
+      "type": "wish-response, grammar"
+    },
+    {
+      "cue": "C192",
+      "voices": [
+        {
+          "role": "CHRISTINE SULLIVAN",
+          "anchor": "gotta go",
+          "confidence": "high"
+        }
+      ],
+      "note": "Completes Christine's unfinished C191 instruction; C193 'Or you gotta go' is likely a wordplay by another character but lacks decisive textual voice evidence.",
+      "type": "cross-cue continuation"
+    },
+    {
+      "cue": "C206",
+      "voices": [
+        {
+          "role": "CHRISTINE SULLIVAN",
+          "anchor": "thing is very unsettling",
+          "confidence": "medium"
+        },
+        {
+          "role": "DAN FIELDING",
+          "anchor": "No, this whole thing is really boring.",
+          "confidence": "high"
+        }
+      ],
+      "note": "Christine has voiced disquiet about the campaign fallout; Dan's dismissal continues across C207-C209. Opening 'Well...' could be hers or another interlocutor.",
+      "type": "topic continuity, contradiction"
+    },
+    {
+      "cue": "C209",
+      "voices": [
+        {
+          "role": "DAN FIELDING",
+          "anchor": "from.",
+          "confidence": "high"
+        },
+        {
+          "role": "UNKNOWN",
+          "anchor": "That's right, I mean, voters are very fickle.",
+          "confidence": "unknown"
+        }
+      ],
+      "note": "Dan's sentence from C207-C208 ends at 'from'; second speaker agrees. Identity could be Harry, Mac or another scene participant.",
+      "type": "syntax, reply"
+    },
+    {
+      "cue": "C211",
+      "voices": [
+        {
+          "role": "CHRISTINE SULLIVAN",
+          "anchor": "I don't think so.",
+          "confidence": "medium"
+        },
+        {
+          "role": "UNKNOWN",
+          "anchor": "Well, that outfit really showed off your figure.",
+          "confidence": "unknown"
+        }
+      ],
+      "note": "Christine rejects speculation that the Amish girls are jealous, followed by a different appraisal of her appearance; role of appraiser uncertain.",
+      "type": "contrast, scene addressee"
+    },
+    {
+      "cue": "C271",
+      "voices": [
+        {
+          "role": "UNKNOWN",
+          "anchor": "No. It's yours.",
+          "confidence": "unknown"
+        },
+        {
+          "role": "UNKNOWN",
+          "anchor": "You want it.",
+          "confidence": "unknown"
+        },
+        {
+          "role": "UNKNOWN",
+          "anchor": "No, really. You keep it.",
+          "confidence": "unknown"
+        }
+      ],
+      "note": "The source is a three-part alternation candidate during handback of wager winnings, but 'You want it' may be a continuation by the first voice; no unique number of performed turns established.",
+      "type": "reciprocal pronouns, uncertain alternation"
+    },
+    {
+      "cue": "C284",
+      "voices": [
+        {
+          "role": "ALEX PATTERSON",
+          "anchor": "And you are...",
+          "confidence": "medium"
+        },
+        {
+          "role": "ROZ RUSSELL",
+          "anchor": "Out of here.",
+          "confidence": "medium"
+        }
+      ],
+      "note": "Alex has introduced himself in C283 and invites Roz's identification; 'Out of here' is a sharp departure rejoinder. No word timings.",
+      "type": "question-answer, exit"
+    },
+    {
+      "cue": "C290",
+      "voices": [
+        {
+          "role": "UNKNOWN",
+          "anchor": "He.",
+          "confidence": "unknown"
+        },
+        {
+          "role": "UNKNOWN",
+          "anchor": "Was she?",
+          "confidence": "unknown"
+        }
+      ],
+      "note": "Original P0 ledger flags a switch; do not infer Alex/Roz direction solely from grammar of the broken pun.",
+      "type": "pronoun farce"
+    },
+    {
+      "cue": "C291",
+      "voices": [
+        {
+          "role": "UNKNOWN",
+          "anchor": "He.",
+          "confidence": "unknown"
+        },
+        {
+          "role": "ALEX PATTERSON",
+          "anchor": "He was me.",
+          "confidence": "medium"
+        }
+      ],
+      "note": "Earlier attribution specifically cautions that C291 contains an Alex-associated voice fragment; sequence remains unverified. Alex's confession about hired actor supports final phrase only.",
+      "type": "persona/reference separation"
+    }
+  ]
+}
