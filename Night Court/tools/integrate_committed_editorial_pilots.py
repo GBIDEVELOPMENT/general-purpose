@@ -109,7 +109,7 @@ def integrate_s01(root: Path, old: list[dict]) -> tuple[list[dict], list[dict], 
         new.append(row)
     assert sorted(changes) == sorted([
         ("C028.1", "BULL SHANNON", "LANA WAGNER"),
-        ("C101.1", None, "SHEILA"),
+        ("C101.1", None, "SHEILA GARDINER"),
     ]), ("Unexpected S01 v18 speaker role edits", changes)
     g = defaultdict(set)
     for row in proof:
