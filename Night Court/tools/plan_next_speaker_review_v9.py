@@ -352,18 +352,19 @@ def make_queue(rows:list[dict],s09_times:dict[int,dict],
     unknown_by_episode={}
     unknown_runs={}
     for ep in ("S01E01","S09E19"):
-        ids=sorted({int(x.split(":C",1)[1][:3]) for x in unknown
-                    if x.startswith(ep+":C")})
-        unknown_by_episode[ep]=len(ids)
+        counts=Counter(int(x.split(":C",1)[1][:3]) for x in unknown
+                       if x.startswith(ep+":C"))
+        ids=sorted(counts)
+        unknown_by_episode[ep]=sum(counts.values())
         runs=[]
         for n in ids:
             if runs and runs[-1]["end_source_cue"]+1==n:
                 runs[-1]["end_source_cue"]=n
-                runs[-1]["unknown_source_units"]+=1
+                runs[-1]["unknown_source_units"]+=counts[n]
             else:
                 runs.append({"start_source_cue":n,
                              "end_source_cue":n,
-                             "unknown_source_units":1})
+                             "unknown_source_units":counts[n]})
         unknown_runs[ep]=sorted(runs,
             key=lambda x:(-x["unknown_source_units"],x["start_source_cue"]))[:10]
     if sum(unknown_by_episode.values())!=len(unknown):
