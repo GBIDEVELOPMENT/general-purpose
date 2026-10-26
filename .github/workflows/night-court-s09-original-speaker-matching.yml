@@ -210,13 +210,13 @@ jobs:
           assert data['scene_review_complete'] is False
           assert set(data['episodes'])=={'S01E01','S09E19'}
           total=0
-          for episode, n in [('S01E01',404),('S09E19',322)]:
+          for episode, n in [('S01E01',405),('S09E19',321)]:
               manuscript=base/f'{episode}-working-screenplay.md'
               sidecar=base/f'{episode}-working-screenplay-provenance.jsonl'
               assert manuscript.is_file() and sidecar.is_file()
               assert hashlib.sha256(manuscript.read_bytes()).hexdigest()==data['manuscript_sha256'][episode]
               rows=[json.loads(x) for x in sidecar.read_text('utf-8').splitlines()]
-              assert len(rows)==data['episodes'][episode]['source_blocks']
+              assert len(rows)==n==data['episodes'][episode]['source_blocks']
               assert all(r['actual_original_av_reviewer_accepted'] is False for r in rows)
               assert all(r['source_cue_times_not_subturn_times_ms'] is None for r in rows) if episode=='S09E19' else True
               total+=len(rows)
