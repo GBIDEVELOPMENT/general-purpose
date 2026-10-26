@@ -284,7 +284,7 @@ def integrate(output: Path) -> dict:
     # The original 100-unit queue remains an archived v16 baseline outside
     # this current snapshot. Regenerate exactly from updated source rows.
     private_review=output/"private-review"
-    assert private_review.is_dir()
+    private_review.mkdir(parents=True, exist_ok=True)
     for prior in private_review.glob("remaining-*-speaker-review*"):
         prior.unlink()
     internal = read_json(ROOT/"research/probable-internal-speaker-switches-v1.json")
