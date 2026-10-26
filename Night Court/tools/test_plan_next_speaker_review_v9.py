@@ -105,6 +105,28 @@ class RemainingSpeakerReviewTests(unittest.TestCase):
         self.assertEqual(summary["original_source_units_still_unknown"],2)
         self.assertTrue(all("C266.1" not in r["unidentified_original_unit_refs"] for r in result))
 
+    def test_v11_original_mixed_speaker_roles_and_156_unknown_manifest_cannot_be_forged(self):
+        from plan_next_speaker_review_v9 import load_private_v11
+        with tempfile.TemporaryDirectory() as temp:
+            base=Path(temp)
+            (base/"pilot-current-multi-voice-turns-v11.jsonl").write_text("{}\\n","utf-8")
+            (base/"pilot-current-multi-voice-turns-v11-manifest.json").write_text("{}","utf-8")
+            with self.assertRaisesRegex(ValueError,"Source-v11 original-role"):
+                load_private_v11(base)
+        rows=[
+            row("S09E19","C188.1:v11a","ROZ RUSSELL","short original voice"),
+            row("S09E19","C188.1:v11b","CHRISTINE SULLIVAN","responding original voice"),
+            row("S09E19","C189.1",None,"Still unidentified."),
+        ]
+        rows[0]["original_source_part_refs"]=["C188.1"]
+        rows[1]["original_source_part_refs"]=["C188.1"]
+        queue,summary=make_queue(rows,{},{"cues":[{"episode_id":"S09E19","original_cue":188}]},
+                                 strict=False)
+        self.assertEqual(summary["original_source_units"],2)
+        self.assertEqual(summary["original_units_provisionally_named"],1)
+        self.assertEqual(summary["original_source_units_still_unknown"],1)
+        self.assertEqual(queue[0]["source_reading_ref"],"C189.1")
+
     def test_private_original_audio_numeric_sha_required(self):
         with tempfile.TemporaryDirectory() as folder:
             p=Path(folder)/"real-source.json"
