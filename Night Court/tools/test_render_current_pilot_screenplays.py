@@ -110,6 +110,20 @@ class CurrentPilotScreenplayTests(unittest.TestCase):
         self.assertEqual(sum(map(len,grouped["S01E01"])),404)
         self.assertTrue(all(len(group)==1 for group in grouped["S01E01"]))
 
+    def test_source_chronology_restored_when_role_reader_input_interleaves_episodes(self):
+        rows,_,manifest,witnesses=fixture()
+        # A source-patch pipeline may append an older S01 role change after S09.
+        unsorted=rows[404:]+rows[1:404]+rows[:1]
+        scrambled="".join(json.dumps(row,sort_keys=True)+"\\n" for row in unsorted).encode()
+        updated=dict(manifest,source_role_record_sha256=sha(scrambled))
+        self.assertEqual(check_source(unsorted,updated,scrambled,witnesses)["original_source_units"],751)
+        scripts,sidecars,summary=render(unsorted,compact=False)
+        self.assertEqual(sidecars["S01E01"][0]["reading_block_id"],"test-s01-0")
+        self.assertEqual(sidecars["S01E01"][-1]["reading_block_id"],"test-s01-403")
+        self.assertEqual(sidecars["S09E19"][0]["reading_block_id"],"test-s09-0")
+        self.assertEqual(summary["S01E01"]["source_blocks"],404)
+        self.assertIn("Test synthetic line 0",scripts["S01E01"])
+
     def test_invalid_source_changes_and_fake_s09_times_fail_closed(self):
         rows,raw,manifest,witnesses=fixture()
         fake=copy.deepcopy(rows)
