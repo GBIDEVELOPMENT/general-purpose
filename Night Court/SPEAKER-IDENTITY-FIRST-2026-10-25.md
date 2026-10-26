@@ -356,3 +356,14 @@ python 'Night Court/tools/export_fan_retrieval_chunks.py' \
   --source-turn-patch-root /private/night-court-current-source-turn-patches \
   --output /private/night-court-fan-script-turn-search
 ```
+
+## Further P0 correction: do not hide unidentified voices inside a named dialogue cue
+
+The new generic source-turn amendment ledger now also addresses original S09 **C209 and C211**, two unusually clear examples where an original UNTImED subtitle paragraph contains more than one character:
+
+- **C209** begins with the last word of Dan's already-known statement across C207/C208, followed by another voice agreeing that voters are fickle. The first fragment is provisionally Dan; the second speaker is **explicitly UNKNOWN**.
+- **C211** begins with Christine's reply denying that the Amish girls are jealous, followed by somebody else remarking on how revealing her commercial outfit was. The first fragment is provisionally Christine; the second speaker stays **UNKNOWN**.
+
+These are source-text-backed potential voice handoffs, not independently verified performed boundaries. All original words and spaces are preserved exactly under source Unicode offsets. Unlike earlier coarse attribution schemes, the original cue **does not become named if even one subturn remains UNKNOWN**. Both C209 and C211 therefore remain in the priority speaker-review queue, especially for film/audio verification of their second voices.
+
+Together with C102→C103, these declarative corrections yield **three original source P0 amendment operations, 721 provisional reader turns, and unchanged 621 provisionally named /130 UNKNOWN of the 751 original caption-derived source units**. No original actor names, voice identities, source timestamps or multimedia were independently certified or silently changed. The full 193-episode fan retrieval and original speaker SQLite FTS follow the same exact-source updated speaker-turn evidence.
