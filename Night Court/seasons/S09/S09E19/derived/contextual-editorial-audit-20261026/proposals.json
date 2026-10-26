@@ -1,0 +1,631 @@
+{
+  "schema": "night-court-contextual-editorial-audit/1",
+  "episode": "S09E19",
+  "source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "source_units": 347,
+  "source_unit_timing": "untimed",
+  "latest_baseline": {
+    "version": "v16",
+    "named_source_units": 268,
+    "unknown_source_units": 79,
+    "independent_soundtrack_verified": 0
+  },
+  "status": "text_only_unverified",
+  "note": "Targeted source-linked editorial hypotheses. Ranges include source paragraph identifiers, not performed voice timecodes; entries do not overwrite current role ledger. Other source cues retain existing provenance and labels, including UNKNOWN.",
+  "proposals": [
+    {
+      "source_start": "C016",
+      "source_end": "C017",
+      "proposed_voice_sequence": [
+        "DAN FIELDING"
+      ],
+      "confidence": "high",
+      "evidence_type": "same-speaker-question-and-joke",
+      "rationale": "The question to Roz and follow-up teasing title belong to Dan in one conversational turn.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C028",
+      "source_end": "C031",
+      "proposed_voice_sequence": [
+        "ROZ RUSSELL"
+      ],
+      "confidence": "high",
+      "evidence_type": "first-person-story-continuation",
+      "rationale": "Roz explains the forwarded mail and threatening note to her pen pal; four paragraphs form a continuous narrative.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C033",
+      "source_end": "C034",
+      "proposed_voice_sequence": [
+        "ROZ RUSSELL",
+        "UNKNOWN"
+      ],
+      "confidence": "medium",
+      "evidence_type": "mixed-caption-voice",
+      "rationale": "C033 continues Roz's story into C034 ('me.'); the following 'Wow, what a great story' is a different reacting voice, unidentified.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C058",
+      "source_end": "C061",
+      "proposed_voice_sequence": [
+        "DAN FIELDING"
+      ],
+      "confidence": "medium",
+      "evidence_type": "prosecutor-role-and-syntax",
+      "rationale": "After the case is called, prosecution introduces Fingers Kirby and completes one interrupted grammatical statement.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C063",
+      "source_end": "C064",
+      "proposed_voice_sequence": [
+        "FINGERS KIRBY"
+      ],
+      "confidence": "high",
+      "evidence_type": "first-person-defense-and-syntax",
+      "rationale": "The defendant defends raiding expensive hotel minibars and continues across the paragraph break.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C075",
+      "source_end": "C076",
+      "proposed_voice_sequence": [
+        "DAN FIELDING"
+      ],
+      "confidence": "high",
+      "evidence_type": "syntax-and-reply",
+      "rationale": "Dan's eyelid remark spans captions; Bull's C077 TV-channel misunderstanding is the reply.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C094",
+      "source_end": "C096",
+      "proposed_voice_sequence": [
+        "HARRY STONE"
+      ],
+      "confidence": "high",
+      "evidence_type": "pun-setup-payoff",
+      "rationale": "Harry reads an obsolete legal text and supplies his own Prohibition pun.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C102",
+      "source_end": "C103",
+      "proposed_voice_sequence": [
+        "DAN FIELDING",
+        "HARRY STONE",
+        "DAN FIELDING"
+      ],
+      "confidence": "high",
+      "evidence_type": "question-answer-interjection",
+      "rationale": "Dan asks whether Harry knew about the safe; Harry says no in C102 and completes 'it' in C103; Dan reacts 'Wow'.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C126",
+      "source_end": "C127",
+      "proposed_voice_sequence": [
+        "HARRIET",
+        "MAC ROBINSON"
+      ],
+      "confidence": "high",
+      "evidence_type": "direct-address-reply",
+      "rationale": "Harriet's praise to Mac continues into C127, followed by Mac thanking Harriet. Earlier split already documented.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C175",
+      "source_end": "C177",
+      "proposed_voice_sequence": [
+        "ROZ RUSSELL"
+      ],
+      "confidence": "high",
+      "evidence_type": "first-person-confession",
+      "rationale": "Roz's admission of embellishing letters is a continuous three-paragraph speech.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C188",
+      "source_end": "C192",
+      "proposed_voice_sequence": [
+        "MULTIPLE VOICES UNKNOWN"
+      ],
+      "confidence": "low",
+      "evidence_type": "garbled-mixed-dialogue",
+      "rationale": "Poorly punctuated transcription contains Roz's admission and another speaker's reassurance; precise words and boundaries cannot be safely restored from text alone.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C206",
+      "source_end": "C206",
+      "proposed_voice_sequence": [
+        "UNKNOWN",
+        "DAN FIELDING"
+      ],
+      "confidence": "high",
+      "evidence_type": "explicit-contradiction-and-interruption",
+      "rationale": "First unsettled speaker is not Dan; Dan interrupts with a dismissive 'No' and continues his tirade C207-C209.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C207",
+      "source_end": "C209",
+      "proposed_voice_sequence": [
+        "DAN FIELDING",
+        "UNKNOWN"
+      ],
+      "confidence": "high",
+      "evidence_type": "continuation-and-internal-handoff",
+      "rationale": "Dan's 'coming from' finishes at opening C209; a new speaker begins 'That's right'. Do not give all C209 to Dan.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C211",
+      "source_end": "C211",
+      "proposed_voice_sequence": [
+        "CHRISTINE SULLIVAN",
+        "UNKNOWN"
+      ],
+      "confidence": "medium",
+      "evidence_type": "denial-then-rejoinder",
+      "rationale": "The first response rejects the prior attempt at reassurance; another voice appraises the outfit. Second identity remains underdetermined.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C216",
+      "source_end": "C217",
+      "proposed_voice_sequence": [
+        "THE GUY (PLAYING ALEX)"
+      ],
+      "confidence": "high",
+      "evidence_type": "continuous-direct-address",
+      "rationale": "Paid actor playing Alex makes uninterrupted opening romantic speech to stand-in Roz.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C230",
+      "source_end": "C231",
+      "proposed_voice_sequence": [
+        "THE GUY (PLAYING ALEX)"
+      ],
+      "confidence": "high",
+      "evidence_type": "single-question-continuation",
+      "rationale": "The question about Florence runs across paragraph break.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C235",
+      "source_end": "C237",
+      "proposed_voice_sequence": [
+        "UNKNOWN"
+      ],
+      "confidence": "low",
+      "evidence_type": "observer-commentary",
+      "rationale": "Restaurant observers discuss the impostors, but the text does not distinguish which observer says each line.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C258",
+      "source_end": "C259",
+      "proposed_voice_sequence": [
+        "THE GUY (PLAYING ALEX)"
+      ],
+      "confidence": "high",
+      "evidence_type": "same-sentence-continuation",
+      "rationale": "The substitute Alex invites substitute Roz out, crossing original paragraph boundary.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C266",
+      "source_end": "C267",
+      "proposed_voice_sequence": [
+        "UNKNOWN"
+      ],
+      "confidence": "low",
+      "evidence_type": "same-sentence-continuation",
+      "rationale": "One observer asks a long question across the boundary; identity requires more than text.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C270",
+      "source_end": "C271",
+      "proposed_voice_sequence": [
+        "MULTIPLE VOICES UNKNOWN"
+      ],
+      "confidence": "high",
+      "evidence_type": "back-and-forth-over-money",
+      "rationale": "The disputed five-dollar wager includes direct refusals from different voices within C271; retain ordered unknown voice changes.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C277",
+      "source_end": "C277",
+      "proposed_voice_sequence": [
+        "UNKNOWN",
+        "ALEX PATTERSON"
+      ],
+      "confidence": "medium",
+      "evidence_type": "offer-and-objection",
+      "rationale": "The offer that snacks are free and objection that they are stale are different voices; Alex's subsequent expert complaint favors Alex as the objection's voice, not verified.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C279",
+      "source_end": "C281",
+      "proposed_voice_sequence": [
+        "ALEX PATTERSON"
+      ],
+      "confidence": "high",
+      "evidence_type": "peanut-expertise-continuation",
+      "rationale": "Alex's complaint, demand for fresh nuts and explicit nuts-expert statement are one contiguous argument.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C284",
+      "source_end": "C284",
+      "proposed_voice_sequence": [
+        "ALEX PATTERSON",
+        "ROZ RUSSELL"
+      ],
+      "confidence": "medium",
+      "evidence_type": "question-and-abrupt-rejection",
+      "rationale": "Alex's introduction prompts 'And you are...' while Roz leaves with 'Out of here'; internal boundary must remain unverified.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C287",
+      "source_end": "C288",
+      "proposed_voice_sequence": [
+        "ALEX PATTERSON",
+        "ROZ RUSSELL"
+      ],
+      "confidence": "high",
+      "evidence_type": "counter-question-and-stand-in-referents",
+      "rationale": "Alex asks about the woman impersonating Roz; Roz demands the identity of the man impersonating Alex.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C289",
+      "source_end": "C291",
+      "proposed_voice_sequence": [
+        "MULTIPLE VOICES"
+      ],
+      "confidence": "medium",
+      "evidence_type": "pronoun-referent-comedy",
+      "rationale": "The deliberately tangled 'he/she/me' exchange must not be collapsed into a monologue; prior C291 role overlay requires separate review.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C292",
+      "source_end": "C294",
+      "proposed_voice_sequence": [
+        "ALEX PATTERSON / ROZ RUSSELL"
+      ],
+      "confidence": "high",
+      "evidence_type": "question-answer-summary",
+      "rationale": "Alex asks whether the substitute was Roz; Roz affirms; Alex summarizes. C294 already assigned in v16.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C295",
+      "source_end": "C297",
+      "proposed_voice_sequence": [
+        "ROZ RUSSELL",
+        "ALEX PATTERSON"
+      ],
+      "confidence": "high",
+      "evidence_type": "accusation-and-rebuttal",
+      "rationale": "Roz calls the deception cheapening; Alex replies that hiring the actor cost $400 and cites the actor's soap opera credits.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C300",
+      "source_end": "C301",
+      "proposed_voice_sequence": [
+        "ROZ RUSSELL"
+      ],
+      "confidence": "high",
+      "evidence_type": "apology-continuation",
+      "rationale": "Roz addresses Alex and apologizes over two paragraphs.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C302",
+      "source_end": "C304",
+      "proposed_voice_sequence": [
+        "ALEX PATTERSON",
+        "ROZ RUSSELL"
+      ],
+      "confidence": "high",
+      "evidence_type": "question-answer",
+      "rationale": "Alex apologizes and asks about his chiseled stand-in; Roz answers 'Very studly'.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C305",
+      "source_end": "C306",
+      "proposed_voice_sequence": [
+        "ALEX PATTERSON",
+        "ROZ RUSSELL"
+      ],
+      "confidence": "high",
+      "evidence_type": "direct-answer-and-ironical-callback",
+      "rationale": "Alex asks what Roz thought of his invented size-three figure and Roz answers; v16 reversal must be preserved.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C307",
+      "source_end": "C308",
+      "proposed_voice_sequence": [
+        "ALEX PATTERSON",
+        "ROZ RUSSELL"
+      ],
+      "confidence": "high",
+      "evidence_type": "invitation-and-acceptance",
+      "rationale": "Alex invites Roz to dinner and she accepts.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C310",
+      "source_end": "C314",
+      "proposed_voice_sequence": [
+        "ALEX PATTERSON / ROZ RUSSELL"
+      ],
+      "confidence": "high",
+      "evidence_type": "dietary-preference-contradiction",
+      "rationale": "Alex proposes Thai food; Roz protests, and admits lying about what she wrote; C313-C314 belong to Roz.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C315",
+      "source_end": "C316",
+      "proposed_voice_sequence": [
+        "CHRISTINE SULLIVAN"
+      ],
+      "confidence": "high",
+      "evidence_type": "continuous-address",
+      "rationale": "Christine addresses Mac and complains that a woman hates her; title/plot confirms campaign subplot.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C318",
+      "source_end": "C319",
+      "proposed_voice_sequence": [
+        "MAC ROBINSON"
+      ],
+      "confidence": "high",
+      "evidence_type": "source-of-revelation-continuation",
+      "rationale": "Mac explains the commercial duplicate problem across two paragraphs.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C321",
+      "source_end": "C324",
+      "proposed_voice_sequence": [
+        "MAC ROBINSON"
+      ],
+      "confidence": "high",
+      "evidence_type": "technical-explanation-continuation",
+      "rationale": "Mac describes reused media and subliminal content across the paragraph boundaries.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C335",
+      "source_end": "C338",
+      "proposed_voice_sequence": [
+        "HARRY STONE / DAN FIELDING"
+      ],
+      "confidence": "medium",
+      "evidence_type": "safe-story-callback",
+      "rationale": "Two people negotiate division of Judge Grimm's safe; reciprocal terms suggest Harry and Dan but precise turn-by-turn alternation needs review.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C339",
+      "source_end": "C342",
+      "proposed_voice_sequence": [
+        "HARRY STONE / DAN FIELDING"
+      ],
+      "confidence": "medium",
+      "evidence_type": "safe-payoff-argument",
+      "rationale": "The negotiators discuss securities, then demand the safe be opened; specific interjections uncertain.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    },
+    {
+      "source_start": "C343",
+      "source_end": "C347",
+      "proposed_voice_sequence": [
+        "UNKNOWN"
+      ],
+      "confidence": "unknown",
+      "evidence_type": "overlapping-exclamations",
+      "rationale": "The safe's turkey-sandwich punchline may involve both Harry and Dan; no defensible voice order from text alone.",
+      "source_text_unchanged": true,
+      "verified": false,
+      "alternatives": [
+        "UNKNOWN",
+        "other present participant"
+      ],
+      "exact_text_split_offsets": null,
+      "original_timestamps": null
+    }
+  ]
+}
