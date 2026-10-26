@@ -7,6 +7,9 @@ on:
       - 'Night Court/tools/test_compare_s09_original_speaker_embeddings.py'
       - 'Night Court/tools/apply_source_role_amendments.py'
       - 'Night Court/research/source-role-amendments-v1.json'
+      - 'Night Court/tools/apply_source_turn_amendments.py'
+      - 'Night Court/tools/test_apply_source_turn_amendments.py'
+      - 'Night Court/research/source-turn-amendments-v1.json'
       - '.github/workflows/night-court-s09-original-speaker-matching.yml'
       - 'Night Court/tools/plan_next_speaker_review_v9.py'
       - 'Night Court/tools/test_plan_next_speaker_review_v9.py'
@@ -106,7 +109,7 @@ jobs:
                     p["candidate_reference_role_counts"],
                     "unknown source candidate windows:",len(p["previously_unidentified_audio_windows"]))
           PY
-      - name: Reconcile all 132 current source UNKNOWNs against authentic sound location evidence
+      - name: Reconcile all 130 current source UNKNOWNs against authentic sound location evidence
         run: |
           python 'Night Court/tools/build_s09_source_acoustic_speaker_reader_v9.py' \
             --current-v8 '${{ runner.temp }}/s09-v8' \
@@ -126,26 +129,31 @@ jobs:
           python 'Night Court/tools/apply_source_role_amendments.py' \
             --v13 '${{ runner.temp }}/s09-v13' \
             --output '${{ runner.temp }}/s09-source-role-patches'
+          python 'Night Court/tools/apply_source_turn_amendments.py' \
+            --source-role-patches '${{ runner.temp }}/s09-source-role-patches' \
+            --output '${{ runner.temp }}/s09-source-turn-patches'
           python 'Night Court/tools/plan_next_speaker_review_v9.py' \
-            --speaker-patch-root '${{ runner.temp }}/s09-source-role-patches' \
+            --speaker-turn-patch-root '${{ runner.temp }}/s09-source-turn-patches' \
             --s09-original-audio-locator '${{ runner.temp }}/s09-source-numeric/night-court-s09-original-audio-paragraph-locators.json' \
-            --output '${{ runner.temp }}/s09-next-132-private-speaker-review'
+            --output '${{ runner.temp }}/s09-next-130-private-speaker-review'
           python 'Night Court/tools/triage_internal_speaker_switches.py' \
             --output '${{ runner.temp }}/s09-p0-original-internal-turns'
           python - <<'PY'
           from pathlib import Path
           import json,os
           base=Path(os.environ['RUNNER_TEMP'])
-          out=base/'s09-next-132-private-speaker-review'
-          m=json.loads((out/'remaining-132-speaker-review-summary.json').read_text('utf-8'))
+          out=base/'s09-next-130-private-speaker-review'
+          m=json.loads((out/'remaining-130-speaker-review-summary.json').read_text('utf-8'))
           assert m['original_source_units']==751
-          assert m['original_units_provisionally_named']==619
-          assert m['original_source_units_still_unknown']==132
+          assert m['original_units_provisionally_named']==621
+          assert m['original_source_units_still_unknown']==130
           assert m['s09_actual_audio_window_leads']>0
           assert m['new_speaker_names_automatically_assigned']==0
           assert m['new_voices_human_accepted']==0
           assert m['original_untimed_S09_captions_modified'] is False
-          q=[json.loads(x) for x in (out/'remaining-132-speaker-review.jsonl').read_text().splitlines()]
+          q=[json.loads(x) for x in (out/'remaining-130-speaker-review.jsonl').read_text().splitlines()]
+          assert all(ref not in x['unidentified_original_unit_refs'] for x in q
+                     if x['episode_id']=='S09E19' for ref in ('C102.1','C103.1'))
           assert all('C266.1' not in x['unidentified_original_unit_refs'] for x in q if x['episode_id']=='S09E19')
           assert all(ref not in x['unidentified_original_unit_refs'] for x in q if x['episode_id']=='S09E19' for ref in
                      ('C127.1','C146.1','C284.1','C091.1','C092.1',
@@ -160,7 +168,7 @@ jobs:
           triage=json.loads((base/'s09-p0-original-internal-turns'/'potential-within-caption-summary.json').read_text('utf-8'))
           assert triage['provisional_inside_original_cue_switch_questions']==16
           assert triage['last_episode_original_untimed_candidate_count']==15
-          print('All 132 current UNKNOWN source units now queued with original audio locators, 16 P0 intra-cue review questions and disputed C129 still UNKNOWN')
+          print('All 130 current UNKNOWN source units now queued with original audio locators, 16 P0 intra-cue review questions and disputed C129 still UNKNOWN')
           PY
       - name: Compare newest original S09 soundtrack role-bank coverage before expensive acoustic model work
         env:
@@ -197,7 +205,7 @@ jobs:
         if: always()
         run: |
           rm -rf '${{ runner.temp }}/s09-v6' '${{ runner.temp }}/s09-v7' '${{ runner.temp }}/s09-v8' '${{ runner.temp }}/s09-source-numeric'
-          rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-v12' '${{ runner.temp }}/s09-v13' '${{ runner.temp }}/s09-source-role-patches' '${{ runner.temp }}/s09-next-132-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
+          rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-v12' '${{ runner.temp }}/s09-v13' '${{ runner.temp }}/s09-source-role-patches' '${{ runner.temp }}/s09-source-turn-patches' '${{ runner.temp }}/s09-next-130-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
           rm -f '${{ runner.temp }}/s09-source-v8-reference-sensitivity-'*.json
           rm -f '${{ runner.temp }}/s09-current-source-voice-plan.json'
 
