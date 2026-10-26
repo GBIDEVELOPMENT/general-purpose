@@ -202,6 +202,38 @@ def load_private_source_turn_patches(path:Path)->list[dict]:
         raise ValueError("Original source C129 false-positive actor label remains UNKNOWN")
     return rows
 
+def load_private_s01_v15_source_turns(path:Path)->list[dict]:
+    """Current private original S01 timed dash reply review over latest S09 roles."""
+    raw=(path/"pilot-source-episode-turns-v15.jsonl").read_bytes()
+    m=json.loads((path/"pilot-source-episode-turns-v15-manifest.json").read_text("utf-8"))
+    if (sha(raw)!=m.get("source_role_record_sha256")
+        or m.get("original_caption_source_units")!=751
+        or m.get("provisional_named_original_source_units")!=621
+        or m.get("original_source_units_still_UNKNOWN")!=130
+        or m.get("current_provisional_speaking_blocks")!=726
+        or m.get("original_source_cue_start_ms")!=879532
+        or m.get("original_source_cue_end_ms")!=882330
+        or m.get("new_original_actor_identities_certified")!=0
+        or m.get("new_performer_turns_independently_audio_verified")!=0
+        or m.get("all_original_source_characters_preserved_exactly") is not True
+        or m.get("source_cue_timing_is_not_performer_turn_timing") is not True):
+        raise ValueError("Private S01 latest 726 original source-turn evidence SHA/actor status differs")
+    rows=[json.loads(x) for x in raw.decode("utf-8").splitlines() if x.strip()]
+    if len(rows)!=726 or any(x.get("actor_face_or_voice_independently_verified") is not False for x in rows):
+        raise ValueError("Private original S01 actor evidence falsely certified")
+    c219=[x for x in rows if x["episode_id"]=="S01E01" and
+          x["source_reading_ref"].startswith("S01E01-C219-SOURCE-TURN-")]
+    if (len(c219)!=2 or any(x.get("candidate_role") is not None
+                            or x.get("speaker_turn_boundary_verified") is not False
+                            or x.get("original_source_part_refs")!=["C219.1"]
+                            or x.get("source_original_cue_bounds_not_subturn_alignment") is not True
+                            for x in c219)):
+        raise ValueError("S01 C219 original source two UNKNOWN voices were mislabeled")
+    disputed=[x for x in rows if x["episode_id"]=="S09E19" and x["source_reading_ref"]=="C129.1"]
+    if len(disputed)!=1 or disputed[0]["candidate_role"] is not None:
+        raise ValueError("S09 source C129 false-positive character remains UNKNOWN")
+    return rows
+
 def load_s09_locator(path:Path)->dict[int,dict]:
     raw=path.read_bytes()
     if sha(raw)!=S09_LOCATOR_SHA:
@@ -399,9 +431,10 @@ def build(root:Path,role_root:Path,locator:Path,output:Path,
           revision:str="v9")->dict:
     if output.resolve().is_relative_to(root.resolve()):
         raise ValueError("Private source dialogue output must never enter repo")
-    if revision not in ("v8","v9","v10","v11","v13","source-patches","source-turn-patches"):
+    if revision not in ("v8","v9","v10","v11","v13","source-patches","source-turn-patches","s01-v15"):
         raise ValueError("Unsupported private original speaker source version")
-    rows=(load_private_source_turn_patches(role_root) if revision=="source-turn-patches" else
+    rows=(load_private_s01_v15_source_turns(role_root) if revision=="s01-v15" else
+          load_private_source_turn_patches(role_root) if revision=="source-turn-patches" else
           load_private_source_patches(role_root) if revision=="source-patches" else
           load_private_v13(role_root) if revision=="v13" else
           load_private_v11(role_root) if revision=="v11" else
@@ -414,7 +447,7 @@ def build(root:Path,role_root:Path,locator:Path,output:Path,
         for row in rows:
             if row["episode_id"]==ep and row["original_source_sha256"]!=meta["sha256"]:
                 raise ValueError("Original source caption SHA mismatch in private v8 reader")
-    named,unknown=((621,130) if revision=="source-turn-patches" else
+    named,unknown=((621,130) if revision in ("source-turn-patches","s01-v15") else
                    (619,132) if revision=="source-patches" else
                    (613,138) if revision=="v13" else
                    (595,156) if revision=="v11" else
@@ -440,13 +473,15 @@ def main():
     options.add_argument("--speaker-v13-root",type=Path)
     options.add_argument("--speaker-patch-root",type=Path)
     options.add_argument("--speaker-turn-patch-root",type=Path)
+    options.add_argument("--s01-p0-root",type=Path)
     p.add_argument("--s09-original-audio-locator",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True)
     a=p.parse_args()
-    role_root=(a.speaker_turn_patch_root or a.speaker_patch_root or
+    role_root=(a.s01_p0_root or a.speaker_turn_patch_root or a.speaker_patch_root or
                a.speaker_v13_root or a.speaker_v11_root or
                a.speaker_v10_root or a.speaker_v9_root or a.speaker_v8_root)
-    version=("source-turn-patches" if a.speaker_turn_patch_root is not None else
+    version=("s01-v15" if a.s01_p0_root is not None else
+             "source-turn-patches" if a.speaker_turn_patch_root is not None else
              "source-patches" if a.speaker_patch_root is not None else
              "v13" if a.speaker_v13_root is not None else
              "v11" if a.speaker_v11_root is not None else

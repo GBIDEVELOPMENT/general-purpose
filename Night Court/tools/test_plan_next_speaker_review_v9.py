@@ -210,6 +210,38 @@ class RemainingSpeakerReviewTests(unittest.TestCase):
              {"start_source_cue":105,"end_source_cue":105,"unknown_source_units":1}])
         self.assertTrue(summary["original_source_cue_numbers_only_no_dialogue"])
 
+    def test_latest_s01_c219_two_unknown_rows_share_one_original_source_unit(self):
+        from plan_next_speaker_review_v9 import load_private_s01_v15_source_turns
+        with tempfile.TemporaryDirectory() as temp:
+            base=Path(temp)
+            (base/"pilot-source-episode-turns-v15.jsonl").write_text("{}\\n","utf-8")
+            (base/"pilot-source-episode-turns-v15-manifest.json").write_text("{}","utf-8")
+            with self.assertRaisesRegex(ValueError,"S01 latest 726"):
+                load_private_s01_v15_source_turns(base)
+        time=[{"start_ms":879532,"end_ms":882330}]
+        rows=[
+            row("S01E01","S01E01-C219-SOURCE-TURN-1",None,
+                "...must have been a living hell, huh?\\n",time),
+            row("S01E01","S01E01-C219-SOURCE-TURN-2",None,
+                "- Yeah.",time),
+            row("S09E19","C129.1",None,"Original suspicious guest voice."),
+        ]
+        rows[0]["original_source_part_refs"]=["C219.1"]
+        rows[1]["original_source_part_refs"]=["C219.1"]
+        result,summary=make_queue(rows,{},{"cues":[{"episode_id":"S01E01","original_cue":219}]},
+                                  strict=False)
+        self.assertEqual(summary["original_source_units"],2)
+        self.assertEqual(summary["original_source_units_still_unknown"],2)
+        self.assertEqual(summary["unknown_source_unit_review_records"],3)
+        self.assertEqual(summary["suspected_internal_switch_review_records"],2)
+        self.assertEqual(summary["new_voices_human_accepted"],0)
+        one=[x for x in result if x["episode_id"]=="S01E01"]
+        self.assertEqual(len(one),2)
+        self.assertTrue(all(x["actual_original_sound_candidate_window_ms"]==[878332,883530]
+                            for x in one))
+        self.assertTrue(all(x["unidentified_original_unit_refs"]==["C219.1"] for x in one))
+        self.assertTrue(all(x["actual_original_voice_actor_name_verified"] is False for x in one))
+
     def test_private_original_audio_numeric_sha_required(self):
         with tempfile.TemporaryDirectory() as folder:
             p=Path(folder)/"real-source.json"
