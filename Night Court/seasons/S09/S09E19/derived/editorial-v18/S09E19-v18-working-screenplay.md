@@ -8,6 +8,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Christine's congressional mailing and Roz's pen-pal letters circulate through the courthouse.
 
+*Checked original-picture reference (1/11):* Source-picture context, frames 001–007: a bright diner/coffee-counter setting with purple outerwear, navy uniforms and table condiments. The exact dialogue spoken at each sampled image is unverified.
+
 **UNIDENTIFIED SPEAKER** (unresolved)
 
     Ah, well, that does it. 2,000 Sullivan for Congress flyers ready to fly.
@@ -196,6 +198,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* The judge hears the hotel's honor-bar case and the staff discusses the campaign ad's schedule.
 
+*Checked original-picture reference (2/11):* Source-picture context, frames 008–016: courtroom bench, desks and rails; a bright yellow jacket, navy uniform, purple outerwear, tan suit and case papers are visible in separate stills.
+
 **MAC ROBINSON** (provisional)
 
     Yes, sir. People versus Fingers Kirby.
@@ -295,6 +299,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 ## Sequence 3: Book-lined office: the hidden safe
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Harry and Dan discover a safe, while a visitor named Paul recounts Judge Grimm's purported blackmail.
+
+*Checked original-picture reference (3/11):* Source-picture context, frames 017–024: law-book-lined office and large wood desk, with tan patterned tie and reddish-brown jacket on separate adults; a navy-uniformed adult appears in a doorway. No opening action or speaker is synchronized.
 
 **DAN FIELDING** (provisional)
 
@@ -420,6 +426,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Christine learns about the ad's reception as Harry and Dan devise ways into the safe.
 
+*Checked original-picture reference (4/11):* Source-picture context, frames 025–029: return to the crowded diner tables, cups, napkin holders and condiment bottles; colorful burgundy/mustard garments and a navy uniform appear in separate views.
+
 **HARRIET** (provisional)
 
     If there was ever any doubt about my vote, it was erased last night.
@@ -507,6 +515,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 ## Sequence 5: Roz's anxiety about meeting Alex
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Roz confesses exaggerations and is urged to follow through.
+
+*Checked original-picture reference (5/11):* Source-picture context, frames 030–038: desk and courtroom furniture, stacks of paper, a dark navy uniform and a burgundy patterned outfit with bright yellow collar. Sparse images show standing/leaning postures, not their complete gestures.
 
 **CHRISTINE SULLIVAN** (provisional)
 
@@ -644,6 +654,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Fingers Kirby's lockpicking and Christine's changing polling numbers interrupt the plans.
 
+*Checked original-picture reference (6/11):* Source-picture context, frames 039–045: a glowing line on the floor in a sparking insert and return to a book-lined office. A separately checked 5fps sequence shows an adult later approaching the spark and bending over it, rather than retreating.
+
 **BULL SHANNON** (provisional)
 
     on her, but we're having a tough time keeping fingers Kirby and holding.
@@ -721,6 +733,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 ## Sequence 7: Restaurant: professional stand-ins
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* The Guy impersonates Alex opposite Lisette impersonating Roz, while unidentified onlookers observe.
+
+*Checked original-picture reference (7/11):* Source-picture context, frames 046–049: warm, dim restaurant/bar with drinks and densely occupied tables, a burgundy outfit, bearded dark-suited diner, navy uniform and vest-wearing service person in separate stills.
 
 **THE GUY (PLAYING ALEX)** (provisional)
 
@@ -820,6 +834,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* The hired couple dance and observers keep betting on their chances.
 
+*Checked original-picture reference (8/11):* Source-picture context, frames 050–055: dark wood bar with a server's counter, small round tables and a close-dancing pair in burgundy and dark suit amid other patrons. Their actual voice roles are not certified by picture.
+
 **LISETTE HOCHEISER (PLAYING ROZ)** (provisional)
 
     And then there's that, um, uh, glue painting I have. You know, the one that was painted by the artist that was named after the Ninja Turtle?
@@ -891,6 +907,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 ## Sequence 9: Real Alex and Roz at the bar
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* The actual correspondents question their paid substitutes, reveal themselves and reconcile.
+
+*Checked original-picture reference (9/11):* Source-picture context, frames 056–065: bar counter, a navy uniform, a gray suit and glasses, vest-wearing server, drinking vessels and a snack bowl; no sampled still proves the handback of money or who complains about nuts.
 
 **ROZ RUSSELL** (provisional)
 
@@ -1072,6 +1090,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Mac explains the unexpectedly suggestive fragments in Christine's campaign spot.
 
+*Checked original-picture reference (10/11):* Source-picture context, frames 066–069: cream-colored corridor and office doorway, structured red-orange jacket, patterned outerwear with a round badge and pale jacket on different adults. The moving reactions remain uncertified.
+
 **CHRISTINE SULLIVAN** (provisional)
 
     Mac, she hates me. I don't get it.
@@ -1127,6 +1147,8 @@ Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b
 ## Sequence 11: Harry and Dan's safe pays off
 
 *Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Their inventory fantasies end with a sandwich.
+
+*Checked original-picture reference (11/11):* Source-picture context, frames 070–072: final bookcase/office scene with multiple suited adults and papers or a pale object; sampled images alone cannot settle the exact prop reveal or who speaks each cry.
 
 **DAN FIELDING** (provisional)
 
@@ -1186,3 +1208,5 @@ These observations refer to original-video still sequences already retained unde
 **Source-linked word and role exceptions:** C129 remains an acoustic-model quarantine; C188–C192 retain damaged transcribed multi-voice fragments; C271 and C289–C291 have uncertain performed speaker switches, with the first C291 “He.” explicitly unidentified; C305 belongs to Roz and C306 to Alex in the contextual correction; C343–C347 have unidentified safe-reaction voices. All unchanged source words and punctuation are preserved, even when the witness appears inaccurate.
 
 **Direct source-still re-review, 2026-10-26:** The original SHA-indexed 5fps video-image artifact was recovered and all 200 retained source JPEG checksums verified, along with four contact-sheet hashes. The versioned, image-backed direction correction is in `S09E19-direct-original-frame-review-v18.json`. At the floor spark, source frames 078–100 show an adult approaching and bending toward the glowing object, not retreating from it. No original continuous video was played and no actual actor identity or soundtrack voice was verified.
+
+**Picture evidence version:** The full-episode image register `S09E19-whole-episode-original-still-review-v18.json` directly checks the retained original source-frame archive (73/73 JPEG hashes and 4/4 contact sheet hashes). The source images are 18 seconds apart and have no synchronized original transcript timings. These contextual notes add clothing, props and sets only at evidence-supported resolution, not voice or full-motion certification.
