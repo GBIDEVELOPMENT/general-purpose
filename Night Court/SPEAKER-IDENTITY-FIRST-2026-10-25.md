@@ -367,3 +367,22 @@ The new generic source-turn amendment ledger now also addresses original S09 **C
 These are source-text-backed potential voice handoffs, not independently verified performed boundaries. All original words and spaces are preserved exactly under source Unicode offsets. Unlike earlier coarse attribution schemes, the original cue **does not become named if even one subturn remains UNKNOWN**. Both C209 and C211 therefore remain in the priority speaker-review queue, especially for film/audio verification of their second voices.
 
 Together with C102→C103, these declarative corrections yield **three original source P0 amendment operations, 721 provisional reader turns, and unchanged 621 provisionally named /130 UNKNOWN of the 751 original caption-derived source units**. No original actor names, voice identities, source timestamps or multimedia were independently certified or silently changed. The full 193-episode fan retrieval and original speaker SQLite FTS follow the same exact-source updated speaker-turn evidence.
+
+## Numerically prioritized remaining unknown character review: original 621/130 reader
+
+An original-source-checked, no-media/no-transcript CI run on October 26 ranked the remaining **130 original caption-derived UNKNOWN speaking parts** (not true film-performance turns) by episode and contiguous source cue number. It found **S01E01: 34** and **S09E19: 96**. Original 193-episode and two pilot source hashes, no S09 original cue clocks, and the 751-unit denominator were conserved.
+
+| Episode | Source cue span | UNKNOWN original speaking parts in span | Review goal |
+|---|---|---:|---|
+| S01E01 | C075–C082 | 9 across eight cue numbers | Identify the consecutive voices; some original cues contain multiple speaking parts |
+| S01E01 | C100–C103 | 4 | Determine which actors/roles speak before retaining later staging annotations |
+| S01E01 | C106–C107 | 3 | Speaker/voice continuity check |
+| S09E19 | C235–C244 | 10 | Bar spectator dialogue, rapid banter and wagering; prioritize original moving-picture actor identification |
+| S09E19 | C260–C265 | 6 | Bar scene and impostor reactions; watch visible character transitions |
+| S09E19 | C342–C347 | 6 | End-of-episode courthouse safe scene, multiple exclamations and punchline |
+| S09E19 | C094–C098 | 5 | Early safe discovery dialogue, quick reactions |
+| S09E19 | C107–C111 | 5 | Follow-up safe dialogue, determine speaker changes |
+
+These are original **source cue numbers**, not guaranteed original soundtrack timestamps; the 231/347 S09 numerical audio-alignment matches are still hypotheses only. A short original-source performer review of the long multi-voice bar exchange is the likely highest-return **P0/P1 task**. The current audio model only has four character reference banks and they are unreliable on Dan and Mac (2/5 and 1/4 provisional holdout), so it should not guess character identities for every bar speaker. Never presume that several nearby subtitle paragraphs all belong to one person.
+
+The [private latest UNKNOWN review planner](tools/plan_next_speaker_review_v9.py) now records episode totals and the top contiguous source-cue runs in its SHA-bound manifest with **numbers/metadata only**, never dialogue. Importantly it counts each original speaking-part ID, so two original speakers contained in one subtitle cue contribute **two UNKNOWN units**, not one. Numeric results make it easy to allocate original video/audio inspection to the largest genuine source gaps rather than recopying captions. Actor identities independently certified from moving original AV remain zero.
