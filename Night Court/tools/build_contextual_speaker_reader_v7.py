@@ -24,7 +24,7 @@ RECORD_SCHEMA = "night-court-private-contextual-speaker-reading/1"
 SEED = ROOT / "research/pilot-contextual-speaker-proposals-v1.json"
 CAST = ROOT / "research/pilot-episode-credited-cast-v1.json"
 ALLOWED_DESCRIPTIVE = {"BATHROBE SPECTATOR"}
-EXPECTED = {"S01E01": 58, "S09E19": 34}
+EXPECTED = {"S01E01": 59, "S09E19": 34}
 
 
 def source_unit_list(row: dict) -> list[str]:
@@ -81,8 +81,14 @@ def apply_candidates(rows: list[dict], proposals: dict,
             raise ValueError("Cannot override an existing speaker attribution")
         if (proposal.get("original_audio_reviewed") is not False
             or proposal.get("character_verified") is not False
-            or proposal.get("evidence_tier") != "narrative_context_proposal"):
+            or proposal.get("evidence_tier") not in (
+                "narrative_context_proposal", "episode_specific_external_quote_context"
+            )):
             raise ValueError("False AV certainty or unsupported evidence tier")
+        if (proposal["evidence_tier"] == "episode_specific_external_quote_context"
+            and proposal.get("source_url") !=
+                "https://en.wikiquote.org/wiki/Night_Court_(season_1)"):
+            raise ValueError("Published external speaker claim lacks source URL")
         refs = source_unit_list(old)
         if any((ep, unit) in added_unit_refs for unit in refs):
             raise ValueError("Source cue reused by several contextual proposals")
@@ -90,7 +96,7 @@ def apply_candidates(rows: list[dict], proposals: dict,
         changes.append((idx, proposal))
     if strict:
         count = Counter(ep for ep, unit in added_unit_refs)
-        if dict(count) != EXPECTED or len(changes) != 89:
+        if dict(count) != EXPECTED or len(changes) != 90:
             raise ValueError("Contextual proposal source-unit count drift")
     result = [dict(r) for r in rows]
     for idx, proposed in changes:
@@ -98,6 +104,8 @@ def apply_candidates(rows: list[dict], proposals: dict,
         row["candidate_role"] = proposed["proposed_role"]
         row["role_attribution_status"] = "narrative_context_candidate_not_voice_verified"
         row["editorial_confidence_group"] = proposed.get("confidence_group")
+        row["attribution_evidence_tier"] = proposed["evidence_tier"]
+        row["external_character_quote_source_url"] = proposed.get("source_url")
         row["original_audio_reviewed"] = False
         row["speaker_turn_boundary_verified"] = False
         row["actor_face_or_voice_independently_verified"] = False
@@ -122,7 +130,7 @@ def apply_candidates(rows: list[dict], proposals: dict,
         "source_unit_distribution": {ep: sum(k[0] == ep for k in source_unique)
                                      for ep in ("S01E01", "S09E19")},
     }
-    if strict and (len(source_unique), source_named, len(source_unique)-source_named) != (751, 582, 169):
+    if strict and (len(source_unique), source_named, len(source_unique)-source_named) != (751, 583, 168):
         raise ValueError("Original source coverage or candidate identity ledger drift")
     return result, report
 
