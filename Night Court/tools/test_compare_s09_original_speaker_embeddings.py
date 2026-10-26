@@ -68,6 +68,34 @@ class OriginalS09VoicePlanTests(unittest.TestCase):
         self.assertEqual(plan["source_aligned_audio_windows_eligible_for_single_voice_comparison"],0)
         self.assertEqual(plan["potentially_multivoice_or_weak_alignment_rejected_count"],4)
 
+    def test_newer_source_names_extend_audio_seed_pool_but_do_not_invent_names(self):
+        seen=[aligned(i) for i in range(1,17)]
+        # The old reader only knew two named characters in these windows,
+        # while the v8 role proposal view includes another character.
+        old={i:[reading(i,"CHRISTINE SULLIVAN" if i<=4
+                           else ("ROZ RUSSELL" if i<=8 else None))]
+             for i in range(1,17)}
+        current=copy.deepcopy(old)
+        for i in range(9,13):
+            current[i][0]["candidate_role"]="DAN FIELDING"
+        previous=prepare_eligible({"matches":seen},old)
+        updated=prepare_eligible({"matches":seen},current)
+        self.assertEqual(len(previous["candidate_reference_role_counts"]),2)
+        self.assertEqual(len(updated["candidate_reference_role_counts"]),3)
+        self.assertEqual(updated["candidate_reference_role_counts"]["DAN FIELDING"],4)
+        self.assertEqual(len(updated["previously_unidentified_audio_windows"]),4)
+        self.assertTrue(all(x["candidate_role"] is None
+                            for x in updated["previously_unidentified_audio_windows"]))
+        # Sensitivity sweep changes candidate pool size, not audio identity
+        # acceptance rules or original subtitle timing.
+        marginal=aligned(17,coverage=.61)
+        relaxed=prepare_eligible({"matches":seen+[marginal]},
+            {**current,17:[reading(17,None)]},minimum_coverage=.60)
+        self.assertEqual(len(relaxed["previously_unidentified_audio_windows"]),5)
+        self.assertTrue(relaxed["original_paragraphs_remain_untimed"])
+        with self.assertRaises(ValueError):
+            prepare_eligible({"matches":seen},current,minimum_coverage=.10)
+
     def test_exact_original_report_sha_and_source_status_fail_closed(self):
         fake={
             "schema":"night-court-s09-original-film-untimed-paragraph-audio-locator/1",
