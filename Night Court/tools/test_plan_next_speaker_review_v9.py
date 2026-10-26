@@ -149,6 +149,25 @@ class RemainingSpeakerReviewTests(unittest.TestCase):
         self.assertEqual(q[0]["source_reading_ref"],"C147.1")
         self.assertIsNone(q[0]["model_proposed_character"])
 
+    def test_source_role_patch_review_requires_all_current_guest_paul_clues(self):
+        from plan_next_speaker_review_v9 import load_private_source_patches
+        with tempfile.TemporaryDirectory() as temp:
+            p=Path(temp)
+            (p/"pilot-source-role-amendments.jsonl").write_text("{}\\n","utf-8")
+            (p/"pilot-source-role-amendments-manifest.json").write_text("{}","utf-8")
+            with self.assertRaisesRegex(ValueError,"132-UNKNOWN source patch"):
+                load_private_source_patches(p)
+        rows=[
+            row("S09E19","C112.1","PAUL","You found the old safe"),
+            row("S09E19","C113.1",None,"You knew about that book?"),
+        ]
+        q,summary=make_queue(rows,{},{"cues":[]},strict=False)
+        self.assertEqual(summary["original_source_units"],2)
+        self.assertEqual(summary["original_units_provisionally_named"],1)
+        self.assertEqual(summary["original_source_units_still_unknown"],1)
+        self.assertEqual(q[0]["source_reading_ref"],"C113.1")
+        self.assertIsNone(q[0]["model_proposed_character"])
+
     def test_private_original_audio_numeric_sha_required(self):
         with tempfile.TemporaryDirectory() as folder:
             p=Path(folder)/"real-source.json"
