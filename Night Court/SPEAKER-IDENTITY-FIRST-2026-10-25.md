@@ -197,3 +197,27 @@ python 'Night Court/tools/triage_internal_speaker_switches.py' \
 ```
 
 Use candidate S09 original-audio ASR paragraph windows from the actual [S09 soundtrack alignment run](https://github.com/gamesbyian/general-purpose/actions/runs/40253914693), where available, to locate excerpts. That run placed **231/347** previously untimed original paragraphs into **unverified** original-audio windows, matching **1,803** original source words, and left 116 unlocated; those proposed *audio* positions are NOT original subtitle timecodes and do not establish who performed a line. Preserve the frozen original source text and ask an actual soundtrack reviewer to approve every source turn split and actor identity.
+
+## Current 164-source-unit review queue, combining original S09 audio leads
+
+After the v8 source-first private character evidence is generated (**587 provisionally named / 164 original-source UNKNOWN**), `tools/plan_next_speaker_review_v9.py` produces the current **P0/P1 working queue**, instead of repeating older 261-UNKNOWN baseline packets. It joins:
+
+- Every still-unknown exact original source caption-part ID and SHA from the private v8 reader.
+- Real S01 timed SRT cue neighborhoods (not verified movie synchronization).
+- Real S09 [source-AVI audio-alignment report #40253914693](https://github.com/gamesbyian/general-purpose/actions/runs/40253914693), limited to its 231 **UNVERIFIED** audio-window suggestions, with original untimed paragraphs unchanged.
+- Source-cue-exact suspected internal voice-switch flags and adjacent provisionally named speech, provided for review context, **not** evidence that a nearby name belongs to the unknown speaker.
+
+```sh
+python 'Night Court/tools/plan_next_speaker_review_v9.py' \
+  --speaker-v8-root /tmp/night-court-private-source-audio-speaker-v8 \
+  --s09-original-audio-locator /private/night-court-s09-original-audio-paragraph-locators.json \
+  --output /private/night-court-review-next-164
+```
+
+The S09 numeric-only report is available through the owner-trusted private Actions artifact on the linked original alignment run (artifact 12622255206, original data SHA256 `febac6aff2cb01ee36ac1c44b592317011d655628ede2eb83981b98201e3accc`). The script fails closed on changed report bytes, original S09 episode SHA, v8 source-role manifest, or invented S09 original source timecodes; source lines stay out of logs and GitHub files. The output is a local review queue with no automatic P1 name acceptance.
+
+### First original S09 voice comparison (real audio, **no qualified new labels**)
+
+[Original S09 role-acoustic run #40256897493](https://github.com/gamesbyian/general-purpose/actions/runs/40256897493) processed **39 currently UNKNOWN** original paragraph audio windows, but its strict clean-original-source screening left only **two usable role-reference speakers**: **Christine Sullivan (8)** and **Roz Russell (7)**. Those 15 pre-labeled samples were 15/15 correctly classified by leave-one-out comparison **between just those two**. It is **not** a 100% cast voice recognition result. The model correctly declined to propose a new name because its minimum three distinct voice roles / 20 reference examples conditions were unsatisfied; zero original film actor identity independently confirmed. Thus v8 **remains 587/751 named proposals and 164 source unit UNKNOWN** after that run. Numeric original 1992 soundtrack evidence only was retained in the private 7-day action artifact; no original audio or speaker voiceprints were uploaded.
+
+**Next work:** broaden original S09 voice reference bank by joining actual audio candidate intervals to the *latest source-checked v8 original role proposals* (rather than v4 pilot roles) and confirm whether more characters meet minimum source-lexical quality. If a fairer speaker reference bank still lacks sufficient distinct characters, don't run the same model repeatedly hoping to reach 751; try less fragmented source windows, paired short contextual audition of actual source film, or a locally obtained original teleplay with proper scene/role headers. Remember two people often share a paragraph. A character may never have a sufficient uninterrupted audio sample for a voiceprint, in which case image+dialogue context are needed.
