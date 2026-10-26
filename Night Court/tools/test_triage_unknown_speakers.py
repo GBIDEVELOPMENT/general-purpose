@@ -21,7 +21,7 @@ def sample(i, ep, role, text, ref=None, span=None):
 class SpeakerTriageTests(unittest.TestCase):
     def test_short_continuation_unknown_comes_before_long_speech(self):
         rows=[
-            sample(1,"S01E01","HARRY STONE","I was talking to",[{"start_ms":0,"end_ms":200}]),
+            sample(1,"S01E01","HARRY STONE","I was talking to",span=[{"start_ms":0,"end_ms":200}]),
             sample(2,"S01E01",None,"...you.",span=[{"start_ms":200,"end_ms":350}]),
             sample(3,"S01E01","DAN FIELDING","Oh.",span=[{"start_ms":400,"end_ms":500}]),
             sample(4,"S01E01",None,"A longer statement should remain an unidentified original speaker even if it is next to a named one in a working draft.",span=[{"start_ms":750,"end_ms":1400}]),
