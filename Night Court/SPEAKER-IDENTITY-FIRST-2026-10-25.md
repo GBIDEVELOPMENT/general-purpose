@@ -184,3 +184,16 @@ python 'Night Court/tools/fan_sqlite_index.py' build \
 ```
 
 Do not upload private WAVs, voiceprints or original video to public GitHub. Keep the zero-audio-verified status until actual original-film reviewer evidence. A follow-up should inspect the four new cue windows with the original picture and audio, compare anonymous voices against known characters, and correct source latency / overlapped laughter risk before accepting them. S09E19 still needs defensible original source paragraph-to-audio alignment to unlock the larger remaining UNKNOWN pool.
+
+## More missing *speaker turns* inside held source caption units
+
+An explicit [mixed-voice P0 review locator](research/probable-internal-speaker-switches-v1.json) now records **12 additional exact-source probable voice-switch locations**: one in timed S01E01 and eleven in untimed S09E19. These are not twelve newly accepted splits, and the original 751 caption-derived source-unit count is unchanged. Named identities remain unknown until original source audiovisual review. The read-only validator `tools/triage_internal_speaker_switches.py` verifies the original episode/cue SHA and single unique in-cue lexical boundary, preserves every source character, and generates private two-part review excerpts with no guessed named characters or untimed source clock.
+
+Known high-impact problems include a speaker reply buried after a question in S09 C102, a named greeting at C127, the change from Dan to Harry implied within C146, competing dialogue within C206/C209/C211, rapid bar scene exchanges at C271/C284, and the identity-reveal farce C290/C291. S01 C219 also embeds a short reply behind a dash. Some of those may include **more than two** speaking turns; the proposal is a targeted audit starting point rather than authoritative segmentation. The established S09 C034.1 split remains tracked separately, already represented in the provisional v6–v8 scripts.
+
+```sh
+python 'Night Court/tools/triage_internal_speaker_switches.py' \
+  --output /tmp/night-court-private-mixed-voice-review
+```
+
+Use candidate S09 original-audio ASR paragraph windows from the actual [S09 soundtrack alignment run](https://github.com/gamesbyian/general-purpose/actions/runs/40253914693), where available, to locate excerpts. That run placed **231/347** previously untimed original paragraphs into **unverified** original-audio windows, matching **1,803** original source words, and left 116 unlocated; those proposed *audio* positions are NOT original subtitle timecodes and do not establish who performed a line. Preserve the frozen original source text and ask an actual soundtrack reviewer to approve every source turn split and actor identity.
