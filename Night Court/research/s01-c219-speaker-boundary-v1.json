@@ -1,0 +1,15 @@
+{
+  "schema": "night-court-s01-source-exact-speaker-split-proposal/1",
+  "episode_id": "S01E01",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_ref": "C219.1",
+  "unique_split_before": "- Yeah.",
+  "original_source_timing_preserved": true,
+  "independent_video_audio_actor_identity_reviewed": false,
+  "independent_original_turn_boundary_verified": false,
+  "provisional_roles": [
+    null,
+    null
+  ],
+  "reason": "Original SRT cue has the previous person's question on its first line followed by a dash-introduced affirmative reply on the second line. Mark a proposed distinct turn but do not infer either speaker's character without the original audiovisual performance."
+}
