@@ -147,3 +147,40 @@ python 'Night Court/tools/align_private_production_script.py' \
 ```
 
 The tool maps known original-series character headings, scores nearby consecutive cue-parts in source order, rejects ambiguous repeated quote lines and unrelated revised dialogue, and **separately reports a possible contradiction with an already-named source unit**. Only source fingerprints, short locator IDs and role proposals are emitted, not the complete screenplay. No publication of privately acquired teleplay contents, and **zero automatic promotion to audio-certified dialogue**. Use its output to prioritize real soundtrack listens and to avoid falsely forcing a line from a production draft onto a different final broadcast performance. A PDF would need to be extracted to text separately before running this tool.
+
+## First original-soundtrack voice comparison: 56/75 held-out role matches
+
+A trusted-source, main-checked [original S01E01 acoustic identity proposal run](https://github.com/gamesbyian/general-purpose/actions/runs/40252708569) (invoked through [owner trigger PR #448](https://github.com/gamesbyian/general-purpose/pull/448)) completed the actual exact source AVI + original SRT cue voice embeddings with **Resemblyzer 0.1.4** locally. It used eight previously provisionally labeled voice reference roles, and never retained soundtrack, video, face data, model voiceprints or transcript text in its artifact. Its lightweight numeric report SHA-256 is `9729ed2882df04fcdc3706a491875e836873d334f5121be8d65809833e4a25e1`.
+
+**Measured results:** 75 held-out provisionally known voice samples, **56/75 (74.67%)** assigned to their preexisting editorial role. This is a useful acoustic *consistency* measure and a very real error rate. It is emphatically **not** an actor identity true-label validation. Forty-two original previously unknown caption cues had enough appropriate audio for acoustic comparison; conservative cosine and role-margin filters generated only **six voice-model role proposals**, **36 abstentions**. The other original UNKNOWN cues are shorter, multivoice, otherwise unusable or excluded by the original-caption timing safety contract.
+
+The six source cue numerical proposals:
+- C074.1 → **Dan Fielding** (cosine 0.83307, margin 0.11950)
+- C095.1 → **Dan Fielding** (0.87293, 0.09851)
+- C097.1 → **Harry Stone** (0.85095, 0.15045), *already provisionally assigned from narrative context*
+- C161.1 → **Harry Stone** (0.87834, 0.11500)
+- C172.1 → **Harry Stone** (0.82920, 0.09943), *already assigned after published quote correction*
+- C179.1 → **Lana Wagner** (0.84246, 0.13790)
+
+Therefore **four** original source units formerly UNKNOWN in v7 receive **additional independent acoustic-model-supported provisional character names**, and two earlier textual assignments receive acoustic agreement evidence. The conservative new *working* speaker-reader count becomes **587 provisionally named / 164 UNKNOWN original cue units** once the audited `tools/build_original_audio_speaker_reader_v8.py` overlay is regenerated. **Zero** roles were independently verified by an actual actor-recognition/audio/video reviewer; the voice comparison uses preexisting provisional character labels as its reference seeds, and one wrong seed could corrupt another name. We must not claim 587 truly identified humans.
+
+Source-only evidence ledger: [numeric original voice findings](research/s01e01-source-voice-acoustic-proposals-v1.json). Rebuild the speaker reader locally, after the v7 reader:
+
+```sh
+python 'Night Court/tools/build_original_audio_speaker_reader_v8.py' \
+  --v7 /tmp/night-court-private-context-speaker-v7 \
+  --output /tmp/night-court-private-source-audio-speaker-v8
+
+python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+  --speaker-v8-root /tmp/night-court-private-source-audio-speaker-v8 \
+  --output /tmp/night-court-private-fan-speaker-v8
+
+python 'Night Court/tools/fan_sqlite_index.py' build \
+  --corpus /tmp/night-court-private-fan-speaker-v8/fan-retrieval-chunks.jsonl \
+  --cards /tmp/night-court-fan-beats/pilot-fan-beat-cards.jsonl \
+  --roles /tmp/night-court-private-character-evidence/pilot-character-reading-blocks.jsonl \
+  --acoustic-context-roles /tmp/night-court-private-source-audio-speaker-v8/pilot-original-acoustic-speaker-reads.jsonl \
+  --database /tmp/night-court-private-fan-audio-v8.sqlite
+```
+
+Do not upload private WAVs, voiceprints or original video to public GitHub. Keep the zero-audio-verified status until actual original-film reviewer evidence. A follow-up should inspect the four new cue windows with the original picture and audio, compare anonymous voices against known characters, and correct source latency / overlapped laughter risk before accepting them. S09E19 still needs defensible original source paragraph-to-audio alignment to unlock the larger remaining UNKNOWN pool.

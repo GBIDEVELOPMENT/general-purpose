@@ -1,0 +1,88 @@
+{
+  "schema": "night-court-actual-s01-source-voice-embedding-proposals/1",
+  "scope": "Original Night Court S01E01; 6 unverified voice-model-only source cue role proposals",
+  "source_job_url": "https://github.com/gamesbyian/general-purpose/actions/runs/40252708569",
+  "source_pr": "https://github.com/gamesbyian/general-purpose/pull/448",
+  "original_movie_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_decoded_pcm_sha256": "7fd284e99af1d69ca429496060c876241f181738666a86e8cb1335d5b869861a",
+  "full_original_numeric_report_sha256": "9729ed2882df04fcdc3706a491875e836873d334f5121be8d65809833e4a25e1",
+  "model": "resemblyzer-0.1.4",
+  "source_caption_seed_role_status": "v4 provisional working-reader attribution, not reviewed original audio/face truth",
+  "named_voice_reference_sample_counts": {
+    "BULL SHANNON": 7,
+    "CARLA BOUVIER": 4,
+    "DAN FIELDING": 14,
+    "HARRY STONE": 16,
+    "LANA WAGNER": 16,
+    "LOUISE KERR": 5,
+    "PHIL KERR": 7,
+    "SHEILA GARDINER": 6
+  },
+  "crossvalidation": {
+    "held_out_samples": 75,
+    "correct_predicted_provisional_roles": 56,
+    "accuracy": 0.7467,
+    "independent_human_actor_identity_acceptances": 0
+  },
+  "source_original_unknown_audio_samples_compared": 42,
+  "voice_model_role_suggestions_that_passed_threshold": 6,
+  "voice_model_abstentions": 36,
+  "thresholds": {
+    "minimum_similarity": 0.68,
+    "minimum_margin": 0.09,
+    "probabilistically_calibrated": false
+  },
+  "cannot_automatically_confirm_actor_id": true,
+  "proposals": [
+    {
+      "source_ref": "C074.1",
+      "voice_model_proposed_role": "DAN FIELDING",
+      "cosine_similarity": 0.83307,
+      "next_best_margin": 0.1195,
+      "original_soundtrack_was_processed": true,
+      "actor_id_independently_verified": false
+    },
+    {
+      "source_ref": "C095.1",
+      "voice_model_proposed_role": "DAN FIELDING",
+      "cosine_similarity": 0.87293,
+      "next_best_margin": 0.09851,
+      "original_soundtrack_was_processed": true,
+      "actor_id_independently_verified": false
+    },
+    {
+      "source_ref": "C097.1",
+      "voice_model_proposed_role": "HARRY STONE",
+      "cosine_similarity": 0.85095,
+      "next_best_margin": 0.15045,
+      "original_soundtrack_was_processed": true,
+      "actor_id_independently_verified": false
+    },
+    {
+      "source_ref": "C161.1",
+      "voice_model_proposed_role": "HARRY STONE",
+      "cosine_similarity": 0.87834,
+      "next_best_margin": 0.115,
+      "original_soundtrack_was_processed": true,
+      "actor_id_independently_verified": false
+    },
+    {
+      "source_ref": "C172.1",
+      "voice_model_proposed_role": "HARRY STONE",
+      "cosine_similarity": 0.8292,
+      "next_best_margin": 0.09943,
+      "original_soundtrack_was_processed": true,
+      "actor_id_independently_verified": false
+    },
+    {
+      "source_ref": "C179.1",
+      "voice_model_proposed_role": "LANA WAGNER",
+      "cosine_similarity": 0.84246,
+      "next_best_margin": 0.1379,
+      "original_soundtrack_was_processed": true,
+      "actor_id_independently_verified": false
+    }
+  ],
+  "safety_note": "Do not call voice predictions independently confirmed. They are machine similarity results conditioned on unverified editorial role seeds. A different person speaking over a caption, laughter, or imprecise SRT sync can pass despite being false."
+}

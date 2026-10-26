@@ -166,7 +166,8 @@ def apply_speaker_improvements(source: list[dict], roles: list[dict],
 
 def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
                                      context_path: Path,
-                                     full: bool = True) -> tuple[list[dict], dict]:
+                                     full: bool = True,
+                                     source_acoustic_v8: bool = False) -> tuple[list[dict], dict]:
     """Verify original speaker records still cover identical caption units.
 
     The v7 reader is a P1-first view, not independently sound-verified.
@@ -174,10 +175,15 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
     """
     import hashlib
     from collections import defaultdict
-    manifest_path = context_path.parent / "pilot-contextual-speaker-manifest.json"
+    manifest_path = context_path.parent / (
+        "pilot-original-acoustic-speaker-manifest.json" if source_acoustic_v8
+        else "pilot-contextual-speaker-manifest.json"
+    )
     manifest = json.loads(manifest_path.read_text("utf-8"))
     raw = context_path.read_bytes()
-    if hashlib.sha256(raw).hexdigest() != manifest.get("reading_record_sha256"):
+    sha_field = ("source_role_record_sha256" if source_acoustic_v8
+                 else "reading_record_sha256")
+    if hashlib.sha256(raw).hexdigest() != manifest.get(sha_field):
         raise ValueError("Private character source-index SHA256 mismatch")
     newer = rows_from_jsonl(context_path)
     old_map = {(r["episode_id"], r["source_reading_ref"]): r for r in old_roles}
@@ -220,6 +226,12 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
                 or row.get("actor_face_or_voice_independently_verified") is not False
                 or row.get("original_audio_reviewed") is not False):
                 raise ValueError("Contextual identity masquerades as confirmed voice")
+        if row.get("role_attribution_status")=="original_soundtrack_embedding_support_not_audio_verified":
+            if (not source_acoustic_v8
+                or row.get("original_soundtrack_acoustic_similarity_proposal_only") is not True
+                or row.get("original_soundtrack_human_speaker_identity_verified") is not False
+                or row.get("source_acoustic_role_source_conditioned_on_previous_provisional_labels") is not True):
+                raise ValueError("Original soundtrack role silently accepted as verified identity")
         expected = ((row["candidate_role"] or "UNIDENTIFIED SPEAKER")
                     + " · " + row["role_attribution_status"] + "\n" + row["caption_text"])
         if expected not in source_docs[row["episode_id"]]:
@@ -229,32 +241,48 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
         for ref in row["original_source_part_refs"]:
             source_keys.setdefault((row["episode_id"], ref), set()).add(row["candidate_role"])
     accepted = sum(None not in roles for roles in source_keys.values())
-    if full and (len(newer),len(source_keys),accepted,len(source_keys)-accepted)!=(716,751,583,168):
-        raise ValueError("V7 contextual pilot totals no longer match source-backed ledger")
-    if full and (manifest.get("source_units_total") != 751 or
-                 manifest.get("source_units_provisionally_named") != 583 or
-                 manifest.get("source_units_unknown") != 168 or
-                 manifest.get("audio_confirmed_by_this_pass") != 0):
+    expected_named, expected_unknown = ((587,164) if source_acoustic_v8 else (583,168))
+    if full and (len(newer),len(source_keys),accepted,len(source_keys)-accepted)!=(
+        716,751,expected_named,expected_unknown
+    ):
+        raise ValueError("Original source pilot totals no longer match speaker evidence")
+    if full and source_acoustic_v8 and (
+        manifest.get("source_units_with_provisional_names")!=587
+        or manifest.get("original_units_still_unknown")!=164
+        or manifest.get("source_speaker_identities_human_verified_by_pass")!=0
+    ):
+        raise ValueError("Original source voice-v8 acceptance falsely claimed")
+    if full and not source_acoustic_v8 and (
+        manifest.get("source_units_total")!=751
+        or manifest.get("source_units_provisionally_named")!=583
+        or manifest.get("source_units_unknown")!=168
+        or manifest.get("audio_confirmed_by_this_pass")!=0
+    ):
         raise ValueError("V7 report mismatches actual original pilot coverage")
+    prefix = "v8" if source_acoustic_v8 else "v7"
     return newer, {
-        "v7_provisional_speaker_record_count":len(newer),
-        "v7_provisionally_named_original_units":accepted,
-        "v7_unidentified_original_units":len(source_keys)-accepted,
-        "v7_audio_confirmed_in_this_pass":0,
+        prefix+"_provisional_speaker_record_count":len(newer),
+        prefix+"_provisionally_named_original_units":accepted,
+        prefix+"_unidentified_original_units":len(source_keys)-accepted,
+        prefix+"_audio_confirmed_in_this_pass":0,
     }
 
 
 def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                    role_path: Path, require_full: bool = True,
                    speaker_override_path: Path | None = None,
-                   context_role_path: Path | None = None) -> dict:
+                   context_role_path: Path | None = None,
+                   acoustic_context_role_path: Path | None = None) -> dict:
     if db_path.resolve().is_relative_to(ROOT.resolve()):
         raise ValueError("Private indexed dialogue database must be outside the repository")
-    if speaker_override_path is not None and context_role_path is not None:
-        raise ValueError("V7 character index includes earlier corrections; use one overlay only")
+    if sum(x is not None for x in (
+        speaker_override_path, context_role_path, acoustic_context_role_path
+    ))>1:
+        raise ValueError("Choose exactly one pilot character-role evidence overlay")
     if db_path.resolve() in {corpus_path.resolve(), card_path.resolve(), role_path.resolve(),
                              speaker_override_path.resolve() if speaker_override_path else None,
-                             context_role_path.resolve() if context_role_path else None}:
+                             context_role_path.resolve() if context_role_path else None,
+                             acoustic_context_role_path.resolve() if acoustic_context_role_path else None}:
         raise ValueError("Refusing to overwrite a source file with the database")
     source = load_records(corpus_path)
     cards = load_cards(card_path, source)
@@ -270,6 +298,10 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
     if context_role_path is not None:
         roles, summary = use_source_checked_context_roles(source, roles,
                        context_role_path, full=require_full)
+        report.update(summary)
+    if acoustic_context_role_path is not None:
+        roles, summary = use_source_checked_context_roles(source, roles,
+            acoustic_context_role_path, full=require_full, source_acoustic_v8=True)
         report.update(summary)
     if db_path.exists():
         raise FileExistsError("Refuse overwriting an existing fan corpus database")
@@ -404,6 +436,7 @@ def main():
     init.add_argument("--allow-partial", action="store_true")
     init.add_argument("--speaker-overrides", type=Path, default=None)
     init.add_argument("--context-roles", type=Path, default=None)
+    init.add_argument("--acoustic-context-roles", type=Path, default=None)
     srch = sub.add_parser("query")
     srch.add_argument("--database", type=Path, required=True)
     srch.add_argument("--query", required=True)
@@ -416,7 +449,8 @@ def main():
         report = build_database(opts.database, opts.corpus, opts.cards, opts.roles,
                                 require_full=not opts.allow_partial,
                                 speaker_override_path=opts.speaker_overrides,
-                                context_role_path=opts.context_roles)
+                                context_role_path=opts.context_roles,
+                                acoustic_context_role_path=opts.acoustic_context_roles)
         print(f"{report['indexed_documents']} private documents indexed across "
               f"{report['source_episodes']} episodes; no dialogue printed")
     else:
