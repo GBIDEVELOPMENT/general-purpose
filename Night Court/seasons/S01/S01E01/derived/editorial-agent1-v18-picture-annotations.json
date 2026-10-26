@@ -1,0 +1,150 @@
+{
+  "schema": "night-court-s01e01-sampled-source-picture-script-amendments/1",
+  "episode_id": "S01E01",
+  "source_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_original_avi_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "baseline": "v17 versioned S01 screenplay/source-linked provenance, not historical v5",
+  "all_source_refs_preserved": true,
+  "original_srt_modified": false,
+  "source_original_AV_replayed_during_this_session": false,
+  "method": "Reuse separately provenance-checked first-hand picture observations preserved under episode derived/; storyboard annotation adds only observed setting, wardrobe, positions and sampled motions. Film recordings and screenshots were not accessed this session. Insert near current subtitle cue positions but do not claim exact AV synchronization.",
+  "sampled_source_positions_are_not_new_verified_native_pts": true,
+  "full_episode_continuous_visual_review": false,
+  "full_episode_audio_review": false,
+  "accepted_named_voice_verifications": 0,
+  "annotations": [
+    {
+      "id": "PIC-01",
+      "window_s": [
+        0,
+        20
+      ],
+      "insert_before": "C001.1",
+      "method": "100 source frames at nominal 5 fps",
+      "source": "additional-original-motion-observations-v2/observations.json",
+      "text": "In a book-lined courthouse office, a lavender-jacketed person crosses to a paper-covered desk. At a tall window, a figure in white painter's overalls with bright yellow sleeves holds a small implement and looks outside.",
+      "limits": "No actual painting stroke, naked couple or synchronized actor identity independently established."
+    },
+    {
+      "id": "PIC-02",
+      "window_s": [
+        82.5,
+        88.5
+      ],
+      "insert_after": "C025.1",
+      "method": "4fps sequence with six ordered action observations",
+      "source": "scene-review-v3/scene-script-v3.md",
+      "text": "A uniformed person reaches for the black desk telephone, brings the receiver to the ear, then lowers it toward the desk.",
+      "limits": "Observed across sampled source frames, not certified dialogue/action alignment or named Bull."
+    },
+    {
+      "id": "PIC-03",
+      "window_s": [
+        160,
+        182
+      ],
+      "insert_after": "C049.1",
+      "method": "110 source frames at nominal 5 fps",
+      "source": "physical-motion-original-v1/observations.json",
+      "text": "A man in a grey shirt and blue trousers reclines on the padded ledge beneath the office windows and gestures toward the window. A lavender-clad person approaches with a folder; another man in a dark suit holds rolled papers.",
+      "limits": "Speaker identity and precise shot-to-caption synchronization unreviewed."
+    },
+    {
+      "id": "PIC-04",
+      "window_s": [
+        261,
+        261
+      ],
+      "insert_after": "C073.1",
+      "method": "single source-film image thumbnail",
+      "source": "source-photo-scene-overview-v1/observations.json",
+      "text": "ESTABLISHING VIEW: An illuminated bridge against the night city skyline.",
+      "limits": "Exact source cut and precise location not authenticated; sampled still at requested source offset."
+    },
+    {
+      "id": "PIC-05",
+      "window_s": [
+        279,
+        279
+      ],
+      "insert_before": "C074.1",
+      "method": "single source-film image thumbnail",
+      "source": "source-photo-scene-overview-v1/observations.json",
+      "text": "COURTROOM: A raised judicial bench, a dark-robed person at the desk and a lavender-clad person near the lectern.",
+      "limits": "Not a source-verified continuous cut; source picture shows the new setting at sampled 279s."
+    },
+    {
+      "id": "PIC-06",
+      "window_s": [
+        621,
+        675
+      ],
+      "insert_after": "C154.2",
+      "method": "source-film still thumbnails at 621s/675s",
+      "source": "source-photo-scene-overview-v1/observations.json",
+      "text": "Back in the book-lined office, the lavender-clad person leans over a desk toward a dark-robed figure. The shelves, windows and doorway remain visible in the sampled views.",
+      "limits": "Describes two static frame observations across 54 seconds, not a continuous movement or exact new scene cut."
+    },
+    {
+      "id": "PIC-07",
+      "window_s": [
+        743,
+        747
+      ],
+      "insert_before": "C182.1",
+      "method": "source-film still thumbnail at 747s",
+      "source": "source-photo-scene-overview-v1/observations.json",
+      "text": "COURTROOM: Several adults gather near the rail, with uniformed personnel among them.",
+      "limits": "Not independently proved when the preceding office scene cuts into the courtroom."
+    },
+    {
+      "id": "PIC-08",
+      "window_s": [
+        838,
+        858
+      ],
+      "insert_after": "C209.1",
+      "method": "100 source frames at nominal 5 fps",
+      "source": "additional-original-motion-observations-v2/observations.json",
+      "text": "Beside the raised bench, the robed figure reaches toward the area by the lavender-jacketed person's head, then holds up a small pale round object. The other person leans over the desk as the robed figure gestures.",
+      "limits": "The caption calls it a coin; original frames do not prove its markings, trick method or synchronized dialogue."
+    },
+    {
+      "id": "PIC-09",
+      "window_s": [
+        1094,
+        1114
+      ],
+      "insert_before": "C273.2",
+      "method": "100 source frames at nominal 5 fps",
+      "source": "additional-original-motion-observations-v2/observations.json",
+      "text": "At the judicial bench, a robed figure manipulates a small pale circular object as views alternate with a woman in a dark red cardigan and a broad-built man wearing a yellow top beneath a blue jacket.",
+      "limits": "Double-headed sides not visible; actor identities and word-to-frame placement unconfirmed."
+    },
+    {
+      "id": "PIC-10",
+      "window_s": [
+        1258,
+        1278
+      ],
+      "insert_after": "C307.1",
+      "method": "100 source frames at nominal 5 fps",
+      "source": "physical-motion-original-v1/observations.json",
+      "text": "The courtroom benches are almost empty. Behind the raised desk, a casually dressed man reclines low in the judge's chair with an arm raised. A lavender-clad person approaches through the courtroom doorway carrying a folder.",
+      "limits": "Sequential picture evidence without synchronized speech; precise motion/entrance times not authenticated."
+    },
+    {
+      "id": "PIC-11",
+      "window_s": [
+        1395,
+        1395
+      ],
+      "insert_after": "C336.1",
+      "method": "single original source image thumbnail",
+      "source": "source-photo-scene-overview-v1/observations.json",
+      "text": "A casually dressed adult stands near the courtroom double doors.",
+      "limits": "Frame samples alone do not establish exact spoken exit line or the person's identity."
+    }
+  ],
+  "illustrative_stage_annotation_count": 11
+}

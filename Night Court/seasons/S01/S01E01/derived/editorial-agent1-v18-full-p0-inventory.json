@@ -1,0 +1,2891 @@
+{
+  "schema": "night-court-S01E01-current-script-P0-integrity-inventory/1",
+  "episode_id": "S01E01",
+  "original_immutable_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_reader_manifest_sha256": "2c09488487a9ac45dcf8af097b6aad36a7548b54dd1d05facbee20643af1d88b",
+  "source_caption_cues": 336,
+  "source_part_refs": 404,
+  "reader_rows": 405,
+  "current_display_groups": 276,
+  "original_cues_with_two_proposed_voice_parts": 69,
+  "original_source_part_excess_over_cues": 68,
+  "C219_extra_reader_fragment_count": 1,
+  "current_display_continuations_unverified": 129,
+  "original_source_av_replayed_in_this_review": false,
+  "actual_performed_turn_boundaries_verified": 0,
+  "caption_part_multi_voice_candidates": 66,
+  "identical_provisional_role_in_both_cue_parts_same": [
+    61,
+    106,
+    175
+  ],
+  "text_only_p0_correction": {
+    "cue": "C175",
+    "role": "DAN FIELDING",
+    "source_refs": [
+      "C175.1",
+      "C175.2"
+    ],
+    "new_display_same_turn": true,
+    "AV_verified": false,
+    "source_report": "seasons/S01/S01E01/derived/editorial-agent1-v18-c175-turn-join.json"
+  },
+  "genuinely_disputed_cues": [
+    {
+      "cue": 61,
+      "status": "two_unknown_fragments_keep_both",
+      "note": "A question and short response in a single original caption. Different voices plausible, no defensible role assignments."
+    },
+    {
+      "cue": 106,
+      "status": "two_unknown_fragments_keep_both",
+      "note": "Reciprocal hate exchange strongly suggests distinct arguers; names/orientation need source listening."
+    },
+    {
+      "cue": 219,
+      "status": "two_source_reading_rows_sharing_original_part_ref",
+      "note": "Source-original timed cue preserved at full envelope only. First role Harry provisional, second remains UNKNOWN. No subcue clocks."
+    }
+  ],
+  "all_original_mixed_cues": [
+    {
+      "cue": 2,
+      "source_cue_window_ms": [
+        6193,
+        8388
+      ],
+      "original_caption_text": "- Are you finished painting?\n- Yeah.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C002.1",
+          "reading_ref": "C002.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 1,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C002.2",
+          "reading_ref": "C002.2",
+          "candidate_role": "PAINTER",
+          "display_group_id": 2,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 19,
+      "source_cue_window_ms": [
+        58912,
+        62541
+      ],
+      "original_caption_text": "- Did you say \"mercurial\"?\n- I'm trying to make up for lack of education.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C019.1",
+          "reading_ref": "C019.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 16,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C019.2",
+          "reading_ref": "C019.2",
+          "candidate_role": "BULL SHANNON",
+          "display_group_id": 17,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 22,
+      "source_cue_window_ms": [
+        69689,
+        73147
+      ],
+      "original_caption_text": "- My, how...\n- Minimifidian?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C022.1",
+          "reading_ref": "C022.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 18,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C022.2",
+          "reading_ref": "C022.2",
+          "candidate_role": "BULL SHANNON",
+          "display_group_id": 19,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 29,
+      "source_cue_window_ms": [
+        96483,
+        99384
+      ],
+      "original_caption_text": "- Hello.\n- Is that stuff for the judge?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C029.1",
+          "reading_ref": "C029.1",
+          "candidate_role": "COURIER",
+          "display_group_id": 25,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C029.2",
+          "reading_ref": "C029.2",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 26,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 30,
+      "source_cue_window_ms": [
+        100787,
+        102982
+      ],
+      "original_caption_text": "- Yeah.\n- What is it?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C030.1",
+          "reading_ref": "C030.1",
+          "candidate_role": "COURIER",
+          "display_group_id": 27,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C030.2",
+          "reading_ref": "C030.2",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 28,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 34,
+      "source_cue_window_ms": [
+        110063,
+        112827
+      ],
+      "original_caption_text": "- My name's Harry.\n- So?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C034.1",
+          "reading_ref": "C034.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 30,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C034.2",
+          "reading_ref": "C034.2",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 31,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 38,
+      "source_cue_window_ms": [
+        120407,
+        122739
+      ],
+      "original_caption_text": "- Good evening.\n- Do I look all right?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C038.1",
+          "reading_ref": "C038.1",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 35,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C038.2",
+          "reading_ref": "C038.2",
+          "candidate_role": "SHEILA GARDINER",
+          "display_group_id": 36,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 48,
+      "source_cue_window_ms": [
+        153373,
+        155739
+      ],
+      "original_caption_text": "- Package for Judge Stone.\n- He's not here.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C048.1",
+          "reading_ref": "C048.1",
+          "candidate_role": "COURIER",
+          "display_group_id": 45,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C048.2",
+          "reading_ref": "C048.2",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 46,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 50,
+      "source_cue_window_ms": [
+        158278,
+        162681
+      ],
+      "original_caption_text": "- What are you doing up there?\n- I'm watching this guy trying to...",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C050.1",
+          "reading_ref": "C050.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 48,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C050.2",
+          "reading_ref": "C050.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 49,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 52,
+      "source_cue_window_ms": [
+        164384,
+        167820
+      ],
+      "original_caption_text": "- Could you just get off of there?\n- The judge has to sign for this himself.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C052.1",
+          "reading_ref": "C052.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 50,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C052.2",
+          "reading_ref": "C052.2",
+          "candidate_role": "COURIER",
+          "display_group_id": 51,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 57,
+      "source_cue_window_ms": [
+        182569,
+        187097
+      ],
+      "original_caption_text": "- You're judge Harold T. Stone?\n- Yep.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C057.1",
+          "reading_ref": "C057.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 56,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C057.2",
+          "reading_ref": "C057.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 57,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 61,
+      "source_cue_window_ms": [
+        212599,
+        215830
+      ],
+      "original_caption_text": "- In his office?\n- No, I guess not.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C061.1",
+          "reading_ref": "C061.1",
+          "candidate_role": null,
+          "display_group_id": 60,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C061.2",
+          "reading_ref": "C061.2",
+          "candidate_role": null,
+          "display_group_id": 61,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 77,
+      "source_cue_window_ms": [
+        329215,
+        333652
+      ],
+      "original_caption_text": "- Diaper change, perhaps.\n- All rise.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C077.1",
+          "reading_ref": "C077.1",
+          "candidate_role": null,
+          "display_group_id": 74,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C077.2",
+          "reading_ref": "C077.2",
+          "candidate_role": "BULL SHANNON",
+          "display_group_id": 75,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 84,
+      "source_cue_window_ms": [
+        370023,
+        373254
+      ],
+      "original_caption_text": "- Your Honor...\n- I've always wanted to see that happen.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C084.1",
+          "reading_ref": "C084.1",
+          "candidate_role": null,
+          "display_group_id": 78,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C084.2",
+          "reading_ref": "C084.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 79,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 86,
+      "source_cue_window_ms": [
+        376162,
+        378027
+      ],
+      "original_caption_text": "- Where's my gavel?\n- I beg your pardon?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C086.1",
+          "reading_ref": "C086.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 81,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C086.2",
+          "reading_ref": "C086.2",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 82,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 87,
+      "source_cue_window_ms": [
+        378198,
+        380257
+      ],
+      "original_caption_text": "- That hammer thing.\n- I know what it is...",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C087.1",
+          "reading_ref": "C087.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 83,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C087.2",
+          "reading_ref": "C087.2",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 84,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 88,
+      "source_cue_window_ms": [
+        380433,
+        382367
+      ],
+      "original_caption_text": "- Oh, here it is.\n- Your Honor...",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C088.1",
+          "reading_ref": "C088.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 85,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C088.2",
+          "reading_ref": "C088.2",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 86,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 91,
+      "source_cue_window_ms": [
+        391344,
+        393972
+      ],
+      "original_caption_text": "- Sir, the first case on the docket...\n- Harry?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C091.1",
+          "reading_ref": "C091.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 88,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C091.2",
+          "reading_ref": "C091.2",
+          "candidate_role": "HACKSAW HAMMOND",
+          "display_group_id": 89,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 92,
+      "source_cue_window_ms": [
+        394147,
+        396741
+      ],
+      "original_caption_text": "- Is that you?\n- Hacksaw?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C092.1",
+          "reading_ref": "C092.1",
+          "candidate_role": "HACKSAW HAMMOND",
+          "display_group_id": 89,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C092.2",
+          "reading_ref": "C092.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 90,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 96,
+      "source_cue_window_ms": [
+        406092,
+        408492
+      ],
+      "original_caption_text": "- Hacksaw, how are you doing?\n- Yeah, well, you know.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C096.1",
+          "reading_ref": "C096.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 93,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C096.2",
+          "reading_ref": "C096.2",
+          "candidate_role": "HACKSAW HAMMOND",
+          "display_group_id": 94,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 98,
+      "source_cue_window_ms": [
+        411531,
+        413362
+      ],
+      "original_caption_text": "- Guilty, Your Honor.\n- Miss Wagner...",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C098.1",
+          "reading_ref": "C098.1",
+          "candidate_role": "HACKSAW HAMMOND",
+          "display_group_id": 96,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C098.2",
+          "reading_ref": "C098.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 97,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 100,
+      "source_cue_window_ms": [
+        415835,
+        419134
+      ],
+      "original_caption_text": "- It's not the first case...\n- Miss Gardiner, your client's pleading guilty.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C100.1",
+          "reading_ref": "C100.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 98,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C100.2",
+          "reading_ref": "C100.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 99,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 101,
+      "source_cue_window_ms": [
+        419305,
+        421296
+      ],
+      "original_caption_text": "- Be right there.\n- It'll cost you 50 bucks.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C101.1",
+          "reading_ref": "C101.1",
+          "candidate_role": "SHEILA GARDINER",
+          "display_group_id": 100,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C101.2",
+          "reading_ref": "C101.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 101,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 102,
+      "source_cue_window_ms": [
+        421474,
+        423237
+      ],
+      "original_caption_text": "- What was the fine?\n- Fifty bucks, hon.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C102.1",
+          "reading_ref": "C102.1",
+          "candidate_role": null,
+          "display_group_id": 102,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C102.2",
+          "reading_ref": "C102.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 103,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 103,
+      "source_cue_window_ms": [
+        423409,
+        426310
+      ],
+      "original_caption_text": "- Thank you. Here's the file.\n- Case closed.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C103.1",
+          "reading_ref": "C103.1",
+          "candidate_role": null,
+          "display_group_id": 104,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C103.2",
+          "reading_ref": "C103.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 105,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 104,
+      "source_cue_window_ms": [
+        427413,
+        429847
+      ],
+      "original_caption_text": "- Good to see you, Hacksaw, really good.\n- You too.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C104.1",
+          "reading_ref": "C104.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 105,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C104.2",
+          "reading_ref": "C104.2",
+          "candidate_role": "HACKSAW HAMMOND",
+          "display_group_id": 106,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 106,
+      "source_cue_window_ms": [
+        433119,
+        435610
+      ],
+      "original_caption_text": "- I hate you!\n- Well, I hate you more!",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C106.1",
+          "reading_ref": "C106.1",
+          "candidate_role": null,
+          "display_group_id": 108,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C106.2",
+          "reading_ref": "C106.2",
+          "candidate_role": null,
+          "display_group_id": 109,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 107,
+      "source_cue_window_ms": [
+        436089,
+        438353
+      ],
+      "original_caption_text": "- We'll talk later.\n- Your whole family's crazy.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C107.1",
+          "reading_ref": "C107.1",
+          "candidate_role": null,
+          "display_group_id": 110,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C107.2",
+          "reading_ref": "C107.2",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 111,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 110,
+      "source_cue_window_ms": [
+        444764,
+        446891
+      ],
+      "original_caption_text": "- Scuzzball.\n- Scuzzball!",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C110.1",
+          "reading_ref": "C110.1",
+          "candidate_role": "LOUISE KERR",
+          "display_group_id": 112,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C110.2",
+          "reading_ref": "C110.2",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 113,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 115,
+      "source_cue_window_ms": [
+        466019,
+        469352
+      ],
+      "original_caption_text": "- This case has some intricate...\n- Let's all gather around the big desk.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C115.1",
+          "reading_ref": "C115.1",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 117,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C115.2",
+          "reading_ref": "C115.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 118,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 121,
+      "source_cue_window_ms": [
+        484704,
+        487571
+      ],
+      "original_caption_text": "- This could go either way.\n- Yes.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C121.1",
+          "reading_ref": "C121.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 122,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C121.2",
+          "reading_ref": "C121.2",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 123,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 122,
+      "source_cue_window_ms": [
+        488208,
+        490699
+      ],
+      "original_caption_text": "- Unless...\n- What?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C122.1",
+          "reading_ref": "C122.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 124,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C122.2",
+          "reading_ref": "C122.2",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 125,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 124,
+      "source_cue_window_ms": [
+        499719,
+        501186
+      ],
+      "original_caption_text": "- Your Honor...\n- Hi.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C124.1",
+          "reading_ref": "C124.1",
+          "candidate_role": null,
+          "display_group_id": 127,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C124.2",
+          "reading_ref": "C124.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 128,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 126,
+      "source_cue_window_ms": [
+        504857,
+        507758
+      ],
+      "original_caption_text": "- Let's see here. Philip Kerr?\n- Yes, sir.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C126.1",
+          "reading_ref": "C126.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 130,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C126.2",
+          "reading_ref": "C126.2",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 131,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 127,
+      "source_cue_window_ms": [
+        507927,
+        509417
+      ],
+      "original_caption_text": "- Louise Kerr?\n- Here.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C127.1",
+          "reading_ref": "C127.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 132,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C127.2",
+          "reading_ref": "C127.2",
+          "candidate_role": "LOUISE KERR",
+          "display_group_id": 133,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 132,
+      "source_cue_window_ms": [
+        524677,
+        527407
+      ],
+      "original_caption_text": "- Your Honor, may I?\n- Mr. Prosecutor...",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C132.1",
+          "reading_ref": "C132.1",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 137,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C132.2",
+          "reading_ref": "C132.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 138,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 137,
+      "source_cue_window_ms": [
+        540126,
+        542993
+      ],
+      "original_caption_text": "- What do you mean it's not necessary?\n- Glad you asked.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C137.1",
+          "reading_ref": "C137.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 139,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C137.2",
+          "reading_ref": "C137.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 140,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 146,
+      "source_cue_window_ms": [
+        577063,
+        580624
+      ],
+      "original_caption_text": "- There isn't much we can do.\n- What's that mean?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C146.1",
+          "reading_ref": "C146.1",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 144,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C146.2",
+          "reading_ref": "C146.2",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 145,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 154,
+      "source_cue_window_ms": [
+        611798,
+        615427
+      ],
+      "original_caption_text": "- Sir, I have to speak with you.\n- Lana, good to see you. Come over.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C154.1",
+          "reading_ref": "C154.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 149,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C154.2",
+          "reading_ref": "C154.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 150,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 156,
+      "source_cue_window_ms": [
+        620373,
+        624207
+      ],
+      "original_caption_text": "- Pick a card.\n- Sir, I have urgent business to discuss.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C156.1",
+          "reading_ref": "C156.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 152,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C156.2",
+          "reading_ref": "C156.2",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 153,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 162,
+      "source_cue_window_ms": [
+        647133,
+        649897
+      ],
+      "original_caption_text": "- Your Honor!\n- Come on, call me Harry.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C162.1",
+          "reading_ref": "C162.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 157,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C162.2",
+          "reading_ref": "C162.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 158,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 163,
+      "source_cue_window_ms": [
+        650169,
+        651693
+      ],
+      "original_caption_text": "- I don't think I can.\n- Yeah...",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C163.1",
+          "reading_ref": "C163.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 159,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C163.2",
+          "reading_ref": "C163.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 160,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 166,
+      "source_cue_window_ms": [
+        655942,
+        658570
+      ],
+      "original_caption_text": "- Your Honor...\n- Call me:",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C166.1",
+          "reading_ref": "C166.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 161,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C166.2",
+          "reading_ref": "C166.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 162,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 174,
+      "source_cue_window_ms": [
+        693613,
+        696707
+      ],
+      "original_caption_text": "- What happened?\n- You wanna know what happened?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C174.1",
+          "reading_ref": "C174.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 165,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C174.2",
+          "reading_ref": "C174.2",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 166,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 175,
+      "source_cue_window_ms": [
+        700920,
+        704720
+      ],
+      "original_caption_text": "- I'll tell you what happened.\n- No settlement with the Kerrs.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C175.1",
+          "reading_ref": "C175.1",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 167,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C175.2",
+          "reading_ref": "C175.2",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 167,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 182,
+      "source_cue_window_ms": [
+        743429,
+        746330
+      ],
+      "original_caption_text": "- You're a whale!\n- You're a tarantula!",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C182.1",
+          "reading_ref": "C182.1",
+          "candidate_role": "LOUISE KERR",
+          "display_group_id": 173,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C182.2",
+          "reading_ref": "C182.2",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 174,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 184,
+      "source_cue_window_ms": [
+        749469,
+        752131
+      ],
+      "original_caption_text": "- You never tried to shoot me before.\n- Settle down.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C184.1",
+          "reading_ref": "C184.1",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 176,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C184.2",
+          "reading_ref": "C184.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 177,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 198,
+      "source_cue_window_ms": [
+        799819,
+        803152
+      ],
+      "original_caption_text": "- They're fine.\n- Thank you.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C198.1",
+          "reading_ref": "C198.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 185,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C198.2",
+          "reading_ref": "C198.2",
+          "candidate_role": "BATHROBE SPECTATOR",
+          "display_group_id": 186,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 199,
+      "source_cue_window_ms": [
+        805858,
+        809055
+      ],
+      "original_caption_text": "- Have we started?\n- Can I have the Kerr file, please?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C199.1",
+          "reading_ref": "C199.1",
+          "candidate_role": "BATHROBE SPECTATOR",
+          "display_group_id": 187,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C199.2",
+          "reading_ref": "C199.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 188,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 207,
+      "source_cue_window_ms": [
+        838925,
+        842156
+      ],
+      "original_caption_text": "- Your Honor...\n- Miss Wagner.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C207.1",
+          "reading_ref": "C207.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 190,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C207.2",
+          "reading_ref": "C207.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 191,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 210,
+      "source_cue_window_ms": [
+        848734,
+        851999
+      ],
+      "original_caption_text": "- Oh, my God.\n- Why, it's the coin of justice.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C210.1",
+          "reading_ref": "C210.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 192,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C210.2",
+          "reading_ref": "C210.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 193,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 211,
+      "source_cue_window_ms": [
+        852171,
+        856369
+      ],
+      "original_caption_text": "- I don't think you're feeling very well.\n- Let's flip the coin, let it decide.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C211.1",
+          "reading_ref": "C211.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 194,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C211.2",
+          "reading_ref": "C211.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 195,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 218,
+      "source_cue_window_ms": [
+        877263,
+        879356
+      ],
+      "original_caption_text": "- Yes, sir.\n- Twenty-seven years. Jeez...",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C218.1",
+          "reading_ref": "C218.1",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 198,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C218.2",
+          "reading_ref": "C218.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 199,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 219,
+      "source_cue_window_ms": [
+        879532,
+        882330
+      ],
+      "original_caption_text": "...must have been a living hell, huh?\n- Yeah.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C219.1",
+          "reading_ref": "S01E01-C219-SOURCE-TURN-1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 199,
+          "source_exact_character_span": {
+            "end_char": 38,
+            "exact_text_sha256": "69cfbd29a11ed4b322dabd2f2e407133ee238c2541939c58e506638216cfad0f",
+            "original_source_ref": "C219.1",
+            "start_char": 0
+          },
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C219.1",
+          "reading_ref": "S01E01-C219-SOURCE-TURN-2",
+          "candidate_role": null,
+          "display_group_id": 200,
+          "source_exact_character_span": {
+            "end_char": 45,
+            "exact_text_sha256": "f52564defa12c2653322f4f79cf24c2217180b0e4748a5bb9075797f003415a9",
+            "original_source_ref": "C219.1",
+            "start_char": 38
+          },
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 221,
+      "source_cue_window_ms": [
+        886339,
+        889172
+      ],
+      "original_caption_text": "- Early on.\n- Yeah, early on.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C221.1",
+          "reading_ref": "C221.1",
+          "candidate_role": "LOUISE KERR",
+          "display_group_id": 202,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C221.2",
+          "reading_ref": "C221.2",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 203,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 228,
+      "source_cue_window_ms": [
+        917136,
+        921163
+      ],
+      "original_caption_text": "- Heads, I just fine you, tails, you go to jail.\n- Wait.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C228.1",
+          "reading_ref": "C228.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 207,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C228.2",
+          "reading_ref": "C228.2",
+          "candidate_role": "CARLA BOUVIER",
+          "display_group_id": 208,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 236,
+      "source_cue_window_ms": [
+        949268,
+        951896
+      ],
+      "original_caption_text": "- I don't want to answer.\n- I don't wanna fine you for contempt.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C236.1",
+          "reading_ref": "C236.1",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 216,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C236.2",
+          "reading_ref": "C236.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 217,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 237,
+      "source_cue_window_ms": [
+        952071,
+        953766
+      ],
+      "original_caption_text": "- I didn't laugh a lot.\n- Thank you.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C237.1",
+          "reading_ref": "C237.1",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 218,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C237.2",
+          "reading_ref": "C237.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 219,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 242,
+      "source_cue_window_ms": [
+        974193,
+        978391
+      ],
+      "original_caption_text": "- Bull.\n- I don't know what the hell's going on.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C242.1",
+          "reading_ref": "C242.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 220,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C242.2",
+          "reading_ref": "C242.2",
+          "candidate_role": "BULL SHANNON",
+          "display_group_id": 221,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 260,
+      "source_cue_window_ms": [
+        1051604,
+        1054334
+      ],
+      "original_caption_text": "- Okay.\n- It was your own fault for trying to shoot me.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C260.1",
+          "reading_ref": "C260.1",
+          "candidate_role": "LOUISE KERR",
+          "display_group_id": 227,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C260.2",
+          "reading_ref": "C260.2",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 228,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 269,
+      "source_cue_window_ms": [
+        1080966,
+        1084902
+      ],
+      "original_caption_text": "- I...\n- Say it, Phil. Say it!",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C269.1",
+          "reading_ref": "C269.1",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 232,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C269.2",
+          "reading_ref": "C269.2",
+          "candidate_role": "LOUISE KERR",
+          "display_group_id": 233,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 271,
+      "source_cue_window_ms": [
+        1088240,
+        1091505
+      ],
+      "original_caption_text": "- And I love you, Phil.\n- Then what are we doing here?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C271.1",
+          "reading_ref": "C271.1",
+          "candidate_role": "LOUISE KERR",
+          "display_group_id": 235,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C271.2",
+          "reading_ref": "C271.2",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 236,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 272,
+      "source_cue_window_ms": [
+        1092378,
+        1096678
+      ],
+      "original_caption_text": "- Phil, can we forget this whole thing?\n- I'd like to. I really would.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C272.1",
+          "reading_ref": "C272.1",
+          "candidate_role": "LOUISE KERR",
+          "display_group_id": 237,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C272.2",
+          "reading_ref": "C272.2",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 238,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 273,
+      "source_cue_window_ms": [
+        1096849,
+        1099215
+      ],
+      "original_caption_text": "- Your Honor...\n- Oh, come on, Phil, one more flip.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C273.1",
+          "reading_ref": "C273.1",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 238,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C273.2",
+          "reading_ref": "C273.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 239,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 279,
+      "source_cue_window_ms": [
+        1122875,
+        1125935
+      ],
+      "original_caption_text": "- All right. Philip Kerr.\n- Yes, sir.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C279.1",
+          "reading_ref": "C279.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 242,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C279.2",
+          "reading_ref": "C279.2",
+          "candidate_role": "PHIL KERR",
+          "display_group_id": 243,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 280,
+      "source_cue_window_ms": [
+        1126111,
+        1127703
+      ],
+      "original_caption_text": "- Louise Kerr.\n- Yes, sir.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C280.1",
+          "reading_ref": "C280.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 244,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C280.2",
+          "reading_ref": "C280.2",
+          "candidate_role": "LOUISE KERR",
+          "display_group_id": 245,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 290,
+      "source_cue_window_ms": [
+        1182434,
+        1185835
+      ],
+      "original_caption_text": "- I'll do anything you want.\n- Terrific. You guys sort it out.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C290.1",
+          "reading_ref": "C290.1",
+          "candidate_role": null,
+          "display_group_id": 252,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C290.2",
+          "reading_ref": "C290.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 253,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 293,
+      "source_cue_window_ms": [
+        1191944,
+        1195175
+      ],
+      "original_caption_text": "- Any questions?\n- Just one.",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C293.1",
+          "reading_ref": "C293.1",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 253,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C293.2",
+          "reading_ref": "C293.2",
+          "candidate_role": "DAN FIELDING",
+          "display_group_id": 254,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    },
+    {
+      "cue": 312,
+      "source_cue_window_ms": [
+        1310362,
+        1313263
+      ],
+      "original_caption_text": "- I beg your pardon?\n- You were about to say?",
+      "reader_parts": [
+        {
+          "original_source_part_ref": "C312.1",
+          "reading_ref": "C312.1",
+          "candidate_role": "LANA WAGNER",
+          "display_group_id": 263,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        },
+        {
+          "original_source_part_ref": "C312.2",
+          "reading_ref": "C312.2",
+          "candidate_role": "HARRY STONE",
+          "display_group_id": 264,
+          "source_exact_character_span": null,
+          "AV_verified": false
+        }
+      ]
+    }
+  ],
+  "all_current_display_joins": [
+    {
+      "display_group_id": 1,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C001.1",
+      "right_reading_ref": "C002.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 13,
+      "role_candidate": "BULL SHANNON",
+      "left_reading_ref": "C013.1",
+      "right_reading_ref": "C014.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 14,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C015.1",
+      "right_reading_ref": "C016.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 14,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C016.1",
+      "right_reading_ref": "C017.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 17,
+      "role_candidate": "BULL SHANNON",
+      "left_reading_ref": "C019.2",
+      "right_reading_ref": "C020.1",
+      "original_caption_envelope_gap_ms": 175,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 17,
+      "role_candidate": "BULL SHANNON",
+      "left_reading_ref": "C020.1",
+      "right_reading_ref": "C021.1",
+      "original_caption_envelope_gap_ms": 177,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 24,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C027.1",
+      "right_reading_ref": "C028.1",
+      "original_caption_envelope_gap_ms": 1305,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 28,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C030.2",
+      "right_reading_ref": "C031.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 28,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C031.1",
+      "right_reading_ref": "C032.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 43,
+      "role_candidate": "SHEILA GARDINER",
+      "left_reading_ref": "C045.1",
+      "right_reading_ref": "C046.1",
+      "original_caption_envelope_gap_ms": 311,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 49,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C050.2",
+      "right_reading_ref": "C051.1",
+      "original_caption_envelope_gap_ms": 268,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 59,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C059.1",
+      "right_reading_ref": "C060.1",
+      "original_caption_envelope_gap_ms": 178,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 63,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C063.1",
+      "right_reading_ref": "C064.1",
+      "original_caption_envelope_gap_ms": 177,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 63,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C064.1",
+      "right_reading_ref": "C065.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 65,
+      "role_candidate": "DAN FIELDING",
+      "left_reading_ref": "C067.1",
+      "right_reading_ref": "C068.1",
+      "original_caption_envelope_gap_ms": 643,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 76,
+      "role_candidate": "BULL SHANNON",
+      "left_reading_ref": "C078.1",
+      "right_reading_ref": "C079.1",
+      "original_caption_envelope_gap_ms": 168,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 76,
+      "role_candidate": "BULL SHANNON",
+      "left_reading_ref": "C079.1",
+      "right_reading_ref": "C080.1",
+      "original_caption_envelope_gap_ms": 172,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 76,
+      "role_candidate": "BULL SHANNON",
+      "left_reading_ref": "C080.1",
+      "right_reading_ref": "C081.1",
+      "original_caption_envelope_gap_ms": 176,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 76,
+      "role_candidate": "BULL SHANNON",
+      "left_reading_ref": "C081.1",
+      "right_reading_ref": "C082.1",
+      "original_caption_envelope_gap_ms": 171,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 87,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C089.1",
+      "right_reading_ref": "C090.1",
+      "original_caption_envelope_gap_ms": 2140,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 89,
+      "role_candidate": "HACKSAW HAMMOND",
+      "left_reading_ref": "C091.2",
+      "right_reading_ref": "C092.1",
+      "original_caption_envelope_gap_ms": 175,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 90,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C092.2",
+      "right_reading_ref": "C093.1",
+      "original_caption_envelope_gap_ms": 175,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 97,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C098.2",
+      "right_reading_ref": "C099.1",
+      "original_caption_envelope_gap_ms": 171,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 105,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C103.2",
+      "right_reading_ref": "C104.1",
+      "original_caption_envelope_gap_ms": 1103,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 111,
+      "role_candidate": "PHIL KERR",
+      "left_reading_ref": "C107.2",
+      "right_reading_ref": "C108.1",
+      "original_caption_envelope_gap_ms": 172,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 112,
+      "role_candidate": "LOUISE KERR",
+      "left_reading_ref": "C109.1",
+      "right_reading_ref": "C110.1",
+      "original_caption_envelope_gap_ms": 176,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 113,
+      "role_candidate": "PHIL KERR",
+      "left_reading_ref": "C110.2",
+      "right_reading_ref": "C111.1",
+      "original_caption_envelope_gap_ms": 175,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 121,
+      "role_candidate": "DAN FIELDING",
+      "left_reading_ref": "C118.1",
+      "right_reading_ref": "C119.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 121,
+      "role_candidate": "DAN FIELDING",
+      "left_reading_ref": "C119.1",
+      "right_reading_ref": "C120.1",
+      "original_caption_envelope_gap_ms": 176,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 135,
+      "role_candidate": "CARLA BOUVIER",
+      "left_reading_ref": "C129.1",
+      "right_reading_ref": "C130.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 138,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C132.2",
+      "right_reading_ref": "C133.1",
+      "original_caption_envelope_gap_ms": 173,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 138,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C133.1",
+      "right_reading_ref": "C134.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 138,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C134.1",
+      "right_reading_ref": "C135.1",
+      "original_caption_envelope_gap_ms": 172,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 138,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C135.1",
+      "right_reading_ref": "C136.1",
+      "original_caption_envelope_gap_ms": 373,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 140,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C137.2",
+      "right_reading_ref": "C138.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 140,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C138.1",
+      "right_reading_ref": "C139.1",
+      "original_caption_envelope_gap_ms": 173,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 140,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C139.1",
+      "right_reading_ref": "C140.1",
+      "original_caption_envelope_gap_ms": 176,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 140,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C140.1",
+      "right_reading_ref": "C141.1",
+      "original_caption_envelope_gap_ms": 172,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 142,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C143.1",
+      "right_reading_ref": "C144.1",
+      "original_caption_envelope_gap_ms": 177,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 146,
+      "role_candidate": "DAN FIELDING",
+      "left_reading_ref": "C147.1",
+      "right_reading_ref": "C148.1",
+      "original_caption_envelope_gap_ms": 178,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 146,
+      "role_candidate": "DAN FIELDING",
+      "left_reading_ref": "C148.1",
+      "right_reading_ref": "C149.1",
+      "original_caption_envelope_gap_ms": 939,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 146,
+      "role_candidate": "DAN FIELDING",
+      "left_reading_ref": "C149.1",
+      "right_reading_ref": "C150.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 147,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C151.1",
+      "right_reading_ref": "C152.1",
+      "original_caption_envelope_gap_ms": 903,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 154,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C157.1",
+      "right_reading_ref": "C158.1",
+      "original_caption_envelope_gap_ms": 1342,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 155,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C159.1",
+      "right_reading_ref": "C160.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 160,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C163.2",
+      "right_reading_ref": "C164.1",
+      "original_caption_envelope_gap_ms": 178,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 160,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C164.1",
+      "right_reading_ref": "C165.1",
+      "original_caption_envelope_gap_ms": 171,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 163,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C167.1",
+      "right_reading_ref": "C168.1",
+      "original_caption_envelope_gap_ms": 175,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 164,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C169.1",
+      "right_reading_ref": "C170.1",
+      "original_caption_envelope_gap_ms": 2278,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 164,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C170.1",
+      "right_reading_ref": "C171.1",
+      "original_caption_envelope_gap_ms": 168,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 165,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C172.1",
+      "right_reading_ref": "C173.1",
+      "original_caption_envelope_gap_ms": 774,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 165,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C173.1",
+      "right_reading_ref": "C174.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 167,
+      "role_candidate": "DAN FIELDING",
+      "left_reading_ref": "C175.1",
+      "right_reading_ref": "C175.2",
+      "original_caption_envelope_gap_ms": -3800,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 171,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C179.1",
+      "right_reading_ref": "C180.1",
+      "original_caption_envelope_gap_ms": 944,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 177,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C184.2",
+      "right_reading_ref": "C185.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 178,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C186.1",
+      "right_reading_ref": "C187.1",
+      "original_caption_envelope_gap_ms": 1275,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 178,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C187.1",
+      "right_reading_ref": "C188.1",
+      "original_caption_envelope_gap_ms": 179,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 178,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C188.1",
+      "right_reading_ref": "C189.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 183,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C194.1",
+      "right_reading_ref": "C195.1",
+      "original_caption_envelope_gap_ms": 177,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 183,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C195.1",
+      "right_reading_ref": "C196.1",
+      "original_caption_envelope_gap_ms": 168,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 188,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C199.2",
+      "right_reading_ref": "C200.1",
+      "original_caption_envelope_gap_ms": 173,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 188,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C200.1",
+      "right_reading_ref": "C201.1",
+      "original_caption_envelope_gap_ms": 178,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 188,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C201.1",
+      "right_reading_ref": "C202.1",
+      "original_caption_envelope_gap_ms": 2337,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 188,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C202.1",
+      "right_reading_ref": "C203.1",
+      "original_caption_envelope_gap_ms": 178,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 188,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C203.1",
+      "right_reading_ref": "C204.1",
+      "original_caption_envelope_gap_ms": 1406,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 189,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C205.1",
+      "right_reading_ref": "C206.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 191,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C207.2",
+      "right_reading_ref": "C208.1",
+      "original_caption_envelope_gap_ms": 172,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 191,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C208.1",
+      "right_reading_ref": "C209.1",
+      "original_caption_envelope_gap_ms": 175,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 195,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C211.2",
+      "right_reading_ref": "C212.1",
+      "original_caption_envelope_gap_ms": 173,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 195,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C212.1",
+      "right_reading_ref": "C213.1",
+      "original_caption_envelope_gap_ms": 177,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 197,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C215.1",
+      "right_reading_ref": "C216.1",
+      "original_caption_envelope_gap_ms": 1038,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 197,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C216.1",
+      "right_reading_ref": "C217.1",
+      "original_caption_envelope_gap_ms": 171,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 199,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C218.2",
+      "right_reading_ref": "S01E01-C219-SOURCE-TURN-1",
+      "original_caption_envelope_gap_ms": 176,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 204,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C222.1",
+      "right_reading_ref": "C223.1",
+      "original_caption_envelope_gap_ms": 842,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 205,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C224.1",
+      "right_reading_ref": "C225.1",
+      "original_caption_envelope_gap_ms": 172,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 207,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C227.1",
+      "right_reading_ref": "C228.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 219,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C237.2",
+      "right_reading_ref": "C238.1",
+      "original_caption_envelope_gap_ms": 2276,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 219,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C238.1",
+      "right_reading_ref": "C239.1",
+      "original_caption_envelope_gap_ms": 1408,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 219,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C239.1",
+      "right_reading_ref": "C240.1",
+      "original_caption_envelope_gap_ms": 1270,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 219,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C240.1",
+      "right_reading_ref": "C241.1",
+      "original_caption_envelope_gap_ms": 2145,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 222,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C243.1",
+      "right_reading_ref": "C244.1",
+      "original_caption_envelope_gap_ms": 172,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 222,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C244.1",
+      "right_reading_ref": "C245.1",
+      "original_caption_envelope_gap_ms": 173,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 222,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C245.1",
+      "right_reading_ref": "C246.1",
+      "original_caption_envelope_gap_ms": 171,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 222,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C246.1",
+      "right_reading_ref": "C247.1",
+      "original_caption_envelope_gap_ms": 173,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 222,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C247.1",
+      "right_reading_ref": "C248.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 222,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C248.1",
+      "right_reading_ref": "C249.1",
+      "original_caption_envelope_gap_ms": 170,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 222,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C249.1",
+      "right_reading_ref": "C250.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 222,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C250.1",
+      "right_reading_ref": "C251.1",
+      "original_caption_envelope_gap_ms": 1847,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 222,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C251.1",
+      "right_reading_ref": "C252.1",
+      "original_caption_envelope_gap_ms": 1780,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 224,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C254.1",
+      "right_reading_ref": "C255.1",
+      "original_caption_envelope_gap_ms": 907,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 224,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C255.1",
+      "right_reading_ref": "C256.1",
+      "original_caption_envelope_gap_ms": 171,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 224,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C256.1",
+      "right_reading_ref": "C257.1",
+      "original_caption_envelope_gap_ms": 1136,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 229,
+      "role_candidate": "LOUISE KERR",
+      "left_reading_ref": "C261.1",
+      "right_reading_ref": "C262.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 231,
+      "role_candidate": "LOUISE KERR",
+      "left_reading_ref": "C264.1",
+      "right_reading_ref": "C265.1",
+      "original_caption_envelope_gap_ms": 176,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 231,
+      "role_candidate": "LOUISE KERR",
+      "left_reading_ref": "C265.1",
+      "right_reading_ref": "C266.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 232,
+      "role_candidate": "PHIL KERR",
+      "left_reading_ref": "C267.1",
+      "right_reading_ref": "C268.1",
+      "original_caption_envelope_gap_ms": 1540,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 232,
+      "role_candidate": "PHIL KERR",
+      "left_reading_ref": "C268.1",
+      "right_reading_ref": "C269.1",
+      "original_caption_envelope_gap_ms": 1911,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 238,
+      "role_candidate": "PHIL KERR",
+      "left_reading_ref": "C272.2",
+      "right_reading_ref": "C273.1",
+      "original_caption_envelope_gap_ms": 171,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 239,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C273.2",
+      "right_reading_ref": "C274.1",
+      "original_caption_envelope_gap_ms": 170,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 241,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C276.1",
+      "right_reading_ref": "C277.1",
+      "original_caption_envelope_gap_ms": 1913,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 242,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C278.1",
+      "right_reading_ref": "C279.1",
+      "original_caption_envelope_gap_ms": 672,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 246,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C281.1",
+      "right_reading_ref": "C282.1",
+      "original_caption_envelope_gap_ms": 173,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 246,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C282.1",
+      "right_reading_ref": "C283.1",
+      "original_caption_envelope_gap_ms": 2206,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 251,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C288.1",
+      "right_reading_ref": "C289.1",
+      "original_caption_envelope_gap_ms": 168,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 253,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C290.2",
+      "right_reading_ref": "C291.1",
+      "original_caption_envelope_gap_ms": 170,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 253,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C291.1",
+      "right_reading_ref": "C292.1",
+      "original_caption_envelope_gap_ms": 1510,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 253,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C292.1",
+      "right_reading_ref": "C293.1",
+      "original_caption_envelope_gap_ms": 174,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 254,
+      "role_candidate": "DAN FIELDING",
+      "left_reading_ref": "C293.2",
+      "right_reading_ref": "C294.1",
+      "original_caption_envelope_gap_ms": 1507,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 254,
+      "role_candidate": "DAN FIELDING",
+      "left_reading_ref": "C294.1",
+      "right_reading_ref": "C295.1",
+      "original_caption_envelope_gap_ms": 668,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 255,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C296.1",
+      "right_reading_ref": "C297.1",
+      "original_caption_envelope_gap_ms": 1002,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 255,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C297.1",
+      "right_reading_ref": "C298.1",
+      "original_caption_envelope_gap_ms": 175,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 255,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C298.1",
+      "right_reading_ref": "C299.1",
+      "original_caption_envelope_gap_ms": 177,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 255,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C299.1",
+      "right_reading_ref": "C300.1",
+      "original_caption_envelope_gap_ms": 173,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 255,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C300.1",
+      "right_reading_ref": "C301.1",
+      "original_caption_envelope_gap_ms": 175,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 255,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C301.1",
+      "right_reading_ref": "C302.1",
+      "original_caption_envelope_gap_ms": 176,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 255,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C302.1",
+      "right_reading_ref": "C303.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 258,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C306.1",
+      "right_reading_ref": "C307.1",
+      "original_caption_envelope_gap_ms": 173,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 266,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C314.1",
+      "right_reading_ref": "C315.1",
+      "original_caption_envelope_gap_ms": 912,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 266,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C315.1",
+      "right_reading_ref": "C316.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 268,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C318.1",
+      "right_reading_ref": "C319.1",
+      "original_caption_envelope_gap_ms": 177,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 268,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C319.1",
+      "right_reading_ref": "C320.1",
+      "original_caption_envelope_gap_ms": 176,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 268,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C320.1",
+      "right_reading_ref": "C321.1",
+      "original_caption_envelope_gap_ms": 171,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 268,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C321.1",
+      "right_reading_ref": "C322.1",
+      "original_caption_envelope_gap_ms": 172,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 268,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C322.1",
+      "right_reading_ref": "C323.1",
+      "original_caption_envelope_gap_ms": 1239,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 269,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C324.1",
+      "right_reading_ref": "C325.1",
+      "original_caption_envelope_gap_ms": 1712,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 271,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C327.1",
+      "right_reading_ref": "C328.1",
+      "original_caption_envelope_gap_ms": 435,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 271,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C328.1",
+      "right_reading_ref": "C329.1",
+      "original_caption_envelope_gap_ms": 178,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 272,
+      "role_candidate": "HARRY STONE",
+      "left_reading_ref": "C330.1",
+      "right_reading_ref": "C331.1",
+      "original_caption_envelope_gap_ms": 476,
+      "verified_same_performed_actor_turn": false
+    },
+    {
+      "display_group_id": 275,
+      "role_candidate": "LANA WAGNER",
+      "left_reading_ref": "C334.1",
+      "right_reading_ref": "C335.1",
+      "original_caption_envelope_gap_ms": 169,
+      "verified_same_performed_actor_turn": false
+    }
+  ],
+  "acceptance": "Data-level conservation and cue adjacency verified against saved text. Neither this inventory nor current visual source frames independently authenticate original acoustic turns."
+}
