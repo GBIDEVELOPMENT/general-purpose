@@ -81,7 +81,7 @@ class RealAudioProposalTests(unittest.TestCase):
     def test_cannot_replace_previously_named_role_or_invent_audio_certainty(self):
         ledger,rows=fixture()
         rows[0]["candidate_role"]="LANA WAGNER"
-        with self.assertRaisesRegex(ValueError,"unsupported role overwrite"):
+        with self.assertRaisesRegex(ValueError,"Original soundtrack disagrees with earlier character role"):
             apply(rows,ledger,SRC,require_full=False)
         ledger,rows=fixture()
         ledger["proposals"][0]["actor_id_independently_verified"]=True
