@@ -79,9 +79,9 @@ def validate(root:Path, seeds:dict, strict=True) -> tuple[list[dict],dict]:
             "second_speaker_character_name":None,
             "two_voices_actually_present_independently_verified":False,
         })
-    if strict and (len(packets)!=12 or
+    if strict and (len(packets)!=16 or
                    sum(x["episode_id"]=="S01E01" for x in packets)!=1 or
-                   sum(x["episode_id"]=="S09E19" for x in packets)!=11):
+                   sum(x["episode_id"]=="S09E19" for x in packets)!=15):
         raise ValueError("Original source-review P0 candidate coverage changed")
     summary={
         "schema":OUTPUT,
