@@ -208,13 +208,75 @@ def read_current_v8_speaker_roles(root:Path, private_v8:Path)->list[dict]:
     return source_rows
 
 
+def validate_latest_source_role_parts(rows:list[dict],required:int=347)->dict[int,list[dict]]:
+    """Verify original S09 source cue coverage without treating multi-voice cues as one speaker."""
+    from collections import defaultdict
+    result=defaultdict(list)
+    for row in rows:
+        if row.get("episode_id")!="S09E19":
+            continue
+        if (row.get("original_source_sha256")!=SOURCE_SHA
+            or row.get("actor_face_or_voice_independently_verified") is not False
+            or row.get("speaker_turn_boundary_verified") is not False
+            or row.get("source_original_times_ms") is not None
+            or row.get("original_source_untimed") is not True):
+            raise ValueError("Original source speaker/untimed claim unexpectedly certified")
+        refs=row.get("original_source_part_refs")
+        if not isinstance(refs,list) or not refs:
+            raise ValueError("Source role source cue part refs missing")
+        for ref in refs:
+            if (not isinstance(ref,str) or len(ref)!=6 or ref[:1]!="C"
+                or ref[4:]!=".1" or not ref[1:4].isdigit()
+                or not 1<=int(ref[1:4])<=required):
+                raise ValueError("Original S09 source cue ID invalid")
+            result[int(ref[1:4])].append(row)
+    if set(result)!=set(range(1,required+1)):
+        raise ValueError("Original 347 S09 source paragraphs omitted by reference bank")
+    for n,items in result.items():
+        if len(items)>1 and n not in {34,127,146,188,189,190,191,192,284}:
+            raise ValueError("Unsupported duplicated S09 paragraph source part")
+    return dict(result)
+
+
+def read_current_source_patch_speaker_roles(root:Path,private_patches:Path)->list[dict]:
+    """Read source SHA bound 619-name candidate bank without claiming actual performer verification."""
+    from apply_source_role_amendments import AFTER,AFTER_MANIFEST
+    raw=(private_patches/AFTER).read_bytes()
+    m=json.loads((private_patches/AFTER_MANIFEST).read_text("utf-8"))
+    if (hashlib.sha256(raw).hexdigest()!=m.get("source_patch_roles_sha256")
+        or m.get("original_held_source_caption_units")!=751
+        or m.get("provisionally_named_source_units")!=619
+        or m.get("unknown_original_source_units")!=132
+        or m.get("source_reading_blocks")!=718
+        or m.get("source_character_roles_independently_verified_via_AV")!=0
+        or m.get("source_original_cue_text_and_part_membership_unchanged") is not True):
+        raise ValueError("Latest patch speaker bank source SHA or character totals drift")
+    rows=[json.loads(x) for x in raw.decode("utf-8").splitlines() if x.strip()]
+    if len(rows)!=718:
+        raise ValueError("Latest speaking block count is not original patch corpus")
+    _,cues=load_witness(root,"S09E19")
+    if len(cues)!=347:
+        raise ValueError("Original S09 347 source paragraph witness unavailable")
+    source_rows=[r for r in rows if r["episode_id"]=="S09E19"]
+    validate_latest_source_role_parts(source_rows)
+    if any(r["source_reading_ref"]=="C129.1" and r["candidate_role"] is not None
+           for r in source_rows):
+        raise ValueError("Quarantined out-of-bank C129 source voice was assigned")
+    return source_rows
+
+
 def source_plan(root:Path, alignment:Path,
                 private_v8:Path|None=None,
+                private_patches:Path|None=None,
                 minimum_coverage:float=MIN_ALIGN_COVERAGE)->dict:
     meta,cues=load_witness(root,"S09E19")
     if meta["sha256"]!=SOURCE_SHA or meta["timecoded"] is not False or len(cues)!=347:
         raise ValueError("Original source S09 text or time status drift")
-    rows=(read_current_v8_speaker_roles(root,private_v8)
+    if private_v8 is not None and private_patches is not None:
+        raise ValueError("Original S09 audio cannot mix historical and current source role readers")
+    rows=(read_current_source_patch_speaker_roles(root,private_patches)
+          if private_patches is not None else
+          read_current_v8_speaker_roles(root,private_v8)
           if private_v8 is not None else records_for_episode(root,"S09E19"))
     source_map={}
     for item in rows:
@@ -223,8 +285,10 @@ def source_plan(root:Path, alignment:Path,
             source_map.setdefault(n,[]).append(item)
     plan=prepare_eligible(read_alignment(alignment),source_map,
                           minimum_coverage=minimum_coverage)
-    plan["voice_reference_source"]=("latest_587_named_v8_provisional_originals"
-                                    if private_v8 is not None else "older_v4_pilot_editorial_roles")
+    plan["voice_reference_source"]=("latest_619_named_source_role_patches_original_untimed"
+                                     if private_patches is not None else
+                                     "latest_587_named_v8_provisional_originals"
+                                     if private_v8 is not None else "older_v4_pilot_editorial_roles")
     return plan
 
 
@@ -330,7 +394,9 @@ def main():
     p.add_argument("--source-alignment",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True)
     p.add_argument("--v8-source-roles",type=Path,default=None,
-                   help="Current private source-checked 587-named character evidence root")
+                   help="Historical private source-checked 587-named character evidence root")
+    p.add_argument("--speaker-patch-root",type=Path,default=None,
+                   help="Current exact-source 619 named-unit private character evidence root")
     p.add_argument("--minimum-coverage",type=float,default=MIN_ALIGN_COVERAGE,
                    help="Source–original-audio ASR lexical word coverage; 0.48 to 1.0")
     p.add_argument("--plan-only",action="store_true")
@@ -339,6 +405,7 @@ def main():
     if a.output.resolve().is_relative_to(ROOT.resolve()):
         raise ValueError("Original source audio evidence cannot be written into repository")
     plan=source_plan(ROOT,a.source_alignment,private_v8=a.v8_source_roles,
+                     private_patches=a.speaker_patch_root,
                      minimum_coverage=a.minimum_coverage)
     if a.plan_only:
         a.output.parent.mkdir(parents=True,exist_ok=True)
