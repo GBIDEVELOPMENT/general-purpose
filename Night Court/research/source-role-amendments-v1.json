@@ -1,0 +1,109 @@
+{
+  "schema": "night-court-source-role-amendment-ledger/1",
+  "id": "S09-SAFE-PAUL-20261026-A",
+  "input_role_reader": "v13-original-source-speaker-turns",
+  "sources": {
+    "S01E01": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+    "S09E19": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2"
+  },
+  "prior_source_caption_units": 751,
+  "prior_working_named_source_units": 613,
+  "prior_remaining_unknown_source_units": 138,
+  "prior_private_reader_blocks": 718,
+  "original_source_captions_modified": false,
+  "performed_turns_independently_verified": false,
+  "source_actor_identity_independently_verified": false,
+  "contract": "Generic, append-only set_role amendment list. A new patch requires an exact prior UNKNOWN role, original cue source parts, a unique lexical source anchor and a documented character-dialogue inference. Future additional set_role amendments do not require a new script generator.",
+  "amendments": [
+    {
+      "operation": "set_role",
+      "episode_id": "S09E19",
+      "source_reading_ref": "C112.1",
+      "original_source_part_refs": [
+        "C112.1"
+      ],
+      "original_source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "prior_role": null,
+      "new_provisional_role": "PAUL",
+      "source_text_must_contain": "Hey, you found Judge Grimm's old safe.",
+      "reason": "The person recognizes Judge Grimm's safe and explains the old judge's background. Other participants later bid him good night by name as Paul.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S09E19",
+      "source_reading_ref": "C114.1",
+      "original_source_part_refs": [
+        "C114.1"
+      ],
+      "original_source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "prior_role": null,
+      "new_provisional_role": "PAUL",
+      "source_text_must_contain": "Sure. Rumor has it the old judge was on a take",
+      "reason": "He directly answers a question about the safe, beginning the historical blackmail story that Paul explains to Harry and Dan.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S09E19",
+      "source_reading_ref": "C115.1",
+      "original_source_part_refs": [
+        "C115.1"
+      ],
+      "original_source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "prior_role": null,
+      "new_provisional_role": "PAUL",
+      "source_text_must_contain": "lucrative blackmail business.",
+      "reason": "Unpunctuated continuation of the immediately preceding Paul source-dialogue sentence about Judge Grimm's wealth and blackmail.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S09E19",
+      "source_reading_ref": "C117.1",
+      "original_source_part_refs": [
+        "C117.1"
+      ],
+      "original_source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "prior_role": null,
+      "new_provisional_role": "PAUL",
+      "source_text_must_contain": "He supposedly had the goods on all the rich and famous",
+      "reason": "Same safe history explanation, between other characters' surprised interjections and followed by more details from Paul.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S09E19",
+      "source_reading_ref": "C118.1",
+      "original_source_part_refs": [
+        "C118.1"
+      ],
+      "original_source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "prior_role": null,
+      "new_provisional_role": "PAUL",
+      "source_text_must_contain": "Celebrities, politicians, even Houdini.",
+      "reason": "Same continuing Paul exposition listing Judge Grimm's supposed blackmail subjects, with Houdini as punchline.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S09E19",
+      "source_reading_ref": "C122.1",
+      "original_source_part_refs": [
+        "C122.1"
+      ],
+      "original_source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "prior_role": null,
+      "new_provisional_role": "PAUL",
+      "source_text_must_contain": "Well, good night.",
+      "reason": "Speaker leaves immediately before two replies address him as Paul. This is a contextual departure speaker proposal, not original voice recognition.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    }
+  ]
+}
