@@ -168,6 +168,15 @@ jobs:
           triage=json.loads((base/'s09-p0-original-internal-turns'/'potential-within-caption-summary.json').read_text('utf-8'))
           assert triage['provisional_inside_original_cue_switch_questions']==16
           assert triage['last_episode_original_untimed_candidate_count']==15
+          assert sum(m['remaining_unknown_original_source_units_by_episode'].values())==130
+          assert m['original_source_cue_numbers_only_no_dialogue'] is True
+          assert all(len(v)<=10 for v in m['largest_contiguous_unknown_original_source_runs'].values())
+          print('Source-only unidentified voice counts by pilot:',
+                m['remaining_unknown_original_source_units_by_episode'])
+          for episode,spans in m['largest_contiguous_unknown_original_source_runs'].items():
+              print(episode,'largest unresolved original cue runs (cue IDs/length only):',
+                    [(x['start_source_cue'],x['end_source_cue'],x['unknown_source_units'])
+                     for x in spans[:5]])
           print('All 130 current UNKNOWN source units now queued with original audio locators, 16 P0 intra-cue review questions and disputed C129 still UNKNOWN')
           PY
       - name: Compare newest original S09 soundtrack role-bank coverage before expensive acoustic model work
