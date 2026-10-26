@@ -22,6 +22,8 @@ on:
       - 'Night Court/tools/test_build_s09_explicit_handoff_turns_v13.py'
       - 'Night Court/research/s09-explicit-address-speaker-turns-v13.json'
       - 'Night Court/tools/apply_s01_c219_source_turn.py'
+      - 'Night Court/tools/render_current_pilot_screenplays.py'
+      - 'Night Court/tools/test_render_current_pilot_screenplays.py'
       - 'Night Court/tools/test_apply_s01_c219_source_turn.py'
       - 'Night Court/tools/validate_s01_c219_p0_split.py'
       - 'Night Court/tools/apply_source_role_amendments.py'
@@ -138,6 +140,9 @@ jobs:
           python 'Night Court/tools/apply_s01_c219_source_turn.py' \
             --source-turn-patches '${{ runner.temp }}/s09-source-turn-patches' \
             --output '${{ runner.temp }}/s09-source-turns-v15'
+          python 'Night Court/tools/render_current_pilot_screenplays.py' \
+            --source-first-v15 '${{ runner.temp }}/s09-source-turns-v15' \
+            --output '${{ runner.temp }}/s09-current-private-readable-pilots'
           python 'Night Court/tools/plan_next_speaker_review_v9.py' \
             --s01-p0-root '${{ runner.temp }}/s09-source-turns-v15' \
             --s09-original-audio-locator '${{ runner.temp }}/s09-source-numeric/night-court-s09-original-audio-paragraph-locators.json' \
@@ -192,6 +197,35 @@ jobs:
                      for x in spans[:5]])
           print('All 130 current UNKNOWN source units now queued with original audio locators, 16 P0 intra-cue review questions and disputed C129 still UNKNOWN')
           PY
+      - name: Validate both actual source-first readable screenplay drafts, source SHA and private-only provenance
+        run: |
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          base=Path(os.environ['RUNNER_TEMP'])/'s09-current-private-readable-pilots'
+          data=json.loads((base/'working-screenplay-layout-manifest.json').read_text('utf-8'))
+          assert data['source_unit_counts']=={'original_source_units':751,'named_provisional':621,'unknown':130}
+          assert data['new_independently_verified_actor_voices']==0
+          assert data['new_independently_verified_performed_turns']==0
+          assert data['scene_review_complete'] is False
+          assert set(data['episodes'])=={'S01E01','S09E19'}
+          total=0
+          for episode, n in [('S01E01',404),('S09E19',322)]:
+              manuscript=base/f'{episode}-working-screenplay.md'
+              sidecar=base/f'{episode}-working-screenplay-provenance.jsonl'
+              assert manuscript.is_file() and sidecar.is_file()
+              assert hashlib.sha256(manuscript.read_bytes()).hexdigest()==data['manuscript_sha256'][episode]
+              rows=[json.loads(x) for x in sidecar.read_text('utf-8').splitlines()]
+              assert len(rows)==data['episodes'][episode]['source_blocks']
+              assert all(r['actual_original_av_reviewer_accepted'] is False for r in rows)
+              assert all(r['source_cue_times_not_subturn_times_ms'] is None for r in rows) if episode=='S09E19' else True
+              total+=len(rows)
+              print(episode,'private current manuscript source blocks',len(rows),'display groups',data['episodes'][episode]['display_groups'])
+          assert total==726
+          assert data['episodes']['S01E01']['source_blocks']>0
+          assert data['episodes']['S09E19']['source_blocks']>0
+          print('Validated both real held-caption working manuscripts without publishing private dialogue')
+          PY
       - name: Compare newest original S09 soundtrack role-bank coverage before expensive acoustic model work
         env:
           AUDIO: ${{ runner.temp }}/s09-source-numeric/night-court-s09-original-audio-paragraph-locators.json
@@ -226,6 +260,7 @@ jobs:
       - name: Erase private source/role-derived text and numeric audio leads
         if: always()
         run: |
+          rm -rf '${{ runner.temp }}/s09-current-private-readable-pilots'
           rm -rf '${{ runner.temp }}/s09-v6' '${{ runner.temp }}/s09-v7' '${{ runner.temp }}/s09-v8' '${{ runner.temp }}/s09-source-numeric'
           rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-v12' '${{ runner.temp }}/s09-v13' '${{ runner.temp }}/s09-source-role-patches' '${{ runner.temp }}/s09-source-turn-patches' '${{ runner.temp }}/s09-source-turns-v15' '${{ runner.temp }}/s09-next-130-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
           rm -f '${{ runner.temp }}/s09-source-v8-reference-sensitivity-'*.json
