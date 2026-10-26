@@ -132,12 +132,12 @@ def apply(rows:list[dict],ledger:dict,strict:bool=True)->tuple[list[dict],dict]:
                 or prior.get("speaker_turn_boundary_verified") is not False
                 or prior.get("source_original_times_ms") is not None
                 or prior.get("original_source_untimed") is not True):
-                raise ValueError("An original unidentified S09 source cue or AV role changed")
+                raise ValueError(f"An original unidentified S09 source cue or AV role changed: {ref}")
             text=prior["caption_text"]
             starts=[0]
             for phrase in op["split_before"][ref]:
                 if text.count(phrase)!=1:
-                    raise ValueError("An expected exact original lexical turn boundary was altered")
+                    raise ValueError(f"An expected exact original lexical turn boundary was altered: {ref}")
                 pos=text.index(phrase)
                 if pos<=starts[-1] or pos>=len(text):
                     raise ValueError("Source speaker turn split is empty or out of order")
