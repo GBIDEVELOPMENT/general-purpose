@@ -12,6 +12,10 @@ on:
       - 'Night Court/tools/build_s09_mixed_voice_turns_v11.py'
       - 'Night Court/tools/test_build_s09_mixed_voice_turns_v11.py'
       - 'Night Court/research/probable-internal-speaker-switches-v1.json'
+      - 'Night Court/tools/build_s09_high_context_speaker_reader_v12.py'
+      - 'Night Court/tools/build_s09_explicit_handoff_turns_v13.py'
+      - 'Night Court/tools/test_build_s09_explicit_handoff_turns_v13.py'
+      - 'Night Court/research/s09-explicit-address-speaker-turns-v13.json'
   pull_request_target:
     types: [opened, reopened, synchronize]
     paths:
@@ -97,7 +101,7 @@ jobs:
                     p["candidate_reference_role_counts"],
                     "unknown source candidate windows:",len(p["previously_unidentified_audio_windows"]))
           PY
-      - name: Reconcile all 156 current source UNKNOWNs against authentic sound location evidence
+      - name: Reconcile all 138 current source UNKNOWNs against authentic sound location evidence
         run: |
           python 'Night Court/tools/build_s09_source_acoustic_speaker_reader_v9.py' \
             --current-v8 '${{ runner.temp }}/s09-v8' \
@@ -108,40 +112,51 @@ jobs:
           python 'Night Court/tools/build_s09_mixed_voice_turns_v11.py' \
             --v10 '${{ runner.temp }}/s09-v10' \
             --output '${{ runner.temp }}/s09-v11'
+          python 'Night Court/tools/build_s09_high_context_speaker_reader_v12.py' \
+            --v11 '${{ runner.temp }}/s09-v11' \
+            --output '${{ runner.temp }}/s09-v12'
+          python 'Night Court/tools/build_s09_explicit_handoff_turns_v13.py' \
+            --v12 '${{ runner.temp }}/s09-v12' \
+            --output '${{ runner.temp }}/s09-v13'
           python 'Night Court/tools/plan_next_speaker_review_v9.py' \
-            --speaker-v11-root '${{ runner.temp }}/s09-v11' \
+            --speaker-v13-root '${{ runner.temp }}/s09-v13' \
             --s09-original-audio-locator '${{ runner.temp }}/s09-source-numeric/night-court-s09-original-audio-paragraph-locators.json' \
-            --output '${{ runner.temp }}/s09-next-156-private-speaker-review'
+            --output '${{ runner.temp }}/s09-next-138-private-speaker-review'
           python 'Night Court/tools/triage_internal_speaker_switches.py' \
             --output '${{ runner.temp }}/s09-p0-original-internal-turns'
           python - <<'PY'
           from pathlib import Path
           import json,os
           base=Path(os.environ['RUNNER_TEMP'])
-          out=base/'s09-next-156-private-speaker-review'
-          m=json.loads((out/'remaining-156-speaker-review-summary.json').read_text('utf-8'))
+          out=base/'s09-next-138-private-speaker-review'
+          m=json.loads((out/'remaining-138-speaker-review-summary.json').read_text('utf-8'))
           assert m['original_source_units']==751
-          assert m['original_units_provisionally_named']==595
-          assert m['original_source_units_still_unknown']==156
+          assert m['original_units_provisionally_named']==613
+          assert m['original_source_units_still_unknown']==138
           assert m['s09_actual_audio_window_leads']>0
           assert m['new_speaker_names_automatically_assigned']==0
           assert m['new_voices_human_accepted']==0
           assert m['original_untimed_S09_captions_modified'] is False
-          q=[json.loads(x) for x in (out/'remaining-156-speaker-review.jsonl').read_text().splitlines()]
+          q=[json.loads(x) for x in (out/'remaining-138-speaker-review.jsonl').read_text().splitlines()]
           assert all('C266.1' not in x['unidentified_original_unit_refs'] for x in q)
+          assert all(ref not in x['unidentified_original_unit_refs'] for x in q for ref in
+                     ('C127.1','C146.1','C284.1','C091.1','C092.1',
+                      'C099.1','C125.1','C126.1','C134.1','C135.1',
+                      'C268.1','C298.1','C299.1','C335.1','C336.1',
+                      'C337.1','C340.1','C341.1'))
           assert all(ref not in x['unidentified_original_unit_refs'] for x in q for ref in
                      ('C188.1','C189.1','C190.1','C191.1','C192.1'))
           assert any(x['source_reading_ref']=='C129.1' and x['model_proposed_character'] is None for x in q)
           triage=json.loads((base/'s09-p0-original-internal-turns'/'potential-within-caption-summary.json').read_text('utf-8'))
           assert triage['provisional_inside_original_cue_switch_questions']==16
           assert triage['last_episode_original_untimed_candidate_count']==15
-          print('All 156 current UNKNOWN source units now queued with original audio locators, 16 P0 intra-cue review questions and disputed C129 still UNKNOWN')
+          print('All 138 current UNKNOWN source units now queued with original audio locators, 16 P0 intra-cue review questions and disputed C129 still UNKNOWN')
           PY
       - name: Erase private source/role-derived text and numeric audio leads
         if: always()
         run: |
           rm -rf '${{ runner.temp }}/s09-v6' '${{ runner.temp }}/s09-v7' '${{ runner.temp }}/s09-v8' '${{ runner.temp }}/s09-source-numeric'
-          rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-next-156-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
+          rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-v12' '${{ runner.temp }}/s09-v13' '${{ runner.temp }}/s09-next-138-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
           rm -f '${{ runner.temp }}/s09-source-v8-reference-sensitivity-'*.json
 
   notify-trusted-original-s09-speaker-run:
