@@ -1,0 +1,42 @@
+{
+  "schema": "night-court-s01e01-source-exact-p0-internal-join/1",
+  "episode_id": "S01E01",
+  "original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_source_cue_id": "C175",
+  "original_source_cue_window_ms": [
+    700000,
+    708000
+  ],
+  "source_reading_refs": [
+    "C175.1",
+    "C175.2"
+  ],
+  "source_full_cue_text_must_equal": "- I'll tell you what happened.\n- No settlement with the Kerrs.",
+  "observed_error": "Previous v17 reading layout displays two consecutive DAN FIELDING headings solely because caption text uses dash-prefixed separate lines. A source-caption dash is not proof of two actual performers; v16 assigns both phrases to DAN FIELDING. Both lines are semantically one continuing answer to Harry's question. Joining under one reading header is justified without removing original source parts.",
+  "operation": "join_display_only_preserve_two_original_source_parts",
+  "provisional_character": "DAN FIELDING",
+  "hypothesized_performed_turn_status": "high_context_continuation_unverified_original_audio",
+  "no_original_caption_text_rewrite": true,
+  "precise_original_subcue_times_unknown": true,
+  "part_boundary_original_sound_verified": false,
+  "other_sources": "seasons/S01/S01E01/dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6/segments.jsonl",
+  "expected_before": {
+    "source_reading_blocks": 405,
+    "source_parts": 404,
+    "display_groups": 277,
+    "unverified_display_joins": 128
+  },
+  "expected_after": {
+    "source_reading_blocks": 405,
+    "source_parts": 404,
+    "display_groups": 276,
+    "unverified_display_joins": 129
+  },
+  "additional_p0_questions": [
+    "C061: two UNKNOWN voices, preserve split until audio",
+    "C106: two argumentative UNKNOWN voices, preserve split until audio",
+    "C219: Harry + unidentified reply within one true timed cue, preserve distinct rows and no fabricated subcue milliseconds",
+    "C077.2–C082.1: court ceremonial proclamation already grouped; preceding 'All rise' separate due pause until film review"
+  ],
+  "editorial_origin": "Original full source text plus v17 live reader, cross-checked against existing source-role labels; no original audio heard."
+}
