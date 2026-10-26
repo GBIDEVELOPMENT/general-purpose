@@ -1,6 +1,9 @@
 name: Night Court private two-pilot working screenplay delivery
 
 on:
+  pull_request:
+    paths:
+      - '.github/workflows/night-court-private-working-drafts.yml'
   workflow_dispatch:
   push:
     branches: [main]
@@ -15,7 +18,7 @@ jobs:
     if: >-
       github.repository == 'gamesbyian/general-purpose' &&
       github.event.repository.private == true &&
-      github.ref == 'refs/heads/main'
+      (github.event_name == 'pull_request' || github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -78,6 +81,7 @@ jobs:
           S09 original dialogue remains untimed. No whole episode AV certified.
           NOTE
       - name: Upload short-lived artifact accessible through the PRIVATE repository
+        if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: night-court-original-pilot-working-screenplays-private
