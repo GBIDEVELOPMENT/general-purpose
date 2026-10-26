@@ -1,4 +1,27 @@
+## Live post-editorial current release (supersedes the original v16 audit below)
+
+The earlier audit below records the **starting v16 benchmark only**, not the current production corpus. [PR #507](https://github.com/gamesbyian/general-purpose/pull/507) accepted both parallel editors' **source-preserving, explicitly provisional** episode deliverables into shared integration, after PRs #502, #503 and #505. [Actual-source main generation and publisher #40413540356](https://github.com/gamesbyian/general-purpose/actions/runs/40413540356) passed every production step. The canonical private outputs were **committed** by [9193315](https://github.com/gamesbyian/general-purpose/commit/9193315ec26f9ae2b02251a79771ba6d46eafe62), rather than only posted to expiring artifacts. The [current editorial evidence manifest](saved-private/pilot-current/pilot-current-editorial-manifest.json) and [layout manifest](saved-private/pilot-current/working-screenplay-layout-manifest.json) are authoritative for reproducible exact counters and source-script hashes.
+
+| Current committed measure | S01E01 v18 | S09E19 v17 | Both |
+| --- | ---: | ---: | ---: |
+| Original source speaking units | 404 | 347 | **751** |
+| Entirely provisionally named source units | 384 | 271 | **655** |
+| Source units with any UNKNOWN voice | 20 | 76 | **96** |
+| Provisional reading blocks | 405 | 323 | **728** |
+| Display groups, *not verified performed turns* | 276 | 244 | **520** |
+| Unverified presentation joins | 129 | 79 | **208** |
+| Independently accepted original-soundtrack actors/turns | 0 | 0 | **0** |
+
+- [Latest committed S01 screenplay](saved-private/pilot-current/S01E01-working-screenplay.md), with 405-row [canonical provenance](saved-private/pilot-current/S01E01-working-screenplay-provenance.jsonl). Agent 1's [versioned v18 source-piece manuscript](saved-private/editorial-agent1-v18/S01E01-editorial-screenplay.md) supplies 11 tagged, historically sampled original-picture stage notes; **no continuous full episode original-video inspection, performed boundary or actor-synchronized dialogue is claimed**. Source-exact contextual corrections C028 Bull→Lana, C101 UNKNOWN→Sheila Gardiner, and C175 same-Dan two-caption presentation join propagate to the current scripts and fan corpus. C219 short second voice remains unidentified.
+- [Latest committed S09 screenplay](saved-private/pilot-current/S09E19-working-screenplay.md), with 323-row [canonical provenance](saved-private/pilot-current/S09E19-working-screenplay-provenance.jsonl). Agent 2's [versioned v17 source reader](seasons/S09/S09E19/derived/editorial-v17/S09E19-v17-source-first-reader.jsonl) protects 11 specific role changes, real Alex/Roz referent corrections, 76 still UNKNOWN-containing source units and an explicit exact-text split of ambiguous C291. This entire original source remains **untimed**. Original soundtrack role and split verification remains outstanding.
+- Independent integrated generator conservation compares every non-whitespace original-dialogue character against the immutable held source candidate-turns and each output provenance row's exact SHA and source refs; no missing/reordered/punctuation-altered words passed the test. The private remaining-review worklist is now [96-unit source queue](saved-private/pilot-current/private-review/remaining-96-speaker-review-summary.json) with **98** reader records; 193-episode fan retrieval now has **3,151 source-linked chunks** pointing to the current manuscript hashes.
+- **Outstanding P0/P1:** S01 C219 second voice and all 129 presentation joins still require soundtrack-referenced decisions; review the 69 S01 multi-part original timed subtitle cues, particularly intra-cue handoffs. S09 C129 remains correctly quarantined; C034, C102–103, C121, C188–191, C206, C209, C211, C271, C277, C290–291 and C305–306 are high-risk voice/identity boundaries or corrections awaiting source performance validation. 79 current S09 presentation joins remain unverified. Named character corrections are text-and-scene context proposals, **not** zero-error or soundtrack-authenticated names.
+- **Outstanding P2–P4:** S01's limited sampled-picture evidence substantially improves wardrobe, setting, and some physical-action description; its 11 notes cannot prove episode-wide coverage or actor-to-dialogue AV synchronization. S09's 11 narrative sequences remain editorial story divisions without independent filmed-cut proof; voice delivery, verified reaction shots, actor/action/recipient, clothing and props coverage are incomplete. Earlier false Qwen actor/recipient reversal demonstrates the importance of source-directed physical-business inspection.
+- **Acceptance:** private source dialogue completeness and fan corpus/persistence **PASS**; independent whole-episode performed-turn/editorial and audiovisual acceptance **OPEN, NOT PASSED** for both. **0/2 complete final screenplays independently accepted, 0/193 archival AV-certified**. Keep issue #441 unresolved until those genuine evidence gates are met; no FTP/Plex renaming work was merged.
+
+---
 # Independent two-pilot integration and acceptance review (2026-10-26)
+
 
 **Owner:** Agent 3, shared integration/independent acceptance; S01 editorial decisions remain Agent 1's, S09 editorial decisions Agent 2's. **Evidence tier:** desk/source-provenance and actual-source generation CI review, **not** independently listened or watched original AV. Neither pilot is accepted as an editorially complete performed screenplay. This is a decision record, not a status promotion.
 
