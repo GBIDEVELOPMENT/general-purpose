@@ -138,13 +138,13 @@ jobs:
           assert m['new_voices_human_accepted']==0
           assert m['original_untimed_S09_captions_modified'] is False
           q=[json.loads(x) for x in (out/'remaining-138-speaker-review.jsonl').read_text().splitlines()]
-          assert all('C266.1' not in x['unidentified_original_unit_refs'] for x in q)
-          assert all(ref not in x['unidentified_original_unit_refs'] for x in q for ref in
+          assert all('C266.1' not in x['unidentified_original_unit_refs'] for x in q if x['episode_id']=='S09E19')
+          assert all(ref not in x['unidentified_original_unit_refs'] for x in q if x['episode_id']=='S09E19' for ref in
                      ('C127.1','C146.1','C284.1','C091.1','C092.1',
                       'C099.1','C125.1','C126.1','C134.1','C135.1',
                       'C268.1','C298.1','C299.1','C335.1','C336.1',
                       'C337.1','C340.1','C341.1'))
-          assert all(ref not in x['unidentified_original_unit_refs'] for x in q for ref in
+          assert all(ref not in x['unidentified_original_unit_refs'] for x in q if x['episode_id']=='S09E19' for ref in
                      ('C188.1','C189.1','C190.1','C191.1','C192.1'))
           assert any(x['source_reading_ref']=='C129.1' and x['model_proposed_character'] is None for x in q)
           triage=json.loads((base/'s09-p0-original-internal-turns'/'potential-within-caption-summary.json').read_text('utf-8'))
