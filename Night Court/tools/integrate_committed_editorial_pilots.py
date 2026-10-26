@@ -215,7 +215,48 @@ def integrate_s09(old: list[dict], v16_binary: bytes) -> tuple[list[dict], list[
     }
 
 
+def ensure_no_unintegrated_newer_editorial_revision() -> None:
+    """Never publish an older script over newly committed episode-editor work.
+
+    Different successor schemas need explicit evidence-aware integration;
+    guessing that the old v18/v17 code can consume them would lose edits.
+    """
+    for base, prefix, current in (
+        (ROOT / "saved-private", "editorial-agent1-v", 18),
+        (ROOT / "saved-private", "editorial-agent2-v", 17),
+        (ROOT / "seasons/S01/S01E01/derived", "editorial-agent1-v", 18),
+        (ROOT / "seasons/S09/S09E19/derived", "editorial-agent2-v", 17),
+        (ROOT / "seasons/S09/S09E19/derived", "editorial-v", 17),
+    ):
+        if not base.exists():
+            continue
+        for candidate in base.iterdir():
+            if not candidate.is_dir() or not candidate.name.startswith(prefix):
+                continue
+            version = candidate.name.removeprefix(prefix)
+            if version.isdigit() and int(version) > current:
+                raise ValueError(
+                    "Newer episode editorial version " + candidate.name +
+                    " exists: refuse to overwrite the current canonical screenplay "
+                    "until Agent 3 integrates this evidence"
+                )
+    committed = ROOT / "saved-private/pilot-current/pilot-current-editorial-manifest.json"
+    if committed.is_file():
+        current = read_json(committed)
+        evidence = current.get("episode_evidence", {})
+        for ep, supported in (("S01E01",18),("S09E19",17)):
+            name = evidence.get(ep, {}).get("editorial_version", "")
+            if name.startswith("Agent") and "-v" in name:
+                suffix = name.rsplit("-v", 1)[-1]
+                if suffix.isdigit() and int(suffix) > supported:
+                    raise ValueError(
+                        ep + " has newer committed canonical editorial evidence " +
+                        name + "; refuse v18/v17 regeneration downgrade"
+                    )
+
+
 def integrate(output: Path) -> dict:
+    ensure_no_unintegrated_newer_editorial_revision()
     output = output.resolve(strict=True)
     if output.is_relative_to(ROOT.resolve()):
         raise ValueError("Private generated corpus must be outside tracked Night Court source tree")
