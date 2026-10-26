@@ -1,0 +1,60 @@
+{
+  "schema": "night-court-p0-pending-source-exact-split-specs/1",
+  "original_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "episode": "S09E19",
+  "independently_original_av_verified": false,
+  "original_untimed": true,
+  "named_actor_roles_introduced": 0,
+  "source_cues": [
+    {
+      "source_ref": "C121.1",
+      "split_before": "Yeah, probably.",
+      "proposed_roles": [
+        null,
+        null
+      ],
+      "reason": "C120's source sentence ends on the first word in C121, and a separate assent follows; the turn split is required before any character attribution. Both fragments remain UNKNOWN pending actual soundtrack listening.",
+      "source_soundtrack_verification": false
+    },
+    {
+      "source_ref": "C206.1",
+      "split_before": "No, this whole thing",
+      "proposed_roles": [
+        null,
+        null
+      ],
+      "reason": "The initial uncertainty over the negative campaign publicity is contradicted by a dismissive separate comment within the same source paragraph. Both voice IDs remain explicitly UNKNOWN pending actual AV.",
+      "source_soundtrack_verification": false
+    },
+    {
+      "source_ref": "C271.1",
+      "split_before": "No, really.",
+      "proposed_roles": [
+        null,
+        null
+      ],
+      "reason": "The bar-scene source contains an offer/return of five dollars and a renewed refusal within one paragraph. A likely reply starts at this anchor, but three-party interruptions require soundtrack review.",
+      "source_soundtrack_verification": false
+    },
+    {
+      "source_ref": "C290.1",
+      "split_before": "Was she?",
+      "proposed_roles": [
+        null,
+        null
+      ],
+      "reason": "Two short identity/pronoun responses in the same original paragraph are likely spoken by different actors. No character role is assigned from pronouns alone; inspect film before final turn acceptance.",
+      "source_soundtrack_verification": false
+    },
+    {
+      "source_ref": "C291.1",
+      "split_before": "He was me.",
+      "proposed_roles": [
+        null,
+        null
+      ],
+      "reason": "A second response follows the single-word 'He' in the original mistaken-identity exchange. Source character offsets are exact, but role remains UNKNOWN until an original-AV performer check.",
+      "source_soundtrack_verification": false
+    }
+  ]
+}
