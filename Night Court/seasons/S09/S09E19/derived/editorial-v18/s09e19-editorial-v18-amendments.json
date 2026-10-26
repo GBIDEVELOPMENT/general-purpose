@@ -1,0 +1,116 @@
+{
+  "schema": "night-court-s09e19-v18-source-exact-role-and-anonymous-joins/1",
+  "episode_id": "S09E19",
+  "base_version": "Agent2-v17",
+  "base_canonical_editorial_reader": "Night Court/saved-private/pilot-current/pilot-current-editorial-reader.jsonl",
+  "base_reader_sha256": "88aee05506d7b85c23f61b767180d8a5a8e2466d044885e6f7815f13bb2205be",
+  "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_source_untimed": true,
+  "v17_source_units": 347,
+  "v17_s09_reading_blocks": 323,
+  "v17_fully_named_source_units": 271,
+  "v17_source_units_with_unknown": 76,
+  "episode_only": true,
+  "evidence_scope": "dialogue_context_only_not_original_audio_verified",
+  "role_amendments": [
+    {
+      "reading_ref": "C051.1",
+      "prior_role": null,
+      "new_provisional_role": "CHRISTINE SULLIVAN",
+      "source_text_must_equal": "What does he do?",
+      "confidence": "high_contextual",
+      "rationale": "Christine asks Roz whether the correspondents ever exhaust topics (C046), Roz explains Alex's worldview (C047–C050), and Christine asks the natural occupation follow-up. Dan then mocks the answer and Christine asks when the couple will meet (C054). A third interlocutor remains theoretically possible; no audio heard.",
+      "original_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "source_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "reading_ref": "C229.1",
+      "prior_role": null,
+      "new_provisional_role": "THE GUY (PLAYING ALEX)",
+      "source_text_must_equal": "Well...",
+      "confidence": "high_contextual",
+      "rationale": "The paid male stand-in for Alex asks Lisette where to begin describing her art holdings at C227. She says she does not know where to start at C228, and C229 opens the same male stand-in's next suggested question, completed across C230–C231 about her supposed neoclassics from Florence. Joined response is a stronger P0 cue than isolated words.",
+      "original_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "source_audio_verified": false,
+      "performed_turn_verified": false
+    }
+  ],
+  "anonymous_display_join_proposals": [
+    {
+      "source_refs": [
+        "C002.1",
+        "C003.1"
+      ],
+      "expected_roles": [
+        null,
+        null
+      ],
+      "expected_texts": [
+        "No problem.",
+        "We love monotonous, servile labor."
+      ],
+      "confidence": "medium",
+      "anonymous_voice_id": "S09-V18-UNIDENTIFIED-C002-C003",
+      "rationale": "The short assent and collective complaint about monotonous campaign labor plausibly form one reply to the flyers being completed. No named actual speaker inferred; original soundtrack may disconfirm the join."
+    },
+    {
+      "source_refs": [
+        "C235.1",
+        "C236.1",
+        "C237.1"
+      ],
+      "expected_roles": [
+        null,
+        null,
+        null
+      ],
+      "expected_texts": [
+        "You know, I see a lot of couples in here.",
+        "I think those two got chemistry.",
+        "I predict a hot night ahead for them."
+      ],
+      "confidence": "high_contextual",
+      "anonymous_voice_id": "S09-V18-UNIDENTIFIED-C235-C237",
+      "rationale": "A single continuous first-person observational premise develops across three successive restaurant paragraphs, culminating in an explicit prediction. Speaker remains anonymous pending heard source."
+    },
+    {
+      "source_refs": [
+        "C238.1",
+        "C239.1"
+      ],
+      "expected_roles": [
+        null,
+        null
+      ],
+      "expected_texts": [
+        "You're right.",
+        "Arson is a possibility."
+      ],
+      "confidence": "high_contextual",
+      "anonymous_voice_id": "S09-V18-UNIDENTIFIED-C238-C239",
+      "rationale": "The assent and deadpan arson counterprediction form a continuous joke response to C237's 'hot night' suggestion. The second observer's actual identity remains UNKNOWN."
+    }
+  ],
+  "role_non_changes": [
+    "C129 UNKNOWN quarantined",
+    "C271 provisional two-voice split role UNKNOWN",
+    "C277 split prior v17 bartender/Alex only contextually proposed",
+    "C291 first He. remains UNKNOWN, second He was me. retains ALEX PATTERSON",
+    "C305 ROZ RUSSELL / C306 ALEX PATTERSON"
+  ],
+  "original_dialogue_character_edits": 0,
+  "original_audio_accepted_actors": 0,
+  "independent_source_performed_turns_certified": 0,
+  "expected_source_units": 347,
+  "expected_reader_blocks": 323,
+  "expected_fully_named_units": 273,
+  "expected_units_with_unknown": 74,
+  "expected_anonymous_joins": 3,
+  "expected_display_group_reduction_from_joins": 4,
+  "external_episode_context_sources": [
+    "https://tv.apple.com/ca/episode/ps-do-i-know-you/umc.cmc.55pw7ljknq3ttj9993slpfkdg?showId=umc.cmc.3v8igla11dgg4chywljv2og89",
+    "https://www.oocities.org/trekker_1.geo/nc-ep.htm"
+  ],
+  "external_cast_sources_are_not_voice_verification": true
+}
