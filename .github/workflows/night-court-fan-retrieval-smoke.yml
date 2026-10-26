@@ -55,6 +55,8 @@ on:
       - 'Night Court/research/source-turn-amendments-v1.json'
       - 'Night Court/research/pending-s09-p0-source-splits-v1.json'
       - 'Night Court/tools/validate_pending_s09_p0_splits.py'
+      - 'Night Court/research/s01-c219-speaker-boundary-v1.json'
+      - 'Night Court/tools/validate_s01_c219_p0_split.py'
       - 'Night Court/research/source-role-amendments-v1.json'
       - 'Night Court/research/s09-explicit-address-speaker-turns-v13.json'
       - 'Night Court/research/s09-high-context-speaker-proposals-v12.json'
@@ -523,6 +525,7 @@ jobs:
       - name: Prove next five original S09 source switch candidates preserve text and uncertainty
         run: |
           python 'Night Court/tools/validate_pending_s09_p0_splits.py'
+          python 'Night Court/tools/validate_s01_c219_p0_split.py'
       - name: All 193 source witnesses with pilot v5 substitutions
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
