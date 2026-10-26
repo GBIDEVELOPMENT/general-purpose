@@ -11,6 +11,7 @@ from unittest.mock import patch
 from compare_s09_original_speaker_embeddings import (
     SCHEMA, ALIGNMENT_REPORT_SHA, VIDEO_SHA, PCM_SHA,
     MIN_QUERY_MS, prepare_eligible, read_alignment,validate_latest_source_role_parts,
+    classwise_role_eligible,source_acoustic_editor_candidate,
 )
 
 
@@ -137,6 +138,43 @@ class OriginalS09VoicePlanTests(unittest.TestCase):
         broken.pop(0)
         with self.assertRaisesRegex(ValueError,"omitted"):
             validate_latest_source_role_parts(broken,required=34)
+
+    def test_new_actual_s09_20_of_28_holdout_does_not_hide_dan_mac_failures(self):
+        # These exact small integer role counts came from the trusted
+        # current-source original soundtrack run, but remain provisional
+        # script-role labels, not human-known actor ground truth.
+        q={"provisional_role_holdout_counts":{
+            "CHRISTINE SULLIVAN":{"correct_held_out":10,"evaluated":12},
+            "ROZ RUSSELL":{"correct_held_out":7,"evaluated":7},
+            "DAN FIELDING":{"correct_held_out":2,"evaluated":5},
+            "MAC ROBINSON":{"correct_held_out":1,"evaluated":4},
+        }}
+        self.assertTrue(classwise_role_eligible(q,"CHRISTINE SULLIVAN"))
+        self.assertTrue(classwise_role_eligible(q,"ROZ RUSSELL"))
+        self.assertFalse(classwise_role_eligible(q,"DAN FIELDING"))
+        self.assertFalse(classwise_role_eligible(q,"MAC ROBINSON"))
+        self.assertFalse(classwise_role_eligible(q,None))
+        self.assertEqual(source_acoustic_editor_candidate(
+            129,{"role":"CHRISTINE SULLIVAN"},q,True),
+            (None,True,True))
+        self.assertEqual(source_acoustic_editor_candidate(
+            262,{"role":"CHRISTINE SULLIVAN"},q,True),
+            (None,True,True))
+        self.assertEqual(source_acoustic_editor_candidate(
+            133,{"role":"DAN FIELDING"},q,True),
+            (None,False,False))
+        self.assertEqual(source_acoustic_editor_candidate(
+            133,{"role":"CHRISTINE SULLIVAN"},q,True),
+            ("CHRISTINE SULLIVAN",True,False))
+        self.assertEqual(source_acoustic_editor_candidate(
+            133,{"role":"CHRISTINE SULLIVAN"},q,False),
+            (None,True,False))
+        bad=copy.deepcopy(q)
+        bad["provisional_role_holdout_counts"]["ROZ RUSSELL"]["evaluated"]=3
+        self.assertFalse(classwise_role_eligible(bad,"ROZ RUSSELL"))
+        bad=copy.deepcopy(q)
+        bad["provisional_role_holdout_counts"]["CHRISTINE SULLIVAN"]["correct_held_out"]=13
+        self.assertFalse(classwise_role_eligible(bad,"CHRISTINE SULLIVAN"))
 
     def test_exact_original_report_sha_and_source_status_fail_closed(self):
         fake={
