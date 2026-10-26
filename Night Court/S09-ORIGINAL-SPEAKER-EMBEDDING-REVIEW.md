@@ -37,3 +37,29 @@ The first original-S09 model run [#40256897493](https://github.com/gamesbyian/ge
 | 50% (exploratory) | Same as 60%, no extra seed role | 32 |
 
 These are **pre-embedding windows**, not 26 independently judged clean acoustic reference examples, and the existing contextual character guesses can be wrong. The next trusted original soundtrack pass uses the **unchanged stronger 72% lexical criterion**, with all original S09 paragraphs still untimed, all mixed-voice exclusions enforced, source model holdout still required, and explicit automatic abstention unless the remaining acoustic samples provide at least three distinct cast voices, 20 held-out samples, and 65% recovery of provisional source labels. No character name should be inferred from insufficient role coverage or the apparent 100% two-role holdout number.
+
+## October 26 2026: upgrade original S09 voice references to latest source-role corpus
+
+The original-S09 acoustic reference builder was still using the v8 **587 provisional named source units** even though the working original-caption P0/P1 reader reached **619/751 provisional names with 132 UNKNOWN**. The newer [source-cue-checked reference adapter](tools/compare_s09_original_speaker_embeddings.py) now reads the immutable `apply_source_role_amendments.py` output on the **entire v6→v13 speaker/turn derivation chain**. The source and reader SHA-256 receipts, all 347 original untimed paragraph IDs, exact current 718 candidate turn reading blocks, role uncertainty, and special quarantined C129 source cue are enforced.
+
+Against the **actual original S09 231-paragraph numeric soundtrack alignment** at the unchanged minimum lexical matching coverage 0.72, the updated reference bank yielded:
+
+| Original-S09 source audio planning metric | Prior v8 source names | Latest source-name patches |
+|---|---:|---:|
+| Character role reference groups passing 4-sample minimum | 4 | 4 |
+| Christine / Dan / Mac / Roz voice-reference sample counts | 10 / 5 / 4 / 7 | 12 / 5 / 4 / 7 |
+| Total eligible role-seed original paragraph windows | 26 | 28 |
+| Unidentified original paragraphs with eligible sound windows | 28 | 18 |
+| Independently human-certified actor identities | 0 | 0 |
+
+The last row of 18 is **not** the number of original UNKNOWN caption units: the working source-role ledger has 132 UNKNOWN units across both pilots, including samples that lack a trustworthy S09 numerical soundtrack location, are too short, have weak lexical match, or contain apparent multiple voices. **PAUL** and other text-inferred guest roles may remain excluded by the four-sample and sound-alignment thresholds. No complete episode's identities have been independently film/audio certified.
+
+Source paragraphs known to have mixed speaker roles (C034, C102, C127, C146, C188–C192, C206, C209, C211, C271, C284, C290–C291, etc.) are deliberately never used as a voice embedding anchor, even when editorial character labels exist. The old `--v8-source-roles` mode remains available for comparing past acoustic reports; it cannot be mixed with the new `--speaker-patch-root` input. The trusted original-film workflow uses reviewed `main` only and only numerical source-aligned results/uncertain hypotheses may leave its private runner. As before, a good sound model match is *evidence for subsequent performer review*, **not authentication of a fictional character by a human**.
+
+```sh
+python 'Night Court/tools/compare_s09_original_speaker_embeddings.py' \
+  --source-alignment /private/night-court-s09-original-audio-paragraph-locators.json \
+  --speaker-patch-root /private/night-court-private-source-role-patches \
+  --minimum-coverage 0.72 \
+  --output /private/night-court-current-source-speaker-plan.json --plan-only
+```
