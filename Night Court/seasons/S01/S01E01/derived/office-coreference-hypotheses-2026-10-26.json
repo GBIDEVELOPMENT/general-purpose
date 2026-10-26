@@ -1,0 +1,82 @@
+{
+  "schema": "night-court-s01e01-contextual-hypotheses/1",
+  "episode_id": "S01E01",
+  "original_source_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "baseline": "v16",
+  "source_part_refs_known": false,
+  "source_cues": 336,
+  "source_units": 404,
+  "named_source_units": 383,
+  "source_units_with_unknown": 21,
+  "proposals": [
+    {
+      "anchor_excerpt": "I hope he plays chess.",
+      "speaker_candidate": "DAN FIELDING",
+      "confidence": "medium",
+      "evidence": [
+        "immediately follows Sheila criminal-law wish",
+        "Sheila criticizes the chess wish",
+        "Dan follows with matching Shecky joke"
+      ],
+      "alternatives": [
+        "OTHER PRESENT STAFF"
+      ],
+      "promote": false
+    },
+    {
+      "anchor_excerpt": "I also hope his first name is not Shecky.",
+      "speaker_candidate": "DAN FIELDING",
+      "confidence": "medium",
+      "evidence": [
+        "echoed I hope formulation",
+        "reply to Sheila's criticism of chess wish"
+      ],
+      "alternatives": [
+        "OTHER STAFF MEMBER"
+      ],
+      "promote": false
+    },
+    {
+      "anchor_excerpt": "Here you go.",
+      "speaker_candidate": "COURIER",
+      "confidence": "low",
+      "evidence": [
+        "Harry immediately responds with Thanks and joke about tipping"
+      ],
+      "alternatives": [
+        "OTHER PERSON HANDING ITEM TO HARRY"
+      ],
+      "promote": false
+    },
+    {
+      "anchor_excerpt": "In his office?",
+      "speaker_candidate": "LANA WAGNER",
+      "confidence": "low",
+      "evidence": [
+        "Lana doubts Harry's judicial identity in this sequence"
+      ],
+      "alternatives": [
+        "SHEILA GARDINER",
+        "OTHER STAFF"
+      ],
+      "promote": false
+    },
+    {
+      "anchor_excerpt": "I cannot work with that man. He's disrupting my court.",
+      "speaker_candidate": null,
+      "confidence": "unknown",
+      "evidence": [
+        "third person man references Harry, narrowing non-Harry candidates"
+      ],
+      "alternatives": [
+        "LANA WAGNER",
+        "SHEILA GARDINER"
+      ],
+      "promote": false
+    }
+  ],
+  "proposed_new_source_exact_splits": 0,
+  "proposed_new_source_exact_joins": 0,
+  "newly_accepted_named_units": 0,
+  "independent_av_identifications": 0
+}
