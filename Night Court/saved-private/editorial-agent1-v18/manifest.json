@@ -4,8 +4,8 @@
   "source_srt_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
   "original_avi_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
   "parent_v17_manuscript_sha256": "e865562f8d039623222685a928c6aae02270cdf30ed18f0f2eff09c2fc1e1614",
-  "manuscript_sha256": "6a7a41188d58ba0466a784fdf4a92733023fd62105f981ff2178612908a40167",
-  "provenance_sha256": "d6fc472a3eda797354f5dbc8fb8b0b727ab09c8930448e000b98bc633f2808f5",
+  "manuscript_sha256": "c430ad3da4d60d08079d617b53bb4c50e1e1338b1634903bb3ee49283a53fcf5",
+  "provenance_sha256": "2c09488487a9ac45dcf8af097b6aad36a7548b54dd1d05facbee20643af1d88b",
   "picture_annotation_ledger": "seasons/S01/S01E01/derived/editorial-agent1-v18-picture-annotations.json",
   "picture_annotations": [
     "PIC-01",
@@ -23,7 +23,7 @@
   "visual_annotation_count": 11,
   "source_part_refs": 404,
   "reader_blocks": 405,
-  "display_groups": 277,
+  "display_groups": 276,
   "source_units_fully_provisionally_named": 384,
   "source_units_with_UNKNOWN_voice": 20,
   "source_visual_observation_category": "historical_reviewed_sampled_original_picture_not_this_session",
@@ -34,5 +34,10 @@
   "cue_times_modified": false,
   "s09_modified": false,
   "original_script_generation_integrated": false,
-  "private_scope": "Versioned S01 staging artifact; canonical shared generator and publisher remain Agent 3 responsibilities"
+  "private_scope": "Versioned S01 staging artifact; canonical shared generator and publisher remain Agent 3 responsibilities",
+  "display_continuations_unverified": 129,
+  "p0_contextual_same_speaker_c175_join": true,
+  "p0_join_source_ledger": "seasons/S01/S01E01/derived/editorial-agent1-v18-c175-turn-join.json",
+  "provenance_old_sha256": "d6fc472a3eda797354f5dbc8fb8b0b727ab09c8930448e000b98bc633f2808f5",
+  "original_srt_subcue_timestamps_invented": false
 }
