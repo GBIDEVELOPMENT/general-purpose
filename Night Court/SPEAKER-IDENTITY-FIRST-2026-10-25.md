@@ -58,6 +58,30 @@ This produces `speaker-identity-first-review.jsonl` with each unresolved source 
 
 Acceptance against the current source-ledger state: **97 S01 UNKNOWN + 164 S09 UNKNOWN = 261 remaining original source units**; one additional suspected incorrect legacy named label, ranked separately. No automated new role names or independently listened speaker confirmations are claimed. Do not publish this private queue; it contains source transcript text and working character hypotheses.
 
+## Bounded S01 original-soundtrack review clips, with no audio in GitHub
+
+The **speaker** queue may now be turned into a compact plan of source-only listening windows, prioritizing the highest-risk unknowns and coalescing overlapping windows into at most twelve short excerpts by default. It is independent of, and ranked ahead of, the animation/staging pipeline:
+
+```sh
+python 'Night Court/tools/plan_speaker_audio_review.py' \
+  --queue /tmp/night-court-private-speaker-review/speaker-identity-first-review.jsonl \
+  --output /tmp/night-court-private-speaker-listening-plan.json --max-clips 12
+```
+
+This first action only creates metadata. When the **real original S01E01 AVI is available locally**, and only if its complete file SHA-256 matches the pinned original media evidence `5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962`, extract private 16kHz mono WAVs with:
+
+```sh
+python 'Night Court/tools/plan_speaker_audio_review.py' \
+  --queue /tmp/night-court-private-speaker-review/speaker-identity-first-review.jsonl \
+  --output /tmp/night-court-private-speaker-listening-plan.json \
+  --original-avi /private/media/Night-Court-S01E01-original.avi \
+  --audio-output /private/night-court/speaker-listening-wavs
+```
+
+**No original media** is downloaded by this new tool, its output is private local only, and no CI action here extracts, retains, uploads or prints television audio. Every WAV is a **candidate listening window, not acoustic speaker authentication**. The S01 subtitle timings are approximate reference points, not independently synchronized speech alignments, and may be wrong for a source edition. The untimed S09 original is explicitly deferred until a defensible original-audio/text alignment is established. The separate C028 potentially wrong legacy role is also deferred to its original cue locator until it receives an actual time/shot resolution.
+
+This planner may reuse a verified original local media checkout from a trusted source job without another full-episode download, once available. Only a later human or validated diarization/voice pass can turn these clips into confirmed named speakers. Keep all media, ephemeral WAVs, thumbnails and acoustic voice embeddings outside GitHub and public CI artifacts.
+
 ## Next mandatory work
 
 1. **Rank and review the remaining 261 unknown original units.** Prioritize S01 and S09 dialogues with multi-voice cue boundaries, short replies, adjacent named turns, repeated speaker/character quotes, and potentially incorrect already-named voices. A false Dan/Harry/Bull/Roz assignment is at least as damaging as an UNKNOWN.
