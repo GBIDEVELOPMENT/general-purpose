@@ -186,15 +186,17 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
     if working_pilot_root is not None:
         working_report=json.loads((working_pilot_root/"working-screenplay-layout-manifest.json").read_text("utf-8"))
         counts=working_report.get("source_unit_counts")
-        expected={"original_source_units":751,"named_provisional":621,"unknown":130}
-        if (working_report.get("schema")!="night-court-private-pilot-screenplay-layout/1"
+        version=working_report.get("schema")
+        expected={"original_source_units":751,"named_provisional":651 if version.endswith("/2") else 621,"unknown":100 if version.endswith("/2") else 130}
+        blocks=[405,322] if version.endswith("/2") else [405,321]
+        if (version not in ("night-court-private-pilot-screenplay-layout/1","night-court-private-pilot-screenplay-layout/2")
             or counts!=expected
             or set(working_report.get("episodes",{}))!=set(PILOT_SCRIPTS)
             or working_report.get("new_independently_verified_actor_voices")!=0
             or working_report.get("new_independently_verified_performed_turns")!=0
             or working_report.get("scene_review_complete") is not False
             or not re.fullmatch(r"[0-9a-f]{64}",working_report.get("source_v15_reader_sha256",""))
-            or [working_report["episodes"][ep].get("source_blocks") for ep in PILOT_SCRIPTS]!=[405,321]
+            or [working_report["episodes"][ep].get("source_blocks") for ep in PILOT_SCRIPTS]!=blocks
             or [working_report["episodes"][ep].get("source_units") for ep in PILOT_SCRIPTS]!=[404,347]
             or working_report["episodes"]["S09E19"].get("original_caption_timed") is not False):
             raise ValueError("Private current working screenplay layout source/identity provenance failed")

@@ -43,8 +43,8 @@ jobs:
           python 'Night Court/tools/apply_source_role_amendments.py' --v13 "$T/v13" --output "$T/roles"
           python 'Night Court/tools/apply_source_turn_amendments.py' --source-role-patches "$T/roles" --output "$T/turns"
           python 'Night Court/tools/apply_s01_c219_source_turn.py' --source-turn-patches "$T/turns" --output "$T/v15"
-          python 'Night Court/tools/render_current_pilot_screenplays.py' \
-            --source-first-v15 "$T/v15" --output "$T/deliverable"
+          python 'Night Court/tools/apply_manual_context_pilot_review_v16.py' \
+            --v15-root "$T/v15" --output "$T/deliverable"
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
             --working-pilot-root "$T/deliverable" --output "$T/deliverable/private-fan-retrieval"
       - name: Validate private working screenplay digest and source conservation
@@ -54,12 +54,13 @@ jobs:
           from pathlib import Path
           out=Path(os.environ['RUNNER_TEMP'])/'night-court-pilot-v15'/'deliverable'
           m=json.loads((out/'working-screenplay-layout-manifest.json').read_text('utf-8'))
-          assert m['source_unit_counts']=={'original_source_units':751,'named_provisional':621,'unknown':130}
+          assert m['source_unit_counts']=={'original_source_units':751,'named_provisional':651,'unknown':100}
+          assert m['schema']=='night-court-private-pilot-screenplay-layout/2'
           assert m['new_independently_verified_actor_voices']==0
           assert m['new_independently_verified_performed_turns']==0
           assert m['scene_review_complete'] is False
           total=0
-          for ep,n in [('S01E01',405),('S09E19',321)]:
+          for ep,n in [('S01E01',405),('S09E19',322)]:
               draft=out/f'{ep}-working-screenplay.md'
               side=out/f'{ep}-working-screenplay-provenance.jsonl'
               assert draft.exists() and side.exists()
@@ -71,7 +72,7 @@ jobs:
                   assert all(r['source_cue_times_not_subturn_times_ms'] is None for r in rows)
               total+=len(rows)
               print(ep,'source reader blocks',n,'display groups',m['episodes'][ep]['display_groups'])
-          assert total==726
+          assert total==727
           print('Both private complete-dialogue working drafts verified; NO AV certifications.')
           retrieval=out/'private-fan-retrieval'
           fan=json.loads((retrieval/'fan-retrieval-manifest.json').read_text('utf-8'))
@@ -88,6 +89,8 @@ jobs:
           PY
           cat > "${RUNNER_TEMP}/night-court-pilot-v15/deliverable/READ_ME_FIRST.txt" <<'NOTE'
           Original Night Court 1984-1992, private EDITORIAL WORKING DRAFTS only.
+          V16 adds 32 contextual speaker assignments, two reversed names corrected,
+          and a tentative two-voice C277 split. All are ORIGINAL AUDIO UNVERIFIED.
           All held original source-derived dialogue retained, with source hashes and
           provenance JSONL sidecars. Character identities and layout continuations
           remain provisional, NOT independently audio/video verified.

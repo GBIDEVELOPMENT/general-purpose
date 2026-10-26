@@ -1,3 +1,15 @@
+## Leading working editorial layer: private v16
+
+The v15 renderer documented below remains an immutable-source reference baseline. The **current** editor-reviewed v16 applies the SHA/source-ref-checked [2026-10-26 manual role ledger](research/manual-context-editorial-speaker-review-v16.json). After building private v15 source-first rows as before:
+
+    python 'Night Court/tools/apply_manual_context_pilot_review_v16.py' \
+      --v15-root /tmp/night-court-private-v15 \
+      --output /tmp/night-court-private-v16
+
+The output includes both improved original-dialogue working manuscripts, SHA-bound provenance and source records, an editorial-only v16 report, and a current working-screenplay-layout manifest. It **does not** modify original SRT/paragraphs, v15 reader or original AV acceptance. Thirty source units newly become fully provisionally named; the current 100 UNKNOWN source units still require P0/P1 attention. Two role corrections reverse S09 C305/C306, while original C277 is reversibly split into two still-UNKNOWN parts.
+
+To generate the matching private fan corpus, use the ordinary fan exporter with `--working-pilot-root /tmp/night-court-private-v16` instead of the old v15 directory. The source-backed CI also generates the 100-unit review worklist via `tools/plan_remaining_manual_v16_review.py`, using the original numeric S09 audio-locator artifact. Its S09 windows remain ASR **search proposals**, not original transcript timing.
+
 # Private readable pilot screenplay layout (P0/P1, 2026-10-26)
 
 This is a **working draft generator**, not an audiovisual acceptance shortcut. It turns the most recent private **v15 source-first reader** into two legible, source-linked original-series screenplay *dialogue* manuscripts, with one character heading for contiguous rows bearing the same provisional name. Because those names and boundaries have not been independently listened to, the output says **DISPLAY CONTINUATION, UNVERIFIED** rather than asserting a performed single turn. UNKNOWN turns are never merged and distinct voices provisionally split within one original cue are never rejoined.

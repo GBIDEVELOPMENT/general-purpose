@@ -1,0 +1,537 @@
+{
+  "schema": "night-court-private-manual-context-role-review/1",
+  "id": "S01-S09-MANUAL-CONTEXT-20261026-A",
+  "original_source_shas": {
+    "S01E01": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+    "S09E19": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2"
+  },
+  "source_reader_input": "pilot-source-episode-turns-v15.jsonl",
+  "prior_source_units": 751,
+  "prior_named_source_units": 621,
+  "prior_unidentified_source_units": 130,
+  "prior_reading_blocks": 726,
+  "context_not_original_av_verified": true,
+  "editorial_origin": "2026-10-26 private full-manuscript manual dialogue review; exact source cue anchors rechecked",
+  "role_amendments": [
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C077.2",
+      "original_source_part_refs": [
+        "C077.2"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "All rise.",
+      "rationale": "The same bailiff opens the courtroom with a formal continuous introductory proclamation; subtitle cues fragment his statement but do not imply new speaking voices.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C078.1",
+      "original_source_part_refs": [
+        "C078.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "Criminal courts, part two",
+      "rationale": "The same bailiff opens the courtroom with a formal continuous introductory proclamation; subtitle cues fragment his statement but do not imply new speaking voices.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C079.1",
+      "original_source_part_refs": [
+        "C079.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "The Honorable",
+      "rationale": "The same bailiff opens the courtroom with a formal continuous introductory proclamation; subtitle cues fragment his statement but do not imply new speaking voices.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C080.1",
+      "original_source_part_refs": [
+        "C080.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "Harold T",
+      "rationale": "The same bailiff opens the courtroom with a formal continuous introductory proclamation; subtitle cues fragment his statement but do not imply new speaking voices.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C081.1",
+      "original_source_part_refs": [
+        "C081.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "Stone",
+      "rationale": "The same bailiff opens the courtroom with a formal continuous introductory proclamation; subtitle cues fragment his statement but do not imply new speaking voices.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C082.1",
+      "original_source_part_refs": [
+        "C082.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "presiding.",
+      "rationale": "The same bailiff opens the courtroom with a formal continuous introductory proclamation; subtitle cues fragment his statement but do not imply new speaking voices.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C091.1",
+      "original_source_part_refs": [
+        "C091.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "LANA WAGNER",
+      "source_text_must_contain": "Sir, the first case",
+      "rationale": "The court clerk Lana announces the docket to Harry before a different litigant interrupts; this line belongs to the established clerk role.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C100.1",
+      "original_source_part_refs": [
+        "C100.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "LANA WAGNER",
+      "source_text_must_contain": "It's not the first case",
+      "rationale": "Lana continues objecting that Harry is moving the docket out of order; the immediately following line is Harry addressing Sheila.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C153.1",
+      "original_source_part_refs": [
+        "C153.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "HARRY STONE",
+      "source_text_must_contain": "Yo.",
+      "rationale": "Harry enters and greets the court staff immediately before Lana approaches him to discuss his conduct; this brief response remains soundtrack-unverified.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C175.2",
+      "original_source_part_refs": [
+        "C175.2"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "DAN FIELDING",
+      "source_text_must_contain": "No settlement with the Kerrs.",
+      "rationale": "Dan is recounting his unsuccessful Kerr settlement after his previous line promises to explain the confrontation and is followed by commentary on his shirt.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C180.1",
+      "original_source_part_refs": [
+        "C180.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "LANA WAGNER",
+      "source_text_must_contain": "...but it was predictable.",
+      "rationale": "This visibly continues Lana's preceding unfinished apology and forms the second half of the same syntactic construction; preserve a potential single-turn reading.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "S01E01-C219-SOURCE-TURN-1",
+      "original_source_part_refs": [
+        "C219.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "HARRY STONE",
+      "source_text_must_contain": "...must have been a living hell",
+      "rationale": "Harry's earlier line explicitly begins a comment about the Kerrs' 27-year marriage and this fragment completes that sentence.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C221.1",
+      "original_source_part_refs": [
+        "C221.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "LOUISE KERR",
+      "source_text_must_contain": "Early on.",
+      "rationale": "Louise adds a rueful qualification to Phil's recollection that there were some tolerable years, with a different voice echoing afterward.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S01E01",
+      "source_reading_ref": "C221.2",
+      "original_source_part_refs": [
+        "C221.2"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "PHIL KERR",
+      "source_text_must_contain": "Yeah, early on.",
+      "rationale": "Phil echoes the just-stated qualification after he himself suggested the marriage once had some better moments.",
+      "source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C016.1",
+      "original_source_part_refs": [
+        "C016.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "DAN FIELDING",
+      "source_text_must_contain": "What you reading, Ross?",
+      "rationale": "Dan initiates the question to Roz, then follows up with his own joke about the appearance of her reading material.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C017.1",
+      "original_source_part_refs": [
+        "C017.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "DAN FIELDING",
+      "source_text_must_contain": "Humor in uniform?",
+      "rationale": "This is Dan's uninterrupted follow-up tease to Roz following the previous question about what she is reading.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C077.1",
+      "original_source_part_refs": [
+        "C077.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "Oh, what channel is that on?",
+      "rationale": "Bull interprets Dan's sarcastic description of looking at his eyelids as a television channel; a literal-minded punchline.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C094.1",
+      "original_source_part_refs": [
+        "C094.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "HARRY STONE",
+      "source_text_must_contain": "Look at this.",
+      "rationale": "Harry is browsing old legal books in his office and invites Dan to notice an archaic legal phrase.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C095.1",
+      "original_source_part_refs": [
+        "C095.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "HARRY STONE",
+      "source_text_must_contain": "Prohibition mandates.",
+      "rationale": "Harry continues referring to the antiquated legal volume he has been examining, directly setting up his own pun.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C096.1",
+      "original_source_part_refs": [
+        "C096.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "HARRY STONE",
+      "source_text_must_contain": "This is a dry subject.",
+      "rationale": "Harry's joke about prohibition is the punchline to his reading the legal volume; lexical continuity supports one speaking turn.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C104.1",
+      "original_source_part_refs": [
+        "C104.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "DAN FIELDING",
+      "source_text_must_contain": "That sucker is old.",
+      "rationale": "Dan's interest in the hidden safe follows immediately after his reaction to Harry's discovery and precedes his question about its contents.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C105.1",
+      "original_source_part_refs": [
+        "C105.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "DAN FIELDING",
+      "source_text_must_contain": "I wonder what's in it.",
+      "rationale": "Dan follows up his appraisal of the newly discovered safe with another statement of curiosity.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "S09-S09E19-C206-UNVERIFIED-TWO-VOICE-BOUNDARY-T02",
+      "original_source_part_refs": [
+        "C206.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "DAN FIELDING",
+      "source_text_must_contain": "No, this whole thing is really boring.",
+      "rationale": "Dan brusquely interrupts Christine and Mac's commercial argument and then launches his already named long dismissal of campaign reactions.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C220.1",
+      "original_source_part_refs": [
+        "C220.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "WAITER",
+      "source_text_must_contain": "Wine?",
+      "rationale": "A service person's offer of a drink prompts the stand-in Alex's pun that he always talks in that manner; the speaker is not a primary character.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C279.1",
+      "original_source_part_refs": [
+        "C279.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_contain": "Give me a break.",
+      "rationale": "Alex argues over the stale snacks and shows improbable expertise about peanuts before declaring that he is a nut expert.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C280.1",
+      "original_source_part_refs": [
+        "C280.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_contain": "Bring us some fresh ones.",
+      "rationale": "Alex insists on fresh bar snacks immediately before delivering his self-identification as a nuts expert.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C285.1",
+      "original_source_part_refs": [
+        "C285.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "BARTENDER",
+      "source_text_must_contain": "Hey, nut man.",
+      "rationale": "The bartender addresses Alex after Roz leaves, recalling Alex's earlier complaint about the snacks.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C286.1",
+      "original_source_part_refs": [
+        "C286.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "BARTENDER",
+      "source_text_must_contain": "See what you get for busting my chops?",
+      "rationale": "The bartender mocks Alex for having hassled him about the stale nuts in the preceding scene.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C294.1",
+      "original_source_part_refs": [
+        "C294.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_contain": "So, that was us.",
+      "rationale": "Alex sums up the mistaken-identity explanation just after Roz confirms that she too had used a stand-in.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C309.1",
+      "original_source_part_refs": [
+        "C309.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_contain": "Let's go.",
+      "rationale": "Alex is initiating the dinner outing after Roz agrees, immediately before proposing Thai food.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C317.1",
+      "original_source_part_refs": [
+        "C317.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "MAC ROBINSON",
+      "source_text_must_contain": "I do.",
+      "rationale": "Mac immediately explains that the campaign ad was incorrectly duplicated, so this answers Christine's inability to understand reactions.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C338.1",
+      "original_source_part_refs": [
+        "C338.1"
+      ],
+      "prior_role": null,
+      "new_provisional_role": "DAN FIELDING",
+      "source_text_must_contain": "Deal, deal.",
+      "rationale": "Dan eagerly accepts the division of old-safe discoveries with Harry following a long exchange over the possible contents.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C305.1",
+      "original_source_part_refs": [
+        "C305.1"
+      ],
+      "prior_role": "ALEX PATTERSON",
+      "new_provisional_role": "ROZ RUSSELL",
+      "source_text_must_contain": "How'd you like my perfect size three?",
+      "rationale": "Roz exaggerated her own size in letters and hired a stand-in, so she asks Alex about the supposed perfect size three in their mutual reveal.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    },
+    {
+      "episode_id": "S09E19",
+      "source_reading_ref": "C306.1",
+      "original_source_part_refs": [
+        "C306.1"
+      ],
+      "prior_role": "ROZ RUSSELL",
+      "new_provisional_role": "ALEX PATTERSON",
+      "source_text_must_contain": "You look great.",
+      "rationale": "Alex answers Roz's question about the false size-three stand-in with reassurance after each confesses to the swap.",
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_audio_verified": false,
+      "performed_turn_verified": false
+    }
+  ],
+  "original_source_split_proposals": [
+    {
+      "episode_id": "S09E19",
+      "original_source_ref": "C277.1",
+      "source_reading_ref": "C277.1",
+      "prior_role": null,
+      "source_witness_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "source_text_must_equal": "And the snacks are free. Yeah, but they're not fresh.",
+      "split_before": "Yeah, but they're not fresh.",
+      "roles": [
+        null,
+        null
+      ],
+      "rationale": "Two contrastive snack remarks appear in one untimed S09 source paragraph; retaining two separate UNKNOWN voices avoids assigning one uninterrupted sentence without audio.",
+      "original_audio_verified": false
+    }
+  ],
+  "pending_acoustic_or_ambiguous_review": [
+    {
+      "episode_id": "S01E01",
+      "source_ref": "C028.1",
+      "issue": "Bull provisionally credited with saying goodbye to himself; Lana is a candidate, but retain the original Bull label pending original soundtrack."
+    },
+    {
+      "episode_id": "S01E01",
+      "source_ref": "C219.1:second",
+      "issue": "Very brief reply plausibly Phil Kerr; preserve UNKNOWN pending voice comparison."
+    },
+    {
+      "episode_id": "S09E19",
+      "source_ref": "C129.1",
+      "issue": "Known out-of-bank acoustic false-positive risk; preserve UNKNOWN quarantine."
+    },
+    {
+      "episode_id": "S09E19",
+      "source_ref": "C277.1",
+      "issue": "Split snack remarks into two UNKNOWN fragments provisionally; exact performed boundary and character identities require sound."
+    },
+    {
+      "episode_id": "S09E19",
+      "source_ref": "C291.1",
+      "issue": "Role-sensitive pronoun handoff potentially contains multiple speakers; must not erase the prior Alex name without audio."
+    }
+  ]
+}

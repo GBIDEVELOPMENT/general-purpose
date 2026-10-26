@@ -1,3 +1,21 @@
+## Manual-context speaker editorial update, v16 (2026-10-26)
+
+**Current leading private working-draft evidence tier: source-first v16, editorial/dialogue context only, not original-audio-certified.** The older 621/130 and 726 reading blocks above remain valid **v15 input baselines**, not the active downstream v16 output.
+
+| Measure | S01E01 | S09E19 | Total |
+| --- | ---: | ---: | ---: |
+| Immutable original speaking-unit refs | 404 | 347 | 751 |
+| Entire source unit with no remaining UNKNOWN voice, provisionally | 383 | 268 | 651 |
+| Source units still having at least one UNKNOWN voice | 21 | 79 | 100 |
+| Provisional v16 reader blocks | 405 | 322 | 727 |
+| Original soundtrack identities independently accepted | 0 | 0 | 0 |
+
+The private original-caption pipeline performs **32** new provisional reader-block speaker assignments and corrects **two previously named** labels (S09 C305 Alex→Roz, C306 Roz→Alex). Thirty *whole original source units* newly become fully provisionally named. S01 C219 and S09 C206 remain partially UNKNOWN because only one of two voice fragments was contextually identified. **S09 C277 is split into two exact-character, still-UNKNOWN fragments**; source C291 remains role-sensitive and held. The C028 Bull-vs-Lana suspicion and S09 C129 role quarantine remain unresolved. No sounds/frames were independently reviewed by these edits.
+
+The authoring ledger is [research/manual-context-editorial-speaker-review-v16.json](research/manual-context-editorial-speaker-review-v16.json); the generic post-v15 apply/render is [tools/apply_manual_context_pilot_review_v16.py](tools/apply_manual_context_pilot_review_v16.py). All original dialogue and clocks are preserved and the v15 reader is not mutated. The private full-193 fan retrieval now reads the v16 output through the existing working screenplay selector. [Manual-current review queue](tools/plan_remaining_manual_v16_review.py) rebuilds the 100 source-unit P0/P1 review list with source-locator leads; older 130-unit queue stays as a historical v15 QA stage, not current fieldwork.
+
+**Actual scene prioritization:** Source listen to (1) S01 C028 speaker and C219 reply; (2) S09 C277 exact switch and bartender/real Alex cues; (3) S09 C305–306 roles against real voices even though the narrative inference is strong; (4) S09 C129 quarantine; (5) S09 C291 possible intra-cue switch. Then cluster remaining 21 S01 and 79 S09 cue windows, correcting false names as well as unresolved names. Before marking any scene editorially ready, add its photographed stage/reactions and genuinely heard delivery, and independently audit source-conserving performed speaker turns.
+
 # Two-pilot execution ledger (2026-10-26)
 
 **Scope:** original *Night Court* (1984–1992), S01E01 and S09E19. This ledger is the current short operational handoff; the longer documents remain historical evidence. Priority authority: [SCRIPT-PRIORITIES-AND-ACCEPTANCE-2026-10-25.md](SCRIPT-PRIORITIES-AND-ACCEPTANCE-2026-10-25.md).
