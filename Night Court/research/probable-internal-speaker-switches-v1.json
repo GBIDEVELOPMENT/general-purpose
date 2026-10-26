@@ -1,0 +1,82 @@
+{
+  "schema": "night-court-unresolved-internal-speaker-turn-review/1",
+  "written_date": "2026-10-25",
+  "purpose": "Prioritize probable P0 turn switches inside original subtitle/paragraph units; these are evidence-review questions, not accepted turns or speaker identifications",
+  "cues": [
+    {
+      "episode_id": "S01E01",
+      "original_cue": 219,
+      "split_before": "Yeah.",
+      "reason": "speaker reply signaled by a dash within an otherwise unsplit caption line; source-part may also need a new performance segment"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 102,
+      "split_before": "No, I've never seen",
+      "reason": "direct question followed by contradictory answer inside one original transcript paragraph"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 121,
+      "split_before": "Yeah, probably.",
+      "reason": "reply after another person's continuing sentence within one paragraph"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 127,
+      "split_before": "Well, thanks, Harriet.",
+      "reason": "named addressee and reply after another speaker completes sentence"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 146,
+      "split_before": "Yeah, thanks, Dan.",
+      "reason": "addressed Harry, then direct reply to Dan in same paragraph"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 206,
+      "split_before": "No, this whole thing",
+      "reason": "contrasting reply apparently switches from one person to another"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 209,
+      "split_before": "That's right, I mean",
+      "reason": "another short answer begins after preceding fragment"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 211,
+      "split_before": "Well, that outfit",
+      "reason": "question/reply transitions within one original transcript paragraph"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 271,
+      "split_before": "No, really.",
+      "reason": "bar scene contains rapid handback of bet money; may have more than two actual voices, boundary is partial"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 284,
+      "split_before": "Out of here.",
+      "reason": "interrupted question and response in one caption paragraph"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 290,
+      "split_before": "Was she?",
+      "reason": "identity pronoun farce likely switches voices within the paragraph"
+    },
+    {
+      "episode_id": "S09E19",
+      "original_cue": 291,
+      "split_before": "He was me.",
+      "reason": "identity pronoun farce likely switches voices within the paragraph"
+    }
+  ],
+  "no_source_cue_automatically_changed": true,
+  "no_character_assigned": true,
+  "independently_original_audio_reviewed": false
+}
