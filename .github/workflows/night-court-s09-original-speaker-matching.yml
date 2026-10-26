@@ -230,7 +230,7 @@ jobs:
           assert data['episodes']['S01E01']['source_blocks']>0
           assert data['episodes']['S09E19']['source_blocks']>0
           print('Validated both real held-caption working manuscripts without publishing private dialogue')
-          retrieval=base/'s09-current-private-fan-retrieval'
+          retrieval=base.parent/'s09-current-private-fan-retrieval'
           manifest=json.loads((retrieval/'fan-retrieval-manifest.json').read_text('utf-8'))
           assert manifest['episode_count']==193
           assert manifest['contains_original_source_dialogue'] is True
