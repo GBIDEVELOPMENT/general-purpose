@@ -1,0 +1,95 @@
+{
+  "schema": "night-court-s09e19-anonymous-contextual-turn-joins-v19/1",
+  "episode_id": "S09E19",
+  "parent_version": "Agent2-v18",
+  "parent_reader_path": "Night Court/seasons/S09/S09E19/derived/editorial-v18/S09E19-v18-editorial-reader.jsonl",
+  "parent_original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_347_units_untimed": true,
+  "source_dialogue_may_change": false,
+  "all_roles_held_constant": true,
+  "new_named_speaker_claims": 0,
+  "original_audio_or_continuous_film_consulted_for_turns": false,
+  "independent_performed_turns_certified": 0,
+  "join_proposals": [
+    {
+      "id": "SAFE-C120-C121-FIRST-VOICE",
+      "refs": [
+        "C120.1",
+        "S09-S09E19-C121-UNVERIFIED-TWO-VOICE-BOUNDARY-T01"
+      ],
+      "exact_texts": [
+        "Well, then there's probably nothing in there except some old photos and",
+        "letters."
+      ],
+      "required_existing_roles": [
+        null,
+        null
+      ],
+      "anonymous_turn_id": "S09-V19-UNKNOWN-SAFE-LETTERS",
+      "confidence": "high_dialogue_syntax_not_AV",
+      "rationale": "The first fragment of C121 is the final word of an unfinished sentence that begins in C120. The already-separate second C121 fragment ('Yeah, probably.') is a distinct answer and must never be pulled into this continuation."
+    },
+    {
+      "id": "HARRIET-COMMERCIAL-C128-C130",
+      "refs": [
+        "C128.1",
+        "C129.1",
+        "C130.1"
+      ],
+      "exact_texts": [
+        "I'll say.",
+        "I taped the wrong commercial, Norm's Auto World.",
+        "Now I'm the proud owner of a lime green Pacer."
+      ],
+      "required_existing_roles": [
+        null,
+        null,
+        null
+      ],
+      "anonymous_turn_id": "S09-V19-UNKNOWN-CAR-AD",
+      "confidence": "medium_high_dialogue_continuity_not_AV",
+      "rationale": "After Mac claims advertising power, a voice agrees and recounts taping the wrong commercial, then acquiring the Pacer. Harriet is a reasonable *alternative* for all three fragments based on preceding dialogue, but the C129 original-acoustic model output was explicitly quarantined; keep every fragment UNKNOWN, join provisionally as a single anonymous reply, and preserve C129 as an identity-review exception.",
+      "explicit_acoustic_quarantine_source_cue": "C129"
+    },
+    {
+      "id": "RESTAURANT-WAGER-C263-C265",
+      "refs": [
+        "C263.1",
+        "C264.1",
+        "C265.1"
+      ],
+      "exact_texts": [
+        "You win.",
+        "I lose.",
+        "As usual."
+      ],
+      "required_existing_roles": [
+        null,
+        null,
+        null
+      ],
+      "anonymous_turn_id": "S09-V19-UNKNOWN-WAGER-CONCESSION",
+      "confidence": "high_dialogue_syntax_not_AV",
+      "rationale": "A single first-person loser concedes the outcome of the wager in three short consecutive source paragraphs. Each sentence grammatically continues the same concession; no confidence in which actual restaurant/bar onlooker said it."
+    }
+  ],
+  "source_image_review": {
+    "artifact_id": 12544518469,
+    "source_window_ms": [
+      900000,
+      925000
+    ],
+    "sample_count": 100,
+    "nominal_fps": 4,
+    "source_frame_sha256_verified": 100,
+    "contact_sheet_sha256_verified": true,
+    "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+    "description_provenance": "directly inspected full contact sheet and checked recorded hashes; time offsets locate VIDEO picture only, not original transcript"
+  },
+  "expected_source_units": 347,
+  "expected_source_reading_blocks": 323,
+  "expected_fully_contextually_named": 273,
+  "expected_cues_with_unknown": 74,
+  "expected_provisional_display_groups": 234,
+  "expected_original_audio_certified_roles": 0
+}

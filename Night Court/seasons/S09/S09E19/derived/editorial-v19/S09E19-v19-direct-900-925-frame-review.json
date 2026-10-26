@@ -1,0 +1,75 @@
+{
+  "schema": "night-court-s09e19-v19-original-avi-sampled-image-900-925-direct-review/1",
+  "episode_id": "S09E19",
+  "source_avi_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_untimed_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "action_run": 40054491519,
+  "private_artifact_id": 12544518469,
+  "source_packet_index": "frame-source-index.json",
+  "sample_count": 100,
+  "nominal_four_frames_per_second": true,
+  "source_window_ms": [
+    900000,
+    925000
+  ],
+  "frame_sha256_verified": 100,
+  "frame_sha256_mismatch": 0,
+  "contact_sheet_sha256_verified": true,
+  "actual_original_avi_listened_or_continuously_played": false,
+  "performed_voice_and_actor_identity_verified": false,
+  "caption_times_invented": false,
+  "source_episode_visual_observations": [
+    {
+      "id": "COUNTER",
+      "frames": [
+        1,
+        53
+      ],
+      "source_interval_nominal_seconds": [
+        900,
+        913
+      ],
+      "description": "Counter conversation among a dark-uniformed adult, a gray-jacketed bespectacled adult and an adult in dark waistcoat/service shirt behind; several hand, torso and gaze changes as the uniformed participant brings hands toward the chest; a rear view then return to side-on view.",
+      "independent_character_identity": false
+    },
+    {
+      "id": "SEATED-REACTION",
+      "frames": [
+        54,
+        79
+      ],
+      "source_interval_nominal_seconds": [
+        913.25,
+        919.5
+      ],
+      "description": "Close view of curly-haired adult in a burgundy outfit with broad bright yellow collar seated beside a drinking glass; hands repeatedly move up to face or shoulder level, brows and head direction change, then hands lower.",
+      "independent_character_identity": false
+    },
+    {
+      "id": "BEARDED-REACTION",
+      "frames": [
+        80,
+        100
+      ],
+      "source_interval_nominal_seconds": [
+        919.75,
+        924.75
+      ],
+      "description": "Close view of a bearded adult with collared shirt, patterned tie and muted gray-brown jacket; facial expression progresses through a smile, with small head and mouth movements; no audio identity.",
+      "independent_character_identity": false
+    }
+  ],
+  "candidate_picture_cuts": [
+    [
+      53,
+      54
+    ],
+    [
+      79,
+      80
+    ]
+  ],
+  "cut_boundary_evidence": "different sampled camera views, not continuous original native-frame-accurate movie edit",
+  "source_text_audio_alignment_accepted": false,
+  "original_images_audio_or_video_committed": false
+}
