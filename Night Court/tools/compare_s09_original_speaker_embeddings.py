@@ -98,8 +98,11 @@ def read_alignment(path:Path)->dict:
     return report
 
 
-def prepare_eligible(record:dict, role_by_original_paragraph:dict[int,list[dict]])->dict:
+def prepare_eligible(record:dict, role_by_original_paragraph:dict[int,list[dict]],
+                     minimum_coverage:float=MIN_ALIGN_COVERAGE)->dict:
     """Source-bound single-voice *candidates* only; no accepted role claims."""
+    if not .48<=minimum_coverage<=1:
+        raise ValueError("Source lexical coverage must meet a positive evidence floor")
     sources={}
     declined=[]
     for sample in record["matches"]:
@@ -110,7 +113,7 @@ def prepare_eligible(record:dict, role_by_original_paragraph:dict[int,list[dict]
         matched=sample["exact_source_words_globally_matched"]
         if (n in UNRESOLVED_INTERNAL_SWITCHES
             or duration<MIN_QUERY_MS or duration>15_000
-            or coverage<MIN_ALIGN_COVERAGE or matched<MIN_QUERY_WORD_MATCH):
+            or coverage<minimum_coverage or matched<MIN_QUERY_WORD_MATCH):
             declined.append(n)
             continue
         candidates=role_by_original_paragraph.get(n,[])
@@ -159,6 +162,7 @@ def prepare_eligible(record:dict, role_by_original_paragraph:dict[int,list[dict]
         "original_source_paragraphs_total":347,
         "original_audio_paragraphs_with_candidate_windows":len(record["matches"]),
         "source_aligned_audio_windows_eligible_for_single_voice_comparison":len(sources),
+        "minimum_source_lexical_coverage_for_voice_reference":minimum_coverage,
         "potentially_multivoice_or_weak_alignment_rejected_count":len(declined),
         "candidate_reference_role_counts":{k:len(v) for k,v in chosen.items()},
         "reference_audio_windows":chosen,
@@ -168,17 +172,60 @@ def prepare_eligible(record:dict, role_by_original_paragraph:dict[int,list[dict]
     }
 
 
-def source_plan(root:Path, alignment:Path)->dict:
+def read_current_v8_speaker_roles(root:Path, private_v8:Path)->list[dict]:
+    """The current source-cue SHA-bound v8 provisional role bank.
+
+    Do not reinterpret context guesses as certified actors. Only use the
+    newer editorial names as acoustically testable candidate seed labels.
+    """
+    from build_original_audio_speaker_reader_v8 import OUTPUT_FILE, OUTPUT_REPORT
+    raw=(private_v8 / OUTPUT_FILE).read_bytes()
+    manifest=json.loads((private_v8 / OUTPUT_REPORT).read_text("utf-8"))
+    if (hashlib.sha256(raw).hexdigest()!=manifest.get("source_role_record_sha256")
+        or manifest.get("original_source_caption_units")!=751
+        or manifest.get("source_units_with_provisional_names")!=587
+        or manifest.get("original_units_still_unknown")!=164
+        or manifest.get("source_speaker_identities_human_verified_by_pass")!=0):
+        raise ValueError("Private v8 source characters not securely derived from held original caption")
+    rows=[json.loads(line) for line in raw.decode("utf-8").splitlines() if line.strip()]
+    source_rows=[r for r in rows if r["episode_id"]=="S09E19"]
+    _,cues=load_witness(root,"S09E19")
+    if len(cues)!=347:
+        raise ValueError("Original S09 source has missing paragraphs")
+    accounted=set()
+    for row in source_rows:
+        if row["original_source_sha256"]!=SOURCE_SHA:
+            raise ValueError("New character evidence conflicts with original S09 source")
+        if (row.get("actor_face_or_voice_independently_verified") is not False
+            or row.get("speaker_turn_boundary_verified") is not False):
+            raise ValueError("Reference role improperly declares AV actor ID certified")
+        for ref in row["original_source_part_refs"]:
+            if ref in accounted and ref!="C034.1":
+                raise ValueError("New provisional speaker source overlaps unsupported original cue")
+            accounted.add(ref)
+    if accounted!={f"C{i:03d}.1" for i in range(1,348)}:
+        raise ValueError("Original source S09 paragraph cue missing from expanded voice bank")
+    return source_rows
+
+
+def source_plan(root:Path, alignment:Path,
+                private_v8:Path|None=None,
+                minimum_coverage:float=MIN_ALIGN_COVERAGE)->dict:
     meta,cues=load_witness(root,"S09E19")
     if meta["sha256"]!=SOURCE_SHA or meta["timecoded"] is not False or len(cues)!=347:
         raise ValueError("Original source S09 text or time status drift")
-    rows=records_for_episode(root,"S09E19")
+    rows=(read_current_v8_speaker_roles(root,private_v8)
+          if private_v8 is not None else records_for_episode(root,"S09E19"))
     source_map={}
     for item in rows:
         for ref in item["original_source_part_refs"]:
             n=int(ref[1:4])
             source_map.setdefault(n,[]).append(item)
-    return prepare_eligible(read_alignment(alignment),source_map)
+    plan=prepare_eligible(read_alignment(alignment),source_map,
+                          minimum_coverage=minimum_coverage)
+    plan["voice_reference_source"]=("latest_587_named_v8_provisional_originals"
+                                    if private_v8 is not None else "older_v4_pilot_editorial_roles")
+    return plan
 
 
 def embed_original_source(media:Path, plan:dict, output:Path)->dict:
@@ -264,6 +311,9 @@ def embed_original_source(media:Path, plan:dict, output:Path)->dict:
             "original_actor_identity_independently_verified":0,
             "source_original_soundtrack_voice_embeddings_retained":False,
             "speaker_reference_roles_originally_provisional":True,
+            "voice_reference_source":plan.get("voice_reference_source"),
+            "minimum_source_lexical_coverage_for_voice_reference":
+                plan.get("minimum_source_lexical_coverage_for_voice_reference"),
             "model":"resemblyzer-0.1.4",
             "candidates":candidates,
         }
@@ -279,12 +329,17 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--source-alignment",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True)
+    p.add_argument("--v8-source-roles",type=Path,default=None,
+                   help="Current private source-checked 587-named character evidence root")
+    p.add_argument("--minimum-coverage",type=float,default=MIN_ALIGN_COVERAGE,
+                   help="Source–original-audio ASR lexical word coverage; 0.48 to 1.0")
     p.add_argument("--plan-only",action="store_true")
     p.add_argument("--ftp",action="store_true")
     a=p.parse_args()
     if a.output.resolve().is_relative_to(ROOT.resolve()):
         raise ValueError("Original source audio evidence cannot be written into repository")
-    plan=source_plan(ROOT,a.source_alignment)
+    plan=source_plan(ROOT,a.source_alignment,private_v8=a.v8_source_roles,
+                     minimum_coverage=a.minimum_coverage)
     if a.plan_only:
         a.output.parent.mkdir(parents=True,exist_ok=True)
         a.output.write_text(json.dumps(plan,ensure_ascii=False,indent=2)+"\n","utf-8")
