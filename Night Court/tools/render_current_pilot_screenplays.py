@@ -50,7 +50,6 @@ def check_source(rows, manifest, binary, witnesses):
         raise ValueError("Private v15 source-first manifest/count drift")
     roles = defaultdict(set)
     blocks = set()
-    last = (-1, 0)
     for row in rows:
         ep = row.get("episode_id")
         if ep not in SOURCE:
@@ -76,10 +75,6 @@ def check_source(rows, manifest, binary, witnesses):
         if ep=="S09E19" and (row.get("source_original_times_ms") is not None
                              or row.get("original_source_untimed") is not True):
             raise ValueError("Invented original S09 timing")
-        pos=(list(SOURCE).index(ep),numbers[0])
-        if pos<last:
-            raise ValueError(f"Original episode cue order changed at {row.get('reading_block_id')}: {last} -> {pos}")
-        last=pos
         bid=row.get("reading_block_id")
         if not isinstance(bid,str) or not bid or bid in blocks:
             raise ValueError("Missing/repeated source reading block")
@@ -116,9 +111,22 @@ def display_join(left, right):
             return False
     return True
 
+def original_reading_order(rows):
+    """Stable source cue/part order for presentation, not a v15 source rewrite.
+
+    Contextual-role patches in the v15 chain can append older S01 cue rows
+    after all S09 rows. The private input SHA and row IDs remain unchanged.
+    """
+    def key(numbered):
+        original_index, row = numbered
+        refs = row["original_source_part_refs"]
+        first = min((int(ref[1:4]), int(ref[5])) for ref in refs)
+        return (list(SOURCE).index(row["episode_id"]), *first, original_index)
+    return [row for _,row in sorted(enumerate(rows),key=key)]
+
 def group_rows(rows, compact=True):
     result={ep:[] for ep in SOURCE}
-    for row in rows:
+    for row in original_reading_order(rows):
         groups=result[row["episode_id"]]
         if compact and groups and display_join(groups[-1][-1],row):
             groups[-1].append(row)
