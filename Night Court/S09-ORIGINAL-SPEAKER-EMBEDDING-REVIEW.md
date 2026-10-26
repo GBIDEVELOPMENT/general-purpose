@@ -63,3 +63,22 @@ python 'Night Court/tools/compare_s09_original_speaker_embeddings.py' \
   --minimum-coverage 0.72 \
   --output /private/night-court-current-source-speaker-plan.json --plan-only
 ```
+
+## Third source-AV run: role-specific holdout and source-scene contradictions
+
+The owner-authorized, trusted reviewed-main source run [#40369473866](https://github.com/gamesbyian/general-purpose/actions/runs/40369473866) checked the original S09 soundtrack against the current 619-name role reader. It confirmed 28 eligible reference windows across Christine (12), Dan (5), Mac (4), and Roz (7), and measured 18 as-yet-UNKNOWN source-audio windows. The overall provisional-reference leave-one-out score improved from 18/26 to **20/28**. Its per-role error distribution is much more informative:
+
+| Provisional character bank | Correct / tested | Within-bank accuracy |
+|---|---:|---:|
+| Christine Sullivan | 10/12 | 83.3% |
+| Roz Russell | 7/7 | 100% |
+| Dan Fielding | 2/5 | 40% |
+| Mac Robinson | 1/4 | 25% |
+
+These are comparisons to other **provisional transcript-derived labels**, not independently certified actor recordings. Dan's and Mac's scores show that an aggregate pass can conceal severe character-specific unreliability. The new gate requires **at least four tested original-source examples and at least 75% character-specific holdout accuracy** before a role can even be suggested for an editor's later audiovisual review. All preexisting whole-model similarity and margin thresholds remain in force.
+
+Only two of the 18 previously UNKNOWN audio windows produced suggestions above the old similarity/margin thresholds. **Both suggested Christine**, at original source C129 and C262, but **neither should be promoted**. C129 is the speaker who watched the wrong advertisement and bought a lime-green Pacer, not the candidate whose commercial was airing. C262 belongs to the bar's Alex/Roz stand-in storyline, not Christine's election-campaign conversation. The original alignment remains machine-estimated and could also explain wrong-voice embeddings. Both cue/role conflicts are explicitly quarantined by the model-output gate, and C129 continues the earlier false-positive abstention.
+
+The third-run numeric report keeps original source film SHA, 347 untimed source paragraphs, audio PCM receipt and prior original 231-paragraph locator SHA. It includes no retained audio, film frames, voiceprints or independently confirmed actor identities. The same owner-trigger produced duplicate completed workflow runs after both synchronize and reopen events; the inert [trigger PR #455](https://github.com/gamesbyian/general-purpose/pull/455) was subsequently closed without merge. Do not repeat an expensive full-film source run just to recompute these deterministic rejection decisions.
+
+**Outcome: 0 new authenticated or even responsibly promotable speaker names from this third run.** The source-first corpus remains **619 provisionally named / 132 UNKNOWN of 751 original caption units**. Every original subtitle source and S09's lack of authentic source timestamps is unchanged.
