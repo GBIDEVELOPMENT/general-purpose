@@ -129,3 +129,43 @@ jobs:
           rm -f '${{ runner.temp }}/nc-s01e01-original-acoustic-speaker-proposals.json'
           rm -f /tmp/night-court-verified-speaker-source-plan.json
           rm -rf /tmp/night-court-speaker-voiceenv
+
+  summarize-original-speaker-source-without-media:
+    needs: trusted-original-source-speaker-embedding
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      needs.trusted-original-source-speaker-embedding.result == 'success' &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.ref == 'research/night-court-owner-speaker-embedding-trigger'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      actions: read
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: night-court-s01e01-original-voice-embedding-review-proposals
+          path: ${{ runner.temp }}/original-voice-evidence
+      - name: Report only counts, heldout diagnostic and original-voice nonacceptance
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PULL: ${{ github.event.pull_request.number }}
+          EVIDENCE: ${{ runner.temp }}/original-voice-evidence/nc-s01e01-original-acoustic-speaker-proposals.json
+        run: |
+          set -euo pipefail
+          test -f "$EVIDENCE"
+          EQ=$(jq -r '.unknown_caption_units_with_usable_original_pcm' "$EVIDENCE")
+          LABELS=$(jq -r '.provisional_acoustic_identity_proposals' "$EVIDENCE")
+          VALID=$(jq -r '.holdout.evaluated_provisional_known_voice_samples' "$EVIDENCE")
+          CORRECT=$(jq -r '.holdout.correctly_recovered_held_out_provisional_roles' "$EVIDENCE")
+          SUITABLE=$(jq -r '.minimum_proposal_eligibility_criteria_met' "$EVIDENCE")
+          SOURCE=$(jq -r '.source_video_sha256' "$EVIDENCE")
+          test "$SOURCE" = '5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962'
+          test "$(jq -r '.actor_character_identities_independently_confirmed' "$EVIDENCE")" = '0'
+          gh api --method POST "repos/$REPO/issues/$PULL/comments" \
+            -f body="Original Night Court S01 voice-embedding pilot result: $EQ usable originally UNKNOWN cue audio windows, $LABELS unverified model-similarity role proposals, held-out provisional-role comparison $CORRECT/$VALID, proposal eligibility=$SUITABLE. ZERO actor identities independently AV confirmed. Numeric source-bounded evidence retained privately in this run artifact for 7 days; no episode audio/voiceprints retained. Do not merge trigger PR."
+      - name: Remove private numeric evidence
+        if: always()
+        run: rm -rf '${{ runner.temp }}/original-voice-evidence'
