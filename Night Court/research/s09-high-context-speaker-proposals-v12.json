@@ -1,0 +1,139 @@
+{
+  "schema": "night-court-original-s09-contextual-speaker-reading-v12/1",
+  "episode_id": "S09E19",
+  "original_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "prior_reader_version": "v11",
+  "original_caption_source_units": 751,
+  "prior_named_proposals": 595,
+  "prior_unknown_units": 156,
+  "contextual_name_proposals_are_independently_original_audio_verified": false,
+  "original_dialogue_and_source_timestamps_change": false,
+  "original_p0_speaker_boundaries_independently_av_verified": false,
+  "source_subtitle_witness_is_originally_untimed": true,
+  "rationale": "Small deliberately chosen speaker role interpretations from explicit address, same-person paragraph continuation, character plot continuity and cross-scene character identities. These are usable working script names, not reviewed actor voice identities.",
+  "candidates": [
+    {
+      "source_reading_ref": "C091.1",
+      "original_source_part_refs": [
+        "C091.1"
+      ],
+      "proposed_role": "CHRISTINE SULLIVAN",
+      "source_text_must_contain": "Sure, I'll go.",
+      "reason": "Christine was just addressed by Dan, and the answer directly accepts his dinner invitation; editorial scene-dialogue inference, not acoustic voice matching",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C092.1",
+      "original_source_part_refs": [
+        "C092.1"
+      ],
+      "proposed_role": "DAN FIELDING",
+      "source_text_must_contain": "What you doing?",
+      "reason": "Episode subplot features Dan and Harry discovering the safe; Harry answers in the next source cue that he is reading legal texts",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C099.1",
+      "original_source_part_refs": [
+        "C099.1"
+      ],
+      "proposed_role": "DAN FIELDING",
+      "source_text_must_contain": "Look at that. A safe?",
+      "reason": "Harry identifies the book as his own unexpected trigger in C100–C101, and this question addresses the person who uncovered the safe",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C125.1",
+      "original_source_part_refs": [
+        "C125.1"
+      ],
+      "proposed_role": "HARRIET",
+      "source_text_must_contain": "If there was ever any doubt about my vote",
+      "reason": "Same campaign-endorsement speech as C126; C127 explicitly addresses the speaker as Harriet",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C126.1",
+      "original_source_part_refs": [
+        "C126.1"
+      ],
+      "proposed_role": "HARRIET",
+      "source_text_must_contain": "Mac, your commercial inspired",
+      "reason": "Directly names Mac as addressee and is followed by Mac thanking Harriet in the next mixed-voice cue",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C134.1–C135.1",
+      "original_source_part_refs": [
+        "C134.1",
+        "C135.1"
+      ],
+      "proposed_role": "BULL SHANNON",
+      "source_text_must_contain": "I'm pledging my entire piggy",
+      "reason": "Speaker offers his piggy bank to Christine and continues in Bull's source-attributed $40,000 joke in C138–C139",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C268.1",
+      "original_source_part_refs": [
+        "C268.1"
+      ],
+      "proposed_role": "ALEX PATTERSON",
+      "source_text_must_contain": "Yeah. I bought stock in Earthshoes.",
+      "reason": "Reply to Roz's C266–C267 continuing confession; the two characters are subsequently established in this same bar conversation as Roz and the real Alex",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C298.1",
+      "original_source_part_refs": [
+        "C298.1"
+      ],
+      "proposed_role": "ALEX PATTERSON",
+      "source_text_must_contain": "Mind if I sit down?",
+      "reason": "Follows Alex's explanation that he hired a stand-in and precedes his apology to Roz; speaker asking to join her at the table",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C299.1",
+      "original_source_part_refs": [
+        "C299.1"
+      ],
+      "proposed_role": "ROZ RUSSELL",
+      "source_text_must_contain": "It's a good idea.",
+      "reason": "Answer to the request to sit in C298 followed immediately by Roz apologizing to Alex in C300–C301",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C335.1",
+      "original_source_part_refs": [
+        "C335.1"
+      ],
+      "proposed_role": "DAN FIELDING",
+      "source_text_must_contain": "if it's cash, the straight 50-50 split",
+      "reason": "Harry–Dan safe subplot: cash-split opener responds to Harry's interest in magical memorabilia and Dan's established profit motive",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C336.1–C337.1",
+      "original_source_part_refs": [
+        "C336.1",
+        "C337.1"
+      ],
+      "proposed_role": "HARRY STONE",
+      "source_text_must_contain": "I get all Houdini-related memorabilia",
+      "reason": "Harry's established fascination with magic matches the Houdini-memorabilia side of the split while Dan receives kompromat",
+      "source_actor_or_performer_independently_audio_verified": false
+    },
+    {
+      "source_reading_ref": "C340.1–C341.1",
+      "original_source_part_refs": [
+        "C340.1",
+        "C341.1"
+      ],
+      "proposed_role": "DAN FIELDING",
+      "source_text_must_contain": "I've already had some knocks in the market",
+      "reason": "Dan argues for liquid financial assets and stock-market loss in Harry–Dan safe subplot; contextual person-role inference",
+      "source_actor_or_performer_independently_audio_verified": false
+    }
+  ]
+}
