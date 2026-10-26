@@ -243,3 +243,20 @@ python 'Night Court/tools/export_fan_retrieval_chunks.py' \
 ```
 
 The next useful acoustic challenge should include **out-of-set negative references** (named character voices the model cannot train on) to estimate how often it confidently mistakes Harry/Bull/guest voices for Christine, Roz, Dan or Mac. Prefer original-local sound/film listening or correctly versioned production scripts for ambiguous cameo roles, and do not use repeated model agreement to certify a character name.
+
+## Current working review queue: 161 unidentified original units (v9 truth)
+
+[Source-first generator](tools/build_s09_source_acoustic_speaker_reader_v9.py) now conservatively emits the 590-named / 161-UNKNOWN provisional speaker evidence ledger, and C129 remains deliberately UNKNOWN despite its S09 acoustic out-of-set suspicion. The previous **164-unit** queue is a historical v8 snapshot, **not** the current P0/P1 work assignment.
+
+Run the same lossless and SHA-bound review planner with `--speaker-v9-root` rather than an outdated v8 reader:
+
+```sh
+python 'Night Court/tools/plan_next_speaker_review_v9.py' \
+  --speaker-v9-root /tmp/night-court-private-source-audio-speaker-v9 \
+  --s09-original-audio-locator /private/night-court-s09-original-audio-paragraph-locators.json \
+  --output /private/night-court-original-speaker-next-161
+```
+
+It produces `remaining-161-speaker-review.jsonl` and a summary in that **private outside-repository** directory. The full preserved S01 SRT cue offsets and 231 candidate original-S09 soundtrack audio positions are review *pointers* only. A newly ranked **P0 same-speaker continuation question** involves S09 C266→C267: the first paragraph's incomplete sentence flows grammatically into the next, which is provisionally attributed to Roz via an original soundtrack embedding result. The queue flags that as a candidate *one continuing speaking turn*, but **does not automatically label C266 as Roz or count it resolved**, because actual original voice identity and possible interruption remain unreviewed. The next source reviewer can check the scene and then apply a proper source-preserving same-turn merge, potentially resolving a missing name with one source operation.
+
+All 161 unknown source units, duplicate/invalid original role parts, original caption text, original S09 untimed status and audio-alignment report exact digests are covered by the lightweight real-source non-media CI contract. The original 751 source unit denominator is fixed; true actor performance speaking-turn count can differ after P0 adjudication.
