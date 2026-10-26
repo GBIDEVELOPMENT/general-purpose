@@ -105,7 +105,9 @@ def display_join(left, right):
     if (left["episode_id"]!=right["episode_id"] or
         left.get("candidate_role") is None or
         left.get("candidate_role")!=right.get("candidate_role") or
-        set(left["original_source_part_refs"]) & set(right["original_source_part_refs"])):
+        set(left["original_source_part_refs"]) & set(right["original_source_part_refs"]) or
+        {int(ref[1:4]) for ref in left["original_source_part_refs"]} &
+        {int(ref[1:4]) for ref in right["original_source_part_refs"]}):
         return False
     # Protect large genuine S01 cue gaps from being formatted as one utterance.
     if left["episode_id"]=="S01E01":
