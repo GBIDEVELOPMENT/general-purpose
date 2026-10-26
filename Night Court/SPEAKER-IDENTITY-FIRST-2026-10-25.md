@@ -308,3 +308,15 @@ python 'Night Court/tools/export_fan_retrieval_chunks.py' \
 ```
 
 This is **NOT** evidence that twelve new voices have been heard or verified. The named-source-unit denominator is not the number of true performed turns after all intra-cue speaker splits, and the full 0/193 independent audiovisual episode certifications remain unaffected.
+
+## Original S09 explicit actor handoffs, source-first v13
+
+The v12 contextual reader provides 610 provisional names but still treats some original paragraphs containing more than one character's lines as single UNKNOWN turns. Three P0 split-and-join operations can be reconstructed directly from source dialogue and **named addressees**, with each original source character retained under an exact Unicode offset:
+
+- **C126→C127:** Harriet's Congress endorsement continues into the first two characters of C127, after which Mac clearly thanks **Harriet** and comments on advertising. Join the Harriet sentence across C126/C127 and split Mac into his own following speaking turn.
+- **C146:** Dan offers to pull Harry's loose tooth; **Harry replies thanking Dan** in the same held source paragraph. Two proposed characters, two exact source text fragments.
+- **C284:** Alex asks for his interlocutor's name, and **Roz abruptly says she's leaving** in the same source paragraph. Two proposed characters, two exact source text fragments.
+
+The human/film acoustic adjudication remains **pending**, despite unusually strong textual turn and character evidence. All six newly rendered performance/actor labels are **editable source-context hypotheses**, not certified film turns or audiovisual cast IDs. [Explicit source-turn proposals](research/s09-explicit-address-speaker-turns-v13.json) preserve the immutability of the original 347 UNTIMED S09 witness paragraphs. The deterministic [v13 private source reader](tools/build_s09_explicit_handoff_turns_v13.py) reproduces every source cue's original Unicode string exactly and refuses any modified prior named role, missing original cue, duplicated/missing source characters or fake AV acceptance.
+
+This gives **613 provisional named / 138 UNKNOWN of 751 original cue-derived source units** and **718 proposed true-speaking-turn reading blocks** across the two pilots. That higher turn-block count reflects editorial source span regrouping, **not independent verification of a new actor or one-to-one equivalence between subtitle cues and performed turns**. All other prior source and v12 character roles remain unchanged. The all-193 episode fan retrieval and private SQLite index use the latest v13 source-first manuscript and consistent role evidence, while existing frozen v5 rich staged scripts remain untouched.
