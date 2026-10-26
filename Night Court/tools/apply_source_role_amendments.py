@@ -90,8 +90,8 @@ def apply(rows:list[dict],ledger:dict,strict:bool=True)->tuple[list[dict],dict]:
     for row in rows:
         for ref in row["original_source_part_refs"]:
             before[(row["episode_id"],ref)].add(row["candidate_role"])
-    if strict and (len(rows),len(old_ids),
-        sum(None not in roles for roles in before.values()))!=(718,751,613):
+    baseline_named=sum(None not in roles for roles in before.values())
+    if strict and (len(rows),len(old_ids),baseline_named)!=(718,751,613):
         raise ValueError("Prior original source speaker role document changed unexpectedly")
     for row in updated:
         key=row["episode_id"],row["source_reading_ref"]
@@ -130,8 +130,8 @@ def apply(rows:list[dict],ledger:dict,strict:bool=True)->tuple[list[dict],dict]:
         raise ValueError("Source role amendment lost or created original cue/turn")
     named=sum(None not in roles for roles in final.values())
     changed_source_units=sum(len(p["original_source_part_refs"]) for p in patches.values())
-    if (named!=613+changed_source_units or
-        len(final)-named!=138-changed_source_units):
+    if (named!=baseline_named+changed_source_units or
+        len(final)-named!=len(old_ids)-baseline_named-changed_source_units):
         raise ValueError("Source role patch reassignments did not resolve expected UNKNOWN cue parts")
     report={
         "schema":SCHEMA,
