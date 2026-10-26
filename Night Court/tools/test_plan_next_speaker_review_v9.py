@@ -57,6 +57,33 @@ class RemainingSpeakerReviewTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"must remain untimed"):
             make_queue(rows,{},{"cues":[]},strict=False)
 
+    def test_source_sentence_continuation_is_prioritized_without_guessing_speaker(self):
+        rows=[
+            row("S09E19","C266.1",None,
+                "You ever make a huge mistake you knew you were going to end up regretting"),
+            row("S09E19","C267.1","ROZ RUSSELL",
+                "every minute for the rest of your life?"),
+        ]
+        tasks,report=make_queue(rows,{},{"cues":[]},strict=False)
+        self.assertEqual(report["original_source_units_still_unknown"],1)
+        self.assertEqual(report["possible_unknown_to_named_same_sentence_continuation_reviews"],1)
+        self.assertIn("possible_same_voice_sentence_continuation_to_next_named_cue_P0",
+                      tasks[0]["reasons"])
+        candidate=tasks[0]["adjacent_source_sentence_continuation_candidate_not_auto_attributed"]
+        self.assertEqual(candidate["next_provisional_role_not_verified"],"ROZ RUSSELL")
+        self.assertIsNone(tasks[0]["model_proposed_character"])
+        self.assertFalse(candidate["actual_original_audio_review_done"])
+        self.assertTrue(tasks[0]["all_original_S09_caption_times_remain_null"])
+
+    def test_new_v9_privacy_sha_required(self):
+        from plan_next_speaker_review_v9 import load_private_v9
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            (root/"pilot-current-source-first-s09-audio-v9.jsonl").write_text("{}\\n","utf-8")
+            (root/"pilot-current-speaker-s09-audio-v9-manifest.json").write_text("{}","utf-8")
+            with self.assertRaisesRegex(ValueError,"v9 source-role ledger"):
+                load_private_v9(root)
+
     def test_private_original_audio_numeric_sha_required(self):
         with tempfile.TemporaryDirectory() as folder:
             p=Path(folder)/"real-source.json"
