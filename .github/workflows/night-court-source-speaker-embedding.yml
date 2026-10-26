@@ -1,0 +1,107 @@
+name: Night Court speaker identity SHA-pinned original audio probe
+
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/compare_original_speaker_embeddings.py'
+      - 'Night Court/tools/test_compare_original_speaker_embeddings.py'
+      - '.github/workflows/night-court-source-speaker-embedding.yml'
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-source-speaker-embedding.txt'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: night-court-speaker-original-${{ github.event_name == 'pull_request_target' && 'trusted-owner-source' || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  offline-source-speaker-matching-contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Source-free role embedding tests
+        run: |
+          python 'Night Court/tools/test_compare_original_speaker_embeddings.py' -v
+      - name: Prepare actual 1984 pilot role/unknown source selection without secrets or audio
+        run: |
+          python 'Night Court/tools/compare_original_speaker_embeddings.py' \
+            --plan-only \
+            --output /tmp/night-court-source-speaker-plan.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('/tmp/night-court-source-speaker-plan.json').read_text('utf-8'))
+          assert p['episode_id']=='S01E01'
+          assert p['original_movie_sha256_required']=='5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962'
+          assert p['source_unidentified_candidates_timeable']>0
+          assert len(p['selected_reference_voice_roles'])>=3
+          assert p['source_identity_acceptances']==0
+          print('Real S01E01 anchors and unidentified cues selected; no media requested')
+          PY
+
+  trusted-original-source-speaker-embedding:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-owner-speaker-embedding-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - name: Checkout current trusted base only, never PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate original witness and deterministic source plan before secrets
+        run: |
+          python 'Night Court/tools/test_compare_original_speaker_embeddings.py' -v
+          python 'Night Court/tools/compare_original_speaker_embeddings.py' \
+            --plan-only --output /tmp/night-court-verified-speaker-source-plan.json
+      - name: Install pinned local-only voice embedding inference dependencies
+        run: |
+          set -euo pipefail
+          if ! command -v ffmpeg >/dev/null; then
+            timeout 180 sudo apt-get update -qq
+            timeout 180 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
+          fi
+          python -m venv /tmp/night-court-speaker-voiceenv
+          timeout 480 /tmp/night-court-speaker-voiceenv/bin/pip install --disable-pip-version-check -q \
+            'torch==2.7.1' --index-url https://download.pytorch.org/whl/cpu
+          timeout 360 /tmp/night-court-speaker-voiceenv/bin/pip install --disable-pip-version-check -q \
+            'resemblyzer==0.1.4' 'numpy==1.26.4'
+      - name: Process one pinned original AVI privately into derived speaker similarity proposals
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: |
+          set -euo pipefail
+          timeout 900 /tmp/night-court-speaker-voiceenv/bin/python -u \
+            'Night Court/tools/compare_original_speaker_embeddings.py' \
+            --ftp --output '${{ runner.temp }}/nc-s01e01-original-acoustic-speaker-proposals.json'
+      - name: Retain only compact source-hash-bound numeric suggestions for review
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-s01e01-original-voice-embedding-review-proposals
+          path: ${{ runner.temp }}/nc-s01e01-original-acoustic-speaker-proposals.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Wipe speaker-acoustic numeric output, model cache and transient python env
+        if: always()
+        run: |
+          rm -f '${{ runner.temp }}/nc-s01e01-original-acoustic-speaker-proposals.json'
+          rm -f /tmp/night-court-verified-speaker-source-plan.json
+          rm -rf /tmp/night-court-speaker-voiceenv
