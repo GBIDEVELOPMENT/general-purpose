@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 from compare_s09_original_speaker_embeddings import (
     SCHEMA, ALIGNMENT_REPORT_SHA, VIDEO_SHA, PCM_SHA,
-    MIN_QUERY_MS, prepare_eligible, read_alignment,
+    MIN_QUERY_MS, prepare_eligible, read_alignment,validate_latest_source_role_parts,
 )
 
 
@@ -95,6 +95,48 @@ class OriginalS09VoicePlanTests(unittest.TestCase):
         self.assertTrue(relaxed["original_paragraphs_remain_untimed"])
         with self.assertRaises(ValueError):
             prepare_eligible({"matches":seen},current,minimum_coverage=.10)
+
+    def test_new_current_original_source_role_bank_never_seeds_mixed_cue_voices(self):
+        rows=[]
+        for n in range(1,35):
+            x=reading(n,"PAUL" if n>=29 else "CHRISTINE SULLIVAN")
+            x.update({"episode_id":"S09E19",
+                      "original_source_sha256":
+                         "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+                      "source_original_times_ms":None,
+                      "original_source_untimed":True})
+            rows.append(x)
+        split=copy.deepcopy(rows[-1])
+        split["candidate_role"]="DAN FIELDING"
+        rows.append(split)
+        indexed=validate_latest_source_role_parts(rows,required=34)
+        self.assertEqual(len(indexed),34)
+        self.assertEqual(len(indexed[34]),2)
+        fake={"matches":[aligned(x) for x in range(26,35)]}
+        pool=prepare_eligible(fake,indexed)
+        self.assertNotIn(34,[x["original_source_paragraph"]
+                              for x in pool["reference_audio_windows"].get("PAUL",[])])
+        self.assertEqual(pool["candidate_reference_role_counts"],{"PAUL":5})
+        broken=copy.deepcopy(rows)
+        broken[0]["actor_face_or_voice_independently_verified"]=True
+        with self.assertRaisesRegex(ValueError,"unexpectedly certified"):
+            validate_latest_source_role_parts(broken,required=34)
+        broken=copy.deepcopy(rows)
+        broken[0]["source_original_times_ms"]=[123,456]
+        with self.assertRaisesRegex(ValueError,"unexpectedly certified"):
+            validate_latest_source_role_parts(broken,required=34)
+        broken=copy.deepcopy(rows)
+        broken[0]["original_source_sha256"]="a"*64
+        with self.assertRaisesRegex(ValueError,"unexpectedly certified"):
+            validate_latest_source_role_parts(broken,required=34)
+        broken=copy.deepcopy(rows)
+        broken[-1]["original_source_part_refs"]=["C033.1"]
+        with self.assertRaisesRegex(ValueError,"Unsupported duplicated"):
+            validate_latest_source_role_parts(broken,required=34)
+        broken=copy.deepcopy(rows)
+        broken.pop(0)
+        with self.assertRaisesRegex(ValueError,"omitted"):
+            validate_latest_source_role_parts(broken,required=34)
 
     def test_exact_original_report_sha_and_source_status_fail_closed(self):
         fake={
