@@ -4,23 +4,21 @@ on:
   pull_request:
     paths:
       - '.github/workflows/night-court-private-working-drafts.yml'
-      - 'Night Court/research/manual-context-editorial-speaker-review-v16.json'
-      - 'Night Court/research/source-role-amendments-v1.json'
-      - 'Night Court/research/source-turn-amendments-v1.json'
-      - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
-      - 'Night Court/tools/plan_remaining_manual_v16_review.py'
-      - 'Night Court/tools/export_fan_retrieval_chunks.py'
+      - 'Night Court/research/**'
+      - 'Night Court/tools/**'
+      - 'Night Court/seasons/**'
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - '.github/workflows/night-court-private-working-drafts.yml'
-      - 'Night Court/research/manual-context-editorial-speaker-review-v16.json'
-      - 'Night Court/research/source-role-amendments-v1.json'
-      - 'Night Court/research/source-turn-amendments-v1.json'
-      - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
-      - 'Night Court/tools/plan_remaining_manual_v16_review.py'
-      - 'Night Court/tools/export_fan_retrieval_chunks.py'
+      - 'Night Court/research/**'
+      - 'Night Court/tools/**'
+      - 'Night Court/seasons/**'
+
+concurrency:
+  group: night-court-private-pilots-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -61,51 +59,10 @@ jobs:
             --v16-root "$T/deliverable" --output "$T/deliverable/private-review"
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
             --working-pilot-root "$T/deliverable" --output "$T/deliverable/private-fan-retrieval"
-      - name: Validate private working screenplay digest and source conservation
+      - name: Validate private manuscripts, coverage, review queue, and complete fan corpus
         run: |
-          python - <<'PY'
-          import hashlib,json,os
-          from pathlib import Path
-          out=Path(os.environ['RUNNER_TEMP'])/'night-court-pilot-v15'/'deliverable'
-          m=json.loads((out/'working-screenplay-layout-manifest.json').read_text('utf-8'))
-          assert m['source_unit_counts']=={'original_source_units':751,'named_provisional':651,'unknown':100}
-          assert m['schema']=='night-court-private-pilot-screenplay-layout/2'
-          assert m['new_independently_verified_actor_voices']==0
-          assert m['new_independently_verified_performed_turns']==0
-          assert m['scene_review_complete'] is False
-          total=0
-          for ep,n in [('S01E01',405),('S09E19',322)]:
-              draft=out/f'{ep}-working-screenplay.md'
-              side=out/f'{ep}-working-screenplay-provenance.jsonl'
-              assert draft.exists() and side.exists()
-              assert hashlib.sha256(draft.read_bytes()).hexdigest()==m['manuscript_sha256'][ep]
-              rows=[json.loads(x) for x in side.read_text('utf-8').splitlines()]
-              assert len(rows)==n==m['episodes'][ep]['source_blocks']
-              assert all(r['actual_original_av_reviewer_accepted'] is False for r in rows)
-              if ep=='S09E19':
-                  assert all(r['source_cue_times_not_subturn_times_ms'] is None for r in rows)
-              total+=len(rows)
-              print(ep,'source reader blocks',n,'display groups',m['episodes'][ep]['display_groups'])
-          assert total==727
-          pending=json.loads((out/'private-review'/'remaining-100-speaker-review-summary.json').read_text('utf-8'))
-          assert pending['original_source_units_still_unknown']==100
-          assert pending['remaining_unknown_original_source_units_by_episode']=={'S01E01':21,'S09E19':79}
-          assert pending['s09_candidate_audio_locator_loaded'] is False
-          assert pending['new_voices_human_accepted']==0
-          print('Both private complete-dialogue working drafts verified; NO AV certifications.')
-          retrieval=out/'private-fan-retrieval'
-          fan=json.loads((retrieval/'fan-retrieval-manifest.json').read_text('utf-8'))
-          assert fan['episode_count']==193
-          assert fan['chunk_count']>193
-          assert fan['all_speakers_and_staging_provisional'] is True
-          assert fan['contains_original_source_dialogue'] is True
-          pilots={e['episode_id']:e for e in fan['episodes'] if e['episode_id'] in ('S01E01','S09E19')}
-          assert set(pilots)=={'S01E01','S09E19'}
-          assert all(e['evidence_tier']=='provisional_source_first_chronological_screenplay_layout' for e in pilots.values())
-          assert sum(e['evidence_tier']=='source_only_dialogue_scaffold' for e in fan['episodes'])==191
-          assert all(pilots[ep]['script_sha256']==m['manuscript_sha256'][ep] for ep in pilots)
-          print('Private all-193 fan corpus generated, chronological current pilot scripts, 191 historical source-only readers.')
-          PY
+          python 'Night Court/tools/validate_private_pilot_snapshot.py' \
+            --snapshot "${RUNNER_TEMP}/night-court-pilot-v15/deliverable"
           cat > "${RUNNER_TEMP}/night-court-pilot-v15/deliverable/READ_ME_FIRST.txt" <<'NOTE'
           Original Night Court 1984-1992, private EDITORIAL WORKING DRAFTS only.
           V16 adds 32 contextual speaker assignments, two reversed names corrected,
@@ -154,47 +111,42 @@ jobs:
         with:
           name: night-court-original-pilot-working-screenplays-private
           path: ${{ runner.temp }}/night-court-current-private-snapshot
-      - name: Check provenance and persist exact private working output
+      - name: Refuse stale workflow run before replacing committed manuscripts
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          # Checkout reflects the *generation* revision, not whichever commit
+          # happens to be main by the time publication finishes.
+          test "$(git rev-parse HEAD)" = "${{ github.sha }}" || {
+            echo "::error::Publisher checked out a different revision from generator"; exit 1;
+          }
+          test "$(git rev-parse origin/main)" = "${{ github.sha }}" || {
+            echo "::error::Main advanced during generation. Refusing stale snapshot overwrite."; exit 1;
+          }
+      - name: Validate and persist exact private working output
         env:
           SNAPSHOT: ${{ runner.temp }}/night-court-current-private-snapshot
         run: |
           set -euo pipefail
-          python - <<'PY'
-          import hashlib, json, os
-          from pathlib import Path
-          src=Path(os.environ['SNAPSHOT'])
-          m=json.loads((src/'working-screenplay-layout-manifest.json').read_text())
-          assert m['source_unit_counts']=={'original_source_units':751,'named_provisional':651,'unknown':100}
-          assert m['new_independently_verified_actor_voices']==0
-          assert m['new_independently_verified_performed_turns']==0
-          assert not m['scene_review_complete']
-          for episode in ('S01E01','S09E19'):
-              p=src/(episode+'-working-screenplay.md')
-              assert hashlib.sha256(p.read_bytes()).hexdigest()==m['manuscript_sha256'][episode]
-          assert (src/'private-fan-retrieval'/'fan-retrieval-manifest.json').is_file()
-          files=[p for p in src.rglob('*') if p.is_file()]
-          assert all(p.suffix in ('.md','.json','.jsonl','.txt') for p in files)
-          assert all(p.stat().st_size < 30_000_000 for p in files)
-          assert sum(p.stat().st_size for p in files) < 85_000_000
-          print('Validated private text-only snapshot:',len(files),'files')
-          PY
+          python 'Night Court/tools/validate_private_pilot_snapshot.py' --snapshot "$SNAPSHOT"
           mkdir -p 'Night Court/saved-private/pilot-current'
           rsync -a --delete "$SNAPSHOT/" 'Night Court/saved-private/pilot-current/'
           git add -- 'Night Court/saved-private/pilot-current'
           if git diff --cached --quiet; then
-            echo 'Current private snapshot already committed.'
+            echo 'Current validated private snapshot already committed.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Night Court: persist generated private v16 pilots and retrieval corpus'
+          git commit -m 'Night Court: persist validated current private pilot screenplays and fan corpus'
+          # Non-fast-forward push is rejected: never clobber a newer editor.
           git push origin HEAD:main
 
   announce-private-draft-download:
-    needs: generate-private-pilot-reading-scripts
+    needs: [generate-private-pilot-reading-scripts, persist-private-editorial-snapshot]
     if: >-
       github.event_name != 'pull_request' &&
-      needs.generate-private-pilot-reading-scripts.result == 'success' &&
+      needs.persist-private-editorial-snapshot.result == 'success' &&
       github.ref == 'refs/heads/main' &&
       github.event.repository.private == true
     runs-on: ubuntu-latest
@@ -210,4 +162,4 @@ jobs:
         run: |
           set -euo pipefail
           gh api --method POST "repos/$REPO/issues/441/comments" \
-            -f body="Generated and SHA-checked the two PRIVATE 1984 Night Court pilot dialogue WORKING drafts. Plus the private 193-episode fan-retrieval seed (191 source-only episodes). Download the seven-day artifact 'night-court-original-pilot-working-screenplays-private' from [this successful Actions run]($RUN_URL) under Artifacts. The source text and evidence sidecars were not committed, and NO speaker identities, stage claims or full episodes were independently AV-certified by this run."
+            -f body="Generated and SHA-checked the two PRIVATE 1984 Night Court pilot dialogue WORKING drafts. Plus the private 193-episode fan-retrieval seed (191 source-only episodes). Download the seven-day artifact 'night-court-original-pilot-working-screenplays-private' from [this successful Actions run]($RUN_URL) under Artifacts. A validated private snapshot with manuscripts, provenance and current retrieval was committed to main under Night Court/saved-private/pilot-current/. NO speaker identities, stage claims or full episodes were independently AV-certified by this run."
