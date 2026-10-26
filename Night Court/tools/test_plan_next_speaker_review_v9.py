@@ -191,6 +191,25 @@ class RemainingSpeakerReviewTests(unittest.TestCase):
         self.assertEqual(m["original_source_units_still_unknown"],1)
         self.assertEqual(queue[0]["source_reading_ref"],"C104.1")
 
+    def test_numeric_only_pilot_unknown_clusters_include_partial_multivoice_cues(self):
+        rows=[
+            row("S01E01","C002.1",None,"An unnamed reply."),
+            row("S01E01","C002.2",None,"A second unidentified voice in the same original subtitle cue."),
+            row("S01E01","C003.1","HARRY STONE","Known judge."),
+            row("S09E19","C101.1",None,"A"),
+            row("S09E19","C102.1",None,"B"),
+            row("S09E19","C105.1",None,"C"),
+        ]
+        _,summary=make_queue(rows,{},{"cues":[]},strict=False)
+        self.assertEqual(summary["remaining_unknown_original_source_units_by_episode"],
+                         {"S01E01":2,"S09E19":3})
+        self.assertEqual(summary["largest_contiguous_unknown_original_source_runs"]["S01E01"],
+            [{"start_source_cue":2,"end_source_cue":2,"unknown_source_units":2}])
+        self.assertEqual(summary["largest_contiguous_unknown_original_source_runs"]["S09E19"],
+            [{"start_source_cue":101,"end_source_cue":102,"unknown_source_units":2},
+             {"start_source_cue":105,"end_source_cue":105,"unknown_source_units":1}])
+        self.assertTrue(summary["original_source_cue_numbers_only_no_dialogue"])
+
     def test_private_original_audio_numeric_sha_required(self):
         with tempfile.TemporaryDirectory() as folder:
             p=Path(folder)/"real-source.json"
