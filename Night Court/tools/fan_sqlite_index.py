@@ -172,7 +172,8 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
                                      allow_original_s09_v10_turn_reunion: bool = False,
                                      allow_original_s09_v11_mixed_voice: bool = False,
                                      allow_original_s09_v12_contextual: bool = False,
-                                     allow_original_s09_v13_handoffs: bool = False
+                                     allow_original_s09_v13_handoffs: bool = False,
+                                     allow_original_source_role_patches: bool = False
                                      ) -> tuple[list[dict], dict]:
     """Verify original speaker records still cover identical caption units.
 
@@ -191,6 +192,8 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
         raise ValueError("New scene-context roles require prior exact source mixed-voice layer")
     if allow_original_s09_v13_handoffs and not allow_original_s09_v12_contextual:
         raise ValueError("New original cue actor handoffs require earlier source roles")
+    if allow_original_source_role_patches and not allow_original_s09_v13_handoffs:
+        raise ValueError("Source scene-context amendments require original v13 actor/turn provenance")
     manifest_path = context_path.parent / (
         "pilot-current-speaker-s09-audio-v9-manifest.json" if source_acoustic_v9 else
         "pilot-original-acoustic-speaker-manifest.json" if source_acoustic_v8 else
@@ -265,6 +268,13 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
         expected = ((row["candidate_role"] or "UNIDENTIFIED SPEAKER")
                     + " · " + row["role_attribution_status"] + "\n" + row["caption_text"])
         if expected not in source_docs[row["episode_id"]]:
+            if allow_original_source_role_patches:
+                from apply_source_role_amendments import LEDGER,validate_ledger
+                patched_refs=validate_ledger(json.loads(LEDGER.read_text("utf-8")))
+                if (row["episode_id"],row["source_reading_ref"]) in patched_refs:
+                    # Final role-vs-source verification occurs only after
+                    # the exact v13 source ledger patchset is reconstructed.
+                    continue
             if (allow_original_s09_v13_handoffs and row["episode_id"]=="S09E19"
                 and row["source_reading_ref"] in ("C127.1","C146.1","C284.1")):
                 # Exact v13 original text-span reconciliation is required
@@ -645,6 +655,48 @@ def apply_original_s09_explicit_handoffs_v13(source:list[dict],old_roles:list[di
     }
 
 
+def apply_original_source_role_patches(source:list[dict],old_roles:list[dict],
+                                      path:Path,full:bool=True)->tuple[list[dict],dict]:
+    """Extend exact source role names from ledger, no changes to speaker turn or dialogue."""
+    from collections import defaultdict
+    from hashlib import sha256
+    from apply_source_role_amendments import (
+        LEDGER,AFTER_MANIFEST,STATUS,apply
+    )
+    report=json.loads((path.parent/AFTER_MANIFEST).read_text("utf-8"))
+    raw=path.read_bytes()
+    if sha256(raw).hexdigest()!=report.get("source_patch_roles_sha256"):
+        raise ValueError("Private source role patch record SHA mismatch")
+    corrected,expected=apply(old_roles,json.loads(LEDGER.read_text("utf-8")),strict=full)
+    observed=rows_from_jsonl(path)
+    if observed!=corrected:
+        raise ValueError("Speaker role amendments modified another source character or speaking turn")
+    if (report.get("provisionally_named_source_units")!=expected["provisionally_named_source_units"]
+        or report.get("unknown_original_source_units")!=expected["unknown_original_source_units"]
+        or report.get("source_reading_blocks")!=expected["source_reading_blocks"]
+        or report.get("source_character_roles_independently_verified_via_AV")!=0):
+        raise ValueError("Source role patch source-unit counts or evidence acceptances drifted")
+    text=defaultdict(str)
+    for x in source:
+        text[x["episode_id"]]+=x["retrieval_text"]
+    changed=[x for x in observed if x.get("role_attribution_status")==STATUS]
+    if len(changed)!=expected["reusable_ledger_amendment_count"]:
+        raise ValueError("Source role patch missing named character after original cue loading")
+    for x in changed:
+        if (x.get("actor_face_or_voice_independently_verified") is not False
+            or x.get("speaker_turn_boundary_verified") is not False
+            or x.get("original_source_actor_voice_independently_verified") is not False):
+            raise ValueError("Source patch falsely promotes independent actor or turn verification")
+        if (x["candidate_role"]+" · "+STATUS+"\n"+x["caption_text"]) not in text[x["episode_id"]]:
+            raise ValueError("Source-patched role not visible in current full episode script")
+    return observed,{
+        "source_amended_actor_reading_blocks":len(observed),
+        "source_amended_original_named_units":expected["provisionally_named_source_units"],
+        "source_amended_original_UNKNOWN_units":expected["unknown_original_source_units"],
+        "source_amended_actor_names_Av_verified":0
+    }
+
+
 def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                    role_path: Path, require_full: bool = True,
                    speaker_override_path: Path | None = None,
@@ -654,7 +706,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                    source_turn_v10_role_path: Path | None = None,
                    mixed_turn_v11_role_path: Path | None = None,
                    contextual_v12_role_path: Path | None = None,
-                   handoffs_v13_role_path: Path | None = None) -> dict:
+                   handoffs_v13_role_path: Path | None = None,
+                   source_role_patch_path: Path | None = None) -> dict:
     if db_path.resolve().is_relative_to(ROOT.resolve()):
         raise ValueError("Private indexed dialogue database must be outside the repository")
     if sum(x is not None for x in (
@@ -670,6 +723,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
         raise ValueError("Original S09 v12 character inferences require full prior source-turn model")
     if handoffs_v13_role_path is not None and contextual_v12_role_path is None:
         raise ValueError("S09 original source explicit speaker handoffs require v12 prior role provenance")
+    if source_role_patch_path is not None and handoffs_v13_role_path is None:
+        raise ValueError("Source amendments require exact earlier S09 P0 turn chronology")
     if db_path.resolve() in {corpus_path.resolve(), card_path.resolve(), role_path.resolve(),
                              speaker_override_path.resolve() if speaker_override_path else None,
                              context_role_path.resolve() if context_role_path else None,
@@ -678,7 +733,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                              source_turn_v10_role_path.resolve() if source_turn_v10_role_path else None,
                              mixed_turn_v11_role_path.resolve() if mixed_turn_v11_role_path else None,
                              contextual_v12_role_path.resolve() if contextual_v12_role_path else None,
-                             handoffs_v13_role_path.resolve() if handoffs_v13_role_path else None}:
+                             handoffs_v13_role_path.resolve() if handoffs_v13_role_path else None,
+                             source_role_patch_path.resolve() if source_role_patch_path else None}:
         raise ValueError("Refusing to overwrite a source file with the database")
     source = load_records(corpus_path)
     cards = load_cards(card_path, source)
@@ -705,7 +761,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
             allow_original_s09_v10_turn_reunion=source_turn_v10_role_path is not None,
             allow_original_s09_v11_mixed_voice=mixed_turn_v11_role_path is not None,
             allow_original_s09_v12_contextual=contextual_v12_role_path is not None,
-            allow_original_s09_v13_handoffs=handoffs_v13_role_path is not None)
+            allow_original_s09_v13_handoffs=handoffs_v13_role_path is not None,
+            allow_original_source_role_patches=source_role_patch_path is not None)
         report.update(summary)
     if source_turn_v10_role_path is not None:
         roles, summary = apply_current_source_turn_reunion_v10(
@@ -723,6 +780,10 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
     if handoffs_v13_role_path is not None:
         roles, summary = apply_original_s09_explicit_handoffs_v13(
             source,roles,handoffs_v13_role_path,full=require_full)
+        report.update(summary)
+    if source_role_patch_path is not None:
+        roles, summary = apply_original_source_role_patches(
+            source,roles,source_role_patch_path,full=require_full)
         report.update(summary)
     if db_path.exists():
         raise FileExistsError("Refuse overwriting an existing fan corpus database")
@@ -863,6 +924,7 @@ def main():
     init.add_argument("--mixed-turn-v11-roles", type=Path, default=None)
     init.add_argument("--contextual-v12-roles", type=Path, default=None)
     init.add_argument("--handoffs-v13-roles", type=Path, default=None)
+    init.add_argument("--source-role-patches", type=Path, default=None)
     srch = sub.add_parser("query")
     srch.add_argument("--database", type=Path, required=True)
     srch.add_argument("--query", required=True)
@@ -881,7 +943,8 @@ def main():
                                 source_turn_v10_role_path=opts.source_turn_v10_roles,
                                 mixed_turn_v11_role_path=opts.mixed_turn_v11_roles,
                                 contextual_v12_role_path=opts.contextual_v12_roles,
-                                handoffs_v13_role_path=opts.handoffs_v13_roles)
+                                handoffs_v13_role_path=opts.handoffs_v13_roles,
+                                source_role_patch_path=opts.source_role_patches)
         print(f"{report['indexed_documents']} private documents indexed across "
               f"{report['source_episodes']} episodes; no dialogue printed")
     else:
