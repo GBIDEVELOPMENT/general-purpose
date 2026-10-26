@@ -88,10 +88,23 @@ def check(snapshot: Path) -> dict:
 
     # The exact current post-editorial reader is itself preserved privately.
     # Accept successor filenames without freezing the v16 editorial baseline.
-    reader_files = sorted(snapshot.glob("pilot-manual-context-speaker-*.jsonl"))
-    assert len(reader_files) == 1, "Ambiguous or absent current source-first reader"
-    raw = reader_files[0].read_bytes()
-    if "source_manual_v16_reader_sha256" in layout:
+    current = snapshot / "pilot-current-editorial-reader.jsonl"
+    if current.is_file():
+        raw = current.read_bytes()
+        assert hashlib.sha256(raw).hexdigest() == layout["current_editorial_reader_sha256"]
+        assert (snapshot / "pilot-current-editorial-manifest.json").is_file()
+        editorial = load_json(snapshot / "pilot-current-editorial-manifest.json")
+        assert editorial["current_editorial_reader_sha256"] == layout["current_editorial_reader_sha256"]
+        assert editorial["named_provisional"] == 655
+        assert editorial["units_with_unknown_voice"] == 96
+        assert editorial["AV_accepted_actors"] == editorial["AV_accepted_performed_turns"] == 0
+        assert layout["episode_editorial_integrations"] == {
+            "S01E01":"Agent1-v18","S09E19":"Agent2-v17"
+        }
+    else:
+        reader_files = sorted(snapshot.glob("pilot-manual-context-speaker-*.jsonl"))
+        assert len(reader_files) == 1, "Ambiguous or absent current source-first reader"
+        raw = reader_files[0].read_bytes()
         assert hashlib.sha256(raw).hexdigest() == layout["source_manual_v16_reader_sha256"]
     source_rows = [json.loads(line) for line in raw.decode("utf-8").splitlines() if line]
     by_episode_provenance = {}
@@ -104,7 +117,7 @@ def check(snapshot: Path) -> dict:
         assert manuscript.is_file() and provenance.is_file()
         text = manuscript.read_bytes()
         assert hashlib.sha256(text).hexdigest() == layout["manuscript_sha256"][ep]
-        assert f"Original caption source SHA-256: {source_sha}".encode() in text
+        assert source_sha.encode() in text, "Original caption/transcript SHA absent from manuscript"
         rows = [json.loads(line) for line in provenance.read_text("utf-8").splitlines() if line]
         by_episode_provenance[ep] = rows
         assert len(rows) == layout["episodes"][ep]["source_blocks"]

@@ -187,8 +187,19 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         working_report=json.loads((working_pilot_root/"working-screenplay-layout-manifest.json").read_text("utf-8"))
         counts=working_report.get("source_unit_counts")
         version=working_report.get("schema")
-        expected={"original_source_units":751,"named_provisional":651 if version.endswith("/2") else 621,"unknown":100 if version.endswith("/2") else 130}
-        blocks=[405,322] if version.endswith("/2") else [405,321]
+        editorial = "current_editorial_reader_sha256" in working_report
+        expected = ({"original_source_units":751,"named_provisional":655,"unknown":96} if editorial else
+                    {"original_source_units":751,"named_provisional":651 if version.endswith("/2") else 621,
+                     "unknown":100 if version.endswith("/2") else 130})
+        blocks = ([405,323] if editorial else [405,322] if version.endswith("/2") else [405,321])
+        if editorial:
+            integration=json.loads((working_pilot_root/"pilot-current-editorial-manifest.json").read_text("utf-8"))
+            if (integration.get("current_editorial_reader_sha256") != working_report["current_editorial_reader_sha256"]
+                or integration.get("original_source_units") != 751
+                or integration.get("provisional_reader_blocks") != 728
+                or integration.get("AV_accepted_actors") != 0
+                or integration.get("AV_accepted_performed_turns") != 0):
+                raise ValueError("Private current episode editorial evidence drift")
         if (version not in ("night-court-private-pilot-screenplay-layout/1","night-court-private-pilot-screenplay-layout/2")
             or counts!=expected
             or set(working_report.get("episodes",{}))!=set(PILOT_SCRIPTS)
@@ -315,7 +326,12 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         document = content.decode("utf-8")
         if source_sha not in document:
             raise ValueError(f"Script not linked to expected original caption SHA: {episode}")
-        if not document.lstrip().startswith("# " + episode):
+        # S09 editor v17 deliberately heads its own complete episode reader
+        # with the show name first. Require exact episode identity nonetheless.
+        title = document.lstrip()
+        if not (title.startswith("# " + episode)
+                or (working_pilot_root is not None and episode == "S09E19"
+                    and title.startswith("# Night Court (1984–1992) • S09E19:"))):
             raise ValueError(f"Wrong episode script: {episode}")
         for named_season in re.findall(r"\bThe (S\d{2}) original\b", document[:1800]):
             if named_season != episode[:3]:

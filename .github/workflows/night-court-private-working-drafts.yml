@@ -1,4 +1,4 @@
-name: Night Court private two-pilot working screenplay delivery
+name: Night Court private two-pilot integrated editorial screenplay delivery
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
       - 'Night Court/research/**'
       - 'Night Court/tools/**'
       - 'Night Court/seasons/**'
+      - 'Night Court/saved-private/editorial-agent1-v18/**'
   workflow_dispatch:
   push:
     branches: [main]
@@ -15,6 +16,7 @@ on:
       - 'Night Court/research/**'
       - 'Night Court/tools/**'
       - 'Night Court/seasons/**'
+      - 'Night Court/saved-private/editorial-agent1-v18/**'
 
 concurrency:
   group: night-court-private-pilots-${{ github.ref }}
@@ -55,31 +57,14 @@ jobs:
           python 'Night Court/tools/apply_s01_c219_source_turn.py' --source-turn-patches "$T/turns" --output "$T/v15"
           python 'Night Court/tools/apply_manual_context_pilot_review_v16.py' \
             --v15-root "$T/v15" --output "$T/deliverable"
-          python 'Night Court/tools/plan_remaining_manual_v16_review.py' \
-            --v16-root "$T/deliverable" --output "$T/deliverable/private-review"
+          python 'Night Court/tools/integrate_committed_editorial_pilots.py' \
+            --working-root "$T/deliverable"
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
             --working-pilot-root "$T/deliverable" --output "$T/deliverable/private-fan-retrieval"
       - name: Validate private manuscripts, coverage, review queue, and complete fan corpus
         run: |
           python 'Night Court/tools/validate_private_pilot_snapshot.py' \
             --snapshot "${RUNNER_TEMP}/night-court-pilot-v15/deliverable"
-          cat > "${RUNNER_TEMP}/night-court-pilot-v15/deliverable/READ_ME_FIRST.txt" <<'NOTE'
-          Original Night Court 1984-1992, private EDITORIAL WORKING DRAFTS only.
-          V16 adds 32 contextual speaker assignments, two reversed names corrected,
-          and a tentative two-voice C277 split. All are ORIGINAL AUDIO UNVERIFIED.
-          All held original source-derived dialogue retained, with source hashes and
-          provenance JSONL sidecars. Character identities and layout continuations
-          remain provisional, NOT independently audio/video verified.
-          Stage directions, delivery, scene settings and physical gags incomplete.
-          S09 original dialogue remains untimed. No whole episode AV certified.
-          The private-fan-retrieval/ directory also contains 193-episode FTS-ready
-          JSONL chunks; only the two pilots have current chronological working
-          scripts; remaining 191 episodes are source-only witnesses, unreviewed.
-          The private-review/ directory includes remaining-100 source-context
-          dialogue worklist with adjacent candidate voices and original S01 cue
-          clocks. S09 candidate audio locator is absent in portable artifact;
-          consult source-only original S09 audio-locator CI for search windows.
-          NOTE
       - name: Upload short-lived artifact accessible through the PRIVATE repository
         if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
