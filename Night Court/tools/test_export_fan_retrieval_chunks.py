@@ -123,6 +123,61 @@ class RetrievalExportTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "SHA mismatch"):
                 export(root, Path(folder)/"retrieval", pilot_only=True, v6_root=private)
 
+    def test_current_private_screenplay_layout_round_trips_to_fan_retrieval(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)/"Night Court"
+            fixture(root)
+            current=Path(folder)/"current-chronological-working-pilots"
+            current.mkdir()
+            proofs={}
+            for episode in ("S01E01","S09E19"):
+                original=(root/PILOT_SCRIPTS[episode]).read_text("utf-8")
+                draft=current/f"{episode}-working-screenplay.md"
+                draft.write_text(original,"utf-8")
+                proofs[episode]=sha256(original.encode())
+            report={
+                "schema":"night-court-private-pilot-screenplay-layout/1",
+                "source_unit_counts":{"original_source_units":751,
+                                      "named_provisional":621,"unknown":130},
+                "source_v15_reader_sha256":"a"*64,
+                "new_independently_verified_actor_voices":0,
+                "new_independently_verified_performed_turns":0,
+                "scene_review_complete":False,
+                "manuscript_sha256":proofs,
+                "episodes":{
+                    "S01E01":{"source_blocks":405,"source_units":404,
+                              "original_caption_timed":True},
+                    "S09E19":{"source_blocks":321,"source_units":347,
+                              "original_caption_timed":False},
+                },
+            }
+            manifest=current/"working-screenplay-layout-manifest.json"
+            manifest.write_text(json.dumps(report),"utf-8")
+            target=Path(folder)/"private-output"
+            exported=export(root,target,pilot_only=True,working_pilot_root=current)
+            self.assertEqual(exported["episode_count"],2)
+            self.assertTrue(all(x["evidence_tier"]=="provisional_source_first_chronological_screenplay_layout"
+                                for x in exported["episodes"]))
+            self.assertTrue(all(x["script_path"].startswith("private-current-working-screenplays/")
+                                for x in exported["episodes"]))
+            records=[json.loads(x) for x in (target/"fan-retrieval-chunks.jsonl").read_text().splitlines()]
+            for episode in ("S01E01","S09E19"):
+                original=(current/f"{episode}-working-screenplay.md").read_text("utf-8")
+                self.assertEqual("".join(x["retrieval_text"] for x in records
+                                         if x["episode_id"]==episode),original)
+            self.assertTrue(all(x["speaker_names_verified"] is False for x in records))
+            self.assertTrue(all(x["whole_episode_av_certified"] is False for x in records))
+            self.assertFalse(next(x for x in records if x["episode_id"]=="S09E19")["dialogue_timed_original"])
+            draft=current/"S01E01-working-screenplay.md"
+            draft.write_text(draft.read_text("utf-8")+"tampered","utf-8")
+            with self.assertRaisesRegex(ValueError,"chronological pilot screenplay SHA mismatch"):
+                export(root,target,pilot_only=True,working_pilot_root=current)
+            draft.write_text((root/PILOT_SCRIPTS["S01E01"]).read_text("utf-8"),"utf-8")
+            report["scene_review_complete"]=True
+            manifest.write_text(json.dumps(report),"utf-8")
+            with self.assertRaisesRegex(ValueError,"provenance failed"):
+                export(root,target,pilot_only=True,working_pilot_root=current)
+
     def test_sha_mismatch_fails_closed(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder) / "Night Court"

@@ -24,3 +24,13 @@ This renderer validates the v15 manifest SHA against the reader JSONL bytes, the
 The output now has the useful *shape* of a working script, but the scene headings are deliberately placeholders pending review, and provisional display joins must be individually adjudicated using original soundtrack context. The renderer does not replace [issue #441](https://github.com/gamesbyian/general-purpose/issues/441), the current 34/96 source-UNKNOWN review queue, the S09 C291 uncertain handoff, the quarantined S09 C129 character guess, or genuine filmed-performance evidence.
 
 No finished episode or new audio-certified character identity should be reported from layout grouping alone. Prioritize real source first P0/P1 corrections; then rerun this tool to produce reader-friendly manuscripts after those corrections. Once independently accepted speaker evidence exists, a follow-up generator can add source-reviewed scene/gesture/delivery fields without discarding this reversible dialogue view.
+
+## Same-reader fan retrieval
+
+With the *same* SHA-checked output directory, update the private fan retrieval corpus rather than indexing the old v5 manuscript:
+
+    python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+      --working-pilot-root /tmp/night-court-private-readable-pilots \
+      --output /tmp/night-court-private-current-fan-corpus
+
+This command keeps the other 191 original source-only episode scaffolds, replaces only the **two pilot** script inputs, and marks their evidence tier `provisional_source_first_chronological_screenplay_layout`. It refuses wrong source counts, altered manuscript digests, unsupported AV promotion and invented S09 original timing. The private corpus chunks round-trip to the complete current screenplay text. The generator does not implicitly change the existing default historical v5 mode; the choice of current private output must be explicit and the script directory available. Both full screenplay and fan retrieval text remain private and uncommitted.
