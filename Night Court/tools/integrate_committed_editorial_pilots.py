@@ -215,6 +215,136 @@ def integrate_s09(old: list[dict], v16_binary: bytes) -> tuple[list[dict], list[
     }
 
 
+def integrate_s09_v18(
+    v17_rows: list[dict], expected_parent_reader_sha: str,
+) -> tuple[list[dict], list[dict], str, dict]:
+    """Consume Agent 2's exact v18 P0/P1 amendments and picture-rich manuscript.
+
+    The entire v17 reader is regenerated from its previous SHA-pinned editors
+    first. Source dialogue, actor-identity and performed-turn acceptance cannot
+    be altered; anonymous joins are only layout, not actor attribution.
+    """
+    v18_dir = ROOT / "seasons/S09/S09E19/derived/editorial-v18"
+    manifest_path = v18_dir / "S09E19-v18-manifest.json"
+    ledger_path = v18_dir / "s09e19-editorial-v18-amendments.json"
+    manifest, ledger = read_json(manifest_path), read_json(ledger_path)
+    assert manifest["schema"] == "night-court-s09e19-editorial-v18-manifest/1"
+    assert ledger["schema"] == "night-court-s09e19-v18-source-exact-role-and-anonymous-joins/1"
+    assert manifest["original_source_sha256"] == ledger["source_witness_sha256"] == SOURCE["S09E19"][0]
+    assert manifest["source_v17_main_editorial_reader_sha256"] == expected_parent_reader_sha
+    assert ledger["base_reader_sha256"] == expected_parent_reader_sha
+    assert manifest["original_source_untimed"] is True
+    assert ledger["original_source_untimed"] is True
+    assert (manifest["current_v17_reading_blocks"], manifest["new_v18_reading_blocks"],
+            manifest["original_units"], manifest["fully_provisionally_named"],
+            manifest["contains_unknown_voice"], manifest["display_groups"]) == (323,323,347,273,74,239)
+    assert ledger["expected_anonymous_joins"] == 3 and ledger["expected_display_group_reduction_from_joins"] == 4
+    assert manifest["new_source_audio_verified_names"] == 0
+    assert manifest["new_performed_turns_independently_AV_verified"] == 0
+    assert manifest["final_AV_complete"] is False
+    assert ledger["original_audio_accepted_actors"] == 0
+    assert ledger["independent_source_performed_turns_certified"] == 0
+    assert ledger["original_dialogue_character_edits"] == 0
+
+    rows = read_jsonl(v18_dir / "S09E19-v18-editorial-reader.jsonl")
+    proof = read_jsonl(v18_dir / "S09E19-v18-source-provenance.jsonl")
+    assert len(rows) == len(proof) == len(v17_rows) == 323
+    previous = {row["reading_block_id"]: row for row in v17_rows}
+    assert len(previous) == 323
+    assert [p["source_reader_id"] for p in proof] == [r["reading_block_id"] for r in rows]
+    assert set(previous) == {r["reading_block_id"] for r in rows}
+    changes, anonymous_groups = [], defaultdict(list)
+    groups = defaultdict(list)
+    sidecar = []
+    for row, record in zip(rows, proof):
+        before = previous[row["reading_block_id"]]
+        assert row["episode_id"] == "S09E19"
+        assert row["caption_text"] == before["caption_text"] == record["source_text_exact"]
+        assert row["original_source_part_refs"] == before["original_source_part_refs"] == record["source_part_refs"]
+        assert row["source_reading_ref"] == before["source_reading_ref"] == record["source_reading_ref"]
+        assert row["original_source_sha256"] == record["source_original_sha256"] == SOURCE["S09E19"][0]
+        assert row["source_original_times_ms"] is None and row["original_source_untimed"] is True
+        assert record["source_untimed"] is True and record["source_timing"] is None
+        assert row["speaker_turn_boundary_verified"] is False
+        assert row["actor_face_or_voice_independently_verified"] is False
+        assert record["actor_voice_verified"] is False and record["performed_turn_verified"] is False
+        assert record["provisional_role"] == row["candidate_role"]
+        assert record["provisional_same_anonymous_voice"] == row.get("provisional_anonymous_turn_key")
+        if row["candidate_role"] != before["candidate_role"]:
+            changes.append((row["source_reading_ref"],before["candidate_role"],row["candidate_role"]))
+            assert record["role_new_in_v18"] is True
+        else:
+            assert record["role_new_in_v18"] is False
+        group = record["display_group_id"]
+        assert isinstance(group,int) and group > 0
+        groups[group].append(record)
+        key = record["provisional_same_anonymous_voice"]
+        if key is not None:
+            assert row["candidate_role"] is None
+            anonymous_groups[key].append(record)
+        sidecar.append({
+            "reading_block_id":row["reading_block_id"],
+            "source_reading_ref":row["source_reading_ref"],
+            "original_source_part_refs":row["original_source_part_refs"],
+            "source_sha256":SOURCE["S09E19"][0],
+            "exact_rendered_caption_sha256":sha(row["caption_text"].encode("utf-8")),
+            "candidate_role":row["candidate_role"],
+            "display_group_id":group,
+            "display_join_not_performed_turn_proof":False,  # set after group audit
+            "source_cue_times_not_subturn_times_ms":None,
+            "source_exact_character_span":row.get("source_exact_character_span"),
+            "original_source_unicode_spans_v13":row.get("original_source_unicode_spans_v13"),
+            "provisional_anonymous_turn_key":key,
+            "actual_original_av_reviewer_accepted":False,
+        })
+    expected_edits = [(x["reading_ref"],x["prior_role"],x["new_provisional_role"])
+                      for x in ledger["role_amendments"]]
+    assert sorted(changes) == sorted(expected_edits), ("Unapproved S09 role change",changes)
+    assert len(changes) == manifest["named_role_edits"] == 2
+    assert list(sorted(groups)) == list(range(1,240))
+    assert len(groups) == manifest["display_groups"]
+    assert all(len({x["provisional_role"] for x in g}) == 1 for g in groups.values())
+    assert len(anonymous_groups) == 3
+    assert all(len({r["display_group_id"] for r in g}) == 1 for g in anonymous_groups.values())
+    for proposal in ledger["anonymous_display_join_proposals"]:
+        key = proposal["anonymous_voice_id"]
+        proposed = anonymous_groups[key]
+        assert [x["source_reading_ref"] for x in proposed] == proposal["source_refs"]
+        assert [x["source_text_exact"] for x in proposed] == proposal["expected_texts"]
+        assert [x["provisional_role"] for x in proposed] == proposal["expected_roles"]
+    assert sum(len(g)-1 for g in anonymous_groups.values()) == 4
+    for row in sidecar:
+        group_rows = groups[row["display_group_id"]]
+        row["display_join_not_performed_turn_proof"] = len(group_rows) > 1
+        if row["candidate_role"] is None and len(group_rows) > 1:
+            assert row["provisional_anonymous_turn_key"] is not None
+    script_bytes = (v18_dir/"S09E19-v18-working-screenplay.md").read_bytes()
+    script = script_bytes.decode("utf-8")
+    assert "Original 347-unit untimed dialogue SHA-256:" in script
+    assert_original_dialogue("S09E19",rows,script)
+    after = counts(rows)
+    assert (after["source_units"],after["fully_provisionally_named_source_units"],
+            after["source_units_with_any_unknown_voice"]) == (347,273,74)
+    assert next(x for x in rows if x["source_reading_ref"]=="C129.1")["candidate_role"] is None
+    assert next(x for x in rows if x["source_reading_ref"]=="C305.1")["candidate_role"] == "ROZ RUSSELL"
+    assert next(x for x in rows if x["source_reading_ref"]=="C306.1")["candidate_role"] == "ALEX PATTERSON"
+    picture = read_json(v18_dir/"S09E19-whole-episode-original-still-review-v18.json")
+    assert picture["source_frame_count"] == picture["source_frames_checked_sha256"] == 73
+    assert picture["frame_hash_mismatches"] == picture["contact_sheet_hash_mismatches"] == 0
+    assert picture["original_source_video_sha256"] == "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649"
+    assert picture["film_complete_AV_certified"] is False
+    assert script.count("*Checked original-picture reference (") == 11
+    return rows,sidecar,script,{
+        "editorial_version":"Agent2-v18",
+        "manifest_sha256":sha(manifest_path.read_bytes()),
+        "amendment_sha256":sha(ledger_path.read_bytes()),
+        "picture_review_sha256":sha((v18_dir/"S09E19-whole-episode-original-still-review-v18.json").read_bytes()),
+        "named_role_edits_added_v18":len(changes),
+        "anonymous_same_voice_join_hypotheses":3,
+        "independently_accepted_original_voice_or_turns":0,
+    }
+
+
 def ensure_no_unintegrated_newer_editorial_revision() -> None:
     """Never publish an older script over newly committed episode-editor work.
 
@@ -226,7 +356,7 @@ def ensure_no_unintegrated_newer_editorial_revision() -> None:
         (ROOT / "saved-private", "editorial-agent2-v", 17),
         (ROOT / "seasons/S01/S01E01/derived", "editorial-agent1-v", 18),
         (ROOT / "seasons/S09/S09E19/derived", "editorial-agent2-v", 17),
-        (ROOT / "seasons/S09/S09E19/derived", "editorial-v", 17),
+        (ROOT / "seasons/S09/S09E19/derived", "editorial-v", 18),
     ):
         if not base.exists():
             continue
@@ -244,7 +374,7 @@ def ensure_no_unintegrated_newer_editorial_revision() -> None:
     if committed.is_file():
         current = read_json(committed)
         evidence = current.get("episode_evidence", {})
-        for ep, supported in (("S01E01",18),("S09E19",17)):
+        for ep, supported in (("S01E01",18),("S09E19",18)):
             name = evidence.get(ep, {}).get("editorial_version", "")
             if name.startswith("Agent") and "-v" in name:
                 suffix = name.rsplit("-v", 1)[-1]
@@ -270,10 +400,16 @@ def integrate(output: Path) -> dict:
     second, second_side, second_script, second_info = integrate_s09(
         [x for x in old if x["episode_id"]=="S09E19"], old_bytes
     )
+    prior_editorial_reader = original_reading_order(first + second)
+    prior_reader_bytes = "".join(json.dumps(row,ensure_ascii=False,sort_keys=True)+"\\n"
+                                 for row in prior_editorial_reader).encode("utf-8")
+    second, second_side, second_script, second_info = integrate_s09_v18(
+        second, sha(prior_reader_bytes)
+    )
     new = original_reading_order(first + second)
     after = counts(new)
     assert (len(new),after["source_units"],after["fully_provisionally_named_source_units"],
-            after["source_units_with_any_unknown_voice"]) == (728,751,655,96)
+            after["source_units_with_any_unknown_voice"]) == (728,751,657,94)
     source_raw = "".join(json.dumps(row, ensure_ascii=False, sort_keys=True)+"\n" for row in new).encode("utf-8")
     (output / "pilot-current-editorial-reader.jsonl").write_bytes(source_raw)
     episodes = {"S01E01":(first_side,first_script,first_info),
@@ -282,7 +418,7 @@ def integrate(output: Path) -> dict:
                           "base_v16_reader_sha256":sha(old_bytes),
                           "current_editorial_reader_sha256":sha(source_raw),
                           "original_source_units":751,
-                          "named_provisional":655,"units_with_unknown_voice":96,
+                          "named_provisional":657,"units_with_unknown_voice":94,
                           "provisional_reader_blocks":728,
                           "episode_evidence":{},"AV_accepted_actors":0,
                           "AV_accepted_performed_turns":0}
@@ -309,12 +445,12 @@ def integrate(output: Path) -> dict:
             original_units=SOURCE[ep][1],
             source_reading_blocks=len(side),
             display_groups=max(groups),
-            fully_named_units=384 if ep=="S01E01" else 271,
-            units_with_unknown=20 if ep=="S01E01" else 76,
+            fully_named_units=384 if ep=="S01E01" else 273,
+            units_with_unknown=20 if ep=="S01E01" else 74,
         )
     layout["current_editorial_reader_sha256"]=sha(source_raw)
-    layout["source_unit_counts"]={"original_source_units":751,"named_provisional":655,"unknown":96}
-    layout["episode_editorial_integrations"]={"S01E01":"Agent1-v18","S09E19":"Agent2-v17"}
+    layout["source_unit_counts"]={"original_source_units":751,"named_provisional":657,"unknown":94}
+    layout["episode_editorial_integrations"]={"S01E01":"Agent1-v18","S09E19":"Agent2-v18"}
     layout["provisional_contextual_roles_only"]=True
     layout["scene_review_complete"]=False
     layout["new_independently_verified_actor_voices"]=0
@@ -329,19 +465,19 @@ def integrate(output: Path) -> dict:
     for prior in private_review.glob("remaining-*-speaker-review*"):
         prior.unlink()
     internal = read_json(ROOT/"research/probable-internal-speaker-switches-v1.json")
-    review,summary=make_queue(new,{},internal,expected_named=655,expected_unknown=96)
-    assert summary["remaining_unknown_original_source_units_by_episode"] == {"S01E01":20,"S09E19":76}
+    review,summary=make_queue(new,{},internal,expected_named=657,expected_unknown=94)
+    assert summary["remaining_unknown_original_source_units_by_episode"] == {"S01E01":20,"S09E19":74}
     assert any(x["episode_id"]=="S09E19" and x["source_reading_ref"]=="C129.1" for x in review)
     summary["current_editorial_reader_sha256"]=sha(source_raw)
     summary["s09_candidate_audio_locator_loaded"]=False
     summary["new_automatic_roles_proposed_from_editorial_review"]=0
-    write_jsonl(private_review/"remaining-96-speaker-review.jsonl",review)
+    write_jsonl(private_review/"remaining-94-speaker-review.jsonl",review)
     write_json(private_review/"remaining-96-speaker-review-summary.json",summary)
     (output/"READ_ME_FIRST.txt").write_text(
         "PRIVATE Night Court original-series source-dialogue editorial scripts.\n"
         "S01E01 Agent1-v18 (11 historical original-source sampled-picture annotations), "
-        "S09E19 Agent2-v17 (11 role edits, cautious C291 source split).\n"
-        "751 immutable source units; 655 wholly PROVISIONALLY named; 96 with UNKNOWN "
+        "S09E19 Agent2-v18 (2 additional role edits and 3 source-text-only anonymous joins).\n"
+        "751 immutable source units; 657 wholly PROVISIONALLY named; 94 with UNKNOWN "
         "voices; 728 proposed reader blocks; display groups not verified performed turns.\n"
         "Every original source word and punctuation character retained. "
         "No independent original-soundtrack actor or turn acceptance. "
