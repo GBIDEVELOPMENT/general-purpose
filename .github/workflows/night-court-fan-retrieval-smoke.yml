@@ -23,6 +23,8 @@ on:
       - 'Night Court/tools/test_build_external_speaker_reader_v6.py'
       - 'Night Court/tools/triage_unknown_speakers.py'
       - 'Night Court/tools/test_triage_unknown_speakers.py'
+      - 'Night Court/tools/plan_speaker_audio_review.py'
+      - 'Night Court/tools/test_plan_speaker_audio_review.py'
       - 'Night Court/research/pilot-speaker-external-quote-improvements-v1.json'
       - 'Night Court/AUTOMATIC-QUOTE-SEQUENCE-2026-10-25.md'
       - 'Night Court/research/pilot-fan-beat-seeds-v1.json'
@@ -45,7 +47,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6 test_triage_unknown_speakers
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6 test_triage_unknown_speakers test_plan_speaker_audio_review
       - name: Speaker priority one - generate and check real external quote v6 pilots
         run: |
           python 'Night Court/tools/build_external_speaker_reader_v6.py' \
@@ -97,6 +99,23 @@ jobs:
           assert m['automatically_accepted_new_names']==0
           assert m['independently_audio_confirmed_by_triage']==0
           print('All 261 unassigned original pilot source units queued for prioritized P0/P1 review; no source dialogue uploaded')
+          PY
+      - name: Plan bounded actual-source S01 listening windows without decoding media
+        run: |
+          python 'Night Court/tools/plan_speaker_audio_review.py' \
+            --queue /tmp/night-court-private-speaker-review/speaker-identity-first-review.jsonl \
+            --output /tmp/night-court-private-speaker-listening-plan.json \
+            --max-clips 12
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('/tmp/night-court-private-speaker-listening-plan.json').read_text('utf-8'))
+          assert p['selected_clip_count']>0 and p['selected_clip_count']<=12
+          assert p['deferred_untimed_s09_items']>0
+          assert p['source_video_audio_processed'] is False
+          assert all(x['episode_id']=='S01E01' and x['duration_ms']<=18000
+                     and not x['speaker_identity_audio_verified'] for x in p['clip_list'])
+          print('Ranked original-source listening windows prepared privately; S09 untimed remains deferred')
           PY
       - name: Speaker-first revised pilot script retrieval with real immutable source text
         run: |
