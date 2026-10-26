@@ -57,6 +57,8 @@ on:
       - 'Night Court/tools/validate_pending_s09_p0_splits.py'
       - 'Night Court/research/s01-c219-speaker-boundary-v1.json'
       - 'Night Court/tools/validate_s01_c219_p0_split.py'
+      - 'Night Court/tools/apply_s01_c219_source_turn.py'
+      - 'Night Court/tools/test_apply_s01_c219_source_turn.py'
       - 'Night Court/research/source-role-amendments-v1.json'
       - 'Night Court/research/s09-explicit-address-speaker-turns-v13.json'
       - 'Night Court/research/s09-high-context-speaker-proposals-v12.json'
@@ -86,7 +88,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6 test_triage_unknown_speakers test_plan_speaker_audio_review test_build_contextual_speaker_reader_v7 test_align_private_production_script test_build_original_audio_speaker_reader_v8 test_build_s09_source_acoustic_speaker_reader_v9 test_triage_internal_speaker_switches test_plan_next_speaker_review_v9 test_build_s09_source_turns_v10 test_build_s09_mixed_voice_turns_v11 test_build_s09_high_context_speaker_reader_v12 test_build_s09_explicit_handoff_turns_v13 test_apply_source_role_amendments test_apply_source_turn_amendments test_s01e01_full_asr_import
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6 test_triage_unknown_speakers test_plan_speaker_audio_review test_build_contextual_speaker_reader_v7 test_align_private_production_script test_build_original_audio_speaker_reader_v8 test_build_s09_source_acoustic_speaker_reader_v9 test_triage_internal_speaker_switches test_plan_next_speaker_review_v9 test_build_s09_source_turns_v10 test_build_s09_mixed_voice_turns_v11 test_build_s09_high_context_speaker_reader_v12 test_build_s09_explicit_handoff_turns_v13 test_apply_source_role_amendments test_apply_source_turn_amendments test_apply_s01_c219_source_turn test_s01e01_full_asr_import
       - name: Verify preserved exact original S01 source 36-second audio ASR hypotheses against frozen SRT
         run: |
           python 'Night Court/tools/validate_s01e01_full_asr_import.py' \
@@ -522,6 +524,40 @@ jobs:
           assert sum(x['evidence_tier']=='provisional_original_source_turn_amendment_reader' for x in m['episodes'])==2
           print('Source SHA-checked 193 original series episodes with amended exact-original S09 speaking turns indexed privately, no dialogue logged')
           PY
+      - name: Incorporate original timed S01 C219 separate UNKNOWN dash reply in private speaker-turn reader
+        run: |
+          python 'Night Court/tools/apply_s01_c219_source_turn.py' \
+            --source-turn-patches /tmp/night-court-private-source-turn-patches \
+            --output /tmp/night-court-private-source-v15-s01
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads((Path('/tmp/night-court-private-source-v15-s01')/'pilot-source-episode-turns-v15-manifest.json').read_text('utf-8'))
+          assert m['original_caption_source_units']==751
+          assert m['provisional_named_original_source_units']==621
+          assert m['original_source_units_still_UNKNOWN']==130
+          assert m['previous_provisional_speaking_blocks']==725
+          assert m['current_provisional_speaking_blocks']==726
+          assert m['source_cue_timing_is_not_performer_turn_timing'] is True
+          assert m['original_source_cue_start_ms']==879532
+          assert m['original_source_cue_end_ms']==882330
+          assert m['new_original_actor_identities_certified']==0
+          assert m['new_performer_turns_independently_audio_verified']==0
+          print('S01E01 original source C219 2 cue-bounded, source-conserving UNKNOWN voices now in private reader, without fabricated subcue actor times')
+          PY
+      - name: Private fan corpus from all 193 originals with S01 C219 speaker turn source integrity
+        run: |
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --s01-p0-root /tmp/night-court-private-source-v15-s01 \
+            --output /tmp/night-court-private-fan-turns-v15
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads((Path('/tmp/night-court-private-fan-turns-v15')/'fan-retrieval-manifest.json').read_text('utf-8'))
+          assert m['episode_count']==193
+          assert sum(x['evidence_tier']=='provisional_original_s01_dashed_reply_turn_v15' for x in m['episodes'])==2
+          print('Source-exact v15 private 193-episode LLM retrieval includes original first-pilot C219 voice handoff')
+          PY
       - name: Prove next five original S09 source switch candidates preserve text and uncertainty
         run: |
           python 'Night Court/tools/validate_pending_s09_p0_splits.py'
@@ -621,7 +657,7 @@ jobs:
       - name: Build and query one private SQLite index for every evidence type
         run: |
           python 'Night Court/tools/fan_sqlite_index.py' build \
-            --corpus /tmp/night-court-private-fan-turn-patches/fan-retrieval-chunks.jsonl \
+            --corpus /tmp/night-court-private-fan-turns-v15/fan-retrieval-chunks.jsonl \
             --cards /tmp/night-court-private-fan-beats/pilot-fan-beat-cards.jsonl \
             --roles /tmp/night-court-private-character-evidence/pilot-character-reading-blocks.jsonl \
             --s09-acoustic-v9-roles /tmp/night-court-private-source-audio-speaker-v9/pilot-current-source-first-s09-audio-v9.jsonl \
@@ -631,6 +667,7 @@ jobs:
             --handoffs-v13-roles /tmp/night-court-private-speaker-turns-v13/pilot-source-dialogue-turns-v13.jsonl \
             --source-role-patches /tmp/night-court-private-source-role-patches/pilot-source-role-amendments.jsonl \
             --source-turn-patches /tmp/night-court-private-source-turn-patches/pilot-source-turn-amendments.jsonl \
+            --s01-p0-roles /tmp/night-court-private-source-v15-s01/pilot-source-episode-turns-v15.jsonl \
             --database /tmp/night-court-all-private-fan.sqlite
           python 'Night Court/tools/fan_sqlite_index.py' query \
             --database /tmp/night-court-all-private-fan.sqlite \
@@ -645,7 +682,8 @@ jobs:
           from pathlib import Path
           db=sqlite3.connect('/tmp/night-court-all-private-fan.sqlite')
           assert db.execute("SELECT COUNT(DISTINCT episode_id) FROM documents WHERE kind='script_witness'").fetchone()[0]==193
-          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue'").fetchone()[0]==725
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue'").fetchone()[0]==726
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND episode_id='S01E01' AND json_extract(source_data_json,'$.source_reading_ref') LIKE 'S01E01-C219-SOURCE-TURN-%'").fetchone()[0]==2
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='original_dialogue_text_turn_split_context_proposal_not_original_AV_verified'").fetchone()[0]==5
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='source_context_named_character_handoff_proposal_not_original_AV_verified'").fetchone()[0]==6
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='PAUL' AND evidence_state='source_role_patch_context_only_not_original_voice_verified'").fetchone()[0]==6

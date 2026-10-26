@@ -44,8 +44,14 @@ def select_script(root: Path, record: dict, v6_root: Path | None = None,
                   v12_root: Path | None = None,
                   v13_root: Path | None = None,
                   patched_root: Path | None = None,
-                  turn_root: Path | None = None) -> tuple[Path, str]:
+                  turn_root: Path | None = None,
+                  s01_p0_root: Path | None = None) -> tuple[Path, str]:
     episode = record["episode_id"]
+    if s01_p0_root is not None and episode in PILOT_SCRIPTS:
+        path=(s01_p0_root / f"{episode}-source-turns-v15.md").resolve()
+        if not path.is_relative_to(s01_p0_root.resolve()) or not path.is_file():
+            raise ValueError("Private S01 exact-caption speaking-turn reader missing")
+        return path, "provisional_original_s01_dashed_reply_turn_v15"
     if turn_root is not None and episode in PILOT_SCRIPTS:
         path=(turn_root / f"{episode}-source-turn-amendments.md").resolve()
         if not path.is_relative_to(turn_root.resolve()) or not path.is_file():
@@ -161,14 +167,25 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
            v12_root: Path | None = None,
            v13_root: Path | None = None,
            patched_root: Path | None = None,
-           turn_root: Path | None = None) -> dict:
+           turn_root: Path | None = None,
+           s01_p0_root: Path | None = None) -> dict:
     if max_chars < 200:
         raise ValueError("Chunk size must be >= 200 characters")
     if out_dir.resolve().is_relative_to(root.resolve()):
         raise ValueError("Private retrieval output must be outside the Night Court source tree")
-    if sum(x is not None for x in (v6_root,v7_root,v8_root,v9_root,v10_root,v11_root,v12_root,v13_root,patched_root,turn_root))>1:
+    if sum(x is not None for x in (v6_root,v7_root,v8_root,v9_root,v10_root,v11_root,v12_root,v13_root,patched_root,turn_root,s01_p0_root))>1:
         raise ValueError("Choose one speaker reader source per pilot")
     rows = read_queue(root)
+    if s01_p0_root is not None:
+        s01_p0_report=json.loads((s01_p0_root/"pilot-source-episode-turns-v15-manifest.json").read_text("utf-8"))
+        if (s01_p0_report.get("original_caption_source_units")!=751
+            or s01_p0_report.get("provisional_named_original_source_units")!=621
+            or s01_p0_report.get("original_source_units_still_UNKNOWN")!=130
+            or s01_p0_report.get("current_provisional_speaking_blocks")!=726
+            or s01_p0_report.get("new_original_actor_identities_certified")!=0
+            or s01_p0_report.get("source_cue_timing_is_not_performer_turn_timing") is not True
+            or s01_p0_report.get("all_original_source_characters_preserved_exactly") is not True):
+            raise ValueError("Private S01 first-episode P0 source turn incorrectly certified")
     if turn_root is not None:
         turn_report=json.loads((turn_root/"pilot-source-turn-amendments-manifest.json").read_text("utf-8"))
         if (turn_report.get("original_caption_source_units")!=751
@@ -269,7 +286,7 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         source_sha = entry["source_metadata"]["source_sha256"]
         if not re.fullmatch(r"[0-9a-f]{64}", source_sha):
             raise ValueError(f"Invalid source SHA: {episode}")
-        path, tier = select_script(root, entry, v6_root, v7_root, v8_root, v9_root, v10_root, v11_root, v12_root, v13_root, patched_root, turn_root)
+        path, tier = select_script(root, entry, v6_root, v7_root, v8_root, v9_root, v10_root, v11_root, v12_root, v13_root, patched_root, turn_root, s01_p0_root)
         content = path.read_bytes()
         document = content.decode("utf-8")
         if source_sha not in document:
@@ -281,7 +298,12 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
                 raise ValueError(f"Wrong-season pilot prose in {episode} reader header: {named_season}")
         if episode == "S09E19" and entry["source_metadata"]["timed"]:
             raise ValueError("Untimed S09 original witness erroneously marked timed")
-        if turn_root is not None and episode in PILOT_SCRIPTS:
+        if s01_p0_root is not None and episode in PILOT_SCRIPTS:
+            expected_sha=s01_p0_report["private_source_manuscripts_sha256"][episode]
+            if sha256(content)!=expected_sha:
+                raise ValueError("Original S01 source turn v15 manuscript source SHA mismatch")
+            rel_path="private-source-turns-v15/"+path.name
+        elif turn_root is not None and episode in PILOT_SCRIPTS:
             expected_sha = turn_report["private_reader_sha256_by_episode"][episode]
             if sha256(content)!=expected_sha:
                 raise ValueError("Original speaker turn amendment script SHA differs")
@@ -415,6 +437,8 @@ def main() -> None:
                         help="Private exact-original cue Harriet/Mac Dan/Harry Alex/Roz split-turn scripts")
     parser.add_argument("--speaker-patch-root", type=Path, default=None,
                         help="Generic private original-source role amendments, append-only ledger")
+    parser.add_argument("--s01-p0-root", type=Path, default=None,
+                        help="Private original S01 exact-source C219 dash reply role-turn reader")
     parser.add_argument("--source-turn-patch-root", type=Path, default=None,
                         help="Generic exact-source original paragraph speaker turn amendments")
     options = parser.parse_args()
@@ -423,7 +447,8 @@ def main() -> None:
                     options.speaker_v8_root, options.speaker_v9_root,
                     options.speaker_v10_root, options.speaker_v11_root,
                     options.speaker_v12_root, options.speaker_v13_root,
-                    options.speaker_patch_root, options.source_turn_patch_root)
+                    options.speaker_patch_root, options.source_turn_patch_root,
+                    options.s01_p0_root)
     print(f"Exported {result['chunk_count']} retrieval chunks from {result['episode_count']} episodes")
 
 

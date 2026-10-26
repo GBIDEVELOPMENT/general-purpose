@@ -174,7 +174,8 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
                                      allow_original_s09_v12_contextual: bool = False,
                                      allow_original_s09_v13_handoffs: bool = False,
                                      allow_original_source_role_patches: bool = False,
-                                     allow_original_source_turn_amendments: bool = False
+                                     allow_original_source_turn_amendments: bool = False,
+                                     allow_original_s01_c219_turn: bool = False
                                      ) -> tuple[list[dict], dict]:
     """Verify original speaker records still cover identical caption units.
 
@@ -271,6 +272,12 @@ def use_source_checked_context_roles(source: list[dict], old_roles: list[dict],
         expected = ((row["candidate_role"] or "UNIDENTIFIED SPEAKER")
                     + " · " + row["role_attribution_status"] + "\n" + row["caption_text"])
         if expected not in source_docs[row["episode_id"]]:
+            if (allow_original_s01_c219_turn and
+                row["episode_id"]=="S01E01" and
+                row["source_reading_ref"]=="C219.1"):
+                # Verified private v15 exact source-span validator owns the
+                # split; this is NOT a whole-cue name or actor certification.
+                continue
             if (allow_original_source_turn_amendments and
                 row["episode_id"]=="S09E19" and
                 row["source_reading_ref"] in ("C102.1","C103.1","C209.1","C211.1","C121.1","C206.1","C271.1","C290.1")):
@@ -751,6 +758,54 @@ def apply_original_source_turn_amendments_to_index(source:list[dict],
     }
 
 
+def apply_source_exact_s01_c219_turn_to_index(source:list[dict],old_roles:list[dict],
+                                                path:Path,full:bool=True)->tuple[list[dict],dict]:
+    """Conserve S01 original timed SRT C219 while separating two UNKNOWN voices."""
+    from collections import defaultdict
+    from hashlib import sha256
+    from apply_s01_c219_source_turn import AFTER_MANIFEST, split, SOURCE_REF
+    manifest=json.loads((path.parent/AFTER_MANIFEST).read_text("utf-8"))
+    raw=path.read_bytes()
+    if sha256(raw).hexdigest()!=manifest.get("source_role_record_sha256"):
+        raise ValueError("S01 C219 private original split source role bytes mismatch")
+    prior=[r for r in old_roles if r["episode_id"]=="S01E01" and
+           r["source_reading_ref"]==SOURCE_REF]
+    if len(prior)!=1:
+        raise ValueError("Source S01 C219 original one-cue reader missing")
+    expected,computed=split(old_roles,prior[0]["caption_text"],strict=full)
+    current=rows_from_jsonl(path)
+    if current!=expected:
+        raise ValueError("Original S01 C219 two-voice split changed other episode dialogue or role")
+    for key in ("original_caption_source_units","provisional_named_original_source_units",
+                "original_source_units_still_UNKNOWN","current_provisional_speaking_blocks",
+                "new_original_actor_identities_certified"):
+        if manifest.get(key)!=computed[key]:
+            raise ValueError("S01 original subtitle cue or actor-certification counts drift")
+    docs=defaultdict(str)
+    for x in source:
+        docs[x["episode_id"]]+=x["retrieval_text"]
+    new=[r for r in current if r["episode_id"]=="S01E01" and
+         r["source_reading_ref"].startswith("S01E01-C219-SOURCE-TURN-")]
+    if len(new)!=2:
+        raise ValueError("Expected both P0 C219 voice fragments in private source reader")
+    for row in new:
+        if (row["candidate_role"] is not None
+            or row.get("speaker_turn_boundary_verified") is not False
+            or row.get("actor_face_or_voice_independently_verified") is not False
+            or row.get("source_cue_timing_is_not_performer_turn_timing") is False
+            or row.get("original_source_cue_start_ms")!=879532
+            or row.get("original_source_cue_end_ms")!=882330):
+            raise ValueError("S01 cue timing has been mistaken for an independently recognized actor")
+        visible="UNIDENTIFIED SPEAKER · unidentified\n"+row["caption_text"]
+        if visible not in docs["S01E01"]:
+            raise ValueError("Private S01 C219 split script not represented in retrieved source")
+    return current,{
+        "s01_c219_original_timed_source_turns":2,
+        "s01_original_source_turns_in_private_index":len(current),
+        "s01_c219_new_original_AV_verified_turns":0
+    }
+
+
 def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                    role_path: Path, require_full: bool = True,
                    speaker_override_path: Path | None = None,
@@ -762,7 +817,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                    contextual_v12_role_path: Path | None = None,
                    handoffs_v13_role_path: Path | None = None,
                    source_role_patch_path: Path | None = None,
-                   source_turn_patch_path: Path | None = None) -> dict:
+                   source_turn_patch_path: Path | None = None,
+                   s01_p0_role_path: Path | None = None) -> dict:
     if db_path.resolve().is_relative_to(ROOT.resolve()):
         raise ValueError("Private indexed dialogue database must be outside the repository")
     if sum(x is not None for x in (
@@ -782,6 +838,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
         raise ValueError("Source amendments require exact earlier S09 P0 turn chronology")
     if source_turn_patch_path is not None and source_role_patch_path is None:
         raise ValueError("Original paragraph P0 split amendments require the preceding role ledger")
+    if s01_p0_role_path is not None and source_turn_patch_path is None:
+        raise ValueError("S01 C219 source P0 turn role evidence requires latest original source patch ledger")
     if db_path.resolve() in {corpus_path.resolve(), card_path.resolve(), role_path.resolve(),
                              speaker_override_path.resolve() if speaker_override_path else None,
                              context_role_path.resolve() if context_role_path else None,
@@ -792,7 +850,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
                              contextual_v12_role_path.resolve() if contextual_v12_role_path else None,
                              handoffs_v13_role_path.resolve() if handoffs_v13_role_path else None,
                              source_role_patch_path.resolve() if source_role_patch_path else None,
-                             source_turn_patch_path.resolve() if source_turn_patch_path else None}:
+                             source_turn_patch_path.resolve() if source_turn_patch_path else None,
+                             s01_p0_role_path.resolve() if s01_p0_role_path else None}:
         raise ValueError("Refusing to overwrite a source file with the database")
     source = load_records(corpus_path)
     cards = load_cards(card_path, source)
@@ -821,7 +880,8 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
             allow_original_s09_v12_contextual=contextual_v12_role_path is not None,
             allow_original_s09_v13_handoffs=handoffs_v13_role_path is not None,
             allow_original_source_role_patches=source_role_patch_path is not None,
-            allow_original_source_turn_amendments=source_turn_patch_path is not None)
+            allow_original_source_turn_amendments=source_turn_patch_path is not None,
+            allow_original_s01_c219_turn=s01_p0_role_path is not None)
         report.update(summary)
     if source_turn_v10_role_path is not None:
         roles, summary = apply_current_source_turn_reunion_v10(
@@ -847,6 +907,10 @@ def build_database(db_path: Path, corpus_path: Path, card_path: Path,
     if source_turn_patch_path is not None:
         roles, summary = apply_original_source_turn_amendments_to_index(
             source,roles,source_turn_patch_path,full=require_full)
+        report.update(summary)
+    if s01_p0_role_path is not None:
+        roles, summary = apply_source_exact_s01_c219_turn_to_index(
+            source,roles,s01_p0_role_path,full=require_full)
         report.update(summary)
     if db_path.exists():
         raise FileExistsError("Refuse overwriting an existing fan corpus database")
@@ -989,6 +1053,7 @@ def main():
     init.add_argument("--handoffs-v13-roles", type=Path, default=None)
     init.add_argument("--source-role-patches", type=Path, default=None)
     init.add_argument("--source-turn-patches", type=Path, default=None)
+    init.add_argument("--s01-p0-roles", type=Path, default=None)
     srch = sub.add_parser("query")
     srch.add_argument("--database", type=Path, required=True)
     srch.add_argument("--query", required=True)
@@ -1009,7 +1074,8 @@ def main():
                                 contextual_v12_role_path=opts.contextual_v12_roles,
                                 handoffs_v13_role_path=opts.handoffs_v13_roles,
                                 source_role_patch_path=opts.source_role_patches,
-                                source_turn_patch_path=opts.source_turn_patches)
+                                source_turn_patch_path=opts.source_turn_patches,
+                                s01_p0_role_path=opts.s01_p0_roles)
         print(f"{report['indexed_documents']} private documents indexed across "
               f"{report['source_episodes']} episodes; no dialogue printed")
     else:
