@@ -80,6 +80,27 @@ jobs:
           assert all(r['evidence_tier']=='provisional_filmed_staging_working_script' for r in m['episodes'])
           print('Pilot source-SHA-checked retrieval export passed; no dialogue printed')
           PY
+      - name: Speaker-first revised pilot script retrieval with real immutable source text
+        run: |
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --speaker-v6-root /tmp/night-court-private-speaker-v6 \
+            --output /tmp/night-court-private-fan-speaker-v6
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out=Path('/tmp/night-court-private-fan-speaker-v6')
+          m=json.loads((out/'fan-retrieval-manifest.json').read_text('utf-8'))
+          assert m['episode_count']==193
+          assert sum(x['evidence_tier']=='provisional_external_quote_speaker_reader_v6' for x in m['episodes'])==2
+          assert sum(x['evidence_tier']=='source_only_dialogue_scaffold' for x in m['episodes'])==191
+          rows=[json.loads(x) for x in (out/'fan-retrieval-chunks.jsonl').read_text('utf-8').splitlines()]
+          s01=''.join(x['retrieval_text'] for x in rows if x['episode_id']=='S01E01')
+          s09=''.join(x['retrieval_text'] for x in rows if x['episode_id']=='S09E19')
+          assert 'DAN FIELDING · EXTERNALLY QUOTE-ATTRIBUTED; AUDIO UNVERIFIED' in s01
+          assert 'CHRISTINE SULLIVAN · EXTERNALLY QUOTE-ATTRIBUTED; AUDIO UNVERIFIED' in s09
+          assert 'ROZ RUSSELL · P0 SOURCE-CONTINUATION PROPOSAL; AUDIO UNVERIFIED' in s09
+          print('Newly proposed speaker names flow through all-episode retrieval; zero original dialogue printed')
+          PY
       - name: All 193 source witnesses with pilot v5 substitutions
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
