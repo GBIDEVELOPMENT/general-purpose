@@ -6,6 +6,8 @@ on:
       - 'Night Court/tools/render_current_pilot_screenplays.py'
       - 'Night Court/tools/test_render_current_pilot_screenplays.py'
       - 'Night Court/tools/export_fan_retrieval_chunks.py'
+      - 'Night Court/tools/integrate_committed_editorial_pilots.py'
+      - 'Night Court/tools/test_integrate_committed_editorial_pilots.py'
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
       - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
       - 'Night Court/tools/test_apply_manual_context_pilot_review_v16.py'
@@ -17,6 +19,8 @@ on:
       - 'Night Court/tools/render_current_pilot_screenplays.py'
       - 'Night Court/tools/test_render_current_pilot_screenplays.py'
       - 'Night Court/tools/export_fan_retrieval_chunks.py'
+      - 'Night Court/tools/integrate_committed_editorial_pilots.py'
+      - 'Night Court/tools/test_integrate_committed_editorial_pilots.py'
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
       - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
       - 'Night Court/tools/test_apply_manual_context_pilot_review_v16.py'
@@ -45,10 +49,12 @@ jobs:
             'Night Court/tools/render_current_pilot_screenplays.py' \
             'Night Court/tools/test_render_current_pilot_screenplays.py' \
             'Night Court/tools/export_fan_retrieval_chunks.py' \
+            'Night Court/tools/integrate_committed_editorial_pilots.py' \
+            'Night Court/tools/test_integrate_committed_editorial_pilots.py' \
             'Night Court/tools/test_export_fan_retrieval_chunks.py' \
             'Night Court/tools/apply_manual_context_pilot_review_v16.py' \
             'Night Court/tools/test_apply_manual_context_pilot_review_v16.py'
-          python -m unittest -v test_render_current_pilot_screenplays test_export_fan_retrieval_chunks test_apply_manual_context_pilot_review_v16
+          python -m unittest -v test_render_current_pilot_screenplays test_export_fan_retrieval_chunks test_apply_manual_context_pilot_review_v16 test_integrate_committed_editorial_pilots
       - name: Reject unexpected committed source-derived manuscripts outside approved private paths
         run: |
           set -euo pipefail
