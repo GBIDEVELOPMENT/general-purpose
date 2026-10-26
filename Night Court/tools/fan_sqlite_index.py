@@ -80,16 +80,109 @@ def validate_evidence(original: list[dict], cards: list[dict],
     }
 
 
+def apply_speaker_improvements(source: list[dict], roles: list[dict],
+                               improvements: list[dict],
+                               require_full: bool = True) -> list[dict]:
+    """Supersede matching UNKNOWN role blocks, never index conflicting old labels.
+
+    The historical 715-reading-block baseline remains independently validated
+    before this function. The corrected representation contains 716 proposed
+    speaker segments because one S09 original paragraph held two voices.
+    """
+    from collections import defaultdict
+    from hashlib import sha256
+    groups = defaultdict(list)
+    if require_full and (len(improvements) != 4
+                         or {(x.get("episode_id"), x.get("source_ref")) for x in improvements} !=
+                         {("S01E01", "C142.1"), ("S09E19", "C027.1"), ("S09E19", "C034.1")}):
+        raise ValueError("Unexpected high-priority speaker revision coverage")
+    for item in improvements:
+        ep, ref = item.get("episode_id"), item.get("source_ref")
+        if (item.get("schema") !=
+                "night-court-original-pilot-external-attribution-application/1"
+            or item.get("original_soundtrack_verified") is not False
+            or item.get("character_identity_status") != "external_or_context_editorial_proposal"
+            or not isinstance(item.get("start_char"), int)
+            or not isinstance(item.get("end_char"), int)
+            or not isinstance(item.get("text"), str)
+            or not isinstance(item.get("candidate_role"), str)
+            or not item["candidate_role"].strip()
+            or not isinstance(item.get("reader_label"), str)
+            or not item["reader_label"].startswith(item["candidate_role"] + " · ")
+            or "UNVERIFIED" not in item["reader_label"]
+            or not isinstance(ref, str)):
+            raise ValueError("Invalid or falsely certified external speaker proposal")
+        groups[(ep, ref)].append(item)
+    old_by_key = {(r["episode_id"], r.get("source_reading_ref")): r for r in roles}
+    result = [r for r in roles if
+              (r["episode_id"], r.get("source_reading_ref")) not in groups]
+    source_by_episode = defaultdict(list)
+    for row in source:
+        source_by_episode[row["episode_id"]].append(row)
+    for (ep, ref), entries in groups.items():
+        previous = old_by_key.get((ep, ref))
+        if previous is None or previous["candidate_role"] is not None:
+            raise ValueError("Cannot supersede a named or nonexistent earlier speaking block")
+        original = previous["caption_text"]
+        if not all(x.get("source_witness_sha256") == previous["original_source_sha256"]
+                   and x.get("source_cue_sha256") == sha256(original.encode()).hexdigest()
+                   for x in entries):
+            raise ValueError("Speaker correction conflicts with source caption SHA")
+        document = "".join(x["retrieval_text"] for x in source_by_episode[ep])
+        spans = sorted(entries, key=lambda x: x["start_char"])
+        pos = 0
+        for idx, row in enumerate(spans, 1):
+            a,b=row["start_char"],row["end_char"]
+            if not (pos <= a < b <= len(original)
+                    and not original[pos:a].strip()
+                    and original[a:b] == row["text"]):
+                raise ValueError("Proposed voice segments alter or omit source words")
+            if row["reader_label"] + "\n" + row["text"] not in document:
+                raise ValueError("New speaker reading not actually present in indexed v6 pilot")
+            replacement = dict(previous)
+            replacement.update({
+                "reading_block_id": previous["reading_block_id"] + f":speaker-p{idx}",
+                "caption_text": row["text"],
+                "candidate_role": row["candidate_role"],
+                "role_attribution_status": "external_or_context_editorial_proposal",
+                "speaker_turn_boundary_verified": False,
+                "actor_face_or_voice_independently_verified": False,
+                "original_source_spans_shared_across_multiple_voices": len(spans) > 1,
+                "source_cue_start_char": a,
+                "source_cue_end_char": b,
+                "external_episode_quote_url": row["external_episode_quote_url"],
+                "source_quote_dependency_possible": True,
+            })
+            result.append(replacement)
+            pos=b
+        if original[pos:].strip():
+            raise ValueError("Last proposed speaker span does not cover complete original dialogue")
+    if len({x["reading_block_id"] for x in result}) != len(result):
+        raise ValueError("Duplicated corrected character reading ID")
+    if require_full and len(result) != 716:
+        raise ValueError("Expected 716 post-split provisional pilot speaking segments")
+    return result
+
+
 def build_database(db_path: Path, corpus_path: Path, card_path: Path,
-                   role_path: Path, require_full: bool = True) -> dict:
+                   role_path: Path, require_full: bool = True,
+                   speaker_override_path: Path | None = None) -> dict:
     if db_path.resolve().is_relative_to(ROOT.resolve()):
         raise ValueError("Private indexed dialogue database must be outside the repository")
-    if db_path.resolve() in {corpus_path.resolve(), card_path.resolve(), role_path.resolve()}:
+    if db_path.resolve() in {corpus_path.resolve(), card_path.resolve(), role_path.resolve(),
+                             speaker_override_path.resolve() if speaker_override_path else None}:
         raise ValueError("Refusing to overwrite a source file with the database")
     source = load_records(corpus_path)
     cards = load_cards(card_path, source)
     roles = rows_from_jsonl(role_path)
     report = validate_evidence(source, cards, roles, require_full=require_full)
+    if speaker_override_path is not None:
+        revisions = rows_from_jsonl(speaker_override_path)
+        roles = apply_speaker_improvements(source, roles, revisions, require_full=require_full)
+        report["post_speaker_improvement_blocks"] = len(roles)
+        report["speaker_improvement_provisional_source_units"] = len(set(
+            (x["episode_id"], x["source_ref"]) for x in revisions))
+        report["speaker_improvement_independently_audio_verified"] = 0
     if db_path.exists():
         raise FileExistsError("Refuse overwriting an existing fan corpus database")
     db_path.parent.mkdir(parents=True, exist_ok=True)
@@ -221,6 +314,7 @@ def main():
     init.add_argument("--roles", type=Path, required=True)
     init.add_argument("--database", type=Path, required=True)
     init.add_argument("--allow-partial", action="store_true")
+    init.add_argument("--speaker-overrides", type=Path, default=None)
     srch = sub.add_parser("query")
     srch.add_argument("--database", type=Path, required=True)
     srch.add_argument("--query", required=True)
@@ -231,7 +325,8 @@ def main():
     opts = parser.parse_args()
     if opts.command == "build":
         report = build_database(opts.database, opts.corpus, opts.cards, opts.roles,
-                                require_full=not opts.allow_partial)
+                                require_full=not opts.allow_partial,
+                                speaker_override_path=opts.speaker_overrides)
         print(f"{report['indexed_documents']} private documents indexed across "
               f"{report['source_episodes']} episodes; no dialogue printed")
     else:
