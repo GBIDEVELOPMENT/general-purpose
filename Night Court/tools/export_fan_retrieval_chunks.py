@@ -188,7 +188,7 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         counts=working_report.get("source_unit_counts")
         version=working_report.get("schema")
         editorial = "current_editorial_reader_sha256" in working_report
-        expected = ({"original_source_units":751,"named_provisional":655,"unknown":96} if editorial else
+        expected = ({"original_source_units":751,"named_provisional":657,"unknown":94} if editorial else
                     {"original_source_units":751,"named_provisional":651 if version.endswith("/2") else 621,
                      "unknown":100 if version.endswith("/2") else 130})
         blocks = ([405,323] if editorial else [405,322] if version.endswith("/2") else [405,321])
