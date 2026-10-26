@@ -1,0 +1,180 @@
+name: Night Court real S09 original soundtrack speaker comparison
+
+on:
+  pull_request:
+    paths:
+      - 'Night Court/tools/compare_s09_original_speaker_embeddings.py'
+      - 'Night Court/tools/test_compare_s09_original_speaker_embeddings.py'
+      - '.github/workflows/night-court-s09-original-speaker-matching.yml'
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+    paths:
+      - 'Night Court/research/trigger-original-s09-speaker-embedding.txt'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: night-court-original-s09-role-embeddings-${{ github.event_name == 'pull_request_target' && 'trusted' || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  offline-original-speaker-evidence-contract:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Synthetic S09 source paragraph/voice integrity and abstention tests
+        run: |
+          python 'Night Court/tools/test_compare_s09_original_speaker_embeddings.py' -v
+
+  notify-trusted-original-s09-speaker-run:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-owner-s09-speaker-embedding-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Post S09 source run locator with no FTP/media data
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          gh api --method POST "repos/$REPO/issues/$PR_NUMBER/comments" \
+            -f body="Original 1992 Night Court S09 voice-source comparison workflow: $RUN_URL. Result is pending; no original actor voice identity certified."
+
+  trusted-original-s09-audio-voice-comparison:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.ref == 'research/night-court-owner-s09-speaker-embedding-trigger' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Use reviewed main commit only, NEVER unreviewed PR head code with secrets
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source-only tests before any private original film access
+        run: |
+          python 'Night Court/tools/test_compare_s09_original_speaker_embeddings.py' -v
+          python 'Night Court/tools/test_build_pilot_character_evidence.py' -v
+      - name: Obtain previous exact-source S09 audio alignment NUMERIC evidence only
+        uses: actions/download-artifact@v4
+        with:
+          name: night-court-original-s09-347-paragraph-audio-locators
+          run-id: 40253914693
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/night-court-s09-numeric-audio-locators
+      - name: Reconcile 347 held original paragraph IDs against 231 candidate numeric sound intervals
+        run: |
+          python 'Night Court/tools/compare_s09_original_speaker_embeddings.py' \
+            --source-alignment '${{ runner.temp }}/night-court-s09-numeric-audio-locators/night-court-s09-original-audio-paragraph-locators.json' \
+            --plan-only --output '${{ runner.temp }}/night-court-s09-speaker-reference-plan.json'
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=json.loads(Path(os.environ['RUNNER_TEMP'],'night-court-s09-speaker-reference-plan.json').read_text('utf-8'))
+          assert p['original_source_paragraphs_total']==347
+          assert p['original_audio_paragraphs_with_candidate_windows']==231
+          assert p['original_paragraphs_remain_untimed'] is True
+          assert p['original_speech_identity_human_verified'] is False
+          print('231 exact-source numeric audio positions checked; role seed candidates present:',
+                len(p['candidate_reference_role_counts']))
+          PY
+      - name: Install pinned CPU-only local speaker identification runtime
+        run: |
+          set -euo pipefail
+          if ! command -v ffmpeg >/dev/null; then
+            timeout 180 sudo apt-get update -qq
+            timeout 180 sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg
+          fi
+          python -m venv /tmp/night-court-original-s09-voice
+          timeout 500 /tmp/night-court-original-s09-voice/bin/pip install -q --disable-pip-version-check \
+            'torch==2.7.1' --index-url https://download.pytorch.org/whl/cpu
+          timeout 360 /tmp/night-court-original-s09-voice/bin/pip install -q --disable-pip-version-check \
+            'resemblyzer==0.1.4' 'numpy==1.26.4'
+      - name: Compare actual original-S09 soundtrack voice embeddings; no original audio retained
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: |
+          set -euo pipefail
+          timeout 900 /tmp/night-court-original-s09-voice/bin/python -u \
+            'Night Court/tools/compare_s09_original_speaker_embeddings.py' \
+            --source-alignment '${{ runner.temp }}/night-court-s09-numeric-audio-locators/night-court-s09-original-audio-paragraph-locators.json' \
+            --ftp --output '${{ runner.temp }}/night-court-s09-original-speaker-numeric-proposals.json'
+      - name: Retain only source-linked numeric comparison and unverified character hypotheses
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-original-s09-role-audio-numeric-proposals
+          path: ${{ runner.temp }}/night-court-s09-original-speaker-numeric-proposals.json
+          if-no-files-found: error
+          retention-days: 7
+      - name: Destroy source evidence and model scratch after run
+        if: always()
+        run: |
+          rm -rf /tmp/night-court-original-s09-voice
+          rm -rf '${{ runner.temp }}/night-court-s09-numeric-audio-locators'
+          rm -f '${{ runner.temp }}/night-court-s09-speaker-reference-plan.json'
+          rm -f '${{ runner.temp }}/night-court-s09-original-speaker-numeric-proposals.json'
+
+  report-original-S09-audio-speaker-candidates:
+    needs: trusted-original-s09-audio-voice-comparison
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      needs.trusted-original-s09-audio-voice-comparison.result == 'success' &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.ref == 'research/night-court-owner-s09-speaker-embedding-trigger'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      actions: read
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: night-court-original-s09-role-audio-numeric-proposals
+          path: ${{ runner.temp }}/private-original-s09-voice
+      - name: Report exact-source counts without audiovisual data or original dialogue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPORT: ${{ runner.temp }}/private-original-s09-voice/night-court-s09-original-speaker-numeric-proposals.json
+        run: |
+          set -euo pipefail
+          test "$(jq -r '.source_film_sha256' "$REPORT")" = '51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649'
+          test "$(jq -r '.source_paragraph_sha256' "$REPORT")" = '659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2'
+          test "$(jq -r '.original_actor_identity_independently_verified' "$REPORT")" = '0'
+          UNKNOWN=$(jq -r '.usable_unknown_source_audio_windows' "$REPORT")
+          CAND=$(jq -r '.unverified_acoustic_role_suggestions' "$REPORT")
+          RIGHT=$(jq -r '.known_role_holdout_metrics.correctly_recovered_held_out_provisional_roles' "$REPORT")
+          N=$(jq -r '.known_role_holdout_metrics.evaluated_provisional_known_voice_samples' "$REPORT")
+          READY=$(jq -r '.crossvalidated_acoustic_model_eligible_to_propose' "$REPORT")
+          gh api --method POST "repos/$REPO/issues/$PR_NUMBER/comments" \
+            -f body="Actual source S09E19 speaker model: $UNKNOWN matched previously UNKNOWN original paragraph audio samples, $CAND unverified actor-role suggestions, holdout provisional source roles $RIGHT/$N, model eligible=$READY. ZERO original cast voices independently certified. All 347 original paragraphs remain UNTImED. Numeric/SHA-only proof in private 7-day run artifact."
+      - name: Wipe numerical acoustic result
+        if: always()
+        run: rm -rf '${{ runner.temp }}/private-original-s09-voice'
