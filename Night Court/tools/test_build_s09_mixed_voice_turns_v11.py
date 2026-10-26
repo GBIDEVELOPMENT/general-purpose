@@ -27,7 +27,7 @@ def old():
             "candidate_role":"CHRISTINE SULLIVAN" if ref=="C190.1" else None,
             "role_attribution_status":"unidentified" if ref!="C190.1" else "provisional_script_context",
             "caption_text":TEXT[ref],
-            "source_original_untimed":True,
+            "original_source_untimed":True,
             "source_original_times_ms":None,
             "speaker_turn_boundary_verified":False,
             "actor_face_or_voice_independently_verified":False,
