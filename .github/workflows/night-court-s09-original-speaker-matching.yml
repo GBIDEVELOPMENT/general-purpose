@@ -5,6 +5,8 @@ on:
     paths:
       - 'Night Court/tools/compare_s09_original_speaker_embeddings.py'
       - 'Night Court/tools/test_compare_s09_original_speaker_embeddings.py'
+      - 'Night Court/tools/apply_source_role_amendments.py'
+      - 'Night Court/research/source-role-amendments-v1.json'
       - '.github/workflows/night-court-s09-original-speaker-matching.yml'
       - 'Night Court/tools/plan_next_speaker_review_v9.py'
       - 'Night Court/tools/test_plan_next_speaker_review_v9.py'
@@ -160,12 +162,44 @@ jobs:
           assert triage['last_episode_original_untimed_candidate_count']==15
           print('All 132 current UNKNOWN source units now queued with original audio locators, 16 P0 intra-cue review questions and disputed C129 still UNKNOWN')
           PY
+      - name: Compare newest original S09 soundtrack role-bank coverage before expensive acoustic model work
+        env:
+          AUDIO: ${{ runner.temp }}/s09-source-numeric/night-court-s09-original-audio-paragraph-locators.json
+          ROLE_ROOT: ${{ runner.temp }}/s09-source-role-patches
+          REPORT: ${{ runner.temp }}/s09-current-source-voice-plan.json
+        run: |
+          python 'Night Court/tools/compare_s09_original_speaker_embeddings.py' \
+            --source-alignment "$AUDIO" \
+            --speaker-patch-root "$ROLE_ROOT" \
+            --output "$REPORT" --plan-only
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=json.loads(Path(os.environ["REPORT"]).read_text("utf-8"))
+          assert p["original_source_paragraphs_total"]==347
+          assert p["original_audio_paragraphs_with_candidate_windows"]==231
+          assert p["voice_reference_source"]=="latest_619_named_source_role_patches_original_untimed"
+          assert p["original_paragraphs_remain_untimed"] is True
+          assert p["original_speech_identity_human_verified"] is False
+          assert len(p["candidate_reference_role_counts"])>=3
+          assert all(len(x)>=4 for x in p["reference_audio_windows"].values())
+          assert p["potentially_multivoice_or_weak_alignment_rejected_count"]>0
+          assert all(x["original_source_paragraph"] not in
+                     {34,102,121,127,146,188,189,190,191,206,209,211,220,225,240,271,277,284,290,291}
+                     for xs in p["reference_audio_windows"].values() for x in xs)
+          print("Latest source-numeric S09 candidate voice-bank roles:",
+                p["candidate_reference_role_counts"],
+                "unidentified original paragraph audio windows:",
+                len(p["previously_unidentified_audio_windows"]),
+                "actor identification independently accepted: 0")
+          PY
       - name: Erase private source/role-derived text and numeric audio leads
         if: always()
         run: |
           rm -rf '${{ runner.temp }}/s09-v6' '${{ runner.temp }}/s09-v7' '${{ runner.temp }}/s09-v8' '${{ runner.temp }}/s09-source-numeric'
           rm -rf '${{ runner.temp }}/s09-v9' '${{ runner.temp }}/s09-v10' '${{ runner.temp }}/s09-v11' '${{ runner.temp }}/s09-v12' '${{ runner.temp }}/s09-v13' '${{ runner.temp }}/s09-source-role-patches' '${{ runner.temp }}/s09-next-132-private-speaker-review' '${{ runner.temp }}/s09-p0-original-internal-turns'
           rm -f '${{ runner.temp }}/s09-source-v8-reference-sensitivity-'*.json
+          rm -f '${{ runner.temp }}/s09-current-source-voice-plan.json
 
   notify-trusted-original-s09-speaker-run:
     if: >-
