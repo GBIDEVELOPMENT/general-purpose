@@ -1,17 +1,11 @@
 {
-  "actual_audio_window_leads": 21,
-  "current_original_cue_p0_unknown_handoff": "S09E19:C277.1",
-  "current_v16_source_sha256": "57dda29307fd9856661a48407f1bd83b6c5ed709fa66ff81f52fab3e63cdf363",
+  "actual_audio_window_leads": 20,
+  "current_editorial_reader_sha256": "88aee05506d7b85c23f61b767180d8a5a8e2466d044885e6f7815f13bb2205be",
   "largest_contiguous_unknown_original_source_runs": {
     "S01E01": [
       {
         "end_source_cue": 77,
         "start_source_cue": 75,
-        "unknown_source_units": 3
-      },
-      {
-        "end_source_cue": 103,
-        "start_source_cue": 101,
         "unknown_source_units": 3
       },
       {
@@ -27,6 +21,11 @@
       {
         "end_source_cue": 61,
         "start_source_cue": 61,
+        "unknown_source_units": 2
+      },
+      {
+        "end_source_cue": 103,
+        "start_source_cue": 102,
         "unknown_source_units": 2
       },
       {
@@ -87,11 +86,6 @@
         "unknown_source_units": 4
       },
       {
-        "end_source_cue": 272,
-        "start_source_cue": 269,
-        "unknown_source_units": 4
-      },
-      {
         "end_source_cue": 3,
         "start_source_cue": 1,
         "unknown_source_units": 3
@@ -105,6 +99,11 @@
         "end_source_cue": 130,
         "start_source_cue": 128,
         "unknown_source_units": 3
+      },
+      {
+        "end_source_cue": 271,
+        "start_source_cue": 269,
+        "unknown_source_units": 3
       }
     ]
   },
@@ -113,19 +112,17 @@
   "new_voices_human_accepted": 0,
   "original_source_cue_numbers_only_no_dialogue": true,
   "original_source_units": 751,
-  "original_source_units_still_unknown": 100,
-  "original_units_provisionally_named": 651,
+  "original_source_units_still_unknown": 96,
+  "original_units_provisionally_named": 655,
   "original_untimed_S09_captions_modified": false,
   "possible_unknown_to_named_same_sentence_continuation_reviews": 0,
-  "preexisting_named_role_corrections_unverified": 2,
-  "prior_contextual_editorial_assignments_unverified": 32,
   "remaining_unknown_original_source_units_by_episode": {
-    "S01E01": 21,
-    "S09E19": 79
+    "S01E01": 20,
+    "S09E19": 76
   },
   "s09_actual_audio_window_leads": 0,
   "s09_candidate_audio_locator_loaded": false,
   "schema": "night-court-private-original-speaker-review-next/1",
   "suspected_internal_switch_review_records": 10,
-  "unknown_source_unit_review_records": 103
+  "unknown_source_unit_review_records": 98
 }

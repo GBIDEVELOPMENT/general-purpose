@@ -1,0 +1,43 @@
+{
+  "AV_accepted_actors": 0,
+  "AV_accepted_performed_turns": 0,
+  "base_v16_reader_sha256": "57dda29307fd9856661a48407f1bd83b6c5ed709fa66ff81f52fab3e63cdf363",
+  "current_editorial_reader_sha256": "88aee05506d7b85c23f61b767180d8a5a8e2466d044885e6f7815f13bb2205be",
+  "episode_evidence": {
+    "S01E01": {
+      "canonical_provenance_sha256": "db7499b4dc9024f44d6a36b7b4c23c9be2ce9763010cb474c5adb67a6191bda2",
+      "display_groups": 276,
+      "editorial_version": "Agent1-v18",
+      "fully_named_units": 384,
+      "manifest_sha256": "6132f393147c533f994feb696d4b299f0801ce0870741f6d3be06644653ec38c",
+      "manuscript_sha256": "c430ad3da4d60d08079d617b53bb4c50e1e1338b1634903bb3ee49283a53fcf5",
+      "new_named_role_edits": 2,
+      "no_independent_actor_voice_certification": true,
+      "original_source_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "original_units": 404,
+      "sampled_picture_annotations": 11,
+      "source_reading_blocks": 405,
+      "units_with_unknown": 20
+    },
+    "S09E19": {
+      "c291_source_exact_split": true,
+      "canonical_provenance_sha256": "b96a152f745a77ae007e1531f2a4744ccadc85f6834b0c7cf4a77839ac2439ae",
+      "display_groups": 244,
+      "editorial_version": "Agent2-v17",
+      "fully_named_units": 271,
+      "manifest_sha256": "6abec4b8b79881e04dcc84d33f06c594294dcbbcba916150a646034d35559d65",
+      "manuscript_sha256": "08ee82aae51280a84346109b43ad26ccef7fcc61e1b32594303d4805e864a88c",
+      "no_independent_actor_voice_certification": true,
+      "original_source_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+      "original_units": 347,
+      "role_edits": 11,
+      "source_reading_blocks": 323,
+      "units_with_unknown": 76
+    }
+  },
+  "named_provisional": 655,
+  "original_source_units": 751,
+  "provisional_reader_blocks": 728,
+  "schema": "night-court-private-two-pilot-integrated-editorial/1",
+  "units_with_unknown_voice": 96
+}

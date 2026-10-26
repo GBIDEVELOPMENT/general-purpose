@@ -1,4 +1,4 @@
-# S01E01: Night Court (1984–1992), working screenplay
+# S01E01: Night Court (1984–1992), contextual and source-picture screenplay v18
 
 **Provisional dialogue reading only.**
 Original character identities and display continuations are not
@@ -6,7 +6,14 @@ independently audio-verified. Scene boundaries, delivery and physical
 business await source AV inspection. S09 source is entirely untimed.
 Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496
 
-## Dialogue (scenes awaiting verification)
+**Editorial update 2026-10-26:** C028.1 corrected to Lana from direct address; C101.1 provisionally identifies Sheila as the respondent to Harry's call. The uninterrupted Lana C027/C028 display is grouped, but the performed boundary remains unverified. Still-image evidence from original source near C025–C027 shows a uniformed person using the desk telephone; neither actor-to-dialogue synchronization nor delivery is established. Source: `seasons/S01/S01E01/derived/scene-review-v3/scene-script-v3.md`.
+
+**Picture editorial layer v18:** Observed scene views, clothing, objects and gestures from separately reviewed *sampled original-film frames* appear in italics, tagged `PIC-01` through `PIC-11`. They are sourced to `seasons/S01/S01E01/derived/editorial-agent1-v18-picture-annotations.json`. Film frames were not replayed in this editing session; pictured people are not independently linked to dialogue voices. Approximate insertions do not certify precise cuts, spoken timing or full continuous action. Prior v17 speaker evidence remains context-only. C175's two dash-prefixed source-caption parts are now displayed as one provisionally continuous Dan speech, pending soundtrack verification (`editorial-agent1-v18-c175-turn-join.json`).
+
+## Dialogue (character voices and performed boundaries awaiting original AV verification)
+
+*In a book-lined courthouse office, a lavender-jacketed person crosses to a paper-covered desk. At a tall window, a figure in white painter's overalls with bright yellow sleeves holds a small implement and looks outside.* `[PIC-01]`
+
 
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -14,57 +21,70 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Are you finished painting?
 
+
 ### PAINTER · PROVISIONAL
 
     Yeah.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Then what are you doing?
+
 
 ### PAINTER · PROVISIONAL
 
     I'm watching a naked couple in the building
     across the alley. They're fooling around.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     That's depraved.
 
+
 ### PAINTER · PROVISIONAL
 
     Too soon to tell.
+
 
 ### LANA WAGNER · PROVISIONAL
 
     How would you like somebody
     watching you and your wife doing that?
 
+
 ### PAINTER · PROVISIONAL
 
     My wife won't do that.
+
 
 ### LANA WAGNER · PROVISIONAL
 
     Out.
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     How are you?
+
 
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     God, I was so close.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Hi, Bull. Any sign of the new judge?
+
 
 ### BULL SHANNON · DISPLAY CONTINUATION, UNVERIFIED
 
     Not yet. Say, Lana...
 
     ...what's this guy supposed to be like?
+
 
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -76,13 +96,16 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Nobody knows who was appointed
     or where they were assigned.
 
+
 ### BULL SHANNON · PROVISIONAL
 
     I think that's mercurial.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Did you say "mercurial"?
+
 
 ### BULL SHANNON · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -93,49 +116,61 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     ...and use it all that month.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     My, how...
+
 
 ### BULL SHANNON · PROVISIONAL
 
     Minimifidian?
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Is that a real word?
+
 
 ### BULL SHANNON · PROVISIONAL
 
     Does a bear extravasate in the forest?
 
+
 ### LANA WAGNER · PROVISIONAL
 
     What?
+
+
+*A uniformed person reaches for the black desk telephone, brings the receiver to the ear, then lowers it toward the desk.* `[PIC-02]`
+
 
 ### BULL SHANNON · PROVISIONAL
 
     No.
 
-### LANA WAGNER · PROVISIONAL
+
+### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
     Tell the judge the mayor called.
 
-### BULL SHANNON · PROVISIONAL
-
     Bye, Bull.
+
 
 ### COURIER · PROVISIONAL
 
     Hello.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Is that stuff for the judge?
 
+
 ### COURIER · PROVISIONAL
 
     Yeah.
+
 
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -145,63 +180,78 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Well, stick it over in the corner.
 
+
 ### COURIER · PROVISIONAL
 
     Right.
+
 
 ### HARRY STONE · PROVISIONAL
 
     My name's Harry.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     So?
+
 
 ### HARRY STONE · PROVISIONAL
 
     I get your drift.
 
+
 ### SHEILA GARDINER · PROVISIONAL
 
     Is he here yet?
+
 
 ### LANA WAGNER · PROVISIONAL
 
     Not yet, Sheila. Good evening, Daniel.
 
+
 ### DAN FIELDING · PROVISIONAL
 
     Good evening.
+
 
 ### SHEILA GARDINER · PROVISIONAL
 
     Do I look all right?
 
+
 ### LANA WAGNER · PROVISIONAL
 
     You look fine, Sheila. Doesn't she, Dan?
 
+
 ### DAN FIELDING · PROVISIONAL
 
     Yeah, swell.
+
 
 ### SHEILA GARDINER · PROVISIONAL
 
     You heard anything about him?
     Anything at all?
 
+
 ### LANA WAGNER · PROVISIONAL
 
     <i>Nada.</i> I was just told to expect him tonight.
+
 
 ### SHEILA GARDINER · PROVISIONAL
 
     I hope he's got a background
     in criminal law.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     I hope he plays chess.
+
 
 ### SHEILA GARDINER · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -211,25 +261,34 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...and all you hope for
     is someone who can play chess.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     I also hope his first name is not Shecky.
+
 
 ### COURIER · PROVISIONAL
 
     Package for Judge Stone.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     He's not here.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Hey, great view.
 
+
+*A man in a grey shirt and blue trousers reclines on the padded ledge beneath the office windows and gestures toward the window. A lavender-clad person approaches with a folder; another man in a dark suit holds rolled papers.* `[PIC-03]`
+
+
 ### LANA WAGNER · PROVISIONAL
 
     What are you doing up there?
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -237,41 +296,51 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Bravo!
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Could you just get off of there?
+
 
 ### COURIER · PROVISIONAL
 
     The judge has to sign for this himself.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     I said, he is not here.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Oh, yes, he is.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     What?
+
 
 ### LANA WAGNER · PROVISIONAL
 
     Oh, you don't mean...
 
+
 ### LANA WAGNER · PROVISIONAL
 
     You're judge Harold T. Stone?
+
 
 ### HARRY STONE · PROVISIONAL
 
     Yep.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     You are really a judge?
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -279,17 +348,21 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     ...could I do this?
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     In his office?
+
 
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     No, I guess not.
 
+
 ### COURIER · PROVISIONAL
 
     Here you go.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -301,9 +374,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...to go out and spend it
     on a Barry Manilow album?
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     Cover me.
+
 
 ### DAN FIELDING · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -311,47 +386,68 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Dan Fielding, assistant district attorney.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Nice to meet you.
+
 
 ### SHEILA GARDINER · PROVISIONAL
 
     I'm Sheila Gardiner,
     an attorney with legal aid.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Pleasure's mine.
+
 
 ### LANA WAGNER · PROVISIONAL
 
     I'm Lana Wagner, your court clerk.
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     Couldn't you just die?
+
+
+**SCENE VIEW | EXTERIOR, NIGHT [picture evidence PIC-04]**
+
+*ESTABLISHING VIEW: An illuminated bridge against the night city skyline.* `[PIC-04]`
+
+
+**SCENE VIEW | COURTROOM [picture evidence PIC-05]**
+
+*COURTROOM: A raised judicial bench, a dark-robed person at the desk and a lavender-clad person near the lectern.* `[PIC-05]`
+
 
 ### DAN FIELDING · PROVISIONAL
 
     Pay no attention to the gossip.
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     On you, they look good.
+
 
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     I don't know
     what's holding the judge up.
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     Diaper change, perhaps.
 
+
 ### BULL SHANNON · PROVISIONAL
 
     All rise.
+
 
 ### BULL SHANNON · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -366,46 +462,57 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     ...presiding.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Gotcha.
+
 
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     Your Honor...
 
+
 ### HARRY STONE · PROVISIONAL
 
     I've always wanted to see that happen.
+
 
 ### DAN FIELDING · PROVISIONAL
 
     Far be it from me to advise you
     on courtroom matters...
 
+
 ### HARRY STONE · PROVISIONAL
 
     Where's my gavel?
+
 
 ### DAN FIELDING · PROVISIONAL
 
     I beg your pardon?
 
+
 ### HARRY STONE · PROVISIONAL
 
     That hammer thing.
+
 
 ### DAN FIELDING · PROVISIONAL
 
     I know what it is...
 
+
 ### HARRY STONE · PROVISIONAL
 
     Oh, here it is.
 
+
 ### DAN FIELDING · PROVISIONAL
 
     Your Honor...
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -413,9 +520,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Well, how the hell are you tonight?
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Sir, the first case on the docket...
+
 
 ### HACKSAW HAMMOND · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -423,36 +532,44 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Is that you?
 
+
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
     Hacksaw?
 
     Come on down.
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     He has a friend named Hacksaw.
+
 
 ### DAN FIELDING · PROVISIONAL
 
     Blocky and Lefty must be
     caught in traffic.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Hacksaw, how are you doing?
+
 
 ### HACKSAW HAMMOND · PROVISIONAL
 
     Yeah, well, you know.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Yeah, three-card monte again, huh?
 
+
 ### HACKSAW HAMMOND · PROVISIONAL
 
     Guilty, Your Honor.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -461,33 +578,41 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...prepare the file
     on Hammond, Leonard G.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     It's not the first case...
+
 
 ### HARRY STONE · PROVISIONAL
 
     Miss Gardiner, your client's pleading guilty.
 
-### UNIDENTIFIED SPEAKER · UNKNOWN
+
+### SHEILA GARDINER · PROVISIONAL
 
     Be right there.
+
 
 ### HARRY STONE · PROVISIONAL
 
     It'll cost you 50 bucks.
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     What was the fine?
+
 
 ### HARRY STONE · PROVISIONAL
 
     Fifty bucks, hon.
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     Thank you. Here's the file.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -495,25 +620,31 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Good to see you, Hacksaw, really good.
 
+
 ### HACKSAW HAMMOND · PROVISIONAL
 
     You too.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Boy, that was quick. What's next?
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     I hate you!
+
 
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     Well, I hate you more!
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     We'll talk later.
+
 
 ### PHIL KERR · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -522,11 +653,13 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Their chromosomes aren't normal,
     and they all look like Slinkys.
 
+
 ### LOUISE KERR · DISPLAY CONTINUATION, UNVERIFIED
 
     You leave my family out of this, you...
 
     Scuzzball.
+
 
 ### PHIL KERR · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -535,34 +668,42 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     You ought to lock her up and throw away
     the key, judge. She's crazy.
 
+
 ### HARRY STONE · PROVISIONAL
 
     All right!
+
 
 ### HARRY STONE · PROVISIONAL
 
     Let's put a lid on this assiduousness.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     <i>State v. Kerr,</i> Your Honor.
+
 
 ### DAN FIELDING · PROVISIONAL
 
     This case has some intricate...
 
+
 ### HARRY STONE · PROVISIONAL
 
     Let's all gather around the big desk.
+
 
 ### DAN FIELDING · PROVISIONAL
 
     Your Honor, this case
     has some intricate facets.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Can you give it to me in a nutshell?
+
 
 ### DAN FIELDING · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -574,58 +715,72 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     ...so the DA files for attempted murder.
 
+
 ### HARRY STONE · PROVISIONAL
 
     This could go either way.
+
 
 ### LANA WAGNER · PROVISIONAL
 
     Yes.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Unless...
 
+
 ### LANA WAGNER · PROVISIONAL
 
     What?
+
 
 ### HARRY STONE · PROVISIONAL
 
     No, I guess it's gotta go either way,
     doesn't it?
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     Your Honor...
+
 
 ### HARRY STONE · PROVISIONAL
 
     Hi.
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     Hi.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Let's see here. Philip Kerr?
 
+
 ### PHIL KERR · PROVISIONAL
 
     Yes, sir.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Louise Kerr?
 
+
 ### LOUISE KERR · PROVISIONAL
 
     Here.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Carla Bouvoir?
+
 
 ### CARLA BOUVIER · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -635,13 +790,16 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...for alleged solicitation
     of prostitution or something.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Right you are.
 
+
 ### DAN FIELDING · PROVISIONAL
 
     Your Honor, may I?
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -658,9 +816,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     But I don't think
     that's gonna be necessary.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     What do you mean it's not necessary?
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -677,9 +837,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...sit down, have a cup of coffee, relax,
     try to work out this little thing.
 
+
 ### DAN FIELDING · PROVISIONAL
 
     Your Honor, this is highly irregular.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -687,18 +849,22 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Court's recessed.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     I cannot work with that man.
     He's disrupting my court.
 
+
 ### DAN FIELDING · PROVISIONAL
 
     There isn't much we can do.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     What's that mean?
+
 
 ### DAN FIELDING · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -713,36 +879,47 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     It is virtually impossible to remove
     a sitting judge from the bench.
 
+
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
     So, what you're saying is...
 
     We have to kill him.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Yo.
+
 
 ### LANA WAGNER · PROVISIONAL
 
     Sir, I have to speak with you.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Lana, good to see you. Come over.
+
+
+*Back in the book-lined office, the lavender-clad person leans over a desk toward a dark-robed figure. The shelves, windows and doorway remain visible in the sampled views.* `[PIC-06]`
+
 
 ### LANA WAGNER · PROVISIONAL
 
     Your Honor, I feel that it's my duty
     to discuss with you your behavior...
 
+
 ### HARRY STONE · PROVISIONAL
 
     Pick a card.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Sir, I have urgent business to discuss.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -751,6 +928,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Now, what's on your mind?
 
+
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
     Judge Stone, I think your actions
@@ -758,21 +936,26 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     ...unorthodox and totally irresponsible.
 
+
 ### HARRY STONE · PROVISIONAL
 
     My God, they're at it again?
+
 
 ### LANA WAGNER · PROVISIONAL
 
     Your Honor!
 
+
 ### HARRY STONE · PROVISIONAL
 
     Come on, call me Harry.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     I don't think I can.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -783,13 +966,16 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Used to come out:
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Your Honor...
 
+
 ### HARRY STONE · PROVISIONAL
 
     Call me:
+
 
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -799,6 +985,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...out for a cup of coffee?
     What do murderers get? Brunch?
 
+
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
     All right, my methods are informal.
@@ -806,6 +993,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Hey, give them a chance. They might work.
 
     Maybe, just maybe, it'll work.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -816,29 +1004,33 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     What happened?
 
+
 ### DAN FIELDING · PROVISIONAL
 
     You wanna know what happened?
 
-### DAN FIELDING · PROVISIONAL
+
+### DAN FIELDING · DISPLAY CONTINUATION, UNVERIFIED
 
     I'll tell you what happened.
 
-### DAN FIELDING · PROVISIONAL
-
     No settlement with the Kerrs.
+
 
 ### LANA WAGNER · PROVISIONAL
 
     Oh, Dan, it must have been awful.
 
+
 ### DAN FIELDING · PROVISIONAL
 
     I loved my shirt.
 
+
 ### HARRY STONE · PROVISIONAL
 
     I really thought it would work.
+
 
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -846,26 +1038,37 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     ...but it was predictable.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Yeah, maybe it was.
+
+
+**SCENE VIEW | COURTROOM RETURN [picture evidence PIC-07]**
+
+*COURTROOM: Several adults gather near the rail, with uniformed personnel among them.* `[PIC-07]`
+
 
 ### LOUISE KERR · PROVISIONAL
 
     You're a whale!
 
+
 ### PHIL KERR · PROVISIONAL
 
     You're a tarantula!
+
 
 ### LOUISE KERR · PROVISIONAL
 
     You never used language like that
     to me before!
 
+
 ### PHIL KERR · PROVISIONAL
 
     You never tried to shoot me before.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -873,6 +1076,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Now, pipe down, or I'm gonna
     turn Bull loose to kick some butt.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -885,24 +1089,29 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Now, I thought I sent you two away
     to work this thing out.
 
+
 ### PHIL KERR · PROVISIONAL
 
     I tried to work things out with her,
     but she won't have none of it.
 
+
 ### LOUISE KERR · PROVISIONAL
 
     That's a damn lie!
+
 
 ### CARLA BOUVIER · PROVISIONAL
 
     Louise has been trying.
     This dude won't give her a chance.
 
+
 ### DAN FIELDING · PROVISIONAL
 
     Hey, don't forget,
     Phil's the one that was shot at.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -913,21 +1122,26 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Yes, the man in the back in the bathrobe.
 
+
 ### BATHROBE SPECTATOR · PROVISIONAL
 
     Are "oohs" and "aahs" okay?
+
 
 ### HARRY STONE · PROVISIONAL
 
     They're fine.
 
+
 ### BATHROBE SPECTATOR · PROVISIONAL
 
     Thank you.
 
+
 ### BATHROBE SPECTATOR · PROVISIONAL
 
     Have we started?
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -945,15 +1159,18 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     It seems that there are those
     who think I'm crazy.
 
+
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
     Well, frankly...
 
     ...I just don't know.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Your Honor...
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -963,17 +1180,24 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Why, it's a coin.
 
+
+*Beside the raised bench, the robed figure reaches toward the area by the lavender-jacketed person's head, then holds up a small pale round object. The other person leans over the desk as the robed figure gestures.* `[PIC-08]`
+
+
 ### LANA WAGNER · PROVISIONAL
 
     Oh, my God.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Why, it's the coin of justice.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     I don't think you're feeling very well.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -983,9 +1207,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Heads. I'm still a judge.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     I'm going for an ambulance.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -996,9 +1222,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...it says there that you've been married
     27 years. Is that right?
 
+
 ### PHIL KERR · PROVISIONAL
 
     Yes, sir.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1007,21 +1235,26 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...must have been a living hell, huh?
     
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     - Yeah.
+
 
 ### PHIL KERR · PROVISIONAL
 
     Well, there were some okay times.
 
+
 ### LOUISE KERR · PROVISIONAL
 
     Early on.
 
+
 ### PHIL KERR · PROVISIONAL
 
     Yeah, early on.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1031,15 +1264,18 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Romance has sort of been replaced
     by a really good night's sleep?
 
+
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
     And so he goes...
 
     ...to the other woman.
 
+
 ### CARLA BOUVIER · PROVISIONAL
 
     It's a living.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1047,51 +1283,63 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Heads, I just fine you, tails, you go to jail.
 
+
 ### CARLA BOUVIER · PROVISIONAL
 
     Wait.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Heads again. It's your lucky day.
 
+
 ### CARLA BOUVIER · PROVISIONAL
 
     Could be yours too.
+
 
 ### HARRY STONE · PROVISIONAL
 
     I can appreciate that.
 
+
 ### DAN FIELDING · PROVISIONAL
 
     Your Honor, I must protest for the record.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Mr. Fielding, did you have
     a happy childhood?
 
+
 ### DAN FIELDING · PROVISIONAL
 
     What?
+
 
 ### HARRY STONE · PROVISIONAL
 
     Was it happy? I mean,
     did you laugh a lot as a youngster?
 
+
 ### DAN FIELDING · PROVISIONAL
 
     I don't want to answer.
+
 
 ### HARRY STONE · PROVISIONAL
 
     I don't wanna fine you for contempt.
 
+
 ### DAN FIELDING · PROVISIONAL
 
     I didn't laugh a lot.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1107,13 +1355,16 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Sheila.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Bull.
 
+
 ### BULL SHANNON · PROVISIONAL
 
     I don't know what the hell's going on.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1142,9 +1393,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     All right, then let's flip the coin again.
     Let's decide the Kerr case.
 
+
 ### SHEILA GARDINER · PROVISIONAL
 
     The defense wants heads, Your Honor!
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1158,21 +1411,26 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Phil, was there anything you wanted
     to say to your wife before I flip?
 
+
 ### PHIL KERR · PROVISIONAL
 
     Seven years?
+
 
 ### PHIL KERR · PROVISIONAL
 
     Good luck, Louise.
 
+
 ### LOUISE KERR · PROVISIONAL
 
     Okay.
 
+
 ### PHIL KERR · PROVISIONAL
 
     It was your own fault for trying to shoot me.
+
 
 ### LOUISE KERR · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1182,9 +1440,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Do you think I would take
     a chance on hurting you?
 
+
 ### HARRY STONE · PROVISIONAL
 
     Is that true, Louise?
+
 
 ### LOUISE KERR · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1196,6 +1456,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...and a gallbladder operation
     just to fill him full of lead?
 
+
 ### PHIL KERR · DISPLAY CONTINUATION, UNVERIFIED
 
     You mean you weren't trying to hurt me?
@@ -1204,31 +1465,41 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     I...
 
+
 ### LOUISE KERR · PROVISIONAL
 
     Say it, Phil. Say it!
+
 
 ### PHIL KERR · PROVISIONAL
 
     I love you, Louise.
 
+
 ### LOUISE KERR · PROVISIONAL
 
     And I love you, Phil.
+
 
 ### PHIL KERR · PROVISIONAL
 
     Then what are we doing here?
 
+
 ### LOUISE KERR · PROVISIONAL
 
     Phil, can we forget this whole thing?
+
 
 ### PHIL KERR · DISPLAY CONTINUATION, UNVERIFIED
 
     I'd like to. I really would.
 
     Your Honor...
+
+
+*At the judicial bench, a robed figure manipulates a small pale circular object as views alternate with a woman in a dark red cardigan and a broad-built man wearing a yellow top beneath a blue jacket.* `[PIC-09]`
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1237,10 +1508,12 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Heads, we send her up the river,
     tails, you take her home.
 
+
 ### PHIL KERR · PROVISIONAL
 
     No. Every time you flip that,
     it comes up heads.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1249,6 +1522,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Oh, come on.
 
+
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
     Come on. You didn't think
@@ -1256,17 +1530,21 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     All right. Philip Kerr.
 
+
 ### PHIL KERR · PROVISIONAL
 
     Yes, sir.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Louise Kerr.
 
+
 ### LOUISE KERR · PROVISIONAL
 
     Yes, sir.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1278,22 +1556,27 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...a little better off than you were
     when you came in.
 
+
 ### SELMA HACKER · PROVISIONAL
 
     I had a husband just like that.
+
 
 ### BULL SHANNON · PROVISIONAL
 
     Oh, yeah?
 
+
 ### SELMA HACKER · PROVISIONAL
 
     Yeah. I had to shoot him too.
+
 
 ### HARRY STONE · PROVISIONAL
 
     Will the counsels approach
     the bench, please?
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1301,9 +1584,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     How about you guys?
 
+
 ### UNIDENTIFIED SPEAKER · UNKNOWN
 
     I'll do anything you want.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1315,6 +1600,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Any questions?
 
+
 ### DAN FIELDING · DISPLAY CONTINUATION, UNVERIFIED
 
     Just one.
@@ -1323,6 +1609,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     How did you get appointed
     to the bench?
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1348,14 +1635,17 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     ...and <i>voilà.</i>
 
+
 ### LANA WAGNER · PROVISIONAL
 
     You mean you were appointed
     a judge because...
 
+
 ### HARRY STONE · PROVISIONAL
 
     I was home.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1363,34 +1653,45 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Pass it on.
 
+
+*The courtroom benches are almost empty. Behind the raised desk, a casually dressed man reclines low in the judge's chair with an arm raised. A lavender-clad person approaches through the courtroom doorway carrying a folder.* `[PIC-10]`
+
+
 ### LANA WAGNER · PROVISIONAL
 
     Your Honor?
+
 
 ### LANA WAGNER · PROVISIONAL
 
     Your Honor.
 
+
 ### HARRY STONE · PROVISIONAL
 
     I own every record Mel Torme ever made.
+
 
 ### HARRY STONE · PROVISIONAL
 
     I'm gonna marry the girl
     that's impressed by that.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     I beg your pardon?
+
 
 ### HARRY STONE · PROVISIONAL
 
     You were about to say?
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Oh, yes. They're ready to lock up now.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1401,9 +1702,11 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     I am new here, you know.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     Yeah, we noticed.
+
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1423,15 +1726,18 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Good night, Miss Wagner.
 
+
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
     What you did out here tonight...
 
     ...was beautiful.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Oh, in a bohemian sort of way.
+
 
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1442,19 +1748,23 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...and the 27 years of love and memories
     and fulfillment that go along with it.
 
+
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
     Sometimes I get lucky.
 
     Good night.
 
+
 ### LANA WAGNER · PROVISIONAL
 
     About my job...
 
+
 ### HARRY STONE · PROVISIONAL
 
     Give me one more chance, huh?
+
 
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1462,6 +1772,10 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     ...to call you Harry.
 
+
 ### HARRY STONE · PROVISIONAL
 
     Then it's fortunate I have that name.
+
+*A casually dressed adult stands near the courtroom double doors.* `[PIC-11]`
+
