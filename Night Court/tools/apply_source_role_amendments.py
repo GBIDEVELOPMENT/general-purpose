@@ -56,7 +56,13 @@ def validate_ledger(ledger:dict)->dict[tuple[str,str],dict]:
         name=patch.get("new_provisional_role")
         words=patch.get("source_text_must_contain")
         reason=patch.get("reason")
-        if (patch.get("operation")!="set_role"
+        if (set(patch)!={
+            "operation","episode_id","source_reading_ref",
+            "original_source_part_refs","original_source_witness_sha256",
+            "prior_role","new_provisional_role","source_text_must_contain",
+            "reason","original_actor_voice_recognition_confirmed",
+            "original_performance_turn_verified"
+        } or patch.get("operation")!="set_role"
             or ep not in SOURCES or not isinstance(ref,str) or not ref
             or not isinstance(refs,list) or not refs
             or len(refs)>8
