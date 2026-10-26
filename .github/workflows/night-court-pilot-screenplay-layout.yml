@@ -37,10 +37,10 @@ jobs:
           python -m unittest -v test_render_current_pilot_screenplays
       - name: Reject accidental committed generated manuscripts
         run: |
-          if git ls-files 'Night Court/**/working-screenplay.md' \
-                          'Night Court/**/working-screenplay-provenance.jsonl' \
-                          'Night Court/**/working-screenplay-layout-manifest.json' \
-                          | grep .; then
+          if git ls-files -- ':(glob)Night Court/**/*-working-screenplay.md' \
+                             ':(glob)Night Court/**/*-working-screenplay-provenance.jsonl' \
+                             ':(glob)Night Court/**/working-screenplay-layout-manifest.json' \
+                             | grep .; then
             echo 'Private complete dialogue must not be committed'
             exit 1
           fi
