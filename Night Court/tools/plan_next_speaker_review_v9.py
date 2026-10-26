@@ -182,13 +182,13 @@ def load_private_source_turn_patches(path:Path)->list[dict]:
         or m.get("original_caption_source_units")!=751
         or m.get("named_original_source_units")!=621
         or m.get("unknown_original_source_units")!=130
-        or m.get("new_provisional_reader_turn_blocks")!=721
+        or m.get("new_provisional_reader_turn_blocks")!=726
         or m.get("original_source_exact_text_preserved") is not True
         or m.get("source_new_performer_identifications_AV_certified")!=0
         or m.get("source_new_turn_boundaries_AV_verified")!=0):
         raise ValueError("Latest 130-UNKNOWN source turn patch ledger SHA/actor evidence drift")
     rows=[json.loads(x) for x in raw.decode("utf-8").splitlines() if x.strip()]
-    if len(rows)!=721 or any(r.get("actor_face_or_voice_independently_verified") is not False
+    if len(rows)!=726 or any(r.get("actor_face_or_voice_independently_verified") is not False
                              for r in rows):
         raise ValueError("Original S09 source turn proof misrepresented")
     turns=[r for r in rows if r.get("role_attribution_status")==
