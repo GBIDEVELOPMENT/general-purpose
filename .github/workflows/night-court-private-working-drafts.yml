@@ -45,6 +45,8 @@ jobs:
           python 'Night Court/tools/apply_s01_c219_source_turn.py' --source-turn-patches "$T/turns" --output "$T/v15"
           python 'Night Court/tools/apply_manual_context_pilot_review_v16.py' \
             --v15-root "$T/v15" --output "$T/deliverable"
+          python 'Night Court/tools/plan_remaining_manual_v16_review.py' \
+            --v16-root "$T/deliverable" --output "$T/deliverable/private-review"
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
             --working-pilot-root "$T/deliverable" --output "$T/deliverable/private-fan-retrieval"
       - name: Validate private working screenplay digest and source conservation
@@ -73,6 +75,11 @@ jobs:
               total+=len(rows)
               print(ep,'source reader blocks',n,'display groups',m['episodes'][ep]['display_groups'])
           assert total==727
+          pending=json.loads((out/'private-review'/'remaining-100-speaker-review-summary.json').read_text('utf-8'))
+          assert pending['original_source_units_still_unknown']==100
+          assert pending['remaining_unknown_original_source_units_by_episode']=={'S01E01':21,'S09E19':79}
+          assert pending['s09_candidate_audio_locator_loaded'] is False
+          assert pending['new_voices_human_accepted']==0
           print('Both private complete-dialogue working drafts verified; NO AV certifications.')
           retrieval=out/'private-fan-retrieval'
           fan=json.loads((retrieval/'fan-retrieval-manifest.json').read_text('utf-8'))
@@ -99,6 +106,10 @@ jobs:
           The private-fan-retrieval/ directory also contains 193-episode FTS-ready
           JSONL chunks; only the two pilots have current chronological working
           scripts; remaining 191 episodes are source-only witnesses, unreviewed.
+          The private-review/ directory includes remaining-100 source-context
+          dialogue worklist with adjacent candidate voices and original S01 cue
+          clocks. S09 candidate audio locator is absent in portable artifact;
+          consult source-only original S09 audio-locator CI for search windows.
           NOTE
       - name: Upload short-lived artifact accessible through the PRIVATE repository
         if: github.event_name != 'pull_request'
