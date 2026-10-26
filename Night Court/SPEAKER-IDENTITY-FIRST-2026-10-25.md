@@ -288,3 +288,23 @@ python 'Night Court/tools/export_fan_retrieval_chunks.py' \
   --speaker-v11-root /tmp/night-court-private-speaker-turns-v11 \
   --output /tmp/night-court-private-fan-speaker-v11
 ```
+
+## Working v12: source dialogue gives character roles before another model is necessary
+
+The user-directed emphasis on actual useful named scripts permits **clearly editorial, non-AV-certified speaker names** when the episode itself supplies unusually strong character evidence. The [S09 high-context original cue ledger](research/s09-high-context-speaker-proposals-v12.json) records 12 tightly scoped source-reading blocks, spanning 15 original previously UNKNOWN source cue units. Every proposed role has a source-internal quote anchor, explicit reason, frozen original transcript SHA and zero independent soundtrack-voice/actor confirmation.
+
+Especially useful source-continuity clues include Bull's pledge of his entire piggy bank followed by his own $40,000 reveal, the named Harriet campaign endorsement followed by Mac addressing her by name, Dan talking to Harry about the court safe and Harry's desire for Houdini-related memorabilia, and the real Alex's reply to Roz followed by their mutual apologies. The chosen original blocks are C091, C092, C099, C125, C126, C134–C135, C268, C298, C299, C335, C336–C337 and C340–C341. No uncertain multi-voice cue such as C129/C146/C189/C211/C271/C284 was forced to a single character, and the earlier disproven high-similarity C129 acoustic Christine hypothesis remains explicitly UNKNOWN.
+
+The deterministic private [v12 source-backed speaker reader](tools/build_s09_high_context_speaker_reader_v12.py) only replaces **unidentified original-source reading blocks**, rejects replacing an existing named role, and keeps every original source cue word, original cue membership and S09 untimed status. It never changes the previously established P0 source spans or uses an unverified actor voice as fact. Across both pilots the new **working hypothesis coverage would be 610 provisionally named / 141 UNKNOWN original cue units, 716 provisional reading-turn blocks**. Until original audiovisual inspection confirms the source-to-performer attribution, the accepted independent actor-identity count is still zero. Those improved reading names flow to the same private 193-episode LLM retrieval and SQLite character index, not into the frozen original caption witness or tracked v5 staging manuscript.
+
+```sh
+python 'Night Court/tools/build_s09_high_context_speaker_reader_v12.py' \
+  --v11 /tmp/night-court-private-speaker-turns-v11 \
+  --output /tmp/night-court-private-speaker-context-v12
+
+python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+  --speaker-v12-root /tmp/night-court-private-speaker-context-v12 \
+  --output /tmp/night-court-private-fan-speaker-v12
+```
+
+This is **NOT** evidence that twelve new voices have been heard or verified. The named-source-unit denominator is not the number of true performed turns after all intra-cue speaker splits, and the full 0/193 independent audiovisual episode certifications remain unaffected.
