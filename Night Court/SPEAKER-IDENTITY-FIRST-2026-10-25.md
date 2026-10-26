@@ -44,6 +44,20 @@ python 'Night Court/tools/fan_sqlite_index.py' build \
 
 The baseline 715 role reading blocks remain source-verifiable. In **opt-in** corrected search results, three original UNKNOWN blocks are replaced by four provenance-bound proposed speech segments, **716 indexed role segments**. Thus the fan LLM no longer receives the stale UNKNOWN label *as a second role-index fact for the very same utterance*. The original source text still belongs to the same 751 caption-derived units. This replacement does not claim a speaker identification from photographs or soundtrack.
 
+## Prioritized private review queue for the remaining 261 UNKNOWNs
+
+Generate the priority-sorted source-review packets **after** generating the new v6 readers:
+
+```sh
+python 'Night Court/tools/triage_unknown_speakers.py' \
+  --speaker-v6-root /tmp/night-court-private-speaker-v6 \
+  --output /tmp/night-court-private-speaker-review
+```
+
+This produces `speaker-identity-first-review.jsonl` with each unresolved source block's cue, nearby named/unnamed dialogue, source SHA, P0 boundary-risk tags, and S01 approximate padded **SRT** window for listening. No S09 timestamps are fabricated. A separate priority-40 item flags the previously labeled S01 C028 for possible speaker error; it is not counted as an unresolved source unit or silently assigned to Lana. Priority boosts identify difficult multi-voice cues, short interjections, merged transcript paragraph groups, probable syntax continuations, and unidentified clusters. Proximity to a named character is shown for reviewer context, **never treated as proof the unknown person has that name**.
+
+Acceptance against the current source-ledger state: **97 S01 UNKNOWN + 164 S09 UNKNOWN = 261 remaining original source units**; one additional suspected incorrect legacy named label, ranked separately. No automated new role names or independently listened speaker confirmations are claimed. Do not publish this private queue; it contains source transcript text and working character hypotheses.
+
 ## Next mandatory work
 
 1. **Rank and review the remaining 261 unknown original units.** Prioritize S01 and S09 dialogues with multi-voice cue boundaries, short replies, adjacent named turns, repeated speaker/character quotes, and potentially incorrect already-named voices. A false Dan/Harry/Bull/Roz assignment is at least as damaging as an UNKNOWN.
