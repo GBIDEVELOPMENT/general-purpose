@@ -84,14 +84,14 @@ jobs:
           out=Path('/tmp/night-court-private-context-speaker-v7')
           report=json.loads((out/'pilot-contextual-speaker-manifest.json').read_text('utf-8'))
           assert report['source_units_total']==751
-          assert report['source_units_provisionally_named']==582
-          assert report['source_units_unknown']==169
-          assert report['new_contextual_source_units_proposed']==92
-          assert report['new_contextual_reading_blocks']==89
+          assert report['source_units_provisionally_named']==583
+          assert report['source_units_unknown']==168
+          assert report['new_contextual_source_units_proposed']==93
+          assert report['new_contextual_reading_blocks']==90
           assert report['audio_confirmed_by_this_pass']==0
           for ep in ['S01E01','S09E19']:
               assert (out/(ep+'-private-speaker-first-v7.md')).is_file()
-          print('92 additional original unit IDs carry UNVERIFIED source-context candidate roles; no copyrighted dialogue printed')
+          print('93 additional original unit IDs carry UNVERIFIED source-context candidate roles; no copyrighted dialogue printed')
           PY
       - name: Both pilot working scripts
         run: |
