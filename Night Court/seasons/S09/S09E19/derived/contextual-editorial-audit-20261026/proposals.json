@@ -349,16 +349,16 @@
       "source_end": "C277",
       "proposed_voice_sequence": [
         "UNKNOWN",
-        "ALEX PATTERSON"
+        "UNKNOWN"
       ],
       "confidence": "medium",
       "evidence_type": "offer-and-objection",
-      "rationale": "The offer that snacks are free and objection that they are stale are different voices; Alex's subsequent expert complaint favors Alex as the objection's voice, not verified.",
+      "rationale": "Matches the v16 P0 split: first voice mentions free snacks; a distinct second voice disputes their freshness. Alex is a plausible second voice based on subsequent complaints, but textual evidence alone does not promote either identity.",
       "source_text_unchanged": true,
       "verified": false,
       "alternatives": [
-        "UNKNOWN",
-        "other present participant"
+        "ALEX PATTERSON as second speaker",
+        "other bar participant"
       ],
       "exact_text_split_offsets": null,
       "original_timestamps": null
@@ -491,12 +491,12 @@
       "source_start": "C305",
       "source_end": "C306",
       "proposed_voice_sequence": [
-        "ALEX PATTERSON",
-        "ROZ RUSSELL"
+        "ROZ RUSSELL",
+        "ALEX PATTERSON"
       ],
       "confidence": "high",
-      "evidence_type": "direct-answer-and-ironical-callback",
-      "rationale": "Alex asks what Roz thought of his invented size-three figure and Roz answers; v16 reversal must be preserved.",
+      "evidence_type": "first-person-coreference-and-question-answer",
+      "rationale": "Corrects this audit's initial inversion: Roz introduced her invented size-three figure in C187 and asks how Alex liked the fabricated size-three stand-in; Alex replies 'You look great'. Matches the authoritative v16 manual-context ledger.",
       "source_text_unchanged": true,
       "verified": false,
       "alternatives": [],
@@ -627,5 +627,14 @@
       "exact_text_split_offsets": null,
       "original_timestamps": null
     }
-  ]
+  ],
+  "reconciliation": {
+    "v16_source": "Night Court/research/manual-context-editorial-speaker-review-v16.json",
+    "private_rendered_artifact_accessible": false,
+    "corrected_initial_audit": [
+      "C305 Roz Russell; C306 Alex Patterson",
+      "C277 two UNKNOWN voices; Alex retained as alternative only"
+    ],
+    "no_new_av_verified": true
+  }
 }
