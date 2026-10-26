@@ -1,0 +1,26 @@
+{
+  "schema": "night-court-private-s01-contextual-editorial-v17/1",
+  "source_immutable_srt_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "base_v16_manuscript_sha256": "439f4cd87f708b54d5fcca7accf8b142d04bb587a6cbd8f45463748dc9ffe974",
+  "base_v16_blob_sha": "13762f04294451b301b9f122599b6ad1b5742d4a",
+  "amendment_ledger": "seasons/S01/S01E01/derived/editorial-agent1-v17-decisions.json",
+  "source_units": 404,
+  "provisional_reader_blocks": 405,
+  "display_groups": 277,
+  "display_joins_not_audio_verified": 128,
+  "fully_provisionally_named_source_units": 384,
+  "source_units_with_unknown_voices": 20,
+  "source_role_corrections": [
+    "C028.1: BULL SHANNON to LANA WAGNER"
+  ],
+  "new_contextually_named_units": [
+    "C101.1: UNKNOWN to SHEILA GARDINER"
+  ],
+  "original_soundtrack_identity_verifications": 0,
+  "performed_turn_verifications": 0,
+  "complete_scene_Av_verification": false,
+  "manuscript_sha256": "e865562f8d039623222685a928c6aae02270cdf30ed18f0f2eff09c2fc1e1614",
+  "provenance_sha256": "d6fc472a3eda797354f5dbc8fb8b0b727ab09c8930448e000b98bc633f2808f5",
+  "editorial_film_source_observation": "seasons/S01/S01E01/derived/scene-review-v3/scene-script-v3.md",
+  "regen_status": "Versioned S01-only manual editorial rendering of preserved v16 outputs. Agent 3 to integrate post-v16 overlay into shared generator and automatic publisher."
+}
