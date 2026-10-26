@@ -26,6 +26,7 @@ on:
       - 'Night Court/tools/test_render_current_pilot_screenplays.py'
       - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
       - 'Night Court/tools/test_apply_manual_context_pilot_review_v16.py'
+      - 'Night Court/tools/plan_remaining_manual_v16_review.py'
       - 'Night Court/research/manual-context-editorial-speaker-review-v16.json'
       - 'Night Court/tools/export_fan_retrieval_chunks.py'
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
@@ -151,6 +152,10 @@ jobs:
           python 'Night Court/tools/apply_manual_context_pilot_review_v16.py' \
             --v15-root '${{ runner.temp }}/s09-source-turns-v15' \
             --output '${{ runner.temp }}/s09-current-private-v16'
+          python 'Night Court/tools/plan_remaining_manual_v16_review.py' \
+            --v16-root '${{ runner.temp }}/s09-current-private-v16' \
+            --s09-original-audio-locator '${{ runner.temp }}/s09-source-numeric/night-court-s09-original-audio-paragraph-locators.json' \
+            --output '${{ runner.temp }}/s09-next-100-manual-review'
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
             --working-pilot-root '${{ runner.temp }}/s09-current-private-v16' \
             --output '${{ runner.temp }}/s09-current-private-fan-retrieval'
