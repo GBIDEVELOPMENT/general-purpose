@@ -46,6 +46,14 @@ MIN_ANCHOR_WORD_MATCH=4
 MIN_QUERY_WORD_MATCH=3
 MIN_HOLDOUT_ACC=.65
 MIN_HOLDOUT_EVAL=20
+MIN_PER_ROLE_HOLDOUT_EVAL=4
+MIN_PER_ROLE_HOLDOUT_ACC=.75
+# Original-S09 episode-context contradictions established independently of
+# the acoustic model. Never convert these into named people from a voice-match.
+# C129: someone taped the *wrong* campaign commercial. Christine is the
+# candidate/presenter, not the unlucky car-purchasing viewer.
+# C262: a bar/identity-mixup dialogue at which campaigner Christine is absent.
+SEMANTICALLY_CONFLICTED_AUDIO_PARAGRAPHS={129,262}
 MIN_SIMILARITY=.69
 MIN_MARGIN=.1
 MAX_REPORT_BYTES=180_000
@@ -292,6 +300,31 @@ def source_plan(root:Path, alignment:Path,
     return plan
 
 
+def classwise_role_eligible(quality:dict,role:str|None)->bool:
+    """Prevent excellent Roz/Christine samples masking poor Dan/Mac voice IDs."""
+    if not isinstance(role,str) or not role:
+        return False
+    counts=quality.get("provisional_role_holdout_counts",{}).get(role)
+    if not isinstance(counts,dict):
+        return False
+    evaluated=counts.get("evaluated")
+    correct=counts.get("correct_held_out")
+    return (type(evaluated)==int and type(correct)==int
+            and evaluated>=MIN_PER_ROLE_HOLDOUT_EVAL
+            and 0<=correct<=evaluated
+            and correct/evaluated>=MIN_PER_ROLE_HOLDOUT_ACC)
+
+
+def source_acoustic_editor_candidate(n:int,match:dict,quality:dict,
+                                     global_eligible:bool)->tuple[str|None,bool,bool]:
+    """Return only an explicitly provisional editor-review hint, never an actor ID."""
+    role=match.get("role")
+    per_role=classwise_role_eligible(quality,role)
+    source_conflict=n in SEMANTICALLY_CONFLICTED_AUDIO_PARAGRAPHS
+    eligible=bool(global_eligible and per_role and not source_conflict)
+    return (role if eligible else None),per_role,source_conflict
+
+
 def embed_original_source(media:Path, plan:dict, output:Path)->dict:
     import numpy as np
     from resemblyzer import VoiceEncoder
@@ -346,13 +379,17 @@ def embed_original_source(media:Path, plan:dict, output:Path)->dict:
         candidates=[]
         for n,(row,v) in sorted(queries.items()):
             match=infer(v,vectors,minimum=MIN_SIMILARITY,margin=MIN_MARGIN)
+            review_role,role_holdout,semantic_conflict=source_acoustic_editor_candidate(
+                n,match,quality,good)
             candidates.append({
                 "source_paragraph":n,
                 "original_paragraph_time_ms":None,
                 "original_audio_window_proposal_ms":row["original_audio_window_proposal_ms"],
                 "model_prediction":match,
-                "proposed_role_for_independent_editor_review":match["role"] if good else None,
+                "proposed_role_for_independent_editor_review":review_role,
                 "voice_holdout_model_eligibility_passed":good,
+                "candidate_role_specific_holdout_eligible":role_holdout,
+                "source_episode_role_contradiction_quarantined":semantic_conflict,
                 "speaker_identity_original_audio_human_verified":False,
                 "audio_window_temporal_alignment_is_unverified":True,
             })
@@ -368,6 +405,13 @@ def embed_original_source(media:Path, plan:dict, output:Path)->dict:
             "source_original_subtitle_timestamps_verified":0,
             "usable_provisional_speaker_reference_role_counts":{k:len(v) for k,v in refs.items()},
             "known_role_holdout_metrics":quality,
+            "minimum_per_role_provisional_holdout_accuracy":MIN_PER_ROLE_HOLDOUT_ACC,
+            "minimum_per_role_holdout_sample_count":MIN_PER_ROLE_HOLDOUT_EVAL,
+            "role_eligibility_after_classwise_holdout":{
+                role:classwise_role_eligible(quality,role) for role in sorted(refs)
+            },
+            "source_paragraphs_quarantined_for_scene_role_conflict":
+                sorted(SEMANTICALLY_CONFLICTED_AUDIO_PARAGRAPHS),
             "crossvalidated_acoustic_model_eligible_to_propose":good,
             "usable_unknown_source_audio_windows":len(queries),
             "unverified_acoustic_role_suggestions":sum(
