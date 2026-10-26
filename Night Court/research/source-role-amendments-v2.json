@@ -1,0 +1,109 @@
+{
+  "schema": "night-court-source-role-amendment-ledger/1",
+  "id": "S01-BAILIFF-C077-C082-20261026-B",
+  "input_role_reader": "source-turn-patches",
+  "sources": {
+    "S01E01": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+    "S09E19": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2"
+  },
+  "prior_source_caption_units": 751,
+  "prior_working_named_source_units": 621,
+  "prior_remaining_unknown_source_units": 130,
+  "prior_private_reader_blocks": 721,
+  "original_source_captions_modified": false,
+  "performed_turns_independently_verified": false,
+  "source_actor_identity_independently_verified": false,
+  "contract": "Second append-only source-checked role update on already P0-resegmented private source-turn reader. Preserve all original words, cue parts, source S01 SRT timestamps and untimed S09 paragraphs.",
+  "amendments": [
+    {
+      "operation": "set_role",
+      "episode_id": "S01E01",
+      "source_reading_ref": "C077.2",
+      "original_source_part_refs": [
+        "C077.2"
+      ],
+      "original_source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "All rise.",
+      "reason": "The courthouse bailiff summons everyone to stand immediately before the formal judicial introduction; Bull Shannon is the established uniformed court bailiff rather than the other person joking about a diaper change.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S01E01",
+      "source_reading_ref": "C078.1",
+      "original_source_part_refs": [
+        "C078.1"
+      ],
+      "original_source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "Criminal courts, part two,",
+      "reason": "A continuing formal courtroom-opening announcement following Bull's explicit 'All rise', with no indicated change of speaker.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S01E01",
+      "source_reading_ref": "C079.1",
+      "original_source_part_refs": [
+        "C079.1"
+      ],
+      "original_source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "The Honorable",
+      "reason": "The same uninterrupted bailiff's ceremonial introduction of the judge's title.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S01E01",
+      "source_reading_ref": "C080.1",
+      "original_source_part_refs": [
+        "C080.1"
+      ],
+      "original_source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "Harold T",
+      "reason": "The title-and-name continuation in Bull's court call; the source cue is only one phrase of the same ceremonial announcement.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S01E01",
+      "source_reading_ref": "C081.1",
+      "original_source_part_refs": [
+        "C081.1"
+      ],
+      "original_source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "Stone",
+      "reason": "The name continuation in Bull's formal announcement of the new judge, without another apparent performer handoff.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    },
+    {
+      "operation": "set_role",
+      "episode_id": "S01E01",
+      "source_reading_ref": "C082.1",
+      "original_source_part_refs": [
+        "C082.1"
+      ],
+      "original_source_witness_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+      "prior_role": null,
+      "new_provisional_role": "BULL SHANNON",
+      "source_text_must_contain": "presiding.",
+      "reason": "The conclusion of the same consecutive bailiff announcement that starts with 'All rise' in C077.2.",
+      "original_actor_voice_recognition_confirmed": false,
+      "original_performance_turn_verified": false
+    }
+  ]
+}
