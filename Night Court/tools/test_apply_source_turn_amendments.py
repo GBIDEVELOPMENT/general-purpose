@@ -16,7 +16,7 @@ def fixture():
                 (121,"letters. Yeah, probably."),
                 (206,"Well... thing is very unsettling. No, this whole thing is really boring."),
                 (271,"No. It's yours. You want it. No, really. You keep it."),
-                (290,"He. Was she."),
+                (290,"He. Was she?"),
                 (291,"He. He was me.")):
         rows.append({
             "episode_id":"S09E19","source_reading_ref":f"C{n:03d}.1",
