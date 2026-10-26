@@ -1,0 +1,205 @@
+{
+  "schema": "night-court-s09e19-v18-direct-original-73-frame-picture-review/1",
+  "episode_id": "S09E19",
+  "original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_untimed_caption_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+  "original_source_workflow_run": 40137223223,
+  "downloaded_archive_id": 12578036143,
+  "archive_sha256": "fa5d4f5ed8791e26257d447c5d40b02d8cf8469e82784b52bbdee6f3a498717d",
+  "source_catalogue": "frame-source-catalogue.json",
+  "source_frame_count": 73,
+  "source_frame_spacing_ms": 18000,
+  "source_frames_checked_sha256": 73,
+  "frame_hash_mismatches": 0,
+  "contact_sheets_checked_sha256": 4,
+  "contact_sheet_hash_mismatches": 0,
+  "reviewer_basis": "direct inspection of four whole-episode source contact sheets in 2026-10-26 session; no source audio/video continuous playback",
+  "source_original_untimed": true,
+  "frame_source_offset_is_synchronized_caption_time": false,
+  "original_actor_names_from_pictures": false,
+  "film_complete_AV_certified": false,
+  "source_witness_dialogue_modified": false,
+  "notes": "One frame every 18 seconds (73 over 22min). Source sample windows provide useful static costumes/objects/settings, not definitive scene boundaries, directed physical performance or identity. Frame 73 is a broadcast 'UP NEXT' slate, excluded from fictional scene descriptions.",
+  "observations": [
+    {
+      "id": "DINER-OPEN",
+      "source_frame_ids_inclusive": [
+        1,
+        4
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "At a bright coffee counter/table, an adult in a vivid purple jacket and white neckline speaks near place settings while several navy-uniformed adults, another mustard/yellow-clad person and other diners appear; menus, condiments and an open service counter are visible.",
+      "editorial_narrative_association": "opening dining area",
+      "limitations": "wardrobe and table setting only; no voice or motion",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "DINER-STAFF",
+      "source_frame_ids_inclusive": [
+        5,
+        7
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "Successive close-ups show dark navy uniform jackets with badges and ties against a busy kitchen/counter; a bright illuminated green counter trim and service staff in white are visible.",
+      "editorial_narrative_association": "staff at diner",
+      "limitations": "speaker identity and exact conversation unverified",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "COURT-OPEN",
+      "source_frame_ids_inclusive": [
+        8,
+        16
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "The courtroom has a raised bench, wooden railing, desk papers and a muted green/cream wall palette. A bright yellow jacket appears at the bench; a dark navy uniform, a purple outfit, a dark coat and a tan suit recur across separate stills.",
+      "editorial_narrative_association": "courtroom proceedings",
+      "limitations": "individual portraits do not certify a continuous conversation or actors",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "OFFICE-SAFE",
+      "source_frame_ids_inclusive": [
+        17,
+        24
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "Legal books cover tall bookcases behind a dark wooden desk/table. A tan-suited adult with patterned tie and pocket square stands by another adult in a reddish-brown jacket; a navy-uniformed adult later appears in the office doorway. One still exposes dark fixtures mounted on the bookcase wall.",
+      "editorial_narrative_association": "Judge's book-lined office",
+      "limitations": "sparse frames do not demonstrate how safe/fixture was opened",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "DINER-RETURN",
+      "source_frame_ids_inclusive": [
+        25,
+        29
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "Bright food-counter environment with small laminated-top tables, cups, napkin holders and condiments. Several casually dressed adults occupy different tables, one in burgundy/pink patterned attire with a broad yellow collar; a navy-uniformed adult and a red-orange clad adult appear nearby.",
+      "editorial_narrative_association": "repeated diner conversation",
+      "limitations": "no unverified identity or sequential blocking",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "COURT-ROZ",
+      "source_frame_ids_inclusive": [
+        30,
+        38
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "A navy-uniformed adult carries/holds folders, later seated behind a wooden desk; another adult in burgundy and yellow-collared patterned top stands beside or leans across the desk. Papers are piled beside the seated person; the stander's hand lifts near the head in a sampled pose.",
+      "editorial_narrative_association": "courtroom area after campaign response",
+      "limitations": "no proof of exact spoken word or performer gesture start/end",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "FLOOR-SPARK",
+      "source_frame_ids_inclusive": [
+        39,
+        42
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "One coarse frame shows a glowing sparking line on a gray floor; the separately reviewed 5fps original 684–704s sequence demonstrates two adults ducking behind a partition and a foreground adult later advancing to and stooping over the flare. Another person remains near a doorway.",
+      "editorial_narrative_association": "safe-breaking floor incident",
+      "limitations": "direction fixed by separate high-cadence still sequence; igniter and mechanics unknown",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "OFFICE-TRANSITION",
+      "source_frame_ids_inclusive": [
+        43,
+        45
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "Book-lined interiors return. A red-orange jacket/outfit, a dark suited adult, a navy uniform and another patterned dark outfit appear in distinct views; papers and office furniture remain visible.",
+      "editorial_narrative_association": "office/courthouse transition",
+      "limitations": "do not infer a synchronized scene cut from 18s samples",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "BAR-IMPOSTORS",
+      "source_frame_ids_inclusive": [
+        46,
+        55
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "Warm dark-wood restaurant/bar with illuminated lamps, crowded tables and cocktail glasses. A dark-suited bearded adult with light shirt and patterned tie sits near a burgundy-dressed person; separately a navy-uniformed observer and dark waistcoated bartender-like adult are visible. A later still shows the suited/dressed pair embracing in a crowded dance.",
+      "editorial_narrative_association": "hired couple and bar spectators",
+      "limitations": "actual identities and exact dialogue not inferred from appearance",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "BAR-REVEAL",
+      "source_frame_ids_inclusive": [
+        56,
+        65
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "Bar/counter frames show a navy-uniformed adult talking near an older bespectacled adult in a gray suit, with a white-shirted dark-vested server behind the counter. Drinking vessels and a bowl with red contents sit on the bar; faces turn between sampled frames but their precise gestures are not recoverable at this cadence.",
+      "editorial_narrative_association": "later bar encounter",
+      "limitations": "do not assert who delivered the money, snacks or mistaken-identity lines",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "HALLWAY-AD",
+      "source_frame_ids_inclusive": [
+        66,
+        69
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "Pale cream/yellow corridor with a wall door and an office area. One adult wears a structured red-orange jacket with high collar; another wears a multicolored patterned dark shirt/jacket with a large circular button or rosette-like badge, and a third adult in pale outerwear enters the view.",
+      "editorial_narrative_association": "campaign advertisement aftermath",
+      "limitations": "precise shot transitions, protest reaction and badge text unknown",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    },
+    {
+      "id": "OFFICE-FINALE",
+      "source_frame_ids_inclusive": [
+        70,
+        72
+      ],
+      "original_source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_picture_observation": "Return to bookshelves and desk. One adult in dark clothing gestures by the books; other suited adults stand nearby holding a light-colored paper/cloth/object. Overlaid credits appear near the last images. The full contents of the safe cannot be identified from these stills alone.",
+      "editorial_narrative_association": "safe payoff",
+      "limitations": "do not present TV channel graphics or production credits as fictional props",
+      "exact_scene_boundary_certified": false,
+      "continuous_film_movement_verified": false,
+      "source_audio_heard": false,
+      "cast_name_visually_identified": false
+    }
+  ]
+}
