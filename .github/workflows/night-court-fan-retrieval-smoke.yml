@@ -42,6 +42,8 @@ on:
       - 'Night Court/tools/test_build_s09_source_acoustic_speaker_reader_v9.py'
       - 'Night Court/tools/build_s09_source_turns_v10.py'
       - 'Night Court/tools/test_build_s09_source_turns_v10.py'
+      - 'Night Court/tools/build_s09_mixed_voice_turns_v11.py'
+      - 'Night Court/tools/test_build_s09_mixed_voice_turns_v11.py'
       - 'Night Court/research/pilot-contextual-speaker-proposals-v1.json'
       - 'Night Court/research/pilot-speaker-external-quote-improvements-v1.json'
       - 'Night Court/AUTOMATIC-QUOTE-SEQUENCE-2026-10-25.md'
@@ -65,7 +67,7 @@ jobs:
       - name: Python and offline synthetic tests
         run: |
           python --version
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6 test_triage_unknown_speakers test_plan_speaker_audio_review test_build_contextual_speaker_reader_v7 test_align_private_production_script test_build_original_audio_speaker_reader_v8 test_build_s09_source_acoustic_speaker_reader_v9 test_triage_internal_speaker_switches test_plan_next_speaker_review_v9 test_build_s09_source_turns_v10
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_export_fan_retrieval_chunks test_search_fan_retrieval_chunks test_build_pilot_fan_beat_cards test_search_fan_corpus test_build_pilot_character_evidence test_fan_sqlite_index test_build_fan_answer_packet test_auto_align_quote_sequence test_build_external_speaker_reader_v6 test_triage_unknown_speakers test_plan_speaker_audio_review test_build_contextual_speaker_reader_v7 test_align_private_production_script test_build_original_audio_speaker_reader_v8 test_build_s09_source_acoustic_speaker_reader_v9 test_triage_internal_speaker_switches test_plan_next_speaker_review_v9 test_build_s09_source_turns_v10 test_build_s09_mixed_voice_turns_v11
       - name: Speaker priority one - generate and check real external quote v6 pilots
         run: |
           python 'Night Court/tools/build_external_speaker_reader_v6.py' \
@@ -311,6 +313,42 @@ jobs:
                      for x in m['episodes'])==2
           print('193 held original-series witnesses intact, current two-pilot source-turn screenplay indexed privately')
           PY
+      - name: Correct original C188-C192 unpunctuated multiple-voice exchange with exact source spans
+        run: |
+          python 'Night Court/tools/build_s09_mixed_voice_turns_v11.py' \
+            --v10 /tmp/night-court-private-speaker-turns-v10 \
+            --output /tmp/night-court-private-speaker-turns-v11
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path('/tmp/night-court-private-speaker-turns-v11')
+          m=json.loads((base/'pilot-current-multi-voice-turns-v11-manifest.json').read_text('utf-8'))
+          assert m['original_caption_units']==751
+          assert m['provisional_named_original_units']==595
+          assert m['original_units_remaining_unknown']==156
+          assert m['private_provisional_reading_turn_blocks_before']==715
+          assert m['private_provisional_reading_turn_blocks_after']==716
+          assert m['candidate_scene_turns_inserted']==6
+          assert m['original_source_fully_reconstructable_via_unicode_spans'] is True
+          assert m['actual_audio_review_performed'] is False
+          assert m['potential_character_voice_and_turn_verifications_from_actual_original_av']==0
+          print('Original S09 five multi-voice paragraphs reorganized into six source-conserving provisional turns; all original dialogue remains exact and original S09 clocks null')
+          PY
+      - name: Full original 193 episode private v11 source-turn search and manuscript coverage
+        run: |
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --speaker-v11-root /tmp/night-court-private-speaker-turns-v11 \
+            --output /tmp/night-court-private-fan-speaker-v11
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          base=Path('/tmp/night-court-private-fan-speaker-v11')
+          m=json.loads((base/'fan-retrieval-manifest.json').read_text('utf-8'))
+          assert m['episode_count']==193
+          assert sum(x['evidence_tier']=='provisional_source_mixed_voice_reader_v11'
+                     for x in m['episodes'])==2
+          print('193 original source episodes private reader indexed with Roz/Christine original 1992 dialogue broken into provisional P0 turns, source SHA conserved')
+          PY
       - name: All 193 source witnesses with pilot v5 substitutions
         run: |
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
@@ -406,11 +444,12 @@ jobs:
       - name: Build and query one private SQLite index for every evidence type
         run: |
           python 'Night Court/tools/fan_sqlite_index.py' build \
-            --corpus /tmp/night-court-private-fan-speaker-v10/fan-retrieval-chunks.jsonl \
+            --corpus /tmp/night-court-private-fan-speaker-v11/fan-retrieval-chunks.jsonl \
             --cards /tmp/night-court-private-fan-beats/pilot-fan-beat-cards.jsonl \
             --roles /tmp/night-court-private-character-evidence/pilot-character-reading-blocks.jsonl \
             --s09-acoustic-v9-roles /tmp/night-court-private-source-audio-speaker-v9/pilot-current-source-first-s09-audio-v9.jsonl \
             --source-turn-v10-roles /tmp/night-court-private-speaker-turns-v10/pilot-current-source-turns-v10.jsonl \
+            --mixed-turn-v11-roles /tmp/night-court-private-speaker-turns-v11/pilot-current-multi-voice-turns-v11.jsonl \
             --database /tmp/night-court-all-private-fan.sqlite
           python 'Night Court/tools/fan_sqlite_index.py' query \
             --database /tmp/night-court-all-private-fan.sqlite \
@@ -425,7 +464,8 @@ jobs:
           from pathlib import Path
           db=sqlite3.connect('/tmp/night-court-all-private-fan.sqlite')
           assert db.execute("SELECT COUNT(DISTINCT episode_id) FROM documents WHERE kind='script_witness'").fetchone()[0]==193
-          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue'").fetchone()[0]==715
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue'").fetchone()[0]==716
+          assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND evidence_state='scene_context_mixed_speaker_turn_proposal_not_audio_verified'").fetchone()[0]==6
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='editorial_comedy_and_story'").fetchone()[0]==21
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='DAN FIELDING' AND evidence_state='external_or_context_editorial_proposal'").fetchone()[0]>=1
           assert db.execute("SELECT COUNT(*) FROM documents WHERE kind='provisional_character_dialogue' AND role='CHRISTINE SULLIVAN' AND evidence_state='external_or_context_editorial_proposal'").fetchone()[0]>=2
