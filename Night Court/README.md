@@ -1,3 +1,5 @@
+**2026-10-26 pilot screenplay delivery:** The [private readable v15 screenplay renderer](PILOT-WORKING-SCREENPLAY-RENDERER.md) now produces both provisional full-dialogue manuscripts with exact source provenance and restores out-of-order v15 role-patch rows to correct cue chronology. An actual held-source CI pass generated **405 S01 blocks → 284 display groups** and **321 S09 blocks → 260 display groups**, with **zero** newly authenticated voices, physical scenes or final episode acceptances. [Execution ledger](PILOT-EXECUTION-LEDGER-2026-10-26.md) · [original-source proof](https://github.com/gamesbyian/general-purpose/actions/runs/40389885348).
+
 ## Current engineering gate: identify missing or incorrect speakers first (owner directive, 2026-10-25)
 
 The highest-priority deliverable is **resolving unknown or falsely identified speakers across the original-series pilot episodes, with correct within-caption speaker turn boundaries before assigning character names**. Do not divert to fan cards, wardrobe, tone, or stage description until this P0/P1 work advances.
