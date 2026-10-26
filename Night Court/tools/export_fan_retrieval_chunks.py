@@ -41,8 +41,14 @@ def select_script(root: Path, record: dict, v6_root: Path | None = None,
                   v9_root: Path | None = None,
                   v10_root: Path | None = None,
                   v11_root: Path | None = None,
-                  v12_root: Path | None = None) -> tuple[Path, str]:
+                  v12_root: Path | None = None,
+                  v13_root: Path | None = None) -> tuple[Path, str]:
     episode = record["episode_id"]
+    if v13_root is not None and episode in PILOT_SCRIPTS:
+        path=(v13_root / f"{episode}-source-turns-v13.md").resolve()
+        if not path.is_relative_to(v13_root.resolve()) or not path.is_file():
+            raise ValueError("Private S09 exact-source dialogue handoff v13 reader unavailable")
+        return path, "provisional_original_source_split_roles_v13"
     if v12_root is not None and episode in PILOT_SCRIPTS:
         path=(v12_root / f"{episode}-source-roles-v12.md").resolve()
         if not path.is_relative_to(v12_root.resolve()) or not path.is_file():
@@ -140,14 +146,24 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
            v9_root: Path | None = None,
            v10_root: Path | None = None,
            v11_root: Path | None = None,
-           v12_root: Path | None = None) -> dict:
+           v12_root: Path | None = None,
+           v13_root: Path | None = None) -> dict:
     if max_chars < 200:
         raise ValueError("Chunk size must be >= 200 characters")
     if out_dir.resolve().is_relative_to(root.resolve()):
         raise ValueError("Private retrieval output must be outside the Night Court source tree")
-    if sum(x is not None for x in (v6_root,v7_root,v8_root,v9_root,v10_root,v11_root,v12_root))>1:
+    if sum(x is not None for x in (v6_root,v7_root,v8_root,v9_root,v10_root,v11_root,v12_root,v13_root))>1:
         raise ValueError("Choose one speaker reader source per pilot")
     rows = read_queue(root)
+    if v13_root is not None:
+        v13_report=json.loads((v13_root / "pilot-source-dialogue-turns-v13-manifest.json").read_text("utf-8"))
+        if (v13_report.get("original_held_caption_units")!=751
+            or v13_report.get("provisionally_named_original_caption_units")!=613
+            or v13_report.get("unidentified_original_caption_units")!=138
+            or v13_report.get("new_provisional_speaking_turns")!=718
+            or v13_report.get("source_audio_actor_identities_or_true_turns_independently_verified")!=0
+            or v13_report.get("all_source_character_spans_reversible") is not True):
+            raise ValueError("Private S09 source-span actor handoff v13 status misrepresented")
     if v12_root is not None:
         v12_report=json.loads((v12_root / "pilot-original-speaker-context-v12-manifest.json").read_text("utf-8"))
         if (v12_report.get("original_caption_source_units")!=751
@@ -220,7 +236,7 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         source_sha = entry["source_metadata"]["source_sha256"]
         if not re.fullmatch(r"[0-9a-f]{64}", source_sha):
             raise ValueError(f"Invalid source SHA: {episode}")
-        path, tier = select_script(root, entry, v6_root, v7_root, v8_root, v9_root, v10_root, v11_root, v12_root)
+        path, tier = select_script(root, entry, v6_root, v7_root, v8_root, v9_root, v10_root, v11_root, v12_root, v13_root)
         content = path.read_bytes()
         document = content.decode("utf-8")
         if source_sha not in document:
@@ -232,7 +248,12 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
                 raise ValueError(f"Wrong-season pilot prose in {episode} reader header: {named_season}")
         if episode == "S09E19" and entry["source_metadata"]["timed"]:
             raise ValueError("Untimed S09 original witness erroneously marked timed")
-        if v12_root is not None and episode in PILOT_SCRIPTS:
+        if v13_root is not None and episode in PILOT_SCRIPTS:
+            expected_sha = v13_report["private_manuscript_sha256_by_episode"][episode]
+            if sha256(content)!=expected_sha:
+                raise ValueError("Original S09 two-voice exact-span screenplay SHA mismatch")
+            rel_path="private-source-turns-v13/"+path.name
+        elif v12_root is not None and episode in PILOT_SCRIPTS:
             expected_sha = v12_report["manuscripts_sha256_by_episode"][episode]
             if sha256(content)!=expected_sha:
                 raise ValueError("Original S09 v12 contextual speaker manuscript SHA mismatch")
@@ -347,12 +368,14 @@ def main() -> None:
                         help="Private source-exact mixed-voice S09 C188-C192 candidate reader manuscripts")
     parser.add_argument("--speaker-v12-root", type=Path, default=None,
                         help="Private episode-context speaker v12 scripts, 610 tentative named source units")
+    parser.add_argument("--speaker-v13-root", type=Path, default=None,
+                        help="Private exact-original cue Harriet/Mac Dan/Harry Alex/Roz split-turn scripts")
     options = parser.parse_args()
     result = export(options.root, options.output, options.pilot_only, options.max_chars,
                     options.speaker_v6_root, options.speaker_v7_root,
                     options.speaker_v8_root, options.speaker_v9_root,
                     options.speaker_v10_root, options.speaker_v11_root,
-                    options.speaker_v12_root)
+                    options.speaker_v12_root, options.speaker_v13_root)
     print(f"Exported {result['chunk_count']} retrieval chunks from {result['episode_count']} episodes")
 
 
