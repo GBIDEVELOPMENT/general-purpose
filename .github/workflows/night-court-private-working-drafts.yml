@@ -4,11 +4,23 @@ on:
   pull_request:
     paths:
       - '.github/workflows/night-court-private-working-drafts.yml'
+      - 'Night Court/research/manual-context-editorial-speaker-review-v16.json'
+      - 'Night Court/research/source-role-amendments-v1.json'
+      - 'Night Court/research/source-turn-amendments-v1.json'
+      - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
+      - 'Night Court/tools/plan_remaining_manual_v16_review.py'
+      - 'Night Court/tools/export_fan_retrieval_chunks.py'
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - '.github/workflows/night-court-private-working-drafts.yml'
+      - 'Night Court/research/manual-context-editorial-speaker-review-v16.json'
+      - 'Night Court/research/source-role-amendments-v1.json'
+      - 'Night Court/research/source-turn-amendments-v1.json'
+      - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
+      - 'Night Court/tools/plan_remaining_manual_v16_review.py'
+      - 'Night Court/tools/export_fan_retrieval_chunks.py'
 
 permissions:
   contents: read
@@ -122,6 +134,61 @@ jobs:
       - name: Erase private source-derived and output text
         if: always()
         run: rm -rf "${RUNNER_TEMP}/night-court-pilot-v15"
+
+  persist-private-editorial-snapshot:
+    needs: generate-private-pilot-reading-scripts
+    if: >-
+      github.event_name != 'pull_request' &&
+      needs.generate-private-pilot-reading-scripts.result == 'success' &&
+      github.ref == 'refs/heads/main' &&
+      github.event.repository.private == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/download-artifact@v4
+        with:
+          name: night-court-original-pilot-working-screenplays-private
+          path: ${{ runner.temp }}/night-court-current-private-snapshot
+      - name: Check provenance and persist exact private working output
+        env:
+          SNAPSHOT: ${{ runner.temp }}/night-court-current-private-snapshot
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          src=Path(os.environ['SNAPSHOT'])
+          m=json.loads((src/'working-screenplay-layout-manifest.json').read_text())
+          assert m['source_unit_counts']=={'original_source_units':751,'named_provisional':651,'unknown':100}
+          assert m['new_independently_verified_actor_voices']==0
+          assert m['new_independently_verified_performed_turns']==0
+          assert not m['scene_review_complete']
+          for episode in ('S01E01','S09E19'):
+              p=src/(episode+'-working-screenplay.md')
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==m['manuscript_sha256'][episode]
+          assert (src/'private-fan-retrieval'/'fan-retrieval-manifest.json').is_file()
+          files=[p for p in src.rglob('*') if p.is_file()]
+          assert all(p.suffix in ('.md','.json','.jsonl','.txt') for p in files)
+          assert all(p.stat().st_size < 30_000_000 for p in files)
+          assert sum(p.stat().st_size for p in files) < 85_000_000
+          print('Validated private text-only snapshot:',len(files),'files')
+          PY
+          mkdir -p 'Night Court/saved-private/pilot-current'
+          rsync -a --delete "$SNAPSHOT/" 'Night Court/saved-private/pilot-current/'
+          git add -- 'Night Court/saved-private/pilot-current'
+          if git diff --cached --quiet; then
+            echo 'Current private snapshot already committed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Night Court: persist generated private v16 pilots and retrieval corpus'
+          git push origin HEAD:main
 
   announce-private-draft-download:
     needs: generate-private-pilot-reading-scripts
