@@ -108,7 +108,7 @@ jobs:
               assert (out/(ep+'-private-speaker-first-v7.md')).is_file()
           print('93 additional original unit IDs carry UNVERIFIED source-context candidate roles; no copyrighted dialogue printed')
           PY
-      - name: Source-exact P0 review queue for 12 more potential intra-caption voice switches
+      - name: Source-exact P0 review queue for 16 potential intra-caption voice switches
         run: |
           python 'Night Court/tools/triage_internal_speaker_switches.py' \
             --output /tmp/night-court-private-internal-turn-switches
@@ -117,12 +117,12 @@ jobs:
           from pathlib import Path
           r=Path('/tmp/night-court-private-internal-turn-switches')
           m=json.loads((r/'potential-within-caption-summary.json').read_text('utf-8'))
-          assert m['provisional_inside_original_cue_switch_questions']==12
+          assert m['provisional_inside_original_cue_switch_questions']==16
           assert m['first_episode_timed_candidate_count']==1
-          assert m['last_episode_original_untimed_candidate_count']==11
+          assert m['last_episode_original_untimed_candidate_count']==15
           assert m['original_caption_speaking_unit_denominator_unchanged']==751
           assert m['actually_verified_new_speaker_switches']==0
-          print('12 original source-exact potential internal voice switches queued; no footage/speaker identity accepted')
+          print('16 original source-exact potential internal voice switches queued; no footage/speaker identity accepted')
           PY
       - name: Both pilot working scripts
         run: |
