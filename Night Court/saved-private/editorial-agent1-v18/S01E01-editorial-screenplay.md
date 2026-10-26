@@ -8,7 +8,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
 **Editorial update 2026-10-26:** C028.1 corrected to Lana from direct address; C101.1 provisionally identifies Sheila as the respondent to Harry's call. The uninterrupted Lana C027/C028 display is grouped, but the performed boundary remains unverified. Still-image evidence from original source near C025–C027 shows a uniformed person using the desk telephone; neither actor-to-dialogue synchronization nor delivery is established. Source: `seasons/S01/S01E01/derived/scene-review-v3/scene-script-v3.md`.
 
-**Picture editorial layer v18:** Observed scene views, clothing, objects and gestures from separately reviewed *sampled original-film frames* appear in italics, tagged `PIC-01` through `PIC-11`. They are sourced to `seasons/S01/S01E01/derived/editorial-agent1-v18-picture-annotations.json`. Film frames were not replayed in this editing session; pictured people are not independently linked to dialogue voices. Approximate insertions do not certify precise cuts, spoken timing or full continuous action. Prior v17 speaker evidence remains context-only.
+**Picture editorial layer v18:** Observed scene views, clothing, objects and gestures from separately reviewed *sampled original-film frames* appear in italics, tagged `PIC-01` through `PIC-11`. They are sourced to `seasons/S01/S01E01/derived/editorial-agent1-v18-picture-annotations.json`. Film frames were not replayed in this editing session; pictured people are not independently linked to dialogue voices. Approximate insertions do not certify precise cuts, spoken timing or full continuous action. Prior v17 speaker evidence remains context-only. C175's two dash-prefixed source-caption parts are now displayed as one provisionally continuous Dan speech, pending soundtrack verification (`editorial-agent1-v18-c175-turn-join.json`).
 
 ## Dialogue (character voices and performed boundaries awaiting original AV verification)
 
@@ -1010,12 +1010,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     You wanna know what happened?
 
 
-### DAN FIELDING · PROVISIONAL
+### DAN FIELDING · DISPLAY CONTINUATION, UNVERIFIED
 
     I'll tell you what happened.
-
-
-### DAN FIELDING · PROVISIONAL
 
     No settlement with the Kerrs.
 
