@@ -124,12 +124,14 @@ def section_heading(text: str) -> str:
     for line in text.splitlines():
         if line.startswith("### "):
             return line[4:].strip()
+        if re.match(r"^## Sequence [0-9]+:", line):
+            return line[3:].strip()
     return "Unheaded source section"
 
 
 def partition_sections(document: str) -> list[str]:
     """Keep every character, including preamble, in document order."""
-    markers = [m.start() for m in re.finditer(r"(?m)^### ", document)]
+    markers = [m.start() for m in re.finditer(r"(?m)^(?:### |## Sequence [0-9]+:)", document)]
     if not markers:
         return [document]
     cuts = [0] + markers + [len(document)]
