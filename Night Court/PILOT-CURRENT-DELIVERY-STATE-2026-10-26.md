@@ -1,33 +1,38 @@
-# Current Night Court pilot delivery: latest committed episodes versus published snapshot
+# Original Night Court pilot delivery, actual published state
 
-**26 October 2026.** Original series (1984–1992), source-dialogue pilot screenplay work.
+**26 October 2026, updated after organization transfer, successful original-source CI, and one-pass review work.** This file supersedes its former GitHub Actions and stale-canonical blocker report. Older named editorial manuscripts remain in Git history for provenance, not as active episode files.
 
-The **newest episode-editor manuscripts are durably committed and source linked**, but their latest combined automatic publication has **not yet completed**. The previous private canonical snapshot is an older, internally consistent fallback. Do not conflate these two states and do not present either as a fully independently audiovisual-accepted screenplay.
+## Verified canonical source-first products on private main
 
-## Latest complete editorial manuscripts on `main`
+[Latest working manuscript and provenance directory](saved-private/pilot-current/) was published by [full successful private publication run 40441814247](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40441814247) and reverified by the subsequent source-stable [run 40444379513](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40444379513).
 
-| Episode | Latest source-first reader | Original speaking-unit refs | Provisional fully named | Contains UNKNOWN | Original reader blocks | Provisional display groups | AV-certified turns |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| S01E01 “All You Need Is Love” | **Agent 1 v22** | 404 | 390 | 14 | 405 | 275 | 0 |
-| S09E19 “P.S. Do I Know You?” | **Agent 2 v19** | 347 | 273 | 74 | 323 | 234 | 0 |
-| **Combined** | | **751** | **663** | **88** | **728** | **509** | **0** |
+| | S01E01 | S09E19 | Combined |
+|---|---:|---:|---:|
+| Canonical integrated edition | Agent1-v22 | Agent2-v19 | |
+| Original source speaking refs | 404 | 347 | **751** |
+| Original reader blocks | 405 | 323 | **728** |
+| Proposed displayed turns (not verified performed turns) | 275 | 234 | **509** |
+| Unverified proposed caption joins | 130 | 89 | **219** |
+| Adjacent reader-block P0 source boundary decisions needed | 404 | 322 | **726** |
+| Unknown-containing source units | 14 | 74 | **88** |
+| Independently original-AV-certified actors and performed boundaries | 0 | 0 | **0** |
 
-Direct complete **S01 v22** manuscript: [saved-private/editorial-agent1-v22/S01E01-editorial-screenplay.md](saved-private/editorial-agent1-v22/S01E01-editorial-screenplay.md). Its full matching 405-row immutable-caption source/voice provenance is [saved-private/editorial-agent1-v21/S01E01-editorial-provenance.jsonl](saved-private/editorial-agent1-v21/S01E01-editorial-provenance.jsonl) and remains text/role/segmentation-identical in v22. [v22 manifest](saved-private/editorial-agent1-v22/manifest.json) pins the exact Git blob and evidence digests. There are 27 distinct original-film sampled-picture notes and three of five refinements directly incorporated, with two additional SHA-guarded physical-comedy notes in [v22 stage amendments](seasons/S01/S01E01/derived/editorial-agent1-v22-three-source-picture-stage-patches.json). S01 captured **510 checksum-matched directly inspected original JPEGs** across eleven reviewed sheets, plus earlier whole-episode sampled stills. This is picture evidence, not synchronized original sound/moving film certification.
+Both canonical manuscript SHA256 digests and the 193-episode **3,153-chunk** private fan index were independently crosschecked after actual successful main publication:
 
-Direct complete **S09 v19** manuscript: [seasons/S09/S09E19/derived/editorial-v19/S09E19-v19-working-screenplay.md](seasons/S09/S09E19/derived/editorial-v19/S09E19-v19-working-screenplay.md); [full current 323-row reader](seasons/S09/S09E19/derived/editorial-v19/S09E19-v19-editorial-reader.jsonl); [original source provenance](seasons/S09/S09E19/derived/editorial-v19/S09E19-v19-provenance.jsonl); [source dialogue QA](seasons/S09/S09E19/derived/editorial-v19/S09E19-v19-audit.json). **S09 original transcript is entirely untimed.** No original paragraph or soundtrack-derived character identity was invented.
+- S01 `85ff8bfb7408b8ddf731bf21980724ff913973cef7bbcd9eb094506fd41fd5c5`
+- S09 `da9ed43ff498d46471248c33cc56c16602149afc2989223825f735ea4ced2f5a`
 
-The **exact original dialogue/role crosscheck** of these latest episode artifacts against the previous canonical source reader finds 728/728 original stable reading block IDs in order, exactly six newly context-named S01 reader voices and two newly context-named S09 reader voices, zero new missing original source unit refs, and no source text changes. The 509 proposed display groups are **not** 509 independently certified performed turns; 219 adjacent source reader pairings remain unverified from soundtrack.
+The original episode evidence is still incomplete with respect to source-listened voices, continuous motion, performance and original full-film acceptance. The source caption/transcript witnesses are conserved in exact order with SHA guards and may not be replaced by invented dialogue.
 
-## Canonical fan retrieval and automation publication state
+## Current faster path to original-AV acceptance
 
-The last **successfully persisted and independently source-integrity-tested** `saved-private/pilot-current/` snapshot is **S01 Agent1-v18 + S09 Agent2-v17**: 751 original source units, 655 provisionally named, 96 with unidentified portions, 728 reader blocks, 520 provisional display groups. That index is a genuine historically validated fallback, **not** the latest editorial source. Its private 193-episode fan retrieval reflects the older pilot manuscripts while the newest episode-local v22/v19 scripts can be read directly from their committed paths.
+[ONE-PASS EPISODE FINISH](ONE-PASS-EPISODE-FINISH.md) is now the production entry point, not 20 numbered versions or five handoff agents. [Offline source-film workbench](episode-finish-workbench.html) can load exact-dialogue private packets and a locally owned original episode video, then export one editor ledger covering every adjacent P0 join/break, P1 identity, P2 delivery, P3 wardrobe/props and P4 actual physical action. One current canonical screenplay and one private episode decision file should be maintained instead of new numbered script editions.
 
-[PR #517](https://github.com/gamesbyian/general-purpose/pull/517) is merged and changes the trusted main-only workflow to regenerate canonical source reading, original-character-span provenance, private UNKNOWN voice review queue, all-193 retrieval, manifests and preserved private artifacts **from latest S01-v22 and S09-v19 together**. The generator explicitly checks the six/two role edits, original subtitle SHA, S01 C219 true source-character split, S09 originally untimed status, original candidate reading text, 27 picture annotations and all zero-AV-acceptance flags, refusing any unexpected source or edition drift. Old [PR #511](https://github.com/gamesbyian/general-purpose/pull/511), limited to S09 v18, was closed as superseded.
+- [S01 current one-pass original-AV packet](saved-private/episode-finish-current/S01E01-one-pass-av-review.json): **34** sequential playback batches, **405** reading blocks, **404** adjacent P0 decisions, exact dialogue SHAs and source-caption candidate clocks.
+- [S09 current one-pass original-AV packet](saved-private/episode-finish-current/S09E19-one-pass-av-review.json): **27** sequential playback batches, **323** reading blocks, **322** adjacent P0 decisions; immutable **untimed** original source. The saved [original-audio source locator](saved-private/episode-finish-current/S09E19-original-audio-locators.json) reuses the original-film ASR lexical matching of **231/347** untimed paragraphs. All 27 review batches have at least one original-audio candidate seek hint. These hints are *not verified source cue timestamps, speaker identities, or performed turns*.
 
-**Present external blocker:** GitHub Actions for PR #517 and its merge commit is failing within about 1–2 seconds **before any job's first step**. This includes unrelated standalone source-only, S09 audio and layout workflows. No runner logs or tests were produced by those jobs. The latest canonical rebuild/persistence/193-episode fan-index test is therefore **not verified as executed**, and the publisher deliberately retains the older last validated snapshot. Do not report the expected 663/88 as current `pilot-current` until a successful source-workflow run verifies and commits the exact regenerated snapshot.
+The single [one-pass GitHub workflow](../.github/workflows/night-court-episode-finish.yml) follows, via explicit dispatch, only after the existing canonical private [publisher](../.github/workflows/night-court-private-working-drafts.yml) has succeeded. Its [first successfully chained current packet run 40443791289](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40443791289) and [S09 locator persistence run 40444421357](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40444421357) passed. They do **not** run speech recognition anew for every manuscript edit and do not confer AV certification by virtue of successful GitHub Actions tests.
 
-## Actual final screenplay acceptance
+## Still open, without euphemisms
 
-The user wants **finished practical 1984 and 1992 pilot screenplays**, not a prolonged research exercise. Source dialogue is present end-to-end and the increasingly precise role and physical-comedy reading layers are preserved. Nevertheless, **neither full episode has yet been accepted as an original audiovisual-verified complete screenplay**. There are 14 S01 + 74 S09 source units still containing UNKNOWN voices. Source-first P0 performed turn boundaries, original soundtrack speaker confirmation, exact scene movements and delivery/inflection remain open. The prior acceptance ledger and issue [#441](https://github.com/gamesbyian/general-purpose/issues/441) stay open; no false completion claim or silent role invention is allowed.
-
-**Operational next step:** restore healthy GitHub Actions runners, execute `.github/workflows/night-court-private-working-drafts.yml` on freshest `main`, inspect actual-source test results and ensure the `persist-private-editorial-snapshot` step commits exact current artifacts; after that, continue original-film audio/turn acceptance rather than manufacturing final signoff. If main advances while a run executes, stale-run refusal must prevail.
+**0 of 2 pilots are finished to the requested audiovisual/performance standard.** Actual continuous synchronized original-film listening/viewing and source-bound editorial decisions are still required. Independent review remains mandatory for the source-voice or shot uncertainties; the software's packet/decision validators can enforce completeness and SHA linkage, but cannot prove somebody truly observed the moving audiovisual evidence. Do not close overarching screenplay acceptance [issue #441](https://github.com/GBIDEVELOPMENT/general-purpose/issues/441) until the performed turns, voices and material staging have been adjudicated and incorporated in the **same** final readable screenplay.
