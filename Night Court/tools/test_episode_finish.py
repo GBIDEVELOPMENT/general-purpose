@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA, render_reviewed_screenplay, block_turn_segments, attach_source_audio_hints
+from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA, render_reviewed_screenplay, block_turn_segments, attach_source_audio_hints, reviewer_source_sha256
 
 
 class OnePassEpisodeTests(unittest.TestCase):
@@ -75,6 +75,28 @@ class OnePassEpisodeTests(unittest.TestCase):
         self.assertEqual(p["sequential_one_pass_batches"][0]["source_window_candidate_ms"],
                          [0, 6100])
         self.assertFalse(p["script_final_or_full_episode_accepted"])
+
+    def test_model_reruns_cannot_invalidate_completed_source_editorial_work(self):
+        original=make_packet(self.root,"S01E01")
+        pinned=original["packet_sha256"]
+        original["machine_audio_review_priorities"]=[{"boundary_id":"B0001","reason":"model-priority-only"}]
+        original["all_adjacent_boundary_questions"][0]["original_audio_machine_voice_pair_similarity"]=.41
+        original["all_adjacent_boundary_questions"][0]["original_audio_machine_review_priority"]="uncalibrated"
+        original["sequential_one_pass_batches"][0]["reader_blocks"][0]["original_audio_model_uncertified_role_hint"]={
+            "best_uncertified_role":"DAN", "original_actor_voice_verified":False}
+        original["sequential_one_pass_batches"][0]["source_window_candidate_ms"]=[850,5500]
+        original["original_soundtrack_machine_evidence_sha256"]="b"*64
+        original["unverified_source_audio_locator_match_count"]=19
+        self.assertEqual(reviewer_source_sha256(original),pinned)
+        original["sequential_one_pass_batches"][0]["reader_blocks"][0]["source_dialogue_sha256"]="b"*64
+        self.assertNotEqual(reviewer_source_sha256(original),pinned)
+        original["sequential_one_pass_batches"][0]["reader_blocks"][0]["source_dialogue_sha256"]=hashlib.sha256("one".encode()).hexdigest()
+        self.assertEqual(reviewer_source_sha256(original),pinned)
+        original["sequential_one_pass_batches"][0]["reader_blocks"][1]["id"]="changed source block"
+        self.assertNotEqual(reviewer_source_sha256(original),pinned)
+        original["sequential_one_pass_batches"][0]["reader_blocks"][1]["id"]=self.rows[1]["reading_block_id"]
+        self.assertEqual(reviewer_source_sha256(original),pinned)
+        self.assertTrue(original["machine_annotations_excluded_from_reviewer_source_sha256"])
 
     def test_provenance_and_original_audio_claims_cannot_be_forged(self):
         self.rows[0]["actual_original_av_reviewer_accepted"] = True
