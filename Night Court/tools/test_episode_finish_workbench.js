@@ -8,7 +8,18 @@ const vm=require("node:vm");
 const page=fs.readFileSync(path.resolve(__dirname,"../episode-finish-workbench.html"),"utf8");
 const match=page.match(/<script>([\s\S]*?)<\/script>/);
 assert.ok(match,"Missing inline offline AV workbench code");
-const context=vm.createContext({document:{getElementById:()=>({addEventListener:()=>{}})}});
+const nodes=new Map(), storage=new Map();
+const context=vm.createContext({
+  document:{getElementById(id){
+    if(!nodes.has(id))nodes.set(id,{addEventListener:()=>{},textContent:"",value:""});
+    return nodes.get(id);
+  }},
+  localStorage:{
+    getItem:k=>storage.get(k)??null,
+    setItem:(k,v)=>storage.set(k,v),
+    removeItem:k=>storage.delete(k)
+  }
+});
 new vm.Script(match[1],{filename:"episode-finish-workbench-inline.js"}).runInContext(context);
 function run(expression){return JSON.parse(JSON.stringify(vm.runInContext(expression,context)))}
 const original="Hey🙂 there!\nYeah.";
@@ -39,4 +50,15 @@ assert.ok(page.includes('original_audio_model_uncertified_role_hint'),
   "Original soundtrack P1 model abstention not shown during playback");
 assert.ok(page.includes('original_actor_voice_verified')||page.includes('not independently heard/verified'),
   "Original-film model display must not be mistaken for certified actor voices");
+// Simulate a browser interruption mid-episode. Keep completed decisions only
+// for the identical original-film/dialogue packet, not for another episode.
+assert.equal(run('packet={episode_id:"S01E01",packet_sha256:"source-A"};saved={boundaries:{B0001:{result:"new_speaker"}},roles:{x:{role:"HARRY"}},batches:{batch1:{observed_original_film_playback_seconds:12}}};$("reviewer").value="Original reviewer";persistDraft();Object.keys(saved.batches).length'),1);
+assert.equal(run('saved={boundaries:{},roles:{},batches:{}};$("reviewer").value="";restoreDraft();Object.keys(saved.roles).length'),1);
+assert.equal(run('Object.keys(saved.batches).length'),1);
+assert.equal(run('$("reviewer").value'),"Original reviewer");
+assert.equal(run('packet.packet_sha256="different-source";saved={boundaries:{},roles:{},batches:{}};restoreDraft();Object.keys(saved.roles).length'),0);
+assert.equal(run('packet.packet_sha256="source-A";restoreDraft();Object.keys(saved.roles).length'),1);
+assert.ok(page.includes('localStorage.removeItem(journalKey())'),
+  "Reviewer needs a clear-local-draft control");
+console.log("Source-bound local AV draft journal: resume after interruption, isolate source and clear");
 console.log("Original film SHA, listened P0 and explicitly unverified acoustic hints: PASS");
