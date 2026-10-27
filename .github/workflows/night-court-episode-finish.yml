@@ -8,6 +8,8 @@ on:
       - 'Night Court/tools/test_episode_finish_workbench.js'
       - 'Night Court/tools/source_once_canonical_voice.py'
       - 'Night Court/tools/test_source_once_canonical_voice.py'
+      - 'Night Court/tools/preflight_original_media_transport.py'
+      - 'Night Court/tools/test_preflight_original_media_transport.py'
       - 'Night Court/episode-finish-workbench.html'
   # Deliberately chained from successful canonical publication.
   # GITHUB_TOKEN is allowed to trigger repository_dispatch; ordinary bot pushes
@@ -76,7 +78,7 @@ jobs:
       - name: Source-first tests and complete P0/P1 AV review agenda per pilot
         run: |
           set -euo pipefail
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_episode_finish test_source_once_canonical_voice
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_episode_finish test_source_once_canonical_voice test_preflight_original_media_transport
           node 'Night Court/tools/test_episode_finish_workbench.js'
           locator=()
           if test -s "${RUNNER_TEMP}/episode-finish-current/S09E19-original-audio-locators.json"; then
@@ -198,6 +200,14 @@ jobs:
           PYTHONPATH='Night Court/tools' python -m unittest -v test_source_once_canonical_voice
           python 'Night Court/tools/source_once_canonical_voice.py' --offline-plan \
             --output "${RUNNER_TEMP}/unused"
+      - name: Check original-film server protocol BEFORE downloading any model weights
+        env:
+          FTP_HOST: wood.seedhost.eu
+        run: |
+          set -euo pipefail
+          python 'Night Court/tools/preflight_original_media_transport.py' \
+            --host "$FTP_HOST" --tries 3 --timeout 7 --delay 2 \
+            --output "${RUNNER_TEMP}/original-media-preflight.json"
       - name: Install isolated pinned CPU voice dependencies with visible errors
         run: |
           set -euo pipefail
