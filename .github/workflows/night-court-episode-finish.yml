@@ -5,12 +5,11 @@ on:
       - '.github/workflows/night-court-episode-finish.yml'
       - 'Night Court/tools/episode_finish.py'
       - 'Night Court/tools/test_episode_finish.py'
-  # Only run once the canonical publisher has committed the new source
-  # snapshot. Do not race that publisher by triggering on tool/workflow edits.
-  push:
-    branches: [main]
-    paths:
-      - 'Night Court/saved-private/pilot-current/**'
+  # Deliberately chained from successful canonical publication.
+  # GITHUB_TOKEN is allowed to trigger repository_dispatch; ordinary bot pushes
+  # are not a reliable trigger and would risk racing a stale screenplay write.
+  repository_dispatch:
+    types: [night-court-canonical-published]
   workflow_dispatch:
 
 # One current source-bounded packet per episode. No recurring version factory.
