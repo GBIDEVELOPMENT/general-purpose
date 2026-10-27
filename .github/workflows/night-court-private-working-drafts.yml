@@ -28,7 +28,7 @@ permissions:
 jobs:
   generate-private-pilot-reading-scripts:
     if: >-
-      github.repository == 'gamesbyian/general-purpose' &&
+      github.repository == 'GBIDEVELOPMENT/general-purpose' &&
       github.event.repository.private == true &&
       (github.event_name == 'pull_request' || github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
