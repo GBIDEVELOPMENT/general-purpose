@@ -9,6 +9,8 @@
   "source_reader_blocks": 323,
   "provisional_display_groups": 234,
   "source_timecodes_available": false,
+  "unverified_source_audio_locator_match_count": 231,
+  "original_audio_locator_report_sha256": "febac6aff2cb01ee36ac1c44b592317011d655628ede2eb83981b98201e3accc",
   "review_passes_required": 27,
   "all_adjacent_boundary_questions": [
     {
@@ -2418,7 +2420,11 @@
       "id": "S09E19-AV-001",
       "block_index_first": 0,
       "block_index_end_exclusive": 12,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        3240,
+        50560
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -2570,7 +2576,11 @@
       "id": "S09E19-AV-002",
       "block_index_first": 12,
       "block_index_end_exclusive": 24,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        50140,
+        88940
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -2722,7 +2732,11 @@
       "id": "S09E19-AV-003",
       "block_index_first": 24,
       "block_index_end_exclusive": 36,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        87260,
+        116820
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -2875,7 +2889,11 @@
       "id": "S09E19-AV-004",
       "block_index_first": 36,
       "block_index_end_exclusive": 48,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        174400,
+        194520
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -3026,7 +3044,11 @@
       "id": "S09E19-AV-005",
       "block_index_first": 48,
       "block_index_end_exclusive": 60,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        201060,
+        239800
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -3178,7 +3200,11 @@
       "id": "S09E19-AV-006",
       "block_index_first": 60,
       "block_index_end_exclusive": 72,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        240480,
+        287440
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -3332,7 +3358,11 @@
       "id": "S09E19-AV-007",
       "block_index_first": 72,
       "block_index_end_exclusive": 84,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        286540,
+        315300
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -3487,7 +3517,11 @@
       "id": "S09E19-AV-008",
       "block_index_first": 84,
       "block_index_end_exclusive": 96,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        345240,
+        373940
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -3639,7 +3673,11 @@
       "id": "S09E19-AV-009",
       "block_index_first": 96,
       "block_index_end_exclusive": 108,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        371540,
+        423440
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -3791,7 +3829,11 @@
       "id": "S09E19-AV-010",
       "block_index_first": 108,
       "block_index_end_exclusive": 120,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        421040,
+        465700
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -3944,7 +3986,11 @@
       "id": "S09E19-AV-011",
       "block_index_first": 120,
       "block_index_end_exclusive": 132,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        463560,
+        510060
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -4096,7 +4142,11 @@
       "id": "S09E19-AV-012",
       "block_index_first": 132,
       "block_index_end_exclusive": 144,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        508840,
+        545620
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -4248,7 +4298,11 @@
       "id": "S09E19-AV-013",
       "block_index_first": 144,
       "block_index_end_exclusive": 156,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        549360,
+        593800
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -4400,7 +4454,11 @@
       "id": "S09E19-AV-014",
       "block_index_first": 156,
       "block_index_end_exclusive": 168,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        595460,
+        636180
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -4553,7 +4611,11 @@
       "id": "S09E19-AV-015",
       "block_index_first": 168,
       "block_index_end_exclusive": 180,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        638160,
+        721840
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -4708,7 +4770,11 @@
       "id": "S09E19-AV-016",
       "block_index_first": 180,
       "block_index_end_exclusive": 192,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        735200,
+        785040
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -4861,7 +4927,11 @@
       "id": "S09E19-AV-017",
       "block_index_first": 192,
       "block_index_end_exclusive": 204,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        782640,
+        823140
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -5014,7 +5084,11 @@
       "id": "S09E19-AV-018",
       "block_index_first": 204,
       "block_index_end_exclusive": 216,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        825660,
+        881400
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -5166,7 +5240,11 @@
       "id": "S09E19-AV-019",
       "block_index_first": 216,
       "block_index_end_exclusive": 228,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        879480,
+        913480
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -5318,7 +5396,11 @@
       "id": "S09E19-AV-020",
       "block_index_first": 228,
       "block_index_end_exclusive": 240,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        914420,
+        965360
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -5470,7 +5552,11 @@
       "id": "S09E19-AV-021",
       "block_index_first": 240,
       "block_index_end_exclusive": 252,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        971140,
+        1015580
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -5622,7 +5708,11 @@
       "id": "S09E19-AV-022",
       "block_index_first": 252,
       "block_index_end_exclusive": 264,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        1013840,
+        1044000
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -5774,7 +5864,11 @@
       "id": "S09E19-AV-023",
       "block_index_first": 264,
       "block_index_end_exclusive": 276,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        1051660,
+        1087800
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -5925,7 +6019,11 @@
       "id": "S09E19-AV-024",
       "block_index_first": 276,
       "block_index_end_exclusive": 288,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        1087920,
+        1140160
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -6076,7 +6174,11 @@
       "id": "S09E19-AV-025",
       "block_index_first": 288,
       "block_index_end_exclusive": 300,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        1142840,
+        1180280
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -6228,7 +6330,11 @@
       "id": "S09E19-AV-026",
       "block_index_first": 300,
       "block_index_end_exclusive": 312,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        1180080,
+        1235100
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -6384,7 +6490,11 @@
       "id": "S09E19-AV-027",
       "block_index_first": 312,
       "block_index_end_exclusive": 323,
-      "source_window_candidate_ms": null,
+      "source_window_candidate_ms": [
+        1235280,
+        1263420
+      ],
+      "source_window_kind": "unverified_original_audio_lexical_seek_hint_not_source_timecode",
       "source_clock_verified": false,
       "reader_blocks": [
         {
@@ -6527,5 +6637,5 @@
   "original_audio_video_inspected_by_this_command": false,
   "script_final_or_full_episode_accepted": false,
   "workflow_instruction": "Review each sequential batch once on the SHA-pinned original film with synchronized sound; answer all P0 and P1 questions first, then record P2/P3/P4. Persist decisions in ONE stable episode ledger; regenerate ONE canonical screenplay. Machine-proposed names, source timestamps and display joins are not original-AV proof.",
-  "packet_sha256": "5ed0665962731959e49d15ed43741a152812582895b9918ed761ba59efca9241"
+  "packet_sha256": "f0eaa6d220bdbdcba6046892dddc2fd1319c0e7baed04f3af32a5f971c30e1e2"
 }
