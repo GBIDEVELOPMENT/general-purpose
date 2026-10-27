@@ -183,6 +183,30 @@ def source_original(ep: str, dest: Path):
     return digest
 
 
+def acoustic_adjacent_pairs(descriptors, groups, vectors):
+    """Compare only truly adjacent original source reader blocks.
+
+    Groups is an insertion-ordered mapping from the SHA-verified original
+    provenance file, not parsed numeric identifiers or guessed caption clocks.
+    """
+    order={key:i for i,key in enumerate(groups)}
+    if any(x["id"] not in order for x in descriptors):
+        raise ValueError("Acoustic descriptor lost its immutable reading-block provenance")
+    answer=[]
+    chronological=[x for x in descriptors if x["id"] in vectors]
+    for a,b in zip(chronological,chronological[1:]):
+        if order[b["id"]]!=order[a["id"]]+1:
+            continue
+        if not -1000<=b["window_ms"][0]-a["window_ms"][1]<=12000:
+            continue
+        sim=cosine(vectors[a["id"]],vectors[b["id"]])
+        answer.append({"source_left":a["id"],"source_right":b["id"],
+            "provisional_display_join":groups[a["id"]]==groups[b["id"]],
+            "machine_acoustic_voice_similarity":round(sim,4),
+            "source_audio_p0_performed_boundary_independently_verified":False})
+    return answer
+
+
 def audio_evidence(ep, movie:Path, descriptors, rejected, groups, meta, encoder):
     """All vectors transient. Export only source IDs and numeric model diagnostics."""
     if movie.stat().st_size!=EXPECTED_BYTES[ep] or sha256(movie)!=VIDEO_SHA[ep]:
@@ -238,21 +262,7 @@ def audio_evidence(ep, movie:Path, descriptors, rejected, groups, meta, encoder)
             "voice_model_margin":m.get("margin"),
             "global_and_role_holdout_pass":passed and role_pass,
             "actor_voice_original_soundtrack_independently_verified":False})
-    joins=[]
-    # Review performed boundaries (P0) as well as named role (P1), without
-    # overwriting original caption joins or claiming a voice-match is truth.
-    chronological=[x for x in descriptors if x["id"] in vectors]
-    for a,b in zip(chronological,chronological[1:]):
-        # Some dropped source reader blocks separate these; never skip them.
-        ai=int(a["id"].rsplit(":",1)[-1]);bi=int(b["id"].rsplit(":",1)[-1])
-        if bi!=ai+1:continue
-        if not -1000<=b["window_ms"][0]-a["window_ms"][1]<=12_000:
-            continue
-        sim=cosine(vectors[a["id"]],vectors[b["id"]])
-        joins.append({"source_left":a["id"],"source_right":b["id"],
-            "provisional_display_join":groups[a["id"]]==groups[b["id"]],
-            "machine_acoustic_voice_similarity":round(sim,4),
-            "source_audio_p0_performed_boundary_independently_verified":False})
+    joins=acoustic_adjacent_pairs(descriptors,groups,vectors)
     if len(results)>MAX_REPORTED_ITEMS or len(joins)>MAX_REPORTED_ITEMS:
         raise ValueError("Unbounded source audio evidence report")
     return {"schema":SCHEMA,"episode_id":ep,

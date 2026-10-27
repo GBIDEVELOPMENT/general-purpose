@@ -191,14 +191,22 @@ function render(){
      '<option value="" '+(getEdge(e)===""?"selected":"")+'>Not reviewed (proposed: '+(e.provisional_same_turn?"continuation":"new speaker")+')</option>'+
      ["same_speaker_continuation","new_speaker","overlapping_voices"].map(choice=>
        '<option value="'+choice+'" '+(getEdge(e)===choice?"selected":"")+'>'+escapeHtml(choice.replaceAll("_"," "))+'</option>').join("")+
-       '</select></label><span class="small">'+(saved.boundaries[e.id]?"Previously source-reviewed":"Proposed, not reviewed")+'</span></div>');
+       '</select></label>'+
+       (typeof e.original_audio_machine_voice_pair_similarity==="number"?
+         '<span class="small">Original soundtrack model: voice-pair similarity '+e.original_audio_machine_voice_pair_similarity.toFixed(2)+' (NOT a verified same-person claim)</span>':"")+
+       '<span class="small">'+(saved.boundaries[e.id]?"Previously source-reviewed":"Proposed, not reviewed")+'</span></div>');
   }
   bits.push('<article class="utterance '+(saved.roles[ref.id]?"complete":"")+'">'+
     '<div class="small">'+escapeHtml(ref.id)+" · "+escapeHtml(ref.source_parts.join(", "))+'</div>'+
     '<p class="line">'+escapeHtml(ref.source_exact_dialogue??"[Source dialogue unavailable]")+'</p>'+
     '<label>P1 • original voice (candidate: '+escapeHtml(ref.provisional_role??"UNKNOWN")+')'+
     '<input type="text" data-role="'+escapeHtml(ref.id)+'" value="'+escapeHtml(getRole(ref))+'"></label>'+
-    '<label>P0 • Voice changes WITHIN this caption? If none, leave blank after listening. Each change: first spoken words | NEW CHARACTER or @Unicode offset | NEW CHARACTER'+
+    (ref.original_audio_model_uncertified_role_hint?
+       '<p class="small">Actual original-audio MODEL (not independently heard/verified): '+
+       escapeHtml(ref.original_audio_model_uncertified_role_hint.role_candidate??"abstains")+
+       ' / best unscreened '+escapeHtml(ref.original_audio_model_uncertified_role_hint.best_uncertified_role??"none")+
+       '. Leave UNKNOWN if the film cannot establish a character.</p>':"")+
+     '<label>P0 • Voice changes WITHIN this caption? If none, leave blank after listening. Each change: first spoken words | NEW CHARACTER or @Unicode offset | NEW CHARACTER'+
      '<textarea data-split="'+escapeHtml(ref.id)+'" placeholder="Yeah | PHIL KERR">'+escapeHtml(savedSplitHints(ref))+'</textarea></label>'+
     '<span class="small">'+(saved.roles[ref.id]?"Previously source-reviewed":"Provisional candidate only")+'</span></article>');
  }

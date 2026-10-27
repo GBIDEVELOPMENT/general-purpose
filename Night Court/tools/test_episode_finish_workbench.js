@@ -33,4 +33,10 @@ assert.equal(run('proposalForEdge({provisional_same_turn:false})'),"new_speaker"
 assert.ok(page.includes('MIN_OBSERVED_PLAYBACK_SECONDS=8'),"No measured listening minimum");
 assert.ok(page.includes('observed_original_film_playback_seconds'),"No playback evidence in signed review");
 assert.ok(page.includes('endorseP0'),"No fast explicit P0 batch endorsement");
-console.log("Original film local fingerprint, playback and opt-in batched P0: PASS");
+assert.ok(page.includes('original_audio_machine_voice_pair_similarity'),
+  "Original soundtrack P0 model comparisons not shown during playback");
+assert.ok(page.includes('original_audio_model_uncertified_role_hint'),
+  "Original soundtrack P1 model abstention not shown during playback");
+assert.ok(page.includes('original_actor_voice_verified')||page.includes('not independently heard/verified'),
+  "Original-film model display must not be mistaken for certified actor voices");
+console.log("Original film SHA, listened P0 and explicitly unverified acoustic hints: PASS");
