@@ -190,8 +190,8 @@ def source_original(ep: str, dest: Path):
             if digest!=VIDEO_SHA[ep]:
                 raise ValueError("Original DVD-rip AVI hash changed")
             return digest
-        except (EOFError,TimeoutError,ConnectionResetError,ConnectionAbortedError,
-                BrokenPipeError,ConnectionRefusedError,OSError) as exc:
+        except (EOFError, TimeoutError, ConnectionResetError,
+                ConnectionAbortedError, BrokenPipeError, ConnectionRefusedError) as exc:
             if attempt == 1:
                 raise SourceTemporarilyUnavailable(ep) from exc
             print(ep,"original FTP connection interrupted; one bounded same-host retry")
@@ -199,7 +199,7 @@ def source_original(ep: str, dest: Path):
         finally:
             if ftp is not None:
                 try:ftp.quit()
-                except (ftplib.all_errors,EOFError,OSError):
+                except (*ftplib.all_errors, EOFError, OSError):
                     try:ftp.close()
                     except OSError:pass
     raise AssertionError("Unreachable FTP retry exit")
