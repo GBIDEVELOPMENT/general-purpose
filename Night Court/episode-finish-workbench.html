@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Night Court | One-Pass AV Editor</title>
+<style>
+:root{font-family:system-ui,Arial,sans-serif;background:#111b29;color:#f0f4fb;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;line-height:1.4}
+header{padding:1rem 1.5rem;background:#203047;border-bottom:3px solid #dba94b}
+h1{font-size:1.45rem;margin:.1rem 0}.note{color:#c6d3e5;margin:.3rem 0}
+main{display:grid;grid-template-columns:minmax(300px,42%) minmax(400px,58%);height:calc(100vh - 108px)}
+aside,.editor{padding:1rem 1.2rem;overflow:auto}aside{background:#162336;border-right:1px solid #3c526c}
+video{width:100%;background:#030508;max-height:47vh;display:block}
+button,input,select,textarea{font:inherit;color:inherit;background:#253951;border:1px solid #8191a8;border-radius:7px;padding:.5rem}
+button{cursor:pointer;font-weight:650}button:hover{background:#355372}
+button:disabled{opacity:.4;cursor:default}input[type=file]{max-width:100%;width:100%}
+label{display:block;margin:.65rem 0;font-weight:600}
+input[type=text],textarea{width:100%}textarea{resize:vertical;min-height:52px}
+.small{font-size:.86rem;color:#c6d3e5}.muted{color:#aabdd2}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1rem 0}
+.controls>button{flex-grow:1}.button-primary{background:#bd7924;color:#121b26;border-color:#eebc72}
+.utterance{border-left:5px solid #dba94b;background:#1e3046;margin:.7rem 0;padding:.7rem;border-radius:0 9px 9px 0}
+.utterance .line{font-size:1.06rem;margin:.35rem 0;white-space:pre-wrap}
+.boundary{background:#19283c;border:1px dashed #6b849d;margin:.7rem 0;padding:.65rem;border-radius:9px}
+.tag{font-size:.77rem;background:#344a64;color:#f0f4fb;border-radius:50px;padding:.18rem .5rem}
+.status{background:#294459;padding:.8rem;border-radius:8px}
+.complete{border-left-color:#65b891!important}.warning{color:#ffcb79}
+a{color:#e3ba6e}
+fieldset{border:1px solid #4c6582;border-radius:9px;padding:.6rem;margin-top:1rem}
+legend{font-weight:700}.stack{display:grid;grid-template-columns:1fr;gap:.4rem}
+hr{border:0;border-top:1px solid #41556d;margin:1rem 0}
+@media(max-width:790px){main{display:block;height:auto}aside,.editor{overflow:visible}video{max-height:38vh}}
+</style>
+</head>
+<body>
+<header>
+<h1>NIGHT COURT <span class="tag">ONE-PASS ORIGINAL AV</span></h1>
+<p class="note">Watch the actual episode in order. Correct P0 boundaries and P1 voices before performance and physical comedy. No automated certifications.</p>
+</header>
+<main>
+<aside>
+  <label>1. Load private current review packet
+    <input id="packet" type="file" accept=".json,application/json">
+  </label>
+  <label>2. Open a locally owned original episode video
+    <input id="videoFile" type="file" accept="video/*,.avi,.mkv,.mp4,.mov,.webm">
+  </label>
+  <video id="player" controls preload="metadata" playsinline></video>
+  <p class="small">Original SHA-256 is pinned in the packet. Browsers cannot verify huge media SHA automatically here; compare the video file to the pinned original using sha256sum/shasum before any certification. Some AVI codecs require local MP4 conversion without altering the verified source evidence.</p>
+  <label>3. AV reviewer identification
+    <input id="reviewer" type="text" placeholder="Reviewer name/identifier">
+  </label>
+  <div class="controls">
+    <button id="prev" type="button" disabled>Previous sequence</button>
+    <button id="seek" type="button" disabled>Seek to cue range</button>
+    <button id="next" type="button" disabled>Next sequence</button>
+  </div>
+  <p class="status" id="status" role="status">Load a packet to begin.</p>
+  <label>Import existing decisions for the same packet
+    <input id="importDecisions" type="file" accept=".json,application/json">
+  </label>
+  <button type="button" class="button-primary" id="download" disabled>Export one AV decision ledger</button>
+  <p class="small">Nothing here is uploaded to a server or automatically written back to GitHub. Export the JSON and commit it to the episode's stable private review location. The independent editorial gate checks each P0, P1 and viewing record.</p>
+</aside>
+<section class="editor">
+ <h2 id="episode">Episode review</h2>
+ <p id="range" class="muted">Select a private current packet.</p>
+ <div id="editor"></div>
+ <fieldset id="sceneFields" disabled>
+  <legend>Same playback: P2 / P3 / P4</legend>
+  <label>P2. Audible delivery and performance, one note per line
+    <textarea id="performance" placeholder="Record heard emphasis, timing, delivery; blank if nothing material."></textarea>
+  </label>
+  <label>P3. Props and wardrobe actually visible, one note per line
+    <textarea id="props" placeholder="Specific objects and clothing, no guessed materials."></textarea>
+  </label>
+  <label>P4. Physical business (initiator → action → recipient/object), one per line
+    <textarea id="actions" placeholder="Include entrances, blocking, action-target proof; abstain if unclear."></textarea>
+  </label>
+  <label><input id="watched" type="checkbox">
+    I watched and listened to this actual sequential source interval (not just read captions or looked at sampled stills), and corrected the P0/P1 proposals above.
+  </label>
+  <div class="controls">
+    <button id="confirm" class="button-primary" type="button">Record this sequence's AV decisions</button>
+  </div>
+ </fieldset>
+</section>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+let packet=null, sequence=0, saved={boundaries:{},roles:{},batches:{}}, media=null;
+const escapeHtml=text=>String(text??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+function status(text){$("status").textContent=text}
+function fileRead(file,cb){const reader=new FileReader();reader.onload=()=>{try{cb(JSON.parse(reader.result))}catch(e){status("Invalid JSON: "+e.message)}};reader.readAsText(file)}
+function arrays(text){return text.split(/\r?\n/).map(t=>t.trim()).filter(Boolean)}
+function batch(){return packet.sequential_one_pass_batches[sequence]}
+function edge(id){return packet.all_adjacent_boundary_questions.find(x=>x.id===id)}
+function getRole(r){return saved.roles[r.id]?.role ?? r.provisional_role ?? "UNIDENTIFIED VOICE"}
+function getEdge(e){return saved.boundaries[e.id]?.result ?? (e.provisional_same_turn?"same_speaker_continuation":"new_speaker")}
+function render(){
+ if(!packet)return;
+ const current=batch(), completed=Object.keys(saved.batches).length;
+ $("episode").textContent=packet.episode_id+" • sequence "+(sequence+1)+" / "+packet.sequential_one_pass_batches.length;
+ $("range").textContent="Reading blocks "+(current.block_index_first+1)+"–"+current.block_index_end_exclusive+
+   " • Original source witness "+packet.source_original_dialogue_sha256.slice(0,16)+"…"+
+   (current.source_window_candidate_ms?" • candidate cue clock "+(current.source_window_candidate_ms[0]/1000).toFixed(1)+"–"+(current.source_window_candidate_ms[1]/1000).toFixed(1)+"s":" • original dialogue is untimed");
+ $("prev").disabled=sequence===0;
+ $("next").disabled=sequence===packet.sequential_one_pass_batches.length-1;
+ $("seek").disabled=!current.source_window_candidate_ms||!media;
+ const bits=[];
+ for(const ref of current.reader_blocks){
+  for(const eid of current.boundary_question_ids){
+   const e=edge(eid);
+   if(e.right_reading_block_id!==ref.id)continue;
+   bits.push('<div class="boundary"><div class="small">P0 • '+escapeHtml(e.id)+
+     " • "+escapeHtml(e.left_reading_block_id)+" → "+escapeHtml(ref.id)+
+     '</div><label>Actual original audio transition<select data-edge="'+escapeHtml(e.id)+'">'+
+     ["same_speaker_continuation","new_speaker","overlapping_voices"].map(choice=>
+       '<option value="'+choice+'" '+(getEdge(e)===choice?"selected":"")+'>'+escapeHtml(choice.replaceAll("_"," "))+'</option>').join("")+
+       '</select></label><span class="small">'+(saved.boundaries[e.id]?"Previously source-reviewed":"Proposed, not reviewed")+'</span></div>');
+  }
+  bits.push('<article class="utterance '+(saved.roles[ref.id]?"complete":"")+'">'+
+    '<div class="small">'+escapeHtml(ref.id)+" · "+escapeHtml(ref.source_parts.join(", "))+'</div>'+
+    '<p class="line">'+escapeHtml(ref.source_exact_dialogue??"[Source dialogue unavailable]")+'</p>'+
+    '<label>P1 • original voice (candidate: '+escapeHtml(ref.provisional_role??"UNKNOWN")+')'+
+    '<input type="text" data-role="'+escapeHtml(ref.id)+'" value="'+escapeHtml(getRole(ref))+'"></label>'+
+    '<span class="small">'+(saved.roles[ref.id]?"Previously source-reviewed":"Provisional candidate only")+'</span></article>');
+ }
+ $("editor").innerHTML=bits.join("");
+ const prior=saved.batches[current.id];
+ $("performance").value=(prior?.performance_notes??[]).join("\n");
+ $("props").value=(prior?.visible_props_and_wardrobe??[]).join("\n");
+ $("actions").value=(prior?.observed_actor_action_target??[]).join("\n");
+ $("watched").checked=!!prior;
+ $("sceneFields").disabled=false;
+ $("confirm").textContent=prior?"Update this source-reviewed sequence":"Record this sequence's AV decisions";
+ status(completed+"/"+packet.sequential_one_pass_batches.length+
+        " sequential original-AV passages reviewed • "+Object.keys(saved.boundaries).length+
+        "/"+packet.all_adjacent_boundary_questions.length+
+        " P0 boundaries • "+Object.keys(saved.roles).length+"/"+packet.source_reader_blocks+
+        " P1 voice decisions.");
+}
+$("packet").onchange=e=>{const f=e.target.files?.[0];if(!f)return;fileRead(f,p=>{
+ if(!p||p.schema!=="night-court-single-pass-source-av-editorial/1"||
+    !p.packet_sha256||!Array.isArray(p.sequential_one_pass_batches))throw Error("Wrong review packet");
+ packet=p;sequence=0;saved={boundaries:{},roles:{},batches:{}};$("download").disabled=false;render();
+})};
+$("videoFile").onchange=e=>{if(media)URL.revokeObjectURL(media);const f=e.target.files?.[0];if(!f)return;media=URL.createObjectURL(f);$("player").src=media;render()};
+$("prev").onclick=()=>{if(packet&&sequence>0){sequence--;render()}};
+$("next").onclick=()=>{if(packet&&sequence<packet.sequential_one_pass_batches.length-1){sequence++;render()}};
+$("seek").onclick=()=>{let b=batch();if(b.source_window_candidate_ms&&media){$("player").currentTime=b.source_window_candidate_ms[0]/1000;$("player").play().catch(()=>{})}};
+$("confirm").onclick=()=>{
+ if(!packet||!media){status("Original video must be loaded before reviewing.");return}
+ if(!$("watched").checked){status("Do not certify a batch without playing original synchronized audio and moving picture.");return}
+ const current=batch(), next={boundaries:{},roles:{}};
+ for(const r of current.reader_blocks){
+  const field=[...document.querySelectorAll("[data-role]")].find(i=>i.dataset.role===r.id);
+  if(!field||!field.value.trim()){status("Every voice needs an identity or UNIDENTIFIED VOICE.");return}
+  next.roles[r.id]={role:field.value.trim(),original_audio_voice_reviewed:true};
+ }
+ for(const id of current.boundary_question_ids){
+  const field=[...document.querySelectorAll("[data-edge]")].find(i=>i.dataset.edge===id);
+  if(!field){status("Missing P0 transition "+id);return}
+  next.boundaries[id]={result:field.value,heard_on_original_audio:true};
+ }
+ Object.assign(saved.roles,next.roles);Object.assign(saved.boundaries,next.boundaries);
+ saved.batches[current.id]={
+  synchronized_original_video_and_sound_reviewed:true,
+  performance_notes:arrays($("performance").value),
+  visible_props_and_wardrobe:arrays($("props").value),
+  observed_actor_action_target:arrays($("actions").value)
+ };
+ render();
+ if(sequence<packet.sequential_one_pass_batches.length-1){sequence++;render()}
+};
+$("importDecisions").onchange=e=>{const f=e.target.files?.[0];if(!f||!packet)return;fileRead(f,d=>{
+ if(d.packet_sha256!==packet.packet_sha256||d.episode_id!==packet.episode_id){status("Decision file does not match this exact manuscript packet");return}
+ saved={boundaries:d.boundaries||{},roles:d.roles||{},batches:d.batches||{}};
+ $("reviewer").value=d.reviewer||"";render()
+})};
+$("download").onclick=()=>{
+ if(!packet)return;const reviewer=$("reviewer").value.trim();
+ if(!reviewer){status("Enter the actual original-AV reviewer identity before exporting.");return}
+ const result={
+  schema:"night-court-source-av-decisions/1",packet_sha256:packet.packet_sha256,
+  episode_id:packet.episode_id,original_video_sha256:packet.original_video_sha256_expected,
+  review_method:"continuous_original_synchronized_av",reviewer,
+  boundaries:saved.boundaries,roles:saved.roles,batches:saved.batches,
+  original_source_full_episode_complete:Object.keys(saved.batches).length===packet.sequential_one_pass_batches.length
+ };
+ const blob=new Blob([JSON.stringify(result,null,2)+"\n"],{type:"application/json"});
+ const href=URL.createObjectURL(blob);
+ const anchor=document.createElement("a");anchor.href=href;anchor.download=packet.episode_id+"-original-av-decisions.json";
+ anchor.click();setTimeout(()=>URL.revokeObjectURL(href),1000)
+};
+</script>
+</body>
+</html>
