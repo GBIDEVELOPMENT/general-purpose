@@ -294,12 +294,16 @@ jobs:
                     'uncertified role suggestions',d['model_eligible_speaker_suggestions'],
                     'P0 acoustic pair checks',len(d['adjacent_P0_original_audio_voice_similarity']))
           PY
-      - uses: actions/upload-artifact@v4
+      # Preserve any COMPLETE source-SHA-pinned episode report even when the
+      # other pilot's FTP/media inference fails. Source bytes never go here.
+      - name: Keep completed per-episode numeric acoustic reports on partial failure
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: night-court-original-film-canonical-audio-p0p1-private
-          path: ${{ runner.temp }}/source-p0p1/
+          path: ${{ runner.temp }}/source-p0p1/*-original-audio-p0p1-evidence.json
           retention-days: 7
-          if-no-files-found: error
+          if-no-files-found: warn
       - name: Preserve exactly current two source-audio reports, no new manuscript version
         run: |
           set -euo pipefail
