@@ -78,6 +78,25 @@ local video against the original source SHA before certifying; HTML cannot
 authenticate what they actually watched, and browser AVI codecs may require a
 locally transcoded MP4 viewing proxy.
 
+**Crash-safe review continuity:** after each genuinely listened and confirmed passage,
+the offline workbench keeps one local browser draft keyed by the source-identity
+packet SHA. Reloading the SAME episode packet restores the confirmed P0/P1
+decisions and P2/P3/P4 notes; re-verifying the original AVI remains mandatory.
+Changing numeric audio scores or inferred lexical-seek hints cannot invalidate
+those decisions. Changing the actual film edition, immutable dialogue,
+canonical screenplay, or ordered source-block layout DOES invalidate the
+review. The draft stores notes locally and unencrypted, not media or original
+soundtrack; use **Clear locally saved episode decisions** to discard it.
+Export the JSON ledger periodically, since browser cache may be cleared.
+
+**Fast CI refresh:** a change to the existing episode finisher or this
+single workflow now regenerates two SHA-bound review packets on `main`
+without re-downloading either original film or rerunning acoustic models.
+Only a separately modified trusted audio trigger
+(`research/trigger-original-pilot-audio-evidence.txt`) dispatches expensive
+original-source inference. The legacy manuscript factory remains independent
+and is not relaunched for an AV editor-only code change.
+
 The **single current review agenda** per pilot lives at
 `saved-private/episode-finish-current/SXXEXX-one-pass-av-review.json`.
 Regenerate it automatically from the exact canonical published screenplay and
