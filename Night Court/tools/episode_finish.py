@@ -462,7 +462,7 @@ def original_av_beat_notes(decision: dict) -> dict[str, list[str]]:
         values=observations[key]
         if (not isinstance(values,list) or len(values)>12 or
             any(not isinstance(v,str) or not v.strip() or
-                len(v)>450 or "\\n" in v or "\\r" in v for v in values)):
+                len(v)>450 or chr(10) in v or chr(13) in v for v in values)):
             raise ValueError("Source AV beat note is not a bounded single observation")
     return {key:[v.strip() for v in observations[key]] for key in fields}
 
