@@ -49,6 +49,7 @@ hr{border:0;border-top:1px solid #41556d;margin:1rem 0}
     <input id="sourceFile" type="file" accept=".avi,.mp4,.mkv,.mov,.webm,video/*">
   </label>
   <p id="sourceStatus" class="small">Original film not verified. No film is uploaded.</p>
+  <p id="wholeFilmStatus" class="small">Whole-film playback coverage: not started.</p>
   <label>3. Open the original film or a locally transcoded playback proxy
     <input id="videoFile" type="file" accept="video/*,.avi,.mkv,.mp4,.mov,.webm">
   </label>
@@ -105,6 +106,38 @@ let packet=null, sequence=0, saved={boundaries:{},roles:{},batches:{}}, media=nu
 let verifiedSourceFile=null, verifiedSourceDigest=null, sourceChecking=false;
 const MIN_OBSERVED_PLAYBACK_SECONDS=8;
 let listenedByBatch={}, lastPlaybackMark=null;
+let filmSecondsSeen=new Set(),filmLastPos=null,filmSaveCount=0;
+let currentPlaybackSignature=null,restoredPlaybackSignature=null;
+function playbackFileSignature(file){
+  return [file.name,file.size,file.lastModified].join(":");
+}
+function recordFullFilmSeconds(previous,current,duration){
+  if(!Number.isFinite(duration)||duration<1200||duration>1800 ||
+     !Number.isFinite(previous)||!Number.isFinite(current)||
+     current<=previous||current-previous>3)return 0;
+  let added=0;
+  for(let second=Math.floor(previous);second<=Math.floor(current);second++){
+    if(second>=0&&second<Math.ceil(duration)&&!filmSecondsSeen.has(second)){
+      filmSecondsSeen.add(second);added++;
+    }
+  }
+  return added;
+}
+function fullFilmCoverage(){
+  const length=Math.ceil($("player").duration||0);
+  return {schema:"night-court-local-playback-seconds/1",
+    duration_seconds:length,
+    observed_seconds:[...filmSecondsSeen].sort((a,b)=>a-b)};
+}
+function renderWholeFilmStatus(){
+  const length=Math.ceil($("player").duration||0);
+  const pct=length>0&&Number.isFinite(length)?100*filmSecondsSeen.size/length:0;
+  $("wholeFilmStatus").textContent="Whole original film: "+
+    filmSecondsSeen.size+" observed video seconds / "+
+    (length>=1200&&length<=1800?length:"unknown runtime")+
+    " ("+pct.toFixed(1)+"%). Complete editorial signoff requires ≥97% coverage with no gap >8s.";
+}
+
 function progressForCurrent(){return packet?(listenedByBatch[batch().id]||0):0}
 function playbackStatus(){
   if(!packet)return;
@@ -116,6 +149,7 @@ function sourceReady(){return !!packet && verifiedSourceDigest===packet.original
 function bytesToHex(bytes){return Array.from(new Uint8Array(bytes)).map(x=>x.toString(16).padStart(2,"0")).join("")}
 async function verifyOriginalSource(file){
   verifiedSourceDigest=null;verifiedSourceFile=file;sourceChecking=true;
+  filmLastPos=null;
   listenedByBatch={};lastPlaybackMark=null;
   $("sourceStatus").textContent="Hashing original film locally; no video is uploaded.";
   try{
@@ -123,6 +157,8 @@ async function verifyOriginalSource(file){
     const actual=bytesToHex(await crypto.subtle.digest("SHA-256",await file.arrayBuffer()));
     if(verifiedSourceFile!==file)return;
     verifiedSourceDigest=actual;
+    if(!sourceReady()){filmSecondsSeen.clear();filmSaveCount=0}
+    renderWholeFilmStatus();
     $("sourceStatus").textContent=sourceReady()?"Original film SHA-256 verified: "+actual:
       "WRONG SOURCE EDITION: "+actual+". Must match the packet original film SHA.";
   }catch(err){
