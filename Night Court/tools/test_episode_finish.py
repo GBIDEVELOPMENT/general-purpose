@@ -232,6 +232,21 @@ class OnePassEpisodeTests(unittest.TestCase):
         self.assertLess(script.index("    two"), script.index("    three"))
         self.assertIn(self.source_sha, script)
         self.assertIn("test observed action", script)
+        d["roles"]["S01E01:speaker-evidence:0002"]["original_av_beat_notes"]={
+            "tone_delivery":["dry skepticism"],
+            "wardrobe_props":["holds a blue folder"],
+            "physical_action":["LANA points to the folder, facing HARRY"]
+        }
+        with_notes=render_reviewed_screenplay(p,d)
+        self.assertIn("*[Original audio delivery: dry skepticism]*",with_notes)
+        self.assertIn("*[Original picture clothing/prop: holds a blue folder]*",with_notes)
+        self.assertIn("*[Original picture action/target: LANA points to the folder, facing HARRY]*",with_notes)
+        self.assertLess(with_notes.index("    one"),with_notes.index("dry skepticism"))
+        self.assertLess(with_notes.index("dry skepticism"),with_notes.index("    two"))
+        d["roles"]["S01E01:speaker-evidence:0002"]["original_av_beat_notes"]["tone_delivery"]=[""]
+        with self.assertRaisesRegex(ValueError, "beat note"):
+            verify_decisions(p,d)
+        d["roles"]["S01E01:speaker-evidence:0002"]["original_av_beat_notes"]["tone_delivery"]=["dry skepticism"]
         d["boundaries"]["B0002"]["result"] = "same_speaker_continuation"
         with self.assertRaisesRegex(ValueError, "conflicting P1"):
             render_reviewed_screenplay(p, d)
