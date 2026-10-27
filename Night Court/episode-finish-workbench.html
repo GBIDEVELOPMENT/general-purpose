@@ -43,12 +43,16 @@ hr{border:0;border-top:1px solid #41556d;margin:1rem 0}
   <label>1. Load private current review packet
     <input id="packet" type="file" accept=".json,application/json">
   </label>
-  <label>2. Open a locally owned original episode video
+  <label>2. SHA-check the exact original source film locally
+    <input id="sourceFile" type="file" accept=".avi,.mp4,.mkv,.mov,.webm,video/*">
+  </label>
+  <p id="sourceStatus" class="small">Original film not verified. No film is uploaded.</p>
+  <label>3. Open the original film or a locally transcoded playback proxy
     <input id="videoFile" type="file" accept="video/*,.avi,.mkv,.mp4,.mov,.webm">
   </label>
   <video id="player" controls preload="metadata" playsinline></video>
-  <p class="small">Original SHA-256 is pinned in the packet. Browsers cannot verify huge media SHA automatically here; compare the video file to the pinned original using sha256sum/shasum before any certification. Some AVI codecs require local MP4 conversion without altering the verified source evidence.</p>
-  <label>3. AV reviewer identification
+  <p class="small">Original SHA-256 is pinned in the packet. Original film is checked against the packet SHA-256 locally using WebCrypto. A playback proxy can be used for unsupported AVI codecs, but the reviewer must establish that it comes from the checked source.</p>
+  <label>4. AV reviewer identification
     <input id="reviewer" type="text" placeholder="Reviewer name/identifier">
   </label>
   <div class="controls">
@@ -91,6 +95,25 @@ hr{border:0;border-top:1px solid #41556d;margin:1rem 0}
 "use strict";
 const $=id=>document.getElementById(id);
 let packet=null, sequence=0, saved={boundaries:{},roles:{},batches:{}}, media=null;
+let verifiedSourceFile=null, verifiedSourceDigest=null, sourceChecking=false;
+function sourceReady(){return !!packet && verifiedSourceDigest===packet.original_video_sha256_expected}
+function bytesToHex(bytes){return Array.from(new Uint8Array(bytes)).map(x=>x.toString(16).padStart(2,"0")).join("")}
+async function verifyOriginalSource(file){
+  verifiedSourceDigest=null;verifiedSourceFile=file;sourceChecking=true;
+  $("sourceStatus").textContent="Hashing original film locally; no video is uploaded.";
+  try{
+    if(!crypto?.subtle)throw Error("WebCrypto needs a secure browser context (localhost)");
+    const actual=bytesToHex(await crypto.subtle.digest("SHA-256",await file.arrayBuffer()));
+    if(verifiedSourceFile!==file)return;
+    verifiedSourceDigest=actual;
+    $("sourceStatus").textContent=sourceReady()?"Original film SHA-256 verified: "+actual:
+      "WRONG SOURCE EDITION: "+actual+". Must match the packet original film SHA.";
+  }catch(err){
+    $("sourceStatus").textContent="Hash failed: "+err.message+
+     ". Original film cannot be AV-certified until its SHA-256 matches.";
+  }finally{if(verifiedSourceFile===file)sourceChecking=false}
+}
+
 const escapeHtml=text=>String(text??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 function status(text){$("status").textContent=text}
 function fileRead(file,cb){const reader=new FileReader();reader.onload=()=>{try{cb(JSON.parse(reader.result))}catch(e){status("Invalid JSON: "+e.message)}};reader.readAsText(file)}
@@ -133,7 +156,7 @@ function savedSplitHints(ref){
 function batch(){return packet.sequential_one_pass_batches[sequence]}
 function edge(id){return packet.all_adjacent_boundary_questions.find(x=>x.id===id)}
 function getRole(r){return saved.roles[r.id]?.role ?? r.provisional_role ?? "UNIDENTIFIED VOICE"}
-function getEdge(e){return saved.boundaries[e.id]?.result ?? (e.provisional_same_turn?"same_speaker_continuation":"new_speaker")}
+function getEdge(e){return saved.boundaries[e.id]?.result ?? ""}
 function render(){
  if(!packet)return;
  const current=batch(), completed=Object.keys(saved.batches).length;
@@ -152,6 +175,7 @@ function render(){
    bits.push('<div class="boundary"><div class="small">P0 • '+escapeHtml(e.id)+
      " • "+escapeHtml(e.left_reading_block_id)+" → "+escapeHtml(ref.id)+
      '</div><label>Actual original audio transition<select data-edge="'+escapeHtml(e.id)+'">'+
+     '<option value="" '+(getEdge(e)===""?"selected":"")+'>Not reviewed (proposed: '+(e.provisional_same_turn?"continuation":"new speaker")+')</option>'+
      ["same_speaker_continuation","new_speaker","overlapping_voices"].map(choice=>
        '<option value="'+choice+'" '+(getEdge(e)===choice?"selected":"")+'>'+escapeHtml(choice.replaceAll("_"," "))+'</option>').join("")+
        '</select></label><span class="small">'+(saved.boundaries[e.id]?"Previously source-reviewed":"Proposed, not reviewed")+'</span></div>');
@@ -182,14 +206,20 @@ function render(){
 $("packet").onchange=e=>{const f=e.target.files?.[0];if(!f)return;fileRead(f,p=>{
  if(!p||p.schema!=="night-court-single-pass-source-av-editorial/1"||
     !p.packet_sha256||!Array.isArray(p.sequential_one_pass_batches))throw Error("Wrong review packet");
- packet=p;sequence=0;saved={boundaries:{},roles:{},batches:{}};$("download").disabled=false;render();
+ packet=p;sequence=0;saved={boundaries:{},roles:{},batches:{}};$("download").disabled=false;
+ verifiedSourceDigest=null;
+ $("sourceStatus").textContent="Verify original source film SHA-256 for "+p.episode_id;
+ if(verifiedSourceFile)verifyOriginalSource(verifiedSourceFile);
+ render();
 })};
+$("sourceFile").onchange=e=>{const f=e.target.files?.[0];if(f)verifyOriginalSource(f)};
 $("videoFile").onchange=e=>{if(media)URL.revokeObjectURL(media);const f=e.target.files?.[0];if(!f)return;media=URL.createObjectURL(f);$("player").src=media;render()};
 $("prev").onclick=()=>{if(packet&&sequence>0){sequence--;render()}};
 $("next").onclick=()=>{if(packet&&sequence<packet.sequential_one_pass_batches.length-1){sequence++;render()}};
 $("seek").onclick=()=>{let b=batch();if(b.source_window_candidate_ms&&media){$("player").currentTime=b.source_window_candidate_ms[0]/1000;$("player").play().catch(()=>{})}};
 $("confirm").onclick=()=>{
  if(!packet||!media){status("Original video must be loaded before reviewing.");return}
+ if(!sourceReady()||sourceChecking){status("Check the exact original film SHA-256 before recording AV decisions.");return}
  if(!$("watched").checked){status("Do not certify a batch without playing original synchronized audio and moving picture.");return}
  const current=batch(), next={boundaries:{},roles:{}};
  for(const r of current.reader_blocks){
@@ -208,7 +238,7 @@ $("confirm").onclick=()=>{
  }
  for(const id of current.boundary_question_ids){
   const field=[...document.querySelectorAll("[data-edge]")].find(i=>i.dataset.edge===id);
-  if(!field){status("Missing P0 transition "+id);return}
+  if(!field||!field.value){status("P0 "+id+" needs an explicit listened-to decision, not the proposed default.");return}
   next.boundaries[id]={result:field.value,heard_on_original_audio:true};
  }
  Object.assign(saved.roles,next.roles);Object.assign(saved.boundaries,next.boundaries);
@@ -228,11 +258,15 @@ $("importDecisions").onchange=e=>{const f=e.target.files?.[0];if(!f||!packet)ret
 })};
 $("download").onclick=()=>{
  if(!packet)return;const reviewer=$("reviewer").value.trim();
+ if(!sourceReady()||sourceChecking){status("Cannot export AV-attested decisions without verified source-film SHA-256.");return}
  if(!reviewer){status("Enter the actual original-AV reviewer identity before exporting.");return}
  const result={
   schema:"night-court-source-av-decisions/1",packet_sha256:packet.packet_sha256,
   episode_id:packet.episode_id,original_video_sha256:packet.original_video_sha256_expected,
   review_method:"continuous_original_synchronized_av",reviewer,
+  original_source_film_sha256_verified_in_browser:true,
+  original_media_sha256_computed_locally:verifiedSourceDigest,
+  playback_edition_kind:($("videoFile").files?.[0]===verifiedSourceFile?"same_original_file":"viewer_supplied_proxy_source_equivalence_unverified"),
   boundaries:saved.boundaries,roles:saved.roles,batches:saved.batches,
   original_source_full_episode_complete:Object.keys(saved.batches).length===packet.sequential_one_pass_batches.length
  };
