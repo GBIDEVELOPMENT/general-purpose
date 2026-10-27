@@ -6,12 +6,18 @@ on:
       - 'Night Court/tools/episode_finish.py'
       - 'Night Court/tools/test_episode_finish.py'
       - 'Night Court/tools/test_episode_finish_workbench.js'
+      - 'Night Court/tools/source_once_canonical_voice.py'
+      - 'Night Court/tools/test_source_once_canonical_voice.py'
       - 'Night Court/episode-finish-workbench.html'
   # Deliberately chained from successful canonical publication.
   # GITHUB_TOKEN is allowed to trigger repository_dispatch; ordinary bot pushes
   # are not a reliable trigger and would risk racing a stale screenplay write.
   repository_dispatch:
     types: [night-court-canonical-published]
+  push:
+    branches: [main]
+    paths:
+      - 'Night Court/research/trigger-original-pilot-audio-evidence.txt'
   workflow_dispatch:
 
 # One current source-bounded packet per episode. No recurring version factory.
@@ -27,7 +33,8 @@ jobs:
   prepare-current-episodes:
     if: >-
       github.repository == 'GBIDEVELOPMENT/general-purpose' &&
-      github.event.repository.private == true
+      github.event.repository.private == true &&
+      github.event_name != 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
@@ -69,7 +76,7 @@ jobs:
       - name: Source-first tests and complete P0/P1 AV review agenda per pilot
         run: |
           set -euo pipefail
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_episode_finish
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_episode_finish test_source_once_canonical_voice
           node 'Night Court/tools/test_episode_finish_workbench.js'
           locator=()
           if test -s "${RUNNER_TEMP}/episode-finish-current/S09E19-original-audio-locators.json"; then
@@ -165,4 +172,95 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Night Court: preserve current one-pass pilot AV review agendas'
+          git push origin HEAD:main
+
+
+  original-soundtrack-single-pass:
+    if: >-
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main' &&
+      github.repository == 'GBIDEVELOPMENT/general-purpose' &&
+      github.event.repository.private == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source-first current-canonical and audio-plan tests (offline)
+        run: |
+          set -euo pipefail
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_source_once_canonical_voice
+          python 'Night Court/tools/source_once_canonical_voice.py' --offline-plan \
+            --output "${RUNNER_TEMP}/unused"
+      - name: Install existing CPU voice model without GPU
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -q \
+            'torch==2.7.1' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --disable-pip-version-check -q \
+            'resemblyzer==0.1.4' 'numpy==1.26.4'
+          command -v ffmpeg
+      - name: One checksum-pinned original-film acquisition and acoustic analysis per episode
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          set -euo pipefail
+          python -u 'Night Court/tools/source_once_canonical_voice.py' \
+            --episode both --output "${RUNNER_TEMP}/source-p0p1"
+      - name: Check both episode acoustic reports are safe and original-SHA-linked
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path(os.environ['RUNNER_TEMP'])/'source-p0p1'
+          pins={'S01E01':'5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962',
+                'S09E19':'51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649'}
+          for ep,sha in pins.items():
+              path=root/f'{ep}-original-audio-p0p1-evidence.json'
+              d=json.loads(path.read_text('utf-8'))
+              assert d['schema']=='night-court-canonical-original-audio-p0-p1-evidence/1'
+              assert d['original_video_sha256']==sha
+              assert d['voice_embedding_windows_usable']>10
+              assert d['original_video_watched_by_human'] is False
+              assert d['independent_original_actor_voice_accepted']==0
+              assert d['independent_performed_turns_accepted']==0
+              assert d['media_audio_pcm_embedding_vectors_or_credentials_preserved'] is False
+              assert path.stat().st_size<200000
+              print(ep,'sound windows',d['voice_embedding_windows_usable'],
+                    'uncertified role suggestions',d['model_eligible_speaker_suggestions'],
+                    'P0 acoustic pair checks',len(d['adjacent_P0_original_audio_voice_similarity']))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: night-court-original-film-canonical-audio-p0p1-private
+          path: ${{ runner.temp }}/source-p0p1/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Preserve exactly current two source-audio reports, no new manuscript version
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          test "$(git rev-parse HEAD)" = "${{ github.sha }}"
+          test "$(git rev-parse origin/main)" = "${{ github.sha }}" || {
+            echo "::error::Source main advanced; refusing stale report.";exit 1;
+          }
+          dest='Night Court/saved-private/episode-finish-current'
+          mkdir -p "$dest"
+          cp "${RUNNER_TEMP}/source-p0p1/"*-original-audio-p0p1-evidence.json "$dest/"
+          git add -- "$dest"
+          if git diff --cached --quiet; then
+            echo 'Original audio model proposals identical; no new commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Night Court: save real original-film acoustic P0/P1 evidence, unverified'
           git push origin HEAD:main
