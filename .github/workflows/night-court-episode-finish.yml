@@ -141,15 +141,18 @@ jobs:
         with:
           name: night-court-one-pass-current-av-review-agendas
           path: ${{ runner.temp }}/one-pass-packet
-      - name: Refuse stale source snapshot and validate each packet afresh
+      - name: Safely skip stale source snapshot; validate only fresh packets
+        id: freshness
         run: |
           set -euo pipefail
           git fetch --no-tags origin main
           test "$(git rev-parse HEAD)" = "${{ github.sha }}"
-          test "$(git rev-parse origin/main)" = "${{ github.sha }}" || {
-            echo "::warning::Source advanced; refusing outdated AV queue."
-            exit 1
-          }
+          if test "$(git rev-parse origin/main)" != "${{ github.sha }}"; then
+            echo "current=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Main advanced during AV agenda preparation; previous packet is obsolete, no publish."
+            exit 0
+          fi
+          echo "current=true" >> "$GITHUB_OUTPUT"
           python 'Night Court/tools/episode_finish.py' \
             --episode both \
             --snapshot 'Night Court/saved-private/pilot-current' \
@@ -160,6 +163,7 @@ jobs:
                 "${RUNNER_TEMP}/one-pass-packet/${ep}-one-pass-av-review.json"
           done
       - name: Save only the current episode agendas, no vNN files
+        if: steps.freshness.outputs.current == 'true'
         run: |
           set -euo pipefail
           dest='Night Court/saved-private/episode-finish-current'
