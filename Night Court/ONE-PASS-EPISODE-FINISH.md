@@ -52,8 +52,15 @@ exactly once in an ordered batch; boundaries between batches remain in the
 queue. Each contiguous batch asks the reviewer/model to resolve P0, P1, P2,
 P3 and P4 from the **same original synchronized audio/video playback**.
 For S01, caption times are coarse finding aids, not performed voice timestamps.
-S09's original transcript is untimed: the agenda deliberately provides no
-fabricated source clock. A source-audio locator is needed for accurate seeking.
+S09's original transcript remains untimed: we never invent subtitle clocks.
+The previously measured original soundtrack [run #40253914693](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40253914693)
+provides **231/347 model-proposed audio seek ranges**, with 116 unlocated.
+These are NOT certified synchronized dialogue or speaker identities. Import
+that numeric evidence ONCE, preserving its verified original film/transcript
+SHAs at `saved-private/episode-finish-current/S09E19-original-audio-locators.json`.
+Future review packets reuse the stable file instead of new models, downloads,
+manual syncing or screenplay versions. The HTML playback UI explicitly labels
+these as unverified source-audio seek hints, not source transcript timecodes.
 
 ## Editorial production loop: no restarting the episode
 
