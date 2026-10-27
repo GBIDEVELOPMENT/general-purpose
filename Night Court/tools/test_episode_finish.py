@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from episode_finish import make_packet, verify_decisions
+from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA
 
 
 class OnePassEpisodeTests(unittest.TestCase):
@@ -123,6 +123,38 @@ class OnePassEpisodeTests(unittest.TestCase):
         d["boundaries"]["B0001"]["heard_on_original_audio"] = False
         with self.assertRaisesRegex(ValueError, "requires original sound"):
             verify_decisions(p, d)
+
+    def test_s09_original_machine_locator_has_no_faked_subtitle_times(self):
+        path = self.root / "s09-source-audio.json"
+        rows = [{
+            "original_paragraph_id": n,
+            "candidate_original_audio_window_ms": [n * 1000, n * 1000 + 900],
+            "original_paragraph_timecode_ms": None,
+            "original_film_audio_timing_independently_verified": False,
+            "spoken_character_identity_verified": False
+        } for n in range(1, 232)]
+        data = {
+            "schema": "night-court-s09-original-film-untimed-paragraph-audio-locator/1",
+            "episode_id": "S09E19",
+            "original_video_sha256": VIDEO_SHA["S09E19"],
+            "original_untimed_source_sha256":
+                "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
+            "original_source_untimed_paragraph_count": 347,
+            "original_soundtrack_processed": True,
+            "original_speaker_identities_verified": 0,
+            "candidate_source_paragraphs_given_audio_window": 231,
+            "matches": rows
+        }
+        path.write_text(json.dumps(data), encoding="utf-8")
+        hints, digest = verified_s09_candidate_locator(path)
+        self.assertEqual(len(hints), 231)
+        self.assertEqual(hints[12], [12000, 12900])
+        self.assertEqual(len(digest), 64)
+        data["matches"][2]["original_paragraph_timecode_ms"] = 3000
+        path.write_text(json.dumps(data), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Fake original S09 paragraph timing"):
+            verified_s09_candidate_locator(path)
+
 
 
 if __name__ == "__main__":
