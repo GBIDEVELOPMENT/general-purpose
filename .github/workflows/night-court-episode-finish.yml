@@ -1,0 +1,126 @@
+name: Night Court one-pass episode finish queue
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/night-court-episode-finish.yml'
+      - 'Night Court/tools/episode_finish.py'
+      - 'Night Court/tools/test_episode_finish.py'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/night-court-episode-finish.yml'
+      - 'Night Court/tools/episode_finish.py'
+      - 'Night Court/tools/test_episode_finish.py'
+      - 'Night Court/saved-private/pilot-current/**'
+  workflow_dispatch:
+
+# One current source-bounded packet per episode. No recurring version factory.
+concurrency:
+  group: night-court-one-pass-episode-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  prepare-current-episodes:
+    if: >-
+      github.repository == 'GBIDEVELOPMENT/general-purpose' &&
+      github.event.repository.private == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Source-first tests and complete P0/P1 AV review agenda per pilot
+        run: |
+          set -euo pipefail
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_episode_finish
+          python 'Night Court/tools/episode_finish.py' \
+            --episode both \
+            --snapshot 'Night Court/saved-private/pilot-current' \
+            --output "${RUNNER_TEMP}/episode-finish-current"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path(os.environ['RUNNER_TEMP'])/'episode-finish-current'
+          counts={'S01E01':(405,404,275,34),'S09E19':(323,322,234,27)}
+          for ep,(blocks,boundaries,groups,batches) in counts.items():
+              x=json.loads((root/f'{ep}-one-pass-av-review.json').read_text())
+              assert x['source_reader_blocks']==blocks
+              assert len(x['all_adjacent_boundary_questions'])==boundaries
+              assert x['provisional_display_groups']==groups
+              assert x['review_passes_required']==batches
+              assert not x['script_final_or_full_episode_accepted']
+              assert not x['original_audio_video_inspected_by_this_command']
+              assert all(not b['whole_original_av_played_and_verified']
+                         for b in x['sequential_one_pass_batches'])
+          print('Source-led P0 coverage: all 726 candidate adjacent boundaries'
+                ' and all 728 reader blocks; zero synthetic AV approvals')
+          PY
+      - name: Stage exactly two small SHA-guarded private review packets
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-one-pass-current-av-review-agendas
+          path: ${{ runner.temp }}/episode-finish-current/
+          retention-days: 7
+          if-no-files-found: error
+
+  persist-current-episode-agendas:
+    needs: prepare-current-episodes
+    if: >-
+      github.event_name != 'pull_request' &&
+      github.ref == 'refs/heads/main' &&
+      github.event.repository.private == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: night-court-one-pass-current-av-review-agendas
+          path: ${{ runner.temp }}/one-pass-packet
+      - name: Refuse stale source snapshot and validate each packet afresh
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          test "$(git rev-parse HEAD)" = "${{ github.sha }}"
+          test "$(git rev-parse origin/main)" = "${{ github.sha }}" || {
+            echo "::warning::Source advanced; refusing outdated AV queue."
+            exit 1
+          }
+          python 'Night Court/tools/episode_finish.py' \
+            --episode both \
+            --snapshot 'Night Court/saved-private/pilot-current' \
+            --output "${RUNNER_TEMP}/one-pass-regenerated"
+          for ep in S01E01 S09E19; do
+            cmp "${RUNNER_TEMP}/one-pass-regenerated/${ep}-one-pass-av-review.json" \
+                "${RUNNER_TEMP}/one-pass-packet/${ep}-one-pass-av-review.json"
+          done
+      - name: Save only the current episode agendas, no vNN files
+        run: |
+          set -euo pipefail
+          dest='Night Court/saved-private/episode-finish-current'
+          mkdir -p "$dest"
+          cp "${RUNNER_TEMP}/one-pass-packet/"*'-one-pass-av-review.json' "$dest/"
+          git add -- "$dest"
+          if git diff --cached --quiet; then
+            echo 'Current one-pass review agendas already preserved.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Night Court: preserve current one-pass pilot AV review agendas'
+          git push origin HEAD:main
