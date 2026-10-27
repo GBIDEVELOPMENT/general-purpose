@@ -467,6 +467,43 @@ def original_av_beat_notes(decision: dict) -> dict[str, list[str]]:
     return {key:[v.strip() for v in observations[key]] for key in fields}
 
 
+def validate_full_episode_playback_coverage(decisions: dict) -> dict:
+    """Fail closed on obvious short-clip/skip-through film review.
+
+    Local player telemetry is a reviewer declaration, not independently
+    observed by this Python process. It cannot prove attention, actor faces,
+    sound, original proxy equivalence or actual editing correctness.
+    """
+    proof=decisions.get("original_film_playback_coverage")
+    if not isinstance(proof,dict) or proof.get("schema")!="night-court-local-playback-seconds/1":
+        raise ValueError("Source-reviewed episode missing continuous full-film playback coverage")
+    duration=proof.get("duration_seconds")
+    seconds=proof.get("observed_seconds")
+    if (type(duration) is not int or not 1200<=duration<=1800 or
+        not isinstance(seconds,list) or len(seconds)>1800 or
+        any(type(x) is not int or not 0<=x<duration for x in seconds) or
+        seconds != sorted(set(seconds))):
+        raise ValueError("Malformed source-film playback timeline")
+    if len(seconds)<duration*.97:
+        raise ValueError("Full-film playback coverage insufficient; a few original AV clips cannot complete an episode")
+    played=set(seconds)
+    longest=0
+    current=0
+    for tick in range(duration):
+        if tick in played:
+            current=0
+        else:
+            current+=1
+            longest=max(longest,current)
+    if longest>8:
+        raise ValueError("Full-film original source playback contains an unreviewed continuous gap")
+    return {"source_playback_duration_seconds":duration,
+            "locally_observed_original_film_seconds":len(seconds),
+            "longest_unobserved_consecutive_seconds":longest,
+            "source_playback_coverage_fraction":round(len(seconds)/duration,4),
+            "human_original_film_viewing_independently_attested":False}
+
+
 def verify_decisions(packet: dict, decisions: dict):
     """Refuse script-complete claims without per-boundary, per-block original AV review.
 
@@ -522,7 +559,9 @@ def verify_decisions(packet: dict, decisions: dict):
             or not isinstance(value.get("visible_props_and_wardrobe"), list)
             or not isinstance(value.get("observed_actor_action_target"), list)):
             raise ValueError("Original performance and picture coverage is incomplete")
-    return {"episode_id": packet["episode_id"], "all_original_source_turn_boundaries_reviewed": True,
+    timeline=validate_full_episode_playback_coverage(decisions)
+    return {"original_film_playback_coverage":timeline,
+            "episode_id": packet["episode_id"], "all_original_source_turn_boundaries_reviewed": True,
             "all_candidate_voices_source_listened": True, "all_sequential_av_batches_reviewed": True,
             "editorial_decisions_complete": True,
             "caveat": "Reviewer declarations, not automatic proof of audiovisual viewing."}
