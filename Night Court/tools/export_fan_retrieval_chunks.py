@@ -188,7 +188,7 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         counts=working_report.get("source_unit_counts")
         version=working_report.get("schema")
         editorial = "current_editorial_reader_sha256" in working_report
-        expected = ({"original_source_units":751,"named_provisional":655,"unknown":96} if editorial else
+        expected = (working_report["source_unit_counts"] if editorial else
                     {"original_source_units":751,"named_provisional":651 if version.endswith("/2") else 621,
                      "unknown":100 if version.endswith("/2") else 130})
         blocks = ([405,323] if editorial else [405,322] if version.endswith("/2") else [405,321])
@@ -197,6 +197,8 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
             if (integration.get("current_editorial_reader_sha256") != working_report["current_editorial_reader_sha256"]
                 or integration.get("original_source_units") != 751
                 or integration.get("provisional_reader_blocks") != 728
+                or integration.get("named_provisional") != counts["named_provisional"]
+                or integration.get("units_with_unknown_voice") != counts["unknown"]
                 or integration.get("AV_accepted_actors") != 0
                 or integration.get("AV_accepted_performed_turns") != 0):
                 raise ValueError("Private current episode editorial evidence drift")

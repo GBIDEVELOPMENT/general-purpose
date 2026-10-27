@@ -5,6 +5,8 @@ on:
     paths:
       - 'Night Court/tools/render_current_pilot_screenplays.py'
       - 'Night Court/tools/test_render_current_pilot_screenplays.py'
+      - 'Night Court/tools/upgrade_latest_editorial_pilots.py'
+      - 'Night Court/tools/test_upgrade_latest_editorial_pilots.py'
       - 'Night Court/tools/export_fan_retrieval_chunks.py'
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
       - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
@@ -16,6 +18,8 @@ on:
     paths:
       - 'Night Court/tools/render_current_pilot_screenplays.py'
       - 'Night Court/tools/test_render_current_pilot_screenplays.py'
+      - 'Night Court/tools/upgrade_latest_editorial_pilots.py'
+      - 'Night Court/tools/test_upgrade_latest_editorial_pilots.py'
       - 'Night Court/tools/export_fan_retrieval_chunks.py'
       - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
       - 'Night Court/tools/apply_manual_context_pilot_review_v16.py'
@@ -43,12 +47,14 @@ jobs:
         run: |
           python -m py_compile \
             'Night Court/tools/render_current_pilot_screenplays.py' \
+            'Night Court/tools/upgrade_latest_editorial_pilots.py' \
+            'Night Court/tools/test_upgrade_latest_editorial_pilots.py' \
             'Night Court/tools/test_render_current_pilot_screenplays.py' \
             'Night Court/tools/export_fan_retrieval_chunks.py' \
             'Night Court/tools/test_export_fan_retrieval_chunks.py' \
             'Night Court/tools/apply_manual_context_pilot_review_v16.py' \
             'Night Court/tools/test_apply_manual_context_pilot_review_v16.py'
-          python -m unittest -v test_render_current_pilot_screenplays test_export_fan_retrieval_chunks test_apply_manual_context_pilot_review_v16
+          python -m unittest -v test_render_current_pilot_screenplays test_export_fan_retrieval_chunks test_apply_manual_context_pilot_review_v16 test_upgrade_latest_editorial_pilots
       - name: Reject unexpected committed source-derived manuscripts outside approved private paths
         run: |
           set -euo pipefail
@@ -60,7 +66,8 @@ jobs:
             test -n "$path" || continue
             case "$path" in
               'Night Court/saved-private/pilot-current/'*) ;;
-              'Night Court/seasons/S09/S09E19/derived/editorial-v17/S09E19-editorial-v17-working-screenplay.md') ;;
+              'Night Court/saved-private/editorial-agent1-v'[0-9]*'/'*) ;;
+              'Night Court/seasons/S09/S09E19/derived/editorial-v'[0-9]*'/'*) ;;
               *) echo "::error::Unexpected full dialogue outside approved paths: $path"; exit 1 ;;
             esac
           done <<< "$tracked"

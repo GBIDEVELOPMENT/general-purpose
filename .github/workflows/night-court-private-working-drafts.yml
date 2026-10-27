@@ -7,7 +7,7 @@ on:
       - 'Night Court/research/**'
       - 'Night Court/tools/**'
       - 'Night Court/seasons/**'
-      - 'Night Court/saved-private/editorial-agent1-v18/**'
+      - 'Night Court/saved-private/editorial-agent1-v*/**'
   workflow_dispatch:
   push:
     branches: [main]
@@ -16,7 +16,7 @@ on:
       - 'Night Court/research/**'
       - 'Night Court/tools/**'
       - 'Night Court/seasons/**'
-      - 'Night Court/saved-private/editorial-agent1-v18/**'
+      - 'Night Court/saved-private/editorial-agent1-v*/**'
 
 concurrency:
   group: night-court-private-pilots-${{ github.ref }}
@@ -43,6 +43,7 @@ jobs:
       - name: Build exactly source-pinned provisional roles and both pilot scripts
         run: |
           set -euo pipefail
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_upgrade_latest_editorial_pilots
           T="${RUNNER_TEMP}/night-court-pilot-v15"
           python 'Night Court/tools/build_external_speaker_reader_v6.py' --output "$T/v6"
           python 'Night Court/tools/build_contextual_speaker_reader_v7.py' --v6 "$T/v6" --output "$T/v7"
@@ -57,7 +58,7 @@ jobs:
           python 'Night Court/tools/apply_s01_c219_source_turn.py' --source-turn-patches "$T/turns" --output "$T/v15"
           python 'Night Court/tools/apply_manual_context_pilot_review_v16.py' \
             --v15-root "$T/v15" --output "$T/deliverable"
-          python 'Night Court/tools/integrate_committed_editorial_pilots.py' \
+          python 'Night Court/tools/upgrade_latest_editorial_pilots.py' \
             --working-root "$T/deliverable"
           python 'Night Court/tools/export_fan_retrieval_chunks.py' \
             --working-pilot-root "$T/deliverable" --output "$T/deliverable/private-fan-retrieval"
