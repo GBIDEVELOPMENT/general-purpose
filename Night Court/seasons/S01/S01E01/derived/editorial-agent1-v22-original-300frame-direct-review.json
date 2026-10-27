@@ -1,0 +1,36 @@
+{
+  "schema": "s01-original-sampled-image-revision/1",
+  "episode": "S01E01",
+  "source_srt_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_avi_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "artifact_id": 12585988324,
+  "run_id": 40161079027,
+  "zip_sha256": "b6423a71c0a5dbc8e457bd4030991ec09cc7f2e2b09d607985519f4b06d72877",
+  "source_image_frames_hash_checked": 300,
+  "frames_verified": 300,
+  "contact_sheets_inspected": 6,
+  "film_not_continuously_played": true,
+  "original_audio_not_listened": true,
+  "existing_stage_annotations_refined": [
+    "PIC-01",
+    "PIC-08",
+    "PIC-09"
+  ],
+  "new_stage_count": 0,
+  "existing_total_stage_count": 27,
+  "scene_windows_seconds": [
+    [
+      0,
+      20
+    ],
+    [
+      838,
+      858
+    ],
+    [
+      1094,
+      1114
+    ]
+  ],
+  "review_note": "Three previously sourced stage paragraphs are refined from a new direct visual read of all contact sheets and byte-verified original-image sequences. No actor attribution, soundtrack linkage, exact edit, native frame timing or unheard sound is asserted. Original media files remain in the private Actions artifact."
+}
