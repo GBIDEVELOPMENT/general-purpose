@@ -61,4 +61,10 @@ assert.equal(run('packet.packet_sha256="source-A";restoreDraft();Object.keys(sav
 assert.ok(page.includes('localStorage.removeItem(journalKey())'),
   "Reviewer needs a clear-local-draft control");
 console.log("Source-bound local AV draft journal: resume after interruption, isolate source and clear");
+assert.ok(page.includes('data-beat-tone'),"P2 audio delivery must attach to a source reading block");
+assert.ok(page.includes('data-beat-props'),"P3 clothing and props must attach to a source reading block");
+assert.ok(page.includes('data-beat-action'),"P4 physical comedy must attach to a source reading block");
+assert.ok(page.includes('original_av_beat_notes:beats'),"Per-block AV notes must be exported in same stable decisions");
+assert.ok(page.includes('el.dataset[fieldName]===r.id'),"Beat-note controls must bind by original reading-block ID");
+console.log("P2/P3/P4 exact-source line-anchored original AV annotations: PASS");
 console.log("Original film SHA, listened P0 and explicitly unverified acoustic hints: PASS");
