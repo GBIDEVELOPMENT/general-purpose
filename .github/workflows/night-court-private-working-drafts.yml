@@ -43,6 +43,7 @@ jobs:
       - name: Build exactly source-pinned provisional roles and both pilot scripts
         run: |
           set -euo pipefail
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_upgrade_latest_editorial_pilots
           T="${RUNNER_TEMP}/night-court-pilot-v15"
           python 'Night Court/tools/build_external_speaker_reader_v6.py' --output "$T/v6"
           python 'Night Court/tools/build_contextual_speaker_reader_v7.py' --v6 "$T/v6" --output "$T/v7"

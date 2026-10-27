@@ -147,6 +147,8 @@ def integrate_s09(current: list[dict]) -> tuple[list[dict], list[dict], str, dic
     changed=[]
     for base,intermediate,row,p in zip(current,v18,rows,proof):
         assert signature(base) == signature(intermediate) == signature(row)
+        assert base["actor_face_or_voice_independently_verified"] is False
+        assert base["speaker_turn_boundary_verified"] is False
         assert intermediate["candidate_role"] == row["candidate_role"]
         assert p["source_reading_block_id"] == row["reading_block_id"]
         assert p["source_reading_ref"] == row["source_reading_ref"]
