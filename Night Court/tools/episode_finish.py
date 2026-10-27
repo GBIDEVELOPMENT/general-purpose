@@ -66,6 +66,34 @@ def load_episode(snapshot: Path, episode: str):
         raise ValueError("Source part union is not complete")
     if source_sha not in manuscript.read_text("utf-8"):
         raise ValueError("Manuscript lacks immutable original witness SHA")
+    # Include the original dialogue in the PRIVATE, LOCAL reviewer worksheet,
+    # so source-ordered audio playback can actually be compared to each turn.
+    # Never infer or paraphrase dialogue from stage prose or a language model.
+    evidence = snapshot / "pilot-current-editorial-reader.jsonl"
+    if not evidence.is_file():
+        raise ValueError("Canonical original source reader needed for AV playback")
+    by_id = {}
+    for line in evidence.read_text("utf-8").splitlines():
+        if not line.strip():
+            continue
+        row = json.loads(line)
+        if row.get("episode_id") == episode:
+            key = row["reading_block_id"]
+            if key in by_id:
+                raise ValueError("Duplicate canonical original-dialogue reading block")
+            by_id[key] = row
+    if set(by_id) != block_ids:
+        raise ValueError("Original dialogue reader does not match provenance IDs")
+    for r in rows:
+        source_row = by_id[r["reading_block_id"]]
+        caption = source_row.get("caption_text")
+        if (not isinstance(caption, str)
+            or hashlib.sha256(caption.encode("utf-8")).hexdigest()
+               != r["exact_rendered_caption_sha256"]
+            or source_row.get("original_source_sha256") != source_sha
+            or source_row.get("original_source_part_refs") != r["original_source_part_refs"]):
+            raise ValueError("Original dialogue or immutable source part changed")
+        r["source_exact_dialogue_for_private_av_review"] = caption
     return manifest, rows, source_sha
 
 
@@ -111,6 +139,7 @@ def make_packet(snapshot: Path, episode: str):
                 "source_parts": r["original_source_part_refs"],
                 "provisional_role": r["candidate_role"],
                 "source_dialogue_sha256": r["exact_rendered_caption_sha256"],
+                "source_exact_dialogue": r["source_exact_dialogue_for_private_av_review"],
                 "provisional_display_group_id": r["display_group_id"]
             } for r in subset],
             "boundary_question_ids": [b["id"] for b in questions],
