@@ -22,6 +22,8 @@ input[type=text],textarea{width:100%}textarea{resize:vertical;min-height:52px}
 .controls>button{flex-grow:1}.button-primary{background:#bd7924;color:#121b26;border-color:#eebc72}
 .utterance{border-left:5px solid #dba94b;background:#1e3046;margin:.7rem 0;padding:.7rem;border-radius:0 9px 9px 0}
 .utterance .line{font-size:1.06rem;margin:.35rem 0;white-space:pre-wrap}
+.utterance details{margin:.6rem 0;padding:.5rem;border:1px solid #435d78;border-radius:7px}
+.utterance summary{cursor:pointer;font-weight:600}
 .boundary{background:#19283c;border:1px dashed #6b849d;margin:.7rem 0;padding:.65rem;border-radius:9px}
 .tag{font-size:.77rem;background:#344a64;color:#f0f4fb;border-radius:50px;padding:.18rem .5rem}
 .status{background:#294459;padding:.8rem;border-radius:8px}
@@ -257,7 +259,15 @@ function render(){
         ' original-soundtrack held-out samples. This is not proof that the role is wrong.</p>':"")+
      '<label>P0 • Voice changes WITHIN this caption? If none, leave blank after listening. Each change: first spoken words | NEW CHARACTER or @Unicode offset | NEW CHARACTER'+
      '<textarea data-split="'+escapeHtml(ref.id)+'" placeholder="Yeah | PHIL KERR">'+escapeHtml(savedSplitHints(ref))+'</textarea></label>'+
-    '<span class="small">'+(saved.roles[ref.id]?"Previously source-reviewed":"Provisional candidate only")+'</span></article>');
+     '<details><summary>Beat-specific original delivery, props & physical business (optional)</summary>'+
+     '<label>P2 • Delivery heard at THIS line<textarea data-beat-tone="'+escapeHtml(ref.id)+'" placeholder="dry, hesitant, exasperated...">'+
+       escapeHtml((saved.roles[ref.id]?.original_av_beat_notes?.tone_delivery??[]).join(String.fromCharCode(10)))+'</textarea></label>'+
+     '<label>P3 • Clothing/prop seen at THIS line<textarea data-beat-props="'+escapeHtml(ref.id)+'" placeholder="holds an umbrella...">'+
+       escapeHtml((saved.roles[ref.id]?.original_av_beat_notes?.wardrobe_props??[]).join(String.fromCharCode(10)))+'</textarea></label>'+
+     '<label>P4 • Who does what to whom at THIS line<textarea data-beat-action="'+escapeHtml(ref.id)+'" placeholder="BULL catches the dropped book...">'+
+       escapeHtml((saved.roles[ref.id]?.original_av_beat_notes?.physical_action??[]).join(String.fromCharCode(10)))+'</textarea></label>'+
+     '</details>'+
+     '<span class="small">'+(saved.roles[ref.id]?"Previously source-reviewed":"Provisional candidate only")+'</span></article>');
  }
  $("editor").innerHTML=bits.join("");
  const prior=saved.batches[current.id];
@@ -344,9 +354,19 @@ $("confirm").onclick=()=>{
    let pieces;
    try{pieces=insideCaptionSplits(splitField.value,r.source_exact_dialogue,field.value.trim())}
    catch(e){status(r.id+": "+e.message);return}
+   const beats={};
+   for(const [kind,fieldName] of Object.entries({
+     tone_delivery:"beatTone",wardrobe_props:"beatProps",physical_action:"beatAction"
+   })){
+     const note=[...document.querySelectorAll("[data-beat-"+fieldName.slice(4).toLowerCase()+"]")].find(el=>
+       el.dataset[fieldName]===r.id);
+     if(!note){status("P2/P3/P4 beat-anchored field missing for "+r.id);return}
+     beats[kind]=arrays(note.value);
+   }
    next.roles[r.id]={
      role:field.value.trim(),original_audio_voice_reviewed:true,
      intra_block_speaker_changes_reviewed:true,
+     original_av_beat_notes:beats,
      ...(pieces?{segments:pieces}:{})
    };
  }
