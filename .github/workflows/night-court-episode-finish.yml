@@ -226,29 +226,48 @@ jobs:
         run: |
           set -euo pipefail
           "${RUNNER_TEMP}/nc-source-voice-env/bin/python" -u 'Night Court/tools/source_once_canonical_voice.py' \
-            --episode both --output "${RUNNER_TEMP}/source-p0p1"
-      - name: Check both episode acoustic reports are safe and original-SHA-linked
+            --episode both --continue-on-transient-ftp \
+            --output "${RUNNER_TEMP}/source-p0p1"
+      - name: Validate every available per-episode original-audio report, preserve partial successes
         run: |
           python - <<'PY'
           import json,os
           from pathlib import Path
           root=Path(os.environ['RUNNER_TEMP'])/'source-p0p1'
+          status=json.loads((root/'source-audio-run-status.json').read_text('utf-8'))
+          assert status['schema']=='night-court-canonical-source-audio-run-status/1'
+          assert status['original_actor_or_turns_independently_AV_certified']==0
+          assert set(status['episode_status'])=={'S01E01','S09E19'}
           pins={'S01E01':'5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962',
                 'S09E19':'51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649'}
+          completed=0
           for ep,sha in pins.items():
               path=root/f'{ep}-original-audio-p0p1-evidence.json'
+              state=status['episode_status'][ep]
+              assert state in ('new_original_audio_model_evidence',
+                               'reused_checksum_checked_report',
+                               'owner_ftp_source_unreachable_no_results')
+              if not path.is_file():
+                  assert state=='owner_ftp_source_unreachable_no_results'
+                  print(ep,'source FTP unavailable; preserving any other successful episode evidence')
+                  continue
+              assert state!='owner_ftp_source_unreachable_no_results'
               d=json.loads(path.read_text('utf-8'))
               assert d['schema']=='night-court-canonical-original-audio-p0-p1-evidence/1'
-              assert d['original_video_sha256']==sha
+              assert d['episode_id']==ep and d['original_video_sha256']==sha
               assert d['voice_embedding_windows_usable']>10
               assert d['original_video_watched_by_human'] is False
               assert d['independent_original_actor_voice_accepted']==0
               assert d['independent_performed_turns_accepted']==0
               assert d['media_audio_pcm_embedding_vectors_or_credentials_preserved'] is False
+              assert d['model_diary_not_film_truth'] is True
               assert path.stat().st_size<200000
+              completed+=1
               print(ep,'sound windows',d['voice_embedding_windows_usable'],
-                    'uncertified role suggestions',d['model_eligible_speaker_suggestions'],
-                    'P0 acoustic pair checks',len(d['adjacent_P0_original_audio_voice_similarity']))
+                    'uncertified actor suggestions',d['model_eligible_speaker_suggestions'],
+                    'P0 acoustic pairs',len(d['adjacent_P0_original_audio_voice_similarity']))
+          assert status['all_requested_episodes_have_acoustic_evidence'] is (completed==2)
+          print('Original sound evidence completed for',completed,'of 2 pilots; no human AV certification')
           PY
       - uses: actions/upload-artifact@v4
         with:
@@ -266,9 +285,15 @@ jobs:
           }
           dest='Night Court/saved-private/episode-finish-current'
           mkdir -p "$dest"
-          cp "${RUNNER_TEMP}/source-p0p1/"*-original-audio-p0p1-evidence.json "$dest/"
-          # Attach only source SHA-matched model hints to the two existing AV
-          # review agendas. Original roles and performed turns remain unverified.
+          # Preserve ONLY validated existing reports: an unreachable second
+          # pilot must not discard the first pilot's real original audio evidence.
+          shopt -s nullglob
+          evidence=("${RUNNER_TEMP}/source-p0p1/"*-original-audio-p0p1-evidence.json)
+          if ((${#evidence[@]} == 0)); then
+            echo 'No original sound evidence available to preserve; no source facts changed.'
+            exit 0
+          fi
+          cp "${evidence[@]}" "$dest/"
           python 'Night Court/tools/episode_finish.py' \
             --episode both \
             --snapshot 'Night Court/saved-private/pilot-current' \
@@ -284,3 +309,21 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Night Court: save real original-film acoustic P0/P1 evidence, unverified'
           git push origin HEAD:main
+
+      - name: Declare incomplete original-source acquisition without discarding partial evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          p="${RUNNER_TEMP}/source-p0p1/source-audio-run-status.json"
+          if test ! -f "$p"; then
+            echo "::error::Original AV source status unavailable; original source job did not finish."
+            exit 1
+          fi
+          python - "$p" <<'PY'
+          import json,sys
+          d=json.load(open(sys.argv[1]))
+          if not d.get('all_requested_episodes_have_acoustic_evidence'):
+              print('::error::Only partial original sound evidence captured. Preserved valid episodes; rerun source when FTP recovers.')
+              sys.exit(1)
+          print('Two original film audio reports preserved with 0 human-certified voices or turns.')
+          PY
