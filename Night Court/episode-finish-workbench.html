@@ -65,6 +65,9 @@ hr{border:0;border-top:1px solid #41556d;margin:1rem 0}
     <input id="importDecisions" type="file" accept=".json,application/json">
   </label>
   <button type="button" class="button-primary" id="download" disabled>Export one AV decision ledger</button>
+  <p id="journalStatus" class="small">Completed passages auto-save privately in this browser. Export the ledger for permanent GitHub preservation.</p>
+  <button type="button" id="clearJournal">Clear locally saved episode decisions</button>
+  <p class="small">Local browser drafts are unencrypted and may be purged by your device; export JSON periodically.</p>
   <p class="small">Nothing here is uploaded to a server or automatically written back to GitHub. Export the JSON and commit it to the episode's stable private review location. The independent editorial gate checks each P0, P1 and viewing record.</p>
 </aside>
 <section class="editor">
@@ -161,6 +164,42 @@ function insideCaptionSplits(input, original, firstRole){
     (i>0&&v.role===segments[i-1].role)))throw Error("Redundant or empty original-voice split");
   return segments;
 }
+// Only decisions and reviewer notes are stored locally; never film/audio.
+function journalKey(){return packet?"night-court-source-av-draft/1/"+packet.packet_sha256:null}
+function persistDraft(){
+  if(!packet)return;
+  const draft={schema:"night-court-local-av-draft/1",episode_id:packet.episode_id,
+    packet_sha256:packet.packet_sha256,reviewer:$("reviewer").value.trim(),
+    boundaries:saved.boundaries,roles:saved.roles,batches:saved.batches};
+  try{
+    localStorage.setItem(journalKey(),JSON.stringify(draft));
+    $("journalStatus").textContent="Locally saved "+Object.keys(saved.batches).length+
+      " confirmed passages. Export JSON to preserve in GitHub.";
+  }catch(e){
+    $("journalStatus").textContent="Local draft save unavailable: "+e.message+
+      ". Export JSON now to avoid lost work.";
+  }
+}
+function restoreDraft(){
+  if(!packet)return;
+  try{
+    const raw=localStorage.getItem(journalKey());
+    if(!raw)return;
+    const d=JSON.parse(raw);
+    if(d.schema!=="night-court-local-av-draft/1"||
+      d.episode_id!==packet.episode_id||d.packet_sha256!==packet.packet_sha256||
+      !d.boundaries||!d.roles||!d.batches||
+      [d.boundaries,d.roles,d.batches].some(v=>Array.isArray(v)||typeof v!=="object"))
+      throw Error("wrong source edition or malformed decisions");
+    saved={boundaries:d.boundaries,roles:d.roles,batches:d.batches};
+    $("reviewer").value=d.reviewer||"";
+    $("journalStatus").textContent="Recovered "+Object.keys(saved.batches).length+
+      " reviewed passages. Recheck the original film SHA before continuing.";
+  }catch(e){
+    $("journalStatus").textContent="Local draft recovery failed: "+e.message+
+      ". Import the previously exported JSON instead.";
+  }
+}
 function savedSplitHints(ref){
   const parts=saved.roles[ref.id]?.segments;
   return Array.isArray(parts)?parts.slice(1).map(s=>"@"+s.start+" | "+s.role).join("\n"):"";
@@ -240,6 +279,7 @@ $("packet").onchange=e=>{const f=e.target.files?.[0];if(!f)return;fileRead(f,p=>
     !p.packet_sha256||!Array.isArray(p.sequential_one_pass_batches))throw Error("Wrong review packet");
  packet=p;sequence=0;saved={boundaries:{},roles:{},batches:{}};$("download").disabled=false;
  listenedByBatch={};lastPlaybackMark=null;
+ restoreDraft();
  verifiedSourceDigest=null;
  $("sourceStatus").textContent="Verify original source film SHA-256 for "+p.episode_id;
  if(verifiedSourceFile)verifyOriginalSource(verifiedSourceFile);
@@ -325,14 +365,24 @@ $("confirm").onclick=()=>{
   visible_props_and_wardrobe:arrays($("props").value),
   observed_actor_action_target:arrays($("actions").value)
  };
+ persistDraft();
  render();
  if(sequence<packet.sequential_one_pass_batches.length-1){sequence++;render()}
 };
 $("importDecisions").onchange=e=>{const f=e.target.files?.[0];if(!f||!packet)return;fileRead(f,d=>{
  if(d.packet_sha256!==packet.packet_sha256||d.episode_id!==packet.episode_id){status("Decision file does not match this exact manuscript packet");return}
  saved={boundaries:d.boundaries||{},roles:d.roles||{},batches:d.batches||{}};
- $("reviewer").value=d.reviewer||"";render()
+ $("reviewer").value=d.reviewer||"";persistDraft();render()
 })};
+$("clearJournal").onclick=()=>{
+ if(!packet){status("Load the source review packet first.");return}
+ if(!confirm("Discard locally saved review decisions for this episode? Export JSON first if needed."))return;
+ try{localStorage.removeItem(journalKey())}catch(e){status("Cannot clear local draft: "+e.message);return}
+ saved={boundaries:{},roles:{},batches:{}};
+ $("reviewer").value="";
+ $("journalStatus").textContent="Local review draft cleared for this original source.";
+ render();
+};
 $("download").onclick=()=>{
  if(!packet)return;const reviewer=$("reviewer").value.trim();
  if(!sourceReady()||sourceChecking){status("Cannot export AV-attested decisions without verified source-film SHA-256.");return}
