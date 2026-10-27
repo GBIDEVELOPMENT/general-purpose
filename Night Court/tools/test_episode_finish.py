@@ -313,6 +313,18 @@ class OnePassEpisodeTests(unittest.TestCase):
                 "provisional_display_join":True
             }]
         }
+        report["adjacent_P0_original_audio_voice_similarity"].append({
+            "source_left":"S01E01:speaker-evidence:0002",
+            "source_right":"S01E01:speaker-evidence:0003",
+            "machine_acoustic_voice_similarity":0.86,
+            "source_audio_p0_performed_boundary_independently_verified":False,
+            "provisional_display_join":False
+        })
+        report["provisional_named_voice_holdout"]={
+            "provisional_role_holdout_counts":{
+                "LANA":{"correct_held_out":2,"evaluated":6}
+            }
+        }
         path=self.root/"acoustic.json"
         path.write_text(json.dumps(report),encoding="utf-8")
         attach_source_audio_hints(packet,path)
@@ -320,7 +332,13 @@ class OnePassEpisodeTests(unittest.TestCase):
         self.assertIsNone(rows[-1]["provisional_role"])
         self.assertEqual(rows[-1]["original_audio_model_uncertified_role_hint"]["role_candidate"],"LANA")
         self.assertFalse(packet["all_adjacent_boundary_questions"][0]["machine_audio_p0_boundary_verified"])
-        self.assertEqual(packet["machine_audio_hints_attached"]["p0_adjacent_audio_pairs"],1)
+        self.assertEqual(packet["machine_audio_hints_attached"]["p0_adjacent_audio_pairs"],2)
+        self.assertEqual(packet["machine_audio_hints_attached"]["p0_acoustic_replay_priority_count"],1)
+        self.assertEqual(packet["machine_audio_hints_attached"]["p1_low_holdout_provisional_roles"],1)
+        self.assertEqual(packet["machine_audio_review_priorities"][0]["boundary_id"],"B0002")
+        self.assertEqual(packet["all_adjacent_boundary_questions"][1]["original_audio_machine_review_priority"],
+                         "strong_acoustic_similarity_across_proposed_break")
+        self.assertEqual(rows[0]["original_audio_provisional_role_holdout_warning"]["correct_held_out"],2)
         report["independent_original_actor_voice_accepted"]=1
         path.write_text(json.dumps(report),encoding="utf-8")
         with self.assertRaisesRegex(ValueError,"nonacceptance"):
