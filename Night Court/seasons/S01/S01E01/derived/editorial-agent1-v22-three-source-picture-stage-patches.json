@@ -1,0 +1,37 @@
+{
+  "schema": "s01e01-picture-stage-revision-layer/1",
+  "baseline": "saved-private/editorial-agent1-v21/S01E01-editorial-screenplay.md",
+  "source": "seasons/S01/S01E01/derived/editorial-agent1-v22-original-300frame-direct-review.json",
+  "kind": "additional_editorial_picture_detail_only",
+  "rendering": "Replace the narrative text of these existing tagged stage notes without altering any dialogue, cue, label, role, display group, cue time, caption source or other PIC note.",
+  "revisions": [
+    {
+      "stage_id": "PIC-01",
+      "scene_sec": [
+        0,
+        20
+      ],
+      "revised": "A lavender-suited person carries papers across the office and leans over the cluttered desk. A yellow-sleeved person in white work overalls remains beside the tall window, working a small hand tool while looking out."
+    },
+    {
+      "stage_id": "PIC-08",
+      "scene_sec": [
+        838,
+        858
+      ],
+      "revised": "At the judicial bench, the seated robed figure reaches alongside the lavender-clad figure's head, withdraws a small pale disk and displays it between raised fingers. The lavender-clad figure rests a hand across the robe's shoulder and bends over the desk."
+    },
+    {
+      "stage_id": "PIC-09",
+      "scene_sec": [
+        1094,
+        1114
+      ],
+      "revised": "The robed figure shifts a small pale disk from hand to hand and gestures from the raised bench. The blue-jacketed person bends toward the court rail, while the red-clad figure leans over a desk in the gallery and rises again."
+    }
+  ],
+  "sampled_image_frames_original_checksum_verified": 300,
+  "original_audio_speaker_review_completed": false,
+  "native_frame_timestamps_verified": false,
+  "full_moving_episode_watched": false
+}
