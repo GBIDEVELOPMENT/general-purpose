@@ -32,6 +32,18 @@ class OnePassEpisodeTests(unittest.TestCase):
                      row(3, 2, None, [3300, 4900])]
         self.provenance = self.root / "S01E01-working-screenplay-provenance.jsonl"
         self.save_rows()
+        reader = self.root / "pilot-current-editorial-reader.jsonl"
+        self.caption_text = ["one", "two", "three"]
+        for i, row in enumerate(self.rows):
+            row["exact_rendered_caption_sha256"] = hashlib.sha256(
+                self.caption_text[i].encode("utf-8")).hexdigest()
+        self.save_rows()
+        reader.write_text("".join(json.dumps({
+            "episode_id": "S01E01", "reading_block_id": row["reading_block_id"],
+            "caption_text": self.caption_text[i],
+            "original_source_sha256": self.source_sha,
+            "original_source_part_refs": row["original_source_part_refs"]
+        }) + "\n" for i, row in enumerate(self.rows)), encoding="utf-8")
         self.manifest = {
             "manuscript_sha256": {
                 "S01E01": hashlib.sha256(script.read_bytes()).hexdigest()},
@@ -52,6 +64,7 @@ class OnePassEpisodeTests(unittest.TestCase):
     def test_review_once_all_source_parts_boundaries_and_roles(self):
         p = make_packet(self.root, "S01E01")
         self.assertEqual(p["source_reader_blocks"], 3)
+        self.assertEqual(p["sequential_one_pass_batches"][0]["reader_blocks"][0]["source_exact_dialogue"], "one")
         self.assertEqual(p["original_source_speaking_part_refs"], 3)
         self.assertEqual(len(p["all_adjacent_boundary_questions"]), 2)
         self.assertEqual(p["all_adjacent_boundary_questions"][0]["priority"],
