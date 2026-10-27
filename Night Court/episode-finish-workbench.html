@@ -95,6 +95,41 @@ const escapeHtml=text=>String(text??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<"
 function status(text){$("status").textContent=text}
 function fileRead(file,cb){const reader=new FileReader();reader.onload=()=>{try{cb(JSON.parse(reader.result))}catch(e){status("Invalid JSON: "+e.message)}};reader.readAsText(file)}
 function arrays(text){return text.split(/\r?\n/).map(t=>t.trim()).filter(Boolean)}
+function insideCaptionSplits(input, original, firstRole){
+  const full=Array.from(original), entries=[];
+  for(const line of arrays(input)){
+    const sep=line.lastIndexOf("|");
+    if(sep<1)throw Error("P0 handoff must be @codepoint | ROLE, or exact first words | ROLE");
+    const key=line.slice(0,sep).trim(), role=line.slice(sep+1).trim();
+    if(!role)throw Error("P0 handoff voice name missing");
+    let offset;
+    if(/^@\d+$/.test(key)){
+      offset=Number(key.slice(1));
+    }else{
+      const match=original.indexOf(key);
+      if(!key||match<0||original.indexOf(key,match+1)>=0)
+        throw Error("P0 next-speaker words must occur exactly once; use @codepoint | ROLE");
+      offset=Array.from(original.slice(0,match)).length;
+    }
+    if(!Number.isSafeInteger(offset)||offset<1||offset>=full.length)
+      throw Error("P0 next speaker offset must be inside the original caption");
+    entries.push({start:offset,role});
+  }
+  if(entries.length>19)throw Error("P0 source review allows at most 20 speaker parts");
+  entries.sort((a,b)=>a.start-b.start);
+  if(entries.some((v,i)=>i>0&&v.start===entries[i-1].start))
+    throw Error("Duplicate P0 speaking positions");
+  if(!entries.length)return null;
+  const places=[{start:0,role:firstRole},...entries];
+  const segments=places.map((v,i)=>({start:v.start,end:i+1<places.length?places[i+1].start:full.length,role:v.role}));
+  if(segments.some((v,i)=>!v.role||v.start>=v.end||
+    (i>0&&v.role===segments[i-1].role)))throw Error("Redundant or empty original-voice split");
+  return segments;
+}
+function savedSplitHints(ref){
+  const parts=saved.roles[ref.id]?.segments;
+  return Array.isArray(parts)?parts.slice(1).map(s=>"@"+s.start+" | "+s.role).join("\n"):"";
+}
 function batch(){return packet.sequential_one_pass_batches[sequence]}
 function edge(id){return packet.all_adjacent_boundary_questions.find(x=>x.id===id)}
 function getRole(r){return saved.roles[r.id]?.role ?? r.provisional_role ?? "UNIDENTIFIED VOICE"}
@@ -126,6 +161,8 @@ function render(){
     '<p class="line">'+escapeHtml(ref.source_exact_dialogue??"[Source dialogue unavailable]")+'</p>'+
     '<label>P1 • original voice (candidate: '+escapeHtml(ref.provisional_role??"UNKNOWN")+')'+
     '<input type="text" data-role="'+escapeHtml(ref.id)+'" value="'+escapeHtml(getRole(ref))+'"></label>'+
+    '<label>P0 • Voice changes WITHIN this caption? If none, leave blank after listening. Each change: first spoken words | NEW CHARACTER or @Unicode offset | NEW CHARACTER'+
+     '<textarea data-split="'+escapeHtml(ref.id)+'" placeholder="Yeah | PHIL KERR">'+escapeHtml(savedSplitHints(ref))+'</textarea></label>'+
     '<span class="small">'+(saved.roles[ref.id]?"Previously source-reviewed":"Provisional candidate only")+'</span></article>');
  }
  $("editor").innerHTML=bits.join("");
@@ -158,7 +195,16 @@ $("confirm").onclick=()=>{
  for(const r of current.reader_blocks){
   const field=[...document.querySelectorAll("[data-role]")].find(i=>i.dataset.role===r.id);
   if(!field||!field.value.trim()){status("Every voice needs an identity or UNIDENTIFIED VOICE.");return}
-  next.roles[r.id]={role:field.value.trim(),original_audio_voice_reviewed:true};
+  const splitField=[...document.querySelectorAll("[data-split]")].find(i=>i.dataset.split===r.id);
+   if(!splitField){status("P0 within-caption handoff form missing");return}
+   let pieces;
+   try{pieces=insideCaptionSplits(splitField.value,r.source_exact_dialogue,field.value.trim())}
+   catch(e){status(r.id+": "+e.message);return}
+   next.roles[r.id]={
+     role:field.value.trim(),original_audio_voice_reviewed:true,
+     intra_block_speaker_changes_reviewed:true,
+     ...(pieces?{segments:pieces}:{})
+   };
  }
  for(const id of current.boundary_question_ids){
   const field=[...document.querySelectorAll("[data-edge]")].find(i=>i.dataset.edge===id);

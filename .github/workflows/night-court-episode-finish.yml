@@ -5,6 +5,8 @@ on:
       - '.github/workflows/night-court-episode-finish.yml'
       - 'Night Court/tools/episode_finish.py'
       - 'Night Court/tools/test_episode_finish.py'
+      - 'Night Court/tools/test_episode_finish_workbench.js'
+      - 'Night Court/episode-finish-workbench.html'
   # Deliberately chained from successful canonical publication.
   # GITHUB_TOKEN is allowed to trigger repository_dispatch; ordinary bot pushes
   # are not a reliable trigger and would risk racing a stale screenplay write.
@@ -68,6 +70,7 @@ jobs:
         run: |
           set -euo pipefail
           PYTHONPATH='Night Court/tools' python -m unittest -v test_episode_finish
+          node 'Night Court/tools/test_episode_finish_workbench.js'
           locator=()
           if test -s "${RUNNER_TEMP}/episode-finish-current/S09E19-original-audio-locators.json"; then
             locator=(--s09-original-audio-locator "${RUNNER_TEMP}/episode-finish-current/S09E19-original-audio-locators.json")

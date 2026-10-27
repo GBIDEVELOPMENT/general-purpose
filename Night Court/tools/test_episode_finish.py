@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA, render_reviewed_screenplay
+from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA, render_reviewed_screenplay, block_turn_segments
 
 
 class OnePassEpisodeTests(unittest.TestCase):
@@ -111,7 +111,8 @@ class OnePassEpisodeTests(unittest.TestCase):
                                    "heard_on_original_audio": True}
                           for e in p["all_adjacent_boundary_questions"]}
         d["roles"] = {r["id"]: {"role": r["provisional_role"] or "UNIDENTIFIED VOICE",
-                                  "original_audio_voice_reviewed": True}
+                                  "original_audio_voice_reviewed": True,
+                                  "intra_block_speaker_changes_reviewed": True}
                       for batch in p["sequential_one_pass_batches"]
                       for r in batch["reader_blocks"]}
         d["batches"] = {batch["id"]: {
@@ -140,7 +141,8 @@ class OnePassEpisodeTests(unittest.TestCase):
             },
             "roles": {row["id"]: {
                 "role": row["provisional_role"] or "UNIDENTIFIED VOICE",
-                "original_audio_voice_reviewed": True
+                "original_audio_voice_reviewed": True,
+                "intra_block_speaker_changes_reviewed": True
             } for batch in p["sequential_one_pass_batches"]
               for row in batch["reader_blocks"]},
             "batches": {p["sequential_one_pass_batches"][0]["id"]: {
@@ -159,6 +161,69 @@ class OnePassEpisodeTests(unittest.TestCase):
         d["boundaries"]["B0002"]["result"] = "same_speaker_continuation"
         with self.assertRaisesRegex(ValueError, "conflicting P1"):
             render_reviewed_screenplay(p, d)
+
+    def test_p0_inside_one_caption_real_character_switch(self):
+        p = make_packet(self.root, "S01E01")
+        d = {
+            "packet_sha256": p["packet_sha256"], "episode_id": "S01E01",
+            "original_video_sha256": p["original_video_sha256_expected"],
+            "review_method": "continuous_original_synchronized_av",
+            "reviewer": "synthetic fixture",
+            "boundaries": {
+                "B0001": {"result": "same_speaker_continuation", "heard_on_original_audio": True},
+                "B0002": {"result": "new_speaker", "heard_on_original_audio": True},
+            },
+            "roles": {row["id"]: {
+                "role": row["provisional_role"] or "UNIDENTIFIED VOICE",
+                "original_audio_voice_reviewed": True,
+                "intra_block_speaker_changes_reviewed": True,
+            } for b in p["sequential_one_pass_batches"] for row in b["reader_blocks"]},
+            "batches": {p["sequential_one_pass_batches"][0]["id"]: {
+                "synchronized_original_video_and_sound_reviewed": True,
+                "performance_notes": [], "visible_props_and_wardrobe": [],
+                "observed_actor_action_target": []
+            }},
+        }
+        second = p["sequential_one_pass_batches"][0]["reader_blocks"][1]
+        d["roles"][second["id"]]["segments"] = [
+            {"start": 0, "end": 1, "role": "LANA"},
+            {"start": 1, "end": 3, "role": "DAN"},
+        ]
+        self.assertTrue(verify_decisions(p, d)["editorial_decisions_complete"])
+        output = render_reviewed_screenplay(p, d)
+        self.assertEqual(output.count("### LANA"), 1)
+        self.assertEqual(output.count("### DAN"), 1)
+        self.assertIn("    t\n", output)
+        self.assertIn("    wo\n", output)
+        self.assertLess(output.index("    t\n"), output.index("    wo\n"))
+        d["roles"][second["id"]]["segments"][1]["start"] = 2
+        with self.assertRaisesRegex(ValueError, "lost, overlapped"):
+            verify_decisions(p, d)
+        d["roles"][second["id"]]["segments"][1]["start"] = 1
+        d["roles"][second["id"]]["segments"][1]["role"] = "LANA"
+        with self.assertRaisesRegex(ValueError, "redundant split"):
+            verify_decisions(p, d)
+        d["roles"][second["id"]].pop("segments")
+        d["roles"][second["id"]].pop("intra_block_speaker_changes_reviewed")
+        with self.assertRaisesRegex(ValueError, "within-caption"):
+            verify_decisions(p, d)
+
+    def test_unicode_codepoint_slices_do_not_mutate_source(self):
+        original = "Hey🙂 there!\nYeah."
+        row = {"source_exact_dialogue": original,
+               "source_dialogue_sha256": hashlib.sha256(original.encode()).hexdigest()}
+        initial = {"role": "LANA", "intra_block_speaker_changes_reviewed": True,
+                   "segments": [
+                       {"start": 0, "end": 12, "role": "LANA"},
+                       {"start": 12, "end": len(original), "role": "DAN"}
+                   ]}
+        pieces = block_turn_segments(row, initial)
+        self.assertEqual("".join(original[v["start"]:v["end"]] for v in pieces), original)
+        self.assertEqual(pieces[0]["end"], 12)
+        initial["segments"][1]["end"] -= 1
+        with self.assertRaisesRegex(ValueError, "incomplete"):
+            block_turn_segments(row, initial)
+
 
     def test_s09_original_machine_locator_has_no_faked_subtitle_times(self):
         path = self.root / "s09-source-audio.json"
