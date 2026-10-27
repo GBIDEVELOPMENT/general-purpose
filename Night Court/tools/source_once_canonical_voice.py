@@ -241,11 +241,14 @@ def audio_evidence(ep, movie:Path, descriptors, rejected, groups, meta, encoder)
     joins=[]
     # Review performed boundaries (P0) as well as named role (P1), without
     # overwriting original caption joins or claiming a voice-match is truth.
+    # Provenance insertion order is exact original reading chronology. Block IDs
+    # are opaque: legitimate mixed-cue IDs can end in ":speaker-p1", and
+    # original C219 manual turn IDs are not numeric. Never parse IDs as ordinals.
+    order={key:i for i,key in enumerate(groups)}
     chronological=[x for x in descriptors if x["id"] in vectors]
     for a,b in zip(chronological,chronological[1:]):
-        # Some dropped source reader blocks separate these; never skip them.
-        ai=int(a["id"].rsplit(":",1)[-1]);bi=int(b["id"].rsplit(":",1)[-1])
-        if bi!=ai+1:continue
+        # No cross-cue shortcut when an intervening source block lacked PCM.
+        if order[b["id"]]!=order[a["id"]]+1:continue
         if not -1000<=b["window_ms"][0]-a["window_ms"][1]<=12_000:
             continue
         sim=cosine(vectors[a["id"]],vectors[b["id"]])
