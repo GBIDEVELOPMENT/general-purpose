@@ -66,6 +66,17 @@ source-listened negative decision. The source check and UI gate reduce
 accidental false signoff but cannot prove the human watched the film or that
 a transcode preserved the original picture and sound.
 
+**Exact-line acting and physical comedy:** P2 delivery, P3 wardrobe/props,
+and P4 actor-action-target notes can now be entered on any individual
+source reading block during the same playback, under its collapsed
+"Beat-specific" editor. These optional notes survive the source-bound
+local draft and the ONE episode decision ledger. The final screenplay
+renders each observation immediately beside the original dialogue beat
+it describes, not at the top of a 12-block scene. The older batch-wide
+P2/P3/P4 fields remain available for continuity-wide observations.
+No field is automatically populated or represented as witnessed unless
+the original film was actually reviewed.
+
 The browser **offline original-film review workbench** is
 [episode-finish-workbench.html](episode-finish-workbench.html). Open it locally
 (no network libraries), load one private review packet and the corresponding
