@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA, render_reviewed_screenplay, block_turn_segments
+from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA, render_reviewed_screenplay, block_turn_segments, attach_source_audio_hints
 
 
 class OnePassEpisodeTests(unittest.TestCase):
@@ -280,6 +280,56 @@ class OnePassEpisodeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "incomplete"):
             block_turn_segments(row, initial)
 
+
+    def test_original_film_acoustic_hint_is_unverified_and_source_pinned(self):
+        packet=make_packet(self.root,"S01E01")
+        report={
+            "schema":"night-court-canonical-original-audio-p0-p1-evidence/1",
+            "episode_id":"S01E01",
+            "original_video_sha256":packet["original_video_sha256_expected"],
+            "immutable_original_dialogue_sha256":packet["source_original_dialogue_sha256"],
+            "canonical_manuscript_sha256":packet["canonical_manuscript_sha256"],
+            "source_pcm_sha256":"a"*64,
+            "voice_embedding_windows_usable":15,
+            "original_video_watched_by_human":False,
+            "independent_original_actor_voice_accepted":0,
+            "independent_performed_turns_accepted":0,
+            "model_diary_not_film_truth":True,
+            "media_audio_pcm_embedding_vectors_or_credentials_preserved":False,
+            "unknown_original_soundtrack_proposals":[{
+                "source_reading_block_id":"S01E01:speaker-evidence:0003",
+                "source_ref":"C003.1",
+                "actor_voice_original_soundtrack_independently_verified":False,
+                "acoustic_candidate":"LANA",
+                "uncertified_best_role":"LANA",
+                "speaker_similarity":0.83,
+                "global_and_role_holdout_pass":True
+            }],
+            "adjacent_P0_original_audio_voice_similarity":[{
+                "source_left":"S01E01:speaker-evidence:0001",
+                "source_right":"S01E01:speaker-evidence:0002",
+                "machine_acoustic_voice_similarity":.91,
+                "source_audio_p0_performed_boundary_independently_verified":False,
+                "provisional_display_join":True
+            }]
+        }
+        path=self.root/"acoustic.json"
+        path.write_text(json.dumps(report),encoding="utf-8")
+        attach_source_audio_hints(packet,path)
+        rows=packet["sequential_one_pass_batches"][0]["reader_blocks"]
+        self.assertIsNone(rows[-1]["provisional_role"])
+        self.assertEqual(rows[-1]["original_audio_model_uncertified_role_hint"]["role_candidate"],"LANA")
+        self.assertFalse(packet["all_adjacent_boundary_questions"][0]["machine_audio_p0_boundary_verified"])
+        self.assertEqual(packet["machine_audio_hints_attached"]["p0_adjacent_audio_pairs"],1)
+        report["independent_original_actor_voice_accepted"]=1
+        path.write_text(json.dumps(report),encoding="utf-8")
+        with self.assertRaisesRegex(ValueError,"nonacceptance"):
+            attach_source_audio_hints(make_packet(self.root,"S01E01"),path)
+        report["independent_original_actor_voice_accepted"]=0
+        report["canonical_manuscript_sha256"]="f"*64
+        path.write_text(json.dumps(report),encoding="utf-8")
+        with self.assertRaisesRegex(ValueError,"source"):
+            attach_source_audio_hints(make_packet(self.root,"S01E01"),path)
 
     def test_s09_original_machine_locator_has_no_faked_subtitle_times(self):
         path = self.root / "s09-source-audio.json"
