@@ -147,7 +147,12 @@ def attach_source_audio_hints(packet: dict, path: Path):
         or report.get("original_video_watched_by_human") is not False
         or report.get("independent_original_actor_voice_accepted") != 0
         or report.get("independent_performed_turns_accepted") != 0
-        or report.get("media_audio_pcm_embedding_vectors_or_credentials_preserved") is not False):
+        or report.get("media_audio_pcm_embedding_vectors_or_credentials_preserved") is not False
+        or report.get("model_diary_not_film_truth") is not True
+        or not isinstance(report.get("source_pcm_sha256"), str)
+        or len(report["source_pcm_sha256"]) != 64
+        or type(report.get("voice_embedding_windows_usable")) is not int
+        or report["voice_embedding_windows_usable"] < 1):
         raise ValueError("Audio hint source, screenplay, original AVI or AV nonacceptance drift")
     by_block = {x["id"]: x for batch in packet["sequential_one_pass_batches"]
                 for x in batch["reader_blocks"]}
