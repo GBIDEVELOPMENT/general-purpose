@@ -76,7 +76,7 @@ these as unverified source-audio seek hints, not source transcript timecodes.
    Use models for **proposals and triage**, never auto-promote to witnessed
    facts. Rerun excerpts only for conflicts/low confidence.
 3. **Apply corrections to the one manuscript** using exact source part IDs,
-   corrected turn boundaries and source-bound reviews. Do not modify immutable
+   corrected turn boundaries and source-bound reviews. **For two voices inside a single original caption/reader block, use the P0 "within this caption" field in the offline workbench:** enter the first exact words spoken by the next character followed by `| CHARACTER`, or `@Unicode-codepoint-offset | CHARACTER` where that phrase repeats. The final reader uses exact original character spans, never mutates dialogue or invents voice timing. A blank field means *no internal handoff heard* only after original playback. Do not modify immutable
    original subtitles. Save one decision ledger at a stable path, e.g.
    `saved-private/episode-finish-current/S01E01-original-av-decisions.json`.
    Do not overwrite it with newly generated blank decisions.
