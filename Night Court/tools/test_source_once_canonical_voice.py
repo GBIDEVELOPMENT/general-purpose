@@ -3,7 +3,7 @@ import unittest
 from unittest.mock import patch
 from source_once_canonical_voice import (
     AUDIO_S09,ORIGINAL_SOURCE,VIDEO_SHA,build_descriptors,read_canonical,
-    MAX_ANCHORS_PER_ROLE,source_cue_n,
+    MAX_ANCHORS_PER_ROLE,source_cue_n,acoustic_adjacent_pairs,
 )
 
 
@@ -50,6 +50,24 @@ class OriginalCanonicalAudioTests(unittest.TestCase):
         self.assertEqual(ex["multiple_people_or_split_caption"],2)
         self.assertFalse(plan[0]["anchor_selected"])
         self.assertIsNone(plan[0]["role"])
+
+    def test_p0_opaque_reader_ids_and_no_skipping_source_rows(self):
+        groups={
+          "S01E01:speaker-evidence:0001":1,
+          "S01E01:speaker-evidence:0179:speaker-p1":2,
+          "S01E01:source-P0-C219:unverified-turn-1":3,
+        }
+        desc=[{"id":name,"window_ms":[n*3000,n*3000+2200]}
+              for n,name in enumerate(groups)]
+        vectors={x["id"]:[1.0,0.0] if i!=1 else [.9,.1]
+                 for i,x in enumerate(desc)}
+        pairs=acoustic_adjacent_pairs(desc,groups,vectors)
+        self.assertEqual(len(pairs),2)
+        self.assertEqual(pairs[0]["source_right"],"S01E01:speaker-evidence:0179:speaker-p1")
+        self.assertTrue(all(x["source_audio_p0_performed_boundary_independently_verified"] is False
+                            for x in pairs))
+        vectors.pop("S01E01:speaker-evidence:0179:speaker-p1")
+        self.assertEqual(acoustic_adjacent_pairs(desc,groups,vectors),[])
 
     def test_s09_no_locator_no_fake_timestamps(self):
         with self.assertRaisesRegex(ValueError,"locator required"):
