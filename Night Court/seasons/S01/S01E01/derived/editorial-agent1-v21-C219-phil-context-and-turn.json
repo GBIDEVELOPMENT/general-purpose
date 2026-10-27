@@ -1,0 +1,74 @@
+{
+  "schema": "night-court-s01e01-C219-P0-P1-source-preserving-v21/1",
+  "episode_id": "S01E01",
+  "original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "original_avi_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "source_cue": 219,
+  "source_cue_full_text": "...must have been a living hell, huh?\n- Yeah.",
+  "source_cue_envelope_ms": [
+    879532,
+    882330
+  ],
+  "first_fragment": {
+    "reading_ref": "S01E01-C219-SOURCE-TURN-1",
+    "source_original_ref": "C219.1",
+    "original_span_chars": [
+      0,
+      38
+    ],
+    "current_role": "HARRY STONE",
+    "change": false
+  },
+  "second_fragment": {
+    "reading_ref": "S01E01-C219-SOURCE-TURN-2",
+    "source_original_ref": "C219.1",
+    "original_span_chars": [
+      38,
+      45
+    ],
+    "prior_role": null,
+    "new_role": "PHIL KERR",
+    "confidence": "high_contextual_not_original_av",
+    "alternatives": [
+      "LOUISE KERR short ironic agreement",
+      "another participant's interjection"
+    ],
+    "rationale": [
+      "Harry addresses Phil explicitly before C217 and receives Phil C218.1 'Yes, sir.'",
+      "Harry's C218.2/C219.1 uninterrupted teasing question elicits C219 second fragment 'Yeah.'",
+      "The very next C220.1 line, already attributed Phil, qualifies that reply and takes the same semantic stance, then C221.1 Louise counters and Phil agrees.",
+      "The 171ms gap between original C219 full subtitle envelope ending and C220 beginning is consistent with a continued Phil answer, but subtitle envelope gap alone does NOT certify speaker performance."
+    ]
+  },
+  "display_only_join": {
+    "source_reading_refs": [
+      "S01E01-C219-SOURCE-TURN-2",
+      "C220.1"
+    ],
+    "new_group_index_in_v21": 200,
+    "remove_old_v20_group_index": 201,
+    "display_joins_added": 1,
+    "original_audio_actual_same_performed_turn_verified": false
+  },
+  "sources": [
+    "Night Court/seasons/S01/S01E01/dialogue/versions/s01-internal-dvdrip-xvid-sprinter-english--aa9f77600cd9f2b6/segments.jsonl",
+    "Night Court/saved-private/editorial-agent1-v20/S01E01-editorial-provenance.jsonl"
+  ],
+  "source_original_cue_parts_unchanged": true,
+  "original_cue_subclock_unavailable": true,
+  "source_char_spans_and_sha_unchanged": true,
+  "new_identified_original_source_units": 1,
+  "old_s01_named": 389,
+  "new_s01_named": 390,
+  "old_s01_unknown_containing": 15,
+  "new_s01_unknown_containing": 14,
+  "old_reading_rows": 405,
+  "new_reading_rows": 405,
+  "old_display_groups": 276,
+  "new_display_groups": 275,
+  "old_display_joins_unverified": 129,
+  "new_display_joins_unverified": 130,
+  "original_audio_listened": false,
+  "original_performed_turn_verified": false,
+  "uncertainty_disposition": "Promote solely provisional contextual label; original sound can invalidate the identification and join."
+}
