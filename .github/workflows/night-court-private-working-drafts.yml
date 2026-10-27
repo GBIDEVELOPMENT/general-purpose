@@ -120,13 +120,20 @@ jobs:
           git add -- 'Night Court/saved-private/pilot-current'
           if git diff --cached --quiet; then
             echo 'Current validated private snapshot already committed.'
-            exit 0
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Night Court: persist validated current private pilot screenplays and fan corpus'
+            # Non-fast-forward push is rejected: never clobber a newer editor.
+            git push origin HEAD:main
           fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'Night Court: persist validated current private pilot screenplays and fan corpus'
-          # Non-fast-forward push is rejected: never clobber a newer editor.
-          git push origin HEAD:main
+      - name: Queue one-pass original-AV review only after publisher succeeds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/dispatches" \
+            -f event_type=night-court-canonical-published
 
   announce-private-draft-download:
     needs: [generate-private-pilot-reading-scripts, persist-private-editorial-snapshot]
