@@ -18,6 +18,18 @@ source-exact decisions in **one episode-local ledger**, applied to the same
 canonical manuscript by a bounded render-and-validate operation; previous
 decisions remain in Git history, not dozens of side-by-side screenplays.
 
+The browser **offline original-film review workbench** is
+[episode-finish-workbench.html](episode-finish-workbench.html). Open it locally
+(no network libraries), load one private review packet and the corresponding
+locally held source film, then review all sequential blocks. It displays exact
+original dialogue against the film, allows correction of every P0 transition
+and P1 role, and collects performance, costume/props and actor-action-target
+notes from the same playback. Export ONE JSON decision ledger and keep it in
+the episode's private stable review location. A reviewer must validate their
+local video against the original source SHA before certifying; HTML cannot
+authenticate what they actually watched, and browser AVI codecs may require a
+locally transcoded MP4 viewing proxy.
+
 The **single current review agenda** per pilot lives at
 `saved-private/episode-finish-current/SXXEXX-one-pass-av-review.json`.
 Regenerate it automatically from the exact canonical published screenplay and
@@ -29,8 +41,11 @@ python 'Night Court/tools/episode_finish.py' --episode both \
   --output 'Night Court/saved-private/episode-finish-current'
 ```
 
-The agenda does NOT copy episode dialogue, audio, screenshots, ASR, or video. It
-pins the **actual original AVI SHA**, original dialogue witness, working
+The agenda copies exact original dialogue only inside this PRIVATE repository,
+with per-reading-block SHA-256 comparison to the immutable canonical source
+reader. No source dialogue is printed in CI logs or exported outside the
+private repository. It never includes audio, film, frames or model hallucinated
+speech. It pins the **actual original AVI SHA**, original dialogue witness, working
 manuscript SHA, all candidate reading blocks, source IDs, all adjacent P0
 boundary questions and all provisional speaker roles. Every block appears
 exactly once in an ordered batch; boundaries between batches remain in the
