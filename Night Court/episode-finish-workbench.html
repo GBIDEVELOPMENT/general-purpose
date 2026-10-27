@@ -105,7 +105,7 @@ function render(){
  $("episode").textContent=packet.episode_id+" • sequence "+(sequence+1)+" / "+packet.sequential_one_pass_batches.length;
  $("range").textContent="Reading blocks "+(current.block_index_first+1)+"–"+current.block_index_end_exclusive+
    " • Original source witness "+packet.source_original_dialogue_sha256.slice(0,16)+"…"+
-   (current.source_window_candidate_ms?" • candidate cue clock "+(current.source_window_candidate_ms[0]/1000).toFixed(1)+"–"+(current.source_window_candidate_ms[1]/1000).toFixed(1)+"s":" • original dialogue is untimed");
+   (current.source_window_candidate_ms?" • "+(packet.source_timecodes_available?"original subtitle clock (not exact turn) ":"machine-proposed audio seek ONLY (original untimed) ")+(current.source_window_candidate_ms[0]/1000).toFixed(1)+"–"+(current.source_window_candidate_ms[1]/1000).toFixed(1)+"s":" • original dialogue is untimed and unlocated");
  $("prev").disabled=sequence===0;
  $("next").disabled=sequence===packet.sequential_one_pass_batches.length-1;
  $("seek").disabled=!current.source_window_candidate_ms||!media;
