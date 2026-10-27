@@ -129,6 +129,77 @@ def verified_s09_candidate_locator(path: Path):
     return hints, hashlib.sha256(raw).hexdigest()
 
 
+def attach_source_audio_hints(packet: dict, path: Path):
+    """Display previously measured original-AVI P0/P1 evidence, never accept it.
+
+    No new names, performed turns or source-clock synchronizations are created.
+    Numeric evidence is only valid against this exact canonical manuscript.
+    """
+    import math
+    raw = path.read_bytes()
+    report = json.loads(raw)
+    ep = packet["episode_id"]
+    if (report.get("schema") != "night-court-canonical-original-audio-p0-p1-evidence/1"
+        or report.get("episode_id") != ep
+        or report.get("original_video_sha256") != packet["original_video_sha256_expected"]
+        or report.get("immutable_original_dialogue_sha256") != packet["source_original_dialogue_sha256"]
+        or report.get("canonical_manuscript_sha256") != packet["canonical_manuscript_sha256"]
+        or report.get("original_video_watched_by_human") is not False
+        or report.get("independent_original_actor_voice_accepted") != 0
+        or report.get("independent_performed_turns_accepted") != 0
+        or report.get("media_audio_pcm_embedding_vectors_or_credentials_preserved") is not False):
+        raise ValueError("Audio hint source, screenplay, original AVI or AV nonacceptance drift")
+    by_block = {x["id"]: x for batch in packet["sequential_one_pass_batches"]
+                for x in batch["reader_blocks"]}
+    by_boundary = {(x["left_reading_block_id"], x["right_reading_block_id"]): x
+                   for x in packet["all_adjacent_boundary_questions"]}
+    checked_roles = set()
+    for x in report.get("unknown_original_soundtrack_proposals", []):
+        key = x.get("source_reading_block_id")
+        if key not in by_block or key in checked_roles or by_block[key]["provisional_role"] is not None:
+            raise ValueError("Acoustic UNKNOWN voice hint has wrong original reading block")
+        checked_roles.add(key)
+        if (x.get("actor_voice_original_soundtrack_independently_verified") is not False
+            or x.get("source_ref") not in by_block[key]["source_parts"]):
+            raise ValueError("Audio hint falsely verified a voice or changed source part")
+        score = x.get("speaker_similarity")
+        if score is not None and (type(score) not in (int, float)
+                                  or not math.isfinite(score) or not -1 <= score <= 1):
+            raise ValueError("Invalid original-audio voice similarity")
+        name=x.get("acoustic_candidate")
+        if name is not None and (not isinstance(name,str) or not name.strip()
+                                 or x.get("global_and_role_holdout_pass") is not True):
+            raise ValueError("Uncalibrated original-audio suggestion given a character name")
+        by_block[key]["original_audio_model_uncertified_role_hint"]={
+            "role_candidate":name,
+            "best_uncertified_role":x.get("uncertified_best_role"),
+            "cosine_similarity":score,
+            "holdout_gate_passed":x.get("global_and_role_holdout_pass") is True,
+            "original_actor_voice_verified":False
+        }
+    checked_pairs=set()
+    for x in report.get("adjacent_P0_original_audio_voice_similarity", []):
+        edge=(x.get("source_left"),x.get("source_right"))
+        if edge not in by_boundary or edge in checked_pairs:
+            raise ValueError("Acoustic boundary evidence is not a unique adjacent P0 question")
+        checked_pairs.add(edge)
+        original=by_boundary[edge]
+        sim=x.get("machine_acoustic_voice_similarity")
+        if (type(sim) not in (int,float) or not math.isfinite(sim)
+            or not -1<=sim<=1 or x.get("source_audio_p0_performed_boundary_independently_verified") is not False
+            or x.get("provisional_display_join") is not original["provisional_same_turn"]):
+            raise ValueError("P0 audio pair claims a performed turn or changed provenance")
+        original["original_audio_machine_voice_pair_similarity"]=sim
+        original["machine_audio_p0_boundary_verified"]=False
+    packet["original_soundtrack_machine_evidence_sha256"]=hashlib.sha256(raw).hexdigest()
+    packet["machine_audio_hints_attached"]={
+        "p1_unknown_candidates":len(checked_roles),
+        "p0_adjacent_audio_pairs":len(checked_pairs),
+        "is_original_AV_actor_or_turn_certification":False
+    }
+    return packet
+
+
 def make_packet(snapshot: Path, episode: str, s09_locator: Path | None = None):
     manifest, rows, source_sha = load_episode(snapshot, episode)
     hints, hint_sha = ({}, None)
@@ -233,6 +304,9 @@ def make_packet(snapshot: Path, episode: str, s09_locator: Path | None = None):
     if sum(b["provisional_same_turn"] for b in boundaries) != (
         len(rows) - manifest["episodes"][episode]["display_groups"]):
         raise ValueError("Unverified display joins mismatch")
+    acoustic = snapshot.resolve().parent / "episode-finish-current" / (episode + "-original-audio-p0p1-evidence.json")
+    if acoustic.is_file():
+        attach_source_audio_hints(result, acoustic)
     result["packet_sha256"] = digest(result)
     return result
 
