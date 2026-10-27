@@ -327,7 +327,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.4915,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0045",
@@ -698,7 +699,8 @@
       "provisional_same_turn": false,
       "priority": "P0_UNVERIFIED_BREAK",
       "original_audio_machine_voice_pair_similarity": 0.804,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "strong_acoustic_similarity_across_proposed_break"
     },
     {
       "id": "B0096",
@@ -1080,7 +1082,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.607,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0150",
@@ -1089,7 +1092,8 @@
       "provisional_same_turn": false,
       "priority": "P0_UNVERIFIED_BREAK",
       "original_audio_machine_voice_pair_similarity": 0.8057,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "strong_acoustic_similarity_across_proposed_break"
     },
     {
       "id": "B0151",
@@ -1561,7 +1565,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.4461,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0217",
@@ -1877,7 +1882,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6256,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0261",
@@ -2101,7 +2107,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.645,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0291",
@@ -2542,7 +2549,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "f6a44e05269fa337e9f4ae8d4ad7865c9a7a691d7a924729285aa4498dc6d502",
           "source_exact_dialogue": "I sprained my tongue.",
-          "provisional_display_group_id": 4
+          "provisional_display_group_id": 4,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0006",
@@ -2594,7 +2606,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "9773143d7b12b270b0e8c741bb3ab99e09a6ffa8eda867ae0f982b8a78e45ed9",
           "source_exact_dialogue": "So what's in it?",
-          "provisional_display_group_id": 9
+          "provisional_display_group_id": 9,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0011",
@@ -2658,7 +2675,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "fd7ea76d56ecf7193cb3edcaa398ee1c382da7371d7fd11d0a978dcbe4f420f0",
           "source_exact_dialogue": "Hope you were naked.",
-          "provisional_display_group_id": 11
+          "provisional_display_group_id": 11,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0014",
@@ -2668,7 +2690,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "f35fb8d3913dee38d4fb495d11f75f1d5f85fc2e1ab1aa6c2b7ecf11196a9fa0",
           "source_exact_dialogue": "What you reading, Ross?",
-          "provisional_display_group_id": 11
+          "provisional_display_group_id": 11,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0015",
@@ -2678,7 +2705,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "faa016e71e00de8229d8f8f2264597bc008caa14735af6d188b4b357cbeb4e78",
           "source_exact_dialogue": "Humor in uniform?",
-          "provisional_display_group_id": 11
+          "provisional_display_group_id": 11,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0016",
@@ -2708,7 +2740,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "9df7d0547e957033a87f2f1eea9262f622ca2cda37a188fb5e9606f57f1f5976",
           "source_exact_dialogue": "Is it a he-pal or a she-pal?",
-          "provisional_display_group_id": 13
+          "provisional_display_group_id": 13,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0019",
@@ -2728,7 +2765,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "8cab60e7ee610e842d2f65fc96b37d438342934743e7bb1b3b37fd98c07c7596",
           "source_exact_dialogue": "Oh, how delicious.",
-          "provisional_display_group_id": 15
+          "provisional_display_group_id": 15,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0021",
@@ -2739,7 +2781,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "96f82ac1784ca0fa754ec924c0c80285f17378a6d97f31b93fcc537969694301",
           "source_exact_dialogue": "Two lonely scribes penning explicit boudoir details accompanied by how-to photos?",
-          "provisional_display_group_id": 15
+          "provisional_display_group_id": 15,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0022",
@@ -2759,7 +2806,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "c78713111698ca563f2975edaa20086bfaccb4f6bd9db905db8030e821362837",
           "source_exact_dialogue": "Then why waste the stamp?",
-          "provisional_display_group_id": 17
+          "provisional_display_group_id": 17,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0024:speaker-p1",
@@ -2836,7 +2888,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "93f414446baaffc3e1846fac92c8651bfc96cb9cb3dc20430025749ab6428126",
           "source_exact_dialogue": "How charming.",
-          "provisional_display_group_id": 20
+          "provisional_display_group_id": 20,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0028",
@@ -2971,7 +3028,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "53ffbc7b99e838ed4ca3c8020935ce8760c3ee0e482474c769d6dc5100cb8027",
           "source_exact_dialogue": "Last case of the night, sir. Files on its way.",
-          "provisional_display_group_id": 28
+          "provisional_display_group_id": 28,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0037",
@@ -2991,7 +3053,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "c67a4f1b7f2d03c60ae0f43d44a27809165f09d89be6f669009a8cadd45a6634",
           "source_exact_dialogue": "Sure. Birth of the world or salute to the cotton gin.",
-          "provisional_display_group_id": 30
+          "provisional_display_group_id": 30,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0039",
@@ -3126,7 +3193,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "48f51b93ed0f28b3d735a6afe5023d4ebaad93c9b0be0373ad57400b18e93711",
           "source_exact_dialogue": "Why can't I ever meet a professional?",
-          "provisional_display_group_id": 36
+          "provisional_display_group_id": 36,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0049",
@@ -3176,7 +3248,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "7ff6aa93859bbfb161f9a550d1eed22bd1b2a8a127ef47ca486b79cee2e1c991",
           "source_exact_dialogue": "Yes, sir. People versus Fingers Kirby.",
-          "provisional_display_group_id": 40
+          "provisional_display_group_id": 40,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0054",
@@ -3186,7 +3263,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "68411e3eb39ed51093956c0ab2e7eb2368612dba378505e674018e13e6b6fb3c",
           "source_exact_dialogue": "Prosecution? Yes, sir. Fingers was fingered at a downtown hotel after he",
-          "provisional_display_group_id": 41
+          "provisional_display_group_id": 41,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0055",
@@ -3196,7 +3278,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "4bdf15b75754654b55659714ad862f1c9ded77f8a109f8c591ffca64f54d4f4b",
           "source_exact_dialogue": "had picked his way into 27 different rooms and cleaned out all of the honor",
-          "provisional_display_group_id": 41
+          "provisional_display_group_id": 41,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0056",
@@ -3206,7 +3293,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "60ab4e9b8c2c5958a044d626c8f9c3027be73d9b8efe2e09ff6ecfea38154094",
           "source_exact_dialogue": "bars.",
-          "provisional_display_group_id": 41
+          "provisional_display_group_id": 41,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0057",
@@ -3364,7 +3456,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "db581044b51fe38116c80f517a696ce0d0258ee7e197de59d0d135c9675d4fed",
           "source_exact_dialogue": "At that time of the morning, the only thing I'm going to be watching is the inside of my eyelids.",
-          "provisional_display_group_id": 53
+          "provisional_display_group_id": 53,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0069",
@@ -3384,7 +3481,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "155ec716df4ece5c49130dd70d32e664dae5353c4426899f795ce3f7599bc216",
           "source_exact_dialogue": "Hey, hey, hey. It's a great time slot.",
-          "provisional_display_group_id": 55
+          "provisional_display_group_id": 55,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0071",
@@ -3395,7 +3497,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "f19f0458cca66bdf3af779f2527e6b62d927752d981b58bf5a53e4d50e2c4e20",
           "source_exact_dialogue": "Christine's commercial airs between I'll Miss Brooks and that show that stars that vegetable juicer.",
-          "provisional_display_group_id": 55
+          "provisional_display_group_id": 55,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -3451,7 +3558,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "7dc6482de4568305ddd1616eccd4593a87e549ee26d76161f78b8102f72c7d59",
           "source_exact_dialogue": "I've got a date with my favorite stewardess, Patina. If I pace myself, I should still be up.",
-          "provisional_display_group_id": 57
+          "provisional_display_group_id": 57,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0074",
@@ -3463,7 +3575,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "02d5e550e5276678233aafca9c1718585b5cb041ebc0d295399bbfad689008c4",
           "source_exact_dialogue": "I think you're going to be very impressed with this commercial. With my artistic eye and brilliant execution, I am confident that this spot is going to put Christine Sullivan on everybody's lips.",
-          "provisional_display_group_id": 58
+          "provisional_display_group_id": 58,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0075",
@@ -3483,7 +3600,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "6eeab484b885033840d8271bed6863a4eac0e789769730f1195a6be2e1235797",
           "source_exact_dialogue": "Hey,",
-          "provisional_display_group_id": 60
+          "provisional_display_group_id": 60,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0077",
@@ -3494,7 +3616,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "2d4c0fc3ce551371031b2aa6772f58ec3018646d19c89f87113c2f3aad538ae0",
           "source_exact_dialogue": "hey, do you want to go to dinner with me? My stewardess can't get back from Chicago. She's got a layover, which means that I won't.",
-          "provisional_display_group_id": 60
+          "provisional_display_group_id": 60,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0078",
@@ -3514,7 +3641,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "5d10d861590a74bea7ec3788bdda66f3788eda8013380bc19fad65a3009af161",
           "source_exact_dialogue": "What you doing?",
-          "provisional_display_group_id": 62
+          "provisional_display_group_id": 62,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0080",
@@ -3619,7 +3751,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "a199691db5e18056dee9dc180100633964c88fbd3b2aae46c2ea29256ca3fec8",
           "source_exact_dialogue": "Look at that. A safe? How did you do that?",
-          "provisional_display_group_id": 66
+          "provisional_display_group_id": 66,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0087",
@@ -3649,7 +3786,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "d936ff3feae377f5f9ef391efb73a3ed98bf1069fb40e979aa762c14b8b222d1",
           "source_exact_dialogue": "Hold on a second. You mean you didn't know that was there?",
-          "provisional_display_group_id": 68
+          "provisional_display_group_id": 68,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:source-turn-amendment:S09E19-C102-C103-QUESTION-ANSWER:02",
@@ -3670,7 +3812,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "b39bad84a899b08e37fe414d2b88753f430f0a13d709e40604af3e4543825dde",
           "source_exact_dialogue": "Wow.",
-          "provisional_display_group_id": 70
+          "provisional_display_group_id": 70,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0091",
@@ -3680,7 +3827,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "3aa1509cb9348475604f71695083f4a28fbc873d2ad3f767e496e85f616b021c",
           "source_exact_dialogue": "That sucker is old.",
-          "provisional_display_group_id": 70
+          "provisional_display_group_id": 70,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0092",
@@ -3690,7 +3842,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "2492769de7e5b51ecd0331a76411e558374ea41af2013b43310ba2dc7094b5a8",
           "source_exact_dialogue": "I wonder what's in it.",
-          "provisional_display_group_id": 70
+          "provisional_display_group_id": 70,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0093",
@@ -3996,7 +4153,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "14932f8e822b29f37240bee72f1cd893776c43dcfda1c5b6680d6cc2574e8ccb",
           "source_exact_dialogue": "Well, thanks, Harriet. Hey, never underestimate the power of advertising.",
-          "provisional_display_group_id": 88
+          "provisional_display_group_id": 88,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0114",
@@ -4177,7 +4339,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "6263af8321e108bb503394e5a2f81c90af17eb6df2e0a713e33220e77f05f271",
           "source_exact_dialogue": "Beg your pardon?",
-          "provisional_display_group_id": 97
+          "provisional_display_group_id": 97,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0127",
@@ -4197,7 +4364,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "07ade28da2038d4673b4bc1fa9c91d1fb5e0a2ae30597f3170b42cf614b6d774",
           "source_exact_dialogue": "Oh, no, no.",
-          "provisional_display_group_id": 99
+          "provisional_display_group_id": 99,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0129",
@@ -4207,7 +4379,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "376e244f92e199cd6efe2f2072313a9b8e5f806883ca46d3513e2df316597ec2",
           "source_exact_dialogue": "Harry has a loose tooth.",
-          "provisional_display_group_id": 99
+          "provisional_display_group_id": 99,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -4252,7 +4429,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "7304e670c1e891c64ec467e7864bbee57b04a9a8523be3160624f0f0f5613238",
           "source_exact_dialogue": "And I'm going to help him pull it. Come along, Harry.",
-          "provisional_display_group_id": 99
+          "provisional_display_group_id": 99,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:source-speaker-turn-v13:C146.1:2",
@@ -4283,7 +4465,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "8b3017a355a88819f04cf6d336fdd35cc179126c966bab117cc9518d5de53d5f",
           "source_exact_dialogue": "work, we'll try that.",
-          "provisional_display_group_id": 101
+          "provisional_display_group_id": 101,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0133",
@@ -4448,7 +4635,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "a94f6c7875f452c2618c87394d61064d9a913b878818ada10abcaab7832fcac3",
           "source_exact_dialogue": "Now, look, this computer program will show us all the possible combinations to",
-          "provisional_display_group_id": 110
+          "provisional_display_group_id": 110,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0146",
@@ -4458,7 +4650,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "79a40620cfbd5eaa4b66b2e583fb33a1a1694e9f1548d97c134879fb228220c1",
           "source_exact_dialogue": "the... You know what? Come on.",
-          "provisional_display_group_id": 110
+          "provisional_display_group_id": 110,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0147",
@@ -4468,7 +4665,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "064eb6589ebefeecb30099ca94d4a1d346d454fe357ab60a4a001d959aa8cf4e",
           "source_exact_dialogue": "If this doesn't work, I've got dynamite.",
-          "provisional_display_group_id": 111
+          "provisional_display_group_id": 111,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0148",
@@ -4927,7 +5129,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "9135c041ca2eb3b01e0c29e5ddc58f41c1fbc27661ebd6cd4ac0b64ec4fe28f0",
           "source_exact_dialogue": "Nothing is wrong, Christine.",
-          "provisional_display_group_id": 131
+          "provisional_display_group_id": 131,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0181",
@@ -4937,7 +5144,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "75ae2dc81bad72b7e593cc04c00d17ecaa14b5ff27005bc92753ea59ca8b48a9",
           "source_exact_dialogue": "Ever since the spot ad, you're up in the polls with male voters 18 to 45.",
-          "provisional_display_group_id": 131
+          "provisional_display_group_id": 131,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0182",
@@ -4968,7 +5180,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "59ebad37bf5d4cdbbb012e88c52e069cf95bfdd3a248dbdbbe5696f73ef52f8a",
           "source_exact_dialogue": "Well, I don't know how you can blame that on my commercial.",
-          "provisional_display_group_id": 133
+          "provisional_display_group_id": 133,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:source-turn-amendment:S09E19-C206-UNVERIFIED-TWO-VOICE-BOUNDARY:01",
@@ -4988,7 +5205,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "6abca2a76a5ca43a624096de636a1e5d35a731a31f923be24008556c0fec72e6",
           "source_exact_dialogue": "No, this whole thing is really boring.",
-          "provisional_display_group_id": 135
+          "provisional_display_group_id": 135,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0186",
@@ -4999,7 +5221,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "183fbbedc8747244cf315f26f2568d0f08cfec6b456f4d8cdfbbd35384a11355",
           "source_exact_dialogue": "Listen, I didn't see your stupid commercial, but you should be happy it's getting you this much attention regardless of which gender it's coming",
-          "provisional_display_group_id": 135
+          "provisional_display_group_id": 135,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -5044,7 +5271,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "803d4b10ed3898034f9ad9f2f50313362e90557552a8dd17c3c44459587e3395",
           "source_exact_dialogue": "from.",
-          "provisional_display_group_id": 135
+          "provisional_display_group_id": 135,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:source-turn-amendment:S09E19-C209-DAN-UNKNOWN-COMMENT:02",
@@ -5064,7 +5296,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "962642d85d621e812aadcc748e1f47662c3d0024617414f2890565979ee3e8ac",
           "source_exact_dialogue": "Maybe those mean old Amish girls are jealous of you.",
-          "provisional_display_group_id": 137
+          "provisional_display_group_id": 137,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:source-turn-amendment:S09E19-C211-CHRISTINE-UNKNOWN-COMMENT:01",
@@ -5105,7 +5342,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "02f3f3a342fa32e7010aa6330d67ae890b9f19aea4311b43c38609509c7f97be",
           "source_exact_dialogue": "Five days of shooting, 20 locations, a brilliant script, and all it comes down to is TNA.",
-          "provisional_display_group_id": 141
+          "provisional_display_group_id": 141,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0192",
@@ -5782,7 +6024,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "7341c61b6ecd80e66461e0f911c9475c59abf30a90e0e7af52699afed790efa9",
           "source_exact_dialogue": "Yeah. I bought stock in Earthshoes.",
-          "provisional_display_group_id": 177
+          "provisional_display_group_id": 177,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0242",
@@ -5932,7 +6179,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "b7876cced6d19991006509671eb6c146cbb6c78c27869ab32c1aaa3d3277d252",
           "source_exact_dialogue": "Yeah, but they're not fresh.",
-          "provisional_display_group_id": 185
+          "provisional_display_group_id": 185,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0250",
@@ -5952,7 +6204,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "e27b1b188498d1171bd1b06455365092b76f5e510e3eb821e6e19335f9a0c4c6",
           "source_exact_dialogue": "Give me a break. These nuts have been out of the can for two days.",
-          "provisional_display_group_id": 187
+          "provisional_display_group_id": 187,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0252",
@@ -5962,7 +6219,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "9f3ebb248a042b8b3ce0d5a6793b71fe979a250ec3938d1607e2d2a71a1b03ad",
           "source_exact_dialogue": "Bring us some fresh ones.",
-          "provisional_display_group_id": 187
+          "provisional_display_group_id": 187,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0253",
@@ -5972,7 +6234,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "41f0b52330d1426ec68cc4a989002e6e6b6d228d34b1ab0ceca1d46b75a54556",
           "source_exact_dialogue": "When it comes to nuts, I'm an expert.",
-          "provisional_display_group_id": 187
+          "provisional_display_group_id": 187,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0254",
@@ -5992,7 +6259,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "a01c784864d1ca44382ebef0f92e07d304baa08a61818630a9107b590fd24e2c",
           "source_exact_dialogue": "I'm Alex Patterson from Fresno, California.",
-          "provisional_display_group_id": 189
+          "provisional_display_group_id": 189,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -6037,7 +6309,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "383b330800dff850edcc7aa7ee221ecd2ba7d4b47181a1e28b2ef7e6f3c12c61",
           "source_exact_dialogue": "And you are...",
-          "provisional_display_group_id": 189
+          "provisional_display_group_id": 189,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:source-speaker-turn-v13:C284.1:2",
@@ -6077,7 +6354,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "fc0010ecdc76be1322b9e1b14d84609486ced6e5e0095d33f57dcd57a9b3be04",
           "source_exact_dialogue": "Who was she?",
-          "provisional_display_group_id": 192
+          "provisional_display_group_id": 192,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0260",
@@ -6137,7 +6419,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "b87167997c670c39d1cee5a1367312348393fb6ca07d430b68a8fd79f99fa580",
           "source_exact_dialogue": "He was me.",
-          "provisional_display_group_id": 198
+          "provisional_display_group_id": 198,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0264",
@@ -6147,7 +6434,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "d2a882bd794658846f3388349df47be16670f8a36ff1dc73b120a40bf5c0ef22",
           "source_exact_dialogue": "Was she you?",
-          "provisional_display_group_id": 198
+          "provisional_display_group_id": 198,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -6202,7 +6494,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "c64532809c6b45130d3602cf467b9dc49d3ce21064fb8dbc7f3b9b3d592403e6",
           "source_exact_dialogue": "So, that was us.",
-          "provisional_display_group_id": 200
+          "provisional_display_group_id": 200,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0267",
@@ -6222,7 +6519,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "ca3f3910e5853ca60e9cb2c245286f0c76d39d2c81485db19c71a4e217099a4f",
           "source_exact_dialogue": "Cheapened? I paid $400 for that actor.",
-          "provisional_display_group_id": 202
+          "provisional_display_group_id": 202,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0269",
@@ -6232,7 +6534,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "6a00de19aa27cf9c0a1a0e90c758e0ae0bf091106694208b88e1dd849769cb9e",
           "source_exact_dialogue": "He's good. He's died on three soap operas.",
-          "provisional_display_group_id": 202
+          "provisional_display_group_id": 202,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0270",
@@ -6242,7 +6549,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "ba2ead49ffd079111167ce529f6ac904d9fb827c6d08f2b13641bf40b14c0bba",
           "source_exact_dialogue": "Mind if I sit down?",
-          "provisional_display_group_id": 202
+          "provisional_display_group_id": 202,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0271",
@@ -6282,7 +6594,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "3fe4bec64820c94a4a2b956bceaa0819ae23187715705f7db89b3063177df440",
           "source_exact_dialogue": "Me too, Roz.",
-          "provisional_display_group_id": 204
+          "provisional_display_group_id": 204,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0275",
@@ -6292,7 +6609,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "23f21e84bb35e0a6f50d1fa265968be1586c228ed82c9c3911e5bb5b20cf24f8",
           "source_exact_dialogue": "So, what did you think of my chiseled features?",
-          "provisional_display_group_id": 204
+          "provisional_display_group_id": 204,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0276",
@@ -6357,7 +6679,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "83b2f942da6cd0cad8b1ac53e1cbeb3570c794e77b54d25b39c396ae75dedea0",
           "source_exact_dialogue": "You look great.",
-          "provisional_display_group_id": 206
+          "provisional_display_group_id": 206,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0279",
@@ -6367,7 +6694,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "b357a2639f8c0870a5c4d4d83799b20a50afa9f2493a8a7846c2d122b4046b85",
           "source_exact_dialogue": "Listen, now that we don't have to, would you like to have dinner with me tonight?",
-          "provisional_display_group_id": 206
+          "provisional_display_group_id": 206,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0280",
@@ -6387,7 +6719,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "d35083c931ac17bcaf2bbc3a9bb6107b3214142cae3f9e25914ceabfbf2ef912",
           "source_exact_dialogue": "Let's go.",
-          "provisional_display_group_id": 208
+          "provisional_display_group_id": 208,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0282",
@@ -6397,7 +6734,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "2e7f0bd13fea11ad5922150be9c9758fe154ba6d65d9170b321af13e4e9696fa",
           "source_exact_dialogue": "How about Thai food?",
-          "provisional_display_group_id": 208
+          "provisional_display_group_id": 208,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0283",
@@ -6417,7 +6759,12 @@
           "provisional_role": "ALEX PATTERSON",
           "source_dialogue_sha256": "1b5e5c4ee9d6a988e1fe6f552d0d63d0343edc922a66f2c1d62957c5f1f343e2",
           "source_exact_dialogue": "But in your letters you said you loved it.",
-          "provisional_display_group_id": 210
+          "provisional_display_group_id": 210,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0285",
@@ -6458,7 +6805,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "7837be81885c529b9713bfada41f55ee5343357f6aae1e37d6ff592068aa122b",
           "source_exact_dialogue": "I do.",
-          "provisional_display_group_id": 213
+          "provisional_display_group_id": 213,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -6504,7 +6856,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "1e8338b858a7835407a43697c21bb512dddd4e7d991dfaf22b46fb2048ae3b5b",
           "source_exact_dialogue": "Look, I spoke to the guy who duplicated your commercial, and I think it explains the strange reaction you've been getting.",
-          "provisional_display_group_id": 213
+          "provisional_display_group_id": 213,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0290",
@@ -6524,7 +6881,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "e9566496187110ccbad06a411a454be1ee63e4b476d182ba4d53946748731cc9",
           "source_exact_dialogue": "Well, you see, to save money, I bought some used...",
-          "provisional_display_group_id": 215
+          "provisional_display_group_id": 215,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0292",
@@ -6536,7 +6898,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "be7d66ace3c83415ec01e847445c6b9ed7c68089284b14901e86faafa58b2e01",
           "source_exact_dialogue": "Apparently, it hadn't been erased properly because some of the original stuff bled through. You know, a frame here and there, kind of subliminal.",
-          "provisional_display_group_id": 215
+          "provisional_display_group_id": 215,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0293",
@@ -6557,7 +6924,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "ea6ab18f5cad8d99eef74bc4a2fbc3431d6d134845e47394fd3191e63ab08bf2",
           "source_exact_dialogue": "Yeah, you've been sharing our time with Candy Goodlove, the star of Beauty and the Priest.",
-          "provisional_display_group_id": 217
+          "provisional_display_group_id": 217,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0295",
@@ -6578,7 +6950,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "845b9b64cc9ac0d1a4cfeb74c939a9d271fc83b4bf3f09cc7426ef4656ecdf23",
           "source_exact_dialogue": "Look, it's already been done. It's no big deal. I'm sure it's already a thing of the past.",
-          "provisional_display_group_id": 219
+          "provisional_display_group_id": 219,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0297",
@@ -6615,7 +6992,12 @@
           "provisional_role": "MAC ROBINSON",
           "source_dialogue_sha256": "48a44d121bf1dcb544c9b8952d746e0c9ffc9d4625461d98941ea76e16e970b0",
           "source_exact_dialogue": "See?",
-          "provisional_display_group_id": 222
+          "provisional_display_group_id": 222,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 1,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0300",
@@ -6677,7 +7059,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "5a39896f3175ad76e5869b02723ee50ee63a36c861316866aa0d36092b5417ab",
           "source_exact_dialogue": "All right, if it's cash, the straight 50-50 split.",
-          "provisional_display_group_id": 224
+          "provisional_display_group_id": 224,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0302",
@@ -6698,7 +7085,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "f728896f3cdb100e266276125c7e98311fac2b08e0bfb242a0fa31af3ab5b04f",
           "source_exact_dialogue": "Deal, deal.",
-          "provisional_display_group_id": 226
+          "provisional_display_group_id": 226,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0304",
@@ -6719,7 +7111,12 @@
           "provisional_role": "DAN FIELDING",
           "source_dialogue_sha256": "142bcf540ea5dae7692f51f0858239355df920011c161707202d872224423ee9",
           "source_exact_dialogue": "I'll take my cut liquid acids. I've already had some knocks in the market this year.",
-          "provisional_display_group_id": 228
+          "provisional_display_group_id": 228,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 2,
+            "evaluated": 5,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0306",
@@ -6809,11 +7206,52 @@
   "original_audio_video_inspected_by_this_command": false,
   "script_final_or_full_episode_accepted": false,
   "workflow_instruction": "Review each sequential batch once on the SHA-pinned original film with synchronized sound; answer all P0 and P1 questions first, then record P2/P3/P4. Persist decisions in ONE stable episode ledger; regenerate ONE canonical screenplay. Machine-proposed names, source timestamps and display joins are not original-AV proof.",
+  "machine_audio_review_priorities": [
+    {
+      "boundary_id": "B0044",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.4915
+    },
+    {
+      "boundary_id": "B0095",
+      "reason": "strong_acoustic_similarity_across_proposed_break",
+      "original_audio_machine_similarity": 0.804
+    },
+    {
+      "boundary_id": "B0149",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.607
+    },
+    {
+      "boundary_id": "B0150",
+      "reason": "strong_acoustic_similarity_across_proposed_break",
+      "original_audio_machine_similarity": 0.8057
+    },
+    {
+      "boundary_id": "B0216",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.4461
+    },
+    {
+      "boundary_id": "B0260",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6256
+    },
+    {
+      "boundary_id": "B0290",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.645
+    }
+  ],
   "original_soundtrack_machine_evidence_sha256": "585e502522ed9119b3ab21b1b05dbdbb40a40971165ddf20145e7853b70e3825",
   "machine_audio_hints_attached": {
     "p1_unknown_candidates": 16,
     "p0_adjacent_audio_pairs": 30,
+    "p0_acoustic_replay_priority_count": 7,
+    "p1_low_holdout_provisional_roles": 3,
     "is_original_AV_actor_or_turn_certification": false
   },
-  "packet_sha256": "a411f49a8e754d296bfde13d204041c701109a496bfa1ce0be6f69bacf05785c"
+  "packet_sha256": "4794ff34c7536db85e922125cc9a7658c3876fcb0f0585f9f8a5096989dde0fa",
+  "packet_source_identity_scheme": "original-film-canonical-dialogue-ordered-reading-blocks-and-review-batches-v1",
+  "machine_annotations_excluded_from_reviewer_source_sha256": true
 }

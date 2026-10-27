@@ -257,7 +257,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5761,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0031",
@@ -301,7 +302,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6103,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0037",
@@ -740,7 +742,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5784,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0092",
@@ -749,7 +752,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5904,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0093",
@@ -758,7 +762,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6309,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0094",
@@ -1413,7 +1418,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6095,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0181",
@@ -1470,7 +1476,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5869,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0188",
@@ -1488,7 +1495,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5499,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0190",
@@ -1692,7 +1700,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6428,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0216",
@@ -1841,7 +1850,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5883,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0235",
@@ -1904,7 +1914,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6249,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0242",
@@ -2112,7 +2123,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5687,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0268",
@@ -2121,7 +2133,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6399,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0269",
@@ -2195,7 +2208,8 @@
       "provisional_same_turn": false,
       "priority": "P0_UNVERIFIED_BREAK",
       "original_audio_machine_voice_pair_similarity": 0.8118,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "strong_acoustic_similarity_across_proposed_break"
     },
     {
       "id": "B0279",
@@ -2355,7 +2369,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6375,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0299",
@@ -2403,7 +2418,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6301,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0305",
@@ -2484,7 +2500,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6181,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0314",
@@ -2493,7 +2510,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6315,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0315",
@@ -2573,7 +2591,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6097,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0325",
@@ -2697,7 +2716,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5104,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0341",
@@ -2807,7 +2827,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5782,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0355",
@@ -2867,7 +2888,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.5922,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0363",
@@ -2939,7 +2961,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6194,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0371",
@@ -3005,7 +3028,8 @@
       "provisional_same_turn": false,
       "priority": "P0_UNVERIFIED_BREAK",
       "original_audio_machine_voice_pair_similarity": 0.8049,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "strong_acoustic_similarity_across_proposed_break"
     },
     {
       "id": "B0379",
@@ -3128,7 +3152,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6203,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0394",
@@ -3155,7 +3180,8 @@
       "provisional_same_turn": true,
       "priority": "P0_UNVERIFIED_JOIN",
       "original_audio_machine_voice_pair_similarity": 0.6481,
-      "machine_audio_p0_boundary_verified": false
+      "machine_audio_p0_boundary_verified": false,
+      "original_audio_machine_review_priority": "weak_acoustic_similarity_within_proposed_join"
     },
     {
       "id": "B0397",
@@ -5019,7 +5045,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "804936974cdea77d55c22e67d202a41ff52845d896c713fa884940432da99108",
           "source_exact_dialogue": "Your whole family's crazy.",
-          "provisional_display_group_id": 111
+          "provisional_display_group_id": 111,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0136",
@@ -5029,7 +5060,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "a628a8bdf53d43792ca9382009f00d55826a0fa13f8fc74945fcf0e6bfdc0917",
           "source_exact_dialogue": "Their chromosomes aren't normal,\nand they all look like Slinkys.",
-          "provisional_display_group_id": 111
+          "provisional_display_group_id": 111,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0137",
@@ -5039,7 +5075,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "11073b7ad9c2f791ef18a560c4bf74e7933bb7b9e98caf0bd6d5c06617af88ef",
           "source_exact_dialogue": "You leave my family out of this, you...",
-          "provisional_display_group_id": 112
+          "provisional_display_group_id": 112,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0138",
@@ -5049,7 +5090,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "9dcdcd9a9b61a8a8a8ebe603f223f94cf4f5ca06e9505fec08b81748dd42847c",
           "source_exact_dialogue": "Scuzzball.",
-          "provisional_display_group_id": 112
+          "provisional_display_group_id": 112,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0139",
@@ -5059,7 +5105,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "53b541a76494157c4acf47be4b7ce86f240fff5d5043b105b33d3dcda1fa33c8",
           "source_exact_dialogue": "Scuzzball!",
-          "provisional_display_group_id": 113
+          "provisional_display_group_id": 113,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0140",
@@ -5069,7 +5120,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "a5f08d498885e1897613e2c69fa4618437a24c06964e441de1017728c1bda6ce",
           "source_exact_dialogue": "You ought to lock her up and throw away\nthe key, judge. She's crazy.",
-          "provisional_display_group_id": 113
+          "provisional_display_group_id": 113,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0141",
@@ -5346,7 +5402,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "c8f858c119db9abf646c0713ae48068fb7c8e4f965cbaffcaf7a923dec11635a",
           "source_exact_dialogue": "Yes, sir.",
-          "provisional_display_group_id": 131
+          "provisional_display_group_id": 131,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0161",
@@ -5366,7 +5427,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "2e25cc8c6bc71f7ea45a4d02973326d901a43b14491a7458d3bac6fe8b5a1086",
           "source_exact_dialogue": "Here.",
-          "provisional_display_group_id": 133
+          "provisional_display_group_id": 133,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0163",
@@ -5386,7 +5452,12 @@
           "provisional_role": "CARLA BOUVIER",
           "source_dialogue_sha256": "97c296fca5910eebcaf51f8c1cf2f0ef720b23e941a52054ff5e31269a8c7074",
           "source_exact_dialogue": "They call me Carla B., Your Honor.\nI'm probably down there...",
-          "provisional_display_group_id": 135
+          "provisional_display_group_id": 135,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 0,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0165",
@@ -5396,7 +5467,12 @@
           "provisional_role": "CARLA BOUVIER",
           "source_dialogue_sha256": "9e832aa2be56a99932ce940bf823e4db09c72f859cb49045b771cf41c98f5ee9",
           "source_exact_dialogue": "...for alleged solicitation\nof prostitution or something.",
-          "provisional_display_group_id": 135
+          "provisional_display_group_id": 135,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 0,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0166",
@@ -6191,7 +6267,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "da19386c19ae08b4b7a52e29b040dcb83941fd6b208bc1240b1db12479221b0d",
           "source_exact_dialogue": "You're a whale!",
-          "provisional_display_group_id": 173
+          "provisional_display_group_id": 173,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0228",
@@ -6201,7 +6282,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "540fe0fd8c8bfe777ad7d7682313bb0793460041839a8da2490cbeb78387cc2a",
           "source_exact_dialogue": "You're a tarantula!",
-          "provisional_display_group_id": 174
+          "provisional_display_group_id": 174,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -6246,7 +6332,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "c208cf18613571ec7a343ac4ee7669eb778d188d90581d472d2536fe5718f145",
           "source_exact_dialogue": "You never used language like that\nto me before!",
-          "provisional_display_group_id": 175
+          "provisional_display_group_id": 175,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0230",
@@ -6256,7 +6347,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "35186fe323b31bf9b01f3232bd7561d741140e916edab0f1af60fa2702de5f29",
           "source_exact_dialogue": "You never tried to shoot me before.",
-          "provisional_display_group_id": 176
+          "provisional_display_group_id": 176,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0231",
@@ -6326,7 +6422,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "48b040fe83833c86e95146ed00977e3454d34f2fd6d518ebef29991c6804d47e",
           "source_exact_dialogue": "I tried to work things out with her,\nbut she won't have none of it.",
-          "provisional_display_group_id": 179
+          "provisional_display_group_id": 179,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0238",
@@ -6336,7 +6437,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "4084c748622313415781a85a735fb125c7067ee0cd8b98c6926c0ec48f0f6a0b",
           "source_exact_dialogue": "That's a damn lie!",
-          "provisional_display_group_id": 180
+          "provisional_display_group_id": 180,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0239",
@@ -6346,7 +6452,12 @@
           "provisional_role": "CARLA BOUVIER",
           "source_dialogue_sha256": "c19643276b8a32a3a13724c3a95df08a33f110e4ae965c8173417c2de0eafbc3",
           "source_exact_dialogue": "Louise has been trying.\nThis dude won't give her a chance.",
-          "provisional_display_group_id": 181
+          "provisional_display_group_id": 181,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 0,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0240",
@@ -6761,7 +6872,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "c8f858c119db9abf646c0713ae48068fb7c8e4f965cbaffcaf7a923dec11635a",
           "source_exact_dialogue": "Yes, sir.",
-          "provisional_display_group_id": 198
+          "provisional_display_group_id": 198,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0271",
@@ -6791,7 +6907,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "f52564defa12c2653322f4f79cf24c2217180b0e4748a5bb9075797f003415a9",
           "source_exact_dialogue": "- Yeah.",
-          "provisional_display_group_id": 200
+          "provisional_display_group_id": 200,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0273",
@@ -6801,7 +6922,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "cc7175727340d7d27372fb6d23ceba90c81130967995ab356be9fe2abcc8d12d",
           "source_exact_dialogue": "Well, there were some okay times.",
-          "provisional_display_group_id": 200
+          "provisional_display_group_id": 200,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0274",
@@ -6811,7 +6937,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "d52fa3fbca78b6b13e559f835ee097592add23a9e0d4fd3e216e4b09e006db18",
           "source_exact_dialogue": "Early on.",
-          "provisional_display_group_id": 201
+          "provisional_display_group_id": 201,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0275",
@@ -6821,7 +6952,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "a4d5c2aa04a986d146116bef2105bdda38fee35c93d5233c69563852dd44b7d4",
           "source_exact_dialogue": "Yeah, early on.",
-          "provisional_display_group_id": 202
+          "provisional_display_group_id": 202,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -6906,7 +7042,12 @@
           "provisional_role": "CARLA BOUVIER",
           "source_dialogue_sha256": "13e655d64c3cc3d0535d0baa52250bd8dfc711b39792a64aafcab73894dcd38e",
           "source_exact_dialogue": "It's a living.",
-          "provisional_display_group_id": 205
+          "provisional_display_group_id": 205,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 0,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0281",
@@ -6936,7 +7077,12 @@
           "provisional_role": "CARLA BOUVIER",
           "source_dialogue_sha256": "b0c879abe018f5ce14617021b5cf0452b6ddeba1b8f0da2382bed52c872bbca0",
           "source_exact_dialogue": "Wait.",
-          "provisional_display_group_id": 207
+          "provisional_display_group_id": 207,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 0,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0284",
@@ -6956,7 +7102,12 @@
           "provisional_role": "CARLA BOUVIER",
           "source_dialogue_sha256": "f2ff1c92173a88288e44a76f18708abb3b862f1cf920c5981f4fe089f2e9e297",
           "source_exact_dialogue": "Could be yours too.",
-          "provisional_display_group_id": 209
+          "provisional_display_group_id": 209,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 0,
+            "evaluated": 4,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0286",
@@ -7371,7 +7522,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "082fc682bca26c1928dc6c6eb78e85ce0144e4a67b8f1cfc9b6b121c21944a91",
           "source_exact_dialogue": "Seven years?",
-          "provisional_display_group_id": 224
+          "provisional_display_group_id": 224,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0317",
@@ -7381,7 +7537,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "1a9e51bd3bf93eb365eb99a18453324648f15dba10729acfe15fdde060ba726b",
           "source_exact_dialogue": "Good luck, Louise.",
-          "provisional_display_group_id": 225
+          "provisional_display_group_id": 225,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0318",
@@ -7391,7 +7552,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "03b25bed61dad2fc92bb7ca539a0f5abb89e97a767e3ca68789d47009f9fa5c3",
           "source_exact_dialogue": "Okay.",
-          "provisional_display_group_id": 226
+          "provisional_display_group_id": 226,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0319",
@@ -7401,7 +7567,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "791253888d5c27fad8a2615169d3e8d5a8533f7226e789cc48d0a5e8b86089cd",
           "source_exact_dialogue": "It was your own fault for trying to shoot me.",
-          "provisional_display_group_id": 227
+          "provisional_display_group_id": 227,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0320",
@@ -7411,7 +7582,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "c005cdac340a36622e2bd68cf3f10e444bbed073d7f822b01a07a8335e978b0b",
           "source_exact_dialogue": "Shoot, \"shmoot.\"\nI fired straight up in the air.",
-          "provisional_display_group_id": 228
+          "provisional_display_group_id": 228,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0321",
@@ -7421,7 +7597,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "8ea5ba8ba850550f25acdb2ad785117dd368475a9ee59aaf71a83d042cd5eb4e",
           "source_exact_dialogue": "Do you think I would take\na chance on hurting you?",
-          "provisional_display_group_id": 228
+          "provisional_display_group_id": 228,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0322",
@@ -7441,7 +7622,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "f27665ac573be4f5947c4af39a45ed02a439e78588adc1df06b630131a9804ea",
           "source_exact_dialogue": "What, I mean...",
-          "provisional_display_group_id": 230
+          "provisional_display_group_id": 230,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -7486,7 +7672,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "4840a5a0eccd8b670ad9eae66b57976694eed5b1e7e8e6ba9e17754a672de7a1",
           "source_exact_dialogue": "...you think I nursed him\nthrough three bouts of pneumonia...",
-          "provisional_display_group_id": 230
+          "provisional_display_group_id": 230,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0325",
@@ -7496,7 +7687,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "1ebd500c8846402f7181d605105cb5d398fea3f3dfb353f28437b13771755858",
           "source_exact_dialogue": "...and a gallbladder operation\njust to fill him full of lead?",
-          "provisional_display_group_id": 230
+          "provisional_display_group_id": 230,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0326",
@@ -7506,7 +7702,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "037c66bd6f33ee97ac6391c99cfe69dc7b5fe645452e9de0e3742a8898bbc321",
           "source_exact_dialogue": "You mean you weren't trying to hurt me?",
-          "provisional_display_group_id": 231
+          "provisional_display_group_id": 231,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0327",
@@ -7516,7 +7717,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "e13722561b67ab61bb0dbb320e3832b9a428af7d7eb5d10b86b2817685443653",
           "source_exact_dialogue": "Louise, I... I...",
-          "provisional_display_group_id": 231
+          "provisional_display_group_id": 231,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0328",
@@ -7526,7 +7732,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "fc7ed7b68999fdae4a99b38a1554db08f6835cb60bb3ce062649fd33935219dd",
           "source_exact_dialogue": "I...",
-          "provisional_display_group_id": 231
+          "provisional_display_group_id": 231,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0329",
@@ -7536,7 +7747,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "a402b189fb5d2735129b7c64c3e3e165b8f6126fb9dcc2a3b6f5950354105f56",
           "source_exact_dialogue": "Say it, Phil. Say it!",
-          "provisional_display_group_id": 232
+          "provisional_display_group_id": 232,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0330",
@@ -7546,7 +7762,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "07b96e952e70327440e1bd54e455c5f264851e769d7c8e9841911ac81d0e1de3",
           "source_exact_dialogue": "I love you, Louise.",
-          "provisional_display_group_id": 233
+          "provisional_display_group_id": 233,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0331",
@@ -7556,7 +7777,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "2b574770c4684a25c8b16bc663619b2a477763645a8c46f652aa0f5b06d9a2cd",
           "source_exact_dialogue": "And I love you, Phil.",
-          "provisional_display_group_id": 234
+          "provisional_display_group_id": 234,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0332",
@@ -7566,7 +7792,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "21d6946db21b520c3624b9e0df3c7f98ad85869d7f4e1949063fd6b5acbf88d9",
           "source_exact_dialogue": "Then what are we doing here?",
-          "provisional_display_group_id": 235
+          "provisional_display_group_id": 235,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0333",
@@ -7576,7 +7807,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "c7e1e23cbadaed885de077a51aed15046bf51219cac4e440bb2b038d20ce65ba",
           "source_exact_dialogue": "Phil, can we forget this whole thing?",
-          "provisional_display_group_id": 236
+          "provisional_display_group_id": 236,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0334",
@@ -7586,7 +7822,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "f19660e97c4fe8629d852921f3eab4ab619b2b5283c01a64ca4d0bc4ec8f4246",
           "source_exact_dialogue": "I'd like to. I really would.",
-          "provisional_display_group_id": 237
+          "provisional_display_group_id": 237,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0335",
@@ -7596,7 +7837,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "77bceb4dc48c58696317872fe85279c6af7bc29d935860161d67befefcbc83f0",
           "source_exact_dialogue": "Your Honor...",
-          "provisional_display_group_id": 237
+          "provisional_display_group_id": 237,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -7661,7 +7907,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "d9660ae7e072b60e345593bf75b3d9aa23a424a921a5b09491e1c8fd6db23069",
           "source_exact_dialogue": "No. Every time you flip that,\nit comes up heads.",
-          "provisional_display_group_id": 239
+          "provisional_display_group_id": 239,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0339",
@@ -7711,7 +7962,12 @@
           "provisional_role": "PHIL KERR",
           "source_dialogue_sha256": "c8f858c119db9abf646c0713ae48068fb7c8e4f965cbaffcaf7a923dec11635a",
           "source_exact_dialogue": "Yes, sir.",
-          "provisional_display_group_id": 242
+          "provisional_display_group_id": 242,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0344",
@@ -7731,7 +7987,12 @@
           "provisional_role": "LOUISE KERR",
           "source_dialogue_sha256": "c8f858c119db9abf646c0713ae48068fb7c8e4f965cbaffcaf7a923dec11635a",
           "source_exact_dialogue": "Yes, sir.",
-          "provisional_display_group_id": 244
+          "provisional_display_group_id": 244,
+          "original_audio_provisional_role_holdout_warning": {
+            "correct_held_out": 4,
+            "evaluated": 7,
+            "original_voice_identity_verified": false
+          }
         },
         {
           "id": "S01E01:speaker-evidence:0346",
@@ -8524,11 +8785,147 @@
   "original_audio_video_inspected_by_this_command": false,
   "script_final_or_full_episode_accepted": false,
   "workflow_instruction": "Review each sequential batch once on the SHA-pinned original film with synchronized sound; answer all P0 and P1 questions first, then record P2/P3/P4. Persist decisions in ONE stable episode ledger; regenerate ONE canonical screenplay. Machine-proposed names, source timestamps and display joins are not original-AV proof.",
+  "machine_audio_review_priorities": [
+    {
+      "boundary_id": "B0030",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5761
+    },
+    {
+      "boundary_id": "B0036",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6103
+    },
+    {
+      "boundary_id": "B0091",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5784
+    },
+    {
+      "boundary_id": "B0092",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5904
+    },
+    {
+      "boundary_id": "B0093",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6309
+    },
+    {
+      "boundary_id": "B0180",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6095
+    },
+    {
+      "boundary_id": "B0187",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5869
+    },
+    {
+      "boundary_id": "B0189",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5499
+    },
+    {
+      "boundary_id": "B0215",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6428
+    },
+    {
+      "boundary_id": "B0234",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5883
+    },
+    {
+      "boundary_id": "B0241",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6249
+    },
+    {
+      "boundary_id": "B0267",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5687
+    },
+    {
+      "boundary_id": "B0268",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6399
+    },
+    {
+      "boundary_id": "B0278",
+      "reason": "strong_acoustic_similarity_across_proposed_break",
+      "original_audio_machine_similarity": 0.8118
+    },
+    {
+      "boundary_id": "B0298",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6375
+    },
+    {
+      "boundary_id": "B0304",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6301
+    },
+    {
+      "boundary_id": "B0313",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6181
+    },
+    {
+      "boundary_id": "B0314",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6315
+    },
+    {
+      "boundary_id": "B0324",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6097
+    },
+    {
+      "boundary_id": "B0340",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5104
+    },
+    {
+      "boundary_id": "B0354",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5782
+    },
+    {
+      "boundary_id": "B0362",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.5922
+    },
+    {
+      "boundary_id": "B0370",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6194
+    },
+    {
+      "boundary_id": "B0378",
+      "reason": "strong_acoustic_similarity_across_proposed_break",
+      "original_audio_machine_similarity": 0.8049
+    },
+    {
+      "boundary_id": "B0393",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6203
+    },
+    {
+      "boundary_id": "B0396",
+      "reason": "weak_acoustic_similarity_within_proposed_join",
+      "original_audio_machine_similarity": 0.6481
+    }
+  ],
   "original_soundtrack_machine_evidence_sha256": "02d8bc1320e1e41e8d83839f7efe9a6f9eaf13c785f702f15dfa43e0a723fbf8",
   "machine_audio_hints_attached": {
     "p1_unknown_candidates": 6,
     "p0_adjacent_audio_pairs": 194,
+    "p0_acoustic_replay_priority_count": 26,
+    "p1_low_holdout_provisional_roles": 3,
     "is_original_AV_actor_or_turn_certification": false
   },
-  "packet_sha256": "9b8ae9cda3d1de3faf4e5910851565170104b0c7174745121722f15dce3efca6"
+  "packet_sha256": "48ddf97f2cd1fb3c284d56e2f05415e8f818bac2443d17ce5d89f34595a4c55d",
+  "packet_source_identity_scheme": "original-film-canonical-dialogue-ordered-reading-blocks-and-review-batches-v1",
+  "machine_annotations_excluded_from_reviewer_source_sha256": true
 }
