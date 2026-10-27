@@ -1,3 +1,13 @@
+## CURRENT source-first integrated release and original-AV acceptance (supersedes historical tables below)
+
+**October 26, 2026, after GH organization transfer.** Canonical `saved-private/pilot-current` is **S01 Agent1-v22 + S09 Agent2-v19**. Successful [source-validating current generation](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40441814247) and [follow-on saved one-pass AV agendas](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40444421357) confirm 751 original source units, 663 provisionally fully named / 88 UNKNOWN-containing units, 728 source reading blocks, 509 provisional display groups, and 193 episodes/3,153 fan chunks. Original *performed* turns and voices independently accepted: **0/2 episodes**.
+
+The first-phase CI and source SHA acceptance is **PASS**, but **editorial original audiovisual screenplay acceptance remains OPEN**. A new [one-pass source-original playback and review contract](ONE-PASS-EPISODE-FINISH.md) + [stable private current queues](saved-private/episode-finish-current/) replace accumulating new vNN manuscripts. All 726 adjacent P0 boundaries, 728 role candidates and original staging remain review tasks, not silently accepted. The recovered original S09 audio lexical locator gives 231/347 *model-proposed* seek hints while its 347 original paragraphs remain untimed. See the [authoritative delivery state](PILOT-CURRENT-DELIVERY-STATE-2026-10-26.md).
+
+Everything below this divider is a **historical record only**, not the latest canonical counts or required workflow.
+
+---
+
 ## Live post-editorial current release (supersedes the original v16 audit below)
 
 The earlier audit below records the **starting v16 benchmark only**, not the current production corpus. [PR #507](https://github.com/gamesbyian/general-purpose/pull/507) accepted both parallel editors' **source-preserving, explicitly provisional** episode deliverables into shared integration, after PRs #502, #503 and #505. [Actual-source main generation and publisher #40413540356](https://github.com/gamesbyian/general-purpose/actions/runs/40413540356) passed every production step. The canonical private outputs were **committed** by [9193315](https://github.com/gamesbyian/general-purpose/commit/9193315ec26f9ae2b02251a79771ba6d46eafe62), rather than only posted to expiring artifacts. The [current editorial evidence manifest](saved-private/pilot-current/pilot-current-editorial-manifest.json) and [layout manifest](saved-private/pilot-current/working-screenplay-layout-manifest.json) are authoritative for reproducible exact counters and source-script hashes.
