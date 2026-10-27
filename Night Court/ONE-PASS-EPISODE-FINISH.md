@@ -2,7 +2,7 @@
 
 ## Actual original-film audio pass, 27 October 2026 (current evidence)
 
-**Both exact source-video SHA-pinned pilot films were acquired and processed successfully** in [private main Actions run #40559268586](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40559268586). Model reports are committed at `saved-private/episode-finish-current/S01E01-original-audio-p0p1-evidence.json` and `S09E19-original-audio-p0p1-evidence.json`; the one-pass review packets have the exact audio report SHA and numerical machine hints. Media, decoded PCM, weights, and embeddings are not in Git.
+**Both exact source-video SHA-pinned pilot films were acquired and processed successfully** in [private main Actions run #40559268586](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40559268586). The actual one-job elapsed runner window was **133 seconds (18:21:55–18:24:08 UTC)**, including setup, validation and source-result commit; source acquisition plus acoustic inference for **both** episodes took **43 seconds** (18:23:17–18:24:00 UTC). The dependency install consumed 50 seconds. These are verified step timings for **source voice comparison only**, not complete AV screenplay editing or reliable fleet averages. Model reports are committed at `saved-private/episode-finish-current/S01E01-original-audio-p0p1-evidence.json` and `S09E19-original-audio-p0p1-evidence.json`; the one-pass review packets have the exact audio report SHA and numerical machine hints. Media, decoded PCM, weights, and embeddings are not in Git.
 
 | Source metric | S01E01 | S09E19 |
 | --- | ---: | ---: |
