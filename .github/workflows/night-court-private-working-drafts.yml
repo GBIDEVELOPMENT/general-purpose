@@ -5,7 +5,10 @@ on:
     paths:
       - '.github/workflows/night-court-private-working-drafts.yml'
       - 'Night Court/research/**'
+      - '!Night Court/research/trigger-original-pilot-audio-evidence.txt'
       - 'Night Court/tools/**'
+      - '!Night Court/tools/source_once_canonical_voice.py'
+      - '!Night Court/tools/test_source_once_canonical_voice.py'
       # The one-pass AV editor changes decisions, not the canonical caption source.
       # Its own lightweight workflow validates these files independently.
       - '!Night Court/tools/episode_finish.py'
@@ -19,7 +22,10 @@ on:
     paths:
       - '.github/workflows/night-court-private-working-drafts.yml'
       - 'Night Court/research/**'
+      - '!Night Court/research/trigger-original-pilot-audio-evidence.txt'
       - 'Night Court/tools/**'
+      - '!Night Court/tools/source_once_canonical_voice.py'
+      - '!Night Court/tools/test_source_once_canonical_voice.py'
       # The one-pass AV editor changes decisions, not the canonical caption source.
       # Its own lightweight workflow validates these files independently.
       - '!Night Court/tools/episode_finish.py'
