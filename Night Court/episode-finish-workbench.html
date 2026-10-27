@@ -208,7 +208,9 @@ function persistDraft(){
   if(!packet)return;
   const draft={schema:"night-court-local-av-draft/1",episode_id:packet.episode_id,
     packet_sha256:packet.packet_sha256,reviewer:$("reviewer").value.trim(),
-    boundaries:saved.boundaries,roles:saved.roles,batches:saved.batches};
+    boundaries:saved.boundaries,roles:saved.roles,batches:saved.batches,
+    playback_file_signature:currentPlaybackSignature,
+    film_coverage_seconds:[...filmSecondsSeen].sort((a,b)=>a-b)};
   try{
     localStorage.setItem(journalKey(),JSON.stringify(draft));
     $("journalStatus").textContent="Locally saved "+Object.keys(saved.batches).length+
@@ -230,6 +232,13 @@ function restoreDraft(){
       [d.boundaries,d.roles,d.batches].some(v=>Array.isArray(v)||typeof v!=="object"))
       throw Error("wrong source edition or malformed decisions");
     saved={boundaries:d.boundaries,roles:d.roles,batches:d.batches};
+    restoredPlaybackSignature=d.playback_file_signature||null;
+    if(Array.isArray(d.film_coverage_seconds)&&d.film_coverage_seconds.every(
+      n=>Number.isInteger(n)&&n>=0&&n<1800)){
+      filmSecondsSeen=new Set(d.film_coverage_seconds);
+      filmSaveCount=filmSecondsSeen.size;
+    }
+    renderWholeFilmStatus();
     $("reviewer").value=d.reviewer||"";
     $("journalStatus").textContent="Recovered "+Object.keys(saved.batches).length+
       " reviewed passages. Recheck the original film SHA before continuing.";
@@ -325,6 +334,8 @@ $("packet").onchange=e=>{const f=e.target.files?.[0];if(!f)return;fileRead(f,p=>
     !p.packet_sha256||!Array.isArray(p.sequential_one_pass_batches))throw Error("Wrong review packet");
  packet=p;sequence=0;saved={boundaries:{},roles:{},batches:{}};$("download").disabled=false;
  listenedByBatch={};lastPlaybackMark=null;
+ filmSecondsSeen=new Set();filmLastPos=null;filmSaveCount=0;
+ currentPlaybackSignature=null;restoredPlaybackSignature=null;
  restoreDraft();
  verifiedSourceDigest=null;
  $("sourceStatus").textContent="Verify original source film SHA-256 for "+p.episode_id;
@@ -335,14 +346,32 @@ $("sourceFile").onchange=e=>{const f=e.target.files?.[0];if(f)verifyOriginalSour
 $("videoFile").onchange=e=>{
   if(media)URL.revokeObjectURL(media);
   const f=e.target.files?.[0];if(!f)return;
-  listenedByBatch={};lastPlaybackMark=null;
-  media=URL.createObjectURL(f);$("player").src=media;render()
+  listenedByBatch={};lastPlaybackMark=null;filmLastPos=null;
+  const signature=playbackFileSignature(f);
+  if(restoredPlaybackSignature&&signature!==restoredPlaybackSignature){
+    filmSecondsSeen.clear();filmSaveCount=0;
+    status("Playback file changed. Original-film watch coverage reset for truthful certification.");
+  }
+  currentPlaybackSignature=signature;restoredPlaybackSignature=signature;
+  media=URL.createObjectURL(f);$("player").src=media;render();
+  renderWholeFilmStatus()
 };
 $("player").addEventListener("timeupdate",()=>{
   if(!packet||!media||!sourceReady()||sourceChecking||$("player").paused||$("player").seeking){
-    lastPlaybackMark=null;return;
+    lastPlaybackMark=null;filmLastPos=null;return;
   }
   const player=$("player"), current=batch(), pos=Number(player.currentTime);
+  if(filmLastPos!==null){
+    const found=recordFullFilmSeconds(filmLastPos,pos,player.duration);
+    if(found){
+      renderWholeFilmStatus();
+      if(filmSecondsSeen.size-filmSaveCount>=10){
+        filmSaveCount=filmSecondsSeen.size;
+        persistDraft();
+      }
+    }
+  }
+  filmLastPos=pos;
   if(packet.source_timecodes_available&&current.source_window_candidate_ms){
     const [a,z]=current.source_window_candidate_ms;
     if(pos*1000<a-1000||pos*1000>z+1000){lastPlaybackMark=null;return}
@@ -356,7 +385,7 @@ $("player").addEventListener("timeupdate",()=>{
   }
   lastPlaybackMark={id:current.id,pos};
 });
-$("player").addEventListener("seeking",()=>{lastPlaybackMark=null});
+$("player").addEventListener("seeking",()=>{lastPlaybackMark=null;filmLastPos=null});
 $("endorseP0").onclick=()=>{
   if(!packet||!sourceReady()||!media||!$("watched").checked||
      progressForCurrent()<MIN_OBSERVED_PLAYBACK_SECONDS){
@@ -428,13 +457,22 @@ $("confirm").onclick=()=>{
 $("importDecisions").onchange=e=>{const f=e.target.files?.[0];if(!f||!packet)return;fileRead(f,d=>{
  if(d.packet_sha256!==packet.packet_sha256||d.episode_id!==packet.episode_id){status("Decision file does not match this exact manuscript packet");return}
  saved={boundaries:d.boundaries||{},roles:d.roles||{},batches:d.batches||{}};
- $("reviewer").value=d.reviewer||"";persistDraft();render()
+ $("reviewer").value=d.reviewer||"";
+ if(d.original_film_playback_coverage?.schema==="night-court-local-playback-seconds/1"&&
+    Array.isArray(d.original_film_playback_coverage.observed_seconds)){
+    const secs=d.original_film_playback_coverage.observed_seconds;
+    if(secs.every(n=>Number.isInteger(n)&&n>=0&&n<1800)){
+      filmSecondsSeen=new Set(secs);filmSaveCount=filmSecondsSeen.size;
+    }
+ }
+ persistDraft();render();renderWholeFilmStatus()
 })};
 $("clearJournal").onclick=()=>{
  if(!packet){status("Load the source review packet first.");return}
  if(!confirm("Discard locally saved review decisions for this episode? Export JSON first if needed."))return;
  try{localStorage.removeItem(journalKey())}catch(e){status("Cannot clear local draft: "+e.message);return}
  saved={boundaries:{},roles:{},batches:{}};
+ filmSecondsSeen.clear();filmSaveCount=0;filmLastPos=null;
  $("reviewer").value="";
  $("journalStatus").textContent="Local review draft cleared for this original source.";
  render();
@@ -451,6 +489,7 @@ $("download").onclick=()=>{
   original_media_sha256_computed_locally:verifiedSourceDigest,
   playback_edition_kind:($("videoFile").files?.[0]===verifiedSourceFile?"same_original_file":"viewer_supplied_proxy_source_equivalence_unverified"),
   boundaries:saved.boundaries,roles:saved.roles,batches:saved.batches,
+  original_film_playback_coverage:fullFilmCoverage(),
   original_source_full_episode_complete:Object.keys(saved.batches).length===packet.sequential_one_pass_batches.length
  };
  const blob=new Blob([JSON.stringify(result,null,2)+"\n"],{type:"application/json"});
