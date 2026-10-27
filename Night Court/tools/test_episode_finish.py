@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA
+from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA, render_reviewed_screenplay
 
 
 class OnePassEpisodeTests(unittest.TestCase):
@@ -123,6 +123,42 @@ class OnePassEpisodeTests(unittest.TestCase):
         d["boundaries"]["B0001"]["heard_on_original_audio"] = False
         with self.assertRaisesRegex(ValueError, "requires original sound"):
             verify_decisions(p, d)
+
+    def test_source_exact_original_av_reviewed_script_render_after_all_decisions(self):
+        p = make_packet(self.root, "S01E01")
+        d = {
+            "packet_sha256": p["packet_sha256"],
+            "episode_id": "S01E01",
+            "original_video_sha256": p["original_video_sha256_expected"],
+            "review_method": "continuous_original_synchronized_av",
+            "reviewer": "synthetic fixture",
+            "boundaries": {
+                "B0001": {"result": "same_speaker_continuation",
+                           "heard_on_original_audio": True},
+                "B0002": {"result": "new_speaker",
+                           "heard_on_original_audio": True}
+            },
+            "roles": {row["id"]: {
+                "role": row["provisional_role"] or "UNIDENTIFIED VOICE",
+                "original_audio_voice_reviewed": True
+            } for batch in p["sequential_one_pass_batches"]
+              for row in batch["reader_blocks"]},
+            "batches": {p["sequential_one_pass_batches"][0]["id"]: {
+                "synchronized_original_video_and_sound_reviewed": True,
+                "performance_notes": ["test delivery"], "visible_props_and_wardrobe": [],
+                "observed_actor_action_target": ["test observed action"]
+            }}
+        }
+        script = render_reviewed_screenplay(p, d)
+        self.assertEqual(script.count("### LANA"), 1)
+        self.assertEqual(script.count("### UNIDENTIFIED VOICE"), 1)
+        self.assertLess(script.index("    one"), script.index("    two"))
+        self.assertLess(script.index("    two"), script.index("    three"))
+        self.assertIn(self.source_sha, script)
+        self.assertIn("test observed action", script)
+        d["boundaries"]["B0002"]["result"] = "same_speaker_continuation"
+        with self.assertRaisesRegex(ValueError, "conflicting P1"):
+            render_reviewed_screenplay(p, d)
 
     def test_s09_original_machine_locator_has_no_faked_subtitle_times(self):
         path = self.root / "s09-source-audio.json"

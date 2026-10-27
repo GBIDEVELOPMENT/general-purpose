@@ -287,6 +287,70 @@ def verify_decisions(packet: dict, decisions: dict):
             "caveat": "Reviewer declarations, not automatic proof of audiovisual viewing."}
 
 
+def render_reviewed_screenplay(packet: dict, decisions: dict) -> str:
+    """One exact-caption reader from witnessed P0/P1 decisions and AV notes.
+
+    Does not imply independent certification beyond the source-review
+    declarations already checked by verify_decisions.
+    """
+    verify_decisions(packet, decisions)
+    episode = packet["episode_id"]
+    output = [
+        f"# {episode}: Night Court (1984–1992), source-AV reviewed screenplay",
+        "",
+        "**Evidence tier:** reviewer-attested original synchronized playback; "
+        "**independent second-editor audiovisual certification remains separate.** "
+        "Do not mistake a machine-signed checklist for independent film acceptance.",
+        "",
+        "Original immutable dialogue SHA-256: "
+        + packet["source_original_dialogue_sha256"],
+        "Original film SHA-256: " + packet["original_video_sha256_expected"],
+        "Canonical input manuscript SHA-256: " + packet["canonical_manuscript_sha256"],
+        "Source viewing reviewer: " + decisions["reviewer"],
+        "",
+        "## Performed dialogue, delivery and stage business",
+        "",
+    ]
+    prior_role = None
+    index = 0
+    for batch in packet["sequential_one_pass_batches"]:
+        source_review = decisions["batches"][batch["id"]]
+        for key, heading in (
+            ("performance_notes", "Original soundtrack delivery"),
+            ("visible_props_and_wardrobe", "Original picture: clothing and objects"),
+            ("observed_actor_action_target", "Original moving-picture blocking")
+        ):
+            notes = source_review[key]
+            if notes:
+                output.append("*" + heading + ":*")
+                for note in notes:
+                    if not isinstance(note, str) or not note.strip() or len(note) > 800:
+                        raise ValueError("Source AV note must be a bounded, useful observation")
+                    output.append("* " + note.strip())
+                output.append("")
+        for row in batch["reader_blocks"]:
+            new_role = decisions["roles"][row["id"]]["role"].strip()
+            if index == 0:
+                change = True
+            else:
+                result = decisions["boundaries"][f"B{index:04d}"]["result"]
+                change = result != "same_speaker_continuation"
+                if not change and new_role != prior_role:
+                    raise ValueError("P0 same-voice continuation has conflicting P1 character names")
+            if change:
+                output.extend(["", "### " + new_role, ""])
+            caption = row["source_exact_dialogue"]
+            if hashlib.sha256(caption.encode("utf-8")).hexdigest() != row["source_dialogue_sha256"]:
+                raise ValueError("Original caption was mutated during source AV editing")
+            output.extend("    " + textline for textline in caption.split("\n"))
+            output.append("")
+            index += 1
+            prior_role = new_role
+    if index != packet["source_reader_blocks"]:
+        raise ValueError("Completed reader lost an original source block")
+    return "\n".join(output).strip() + "\n"
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--snapshot", type=Path, required=True)
@@ -297,7 +361,11 @@ def main():
                     help="Existing SHAs-pinned untimed-source acoustic seek hints, NEVER original subtitle timings")
     ap.add_argument("--verify-decisions", type=Path,
                     help="Explicit signed human original-AV ledger for one episode")
+    ap.add_argument("--render-reviewed-screenplay", action="store_true",
+                    help="Render the ONE stable complete reader only after all source AV decisions validate")
     args = ap.parse_args()
+    if args.render_reviewed_screenplay and not args.verify_decisions:
+        ap.error("--render-reviewed-screenplay requires --verify-decisions")
     if args.verify_decisions and args.episode == "both":
         ap.error("Verify a single episode at a time")
     args.output.mkdir(parents=True, exist_ok=True)
@@ -312,6 +380,11 @@ def main():
         if args.verify_decisions:
             decision = json.loads(args.verify_decisions.read_text("utf-8"))
             print(json.dumps(verify_decisions(packet, decision), sort_keys=True))
+            if args.render_reviewed_screenplay:
+                final = render_reviewed_screenplay(packet, decision)
+                target = args.output / f"{ep}-original-av-reviewed-screenplay.md"
+                target.write_text(final, encoding="utf-8")
+                print("reviewer-attested complete screenplay candidate:", target)
 
 
 if __name__ == "__main__":

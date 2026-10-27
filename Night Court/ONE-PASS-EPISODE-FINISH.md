@@ -80,14 +80,33 @@ these as unverified source-audio seek hints, not source transcript timecodes.
    original subtitles. Save one decision ledger at a stable path, e.g.
    `saved-private/episode-finish-current/S01E01-original-av-decisions.json`.
    Do not overwrite it with newly generated blank decisions.
-4. **Accept or explicitly abstain.** Every adjacency, actor attribution and
+4. **Render the single source-exact reviewed screenplay.** Once the
+   source-viewed JSON exists, validate every transition, block role, batch
+   observation and original source/media SHA, then render the same named
+   reviewed screenplay from the one ledger, not a vNN:
+   ```sh
+   python 'Night Court/tools/episode_finish.py' \\
+     --episode S01E01 \\
+     --snapshot 'Night Court/saved-private/pilot-current' \\
+     --output 'Night Court/saved-private/episode-finish-current' \\
+     --verify-decisions 'Night Court/saved-private/episode-finish-current/S01E01-original-av-decisions.json' \\
+     --render-reviewed-screenplay
+   ```
+   This produces `S01E01-original-av-reviewed-screenplay.md` only after
+   all exact caption rows are conserved and all source-reviewed turn and voice
+   decisions are accepted or explicitly marked UNIDENTIFIED. The renderer
+   refuses a same-speaker turn containing incompatible roles, lost original
+   caption text or undocumented timing. The reviewer-attested file still
+   requires independent second-editor spot checking, which cannot be proven
+   by software alone.
+5. **Accept or explicitly abstain.** Every adjacency, actor attribution and
    sequential viewing batch needs disposition. The source-pinned
    `verify_decisions` helper refuses missing turns, unheard source claims,
    absent scene passes, mismatched media SHA or stale manuscript. It checks
    a reviewer's declarations; it cannot prove a reviewer actually watched.
    Run an independent editorial spot check, reconcile harmful mistakes, then
    publish once. Stage directions never outrank wrong P0/P1.
-5. **Move to the next episode.** One lead editor, one independent sample/review,
+6. **Move to the next episode.** One lead editor, one independent sample/review,
    not five agents spending two days relaying incremental versions.
 
 ## Actual current checkpoint, not a finish claim
