@@ -31,7 +31,7 @@ S09_V18 = ROOT / "seasons/S09/S09E19/derived/editorial-v18"
 
 
 def github_blob_sha(raw: bytes) -> str:
-    return sha(b"blob " + str(len(raw)).encode() + b"\0" + raw)
+    return hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
 
 
 def signature(row: dict) -> tuple:
