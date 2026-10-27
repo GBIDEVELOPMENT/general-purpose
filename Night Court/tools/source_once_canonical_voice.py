@@ -17,6 +17,7 @@ import os
 from pathlib import Path
 import subprocess
 import tempfile
+import time
 import wave
 
 from compare_original_speaker_embeddings import (
@@ -164,15 +165,38 @@ def build_descriptors(ep,rows,locator=None):
     return chosen,dict(rejected)
 
 
+def original_media_login(*, sleep=time.sleep):
+    """Login check before CPU install and transient FTP greeting retries.
+
+    Retry connection/greeting outages only, never permanent authentication
+    failures or mid-transfer corruption. No passwords or FTP replies in logs.
+    """
+    password=os.environ.get("FTP_PASSWORD")
+    if not password:
+        raise ValueError("Missing original owner source credential")
+    protocol=os.environ.get("FTP_PROTOCOL","ftp")
+    if protocol not in ("ftp","ftps"):
+        raise ValueError("Original media requires FTP/FTPS on owner-known host")
+    host=os.environ.get("FTP_HOST","wood.seedhost.eu")
+    username=os.environ.get("FTP_USER","ianseeds")
+    failures=[]
+    for attempt in range(3):
+        try:
+            return connect(host,username,password,protocol)
+        except (OSError,EOFError,ftplib.error_temp) as err:
+            failures.append(type(err).__name__)
+            if attempt<2:
+                sleep(1+attempt)
+    raise ConnectionError(
+        "Original-film FTP/FTPS login failed across three bounded attempts; "
+        "failure classes: "+",".join(failures)) from None
+
+
 def source_original(ep: str, dest: Path):
     item=s01_candidate() if ep=="S01E01" else s09_candidate()
     if item["size_bytes"]!=EXPECTED_BYTES[ep]:
         raise ValueError("Original source size drift")
-    password=os.environ.get("FTP_PASSWORD")
-    if not password:
-        raise ValueError("Missing original owner source credential")
-    ftp=connect(os.environ.get("FTP_HOST","wood.seedhost.eu"),
-                os.environ.get("FTP_USER","ianseeds"),password,"ftp")
+    ftp=original_media_login()
     try:
         digest=retrieve(ftp,item,dest)
     finally:
@@ -207,13 +231,26 @@ def acoustic_adjacent_pairs(descriptors, groups, vectors):
     return answer
 
 
+def source_ffmpeg_binary():
+    """Find a packaged, SHA-checked FFmpeg; only audio decoding is needed."""
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except ImportError:
+        from shutil import which
+        exe=which("ffmpeg")
+        if not exe:
+            raise RuntimeError("No source-audio FFmpeg binary installed") from None
+        return exe
+
+
 def audio_evidence(ep, movie:Path, descriptors, rejected, groups, meta, encoder):
     """All vectors transient. Export only source IDs and numeric model diagnostics."""
     if movie.stat().st_size!=EXPECTED_BYTES[ep] or sha256(movie)!=VIDEO_SHA[ep]:
         raise ValueError("Video source differs from pinned original")
     with tempfile.TemporaryDirectory(prefix="night-court-single-voice-pcm-") as scratch:
         wav=Path(scratch)/"audio.wav"
-        subprocess.run(["ffmpeg","-nostdin","-hide_banner","-loglevel","error",
+        subprocess.run([source_ffmpeg_binary(),"-nostdin","-hide_banner","-loglevel","error",
             "-i",str(movie),"-map","0:a:0","-vn","-ac","1","-ar","16000",
             "-c:a","pcm_s16le",str(wav)],check=True,capture_output=True,timeout=150)
         pcm_sha=sha256(wav)

@@ -1,9 +1,12 @@
 """Offline source-first checks for one-pass original-soundtrack P0/P1 proposals."""
 import unittest
+import os
+import sys
+from types import SimpleNamespace
 from unittest.mock import patch
 from source_once_canonical_voice import (
     AUDIO_S09,ORIGINAL_SOURCE,VIDEO_SHA,build_descriptors,read_canonical,
-    MAX_ANCHORS_PER_ROLE,source_cue_n,acoustic_adjacent_pairs,
+    MAX_ANCHORS_PER_ROLE,source_cue_n,acoustic_adjacent_pairs,original_media_login,source_ffmpeg_binary,
 )
 
 
@@ -68,6 +71,43 @@ class OriginalCanonicalAudioTests(unittest.TestCase):
                             for x in pairs))
         vectors.pop("S01E01:speaker-evidence:0179:speaker-p1")
         self.assertEqual(acoustic_adjacent_pairs(desc,groups,vectors),[])
+
+    def test_transient_ftp_early_eof_then_live_login(self):
+        state={"tries":0}
+        def fake(*args):
+            state["tries"]+=1
+            self.assertNotIn("password",str(args[:2]))
+            if state["tries"]==1:
+                raise EOFError("connection closed before 220")
+            return object()
+        with patch.dict(os.environ,{"FTP_PASSWORD":"test-pw","FTP_PROTOCOL":"ftps"},clear=False):
+            with patch("source_once_canonical_voice.connect",side_effect=fake) as called:
+                expected=original_media_login(sleep=lambda _:None)
+                self.assertIsNotNone(expected)
+                self.assertEqual(state["tries"],2)
+                self.assertEqual(called.call_args.args[-1],"ftps")
+
+    def test_bad_password_does_not_retry_or_log(self):
+        with patch.dict(os.environ,{"FTP_PASSWORD":"secret-to-never-print"},clear=False):
+            with patch("source_once_canonical_voice.connect",side_effect=__import__("ftplib").error_perm("530 forbidden")) as call:
+                with self.assertRaises(__import__("ftplib").error_perm):
+                    original_media_login(sleep=lambda _:None)
+                self.assertEqual(call.call_count,1)
+
+    def test_bounded_connection_retries_never_include_credentials(self):
+        with patch.dict(os.environ,{"FTP_PASSWORD":"very-private-password","FTP_PROTOCOL":"ftp"},clear=False):
+            with patch("source_once_canonical_voice.connect",side_effect=EOFError("bad welcome")) as call:
+                with self.assertRaises(ConnectionError) as exc:
+                    original_media_login(sleep=lambda _:None)
+                self.assertEqual(call.call_count,3)
+                self.assertNotIn("very-private-password",str(exc.exception))
+                self.assertIn("EOFError",str(exc.exception))
+
+
+    def test_audio_decoder_uses_packaged_pinned_ffmpeg_without_apt(self):
+        mock=SimpleNamespace(get_ffmpeg_exe=lambda:"/private/venv/imageio_ffmpeg/bin/ffmpeg")
+        with patch.dict(sys.modules,{"imageio_ffmpeg":mock}):
+            self.assertEqual(source_ffmpeg_binary(),"/private/venv/imageio_ffmpeg/bin/ffmpeg")
 
     def test_s09_no_locator_no_fake_timestamps(self):
         with self.assertRaisesRegex(ValueError,"locator required"):
