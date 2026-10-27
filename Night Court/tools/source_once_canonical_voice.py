@@ -17,6 +17,7 @@ import os
 from pathlib import Path
 import subprocess
 import tempfile
+import time
 import wave
 
 from compare_original_speaker_embeddings import (
@@ -37,6 +38,13 @@ ORIGINAL_SOURCE={
 }
 EXPECTED_BYTES={"S01E01":183386112,"S09E19":183377920}
 SCHEMA="night-court-canonical-original-audio-p0-p1-evidence/1"
+
+
+class SourceTemporarilyUnavailable(RuntimeError):
+    """Remote owner source did not respond; not a transcript/identity result."""
+    def __init__(self,episode):
+        self.episode=episode
+        super().__init__(episode+" original source currently unavailable")
 MIN_ANCHOR_MS=1900
 MIN_QUERY_MS=1200
 MAX_AUDIO_MS=12000
@@ -171,16 +179,30 @@ def source_original(ep: str, dest: Path):
     password=os.environ.get("FTP_PASSWORD")
     if not password:
         raise ValueError("Missing original owner source credential")
-    ftp=connect(os.environ.get("FTP_HOST","wood.seedhost.eu"),
-                os.environ.get("FTP_USER","ianseeds"),password,"ftp")
-    try:
-        digest=retrieve(ftp,item,dest)
-    finally:
-        try:ftp.quit()
-        except ftplib.all_errors:ftp.close()
-    if digest!=VIDEO_SHA[ep]:
-        raise ValueError("Original DVD-rip AVI hash changed")
-    return digest
+    # A remote server may close the greeting before authentication. Bounded,
+    # same-host retry only: no alternate addresses, proxy/cycling, or auth retries.
+    for attempt in range(2):
+        ftp=None
+        try:
+            ftp=connect(os.environ.get("FTP_HOST","wood.seedhost.eu"),
+                        os.environ.get("FTP_USER","ianseeds"),password,"ftp")
+            digest=retrieve(ftp,item,dest)
+            if digest!=VIDEO_SHA[ep]:
+                raise ValueError("Original DVD-rip AVI hash changed")
+            return digest
+        except (EOFError,TimeoutError,ConnectionResetError,ConnectionAbortedError,
+                BrokenPipeError,ConnectionRefusedError,OSError) as exc:
+            if attempt == 1:
+                raise SourceTemporarilyUnavailable(ep) from exc
+            print(ep,"original FTP connection interrupted; one bounded same-host retry")
+            time.sleep(12)
+        finally:
+            if ftp is not None:
+                try:ftp.quit()
+                except (ftplib.all_errors,EOFError,OSError):
+                    try:ftp.close()
+                    except OSError:pass
+    raise AssertionError("Unreachable FTP retry exit")
 
 
 def acoustic_adjacent_pairs(descriptors, groups, vectors):
@@ -289,32 +311,80 @@ def audio_evidence(ep, movie:Path, descriptors, rejected, groups, meta, encoder)
     }
 
 
-def run(episode,out):
+def reusable_private_result(ep,meta):
+    """Only reuse a report already source-pinned to exact current original movie."""
+    path=ROOT/"saved-private/episode-finish-current"/(ep+"-original-audio-p0p1-evidence.json")
+    if not path.is_file():
+        return None
+    data=json.loads(path.read_text("utf-8"))
+    if (data.get("schema")!=SCHEMA
+        or data.get("episode_id")!=ep
+        or data.get("original_video_sha256")!=VIDEO_SHA[ep]
+        or data.get("immutable_original_dialogue_sha256")!=ORIGINAL_SOURCE[ep]
+        or data.get("canonical_manuscript_sha256")!=meta["manuscript_sha256"][ep]
+        or data.get("voice_embedding_windows_usable",0)<10
+        or data.get("original_video_watched_by_human") is not False
+        or data.get("independent_original_actor_voice_accepted")!=0
+        or data.get("independent_performed_turns_accepted")!=0
+        or data.get("media_audio_pcm_embedding_vectors_or_credentials_preserved") is not False
+        or data.get("model_diary_not_film_truth") is not True):
+        raise ValueError("Previously saved original soundtrack model report provenance drift")
+    return path.read_bytes()
+
+
+def run(episode,out,*,continue_on_transient=False):
     if out.exists():raise ValueError("No silent overwrite of committed review evidence")
     meta,rows,groups=read_canonical()
-    from resemblyzer import VoiceEncoder
-    encoder=VoiceEncoder(device="cpu",verbose=False)
     selected=("S01E01","S09E19") if episode=="both" else (episode,)
     out.mkdir(parents=True)
+    outcomes={}
+    encoder=None
     for ep in selected:
-        descriptors,rejected=build_descriptors(ep,rows[ep],AUDIO_S09 if ep=="S09E19" else None)
-        with tempfile.TemporaryDirectory(prefix="night-court-owner-original-") as tmp:
-            movie=Path(tmp)/("original-"+ep+".avi")
-            source_original(ep,movie)
-            result=audio_evidence(ep,movie,descriptors,rejected,groups[ep],meta,encoder)
         dest=out/(ep+"-original-audio-p0p1-evidence.json")
+        cached=reusable_private_result(ep,meta)
+        if cached is not None:
+            dest.write_bytes(cached)
+            outcomes[ep]="reused_checksum_checked_report"
+            print(ep,"using existing exact-film/canonical-manuscript SHA-bound acoustic evidence")
+            continue
+        descriptors,rejected=build_descriptors(ep,rows[ep],AUDIO_S09 if ep=="S09E19" else None)
+        try:
+            with tempfile.TemporaryDirectory(prefix="night-court-owner-original-") as tmp:
+                movie=Path(tmp)/("original-"+ep+".avi")
+                source_original(ep,movie)
+                if encoder is None:
+                    from resemblyzer import VoiceEncoder
+                    encoder=VoiceEncoder(device="cpu",verbose=False)
+                result=audio_evidence(ep,movie,descriptors,rejected,groups[ep],meta,encoder)
+        except SourceTemporarilyUnavailable:
+            if not continue_on_transient:
+                raise
+            outcomes[ep]="owner_ftp_source_unreachable_no_results"
+            print(ep,"source FTP unavailable after bounded same-host retry; no new AV claims")
+            continue
         dest.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n","utf-8")
+        outcomes[ep]="new_original_audio_model_evidence"
         print(ep,"original audio candidate windows",result["voice_embedding_windows_usable"],
             "unknowns",result["previously_unidentified_acoustic_windows_tested"],
             "UNCERTIFIED role hints",result["model_eligible_speaker_suggestions"],
             "P0 voice comparisons",len(result["adjacent_P0_original_audio_voice_similarity"]),
             "original AV certifications 0")
+    status={"schema":"night-court-canonical-source-audio-run-status/1",
+            "episode_status":outcomes,
+            "all_requested_episodes_have_acoustic_evidence":all(
+                (out/(ep+"-original-audio-p0p1-evidence.json")).is_file() for ep in selected),
+            "original_actor_or_turns_independently_AV_certified":0}
+    (out/"source-audio-run-status.json").write_text(
+        json.dumps(status,indent=2,sort_keys=True)+"\n","utf-8")
+    return status
 
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--episode",choices=("S01E01","S09E19","both"),default="both")
     ap.add_argument("--output",type=Path,required=True)
+    ap.add_argument("--continue-on-transient-ftp",action="store_true",
+                    help="On transient source disconnection retain other episode's valid audio evidence")
     ap.add_argument("--offline-plan",action="store_true",
                     help="Read canonical source records only, never fetch the original media")
     a=ap.parse_args()
@@ -328,7 +398,11 @@ def main():
         return
     if a.output.resolve().is_relative_to(ROOT.resolve()):
         ap.error("Raw machine output must be generated in an ephemeral runner, then vetted")
-    run(a.episode,a.output)
+    result=run(a.episode,a.output,
+               continue_on_transient=a.continue_on_transient_ftp)
+    if not result["all_requested_episodes_have_acoustic_evidence"]:
+        print("Original film missing for at least one requested episode; "
+              "remaining saved reports are provisional only")
 
 
 if __name__=="__main__":
