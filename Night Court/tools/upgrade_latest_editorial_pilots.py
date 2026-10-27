@@ -31,7 +31,7 @@ S09_V18 = ROOT / "seasons/S09/S09E19/derived/editorial-v18"
 
 
 def github_blob_sha(raw: bytes) -> str:
-    return sha(b"blob " + str(len(raw)).encode() + b"\\0" + raw)
+    return sha(b"blob " + str(len(raw)).encode() + b"\0" + raw)
 
 
 def signature(row: dict) -> tuple:
@@ -55,12 +55,12 @@ def validate_stage_overlay(screenplay: str) -> str:
         assert screenplay.count("`[" + marker + "]`") == 1
         if marker not in ("PIC-03", "PIC-10"):
             continue
-        expression = r"(?m)^\\*[^\\n]+\\* `\\[" + marker + r"\\]`"
+        expression = r"(?m)^\*[^\n]+\* `\[" + marker + r"\]`"
         matches = list(re.finditer(expression, screenplay))
         assert len(matches) == 1, "Unmatched source-staging patch: " + marker
         replacement = "*" + note["revised"] + "* `[" + marker + "]`"
         screenplay = screenplay[:matches[0].start()] + replacement + screenplay[matches[0].end():]
-    tags = re.findall(r"\\[PIC-(\\d+)\\]", screenplay)
+    tags = re.findall(r"\[PIC-(\d+)\]", screenplay)
     assert len(tags) == len(set(tags)) == 27
     return screenplay
 
@@ -206,7 +206,7 @@ def integrate(output: Path) -> dict:
     c=counts(merged)
     assert (len(merged),c["source_units"],c["fully_provisionally_named_source_units"],
             c["source_units_with_any_unknown_voice"]) == (728,751,663,88)
-    reader=b"".join(json.dumps(r,ensure_ascii=False,sort_keys=True).encode("utf-8")+b"\\n" for r in merged)
+    reader=b"".join(json.dumps(r,ensure_ascii=False,sort_keys=True).encode("utf-8")+b"\n" for r in merged)
     (output/"pilot-current-editorial-reader.jsonl").write_bytes(reader)
     layout=read_json(output/"working-screenplay-layout-manifest.json")
     editorial=read_json(output/"pilot-current-editorial-manifest.json")
@@ -262,14 +262,14 @@ def integrate(output: Path) -> dict:
     write_jsonl(review_dir/"remaining-88-speaker-review.jsonl",queue)
     write_json(review_dir/"remaining-88-speaker-review-summary.json",summary)
     (output/"READ_ME_FIRST.txt").write_text(
-        "PRIVATE ORIGINAL-SERIES TWO-PILOT CURRENT SOURCE SCRIPT READER.\\n"
-        "S01E01 Agent1-v22 / S09E19 Agent2-v19, exact source and provenance.\\n"
-        "751 source units: 663 CONTEXTUALLY named, 88 still containing UNKNOWN.\\n"
-        "728 source-preserving reader blocks; 275/234 proposed display groups.\\n"
-        "All actual actor voices, delivery and performed turn boundaries remain unverified.\\n"
-        "No original soundtrack/continuous film editorial episode certified.\\n"
-        "193-episode retrieval output includes these two picture-enriched, provisional\\n"
-        "pilots and 191 source-only episode scaffolds. Do not publish as final scripts.\\n",
+        "PRIVATE ORIGINAL-SERIES TWO-PILOT CURRENT SOURCE SCRIPT READER.\n"
+        "S01E01 Agent1-v22 / S09E19 Agent2-v19, exact source and provenance.\n"
+        "751 source units: 663 CONTEXTUALLY named, 88 still containing UNKNOWN.\n"
+        "728 source-preserving reader blocks; 275/234 proposed display groups.\n"
+        "All actual actor voices, delivery and performed turn boundaries remain unverified.\n"
+        "No original soundtrack/continuous film editorial episode certified.\n"
+        "193-episode retrieval output includes these two picture-enriched, provisional\n"
+        "pilots and 191 source-only episode scaffolds. Do not publish as final scripts.\n",
         "utf-8",
     )
     return editorial
