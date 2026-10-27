@@ -1,10 +1,12 @@
 """Offline source-first checks for one-pass original-soundtrack P0/P1 proposals."""
 import unittest
 import os
+import sys
+from types import SimpleNamespace
 from unittest.mock import patch
 from source_once_canonical_voice import (
     AUDIO_S09,ORIGINAL_SOURCE,VIDEO_SHA,build_descriptors,read_canonical,
-    MAX_ANCHORS_PER_ROLE,source_cue_n,acoustic_adjacent_pairs,original_media_login,
+    MAX_ANCHORS_PER_ROLE,source_cue_n,acoustic_adjacent_pairs,original_media_login,source_ffmpeg_binary,
 )
 
 
@@ -101,6 +103,11 @@ class OriginalCanonicalAudioTests(unittest.TestCase):
                 self.assertNotIn("very-private-password",str(exc.exception))
                 self.assertIn("EOFError",str(exc.exception))
 
+
+    def test_audio_decoder_uses_packaged_pinned_ffmpeg_without_apt(self):
+        mock=SimpleNamespace(get_ffmpeg_exe=lambda:"/private/venv/imageio_ffmpeg/bin/ffmpeg")
+        with patch.dict(sys.modules,{"imageio_ffmpeg":mock}):
+            self.assertEqual(source_ffmpeg_binary(),"/private/venv/imageio_ffmpeg/bin/ffmpeg")
 
     def test_s09_no_locator_no_fake_timestamps(self):
         with self.assertRaisesRegex(ValueError,"locator required"):
