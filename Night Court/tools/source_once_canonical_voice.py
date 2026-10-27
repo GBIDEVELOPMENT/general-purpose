@@ -231,13 +231,26 @@ def acoustic_adjacent_pairs(descriptors, groups, vectors):
     return answer
 
 
+def source_ffmpeg_binary():
+    """Find a packaged, SHA-checked FFmpeg; only audio decoding is needed."""
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except ImportError:
+        from shutil import which
+        exe=which("ffmpeg")
+        if not exe:
+            raise RuntimeError("No source-audio FFmpeg binary installed") from None
+        return exe
+
+
 def audio_evidence(ep, movie:Path, descriptors, rejected, groups, meta, encoder):
     """All vectors transient. Export only source IDs and numeric model diagnostics."""
     if movie.stat().st_size!=EXPECTED_BYTES[ep] or sha256(movie)!=VIDEO_SHA[ep]:
         raise ValueError("Video source differs from pinned original")
     with tempfile.TemporaryDirectory(prefix="night-court-single-voice-pcm-") as scratch:
         wav=Path(scratch)/"audio.wav"
-        subprocess.run(["ffmpeg","-nostdin","-hide_banner","-loglevel","error",
+        subprocess.run([source_ffmpeg_binary(),"-nostdin","-hide_banner","-loglevel","error",
             "-i",str(movie),"-map","0:a:0","-vn","-ac","1","-ar","16000",
             "-c:a","pcm_s16le",str(wav)],check=True,capture_output=True,timeout=150)
         pcm_sha=sha256(wav)
