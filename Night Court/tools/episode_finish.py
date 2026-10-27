@@ -97,6 +97,48 @@ def load_episode(snapshot: Path, episode: str):
     return manifest, rows, source_sha
 
 
+def reviewer_source_identity(packet: dict) -> dict:
+    """Stable film/text proof for ONE continuing editor ledger.
+
+    Machine evidence may be refreshed, ASR seek hints may be refined and
+    numerical acoustic priorities may change without deleting the human's
+    already recorded source-AV boundary/role decisions. Source text, movie,
+    exact block/part order, canonical manuscript or review batch membership
+    changes DO invalidate that ledger. No unverified model score or provisional
+    character identity is part of this hash.
+    """
+    batches=packet["sequential_one_pass_batches"]
+    edges=packet["all_adjacent_boundary_questions"]
+    return {
+        "schema":"night-court-original-av-decision-source-identity/1",
+        "episode_id":packet["episode_id"],
+        "original_dialogue_sha256":packet["source_original_dialogue_sha256"],
+        "original_film_sha256":packet["original_video_sha256_expected"],
+        "input_manuscript_sha256":packet["canonical_manuscript_sha256"],
+        "source_part_count":packet["original_source_speaking_part_refs"],
+        "review_blocks":[
+            {"id":row["id"],"source_parts":row["source_parts"],
+             "source_dialogue_sha256":row["source_dialogue_sha256"]}
+            for batch in batches for row in batch["reader_blocks"]
+        ],
+        "review_batches":[{
+            "id":batch["id"],
+            "first":batch["block_index_first"],
+            "end_exclusive":batch["block_index_end_exclusive"],
+            "source_reader_ids":[row["id"] for row in batch["reader_blocks"]],
+        } for batch in batches],
+        "boundary_pairs":[{
+            "id":edge["id"],
+            "left_reading_block_id":edge["left_reading_block_id"],
+            "right_reading_block_id":edge["right_reading_block_id"],
+        } for edge in edges],
+    }
+
+
+def reviewer_source_sha256(packet: dict) -> str:
+    return digest(reviewer_source_identity(packet))
+
+
 def verified_s09_candidate_locator(path: Path):
     """Source-hashed *machine* lexical anchors; they are NOT true cue times."""
     raw = path.read_bytes()
@@ -353,7 +395,11 @@ def make_packet(snapshot: Path, episode: str, s09_locator: Path | None = None):
     acoustic = snapshot.resolve().parent / "episode-finish-current" / (episode + "-original-audio-p0p1-evidence.json")
     if acoustic.is_file():
         attach_source_audio_hints(result, acoustic)
-    result["packet_sha256"] = digest(result)
+    result["packet_sha256"] = reviewer_source_sha256(result)
+    result["packet_source_identity_scheme"] = (
+        "original-film-canonical-dialogue-ordered-reading-blocks-and-review-batches-v1"
+    )
+    result["machine_annotations_excluded_from_reviewer_source_sha256"] = True
     return result
 
 
@@ -406,7 +452,8 @@ def verify_decisions(packet: dict, decisions: dict):
     Checking a signed reviewer ledger is *not* itself proof of someone watching.
     Reviewer must have genuinely listened and watched the pinned original film.
     """
-    if (decisions.get("packet_sha256") != packet.get("packet_sha256")
+    if (packet.get("packet_sha256") != reviewer_source_sha256(packet)
+        or decisions.get("packet_sha256") != packet.get("packet_sha256")
         or decisions.get("episode_id") != packet["episode_id"]
         or decisions.get("original_video_sha256") != packet["original_video_sha256_expected"]
         or decisions.get("review_method") != "continuous_original_synchronized_av"
