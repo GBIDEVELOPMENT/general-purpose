@@ -6,6 +6,11 @@ on:
       - '.github/workflows/night-court-private-working-drafts.yml'
       - 'Night Court/research/**'
       - 'Night Court/tools/**'
+      # The one-pass AV editor changes decisions, not the canonical caption source.
+      # Its own lightweight workflow validates these files independently.
+      - '!Night Court/tools/episode_finish.py'
+      - '!Night Court/tools/test_episode_finish.py'
+      - '!Night Court/tools/test_episode_finish_workbench.js'
       - 'Night Court/seasons/**'
       - 'Night Court/saved-private/editorial-agent1-v*/**'
   workflow_dispatch:
@@ -15,6 +20,11 @@ on:
       - '.github/workflows/night-court-private-working-drafts.yml'
       - 'Night Court/research/**'
       - 'Night Court/tools/**'
+      # The one-pass AV editor changes decisions, not the canonical caption source.
+      # Its own lightweight workflow validates these files independently.
+      - '!Night Court/tools/episode_finish.py'
+      - '!Night Court/tools/test_episode_finish.py'
+      - '!Night Court/tools/test_episode_finish_workbench.js'
       - 'Night Court/seasons/**'
       - 'Night Court/saved-private/editorial-agent1-v*/**'
 
