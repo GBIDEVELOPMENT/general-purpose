@@ -1,4 +1,4 @@
-# S01E01: Night Court (1984–1992), contextual and source-picture screenplay v18
+# S01E01: Night Court (1984–1992), contextual and source-film pictured and contextual screenplay v22
 
 **Provisional dialogue reading only.**
 Original character identities and display continuations are not
@@ -6,13 +6,21 @@ independently audio-verified. Scene boundaries, delivery and physical
 business await source AV inspection. S09 source is entirely untimed.
 Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496
 
+**v22 original-picture choreography review, 2026-10-26:** The same 27 source-picture annotations are retained, with PIC-01, PIC-08 and PIC-09 refined after directly inspecting six 5fps original-film contact sheets and verifying all 300 original frame SHA fingerprints. No new voice, performed turn, synchronized action or native-frame timestamp is certified. The preserved source photo evidence report is `seasons/S01/S01E01/derived/editorial-agent1-v22-original-300frame-direct-review.json`.
+
+**C219 source-first P0/P1 editorial v21, 2026-10-26:** The short second voice in the original C219 subtitle, after Harry's marriage question, is now provisionally attributed to Phil Kerr and displayed together with Phil's immediately following C220 answer. Original C219 time envelope, two exact original character spans, all 405 reading rows, and C219 first voice Harry are preserved. This is a high-contextual but originally unheard attribution and same-speaker display hypothesis, **not** verified performed sound, subcue time or turn boundary. See `seasons/S01/S01E01/derived/editorial-agent1-v21-C219-phil-context-and-turn.json`.
+
+**Direct original-picture v20 pass, 2026-10-26:** In addition to inherited PIC-01–PIC-11, 16 new frame-indexed observations PIC-12–PIC-27 are embedded next to their original-source cue vicinity. The 80 original frame JPGs in the private Actions artifact were cryptographically checked against the catalog and all four 20-frame contact sheets viewed in this session. These are sampled stills every 18 seconds, not synchronized source audio, full motion or authenticated performed blocking. Their source evidence is `seasons/S01/S01E01/derived/editorial-agent1-v20-direct-original-film-frame-observations.json`.
+
+**Editorial update 2026-10-26, v19 contextual pass:** Five additional reversible, context-supported voice labels: C010 Bull (arrival greeting), C011 Painter (interrupted window business), C084 Dan (repeated courtroom advisement), C102 and C103 Lana (fine and case file). None independently soundtrack-certified; alternatives are recorded in the v19 decision ledger.
+
 **Editorial update 2026-10-26:** C028.1 corrected to Lana from direct address; C101.1 provisionally identifies Sheila as the respondent to Harry's call. The uninterrupted Lana C027/C028 display is grouped, but the performed boundary remains unverified. Still-image evidence from original source near C025–C027 shows a uniformed person using the desk telephone; neither actor-to-dialogue synchronization nor delivery is established. Source: `seasons/S01/S01E01/derived/scene-review-v3/scene-script-v3.md`.
 
 **Picture editorial layer v18:** Observed scene views, clothing, objects and gestures from separately reviewed *sampled original-film frames* appear in italics, tagged `PIC-01` through `PIC-11`. They are sourced to `seasons/S01/S01E01/derived/editorial-agent1-v18-picture-annotations.json`. Film frames were not replayed in this editing session; pictured people are not independently linked to dialogue voices. Approximate insertions do not certify precise cuts, spoken timing or full continuous action. Prior v17 speaker evidence remains context-only. C175's two dash-prefixed source-caption parts are now displayed as one provisionally continuous Dan speech, pending soundtrack verification (`editorial-agent1-v18-c175-turn-join.json`).
 
 ## Dialogue (character voices and performed boundaries awaiting original AV verification)
 
-*In a book-lined courthouse office, a lavender-jacketed person crosses to a paper-covered desk. At a tall window, a figure in white painter's overalls with bright yellow sleeves holds a small implement and looks outside.* `[PIC-01]`
+*Inside the book-lined office, a lavender-jacketed figure carries papers across the room, reaches the cluttered desk and bends over its work. The figure in white painter's overalls and yellow sleeves remains near the tall window, handling a small tool and looking outward.* `[PIC-01]`
 
 
 ### LANA WAGNER · DISPLAY CONTINUATION, UNVERIFIED
@@ -64,12 +72,12 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Out.
 
 
-### UNIDENTIFIED SPEAKER · UNKNOWN
+### BULL SHANNON · PROVISIONAL
 
     How are you?
 
 
-### UNIDENTIFIED SPEAKER · UNKNOWN
+### PAINTER · PROVISIONAL
 
     God, I was so close.
 
@@ -201,6 +209,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     I get your drift.
 
 
+
+*A dark-outerwear adult enters through the wood-framed office doorway carrying a dark shoulder bag; the room's bookcases and desk remain in view.* `[PIC-12]` (original-film still 007, nominal 117.0s)
+
 ### SHEILA GARDINER · PROVISIONAL
 
     Is he here yet?
@@ -267,6 +278,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     I also hope his first name is not Shecky.
 
 
+
+*In the crowded book-lined office, a dark-suited person carries a document or folder across the foreground as other people gather around the lavender-clad figure and chairs.* `[PIC-13]` (original-film still 009, nominal 153.0s)
+
 ### COURIER · PROVISIONAL
 
     Package for Judge Stone.
@@ -282,7 +296,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Hey, great view.
 
 
-*A man in a grey shirt and blue trousers reclines on the padded ledge beneath the office windows and gestures toward the window. A lavender-clad person approaches with a folder; another man in a dark suit holds rolled papers.* `[PIC-03]`
+*A grey-shirted figure lounges on a padded ledge below the office window with bent knees and one hand gesturing toward the view. A lavender-clad person stands beside him with a brown folder. In alternate views, a dark-suited person gestures with rolled papers.* `[PIC-03]`
 
 
 ### LANA WAGNER · PROVISIONAL
@@ -363,6 +377,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Here you go.
 
+
+
+*A grey-shirted person perches casually on the office desktop beside stacked boxes, knees drawn up, while another adult in dark outerwear stands facing the desk.* `[PIC-14]` (original-film still 013, nominal 225.0s)
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -463,12 +480,15 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     ...presiding.
 
 
+
+*At the raised courtroom bench, a robed figure leans sideways with one arm extended, with a high-backed judge's chair and the wall flag visible.* `[PIC-15]` (original-film still 021, nominal 369.0s)
+
 ### HARRY STONE · PROVISIONAL
 
     Gotcha.
 
 
-### UNIDENTIFIED SPEAKER · UNKNOWN
+### DAN FIELDING · PROVISIONAL
 
     Your Honor...
 
@@ -599,7 +619,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     It'll cost you 50 bucks.
 
 
-### UNIDENTIFIED SPEAKER · UNKNOWN
+### LANA WAGNER · PROVISIONAL
 
     What was the fine?
 
@@ -609,7 +629,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Fifty bucks, hon.
 
 
-### UNIDENTIFIED SPEAKER · UNKNOWN
+### LANA WAGNER · PROVISIONAL
 
     Thank you. Here's the file.
 
@@ -645,6 +665,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     We'll talk later.
 
+
+
+*The courtroom is congested around the rail: several adults crowd toward a seated adult while a dark-uniformed figure stands over the group.* `[PIC-16]` (original-film still 025, nominal 441.0s)
 
 ### PHIL KERR · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -735,6 +758,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     What?
 
+
+
+*Near the raised bench, the robed figure leans close to the lavender-jacketed person's head and lifts a hand toward the person's hair, while the lavender-clad figure bends toward the desktop.* `[PIC-17]` (original-film still 028, nominal 495.0s)
 
 ### HARRY STONE · PROVISIONAL
 
@@ -995,6 +1021,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Maybe, just maybe, it'll work.
 
 
+
+*In the office, a person in a charcoal sleeveless, visibly ragged-looking vest stands by a person wearing dark red or rust clothing, opposite the lavender-suited adult.* `[PIC-18]` (original-film still 039, nominal 693.0s)
+
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
     Then again, maybe someday pigs will fly.
@@ -1058,6 +1087,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     You're a tarantula!
 
+
+
+*In the busy courtroom, a tall dark-uniformed person holds both arms out across the space between several arguing adults near the rail.* `[PIC-19]` (original-film still 042, nominal 747.0s)
 
 ### LOUISE KERR · PROVISIONAL
 
@@ -1160,6 +1192,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     who think I'm crazy.
 
 
+
+*At the judge's bench, a robed figure sprawls in the high-backed chair, with one foot stretched onto the bench edge and an arm lifted in an expansive gesture beside the desk water glass.* `[PIC-20]` (original-film still 047, nominal 837.0s)
+
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
     Well, frankly...
@@ -1181,7 +1216,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Why, it's a coin.
 
 
-*Beside the raised bench, the robed figure reaches toward the area by the lavender-jacketed person's head, then holds up a small pale round object. The other person leans over the desk as the robed figure gestures.* `[PIC-08]`
+*At the bench, the robed figure reaches beside the lavender-clad figure's ear, withdraws his hand and raises a small pale disk between his fingers. The lavender-clad figure moves closer, lays a hand along his shoulder and leans across the desk as he keeps the disk aloft.* `[PIC-08]`
 
 
 ### LANA WAGNER · PROVISIONAL
@@ -1236,12 +1271,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     
 
 
-### UNIDENTIFIED SPEAKER · UNKNOWN
+### PHIL KERR · DISPLAY CONTINUATION, UNVERIFIED
 
     - Yeah.
-
-
-### PHIL KERR · PROVISIONAL
 
     Well, there were some okay times.
 
@@ -1294,6 +1326,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Heads again. It's your lucky day.
 
 
+
+*In the courtroom audience area, a red-clad woman smiles while a robed adult occupies the edge of the courtroom rail close beside her.* `[PIC-21]` (original-film still 052, nominal 927.0s)
+
 ### CARLA BOUVIER · PROVISIONAL
 
     Could be yours too.
@@ -1319,6 +1354,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     What?
 
+
+
+*A person in a dark sleeveless vest with a pale torn-looking cloth protruding from the arm opening faces a robed figure at the courtroom rail; other spectators sit behind.* `[PIC-22]` (original-film still 053, nominal 945.0s)
 
 ### HARRY STONE · PROVISIONAL
 
@@ -1498,7 +1536,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Your Honor...
 
 
-*At the judicial bench, a robed figure manipulates a small pale circular object as views alternate with a woman in a dark red cardigan and a broad-built man wearing a yellow top beneath a blue jacket.* `[PIC-09]`
+*The scene alternates between a red-cardigan wearer at the gallery, a broad-built blue-jacketed person in a yellow top, and a robed figure at the bench. The robed figure changes the position of a raised pale disk while gesturing. The blue-jacketed person bends sharply forward near the rail, while the red-clad figure leans across a desk before straightening.* `[PIC-09]`
 
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
@@ -1557,6 +1595,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     when you came in.
 
 
+
+*A towering dark-uniformed adult and a much shorter dark-uniformed adult stand side by side by the courtroom bookcase; the shorter figure tilts the head and smiles.* `[PIC-23]` (original-film still 065, nominal 1161.0s)
+
 ### SELMA HACKER · PROVISIONAL
 
     I had a husband just like that.
@@ -1611,6 +1652,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     to the bench?
 
 
+
+*Near the judicial bench, a robed adult leans an arm across the shoulder of another adult wearing a sleeveless grey garment and loosened neckwear; the courtroom audience is in the background.* `[PIC-24]` (original-film still 068, nominal 1215.0s)
+
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
     You know, Dan, that's a funny story.
@@ -1654,7 +1698,7 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
     Pass it on.
 
 
-*The courtroom benches are almost empty. Behind the raised desk, a casually dressed man reclines low in the judge's chair with an arm raised. A lavender-clad person approaches through the courtroom doorway carrying a folder.* `[PIC-10]`
+*The camera view crosses near-empty courtroom benches toward the raised judge's desk, where a casually dressed figure reclines low in the chair with an arm up. A lavender-clad person enters through the courtroom double doors holding a brown folder and proceeds toward the bench.* `[PIC-10]`
 
 
 ### LANA WAGNER · PROVISIONAL
@@ -1666,6 +1710,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Your Honor.
 
+
+
+*In the near-empty late courtroom, a casually dressed man in a light-grey crewneck sweater reclines against the bench with his chin tipped upward while the lavender-suited adult faces him.* `[PIC-25]` (original-film still 073, nominal 1305.0s)
 
 ### HARRY STONE · PROVISIONAL
 
@@ -1707,6 +1754,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Yeah, we noticed.
 
+
+
+*A grey-sweatered man braces both hands against the courtroom desk with his body leaning forward; the lavender-suited adult faces him from across the desk.* `[PIC-26]` (original-film still 075, nominal 1341.0s)
 
 ### HARRY STONE · DISPLAY CONTINUATION, UNVERIFIED
 
@@ -1755,6 +1805,9 @@ Original caption source SHA-256: aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665
 
     Good night.
 
+
+
+*Late in the near-empty courtroom, the lavender-suited adult stands between benches with one hand extending outward; the bench, flag and chairs recede behind.* `[PIC-27]` (original-film still 077, nominal 1377.0s)
 
 ### LANA WAGNER · PROVISIONAL
 

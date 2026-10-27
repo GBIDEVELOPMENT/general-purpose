@@ -1,60 +1,60 @@
-# Night Court (1984–1992) • S09E19: “P.S. Do I Know You?”
+# Night Court (1984–1992), S09E19: P.S. Do I Know You?
 
-**Editorial v17 complete source-dialogue reader. Not final audiovisual-certified screenplay.** Every original untimed speaking unit is represented. Speaker roles, voice breaks and display continuations remain provisional; section headings reconstruct dialogue story beats and are not verified camera cuts. No original transcript timestamps have been created.
+**Editorial v19, entire source-dialogue working screenplay.** Original filmed voices, performed speech boundaries, delivery and blocking are **not independently audiovisual-certified**. The entire 1992 dialogue witness is untimed; no original cue timestamps are invented. Some display joins of unidentified voices are contextual hypotheses only, including three newly examined source continuations. The separately credited actor **The Guy** plays Alex, while the real pen pal **Alex Patterson** remains a distinct character.
 
-Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2`. Source: the durable private v16 reader, edited reversibly through the episode-local v17 amendment ledger. **347 source units, 323 editorial reading blocks, 271 fully provisionally named source units, 76 units containing UNKNOWN speech.**
+Original 347-unit untimed dialogue SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2`. The v18 editorial layer remains intact, and reversible anonymous turn amendments are in `S09E19-v19-source-exact-P0-ledger.json`. **323 editorial reading blocks; 273 fully provisionally named source units; 74 with unidentified speech.**
 
-## Sequence 1: Campaign preparations and the pen-pal letters
+## Sequence 1: Campaign preparation and correspondence
 
-*Editorial location/plot inference:* Dialogue establishes Christine's advertising and Roz's long-distance correspondent; exact cuts are unverified.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Christine's congressional mailing and Roz's pen-pal letters circulate through the courthouse.
 
-**UNIDENTIFIED VOICE** (unresolved)
+*Checked original-picture reference (1/11):* Source-picture context, frames 001–007: a bright diner/coffee-counter setting with purple outerwear, navy uniforms and table condiments. The exact dialogue spoken at each sampled image is unverified.
+
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Ah, well, that does it. 2,000 Sullivan for Congress flyers ready to fly.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (same anonymous voice proposed, unverified)
 
     No problem.
 
-**UNIDENTIFIED VOICE** (unresolved)
-
     We love monotonous, servile labor.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Dan, you're supposed to be licking this envelope.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     I sprained my tongue.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     There's a campaign commercial coming along.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Well, it's going out to the television stations tonight, and I must say, Matt did a good job directing it.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Really? I thought you said he went way over budget.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Well, at first. But after I threw out the original musical score and mixed the underwater dream sequence, we were left with a pretty fascinating 30 seconds.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     So what's in it?
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Me talking?
 
     For 30 whole seconds?
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Hope you were naked.
 
@@ -62,103 +62,103 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     Humor in uniform?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     No, that's what I'm looking at.
 
     This is a letter from my pen pal.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Is it a he-pal or a she-pal?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     A he-pal, and his name is Alex.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Oh, how delicious.
 
     Two lonely scribes penning explicit boudoir details accompanied by how-to photos?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     It's nothing like that.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Then why waste the stamp?
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     So, how'd you start writing?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Well, Alex had my apartment before I moved in. But when he moved to California, his mail kept coming.
 
     So I sent him a note telling him if he didn't do something about it, the next package he'd get from me would explode in his face.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     How charming.
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     I guess I did charm him. Because the next thing I know, he started writing to
 
     me.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Wow, what a great story.
 
-**BULL SHANNON**
+**BULL SHANNON** (provisional)
 
     I had a pen pal once.
 
     But we had to stop writing.
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     How come?
 
-**BULL SHANNON**
+**BULL SHANNON** (provisional)
 
     You couldn't find the time once he became vice president.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     $55 in time, sir.
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     What's next, Mac?
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Last case of the night, sir. Files on its way.
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Got a stamp?
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Sure. Birth of the world or salute to the cotton gin.
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     I don't care.
 
     I just want to send this letter off to Alex.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Do you two ever run out of things to say?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     No, not yet.
 
@@ -168,41 +168,43 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     A real joie de vivre.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**CHRISTINE SULLIVAN** (provisional)
 
     What does he do?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     He's a nut salesman from Fresno.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Why can't I ever meet a professional?
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     When are you going to finally meet?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Never, I hope.
 
     I'm afraid if I ever met Alex, it would take all the fun out of the fantasy.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Yeah, I feel the same way about Lamb Chop.
 
-## Sequence 2: Fingers Kirby before the court
+## Sequence 2: Courtroom: Fingers Kirby's minibars
 
-*Editorial location/plot inference:* The defendant disputes the hotel's expensive minibar charges; a courthouse set is independently visible in sampled source frames.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* The judge hears the hotel's honor-bar case and the staff discusses the campaign ad's schedule.
 
-**MAC ROBINSON**
+*Checked original-picture reference (2/11):* Source-picture context, frames 008–016: courtroom bench, desks and rails; a bright yellow jacket, navy uniform, purple outerwear, tan suit and case papers are visible in separate stills.
+
+**MAC ROBINSON** (provisional)
 
     Yes, sir. People versus Fingers Kirby.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Prosecution? Yes, sir. Fingers was fingered at a downtown hotel after he
 
@@ -210,99 +212,101 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     bars.
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     How dishonorable of you.
 
-**FINGERS KIRBY**
+**FINGERS KIRBY** (provisional)
 
     Come on, they charge 18 bucks for a club soda. You should see what they get for a tin of beef jerky.
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     Defense.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     I believe beef jerky runs about $22.
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     Wow, that is a crime.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Unfortunately, it's not the one we're discussing here.
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     I'll hold this over for trial, and good night, folks.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Hey, everybody, don't forget my campaign ad is on tonight. Well, not exactly tonight. More like tomorrow morning.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Early.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     How early?
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     4.16 a.m.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     At that time of the morning, the only thing I'm going to be watching is the inside of my eyelids.
 
-**BULL SHANNON**
+**BULL SHANNON** (provisional)
 
     Oh, what channel is that on?
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Hey, hey, hey. It's a great time slot.
 
     Christine's commercial airs between I'll Miss Brooks and that show that stars that vegetable juicer.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     You know, you guys can set your VCRs for my debut. I don't expect you to stay up.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     I've got a date with my favorite stewardess, Patina. If I pace myself, I should still be up.
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     I think you're going to be very impressed with this commercial. With my artistic eye and brilliant execution, I am confident that this spot is going to put Christine Sullivan on everybody's lips.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Don't, Dan.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Hey,
 
     hey, do you want to go to dinner with me? My stewardess can't get back from Chicago. She's got a layover, which means that I won't.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Sure, I'll go.
 
-## Sequence 3: Harry's books and Judge Grimm's safe
+## Sequence 3: Book-lined office: the hidden safe
 
-*Editorial location/plot inference:* A book-lined office appears in the original still survey; Harry and Dan find the concealed safe. The movement of the discovery remains unverified.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Harry and Dan discover a safe, while a visitor named Paul recounts Judge Grimm's purported blackmail.
 
-**DAN FIELDING**
+*Checked original-picture reference (3/11):* Source-picture context, frames 017–024: law-book-lined office and large wood desk, with tan patterned tie and reddish-brown jacket on separate adults; a navy-uniformed adult appears in a doorway. No opening action or speaker is synchronized.
+
+**DAN FIELDING** (provisional)
 
     What you doing?
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     Oh, I'm just looking through some of these old legal texts.
 
@@ -312,33 +316,33 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     This is a dry subject.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Wow.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Whoa.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Look at that. A safe? How did you do that?
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     I don't know. Must have been this book.
 
     Yeah, there's a hidden trigger back there.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Hold on a second. You mean you didn't know that was there?
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     No, I've never seen it.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Wow.
 
@@ -346,145 +350,141 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     I wonder what's in it.
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     This is not a sandbox. It's my office.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Finders, keep doing what we both saw. Oh, what are we doing?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Probably nothing in there but dust. I'm sure whoever had that safe cleared it out before he left the office.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Probably right.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     I bet you nobody even knows it's there.
 
-**PAUL**
+**PAUL** (provisional)
 
     Hey, you found Judge Grimm's old safe.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     You knew about this book?
 
-**PAUL**
+**PAUL** (provisional)
 
     Sure. Rumor has it the old judge was on a take to the tune of millions.
 
     lucrative blackmail business.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Oh.
 
-**PAUL**
+**PAUL** (provisional)
 
     He supposedly had the goods on all the rich and famous of the time.
 
     Celebrities, politicians, even Houdini.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Oh.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (same anonymous voice proposed, unverified)
 
     Well, then there's probably nothing in there except some old photos and
 
-**UNIDENTIFIED VOICE** (unresolved)
-
     letters.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Yeah, probably.
 
-**PAUL**
+**PAUL** (provisional)
 
     Well, good night.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Night, Paul.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Night, Paul. See ya.
 
-## Sequence 4: Campaign reactions and concealment plans
+## Sequence 4: Campaign response and safe plans
 
-*Editorial location/plot inference:* The television spot inspires voters while the safe tempts Harry and Dan. Dialogue-derived transitions may conceal additional shot changes.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Christine learns about the ad's reception as Harry and Dan devise ways into the safe.
 
-**HARRIET**
+*Checked original-picture reference (4/11):* Source-picture context, frames 025–029: return to the crowded diner tables, cups, napkin holders and condiment bottles; colorful burgundy/mustard garments and a navy uniform appear in separate views.
+
+**HARRIET** (provisional)
 
     If there was ever any doubt about my vote, it was erased last night.
 
     Christine Sullivan must be elected to Congress. Mac, your commercial inspired me.
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Well, thanks, Harriet. Hey, never underestimate the power of advertising.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (same anonymous voice proposed, unverified)
 
     I'll say.
 
-**UNIDENTIFIED VOICE** (unresolved)
-
     I taped the wrong commercial, Norm's Auto World.
-
-**UNIDENTIFIED VOICE** (unresolved)
 
     Now I'm the proud owner of a lime green Pacer.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Mac, the commercial is doing wonders. My headquarters has been flooded with new volunteers and pledges of support.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Good for you, Christine. I thought that commercial was great.
 
-**BULL SHANNON**
+**BULL SHANNON** (provisional)
 
     Christine, your commercial inspired me so much, I'm pledging my entire piggy bank to your campaign.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Oh, thank you. I just wouldn't feel right about taking your savings.
 
     And besides, it takes a sizable amount to keep a campaign running.
 
-**BULL SHANNON**
+**BULL SHANNON** (provisional)
 
     Okay, I guess you're right.
 
     My measly $40,000 probably wouldn't make a dent.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     the title producer grab you?
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     Gee, Dan, got a leak?
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Beg your pardon?
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     The tools.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Oh, no, no.
 
@@ -492,43 +492,45 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     And I'm going to help him pull it. Come along, Harry.
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     Yeah, thanks, Dan.
 
     Oh, you know, my mother used to pull my loose teeth by tying a string around it and attaching the other end to the ceiling fan at Woolworth's.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     work, we'll try that.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Yeah.
 
-## Sequence 5: Roz's reluctant meeting
+## Sequence 5: Roz's anxiety about meeting Alex
 
-*Editorial location/plot inference:* Roz confesses she exaggerated her letters; Christine offers advice. The location and gestures need source-video review.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Roz confesses exaggerations and is urged to follow through.
 
-**CHRISTINE SULLIVAN**
+*Checked original-picture reference (5/11):* Source-picture context, frames 030–038: desk and courtroom furniture, stacks of paper, a dark navy uniform and a burgundy patterned outfit with bright yellow collar. Sparse images show standing/leaning postures, not their complete gestures.
+
+**CHRISTINE SULLIVAN** (provisional)
 
     Who have you been?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Checking my phone machine.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Any interesting calls?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Just one.
 
     Alec. He's in town and he wants to meet me after work.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Oh, Ross!
 
@@ -536,33 +538,33 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     That's great.
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Yeah.
 
     Great.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     That's a wrap.
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Now, look, this computer program will show us all the possible combinations to
 
     the... You know what? Come on.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     If this doesn't work, I've got dynamite.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     What are you
 
     doing?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     I'm painting the Sistine Chapel.
 
@@ -570,7 +572,7 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     In fact, as soon as I finish waxing these floors, I'm gonna go chew out the head janitor well into the night.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     You're stalling.
 
@@ -578,37 +580,37 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     surprises.
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Are there?
 
     Well, thinking back, I suppose there have been a couple of times when maybe some of the things I said about myself were slightly embellished.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Such as?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     I'm a classical music buff.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     That's easy.
 
     If he mentions Mozart, just say, love that third movement.
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     I also said I was a figure skater.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Skate? With Holiday on Ice.
 
     Anything else?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Oh, yeah.
 
@@ -618,35 +620,37 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     meet i just got carried away
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     oh roz there are worse things i can't think of any at the moment but there are
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     i can't face him now i lied to him
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     i think you're missing a really great opportunity roz
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     yeah i really would like to get a look at him
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     there's only one way to do that you gotta go
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Or you gotta go.
 
-## Sequence 6: Fingers Kirby and the campaign backlash
+## Sequence 6: Courthouse interruptions and advertisement backlash
 
-*Editorial location/plot inference:* The lock-picking predicament intersects with Christine's changing polls and the controversy over Mac's advertisement.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Fingers Kirby's lockpicking and Christine's changing polling numbers interrupt the plans.
 
-**BULL SHANNON**
+*Checked original-picture reference (6/11):* Source-picture context, frames 039–045: a glowing line on the floor in a sparking insert and return to a book-lined office. A separately checked 5fps sequence shows an adult later approaching the spark and bending over it, rather than retreating.
+
+**BULL SHANNON** (provisional)
 
     on her, but we're having a tough time keeping fingers Kirby and holding.
 
@@ -654,37 +658,37 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     Any suggestions?
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     Yeah, Bull, why don't you bring him up here?
 
     We can probably find something for him to do.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     about my commercial. Something is wrong.
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Nothing is wrong, Christine.
 
     Ever since the spot ad, you're up in the polls with male voters 18 to 45.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Yes, but I'm losing support fast with the female constituency.
 
     The Sisters of the Flag canceled my speech and the Amish Girls Club of Manhattan just called off their fundraising quilting bee.
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Well, I don't know how you can blame that on my commercial.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Well... thing is very unsettling.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     No, this whole thing is really boring.
 
@@ -692,93 +696,93 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     from.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     That's right, I mean, voters are very fickle.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Maybe those mean old Amish girls are jealous of you.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     I don't think so.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Well, that outfit really showed off your figure.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Oh, that's fine. Fine!
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Five days of shooting, 20 locations, a brilliant script, and all it comes down to is TNA.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     A technique in attitude.
 
-## Sequence 7: Restaurant: the hired substitutes
+## Sequence 7: Restaurant: professional stand-ins
 
-*Editorial location/plot inference:* The man credited as The Guy performs as Alex, while Lisette Hocheiser performs as Roz. Actual Alex and Roz must remain distinct from both actors.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* The Guy impersonates Alex opposite Lisette impersonating Roz, while unidentified onlookers observe.
 
-**THE GUY (PLAYING ALEX)**
+*Checked original-picture reference (7/11):* Source-picture context, frames 046–049: warm, dim restaurant/bar with drinks and densely occupied tables, a burgundy outfit, bearded dark-suited diner, navy uniform and vest-wearing service person in separate stills.
+
+**THE GUY (PLAYING ALEX)** (provisional)
 
     I have to admit, I was filled with trepidation about meeting you. I didn't know what to expect, but you are everything I imagined and more, Roz.
 
-**LISETTE HOCHEISER (PLAYING ROZ)**
+**LISETTE HOCHEISER (PLAYING ROZ)** (provisional)
 
     You're not so bad yourself.
 
     Alex.
 
-**WAITER**
+**WAITER** (provisional)
 
     Wine?
 
-**THE GUY (PLAYING ALEX)**
+**THE GUY (PLAYING ALEX)** (provisional)
 
     No, I always talk like this.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     He just looks like someone I'm supposed to be.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     I mean, no, I've never seen her before.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Oh, the tangled web I weave.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Excuse me. I can't see all the fun I'm having.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Move it.
 
-**THE GUY (PLAYING ALEX)**
+**THE GUY (PLAYING ALEX)** (provisional)
 
     So, tell me all about that fabulous art collection of yours.
 
-**LISETTE HOCHEISER (PLAYING ROZ)**
+**LISETTE HOCHEISER (PLAYING ROZ)** (provisional)
 
     Gee, it's so big I don't know where to start.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**THE GUY (PLAYING ALEX)** (provisional)
 
     Well...
 
-**THE GUY (PLAYING ALEX)**
-
     Why don't you start with the 18th century neoclassics you picked up on your last trip to Florence?
 
-**LISETTE HOCHEISER (PLAYING ROZ)**
+**LISETTE HOCHEISER (PLAYING ROZ)** (provisional)
 
     Oh, yeah.
 
@@ -786,59 +790,55 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     I think I'll have some more wine.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (same anonymous voice proposed, unverified)
 
     You know, I see a lot of couples in here.
 
-**UNIDENTIFIED VOICE** (unresolved)
-
     I think those two got chemistry.
-
-**UNIDENTIFIED VOICE** (unresolved)
 
     I predict a hot night ahead for them.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (same anonymous voice proposed, unverified)
 
     You're right.
 
-**UNIDENTIFIED VOICE** (unresolved)
-
     Arson is a possibility.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Anyway, they're all wrong for you. each other.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     I think they make a cute couple.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Who asked you?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Hey, five bucks so they leave here together.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     I'll take that bet.
 
-## Sequence 8: Restaurant: art talk, dancing and the wager
+## Sequence 8: Restaurant: art, dance and wagers
 
-*Editorial location/plot inference:* The original sampled restaurant sequence shows a dancing couple and a busy floor, but cannot on its own identify the two people or synchronize a cue.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* The hired couple dance and observers keep betting on their chances.
 
-**LISETTE HOCHEISER (PLAYING ROZ)**
+*Checked original-picture reference (8/11):* Source-picture context, frames 050–055: dark wood bar with a server's counter, small round tables and a close-dancing pair in burgundy and dark suit amid other patrons. Their actual voice roles are not certified by picture.
+
+**LISETTE HOCHEISER (PLAYING ROZ)** (provisional)
 
     And then there's that, um, uh, glue painting I have. You know, the one that was painted by the artist that was named after the Ninja Turtle?
 
-**THE GUY (PLAYING ALEX)**
+**THE GUY (PLAYING ALEX)** (provisional)
 
     Raphael? How did you get one of those? They go for millions.
 
-**LISETTE HOCHEISER (PLAYING ROZ)**
+**LISETTE HOCHEISER (PLAYING ROZ)** (provisional)
 
     Sold my Rembrandt.
 
@@ -848,85 +848,83 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     How's the weather in Fresca?
 
-**THE GUY (PLAYING ALEX)**
+**THE GUY (PLAYING ALEX)** (provisional)
 
     That's Fresno.
 
     Why don't we forget the talking? Let's dance.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     They're dancing.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     No, they say a good dance is a prelude to, uh... A bar brawl.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Wow.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Wow, back.
 
-**THE GUY (PLAYING ALEX)**
+**THE GUY (PLAYING ALEX)** (provisional)
 
     You know, Rod, the night is still young. Why don't you show me the town?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Wow, again.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     What is going on?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     You're having a great time. Good night.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (same anonymous voice proposed, unverified)
 
     You win.
 
-**UNIDENTIFIED VOICE** (unresolved)
-
     I lose.
-
-**UNIDENTIFIED VOICE** (unresolved)
 
     As usual.
 
-## Sequence 9: The real pen pals meet
+## Sequence 9: Real Alex and Roz at the bar
 
-*Editorial location/plot inference:* Real Roz and Alex quarrel about the actors hired to represent them; the pronoun farce contains unresolved short voice switches.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* The actual correspondents question their paid substitutes, reveal themselves and reconcile.
 
-**ROZ RUSSELL**
+*Checked original-picture reference (9/11):* Source-picture context, frames 056–065: bar counter, a navy uniform, a gray suit and glasses, vest-wearing server, drinking vessels and a snack bowl; no sampled still proves the handback of money or who complains about nuts.
+
+**ROZ RUSSELL** (provisional)
 
     You ever make a huge mistake you knew you were going to end up regretting every minute for the rest of your life?
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     Yeah. I bought stock in Earthshoes.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     it this way. The air is human, right?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Here. Here's your five dollars.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     No. It's yours. You want it.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     No, really. You keep it.
 
-**BARTENDER**
+**BARTENDER** (provisional)
 
     I'll tell you what.
 
@@ -934,23 +932,23 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     What do you say?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Got no better place to go.
 
-**BARTENDER**
+**BARTENDER** (provisional)
 
     And the snacks are free. 
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     Yeah, but they're not fresh.
 
-**BARTENDER**
+**BARTENDER** (provisional)
 
     Sure they are.
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     Give me a break. These nuts have been out of the can for two days.
 
@@ -958,69 +956,69 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     When it comes to nuts, I'm an expert.
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     We haven't been introduced.
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     I'm Alex Patterson from Fresno, California.
 
     And you are...
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Out of here.
 
-**BARTENDER**
+**BARTENDER** (provisional)
 
     Hey, nut man.
 
     See what you get for busting my chops?
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     Who was she?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     First you tell me. Who was he?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     He. Who?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     He.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Was she?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     He. 
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     He was me.
 
     Was she you?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     She was me.
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     So, that was us.
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Cheapened our whole relationship.
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     Cheapened? I paid $400 for that actor.
 
@@ -1028,7 +1026,7 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     Mind if I sit down?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     It's a good idea.
 
@@ -1036,156 +1034,173 @@ Original untimed source SHA-256: `659beb9c50fabdd1028aac9570999d9a16b36e6d582938
 
     I don't know what to say except I'm sorry.
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     Me too, Roz.
 
     So, what did you think of my chiseled features?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     Very studly.
 
     How'd you like my perfect size three?
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     You look great.
 
     Listen, now that we don't have to, would you like to have dinner with me tonight?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     I'd love that.
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     Let's go.
 
     How about Thai food?
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     I hate Thai.
 
-**ALEX PATTERSON**
+**ALEX PATTERSON** (provisional)
 
     But in your letters you said you loved it.
 
-**ROZ RUSSELL**
+**ROZ RUSSELL** (provisional)
 
     What can I tell you?
 
     I lied.
 
-## Sequence 10: The campaign advertisement's hidden problem
+## Sequence 10: Commercial revelation
 
-*Editorial location/plot inference:* Mac explains why viewers are reacting unexpectedly; the dialogue describes reused footage without establishing frame timing.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Mac explains the unexpectedly suggestive fragments in Christine's campaign spot.
 
-**CHRISTINE SULLIVAN**
+*Checked original-picture reference (10/11):* Source-picture context, frames 066–069: cream-colored corridor and office doorway, structured red-orange jacket, patterned outerwear with a round badge and pale jacket on different adults. The moving reactions remain uncertified.
+
+**CHRISTINE SULLIVAN** (provisional)
 
     Mac, she hates me. I don't get it.
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     I do.
 
     Look, I spoke to the guy who duplicated your commercial, and I think it explains the strange reaction you've been getting.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     What is it?
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Well, you see, to save money, I bought some used...
 
     Apparently, it hadn't been erased properly because some of the original stuff bled through. You know, a frame here and there, kind of subliminal.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     Uh-oh.
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Yeah, you've been sharing our time with Candy Goodlove, the star of Beauty and the Priest.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     This is so humiliating. We've got to get those commercials off the air.
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     Look, it's already been done. It's no big deal. I'm sure it's already a thing of the past.
 
-**CHRISTINE SULLIVAN**
+**CHRISTINE SULLIVAN** (provisional)
 
     I hope you're right.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Hey, Christine Sullivan, I'm voting for you.
 
-**MAC ROBINSON**
+**MAC ROBINSON** (provisional)
 
     See?
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     That's an interesting place for a bumper sticker.
 
-## Sequence 11: The safe's anticlimax
+## Sequence 11: Harry and Dan's safe pays off
 
-*Editorial location/plot inference:* Harry and Dan negotiate over the imaginary riches; source words culminate in a turkey sandwich, while the exact filmed reveal and reactions await continuous footage.
+*Story and location inferred from dialogue, not verified as an exact original-film scene cut:* Their inventory fantasies end with a sandwich.
 
-**DAN FIELDING**
+*Checked original-picture reference (11/11):* Source-picture context, frames 070–072: final bookcase/office scene with multiple suited adults and papers or a pale object; sampled images alone cannot settle the exact prop reveal or who speaks each cry.
+
+**DAN FIELDING** (provisional)
 
     All right, if it's cash, the straight 50-50 split.
 
-**HARRY STONE**
+**HARRY STONE** (provisional)
 
     Right. I get all Houdini-related memorabilia, and you get any compromising blackmail photos and documents.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     Deal, deal.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Well, that's stocks and bonds.
 
-**DAN FIELDING**
+**DAN FIELDING** (provisional)
 
     I'll take my cut liquid acids. I've already had some knocks in the market this year.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Just open it.
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Oh! Yes! Yes!
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Oh!
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Look at that!
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     Look at that!
 
-**UNIDENTIFIED VOICE** (unresolved)
+**UNIDENTIFIED SPEAKER** (unresolved)
 
     It's a turkey sandwich.
 
+
 ---
 
-### Provenance and acceptance boundaries
+## Separately retained original-source picture observations
 
-This is a dialogue-complete **editorial working screenplay**, not an independently AV-certified final screenplay. In particular, the C188–C192 transcribed sentence run is malformed, C271 and C289–C291 preserve unresolved performer handoffs, and the opening fragment of C291 remains UNKNOWN while its remainder preserves the earlier Alex hypothesis. C129 remains quarantined. All changes have direct v16 block identities and original source-part references in the companion JSONL; adjacent same-character display groups are not validated single performed turns.
+These observations refer to original-video still sequences already retained under `derived/source-photo-scene-overview-v1` and `derived/physical-motion-original-v1`. The image times are nominal *video* sampling offsets, **not** synchronized timestamps for the 347 untimed text paragraphs, and performers in the sampled scenes are not independently identified by voice.
 
-Original moving-image evidence already retained elsewhere includes a sampled 5fps sparking-floor incident at nominal 684–704 seconds and a restaurant dance at 951–971 seconds, plus sparse whole-episode thumbnail observations. Those times are **video retrieval offsets only**, not original transcript timestamps; sampled frames do not establish the identity, timing or continuous direction of each action. No new emotion, clothing, gesture, performer identity or synchronized stage action is invented in this edition.
+- An original sampled courtroom view shows an adult at the bench among court desks, and another sampled view shows the law-book-lined office where the safe subplot is situated.
+- At approximately **684–704 seconds in the original video**, a reviewed 5fps still sequence depicts a thin dark length on the floor producing sparks and smoke. Two suited adults shelter behind a wooden partition as smoke spreads. Later sampled frames show a foreground adult moving **toward** the still-sparking floor line and bending close to it, while another adult remains nearby and a third person is visible farther back by a doorway. Earlier prose describing a retreat is contradicted by the recovered ordered frames. Neither the igniter nor the exact purpose of the approaching movement is established.
+- Restaurant/bar thumbnails show a crowded interior and guests around tables. In a reviewed **951–971-second original-video sampled sequence**, a woman in a burgundy dress and a tall man in a dark suit sway and turn together on the busy dance floor. Their characters and exact dialogue positions are not established by the images.
+- Later sampled frames return to a book-lined interior where people gather near the safe subplot's resolution, without validating each action's actual continuous timing.
+
+**Source-linked word and role exceptions:** C129 remains an acoustic-model quarantine; C188–C192 retain damaged transcribed multi-voice fragments; C271 and C289–C291 have uncertain performed speaker switches, with the first C291 “He.” explicitly unidentified; C305 belongs to Roz and C306 to Alex in the contextual correction; C343–C347 have unidentified safe-reaction voices. All unchanged source words and punctuation are preserved, even when the witness appears inaccurate.
+
+**Direct source-still re-review, 2026-10-26:** The original SHA-indexed 5fps video-image artifact was recovered and all 200 retained source JPEG checksums verified, along with four contact-sheet hashes. The versioned, image-backed direction correction is in `S09E19-direct-original-frame-review-v18.json`. At the floor spark, source frames 078–100 show an adult approaching and bending toward the glowing object, not retreating from it. No original continuous video was played and no actual actor identity or soundtrack voice was verified.
+
+**Picture evidence version:** The full-episode image register `S09E19-whole-episode-original-still-review-v18.json` directly checks the retained original source-frame archive (73/73 JPEG hashes and 4/4 contact sheet hashes). The source images are 18 seconds apart and have no synchronized original transcript timings. These contextual notes add clothing, props and sets only at evidence-supported resolution, not voice or full-motion certification.
+
+
+**Fresh direct source-still verification:** The exact original-source 15:00–15:25 video-image packet from [source review run #40054491519](https://github.com/gamesbyian/general-purpose/actions/runs/40054491519), artifact #12544518469, has been freshly retrieved and checked against its source index: **100/100 JPEG hashes and 1/1 contact-sheet hash match**. In sampled frames 001–053, a dark-uniformed adult and gray-jacketed adult converse beside a counter with an adult in a service vest behind them; one raises hands near chest level during the exchange. Frames 054–079 then show a curly-haired burgundy-clad adult with a striking yellow collar seated at a table and gesturing repeatedly around their face and chest beside a glass. Frames 080–100 show a bearded adult wearing a jacket, patterned tie and collared shirt, smiling during a separate close view. Changes between sampled frames **053→054** and **079→080** suggest separate camera views. These nominal video offsets are not timestamps for the *untimed* subtitle paragraphs and prove neither voices nor all continuous gestures. The exact record is `S09E19-v19-direct-900-925-frame-review.json`.

@@ -1,21 +1,21 @@
 {
-  "current_editorial_reader_sha256": "88aee05506d7b85c23f61b767180d8a5a8e2466d044885e6f7815f13bb2205be",
+  "current_editorial_reader_sha256": "d3b098f9b1dba56f3ce6220648a238bffe46043729393f63ad43c07aed2a2da4",
   "episode_editorial_integrations": {
-    "S01E01": "Agent1-v18",
-    "S09E19": "Agent2-v17"
+    "S01E01": "Agent1-v22",
+    "S09E19": "Agent2-v19"
   },
   "episodes": {
     "S01E01": {
-      "display_groups": 276,
-      "display_joins_unverified": 129,
+      "display_groups": 275,
+      "display_joins_unverified": 130,
       "full_original_audio_video_accepted": false,
       "original_caption_timed": true,
       "source_blocks": 405,
       "source_units": 404
     },
     "S09E19": {
-      "display_groups": 244,
-      "display_joins_unverified": 79,
+      "display_groups": 234,
+      "display_joins_unverified": 89,
       "full_original_audio_video_accepted": false,
       "original_caption_timed": false,
       "source_blocks": 323,
@@ -23,8 +23,8 @@
     }
   },
   "manuscript_sha256": {
-    "S01E01": "c430ad3da4d60d08079d617b53bb4c50e1e1338b1634903bb3ee49283a53fcf5",
-    "S09E19": "08ee82aae51280a84346109b43ad26ccef7fcc61e1b32594303d4805e864a88c"
+    "S01E01": "85ff8bfb7408b8ddf731bf21980724ff913973cef7bbcd9eb094506fd41fd5c5",
+    "S09E19": "da9ed43ff498d46471248c33cc56c16602149afc2989223825f735ea4ced2f5a"
   },
   "new_independently_verified_actor_voices": 0,
   "new_independently_verified_performed_turns": 0,
@@ -34,9 +34,9 @@
   "source_manual_v16_patch_sha256": "8173ee45d69d123538676f7900cde71330a0e97f636594c29766d6ef165e0ea1",
   "source_manual_v16_reader_sha256": "57dda29307fd9856661a48407f1bd83b6c5ed709fa66ff81f52fab3e63cdf363",
   "source_unit_counts": {
-    "named_provisional": 655,
+    "named_provisional": 663,
     "original_source_units": 751,
-    "unknown": 96
+    "unknown": 88
   },
   "source_v15_reader_sha256": "fc5ce79022622763d9b6d7e0a93e1b3f65fcb4f5a0b1e9bc1a981aafd3fcfc38"
 }

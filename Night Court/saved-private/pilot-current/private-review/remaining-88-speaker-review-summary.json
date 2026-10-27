@@ -1,6 +1,6 @@
 {
-  "actual_audio_window_leads": 20,
-  "current_editorial_reader_sha256": "88aee05506d7b85c23f61b767180d8a5a8e2466d044885e6f7815f13bb2205be",
+  "actual_audio_window_leads": 14,
+  "current_editorial_reader_sha256": "d3b098f9b1dba56f3ce6220648a238bffe46043729393f63ad43c07aed2a2da4",
   "largest_contiguous_unknown_original_source_runs": {
     "S01E01": [
       {
@@ -14,18 +14,8 @@
         "unknown_source_units": 3
       },
       {
-        "end_source_cue": 11,
-        "start_source_cue": 10,
-        "unknown_source_units": 2
-      },
-      {
         "end_source_cue": 61,
         "start_source_cue": 61,
-        "unknown_source_units": 2
-      },
-      {
-        "end_source_cue": 103,
-        "start_source_cue": 102,
         "unknown_source_units": 2
       },
       {
@@ -44,13 +34,13 @@
         "unknown_source_units": 1
       },
       {
-        "end_source_cue": 84,
-        "start_source_cue": 84,
+        "end_source_cue": 94,
+        "start_source_cue": 94,
         "unknown_source_units": 1
       },
       {
-        "end_source_cue": 94,
-        "start_source_cue": 94,
+        "end_source_cue": 290,
+        "start_source_cue": 290,
         "unknown_source_units": 1
       }
     ],
@@ -107,22 +97,21 @@
       }
     ]
   },
-  "new_automatic_roles_proposed_from_editorial_review": 0,
   "new_speaker_names_automatically_assigned": 0,
   "new_voices_human_accepted": 0,
+  "no_source_original_AV_reviewer_certification": true,
   "original_source_cue_numbers_only_no_dialogue": true,
   "original_source_units": 751,
-  "original_source_units_still_unknown": 96,
-  "original_units_provisionally_named": 655,
+  "original_source_units_still_unknown": 88,
+  "original_units_provisionally_named": 663,
   "original_untimed_S09_captions_modified": false,
   "possible_unknown_to_named_same_sentence_continuation_reviews": 0,
   "remaining_unknown_original_source_units_by_episode": {
-    "S01E01": 20,
-    "S09E19": 76
+    "S01E01": 14,
+    "S09E19": 74
   },
   "s09_actual_audio_window_leads": 0,
-  "s09_candidate_audio_locator_loaded": false,
   "schema": "night-court-private-original-speaker-review-next/1",
-  "suspected_internal_switch_review_records": 10,
-  "unknown_source_unit_review_records": 98
+  "suspected_internal_switch_review_records": 9,
+  "unknown_source_unit_review_records": 90
 }

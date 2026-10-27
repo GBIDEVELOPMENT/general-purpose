@@ -1,5 +1,8 @@
-PRIVATE Night Court original-series source-dialogue editorial scripts.
-S01E01 Agent1-v18 (11 historical original-source sampled-picture annotations), S09E19 Agent2-v17 (11 role edits, cautious C291 source split).
-751 immutable source units; 655 wholly PROVISIONALLY named; 96 with UNKNOWN voices; 728 proposed reader blocks; display groups not verified performed turns.
-Every original source word and punctuation character retained. No independent original-soundtrack actor or turn acceptance. No full episode independently AV certified. S09 source entirely untimed.
-Canonical two-pilot manifests and per-row provenance are adjacent. 193-episode private fan retrieval is generated from these current manuscripts plus 191 source-only episode readings; staging and speaker roles provisional.
+PRIVATE ORIGINAL-SERIES TWO-PILOT CURRENT SOURCE SCRIPT READER.
+S01E01 Agent1-v22 / S09E19 Agent2-v19, exact source and provenance.
+751 source units: 663 CONTEXTUALLY named, 88 still containing UNKNOWN.
+728 source-preserving reader blocks; 275/234 proposed display groups.
+All actual actor voices, delivery and performed turn boundaries remain unverified.
+No original soundtrack/continuous film editorial episode certified.
+193-episode retrieval output includes these two picture-enriched, provisional
+pilots and 191 source-only episode scaffolds. Do not publish as final scripts.
