@@ -290,6 +290,9 @@ def verify_decisions(packet: dict, decisions: dict):
         or decisions.get("episode_id") != packet["episode_id"]
         or decisions.get("original_video_sha256") != packet["original_video_sha256_expected"]
         or decisions.get("review_method") != "continuous_original_synchronized_av"
+        or decisions.get("original_source_film_sha256_verified_in_browser") is not True
+        or decisions.get("original_media_sha256_computed_locally") != packet["original_video_sha256_expected"]
+        or decisions.get("playback_edition_kind") not in ("same_original_file", "viewer_supplied_proxy_source_equivalence_unverified")
         or not isinstance(decisions.get("reviewer"), str)
         or not decisions["reviewer"].strip()):
         raise ValueError("Missing reviewer, source media SHA or matching packet")
