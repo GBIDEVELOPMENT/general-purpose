@@ -326,6 +326,9 @@ def verify_decisions(packet: dict, decisions: dict):
     for value in decision_batches.values():
         if (not isinstance(value, dict)
             or value.get("synchronized_original_video_and_sound_reviewed") is not True
+            or not isinstance(value.get("observed_original_film_playback_seconds"), (int, float))
+            or isinstance(value.get("observed_original_film_playback_seconds"), bool)
+            or not 8 <= value["observed_original_film_playback_seconds"] <= 1800
             or not isinstance(value.get("performance_notes"), list)
             or not isinstance(value.get("visible_props_and_wardrobe"), list)
             or not isinstance(value.get("observed_actor_action_target"), list)):
