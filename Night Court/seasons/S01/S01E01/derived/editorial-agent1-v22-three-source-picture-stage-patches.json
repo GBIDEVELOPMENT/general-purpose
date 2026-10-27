@@ -1,0 +1,69 @@
+{
+  "schema": "s01e01-picture-stage-revision-layer/2",
+  "baseline": "saved-private/editorial-agent1-v21/S01E01-editorial-screenplay.md",
+  "source": "seasons/S01/S01E01/derived/editorial-agent1-v22-original-300frame-direct-review.json",
+  "kind": "additional_editorial_picture_detail_only",
+  "rendering": "Replace the narrative text of exactly these five existing tagged PIC notes only after validating baseline SHA. Original video observed by ordered still images, no independent moving-film or heard speaker acceptance.",
+  "revisions": [
+    {
+      "stage_id": "PIC-01",
+      "scene_sec": [
+        0,
+        20
+      ],
+      "revised": "A lavender-suited person carries papers across the office and leans over the cluttered desk. A yellow-sleeved person in white work overalls remains beside the tall window, working a small hand tool while looking out."
+    },
+    {
+      "stage_id": "PIC-08",
+      "scene_sec": [
+        838,
+        858
+      ],
+      "revised": "At the judicial bench, the seated robed figure reaches alongside the lavender-clad figure's head, withdraws a small pale disk and displays it between raised fingers. The lavender-clad figure rests a hand across the robe's shoulder and bends over the desk."
+    },
+    {
+      "stage_id": "PIC-09",
+      "scene_sec": [
+        1094,
+        1114
+      ],
+      "revised": "The robed figure shifts a small pale disk from hand to hand and gestures from the raised bench. The blue-jacketed person bends toward the court rail, while the red-clad figure leans over a desk in the gallery and rises again."
+    },
+    {
+      "stage_id": "PIC-03",
+      "scene_sec": [
+        160,
+        182
+      ],
+      "revised": "A grey-shirted figure lounges on a padded ledge below the office window with bent knees and one hand gesturing toward the view. A lavender-clad person stands beside him with a brown folder. In alternate views, a dark-suited person gestures with rolled papers."
+    },
+    {
+      "stage_id": "PIC-10",
+      "scene_sec": [
+        1258,
+        1278
+      ],
+      "revised": "The camera view crosses near-empty courtroom benches toward the raised judge's desk, where a casually dressed figure reclines low in the chair with an arm up. A lavender-clad person enters through the courtroom double doors holding a brown folder and proceeds toward the bench."
+    }
+  ],
+  "sampled_image_frames_original_checksum_verified": 300,
+  "original_audio_speaker_review_completed": false,
+  "native_frame_timestamps_verified": false,
+  "full_moving_episode_watched": false,
+  "baseline_manuscript_sha256": "191ddc1766e59d3da3619307cdb2bb55710788905d3d67aecab181ec729e62ae",
+  "baseline_provenance_sha256": "d8bf94abd8243905a77a2fdfa188b40f5a7efff7195b4a16b01b3f9eaf17f5e5",
+  "source_conservation_guard": "Apply only if full v21 original screenplay SHA and 3 unique original PIC tags match. No named roles, original caption text, cue timing, reading provenance, dialogue groups or P0 C219 modifications.",
+  "source_original_210_frames": "seasons/S01/S01E01/derived/editorial-agent1-v22-original-210frame-direct-review.json",
+  "source_image_frames_hash_checked": 510,
+  "frames_verified": 510,
+  "contact_sheets_inspected": 11,
+  "existing_stage_annotations_refined": [
+    "PIC-01",
+    "PIC-03",
+    "PIC-08",
+    "PIC-09",
+    "PIC-10"
+  ],
+  "new_stage_count": 0,
+  "existing_total_stage_count": 27
+}

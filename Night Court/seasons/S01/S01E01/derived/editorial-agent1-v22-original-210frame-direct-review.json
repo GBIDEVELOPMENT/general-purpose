@@ -1,0 +1,31 @@
+{
+  "schema": "s01-original-sampled-image-second-revision/1",
+  "episode_id": "S01E01",
+  "original_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_caption_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "github_actions_original_artifact_id": 12577043742,
+  "github_actions_run_id": 40139082891,
+  "archive_sha256": "838234cc08f7982bf8ca5c68579a9e317f4a627c00be6ac9d4e3398c4dc7cb78",
+  "source_windows_s": [
+    [
+      160,
+      182
+    ],
+    [
+      1258,
+      1278
+    ]
+  ],
+  "original_jpeg_frames_SHA256_matched": 210,
+  "missing_or_mismatched": 0,
+  "contact_sheets_directly_viewed": 5,
+  "source_original_video_continuously_played": false,
+  "original_audio_listened": false,
+  "character_identities_from_images_claimed": false,
+  "stage_paragraphs_refined": [
+    "PIC-03",
+    "PIC-10"
+  ],
+  "stage_notes_added": 0,
+  "method": "Separate direct visual review of all five contact sheets after SHA-check of each original-source still. Adds reversible stage-only patch content, not original-dialogue role or AV acceptance."
+}

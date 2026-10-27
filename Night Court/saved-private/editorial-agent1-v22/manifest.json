@@ -1,0 +1,42 @@
+{
+  "schema": "night-court-s01e01-picture-choreography-source-stable-v22/1",
+  "episode_id": "S01E01",
+  "source_original_srt_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
+  "source_original_avi_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "baseline_v21_screenplay_sha256": "191ddc1766e59d3da3619307cdb2bb55710788905d3d67aecab181ec729e62ae",
+  "baseline_v21_provenance_sha256": "d8bf94abd8243905a77a2fdfa188b40f5a7efff7195b4a16b01b3f9eaf17f5e5",
+  "latest_full_screenplay": "saved-private/editorial-agent1-v22/S01E01-editorial-screenplay.md",
+  "latest_full_screenplay_git_blob_sha": "fab298a19a82a4fd6ac345ada8ee5fcd13a01719",
+  "shared_authoritative_provenance_file": "saved-private/editorial-agent1-v21/S01E01-editorial-provenance.jsonl",
+  "shared_provenance_sha256": "d8bf94abd8243905a77a2fdfa188b40f5a7efff7195b4a16b01b3f9eaf17f5e5",
+  "note": "V22 changes stage prose only. The original 405 reader records are intentionally not duplicated; source/role/provenance remain exactly V21.",
+  "original_srt_cues": 336,
+  "source_speaking_unit_refs": 404,
+  "source_reader_rows": 405,
+  "provisionally_fully_named_source_units": 390,
+  "original_source_units_containing_UNKNOWN": 14,
+  "proposed_display_groups": 275,
+  "unverified_display_joins": 130,
+  "picture_stage_tags": 27,
+  "original_source_image_jpegs_hash_verified": 510,
+  "original_picture_contact_sheets_inspected": 11,
+  "stage_refinements_directly_embedded": [
+    "PIC-01",
+    "PIC-08",
+    "PIC-09"
+  ],
+  "additional_stage_refinements_in_overlay": [
+    "PIC-03",
+    "PIC-10"
+  ],
+  "source_guarded_overlay": "seasons/S01/S01E01/derived/editorial-agent1-v22-three-source-picture-stage-patches.json",
+  "source_300_frame_review": "seasons/S01/S01E01/derived/editorial-agent1-v22-original-300frame-direct-review.json",
+  "source_210_frame_review": "seasons/S01/S01E01/derived/editorial-agent1-v22-original-210frame-direct-review.json",
+  "original_dialogue_groups_exactly_match_v21_after_removing_picture_lines": true,
+  "original_source_dialogue_or_timestamps_changed": false,
+  "original_audio_listened": false,
+  "independently_verified_actor_voices": 0,
+  "independently_verified_performed_turns": 0,
+  "full_continuous_original_Av_accepted": false,
+  "shared_canonical_publisher_integrated": false
+}
