@@ -267,6 +267,14 @@ jobs:
           dest='Night Court/saved-private/episode-finish-current'
           mkdir -p "$dest"
           cp "${RUNNER_TEMP}/source-p0p1/"*-original-audio-p0p1-evidence.json "$dest/"
+          # Attach only source SHA-matched model hints to the two existing AV
+          # review agendas. Original roles and performed turns remain unverified.
+          python 'Night Court/tools/episode_finish.py' \
+            --episode both \
+            --snapshot 'Night Court/saved-private/pilot-current' \
+            --s09-original-audio-locator "$dest/S09E19-original-audio-locators.json" \
+            --output "${RUNNER_TEMP}/source-p0p1-packets"
+          cp "${RUNNER_TEMP}/source-p0p1-packets/"*-one-pass-av-review.json "$dest/"
           git add -- "$dest"
           if git diff --cached --quiet; then
             echo 'Original audio model proposals identical; no new commit.'
