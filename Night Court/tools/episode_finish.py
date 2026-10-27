@@ -446,6 +446,27 @@ def block_turn_segments(row: dict, decision: dict):
     return parts
 
 
+def original_av_beat_notes(decision: dict) -> dict[str, list[str]]:
+    """Return source-reading-block-anchored AV notes with strict bounded text.
+
+    Optional in the first pass; empty means no salient P2/P3/P4 event at this
+    exact beat, NOT that the original film was independently certified.
+    """
+    fields=("tone_delivery","wardrobe_props","physical_action")
+    observations=decision.get("original_av_beat_notes")
+    if observations is None:
+        return {key:[] for key in fields}
+    if not isinstance(observations,dict) or set(observations)!=set(fields):
+        raise ValueError("P2/P3/P4 beat notes have invalid structure")
+    for key in fields:
+        values=observations[key]
+        if (not isinstance(values,list) or len(values)>12 or
+            any(not isinstance(v,str) or not v.strip() or
+                len(v)>450 or "\\n" in v or "\\r" in v for v in values)):
+            raise ValueError("Source AV beat note is not a bounded single observation")
+    return {key:[v.strip() for v in observations[key]] for key in fields}
+
+
 def verify_decisions(packet: dict, decisions: dict):
     """Refuse script-complete claims without per-boundary, per-block original AV review.
 
@@ -490,6 +511,7 @@ def verify_decisions(packet: dict, decisions: dict):
                 or value.get("original_audio_voice_reviewed") is not True):
                 raise ValueError("P1 role has no original-audio decision; UNIDENTIFIED VOICE is permitted")
             block_turn_segments(row, value)
+            original_av_beat_notes(value)
     for value in decision_batches.values():
         if (not isinstance(value, dict)
             or value.get("synchronized_original_video_and_sound_reviewed") is not True
@@ -563,6 +585,17 @@ def render_reviewed_screenplay(packet: dict, decisions: dict) -> str:
                         raise ValueError("P0 same-voice continuation has conflicting P1 character names")
                 if change:
                     output.extend(["", "### " + new_role, ""])
+                if part_number == 0:
+                    observed=original_av_beat_notes(decisions["roles"][row["id"]])
+                    for kind,label in (
+                        ("tone_delivery","Original audio delivery"),
+                        ("wardrobe_props","Original picture clothing/prop"),
+                        ("physical_action","Original picture action/target")
+                    ):
+                        for note in observed[kind]:
+                            output.append("*[" + label + ": " + note + "]*")
+                    if any(observed.values()):
+                        output.append("")
                 exact_part = caption[piece["start"]:piece["end"]]
                 output.extend("    " + textline for textline in exact_part.split("\n"))
                 output.append("")
