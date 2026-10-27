@@ -194,7 +194,10 @@ function render(){
        '</select></label>'+
        (typeof e.original_audio_machine_voice_pair_similarity==="number"?
          '<span class="small">Original soundtrack model: voice-pair similarity '+e.original_audio_machine_voice_pair_similarity.toFixed(2)+' (NOT a verified same-person claim)</span>':"")+
-       (e.original_audio_machine_review_priority?
+       (e.original_audio_machine_review_priority ||
+         (typeof e.original_audio_machine_voice_pair_similarity==="number" &&
+          ((e.provisional_same_turn&&e.original_audio_machine_voice_pair_similarity<=0.65) ||
+           (!e.provisional_same_turn&&e.original_audio_machine_voice_pair_similarity>=0.80)))?
          '<p class="small"><strong>Acoustic review priority:</strong> actual-source model differs with this proposed '+(e.provisional_same_turn?"join":"break")+'. Replay carefully; not a certified turn.</p>':"")+
        '<span class="small">'+(saved.boundaries[e.id]?"Previously source-reviewed":"Proposed, not reviewed")+'</span></div>');
   }
