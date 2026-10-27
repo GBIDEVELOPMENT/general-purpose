@@ -120,6 +120,7 @@ class OnePassEpisodeTests(unittest.TestCase):
                       for r in batch["reader_blocks"]}
         d["batches"] = {batch["id"]: {
             "synchronized_original_video_and_sound_reviewed": True,
+            "observed_original_film_playback_seconds": 8.5,
             "performance_notes": [], "visible_props_and_wardrobe": [],
             "observed_actor_action_target": []}
                         for batch in p["sequential_one_pass_batches"]}
@@ -143,6 +144,34 @@ class OnePassEpisodeTests(unittest.TestCase):
         d["playback_edition_kind"]="viewer_supplied_proxy_source_equivalence_unverified"
         with self.assertRaisesRegex(ValueError,"source media SHA"):
             verify_decisions(p,d)
+
+    def test_batch_playback_must_be_observed_not_merely_checked(self):
+        p=make_packet(self.root,"S01E01")
+        d={
+            "packet_sha256":p["packet_sha256"],"episode_id":"S01E01",
+            "original_video_sha256":p["original_video_sha256_expected"],
+            "review_method":"continuous_original_synchronized_av",
+            "original_source_film_sha256_verified_in_browser":True,
+            "original_media_sha256_computed_locally":p["original_video_sha256_expected"],
+            "playback_edition_kind":"same_original_file",
+            "reviewer":"synthetic fixture",
+            "boundaries":{e["id"]:{"result":"new_speaker","heard_on_original_audio":True}
+                          for e in p["all_adjacent_boundary_questions"]},
+            "roles":{row["id"]:{"role":row["provisional_role"] or "UNIDENTIFIED VOICE",
+                                "original_audio_voice_reviewed":True,
+                                "intra_block_speaker_changes_reviewed":True}
+                      for group in p["sequential_one_pass_batches"] for row in group["reader_blocks"]},
+            "batches":{p["sequential_one_pass_batches"][0]["id"]:{
+               "synchronized_original_video_and_sound_reviewed":True,
+               "observed_original_film_playback_seconds":0,
+               "performance_notes":[],"visible_props_and_wardrobe":[],
+               "observed_actor_action_target":[]
+            }}
+        }
+        with self.assertRaisesRegex(ValueError,"picture coverage is incomplete"):
+            verify_decisions(p,d)
+        for value in d["batches"].values():value["observed_original_film_playback_seconds"]=8.1
+        self.assertTrue(verify_decisions(p,d)["editorial_decisions_complete"])
 
     def test_source_exact_original_av_reviewed_script_render_after_all_decisions(self):
         p = make_packet(self.root, "S01E01")
@@ -169,6 +198,7 @@ class OnePassEpisodeTests(unittest.TestCase):
               for row in batch["reader_blocks"]},
             "batches": {p["sequential_one_pass_batches"][0]["id"]: {
                 "synchronized_original_video_and_sound_reviewed": True,
+            "observed_original_film_playback_seconds": 8.5,
                 "performance_notes": ["test delivery"], "visible_props_and_wardrobe": [],
                 "observed_actor_action_target": ["test observed action"]
             }}
@@ -205,6 +235,7 @@ class OnePassEpisodeTests(unittest.TestCase):
             } for b in p["sequential_one_pass_batches"] for row in b["reader_blocks"]},
             "batches": {p["sequential_one_pass_batches"][0]["id"]: {
                 "synchronized_original_video_and_sound_reviewed": True,
+            "observed_original_film_playback_seconds": 8.5,
                 "performance_notes": [], "visible_props_and_wardrobe": [],
                 "observed_actor_action_target": []
             }},

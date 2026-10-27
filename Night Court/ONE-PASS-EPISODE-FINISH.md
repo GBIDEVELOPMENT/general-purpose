@@ -26,6 +26,18 @@ does not match. A locally transcoded playback proxy remains possible for AVI
 codec compatibility but is separately labeled as unverified source-equivalence.
 Each proposed adjacent dialogue boundary now starts **unreviewed**; the reviewer
 must explicitly choose continuation, change, or overlap on actual audio.
+To avoid 726 rote dropdown interactions, the player now has an optional
+**"Endorse remaining proposed P0 boundaries after listening"** control
+for each sequential passage. It is disabled in practice until original-film
+SHA verification, source playback and the per-passage watched acknowledgement;
+it only fills still-unreviewed boundaries, never overwrites a correction.
+The final per-passage save checks each result. The web workbench observes local
+non-seeking playback time (at least eight seconds per passage before review
+signoff); Python rejects imported ledgers with no such recorded evidence.
+Eight seconds is just a minimal anti-checkbox guard, **not** proof that an
+entire passage or film was faithfully observed, or that the provisional
+speakers were correct. Sustained source playback and skeptical review
+remain necessary to make any AV acceptance claim.
 Likewise internal caption switches require explicit observed spans or a
 source-listened negative decision. The source check and UI gate reduce
 accidental false signoff but cannot prove the human watched the film or that
