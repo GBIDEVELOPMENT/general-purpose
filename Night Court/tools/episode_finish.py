@@ -237,6 +237,49 @@ def make_packet(snapshot: Path, episode: str, s09_locator: Path | None = None):
     return result
 
 
+def block_turn_segments(row: dict, decision: dict):
+    """Validate source-exact within-caption P0 handoffs, Unicode codepoint offsets.
+
+    Every block is either one explicitly reviewed voice or consecutive
+    nonempty exact-source slices. No changed letters, reordered captions,
+    omitted dialogue, invented subturn clocks, or silent speaker switches.
+    """
+    content = row["source_exact_dialogue"]
+    if (not isinstance(content, str) or not content or
+        hashlib.sha256(content.encode("utf-8")).hexdigest()
+        != row["source_dialogue_sha256"]):
+        raise ValueError("Original caption text altered in AV review")
+    if decision.get("intra_block_speaker_changes_reviewed") is not True:
+        raise ValueError("P0 within-caption speaker handoffs not source-reviewed")
+    role = decision.get("role")
+    if not isinstance(role, str) or not role.strip():
+        raise ValueError("P1 source role missing")
+    raw = decision.get("segments")
+    if raw is None:
+        return [{"start": 0, "end": len(content), "role": role.strip()}]
+    if not isinstance(raw, list) or not 1 <= len(raw) <= 20:
+        raise ValueError("P0 split segments must be a bounded nonempty list")
+    last = 0
+    parts = []
+    for piece in raw:
+        if not isinstance(piece, dict) or set(piece) != {"start", "end", "role"}:
+            raise ValueError("P0 segment must contain exact offset/role fields")
+        a, b, who = piece["start"], piece["end"], piece["role"]
+        if (type(a) is not int or type(b) is not int or
+            a != last or not a < b <= len(content) or
+            not isinstance(who, str) or not who.strip()):
+            raise ValueError("P0 source-character segment lost, overlapped, reordered or unlabeled")
+        parts.append({"start": a, "end": b, "role": who.strip()})
+        last = b
+    if last != len(content) or parts[0]["role"] != role.strip():
+        raise ValueError("P0 source-character segments incomplete or first role inconsistent")
+    if any(a["role"] == b["role"] for a, b in zip(parts, parts[1:])):
+        raise ValueError("P0 redundant split: adjacent subturns have the same role")
+    if "".join(content[x["start"]:x["end"]] for x in parts) != content:
+        raise ValueError("P0 original dialogue not exactly conserved")
+    return parts
+
+
 def verify_decisions(packet: dict, decisions: dict):
     """Refuse script-complete claims without per-boundary, per-block original AV review.
 
@@ -269,11 +312,14 @@ def verify_decisions(packet: dict, decisions: dict):
             raise ValueError("A P0 boundary remains unreviewed")
         if outcome.get("heard_on_original_audio") is not True:
             raise ValueError("P0 decision requires original sound")
-    for value in decision_roles.values():
-        if (not isinstance(value, dict) or not isinstance(value.get("role"), str)
-            or not value["role"].strip()
-            or value.get("original_audio_voice_reviewed") is not True):
-            raise ValueError("P1 role has no original-audio decision; UNIDENTIFIED VOICE is permitted")
+    for batch in packet["sequential_one_pass_batches"]:
+        for row in batch["reader_blocks"]:
+            value = decision_roles[row["id"]]
+            if (not isinstance(value, dict) or not isinstance(value.get("role"), str)
+                or not value["role"].strip()
+                or value.get("original_audio_voice_reviewed") is not True):
+                raise ValueError("P1 role has no original-audio decision; UNIDENTIFIED VOICE is permitted")
+            block_turn_segments(row, value)
     for value in decision_batches.values():
         if (not isinstance(value, dict)
             or value.get("synchronized_original_video_and_sound_reviewed") is not True
@@ -329,23 +375,26 @@ def render_reviewed_screenplay(packet: dict, decisions: dict) -> str:
                     output.append("* " + note.strip())
                 output.append("")
         for row in batch["reader_blocks"]:
-            new_role = decisions["roles"][row["id"]]["role"].strip()
-            if index == 0:
-                change = True
-            else:
-                result = decisions["boundaries"][f"B{index:04d}"]["result"]
-                change = result != "same_speaker_continuation"
-                if not change and new_role != prior_role:
-                    raise ValueError("P0 same-voice continuation has conflicting P1 character names")
-            if change:
-                output.extend(["", "### " + new_role, ""])
+            pieces = block_turn_segments(row, decisions["roles"][row["id"]])
             caption = row["source_exact_dialogue"]
-            if hashlib.sha256(caption.encode("utf-8")).hexdigest() != row["source_dialogue_sha256"]:
-                raise ValueError("Original caption was mutated during source AV editing")
-            output.extend("    " + textline for textline in caption.split("\n"))
-            output.append("")
+            for part_number, piece in enumerate(pieces):
+                new_role = piece["role"]
+                if index == 0 and part_number == 0:
+                    change = True
+                elif part_number > 0:
+                    change = True  # Original source: true within-block P0 switch
+                else:
+                    result = decisions["boundaries"][f"B{index:04d}"]["result"]
+                    change = result != "same_speaker_continuation"
+                    if not change and new_role != prior_role:
+                        raise ValueError("P0 same-voice continuation has conflicting P1 character names")
+                if change:
+                    output.extend(["", "### " + new_role, ""])
+                exact_part = caption[piece["start"]:piece["end"]]
+                output.extend("    " + textline for textline in exact_part.split("\n"))
+                output.append("")
+                prior_role = new_role
             index += 1
-            prior_role = new_role
     if index != packet["source_reader_blocks"]:
         raise ValueError("Completed reader lost an original source block")
     return "\n".join(output).strip() + "\n"
