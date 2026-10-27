@@ -208,6 +208,27 @@ jobs:
           python 'Night Court/tools/preflight_original_media_transport.py' \
             --host "$FTP_HOST" --tries 3 --timeout 7 --delay 2 \
             --output "${RUNNER_TEMP}/original-media-preflight.json"
+      - name: Authenticate exact owner FTP media source before CPU model install
+        env:
+          FTP_HOST: wood.seedhost.eu
+          FTP_USER: ianseeds
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PROTOCOL: ftp
+        run: |
+          set -euo pipefail
+          PYTHONPATH='Night Court/tools' python - <<'PY'
+          import ftplib
+          from source_once_canonical_voice import original_media_login
+          ftp=original_media_login()
+          try:
+              ftp.voidcmd("NOOP")
+          finally:
+              try:
+                  ftp.quit()
+              except ftplib.all_errors:
+                  ftp.close()
+          print("Original-film media FTP control authenticated; no media transferred or AV certification.")
+          PY
       - name: Install isolated pinned CPU voice dependencies with visible errors
         run: |
           set -euo pipefail
