@@ -196,10 +196,51 @@ def attach_source_audio_hints(packet: dict, path: Path):
             raise ValueError("P0 audio pair claims a performed turn or changed provenance")
         original["original_audio_machine_voice_pair_similarity"]=sim
         original["machine_audio_p0_boundary_verified"]=False
+    # These conservative thresholds are only triage heuristics, not calibrated
+    # diarization decisions: low similarity inside a proposed same-speaker
+    # group and high similarity across a proposed break deserve a replay.
+    priorities=[]
+    for question in packet["all_adjacent_boundary_questions"]:
+        score=question.get("original_audio_machine_voice_pair_similarity")
+        if score is None:
+            continue
+        if question["provisional_same_turn"] and score<=0.65:
+            reason="weak_acoustic_similarity_within_proposed_join"
+        elif not question["provisional_same_turn"] and score>=0.80:
+            reason="strong_acoustic_similarity_across_proposed_break"
+        else:
+            continue
+        question["original_audio_machine_review_priority"]=reason
+        priorities.append({"boundary_id":question["id"],"reason":reason,
+                           "original_audio_machine_similarity":score})
+    # Held-out *provisional* roles often misclassify. Show the source
+    # measured error, never replace a candidate role on that basis.
+    role_quality=report.get("provisional_named_voice_holdout",{}).get(
+        "provisional_role_holdout_counts",{})
+    if not isinstance(role_quality,dict):
+        raise ValueError("Original film speaker role holdout malformed")
+    weak_roles={}
+    for role,quality in role_quality.items():
+        if not isinstance(quality,dict):
+            raise ValueError("Original film speaker role holdout malformed")
+        good,n=quality.get("correct_held_out"),quality.get("evaluated")
+        if (not isinstance(role,str) or not role.strip() or
+            type(n) is not int or type(good) is not int or
+            not 0<=good<=n<=100):
+            raise ValueError("Original film speaker holdout counts invalid")
+        if n>=4 and good/n<0.60:
+            weak_roles[role]={"correct_held_out":good,"evaluated":n,
+                "original_voice_identity_verified":False}
+    for row in by_block.values():
+        if row["provisional_role"] in weak_roles:
+            row["original_audio_provisional_role_holdout_warning"]=weak_roles[row["provisional_role"]]
+    packet["machine_audio_review_priorities"]=priorities
     packet["original_soundtrack_machine_evidence_sha256"]=hashlib.sha256(raw).hexdigest()
     packet["machine_audio_hints_attached"]={
         "p1_unknown_candidates":len(checked_roles),
         "p0_adjacent_audio_pairs":len(checked_pairs),
+        "p0_acoustic_replay_priority_count":len(priorities),
+        "p1_low_holdout_provisional_roles":len(weak_roles),
         "is_original_AV_actor_or_turn_certification":False
     }
     return packet
