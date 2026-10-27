@@ -1,5 +1,28 @@
 # Finish a Night Court episode in one editorial pass
 
+## Actual original-film audio pass, 27 October 2026 (current evidence)
+
+**Both exact source-video SHA-pinned pilot films were acquired and processed successfully** in [private main Actions run #40559268586](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/40559268586). Model reports are committed at `saved-private/episode-finish-current/S01E01-original-audio-p0p1-evidence.json` and `S09E19-original-audio-p0p1-evidence.json`; the one-pass review packets have the exact audio report SHA and numerical machine hints. Media, decoded PCM, weights, and embeddings are not in Git.
+
+| Source metric | S01E01 | S09E19 |
+| --- | ---: | ---: |
+| Source cue/paragraph windows considered | 267 | 103 |
+| Usable embedded original-soundtrack windows | 253 | 98 |
+| Provisional named-role leave-one-out correctness | **48/67 (71.64%)** | **24/35 (68.57%)** |
+| Measured adjacent acoustic speaker-pair comparisons | 194 | 30 |
+| Previously anonymous sound windows tested | 6 | 16 |
+| High-priority machine/P0 *disagreement* comparisons | **26** | **7** |
+| Provisional cast roles with especially weak model holdout | 3 | 3 |
+| New source-audio independently verified character IDs | **0** | **0** |
+| New independently AV-certified performed turns | **0** | **0** |
+
+The role classifier's global holdouts **fail** the conservative 80% promotion threshold. Its provisional character labels and acoustic similarity comparisons are **not** human film observations or performance truth. No new named lines should be accepted from these model results alone. The 33 elevated boundaries reflect deliberately conservative **uncalibrated review-priority thresholds**, not 33 demonstrated segmentation mistakes. Similarly the six role-reference warnings are opportunities to listen, not six proven misattributions. Review the flagged passages first **during the normal source-order viewing**, without omitting the remaining boundaries or scene passages.
+
+Original-film delivery has been repaired without a new per-episode pipeline: [#533](https://github.com/GBIDEVELOPMENT/general-purpose/pull/533) adds bounded network preflight; [#534](https://github.com/GBIDEVELOPMENT/general-purpose/pull/534) authenticates before heavyweight setup, retries transient FTP greetings and installs the source-audio FFmpeg decoder from a fixed SHA-256 Linux wheel rather than apt; [#535](https://github.com/GBIDEVELOPMENT/general-purpose/pull/535) preserves partial numeric source evidence, flags acoustic review disagreements, and skips stale manuscript review-packet writes safely. Successful original-source acquisition and analysis are **not** screenplay completion. The next required editorial work is actual synchronized source listening/viewing of P0/P1 high-risk segments and comprehensive performance/action coverage, recorded in the same stable decision ledger.
+
+---
+
+
 **Operating contract, 26 October 2026.** Two current source-preserving pilot
 manuscripts exist on private main. The product is a rich, useful performed
 screenplay. The version-per-experiment loop (v6 through v22), proliferating
