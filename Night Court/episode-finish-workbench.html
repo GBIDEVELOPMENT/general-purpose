@@ -194,6 +194,11 @@ function render(){
        '</select></label>'+
        (typeof e.original_audio_machine_voice_pair_similarity==="number"?
          '<span class="small">Original soundtrack model: voice-pair similarity '+e.original_audio_machine_voice_pair_similarity.toFixed(2)+' (NOT a verified same-person claim)</span>':"")+
+       (e.original_audio_machine_review_priority ||
+         (typeof e.original_audio_machine_voice_pair_similarity==="number" &&
+          ((e.provisional_same_turn&&e.original_audio_machine_voice_pair_similarity<=0.65) ||
+           (!e.provisional_same_turn&&e.original_audio_machine_voice_pair_similarity>=0.80)))?
+         '<p class="small"><strong>Acoustic review priority:</strong> actual-source model differs with this proposed '+(e.provisional_same_turn?"join":"break")+'. Replay carefully; not a certified turn.</p>':"")+
        '<span class="small">'+(saved.boundaries[e.id]?"Previously source-reviewed":"Proposed, not reviewed")+'</span></div>');
   }
   bits.push('<article class="utterance '+(saved.roles[ref.id]?"complete":"")+'">'+
@@ -206,6 +211,11 @@ function render(){
        escapeHtml(ref.original_audio_model_uncertified_role_hint.role_candidate??"abstains")+
        ' / best unscreened '+escapeHtml(ref.original_audio_model_uncertified_role_hint.best_uncertified_role??"none")+
        '. Leave UNKNOWN if the film cannot establish a character.</p>':"")+
+     (ref.original_audio_provisional_role_holdout_warning?
+        '<p class="small"><strong>Weak voice reference:</strong> provisional '+escapeHtml(ref.provisional_role)+
+        ' recovered in '+ref.original_audio_provisional_role_holdout_warning.correct_held_out+
+        '/'+ref.original_audio_provisional_role_holdout_warning.evaluated+
+        ' original-soundtrack held-out samples. This is not proof that the role is wrong.</p>':"")+
      '<label>P0 • Voice changes WITHIN this caption? If none, leave blank after listening. Each change: first spoken words | NEW CHARACTER or @Unicode offset | NEW CHARACTER'+
      '<textarea data-split="'+escapeHtml(ref.id)+'" placeholder="Yeah | PHIL KERR">'+escapeHtml(savedSplitHints(ref))+'</textarea></label>'+
     '<span class="small">'+(saved.roles[ref.id]?"Previously source-reviewed":"Provisional candidate only")+'</span></article>');
