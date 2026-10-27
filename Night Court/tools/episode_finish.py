@@ -97,8 +97,45 @@ def load_episode(snapshot: Path, episode: str):
     return manifest, rows, source_sha
 
 
-def make_packet(snapshot: Path, episode: str):
+def verified_s09_candidate_locator(path: Path):
+    """Source-hashed *machine* lexical anchors; they are NOT true cue times."""
+    raw = path.read_bytes()
+    locator = json.loads(raw)
+    if (locator.get("schema") != "night-court-s09-original-film-untimed-paragraph-audio-locator/1"
+        or locator.get("episode_id") != "S09E19"
+        or locator.get("original_video_sha256") != VIDEO_SHA["S09E19"]
+        or locator.get("original_untimed_source_sha256")
+           != "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2"
+        or locator.get("original_source_untimed_paragraph_count") != 347
+        or locator.get("original_soundtrack_processed") is not True
+        or locator.get("original_speaker_identities_verified") != 0
+        or locator.get("candidate_source_paragraphs_given_audio_window") != 231):
+        raise ValueError("Original S09 untimed source-AV locator proof mismatch")
+    hints = {}
+    for entry in locator["matches"]:
+        n = entry.get("original_paragraph_id")
+        window = entry.get("candidate_original_audio_window_ms")
+        if (type(n) is not int or not 1 <= n <= 347 or n in hints
+            or not isinstance(window, list) or len(window) != 2
+            or any(type(t) is not int for t in window)
+            or not 0 <= window[0] < window[1] <= 1_800_000
+            or entry.get("original_paragraph_timecode_ms") is not None
+            or entry.get("original_film_audio_timing_independently_verified") is not False
+            or entry.get("spoken_character_identity_verified") is not False):
+            raise ValueError("Fake original S09 paragraph timing or duplicate match")
+        hints[n] = window
+    if len(hints) != 231:
+        raise ValueError("Original S09 source locator did not conserve 231 candidates")
+    return hints, hashlib.sha256(raw).hexdigest()
+
+
+def make_packet(snapshot: Path, episode: str, s09_locator: Path | None = None):
     manifest, rows, source_sha = load_episode(snapshot, episode)
+    hints, hint_sha = ({}, None)
+    if s09_locator is not None:
+        if episode != "S09E19":
+            raise ValueError("Untimed S09 audio locator cannot time S01")
+        hints, hint_sha = verified_s09_candidate_locator(s09_locator)
     groups, boundaries = [], []
     for i in range(1, len(rows)):
         old, new = rows[i - 1], rows[i]
@@ -122,17 +159,28 @@ def make_packet(snapshot: Path, episode: str):
         end = min(start + BATCH_BLOCKS, len(rows))
         subset = rows[start:end]
         clips = [r.get("source_cue_times_not_subturn_times_ms") for r in subset]
+        clock_kind = "source_caption_time_not_subturn_time" if episode == "S01E01" else "original_source_untimed"
         source_window = ([max(0, min(v[0] for v in clips) - 1200),
                           max(v[1] for v in clips) + 1200]
                          if all(isinstance(v, list) and len(v) == 2
                                 and all(type(t) is int for t in v) for v in clips)
                          else None)
+        if episode == "S09E19" and hints:
+            candidate = [hints[int(ref[1:4])] for row in subset
+                         for ref in row["original_source_part_refs"]
+                         if ref.startswith("C") and ref[1:4].isdigit()
+                         and int(ref[1:4]) in hints]
+            if candidate:
+                source_window = [max(0, min(v[0] for v in candidate) - 1200),
+                                 max(v[1] for v in candidate) + 1200]
+                clock_kind = "unverified_original_audio_lexical_seek_hint_not_source_timecode"
         questions = boundaries[max(0, start - 1):end - 1]
         groups.append({
             "id": f"{episode}-AV-{len(groups) + 1:03d}",
             "block_index_first": start,
             "block_index_end_exclusive": end,
             "source_window_candidate_ms": source_window,
+            "source_window_kind": clock_kind,
             "source_clock_verified": False,
             "reader_blocks": [{
                 "id": r["reading_block_id"],
@@ -164,6 +212,8 @@ def make_packet(snapshot: Path, episode: str):
         "source_reader_blocks": len(rows),
         "provisional_display_groups": manifest["episodes"][episode]["display_groups"],
         "source_timecodes_available": episode == "S01E01",
+        "unverified_source_audio_locator_match_count": len(hints),
+        "original_audio_locator_report_sha256": hint_sha,
         "review_passes_required": len(groups),
         "all_adjacent_boundary_questions": boundaries,
         "within_source_part_handoffs_needing_review": internal,
@@ -243,6 +293,8 @@ def main():
     ap.add_argument("--episode", choices=(*EPISODES, "both"), required=True)
     ap.add_argument("--output", type=Path, required=True,
                     help="Stable destination directory; files overwritten in place, no vNN history")
+    ap.add_argument("--s09-original-audio-locator", type=Path,
+                    help="Existing SHAs-pinned untimed-source acoustic seek hints, NEVER original subtitle timings")
     ap.add_argument("--verify-decisions", type=Path,
                     help="Explicit signed human original-AV ledger for one episode")
     args = ap.parse_args()
@@ -250,7 +302,8 @@ def main():
         ap.error("Verify a single episode at a time")
     args.output.mkdir(parents=True, exist_ok=True)
     for ep in (EPISODES if args.episode == "both" else (args.episode,)):
-        packet = make_packet(args.snapshot, ep)
+        packet = make_packet(args.snapshot, ep,
+                             args.s09_original_audio_locator if ep == "S09E19" else None)
         target = args.output / f"{ep}-one-pass-av-review.json"
         target.write_text(json.dumps(packet, indent=2, ensure_ascii=False) + "\n", "utf-8")
         print(ep, "blocks", packet["source_reader_blocks"], "batches",

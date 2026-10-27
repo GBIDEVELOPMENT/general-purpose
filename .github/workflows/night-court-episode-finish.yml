@@ -19,6 +19,7 @@ concurrency:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   prepare-current-episodes:
@@ -34,14 +35,47 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Check reusable original-source S09 soundtrack audio locators
+        if: github.event_name != 'pull_request'
+        id: locator
+        run: |
+          if test -s 'Night Court/saved-private/episode-finish-current/S09E19-original-audio-locators.json'; then
+            echo 'already_committed=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'already_committed=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Import EXISTING original-film 231/347 lexical seek evidence once
+        if: github.event_name != 'pull_request' && steps.locator.outputs.already_committed == 'false'
+        uses: actions/download-artifact@v4
+        with:
+          name: night-court-original-s09-347-paragraph-audio-locators
+          run-id: 40253914693
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/original-s09-source-evidence
+      - name: Stage source-hashed numeric S09 seeks in stable private review output
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          mkdir -p "${RUNNER_TEMP}/episode-finish-current"
+          if test -s 'Night Court/saved-private/episode-finish-current/S09E19-original-audio-locators.json'; then
+            cp 'Night Court/saved-private/episode-finish-current/S09E19-original-audio-locators.json' \
+              "${RUNNER_TEMP}/episode-finish-current/S09E19-original-audio-locators.json"
+          else
+            cp "${RUNNER_TEMP}/original-s09-source-evidence/night-court-s09-original-audio-paragraph-locators.json" \
+              "${RUNNER_TEMP}/episode-finish-current/S09E19-original-audio-locators.json"
+          fi
       - name: Source-first tests and complete P0/P1 AV review agenda per pilot
         run: |
           set -euo pipefail
           PYTHONPATH='Night Court/tools' python -m unittest -v test_episode_finish
+          locator=()
+          if test -s "${RUNNER_TEMP}/episode-finish-current/S09E19-original-audio-locators.json"; then
+            locator=(--s09-original-audio-locator "${RUNNER_TEMP}/episode-finish-current/S09E19-original-audio-locators.json")
+          fi
           python 'Night Court/tools/episode_finish.py' \
             --episode both \
             --snapshot 'Night Court/saved-private/pilot-current' \
-            --output "${RUNNER_TEMP}/episode-finish-current"
+            --output "${RUNNER_TEMP}/episode-finish-current" "${locator[@]}"
           python - <<'PY'
           import json,os
           from pathlib import Path
@@ -53,6 +87,11 @@ jobs:
               assert len(x['all_adjacent_boundary_questions'])==boundaries
               assert x['provisional_display_groups']==groups
               assert x['review_passes_required']==batches
+              if os.environ.get('GITHUB_EVENT_NAME')!='pull_request' and ep=='S09E19':
+                  assert x['unverified_source_audio_locator_match_count']==231
+                  assert x['original_audio_locator_report_sha256']
+                  assert any(z['source_window_kind'].startswith('unverified_original_audio_lexical')
+                             for z in x['sequential_one_pass_batches'])
               assert not x['script_final_or_full_episode_accepted']
               assert not x['original_audio_video_inspected_by_this_command']
               assert all(not b['whole_original_av_played_and_verified']
@@ -102,6 +141,7 @@ jobs:
           python 'Night Court/tools/episode_finish.py' \
             --episode both \
             --snapshot 'Night Court/saved-private/pilot-current' \
+            --s09-original-audio-locator "${RUNNER_TEMP}/one-pass-packet/S09E19-original-audio-locators.json" \
             --output "${RUNNER_TEMP}/one-pass-regenerated"
           for ep in S01E01 S09E19; do
             cmp "${RUNNER_TEMP}/one-pass-regenerated/${ep}-one-pass-av-review.json" \
@@ -113,6 +153,7 @@ jobs:
           dest='Night Court/saved-private/episode-finish-current'
           mkdir -p "$dest"
           cp "${RUNNER_TEMP}/one-pass-packet/"*'-one-pass-av-review.json' "$dest/"
+          cp "${RUNNER_TEMP}/one-pass-packet/S09E19-original-audio-locators.json" "$dest/"
           git add -- "$dest"
           if git diff --cached --quiet; then
             echo 'Current one-pass review agendas already preserved.'
