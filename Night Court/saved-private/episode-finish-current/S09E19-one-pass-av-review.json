@@ -123,7 +123,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0016",
       "right_reading_block_id": "S09E19:speaker-evidence:0017",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.8475,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0017",
@@ -144,7 +146,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0019",
       "right_reading_block_id": "S09E19:speaker-evidence:0020",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.548,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0020",
@@ -298,7 +302,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0040",
       "right_reading_block_id": "S09E19:speaker-evidence:0041",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.4694,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0042",
@@ -319,7 +325,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0043",
       "right_reading_block_id": "S09E19:speaker-evidence:0044",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.4915,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0045",
@@ -375,7 +383,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0051",
       "right_reading_block_id": "S09E19:speaker-evidence:0052",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.6174,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0053",
@@ -396,7 +406,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0054",
       "right_reading_block_id": "S09E19:speaker-evidence:0055",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.8614,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0056",
@@ -438,21 +450,27 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0060",
       "right_reading_block_id": "S09E19:speaker-evidence:0061",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.4856,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0062",
       "left_reading_block_id": "S09E19:speaker-evidence:0061",
       "right_reading_block_id": "S09E19:speaker-evidence:0062",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.7093,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0063",
       "left_reading_block_id": "S09E19:speaker-evidence:0062",
       "right_reading_block_id": "S09E19:speaker-evidence:0063",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.6711,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0064",
@@ -501,7 +519,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0069",
       "right_reading_block_id": "S09E19:speaker-evidence:0070",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.5722,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0071",
@@ -676,7 +696,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0093",
       "right_reading_block_id": "S09E19:speaker-evidence:0094",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.804,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0096",
@@ -746,7 +768,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0103",
       "right_reading_block_id": "S09E19:speaker-evidence:0104",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.7135,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0106",
@@ -1054,14 +1078,18 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0145",
       "right_reading_block_id": "S09E19:speaker-evidence:0146",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.607,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0150",
       "left_reading_block_id": "S09E19:speaker-evidence:0146",
       "right_reading_block_id": "S09E19:speaker-evidence:0147",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.8057,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0151",
@@ -1166,14 +1194,18 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0161",
       "right_reading_block_id": "S09E19:speaker-evidence:0162",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.4605,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0166",
       "left_reading_block_id": "S09E19:speaker-evidence:0162",
       "right_reading_block_id": "S09E19:speaker-evidence:0163",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.7051,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0167",
@@ -1299,7 +1331,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0179",
       "right_reading_block_id": "S09E19:speaker-evidence:0180",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.5045,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0185",
@@ -1488,7 +1522,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0203",
       "right_reading_block_id": "S09E19:speaker-evidence:0204",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.4765,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0212",
@@ -1523,28 +1559,36 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0208",
       "right_reading_block_id": "S09E19:speaker-evidence:0209",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.4461,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0217",
       "left_reading_block_id": "S09E19:speaker-evidence:0209",
       "right_reading_block_id": "S09E19:speaker-evidence:0210",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.5408,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0218",
       "left_reading_block_id": "S09E19:speaker-evidence:0210",
       "right_reading_block_id": "S09E19:speaker-evidence:0211",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.6757,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0219",
       "left_reading_block_id": "S09E19:speaker-evidence:0211",
       "right_reading_block_id": "S09E19:speaker-evidence:0212",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.7521,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0220",
@@ -1831,14 +1875,18 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0251",
       "right_reading_block_id": "S09E19:speaker-evidence:0252",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.6256,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0261",
       "left_reading_block_id": "S09E19:speaker-evidence:0252",
       "right_reading_block_id": "S09E19:speaker-evidence:0253",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.666,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0262",
@@ -1950,28 +1998,36 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0265",
       "right_reading_block_id": "S09E19:speaker-evidence:0266",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.6495,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0278",
       "left_reading_block_id": "S09E19:speaker-evidence:0266",
       "right_reading_block_id": "S09E19:speaker-evidence:0267",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.6595,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0279",
       "left_reading_block_id": "S09E19:speaker-evidence:0267",
       "right_reading_block_id": "S09E19:speaker-evidence:0268",
       "provisional_same_turn": false,
-      "priority": "P0_UNVERIFIED_BREAK"
+      "priority": "P0_UNVERIFIED_BREAK",
+      "original_audio_machine_voice_pair_similarity": 0.5237,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0280",
       "left_reading_block_id": "S09E19:speaker-evidence:0268",
       "right_reading_block_id": "S09E19:speaker-evidence:0269",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.7993,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0281",
@@ -1999,7 +2055,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0272",
       "right_reading_block_id": "S09E19:speaker-evidence:0273",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.8014,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0285",
@@ -2041,7 +2099,9 @@
       "left_reading_block_id": "S09E19:speaker-evidence:0278",
       "right_reading_block_id": "S09E19:speaker-evidence:0279",
       "provisional_same_turn": true,
-      "priority": "P0_UNVERIFIED_JOIN"
+      "priority": "P0_UNVERIFIED_JOIN",
+      "original_audio_machine_voice_pair_similarity": 0.645,
+      "machine_audio_p0_boundary_verified": false
     },
     {
       "id": "B0291",
@@ -2455,7 +2515,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "b6724a11bdd7b455318e7840eb5bc40f35b2bd06d0b96029709267ae6fdc796d",
           "source_exact_dialogue": "We love monotonous, servile labor.",
-          "provisional_display_group_id": 2
+          "provisional_display_group_id": 2,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "DAN FIELDING",
+            "cosine_similarity": 0.78647,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0004",
@@ -3643,7 +3710,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "afe4efe9b8eaa27d0b40333ce4a35b9eb3eaa863485a03d95afdee7c2d6ef12b",
           "source_exact_dialogue": "Finders, keep doing what we both saw. Oh, what are we doing?",
-          "provisional_display_group_id": 72
+          "provisional_display_group_id": 72,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "DAN FIELDING",
+            "cosine_similarity": 0.79689,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -3799,7 +3873,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "f9122d15a05574cda075e39e737242fd85523c97efb1d132b8c7bceb77412836",
           "source_exact_dialogue": "Well, then there's probably nothing in there except some old photos and",
-          "provisional_display_group_id": 82
+          "provisional_display_group_id": 82,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "ALEX PATTERSON",
+            "cosine_similarity": 0.81477,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -3935,7 +4016,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "a50c5a5a14c1f8eea8dfa963a7d382f50365492063fc32c0c95d1564592dec10",
           "source_exact_dialogue": "I taped the wrong commercial, Norm's Auto World.",
-          "provisional_display_group_id": 89
+          "provisional_display_group_id": 89,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "CHRISTINE SULLIVAN",
+            "cosine_similarity": 0.80611,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0116",
@@ -4001,7 +4089,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "82e521df5345c9940cfb149a118a75cfd8ec83603f3a4872e630b77755e6f824",
           "source_exact_dialogue": "Good for you, Christine. I thought that commercial was great.",
-          "provisional_display_group_id": 91
+          "provisional_display_group_id": 91,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "ALEX PATTERSON",
+            "cosine_similarity": 0.78527,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0119",
@@ -4720,7 +4815,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "0dac18b13b5c2731487c58cf83e0b97322b343034a453afd5d77576ec5517b03",
           "source_exact_dialogue": "Or you gotta go.",
-          "provisional_display_group_id": 127
+          "provisional_display_group_id": 127,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "ROZ RUSSELL",
+            "cosine_similarity": 0.643,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0174",
@@ -5265,7 +5367,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "93b0e3b2a2685d14fc0fd8ef34478eb7445d29df8ec5eacab0d23eaa8aa57171",
           "source_exact_dialogue": "You know, I see a lot of couples in here.",
-          "provisional_display_group_id": 156
+          "provisional_display_group_id": 156,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "DAN FIELDING",
+            "cosine_similarity": 0.7175,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0211",
@@ -5275,7 +5384,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "032736d3c8442502013f4020e82a8c1c23ae8eb9741db0162cdafdb91c7cc5b5",
           "source_exact_dialogue": "I think those two got chemistry.",
-          "provisional_display_group_id": 156
+          "provisional_display_group_id": 156,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "DAN FIELDING",
+            "cosine_similarity": 0.73302,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0212",
@@ -5285,7 +5401,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "cb39dec7e0e96532ee5c39e25d3727e5b9bd35b50a6c8107ae486c11145eecf5",
           "source_exact_dialogue": "I predict a hot night ahead for them.",
-          "provisional_display_group_id": 156
+          "provisional_display_group_id": 156,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "DAN FIELDING",
+            "cosine_similarity": 0.74044,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0213",
@@ -5325,7 +5448,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "784242b756513177ec332d80f8ad8923a6b600b0a3975c07fe9c25fae9ff585d",
           "source_exact_dialogue": "I think they make a cute couple.",
-          "provisional_display_group_id": 159
+          "provisional_display_group_id": 159,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "ALEX PATTERSON",
+            "cosine_similarity": 0.83693,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0217",
@@ -5345,7 +5475,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "1219b3dbe3525e8162ee7ff9c59caa9fffd57485456650b97b2357572cd1a387",
           "source_exact_dialogue": "Hey, five bucks so they leave here together.",
-          "provisional_display_group_id": 161
+          "provisional_display_group_id": 161,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "ALEX PATTERSON",
+            "cosine_similarity": 0.86302,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0219",
@@ -5587,7 +5724,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "b02c3783705ba328effbfff531ad708b72c1be41b8882d4aa49cf594bd175336",
           "source_exact_dialogue": "You're having a great time. Good night.",
-          "provisional_display_group_id": 174
+          "provisional_display_group_id": 174,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "CHRISTINE SULLIVAN",
+            "cosine_similarity": 0.72604,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0236",
@@ -5648,7 +5792,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "4346d8d25edf7fb5e8486df6c7a43bde52af30fa4a26b18f46ce08081a0cd8b0",
           "source_exact_dialogue": "it this way. The air is human, right?",
-          "provisional_display_group_id": 178
+          "provisional_display_group_id": 178,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "ALEX PATTERSON",
+            "cosine_similarity": 0.87307,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0243",
@@ -5754,7 +5905,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "dc252dc3b436cdb7f5999b64019ec2e547f2c0eee01328abb5b9d2a64387f1be",
           "source_exact_dialogue": "Got no better place to go.",
-          "provisional_display_group_id": 183
+          "provisional_display_group_id": 183,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "ROZ RUSSELL",
+            "cosine_similarity": 0.81279,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:manual-P0-C277:unknown-1",
@@ -6440,7 +6598,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "d3395e01a5492e224b9f704aea448b54881a70d3b399e64f57bd3e70c167a4f1",
           "source_exact_dialogue": "Hey, Christine Sullivan, I'm voting for you.",
-          "provisional_display_group_id": 221
+          "provisional_display_group_id": 221,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "DAN FIELDING",
+            "cosine_similarity": 0.7771,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         },
         {
           "id": "S09E19:speaker-evidence:0299",
@@ -6460,7 +6625,14 @@
           "provisional_role": null,
           "source_dialogue_sha256": "a9ca93c7d6a3212674d70864bddf2d223f567d3a1b4ef12557c7ced4af7fd862",
           "source_exact_dialogue": "That's an interesting place for a bumper sticker.",
-          "provisional_display_group_id": 223
+          "provisional_display_group_id": 223,
+          "original_audio_model_uncertified_role_hint": {
+            "role_candidate": null,
+            "best_uncertified_role": "MAC ROBINSON",
+            "cosine_similarity": 0.79706,
+            "holdout_gate_passed": false,
+            "original_actor_voice_verified": false
+          }
         }
       ],
       "boundary_question_ids": [
@@ -6637,5 +6809,11 @@
   "original_audio_video_inspected_by_this_command": false,
   "script_final_or_full_episode_accepted": false,
   "workflow_instruction": "Review each sequential batch once on the SHA-pinned original film with synchronized sound; answer all P0 and P1 questions first, then record P2/P3/P4. Persist decisions in ONE stable episode ledger; regenerate ONE canonical screenplay. Machine-proposed names, source timestamps and display joins are not original-AV proof.",
-  "packet_sha256": "f0eaa6d220bdbdcba6046892dddc2fd1319c0e7baed04f3af32a5f971c30e1e2"
+  "original_soundtrack_machine_evidence_sha256": "585e502522ed9119b3ab21b1b05dbdbb40a40971165ddf20145e7853b70e3825",
+  "machine_audio_hints_attached": {
+    "p1_unknown_candidates": 16,
+    "p0_adjacent_audio_pairs": 30,
+    "is_original_AV_actor_or_turn_certification": false
+  },
+  "packet_sha256": "a411f49a8e754d296bfde13d204041c701109a496bfa1ce0be6f69bacf05785c"
 }
