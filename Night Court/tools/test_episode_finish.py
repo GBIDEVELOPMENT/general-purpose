@@ -43,7 +43,7 @@ class OnePassEpisodeTests(unittest.TestCase):
             "caption_text": self.caption_text[i],
             "original_source_sha256": self.source_sha,
             "original_source_part_refs": row["original_source_part_refs"]
-        }) + "\\n" for i, row in enumerate(self.rows)), encoding="utf-8")
+        }) + "\n" for i, row in enumerate(self.rows)), encoding="utf-8")
         self.manifest = {
             "manuscript_sha256": {
                 "S01E01": hashlib.sha256(script.read_bytes()).hexdigest()},
