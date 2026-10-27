@@ -198,13 +198,20 @@ jobs:
           PYTHONPATH='Night Court/tools' python -m unittest -v test_source_once_canonical_voice
           python 'Night Court/tools/source_once_canonical_voice.py' --offline-plan \
             --output "${RUNNER_TEMP}/unused"
-      - name: Install existing CPU voice model without GPU
+      - name: Install isolated pinned CPU voice dependencies with visible errors
         run: |
           set -euo pipefail
-          python -m pip install --disable-pip-version-check -q \
+          python -m venv "${RUNNER_TEMP}/nc-source-voice-env"
+          VP="${RUNNER_TEMP}/nc-source-voice-env/bin/python"
+          "$VP" -m pip --version
+          df -h "${RUNNER_TEMP}"
+          timeout 420 "$VP" -m pip install --disable-pip-version-check \
+            --no-input --retries 2 --timeout 25 --prefer-binary \
             'torch==2.7.1' --index-url https://download.pytorch.org/whl/cpu
-          python -m pip install --disable-pip-version-check -q \
+          timeout 360 "$VP" -m pip install --disable-pip-version-check \
+            --no-input --retries 2 --timeout 25 --prefer-binary \
             'resemblyzer==0.1.4' 'numpy==1.26.4'
+          "$VP" -c 'import torch, numpy, resemblyzer; print("CPU PyTorch",torch.__version__,"numpy",numpy.__version__)'
           command -v ffmpeg
       - name: One checksum-pinned original-film acquisition and acoustic analysis per episode
         env:
@@ -213,7 +220,7 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           set -euo pipefail
-          python -u 'Night Court/tools/source_once_canonical_voice.py' \
+          "${RUNNER_TEMP}/nc-source-voice-env/bin/python" -u 'Night Court/tools/source_once_canonical_voice.py' \
             --episode both --output "${RUNNER_TEMP}/source-p0p1"
       - name: Check both episode acoustic reports are safe and original-SHA-linked
         run: |
