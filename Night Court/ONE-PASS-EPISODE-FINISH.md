@@ -18,6 +18,19 @@ source-exact decisions in **one episode-local ledger**, applied to the same
 canonical manuscript by a bounded render-and-validate operation; previous
 decisions remain in Git history, not dozens of side-by-side screenplays.
 
+**Original-film verification is now a mandatory, local SHA-256 check:** the
+workbench hashes the user-selected exact original source file with browser
+WebCrypto, compares it with the packet's pinned original AVI checksum, and
+rejects exporting or recording any AV-attested decisions if the media edition
+does not match. A locally transcoded playback proxy remains possible for AVI
+codec compatibility but is separately labeled as unverified source-equivalence.
+Each proposed adjacent dialogue boundary now starts **unreviewed**; the reviewer
+must explicitly choose continuation, change, or overlap on actual audio.
+Likewise internal caption switches require explicit observed spans or a
+source-listened negative decision. The source check and UI gate reduce
+accidental false signoff but cannot prove the human watched the film or that
+a transcode preserved the original picture and sound.
+
 The browser **offline original-film review workbench** is
 [episode-finish-workbench.html](episode-finish-workbench.html). Open it locally
 (no network libraries), load one private review packet and the corresponding

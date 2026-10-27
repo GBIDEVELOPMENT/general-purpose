@@ -100,6 +100,9 @@ class OnePassEpisodeTests(unittest.TestCase):
             "episode_id": "S01E01",
             "original_video_sha256": p["original_video_sha256_expected"],
             "review_method": "continuous_original_synchronized_av",
+            "original_source_film_sha256_verified_in_browser": True,
+            "original_media_sha256_computed_locally": p["original_video_sha256_expected"],
+            "playback_edition_kind": "same_original_file",
             "reviewer": "Test fixture person",
             "boundaries": {},
             "roles": {},
@@ -125,6 +128,22 @@ class OnePassEpisodeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "requires original sound"):
             verify_decisions(p, d)
 
+    def test_no_av_acceptance_without_sha_verified_original_movie(self):
+        p=make_packet(self.root,"S01E01")
+        d={
+            "packet_sha256":p["packet_sha256"],"episode_id":"S01E01",
+            "original_video_sha256":p["original_video_sha256_expected"],
+            "review_method":"continuous_original_synchronized_av","reviewer":"test fixture",
+            "boundaries":{},"roles":{},"batches":{},
+        }
+        with self.assertRaisesRegex(ValueError,"source media SHA"):
+            verify_decisions(p,d)
+        d["original_source_film_sha256_verified_in_browser"]=True
+        d["original_media_sha256_computed_locally"]="0"*64
+        d["playback_edition_kind"]="viewer_supplied_proxy_source_equivalence_unverified"
+        with self.assertRaisesRegex(ValueError,"source media SHA"):
+            verify_decisions(p,d)
+
     def test_source_exact_original_av_reviewed_script_render_after_all_decisions(self):
         p = make_packet(self.root, "S01E01")
         d = {
@@ -132,6 +151,9 @@ class OnePassEpisodeTests(unittest.TestCase):
             "episode_id": "S01E01",
             "original_video_sha256": p["original_video_sha256_expected"],
             "review_method": "continuous_original_synchronized_av",
+            "original_source_film_sha256_verified_in_browser": True,
+            "original_media_sha256_computed_locally": p["original_video_sha256_expected"],
+            "playback_edition_kind": "same_original_file",
             "reviewer": "synthetic fixture",
             "boundaries": {
                 "B0001": {"result": "same_speaker_continuation",
@@ -168,6 +190,9 @@ class OnePassEpisodeTests(unittest.TestCase):
             "packet_sha256": p["packet_sha256"], "episode_id": "S01E01",
             "original_video_sha256": p["original_video_sha256_expected"],
             "review_method": "continuous_original_synchronized_av",
+            "original_source_film_sha256_verified_in_browser": True,
+            "original_media_sha256_computed_locally": p["original_video_sha256_expected"],
+            "playback_edition_kind": "same_original_file",
             "reviewer": "synthetic fixture",
             "boundaries": {
                 "B0001": {"result": "same_speaker_continuation", "heard_on_original_audio": True},
