@@ -30,7 +30,7 @@ Evidence classes:
 
 ## Episode consequences
 
-- **S01E01:** Four downloadable non-English SRT *translations* exist on Subtitle Cat; there is **no evidence of independent speaker names in them**. Independent German role data provides candidate names (Louise Kerr, Phil Kerr, painter; Carla B. requires further episode reconciliation). None of these supports upgrading provisional P0/P1 turns to accepted.
+- **S01E01:** Four downloadable non-English SRT *translations* exist on Subtitle Cat; there is **no evidence of independent speaker names in them**. Independent German role data provides candidate names (Louise Kerr, Phil Kerr, painter; Carla B. requires further episode reconciliation). A live repository search confirmed all four role concepts (Carla Bouvier, Louise Kerr, Phil Kerr, and PAINTER) **already appear in the latest canonical S01E01 working screenplay**. Consequently, the German listing adds independent **cast corroboration** but **zero genuinely new named character roles** to this pilot, and does not support upgrading provisional P0/P1 turns to accepted.
 - **S09E19:** SUBDL season-nine page is empty and the German casting index adds no episode-specific role. No verified independently attributed multilingual source found.
 - **Other episodes:** German index covers 37 speaking roles over the series but is sparse. Subtitle Cat translations are generally derivative, even when many languages are downloadable. They may supply corroborating dialogue strings but must not count as cross-source speaker votes.
 
