@@ -105,10 +105,68 @@ class ScriptFactoryTests(unittest.TestCase):
                 self.assertEqual(len(focus), report["priority_original_audio_p0_conflicts"])
                 self.assertTrue(len(focus) > 0)
                 self.assertTrue(all(not f["film_heard_turn_confirmed"] for f in focus))
+                rows = [json.loads(s) for s in files["provenance.jsonl"].splitlines()]
+                p1 = queue["original_audio_model_p1_unknown_voice_review"]
+                self.assertEqual(len(p1), 6 if ep == "S01E01" else 16)
+                self.assertEqual(report["previously_unknown_original_voice_windows"], len(p1))
+                self.assertEqual(report["unknown_voice_model_automatically_promoted"], 0)
+                self.assertEqual(len(set(x["reading_block_id"] for x in p1)), len(p1))
+                self.assertTrue(all(
+                    not x["original_soundtrack_heard_by_editor"]
+                    and not x["actual_character_voice_verified"]
+                    and not x["eligible_for_automatic_role_promotion"]
+                    and x["source_video_sha256"] == report["original_video_sha256"]
+                    and x["model_source_report_sha256"] == report["sha256"]
+                    and x["uncertified_machine_nearest_role"]
+                    for x in p1))
+                if ep == "S09E19":
+                    self.assertTrue(all(
+                        x["source_caption_time_ms"] is None and
+                        isinstance(x["unverified_original_movie_seek_hint_ms"], list)
+                        for x in p1))
+                else:
+                    self.assertTrue(all(
+                        isinstance(x["source_caption_time_ms"], list) and
+                        x["unverified_original_movie_seek_hint_ms"] is None
+                        for x in p1))
+                self.assertFalse(any(x["provisional_role"] is not None for x in rows
+                                     if x["reading_block_id"] in
+                                     {y["reading_block_id"] for y in p1}))
                 self.assertEqual(
                     len([x for x in scored
                          if x["review_priority"] == "P0_FOCUS_MODEL_CONTRADICTION"]),
                     len(focus))
+
+    def test_source_audio_p1_rejects_forged_calibration_and_false_av_acceptance(self):
+        import shutil
+        from script_factory import apply_existing_original_audio_p0
+        ep = "S09E19"
+        files, report = construct(ROOT, ep, self.index[ep])
+        rows = [json.loads(s) for s in files["provenance.jsonl"].splitlines()]
+        edges = json.loads(files["review-queue.json"])["boundary_review_questions"]
+        path = ROOT / "saved-private/episode-finish-current" / (
+            ep + "-original-audio-p0p1-evidence.json")
+        current = json.loads(path.read_text("utf-8"))
+        original = (ROOT / "saved-private/pilot-current" /
+                    (ep + "-working-screenplay.md")).read_text("utf-8")
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            target = root / "saved-private/episode-finish-current" / path.name
+            target.parent.mkdir(parents=True)
+            for field, forged in (
+                ("actor_voice_original_soundtrack_independently_verified", True),
+                ("global_and_role_holdout_pass", True),
+                ("source_original_timecode_ms", [100, 150]),
+                ("source_ref", "C99999.1"),
+                ("uncertified_best_role", ""),
+            ):
+                with self.subTest(field=field):
+                    tampered = json.loads(json.dumps(current))
+                    tampered["unknown_original_soundtrack_proposals"][0][field] = forged
+                    target.write_text(json.dumps(tampered), encoding="utf-8")
+                    with self.assertRaisesRegex(ValueError, "P1 source voice"):
+                        apply_existing_original_audio_p0(
+                            root, ep, self.index[ep]["sha256"], original, edges, rows)
 
     def test_generic_maintains_all_actual_original_cues_and_never_invents_time(self):
         for ep in ("S05E05", "S09E18"):
@@ -133,15 +191,15 @@ class ScriptFactoryTests(unittest.TestCase):
         ep = "S05E05"
         files, data = construct(ROOT, ep, self.index[ep])
         overlay = data["contextual_overlay"]
-        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 259)
+        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 265)
         self.assertEqual(overlay["mixed_voice_internal_review_cues"], 7)
-        self.assertEqual(overlay["weak_or_abstained_cues"], 34)
+        self.assertEqual(overlay["weak_or_abstained_cues"], 28)
         self.assertEqual(overlay["exact_contextual_internal_handoffs"], 7)
         self.assertEqual(overlay["unlocated_contextual_internal_handoffs"], 0)
         self.assertEqual(data["source_contextual_exact_p0_boundaries"], 7)
         self.assertEqual(data["contextual_provisional_named_parts"], 14)
         self.assertFalse(overlay["original_audio_verified"])
-        self.assertEqual(data["unknown_label_cues"], 41)
+        self.assertEqual(data["unknown_label_cues"], 35)
         rows = [json.loads(x) for x in files["provenance.jsonl"].splitlines()]
         self.assertEqual(rows[34]["candidate_display_role"], "Dan Fielding")
         self.assertTrue(rows[34]["provisional_continuation_of_previous"])
@@ -169,6 +227,13 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertTrue(all(not r["candidate_role_original_soundtrack_verified"] for r in rows))
         review = json.loads(files["review-queue.json"])
         self.assertEqual(len(review["contextual_role_review"]), 300)
+        for cue, person in ((196, "Christine Sullivan"), (199, "Christine Sullivan"),
+                            (202, "Christine Sullivan"), (207, "Christine Sullivan"),
+                            (243, "Dave (safe technician)"), (253, "Roz Russell")):
+            with self.subTest(cue=cue):
+                self.assertEqual(rows[cue - 1]["candidate_display_role"], person)
+                self.assertEqual(rows[cue - 1]["contextual_confidence"], "medium")
+                self.assertFalse(rows[cue - 1]["candidate_role_original_soundtrack_verified"])
         self.assertIn(36, review["review_internal_voice_changes"])
         self.assertIn("contextual hypothesis, unverified", files["screenplay.md"])
         self.assertIn("contextual lexical turn hypothesis; audio unverified", files["screenplay.md"])
