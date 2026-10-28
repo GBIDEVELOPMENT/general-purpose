@@ -1,0 +1,95 @@
+name: Night Court script factory (one click)
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: 'Original Night Court episode, e.g. S05E05, or all (193)'
+        required: true
+        type: string
+        default: S01E01
+      publish:
+        description: 'Save generated private scripts to main (recommended)'
+        required: true
+        type: boolean
+        default: true
+  pull_request:
+    paths:
+      - 'Night Court/tools/script_factory.py'
+      - 'Night Court/tools/test_script_factory.py'
+      - '.github/workflows/night-court-script-factory.yml'
+permissions:
+  contents: read
+concurrency:
+  group: night-court-script-factory-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.repository == 'GBIDEVELOPMENT/general-purpose'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test full original-source corpus, both pilots, source preservation and deterministic second run
+        run: |
+          set -euo pipefail
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_script_factory test_episode_finish
+      - name: Smoke the one-command user entrypoint
+        run: |
+          set -euo pipefail
+          python 'Night Court/tools/script_factory.py' --episode S05E05 --output "${RUNNER_TEMP}/script-factory-smoke"
+          python 'Night Court/tools/script_factory.py' --episode S01E01 --output "${RUNNER_TEMP}/script-factory-smoke"
+          test -s "${RUNNER_TEMP}/script-factory-smoke/S05E05/screenplay.md"
+          test -s "${RUNNER_TEMP}/script-factory-smoke/S01E01/manifest.json"
+  publish:
+    needs: validate
+    if: >-
+      github.event_name == 'workflow_dispatch' &&
+      github.ref == 'refs/heads/main' &&
+      github.event.repository.private == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Produce strongest currently supported complete available-source draft
+        env:
+          REQUESTED_EPISODE: ${{ inputs.episode }}
+        run: |
+          set -euo pipefail
+          python 'Night Court/tools/script_factory.py' \
+            --episode "${REQUESTED_EPISODE}" \
+            --output 'Night Court/saved-private/script-factory-current'
+      - name: Upload private editable screenplay and exact-source review queue
+        uses: actions/upload-artifact@v4
+        with:
+          name: night-court-script-factory-${{ inputs.episode }}
+          path: Night Court/saved-private/script-factory-current/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Commit one stable per-episode output (no generated version proliferation)
+        if: inputs.publish == true
+        env:
+          REQUESTED_EPISODE: ${{ inputs.episode }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'Night Court/saved-private/script-factory-current/'
+          if ! git diff --cached --quiet; then
+            git commit -m "data(night-court): refresh source-guarded script factory output for ${REQUESTED_EPISODE}"
+            # Normal fast-forward only: never force or overwrite concurrent editing.
+            git push origin HEAD:main
+          fi
