@@ -7,6 +7,10 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/night-court-script-factory.yml'
+      # Main refresh when model-report publisher itself is upgraded. Future
+      # Qwen owner jobs regenerate pilot scripts atomically with the report:
+      # a GITHUB_TOKEN bot push alone cannot trigger this workflow.
+      - '.github/workflows/night-court-owner-qwen-picture-pilot.yml'
       - 'Night Court/tools/script_factory.py'
       - 'Night Court/seasons/**/derived/text-only-speaker-proposals-v*.json'
       - 'Night Court/saved-private/episode-finish-current/*-original-audio-p0p1-evidence.json'
