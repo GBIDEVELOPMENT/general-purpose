@@ -63,6 +63,31 @@ class ScriptFactoryTests(unittest.TestCase):
                 self.assertTrue(all(sha(x["source_text"].encode()) == x["source_text_sha256"]
                                     for x in rows))
 
+    def test_pilots_reuse_existing_original_soundtrack_without_claiming_av_truth(self):
+        for ep, expected in (("S01E01", 194), ("S09E19", 30)):
+            with self.subTest(ep=ep):
+                files, manifest = construct(ROOT, ep, self.index[ep])
+                report = manifest["original_audio_p0_triage"]
+                self.assertEqual(report["status"], "canonical_source_audio_model_linked")
+                self.assertEqual(report["model_measured_adjacent_pairs"], expected)
+                self.assertEqual(report["matched_p0_pairs"], expected)
+                self.assertFalse(report["speaker_or_turn_audio_accepted"])
+                self.assertFalse(manifest["actual_av_verified"])
+                queue = json.loads(files["review-queue.json"])
+                scored = [x for x in queue["boundary_review_questions"]
+                          if "original_soundtrack_machine_similarity" in x]
+                self.assertEqual(len(scored), expected)
+                self.assertTrue(all(not x["original_audio_performed_boundary_verified"]
+                                    for x in scored))
+                focus = queue["original_audio_model_priority_p0"]
+                self.assertEqual(len(focus), report["priority_original_audio_p0_conflicts"])
+                self.assertTrue(len(focus) > 0)
+                self.assertTrue(all(not f["film_heard_turn_confirmed"] for f in focus))
+                self.assertEqual(
+                    len([x for x in scored
+                         if x["review_priority"] == "P0_FOCUS_MODEL_CONTRADICTION"]),
+                    len(focus))
+
     def test_generic_maintains_all_actual_original_cues_and_never_invents_time(self):
         for ep in ("S05E05", "S09E18"):
             with self.subTest(ep=ep):
@@ -89,6 +114,10 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertEqual(overlay["high_medium_single_role_hypotheses"], 259)
         self.assertEqual(overlay["mixed_voice_internal_review_cues"], 7)
         self.assertEqual(overlay["weak_or_abstained_cues"], 34)
+        self.assertEqual(overlay["exact_contextual_internal_handoffs"], 7)
+        self.assertEqual(overlay["unlocated_contextual_internal_handoffs"], 0)
+        self.assertEqual(data["source_contextual_exact_p0_boundaries"], 7)
+        self.assertEqual(data["contextual_provisional_named_parts"], 14)
         self.assertFalse(overlay["original_audio_verified"])
         self.assertEqual(data["unknown_label_cues"], 41)
         rows = [json.loads(x) for x in files["provenance.jsonl"].splitlines()]
@@ -97,13 +126,20 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertIsNone(rows[35]["candidate_display_role"])
         self.assertEqual(rows[35]["contextual_intra_cue_voice_roles"],
                          ["Dan Fielding", "Harry Stone"])
+        self.assertEqual(rows[35]["contextual_unicode_split_offsets"], [32])
+        self.assertEqual([p["provisional_part_role"] for p in rows[35]["source_speaker_parts"]],
+                         ["Dan Fielding", "Harry Stone"])
+        self.assertTrue(all(not p["original_audio_boundary_verified"]
+                            for p in rows[35]["source_speaker_parts"]))
         self.assertIsNone(rows[148]["candidate_display_role"])  # LOW confidence abstains
         self.assertTrue(all(not r["candidate_role_original_soundtrack_verified"] for r in rows))
         review = json.loads(files["review-queue.json"])
         self.assertEqual(len(review["contextual_role_review"]), 300)
         self.assertIn(36, review["review_internal_voice_changes"])
         self.assertIn("contextual hypothesis, unverified", files["screenplay.md"])
-        self.assertIn("MULTIPLE UNIDENTIFIED VOICES", files["screenplay.md"])
+        self.assertIn("contextual lexical turn hypothesis; audio unverified", files["screenplay.md"])
+        self.assertIn("Devil / Stu Blumberg (contextual lexical turn hypothesis",
+                      files["screenplay.md"])
         witness, _, captions = source_rows(ROOT, self.index[ep])
         with self.assertRaisesRegex(ValueError, "stale/malformed contextual role"):
             contextual_role_overlay(ROOT, ep, {**witness, "sha256": "0" * 64}, captions)
@@ -146,11 +182,22 @@ class ScriptFactoryTests(unittest.TestCase):
                                     p["source_character_start"]:p["source_character_end"]
                                 ].encode("utf-8")), p["source_text_sha256"])
                             cut_count += len(parts) - 1
-                        self.assertEqual(manifest["source_dash_candidate_p0_boundaries"], cut_count)
+                        self.assertEqual(
+                            manifest["source_dash_candidate_p0_boundaries"] +
+                            manifest["source_contextual_exact_p0_boundaries"], cut_count)
                         review = json.loads(queue)
                         self.assertEqual(len(review["within_cue_structural_turn_questions"]), cut_count)
                         self.assertTrue(all(not q["source_audio_performed_turn_verified"]
                                             for q in review["within_cue_structural_turn_questions"]))
+                        for row in rows:
+                            if row["contextual_unicode_split_offsets"]:
+                                self.assertEqual(
+                                    row["contextual_unicode_split_offsets"],
+                                    [p["source_character_start"] for p in
+                                     row["source_speaker_parts"][1:]])
+                                self.assertTrue(all(
+                                    p["provisional_part_role"] is not None
+                                    for p in row["source_speaker_parts"]))
 
     def test_cannot_silently_mutate_original_transcript(self):
         import shutil
