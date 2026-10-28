@@ -82,7 +82,7 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         self.assertIn("ref: ${{ github.sha }}", trusted)
         self.assertNotIn("github.event.pull_request.head.sha", trusted)
         self.assertNotIn("FTP_PASSWORD", trusted)
-        self.assertIn("permissions:\\n      actions: read\\n      contents: write", trusted)
+        self.assertIn("permissions:\n      actions: read\n      contents: write", trusted)
         self.assertIn("test_preserve_original_qwen_model_reports", trusted)
         self.assertIn("preserve_original_qwen_model_reports.py", trusted)
 
