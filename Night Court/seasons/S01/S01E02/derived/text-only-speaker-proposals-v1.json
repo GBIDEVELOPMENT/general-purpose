@@ -36,10 +36,10 @@
   "confidence_scale": "high only for contextually matched published role-labelled passage, medium for dialogue-context proposal, abstain when unique speaker not established; NONE has been authenticated against original video/audio",
   "counts": {
     "high_single": 20,
-    "medium_single": 269,
+    "medium_single": 273,
     "low_single": 0,
-    "mixed_cues": 71,
-    "abstain_cues": 20
+    "mixed_cues": 72,
+    "abstain_cues": 15
   },
   "source_audio_review_completed": false,
   "original_video_viewed": false,
@@ -79,12 +79,12 @@
     {
       "cue_id": "C00003.1",
       "source_unit_index": 3,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text and cast do not uniquely identify this voice. Keep it unassigned, including any source-caption dash segmentation, pending the original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "initial_whole_episode_dialogue_context_v1",
-      "evidence_type": "no_unique_voice",
+      "proposed_speaker": "Liz Williams",
+      "confidence": "medium",
+      "basis": "Reply to Dan's immediately preceding personal greeting and comment about seeing Liz on Perry Como; no source-heard confirmation.",
+      "status": "text_only_unverified",
+      "review_delta": "textual_exchange_reassessment",
+      "evidence_type": "adjacent_turn_taking;pronouns;dialogue_context",
       "original_audio_verified": false
     },
     {
@@ -261,12 +261,12 @@
     {
       "cue_id": "C00017.1",
       "source_unit_index": 17,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text and cast do not uniquely identify this voice. Keep it unassigned, including any source-caption dash segmentation, pending the original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "initial_whole_episode_dialogue_context_v1",
-      "evidence_type": "no_unique_voice",
+      "proposed_speaker": "Lana Wagner",
+      "confidence": "medium",
+      "basis": "Lana is the immediately addressed guesser in C14-C16 and describes the ball visible between the judge's fingers; textual same-speaker continuation only.",
+      "status": "text_only_unverified",
+      "review_delta": "textual_exchange_reassessment",
+      "evidence_type": "adjacent_turn_taking;pronouns;dialogue_context",
       "original_audio_verified": false
     },
     {
@@ -2176,12 +2176,12 @@
     {
       "cue_id": "C00172.1",
       "source_unit_index": 172,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text and cast do not uniquely identify this voice. Keep it unassigned, including any source-caption dash segmentation, pending the original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "initial_whole_episode_dialogue_context_v1",
-      "evidence_type": "no_unique_voice",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "Harry thanks the examining doctor and says the same reassurance carries more weight from the physician; immediate C168-C174 doctor's visit exchange.",
+      "status": "text_only_unverified",
+      "review_delta": "textual_exchange_reassessment",
+      "evidence_type": "adjacent_turn_taking;pronouns;dialogue_context",
       "original_audio_verified": false
     },
     {
@@ -4376,22 +4376,29 @@
       "cue_id": "C00349.1",
       "source_unit_index": 349,
       "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text and cast do not uniquely identify this voice. Keep it unassigned, including any source-caption dash segmentation, pending the original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "initial_whole_episode_dialogue_context_v1",
-      "evidence_type": "no_unique_voice",
-      "original_audio_verified": false
+      "confidence": "medium",
+      "basis": "Eddie begins apologizing for his outburst; after the source's explicit second voice dash, the red-suited man answers 'don't worry'. This handoff is contextually proposed at an exact Unicode character offset, not soundtrack heard.",
+      "status": "proposed_internal_voice_switch_unverified",
+      "review_delta": "source_exact_lexical_handoff",
+      "evidence_type": "caption_explicit_single_second_voice_dash;question_reply",
+      "original_audio_verified": false,
+      "proposed_ordered_speaker_parts": [
+        "Eddie Simms",
+        "Santa / John Stevens"
+      ],
+      "utf8_or_unicode_split_offsets": [
+        29
+      ]
     },
     {
       "cue_id": "C00350.1",
       "source_unit_index": 350,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text and cast do not uniquely identify this voice. Keep it unassigned, including any source-caption dash segmentation, pending the original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "initial_whole_episode_dialogue_context_v1",
-      "evidence_type": "no_unique_voice",
+      "proposed_speaker": "Santa / John Stevens",
+      "confidence": "medium",
+      "basis": "Continuing the red-suited man's 'Don't worry' response to Eddie's apology in the immediately preceding mixed cue C349; earlier claimed identity gives the joke its double meaning.",
+      "status": "text_only_unverified",
+      "review_delta": "textual_exchange_reassessment",
+      "evidence_type": "adjacent_turn_taking;pronouns;dialogue_context",
       "original_audio_verified": false
     },
     {
@@ -4724,5 +4731,19 @@
       "evidence_type": "turn_taking;pronouns;role_knowledge",
       "original_audio_verified": false
     }
-  ]
+  ],
+  "contextual_reassessment": {
+    "date": "2026-10-28",
+    "new_singles": [
+      3,
+      17,
+      172,
+      350
+    ],
+    "new_unambiguous_source_lexical_voice_handoff": [
+      349
+    ],
+    "source_caption_words_changed": false,
+    "original_film_review": false
+  }
 }
