@@ -113,6 +113,31 @@ class ScriptFactoryTests(unittest.TestCase):
                             for i, r in grammar))
         self.assertEqual(len(review["boundary_review_questions"]), len(rows) - 1)
 
+    def test_factory_edits_do_not_wake_legacy_multi_stage_pilot_rebuilder(self):
+        # That historical rebuild executes ~13 serial manuscript generators
+        # and can race the source-exact one-click factory's private publisher.
+        # Keep it for actual S01E01 and S09E19 editorial changes only.
+        workflow = (ROOT.parent / ".github/workflows/night-court-private-working-drafts.yml").read_text(
+            "utf-8")
+        self.assertEqual(workflow.count("      - 'Night Court/seasons/S01/S01E01/**'"), 2)
+        self.assertEqual(workflow.count("      - 'Night Court/seasons/S09/S09E19/**'"), 2)
+        self.assertNotIn("      - 'Night Court/seasons/**'", workflow)
+        for filename in (
+            "script_factory.py", "test_script_factory.py",
+            "preserve_original_qwen_model_reports.py",
+            "test_preserve_original_qwen_model_reports.py",
+            "owner_qwen_original_video_pilot.py",
+            "test_owner_qwen_original_video_pilot.py",
+        ):
+            self.assertEqual(
+                workflow.count("      - '!Night Court/tools/" + filename + "'"),
+                2, filename)
+        # Independent factory workflow must remain the sole code owner of
+        # building and saving ordinary original-series screenplay packages.
+        factory = (ROOT.parent / ".github/workflows/night-court-script-factory.yml").read_text(
+            "utf-8")
+        self.assertIn("Night Court/tools/script_factory.py", factory)
+
     def test_explicit_speaker_only_never_converts_addressee_to_voice(self):
         self.assertEqual(source_role("HARRY: Hello, Dan"), "HARRY")
         self.assertEqual(source_role("<v Roz>Hey, Harry"), "Roz")
