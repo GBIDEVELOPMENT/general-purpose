@@ -157,6 +157,64 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertIsNone(rows[348]["candidate_display_role"])
         self.assertIn("NOT AV-CERTIFIED", files["screenplay.md"])
 
+    def test_s01e02_source_text_only_p2_delivery_is_reviewable_not_acting_truth(self):
+        ep = "S01E02"
+        files, manifest = construct(ROOT, ep, self.index[ep])
+        rows = [json.loads(s) for s in files["provenance.jsonl"].splitlines()]
+        queue = json.loads(files["review-queue.json"])
+        self.assertEqual(manifest["contextual_overlay"]["text_only_performance_tone_hypotheses"], 64)
+        self.assertFalse(manifest["contextual_overlay"]["any_performed_tone_original_audio_verified"])
+        self.assertEqual(manifest["text_only_contextual_delivery_proposals"], 64)
+        self.assertFalse(manifest["original_audio_performed_delivery_accepted"])
+        proposed = [r for r in rows if r["contextual_textual_tone"]]
+        self.assertEqual(len(proposed), 64)
+        self.assertEqual(len(queue["textual_delivery_p2_review"]), 64)
+        for row in proposed:
+            self.assertIsNotNone(row["candidate_display_role"])
+            self.assertEqual(len(row["source_speaker_parts"]), 1)
+            self.assertFalse(row["performed_tone_original_soundtrack_verified"])
+            self.assertTrue(len(row["contextual_textual_tone_basis"]) >= 12)
+        self.assertTrue(all(not r["original_audio_tone_verified"]
+                            and not r["eligible_for_performed_stage_direction"]
+                            for r in queue["textual_delivery_p2_review"]))
+        for cue, expected in ((4, "playful"), (15, "exasperated"),
+                              (113, "sarcastic"), (286, "hesitant"),
+                              (330, "contrite"), (380, "exasperated")):
+            self.assertEqual(rows[cue-1]["contextual_textual_tone"], expected)
+        self.assertEqual(files["screenplay.md"].count("Textual delivery hypothesis:"), 64)
+        self.assertIn("original performance unverified", files["screenplay.md"])
+        self.assertFalse(manifest["actual_av_verified"])
+
+    def test_source_textual_tone_rejects_forged_performed_truth_and_mixed_voice(self):
+        from script_factory import contextual_role_overlay
+        ep = "S01E02"
+        manifest, _, captions = source_rows(ROOT, self.index[ep])
+        original = json.loads((ROOT / "seasons/S01/S01E02/derived" /
+                               "text-only-speaker-proposals-v1.json").read_text("utf-8"))
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp) / "seasons/S01/S01E02/derived"
+            folder.mkdir(parents=True)
+            dest = folder / "text-only-speaker-proposals-v1.json"
+            for change in (
+                {"original_soundtrack_verified": True},
+                {"tone": "film-confirmed-crying"},
+                {"basis": ""},
+            ):
+                with self.subTest(change=change):
+                    forged = json.loads(json.dumps(original))
+                    forged["records"][3]["provisional_delivery"].update(change)
+                    dest.write_text(json.dumps(forged), encoding="utf-8")
+                    with self.assertRaisesRegex(ValueError, "contextual delivery"):
+                        contextual_role_overlay(Path(tmp), ep, manifest, captions)
+            forged = json.loads(json.dumps(original))
+            forged["records"][0]["provisional_delivery"] = {
+                "tone": "sarcastic", "basis": "Two distinct source speakers cannot share cue tone.",
+                "original_soundtrack_verified": False,
+            }
+            dest.write_text(json.dumps(forged), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "contextual delivery"):
+                contextual_role_overlay(Path(tmp), ep, manifest, captions)
+
     def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
         episode = "S01E03"  # S01E02 now has a source-locked contextual editor overlay
         files, manifest = construct(ROOT, episode, self.index[episode])
