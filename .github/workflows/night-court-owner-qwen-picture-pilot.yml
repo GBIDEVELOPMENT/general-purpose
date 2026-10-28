@@ -167,7 +167,7 @@ jobs:
   persist-trusted-owner-original-video-model-review:
     # Deliberately separate from media/FTP/model inference. This job has
     # contents:write but receives NO FTP_PASSWORD, runs NO PR-head code and
-    # copies only validated compact JSON model proposals to private main.
+    # copies validated compact JSON model proposals and their source-checked\n    # four-file pilot factory outputs to private main.
     needs: trusted-owner-source-visual-inference
     if: >-
       github.event_name == 'pull_request_target' &&
@@ -207,23 +207,58 @@ jobs:
           python 'Night Court/tools/preserve_original_qwen_model_reports.py' \
             --artifact-root "${RUNNER_TEMP}/source-qwen-artifact" \
             --output 'Night Court/saved-private/episode-finish-current'
-      - name: Commit only stable source-verified compact model reviews to private main
+          # Produce *the same four stable factory files* from newly saved
+          # source-linked model evidence before committing. GITHUB_TOKEN
+          # bot pushes do not trigger another push workflow automatically.
+          python 'Night Court/tools/script_factory.py' --episode S01E01
+          python 'Night Court/tools/script_factory.py' --episode S09E19
+      - name: Preserve only source-checked compact model proposals without overwriting concurrent main
         run: |
           set -euo pipefail
-          git fetch --no-tags origin main
-          if test "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)"; then
-            echo "::error::Trusted source main advanced during original-film inference; refusing stale publication."
-            exit 1
-          fi
+          # Publication uses original trusted source code from github.sha.
+          # Other factory jobs may legitimately advance main during CPU model
+          # loading/inference; losing an 8-minute source run for that alone
+          # is avoidable. NEVER overwrite an existing visual evidence file.
+          source_base="$(git rev-parse HEAD)"
+          protected_paths=()
           for ep in S01E01 S09E19; do
-            git add -- \
-              "Night Court/saved-private/episode-finish-current/${ep}-original-qwen-visual-proposals.json" \
-              "Night Court/saved-private/episode-finish-current/${ep}-original-qwen-review-pending.json" \
+            protected_paths+=(
+              "Night Court/saved-private/episode-finish-current/${ep}-original-qwen-visual-proposals.json"
+              "Night Court/saved-private/episode-finish-current/${ep}-original-qwen-review-pending.json"
               "Night Court/saved-private/episode-finish-current/${ep}-original-qwen-safe-metrics.json"
+              "Night Court/saved-private/script-factory-current/${ep}/screenplay.md"
+              "Night Court/saved-private/script-factory-current/${ep}/provenance.jsonl"
+              "Night Court/saved-private/script-factory-current/${ep}/review-queue.json"
+              "Night Court/saved-private/script-factory-current/${ep}/manifest.json"
+            )
           done
-          if ! git diff --cached --quiet; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'data(night-court): preserve two original-film visual model review proposals'
-            git push origin HEAD:main
+          git add -- "${protected_paths[@]}"
+          if git diff --cached --quiet; then
+            exit 0
           fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data(night-court): preserve two original-film visual model review proposals'
+          # Maximum two bounded optimistic fast-forward attempts. Rebase is
+          # allowed ONLY if intervening main commits did not alter any of
+          # the six trusted original-video model report paths and eight factory output paths. Git conflicts
+          # or another simultaneous publisher abort; no force-push ever.
+          for attempt in 1 2; do
+            git fetch --no-tags origin main
+            if git diff --name-only "${source_base}" origin/main -- "${protected_paths[@]}" | grep -q .; then
+              echo "::error::Original-film visual evidence changed concurrently; refusing replacement."
+              exit 1
+            fi
+            if ! git merge-base --is-ancestor origin/main HEAD; then
+              if ! git -c rebase.autoStash=false rebase origin/main; then
+                git rebase --abort || true
+                echo "::error::Could not safely replay evidence-only commit on advanced main."
+                exit 1
+              fi
+            fi
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+          done
+          echo "::error::Concurrent main updates prevented ordinary fast-forward publication."
+          exit 1

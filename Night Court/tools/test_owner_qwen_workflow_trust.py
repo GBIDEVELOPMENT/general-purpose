@@ -85,6 +85,24 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         self.assertIn("permissions:\n      actions: read\n      contents: write", trusted)
         self.assertIn("test_preserve_original_qwen_model_reports", trusted)
         self.assertIn("preserve_original_qwen_model_reports.py", trusted)
+        # Bot pushes do NOT trigger other push workflows. Scripts and
+        # original-film reports must be saved together by this owner job.
+        self.assertIn("python 'Night Court/tools/script_factory.py' --episode S01E01", trusted)
+        self.assertIn("python 'Night Court/tools/script_factory.py' --episode S09E19", trusted)
+        self.assertIn('Night Court/saved-private/script-factory-current/${ep}/review-queue.json', trusted)
+        self.assertIn('Night Court/saved-private/script-factory-current/${ep}/manifest.json', trusted)
+
+    def test_source_only_publisher_replays_on_unrelated_changes_without_force(self):
+        trusted = self.workflow.split("  persist-trusted-owner-original-video-model-review:", 1)[1]
+        self.assertIn('source_base="$(git rev-parse HEAD)"', trusted)
+        self.assertIn('git diff --name-only "${source_base}" origin/main -- "${protected_paths[@]}"', trusted)
+        self.assertIn("rebase.autoStash=false rebase origin/main", trusted)
+        self.assertIn("git rebase --abort", trusted)
+        self.assertIn("git push origin HEAD:main", trusted)
+        self.assertNotIn("git push --force", trusted)
+        self.assertNotIn("git push -f ", trusted)
+        self.assertIn("for attempt in 1 2; do", trusted)
+        self.assertIn("Original-film visual evidence changed concurrently", trusted)
 
     def test_comment_writer_is_separate_job(self):
         self.assertIn("announce-trusted-owner-run-locator:", self.workflow)
