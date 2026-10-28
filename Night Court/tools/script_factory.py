@@ -524,6 +524,71 @@ def pilot_episode(root: Path, ep: str, index: dict):
     }
 
 
+def original_film_visual_model_review(root: Path, ep: str) -> tuple[dict, list]:
+    """Reuse only source-checked original video observations as *review questions*.
+
+    Two seconds of model vision is nowhere near whole-film coverage, and its
+    scene/action descriptions are not separately witnessed stage directions.
+    Do not insert the text into the production screenplay automatically.
+    """
+    if ep not in PILOTS:
+        return {"status": "no_original_film_visual_model_evidence", "sampled_windows": 0}, []
+    from preserve_original_qwen_model_reports import (
+        review_original_qwen_report, validate_bundle
+    )
+    folder = root / "saved-private/episode-finish-current"
+    report_path = folder / f"{ep}-original-qwen-visual-proposals.json"
+    pending_path = folder / f"{ep}-original-qwen-review-pending.json"
+    metrics_path = folder / f"{ep}-original-qwen-safe-metrics.json"
+    if not any(p.exists() for p in (report_path, pending_path, metrics_path)):
+        return {"status": "no_original_film_visual_model_evidence", "sampled_windows": 0}, []
+    if not all(p.is_file() for p in (report_path, pending_path, metrics_path)):
+        raise ValueError(ep + ": partial original film vision evidence, refusing unlinked proposal")
+    # The source private publisher has validated the exact model-proposal
+    # bundle; recheck all source film, model, deferred reviews and report SHA
+    # before referencing it from the one-click final product review queue.
+    import tempfile
+    with tempfile.TemporaryDirectory(prefix="night-court-qwen-sha-reverify-") as scratch:
+        working = Path(scratch)
+        for dest, src in (
+            (f"nc-qwen-original-{ep}.json", report_path),
+            (f"nc-qwen-pending-{ep}.json", pending_path),
+            (f"nc-qwen-safe-metrics-{ep}.json", metrics_path),
+        ):
+            (working / dest).write_bytes(src.read_bytes())
+        validate_bundle(ep, working)
+    raw = report_path.read_bytes()
+    original = json.loads(raw)
+    windows = review_original_qwen_report(ep, original)
+    pointers = [{
+        "source_original_video_sha256": original["source_video_sha256"],
+        "model_id": original["model_id"],
+        "model_revision": original["model_revision"],
+        "source_window_ms": [row["start_ms"], row["end_ms"]],
+        "window_id": row["id"],
+        "visual_model_status": row["status"],
+        "unverified_description": row["model_hypothesis"],
+        "original_video_human_verified": False,
+        "whole_episode_picture_analyzed": False,
+        "original_stage_direction_accepted": False,
+        "source_report_sha256": sha(raw),
+        "review_priority": "P3_P4_SOURCE_VIDEO_CONFIRMED_ONLY_AFTER_REVIEW",
+    } for row in windows if row.get("model_hypothesis") is not None]
+    return {
+        "status": "original_source_model_proposals_unverified",
+        "file": str(report_path.relative_to(root)),
+        "sha256": sha(raw),
+        "sampled_windows": len(windows),
+        "model_review_questions": len(pointers),
+        "original_source_video_sha256": original["source_video_sha256"],
+        "model_load_seconds": original["model_load_seconds"],
+        "total_model_inference_seconds": round(sum(
+            row.get("inference_seconds", 0) for row in windows), 3),
+        "human_film_reviewer_accepted": False,
+        "whole_episode_video_covered": False,
+    }, pointers
+
+
 def construct(root: Path, ep: str, index: dict):
     if ep in PILOTS:
         script, rows, edges, details = pilot_episode(root, ep, index)
@@ -531,12 +596,14 @@ def construct(root: Path, ep: str, index: dict):
         script, rows, edges, details = generic_episode(root, ep, index)
     if not rows or not script.strip():
         raise ValueError(ep + ": empty script or source lineage")
+    visual_evidence, visual_review = original_film_visual_model_review(root, ep)
     raw = script.encode("utf-8")
     records = json_lines(rows)
     reviews = json_text({"schema": SCHEMA, "episode_id": ep,
                          "priorities": ["P0_turns", "P1_identity", "P2_delivery",
                                         "P3_props_wardrobe", "P4_actions", "P5_coarse_time"],
                          "all_original_audio_boundaries_unverified": True,
+                         "original_film_visual_model_only_review": visual_review,
                          "boundary_review_questions": edges,
                          "original_audio_model_priority_p0": [{
                              "between_block_ids": x["between_block_ids"],
@@ -578,6 +645,7 @@ def construct(root: Path, ep: str, index: dict):
         "script_sha256": sha(raw), "source_provenance_sha256": sha(records.encode("utf-8")),
         "p0_review_queue_sha256": sha(reviews.encode("utf-8")),
         **details,
+        "original_film_visual_model_evidence": visual_evidence,
         "dialogue_source_changed": False,
         "source_only_claims_never_promoted_to_av_truth": True,
     }
