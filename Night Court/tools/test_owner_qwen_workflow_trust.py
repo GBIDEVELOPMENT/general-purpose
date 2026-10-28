@@ -86,6 +86,18 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         self.assertIn("test_preserve_original_qwen_model_reports", trusted)
         self.assertIn("preserve_original_qwen_model_reports.py", trusted)
 
+    def test_source_only_publisher_replays_on_unrelated_changes_without_force(self):
+        trusted = self.workflow.split("  persist-trusted-owner-original-video-model-review:", 1)[1]
+        self.assertIn('source_base="$(git rev-parse HEAD)"', trusted)
+        self.assertIn('git diff --name-only "${source_base}" origin/main -- "${protected_paths[@]}"', trusted)
+        self.assertIn("rebase.autoStash=false rebase origin/main", trusted)
+        self.assertIn("git rebase --abort", trusted)
+        self.assertIn("git push origin HEAD:main", trusted)
+        self.assertNotIn("git push --force", trusted)
+        self.assertNotIn("git push -f ", trusted)
+        self.assertIn("for attempt in 1 2; do", trusted)
+        self.assertIn("Original-film visual evidence changed concurrently", trusted)
+
     def test_comment_writer_is_separate_job(self):
         self.assertIn("announce-trusted-owner-run-locator:", self.workflow)
         self.assertIn("pull-requests: write", self.workflow)
