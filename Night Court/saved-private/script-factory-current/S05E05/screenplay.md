@@ -1115,7 +1115,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 - Source edition: `subtitle-cat-english-online-caption-research-wit--9bdf7ef5e94675cc`; 300 of 300 cues present.
 - 0 cues have source-explicit voice labels; 300 have no explicit source role.
 - 259 high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.
-- 7 cues contain multiple leading-dash voice hints and need internal P0 examination.
+- 7 cues have possible internal voice changes (dash-marked or context-only).
+- 0 candidate within-cue dash boundaries are represented as separate reversible speaker parts.
 - 299 adjacent boundaries remain original-audio unverified.
 - Episode-credited guest roles (not speaker assignments): Art Fensterman, Biker, Dave, Devil, Leona Cowan, Ross Gintz.
 - Passage boundaries are caption-gap heuristics. Scene headings, wardrobe, props,
