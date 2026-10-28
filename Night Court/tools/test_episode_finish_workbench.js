@@ -67,4 +67,14 @@ assert.ok(page.includes('data-beat-action'),"P4 physical comedy must attach to a
 assert.ok(page.includes('original_av_beat_notes:beats'),"Per-block AV notes must be exported in same stable decisions");
 assert.ok(page.includes('el.dataset[fieldName]===r.id'),"Beat-note controls must bind by original reading-block ID");
 console.log("P2/P3/P4 exact-source line-anchored original AV annotations: PASS");
+assert.equal(run('filmSecondsSeen=new Set();recordFullFilmSeconds(.2,1.1,1450)'),2);
+assert.equal(run('recordFullFilmSeconds(1.1,120.3,1450)'),0,"Seeking cannot fake whole-film coverage");
+assert.equal(run('filmSecondsSeen.size'),2);
+assert.equal(run('recordFullFilmSeconds(1.1,2.1,1450)'),1);
+assert.equal(run('filmSecondsSeen.size'),3);
+assert.ok(page.includes('original_film_playback_coverage:fullFilmCoverage()'),
+  "Full-film playback data must travel with the one editorial decision ledger");
+assert.ok(page.includes('film_coverage_seconds:[...filmSecondsSeen]'),
+  "Original film coverage needs crash-safe local storage");
+console.log("Continuous source film timeline: watched seconds count; skipped footage does not");
 console.log("Original film SHA, listened P0 and explicitly unverified acoustic hints: PASS");

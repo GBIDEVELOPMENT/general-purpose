@@ -5,10 +5,31 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA, render_reviewed_screenplay, block_turn_segments, attach_source_audio_hints, reviewer_source_sha256
+from episode_finish import make_packet, verify_decisions, verified_s09_candidate_locator, VIDEO_SHA, render_reviewed_screenplay, block_turn_segments, attach_source_audio_hints, reviewer_source_sha256, validate_full_episode_playback_coverage
 
 
 class OnePassEpisodeTests(unittest.TestCase):
+    @staticmethod
+    def synthetic_entire_original_film():
+        # SYNTHETIC UI telemetry only, no actual original episode watched by tests.
+        return {"schema":"night-court-local-playback-seconds/1",
+                "duration_seconds":1320,"observed_seconds":list(range(1320))}
+
+    def test_source_movie_cannot_be_certified_by_short_clip_sampling(self):
+        complete={"original_film_playback_coverage":self.synthetic_entire_original_film()}
+        self.assertEqual(validate_full_episode_playback_coverage(complete)
+                         ["locally_observed_original_film_seconds"],1320)
+        complete["original_film_playback_coverage"]["observed_seconds"]=list(range(60))
+        with self.assertRaisesRegex(ValueError,"insufficient"):
+            validate_full_episode_playback_coverage(complete)
+        complete["original_film_playback_coverage"]["observed_seconds"]=[
+            i for i in range(1320) if not 400<=i<=412]
+        with self.assertRaisesRegex(ValueError,"unreviewed continuous gap"):
+            validate_full_episode_playback_coverage(complete)
+        complete["original_film_playback_coverage"]["observed_seconds"]=[0,0,1]
+        with self.assertRaisesRegex(ValueError,"Malformed"):
+            validate_full_episode_playback_coverage(complete)
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
@@ -146,6 +167,7 @@ class OnePassEpisodeTests(unittest.TestCase):
             "performance_notes": [], "visible_props_and_wardrobe": [],
             "observed_actor_action_target": []}
                         for batch in p["sequential_one_pass_batches"]}
+        d["original_film_playback_coverage"]=self.synthetic_entire_original_film()
         self.assertTrue(verify_decisions(p, d)["editorial_decisions_complete"])
         d["boundaries"]["B0001"]["heard_on_original_audio"] = False
         with self.assertRaisesRegex(ValueError, "requires original sound"):
@@ -193,6 +215,7 @@ class OnePassEpisodeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"picture coverage is incomplete"):
             verify_decisions(p,d)
         for value in d["batches"].values():value["observed_original_film_playback_seconds"]=8.1
+        d["original_film_playback_coverage"]=self.synthetic_entire_original_film()
         self.assertTrue(verify_decisions(p,d)["editorial_decisions_complete"])
 
     def test_source_exact_original_av_reviewed_script_render_after_all_decisions(self):
@@ -225,6 +248,7 @@ class OnePassEpisodeTests(unittest.TestCase):
                 "observed_actor_action_target": ["test observed action"]
             }}
         }
+        d["original_film_playback_coverage"]=self.synthetic_entire_original_film()
         script = render_reviewed_screenplay(p, d)
         self.assertEqual(script.count("### LANA"), 1)
         self.assertEqual(script.count("### UNIDENTIFIED VOICE"), 1)
@@ -282,6 +306,7 @@ class OnePassEpisodeTests(unittest.TestCase):
             {"start": 0, "end": 1, "role": "LANA"},
             {"start": 1, "end": 3, "role": "DAN"},
         ]
+        d["original_film_playback_coverage"]=self.synthetic_entire_original_film()
         self.assertTrue(verify_decisions(p, d)["editorial_decisions_complete"])
         output = render_reviewed_screenplay(p, d)
         self.assertEqual(output.count("### LANA"), 1)

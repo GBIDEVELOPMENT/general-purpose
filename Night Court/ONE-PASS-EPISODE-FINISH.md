@@ -89,6 +89,21 @@ local video against the original source SHA before certifying; HTML cannot
 authenticate what they actually watched, and browser AVI codecs may require a
 locally transcoded MP4 viewing proxy.
 
+**Whole-episode playback acceptance (not only clips):** the source-verified
+offline video player now tracks each second actually reached by contiguous
+non-seeking playback, including footage between caption paragraphs and silent
+physical comedy. Its compact watched-second timeline lives in the SAME
+locally journaled and exportable episode decision ledger. A reviewer-attested
+final screenplay fails the source-AV gate unless at least **97% of the 20–30
+minute original-runtime playback** was covered and no continuous unattended
+interval exceeds **8 seconds**. Fast seeks cannot manufacture coverage. The
+per-passage minimum-eight-second gate remains a separate anti-checkbox check,
+not a proxy for finishing the full episode. Video-player telemetry is neither
+independent proof of attention nor a guarantee that a locally transcoded proxy
+faithfully represents the original SHA-pinned AVI. Reviewer discipline and
+independent editorial checks remain required. Incomplete JSON backups can
+still be exported, but they cannot pass final acceptance.
+
 **Crash-safe review continuity:** after each genuinely listened and confirmed passage,
 the offline workbench keeps one local browser draft keyed by the source-identity
 packet SHA. Reloading the SAME episode packet restores the confirmed P0/P1
