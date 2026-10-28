@@ -1,0 +1,35 @@
+# Night Court script factory: one click, one stable screenplay per episode
+
+**Launch:** [Actions → Night Court script factory (one click)](https://github.com/GBIDEVELOPMENT/general-purpose/actions/workflows/night-court-script-factory.yml) → **Run workflow** on **main**. Enter `S05E05` (or any original-series `SXXEXX`, or `all` for all 193). Leave **Publish** enabled. There are no local setup steps or new secrets. A single Actions job produces the current screenplay, its immutable-source provenance, a P0/P1 review queue and a manifest. The workflow uploads a short-lived private artifact and, by default, commits the result to a *stable* private location.
+
+**Local equivalent** (Python 3.11+, standard library, no packages, no media or API keys):
+
+```sh
+python 'Night Court/tools/script_factory.py' --episode S05E05
+# Or produce all 193 original-series scripts:
+python 'Night Court/tools/script_factory.py' --episode all
+```
+
+**Where output lives:** `Night Court/saved-private/script-factory-current/SXXEXX/`, exactly four files:
+- `screenplay.md`: the strongest currently integrated screenplay. S01E01/S09E19 prefer canonical editor-completed provisional working manuscripts, then a fully source-AV-validated reviewed promotion if the existing one-pass acceptance ledger is complete. Every other episode gets all presently held dialogue in chronological order with exact source characters, cautious explicit source speaker labels and provisional passage divisions.
+- `provenance.jsonl`: one record per canonical pilot reader block or one complete original caption cue for other episodes, including the exact source text, individual text SHA, original source SHA, original order and source times (or *null* for untimed).
+- `review-queue.json`: every adjacent unverified P0 boundary, plus detectable multi-voice caption typography and the mandated P0→P5 priority order. All unresolved boundaries remain unresolved instead of being silently signed off.
+- `manifest.json`: source version and SHA, exact saved file SHAs, script tier, counts, and acceptance/uncertainty flags.
+
+The script uses the *193 existing verified-index dialogue witnesses*. It never invokes a recognizer, sends transcripts to third parties, runs expensive model jobs or retrieves original video. SHA-256 guards refuse modified source files; bad/missing cue sequence, incorrect witness identity or invented untimed timestamps also fail. Repeated invocations are byte-for-byte idempotent: rerunning the same episode updates existing files only when the evidence or editorial manuscript has actually changed. A rerun never creates agent-vNN manuscripts.
+
+## What the factory can and cannot do
+
+**Pilots**: S01E01 has 404 original source units and 405 reading blocks; S09E19 has 347 original units and 323 reading blocks. Their current editorial readers provisionally name most source units, correctly distinguish the originally untimed S09 source, preserve available contextual splits and joins, and retain substantial source-linked dialogue and editorial material. The factory chooses these instead of discarding months of editorial work in favor of a generic subtitle renderer.
+
+**Other 191 episodes**: the complete *available* subtitle source can be emitted immediately with cue-perfect reversible provenance. The machine cannot reliably derive who actually spoke every anonymous subtitle, when adjacent cues belong to one actor, actual scene changes, actors' comic delivery, costume and props or physical business just from caption text. In particular the `all` option does **not** claim 193 near-complete audiovisual screenplays. Actual source cut completeness is unknown and originally missed or inaccurate words cannot be detected without audio comparison.
+
+For near-complete **performed** scripts, the still-required product lane is the existing [one-pass source-AV finisher](ONE-PASS-EPISODE-FINISH.md): continuous original-film review, full P0 turn and P1 voice confirmation, P2–P4 observations, with the single stable decision ledger and independent QA. The source-audio role model has shown only ~69–72% provisional-role holdout accuracy on the two pilots, so auto-accepting its guesses would degrade the final product. This factory intentionally refuses to label such machine proposals as witnessed truth.
+
+## Acceptance and operations
+
+Run `PYTHONPATH='Night Court/tools' python -m unittest -v test_script_factory test_episode_finish` to verify the two canonical scripts, 193 indexed episodes, exact cue preservation, original witness hashing, idempotence and lack of fabricated AV approvals. CI runs those tests automatically on factory PRs and before every manual publication. If `main` advances during the write, the fast-forward commit fails safely rather than overwriting another editor.
+
+The output is private because the original dialogue corpus is held for owner-authorized research. Never expose the artifacts publicly, including Actions logs. Original media is never embedded in an artifact. If the factory produces a source-only script, assigning fresh characters by intuition is editorial work requiring a source-bound amendment; claiming the audio or video was witnessed requires the original-source acceptance record.
+
+**Two levels of completion must remain distinct:** (1) complete *available source dialogue* delivered and retrievable; (2) complete, verified performed AV screenplay. This workflow automates the former and reuses the best existing validated evidence for the latter. It does not falsely report level (2).
