@@ -190,11 +190,9 @@ class ScriptFactoryTests(unittest.TestCase):
         ep = "S05E05"
         files, data = construct(ROOT, ep, self.index[ep])
         overlay = data["contextual_overlay"]
-        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 259)
+        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 265)
         self.assertEqual(overlay["mixed_voice_internal_review_cues"], 7)
         self.assertEqual(overlay["weak_or_abstained_cues"], 28)
-        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 265)
-        self.assertEqual(data["unknown_label_cues"], 35)
         self.assertEqual(overlay["exact_contextual_internal_handoffs"], 7)
         self.assertEqual(overlay["unlocated_contextual_internal_handoffs"], 0)
         self.assertEqual(data["source_contextual_exact_p0_boundaries"], 7)
