@@ -9,6 +9,7 @@ on:
       - '.github/workflows/night-court-script-factory.yml'
       - 'Night Court/tools/script_factory.py'
       - 'Night Court/seasons/**/derived/text-only-speaker-proposals-v*.json'
+      - 'Night Court/saved-private/episode-finish-current/*-original-audio-p0p1-evidence.json'
   # The existing canonical publisher announces a new trusted manuscript.
   # Refresh the same private pilot output paths, never create vNN editions.
   repository_dispatch:
