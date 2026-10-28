@@ -551,7 +551,7 @@ def construct(root: Path, ep: str, index: dict):
                                  z["between_block_ids"][0]))],
                          "review_internal_voice_changes": [x.get("cue") for x in rows
                                                           if x.get("multiple_voice_dashes") or
-                                                          x.get("contextual_unlocated_internal_handoff")],
+                                                          x.get("contextual_intra_cue_voice_roles")],
                          "within_cue_structural_turn_questions": [{
                              "source_cue": row["cue"],
                              "left_part": left["source_part_id"],
