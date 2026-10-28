@@ -192,6 +192,29 @@ these as unverified source-audio seek hints, not source transcript timecodes.
      --verify-decisions 'Night Court/saved-private/episode-finish-current/S01E01-original-av-decisions.json' \\
      --render-reviewed-screenplay
    ```
+   **Durable promotion is automatic after the complete ledger is committed.**
+   Put the workbench export at
+   `Night Court/saved-private/episode-finish-current/S01E01-original-av-decisions.json`
+   (or the analogous S09E19 path) in private `main`. The EXISTING
+   `night-court-episode-finish.yml` workflow runs the source-verified
+   final-reader validator, refuses partial/inconsistent source playback,
+   and writes `S01E01-original-av-reviewed-screenplay.md` plus a SHA-guarded
+   `S01E01-original-av-reviewed-manifest.json` **at the same stable paths**.
+   No additional workflow or manuscript edition is created. Partial
+   exports can also be committed: they are preserved as drafts and cannot
+   publish a finished screenplay. The provisional immutable snapshot
+   `pilot-current` remains available as source provenance; the accepted
+   reader takes precedence for editorial consumption when its manifest
+   verifies against that original manuscript and source witness.
+
+   A second independent editor may add
+   `S01E01-independent-original-av-acceptance.json` with the same packet
+   SHA, decision-ledger SHA, rendered-screenplay SHA, pinned original film
+   SHA, and **at least three independently checked source blocks from
+   each third of the episode**. That report must come from a separate
+   real reviewer and claim no remaining P0/P1 contradictions; passing the
+   machine-readable gate alone never proves the reviewer watched film.
+
    This produces `S01E01-original-av-reviewed-screenplay.md` only after
    all exact caption rows are conserved and all source-reviewed turn and voice
    decisions are accepted or explicitly marked UNIDENTIFIED. The renderer
