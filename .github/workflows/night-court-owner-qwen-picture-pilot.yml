@@ -41,6 +41,7 @@ jobs:
           fi
           python3 'Night Court/tools/test_owner_qwen_original_video_pilot.py' -v
           python3 'Night Court/tools/test_owner_qwen_workflow_trust.py' -v
+          python3 'Night Court/tools/test_preserve_original_qwen_model_reports.py' -v
 
   announce-trusted-owner-run-locator:
     if: >-
