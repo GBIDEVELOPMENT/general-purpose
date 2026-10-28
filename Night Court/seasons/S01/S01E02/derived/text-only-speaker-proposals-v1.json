@@ -39,7 +39,8 @@
     "medium_single": 273,
     "low_single": 0,
     "mixed_cues": 72,
-    "abstain_cues": 15
+    "abstain_cues": 15,
+    "textual_delivery_hypotheses": 64
   },
   "source_audio_review_completed": false,
   "original_video_viewed": false,
@@ -96,7 +97,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "playful",
+        "basis": "Harry invites Carla to watch a small magic trick, an intentionally playful conversational move.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00005.1",
@@ -107,7 +113,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "dry",
+        "basis": "Carla responds that it is her night off, a laconic refusal rather than an eager reaction.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00006.1",
@@ -191,7 +202,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "playful",
+        "basis": "Harry asks his audience to guess which hand contains the magic ball, continuing a deliberate trick.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00013.1",
@@ -238,7 +254,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "exasperated",
+        "basis": "Harry resorts to a comically exaggerated plea that the court will grow old unless someone guesses.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00016.1",
@@ -539,7 +560,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "teasing",
+        "basis": "Harry needles the Christmas defendant about drinking after the holiday.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00037.1",
@@ -550,7 +576,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "dry",
+        "basis": "Santa matter-of-factly acknowledges having had drinks, undercutting the mystical persona.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00038.1",
@@ -605,7 +636,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "teasing",
+        "basis": "The man warns Dan about an embarrassing childhood doll anecdote in response to Dan's jibe.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00043.1",
@@ -682,7 +718,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "dry",
+        "basis": "Dan responds to the judge's belief in mythology with a teasingly matter-of-fact comeback.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00050.1",
@@ -744,7 +785,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "incredulous",
+        "basis": "The self-described Santa reacts to his own attorney's skepticism about his identity.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00055.1",
@@ -791,7 +837,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "reflective",
+        "basis": "The judge contrasts adults' skepticism with childhood belief, a reflective rhetorical premise.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00058.1",
@@ -842,7 +893,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "dry",
+        "basis": "Carla counters an improbable greeting by claiming to be the Easter Bunny.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00062.1",
@@ -1141,7 +1197,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "exasperated",
+        "basis": "Dan asks permission to smack the uncooperative teenager, a plainly impatient courtroom complaint.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00086.1",
@@ -1185,7 +1246,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "teasing",
+        "basis": "Harry teases the shoplifters for selecting snacks rather than an entree.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00090.1",
@@ -1389,7 +1455,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "defiant",
+        "basis": "Eddie turns the judge's criticism about youth straight back onto the judge.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00106.1",
@@ -1480,7 +1551,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "attributed_episode_public_quote_not_AV_truth",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "teasing",
+        "basis": "Eddie invokes a television monster character to bait Bull, a pointed joke.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00113.1",
@@ -1491,7 +1567,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "attributed_episode_public_quote_not_AV_truth",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "sarcastic",
+        "basis": "Dan's invitation to encourage Eddie immediately undercuts the judge's attempt at control.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00114.1",
@@ -1626,7 +1707,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "defiant",
+        "basis": "Eddie denies being angry directly after the older man challenges him about it.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00125.1",
@@ -1710,7 +1796,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "stern",
+        "basis": "Harry orders the provocative teen to stop insulting someone in his courtroom.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00132.1",
@@ -1842,7 +1933,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "reassuring",
+        "basis": "Santa asks Harry not to be angry and explicitly defends the boy as troubled.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00144.1",
@@ -1959,7 +2055,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "sarcastic",
+        "basis": "Eddie labels Santa's reassurance comforting despite directly mocking it.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00154.1",
@@ -1970,7 +2071,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "angry",
+        "basis": "Eddie pivots to an accusation about the old man's drinking rather than answering compassion.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00155.1",
@@ -1981,7 +2087,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "exasperated",
+        "basis": "Eddie launches another rhetorical challenge about what he is supposed to do.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00156.1",
@@ -1992,7 +2103,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "bitter",
+        "basis": "Eddie dismisses the red-suited man's care, speaking from stated distrust.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00157.1",
@@ -2021,7 +2137,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "indignant",
+        "basis": "Santa insists the young people may laugh but may not dispute his concern for them.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00159.1",
@@ -2043,7 +2164,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "indignant",
+        "basis": "Santa explicitly protests the accusation that he does not care.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00161.1",
@@ -2054,7 +2180,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "indignant",
+        "basis": "Santa repeats the same emphatic protest with rising textual emphasis.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00162.1",
@@ -2222,7 +2353,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "playful",
+        "basis": "Santa begins a deliberate guessing game about a doctor's Christmas present.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00176.1",
@@ -2266,7 +2402,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "teasing",
+        "basis": "Santa asks whether the doctor and judge now believe his claimed powers.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00180.1",
@@ -2277,7 +2418,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "attributed_episode_public_quote_not_AV_truth",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "dry",
+        "basis": "Harry jokingly explains Santa's successful present guess as an ordinary predictable doctor gift.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00181.1",
@@ -2606,7 +2752,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "urgent",
+        "basis": "Eddie calls another person abruptly to ask how the ill man is doing.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00209.1",
@@ -2657,7 +2808,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "defiant",
+        "basis": "Eddie insists that his earlier taunting did not mean he wished the older man harm.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00213.1",
@@ -2701,7 +2857,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "playful",
+        "basis": "Harry proposes a trick on Bull as a deliberate way to lighten the dispute.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00217.1",
@@ -2894,7 +3055,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "sarcastic",
+        "basis": "Harry repeats 'cute' before exaggerating his enthusiasm for the ploy.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00232.1",
@@ -3029,7 +3195,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "reassuring",
+        "basis": "Santa explains that the girl's parents know her identity and care enough to miss her.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00243.1",
@@ -3051,7 +3222,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "reassuring",
+        "basis": "Santa continues that her parents want her safely back at home.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00245.1",
@@ -3120,7 +3296,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "bitter",
+        "basis": "Eddie argues that his nominal parents do not care if he returns, an explicitly distrustful stance.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00250.1",
@@ -3142,7 +3323,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "reassuring",
+        "basis": "The older man counters Eddie's bleak inference about how his parents feel.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00252.1",
@@ -3193,7 +3379,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "gentle",
+        "basis": "The man turns from identification to the boy's private emotional need.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00256.1",
@@ -3215,7 +3406,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "gentle",
+        "basis": "The man offers the boy's need to be loved as the first in a comforting series.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00258.1",
@@ -3259,7 +3455,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "incredulous",
+        "basis": "Eddie dismisses the man's claim to know his private emotional state.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00262.1",
@@ -3303,7 +3504,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "incredulous",
+        "basis": "Eddie asks how a stranger could possibly know the boy's secret wishes.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00266.1",
@@ -3503,7 +3709,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "bitter",
+        "basis": "Eddie greets the psychiatric revelation as another example of adults lying to him.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00281.1",
@@ -3583,7 +3794,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "hesitant",
+        "basis": "Eddie admits, despite his posture, that he briefly listened to the stranger.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00287.1",
@@ -3634,7 +3850,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "angry",
+        "basis": "Eddie directly calls the man a phony after the clinical reveal.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00291.1",
@@ -3645,7 +3866,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "angry",
+        "basis": "Eddie contrasts occasional lying with the old man's entire fabricated life.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00292.1",
@@ -3703,7 +3929,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "defiant",
+        "basis": "Eddie refuses to answer without an attorney, resisting the adults' demand to apologize.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00296.1",
@@ -3798,7 +4029,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "sarcastic",
+        "basis": "Eddie frames gratitude as another imposed adult demand.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00304.1",
@@ -3809,7 +4045,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "sarcastic",
+        "basis": "Eddie repeats formal thanks pointedly in response to pressure.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00305.1",
@@ -3838,7 +4079,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "gentle",
+        "basis": "The old man starts a childhood medicine analogy intended to explain care and resistance.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00307.1",
@@ -3882,7 +4128,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "exasperated",
+        "basis": "Harry addresses the boy with a series of emphatic insults to get his attention.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00311.1",
@@ -3893,7 +4144,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "stern",
+        "basis": "Harry insists that multiple people in the room care about the boy.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00312.1",
@@ -3933,7 +4189,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "angry",
+        "basis": "Eddie declares he is sick of hearing others profess to care.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00315.1",
@@ -3944,7 +4205,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "exasperated",
+        "basis": "Eddie repeats the phrase and explicitly objects to the word care itself.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00316.1",
@@ -3955,7 +4221,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "angry",
+        "basis": "Eddie shouts in the wording that the speeches are only talk.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00317.1",
@@ -4151,7 +4422,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "contrite",
+        "basis": "Eddie apologizes for damaging the other man's garment during the physical exchange.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00331.1",
@@ -4162,7 +4438,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "dry",
+        "basis": "The older man reassures him with a practical joke about the clothes dryer.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00332.1",
@@ -4370,7 +4651,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "hesitant",
+        "basis": "Eddie begins an apology with an incomplete direct address.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00349.1",
@@ -4410,7 +4696,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "incredulous",
+        "basis": "The boy interrupts the departure to challenge how the names and locations were known.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00352.1",
@@ -4421,7 +4712,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "incredulous",
+        "basis": "Eddie explicitly asks for an explanation of the supposedly impossible knowledge.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00353.1",
@@ -4564,7 +4860,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "attributed_episode_public_quote_not_AV_truth",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "dry",
+        "basis": "Harry agrees there must be an explanation without providing one.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00366.1",
@@ -4586,7 +4887,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "attributed_episode_public_quote_not_AV_truth",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "speculative",
+        "basis": "Liz offers a possible ordinary explanation for the stranger's knowledge.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00368.1",
@@ -4597,7 +4903,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "attributed_episode_public_quote_not_AV_truth",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "speculative",
+        "basis": "Bull begins an elaborate hypothetical account involving an unnoticed telephone call.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00369.1",
@@ -4641,7 +4952,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "attributed_episode_public_quote_not_AV_truth",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "dry",
+        "basis": "Dan converts Bull's none-the-wiser hypothesis into a dry rebuke.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00373.1",
@@ -4729,7 +5045,12 @@
       "status": "text_only_unverified",
       "review_delta": "initial_whole_episode_dialogue_context_v1",
       "evidence_type": "turn_taking;pronouns;role_knowledge",
-      "original_audio_verified": false
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "exasperated",
+        "basis": "Selma refuses to take responsibility for the implied extraordinary cleanup.",
+        "original_soundtrack_verified": false
+      }
     }
   ],
   "contextual_reassessment": {
@@ -4745,5 +5066,12 @@
     ],
     "source_caption_words_changed": false,
     "original_film_review": false
+  },
+  "provisional_delivery_policy": {
+    "source": "textual context only; not observed original performance or audible tone",
+    "scope": "only single-source-cue character hypotheses, excludes all split/unidentified voices",
+    "independently_soundtrack_confirmed": 0,
+    "visual_actor_performance_confirmed": 0,
+    "review_priority": "P2, after P0/P1"
   }
 }
