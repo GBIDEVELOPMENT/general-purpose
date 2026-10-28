@@ -92,8 +92,73 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertEqual(confirmed, 22)
         self.assertGreaterEqual(observed, confirmed)
 
+    def test_s01e02_full_contextual_reader_source_exact_and_no_false_av(self):
+        ep = "S01E02"
+        witness, _, captions = source_rows(ROOT, self.index[ep])
+        files, manifest = construct(ROOT, ep, self.index[ep])
+        report = manifest["contextual_overlay"]
+        self.assertEqual(manifest["evidence_tier"], "contextual_provisional_reading_draft")
+        self.assertEqual(manifest["source_units"], 380)
+        self.assertEqual(report["high_medium_single_role_hypotheses"], 293)
+        self.assertEqual(report["mixed_voice_internal_review_cues"], 72)
+        self.assertEqual(report["weak_or_abstained_cues"], 15)
+        self.assertEqual(report["exact_contextual_internal_handoffs"], 72)
+        self.assertEqual(report["unlocated_contextual_internal_handoffs"], 0)
+        self.assertEqual(manifest["unknown_label_cues"], 87)  # 72 mixed + 15 abstain
+        self.assertEqual(manifest["contextual_provisional_named_parts"], 144)
+        self.assertFalse(manifest["actual_av_verified"])
+        rows = [json.loads(s) for s in files["provenance.jsonl"].splitlines()]
+        queue = json.loads(files["review-queue.json"])
+        self.assertEqual(len(rows), len(captions))
+        self.assertEqual([x["source_text"] for x in rows], [x["text"] for x in captions])
+        self.assertEqual([x["source_start_ms"] for x in rows],
+                         [x["start_ms"] for x in captions])
+        self.assertEqual([x["source_end_ms"] for x in rows],
+                         [x["end_ms"] for x in captions])
+        self.assertTrue(all(x["original_dialogue_sha256"] == witness["sha256"]
+                            for x in rows))
+        self.assertEqual(len(queue["contextual_role_review"]), 380)
+        self.assertEqual(len(queue["boundary_review_questions"]), 379)
+        self.assertEqual(len(queue["within_cue_structural_turn_questions"]),
+                         manifest["source_dash_candidate_p0_boundaries"] + 72)
+        for cue, speaker in ((112, "Eddie Simms"), (113, "Dan Fielding"),
+                             (180, "Harry Stone"), (234, "Dan Fielding"),
+                             (331, "Santa / John Stevens"), (364, "Lana Wagner"),
+                             (367, "Liz Williams"), (371, "Bull Shannon"),
+                             (372, "Dan Fielding")):
+            with self.subTest(cue=cue):
+                self.assertEqual(rows[cue-1]["candidate_display_role"], speaker)
+                self.assertFalse(rows[cue-1]["candidate_role_original_soundtrack_verified"])
+        for cue, expected in (
+            (1, ["Dan Fielding", "Liz Williams"]),
+            (198, ["Lana Wagner", "Harry Stone"]),
+            (285, ["Eddie Simms", "Doctor Peter Green"]),
+            (313, ["Eddie Simms", "Bull Shannon"]),
+            (319, ["Eddie Simms", "Harry Stone"]),
+            (349, ["Eddie Simms", "Santa / John Stevens"]),
+        ):
+            row = rows[cue-1]
+            parts = row["source_speaker_parts"]
+            with self.subTest(mixed_cue=cue):
+                self.assertEqual([p["provisional_part_role"] for p in parts], expected)
+                self.assertEqual([p["source_character_start"] for p in parts[1:]],
+                                 row["contextual_unicode_split_offsets"])
+                self.assertTrue(all(not p["original_audio_boundary_verified"]
+                                    and p["original_audio_subcue_time_ms"] is None
+                                    for p in parts))
+                self.assertEqual(
+                    "".join(row["source_text"][p["source_character_start"]:
+                                                p["source_character_end"]] for p in parts),
+                    row["source_text"])
+        # C349 has only ONE dash in the second voice. A literal source-exact
+        # editorial offset detects the real P0 risk that basic multiple-dash
+        # typography alone cannot detect.
+        self.assertEqual(rows[348]["contextual_unicode_split_offsets"], [29])
+        self.assertIsNone(rows[348]["candidate_display_role"])
+        self.assertIn("NOT AV-CERTIFIED", files["screenplay.md"])
+
     def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
-        episode = "S01E02"
+        episode = "S01E03"  # S01E02 now has a source-locked contextual editor overlay
         files, manifest = construct(ROOT, episode, self.index[episode])
         self.assertEqual(manifest["evidence_tier"], "source_only_reading_draft")
         self.assertGreaterEqual(manifest["source_syntactic_p0_provisional_continuations"], 20)
