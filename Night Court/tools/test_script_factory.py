@@ -328,14 +328,14 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertEqual(meta["evidence_tier"], "contextual_provisional_reading_draft")
         self.assertEqual(meta["source_units"], 354)
         ctx = meta["contextual_overlay"]
-        self.assertEqual(ctx["high_medium_single_role_hypotheses"], 300)
-        self.assertEqual(ctx["mixed_voice_internal_review_cues"], 42)
-        self.assertEqual(ctx["exact_contextual_internal_handoffs"], 42)
+        self.assertEqual(ctx["high_medium_single_role_hypotheses"], 301)
+        self.assertEqual(ctx["mixed_voice_internal_review_cues"], 45)
+        self.assertEqual(ctx["exact_contextual_internal_handoffs"], 45)
         self.assertEqual(ctx["unlocated_contextual_internal_handoffs"], 0)
-        self.assertEqual(ctx["weak_or_abstained_cues"], 12)
+        self.assertEqual(ctx["weak_or_abstained_cues"], 8)
         self.assertEqual(ctx["text_only_performance_tone_hypotheses"], 86)
         self.assertEqual(meta["text_only_contextual_delivery_proposals"], 86)
-        self.assertEqual(meta["unknown_label_cues"], 54)
+        self.assertEqual(meta["unknown_label_cues"], 53)
         self.assertFalse(meta["actual_av_verified"])
         self.assertFalse(meta["independent_editorial_acceptance"])
         rows = [json.loads(line) for line in files["provenance.jsonl"].splitlines()]
@@ -356,16 +356,19 @@ class ScriptFactoryTests(unittest.TestCase):
             not q["original_audio_tone_verified"]
             and not q["eligible_for_performed_stage_direction"]
             for q in queue["textual_delivery_p2_review"]))
-        for n, role in ((58, "Dan Fielding"), (68, "Lana Wagner"),
+        for n, role in ((52, "Lana Wagner"), (58, "Dan Fielding"), (68, "Lana Wagner"),
                         (69, "Eleanor Brandon"), (72, "Dan Fielding"),
                         (140, "Liz Williams"), (147, "Liz Williams"),
                         (206, "Selma Hacker"), (319, "Eleanor Brandon"),
                         (348, "Harry Stone"), (353, "Leonard Brandon")):
             with self.subTest(cue=n):
                 self.assertEqual(rows[n-1]["candidate_display_role"], role)
-        for n, pair in ((66, ["Harry Stone", "Eleanor Brandon"]),
+        for n, pair in ((14, ["Harry Stone", "Dan Fielding"]),
+                        (66, ["Harry Stone", "Eleanor Brandon"]),
                         (129, ["Lana Wagner", "Harry Stone"]),
                         (146, ["Harry Stone", "Liz Williams"]),
+                        (194, ["Selma Hacker", "Harry Stone"]),
+                        (205, ["Selma Hacker", "Harry Stone"]),
                         (218, ["Barbara 'Buffy' (Miss USA)", "Dan Fielding"]),
                         (284, ["Leonard Brandon", "Eleanor Brandon"]),
                         (290, ["Eleanor Brandon", "Leonard Brandon"]),
@@ -384,7 +387,7 @@ class ScriptFactoryTests(unittest.TestCase):
                 self.assertTrue(all(part["original_audio_subcue_time_ms"] is None
                                     and not part["original_audio_boundary_verified"]
                                     for part in p))
-        for n in (14, 181, 192, 193, 194, 195, 196, 205, 251):
+        for n in (109, 111, 113, 181, 192, 193, 196, 251):
             self.assertIsNone(rows[n-1]["candidate_display_role"])
         self.assertEqual(files["screenplay.md"].count("Textual delivery hypothesis:"), 86)
         self.assertIn("NOT AV-CERTIFIED", files["screenplay.md"])
