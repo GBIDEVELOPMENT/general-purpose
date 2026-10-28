@@ -171,6 +171,9 @@ def multi_voice_typography(text: str) -> bool:
     return len(structural_speaker_parts(text)) > 1
 
 
+TEXTUAL_TONE_TAGS = frozenset({"playful", "teasing", "dry", "sarcastic", "exasperated", "defiant", "hesitant", "reassuring", "concerned", "indignant", "incredulous", "angry", "reflective", "stern", "bitter", "contrite", "gentle", "speculative", "mock-solemn", "urgent"})
+
+
 def contextual_role_overlay(root: Path, ep: str, manifest: dict, cues: list):
     """Use latest existing source-SHA-pinned full-episode editorial reasoning.
 
@@ -198,7 +201,9 @@ def contextual_role_overlay(root: Path, ep: str, manifest: dict, cues: list):
         "mixed_voice_internal_review_cues": 0,
         "weak_or_abstained_cues": 0, "original_audio_verified": False,
         "exact_contextual_internal_handoffs": 0,
-        "unlocated_contextual_internal_handoffs": 0
+        "unlocated_contextual_internal_handoffs": 0,
+        "text_only_performance_tone_hypotheses": 0,
+        "any_performed_tone_original_audio_verified": False
     }
     overlay = {}
     for cue, record in zip(cues, records):
@@ -229,6 +234,17 @@ def contextual_role_overlay(root: Path, ep: str, manifest: dict, cues: list):
             or (confidence == "abstain" and role is not None)):
             raise ValueError(ep + f": contextual source cue {n} is malformed")
         strong = not mixed and confidence in ("high", "medium") and role is not None
+        delivery = record.get("provisional_delivery")
+        if delivery is not None:
+            if (not strong or len(structural_speaker_parts(cue["text"])) != 1
+                or not isinstance(delivery, dict)
+                or set(delivery) != {"tone", "basis", "original_soundtrack_verified"}
+                or delivery.get("tone") not in TEXTUAL_TONE_TAGS
+                or not isinstance(delivery.get("basis"), str)
+                or not 12 <= len(delivery["basis"]) <= 500
+                or delivery.get("original_soundtrack_verified") is not False):
+                raise ValueError(ep + f": invalid/unverified contextual delivery proposal at {n}")
+            report["text_only_performance_tone_hypotheses"] += 1
         if not mixed and confidence in ("high", "medium") and not strong:
             raise ValueError(ep + ": strong contextual role missing")
         if strong:
@@ -245,6 +261,7 @@ def contextual_role_overlay(root: Path, ep: str, manifest: dict, cues: list):
             "confidence": confidence,
             "basis": record.get("basis", ""),
             "alternatives": record.get("alternative_speakers", []),
+            "textual_delivery": delivery,
         }
     return overlay, report
 
@@ -274,6 +291,7 @@ def generic_episode(root: Path, ep: str, index: dict):
         label = source_role(raw)
         hint = contextual.get(num, {})
         candidate = hint.get("provisional_role")
+        delivery = hint.get("textual_delivery")
         internal = hint.get("internal_voice_roles", [])
         offsets = hint.get("exact_character_offsets", [])
         parts = contextual_exact_parts(raw, offsets) if offsets else structural_speaker_parts(raw)
@@ -337,6 +355,9 @@ def generic_episode(root: Path, ep: str, index: dict):
             "contextual_confidence": hint.get("confidence"),
             "contextual_evidence": hint.get("basis"),
             "contextual_alternatives": hint.get("alternatives", []),
+            "contextual_textual_tone": delivery["tone"] if delivery else None,
+            "contextual_textual_tone_basis": delivery["basis"] if delivery else None,
+            "performed_tone_original_soundtrack_verified": False,
             "contextual_intra_cue_voice_roles": internal,
             "source_label_verified_against_film": False,
             "candidate_role_original_soundtrack_verified": False,
@@ -384,6 +405,9 @@ def generic_episode(root: Path, ep: str, index: dict):
                         " (source label, unverified)" if label else
                         " (contextual hypothesis, unverified)" if candidate else "")
                 lines.extend(["### " + heading, ""])
+            if delivery:
+                # A textual suggestion, never a claim about audible acting.
+                lines.extend([f"*(Textual delivery hypothesis: {delivery['tone']}; original performance unverified.)*", ""])
             lines.extend("    " + line for line in raw.split("\n"))
             lines.append("")
         last = row
@@ -395,6 +419,7 @@ def generic_episode(root: Path, ep: str, index: dict):
         f"- {multi} cues have possible internal voice changes (dash-marked or context-only).",
         f"- {sum(len(r['source_speaker_parts']) - 1 for r in rows)} candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.",
         f"- {sum(len(r['contextual_unicode_split_offsets']) for r in rows)} manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.",
+        f"- {sum(bool(r['contextual_textual_tone']) for r in rows)} textual P2 delivery suggestions are NOT witnessed original performances.",
         f"- {len(edges)} adjacent boundaries remain original-audio unverified.",
         f"- {sum(bool(r['source_syntactic_continuation_hypothesis']) for r in rows)} narrow source-punctuation candidate same-voice joins are unverified; mixed-dash cues and untimed sources abstain.",
         f"- Episode-credited guest roles (not speaker assignments): {', '.join(guests) if guests else 'none listed'}.",
@@ -419,6 +444,8 @@ def generic_episode(root: Path, ep: str, index: dict):
             len(r["contextual_unicode_split_offsets"]) for r in rows),
         "contextual_provisional_named_parts": sum(
             bool(p["provisional_part_role"]) for r in rows for p in r["source_speaker_parts"]),
+        "text_only_contextual_delivery_proposals": sum(bool(r["contextual_textual_tone"]) for r in rows),
+        "original_audio_performed_delivery_accepted": False,
         "adjacent_p0_unverified": len(edges),
         "source_syntactic_p0_provisional_continuations": sum(
             bool(r["source_syntactic_continuation_hypothesis"]) for r in rows),
@@ -740,6 +767,14 @@ def construct(root: Path, ep: str, index: dict):
                              "priority": "P0",
                          } for row in rows if "source_speaker_parts" in row
                            for left, right in zip(row["source_speaker_parts"], row["source_speaker_parts"][1:])],
+                         "textual_delivery_p2_review": [{
+                             "source_cue": x["cue"], "provisional_role": x["candidate_display_role"],
+                             "provisional_text_tone": x["contextual_textual_tone"],
+                             "dialogue_context_basis": x["contextual_textual_tone_basis"],
+                             "original_audio_tone_verified": False,
+                             "eligible_for_performed_stage_direction": False,
+                             "priority": "P2_TEXTUAL_DELIVERY_VERIFY_IN_ORIGINAL_FILM",
+                         } for x in rows if x.get("contextual_textual_tone")],
                          "contextual_role_review": [{
                              "source_cue": x["cue"], "provisional_role": x["contextual_role"],
                              "confidence": x["contextual_confidence"],
