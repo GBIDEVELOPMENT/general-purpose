@@ -29,10 +29,14 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Harry Stone (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: playful; original performance unverified.)*
+
     Hey, Carla B.,
     how'd you like to see a trick?
 
 ### Carla B. (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: dry; original performance unverified.)*
 
     Sorry. It's my night off.
 
@@ -75,6 +79,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Harry Stone (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: playful; original performance unverified.)*
+
     And then, you gotta guess
     which hand is the ball in.
 
@@ -95,6 +101,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     - Your Honor, I don't...
 
 ### Harry Stone (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: exasperated; original performance unverified.)*
 
     Please guess, or we'll all grow
     old and die here.
@@ -233,9 +241,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Harry Stone (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: teasing; original performance unverified.)*
+
     Firing up the old yule log, eh, Mr. Claus?
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: dry; original performance unverified.)*
 
     Well, sure, I had a couple of blasts.
 
@@ -254,6 +266,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     little elves take some of the load off?
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: teasing; original performance unverified.)*
 
     Danny, there was some messy little
     business with a doll when you were eight.
@@ -275,6 +289,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Right, Mr. Fielding?
 
 ### Dan Fielding (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: dry; original performance unverified.)*
 
     You're a mythical kind of guy,
     Your Honor.
@@ -300,6 +316,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: incredulous; original performance unverified.)*
+
     You're my defense attorney.
 
     - Don't you believe that I'm Santa Claus?
@@ -315,6 +333,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 ### Harry Stone (contextual lexical turn hypothesis; audio unverified)
 
     - We all would. Believe me.
+
+*(Textual delivery hypothesis: reflective; original performance unverified.)*
 
     But unfortunately that is part
     of the price we paid for growing up.
@@ -342,6 +362,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     - I'm Santa Claus.
 
 ### Carla B. (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: dry; original performance unverified.)*
 
     I'm the Easter Bunny. We'll have lunch.
 
@@ -465,6 +487,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Dan Fielding (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: exasperated; original performance unverified.)*
+
     Permission to smack him
     around a little, Your Honor.
 
@@ -482,6 +506,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     and she had a blouse full of Fritos.
 
 ### Harry Stone (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: teasing; original performance unverified.)*
 
     Never occurred to you
     to steal an entrée, huh?
@@ -565,6 +591,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: defiant; original performance unverified.)*
+
     You look a little young to be a judge.
 
 ### Harry Stone (contextual lexical turn hypothesis; audio unverified)
@@ -601,9 +629,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: teasing; original performance unverified.)*
+
     <i>Have you ever seen The Munsters?</i>
 
 ### Dan Fielding (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: sarcastic; original performance unverified.)*
 
     That's right. Egg him on.
 
@@ -652,6 +684,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: defiant; original performance unverified.)*
+
     Me? I ain't angry.
 
     - Am I, sweetheart?
@@ -680,6 +714,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     twinkie away from me.
 
 ### Harry Stone (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: stern; original performance unverified.)*
 
     Hey! That'll be enough out of you.
 
@@ -723,6 +759,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: reassuring; original performance unverified.)*
+
     Oh, judge, don't get angry at him.
     He's not a bad boy.
 
@@ -763,12 +801,20 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: sarcastic; original performance unverified.)*
+
     Oh, sure. How comforting!
+
+*(Textual delivery hypothesis: angry; original performance unverified.)*
 
     I can smell the booze on you from here.
 
+*(Textual delivery hypothesis: exasperated; original performance unverified.)*
+
     What am I supposed to do?
     Jump up and down...
+
+*(Textual delivery hypothesis: bitter; original performance unverified.)*
 
     ...because some wino
     in a red suit tells me he cares?
@@ -784,12 +830,18 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: indignant; original performance unverified.)*
+
     You can laugh at me all you want.
 
     All of you disbelievers
     can laugh all you want!
 
+*(Textual delivery hypothesis: indignant; original performance unverified.)*
+
     But don't tell me I don't care!
+
+*(Textual delivery hypothesis: indignant; original performance unverified.)*
 
     Don't anybody ever tell me
     I don't care!
@@ -850,6 +902,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: playful; original performance unverified.)*
+
     Say...
 
     ...do you like that new putter
@@ -863,9 +917,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: teasing; original performance unverified.)*
+
     Now do you believe me, young man?
 
 ### Harry Stone (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: dry; original performance unverified.)*
 
     He's a doctor. What else
     is he gonna get for Christmas?
@@ -983,6 +1041,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: urgent; original performance unverified.)*
+
     Hey, you.
 
 ### Harry Stone (contextual hypothesis, unverified)
@@ -1002,6 +1062,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: defiant; original performance unverified.)*
+
     Sure, he's nuts and all, but I didn't
     mean him no harm or nothing.
 
@@ -1020,6 +1082,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     if that's what you mean.
 
 ### Harry Stone (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: playful; original performance unverified.)*
 
     Wanna have some fun?
 
@@ -1088,6 +1152,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Harry Stone (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: sarcastic; original performance unverified.)*
+
     Cute? Gee willikers, I'm all for it.
 
 ### Bull Shannon (contextual hypothesis, unverified)
@@ -1139,10 +1205,14 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     - A lot of things I know about you.
 
+*(Textual delivery hypothesis: reassuring; original performance unverified.)*
+
     For example, I know
     that your mom and dad...
 
     ...Art and Celeste...
+
+*(Textual delivery hypothesis: reassuring; original performance unverified.)*
 
     ...miss you very much
     and want you back home.
@@ -1173,6 +1243,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: bitter; original performance unverified.)*
+
     Yeah. Well, if you know that,
     then you know the people who live there...
 
@@ -1180,6 +1252,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     don't give a damn if I come home or not.
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: reassuring; original performance unverified.)*
 
     Eddie, I know it appears that way
     right now, but believe me...
@@ -1197,10 +1271,14 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     How did I know your address?
 
+*(Textual delivery hypothesis: gentle; original performance unverified.)*
+
     How do I know the names and addresses
     of every man, woman and child...
 
     ...in the whole world?
+
+*(Textual delivery hypothesis: gentle; original performance unverified.)*
 
     How do I know that
     your secret desire is to be loved...
@@ -1213,6 +1291,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: incredulous; original performance unverified.)*
+
     That's crazy.
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
@@ -1224,6 +1304,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     You told me.
 
 ### Eddie Simms (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: incredulous; original performance unverified.)*
 
     Yeah, well, what if it is?
     How do you know all that anyway?
@@ -1306,6 +1388,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: bitter; original performance unverified.)*
+
     Well, what do you know?
 
     Another adult who lies about things.
@@ -1332,6 +1416,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: hesitant; original performance unverified.)*
+
     I actually started listening
     to this old coot.
 
@@ -1350,7 +1436,11 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     - You're a phony, old man.
 
+*(Textual delivery hypothesis: angry; original performance unverified.)*
+
     You're a fake.
+
+*(Textual delivery hypothesis: angry; original performance unverified.)*
 
     Other people just tell lies.
     You live them.
@@ -1378,6 +1468,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     - Are you that stupid?
 
 ### Eddie Simms (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: defiant; original performance unverified.)*
 
     I ain't saying nothing
     without my attorney present.
@@ -1408,8 +1500,12 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: sarcastic; original performance unverified.)*
+
     What do you want?
     You want me to say thank you?
+
+*(Textual delivery hypothesis: sarcastic; original performance unverified.)*
 
     Okay, fine. Thank you, Santa.
     Thank you. Thanks for caring.
@@ -1423,6 +1519,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     - What's the point?
 
+*(Textual delivery hypothesis: gentle; original performance unverified.)*
+
     Remember...
 
     Remember when you were 5...
@@ -1434,8 +1532,12 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Harry Stone (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: exasperated; original performance unverified.)*
+
     Okay, you thick-skulled,
     empty-headed little creep.
+
+*(Textual delivery hypothesis: stern; original performance unverified.)*
 
     He cares for you.
     Mary cares for you. I care for you.
@@ -1454,10 +1556,16 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: angry; original performance unverified.)*
+
     You know, I am sick of hearing
     how everybody cares for me.
 
+*(Textual delivery hypothesis: exasperated; original performance unverified.)*
+
     I am sick of hearing the word "care"!
+
+*(Textual delivery hypothesis: angry; original performance unverified.)*
 
     It is just talk!
     That's all it is! It's just talk.
@@ -1538,9 +1646,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: contrite; original performance unverified.)*
+
     I'm sorry for crinkling your robe.
 
 ### Santa / John Stevens (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: dry; original performance unverified.)*
 
     Hey, two minutes in a dryer,
     good as new.
@@ -1616,6 +1728,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: hesitant; original performance unverified.)*
+
     Hey...
 
     ...about what I said before.
@@ -1629,7 +1743,11 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Eddie Simms (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: incredulous; original performance unverified.)*
+
     Wait a minute.
+
+*(Textual delivery hypothesis: incredulous; original performance unverified.)*
 
     How did you know our names
     and where we lived and all that other stuff?
@@ -1685,6 +1803,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Harry Stone (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: dry; original performance unverified.)*
+
     Oh, I'm sure there must be.
 
 ### Lana Wagner (contextual hypothesis, unverified)
@@ -1693,10 +1813,14 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Liz Williams (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: speculative; original performance unverified.)*
+
     He overheard some policemen
     talking, perhaps.
 
 ### Bull Shannon (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: speculative; original performance unverified.)*
 
     Yeah.
 
@@ -1710,6 +1834,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     us noticing, and we were none the wiser.
 
 ### Dan Fielding (contextual hypothesis, unverified)
+
+*(Textual delivery hypothesis: dry; original performance unverified.)*
 
     You will always be...
 
@@ -1752,6 +1878,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 ### Selma Hacker (contextual hypothesis, unverified)
 
+*(Textual delivery hypothesis: exasperated; original performance unverified.)*
+
     If you think I'm cleaning that up,
     you're crazy.
 
@@ -1763,6 +1891,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 - 80 cues have possible internal voice changes (dash-marked or context-only).
 - 80 candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.
 - 72 manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.
+- 64 textual P2 delivery suggestions are NOT witnessed original performances.
 - 379 adjacent boundaries remain original-audio unverified.
 - 0 narrow source-punctuation candidate same-voice joins are unverified; mixed-dash cues and untimed sources abstain.
 - Episode-credited guest roles (not speaker assignments): Carla B., Doctor, Doctor Peter Green, Eddie Simms, Mary Elaine Montgomery, Santa.

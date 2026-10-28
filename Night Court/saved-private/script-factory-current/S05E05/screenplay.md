@@ -1126,6 +1126,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 - 7 cues have possible internal voice changes (dash-marked or context-only).
 - 7 candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.
 - 7 manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.
+- 0 textual P2 delivery suggestions are NOT witnessed original performances.
 - 299 adjacent boundaries remain original-audio unverified.
 - 0 narrow source-punctuation candidate same-voice joins are unverified; mixed-dash cues and untimed sources abstain.
 - Episode-credited guest roles (not speaker assignments): Art Fensterman, Biker, Dave, Devil, Leona Cowan, Ross Gintz.
