@@ -46,6 +46,28 @@ class ScriptFactoryTests(unittest.TestCase):
                                     p["source_text_sha256"] for p in parts))
                 self.assertTrue(all(not p["actual_speaker_boundary_verified"] for p in parts))
 
+    def test_unaccepted_visual_model_proposals_never_enter_script_text(self):
+        from unittest.mock import patch
+        specimen = {
+            "status": "original_source_model_proposals_unverified",
+            "sampled_windows": 1, "human_film_reviewer_accepted": False,
+            "whole_episode_video_covered": False,
+        }
+        snippet = {
+            "unverified_description": {"actions": "MODEL TEST: person leans in"},
+            "source_window_ms": [846000, 848000],
+            "original_video_human_verified": False,
+            "original_stage_direction_accepted": False,
+        }
+        with patch("script_factory.original_film_visual_model_review",
+                   return_value=(specimen, [snippet])):
+            files, manifest = construct(ROOT, "S01E01", self.index["S01E01"])
+        self.assertEqual(manifest["original_film_visual_model_evidence"], specimen)
+        self.assertEqual(json.loads(files["review-queue.json"])[
+            "original_film_visual_model_only_review"], [snippet])
+        self.assertNotIn("MODEL TEST: person leans in", files["screenplay.md"])
+        self.assertFalse(manifest["actual_av_verified"])
+
     def test_pilots_reuse_source_checked_canonical_manuscripts(self):
         for ep in PILOTS:
             with self.subTest(ep=ep):
