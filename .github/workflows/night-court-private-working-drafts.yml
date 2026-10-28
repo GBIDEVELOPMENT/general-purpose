@@ -18,6 +18,8 @@ on:
       - '!Night Court/tools/test_episode_finish_workbench.js'
       - '!Night Court/tools/publish_current_original_av.py'
       - '!Night Court/tools/test_publish_current_original_av.py'
+      - '!Night Court/tools/search_fan_retrieval_chunks.py'
+      - '!Night Court/tools/test_search_fan_retrieval_chunks.py'
       - 'Night Court/seasons/**'
       - 'Night Court/saved-private/editorial-agent1-v*/**'
   workflow_dispatch:
@@ -39,6 +41,8 @@ on:
       - '!Night Court/tools/test_episode_finish_workbench.js'
       - '!Night Court/tools/publish_current_original_av.py'
       - '!Night Court/tools/test_publish_current_original_av.py'
+      - '!Night Court/tools/search_fan_retrieval_chunks.py'
+      - '!Night Court/tools/test_search_fan_retrieval_chunks.py'
       - 'Night Court/seasons/**'
       - 'Night Court/saved-private/editorial-agent1-v*/**'
 

@@ -200,7 +200,15 @@ these as unverified source-audio seek hints, not source transcript timecodes.
    final-reader validator, refuses partial/inconsistent source playback,
    and writes `S01E01-original-av-reviewed-screenplay.md` plus a SHA-guarded
    `S01E01-original-av-reviewed-manifest.json` **at the same stable paths**.
-   No additional workflow or manuscript edition is created. Partial
+   No additional workflow or manuscript edition is created. **Private fan search**
+   now automatically prefers that complete source-SHA-checked reviewed script
+   in memory for its episode, without overwriting the 193-episode provisional
+   retrieval corpus or any original subtitle. It rejects stale, incomplete
+   or mismatched review-publication manifests; the other 191 episodes and
+   any unreviewed pilot retain their original source-only/provisional hits.
+   Acoustic hints and a reviewer declaration are never relabeled as
+   independently machine-verified actor identities.
+   Partial
    exports can also be committed: they are preserved as drafts and cannot
    publish a finished screenplay. The provisional immutable snapshot
    `pilot-current` remains available as source provenance; the accepted
