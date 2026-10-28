@@ -321,8 +321,79 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertEqual(json.loads(originals["review-queue.json"])[
             "source_syntactic_role_conflict_focus"], [])
 
+    def test_s01e04_contextual_speaker_p0_and_p2_source_exact(self):
+        episode = "S01E04"
+        files, meta = construct(ROOT, episode, self.index[episode])
+        source_manifest, _, source = source_rows(ROOT, self.index[episode])
+        self.assertEqual(meta["evidence_tier"], "contextual_provisional_reading_draft")
+        self.assertEqual(meta["source_units"], 354)
+        ctx = meta["contextual_overlay"]
+        self.assertEqual(ctx["high_medium_single_role_hypotheses"], 301)
+        self.assertEqual(ctx["mixed_voice_internal_review_cues"], 45)
+        self.assertEqual(ctx["exact_contextual_internal_handoffs"], 45)
+        self.assertEqual(ctx["unlocated_contextual_internal_handoffs"], 0)
+        self.assertEqual(ctx["weak_or_abstained_cues"], 8)
+        self.assertEqual(ctx["text_only_performance_tone_hypotheses"], 86)
+        self.assertEqual(meta["text_only_contextual_delivery_proposals"], 86)
+        self.assertEqual(meta["unknown_label_cues"], 53)
+        self.assertFalse(meta["actual_av_verified"])
+        self.assertFalse(meta["independent_editorial_acceptance"])
+        rows = [json.loads(line) for line in files["provenance.jsonl"].splitlines()]
+        queue = json.loads(files["review-queue.json"])
+        self.assertEqual(len(rows), 354)
+        self.assertEqual([r["source_text"] for r in rows], [x["text"] for x in source])
+        self.assertEqual([r["source_start_ms"] for r in rows],
+                         [x["start_ms"] for x in source])
+        self.assertEqual([r["source_end_ms"] for r in rows],
+                         [x["end_ms"] for x in source])
+        self.assertTrue(all(r["original_dialogue_sha256"] == source_manifest["sha256"]
+                            and not r["candidate_role_original_soundtrack_verified"]
+                            for r in rows))
+        self.assertEqual(len(queue["contextual_role_review"]), 354)
+        self.assertEqual(len(queue["boundary_review_questions"]), 353)
+        self.assertEqual(len(queue["textual_delivery_p2_review"]), 86)
+        self.assertTrue(all(
+            not q["original_audio_tone_verified"]
+            and not q["eligible_for_performed_stage_direction"]
+            for q in queue["textual_delivery_p2_review"]))
+        for n, role in ((52, "Lana Wagner"), (58, "Dan Fielding"), (68, "Lana Wagner"),
+                        (69, "Eleanor Brandon"), (72, "Dan Fielding"),
+                        (140, "Liz Williams"), (147, "Liz Williams"),
+                        (206, "Selma Hacker"), (319, "Eleanor Brandon"),
+                        (348, "Harry Stone"), (353, "Leonard Brandon")):
+            with self.subTest(cue=n):
+                self.assertEqual(rows[n-1]["candidate_display_role"], role)
+        for n, pair in ((14, ["Harry Stone", "Dan Fielding"]),
+                        (66, ["Harry Stone", "Eleanor Brandon"]),
+                        (129, ["Lana Wagner", "Harry Stone"]),
+                        (146, ["Harry Stone", "Liz Williams"]),
+                        (194, ["Selma Hacker", "Harry Stone"]),
+                        (205, ["Selma Hacker", "Harry Stone"]),
+                        (218, ["Barbara 'Buffy' (Miss USA)", "Dan Fielding"]),
+                        (284, ["Leonard Brandon", "Eleanor Brandon"]),
+                        (290, ["Eleanor Brandon", "Leonard Brandon"]),
+                        (340, ["Eleanor Brandon", "Harry Stone"])):
+            with self.subTest(internal_cue=n):
+                row = rows[n-1]
+                p = row["source_speaker_parts"]
+                self.assertEqual(len(p), 2)
+                self.assertEqual([x["provisional_part_role"] for x in p], pair)
+                self.assertEqual([x["source_character_start"] for x in p[1:]],
+                                 row["contextual_unicode_split_offsets"])
+                self.assertEqual("".join(
+                    row["source_text"][part["source_character_start"]:
+                                       part["source_character_end"]] for part in p),
+                    row["source_text"])
+                self.assertTrue(all(part["original_audio_subcue_time_ms"] is None
+                                    and not part["original_audio_boundary_verified"]
+                                    for part in p))
+        for n in (109, 111, 113, 181, 192, 193, 196, 251):
+            self.assertIsNone(rows[n-1]["candidate_display_role"])
+        self.assertEqual(files["screenplay.md"].count("Textual delivery hypothesis:"), 86)
+        self.assertIn("NOT AV-CERTIFIED", files["screenplay.md"])
+
     def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
-        episode = "S01E04"  # S01E02/S01E03 now have source-locked contextual overlays
+        episode = "S01E05"  # S01E02/S01E03/S01E04 have contextual overlays
         files, manifest = construct(ROOT, episode, self.index[episode])
         self.assertEqual(manifest["evidence_tier"], "source_only_reading_draft")
         self.assertGreaterEqual(manifest["source_syntactic_p0_provisional_continuations"], 20)
@@ -645,7 +716,13 @@ class ScriptFactoryTests(unittest.TestCase):
     def test_current_private_fan_retrieval_uses_strongest_five_episode_readers(self):
         from export_fan_retrieval_chunks import export
         factory = ROOT / "saved-private/script-factory-current"
-        researched = {"S01E01", "S01E02", "S01E03", "S05E05", "S09E19"}
+        # Owners may add fully researched packages or explicitly publish all.
+        # The exporter must match the actual SOURCE-VALIDATED committed package
+        # population, not an obsolete fixed episode count.
+        researched = {
+            folder.name for folder in factory.iterdir()
+            if folder.is_dir() and (folder / "manifest.json").is_file()
+        }
         with tempfile.TemporaryDirectory() as folder:
             out = Path(folder) / "private-fan-retrieval"
             manifest = export(ROOT, out, factory_root=factory)
@@ -654,7 +731,7 @@ class ScriptFactoryTests(unittest.TestCase):
             self.assertEqual(len(by_ep), 193)
             self.assertEqual(sum(
                 row["script_path"].startswith("saved-private/script-factory-current/")
-                for row in by_ep.values()), 5)
+                for row in by_ep.values()), len(researched))
             for ep in researched:
                 with self.subTest(ep=ep):
                     draft = factory / ep / "screenplay.md"
@@ -664,7 +741,7 @@ class ScriptFactoryTests(unittest.TestCase):
                     self.assertNotEqual(by_ep[ep]["evidence_tier"],
                                         "source_only_dialogue_scaffold")
             self.assertEqual(sum(x["evidence_tier"] == "source_only_dialogue_scaffold"
-                                 for x in by_ep.values()), 188)
+                                 for x in by_ep.values()), 193 - len(researched))
             self.assertEqual(by_ep["S01E03"]["evidence_tier"],
                              "contextual_provisional_reading_draft")
             self.assertGreater(by_ep["S01E03"]["chunks"], 0)
