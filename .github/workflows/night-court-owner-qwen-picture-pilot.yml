@@ -46,7 +46,7 @@ jobs:
     if: >-
       github.event_name == 'pull_request_target' &&
       github.event.pull_request.user.login == 'gamesbyian' &&
-      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.repo.full_name == 'GBIDEVELOPMENT/general-purpose' &&
       (github.event.pull_request.head.ref == 'research/night-court-qwen-real-original-trigger' ||
        github.event.pull_request.head.ref == 'research/night-court-qwen-physical-comedy-trigger' ||
        github.event.pull_request.head.ref == 'research/night-court-qwen-compact-action-trigger' ||
@@ -73,7 +73,7 @@ jobs:
     if: >-
       github.event_name == 'pull_request_target' &&
       github.event.pull_request.user.login == 'gamesbyian' &&
-      github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose' &&
+      github.event.pull_request.head.repo.full_name == 'GBIDEVELOPMENT/general-purpose' &&
       (github.event.pull_request.head.ref == 'research/night-court-qwen-real-original-trigger' ||
        github.event.pull_request.head.ref == 'research/night-court-qwen-physical-comedy-trigger' ||
        github.event.pull_request.head.ref == 'research/night-court-qwen-compact-action-trigger' ||
