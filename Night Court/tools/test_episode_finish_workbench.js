@@ -87,7 +87,9 @@ const draftInput=[
   {dataset:{beatAction:"R100"},value:"points to window"}
 ];
 nodes.get("editor").querySelectorAll=()=>draftInput;
-nodes.get("performance")?.value;
+for(const id of ["performance","props","actions","watched"]){
+  if(!nodes.has(id))nodes.set(id,{addEventListener:()=>{},textContent:"",value:"",checked:false});
+}
 run('packet={episode_id:"S01E01",packet_sha256:"draft-test",sequential_one_pass_batches:[{id:"S01E01-AV-001"},{id:"S01E01-AV-002"}]};sequence=0;saved={boundaries:{},roles:{},batches:{}};');
 nodes.get("performance").value="dry";
 nodes.get("props").value="red scarf";
