@@ -31,9 +31,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Well, you guys aren't much on whimsy,
     are you?
 
-### MULTIPLE UNIDENTIFIED VOICES (context proposes Christine Sullivan / Harry Stone; internal boundary unverified)
+### Christine Sullivan (contextual lexical turn hypothesis; audio unverified)
 
-    Ah, this is new, isn't it? Well, you
+    Ah, this is new, isn't it? 
+
+### Harry Stone (contextual lexical turn hypothesis; audio unverified)
+
+    Well, you
     certainly are observant, Miss Sullivan.
 
 ### Harry Stone (contextual hypothesis, unverified)
@@ -54,9 +58,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Oh, you know, actually, I feel like I'm
     coming down with something. I'm a little
 
-### MULTIPLE UNIDENTIFIED VOICES (context proposes Christine Sullivan / Harry Stone; internal boundary unverified)
+### Christine Sullivan (contextual lexical turn hypothesis; audio unverified)
 
-    stuffy. Yeah, but that's half your
+    stuffy. 
+
+### Harry Stone (contextual lexical turn hypothesis; audio unverified)
+
+    Yeah, but that's half your
     charm.
 
 ### Harry Stone (contextual hypothesis, unverified)
@@ -150,9 +158,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     parties are trans channelers your honor
     they claim that spiritual entities speak
 
-### MULTIPLE UNIDENTIFIED VOICES (context proposes Dan Fielding / Harry Stone; internal boundary unverified)
+### Dan Fielding (contextual lexical turn hypothesis; audio unverified)
 
-    through them from another realm you
+    through them from another realm 
+
+### Harry Stone (contextual lexical turn hypothesis; audio unverified)
+
+    you
     believe all this higher consciousness
 
 ### Harry Stone (contextual hypothesis, unverified)
@@ -279,9 +291,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Listen, buddy, I don't know who you are,
     but why don't I take you and your stuff
 
-### MULTIPLE UNIDENTIFIED VOICES (context proposes Dan Fielding / Devil / Stu Blumberg; internal boundary unverified)
+### Dan Fielding (contextual lexical turn hypothesis; audio unverified)
 
-    and get... Oh, I'm known by many names.
+    and get... 
+
+### Devil / Stu Blumberg (contextual lexical turn hypothesis; audio unverified)
+
+    Oh, I'm known by many names.
 
 ### Devil / Stu Blumberg (contextual hypothesis, unverified)
 
@@ -432,9 +448,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Oh, I know everything about you. You're
     something of a minor celebrity where I
 
-### MULTIPLE UNIDENTIFIED VOICES (context proposes Devil / Stu Blumberg / Dan Fielding; internal boundary unverified)
+### Devil / Stu Blumberg (contextual lexical turn hypothesis; audio unverified)
 
-    come from. Oh, yeah?
+    come from. 
+
+### Dan Fielding (contextual lexical turn hypothesis; audio unverified)
+
+    Oh, yeah?
 
 ### Devil / Stu Blumberg (contextual hypothesis, unverified)
 
@@ -653,10 +673,14 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     Except maybe that last cup of coffee.
 
-### MULTIPLE UNIDENTIFIED VOICES (context proposes Dan Fielding / Devil / Stu Blumberg; internal boundary unverified)
+### Dan Fielding (contextual lexical turn hypothesis; audio unverified)
 
     All right, Prince of Darkness, out where
-    I can see you. You rang?
+    I can see you. 
+
+### Devil / Stu Blumberg (contextual lexical turn hypothesis; audio unverified)
+
+    You rang?
 
 ### Dan Fielding (contextual hypothesis, unverified)
 
@@ -769,10 +793,14 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     Isn't there anything else you can do?
 
-### MULTIPLE UNIDENTIFIED VOICES (context proposes Dave (safe technician) / UNKNOWN coworker; internal boundary unverified)
+### Dave (safe technician) (contextual lexical turn hypothesis; audio unverified)
 
     Well, I suppose we could blast the thing
-    open, but... But what?
+    open, but... 
+
+### UNKNOWN coworker (contextual lexical turn hypothesis; audio unverified)
+
+    But what?
 
 ### Dave (safe technician) (contextual hypothesis, unverified)
 
@@ -1116,7 +1144,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 - 0 cues have source-explicit voice labels; 300 have no explicit source role.
 - 259 high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.
 - 7 cues have possible internal voice changes (dash-marked or context-only).
-- 0 candidate within-cue dash boundaries are represented as separate reversible speaker parts.
+- 7 candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.
+- 7 manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.
 - 299 adjacent boundaries remain original-audio unverified.
 - Episode-credited guest roles (not speaker assignments): Art Fensterman, Biker, Dave, Devil, Leona Cowan, Ross Gintz.
 - Passage boundaries are caption-gap heuristics. Scene headings, wardrobe, props,

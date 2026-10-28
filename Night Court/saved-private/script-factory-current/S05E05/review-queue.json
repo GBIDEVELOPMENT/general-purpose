@@ -5492,6 +5492,7 @@
     }
   ],
   "episode_id": "S05E05",
+  "original_audio_model_priority_p0": [],
   "priorities": [
     "P0_turns",
     "P1_identity",
@@ -5511,5 +5512,76 @@
     208
   ],
   "schema": "night-court-one-click-script-factory/1",
-  "within_cue_structural_turn_questions": []
+  "within_cue_structural_turn_questions": [
+    {
+      "boundary_proposed_by_caption_dash": false,
+      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
+      "left_part": "C00006.P01",
+      "priority": "P0",
+      "right_part": "C00006.P02",
+      "source_audio_performed_turn_verified": false,
+      "source_character_boundary": 27,
+      "source_cue": 6
+    },
+    {
+      "boundary_proposed_by_caption_dash": false,
+      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
+      "left_part": "C00011.P01",
+      "priority": "P0",
+      "right_part": "C00011.P02",
+      "source_audio_performed_turn_verified": false,
+      "source_character_boundary": 8,
+      "source_cue": 11
+    },
+    {
+      "boundary_proposed_by_caption_dash": false,
+      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
+      "left_part": "C00036.P01",
+      "priority": "P0",
+      "right_part": "C00036.P02",
+      "source_audio_performed_turn_verified": false,
+      "source_character_boundary": 32,
+      "source_cue": 36
+    },
+    {
+      "boundary_proposed_by_caption_dash": false,
+      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
+      "left_part": "C00071.P01",
+      "priority": "P0",
+      "right_part": "C00071.P02",
+      "source_audio_performed_turn_verified": false,
+      "source_character_boundary": 11,
+      "source_cue": 71
+    },
+    {
+      "boundary_proposed_by_caption_dash": false,
+      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
+      "left_part": "C00114.P01",
+      "priority": "P0",
+      "right_part": "C00114.P02",
+      "source_audio_performed_turn_verified": false,
+      "source_character_boundary": 11,
+      "source_cue": 114
+    },
+    {
+      "boundary_proposed_by_caption_dash": false,
+      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
+      "left_part": "C00177.P01",
+      "priority": "P0",
+      "right_part": "C00177.P02",
+      "source_audio_performed_turn_verified": false,
+      "source_character_boundary": 56,
+      "source_cue": 177
+    },
+    {
+      "boundary_proposed_by_caption_dash": false,
+      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
+      "left_part": "C00208.P01",
+      "priority": "P0",
+      "right_part": "C00208.P02",
+      "source_audio_performed_turn_verified": false,
+      "source_character_boundary": 54,
+      "source_cue": 208
+    }
+  ]
 }
