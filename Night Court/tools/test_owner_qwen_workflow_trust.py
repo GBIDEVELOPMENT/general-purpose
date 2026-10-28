@@ -72,6 +72,20 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         self.assertIn("github.event_name == 'pull_request_target' && 'trusted-source' || github.ref", self.workflow)
         self.assertIn("cancel-in-progress: ${{ github.event_name == 'pull_request' }}", self.workflow)
 
+    def test_original_film_reports_publish_with_no_media_and_no_pr_head(self):
+        trusted = self.workflow.split("  persist-trusted-owner-original-video-model-review:", 1)[1]
+        self.assertIn("needs: trusted-owner-source-visual-inference", trusted)
+        self.assertIn("github.event_name == 'pull_request_target'", trusted)
+        self.assertIn("github.event.repository.private == true", trusted)
+        self.assertIn("github.event.pull_request.user.login == 'gamesbyian'", trusted)
+        self.assertIn("github.event.pull_request.head.repo.full_name == 'GBIDEVELOPMENT/general-purpose'", trusted)
+        self.assertIn("ref: ${{ github.sha }}", trusted)
+        self.assertNotIn("github.event.pull_request.head.sha", trusted)
+        self.assertNotIn("FTP_PASSWORD", trusted)
+        self.assertIn("permissions:\\n      actions: read\\n      contents: write", trusted)
+        self.assertIn("test_preserve_original_qwen_model_reports", trusted)
+        self.assertIn("preserve_original_qwen_model_reports.py", trusted)
+
     def test_comment_writer_is_separate_job(self):
         self.assertIn("announce-trusted-owner-run-locator:", self.workflow)
         self.assertIn("pull-requests: write", self.workflow)
