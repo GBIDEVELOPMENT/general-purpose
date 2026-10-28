@@ -12,10 +12,12 @@
     "model_similarity_thresholds_only_review_triage_not_calibrated": true,
     "original_audio_model_only": true,
     "original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+    "previously_unknown_original_voice_windows": 16,
     "priority_original_audio_p0_conflicts": 4,
     "sha256": "585e502522ed9119b3ab21b1b05dbdbb40a40971165ddf20145e7853b70e3825",
     "speaker_or_turn_audio_accepted": false,
-    "status": "canonical_source_audio_model_linked"
+    "status": "canonical_source_audio_model_linked",
+    "unknown_voice_model_automatically_promoted": 0
   },
   "original_dialogue_sha256": "659beb9c50fabdd1028aac9570999d9a16b36e6d582938e10809cc0c664530b2",
   "original_film_visual_model_evidence": {
@@ -30,7 +32,7 @@
     "total_model_inference_seconds": 134.535,
     "whole_episode_video_covered": false
   },
-  "p0_review_queue_sha256": "039b644b496f6b77a25f3848890e8c0547627f01a3e4fbc3c92893ea31346c12",
+  "p0_review_queue_sha256": "0197c4ec1a3ea152720a9321e8e9ad09f8dba8ddc811ad7d16f6f5dad717f17c",
   "provisional_display_groups": 234,
   "provisional_reader_blocks": 323,
   "schema": "night-court-one-click-script-factory/1",

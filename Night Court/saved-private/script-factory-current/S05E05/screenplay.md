@@ -728,7 +728,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     Somebody call for a safe technician?
 
-### UNIDENTIFIED VOICE
+### Christine Sullivan (contextual hypothesis, unverified)
 
     Well, it's about time.
 
@@ -739,7 +739,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     Uh -oh.
 
-### UNIDENTIFIED VOICE
+### Christine Sullivan (contextual hypothesis, unverified)
 
     Uh -oh what?
 
@@ -750,7 +750,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     that, baby.
 
-### UNIDENTIFIED VOICE
+### Christine Sullivan (contextual hypothesis, unverified)
 
     You do have one, don't you?
 
@@ -773,7 +773,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Wait a second. I think I got a carbon
     steel drill downstairs. Let me go check.
 
-### UNIDENTIFIED VOICE
+### Christine Sullivan (contextual hypothesis, unverified)
 
     Isn't there anything else you can do?
 
@@ -922,8 +922,6 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Three to beat your face into a pasty
     dough.
 
-### UNIDENTIFIED VOICE
-
     Right.
 
 ### Harry Stone (contextual hypothesis, unverified)
@@ -957,12 +955,10 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Still got that old sense of humor, don't
     you, sir?
 
-### UNIDENTIFIED VOICE
+### Roz Russell (contextual hypothesis, unverified)
 
     it was just another one of his stupid
     practical jokes.
-
-### Roz Russell (contextual hypothesis, unverified)
 
     You gum.
 
@@ -1126,7 +1122,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 - Source edition: `subtitle-cat-english-online-caption-research-wit--9bdf7ef5e94675cc`; 300 of 300 cues present.
 - 0 cues have source-explicit voice labels; 300 have no explicit source role.
-- 259 high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.
+- 265 high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.
 - 7 cues have possible internal voice changes (dash-marked or context-only).
 - 7 candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.
 - 7 manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.

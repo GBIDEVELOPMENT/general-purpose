@@ -2140,10 +2140,10 @@
         195,
         196
       ],
-      "decision": "unresolved_turn_boundary",
+      "decision": "different_provisional_roles_candidate_change",
       "left_provisional_exit_role": "Dave (safe technician)",
-      "review_priority": "P0",
-      "right_provisional_entry_role": null,
+      "review_priority": "P0_CONFIRM",
+      "right_provisional_entry_role": "Christine Sullivan",
       "source_audio_verified": false
     },
     {
@@ -2151,9 +2151,9 @@
         196,
         197
       ],
-      "decision": "unresolved_turn_boundary",
-      "left_provisional_exit_role": null,
-      "review_priority": "P0",
+      "decision": "different_provisional_roles_candidate_change",
+      "left_provisional_exit_role": "Christine Sullivan",
+      "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Dave (safe technician)",
       "source_audio_verified": false
     },
@@ -2173,10 +2173,10 @@
         198,
         199
       ],
-      "decision": "unresolved_turn_boundary",
+      "decision": "different_provisional_roles_candidate_change",
       "left_provisional_exit_role": "Dave (safe technician)",
-      "review_priority": "P0",
-      "right_provisional_entry_role": null,
+      "review_priority": "P0_CONFIRM",
+      "right_provisional_entry_role": "Christine Sullivan",
       "source_audio_verified": false
     },
     {
@@ -2184,9 +2184,9 @@
         199,
         200
       ],
-      "decision": "unresolved_turn_boundary",
-      "left_provisional_exit_role": null,
-      "review_priority": "P0",
+      "decision": "different_provisional_roles_candidate_change",
+      "left_provisional_exit_role": "Christine Sullivan",
+      "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Dave (safe technician)",
       "source_audio_verified": false
     },
@@ -2206,10 +2206,10 @@
         201,
         202
       ],
-      "decision": "unresolved_turn_boundary",
+      "decision": "different_provisional_roles_candidate_change",
       "left_provisional_exit_role": "Dave (safe technician)",
-      "review_priority": "P0",
-      "right_provisional_entry_role": null,
+      "review_priority": "P0_CONFIRM",
+      "right_provisional_entry_role": "Christine Sullivan",
       "source_audio_verified": false
     },
     {
@@ -2217,9 +2217,9 @@
         202,
         203
       ],
-      "decision": "unresolved_turn_boundary",
-      "left_provisional_exit_role": null,
-      "review_priority": "P0",
+      "decision": "different_provisional_roles_candidate_change",
+      "left_provisional_exit_role": "Christine Sullivan",
+      "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Dave (safe technician)",
       "source_audio_verified": false
     },
@@ -2261,10 +2261,10 @@
         206,
         207
       ],
-      "decision": "unresolved_turn_boundary",
+      "decision": "different_provisional_roles_candidate_change",
       "left_provisional_exit_role": "Art Fensterman",
-      "review_priority": "P0",
-      "right_provisional_entry_role": null,
+      "review_priority": "P0_CONFIRM",
+      "right_provisional_entry_role": "Christine Sullivan",
       "source_audio_verified": false
     },
     {
@@ -2272,9 +2272,9 @@
         207,
         208
       ],
-      "decision": "unresolved_turn_boundary",
-      "left_provisional_exit_role": null,
-      "review_priority": "P0",
+      "decision": "different_provisional_roles_candidate_change",
+      "left_provisional_exit_role": "Christine Sullivan",
+      "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Dave (safe technician)",
       "source_audio_verified": false
     },
@@ -2657,10 +2657,10 @@
         242,
         243
       ],
-      "decision": "unresolved_turn_boundary",
+      "decision": "same_provisional_role_candidate_continuation",
       "left_provisional_exit_role": "Dave (safe technician)",
-      "review_priority": "P0",
-      "right_provisional_entry_role": null,
+      "review_priority": "P0_CONFIRM",
+      "right_provisional_entry_role": "Dave (safe technician)",
       "source_audio_verified": false
     },
     {
@@ -2668,9 +2668,9 @@
         243,
         244
       ],
-      "decision": "unresolved_turn_boundary",
-      "left_provisional_exit_role": null,
-      "review_priority": "P0",
+      "decision": "different_provisional_roles_candidate_change",
+      "left_provisional_exit_role": "Dave (safe technician)",
+      "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Harry Stone",
       "source_audio_verified": false
     },
@@ -2767,10 +2767,10 @@
         252,
         253
       ],
-      "decision": "unresolved_turn_boundary",
+      "decision": "different_provisional_roles_candidate_change",
       "left_provisional_exit_role": "Bull Shannon",
-      "review_priority": "P0",
-      "right_provisional_entry_role": null,
+      "review_priority": "P0_CONFIRM",
+      "right_provisional_entry_role": "Roz Russell",
       "source_audio_verified": false
     },
     {
@@ -2778,9 +2778,9 @@
         253,
         254
       ],
-      "decision": "unresolved_turn_boundary",
-      "left_provisional_exit_role": null,
-      "review_priority": "P0",
+      "decision": "same_provisional_role_candidate_continuation",
+      "left_provisional_exit_role": "Roz Russell",
+      "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Roz Russell",
       "source_audio_verified": false
     },
@@ -5098,12 +5098,15 @@
       "source_cue": 195
     },
     {
-      "alternatives": [],
-      "confidence": "abstain",
-      "evidence": "Text-only review does not establish a unique speaker",
+      "alternatives": [
+        "Roz Russell",
+        "Mac Robinson"
+      ],
+      "confidence": "medium",
+      "evidence": "Arriving rescue technician Dave immediately tells the impatience speaker to 'Relax, relax'; Christine personally addresses Dave again as the concerned organizer at C204. This remains a conversational hypothesis, not an identified voice.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": null,
+      "provisional_role": "Christine Sullivan",
       "source_cue": 196
     },
     {
@@ -5125,12 +5128,15 @@
       "source_cue": 198
     },
     {
-      "alternatives": [],
-      "confidence": "abstain",
-      "evidence": "Text-only review does not establish a unique speaker",
+      "alternatives": [
+        "Roz Russell",
+        "Mac Robinson"
+      ],
+      "confidence": "medium",
+      "evidence": "Dave says 'Uh-oh' at C198; this question demands an explanation from someone else. Christine continues directing this exchange at C204, rather than Dave questioning his own alarm.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": null,
+      "provisional_role": "Christine Sullivan",
       "source_cue": 199
     },
     {
@@ -5152,12 +5158,15 @@
       "source_cue": 201
     },
     {
-      "alternatives": [],
-      "confidence": "abstain",
-      "evidence": "Text-only review does not establish a unique speaker",
+      "alternatives": [
+        "Roz Russell",
+        "Mac Robinson"
+      ],
+      "confidence": "medium",
+      "evidence": "After Dave explains the specialized drill C200-C201, the interlocutor asks if he has one, he answers 'at the shop' C203, and Christine challenges him explicitly in C204. Sustained conversational addressee sequence.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": null,
+      "provisional_role": "Christine Sullivan",
       "source_cue": 202
     },
     {
@@ -5203,12 +5212,15 @@
       "source_cue": 206
     },
     {
-      "alternatives": [],
-      "confidence": "abstain",
-      "evidence": "Text-only review does not establish a unique speaker",
+      "alternatives": [
+        "Roz Russell",
+        "Mac Robinson"
+      ],
+      "confidence": "medium",
+      "evidence": "After Art offers to fetch the drill from downstairs C206, a concerned courthouse colleague asks Dave for an alternative. Christine's immediately earlier objection C204 motivates the request; other rescuers could ask.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": null,
+      "provisional_role": "Christine Sullivan",
       "source_cue": 207
     },
     {
@@ -5551,12 +5563,15 @@
       "source_cue": 242
     },
     {
-      "alternatives": [],
-      "confidence": "abstain",
-      "evidence": "Text-only review does not establish a unique speaker",
+      "alternatives": [
+        "Bull Shannon",
+        "Mac Robinson"
+      ],
+      "confidence": "medium",
+      "evidence": "C238-C242 are a continuous setup/countdown by the technician, and 'Right' appears between that countdown and Harry's interruption C244. Most parsimoniously his own completion/check before the proposed blast; attribution stays tentative.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": null,
+      "provisional_role": "Dave (safe technician)",
       "source_cue": 243
     },
     {
@@ -5646,12 +5661,14 @@
       "source_cue": 252
     },
     {
-      "alternatives": [],
-      "confidence": "abstain",
-      "evidence": "Text-only review does not establish a unique speaker",
+      "alternatives": [
+        "Christine Sullivan"
+      ],
+      "confidence": "medium",
+      "evidence": "After Bull reassures Harry and remarks on his humor C248-C252, this switches to an angry 'his stupid practical jokes' complaint, immediately followed by Roz's uninterrupted insults C254-C258. Her transition from speaking *about* Harry to addressing him fits the referents.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": null,
+      "provisional_role": "Roz Russell",
       "source_cue": 253
     },
     {
@@ -6090,6 +6107,7 @@
     }
   ],
   "episode_id": "S05E05",
+  "original_audio_model_p1_unknown_voice_review": [],
   "original_audio_model_priority_p0": [],
   "original_film_visual_model_only_review": [],
   "priorities": [
