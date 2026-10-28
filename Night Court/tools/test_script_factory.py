@@ -32,9 +32,9 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertIsNone(source_syntactic_continuation(
             "That's right.", "other side.", 200))
         self.assertIsNone(source_syntactic_continuation(
-            "You're sure...", "...some explanation.\\n- I doubt it.", 200))
+            "You're sure...", "...some explanation.\n- I doubt it.", 200))
         self.assertIsNone(source_syntactic_continuation(
-            "- This is one voice.\\n- This is another...", "...the next.", 200))
+            "- This is one voice.\n- This is another...", "...the next.", 200))
         self.assertIsNone(source_syntactic_continuation(
             "And he said,", "- Yes, yes.", 50))
         self.assertIsNone(source_syntactic_continuation(
@@ -55,7 +55,7 @@ class ScriptFactoryTests(unittest.TestCase):
             if block["episode_id"] != "S01E01":
                 continue
             for ref in block["original_source_part_refs"]:
-                m = re.fullmatch(r"C(\\d+)\\.(\\d+)", ref)
+                m = re.fullmatch(r"C(\d+)\.(\d+)", ref)
                 if m:
                     source_roles.setdefault(int(m.group(1)), []).append(
                         (int(m.group(2)), block["candidate_role"]))
