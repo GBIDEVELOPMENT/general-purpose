@@ -117,7 +117,7 @@ def generic_episode(root: Path, ep: str, index: dict):
         multi += int(suspect)
         named += int(label is not None)
         start, end = cue["start_ms"], cue["end_ms"]
-        gap = start - last["end_ms"] if last and start is not None and last["end_ms"] is not None else None
+        gap = start - last["source_end_ms"] if last and start is not None and last["source_end_ms"] is not None else None
         scene_hint = last is None or (gap is not None and gap > 12000)
         if scene_hint:
             group += 1
