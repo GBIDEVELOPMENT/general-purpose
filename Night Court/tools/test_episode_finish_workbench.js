@@ -77,4 +77,37 @@ assert.ok(page.includes('original_film_playback_coverage:fullFilmCoverage()'),
 assert.ok(page.includes('film_coverage_seconds:[...filmSecondsSeen]'),
   "Original film coverage needs crash-safe local storage");
 console.log("Continuous source film timeline: watched seconds count; skipped footage does not");
+// A reviewer may navigate or crash mid-line. Preserve draft edits, but NEVER
+// promote them to source-reviewed voice or turn decisions.
+const draftInput=[
+  {dataset:{role:"R100"},value:"LANA WAGNER"},
+  {dataset:{edge:"B0100"},value:""},
+  {dataset:{split:"R100"},value:"@14 | PAINTER"},
+  {dataset:{beatTone:"R100"},value:"hesitant, abrupt"},
+  {dataset:{beatAction:"R100"},value:"points to window"}
+];
+nodes.get("editor").querySelectorAll=()=>draftInput;
+nodes.get("performance")?.value;
+run('packet={episode_id:"S01E01",packet_sha256:"draft-test",sequential_one_pass_batches:[{id:"S01E01-AV-001"},{id:"S01E01-AV-002"}]};sequence=0;saved={boundaries:{},roles:{},batches:{}};');
+nodes.get("performance").value="dry";
+nodes.get("props").value="red scarf";
+nodes.get("actions").value="points";
+nodes.get("watched").checked=false;
+assert.equal(run('captureUnacceptedForm();Object.keys(pendingForms).length'),1);
+assert.equal(run('saved.roles.R100??null'),null,"Draft voice label MUST NOT be AV certified");
+assert.equal(run('pendingForms["S01E01-AV-001"].fields["role:R100"]'),"LANA WAGNER");
+run('persistDraft();pendingForms={};restoreDraft()');
+assert.equal(run('pendingForms["S01E01-AV-001"].fields["split:R100"]'),"@14 | PAINTER");
+for(const el of draftInput)el.value="";
+nodes.get("performance").value="";
+nodes.get("props").value="";
+nodes.get("actions").value="";
+run('restoreUnacceptedForm({id:"S01E01-AV-001"})');
+assert.equal(draftInput[2].value,"@14 | PAINTER");
+assert.equal(draftInput[4].value,"points to window");
+assert.equal(nodes.get("props").value,"red scarf");
+assert.equal(run('Object.keys(saved.roles).length'),0,"Unaccepted local draft was promoted to source-reviewed decision");
+run('packet.packet_sha256="another-episode";pendingForms={};restoreDraft()');
+assert.equal(run('Object.keys(pendingForms).length'),0,"Pending corrections leaked to another source packet");
+console.log("Unaccepted P0/P1/P2-P4 corrections survive navigation/crash without dishonest AV signoff: PASS");
 console.log("Original film SHA, listened P0 and explicitly unverified acoustic hints: PASS");
