@@ -7,6 +7,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/night-court-script-factory.yml'
+      - 'Night Court/tools/script_factory.py'
+      - 'Night Court/seasons/**/derived/text-only-speaker-proposals-v*.json'
   # The existing canonical publisher announces a new trusted manuscript.
   # Refresh the same private pilot output paths, never create vNN editions.
   repository_dispatch:
@@ -57,7 +59,7 @@ jobs:
           python 'Night Court/tools/script_factory.py' --episode S01E01 --output "${RUNNER_TEMP}/script-factory-smoke"
           test -s "${RUNNER_TEMP}/script-factory-smoke/S05E05/screenplay.md"
           test -s "${RUNNER_TEMP}/script-factory-smoke/S01E01/manifest.json"
-  bootstrap-pilots:
+  bootstrap-known-scripts:
     needs: validate
     if: >-
       (github.event_name == 'push' || github.event_name == 'repository_dispatch') &&
@@ -75,27 +77,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Refresh the two canonical pilots without new source-film inference
+      - name: Refresh canonical pilots and all existing contextual episode readers
         run: |
           set -euo pipefail
           python 'Night Court/tools/script_factory.py' --episode S01E01
           python 'Night Court/tools/script_factory.py' --episode S09E19
-      - name: Upload only the two strongest current private source-bound pilots
+          # Discover all existing whole-episode editorial ledgers; the Python
+          # factory validates each against its immutable transcript source.
+          for path in 'Night Court'/seasons/S??/S??E??/derived/text-only-speaker-proposals-v*.json; do
+            test -f "$path" || continue
+            episode="$(basename "$(dirname "$(dirname "$path")")")"
+            python 'Night Court/tools/script_factory.py' --episode "$episode"
+          done
+      - name: Upload the strongest current pilots and contextual episode scripts
         uses: actions/upload-artifact@v4
         with:
-          name: night-court-script-factory-current-pilots
-          path: |
-            Night Court/saved-private/script-factory-current/S01E01/
-            Night Court/saved-private/script-factory-current/S09E19/
+          name: night-court-script-factory-current-researched-scripts
+          path: Night Court/saved-private/script-factory-current/
           retention-days: 7
           if-no-files-found: error
-      - name: Safely preserve both refreshed scripts to stable private main paths
+      - name: Safely preserve refreshed scripts to stable private main paths
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- 'Night Court/saved-private/script-factory-current/S01E01/' \
-                     'Night Court/saved-private/script-factory-current/S09E19/'
+          git add -- 'Night Court/saved-private/script-factory-current/'
           if ! git diff --cached --quiet; then
             git commit -m 'data(night-court): refresh one-click factory canonical pilots'
             git push origin HEAD:main
