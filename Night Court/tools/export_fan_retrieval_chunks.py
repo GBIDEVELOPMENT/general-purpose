@@ -46,8 +46,43 @@ def select_script(root: Path, record: dict, v6_root: Path | None = None,
                   patched_root: Path | None = None,
                   turn_root: Path | None = None,
                   s01_p0_root: Path | None = None,
-                  working_pilot_root: Path | None = None) -> tuple[Path, str]:
+                  working_pilot_root: Path | None = None,
+                  factory_root: Path | None = None) -> tuple[Path, str]:
     episode = record["episode_id"]
+    if factory_root is not None:
+        # Current factory packages may cover just the researched subset:
+        # S01E01, S01E02, S01E03, S05E05, S09E19 initially. Fallback to
+        # old source-only scaffolds for any missing episode, never for a
+        # malformed or stale existing package.
+        base = factory_root.resolve()
+        if not base.is_relative_to(root.resolve()):
+            raise ValueError("Factory retrieval must use private in-repository output")
+        folder = base / episode
+        if folder.exists():
+            path = (folder / "screenplay.md").resolve()
+            manifest_path = (folder / "manifest.json").resolve()
+            if (not folder.is_dir() or not path.is_relative_to(base)
+                or not manifest_path.is_relative_to(base)
+                or not path.is_file() or not manifest_path.is_file()):
+                raise ValueError(episode + ": partial or unsafe script factory package")
+            meta = json.loads(manifest_path.read_text("utf-8"))
+            source = record["source_metadata"]
+            if (meta.get("schema") != "night-court-one-click-script-factory/1"
+                or meta.get("episode_id") != episode
+                or meta.get("source_witness_sha256") != source["source_sha256"]
+                or meta.get("original_dialogue_sha256") != source["source_sha256"]
+                or meta.get("source_version_id") != source["source_version_id"]
+                or meta.get("source_has_timecodes") is not source["timed"]
+                or meta.get("dialogue_source_changed") is not False
+                or meta.get("source_only_claims_never_promoted_to_av_truth") is not True
+                or meta.get("actual_av_verified") is not False
+                or not isinstance(meta.get("evidence_tier"), str)
+                or meta.get("evidence_tier") not in (
+                    "canonical_provisional_editorial_script",
+                    "contextual_provisional_reading_draft", "source_only_reading_draft")
+                or meta.get("script_sha256") != sha256(path.read_bytes())):
+                raise ValueError(episode + ": stale, tampered, or AV-unaccepted factory source")
+            return path, meta["evidence_tier"]
     if working_pilot_root is not None and episode in PILOT_SCRIPTS:
         path=(working_pilot_root / f"{episode}-working-screenplay.md").resolve()
         if not path.is_relative_to(working_pilot_root.resolve()) or not path.is_file():
@@ -175,12 +210,13 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
            patched_root: Path | None = None,
            turn_root: Path | None = None,
            s01_p0_root: Path | None = None,
-           working_pilot_root: Path | None = None) -> dict:
+           working_pilot_root: Path | None = None,
+           factory_root: Path | None = None) -> dict:
     if max_chars < 200:
         raise ValueError("Chunk size must be >= 200 characters")
     if out_dir.resolve().is_relative_to(root.resolve()):
         raise ValueError("Private retrieval output must be outside the Night Court source tree")
-    if sum(x is not None for x in (v6_root,v7_root,v8_root,v9_root,v10_root,v11_root,v12_root,v13_root,patched_root,turn_root,s01_p0_root,working_pilot_root))>1:
+    if sum(x is not None for x in (v6_root,v7_root,v8_root,v9_root,v10_root,v11_root,v12_root,v13_root,patched_root,turn_root,s01_p0_root,working_pilot_root,factory_root))>1:
         raise ValueError("Choose one speaker reader source per pilot")
     rows = read_queue(root)
     if working_pilot_root is not None:
@@ -323,7 +359,8 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         source_sha = entry["source_metadata"]["source_sha256"]
         if not re.fullmatch(r"[0-9a-f]{64}", source_sha):
             raise ValueError(f"Invalid source SHA: {episode}")
-        path, tier = select_script(root, entry, v6_root, v7_root, v8_root, v9_root, v10_root, v11_root, v12_root, v13_root, patched_root, turn_root, s01_p0_root, working_pilot_root)
+        path, tier = select_script(root, entry, v6_root, v7_root, v8_root, v9_root, v10_root, v11_root, v12_root, v13_root, patched_root, turn_root, s01_p0_root, working_pilot_root, factory_root)
+        is_factory = factory_root is not None and path.is_relative_to(factory_root.resolve())
         content = path.read_bytes()
         document = content.decode("utf-8")
         if source_sha not in document:
@@ -332,6 +369,7 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
         # with the show name first. Require exact episode identity nonetheless.
         title = document.lstrip()
         if not (title.startswith("# " + episode)
+                or (is_factory and episode in title.splitlines()[0])
                 or (working_pilot_root is not None and episode == "S09E19"
                     and (title.startswith("# Night Court (1984–1992) • S09E19:")
                           or title.startswith("# Night Court (1984–1992), S09E19:")))):
@@ -341,7 +379,9 @@ def export(root: Path, out_dir: Path, pilot_only: bool = False, max_chars: int =
                 raise ValueError(f"Wrong-season pilot prose in {episode} reader header: {named_season}")
         if episode == "S09E19" and entry["source_metadata"]["timed"]:
             raise ValueError("Untimed S09 original witness erroneously marked timed")
-        if working_pilot_root is not None and episode in PILOT_SCRIPTS:
+        if is_factory:
+            rel_path = str(path.relative_to(root.resolve()))
+        elif working_pilot_root is not None and episode in PILOT_SCRIPTS:
             expected_sha=working_report["manuscript_sha256"][episode]
             if sha256(content)!=expected_sha:
                 raise ValueError("Private current chronological pilot screenplay SHA mismatch")
@@ -491,6 +531,8 @@ def main() -> None:
                         help="Generic exact-source original paragraph speaker turn amendments")
     parser.add_argument("--working-pilot-root", type=Path, default=None,
                         help="Private v15 chronological readable screenplay outputs, 621 provisional names")
+    parser.add_argument("--factory-root", type=Path, default=None,
+                        help="Current SHA-checked stable screenplay factory packages; missing episodes fall back to source-only")
     options = parser.parse_args()
     result = export(options.root, options.output, options.pilot_only, options.max_chars,
                     options.speaker_v6_root, options.speaker_v7_root,
@@ -498,7 +540,8 @@ def main() -> None:
                     options.speaker_v10_root, options.speaker_v11_root,
                     options.speaker_v12_root, options.speaker_v13_root,
                     options.speaker_patch_root, options.source_turn_patch_root,
-                    options.s01_p0_root, options.working_pilot_root)
+                    options.s01_p0_root, options.working_pilot_root,
+                    options.factory_root)
     print(f"Exported {result['chunk_count']} retrieval chunks from {result['episode_count']} episodes")
 
 

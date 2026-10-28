@@ -12,6 +12,7 @@ on:
       # a GITHUB_TOKEN bot push alone cannot trigger this workflow.
       - '.github/workflows/night-court-owner-qwen-picture-pilot.yml'
       - 'Night Court/tools/script_factory.py'
+      - 'Night Court/tools/export_fan_retrieval_chunks.py'
       - 'Night Court/seasons/**/derived/text-only-speaker-proposals-v*.json'
       - 'Night Court/saved-private/episode-finish-current/*-original-audio-p0p1-evidence.json'
       - 'Night Court/saved-private/episode-finish-current/*-original-qwen-visual-proposals.json'
@@ -35,6 +36,8 @@ on:
     paths:
       - 'Night Court/tools/script_factory.py'
       - 'Night Court/tools/test_script_factory.py'
+      - 'Night Court/tools/export_fan_retrieval_chunks.py'
+      - 'Night Court/tools/test_export_fan_retrieval_chunks.py'
       - '.github/workflows/night-court-script-factory.yml'
 permissions:
   contents: read
@@ -57,7 +60,7 @@ jobs:
       - name: Test full original-source corpus, both pilots, source preservation and deterministic second run
         run: |
           set -euo pipefail
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_script_factory test_episode_finish
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_script_factory test_episode_finish test_export_fan_retrieval_chunks
       - name: Smoke the one-command user entrypoint
         run: |
           set -euo pipefail
@@ -95,6 +98,18 @@ jobs:
             episode="$(basename "$(dirname "$(dirname "$path")")")"
             python 'Night Court/tools/script_factory.py' --episode "$episode"
           done
+      - name: Refresh the existing 193-episode private fan corpus from strongest available readers
+        run: |
+          set -euo pipefail
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --factory-root 'Night Court/saved-private/script-factory-current' \
+            --output "${RUNNER_TEMP}/night-court-strongest-fan-retrieval"
+          test -s "${RUNNER_TEMP}/night-court-strongest-fan-retrieval/fan-retrieval-manifest.json"
+          mkdir -p 'Night Court/saved-private/pilot-current/private-fan-retrieval'
+          cp "${RUNNER_TEMP}/night-court-strongest-fan-retrieval/fan-retrieval-manifest.json" \
+             'Night Court/saved-private/pilot-current/private-fan-retrieval/'
+          cp "${RUNNER_TEMP}/night-court-strongest-fan-retrieval/fan-retrieval-chunks.jsonl" \
+             'Night Court/saved-private/pilot-current/private-fan-retrieval/'
       - name: Upload the strongest current pilots and contextual episode scripts
         uses: actions/upload-artifact@v4
         with:
@@ -107,7 +122,8 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- 'Night Court/saved-private/script-factory-current/'
+          git add -- 'Night Court/saved-private/script-factory-current/' \
+            'Night Court/saved-private/pilot-current/private-fan-retrieval/'
           if ! git diff --cached --quiet; then
             git commit -m 'data(night-court): refresh one-click factory canonical pilots'
             git push origin HEAD:main
@@ -157,6 +173,18 @@ jobs:
           path: ${{ runner.temp }}/script-factory-package/
           retention-days: 7
           if-no-files-found: error
+      - name: Prepare matching private fan retrieval when publication is requested
+        if: inputs.publish == true
+        run: |
+          set -euo pipefail
+          python 'Night Court/tools/export_fan_retrieval_chunks.py' \
+            --factory-root 'Night Court/saved-private/script-factory-current' \
+            --output "${RUNNER_TEMP}/night-court-strongest-fan-retrieval"
+          mkdir -p 'Night Court/saved-private/pilot-current/private-fan-retrieval'
+          cp "${RUNNER_TEMP}/night-court-strongest-fan-retrieval/fan-retrieval-manifest.json" \
+             'Night Court/saved-private/pilot-current/private-fan-retrieval/'
+          cp "${RUNNER_TEMP}/night-court-strongest-fan-retrieval/fan-retrieval-chunks.jsonl" \
+             'Night Court/saved-private/pilot-current/private-fan-retrieval/'
       - name: Commit only requested stable output (no version proliferation)
         if: inputs.publish == true
         env:
@@ -170,6 +198,7 @@ jobs:
           else
             git add -- "Night Court/saved-private/script-factory-current/${REQUESTED_EPISODE}/"
           fi
+          git add -- 'Night Court/saved-private/pilot-current/private-fan-retrieval/'
           if ! git diff --cached --quiet; then
             git commit -m "data(night-court): refresh source-guarded script factory output for ${REQUESTED_EPISODE}"
             # Normal fast-forward only: never force or overwrite concurrent editing.

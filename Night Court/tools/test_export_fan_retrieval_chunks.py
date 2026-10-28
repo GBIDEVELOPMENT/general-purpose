@@ -88,6 +88,75 @@ class RetrievalExportTests(unittest.TestCase):
                 for r in (json.loads(x) for x in
                 (output / "fan-retrieval-chunks.jsonl").read_text().splitlines())))
 
+    def test_current_factory_packages_replace_older_anonymous_fan_sources(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / "Night Court"
+            queue = fixture(root)
+            factory = root / "saved-private/script-factory-current"
+            for ep in ("S01E01", "S02E01"):
+                source = next(e["source_metadata"] for e in queue["episodes"]
+                              if e["episode_id"] == ep)
+                source["source_version_id"] = "fixture-original-v1"
+                draft = factory / ep
+                draft.mkdir(parents=True)
+                document = (
+                    f"# Night Court (1984) · {ep} · Current researched reader\n\n"
+                    f"Original transcript SHA-256: `{source['source_sha256']}`\n"
+                    "### HARRY STONE (source-context proposal, original AV unverified)\n"
+                    "    Hello from the current factory.\n"
+                )
+                content = document.encode("utf-8")
+                (draft / "screenplay.md").write_bytes(content)
+                manifest = {
+                    "schema": "night-court-one-click-script-factory/1",
+                    "episode_id": ep,
+                    "source_witness_sha256": source["source_sha256"],
+                    "original_dialogue_sha256": source["source_sha256"],
+                    "source_version_id": source["source_version_id"],
+                    "source_has_timecodes": source["timed"],
+                    "dialogue_source_changed": False,
+                    "source_only_claims_never_promoted_to_av_truth": True,
+                    "actual_av_verified": False,
+                    "evidence_tier": "contextual_provisional_reading_draft",
+                    "script_sha256": sha256(content),
+                }
+                (draft / "manifest.json").write_text(json.dumps(manifest), "utf-8")
+            (root / "catalog/av-script-reconstruction-queue.json").write_text(
+                json.dumps(queue), "utf-8")
+            out = Path(folder) / "new-retrieval"
+            result = export(root, out, factory_root=factory)
+            self.assertEqual(result["episode_count"], 3)
+            source_by_ep = {e["episode_id"]: e for e in result["episodes"]}
+            self.assertEqual(source_by_ep["S01E01"]["evidence_tier"],
+                             "contextual_provisional_reading_draft")
+            self.assertEqual(source_by_ep["S02E01"]["evidence_tier"],
+                             "contextual_provisional_reading_draft")
+            self.assertEqual(source_by_ep["S09E19"]["evidence_tier"],
+                             "provisional_filmed_staging_working_script")
+            self.assertIn("script-factory-current/S02E01/screenplay.md",
+                          source_by_ep["S02E01"]["script_path"])
+            rows = [json.loads(x) for x in
+                    (out / "fan-retrieval-chunks.jsonl").read_text().splitlines()]
+            self.assertTrue(any("Hello from the current factory." in r["retrieval_text"]
+                                for r in rows if r["episode_id"] == "S02E01"))
+            self.assertTrue(all(not r["speaker_names_verified"]
+                                and not r["whole_episode_av_certified"] for r in rows))
+            self.assertFalse(next(r for r in rows if r["episode_id"] == "S09E19")[
+                "dialogue_timed_original"])
+            # Script bytes cannot be silently changed after the factory SHA.
+            target = factory / "S02E01" / "screenplay.md"
+            target.write_text(target.read_text("utf-8") + "tampered", "utf-8")
+            with self.assertRaisesRegex(ValueError, "stale, tampered"):
+                export(root, out, factory_root=factory)
+            target.write_text(target.read_text("utf-8")[:-8], "utf-8")
+            # Even matching script bytes cannot excuse a forged actor-AV claim.
+            meta_path = factory / "S02E01" / "manifest.json"
+            m = json.loads(meta_path.read_text("utf-8"))
+            m["actual_av_verified"] = True
+            meta_path.write_text(json.dumps(m), "utf-8")
+            with self.assertRaisesRegex(ValueError, "stale, tampered"):
+                export(root, out, factory_root=factory)
+
     def test_private_speaker_v6_scripts_can_replace_both_pilots_without_source_mutation(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder) / "Night Court"

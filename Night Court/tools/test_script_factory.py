@@ -637,6 +637,35 @@ class ScriptFactoryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "stale/malformed contextual role"):
             contextual_role_overlay(ROOT, ep, {**witness, "sha256": "0" * 64}, captions)
 
+    def test_current_private_fan_retrieval_uses_strongest_five_episode_readers(self):
+        from export_fan_retrieval_chunks import export
+        factory = ROOT / "saved-private/script-factory-current"
+        researched = {"S01E01", "S01E02", "S01E03", "S05E05", "S09E19"}
+        with tempfile.TemporaryDirectory() as folder:
+            out = Path(folder) / "private-fan-retrieval"
+            manifest = export(ROOT, out, factory_root=factory)
+            self.assertEqual(manifest["episode_count"], 193)
+            by_ep = {x["episode_id"]: x for x in manifest["episodes"]}
+            self.assertEqual(len(by_ep), 193)
+            self.assertEqual(sum(
+                row["script_path"].startswith("saved-private/script-factory-current/")
+                for row in by_ep.values()), 5)
+            for ep in researched:
+                with self.subTest(ep=ep):
+                    draft = factory / ep / "screenplay.md"
+                    self.assertEqual(by_ep[ep]["script_sha256"], sha(draft.read_bytes()))
+                    self.assertTrue(by_ep[ep]["script_path"].endswith(
+                        ep + "/screenplay.md"))
+                    self.assertNotEqual(by_ep[ep]["evidence_tier"],
+                                        "source_only_dialogue_scaffold")
+            self.assertEqual(sum(x["evidence_tier"] == "source_only_dialogue_scaffold"
+                                 for x in by_ep.values()), 188)
+            self.assertEqual(by_ep["S01E03"]["evidence_tier"],
+                             "contextual_provisional_reading_draft")
+            self.assertGreater(by_ep["S01E03"]["chunks"], 0)
+            self.assertTrue((out / "fan-retrieval-chunks.jsonl").is_file())
+            self.assertTrue((out / "fan-retrieval-manifest.json").is_file())
+
     def test_all_193_episodes_generate_and_second_run_is_idempotent(self):
         with tempfile.TemporaryDirectory() as d:
             output = Path(d)
