@@ -40,8 +40,6 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Well, you
     certainly are observant, Miss Sullivan.
 
-### Harry Stone (contextual hypothesis, unverified)
-
     I've got to hand it to you.
 
 ### Christine Sullivan (contextual hypothesis, unverified)
@@ -58,16 +56,12 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Oh, you know, actually, I feel like I'm
     coming down with something. I'm a little
 
-### Christine Sullivan (contextual lexical turn hypothesis; audio unverified)
-
     stuffy. 
 
 ### Harry Stone (contextual lexical turn hypothesis; audio unverified)
 
     Yeah, but that's half your
     charm.
-
-### Harry Stone (contextual hypothesis, unverified)
 
     Look at this.
 
@@ -158,16 +152,12 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     parties are trans channelers your honor
     they claim that spiritual entities speak
 
-### Dan Fielding (contextual lexical turn hypothesis; audio unverified)
-
     through them from another realm 
 
 ### Harry Stone (contextual lexical turn hypothesis; audio unverified)
 
     you
     believe all this higher consciousness
-
-### Harry Stone (contextual hypothesis, unverified)
 
     huh so if i'm following this you two are
     kind
@@ -291,15 +281,11 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     Listen, buddy, I don't know who you are,
     but why don't I take you and your stuff
 
-### Dan Fielding (contextual lexical turn hypothesis; audio unverified)
-
     and get... 
 
 ### Devil / Stu Blumberg (contextual lexical turn hypothesis; audio unverified)
 
     Oh, I'm known by many names.
-
-### Devil / Stu Blumberg (contextual hypothesis, unverified)
 
     Lucifer, Beelzebub, Satan.
 
@@ -447,8 +433,6 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     Oh, I know everything about you. You're
     something of a minor celebrity where I
-
-### Devil / Stu Blumberg (contextual lexical turn hypothesis; audio unverified)
 
     come from. 
 
