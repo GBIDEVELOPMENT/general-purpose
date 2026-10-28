@@ -85,7 +85,7 @@ class ReviewedPublicationTests(unittest.TestCase):
         packet={"episode_id":"S01E01","original_video_sha256_expected":"a"*64,
                 "packet_sha256":"b"*64,
                 "sequential_one_pass_batches":[{"reader_blocks":[
-                   {"id":f"source-{i}"} for i in range(12)]}]}
+                   {"id":f"source-{i}"} for i in range(15)]}]}
         ledger={"reviewer":"Lead editor"}
         sample={"schema":INDEPENDENT_SCHEMA,"episode_id":"S01E01",
                 "source_video_sha256":"a"*64,"source_packet_sha256":"b"*64,
@@ -96,7 +96,7 @@ class ReviewedPublicationTests(unittest.TestCase):
                 "original_audio_and_picture_spotchecked":True,
                 "P0_P1_contradictions_remaining":0,
                 "accepted":True,
-                "sampled_original_reading_block_ids":[f"source-{i}" for i in range(9)]}
+                "sampled_original_reading_block_ids":[f"source-{i}" for i in (0,1,2,5,6,7,10,11,12)]}
         report=self.review/"sample.json"
         report.write_text(json.dumps(sample))
         with self.assertRaisesRegex(ValueError,"not independent"):
