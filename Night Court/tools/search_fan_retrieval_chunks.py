@@ -8,6 +8,7 @@ counts, not copyrighted episode dialogue.
 from __future__ import annotations
 import argparse
 import collections
+import hashlib
 import json
 import math
 import re
@@ -29,6 +30,99 @@ def words(text: str) -> list[str]:
     plain = unicodedata.normalize("NFKD", text).casefold()
     plain = "".join(ch for ch in plain if not unicodedata.combining(ch))
     return [w for w in re.findall(r"[a-z0-9]+", plain) if len(w) > 1 and w not in STOP]
+
+
+def verified_original_av_overrides(records: list[dict], baseline: Path,
+                                   review_root: Path) -> list[dict]:
+    """Replace only fully published, source-pinned pilot text IN MEMORY.
+
+    The persisted provisional 193-episode corpus and immutable SRT witness
+    remain unchanged. No machine speaker model can promote a script here.
+    """
+    from export_fan_retrieval_chunks import partition_sections, chunk_section, section_heading
+    from episode_finish import VIDEO_SHA
+    if not review_root.is_dir():
+        return records
+    layout_file=baseline/"working-screenplay-layout-manifest.json"
+    replacements={}
+    for ep in ("S01E01","S09E19"):
+        screenplay=review_root/(ep+"-original-av-reviewed-screenplay.md")
+        manifest_file=review_root/(ep+"-original-av-reviewed-manifest.json")
+        ledger=review_root/(ep+"-original-av-decisions.json")
+        present=(screenplay.is_file(),manifest_file.is_file(),ledger.is_file())
+        if not any(present):
+            continue
+        # A submitted partial draft must not displace any canonical source.
+        if present==(False,False,True):
+            continue
+        if not all(present):
+            raise ValueError("Incomplete source-reviewed pilot publication files: "+ep)
+        if not layout_file.is_file():
+            raise ValueError("Original canonical pilot layout unavailable for AV retrieval")
+        layout=json.loads(layout_file.read_text("utf-8"))
+        proof=json.loads(manifest_file.read_text("utf-8"))
+        raw=screenplay.read_bytes()
+        caption_witness={r["caption_source_sha256"] for r in records if r["episode_id"]==ep}
+        if len(caption_witness)!=1:
+            raise ValueError("No unambiguous pilot source caption for reviewed replacement")
+        src=next(iter(caption_witness))
+        digest=lambda content:hashlib.sha256(content).hexdigest()
+        old=baseline/(ep+"-working-screenplay.md")
+        if (proof.get("schema")!="night-court-original-av-stable-reviewed-screenplay-publication/1"
+            or proof.get("episode_id")!=ep
+            or proof.get("original_film_sha256")!=VIDEO_SHA[ep]
+            or proof.get("immutable_original_dialogue_sha256")!=src
+            or proof.get("reviewed_manuscript_sha256")!=digest(raw)
+            or proof.get("actual_editorial_ledger_sha256")!=digest(ledger.read_bytes())
+            or proof.get("canonical_input_manuscript_sha256")!=layout["manuscript_sha256"][ep]
+            or not old.is_file()
+            or digest(old.read_bytes())!=layout["manuscript_sha256"][ep]
+            or proof.get("caption_witness_remains_immutable") is not True
+            or proof.get("software_does_not_prove_human_attention") is not True
+            or proof.get("evidence_tier") not in (
+                "original_av_reviewer_attested_pending_independent_editor",
+                "reviewer_and_independent_spotcheck_attested")):
+            raise ValueError("Reviewer-attested pilot/source SHA provenance mismatch")
+        doc=raw.decode("utf-8")
+        if src not in doc or not doc.startswith("# "+ep+":"):
+            raise ValueError("Reviewed screenplay lost original caption witness or episode identity")
+        original=[r for r in records if r["episode_id"]==ep]
+        template=original[0]
+        replacement=[]
+        for secnum,section in enumerate(partition_sections(doc),1):
+            for partnum,chunk in enumerate(chunk_section(section,3600),1):
+                replacement.append({
+                    **template,
+                    "episode_id":ep,
+                    "record_id":f"{ep}:retrieval:{len(replacement)+1:04d}",
+                    "section_index":secnum,
+                    "section_part":partnum,
+                    "section_label":section_heading(section),
+                    "script_path":"../episode-finish-current/"+screenplay.name,
+                    "script_sha256":digest(raw),
+                    "caption_source_sha256":src,
+                    "retrieval_text":chunk,
+                    "evidence_tier":proof["evidence_tier"],
+                    # This is an actual original-AV reviewer declaration.
+                    # Tool validation does NOT prove actor identity or human sight.
+                    "speaker_names_verified":False,
+                    "whole_episode_av_certified":False,
+                    "section_is_verified_visual_scene":False,
+                })
+        if "".join(r["retrieval_text"] for r in replacement)!=doc:
+            raise ValueError("Source-reviewed pilot retrieval lost script characters")
+        replacements[ep]=replacement
+    if not replacements:
+        return records
+    out=[];emitted=set()
+    for rec in records:
+        ep=rec["episode_id"]
+        if ep in replacements:
+            if ep not in emitted:
+                out.extend(replacements[ep]);emitted.add(ep)
+        else:
+            out.append(rec)
+    return out
 
 
 def load_records(path: Path) -> list[dict]:
@@ -59,6 +153,14 @@ def load_records(path: Path) -> list[dict]:
         raise ValueError("Duplicated record IDs in retrieval source")
     if not records:
         raise ValueError("Empty retrieval corpus")
+    # Canonical private search automatically prefers a source-AV reviewed
+    # screenplay only when a complete, source-checked publication exists.
+    if (path.name=="fan-retrieval-chunks.jsonl"
+        and path.parent.name=="private-fan-retrieval"
+        and path.parent.parent.name=="pilot-current"):
+        root=path.parent.parent.parent
+        records=verified_original_av_overrides(
+            records,path.parent.parent,root/"episode-finish-current")
     return records
 
 
