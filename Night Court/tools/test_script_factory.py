@@ -6,7 +6,7 @@ from pathlib import Path
 
 from script_factory import (
     ROOT, PILOTS, construct, multi_voice_typography, run,
-    source_index, source_role, source_rows, sha, contextual_role_overlay,
+    source_index, source_role, source_rows, sha, contextual_role_overlay, structural_speaker_parts,
 )
 
 
@@ -22,6 +22,29 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertIsNone(source_role("MUSIC: trumpet riff"))
         self.assertTrue(multi_voice_typography("- Hello\n- What's new?"))
         self.assertFalse(multi_voice_typography("- Hello\nAre you there?"))
+
+    def test_multi_dash_voice_segments_preserve_exact_source_unicode(self):
+        samples = [
+            ("- Hello, Dan.\n- Hello, Harry.", 2),
+            ("- First speaker\nwraps onto another line\n– Second speaker", 2),
+            ("A previous voice speaks.\n- A second voice\n- A third voice", 3),
+            ("- Only one leading dash; continuation is unmarked", 1),
+            ("An ordinary hyphen - in a sentence", 1),
+            ("— Bonjour, café.\n— Voilà, niño.", 2),
+            ("- Hello\n- There\n- Friend", 3),
+        ]
+        for raw, expected in samples:
+            with self.subTest(source=raw):
+                parts = structural_speaker_parts(raw)
+                self.assertEqual(len(parts), expected)
+                self.assertEqual("".join(p["text"] for p in parts), raw)
+                self.assertEqual(parts[0]["start"], 0)
+                self.assertEqual(parts[-1]["end"], len(raw))
+                self.assertEqual([p["start"] for p in parts[1:]],
+                                 [p["end"] for p in parts[:-1]])
+                self.assertTrue(all(sha(p["text"].encode("utf-8")) ==
+                                    p["source_text_sha256"] for p in parts))
+                self.assertTrue(all(not p["actual_speaker_boundary_verified"] for p in parts))
 
     def test_pilots_reuse_source_checked_canonical_manuscripts(self):
         for ep in PILOTS:
@@ -104,6 +127,30 @@ class ScriptFactoryTests(unittest.TestCase):
                     self.assertEqual(manifest["source_provenance_sha256"], sha(provenance))
                     self.assertEqual(manifest["p0_review_queue_sha256"], sha(queue))
                     self.assertTrue(manifest["source_only_claims_never_promoted_to_av_truth"])
+                    if ep not in PILOTS:
+                        rows = [json.loads(s) for s in provenance.decode("utf-8").splitlines()]
+                        cut_count = 0
+                        for row in rows:
+                            parts = row["source_speaker_parts"]
+                            self.assertGreaterEqual(len(parts), 1)
+                            self.assertEqual(parts[0]["source_character_start"], 0)
+                            self.assertEqual(parts[-1]["source_character_end"], len(row["source_text"]))
+                            self.assertEqual(
+                                "".join(row["source_text"][p["source_character_start"]:
+                                                            p["source_character_end"]] for p in parts),
+                                row["source_text"])
+                            for p in parts:
+                                self.assertIsNone(p["original_audio_subcue_time_ms"])
+                                self.assertFalse(p["original_audio_boundary_verified"])
+                                self.assertEqual(sha(row["source_text"][
+                                    p["source_character_start"]:p["source_character_end"]
+                                ].encode("utf-8")), p["source_text_sha256"])
+                            cut_count += len(parts) - 1
+                        self.assertEqual(manifest["source_dash_candidate_p0_boundaries"], cut_count)
+                        review = json.loads(queue)
+                        self.assertEqual(len(review["within_cue_structural_turn_questions"]), cut_count)
+                        self.assertTrue(all(not q["source_audio_performed_turn_verified"]
+                                            for q in review["within_cue_structural_turn_questions"]))
 
     def test_cannot_silently_mutate_original_transcript(self):
         import shutil

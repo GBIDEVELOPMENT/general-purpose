@@ -86,9 +86,37 @@ def source_role(text: str) -> str | None:
     return name if name and not re.fullmatch(r"(MUSIC|LAUGHTER|APPLAUSE|SOUND|SFX)", name) else None
 
 
+def structural_speaker_parts(text: str) -> list[dict]:
+    """Exactly partition original cue characters at strong multi-dash signals.
+
+    A subtitle's leading dash is a *proposal* of a separate speaking turn,
+    never proof of two voices. Preserve every Unicode codepoint and newline.
+    A single dash is too ambiguous to segment without other evidence.
+    """
+    starts = [m.start() for m in re.finditer(r"(?m)^[ \t]*[-–—][ \t]+\S", text)]
+    cuts = [0]
+    if len(starts) >= 2:
+        # If there is an undashed opening voice, keep it as its own part;
+        # otherwise subsequent marked lines create proposed handoffs.
+        if text[:starts[0]].strip():
+            cuts.append(starts[0])
+        cuts.extend(starts[1:])
+    cuts.append(len(text))
+    parts = [{
+        "id": f"P{i:02d}", "start": start, "end": end,
+        "text": text[start:end],
+        "source_text_sha256": sha(text[start:end].encode("utf-8")),
+        "source_indicates_possible_speaker_change": i > 1,
+        "actual_speaker_boundary_verified": False,
+    } for i, (start, end) in enumerate(zip(cuts, cuts[1:]), 1)]
+    if (not parts or any(p["start"] >= p["end"] for p in parts)
+        or "".join(p["text"] for p in parts) != text):
+        raise ValueError("Original caption character conservation failed at P0 split")
+    return parts
+
+
 def multi_voice_typography(text: str) -> bool:
-    lines = [line for line in text.splitlines() if line.strip()]
-    return sum(bool(re.match(r"^\s*[-–—]\s+\S", line)) for line in lines) >= 2
+    return len(structural_speaker_parts(text)) > 1
 
 
 def contextual_role_overlay(root: Path, ep: str, manifest: dict, cues: list):
@@ -180,9 +208,11 @@ def generic_episode(root: Path, ep: str, index: dict):
         hint = contextual.get(num, {})
         candidate = hint.get("provisional_role")
         internal = hint.get("internal_voice_roles", [])
-        # A mixed cue cannot be given one name until a source-heard P0 split.
-        role = None if internal else (label or candidate)
-        suspect = multi_voice_typography(raw) or bool(internal)
+        parts = structural_speaker_parts(raw)
+        # Even a confident whole-cue name must never absorb two distinct
+        # dash-marked voices; P0 before P1. No guessed subcue timecodes.
+        role = None if internal or len(parts) > 1 else (label or candidate)
+        suspect = len(parts) > 1 or bool(internal)
         multi += int(suspect)
         named += int(label is not None)
         start, end = cue["start_ms"], cue["end_ms"]
@@ -214,29 +244,49 @@ def generic_episode(root: Path, ep: str, index: dict):
             "contextual_intra_cue_voice_roles": internal,
             "source_label_verified_against_film": False,
             "candidate_role_original_soundtrack_verified": False,
-            "multiple_voice_dashes": suspect,
+            "multiple_voice_dashes": len(parts) > 1,
+            "contextual_unlocated_internal_handoff": bool(internal),
+            "source_speaker_parts": [{
+                "source_part_id": f"C{num:05d}.{p['id']}",
+                "source_character_start": p["start"],
+                "source_character_end": p["end"],
+                "source_text_sha256": p["source_text_sha256"],
+                "proposed_voice_change_before_part": p["source_indicates_possible_speaker_change"],
+                "original_audio_boundary_verified": False,
+                "original_audio_subcue_time_ms": None,
+            } for p in parts],
             "passage_candidate": group, "provisional_continuation_of_previous": continuing,
             "original_dialogue_sha256": source_sha,
         }
         rows.append(row)
-        if not continuing:
-            if internal:
-                heading = ("MULTIPLE UNIDENTIFIED VOICES (context proposes " +
-                           " / ".join(internal) + "; internal boundary unverified)")
-            else:
-                heading = (role or "UNIDENTIFIED VOICE") + (
-                    " (source label, unverified)" if label else
-                    " (contextual hypothesis, unverified)" if candidate else "")
-            lines.extend(["### " + heading, ""])
-        lines.extend("    " + line for line in raw.split("\n"))
-        lines.append("")
+        if len(parts) > 1:
+            # One visual character heading per *proposed* source speaker part.
+            # An unordered/single contextual cue label cannot prove part roles.
+            for p in parts:
+                heading = f"UNIDENTIFIED VOICE (caption-marked P0 candidate {p['id']}; audio unverified)"
+                lines.extend(["### " + heading, ""])
+                lines.extend("    " + line for line in p["text"].split("\n"))
+                lines.append("")
+        else:
+            if not continuing:
+                if internal:
+                    heading = ("MULTIPLE UNIDENTIFIED VOICES (context proposes " +
+                               " / ".join(internal) + "; internal boundary unverified)")
+                else:
+                    heading = (role or "UNIDENTIFIED VOICE") + (
+                        " (source label, unverified)" if label else
+                        " (contextual hypothesis, unverified)" if candidate else "")
+                lines.extend(["### " + heading, ""])
+            lines.extend("    " + line for line in raw.split("\n"))
+            lines.append("")
         last = row
     lines.extend([
         "## Source and editorial limits", "",
         f"- Source edition: `{manifest['version_id']}`; {len(captions)} of {len(captions)} cues present.",
         f"- {named} cues have source-explicit voice labels; {len(captions) - named} have no explicit source role.",
         f"- {context_report['high_medium_single_role_hypotheses'] if context_report else 0} high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.",
-        f"- {multi} cues contain multiple leading-dash voice hints and need internal P0 examination.",
+        f"- {multi} cues have possible internal voice changes (dash-marked or context-only).",
+        f"- {sum(len(r['source_speaker_parts']) - 1 for r in rows)} candidate within-cue dash boundaries are represented as separate reversible speaker parts.",
         f"- {len(edges)} adjacent boundaries remain original-audio unverified.",
         f"- Episode-credited guest roles (not speaker assignments): {', '.join(guests) if guests else 'none listed'}.",
         "- Passage boundaries are caption-gap heuristics. Scene headings, wardrobe, props,",
@@ -252,6 +302,8 @@ def generic_episode(root: Path, ep: str, index: dict):
         "source_explicit_label_cues": named,
         "unknown_label_cues": sum(x["candidate_display_role"] is None for x in rows),
         "internal_voice_handoff_review_cues": multi,
+        "proposed_source_speaker_parts": sum(len(r["source_speaker_parts"]) for r in rows),
+        "source_dash_candidate_p0_boundaries": sum(len(r["source_speaker_parts"]) - 1 for r in rows),
         "adjacent_p0_unverified": len(edges),
         "provisional_passages_not_verified_scenes": group,
         "original_dialogue_sha256": source_sha,
@@ -334,7 +386,18 @@ def construct(root: Path, ep: str, index: dict):
                          "all_original_audio_boundaries_unverified": True,
                          "boundary_review_questions": edges,
                          "review_internal_voice_changes": [x.get("cue") for x in rows
-                                                          if x.get("multiple_voice_dashes")],
+                                                          if x.get("multiple_voice_dashes") or
+                                                          x.get("contextual_unlocated_internal_handoff")],
+                         "within_cue_structural_turn_questions": [{
+                             "source_cue": row["cue"],
+                             "left_part": left["source_part_id"],
+                             "right_part": right["source_part_id"],
+                             "source_character_boundary": right["source_character_start"],
+                             "boundary_proposed_by_caption_dash": True,
+                             "source_audio_performed_turn_verified": False,
+                             "priority": "P0",
+                         } for row in rows if "source_speaker_parts" in row
+                           for left, right in zip(row["source_speaker_parts"], row["source_speaker_parts"][1:])],
                          "contextual_role_review": [{
                              "source_cue": x["cue"], "provisional_role": x["contextual_role"],
                              "confidence": x["contextual_confidence"],
