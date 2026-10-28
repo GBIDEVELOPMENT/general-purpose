@@ -386,7 +386,7 @@ def generic_episode(root: Path, ep: str, index: dict):
 
 
 def apply_existing_original_audio_p0(root: Path, ep: str, source_sha: str,
-                                     canonical_text: str, edges: list) -> dict:
+                                     canonical_text: str, edges: list, rows: list) -> tuple[dict, list]:
     """Attach already-measured original-soundtrack similarities to exact P0 edges.
 
     Numeric acoustic features only prioritize re-listening. They never
@@ -398,7 +398,8 @@ def apply_existing_original_audio_p0(root: Path, ep: str, source_sha: str,
             (ep + "-original-audio-p0p1-evidence.json"))
     if not path.is_file():
         return {"status": "source_audio_report_absent", "matched_p0_pairs": 0,
-                "priority_original_audio_p0_conflicts": 0}
+                "priority_original_audio_p0_conflicts": 0,
+                "previously_unknown_original_voice_windows": 0}, []
     raw = path.read_bytes()
     report = json.loads(raw)
     if (report.get("schema") != "night-court-canonical-original-audio-p0-p1-evidence/1"
@@ -417,7 +418,8 @@ def apply_existing_original_audio_p0(root: Path, ep: str, source_sha: str,
     }
     if report.get("canonical_manuscript_sha256") != sha(canonical_text.encode("utf-8")):
         return {**base, "status": "stale_canonical_manuscript_not_applied",
-                "matched_p0_pairs": 0, "priority_original_audio_p0_conflicts": 0}
+                "matched_p0_pairs": 0, "priority_original_audio_p0_conflicts": 0,
+                "previously_unknown_original_voice_windows": 0}, []
     pairs = report.get("adjacent_P0_original_audio_voice_similarity")
     if not isinstance(pairs, list) or len(pairs) > 1500:
         raise ValueError(ep + ": malformed P0 soundtrack comparison")
@@ -454,13 +456,75 @@ def apply_existing_original_audio_p0(root: Path, ep: str, source_sha: str,
         if discrepancy:
             edge["review_priority"] = "P0_FOCUS_MODEL_CONTRADICTION"
             focus += 1
+    # P1 comes after P0. These acoustic matches were NOT calibrated well
+    # enough to name a speaker: only re-listening questions, never screenplay
+    # labels. Crucially S09's source paragraphs are UNTIMED; the independently
+    # recorded original-video seek range is not a transcript timestamp.
+    unknown = report.get("unknown_original_soundtrack_proposals")
+    if not isinstance(unknown, list) or len(unknown) > len(rows):
+        raise ValueError(ep + ": missing or unbounded unknown-voice model proposals")
+    by_id = {row["reading_block_id"]: row for row in rows}
+    if len(by_id) != len(rows):
+        raise ValueError(ep + ": duplicate P1 source reading block")
+    p1_review = []
+    seen_voices = set()
+    for cand in unknown:
+        key = cand.get("source_reading_block_id")
+        row = by_id.get(key)
+        ref = cand.get("source_ref")
+        score = cand.get("speaker_similarity")
+        runner = cand.get("runner_up_similarity")
+        margin = cand.get("voice_model_margin")
+        source_timing = cand.get("source_original_timecode_ms")
+        s09_seek = cand.get("unverified_s09_original_audio_seek_hint_ms")
+        if (not isinstance(cand, dict) or key in seen_voices or row is None
+            or row["provisional_role"] is not None
+            or not isinstance(ref, str) or ref not in row["original_source_part_refs"]
+            or not isinstance(cand.get("uncertified_best_role"), str)
+            or not cand["uncertified_best_role"].strip()
+            or cand.get("acoustic_candidate") is not None
+            or cand.get("actor_voice_original_soundtrack_independently_verified") is not False
+            or cand.get("global_and_role_holdout_pass") is not False
+            or any(type(v) not in (int, float) or not 0 <= v <= 1
+                   for v in (score, runner, margin))
+            or abs((score - runner) - margin) > .00003
+            or (ep == "S01E01" and (source_timing is None or s09_seek is not None))
+            or (ep == "S09E19" and (source_timing is not None or s09_seek is None))):
+            raise ValueError(ep + ": malformed or falsely certified P1 source voice")
+        seek = source_timing if ep == "S01E01" else s09_seek
+        if (not isinstance(seek, list) or len(seek) != 2
+            or any(type(t) is not int for t in seek)
+            or not 0 <= seek[0] < seek[1] <= 7_200_000):
+            raise ValueError(ep + ": invalid source audio listening envelope")
+        seen_voices.add(key)
+        p1_review.append({
+            "reading_block_id": key, "source_original_part_ref": ref,
+            "source_exact_dialogue_sha256": row["source_text_sha256"],
+            "uncertified_machine_nearest_role": cand["uncertified_best_role"],
+            "machine_nearest_voice_similarity": score,
+            "machine_runner_up_similarity": runner, "machine_margin": margin,
+            "low_discrimination_requires_extra_skepticism": margin < .05,
+            "source_caption_time_ms": source_timing,
+            "unverified_original_movie_seek_hint_ms": s09_seek,
+            "source_video_sha256": base["original_video_sha256"],
+            "model_source_report_sha256": base["sha256"],
+            "original_soundtrack_heard_by_editor": False,
+            "actual_character_voice_verified": False,
+            "eligible_for_automatic_role_promotion": False,
+            "review_priority": "P1_UNIDENTIFIED_ORIGINAL_AUDIO_LISTEN",
+        })
+    p1_review.sort(key=lambda item: (
+        item["unverified_original_movie_seek_hint_ms"] or item["source_caption_time_ms"],
+        item["reading_block_id"]))
     return {
         **base, "status": "canonical_source_audio_model_linked",
         "model_measured_adjacent_pairs": len(pairs),
         "matched_p0_pairs": sum("original_soundtrack_machine_similarity" in e for e in edges),
         "priority_original_audio_p0_conflicts": focus,
         "model_similarity_thresholds_only_review_triage_not_calibrated": True,
-    }
+        "previously_unknown_original_voice_windows": len(p1_review),
+        "unknown_voice_model_automatically_promoted": 0,
+    }, p1_review
 
 
 def pilot_episode(root: Path, ep: str, index: dict):
@@ -507,10 +571,11 @@ def pilot_episode(root: Path, ep: str, index: dict):
         "source_audio_verified_by_factory": False,
         "review_priority": "P0",
     } for i in range(1, len(rows))]
-    acoustic = apply_existing_original_audio_p0(root, ep, witness, text, edges)
+    acoustic, p1_review = apply_existing_original_audio_p0(root, ep, witness, text, edges, rows)
     count = layout["episodes"][ep]
     return text, rows, edges, {
         "original_audio_p0_triage": acoustic,
+        "_source_audio_p1_review_queue": p1_review,
         "evidence_tier": tier,
         "source_units": count["source_units"],
         "provisional_reader_blocks": len(rows),
@@ -605,6 +670,7 @@ def construct(root: Path, ep: str, index: dict):
                          "all_original_audio_boundaries_unverified": True,
                          "original_film_visual_model_only_review": visual_review,
                          "boundary_review_questions": edges,
+                         "original_audio_model_p1_unknown_voice_review": details.get("_source_audio_p1_review_queue", []),
                          "original_audio_model_priority_p0": [{
                              "between_block_ids": x["between_block_ids"],
                              "machine_acoustic_voice_similarity": x["original_soundtrack_machine_similarity"],
@@ -644,7 +710,7 @@ def construct(root: Path, ep: str, index: dict):
         "source_witness_sha256": index["sha256"],
         "script_sha256": sha(raw), "source_provenance_sha256": sha(records.encode("utf-8")),
         "p0_review_queue_sha256": sha(reviews.encode("utf-8")),
-        **details,
+        **{key: value for key, value in details.items() if not key.startswith("_")},
         "original_film_visual_model_evidence": visual_evidence,
         "dialogue_source_changed": False,
         "source_only_claims_never_promoted_to_av_truth": True,
