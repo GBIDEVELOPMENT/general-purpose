@@ -290,7 +290,7 @@ class ScriptFactoryTests(unittest.TestCase):
         # Both originally have Dan as the provisional speaker.
         self.assertEqual(actual_overlay[32]["provisional_role"], "Dan Fielding")
         self.assertEqual(actual_overlay[33]["provisional_role"], "Dan Fielding")
-        fake = json.loads(json.dumps(actual_overlay))
+        fake = {cue: dict(hint) for cue, hint in actual_overlay.items()}
         fake[33]["provisional_role"] = "Harry Stone"
         fake[33]["basis"] = "Deliberately forged conflicting P1 reader for regression"
         with patch("script_factory.contextual_role_overlay", return_value=(fake, report)):
