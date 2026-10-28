@@ -18,7 +18,11 @@
     "status": "canonical_source_audio_model_linked"
   },
   "original_dialogue_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
-  "p0_review_queue_sha256": "f24fd1a5483f5826a7bb84ee6b74fbca08464228b610a85a4d0fcb3df22d7e40",
+  "original_film_visual_model_evidence": {
+    "sampled_windows": 0,
+    "status": "no_original_film_visual_model_evidence"
+  },
+  "p0_review_queue_sha256": "37c3a38ef405a46f737128d0405caaa2c06a53574817384d4c357668a69bf260",
   "provisional_display_groups": 275,
   "provisional_reader_blocks": 405,
   "schema": "night-court-one-click-script-factory/1",
