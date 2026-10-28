@@ -7,6 +7,14 @@ on:
       - 'Night Court/research/**'
       - '!Night Court/research/trigger-original-pilot-audio-evidence.txt'
       - 'Night Court/tools/**'
+      # The modern one-click factory owns its own validation and private
+      # output. It must not regenerate the historical v6→v16 pilot pipeline.
+      - '!Night Court/tools/script_factory.py'
+      - '!Night Court/tools/test_script_factory.py'
+      - '!Night Court/tools/preserve_original_qwen_model_reports.py'
+      - '!Night Court/tools/test_preserve_original_qwen_model_reports.py'
+      - '!Night Court/tools/owner_qwen_original_video_pilot.py'
+      - '!Night Court/tools/test_owner_qwen_original_video_pilot.py'
       - '!Night Court/tools/source_once_canonical_voice.py'
       - '!Night Court/tools/test_source_once_canonical_voice.py'
       - '!Night Court/tools/preflight_original_media_transport.py'
@@ -20,7 +28,11 @@ on:
       - '!Night Court/tools/test_publish_current_original_av.py'
       - '!Night Court/tools/search_fan_retrieval_chunks.py'
       - '!Night Court/tools/test_search_fan_retrieval_chunks.py'
-      - 'Night Court/seasons/**'
+      # Only changes to the TWO canonical source-pilot episode trees
+      # can require rebuilding both 1984/1992 editorial manuscripts.
+      # Other 191 episodes are owned by the separate script factory.
+      - 'Night Court/seasons/S01/S01E01/**'
+      - 'Night Court/seasons/S09/S09E19/**'
       - 'Night Court/saved-private/editorial-agent1-v*/**'
   workflow_dispatch:
   push:
@@ -30,6 +42,14 @@ on:
       - 'Night Court/research/**'
       - '!Night Court/research/trigger-original-pilot-audio-evidence.txt'
       - 'Night Court/tools/**'
+      # The modern one-click factory owns its own validation and private
+      # output. It must not regenerate the historical v6→v16 pilot pipeline.
+      - '!Night Court/tools/script_factory.py'
+      - '!Night Court/tools/test_script_factory.py'
+      - '!Night Court/tools/preserve_original_qwen_model_reports.py'
+      - '!Night Court/tools/test_preserve_original_qwen_model_reports.py'
+      - '!Night Court/tools/owner_qwen_original_video_pilot.py'
+      - '!Night Court/tools/test_owner_qwen_original_video_pilot.py'
       - '!Night Court/tools/source_once_canonical_voice.py'
       - '!Night Court/tools/test_source_once_canonical_voice.py'
       - '!Night Court/tools/preflight_original_media_transport.py'
@@ -43,7 +63,11 @@ on:
       - '!Night Court/tools/test_publish_current_original_av.py'
       - '!Night Court/tools/search_fan_retrieval_chunks.py'
       - '!Night Court/tools/test_search_fan_retrieval_chunks.py'
-      - 'Night Court/seasons/**'
+      # Only changes to the TWO canonical source-pilot episode trees
+      # can require rebuilding both 1984/1992 editorial manuscripts.
+      # Other 191 episodes are owned by the separate script factory.
+      - 'Night Court/seasons/S01/S01E01/**'
+      - 'Night Court/seasons/S09/S09E19/**'
       - 'Night Court/saved-private/editorial-agent1-v*/**'
 
 concurrency:
