@@ -155,7 +155,7 @@ class ScriptFactoryTests(unittest.TestCase):
         # typography alone cannot detect.
         self.assertEqual(rows[348]["contextual_unicode_split_offsets"], [29])
         self.assertIsNone(rows[348]["candidate_display_role"])
-        self.assertNotIn("AV-CERTIFIED", files["screenplay.md"])
+        self.assertIn("NOT AV-CERTIFIED", files["screenplay.md"])
 
     def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
         episode = "S01E02"
