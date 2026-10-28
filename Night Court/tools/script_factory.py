@@ -158,14 +158,15 @@ def generic_episode(root: Path, ep: str, index: dict):
     manifest, meta, captions = source_rows(root, index)
     title = meta["title"]
     source_sha = manifest["sha256"]
+    contextual, context_report = contextual_role_overlay(root, ep, manifest, captions)
     guests = [x.get("character", {}).get("name") for x in meta.get("credits", {}).get("guest_cast", [])]
     guests = sorted(set(x for x in guests if isinstance(x, str) and x))
     rows, edges, lines = [], [], [
         f"# Night Court (1984) · {ep} · {title}", "",
         "**COMPLETE AVAILABLE SOURCE-DIALOGUE DRAFT · NOT AV-CERTIFIED**", "",
         "Original transcript SHA-256: `" + source_sha + "`  ",
-        "Evidence: intact original captions, source labels only; unverified dialogue boundaries,",
-        "character names, actual scenes, performance and visual blocking.", "",
+        "Evidence: intact original captions plus source-SHA-bound textual role hypotheses if available.",
+        "All candidate names, dialogue boundaries, actual scenes, performance and visual blocking remain unverified.", "",
         "## Dialogue in source order", "",
     ]
     last = None
@@ -176,7 +177,12 @@ def generic_episode(root: Path, ep: str, index: dict):
         num = cue["cue"]
         raw = cue["text"]
         label = source_role(raw)
-        suspect = multi_voice_typography(raw)
+        hint = contextual.get(num, {})
+        candidate = hint.get("provisional_role")
+        internal = hint.get("internal_voice_roles", [])
+        # A mixed cue cannot be given one name until a source-heard P0 split.
+        role = None if internal else (label or candidate)
+        suspect = multi_voice_typography(raw) or bool(internal)
         multi += int(suspect)
         named += int(label is not None)
         start, end = cue["start_ms"], cue["end_ms"]
@@ -186,12 +192,12 @@ def generic_episode(root: Path, ep: str, index: dict):
             group += 1
             lines.extend([f"## Passage {group} (dialogue-gap cluster, NOT an observed scene)", ""])
         if last:
-            previous_label = last["source_label"]
-            continuing = bool(label and previous_label == label and gap is not None
+            previous_label = last["candidate_display_role"]
+            continuing = bool(role and previous_label == role and gap is not None
                               and -1000 <= gap <= 2500 and not suspect and not last["multiple_voice_dashes"])
-            edge_kind = ("same_explicit_source_label_candidate_continuation" if continuing
-                         else "different_explicit_source_labels_candidate_change"
-                         if label and previous_label and label != previous_label
+            edge_kind = ("same_provisional_role_candidate_continuation" if continuing
+                         else "different_provisional_roles_candidate_change"
+                         if role and previous_label and role != previous_label
                          else "unresolved_turn_boundary")
             edges.append({"between_cues": [num - 1, num], "decision": edge_kind,
                           "source_audio_verified": False,
@@ -201,22 +207,35 @@ def generic_episode(root: Path, ep: str, index: dict):
         row = {
             "cue": num, "source_text": raw, "source_text_sha256": sha(raw.encode("utf-8")),
             "source_start_ms": start, "source_end_ms": end, "source_label": label,
+            "candidate_display_role": role, "contextual_role": candidate,
+            "contextual_confidence": hint.get("confidence"),
+            "contextual_evidence": hint.get("basis"),
+            "contextual_alternatives": hint.get("alternatives", []),
+            "contextual_intra_cue_voice_roles": internal,
             "source_label_verified_against_film": False,
+            "candidate_role_original_soundtrack_verified": False,
             "multiple_voice_dashes": suspect,
             "passage_candidate": group, "provisional_continuation_of_previous": continuing,
             "original_dialogue_sha256": source_sha,
         }
         rows.append(row)
         if not continuing:
-            lines.extend([f"### {label or 'UNIDENTIFIED VOICE'}"
-                          + (" (explicit caption label, unverified)" if label else ""), ""])
+            if internal:
+                heading = ("MULTIPLE UNIDENTIFIED VOICES (context proposes " +
+                           " / ".join(internal) + "; internal boundary unverified)")
+            else:
+                heading = (role or "UNIDENTIFIED VOICE") + (
+                    " (source label, unverified)" if label else
+                    " (contextual hypothesis, unverified)" if candidate else "")
+            lines.extend(["### " + heading, ""])
         lines.extend("    " + line for line in raw.split("\n"))
         lines.append("")
         last = row
     lines.extend([
         "## Source and editorial limits", "",
         f"- Source edition: `{manifest['version_id']}`; {len(captions)} of {len(captions)} cues present.",
-        f"- {named} cues have source-explicit voice labels; {len(captions) - named} have no safe source label.",
+        f"- {named} cues have source-explicit voice labels; {len(captions) - named} have no explicit source role.",
+        f"- {context_report['high_medium_single_role_hypotheses'] if context_report else 0} high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.",
         f"- {multi} cues contain multiple leading-dash voice hints and need internal P0 examination.",
         f"- {len(edges)} adjacent boundaries remain original-audio unverified.",
         f"- Episode-credited guest roles (not speaker assignments): {', '.join(guests) if guests else 'none listed'}.",
@@ -226,10 +245,12 @@ def generic_episode(root: Path, ep: str, index: dict):
         "",
     ])
     return ("\n".join(lines), rows, edges, {
-        "evidence_tier": "source_only_reading_draft",
+        "evidence_tier": "contextual_provisional_reading_draft" if context_report else "source_only_reading_draft",
+        "contextual_overlay": context_report,
         "caption_cues": len(captions), "source_units": len(captions),
         "provisional_reader_blocks": len(rows),
-        "source_explicit_label_cues": named, "unknown_label_cues": len(rows) - named,
+        "source_explicit_label_cues": named,
+        "unknown_label_cues": sum(x["candidate_display_role"] is None for x in rows),
         "internal_voice_handoff_review_cues": multi,
         "adjacent_p0_unverified": len(edges),
         "provisional_passages_not_verified_scenes": group,
@@ -314,6 +335,14 @@ def construct(root: Path, ep: str, index: dict):
                          "boundary_review_questions": edges,
                          "review_internal_voice_changes": [x.get("cue") for x in rows
                                                           if x.get("multiple_voice_dashes")],
+                         "contextual_role_review": [{
+                             "source_cue": x["cue"], "provisional_role": x["contextual_role"],
+                             "confidence": x["contextual_confidence"],
+                             "evidence": x["contextual_evidence"],
+                             "alternatives": x["contextual_alternatives"],
+                             "internal_voice_role_hypotheses": x["contextual_intra_cue_voice_roles"],
+                             "original_audio_verified": False,
+                         } for x in rows if x.get("contextual_confidence")],
                          "requires_original_av_and_independent_check": True})
     evidence = {
         "schema": SCHEMA, "episode_id": ep, "source_version_id": index["version_id"],
