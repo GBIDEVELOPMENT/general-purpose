@@ -216,6 +216,9 @@ class ScriptFactoryTests(unittest.TestCase):
             ("- Hello, Dan.\n- Hello, Harry.", 2),
             ("- First speaker\nwraps onto another line\n– Second speaker", 2),
             ("A previous voice speaks.\n- A second voice\n- A third voice", 3),
+            ("First voice continues a sentence.\n- Second voice interrupts.", 2),
+            ("...Santa has over there.\n- Yeah.", 2),
+            ("...about what I said before.\n- Oh, don't worry.", 2),
             ("- Only one leading dash; continuation is unmarked", 1),
             ("An ordinary hyphen - in a sentence", 1),
             ("— Bonjour, café.\n— Voilà, niño.", 2),
@@ -255,6 +258,50 @@ class ScriptFactoryTests(unittest.TestCase):
             "original_film_visual_model_only_review"], [snippet])
         self.assertNotIn("MODEL TEST: person leans in", files["screenplay.md"])
         self.assertFalse(manifest["actual_av_verified"])
+
+    def test_single_late_dash_matches_known_pilot_and_protects_s01e02_unknown(self):
+        # S01E01 pilot C219 has two canonical editor character voices,
+        # Harry Stone and Phil Kerr, though source transcription marks only
+        # the *second* voice with a dash. This checks the proposed structure,
+        # NOT independent audio/video approval or sub-cue time.
+        witness, _, cues = source_rows(ROOT, self.index["S01E01"])
+        original = cues[218]
+        self.assertEqual(original["cue"], 219)
+        self.assertEqual(len(structural_speaker_parts(original["text"])), 2)
+        self.assertEqual("".join(x["text"] for x in structural_speaker_parts(original["text"])),
+                         original["text"])
+        source_readers = [
+            json.loads(line) for line in
+            (ROOT / "saved-private/pilot-current/pilot-current-editorial-reader.jsonl")
+            .read_text("utf-8").splitlines() if line.strip()
+        ]
+        expected_roles = {
+            row["candidate_role"] for row in source_readers
+            if row["episode_id"] == "S01E01"
+            and "C219.1" in row["original_source_part_refs"]
+        }
+        self.assertEqual(expected_roles, {"HARRY STONE", "PHIL KERR"})
+
+        # Generic cue C67 has an unknown identity but exactly TWO voices.
+        # C349 has a source-exact contextual overlay providing role names;
+        # the shared splitter independently detects that same P0 handoff.
+        ep = "S01E02"
+        files, report = construct(ROOT, ep, self.index[ep])
+        rows = [json.loads(line) for line in files["provenance.jsonl"].splitlines()]
+        unknown = rows[66]
+        self.assertEqual(unknown["cue"], 67)
+        self.assertIsNone(unknown["candidate_display_role"])
+        self.assertEqual(len(unknown["source_speaker_parts"]), 2)
+        self.assertTrue(all(part["provisional_part_role"] is None
+                            and not part["original_audio_boundary_verified"]
+                            for part in unknown["source_speaker_parts"]))
+        self.assertEqual(len(rows[348]["source_speaker_parts"]), 2)
+        self.assertEqual(rows[348]["contextual_unicode_split_offsets"], [29])
+        self.assertEqual([part["provisional_part_role"] for part in
+                          rows[348]["source_speaker_parts"]],
+                         ["Eddie Simms", "Santa / John Stevens"])
+        self.assertGreaterEqual(report["source_dash_candidate_p0_boundaries"], 1)
+        self.assertFalse(report["actual_av_verified"])
 
     def test_pilots_reuse_source_checked_canonical_manuscripts(self):
         for ep in PILOTS:

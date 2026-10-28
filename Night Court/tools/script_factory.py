@@ -87,19 +87,22 @@ def source_role(text: str) -> str | None:
 
 
 def structural_speaker_parts(text: str) -> list[dict]:
-    """Exactly partition original cue characters at strong multi-dash signals.
+    """Reversibly partition source Unicode at distinct line-leading voice dashes.
 
-    A subtitle's leading dash is a *proposal* of a separate speaking turn,
-    never proof of two voices. Preserve every Unicode codepoint and newline.
-    A single dash is too ambiguous to segment without other evidence.
+    A first and ONLY leading dash doesn't establish two performers, so keep
+    that cue whole. However an undashed opening statement followed by one
+    later line-leading dash DOES propose two source voices: the second dash
+    is explicitly positioned after an earlier voice. Preserve all characters
+    and keep the proposed source-turn boundary AV-unverified.
     """
     starts = [m.start() for m in re.finditer(r"(?m)^[ \t]*[-–—][ \t]+\S", text)]
     cuts = [0]
+    # The first *internal* dash changes speaker after undashed opening text.
+    # E.g. "...about what I said before.\n- Oh, don't worry." exactly splits.
+    # A lone dash at the very start does NOT introduce a second source turn.
+    if starts and text[:starts[0]].strip():
+        cuts.append(starts[0])
     if len(starts) >= 2:
-        # If there is an undashed opening voice, keep it as its own part;
-        # otherwise subsequent marked lines create proposed handoffs.
-        if text[:starts[0]].strip():
-            cuts.append(starts[0])
         cuts.extend(starts[1:])
     cuts.append(len(text))
     parts = [{
