@@ -10,7 +10,7 @@ python 'Night Court/tools/script_factory.py' --episode S05E05
 python 'Night Court/tools/script_factory.py' --episode all
 ```
 
-**Where output lives:** `Night Court/saved-private/script-factory-current/SXXEXX/`, exactly four files:
+**Automatic pilot refresh:** The same factory workflow now seeds both source-checked canonical pilot outputs when deployed to private main, and refreshes those two exact stable paths on the existing `night-court-canonical-published` event. No new manuscript version, external model run or media download is triggered. If a concurrent change advances main during the commit, the job fails safely and can be rerun. Other episodes remain an explicit one-click choice.\n\n**Where output lives:** `Night Court/saved-private/script-factory-current/SXXEXX/`, exactly four files:
 - `screenplay.md`: the strongest currently integrated screenplay. S01E01/S09E19 prefer canonical editor-completed provisional working manuscripts, then a fully source-AV-validated reviewed promotion if the existing one-pass acceptance ledger is complete. Every other episode gets all presently held dialogue in chronological order with exact source characters, cautious explicit source speaker labels and provisional passage divisions.
 - `provenance.jsonl`: one record per canonical pilot reader block or one complete original caption cue for other episodes, including the exact source text, individual text SHA, original source SHA, original order and source times (or *null* for untimed).
 - `review-queue.json`: every adjacent unverified P0 boundary, plus detectable multi-voice caption typography and the mandated P0→P5 priority order. All unresolved boundaries remain unresolved instead of being silently signed off.
