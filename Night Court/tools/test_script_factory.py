@@ -105,6 +105,7 @@ class ScriptFactoryTests(unittest.TestCase):
                 self.assertEqual(len(focus), report["priority_original_audio_p0_conflicts"])
                 self.assertTrue(len(focus) > 0)
                 self.assertTrue(all(not f["film_heard_turn_confirmed"] for f in focus))
+                rows = [json.loads(s) for s in files["provenance.jsonl"].splitlines()]
                 p1 = queue["original_audio_model_p1_unknown_voice_review"]
                 self.assertEqual(len(p1), 6 if ep == "S01E01" else 16)
                 self.assertEqual(report["previously_unknown_original_voice_windows"], len(p1))
