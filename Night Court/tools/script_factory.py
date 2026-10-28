@@ -91,6 +91,69 @@ def multi_voice_typography(text: str) -> bool:
     return sum(bool(re.match(r"^\s*[-–—]\s+\S", line)) for line in lines) >= 2
 
 
+def contextual_role_overlay(root: Path, ep: str, manifest: dict, cues: list):
+    """Use latest existing source-SHA-pinned full-episode editorial reasoning.
+
+    Contextual names are hypotheses, not observed voices; low-confidence roles
+    and mixed-voice cues are left for P0/P1 AV investigation.
+    """
+    folder = root / "seasons" / ep[:3] / ep / "derived"
+    paths = sorted(folder.glob("text-only-speaker-proposals-v*.json"),
+                   key=lambda p: int(re.search(r"-v(\d+)\.json$", p.name).group(1)))
+    if not paths:
+        return {}, None
+    selected = paths[-1]
+    data = json.loads(selected.read_text("utf-8"))
+    version = re.search(r"-v(\d+)\.json$", selected.name).group(1)
+    src = data.get("source", {})
+    records = data.get("records")
+    if (data.get("schema") != "night_court_manual_context_speaker_proposals_v" + version
+        or data.get("episode_id") != ep or src.get("source_sha256") != manifest["sha256"]
+        or src.get("source_caption_units") != len(cues)
+        or not isinstance(records, list) or len(records) != len(cues)):
+        raise ValueError(ep + ": stale/malformed contextual role ledger")
+    report = {
+        "file": str(selected.relative_to(root)), "sha256": sha(selected.read_bytes()),
+        "high_medium_single_role_hypotheses": 0,
+        "mixed_voice_internal_review_cues": 0,
+        "weak_or_abstained_cues": 0, "original_audio_verified": False
+    }
+    overlay = {}
+    for cue, record in zip(cues, records):
+        n = cue["cue"]
+        status = record.get("status")
+        mixed = status == "proposed_internal_voice_switch_unverified"
+        names = record.get("proposed_ordered_speaker_parts", [])
+        role = record.get("proposed_speaker")
+        confidence = record.get("confidence")
+        if (record.get("cue_id") != f"C{n:05d}.1"
+            or record.get("source_unit_index") != n
+            or confidence not in ("high", "medium", "low", "abstain")
+            or (role is not None and (not isinstance(role, str) or not role.strip()))
+            or not isinstance(names, list)
+            or any(not isinstance(x, str) or not x.strip() for x in names)
+            or (mixed and (role is not None or len(names) < 2))
+            or (not mixed and names)
+            or (confidence == "abstain" and role is not None)):
+            raise ValueError(ep + f": contextual source cue {n} is malformed")
+        strong = not mixed and confidence in ("high", "medium") and role is not None
+        if not mixed and confidence in ("high", "medium") and not strong:
+            raise ValueError(ep + ": strong contextual role missing")
+        if strong:
+            report["high_medium_single_role_hypotheses"] += 1
+        elif mixed:
+            report["mixed_voice_internal_review_cues"] += 1
+        else:
+            report["weak_or_abstained_cues"] += 1
+        overlay[n] = {
+            "provisional_role": role.strip() if strong else None,
+            "internal_voice_roles": names, "confidence": confidence,
+            "basis": record.get("basis", ""),
+            "alternatives": record.get("alternative_speakers", []),
+        }
+    return overlay, report
+
+
 def generic_episode(root: Path, ep: str, index: dict):
     manifest, meta, captions = source_rows(root, index)
     title = meta["title"]
