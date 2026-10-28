@@ -260,17 +260,34 @@ def generic_episode(root: Path, ep: str, index: dict):
         if scene_hint:
             group += 1
             lines.extend([f"## Passage {group} (dialogue-gap cluster, NOT an observed scene)", ""])
+        # Exact in-cue editorial parts have independently proposed entrance
+        # and exit roles. Preserve continuity *across* the cue boundary when
+        # the proposed entry/exit role matches, without claiming the internal
+        # switch was heard. Unlocated/dash-only multi-voice cues still abstain.
+        entry_role = internal[0] if offsets else role
+        exit_role = internal[-1] if offsets else role
         if last:
-            previous_label = last["candidate_display_role"]
-            continuing = bool(role and previous_label == role and gap is not None
-                              and -1000 <= gap <= 2500 and not suspect and not last["multiple_voice_dashes"])
-            edge_kind = ("same_provisional_role_candidate_continuation" if continuing
-                         else "different_provisional_roles_candidate_change"
-                         if role and previous_label and role != previous_label
-                         else "unresolved_turn_boundary")
-            edges.append({"between_cues": [num - 1, num], "decision": edge_kind,
-                          "source_audio_verified": False,
-                          "review_priority": "P0" if edge_kind == "unresolved_turn_boundary" else "P0_CONFIRM"})
+            previous_label = last["candidate_exit_voice_role"]
+            continuing = bool(
+                entry_role and previous_label == entry_role and gap is not None
+                and -1000 <= gap <= 2500 and (not suspect or bool(offsets))
+                and not last["multiple_voice_dashes"]
+                and not last["contextual_unlocated_internal_handoff"]
+            )
+            edge_kind = (
+                "same_provisional_entry_voice_candidate_continuation" if continuing and offsets
+                else "same_provisional_role_candidate_continuation" if continuing
+                else "different_provisional_roles_candidate_change"
+                if entry_role and previous_label and entry_role != previous_label
+                else "unresolved_turn_boundary"
+            )
+            edges.append({
+                "between_cues": [num - 1, num], "decision": edge_kind,
+                "left_provisional_exit_role": previous_label,
+                "right_provisional_entry_role": entry_role,
+                "source_audio_verified": False,
+                "review_priority": "P0" if edge_kind == "unresolved_turn_boundary" else "P0_CONFIRM"
+            })
         else:
             continuing = False
         row = {
@@ -283,8 +300,9 @@ def generic_episode(root: Path, ep: str, index: dict):
             "contextual_intra_cue_voice_roles": internal,
             "source_label_verified_against_film": False,
             "candidate_role_original_soundtrack_verified": False,
-            "multiple_voice_dashes": len(parts) > 1,
+            "multiple_voice_dashes": len(parts) > 1 and not offsets,
             "contextual_unlocated_internal_handoff": bool(internal and not offsets),
+            "candidate_entry_voice_role": entry_role, "candidate_exit_voice_role": exit_role,
             "contextual_unicode_split_offsets": offsets,
             "source_speaker_parts": [{
                 "source_part_id": f"C{num:05d}.{p['id']}",
@@ -309,7 +327,10 @@ def generic_episode(root: Path, ep: str, index: dict):
                 heading = (f"{internal[i]} (contextual lexical turn hypothesis; audio unverified)"
                            if offsets else
                            f"UNIDENTIFIED VOICE (caption-marked P0 candidate {p['id']}; audio unverified)")
-                lines.extend(["### " + heading, ""])
+                # The first provisional voice may be a continuation of the
+                # preceding cue. A second in-cue voice always gets a heading.
+                if not (i == 0 and continuing and offsets):
+                    lines.extend(["### " + heading, ""])
                 lines.extend("    " + line for line in p["text"].split("\n"))
                 lines.append("")
         else:
@@ -530,7 +551,7 @@ def construct(root: Path, ep: str, index: dict):
                                  z["between_block_ids"][0]))],
                          "review_internal_voice_changes": [x.get("cue") for x in rows
                                                           if x.get("multiple_voice_dashes") or
-                                                          x.get("contextual_unlocated_internal_handoff")],
+                                                          x.get("contextual_intra_cue_voice_roles")],
                          "within_cue_structural_turn_questions": [{
                              "source_cue": row["cue"],
                              "left_part": left["source_part_id"],
