@@ -367,9 +367,13 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     That's quite a group of admirers...
 
-### UNIDENTIFIED VOICE
+### UNIDENTIFIED VOICE (caption-marked P0 candidate P01; audio unverified)
 
     ...Santa has over there.
+    
+
+### UNIDENTIFIED VOICE (caption-marked P0 candidate P02; audio unverified)
+
     - Yeah.
 
 ### Harry Stone (contextual lexical turn hypothesis; audio unverified)
@@ -1756,8 +1760,8 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 - Source edition: `s01-internal-dvdrip-xvid-sprinter-english--5f47e8e521591659`; 380 of 380 cues present.
 - 0 cues have source-explicit voice labels; 380 have no explicit source role.
 - 293 high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.
-- 79 cues have possible internal voice changes (dash-marked or context-only).
-- 79 candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.
+- 80 cues have possible internal voice changes (dash-marked or context-only).
+- 80 candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.
 - 72 manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.
 - 379 adjacent boundaries remain original-audio unverified.
 - 0 narrow source-punctuation candidate same-voice joins are unverified; mixed-dash cues and untimed sources abstain.

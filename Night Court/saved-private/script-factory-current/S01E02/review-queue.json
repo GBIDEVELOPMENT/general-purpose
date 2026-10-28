@@ -8223,6 +8223,7 @@
     56,
     58,
     60,
+    67,
     68,
     73,
     74,
@@ -8493,6 +8494,16 @@
       "source_audio_performed_turn_verified": false,
       "source_character_boundary": 6,
       "source_cue": 60
+    },
+    {
+      "boundary_proposed_by_caption_dash": true,
+      "candidate_split_basis": "caption_leading_dash",
+      "left_part": "C00067.P01",
+      "priority": "P0",
+      "right_part": "C00067.P02",
+      "source_audio_performed_turn_verified": false,
+      "source_character_boundary": 25,
+      "source_cue": 67
     },
     {
       "boundary_proposed_by_caption_dash": false,
