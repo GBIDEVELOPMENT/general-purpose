@@ -92,6 +92,70 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertEqual(confirmed, 22)
         self.assertGreaterEqual(observed, confirmed)
 
+    def test_s01e03_contextual_script_covers_all_385_exact_original_cues(self):
+        ep = "S01E03"
+        witness, _, cues = source_rows(ROOT, self.index[ep])
+        files, manifest = construct(ROOT, ep, self.index[ep])
+        report = manifest["contextual_overlay"]
+        self.assertEqual(manifest["evidence_tier"], "contextual_provisional_reading_draft")
+        self.assertEqual(manifest["source_units"], 385)
+        self.assertEqual(report["high_medium_single_role_hypotheses"], 306)
+        self.assertEqual(report["mixed_voice_internal_review_cues"], 74)
+        self.assertEqual(report["weak_or_abstained_cues"], 5)
+        self.assertEqual(report["exact_contextual_internal_handoffs"], 74)
+        self.assertEqual(report["unlocated_contextual_internal_handoffs"], 0)
+        self.assertEqual(report["text_only_performance_tone_hypotheses"], 88)
+        self.assertEqual(manifest["unknown_label_cues"], 79)
+        self.assertEqual(manifest["source_contextual_exact_p0_boundaries"], 74)
+        self.assertEqual(manifest["contextual_provisional_named_parts"], 148)
+        self.assertEqual(manifest["text_only_contextual_delivery_proposals"], 88)
+        self.assertFalse(manifest["original_audio_performed_delivery_accepted"])
+        self.assertFalse(manifest["actual_av_verified"])
+        rows = [json.loads(s) for s in files["provenance.jsonl"].splitlines()]
+        queue = json.loads(files["review-queue.json"])
+        self.assertEqual(len(rows), len(cues))
+        self.assertEqual([row["source_text"] for row in rows], [x["text"] for x in cues])
+        self.assertEqual([row["source_start_ms"] for row in rows], [x["start_ms"] for x in cues])
+        self.assertEqual([row["source_end_ms"] for row in rows], [x["end_ms"] for x in cues])
+        self.assertTrue(all(row["original_dialogue_sha256"] == witness["sha256"]
+                            for row in rows))
+        self.assertEqual(len(queue["boundary_review_questions"]), 384)
+        self.assertEqual(len(queue["textual_delivery_p2_review"]), 88)
+        self.assertEqual(len(queue["contextual_role_review"]), 385)
+        self.assertEqual(sum(r["contextual_confidence"] == "abstain" for r in rows), 5)
+        for n, role in ((74, None), (77, "Lana Wagner"),
+                        (177, "Harry Stone"), (178, "Dan Fielding"),
+                        (180, "Dan Fielding"), (221, "Dan Fielding"),
+                        (222, "Dan Fielding"), (223, "Harry Stone"),
+                        (225, "Harry Stone"), (226, "Dan Fielding"),
+                        (228, "Dan Fielding"), (385, "Harry Stone")):
+            with self.subTest(cue=n):
+                self.assertEqual(rows[n-1]["candidate_display_role"], role)
+                self.assertFalse(rows[n-1]["candidate_role_original_soundtrack_verified"])
+        for n, roles in ((74, ["Harry Stone", "Lana Wagner"]),
+                         (75, ["Harry Stone", "Ronald McKenzie"]),
+                         (76, ["Vickie Guyer", "Harry Stone"]),
+                         (232, ["Harry Stone", "Lana Wagner"]),
+                         (237, ["Al Craven", "Harry Stone"]),
+                         (314, ["Ronald McKenzie", "Harry Stone"])):
+            row = rows[n-1]
+            with self.subTest(handoff=n):
+                self.assertEqual([p["provisional_part_role"] for p in
+                                  row["source_speaker_parts"]], roles)
+                self.assertEqual(row["contextual_unicode_split_offsets"],
+                                 [row["source_text"].index("\n- ") + 1])
+                self.assertTrue(all(not p["original_audio_boundary_verified"]
+                                    and p["original_audio_subcue_time_ms"] is None
+                                    for p in row["source_speaker_parts"]))
+                self.assertEqual("".join(
+                    row["source_text"][p["source_character_start"]:p["source_character_end"]]
+                    for p in row["source_speaker_parts"]), row["source_text"])
+        self.assertTrue(all(not t["original_audio_tone_verified"]
+                            and not t["eligible_for_performed_stage_direction"]
+                            for t in queue["textual_delivery_p2_review"]))
+        self.assertEqual(files["screenplay.md"].count("Textual delivery hypothesis:"), 88)
+        self.assertIn("NOT AV-CERTIFIED", files["screenplay.md"])
+
     def test_s01e02_full_contextual_reader_source_exact_and_no_false_av(self):
         ep = "S01E02"
         witness, _, captions = source_rows(ROOT, self.index[ep])
