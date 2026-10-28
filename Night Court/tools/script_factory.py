@@ -138,6 +138,32 @@ def contextual_exact_parts(text: str, offsets: list[int]) -> list[dict]:
     return parts
 
 
+def source_syntactic_continuation(left: str, right: str,
+                                  gap_ms: int | None) -> str | None:
+    """Narrow, unverified same-voice P0 grammar hypothesis for timed captions.
+
+    An ending '...' followed by leading '...', or an unterminated
+    lowercase continuation, can propose a merge. A dash on ANY line,
+    including a single second-speaker dash, must veto whole-cue joins.
+    Original words, timings and speaker truth are never changed.
+    """
+    if type(gap_ms) is not int or gap_ms < -1000:
+        return None
+    if re.search(r"(?m)^[ \t]*[-–—][ \t]+\S", left):
+        return None
+    if re.search(r"(?m)^[ \t]*[-–—][ \t]+\S", right):
+        return None
+    a, b = left.strip(), right.strip()
+    if not a or not b:
+        return None
+    if gap_ms <= 1600 and a.endswith("...") and re.match(r"^\.\.\.\S", b):
+        return "matched_ellipsis_source_continuation_unverified"
+    if (gap_ms <= 900 and re.match(r"^[a-z]", b)
+        and not re.search(r"[.?!…][\\"')\]]*$", a)):
+        return "lowercase_unfinished_sentence_continuation_unverified"
+    return None
+
+
 def multi_voice_typography(text: str) -> bool:
     return len(structural_speaker_parts(text)) > 1
 
@@ -268,14 +294,23 @@ def generic_episode(root: Path, ep: str, index: dict):
         exit_role = internal[-1] if offsets else role
         if last:
             previous_label = last["candidate_exit_voice_role"]
-            continuing = bool(
+            syntactic = (
+                source_syntactic_continuation(last["source_text"], raw, gap)
+                if not entry_role and not previous_label and not suspect
+                and not last["multiple_voice_dashes"]
+                and not last["contextual_unlocated_internal_handoff"]
+                else None
+            )
+            contextual_continuation = bool(
                 entry_role and previous_label == entry_role and gap is not None
                 and -1000 <= gap <= 2500 and (not suspect or bool(offsets))
                 and not last["multiple_voice_dashes"]
                 and not last["contextual_unlocated_internal_handoff"]
             )
+            continuing = bool(contextual_continuation or syntactic)
             edge_kind = (
-                "same_provisional_entry_voice_candidate_continuation" if continuing and offsets
+                "source_syntactic_provisional_same_voice" if syntactic
+                else "same_provisional_entry_voice_candidate_continuation" if continuing and offsets
                 else "same_provisional_role_candidate_continuation" if continuing
                 else "different_provisional_roles_candidate_change"
                 if entry_role and previous_label and entry_role != previous_label
@@ -285,11 +320,13 @@ def generic_episode(root: Path, ep: str, index: dict):
                 "between_cues": [num - 1, num], "decision": edge_kind,
                 "left_provisional_exit_role": previous_label,
                 "right_provisional_entry_role": entry_role,
+                "source_syntactic_continuation_hypothesis": syntactic,
                 "source_audio_verified": False,
                 "review_priority": "P0" if edge_kind == "unresolved_turn_boundary" else "P0_CONFIRM"
             })
         else:
             continuing = False
+            syntactic = None
         row = {
             "cue": num, "source_text": raw, "source_text_sha256": sha(raw.encode("utf-8")),
             "source_start_ms": start, "source_end_ms": end, "source_label": label,
@@ -317,6 +354,7 @@ def generic_episode(root: Path, ep: str, index: dict):
                 "original_audio_subcue_time_ms": None,
             } for i, p in enumerate(parts)],
             "passage_candidate": group, "provisional_continuation_of_previous": continuing,
+            "source_syntactic_continuation_hypothesis": syntactic,
             "original_dialogue_sha256": source_sha,
         }
         rows.append(row)
@@ -355,6 +393,7 @@ def generic_episode(root: Path, ep: str, index: dict):
         f"- {sum(len(r['source_speaker_parts']) - 1 for r in rows)} candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.",
         f"- {sum(len(r['contextual_unicode_split_offsets']) for r in rows)} manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.",
         f"- {len(edges)} adjacent boundaries remain original-audio unverified.",
+        f"- {sum(bool(r['source_syntactic_continuation_hypothesis']) for r in rows)} narrow source-punctuation candidate same-voice joins are unverified; mixed-dash cues and untimed sources abstain.",
         f"- Episode-credited guest roles (not speaker assignments): {', '.join(guests) if guests else 'none listed'}.",
         "- Passage boundaries are caption-gap heuristics. Scene headings, wardrobe, props,",
         "  acting and physical business require observation of the original film.",
@@ -378,6 +417,8 @@ def generic_episode(root: Path, ep: str, index: dict):
         "contextual_provisional_named_parts": sum(
             bool(p["provisional_part_role"]) for r in rows for p in r["source_speaker_parts"]),
         "adjacent_p0_unverified": len(edges),
+        "source_syntactic_p0_provisional_continuations": sum(
+            bool(r["source_syntactic_continuation_hypothesis"]) for r in rows),
         "provisional_passages_not_verified_scenes": group,
         "original_dialogue_sha256": source_sha,
         "source_has_timecodes": manifest["timecoded"],
