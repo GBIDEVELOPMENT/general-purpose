@@ -103,6 +103,52 @@ hr{border:0;border-top:1px solid #41556d;margin:1rem 0}
 "use strict";
 const $=id=>document.getElementById(id);
 let packet=null, sequence=0, saved={boundaries:{},roles:{},batches:{}}, media=null;
+let pendingForms={},pendingFormTimer=null;
+const FORM_KEYS=["role","edge","split","beatTone","beatProps","beatAction"];
+const FORM_SELECTOR="[data-role],[data-edge],[data-split],[data-beat-tone],[data-beat-props],[data-beat-action]";
+function formKey(el){
+  for(const key of FORM_KEYS)if(typeof el.dataset?.[key]==="string")return key+":"+el.dataset[key];
+  return null;
+}
+function captureUnacceptedForm(){
+  if(!packet)return;
+  const fields={};
+  for(const el of $("editor").querySelectorAll(FORM_SELECTOR)){
+    const key=formKey(el);if(key)fields[key]=el.value;
+  }
+  if(!Object.keys(fields).length)return;
+  pendingForms[batch().id]={
+    fields,performance:$("performance").value,
+    props:$("props").value,actions:$("actions").value,
+    watched:$("watched").checked===true
+  };
+}
+function restoreUnacceptedForm(current){
+  const form=pendingForms[current.id];
+  if(!form||typeof form!=="object"||Array.isArray(form))return;
+  if(form.fields && typeof form.fields==="object" && !Array.isArray(form.fields)){
+    for(const el of $("editor").querySelectorAll(FORM_SELECTOR)){
+      const key=formKey(el);
+      if(key && typeof form.fields[key]==="string")el.value=form.fields[key];
+    }
+  }
+  for(const id of ["performance","props","actions"])
+    if(typeof form[id]==="string")$(id).value=form[id];
+  if(typeof form.watched==="boolean")$("watched").checked=form.watched;
+}
+function saveUnacceptedForm(){
+  captureUnacceptedForm();
+  if(pendingFormTimer!==null)clearTimeout(pendingFormTimer);
+  pendingFormTimer=setTimeout(()=>{pendingFormTimer=null;persistDraft()},300);
+}
+function navigateReview(direction){
+  if(!packet)return;
+  const target=sequence+direction;
+  if(target<0||target>=packet.sequential_one_pass_batches.length)return;
+  captureUnacceptedForm();
+  persistDraft();
+  sequence=target;render();
+}
 let verifiedSourceFile=null, verifiedSourceDigest=null, sourceChecking=false;
 const MIN_OBSERVED_PLAYBACK_SECONDS=8;
 let listenedByBatch={}, lastPlaybackMark=null;
@@ -210,6 +256,7 @@ function persistDraft(){
     packet_sha256:packet.packet_sha256,reviewer:$("reviewer").value.trim(),
     boundaries:saved.boundaries,roles:saved.roles,batches:saved.batches,
     playback_file_signature:currentPlaybackSignature,
+    pending_unaccepted_forms:pendingForms,
     film_coverage_seconds:[...filmSecondsSeen].sort((a,b)=>a-b)};
   try{
     localStorage.setItem(journalKey(),JSON.stringify(draft));
@@ -232,6 +279,7 @@ function restoreDraft(){
       [d.boundaries,d.roles,d.batches].some(v=>Array.isArray(v)||typeof v!=="object"))
       throw Error("wrong source edition or malformed decisions");
     saved={boundaries:d.boundaries,roles:d.roles,batches:d.batches};
+    pendingForms=(d.pending_unaccepted_forms&&typeof d.pending_unaccepted_forms==="object"&&!Array.isArray(d.pending_unaccepted_forms))?d.pending_unaccepted_forms:{};
     restoredPlaybackSignature=d.playback_file_signature||null;
     if(Array.isArray(d.film_coverage_seconds)&&d.film_coverage_seconds.every(
       n=>Number.isInteger(n)&&n>=0&&n<1800)){
@@ -320,6 +368,7 @@ function render(){
  $("props").value=(prior?.visible_props_and_wardrobe??[]).join("\n");
  $("actions").value=(prior?.observed_actor_action_target??[]).join("\n");
  $("watched").checked=!!prior;
+ restoreUnacceptedForm(current);
  $("sceneFields").disabled=false;
  $("confirm").textContent=prior?"Update this source-reviewed sequence":"Record this sequence's AV decisions";
  playbackStatus();
@@ -332,7 +381,7 @@ function render(){
 $("packet").onchange=e=>{const f=e.target.files?.[0];if(!f)return;fileRead(f,p=>{
  if(!p||p.schema!=="night-court-single-pass-source-av-editorial/1"||
     !p.packet_sha256||!Array.isArray(p.sequential_one_pass_batches))throw Error("Wrong review packet");
- packet=p;sequence=0;saved={boundaries:{},roles:{},batches:{}};$("download").disabled=false;
+ packet=p;sequence=0;saved={boundaries:{},roles:{},batches:{}};pendingForms={};$("download").disabled=false;
  listenedByBatch={};lastPlaybackMark=null;
  filmSecondsSeen=new Set();filmLastPos=null;filmSaveCount=0;
  currentPlaybackSignature=null;restoredPlaybackSignature=null;
@@ -399,8 +448,14 @@ $("endorseP0").onclick=()=>{
   }
   status("Endorsed "+n+" remaining proposals after source listening. Correct any errors before recording.");
 };
-$("prev").onclick=()=>{if(packet&&sequence>0){sequence--;render()}};
-$("next").onclick=()=>{if(packet&&sequence<packet.sequential_one_pass_batches.length-1){sequence++;render()}};
+$("prev").onclick=()=>navigateReview(-1);
+$("next").onclick=()=>navigateReview(1);
+$("editor").addEventListener("input",saveUnacceptedForm);
+$("editor").addEventListener("change",saveUnacceptedForm);
+for(const id of ["performance","props","actions","watched"]){
+  $(id).addEventListener("input",saveUnacceptedForm);
+  $(id).addEventListener("change",saveUnacceptedForm);
+}
 $("seek").onclick=()=>{let b=batch();if(b.source_window_candidate_ms&&media){$("player").currentTime=b.source_window_candidate_ms[0]/1000;$("player").play().catch(()=>{})}};
 $("confirm").onclick=()=>{
  if(!packet||!media){status("Original video must be loaded before reviewing.");return}
@@ -450,6 +505,7 @@ $("confirm").onclick=()=>{
   visible_props_and_wardrobe:arrays($("props").value),
   observed_actor_action_target:arrays($("actions").value)
  };
+ delete pendingForms[current.id];
  persistDraft();
  render();
  if(sequence<packet.sequential_one_pass_batches.length-1){sequence++;render()}
@@ -457,6 +513,7 @@ $("confirm").onclick=()=>{
 $("importDecisions").onchange=e=>{const f=e.target.files?.[0];if(!f||!packet)return;fileRead(f,d=>{
  if(d.packet_sha256!==packet.packet_sha256||d.episode_id!==packet.episode_id){status("Decision file does not match this exact manuscript packet");return}
  saved={boundaries:d.boundaries||{},roles:d.roles||{},batches:d.batches||{}};
+ pendingForms={};
  $("reviewer").value=d.reviewer||"";
  if(d.original_film_playback_coverage?.schema==="night-court-local-playback-seconds/1"&&
     Array.isArray(d.original_film_playback_coverage.observed_seconds)){
@@ -472,6 +529,7 @@ $("clearJournal").onclick=()=>{
  if(!confirm("Discard locally saved review decisions for this episode? Export JSON first if needed."))return;
  try{localStorage.removeItem(journalKey())}catch(e){status("Cannot clear local draft: "+e.message);return}
  saved={boundaries:{},roles:{},batches:{}};
+ pendingForms={};
  filmSecondsSeen.clear();filmSaveCount=0;filmLastPos=null;
  $("reviewer").value="";
  $("journalStatus").textContent="Local review draft cleared for this original source.";
