@@ -97,20 +97,20 @@ class FanSearchTests(unittest.TestCase):
                 if row["episode_id"]=="S01E01":
                     row["caption_source_sha256"]="a"*64
             corpus=fan/"fan-retrieval-chunks.jsonl"
-            corpus.write_text("".join(json.dumps(r)+"\\n" for r in original),encoding="utf-8")
+            corpus.write_text("".join(json.dumps(r)+"\n" for r in original),encoding="utf-8")
             ledger=review/"S01E01-original-av-decisions.json"
-            ledger.write_text('{"original_AV_viewed":true}\\n',encoding="utf-8")
+            ledger.write_text('{"original_AV_viewed":true}\n',encoding="utf-8")
             # A partial reviewer ledger is NOT a published final screenplay.
             self.assertEqual(len(load_records(corpus)),len(original))
             prior=baseline/"S01E01-working-screenplay.md"
-            prior.write_text("# Pilot manuscript\\n"+"a"*64+"\\n")
+            prior.write_text("# Pilot manuscript\n"+"a"*64+"\n")
             sha=lambda text:hashlib.sha256(text).hexdigest()
             (baseline/"working-screenplay-layout-manifest.json").write_text(
                 json.dumps({"manuscript_sha256":{"S01E01":sha(prior.read_bytes())}}))
             final=review/"S01E01-original-av-reviewed-screenplay.md"
-            final.write_text("# S01E01: source-AV reviewed screenplay\\n\\n"+
+            final.write_text("# S01E01: source-AV reviewed screenplay\n\n"+
                              "Original immutable dialogue SHA-256: "+"a"*64+
-                             "\\n\\n### LANA\\n\\n    sampled prop seen during source audio and film.\\n")
+                             "\n\n### LANA\n\n    sampled prop seen during source audio and film.\n")
             manifest=review/"S01E01-original-av-reviewed-manifest.json"
             data={
               "schema":"night-court-original-av-stable-reviewed-screenplay-publication/1",
