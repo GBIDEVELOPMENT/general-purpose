@@ -364,6 +364,84 @@ def generic_episode(root: Path, ep: str, index: dict):
     })
 
 
+def apply_existing_original_audio_p0(root: Path, ep: str, source_sha: str,
+                                     canonical_text: str, edges: list) -> dict:
+    """Attach already-measured original-soundtrack similarities to exact P0 edges.
+
+    Numeric acoustic features only prioritize re-listening. They never
+    authenticate performed turns, names, joins, or independent acceptance.
+    Stale script-specific reports are excluded rather than applied blindly.
+    """
+    from episode_finish import VIDEO_SHA
+    path = (root / "saved-private/episode-finish-current" /
+            (ep + "-original-audio-p0p1-evidence.json"))
+    if not path.is_file():
+        return {"status": "source_audio_report_absent", "matched_p0_pairs": 0,
+                "priority_original_audio_p0_conflicts": 0}
+    raw = path.read_bytes()
+    report = json.loads(raw)
+    if (report.get("schema") != "night-court-canonical-original-audio-p0-p1-evidence/1"
+        or report.get("episode_id") != ep
+        or report.get("immutable_original_dialogue_sha256") != source_sha
+        or report.get("original_video_sha256") != VIDEO_SHA[ep]
+        or report.get("independent_performed_turns_accepted") != 0
+        or report.get("independent_original_actor_voice_accepted") != 0
+        or report.get("original_video_watched_by_human") is not False
+        or report.get("provisional_role_holdout_threshold_passed") is not False):
+        raise ValueError(ep + ": existing original-soundtrack report is unsafe or has wrong source")
+    base = {
+        "file": str(path.relative_to(root)), "sha256": sha(raw),
+        "original_video_sha256": VIDEO_SHA[ep], "original_audio_model_only": True,
+        "speaker_or_turn_audio_accepted": False,
+    }
+    if report.get("canonical_manuscript_sha256") != sha(canonical_text.encode("utf-8")):
+        return {**base, "status": "stale_canonical_manuscript_not_applied",
+                "matched_p0_pairs": 0, "priority_original_audio_p0_conflicts": 0}
+    pairs = report.get("adjacent_P0_original_audio_voice_similarity")
+    if not isinstance(pairs, list) or len(pairs) > 1500:
+        raise ValueError(ep + ": malformed P0 soundtrack comparison")
+    by_boundary = {tuple(x["between_block_ids"]): x for x in edges}
+    matched = set()
+    focus = 0
+    for pair in pairs:
+        key = (pair.get("source_left"), pair.get("source_right"))
+        score = pair.get("machine_acoustic_voice_similarity")
+        if (key in matched or not isinstance(score, (int, float))
+            or type(score) is bool or not -1 <= score <= 1
+            or pair.get("source_audio_p0_performed_boundary_independently_verified") is not False
+            or type(pair.get("provisional_display_join")) is not bool):
+            raise ValueError(ep + ": malformed original-audio adjacent pair")
+        matched.add(key)
+        edge = by_boundary.get(key)
+        if edge is None:
+            # The source model only sampled usable clean, genuinely adjacent
+            # excerpts; do not graft arbitrary non-adjacent data onto edges.
+            continue
+        if pair["provisional_display_join"] != edge["provisional_continuation"]:
+            raise ValueError(ep + ": acoustic report disagrees with source-bound display groups")
+        # Heuristic only, NOT a learned calibrated same-speaker probability.
+        discrepancy = (score <= .55 if edge["provisional_continuation"]
+                       else score >= .80)
+        edge["original_soundtrack_machine_similarity"] = score
+        edge["acoustic_same_voice_model_hint"] = (
+            "investigate_provisional_join" if discrepancy and edge["provisional_continuation"]
+            else "investigate_provisional_split" if discrepancy
+            else "no_priority_signal_unverified"
+        )
+        edge["original_audio_performed_boundary_verified"] = False
+        edge["original_audio_candidate_model_report_sha256"] = base["sha256"]
+        if discrepancy:
+            edge["review_priority"] = "P0_FOCUS_MODEL_CONTRADICTION"
+            focus += 1
+    return {
+        **base, "status": "canonical_source_audio_model_linked",
+        "model_measured_adjacent_pairs": len(pairs),
+        "matched_p0_pairs": sum("original_soundtrack_machine_similarity" in e for e in edges),
+        "priority_original_audio_p0_conflicts": focus,
+        "model_similarity_thresholds_only_review_triage_not_calibrated": True,
+    }
+
+
 def pilot_episode(root: Path, ep: str, index: dict):
     from episode_finish import load_episode
     snapshot = root / "saved-private/pilot-current"
@@ -408,8 +486,10 @@ def pilot_episode(root: Path, ep: str, index: dict):
         "source_audio_verified_by_factory": False,
         "review_priority": "P0",
     } for i in range(1, len(rows))]
+    acoustic = apply_existing_original_audio_p0(root, ep, witness, text, edges)
     count = layout["episodes"][ep]
     return text, rows, edges, {
+        "original_audio_p0_triage": acoustic,
         "evidence_tier": tier,
         "source_units": count["source_units"],
         "provisional_reader_blocks": len(rows),
@@ -437,6 +517,17 @@ def construct(root: Path, ep: str, index: dict):
                                         "P3_props_wardrobe", "P4_actions", "P5_coarse_time"],
                          "all_original_audio_boundaries_unverified": True,
                          "boundary_review_questions": edges,
+                         "original_audio_model_priority_p0": [{
+                             "between_block_ids": x["between_block_ids"],
+                             "machine_acoustic_voice_similarity": x["original_soundtrack_machine_similarity"],
+                             "possible_issue": x["acoustic_same_voice_model_hint"],
+                             "film_heard_turn_confirmed": False,
+                         } for x in sorted(
+                             [z for z in edges if z.get("review_priority") == "P0_FOCUS_MODEL_CONTRADICTION"],
+                             key=lambda z: (
+                                 z["original_soundtrack_machine_similarity"] if z["provisional_continuation"]
+                                 else -z["original_soundtrack_machine_similarity"],
+                                 z["between_block_ids"][0]))],
                          "review_internal_voice_changes": [x.get("cue") for x in rows
                                                           if x.get("multiple_voice_dashes") or
                                                           x.get("contextual_unlocated_internal_handoff")],
