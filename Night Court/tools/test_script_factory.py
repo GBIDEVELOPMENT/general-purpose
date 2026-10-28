@@ -6,7 +6,7 @@ from pathlib import Path
 
 from script_factory import (
     ROOT, PILOTS, construct, multi_voice_typography, run,
-    source_index, source_role, source_rows, sha,
+    source_index, source_role, source_rows, sha, contextual_role_overlay,
 )
 
 
@@ -45,7 +45,9 @@ class ScriptFactoryTests(unittest.TestCase):
             with self.subTest(ep=ep):
                 manifest, _, cues = source_rows(ROOT, self.index[ep])
                 files, data = construct(ROOT, ep, self.index[ep])
-                self.assertEqual(data["evidence_tier"], "source_only_reading_draft")
+                self.assertEqual(data["evidence_tier"],
+                                 "contextual_provisional_reading_draft" if ep == "S05E05"
+                                 else "source_only_reading_draft")
                 self.assertEqual(data["source_units"], manifest["cue_count"])
                 rows = [json.loads(x) for x in files["provenance.jsonl"].splitlines()]
                 self.assertEqual([x["source_text"] for x in rows], [x["text"] for x in cues])
@@ -56,6 +58,32 @@ class ScriptFactoryTests(unittest.TestCase):
                 self.assertTrue(all(x["original_dialogue_sha256"] == manifest["sha256"]
                                     for x in rows))
                 self.assertFalse(data["actual_av_verified"])
+
+    def test_s05_contextual_review_is_used_without_fake_audio_witness(self):
+        ep = "S05E05"
+        files, data = construct(ROOT, ep, self.index[ep])
+        overlay = data["contextual_overlay"]
+        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 259)
+        self.assertEqual(overlay["mixed_voice_internal_review_cues"], 7)
+        self.assertEqual(overlay["weak_or_abstained_cues"], 34)
+        self.assertFalse(overlay["original_audio_verified"])
+        self.assertEqual(data["unknown_label_cues"], 41)
+        rows = [json.loads(x) for x in files["provenance.jsonl"].splitlines()]
+        self.assertEqual(rows[34]["candidate_display_role"], "Dan Fielding")
+        self.assertTrue(rows[34]["provisional_continuation_of_previous"])
+        self.assertIsNone(rows[35]["candidate_display_role"])
+        self.assertEqual(rows[35]["contextual_intra_cue_voice_roles"],
+                         ["Dan Fielding", "Harry Stone"])
+        self.assertIsNone(rows[148]["candidate_display_role"])  # LOW confidence abstains
+        self.assertTrue(all(not r["candidate_role_original_soundtrack_verified"] for r in rows))
+        review = json.loads(files["review-queue.json"])
+        self.assertEqual(len(review["contextual_role_review"]), 300)
+        self.assertIn(36, review["review_internal_voice_changes"])
+        self.assertIn("contextual hypothesis, unverified", files["screenplay.md"])
+        self.assertIn("MULTIPLE UNIDENTIFIED VOICES", files["screenplay.md"])
+        witness, _, captions = source_rows(ROOT, self.index[ep])
+        with self.assertRaisesRegex(ValueError, "stale/malformed contextual role"):
+            contextual_role_overlay(ROOT, ep, {**witness, "sha256": "0" * 64}, captions)
 
     def test_all_193_episodes_generate_and_second_run_is_idempotent(self):
         with tempfile.TemporaryDirectory() as d:
