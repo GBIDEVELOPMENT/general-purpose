@@ -1952,6 +1952,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 - 88 textual P2 delivery suggestions are NOT witnessed original performances.
 - 384 adjacent boundaries remain original-audio unverified.
 - 0 narrow source-punctuation candidate same-voice joins are unverified; mixed-dash cues and untimed sources abstain.
+- 0 punctuation-versus-role conflicts are P0/P1 re-listening priorities, NOT automatically renamed actors.
 - Episode-credited guest roles (not speaker assignments): Al Craven, Bum, Ronald McKenzie, Vickie Guyer.
 - Passage boundaries are caption-gap heuristics. Scene headings, wardrobe, props,
   acting and physical business require observation of the original film.
