@@ -1,0 +1,89 @@
+{
+  "actor_identity_or_voice_verified": false,
+  "backend": "qwen3vl",
+  "caption_source_sha256": null,
+  "cut_candidate_detector": "5fps_gray160x90_mean_absolute_frame_change_gt_9.5_with_one_second_preroll",
+  "cut_detection_is_editorial_proposal_only": true,
+  "cut_detector_method_not_source_PTS_verified": true,
+  "duration_ms": 1448256,
+  "episode_id": "S01E01",
+  "max_generated_tokens": 256,
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_load_seconds": 29.55,
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "no_source_clip_or_still_uploaded": true,
+  "original_avi_download_count": 1,
+  "original_avi_sha256_verified": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "original_native_decoded_frame_pts_human_verified": false,
+  "original_series_production_screenplay_accepted": false,
+  "original_soundtrack_listened_to_or_uploaded": false,
+  "original_source_retrieval_wall_seconds": 2.724,
+  "original_srt_or_dialogue_modified": false,
+  "owner_source_pilot_schema": "night-court-original-qwen-picture-pilot/1",
+  "pre_model_original_cut_candidate_checks": [
+    {
+      "candidate_image_changes": 1,
+      "start_ms": 845800
+    },
+    {
+      "candidate_image_changes": 0,
+      "start_ms": 846000
+    }
+  ],
+  "prompt_profile": "action_compact",
+  "prompt_sha256": "f1a23742daf684244dd00a800bc7e5d58a9733c67ec1d43b3c3fc8d991442e2d",
+  "runner_logical_cpu_count": 2,
+  "schema": "night-court-headless-video-description/1",
+  "script_or_claim_independently_accepted": false,
+  "source_ffprobe": {
+    "duration_ms": 1448256,
+    "stream": {
+      "avg_frame_rate": "30000/1001",
+      "r_frame_rate": "30000/1001",
+      "time_base": "1001/30000"
+    }
+  },
+  "source_focus": "physical_comedy",
+  "source_frame_pts_independently_verified": false,
+  "source_original_media_is_ephemeral": true,
+  "source_reference_model_schema": "night-court-headless-video-description/1",
+  "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "total_requested_ms": 2000,
+  "verified_source_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+  "verify_seconds": 0.205,
+  "video_sampling_fps": 1,
+  "video_width_pixels": 256,
+  "wall_seconds": 150.348,
+  "whole_episode_visual_coverage_accepted": false,
+  "windows": [
+    {
+      "candidate_cut_crossing": false,
+      "candidate_shot_partition_id_unverified": null,
+      "clip_sha256_ephemeral": "4f3e79fb912d9cf82870ca6f7ef736bd4cda02a6744784ecaafa1ce0b6236da4",
+      "decode_seconds": 0.336,
+      "end_ms": 848000,
+      "id": "S01E01-REAL-PICTURE-CANDIDATE-01",
+      "independently_accepted": false,
+      "inference_seconds": 120.256,
+      "model_hypothesis": {
+        "actions": "person_1 touches person_2's face",
+        "camera": "static",
+        "entrances_exits": "none",
+        "people_and_positions": "person_1 standing, person_2 seated",
+        "physical_comedy": "none",
+        "proposed_stage_direction": "person_1 touches person_2's face",
+        "props": "microphone, flag",
+        "reactions": "person_2 remains still",
+        "setting": "a courtroom",
+        "uncertainty": "none"
+      },
+      "model_output_error": null,
+      "model_response_excerpt": null,
+      "selection_reason": "court-bench-visible-hand-motion-source-sampled-neighborhood",
+      "shot_partition_verified": false,
+      "source_AV_human_review_done": false,
+      "start_ms": 846000,
+      "status": "machine_proposed"
+    }
+  ]
+}

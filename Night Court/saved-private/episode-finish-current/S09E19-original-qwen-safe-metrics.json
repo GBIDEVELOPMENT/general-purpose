@@ -1,0 +1,38 @@
+{
+  "episodes": [
+    {
+      "cut_candidate_windows_tested": 1,
+      "episode_id": "S09E19",
+      "exact_private_owner_model_report_sha256": "0fa2b558c5c81cb67e0b49fe73ed7f9579df584dc171cdede5dd315a5e55967d",
+      "factual_stage_direction_published": false,
+      "independently_verified_shot_or_gag": false,
+      "inference_schema_valid": true,
+      "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "model_revision_sha": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "original_excerpt_end_ms": 557800,
+      "original_excerpt_start_ms": 555800,
+      "original_source_human_stage_reviewed": false,
+      "original_source_video_download_count": 1,
+      "processing_seconds": {
+        "model_load": 31.208,
+        "model_tool": 166.296,
+        "original_source_retrieval": 4.294,
+        "temporary_clip_decode": 0.353,
+        "visual_model_inference": 134.535
+      },
+      "prompt_profile": "action_compact",
+      "prompt_sha256": "f1a23742daf684244dd00a800bc7e5d58a9733c67ec1d43b3c3fc8d991442e2d",
+      "selected_cut_candidate_count": 0,
+      "source_focus": "physical_comedy",
+      "source_media_copied_to_git": false,
+      "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649"
+    }
+  ],
+  "machine_video_semantics_independently_accepted": false,
+  "no_movie_or_inference_prose_embedded": true,
+  "original_source_media_or_audio_retained": false,
+  "pilot_episodes_with_verified_source_and_model": 1,
+  "production_screenplay_complete": false,
+  "schema": "night-court-original-qwen-source-safe-metrics/1",
+  "source_truth_limit": "This reports SHA-linked model runtime and output schema only. Original observed film action, physical comedy, people and setting require direct human/source-video review; never promote machine text based on this metric ledger."
+}

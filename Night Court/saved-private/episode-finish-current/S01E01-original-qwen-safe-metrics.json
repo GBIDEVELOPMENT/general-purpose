@@ -1,0 +1,38 @@
+{
+  "episodes": [
+    {
+      "cut_candidate_windows_tested": 2,
+      "episode_id": "S01E01",
+      "exact_private_owner_model_report_sha256": "d4fff530b017c9cdaad3b8dd1c02503f620f51cf745bd2fd34ce3c06b5434be1",
+      "factual_stage_direction_published": false,
+      "independently_verified_shot_or_gag": false,
+      "inference_schema_valid": true,
+      "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "model_revision_sha": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "original_excerpt_end_ms": 848000,
+      "original_excerpt_start_ms": 846000,
+      "original_source_human_stage_reviewed": false,
+      "original_source_video_download_count": 1,
+      "processing_seconds": {
+        "model_load": 29.55,
+        "model_tool": 150.348,
+        "original_source_retrieval": 2.724,
+        "temporary_clip_decode": 0.336,
+        "visual_model_inference": 120.256
+      },
+      "prompt_profile": "action_compact",
+      "prompt_sha256": "f1a23742daf684244dd00a800bc7e5d58a9733c67ec1d43b3c3fc8d991442e2d",
+      "selected_cut_candidate_count": 0,
+      "source_focus": "physical_comedy",
+      "source_media_copied_to_git": false,
+      "source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962"
+    }
+  ],
+  "machine_video_semantics_independently_accepted": false,
+  "no_movie_or_inference_prose_embedded": true,
+  "original_source_media_or_audio_retained": false,
+  "pilot_episodes_with_verified_source_and_model": 1,
+  "production_screenplay_complete": false,
+  "schema": "night-court-original-qwen-source-safe-metrics/1",
+  "source_truth_limit": "This reports SHA-linked model runtime and output schema only. Original observed film action, physical comedy, people and setting require direct human/source-video review; never promote machine text based on this metric ledger."
+}

@@ -1,0 +1,131 @@
+{
+  "schema": "night-court-visual-review-decisions/1",
+  "episode_id": "S09E19",
+  "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "model_report_sha256": "0fa2b558c5c81cb67e0b49fe73ed7f9579df584dc171cdede5dd315a5e55967d",
+  "reviewer_id": "original-film-pending",
+  "decisions": [
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "setting",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    },
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "camera",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    },
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "people_and_positions",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    },
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "actions",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    },
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "props",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    },
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "entrances_exits",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    },
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "physical_comedy",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    },
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "reactions",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    },
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "uncertainty",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    },
+    {
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "field": "proposed_stage_direction",
+      "verdict": "deferred",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "direct_original_video_review_attested": false,
+      "reviewer_text": null,
+      "reason": "Pending direct original-source video review"
+    }
+  ],
+  "_editor_instructions": "Verify actual synchronized original source at exact window times. For each field, choose accepted/corrected/rejected/deferred and a supporting source-attested decision. Never use the model text alone; set direct_original_video_review_attested=true only after viewing the matching original video. Accepted/corrected need reviewer_text; rejected/deferred need reason. Editing this file is a reviewer act.",
+  "_original_full_episode_independently_certified": false
+}

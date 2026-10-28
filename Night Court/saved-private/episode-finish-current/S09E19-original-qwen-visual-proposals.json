@@ -1,0 +1,85 @@
+{
+  "actor_identity_or_voice_verified": false,
+  "backend": "qwen3vl",
+  "caption_source_sha256": null,
+  "cut_candidate_detector": "5fps_gray160x90_mean_absolute_frame_change_gt_9.5_with_one_second_preroll",
+  "cut_detection_is_editorial_proposal_only": true,
+  "cut_detector_method_not_source_PTS_verified": true,
+  "duration_ms": 1320144,
+  "episode_id": "S09E19",
+  "max_generated_tokens": 256,
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "model_load_seconds": 31.208,
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "no_source_clip_or_still_uploaded": true,
+  "original_avi_download_count": 1,
+  "original_avi_sha256_verified": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "original_native_decoded_frame_pts_human_verified": false,
+  "original_series_production_screenplay_accepted": false,
+  "original_soundtrack_listened_to_or_uploaded": false,
+  "original_source_retrieval_wall_seconds": 4.294,
+  "original_srt_or_dialogue_modified": false,
+  "owner_source_pilot_schema": "night-court-original-qwen-picture-pilot/1",
+  "pre_model_original_cut_candidate_checks": [
+    {
+      "candidate_image_changes": 0,
+      "start_ms": 555800
+    }
+  ],
+  "prompt_profile": "action_compact",
+  "prompt_sha256": "f1a23742daf684244dd00a800bc7e5d58a9733c67ec1d43b3c3fc8d991442e2d",
+  "runner_logical_cpu_count": 2,
+  "schema": "night-court-headless-video-description/1",
+  "script_or_claim_independently_accepted": false,
+  "source_ffprobe": {
+    "duration_ms": 1320144,
+    "stream": {
+      "avg_frame_rate": "30000/1001",
+      "r_frame_rate": "30000/1001",
+      "time_base": "1001/30000"
+    }
+  },
+  "source_focus": "physical_comedy",
+  "source_frame_pts_independently_verified": false,
+  "source_original_media_is_ephemeral": true,
+  "source_reference_model_schema": "night-court-headless-video-description/1",
+  "source_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "total_requested_ms": 2000,
+  "verified_source_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+  "verify_seconds": 0.199,
+  "video_sampling_fps": 1,
+  "video_width_pixels": 256,
+  "wall_seconds": 166.296,
+  "whole_episode_visual_coverage_accepted": false,
+  "windows": [
+    {
+      "candidate_cut_crossing": false,
+      "candidate_shot_partition_id_unverified": null,
+      "clip_sha256_ephemeral": "6555673621e0fd03e12a4ea32ea6c68db0123c5cc4f6db065d65ae747cc60373",
+      "decode_seconds": 0.353,
+      "end_ms": 557800,
+      "id": "S09E19-REAL-PICTURE-CANDIDATE-01",
+      "independently_accepted": false,
+      "inference_seconds": 134.535,
+      "model_hypothesis": {
+        "actions": "person_1 holds a blue object, person_2 leans in",
+        "camera": "static",
+        "entrances_exits": "none",
+        "people_and_positions": "person_1 sitting at a table, person_2 standing behind them",
+        "physical_comedy": "none",
+        "proposed_stage_direction": "person_1 holds the blue object and looks at person_2, person_2 leans in and looks at person_1",
+        "props": "a blue object, a pen",
+        "reactions": "person_1 looks at person_2, person_2 looks at person_1",
+        "setting": "a courtroom",
+        "uncertainty": "none"
+      },
+      "model_output_error": null,
+      "model_response_excerpt": null,
+      "selection_reason": "court-bench-object-handling-source-sampled-neighborhood",
+      "shot_partition_verified": false,
+      "source_AV_human_review_done": false,
+      "start_ms": 555800,
+      "status": "machine_proposed"
+    }
+  ]
+}
