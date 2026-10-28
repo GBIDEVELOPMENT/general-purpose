@@ -93,7 +93,7 @@ def structural_speaker_parts(text: str) -> list[dict]:
     never proof of two voices. Preserve every Unicode codepoint and newline.
     A single dash is too ambiguous to segment without other evidence.
     """
-    starts = [m.start() for m in re.finditer(r"(?m)^[ \\t]*[-–—][ \\t]+\\S", text)]
+    starts = [m.start() for m in re.finditer(r"(?m)^[ \t]*[-–—][ \t]+\S", text)]
     cuts = [0]
     if len(starts) >= 2:
         # If there is an undashed opening voice, keep it as its own part;
