@@ -158,7 +158,7 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertIn("NOT AV-CERTIFIED", files["screenplay.md"])
 
     def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
-        episode = "S01E02"
+        episode = "S01E03"  # S01E02 now has a source-locked contextual editor overlay
         files, manifest = construct(ROOT, episode, self.index[episode])
         self.assertEqual(manifest["evidence_tier"], "source_only_reading_draft")
         self.assertGreaterEqual(manifest["source_syntactic_p0_provisional_continuations"], 20)
