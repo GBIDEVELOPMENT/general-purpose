@@ -32,10 +32,10 @@
   "confidence_scale": "high=published attributed quote text, medium=dialogue-based contextual hypothesis, abstain=unique actor cannot be inferred; none soundtrack heard",
   "counts": {
     "high_single": 23,
-    "medium_single": 277,
+    "medium_single": 278,
     "low_single": 0,
-    "mixed_cues": 42,
-    "abstain_cues": 12,
+    "mixed_cues": 45,
+    "abstain_cues": 8,
     "textual_delivery_hypotheses": 86
   },
   "original_audio_review_completed": false,
@@ -227,12 +227,19 @@
       "cue_id": "C00014.1",
       "source_unit_index": 14,
       "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
-      "original_audio_verified": false
+      "confidence": "medium",
+      "basis": "Harry's question begins at C13 and continues through the first sentence in C14; Dan's clipped 'Right' is a proposed confirmation. No dash exists, so this is an expressly unverified *lexical* turn boundary, not a witnessed voice change.",
+      "status": "proposed_internal_voice_switch_unverified",
+      "review_delta": "textual_cross_cue_speaker_handoff_reassessment",
+      "evidence_type": "question_answer_lexical_turn_hypothesis",
+      "original_audio_verified": false,
+      "proposed_ordered_speaker_parts": [
+        "Harry Stone",
+        "Dan Fielding"
+      ],
+      "utf8_or_unicode_split_offsets": [
+        31
+      ]
     },
     {
       "cue_id": "C00015.1",
@@ -710,12 +717,12 @@
     {
       "cue_id": "C00052.1",
       "source_unit_index": 52,
-      "proposed_speaker": "Dan Fielding",
+      "proposed_speaker": "Lana Wagner",
       "confidence": "medium",
-      "basis": "Based on adjacent C00050.1–C00054.1 dialogue context: Dan prosecutes the pageant case or courts the beauty contestants. Original actor voice not verified.",
+      "basis": "Lana's later exact 'I'll get those paper bags now' callback at C68 identifies the earlier offer of office paper bags in C52; cross-scene textual continuity, not original soundtrack proof.",
       "status": "text_only_unverified",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "dialogue_sequence;case_and_role_context",
+      "review_delta": "source_dialogue_consistency_correction",
+      "evidence_type": "long_range_dialogue_callback;turn_continuity",
       "original_audio_verified": false,
       "provisional_delivery": {
         "tone": "dry",
@@ -1530,12 +1537,12 @@
     {
       "cue_id": "C00114.1",
       "source_unit_index": 114,
-      "proposed_speaker": "Lana Wagner",
+      "proposed_speaker": "Bull Shannon",
       "confidence": "medium",
-      "basis": "Based on adjacent C00112.1–C00116.1 dialogue context: Lana manages courtroom procedure and discusses Harry's mother. Original actor voice not verified.",
+      "basis": "The ensuing C115–C120 uninterrupted first-person attempt to introduce 'Bull' to Miss Sweden makes the C114 greeting most parsimoniously Bull's opening voice.",
       "status": "text_only_unverified",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "dialogue_sequence;case_and_role_context",
+      "review_delta": "source_dialogue_consistency_correction",
+      "evidence_type": "long_range_dialogue_callback;turn_continuity",
       "original_audio_verified": false
     },
     {
@@ -2554,22 +2561,29 @@
       "cue_id": "C00194.1",
       "source_unit_index": 194,
       "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
-      "original_audio_verified": false
+      "confidence": "medium",
+      "basis": "The speaker describing a bizarre seaweed diet then asks 'Crazy, huh?' and Harry pivots to a request for chocolate cigarettes; the subtitle explicitly marks two voices.",
+      "status": "proposed_internal_voice_switch_unverified",
+      "review_delta": "textual_cross_cue_speaker_handoff_reassessment",
+      "evidence_type": "source_caption_double_dash;cross_cue_dialogue_context",
+      "original_audio_verified": false,
+      "proposed_ordered_speaker_parts": [
+        "Selma Hacker",
+        "Harry Stone"
+      ],
+      "utf8_or_unicode_split_offsets": [
+        14
+      ]
     },
     {
       "cue_id": "C00195.1",
       "source_unit_index": 195,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
+      "proposed_speaker": "Selma Hacker",
+      "confidence": "medium",
+      "basis": "After one staffer reports a strange news item and Harry asks for chocolate cigarettes, 'I'll check' is the staffer's response. The same staffer later reports they are out and offers a bubble-gum cigar at C205–C206.",
+      "status": "text_only_unverified",
+      "review_delta": "source_dialogue_consistency_correction",
+      "evidence_type": "long_range_dialogue_callback;turn_continuity",
       "original_audio_verified": false
     },
     {
@@ -2704,12 +2718,19 @@
       "cue_id": "C00205.1",
       "source_unit_index": 205,
       "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
-      "original_audio_verified": false
+      "confidence": "medium",
+      "basis": "Following the request for chocolate cigarettes C194 and the staffer's 'I'll check' C195, the staffer reports 'We're out' and Harry says 'Darn'; C206 offers a substitute. Exact text source dash marks two voices.",
+      "status": "proposed_internal_voice_switch_unverified",
+      "review_delta": "textual_cross_cue_speaker_handoff_reassessment",
+      "evidence_type": "source_caption_double_dash;cross_cue_dialogue_context",
+      "original_audio_verified": false,
+      "proposed_ordered_speaker_parts": [
+        "Selma Hacker",
+        "Harry Stone"
+      ],
+      "utf8_or_unicode_split_offsets": [
+        13
+      ]
     },
     {
       "cue_id": "C00206.1",
@@ -4681,7 +4702,22 @@
     ],
     "corrected_role": [
       58
-    ]
+    ],
+    "last_pass": "2026-10-28",
+    "speaker_role_corrections": [
+      52,
+      114
+    ],
+    "contextually_located_additional_handoffs": [
+      14,
+      194,
+      205
+    ],
+    "newly_named_staff_reply": [
+      195
+    ],
+    "original_video_or_audio_reviewed": false,
+    "original_source_caption_modified": false
   },
   "delivery_claim_limits": {
     "source": "Textual rhetoric and narrative function only, not heard or witnessed actor delivery",
