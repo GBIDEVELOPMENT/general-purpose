@@ -162,3 +162,67 @@ jobs:
         run: |
           rm -rf /tmp/night-court-qwen-env /tmp/night-court-original-qwen-model-cache
           rm -f '${{ runner.temp }}/nc-qwen-original-${{ matrix.episode }}.json' '${{ runner.temp }}/nc-qwen-pending-${{ matrix.episode }}.json' '${{ runner.temp }}/nc-qwen-review-${{ matrix.episode }}.md' '${{ runner.temp }}/nc-qwen-safe-metrics-${{ matrix.episode }}.json'
+
+  persist-trusted-owner-original-video-model-review:
+    # Deliberately separate from media/FTP/model inference. This job has
+    # contents:write but receives NO FTP_PASSWORD, runs NO PR-head code and
+    # copies only validated compact JSON model proposals to private main.
+    needs: trusted-owner-source-visual-inference
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.repository == 'GBIDEVELOPMENT/general-purpose' &&
+      github.event.repository.private == true &&
+      github.event.pull_request.user.login == 'gamesbyian' &&
+      github.event.pull_request.head.repo.full_name == 'GBIDEVELOPMENT/general-purpose' &&
+      github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - name: Checkout only trusted private main with publisher write access
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download only source-owner original Qwen artifact for S01E01
+        uses: actions/download-artifact@v4
+        with:
+          name: night-court-owner-original-qwen-proposals-S01E01
+          path: ${{ runner.temp }}/source-qwen-artifact/S01E01
+      - name: Download only source-owner original Qwen artifact for S09E19
+        uses: actions/download-artifact@v4
+        with:
+          name: night-court-owner-original-qwen-proposals-S09E19
+          path: ${{ runner.temp }}/source-qwen-artifact/S09E19
+      - name: Verify SHA-pinned film, model, deferred-only reviews and no media
+        run: |
+          set -euo pipefail
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_preserve_original_qwen_model_reports
+          python 'Night Court/tools/preserve_original_qwen_model_reports.py' \
+            --artifact-root "${RUNNER_TEMP}/source-qwen-artifact" \
+            --output 'Night Court/saved-private/episode-finish-current'
+      - name: Commit only stable source-verified compact model reviews to private main
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          if test "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)"; then
+            echo "::error::Trusted source main advanced during original-film inference; refusing stale publication."
+            exit 1
+          fi
+          for ep in S01E01 S09E19; do
+            git add -- \
+              "Night Court/saved-private/episode-finish-current/${ep}-original-qwen-visual-proposals.json" \
+              "Night Court/saved-private/episode-finish-current/${ep}-original-qwen-review-pending.json" \
+              "Night Court/saved-private/episode-finish-current/${ep}-original-qwen-safe-metrics.json"
+          done
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'data(night-court): preserve two original-film visual model review proposals'
+            git push origin HEAD:main
+          fi
