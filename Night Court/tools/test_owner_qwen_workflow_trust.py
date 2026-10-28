@@ -20,7 +20,7 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         for required in (
             "github.event_name == 'pull_request_target'",
             "github.event.pull_request.user.login == 'gamesbyian'",
-            "github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose'",
+            "github.event.pull_request.head.repo.full_name == 'GBIDEVELOPMENT/general-purpose'",
             "github.event.pull_request.head.ref == 'research/night-court-qwen-real-original-trigger'",
             "github.event.pull_request.base.ref == 'main'",
             "FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}",
@@ -42,7 +42,7 @@ class OwnerSourceWorkflowTrust(unittest.TestCase):
         self.assertIn("&& 'action_compact' || 'standard'", self.workflow)
         self.assertIn("--prompt-profile '${{ (github.event.pull_request.head.ref", self.workflow)
         self.assertIn("github.event.pull_request.user.login == 'gamesbyian'", self.workflow)
-        self.assertIn("github.event.pull_request.head.repo.full_name == 'gamesbyian/general-purpose'", self.workflow)
+        self.assertIn("github.event.pull_request.head.repo.full_name == 'GBIDEVELOPMENT/general-purpose'", self.workflow)
         self.assertIn("github.event.pull_request.base.ref == 'main'", self.workflow)
         self.assertIn("ref: ${{ github.sha }}", self.workflow)
         self.assertNotIn("ref: ${{ github.event.pull_request.head.sha }}", self.workflow)
