@@ -19,10 +19,18 @@
   },
   "original_dialogue_sha256": "aa9f77600cd9f2b6f317e4b74ebb98273f632cee1337665e03f0fe712f936496",
   "original_film_visual_model_evidence": {
-    "sampled_windows": 0,
-    "status": "no_original_film_visual_model_evidence"
+    "file": "saved-private/episode-finish-current/S01E01-original-qwen-visual-proposals.json",
+    "human_film_reviewer_accepted": false,
+    "model_load_seconds": 29.55,
+    "model_review_questions": 1,
+    "original_source_video_sha256": "5b607acc60fae6893aa76e5b02fc34900cbe68050eac486b31382dc91e504962",
+    "sampled_windows": 1,
+    "sha256": "d4fff530b017c9cdaad3b8dd1c02503f620f51cf745bd2fd34ce3c06b5434be1",
+    "status": "original_source_model_proposals_unverified",
+    "total_model_inference_seconds": 120.256,
+    "whole_episode_video_covered": false
   },
-  "p0_review_queue_sha256": "37c3a38ef405a46f737128d0405caaa2c06a53574817384d4c357668a69bf260",
+  "p0_review_queue_sha256": "500048bb0ce477a4ee90676340270e648029acae8a1b179bf357ef531d6f1a5a",
   "provisional_display_groups": 275,
   "provisional_reader_blocks": 405,
   "schema": "night-court-one-click-script-factory/1",

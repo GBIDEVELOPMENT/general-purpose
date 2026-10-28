@@ -3060,7 +3060,36 @@
       "possible_issue": "investigate_provisional_join"
     }
   ],
-  "original_film_visual_model_only_review": [],
+  "original_film_visual_model_only_review": [
+    {
+      "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "original_stage_direction_accepted": false,
+      "original_video_human_verified": false,
+      "review_priority": "P3_P4_SOURCE_VIDEO_CONFIRMED_ONLY_AFTER_REVIEW",
+      "source_original_video_sha256": "51f409c620245f9f3744b1b38e534122fd8c82cfadc2221bf5f6fc14eac93649",
+      "source_report_sha256": "0fa2b558c5c81cb67e0b49fe73ed7f9579df584dc171cdede5dd315a5e55967d",
+      "source_window_ms": [
+        555800,
+        557800
+      ],
+      "unverified_description": {
+        "actions": "person_1 holds a blue object, person_2 leans in",
+        "camera": "static",
+        "entrances_exits": "none",
+        "people_and_positions": "person_1 sitting at a table, person_2 standing behind them",
+        "physical_comedy": "none",
+        "proposed_stage_direction": "person_1 holds the blue object and looks at person_2, person_2 leans in and looks at person_1",
+        "props": "a blue object, a pen",
+        "reactions": "person_1 looks at person_2, person_2 looks at person_1",
+        "setting": "a courtroom",
+        "uncertainty": "none"
+      },
+      "visual_model_status": "machine_proposed",
+      "whole_episode_picture_analyzed": false,
+      "window_id": "S09E19-REAL-PICTURE-CANDIDATE-01"
+    }
+  ],
   "priorities": [
     "P0_turns",
     "P1_identity",
