@@ -32,10 +32,10 @@
   "confidence_scale": "high=published attributed quote text, medium=dialogue-based contextual hypothesis, abstain=unique actor cannot be inferred; none soundtrack heard",
   "counts": {
     "high_single": 23,
-    "medium_single": 271,
+    "medium_single": 277,
     "low_single": 0,
     "mixed_cues": 42,
-    "abstain_cues": 18
+    "abstain_cues": 12
   },
   "original_audio_review_completed": false,
   "original_video_viewed": false,
@@ -712,12 +712,12 @@
     {
       "cue_id": "C00058.1",
       "source_unit_index": 58,
-      "proposed_speaker": "Harry Stone",
+      "proposed_speaker": "Dan Fielding",
       "confidence": "medium",
-      "basis": "Based on adjacent C00056.1–C00060.1 dialogue context: Harry presides over the case or responds to his claimed mother. Original actor voice not verified.",
+      "basis": "Dan, not Harry, is trying to flirt with Buffy by asking her to say his first name.",
       "status": "text_only_unverified",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "dialogue_sequence;case_and_role_context",
+      "review_delta": "second_textual_context_review_v1",
+      "evidence_type": "conversation_context;adjacency;pronouns",
       "original_audio_verified": false
     },
     {
@@ -2473,12 +2473,12 @@
     {
       "cue_id": "C00206.1",
       "source_unit_index": 206,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
+      "proposed_speaker": "Selma Hacker",
+      "confidence": "medium",
+      "basis": "The office exchange about unavailable chocolate cigarettes ends with a practical substitute offer from a staffer. Selma is the best textual candidate, but alternatives remain.",
+      "status": "text_only_unverified",
+      "review_delta": "second_textual_context_review_v1",
+      "evidence_type": "conversation_context;adjacency;pronouns",
       "original_audio_verified": false
     },
     {
@@ -2743,12 +2743,12 @@
     {
       "cue_id": "C00228.1",
       "source_unit_index": 228,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
+      "proposed_speaker": "Eleanor Brandon",
+      "confidence": "medium",
+      "basis": "Eleanor remarks about the court employees who like Harry, and Harry immediately answers in C229.",
+      "status": "text_only_unverified",
+      "review_delta": "second_textual_context_review_v1",
+      "evidence_type": "conversation_context;adjacency;pronouns",
       "original_audio_verified": false
     },
     {
@@ -3795,45 +3795,45 @@
     {
       "cue_id": "C00316.1",
       "source_unit_index": 316,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
+      "proposed_speaker": "Eleanor Brandon",
+      "confidence": "medium",
+      "basis": "Direct answer to Harry's question about Eleanor's own pets at C315.",
+      "status": "text_only_unverified",
+      "review_delta": "second_textual_context_review_v1",
+      "evidence_type": "conversation_context;adjacency;pronouns",
       "original_audio_verified": false
     },
     {
       "cue_id": "C00317.1",
       "source_unit_index": 317,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
+      "proposed_speaker": "Eleanor Brandon",
+      "confidence": "medium",
+      "basis": "Continues Eleanor's first-person account of fish she once kept.",
+      "status": "text_only_unverified",
+      "review_delta": "second_textual_context_review_v1",
+      "evidence_type": "conversation_context;adjacency;pronouns",
       "original_audio_verified": false
     },
     {
       "cue_id": "C00318.1",
       "source_unit_index": 318,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
+      "proposed_speaker": "Eleanor Brandon",
+      "confidence": "medium",
+      "basis": "Further detail in Eleanor's continuous account of buying and overfeeding fish.",
+      "status": "text_only_unverified",
+      "review_delta": "second_textual_context_review_v1",
+      "evidence_type": "conversation_context;adjacency;pronouns",
       "original_audio_verified": false
     },
     {
       "cue_id": "C00319.1",
       "source_unit_index": 319,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "There is no unique speaker attribution in this caption from dialogue and cast context; defer to original soundtrack.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_source_anchored_whole_episode_contextual_pass_v1",
-      "evidence_type": "unresolved_context",
+      "proposed_speaker": "Eleanor Brandon",
+      "confidence": "medium",
+      "basis": "Eleanor's first-person anecdote ends with her misunderstanding why fish floated.",
+      "status": "text_only_unverified",
+      "review_delta": "second_textual_context_review_v1",
+      "evidence_type": "conversation_context;adjacency;pronouns",
       "original_audio_verified": false
     },
     {
@@ -4235,5 +4235,21 @@
       "evidence_type": "dialogue_sequence;case_and_role_context",
       "original_audio_verified": false
     }
-  ]
+  ],
+  "contextual_reassessment": {
+    "date": "2026-10-28",
+    "source_caption_modified": false,
+    "original_AV_reviewed": false,
+    "newly_named": [
+      228,
+      206,
+      316,
+      317,
+      318,
+      319
+    ],
+    "corrected_role": [
+      58
+    ]
+  }
 }
