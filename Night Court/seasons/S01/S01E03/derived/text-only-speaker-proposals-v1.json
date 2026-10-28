@@ -24,10 +24,10 @@
   "confidence_scale": "high = episode-specific independently published attributed quote with matched source dialogue; medium = contextual logic unverified; abstain = not confidently assignable; all original movie video/audio verification false",
   "counts": {
     "high_single": 9,
-    "medium_single": 297,
+    "medium_single": 298,
     "low_single": 0,
-    "mixed_cues": 74,
-    "abstain_cues": 5,
+    "mixed_cues": 76,
+    "abstain_cues": 2,
     "textual_delivery_hypotheses": 88
   },
   "source_audio_review_completed": false,
@@ -598,23 +598,23 @@
     {
       "cue_id": "C00043.1",
       "source_unit_index": 43,
-      "proposed_speaker": "Lana Wagner",
+      "proposed_speaker": "Al Craven",
       "confidence": "medium",
-      "basis": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "basis": "Craven has just enthusiastically recounted a lurid story about lunchmeat. His 'you'll have to excuse me' marks his departure from that conversation; this preserves Lana and Dan as the participants who continue discussing the age wager. No source audio/listening verification.",
       "status": "text_only_unverified",
-      "review_delta": "single_episode_contextual_reasoning_2026_10_28",
-      "evidence_type": "plot_cast_pronouns_turn_structure",
+      "review_delta": "age_pool_cross_episode_continuity_reassessment_2026_10_28",
+      "evidence_type": "cross_scene_callback;conversation_continuity;pronouns",
       "original_soundtrack_verified": false
     },
     {
       "cue_id": "C00044.1",
       "source_unit_index": 44,
-      "proposed_speaker": "Lana Wagner",
+      "proposed_speaker": "Dan Fielding",
       "confidence": "medium",
-      "basis": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "basis": "Dan favors the judge being in his twenties, and at C47 he wagers five dollars that Harry is 28; the closing C383 says 'I had 28.' Lana's C45 forty-year guess opposes him. No source audio/listening verification.",
       "status": "text_only_unverified",
-      "review_delta": "single_episode_contextual_reasoning_2026_10_28",
-      "evidence_type": "plot_cast_pronouns_turn_structure",
+      "review_delta": "age_pool_cross_episode_continuity_reassessment_2026_10_28",
+      "evidence_type": "cross_scene_callback;conversation_continuity;pronouns",
       "original_soundtrack_verified": false
     },
     {
@@ -622,10 +622,10 @@
       "source_unit_index": 45,
       "proposed_speaker": "Lana Wagner",
       "confidence": "medium",
-      "basis": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "basis": "Lana's near-forty counterguess responds to Dan's C44 estimate of a judge in his twenties, before Dan makes the actual $5 age-28 wager at C47. No source audio/listening verification.",
       "status": "text_only_unverified",
-      "review_delta": "single_episode_contextual_reasoning_2026_10_28",
-      "evidence_type": "plot_cast_pronouns_turn_structure",
+      "review_delta": "age_pool_cross_episode_continuity_reassessment_2026_10_28",
+      "evidence_type": "cross_scene_callback;conversation_continuity;pronouns",
       "original_soundtrack_verified": false
     },
     {
@@ -853,12 +853,12 @@
     {
       "cue_id": "C00061.1",
       "source_unit_index": 61,
-      "proposed_speaker": "Lana Wagner",
+      "proposed_speaker": "Liz Williams",
       "confidence": "medium",
-      "basis": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "basis": "Liz begins this same reservation at the first part of C60, 'I don't know', and then says the pool feels like prying. Dan's C62 answers that prying is the entertaining part. No source audio/listening verification.",
       "status": "text_only_unverified",
-      "review_delta": "single_episode_contextual_reasoning_2026_10_28",
-      "evidence_type": "plot_cast_pronouns_turn_structure",
+      "review_delta": "age_pool_cross_episode_continuity_reassessment_2026_10_28",
+      "evidence_type": "cross_scene_callback;conversation_continuity;pronouns",
       "original_soundtrack_verified": false
     },
     {
@@ -930,23 +930,37 @@
       "cue_id": "C00067.1",
       "source_unit_index": 67,
       "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Could not uniquely identify the speaker by reliable textual context; retain unknown rather than promote a guess to fact.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_episode_contextual_reasoning_2026_10_28",
-      "evidence_type": "abstention",
-      "original_soundtrack_verified": false
+      "confidence": "medium",
+      "basis": "Harry approaches the staff age pool ('What's this?') and Dan tells him how it works; Harry agrees and then fills an entry using Dan's pen at C70–C73. The closing 'HTS' correct-age reveal C383–C385 corroborates Harry's involvement. The candidate handoff is located at the original source dash, not original soundtrack certified.",
+      "status": "proposed_internal_voice_switch_unverified",
+      "review_delta": "long_range_age_pool_payoff_source_exact",
+      "evidence_type": "episode_end_age_pool_callback;caption_exact_dash;dialogue_turns",
+      "original_soundtrack_verified": false,
+      "proposed_ordered_speaker_parts": [
+        "Harry Stone",
+        "Dan Fielding"
+      ],
+      "utf8_or_unicode_split_offsets": [
+        15
+      ]
     },
     {
       "cue_id": "C00068.1",
       "source_unit_index": 68,
       "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Could not uniquely identify the speaker by reliable textual context; retain unknown rather than promote a guess to fact.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_episode_contextual_reasoning_2026_10_28",
-      "evidence_type": "abstention",
-      "original_soundtrack_verified": false
+      "confidence": "medium",
+      "basis": "Harry approaches the staff age pool ('What's this?') and Dan tells him how it works; Harry agrees and then fills an entry using Dan's pen at C70–C73. The closing 'HTS' correct-age reveal C383–C385 corroborates Harry's involvement. The candidate handoff is located at the original source dash, not original soundtrack certified.",
+      "status": "proposed_internal_voice_switch_unverified",
+      "review_delta": "long_range_age_pool_payoff_source_exact",
+      "evidence_type": "episode_end_age_pool_callback;caption_exact_dash;dialogue_turns",
+      "original_soundtrack_verified": false,
+      "proposed_ordered_speaker_parts": [
+        "Harry Stone",
+        "Dan Fielding"
+      ],
+      "utf8_or_unicode_split_offsets": [
+        12
+      ]
     },
     {
       "cue_id": "C00069.1",
@@ -984,12 +998,12 @@
     {
       "cue_id": "C00072.1",
       "source_unit_index": 72,
-      "proposed_speaker": "Lana Wagner",
+      "proposed_speaker": "Harry Stone",
       "confidence": "medium",
-      "basis": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "basis": "Harry is filling out the age-pool sheet. He has pressed the pen too hard at C70–C71, apologizes at C72, and the closing C383–C385 reveals an 'HTS' entry with the correct age, supplying a long-range payoff. No source audio/listening verification.",
       "status": "text_only_unverified",
-      "review_delta": "single_episode_contextual_reasoning_2026_10_28",
-      "evidence_type": "plot_cast_pronouns_turn_structure",
+      "review_delta": "age_pool_cross_episode_continuity_reassessment_2026_10_28",
+      "evidence_type": "cross_scene_callback;conversation_continuity;pronouns",
       "original_soundtrack_verified": false
     },
     {
@@ -3386,12 +3400,12 @@
     {
       "cue_id": "C00249.1",
       "source_unit_index": 249,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Could not uniquely identify the speaker by reliable textual context; retain unknown rather than promote a guess to fact.",
-      "status": "no_source_audio_review",
-      "review_delta": "single_episode_contextual_reasoning_2026_10_28",
-      "evidence_type": "abstention",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "Harry's 'Correct' follows his unfinished story at C247–C248 and precedes his uninterrupted continuation C250–C251; contextual continuity favors the judge, but the referent may involve an unheard interjection. No source audio/listening verification.",
+      "status": "text_only_unverified",
+      "review_delta": "age_pool_cross_episode_continuity_reassessment_2026_10_28",
+      "evidence_type": "cross_scene_callback;conversation_continuity;pronouns",
       "original_soundtrack_verified": false
     },
     {
@@ -5256,6 +5270,23 @@
     ],
     "tone_delivery_interpretations": 88,
     "performed_tone_accepted": false,
-    "notes": "Edited after checking entire episode conversational continuity and published Wikiquote role attributions; all hypotheses remain unverified against film."
+    "notes": "Edited after checking entire episode conversational continuity and published Wikiquote role attributions; all hypotheses remain unverified against film.",
+    "age_pool_corrections": {
+      "date": "2026-10-28",
+      "source_cues": [
+        43,
+        44,
+        45,
+        61,
+        67,
+        68,
+        72,
+        249
+      ],
+      "evidence": "S01E03 age pool setup at C44–C73 cross-checked with final C383–C385 HTS name reveal and per-turn conversation logic",
+      "context_only": true,
+      "original_audio_verified": false,
+      "source_bytes_changed": false
+    }
   }
 }

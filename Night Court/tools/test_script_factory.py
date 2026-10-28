@@ -99,15 +99,15 @@ class ScriptFactoryTests(unittest.TestCase):
         report = manifest["contextual_overlay"]
         self.assertEqual(manifest["evidence_tier"], "contextual_provisional_reading_draft")
         self.assertEqual(manifest["source_units"], 385)
-        self.assertEqual(report["high_medium_single_role_hypotheses"], 306)
-        self.assertEqual(report["mixed_voice_internal_review_cues"], 74)
-        self.assertEqual(report["weak_or_abstained_cues"], 5)
-        self.assertEqual(report["exact_contextual_internal_handoffs"], 74)
+        self.assertEqual(report["high_medium_single_role_hypotheses"], 307)
+        self.assertEqual(report["mixed_voice_internal_review_cues"], 76)
+        self.assertEqual(report["weak_or_abstained_cues"], 2)
+        self.assertEqual(report["exact_contextual_internal_handoffs"], 76)
         self.assertEqual(report["unlocated_contextual_internal_handoffs"], 0)
         self.assertEqual(report["text_only_performance_tone_hypotheses"], 88)
-        self.assertEqual(manifest["unknown_label_cues"], 79)
-        self.assertEqual(manifest["source_contextual_exact_p0_boundaries"], 74)
-        self.assertEqual(manifest["contextual_provisional_named_parts"], 148)
+        self.assertEqual(manifest["unknown_label_cues"], 78)
+        self.assertEqual(manifest["source_contextual_exact_p0_boundaries"], 76)
+        self.assertEqual(manifest["contextual_provisional_named_parts"], 152)
         self.assertEqual(manifest["text_only_contextual_delivery_proposals"], 88)
         self.assertFalse(manifest["original_audio_performed_delivery_accepted"])
         self.assertFalse(manifest["actual_av_verified"])
@@ -122,8 +122,11 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertEqual(len(queue["boundary_review_questions"]), 384)
         self.assertEqual(len(queue["textual_delivery_p2_review"]), 88)
         self.assertEqual(len(queue["contextual_role_review"]), 385)
-        self.assertEqual(sum(r["contextual_confidence"] == "abstain" for r in rows), 5)
-        for n, role in ((74, None), (77, "Lana Wagner"),
+        self.assertEqual(sum(r["contextual_confidence"] == "abstain" for r in rows), 2)
+        for n, role in ((43, "Al Craven"), (44, "Dan Fielding"),
+                        (45, "Lana Wagner"), (61, "Liz Williams"),
+                        (72, "Harry Stone"), (249, "Harry Stone"),
+                        (74, None), (77, "Lana Wagner"),
                         (177, "Harry Stone"), (178, "Dan Fielding"),
                         (180, "Dan Fielding"), (221, "Dan Fielding"),
                         (222, "Dan Fielding"), (223, "Harry Stone"),
@@ -132,7 +135,9 @@ class ScriptFactoryTests(unittest.TestCase):
             with self.subTest(cue=n):
                 self.assertEqual(rows[n-1]["candidate_display_role"], role)
                 self.assertFalse(rows[n-1]["candidate_role_original_soundtrack_verified"])
-        for n, roles in ((74, ["Harry Stone", "Lana Wagner"]),
+        for n, roles in ((67, ["Harry Stone", "Dan Fielding"]),
+                         (68, ["Harry Stone", "Dan Fielding"]),
+                         (74, ["Harry Stone", "Lana Wagner"]),
                          (75, ["Harry Stone", "Ronald McKenzie"]),
                          (76, ["Vickie Guyer", "Harry Stone"]),
                          (232, ["Harry Stone", "Lana Wagner"]),
