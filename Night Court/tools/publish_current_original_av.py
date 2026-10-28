@@ -35,6 +35,17 @@ def independent_sample(packet:dict, ledger:dict, screenplay:bytes, file:Path|Non
     sample=report.get("sampled_original_reading_block_ids")
     source_ids={x["id"] for b in packet["sequential_one_pass_batches"] for x in b["reader_blocks"]}
     sampled={x for x in sample} if isinstance(sample,list) and all(isinstance(x,str) for x in sample) else set()
+    ordered_ids=[x["id"] for batch in packet["sequential_one_pass_batches"]
+                 for x in batch["reader_blocks"]]
+    positions={name:idx for idx,name in enumerate(ordered_ids)}
+    # Independent sample is spread through the movie, not nine adjacent
+    # subtitle rows in one brief scene that would miss later P0/P1 failures.
+    thirds=[0,0,0]
+    for name in sampled:
+        if name in positions:
+            thirds[min(2,3*positions[name]//len(ordered_ids))]+=1
+    if min(thirds)<3:
+        raise ValueError("Independent AV spotcheck needs at least three source turns in each third of the episode")
     if (report.get("schema")!=INDEPENDENT_SCHEMA
         or report.get("episode_id")!=packet["episode_id"]
         or report.get("source_video_sha256")!=packet["original_video_sha256_expected"]
