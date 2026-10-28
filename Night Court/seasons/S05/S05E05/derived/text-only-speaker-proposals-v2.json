@@ -37,10 +37,10 @@
   "confidence_scale": "high/medium/low refer solely to contextual identity inference, not voice verification",
   "counts": {
     "high_single": 169,
-    "medium_single": 90,
+    "medium_single": 96,
     "low_single": 1,
     "mixed_cues": 7,
-    "abstain_cues": 33
+    "abstain_cues": 27
   },
   "changes_since_v1": [
     {
@@ -2172,11 +2172,16 @@
     {
       "cue_id": "C00196.1",
       "source_unit_index": 196,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text-only review does not establish a unique speaker",
-      "status": "no_source_audio_review",
-      "review_delta": "carried_from_v1"
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Arriving rescue technician Dave immediately tells the impatience speaker to 'Relax, relax'; Christine personally addresses Dave again as the concerned organizer at C204. This remains a conversational hypothesis, not an identified voice.",
+      "status": "text_only_unverified",
+      "review_delta": "contextual_reassessment_2026_10_28",
+      "alternative_speakers": [
+        "Roz Russell",
+        "Mac Robinson"
+      ],
+      "evidence_type": "adjacent_reply;rescuer_concern"
     },
     {
       "cue_id": "C00197.1",
@@ -2199,11 +2204,16 @@
     {
       "cue_id": "C00199.1",
       "source_unit_index": 199,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text-only review does not establish a unique speaker",
-      "status": "no_source_audio_review",
-      "review_delta": "carried_from_v1"
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "Dave says 'Uh-oh' at C198; this question demands an explanation from someone else. Christine continues directing this exchange at C204, rather than Dave questioning his own alarm.",
+      "status": "text_only_unverified",
+      "review_delta": "contextual_reassessment_2026_10_28",
+      "alternative_speakers": [
+        "Roz Russell",
+        "Mac Robinson"
+      ],
+      "evidence_type": "turn_taking;exchange_continuity"
     },
     {
       "cue_id": "C00200.1",
@@ -2226,11 +2236,16 @@
     {
       "cue_id": "C00202.1",
       "source_unit_index": 202,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text-only review does not establish a unique speaker",
-      "status": "no_source_audio_review",
-      "review_delta": "carried_from_v1"
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "After Dave explains the specialized drill C200-C201, the interlocutor asks if he has one, he answers 'at the shop' C203, and Christine challenges him explicitly in C204. Sustained conversational addressee sequence.",
+      "status": "text_only_unverified",
+      "review_delta": "contextual_reassessment_2026_10_28",
+      "alternative_speakers": [
+        "Roz Russell",
+        "Mac Robinson"
+      ],
+      "evidence_type": "question_answer;adjacent_turns"
     },
     {
       "cue_id": "C00203.1",
@@ -2281,11 +2296,16 @@
     {
       "cue_id": "C00207.1",
       "source_unit_index": 207,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text-only review does not establish a unique speaker",
-      "status": "no_source_audio_review",
-      "review_delta": "carried_from_v1"
+      "proposed_speaker": "Christine Sullivan",
+      "confidence": "medium",
+      "basis": "After Art offers to fetch the drill from downstairs C206, a concerned courthouse colleague asks Dave for an alternative. Christine's immediately earlier objection C204 motivates the request; other rescuers could ask.",
+      "status": "text_only_unverified",
+      "review_delta": "contextual_reassessment_2026_10_28",
+      "alternative_speakers": [
+        "Roz Russell",
+        "Mac Robinson"
+      ],
+      "evidence_type": "conversational_objective;rescue_context"
     },
     {
       "cue_id": "C00208.1",
@@ -2657,11 +2677,16 @@
     {
       "cue_id": "C00243.1",
       "source_unit_index": 243,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text-only review does not establish a unique speaker",
-      "status": "no_source_audio_review",
-      "review_delta": "carried_from_v1"
+      "proposed_speaker": "Dave (safe technician)",
+      "confidence": "medium",
+      "basis": "C238-C242 are a continuous setup/countdown by the technician, and 'Right' appears between that countdown and Harry's interruption C244. Most parsimoniously his own completion/check before the proposed blast; attribution stays tentative.",
+      "status": "text_only_unverified",
+      "review_delta": "contextual_reassessment_2026_10_28",
+      "alternative_speakers": [
+        "Bull Shannon",
+        "Mac Robinson"
+      ],
+      "evidence_type": "countdown_continuation;interruption"
     },
     {
       "cue_id": "C00244.1",
@@ -2756,11 +2781,15 @@
     {
       "cue_id": "C00253.1",
       "source_unit_index": 253,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Text-only review does not establish a unique speaker",
-      "status": "no_source_audio_review",
-      "review_delta": "carried_from_v1"
+      "proposed_speaker": "Roz Russell",
+      "confidence": "medium",
+      "basis": "After Bull reassures Harry and remarks on his humor C248-C252, this switches to an angry 'his stupid practical jokes' complaint, immediately followed by Roz's uninterrupted insults C254-C258. Her transition from speaking *about* Harry to addressing him fits the referents.",
+      "status": "text_only_unverified",
+      "review_delta": "contextual_reassessment_2026_10_28",
+      "alternative_speakers": [
+        "Christine Sullivan"
+      ],
+      "evidence_type": "pronouns;extended_rant"
     },
     {
       "cue_id": "C00254.1",
@@ -3204,5 +3233,20 @@
       "status": "no_source_audio_review",
       "review_delta": "carried_from_v1"
     }
-  ]
+  ],
+  "additional_contextual_reassessment": {
+    "date": "2026-10-28",
+    "mode": "source-dialogue-only_editorial_conversation_inference",
+    "source_transcript_modified": false,
+    "original_AV_used": false,
+    "changed_cues": [
+      "C00196.1",
+      "C00199.1",
+      "C00202.1",
+      "C00207.1",
+      "C00243.1",
+      "C00253.1"
+    ],
+    "caution": "All six newly proposed voices are medium-confidence hypotheses; film listening can overturn them, and no turn or original word was altered."
+  }
 }
