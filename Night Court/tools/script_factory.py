@@ -159,7 +159,7 @@ def source_syntactic_continuation(left: str, right: str,
     if gap_ms <= 1600 and a.endswith("...") and re.match(r"^\.\.\.\S", b):
         return "matched_ellipsis_source_continuation_unverified"
     if (gap_ms <= 900 and re.match(r"^[a-z]", b)
-        and not re.search(r"[.?!…][\\"')\]]*$", a)):
+        and not re.search(r'[.?!…][)\]}\x27"]*$', a)):
         return "lowercase_unfinished_sentence_continuation_unverified"
     return None
 
