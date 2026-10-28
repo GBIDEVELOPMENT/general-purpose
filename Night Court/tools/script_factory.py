@@ -315,13 +315,21 @@ def generic_episode(root: Path, ep: str, index: dict):
         exit_role = internal[-1] if offsets else role
         if last:
             previous_label = last["candidate_exit_voice_role"]
-            syntactic = (
+            syntax_basis = (
                 source_syntactic_continuation(last["source_text"], raw, gap)
-                if not entry_role and not previous_label and not suspect
-                and not last["multiple_voice_dashes"]
+                if not suspect and not last["multiple_voice_dashes"]
                 and not last["contextual_unlocated_internal_handoff"]
                 else None
             )
+            # P0 outranks P1: if a proposed character switch crosses a
+            # syntactically continuous sentence, expose the disagreement
+            # for priority re-listening. Do not silently join, rename or
+            # claim grammatical context proves an actor's identity.
+            syntax_role_conflict = bool(
+                syntax_basis and entry_role and previous_label
+                and entry_role != previous_label
+            )
+            syntactic = syntax_basis if not entry_role and not previous_label else None
             contextual_continuation = bool(
                 entry_role and previous_label == entry_role and gap is not None
                 and -1000 <= gap <= 2500 and (not suspect or bool(offsets))
@@ -330,7 +338,8 @@ def generic_episode(root: Path, ep: str, index: dict):
             )
             continuing = bool(contextual_continuation or syntactic)
             edge_kind = (
-                "source_syntactic_provisional_same_voice" if syntactic
+                "source_syntactic_role_conflict_needs_P0_P1_recheck" if syntax_role_conflict
+                else "source_syntactic_provisional_same_voice" if syntactic
                 else "same_provisional_entry_voice_candidate_continuation" if continuing and offsets
                 else "same_provisional_role_candidate_continuation" if continuing
                 else "different_provisional_roles_candidate_change"
@@ -342,12 +351,16 @@ def generic_episode(root: Path, ep: str, index: dict):
                 "left_provisional_exit_role": previous_label,
                 "right_provisional_entry_role": entry_role,
                 "source_syntactic_continuation_hypothesis": syntactic,
+                "source_syntactic_role_conflict": syntax_basis if syntax_role_conflict else None,
                 "source_audio_verified": False,
-                "review_priority": "P0" if edge_kind == "unresolved_turn_boundary" else "P0_CONFIRM"
+                "review_priority": ("P0_P1_GRAMMAR_ROLE_CONFLICT" if syntax_role_conflict else
+                                    "P0" if edge_kind == "unresolved_turn_boundary"
+                                    else "P0_CONFIRM")
             })
         else:
             continuing = False
             syntactic = None
+            syntax_role_conflict = False
         row = {
             "cue": num, "source_text": raw, "source_text_sha256": sha(raw.encode("utf-8")),
             "source_start_ms": start, "source_end_ms": end, "source_label": label,
@@ -379,6 +392,7 @@ def generic_episode(root: Path, ep: str, index: dict):
             } for i, p in enumerate(parts)],
             "passage_candidate": group, "provisional_continuation_of_previous": continuing,
             "source_syntactic_continuation_hypothesis": syntactic,
+            "source_syntactic_role_conflict_before_cue": syntax_role_conflict,
             "original_dialogue_sha256": source_sha,
         }
         rows.append(row)
@@ -422,6 +436,7 @@ def generic_episode(root: Path, ep: str, index: dict):
         f"- {sum(bool(r['contextual_textual_tone']) for r in rows)} textual P2 delivery suggestions are NOT witnessed original performances.",
         f"- {len(edges)} adjacent boundaries remain original-audio unverified.",
         f"- {sum(bool(r['source_syntactic_continuation_hypothesis']) for r in rows)} narrow source-punctuation candidate same-voice joins are unverified; mixed-dash cues and untimed sources abstain.",
+        f"- {sum(bool(r['source_syntactic_role_conflict_before_cue']) for r in rows)} punctuation-versus-role conflicts are P0/P1 re-listening priorities, NOT automatically renamed actors.",
         f"- Episode-credited guest roles (not speaker assignments): {', '.join(guests) if guests else 'none listed'}.",
         "- Passage boundaries are caption-gap heuristics. Scene headings, wardrobe, props,",
         "  acting and physical business require observation of the original film.",
@@ -449,6 +464,8 @@ def generic_episode(root: Path, ep: str, index: dict):
         "adjacent_p0_unverified": len(edges),
         "source_syntactic_p0_provisional_continuations": sum(
             bool(r["source_syntactic_continuation_hypothesis"]) for r in rows),
+        "source_syntactic_p0_role_conflicts": sum(
+            bool(r["source_syntactic_role_conflict_before_cue"]) for r in rows),
         "provisional_passages_not_verified_scenes": group,
         "original_dialogue_sha256": source_sha,
         "source_has_timecodes": manifest["timecoded"],
@@ -741,6 +758,15 @@ def construct(root: Path, ep: str, index: dict):
                          "all_original_audio_boundaries_unverified": True,
                          "original_film_visual_model_only_review": visual_review,
                          "boundary_review_questions": edges,
+                         "source_syntactic_role_conflict_focus": [{
+                             "between_cues": e["between_cues"],
+                             "left_provisional_role": e["left_provisional_exit_role"],
+                             "right_provisional_role": e["right_provisional_entry_role"],
+                             "source_continuity_basis": e["source_syntactic_role_conflict"],
+                             "original_audio_performed_boundary_verified": False,
+                             "possible_contextual_role_error": True,
+                             "review_priority": "P0_P1_GRAMMAR_ROLE_CONFLICT",
+                         } for e in edges if e.get("source_syntactic_role_conflict")],
                          "original_audio_model_p1_unknown_voice_review": details.get("_source_audio_p1_review_queue", []),
                          "original_audio_model_priority_p0": [{
                              "between_block_ids": x["between_block_ids"],

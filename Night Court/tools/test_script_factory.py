@@ -279,6 +279,43 @@ class ScriptFactoryTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "contextual delivery"):
                 contextual_role_overlay(Path(tmp), ep, manifest, captions)
 
+    def test_syntax_role_conflicts_are_source_bound_review_not_auto_renaming(self):
+        from unittest.mock import patch
+        ep = "S01E02"
+        source, _, cues = source_rows(ROOT, self.index[ep])
+        actual_overlay, report = contextual_role_overlay(ROOT, ep, source, cues)
+        # Independent source text contains C32 -> C33:
+        # "Security guards at Redfield's department store..." ->
+        # "...found him and a couple of other derelicts..."
+        # Both originally have Dan as the provisional speaker.
+        self.assertEqual(actual_overlay[32]["provisional_role"], "Dan Fielding")
+        self.assertEqual(actual_overlay[33]["provisional_role"], "Dan Fielding")
+        fake = {cue: dict(hint) for cue, hint in actual_overlay.items()}
+        fake[33]["provisional_role"] = "Harry Stone"
+        fake[33]["basis"] = "Deliberately forged conflicting P1 reader for regression"
+        with patch("script_factory.contextual_role_overlay", return_value=(fake, report)):
+            files, manifest = construct(ROOT, ep, self.index[ep])
+        queue = json.loads(files["review-queue.json"])
+        rows = [json.loads(x) for x in files["provenance.jsonl"].splitlines()]
+        conflicts = queue["source_syntactic_role_conflict_focus"]
+        self.assertEqual(manifest["source_syntactic_p0_role_conflicts"], 1)
+        self.assertEqual(len(conflicts), 1)
+        self.assertEqual(conflicts[0]["between_cues"], [32, 33])
+        self.assertEqual(conflicts[0]["left_provisional_role"], "Dan Fielding")
+        self.assertEqual(conflicts[0]["right_provisional_role"], "Harry Stone")
+        self.assertEqual(conflicts[0]["review_priority"], "P0_P1_GRAMMAR_ROLE_CONFLICT")
+        self.assertFalse(conflicts[0]["original_audio_performed_boundary_verified"])
+        self.assertFalse(rows[32]["provisional_continuation_of_previous"])
+        self.assertTrue(rows[32]["source_syntactic_role_conflict_before_cue"])
+        self.assertEqual([r["source_text"] for r in rows], [c["text"] for c in cues])
+        self.assertFalse(manifest["actual_av_verified"])
+
+        # Ordinary real editorial data is not silently rewritten or accepted.
+        originals, accepted = construct(ROOT, ep, self.index[ep])
+        self.assertEqual(accepted["source_syntactic_p0_role_conflicts"], 0)
+        self.assertEqual(json.loads(originals["review-queue.json"])[
+            "source_syntactic_role_conflict_focus"], [])
+
     def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
         episode = "S01E04"  # S01E02/S01E03 now have source-locked contextual overlays
         files, manifest = construct(ROOT, episode, self.index[episode])
