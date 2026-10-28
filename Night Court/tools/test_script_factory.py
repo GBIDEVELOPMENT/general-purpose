@@ -7,6 +7,7 @@ from pathlib import Path
 from script_factory import (
     ROOT, PILOTS, construct, multi_voice_typography, run,
     source_index, source_role, source_rows, sha, contextual_role_overlay, structural_speaker_parts,
+    source_syntactic_continuation,
 )
 
 
@@ -14,6 +15,103 @@ class ScriptFactoryTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.index = source_index(ROOT)
+
+    def test_grammar_p0_is_timing_limited_and_abstains_on_dashed_cues(self):
+        paired = "matched_ellipsis_source_continuation_unverified"
+        lower = "lowercase_unfinished_sentence_continuation_unverified"
+        self.assertEqual(source_syntactic_continuation(
+            "Nobody knows...", "...in the court.", 174), paired)
+        self.assertEqual(source_syntactic_continuation(
+            "you must turn to the", "other side.", 210), lower)
+        self.assertIsNone(source_syntactic_continuation(
+            "Nobody knows...", "...in the court.", None))  # untimed S09
+        self.assertIsNone(source_syntactic_continuation(
+            "Nobody knows...", "...in the court.", 1601))
+        self.assertIsNone(source_syntactic_continuation(
+            "you must turn to the", "other side.", 901))
+        self.assertIsNone(source_syntactic_continuation(
+            "That's right.", "other side.", 200))
+        self.assertIsNone(source_syntactic_continuation(
+            "You're sure...", "...some explanation.\\n- I doubt it.", 200))
+        self.assertIsNone(source_syntactic_continuation(
+            "- This is one voice.\\n- This is another...", "...the next.", 200))
+        self.assertIsNone(source_syntactic_continuation(
+            "And he said,", "- Yes, yes.", 50))
+        self.assertIsNone(source_syntactic_continuation(
+            "I tell you the", "rest.", -1001))
+
+    def test_grammar_p0_agrees_with_existing_original_pilot_turns_and_s05_context(self):
+        # Ground truth here is the provisional *independently edited*
+        # reference reading, not original soundtrack verified truth.
+        # Calibrate proposals, never claim an accepted performed turn.
+        import re
+        reference = [
+            json.loads(line) for line in
+            (ROOT / "saved-private/pilot-current/pilot-current-editorial-reader.jsonl")
+            .read_text("utf-8").splitlines() if line.strip()
+        ]
+        source_roles = {}
+        for block in reference:
+            if block["episode_id"] != "S01E01":
+                continue
+            for ref in block["original_source_part_refs"]:
+                m = re.fullmatch(r"C(\\d+)\\.(\\d+)", ref)
+                if m:
+                    source_roles.setdefault(int(m.group(1)), []).append(
+                        (int(m.group(2)), block["candidate_role"]))
+        _, _, captions = source_rows(ROOT, self.index["S01E01"])
+        matched = 0
+        for prev, nxt in zip(captions, captions[1:]):
+            basis = source_syntactic_continuation(
+                prev["text"], nxt["text"], nxt["start_ms"] - prev["end_ms"])
+            if not basis:
+                continue
+            left = sorted(source_roles[prev["cue"]])[-1][1]
+            right = sorted(source_roles[nxt["cue"]])[0][1]
+            self.assertTrue(left and right)
+            self.assertEqual(left, right, (prev["cue"], nxt["cue"], basis))
+            matched += 1
+        self.assertEqual(matched, 34)  # 34/34 safe explicit S01 source pairs
+
+        _, _, captions = source_rows(ROOT, self.index["S05E05"])
+        source = json.loads((ROOT / "seasons/S05/S05E05/derived" /
+                             "text-only-speaker-proposals-v2.json").read_text("utf-8"))
+        names = {x["source_unit_index"]: x.get("proposed_speaker")
+                 for x in source["records"]}
+        confirmed, observed = 0, 0
+        for prev, nxt in zip(captions, captions[1:]):
+            basis = source_syntactic_continuation(
+                prev["text"], nxt["text"], nxt["start_ms"] - prev["end_ms"])
+            if not basis:
+                continue
+            observed += 1
+            left, right = names.get(prev["cue"]), names.get(nxt["cue"])
+            if left and right:
+                confirmed += 1
+                self.assertEqual(left, right, (prev["cue"], nxt["cue"], basis))
+        self.assertEqual(confirmed, 22)
+        self.assertGreaterEqual(observed, confirmed)
+
+    def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
+        episode = "S01E02"
+        files, manifest = construct(ROOT, episode, self.index[episode])
+        self.assertEqual(manifest["evidence_tier"], "source_only_reading_draft")
+        self.assertGreaterEqual(manifest["source_syntactic_p0_provisional_continuations"], 20)
+        rows = [json.loads(s) for s in files["provenance.jsonl"].splitlines()]
+        review = json.loads(files["review-queue.json"])
+        grammar = [(i, row) for i, row in enumerate(rows)
+                   if row["source_syntactic_continuation_hypothesis"]]
+        self.assertEqual(len(grammar),
+                         manifest["source_syntactic_p0_provisional_continuations"])
+        self.assertTrue(all(i > 0 and r["provisional_continuation_of_previous"]
+                            and r["candidate_display_role"] is None
+                            and r["source_end_ms"] is not None
+                            and not r["candidate_role_original_soundtrack_verified"]
+                            and review["boundary_review_questions"][i - 1]["decision"]
+                            == "source_syntactic_provisional_same_voice"
+                            and not review["boundary_review_questions"][i - 1]["source_audio_verified"]
+                            for i, r in grammar))
+        self.assertEqual(len(review["boundary_review_questions"]), len(rows) - 1)
 
     def test_explicit_speaker_only_never_converts_addressee_to_voice(self):
         self.assertEqual(source_role("HARRY: Hello, Dan"), "HARRY")
