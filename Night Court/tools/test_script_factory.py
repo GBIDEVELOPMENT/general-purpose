@@ -127,6 +127,18 @@ class ScriptFactoryTests(unittest.TestCase):
         self.assertEqual(rows[35]["contextual_intra_cue_voice_roles"],
                          ["Dan Fielding", "Harry Stone"])
         self.assertEqual(rows[35]["contextual_unicode_split_offsets"], [32])
+        # Preserve the lead-in/out voice even when two voices share a cue:
+        # Christine's line C10->C11, Harry C11->C12; Dan C35->C36,
+        # Harry C36->C37; Dan C70->C71 and Devil C71->C72.
+        for left, right in ((10, 11), (11, 12), (35, 36),
+                            (36, 37), (70, 71), (71, 72)):
+            edge = json.loads(files["review-queue.json"])["boundary_review_questions"][right - 2]
+            self.assertEqual(edge["between_cues"], [left, right])
+            self.assertTrue(rows[right - 1]["provisional_continuation_of_previous"])
+            self.assertEqual(edge["left_provisional_exit_role"],
+                             edge["right_provisional_entry_role"])
+            self.assertFalse(edge["source_audio_verified"])
+        self.assertFalse(rows[176]["provisional_continuation_of_previous"])  # 5.3s C176->177
         self.assertEqual([p["provisional_part_role"] for p in rows[35]["source_speaker_parts"]],
                          ["Dan Fielding", "Harry Stone"])
         self.assertTrue(all(not p["original_audio_boundary_verified"]
