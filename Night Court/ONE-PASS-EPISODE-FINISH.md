@@ -173,6 +173,13 @@ these as unverified source-audio seek hints, not source transcript timecodes.
    original subtitles. Save one decision ledger at a stable path, e.g.
    `saved-private/episode-finish-current/S01E01-original-av-decisions.json`.
    Do not overwrite it with newly generated blank decisions.
+   The offline editor **separately journals unconfirmed P0/P1 and P2–P4 form
+   edits** before navigating to another passage, and saves each partial text
+   change after a short pause. Returning to the passage restores those inputs
+   without falsely counting them as listened-to or watched. Only a deliberate
+   original-AV review confirmation promotes them into the signed decision
+   ledger. Local draft recovery remains source-packet-SHA-bound, does not store
+   film/media, and is not durable until exported to the private repository.
 4. **Render the single source-exact reviewed screenplay.** Once the
    source-viewed JSON exists, validate every transition, block role, batch
    observation and original source/media SHA, then render the same named
