@@ -539,10 +539,10 @@
         42,
         43
       ],
-      "decision": "different_provisional_roles_candidate_change",
+      "decision": "same_provisional_role_candidate_continuation",
       "left_provisional_exit_role": "Al Craven",
       "review_priority": "P0_CONFIRM",
-      "right_provisional_entry_role": "Lana Wagner",
+      "right_provisional_entry_role": "Al Craven",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -552,10 +552,10 @@
         43,
         44
       ],
-      "decision": "same_provisional_role_candidate_continuation",
-      "left_provisional_exit_role": "Lana Wagner",
+      "decision": "different_provisional_roles_candidate_change",
+      "left_provisional_exit_role": "Al Craven",
       "review_priority": "P0_CONFIRM",
-      "right_provisional_entry_role": "Lana Wagner",
+      "right_provisional_entry_role": "Dan Fielding",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -565,8 +565,8 @@
         44,
         45
       ],
-      "decision": "same_provisional_role_candidate_continuation",
-      "left_provisional_exit_role": "Lana Wagner",
+      "decision": "different_provisional_roles_candidate_change",
+      "left_provisional_exit_role": "Dan Fielding",
       "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Lana Wagner",
       "source_audio_verified": false,
@@ -776,7 +776,7 @@
       "decision": "different_provisional_roles_candidate_change",
       "left_provisional_exit_role": "Dan Fielding",
       "review_priority": "P0_CONFIRM",
-      "right_provisional_entry_role": "Lana Wagner",
+      "right_provisional_entry_role": "Liz Williams",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -787,7 +787,7 @@
         62
       ],
       "decision": "different_provisional_roles_candidate_change",
-      "left_provisional_exit_role": "Lana Wagner",
+      "left_provisional_exit_role": "Liz Williams",
       "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Dan Fielding",
       "source_audio_verified": false,
@@ -851,10 +851,10 @@
         66,
         67
       ],
-      "decision": "unresolved_turn_boundary",
+      "decision": "different_provisional_roles_candidate_change",
       "left_provisional_exit_role": "Dan Fielding",
-      "review_priority": "P0",
-      "right_provisional_entry_role": null,
+      "review_priority": "P0_CONFIRM",
+      "right_provisional_entry_role": "Harry Stone",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -864,10 +864,10 @@
         67,
         68
       ],
-      "decision": "unresolved_turn_boundary",
-      "left_provisional_exit_role": null,
-      "review_priority": "P0",
-      "right_provisional_entry_role": null,
+      "decision": "different_provisional_roles_candidate_change",
+      "left_provisional_exit_role": "Dan Fielding",
+      "review_priority": "P0_CONFIRM",
+      "right_provisional_entry_role": "Harry Stone",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -877,9 +877,9 @@
         68,
         69
       ],
-      "decision": "unresolved_turn_boundary",
-      "left_provisional_exit_role": null,
-      "review_priority": "P0",
+      "decision": "same_provisional_role_candidate_continuation",
+      "left_provisional_exit_role": "Dan Fielding",
+      "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Dan Fielding",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
@@ -919,7 +919,7 @@
       "decision": "different_provisional_roles_candidate_change",
       "left_provisional_exit_role": "Dan Fielding",
       "review_priority": "P0_CONFIRM",
-      "right_provisional_entry_role": "Lana Wagner",
+      "right_provisional_entry_role": "Harry Stone",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -930,7 +930,7 @@
         73
       ],
       "decision": "different_provisional_roles_candidate_change",
-      "left_provisional_exit_role": "Lana Wagner",
+      "left_provisional_exit_role": "Harry Stone",
       "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Dan Fielding",
       "source_audio_verified": false,
@@ -3217,10 +3217,10 @@
         248,
         249
       ],
-      "decision": "unresolved_turn_boundary",
+      "decision": "same_provisional_role_candidate_continuation",
       "left_provisional_exit_role": "Harry Stone",
-      "review_priority": "P0",
-      "right_provisional_entry_role": null,
+      "review_priority": "P0_CONFIRM",
+      "right_provisional_entry_role": "Harry Stone",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -3230,9 +3230,9 @@
         249,
         250
       ],
-      "decision": "unresolved_turn_boundary",
-      "left_provisional_exit_role": null,
-      "review_priority": "P0",
+      "decision": "same_provisional_role_candidate_continuation",
+      "left_provisional_exit_role": "Harry Stone",
+      "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Harry Stone",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
@@ -5403,25 +5403,25 @@
     {
       "alternatives": [],
       "confidence": "medium",
-      "evidence": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "evidence": "Craven has just enthusiastically recounted a lurid story about lunchmeat. His 'you'll have to excuse me' marks his departure from that conversation; this preserves Lana and Dan as the participants who continue discussing the age wager. No source audio/listening verification.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": "Lana Wagner",
+      "provisional_role": "Al Craven",
       "source_cue": 43
     },
     {
       "alternatives": [],
       "confidence": "medium",
-      "evidence": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "evidence": "Dan favors the judge being in his twenties, and at C47 he wagers five dollars that Harry is 28; the closing C383 says 'I had 28.' Lana's C45 forty-year guess opposes him. No source audio/listening verification.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": "Lana Wagner",
+      "provisional_role": "Dan Fielding",
       "source_cue": 44
     },
     {
       "alternatives": [],
       "confidence": "medium",
-      "evidence": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "evidence": "Lana's near-forty counterguess responds to Dan's C44 estimate of a judge in his twenties, before Dan makes the actual $5 age-28 wager at C47. No source audio/listening verification.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
       "provisional_role": "Lana Wagner",
@@ -5583,10 +5583,10 @@
     {
       "alternatives": [],
       "confidence": "medium",
-      "evidence": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "evidence": "Liz begins this same reservation at the first part of C60, 'I don't know', and then says the pool feels like prying. Dan's C62 answers that prying is the entertaining part. No source audio/listening verification.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": "Lana Wagner",
+      "provisional_role": "Liz Williams",
       "source_cue": 61
     },
     {
@@ -5636,18 +5636,24 @@
     },
     {
       "alternatives": [],
-      "confidence": "abstain",
-      "evidence": "Could not uniquely identify the speaker by reliable textual context; retain unknown rather than promote a guess to fact.",
-      "internal_voice_role_hypotheses": [],
+      "confidence": "medium",
+      "evidence": "Harry approaches the staff age pool ('What's this?') and Dan tells him how it works; Harry agrees and then fills an entry using Dan's pen at C70–C73. The closing 'HTS' correct-age reveal C383–C385 corroborates Harry's involvement. The candidate handoff is located at the original source dash, not original soundtrack certified.",
+      "internal_voice_role_hypotheses": [
+        "Harry Stone",
+        "Dan Fielding"
+      ],
       "original_audio_verified": false,
       "provisional_role": null,
       "source_cue": 67
     },
     {
       "alternatives": [],
-      "confidence": "abstain",
-      "evidence": "Could not uniquely identify the speaker by reliable textual context; retain unknown rather than promote a guess to fact.",
-      "internal_voice_role_hypotheses": [],
+      "confidence": "medium",
+      "evidence": "Harry approaches the staff age pool ('What's this?') and Dan tells him how it works; Harry agrees and then fills an entry using Dan's pen at C70–C73. The closing 'HTS' correct-age reveal C383–C385 corroborates Harry's involvement. The candidate handoff is located at the original source dash, not original soundtrack certified.",
+      "internal_voice_role_hypotheses": [
+        "Harry Stone",
+        "Dan Fielding"
+      ],
       "original_audio_verified": false,
       "provisional_role": null,
       "source_cue": 68
@@ -5682,10 +5688,10 @@
     {
       "alternatives": [],
       "confidence": "medium",
-      "evidence": "Lana's age-wager inquiry, sealed-record discovery, upset apology and support for Harry; nearby S01E03 dialogue and turn taking suggest this role. Source transcript offers no original cast voice verification.",
+      "evidence": "Harry is filling out the age-pool sheet. He has pressed the pen too hard at C70–C71, apologizes at C72, and the closing C383–C385 reveals an 'HTS' entry with the correct age, supplying a long-range payoff. No source audio/listening verification.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": "Lana Wagner",
+      "provisional_role": "Harry Stone",
       "source_cue": 72
     },
     {
@@ -7384,11 +7390,11 @@
     },
     {
       "alternatives": [],
-      "confidence": "abstain",
-      "evidence": "Could not uniquely identify the speaker by reliable textual context; retain unknown rather than promote a guess to fact.",
+      "confidence": "medium",
+      "evidence": "Harry's 'Correct' follows his unfinished story at C247–C248 and precedes his uninterrupted continuation C250–C251; contextual continuity favors the judge, but the referent may involve an unheard interjection. No source audio/listening verification.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": null,
+      "provisional_role": "Harry Stone",
       "source_cue": 249
     },
     {
@@ -9725,8 +9731,8 @@
       "source_cue": 60
     },
     {
-      "boundary_proposed_by_caption_dash": true,
-      "candidate_split_basis": "caption_leading_dash",
+      "boundary_proposed_by_caption_dash": false,
+      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
       "left_part": "C00067.P01",
       "priority": "P0",
       "right_part": "C00067.P02",
@@ -9735,8 +9741,8 @@
       "source_cue": 67
     },
     {
-      "boundary_proposed_by_caption_dash": true,
-      "candidate_split_basis": "caption_leading_dash",
+      "boundary_proposed_by_caption_dash": false,
+      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
       "left_part": "C00068.P01",
       "priority": "P0",
       "right_part": "C00068.P02",

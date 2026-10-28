@@ -219,12 +219,14 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     ...and turned his loved ones
     into lunchmeat?
 
-### Lana Wagner (contextual hypothesis, unverified)
-
     Well, you'll have to excuse me.
     All this lunch talk is making me hungry.
 
+### Dan Fielding (contextual hypothesis, unverified)
+
     I guess the judge is in his 20s.
+
+### Lana Wagner (contextual hypothesis, unverified)
 
     I say he's close to 40.
 
@@ -323,7 +325,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     - Oh, it'll be fun.
 
-### Lana Wagner (contextual hypothesis, unverified)
+### Liz Williams (contextual hypothesis, unverified)
 
     I feel like we're prying.
 
@@ -351,25 +353,23 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     Thank you.
 
-### UNIDENTIFIED VOICE (caption-marked P0 candidate P01; audio unverified)
+### Harry Stone (contextual lexical turn hypothesis; audio unverified)
 
     - What's this?
     
 
-### UNIDENTIFIED VOICE (caption-marked P0 candidate P02; audio unverified)
+### Dan Fielding (contextual lexical turn hypothesis; audio unverified)
 
     - The pool to guess Harry's age.
 
-### UNIDENTIFIED VOICE (caption-marked P0 candidate P01; audio unverified)
+### Harry Stone (contextual lexical turn hypothesis; audio unverified)
 
     - Oh, yeah.
     
 
-### UNIDENTIFIED VOICE (caption-marked P0 candidate P02; audio unverified)
+### Dan Fielding (contextual lexical turn hypothesis; audio unverified)
 
     - Now, there are still some good ages left...
-
-### Dan Fielding (contextual hypothesis, unverified)
 
     ...so just put your initials
     in any empty square.
@@ -380,7 +380,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     You crushed my nib.
 
-### Lana Wagner (contextual hypothesis, unverified)
+### Harry Stone (contextual hypothesis, unverified)
 
     Sorry.
 
@@ -1280,11 +1280,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     ...but my foot slipped off
     the brake pedal, and...
 
-### UNIDENTIFIED VOICE
-
     Correct.
-
-### Harry Stone (contextual hypothesis, unverified)
 
 *(Textual delivery hypothesis: reflective; original performance unverified.)*
 
@@ -1945,10 +1941,10 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 - Source edition: `s01-internal-dvdrip-xvid-sprinter-english--7bb21bd5ac0d612f`; 385 of 385 cues present.
 - 0 cues have source-explicit voice labels; 385 have no explicit source role.
-- 306 high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.
+- 307 high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.
 - 77 cues have possible internal voice changes (dash-marked or context-only).
 - 77 candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.
-- 74 manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.
+- 76 manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.
 - 88 textual P2 delivery suggestions are NOT witnessed original performances.
 - 384 adjacent boundaries remain original-audio unverified.
 - 0 narrow source-punctuation candidate same-voice joins are unverified; mixed-dash cues and untimed sources abstain.
