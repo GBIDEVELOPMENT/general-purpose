@@ -5,6 +5,8 @@ on:
       - '.github/workflows/night-court-episode-finish.yml'
       - 'Night Court/tools/episode_finish.py'
       - 'Night Court/tools/test_episode_finish.py'
+      - 'Night Court/tools/publish_current_original_av.py'
+      - 'Night Court/tools/test_publish_current_original_av.py'
       - 'Night Court/tools/test_episode_finish_workbench.js'
       - 'Night Court/tools/source_once_canonical_voice.py'
       - 'Night Court/tools/test_source_once_canonical_voice.py'
@@ -20,6 +22,8 @@ on:
     branches: [main]
     paths:
       - 'Night Court/research/trigger-original-pilot-audio-evidence.txt'
+      - 'Night Court/saved-private/episode-finish-current/*-original-av-decisions.json'
+      - 'Night Court/saved-private/episode-finish-current/*-independent-original-av-acceptance.json'
       # Tools update ONE working review packet, not either underlying screenplay.
       - 'Night Court/tools/episode_finish.py'
       - 'Night Court/tools/test_episode_finish.py'
@@ -42,7 +46,11 @@ jobs:
       github.event.repository.private == true &&
       (github.event_name != 'push' ||
        (!contains(github.event.head_commit.modified, 'Night Court/research/trigger-original-pilot-audio-evidence.txt') &&
-        !contains(github.event.head_commit.added, 'Night Court/research/trigger-original-pilot-audio-evidence.txt')))
+        !contains(github.event.head_commit.added, 'Night Court/research/trigger-original-pilot-audio-evidence.txt') &&
+        !contains(join(github.event.head_commit.modified, ','), '-original-av-decisions.json') &&
+        !contains(join(github.event.head_commit.added, ','), '-original-av-decisions.json') &&
+        !contains(join(github.event.head_commit.modified, ','), '-independent-original-av-acceptance.json') &&
+        !contains(join(github.event.head_commit.added, ','), '-independent-original-av-acceptance.json')))
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
@@ -84,7 +92,7 @@ jobs:
       - name: Source-first tests and complete P0/P1 AV review agenda per pilot
         run: |
           set -euo pipefail
-          PYTHONPATH='Night Court/tools' python -m unittest -v test_episode_finish test_source_once_canonical_voice test_preflight_original_media_transport
+          PYTHONPATH='Night Court/tools' python -m unittest -v test_episode_finish test_source_once_canonical_voice test_preflight_original_media_transport test_publish_current_original_av
           node 'Night Court/tools/test_episode_finish_workbench.js'
           locator=()
           if test -s "${RUNNER_TEMP}/episode-finish-current/S09E19-original-audio-locators.json"; then
@@ -339,4 +347,63 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Night Court: save real original-film acoustic P0/P1 evidence, unverified'
+          git push origin HEAD:main
+
+
+  deliver-complete-reviewer-attested-scripts:
+    # Only a source-reviewer ledger or independent acceptance change on main
+    # qualifies. This cannot trigger the costly original-film inference job.
+    if: >-
+      github.event_name == 'push' &&
+      github.repository == 'GBIDEVELOPMENT/general-purpose' &&
+      github.ref == 'refs/heads/main' &&
+      github.event.repository.private == true &&
+      (contains(join(github.event.head_commit.modified, ','), '-original-av-decisions.json') ||
+       contains(join(github.event.head_commit.added, ','), '-original-av-decisions.json') ||
+       contains(join(github.event.head_commit.modified, ','), '-independent-original-av-acceptance.json') ||
+       contains(join(github.event.head_commit.added, ','), '-independent-original-av-acceptance.json'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fail-closed original-AV acceptance and final publication tests
+        run: |
+          set -euo pipefail
+          PYTHONPATH='Night Court/tools' python -m unittest -v \
+            test_episode_finish test_publish_current_original_av
+          python 'Night Court/tools/publish_current_original_av.py' --episode both
+      - name: Persist only source-complete reviewer-attested screenplays
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          test "$(git rev-parse HEAD)" = "${{ github.sha }}"
+          test "$(git rev-parse origin/main)" = "${{ github.sha }}" || {
+            echo "::error::Main advanced since reviewer ledger; refusing stale AV script publication."
+            exit 1
+          }
+          python 'Night Court/tools/publish_current_original_av.py' --episode both --write
+          shopt -s nullglob
+          candidates=(
+            'Night Court/saved-private/episode-finish-current/'*-original-av-reviewed-screenplay.md
+            'Night Court/saved-private/episode-finish-current/'*-original-av-reviewed-manifest.json
+          )
+          if (( ${#candidates[@]} == 0 )); then
+            echo 'Only partial reviews were saved. No completed original-AV manuscript to publish.'
+            exit 0
+          fi
+          git add -- "${candidates[@]}"
+          if git diff --cached --quiet; then
+            echo 'Accepted original-AV scripts are unchanged.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Night Court: preserve stable source-viewed original-AV screenplay deliverables'
           git push origin HEAD:main
