@@ -568,7 +568,7 @@ class ScriptFactoryTests(unittest.TestCase):
                         contextual_role_overlay(root, episode, manifest, cues)
 
     def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
-        episode = "S01E06"  # earlier S01 episodes now have contextual overlays
+        episode = "S01E08"  # first six S01 episodes now have contextual overlays
         files, manifest = construct(ROOT, episode, self.index[episode])
         self.assertEqual(manifest["evidence_tier"], "source_only_reading_draft")
         self.assertGreaterEqual(manifest["source_syntactic_p0_provisional_continuations"], 20)
