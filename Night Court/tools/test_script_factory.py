@@ -471,6 +471,102 @@ class ScriptFactoryTests(unittest.TestCase):
                   385, 386, 392, 393, 394):
             self.assertIsNone(rows[n-1]["candidate_display_role"])
 
+    def test_s01e06_source_exact_377_cues_with_context_p0_p1_p2(self):
+        ep = "S01E06"
+        meta, _, captions = source_rows(ROOT, self.index[ep])
+        files, manifest = construct(ROOT, ep, self.index[ep])
+        overlay = manifest["contextual_overlay"]
+        self.assertEqual(manifest["source_units"], 377)
+        self.assertEqual(manifest["evidence_tier"], "contextual_provisional_reading_draft")
+        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 298)
+        self.assertEqual(overlay["mixed_voice_internal_review_cues"], 75)
+        self.assertEqual(overlay["weak_or_abstained_cues"], 4)
+        self.assertEqual(overlay["exact_contextual_internal_handoffs"], 75)
+        self.assertEqual(overlay["unlocated_contextual_internal_handoffs"], 0)
+        self.assertEqual(overlay["text_only_performance_tone_hypotheses"], 52)
+        self.assertEqual(manifest["unknown_label_cues"], 79)
+        self.assertEqual(manifest["contextual_provisional_named_parts"], 150)
+        self.assertEqual(manifest["source_contextual_exact_p0_boundaries"], 75)
+        self.assertEqual(manifest["text_only_contextual_delivery_proposals"], 52)
+        self.assertFalse(manifest["actual_av_verified"])
+        self.assertFalse(manifest["independent_editorial_acceptance"])
+        self.assertFalse(manifest["original_audio_performed_delivery_accepted"])
+        rows = [json.loads(line) for line in files["provenance.jsonl"].splitlines()]
+        review = json.loads(files["review-queue.json"])
+        self.assertEqual([x["source_text"] for x in rows], [x["text"] for x in captions])
+        self.assertEqual([x["source_start_ms"] for x in rows],
+                         [x["start_ms"] for x in captions])
+        self.assertEqual([x["source_end_ms"] for x in rows],
+                         [x["end_ms"] for x in captions])
+        self.assertTrue(all(x["original_dialogue_sha256"] == meta["sha256"]
+                            and not x["candidate_role_original_soundtrack_verified"]
+                            for x in rows))
+        self.assertEqual(len(review["contextual_role_review"]), 377)
+        self.assertEqual(len(review["boundary_review_questions"]), 376)
+        self.assertEqual(len(review["textual_delivery_p2_review"]), 52)
+        self.assertTrue(all(not x["original_audio_tone_verified"] and
+                            not x["eligible_for_performed_stage_direction"]
+                            for x in review["textual_delivery_p2_review"]))
+        self.assertEqual(files["screenplay.md"].count("Textual delivery hypothesis:"), 52)
+        for n, role in ((1, "Harry Stone"), (5, "Anthony Rodriguez"),
+                        (9, "Harry Stone"), (30, "God (self-identified defendant)"),
+                        (50, "Liz Williams"), (65, "Detective Womack"),
+                        (83, "Bull Shannon"), (112, "Lana Wagner"),
+                        (143, "Anthony Rodriguez"),
+                        (161, "Lou (bomb-disposal technician)"),
+                        (202, "Harry Stone"), (265, "Bull Shannon"),
+                        (315, "Harry Stone"), (366, "Bull Shannon"),
+                        (377, "Bull Shannon")):
+            with self.subTest(cue=n):
+                self.assertEqual(rows[n - 1]["candidate_display_role"], role)
+        for n, roles in (
+            (2, ["Harry Stone", "Anthony Rodriguez"]),
+            (28, ["Liz Williams", "God (self-identified defendant)"]),
+            (75, ["Bull Shannon", "Harry Stone"]),
+            (108, ["Harry Stone", "Detective Womack"]),
+            (172, ["Detective Womack", "Lou (bomb-disposal technician)"]),
+            (201, ["Lana Wagner", "Harry Stone"]),
+            (207, ["Lana Wagner", "Harry Stone"]),
+            (268, ["Unidentified courtroom attendee", "Harry Stone"]),
+            (299, ["Lana Wagner", "Harry Stone"]),
+            (349, ["Harry Stone", "Lana Wagner"]),
+        ):
+            with self.subTest(mixed=n):
+                row = rows[n - 1]
+                parts = row["source_speaker_parts"]
+                self.assertEqual([x["provisional_part_role"] for x in parts], roles)
+                self.assertEqual(row["contextual_unicode_split_offsets"],
+                                 [parts[1]["source_character_start"]])
+                self.assertEqual("".join(row["source_text"][
+                    p["source_character_start"]:p["source_character_end"]]
+                    for p in parts), row["source_text"])
+                self.assertTrue(all(not p["original_audio_boundary_verified"]
+                                    and p["original_audio_subcue_time_ms"] is None
+                                    for p in parts))
+        self.assertEqual(rows[206]["contextual_unicode_split_offsets"], [30])
+        self.assertTrue(rows[206]["source_text"][30:].startswith("- Thanks."))
+        self.assertTrue(all(rows[n - 1]["candidate_display_role"] is None
+                            for n in (240, 292, 358, 359)))
+
+    def test_contextual_p0_rejects_off_by_one_explicit_speaker_dash(self):
+        from script_factory import contextual_role_overlay
+        episode = "S01E06"
+        manifest, _, cues = source_rows(ROOT, self.index[episode])
+        source = json.loads((ROOT / "seasons/S01/S01E06/derived" /
+                             "text-only-speaker-proposals-v1.json").read_text("utf-8"))
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            dest = root / "seasons/S01/S01E06/derived/text-only-speaker-proposals-v1.json"
+            dest.parent.mkdir(parents=True)
+            for forged_offset in (29, 31):
+                with self.subTest(forced_offset=forged_offset):
+                    tampered = json.loads(json.dumps(source))
+                    tampered["records"][206]["utf8_or_unicode_split_offsets"] = [
+                        forged_offset]
+                    dest.write_text(json.dumps(tampered), encoding="utf-8")
+                    with self.assertRaisesRegex(ValueError, "misaligned with source speaker dash"):
+                        contextual_role_overlay(root, episode, manifest, cues)
+
     def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
         episode = "S01E06"  # earlier S01 episodes now have contextual overlays
         files, manifest = construct(ROOT, episode, self.index[episode])
