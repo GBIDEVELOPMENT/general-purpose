@@ -28,10 +28,11 @@
   "confidence_scale": "medium is a source-dialogue based editorial hypothesis only; abstain means unresolved. No high-confidence voice claims and no AV attestations.",
   "counts": {
     "high_single": 0,
-    "medium_single": 295,
+    "medium_single": 298,
     "low_single": 0,
-    "mixed_cues": 74,
-    "abstain_cues": 8
+    "mixed_cues": 75,
+    "abstain_cues": 4,
+    "text_only_p2_tone_suggestions": 52
   },
   "text_only_p2_tone_suggestions": 52,
   "source_audio_review_completed": false,
@@ -2856,15 +2857,15 @@
       "source_unit_index": 201,
       "proposed_speaker": null,
       "confidence": "medium",
-      "basis": "Text-only speaker-turn hypothesis keyed to an explicit source-caption second-voice dash at Unicode offset 18; two adjacent interlocutors are proposed as Harry Stone and Lana Wagner. Neither voice nor boundary has been verified against the original film.",
+      "basis": "Text-only P0 speaker exchange: Lana's failed reassurance breaks off mid-sentence; Harry takes over to explain his effort to be fair to people. The subsequent C202 sentence continues Harry's thought. Source caption explicitly marks both lines with leading dashes; no voice verified.",
       "status": "proposed_internal_voice_switch_unverified",
       "review_delta": "initial_complete_episode_lexical_editorial_pass_v1",
       "original_audio_verified": false,
       "original_source_did_not_supply_actor_labels": true,
       "evidence_type": "source_marked_intra_caption_switch;contextual_character_turns",
       "proposed_ordered_speaker_parts": [
-        "Harry Stone",
-        "Lana Wagner"
+        "Lana Wagner",
+        "Harry Stone"
       ],
       "utf8_or_unicode_split_offsets": [
         18
@@ -2939,13 +2940,20 @@
       "cue_id": "C00207.1",
       "source_unit_index": 207,
       "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Source dialogue is insufficient for a reliable unique P1 assignment; any caption dash handoff remains an unconfirmed P0 boundary.",
-      "status": "no_source_audio_review",
+      "confidence": "medium",
+      "basis": "The first voice continues Lana's C206 list of Harry's desk and music belongings; the second answers thanks as Harry, with both lines dash-marked in the original cue.",
+      "status": "proposed_internal_voice_switch_unverified",
       "review_delta": "initial_complete_episode_lexical_editorial_pass_v1",
       "original_audio_verified": false,
       "original_source_did_not_supply_actor_labels": true,
-      "evidence_type": "unresolved"
+      "evidence_type": "unresolved",
+      "proposed_ordered_speaker_parts": [
+        "Lana Wagner",
+        "Harry Stone"
+      ],
+      "utf8_or_unicode_split_offsets": [
+        31
+      ]
     },
     {
       "cue_id": "C00208.1",
@@ -3491,10 +3499,10 @@
     {
       "cue_id": "C00245.1",
       "source_unit_index": 245,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Source dialogue is insufficient for a reliable unique P1 assignment; any caption dash handoff remains an unconfirmed P0 boundary.",
-      "status": "no_source_audio_review",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "The judge resumes speaking to the people present as courtroom work restarts following the interruption.",
+      "status": "text_only_unverified",
       "review_delta": "initial_complete_episode_lexical_editorial_pass_v1",
       "original_audio_verified": false,
       "original_source_did_not_supply_actor_labels": true,
@@ -3758,10 +3766,10 @@
     {
       "cue_id": "C00265.1",
       "source_unit_index": 265,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Source dialogue is insufficient for a reliable unique P1 assignment; any caption dash handoff remains an unconfirmed P0 boundary.",
-      "status": "no_source_audio_review",
+      "proposed_speaker": "Bull Shannon",
+      "confidence": "medium",
+      "basis": "Bull reports the police are bringing the suspect to Harry's office; this short answer immediately replies to Harry's question why they would do so.",
+      "status": "text_only_unverified",
       "review_delta": "initial_complete_episode_lexical_editorial_pass_v1",
       "original_audio_verified": false,
       "original_source_did_not_supply_actor_labels": true,
@@ -3801,14 +3809,14 @@
       "source_unit_index": 268,
       "proposed_speaker": null,
       "confidence": "medium",
-      "basis": "Text-only speaker-turn hypothesis keyed to an explicit source-caption second-voice dash at Unicode offset 28; two adjacent interlocutors are proposed as Liz Williams and Harry Stone. Neither voice nor boundary has been verified against the original film.",
+      "basis": "The original caption separates an unidentified court attendee's sympathetic remark from Harry's thanks. The first speaker is not identifiable from the transcript; 'Unidentified courtroom attendee' explicitly preserves abstention.",
       "status": "proposed_internal_voice_switch_unverified",
       "review_delta": "initial_complete_episode_lexical_editorial_pass_v1",
       "original_audio_verified": false,
       "original_source_did_not_supply_actor_labels": true,
       "evidence_type": "source_marked_intra_caption_switch;contextual_character_turns",
       "proposed_ordered_speaker_parts": [
-        "Liz Williams",
+        "Unidentified courtroom attendee",
         "Harry Stone"
       ],
       "utf8_or_unicode_split_offsets": [
@@ -3820,14 +3828,14 @@
       "source_unit_index": 269,
       "proposed_speaker": null,
       "confidence": "medium",
-      "basis": "Text-only speaker-turn hypothesis keyed to an explicit source-caption second-voice dash at Unicode offset 36; two adjacent interlocutors are proposed as Liz Williams and Harry Stone. Neither voice nor boundary has been verified against the original film.",
+      "basis": "The question about what to do next most plausibly comes from Lana during her sustained concern over Harry's safety, followed by Harry's response. This is a contextual proposal, not witnessed delivery.",
       "status": "proposed_internal_voice_switch_unverified",
       "review_delta": "initial_complete_episode_lexical_editorial_pass_v1",
       "original_audio_verified": false,
       "original_source_did_not_supply_actor_labels": true,
       "evidence_type": "source_marked_intra_caption_switch;contextual_character_turns",
       "proposed_ordered_speaker_parts": [
-        "Liz Williams",
+        "Lana Wagner",
         "Harry Stone"
       ],
       "utf8_or_unicode_split_offsets": [
@@ -4132,10 +4140,10 @@
     {
       "cue_id": "C00291.1",
       "source_unit_index": 291,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "Source dialogue is insufficient for a reliable unique P1 assignment; any caption dash handoff remains an unconfirmed P0 boundary.",
-      "status": "no_source_audio_review",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "The judge echoes the Spanish insult as an interrogative, prompting a translation in the next cue.",
+      "status": "text_only_unverified",
       "review_delta": "initial_complete_episode_lexical_editorial_pass_v1",
       "original_audio_verified": false,
       "original_source_did_not_supply_actor_labels": true,
@@ -5346,5 +5354,19 @@
         "original_soundtrack_verified": false
       }
     }
-  ]
+  ],
+  "contextual_reassessment": {
+    "reason": "source-led text-only dialogue reassessment",
+    "speaker_turn_C201_corrected": true,
+    "C207_precise_split_added": true,
+    "one_speaker_revisions": [
+      245,
+      265,
+      291
+    ],
+    "unknown_first_speaker_preserved": [
+      268
+    ],
+    "original_av_confirmed": false
+  }
 }
