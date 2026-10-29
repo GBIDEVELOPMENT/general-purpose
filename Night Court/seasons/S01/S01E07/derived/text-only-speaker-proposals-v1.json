@@ -24,10 +24,10 @@
   "confidence_scale": "medium names are hypotheses only. UNKNOWN cues explicitly abstain; actor delivery and identities are not confirmed against the film.",
   "counts": {
     "high_single": 0,
-    "medium_single": 281,
+    "medium_single": 279,
     "low_single": 0,
-    "mixed_cues": 73,
-    "abstain_cues": 12
+    "mixed_cues": 72,
+    "abstain_cues": 15
   },
   "text_only_p2_delivery_hypotheses": 53,
   "source_audio_review_completed": false,
@@ -1187,12 +1187,13 @@
     {
       "cue_id": "C00095.1",
       "source_unit_index": 95,
-      "proposed_speaker": "Carla B.",
-      "confidence": "medium",
-      "basis": "Provisional source-text role from the surrounding C00093.1–C00097.1 context: Carla's offered bread pudding, attraction to Harry, distress and reconciliation. Not an audiovisual-verified speaker.",
-      "status": "text_only_unverified",
-      "review_delta": "whole_episode_textual_context_v1",
-      "original_audio_verified": false
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "C86–C92 is a separate defendant's sentencing; C25 states Carla has not been on the court docket. The person offering dinner in C93–C98 cannot be identified as Carla from the source. Retain source exact unknown and confirm from original film.",
+      "status": "no_source_audio_review",
+      "review_delta": "source_continuity_defendant_identity_correction_2026_10_28",
+      "original_audio_verified": false,
+      "evidence_type": "contextual_contradiction;C00025_and_C00086_C00092"
     },
     {
       "cue_id": "C00096.1",
@@ -1207,25 +1208,26 @@
     {
       "cue_id": "C00097.1",
       "source_unit_index": 97,
-      "proposed_speaker": "Carla B.",
-      "confidence": "medium",
-      "basis": "Provisional source-text role from the surrounding C00095.1–C00099.1 context: Carla's offered bread pudding, attraction to Harry, distress and reconciliation. Not an audiovisual-verified speaker.",
-      "status": "text_only_unverified",
-      "review_delta": "whole_episode_textual_context_v1",
-      "original_audio_verified": false
+      "proposed_speaker": null,
+      "confidence": "abstain",
+      "basis": "C86–C92 is a separate defendant's sentencing; C25 states Carla has not been on the court docket. The person offering dinner in C93–C98 cannot be identified as Carla from the source. Retain source exact unknown and confirm from original film.",
+      "status": "no_source_audio_review",
+      "review_delta": "source_continuity_defendant_identity_correction_2026_10_28",
+      "original_audio_verified": false,
+      "evidence_type": "contextual_contradiction;C00025_and_C00086_C00092"
     },
     {
       "cue_id": "C00098.1",
       "source_unit_index": 98,
       "proposed_speaker": null,
       "confidence": "medium",
-      "basis": "Exact original caption line-leading second-speaker dash at Unicode offset 8; adjacent conversational context proposes Harry Stone and Carla B.. No original sound was independently inspected.",
+      "basis": "The judge reacts to a dinner invitation; a separate person offers seafood. C25 confirms Carla is not on the docket whereas C86–C92 is the sentencing of someone else. Source exact P0 change retained, identity explicitly abstained.",
       "status": "proposed_internal_voice_switch_unverified",
-      "review_delta": "whole_episode_textual_context_v1",
+      "review_delta": "source_continuity_defendant_identity_correction_2026_10_28",
       "original_audio_verified": false,
       "proposed_ordered_speaker_parts": [
         "Harry Stone",
-        "Carla B."
+        "Unidentified courtroom defendant"
       ],
       "utf8_or_unicode_split_offsets": [
         8
@@ -3048,18 +3050,11 @@
       "cue_id": "C00245.1",
       "source_unit_index": 245,
       "proposed_speaker": null,
-      "confidence": "medium",
-      "basis": "Exact original caption line-leading second-speaker dash at Unicode offset 23; adjacent conversational context proposes Judge Robert T. Willard and Dan Fielding. No original sound was independently inspected.",
-      "status": "proposed_internal_voice_switch_unverified",
-      "review_delta": "whole_episode_textual_context_v1",
-      "original_audio_verified": false,
-      "proposed_ordered_speaker_parts": [
-        "Judge Robert T. Willard",
-        "Dan Fielding"
-      ],
-      "utf8_or_unicode_split_offsets": [
-        23
-      ]
+      "confidence": "abstain",
+      "basis": "A reporter-like headline and a reaction have separate caption dashes, but the dialogue does not identify who speaks either part. Preserve source P0 division; do not assume Judge Willard or Dan without film evidence.",
+      "status": "no_source_audio_review",
+      "review_delta": "source_contextual_abstention_2026_10_28",
+      "original_audio_verified": false
     },
     {
       "cue_id": "C00246.1",
@@ -4477,5 +4472,24 @@
     "basis": "first-person judicial pronouncements, source-vocative addresses, episode guest cast and one explicit voice dash",
     "original_AV_verified": false,
     "source_bytes_changed": false
+  },
+  "followup_contextual_qa": {
+    "date": "2026-10-28",
+    "corrections": [
+      95,
+      97,
+      98,
+      245
+    ],
+    "source_anchors": [
+      25,
+      86,
+      92,
+      93,
+      98
+    ],
+    "principle": "role appearance inferred by cast or nearby plot cannot override explicit no-docket chronology; uncertain source speakers abstain",
+    "source_text_modified": false,
+    "AV_checked": false
   }
 }

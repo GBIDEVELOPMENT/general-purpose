@@ -574,16 +574,16 @@ class ScriptFactoryTests(unittest.TestCase):
         overlay = manifest["contextual_overlay"]
         self.assertEqual(manifest["source_units"], 366)
         self.assertEqual(manifest["evidence_tier"], "contextual_provisional_reading_draft")
-        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 281)
-        self.assertEqual(overlay["mixed_voice_internal_review_cues"], 73)
-        self.assertEqual(overlay["weak_or_abstained_cues"], 12)
-        self.assertEqual(overlay["exact_contextual_internal_handoffs"], 73)
+        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 279)
+        self.assertEqual(overlay["mixed_voice_internal_review_cues"], 72)
+        self.assertEqual(overlay["weak_or_abstained_cues"], 15)
+        self.assertEqual(overlay["exact_contextual_internal_handoffs"], 72)
         self.assertEqual(overlay["unlocated_contextual_internal_handoffs"], 0)
         self.assertEqual(overlay["text_only_performance_tone_hypotheses"], 53)
         self.assertEqual(manifest["text_only_contextual_delivery_proposals"], 53)
-        self.assertEqual(manifest["source_contextual_exact_p0_boundaries"], 73)
-        self.assertEqual(manifest["contextual_provisional_named_parts"], 146)
-        self.assertEqual(manifest["unknown_label_cues"], 85)  # 73 mixed + 12 unassigned
+        self.assertEqual(manifest["source_contextual_exact_p0_boundaries"], 72)
+        self.assertEqual(manifest["contextual_provisional_named_parts"], 144)
+        self.assertEqual(manifest["unknown_label_cues"], 87)  # 72 mixed + 15 abstained
         self.assertFalse(manifest["actual_av_verified"])
         self.assertFalse(manifest["original_audio_performed_delivery_accepted"])
         readers = [json.loads(x) for x in files["provenance.jsonl"].splitlines()]
@@ -614,6 +614,7 @@ class ScriptFactoryTests(unittest.TestCase):
                 self.assertEqual(readers[n-1]["candidate_display_role"], expected)
         for n, roles in (
             (8, ["Carla B.", "Harry Stone"]),
+            (98, ["Harry Stone", "Unidentified courtroom defendant"]),
             (99, ["Liz Williams", "Harry Stone"]),
             (158, ["Judge Robert T. Willard", "Harry Stone"]),
             (216, ["Dan Fielding", "Harry Stone"]),
@@ -631,6 +632,19 @@ class ScriptFactoryTests(unittest.TestCase):
                     p["source_character_start"]:p["source_character_end"]]
                     for p in parts), line["source_text"])
                 self.assertFalse(any(p["original_audio_boundary_verified"] for p in parts))
+        # The source explicitly says Carla is not on the docket in C25;
+        # never misidentify her as the *separately sentenced* defendant
+        # offering the judge dinner at C93–C98.
+        self.assertIn("not even on the docket", readers[24]["source_text"])
+        for n in (95, 97):
+            self.assertIsNone(readers[n - 1]["candidate_display_role"])
+        self.assertNotEqual(readers[97]["source_speaker_parts"][1][
+            "provisional_part_role"], "Carla B.")
+        # Reporter-like headlines are not unique character identification.
+        self.assertIsNone(readers[244]["candidate_display_role"])
+        self.assertEqual(len(readers[244]["source_speaker_parts"]), 2)
+        self.assertTrue(all(p["provisional_part_role"] is None
+                            for p in readers[244]["source_speaker_parts"]))
         # There are genuine two-speaker subtitle cues that text alone
         # cannot attribute: protect them as P0 structural unknowns.
         for n in (280, 281):
