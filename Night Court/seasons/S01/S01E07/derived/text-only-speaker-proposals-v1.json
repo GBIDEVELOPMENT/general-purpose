@@ -24,12 +24,12 @@
   "confidence_scale": "medium names are hypotheses only. UNKNOWN cues explicitly abstain; actor delivery and identities are not confirmed against the film.",
   "counts": {
     "high_single": 0,
-    "medium_single": 269,
+    "medium_single": 281,
     "low_single": 0,
-    "mixed_cues": 72,
-    "abstain_cues": 25
+    "mixed_cues": 73,
+    "abstain_cues": 12
   },
-  "text_only_p2_delivery_hypotheses": 52,
+  "text_only_p2_delivery_hypotheses": 53,
   "source_audio_review_completed": false,
   "original_video_viewed": false,
   "no_original_dialogue_edited": true,
@@ -418,51 +418,51 @@
     {
       "cue_id": "C00031.1",
       "source_unit_index": 31,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Disheveled Man",
+      "confidence": "medium",
+      "basis": "A cafeteria guest demands faster service; a disheveled diner is credited for this episode, but the attribution is text/cast only.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
       "cue_id": "C00032.1",
       "source_unit_index": 32,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Disheveled Man",
+      "confidence": "medium",
+      "basis": "The same diner elaborates that the fish sticks must not get cold; continuous sentence to prior service demand.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
       "cue_id": "C00033.1",
       "source_unit_index": 33,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Cafeteria Cashier",
+      "confidence": "medium",
+      "basis": "A staff member points out that the diner has nothing on his plate, consistent with the separately credited cafeteria cashier.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
       "cue_id": "C00034.1",
       "source_unit_index": 34,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Disheveled Man",
+      "confidence": "medium",
+      "basis": "The diner answers the cashier that he has the fish sticks in his pocket.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
       "cue_id": "C00035.1",
       "source_unit_index": 35,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Disheveled Man",
+      "confidence": "medium",
+      "basis": "The same diner explains why he hid the food in his pocket.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
@@ -875,11 +875,11 @@
     {
       "cue_id": "C00070.1",
       "source_unit_index": 70,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "Harry addresses Bull by name to offer him standing rib roast; Bull is the addressee and cannot be the speaker.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
@@ -1197,11 +1197,11 @@
     {
       "cue_id": "C00096.1",
       "source_unit_index": 96,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "Harry politely refuses a defendant's proposal to repay him for a light sentence.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
@@ -1235,11 +1235,18 @@
       "cue_id": "C00099.1",
       "source_unit_index": 99,
       "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
-      "original_audio_verified": false
+      "confidence": "medium",
+      "basis": "The source marks Liz's deferential address and Harry's invitation to use his first name as two separate speaking turns; source-exact Unicode second dash. Audio unverified.",
+      "status": "proposed_internal_voice_switch_unverified",
+      "review_delta": "focused_lexical_p0_handoff",
+      "original_audio_verified": false,
+      "proposed_ordered_speaker_parts": [
+        "Liz Williams",
+        "Harry Stone"
+      ],
+      "utf8_or_unicode_split_offsets": [
+        16
+      ]
     },
     {
       "cue_id": "C00100.1",
@@ -2370,21 +2377,21 @@
     {
       "cue_id": "C00191.1",
       "source_unit_index": 191,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "The judge pronounces a guilty judgment and issues the amount of a fine.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
       "cue_id": "C00192.1",
       "source_unit_index": 192,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "The same judge orders the defendant to see the bailiff and calls the next case.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
@@ -2476,11 +2483,11 @@
     {
       "cue_id": "C00199.1",
       "source_unit_index": 199,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "Harry offers Dan an encouraging wish after another gloomy remark about the election.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
@@ -2647,11 +2654,11 @@
     {
       "cue_id": "C00214.1",
       "source_unit_index": 214,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
+      "proposed_speaker": "Harry Stone",
+      "confidence": "medium",
+      "basis": "Harry invites the visiting judge to hear the election results and join a drink.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
       "original_audio_verified": false
     },
     {
@@ -3277,12 +3284,17 @@
     {
       "cue_id": "C00264.1",
       "source_unit_index": 264,
-      "proposed_speaker": null,
-      "confidence": "abstain",
-      "basis": "The dialogue does not support a unique actor voice here; preserve original caption and pending P0/P1 review.",
-      "status": "no_source_audio_review",
-      "review_delta": "whole_episode_textual_context_v1",
-      "original_audio_verified": false
+      "proposed_speaker": "Carla B.",
+      "confidence": "medium",
+      "basis": "Carla jokes that Liz's dimmer-switch experience does not qualify as making love with the lights on.",
+      "status": "text_only_unverified",
+      "review_delta": "focused_dialogue_context_adjudication",
+      "original_audio_verified": false,
+      "provisional_delivery": {
+        "tone": "teasing",
+        "basis": "Carla jokes that a dimmer switch does not count as making love with the lights on.",
+        "original_soundtrack_verified": false
+      }
     },
     {
       "cue_id": "C00265.1",
@@ -4458,5 +4470,12 @@
         "original_soundtrack_verified": false
       }
     }
-  ]
+  ],
+  "contextual_reassessment": {
+    "date": "2026-10-28",
+    "prior_abstentions_resolved": 13,
+    "basis": "first-person judicial pronouncements, source-vocative addresses, episode guest cast and one explicit voice dash",
+    "original_AV_verified": false,
+    "source_bytes_changed": false
+  }
 }
