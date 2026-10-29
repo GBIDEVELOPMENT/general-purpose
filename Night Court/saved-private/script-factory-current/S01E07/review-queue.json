@@ -1218,7 +1218,7 @@
       "decision": "unresolved_turn_boundary",
       "left_provisional_exit_role": null,
       "review_priority": "P0",
-      "right_provisional_entry_role": "Carla B.",
+      "right_provisional_entry_role": null,
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -1228,9 +1228,9 @@
         95,
         96
       ],
-      "decision": "different_provisional_roles_candidate_change",
-      "left_provisional_exit_role": "Carla B.",
-      "review_priority": "P0_CONFIRM",
+      "decision": "unresolved_turn_boundary",
+      "left_provisional_exit_role": null,
+      "review_priority": "P0",
       "right_provisional_entry_role": "Harry Stone",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
@@ -1241,10 +1241,10 @@
         96,
         97
       ],
-      "decision": "different_provisional_roles_candidate_change",
+      "decision": "unresolved_turn_boundary",
       "left_provisional_exit_role": "Harry Stone",
-      "review_priority": "P0_CONFIRM",
-      "right_provisional_entry_role": "Carla B.",
+      "review_priority": "P0",
+      "right_provisional_entry_role": null,
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -1254,9 +1254,9 @@
         97,
         98
       ],
-      "decision": "different_provisional_roles_candidate_change",
-      "left_provisional_exit_role": "Carla B.",
-      "review_priority": "P0_CONFIRM",
+      "decision": "unresolved_turn_boundary",
+      "left_provisional_exit_role": null,
+      "review_priority": "P0",
       "right_provisional_entry_role": "Harry Stone",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
@@ -1268,7 +1268,7 @@
         99
       ],
       "decision": "different_provisional_roles_candidate_change",
-      "left_provisional_exit_role": "Carla B.",
+      "left_provisional_exit_role": "Unidentified courtroom defendant",
       "review_priority": "P0_CONFIRM",
       "right_provisional_entry_role": "Liz Williams",
       "source_audio_verified": false,
@@ -3168,7 +3168,7 @@
       "decision": "unresolved_turn_boundary",
       "left_provisional_exit_role": null,
       "review_priority": "P0",
-      "right_provisional_entry_role": "Judge Robert T. Willard",
+      "right_provisional_entry_role": null,
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
       "source_syntactic_role_conflict": null
@@ -3178,9 +3178,9 @@
         245,
         246
       ],
-      "decision": "different_provisional_roles_candidate_change",
-      "left_provisional_exit_role": "Dan Fielding",
-      "review_priority": "P0_CONFIRM",
+      "decision": "unresolved_turn_boundary",
+      "left_provisional_exit_role": null,
+      "review_priority": "P0",
       "right_provisional_entry_role": "Carla B.",
       "source_audio_verified": false,
       "source_syntactic_continuation_hypothesis": null,
@@ -5656,11 +5656,11 @@
     },
     {
       "alternatives": [],
-      "confidence": "medium",
-      "evidence": "Provisional source-text role from the surrounding C00093.1–C00097.1 context: Carla's offered bread pudding, attraction to Harry, distress and reconciliation. Not an audiovisual-verified speaker.",
+      "confidence": "abstain",
+      "evidence": "C86–C92 is a separate defendant's sentencing; C25 states Carla has not been on the court docket. The person offering dinner in C93–C98 cannot be identified as Carla from the source. Retain source exact unknown and confirm from original film.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": "Carla B.",
+      "provisional_role": null,
       "source_cue": 95
     },
     {
@@ -5674,20 +5674,20 @@
     },
     {
       "alternatives": [],
-      "confidence": "medium",
-      "evidence": "Provisional source-text role from the surrounding C00095.1–C00099.1 context: Carla's offered bread pudding, attraction to Harry, distress and reconciliation. Not an audiovisual-verified speaker.",
+      "confidence": "abstain",
+      "evidence": "C86–C92 is a separate defendant's sentencing; C25 states Carla has not been on the court docket. The person offering dinner in C93–C98 cannot be identified as Carla from the source. Retain source exact unknown and confirm from original film.",
       "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
-      "provisional_role": "Carla B.",
+      "provisional_role": null,
       "source_cue": 97
     },
     {
       "alternatives": [],
       "confidence": "medium",
-      "evidence": "Exact original caption line-leading second-speaker dash at Unicode offset 8; adjacent conversational context proposes Harry Stone and Carla B.. No original sound was independently inspected.",
+      "evidence": "The judge reacts to a dinner invitation; a separate person offers seafood. C25 confirms Carla is not on the docket whereas C86–C92 is the sentencing of someone else. Source exact P0 change retained, identity explicitly abstained.",
       "internal_voice_role_hypotheses": [
         "Harry Stone",
-        "Carla B."
+        "Unidentified courtroom defendant"
       ],
       "original_audio_verified": false,
       "provisional_role": null,
@@ -7126,12 +7126,9 @@
     },
     {
       "alternatives": [],
-      "confidence": "medium",
-      "evidence": "Exact original caption line-leading second-speaker dash at Unicode offset 23; adjacent conversational context proposes Judge Robert T. Willard and Dan Fielding. No original sound was independently inspected.",
-      "internal_voice_role_hypotheses": [
-        "Judge Robert T. Willard",
-        "Dan Fielding"
-      ],
+      "confidence": "abstain",
+      "evidence": "A reporter-like headline and a reaction have separate caption dashes, but the dialogue does not identify who speaks either part. Preserve source P0 division; do not assume Judge Willard or Dan without film evidence.",
+      "internal_voice_role_hypotheses": [],
       "original_audio_verified": false,
       "provisional_role": null,
       "source_cue": 245
@@ -9435,8 +9432,8 @@
       "source_cue": 242
     },
     {
-      "boundary_proposed_by_caption_dash": false,
-      "candidate_split_basis": "contextual_source_exact_lexical_handoff",
+      "boundary_proposed_by_caption_dash": true,
+      "candidate_split_basis": "caption_leading_dash",
       "left_part": "C00245.P01",
       "priority": "P0",
       "right_part": "C00245.P02",

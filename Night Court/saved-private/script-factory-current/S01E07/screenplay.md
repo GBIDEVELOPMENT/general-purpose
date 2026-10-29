@@ -486,7 +486,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     Oh, listen.
 
-### Carla B. (contextual hypothesis, unverified)
+### UNIDENTIFIED VOICE
 
     I really appreciate what you did for me,
     and I'd like to thank you.
@@ -495,7 +495,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
     Don't mention it.
 
-### Carla B. (contextual hypothesis, unverified)
+### UNIDENTIFIED VOICE
 
     Shall we say, over dinner?
 
@@ -504,7 +504,7 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     - What?
     
 
-### Carla B. (contextual lexical turn hypothesis; audio unverified)
+### Unidentified courtroom defendant (contextual lexical turn hypothesis; audio unverified)
 
     - You like seafood?
 
@@ -1276,12 +1276,12 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
     "Sex Party in Judge's Chambers
     Turns Tragic."
 
-### Judge Robert T. Willard (contextual lexical turn hypothesis; audio unverified)
+### UNIDENTIFIED VOICE (caption-marked P0 candidate P01; audio unverified)
 
     - Great headline, huh?
     
 
-### Dan Fielding (contextual lexical turn hypothesis; audio unverified)
+### UNIDENTIFIED VOICE (caption-marked P0 candidate P02; audio unverified)
 
     - Make me wanna read further.
 
@@ -1840,10 +1840,10 @@ All candidate names, dialogue boundaries, actual scenes, performance and visual 
 
 - Source edition: `s01-internal-dvdrip-xvid-sprinter-english--d4c5387ddfbb2390`; 366 of 366 cues present.
 - 0 cues have source-explicit voice labels; 366 have no explicit source role.
-- 281 high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.
+- 279 high/medium contextual whole-cue names are hypotheses, NOT source-heard identities.
 - 75 cues have possible internal voice changes (dash-marked or context-only).
 - 75 candidate within-cue boundaries (dash or source-exact contextual) are reversible speaker parts.
-- 73 manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.
+- 72 manually reasoned contextual exact-word handoffs carry provisional part-specific names, never witnessed voices.
 - 53 textual P2 delivery suggestions are NOT witnessed original performances.
 - 365 adjacent boundaries remain original-audio unverified.
 - 0 narrow source-punctuation candidate same-voice joins are unverified; mixed-dash cues and untimed sources abstain.
