@@ -223,6 +223,20 @@ def contextual_role_overlay(root: Path, ep: str, manifest: dict, cues: list):
             raise ValueError(ep + f": invalid contextual Unicode handoff offsets for cue {n}")
         if offsets is not None:
             contextual_exact_parts(cue["text"], offsets)
+            # If the immutable caption explicitly marks a second speaker
+            # with a line-leading dash AFTER some opening dialogue, any
+            # contextual split must include that exact Unicode position.
+            # Otherwise an off-by-one split can silently misassign a dash
+            # and a word to the WRONG character while still conserving all
+            # source characters. Undashed lexical handoffs (S05E05) remain
+            # eligible for source-exact editorial offsets without this rule.
+            internal_dashes = [
+                m.start() for m in re.finditer(
+                    r"(?m)^[ \t]*[-–—][ \t]+\S", cue["text"])
+                if cue["text"][:m.start()].strip()
+            ]
+            if any(start not in offsets for start in internal_dashes):
+                raise ValueError(ep + f": contextual split misaligned with source speaker dash for cue {n}")
         if (record.get("cue_id") != f"C{n:05d}.1"
             or record.get("source_unit_index") != n
             or confidence not in ("high", "medium", "low", "abstain")
