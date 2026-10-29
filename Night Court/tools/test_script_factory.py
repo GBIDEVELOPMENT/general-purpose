@@ -567,6 +567,79 @@ class ScriptFactoryTests(unittest.TestCase):
                     with self.assertRaisesRegex(ValueError, "misaligned with source speaker dash"):
                         contextual_role_overlay(root, episode, manifest, cues)
 
+    def test_s01e07_original_366_source_cues_and_character_handoffs(self):
+        ep = "S01E07"
+        original, _, cues = source_rows(ROOT, self.index[ep])
+        files, manifest = construct(ROOT, ep, self.index[ep])
+        overlay = manifest["contextual_overlay"]
+        self.assertEqual(manifest["source_units"], 366)
+        self.assertEqual(manifest["evidence_tier"], "contextual_provisional_reading_draft")
+        self.assertEqual(overlay["high_medium_single_role_hypotheses"], 281)
+        self.assertEqual(overlay["mixed_voice_internal_review_cues"], 73)
+        self.assertEqual(overlay["weak_or_abstained_cues"], 12)
+        self.assertEqual(overlay["exact_contextual_internal_handoffs"], 73)
+        self.assertEqual(overlay["unlocated_contextual_internal_handoffs"], 0)
+        self.assertEqual(overlay["text_only_performance_tone_hypotheses"], 53)
+        self.assertEqual(manifest["text_only_contextual_delivery_proposals"], 53)
+        self.assertEqual(manifest["source_contextual_exact_p0_boundaries"], 73)
+        self.assertEqual(manifest["contextual_provisional_named_parts"], 146)
+        self.assertEqual(manifest["unknown_label_cues"], 85)  # 73 mixed + 12 unassigned
+        self.assertFalse(manifest["actual_av_verified"])
+        self.assertFalse(manifest["original_audio_performed_delivery_accepted"])
+        readers = [json.loads(x) for x in files["provenance.jsonl"].splitlines()]
+        queue = json.loads(files["review-queue.json"])
+        self.assertEqual([x["source_text"] for x in readers], [x["text"] for x in cues])
+        self.assertEqual([x["source_start_ms"] for x in readers],
+                         [x["start_ms"] for x in cues])
+        self.assertEqual([x["source_end_ms"] for x in readers],
+                         [x["end_ms"] for x in cues])
+        self.assertTrue(all(x["original_dialogue_sha256"] == original["sha256"]
+                            and not x["candidate_role_original_soundtrack_verified"]
+                            and not x["performed_tone_original_soundtrack_verified"]
+                            for x in readers))
+        self.assertEqual(len(queue["contextual_role_review"]), 366)
+        self.assertEqual(len(queue["boundary_review_questions"]), 365)
+        self.assertEqual(len(queue["textual_delivery_p2_review"]), 53)
+        self.assertTrue(all(not x["original_audio_tone_verified"]
+                            for x in queue["textual_delivery_p2_review"]))
+        for n, expected in ((31, "Disheveled Man"), (33, "Cafeteria Cashier"),
+                            (70, "Harry Stone"), (86, "Harry Stone"),
+                            (87, "Liz Williams"), (159, "Judge Robert T. Willard"),
+                            (191, "Harry Stone"), (192, "Harry Stone"),
+                            (264, "Carla B."), (283, "Dan Fielding"),
+                            (332, "Judge Robert T. Willard"),
+                            (345, "Unidentified television election announcer"),
+                            (366, "Dan Fielding")):
+            with self.subTest(cue=n):
+                self.assertEqual(readers[n-1]["candidate_display_role"], expected)
+        for n, roles in (
+            (8, ["Carla B.", "Harry Stone"]),
+            (99, ["Liz Williams", "Harry Stone"]),
+            (158, ["Judge Robert T. Willard", "Harry Stone"]),
+            (216, ["Dan Fielding", "Harry Stone"]),
+            (261, ["Carla B.", "Liz Williams"]),
+            (328, ["Judge Robert T. Willard", "Harry Stone"]),
+        ):
+            with self.subTest(mixed=n):
+                line = readers[n-1]
+                parts = line["source_speaker_parts"]
+                self.assertEqual(len(parts), 2)
+                self.assertEqual([p["provisional_part_role"] for p in parts], roles)
+                self.assertEqual([parts[1]["source_character_start"]],
+                                 line["contextual_unicode_split_offsets"])
+                self.assertEqual("".join(line["source_text"][
+                    p["source_character_start"]:p["source_character_end"]]
+                    for p in parts), line["source_text"])
+                self.assertFalse(any(p["original_audio_boundary_verified"] for p in parts))
+        # There are genuine two-speaker subtitle cues that text alone
+        # cannot attribute: protect them as P0 structural unknowns.
+        for n in (280, 281):
+            self.assertIsNone(readers[n-1]["candidate_display_role"])
+            self.assertEqual(len(readers[n-1]["source_speaker_parts"]), 2)
+            self.assertTrue(all(not part["original_audio_boundary_verified"]
+                                for part in readers[n-1]["source_speaker_parts"]))
+        self.assertFalse(manifest["independent_editorial_acceptance"])
+
     def test_source_only_factory_uses_grammar_p0_without_name_or_time_fabrication(self):
         episode = "S01E08"  # first six S01 episodes now have contextual overlays
         files, manifest = construct(ROOT, episode, self.index[episode])
