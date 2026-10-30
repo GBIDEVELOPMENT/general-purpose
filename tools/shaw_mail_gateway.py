@@ -23,7 +23,7 @@ import shaw_mail_protocol as crypto
 
 PREFIX = "SHAWMAIL2 "
 OWNER = "gamesbyian"
-REPOSITORY = "gamesbyian/chat-scheduler"
+REPOSITORY = "GBIDEVELOPMENT/general-purpose"
 ISSUE = 6
 MAX_WAIT_SECONDS = 110
 MAX_MAIL_LIMIT = 15

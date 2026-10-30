@@ -60,7 +60,7 @@ class RunnerTests(unittest.TestCase):
     def setUp(self):
         self.event = {
             "action": "created", "issue": {"number": 6},
-            "repository": {"full_name": "gamesbyian/chat-scheduler"},
+            "repository": {"full_name": "GBIDEVELOPMENT/general-purpose"},
             "comment": {"id": 101, "created_at": "2026-10-16T00:00:00Z",
                         "user": {"login": "gamesbyian"},
                         "body": 'SHAWMAIL2 {"version":2,"kind":"start"}'}
