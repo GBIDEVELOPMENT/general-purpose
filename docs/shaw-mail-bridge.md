@@ -347,3 +347,10 @@ Now the `read` response uses a separate UTF-8-byte-budgeted pathway:
 
 Sending is **not involved** in this work, and prior SMTP/IP constraints
 are unchanged.
+
+## October 29, 2026: HP PC diagnostic and repository transfer repair
+
+- Repository moved to `GBIDEVELOPMENT/general-purpose`; privileged gateway had still referred to `gamesbyian/chat-scheduler`, causing the event repository identity check to reject current events. PR #570 fixed only that repository identity and its test fixture; offline CI passed. Merge commit: `9a0adcc90795123b29570c825daa9c68db24323d`.
+- Privileged gateway runtime remains commit-pinned. After an explicit source review, PR #571 updated the privileged workflow's pinned source to **that exact reviewed merge SHA** and updated the regression pin check. Offline CI passed. No secret or workflow permission expanded.
+- PR #569 added `tools/run-shaw-diagnostic.cmd`, `tools/shaw_pc_diagnose.py` and [Windows instructions](shaw-windows-diagnostic.md). Offline CI passed. The diagnostic obtains the Shaw email password locally by hidden prompt, tries a single IMAP and SMTP authentication from the HP PC with validated TLS, prints sanitized statuses, and does **not** read or send any mail.
+- **Next required evidence:** operator runs the Windows diagnostic and shares sanitized JSON results, without the password. There has been no verified SMTP delivery from the PC, and the earlier ambiguous send must never be automatically retried. Gateway protocol after the repository transfer has not yet been live retested; run a password-free encrypted ping before any new mailbox operation.
