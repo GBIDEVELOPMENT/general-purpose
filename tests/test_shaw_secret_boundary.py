@@ -27,7 +27,7 @@ class SecretBoundaryTests(unittest.TestCase):
 
     def test_pinned_gateway_runtime_source(self):
         text = GATEWAY.read_text(encoding="utf-8")
-        self.assertIn("ref: 9a31c343e1025a43ec73ac5adefa628e4dbb2032", text)
+        self.assertIn("ref: 9a0adcc90795123b29570c825daa9c68db24323d", text)
         self.assertNotIn("pull_request_target:", text)
 
 
