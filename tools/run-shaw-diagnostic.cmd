@@ -2,17 +2,19 @@
 setlocal
 cd /d "%~dp0.."
 where py >nul 2>nul
-if %ERRORLEVEL% EQU 0 (
-  py -3 tools\shaw_pc_diagnose.py
-) else (
-  where python >nul 2>nul
-  if %ERRORLEVEL% EQU 0 (
-    python tools\shaw_pc_diagnose.py
-  ) else (
-    echo Python 3 is required. Install it from python.org, then run this file again.
-  )
-)
+if not errorlevel 1 goto use_py
+where python >nul 2>nul
+if not errorlevel 1 goto use_python
+echo Python 3.10 or newer is required. Install it, then try again.
+goto done
+:use_py
+py -3 tools\shaw_pc_diagnose.py
+goto done
+:use_python
+python tools\shaw_pc_diagnose.py
+:done
 echo.
-echo Copy the JSON RESULT shown above back into ChatGPT. No email was sent.
+echo If a JSON RESULT was printed, copy that into ChatGPT.
+echo No email was sent.
 pause
 endlocal
