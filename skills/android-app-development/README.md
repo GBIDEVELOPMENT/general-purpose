@@ -21,4 +21,10 @@ No actions on the three Android repositories are implied by creation of this cen
 
 ## Reproducible read-only historical inventory
 
-Run from this directory: python3 scripts/snapshot_history.py --output /path/to/local-snapshot.json. Optional GITHUB_TOKEN or GH_TOKEN increases GitHub's read-only API rate limit; no token appears in the output. The script enumerates paginated PRs and separate issues for all three repos, emits titles/metadata but no bodies, review text or CI logs, and detects pagination duplicates and a moving main head. Its output is local only; do not commit it automatically. Test offline: python3 -m unittest discover -s tests -v. A full review of diffs, discussions and Actions still requires separate investigation.
+Run from this directory: `python3 scripts/snapshot_history.py --output /path/to/new-local-snapshot.json`. Existing output is deliberately refused unless `--overwrite` is explicitly supplied. Optional GITHUB_TOKEN or GH_TOKEN increases GitHub's read-only API rate limit; no token appears in the output. The script enumerates paginated PRs and separate issues for all three repos, emits titles/metadata but no bodies, review text or CI logs, and detects pagination duplicates and a moving main head. Its output is local only; do not commit it automatically. Test offline: python3 -m unittest discover -s tests -v. A full review of diffs, discussions and Actions still requires separate investigation.
+
+## Version 0.3 refinements
+
+The operating skill now separates quick activation from detailed [Android platform playbooks](references/platform-playbooks.md) and [independent PR review](references/adversarial-review.md). Historical sources are expanded beyond the initial 17 to 33 case studies; the comparison between genuine destructive writes and misguided universal safety constraints is deliberate. These are curated linked issue/PR narratives, not a claim of inspecting all 1,400 diffs or all workflows.
+
+The [upstream skill catalog](references/upstream-catalog.md) remains a pointer for focused official/community specialist material. No upstream scripts or license terms have been copied into the skill. All specialist instructions remain subordinate to project-specific user permission and current source facts.

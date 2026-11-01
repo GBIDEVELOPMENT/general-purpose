@@ -1,48 +1,51 @@
 ---
 name: android-app-development
-description: Build, debug, review and ship production Android apps with Kotlin, Compose and Android platform integrations. Use for architecture choices, feature delivery, storage/SAF/Room, lifecycle, background work, remote protocols, accessibility, CI, testing, signing, releases and historical PR failure analysis. Focus on real user journeys, exact evidence and avoiding costly speculative engineering.
+description: Plan, implement, debug, review and ship real native Android apps using Kotlin, Compose, JNI, Room, SAF, Photo Picker, WorkManager and remote protocols. Activate for architecture, unsafe file/data operations, authentication, lifecycle, accessibility, CI, signing, release and agent-development failures. Prioritize production user journeys, evidence fidelity and smallest conventional fixes over speculative rewrites.
 metadata:
-  version: "0.2.0"
-  origin: "Chunks, Glimpse and Expository Transfer retrospective"
+  version: "0.3.0"
+  origin: "Source-linked Chunks, Glimpse and Expository Transfer retrospectives"
 ---
 
-# Android App Development: production-first, evidence-led
+# Android app development: production-first, evidence-led
 
-**Mission:** maximize correct, usable Android user journeys per unit of engineering, verification and agent attention, without compromising user data, authorization, security, accessibility or maintainability. This is an agent procedure, not a product specification. The project's own AGENTS.md, release policies and current source of truth take precedence.
+**Goal:** maximize safely working Android user journeys per unit of engineering, CI expense and agent attention. This is a portable agent *procedure*, never a substitute for the host project's AGENTS.md, verified product contracts or user authorization. The three source projects are examples, not requirements imposed on another app.
 
-## Activate deliberately
+## First 90 seconds
 
-1. Read live repository instructions, main branch, active issues/PRs, current queue, affected source/tests and relevant CI. Determine whether another agent owns the file/operation. Dated narrative and an old green run never supersede current head.
-2. Trace **one ordinary user journey** from the shipping UI/intents through service/platform/adapter to observed postcondition. Name source/target/account/provider identity, permissions, Android API tier and data at risk.
-3. Write a **six-line execution card in the owning issue or PR**: Outcome; Evidence (observed vs hypothesis); Authority/scope; Smallest production intervention; Proof; Exit. Do not create another competing workboard.
-4. Consult only the task-relevant reference below and official Android documentation. Prefer conventional Android/library APIs; review external skill code/licensing and pin before installing. A skill cannot grant permissions or change the owner's intent.
-5. Deliver a vertical slice. First prove the real positive path, then failure, cancellation, process-death/permission/network/recovery paths proportionate to risk. Verify the **exact PR head** before integration and the resulting main when base changes affect the proof.
-6. Record accepted scope, independent review, evidence links, limitations and next immediately executable work. A green build, code review, invoked picker, synthetic host or animation alone is not feature acceptance.
+1. Inspect current `main`, active PRs/issues, CI and `AGENTS.md`/queue. Identify other agents and shared files before changing anything. Previous summaries, docs or green tests can be stale.
+2. Name the **shipping user journey**, actual production call path, source and destination identities, permissions, Android API/provider and observable result. Separate observed bug, plausible risk and speculative concern.
+3. Record the **six-line execution card** in the existing issue/PR: **Outcome / Evidence / Authority and scope / Smallest intervention / Positive and negative proof / Exit and remaining gaps**. See [decision diagnostics](references/engineering-decisions.md).
+4. Choose the existing platform/library primitive before a custom backend; check current Android platform documentation and relevant narrowly selected upstream skill. Do not fetch/install unknown code merely because it is recommended.
+5. Implement one connected vertical slice. Verify ordinary positive behavior through real UI/platform/adapter, then its specific hostile, cancellation, crash, stale identity and recovery variants. Bound tests by actual risk, not ceremonial checklist length.
+6. Verify focused and integration checks on the **exact PR head**; classify red results by phase and count executed tests. Independent review for destructive/credential/native/schema/signing changes; update current issue/ledger only when evidence moves.
+7. On integration, state precisely **merged vs merely proposed**, exercised tier and exact SHA/run, persisted postcondition, unsupported device/provider/owner gates and next runnable work. When waiting on external CI, choose an independent safe task, never duplicate speculative branches.
 
-## Routing
+## Load only the necessary specialist reference
 
-| Task or symptom | Load |
+| Symptom / responsibility | Load |
 |---|---|
-| Priorities, overengineering, integration, collaboration | [Engineering decisions](references/engineering-decisions.md) |
-| File safety, Room, intents, lifecycle, networking and uncertainty | [Operation integrity](references/operation-integrity.md) |
-| Android emulator/physical evidence, UI/accessibility, CI, releases | [Verification and CI](references/verification-and-ci.md) |
-| Lessons tied to actual PR/issue histories | [Historical casebook](references/historical-casebook.md) |
-| Focused third-party expertise | [Upstream catalog and provenance](references/upstream-catalog.md) |
-| Extending and measuring this skill | [Audit coverage and evaluation](references/audit-coverage.md) |
+| Requirements, priorities, architecture bloat, branches and gates | [Engineering decisions](references/engineering-decisions.md) |
+| SAF, app-private files, Room, remote auth, identity, retry or interruption | [Operation integrity](references/operation-integrity.md) |
+| Concrete Android implementation patterns for pickers, lifecycle, UI, storage and releases | [Platform playbooks](references/platform-playbooks.md) |
+| UI reachability, testing tiers, CI cost, signing and integration | [Verification and CI](references/verification-and-ci.md) |
+| Security/data-risk independent PR review | [Adversarial PR review](references/adversarial-review.md) |
+| A documented historical success, failure or reversed premise | [Historical casebook](references/historical-casebook.md) |
+| Which published expert skill to use and how to trust it | [Upstream catalog](references/upstream-catalog.md) |
+| Offline checks, case evaluations and limits of the historical audit | [Skill evaluation](references/skill-evaluation.md), [audit scope](references/audit-coverage.md) |
 
-## Decision rules that prevent recurring failures
+## Stop or redirect when one of these patterns appears
 
-- **Prove the harm and check normal behavior before creating a universal gate.** A user-authorized existing torrent payload is different from an unowned export, an app-private immutable original or a provider returning the wrong URI. Distinguish threat, capability and intent. The Chunks #568 detour and genuine #809 defect illustrate both sides.
-- **Do not mistake layers.** Requested, accepted, started, RPC acknowledged, OS callback, durable persisted, exact-target byte readback and independently accepted are distinct. Preserve an **UNCERTAIN** outcome after potentially applied non-idempotent actions; never blind replay.
-- **Freeze authority, not presentation.** Bind the exact authenticated principal, connection/session, endpoint, grant, actual selected IDs, revisions and target at approval. Revalidate before effects and after asynchronous suspension. Name, screen, current filter, path text and global byte rates are insufficient identities.
-- **One operation engine, many interfaces.** Single/dual pane, buttons, drag/drop, shares and widgets should converge on one reviewed command/receipt. Avoid duplicate models, fresh UI-only subsystems and full rewrites where incremental migration works.
-- **Make data preservation an actual test.** Real Android Photo Picker, SAF, provider, Room migration, filesystem crash windows, issuer signing and install-over-update require running tests with bytes and persisted rows, not pure JVM assurances. Do not erase data to obtain a pass.
-- **Correct CI failure classification.** Separate product defects from harness, emulator boot, OS picker locator, runner and skipped tests. Preserve the original red evidence; fix test infrastructure without weakening the intended assertion. A green skip-only gate cannot certify execution.
-- **Scope release gates.** Reachable cross-account mutation, unrelated destructive write or security leakage can block the affected release globally. An unsafe disabled optional exporter blocks that feature's shipping path, without pretending it is implemented or holding unrelated safe journeys hostage.
-- **Two-iteration premise reset.** After two revisions with no new real positive-path evidence, re-examine user intent, standard APIs, source entrypoint and simplest change before expanding architecture. This is not permission to ignore a real defect.
-- **Accessibility and aesthetics require observed behavior.** Small devices, 200% fonts, 48dp targets where required, keyboard focus, TalkBack, reduced motion and real window/picker overlays are functional; screenshots require inspection and owner-gated design still requires owner acceptance.
-- **Avoid accidental issue closure.** Never put a GitHub auto-closing verb immediately before a referenced issue when documenting unfinished work. Prefer “Issue #123 remains open”; verify issue state after merge.
+- **Invented universal invariant:** Does “never overwrite” forbid a user-authorized normal write, while doing nothing for a genuine unrelated-file risk? Differentiate payload reuse, user-reviewed Replace, app-owned immutable originals, and unknown provider output. [Chunks #568 vs #809](references/historical-casebook.md).
+- **Success without observation:** A click, RPC acknowledgment, system-picker launch, report summary, emitted file name, build or green *skipped* check is not postcondition evidence. Require exact target, bytes/rows/status and independent readback when material.
+- **Uncertain side effect:** A possibly applied remote write, file creation or wallpaper change must not automatically replay after timeout/401/cancellation/process loss. Preserve truthful `UNCERTAIN`, then read-only reconcile or ask for fresh authorization.
+- **Mutable identity across suspension:** Freeze full exact account/server/grant/item/operation generation at approval, not display labels, current screen state or normalized credentials. One user intent must map to exactly one owned command.
+- **Test-only cure:** Is the test harness fixed but production still missing the guard, or is the production behavior correct but UI automation cannot reach the OS picker? Trace both endpoints and last executed assertion.
+- **Unbounded architectural expansion:** After two revisions without *new real positive-path proof*, recheck user intent, existing call site and standard API. Do not abandon genuine bugs or quietly lower safety.
+- **False release closure:** Physical device, owner signing/design acceptance, provider interop and installed-data upgrade have separate gates. A capability-local refusal must remain visible; do not call disabled functionality shipped.
+- **Parser automation hazard:** Use “Issue #123 remains open” on partial PRs; avoid GitHub issue-closing verbs adjacent to issue numbers unless closure is intended and verified.
 
 ## Completion receipt
 
-Report exact commit/PR; real entrypoint and tested device/API/build; tests **executed** with counts, trace and links; positive readback and hostile/interrupt cases; review and merge state; missing evidence (physical, protected host, owner signing/visual); and next unblocked task. Do not claim a procedure or an installed skill proves app behavior.
+`Outcome | source and head SHA | actual shipping entrypoint | device/API/provider and evidence tier | executed test counts and CI links | positive and recovery outcomes | independent review/merge state | remaining unverified claims | next task`.
+
+Never claim the skill or an unrun test is evidence of an app working.

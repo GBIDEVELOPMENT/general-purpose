@@ -1,0 +1,40 @@
+name: Android agent skill integrity
+
+on:
+  pull_request:
+    paths:
+      - 'skills/android-app-development/**'
+      - '.github/workflows/android-agent-skill-integrity.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'skills/android-app-development/**'
+      - '.github/workflows/android-agent-skill-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-agent-skill-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  skill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact source head
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verify Markdown, cases and evaluation inputs
+        run: python3 skills/android-app-development/scripts/check_skill.py
+      - name: Execute all offline skill tests
+        run: python3 -m unittest discover -s skills/android-app-development/tests -p 'test_*.py' -v
+      - name: Compile Python utilities
+        run: python3 -m py_compile skills/android-app-development/scripts/*.py
+      - name: Verify prompts do not contain answer key
+        run: |
+          python3 skills/android-app-development/scripts/evaluate_decisions.py --emit-prompts > "$RUNNER_TEMP/android-skill-prompts.json"
+          ! grep -E '"(answer|reason|case_id|source)"' "$RUNNER_TEMP/android-skill-prompts.json"
