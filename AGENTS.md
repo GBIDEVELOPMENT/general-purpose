@@ -64,3 +64,7 @@ ownership.
   provider's IP reputation policy by cycling runner IP addresses.
 - Use docs/shaw-mail-bridge.md as the current technical authority. Keep only
   encrypted payloads in GitHub comments, not plaintext messages.
+
+## Android engineering skill lane
+
+When an explicitly requested task concerns native Android app development or a substantive Android code review, start with [Android App Development](skills/android-app-development/SKILL.md) and load only its task-matched references. This is a **portable advisory skill**. It must never override project-specific instructions, safety requirements, user authority, protected credentials or current test evidence. Changes to Chunks, Glimpse, Expository or another repository require their own explicit task and independent qualification; merely improving the central skill does not install it elsewhere. Do not touch unrelated audit, Night Court, Shaw email, FTP or privileged workflows while maintaining this skill.
