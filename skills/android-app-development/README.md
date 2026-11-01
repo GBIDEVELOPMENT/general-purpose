@@ -18,3 +18,7 @@ This skill is optimized for choices that generative coding agents repeatedly get
 Its history contains a **metadata-level** review of 1,400 PR records (881 Chunks, 156 Glimpse, 363 Expository) observed in a 2026-10-31/11-01 snapshot, plus issue inventory. It does **not** claim all 1,400 diffs/reviews/CI logs have been independently examined. The casebook identifies individually inspected, linked evidence and places limitations beside each claim. Further analysis and a counterfactual evaluation plan live in references/audit-coverage.md.
 
 No actions on the three Android repositories are implied by creation of this central skill. A later rollout should use independent review PRs, version pinning and actual task-based activation checks.
+
+## Reproducible read-only historical inventory
+
+Run from this directory: python3 scripts/snapshot_history.py --output /path/to/local-snapshot.json. Optional GITHUB_TOKEN or GH_TOKEN increases GitHub's read-only API rate limit; no token appears in the output. The script enumerates paginated PRs and separate issues for all three repos, emits titles/metadata but no bodies, review text or CI logs, and detects pagination duplicates and a moving main head. Its output is local only; do not commit it automatically. Test offline: python3 -m unittest discover -s tests -v. A full review of diffs, discussions and Actions still requires separate investigation.
