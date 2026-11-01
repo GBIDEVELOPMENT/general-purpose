@@ -1,49 +1,100 @@
 #!/usr/bin/env python3
-"""Dependency-free structure/reference checker. Does not fetch URLs or execute Android code."""
+"""Dependency-free agent skill structural and casebook regression validation."""
+import json
 from pathlib import Path
 import re
 import sys
 
-root = Path(__file__).resolve().parents[1]
-skill = root / "SKILL.md"
-errors = []
-try:
-    body = skill.read_text(encoding="utf-8")
-except OSError as exc:
-    sys.exit(f"FAIL: missing SKILL.md: {exc}")
-if not body.startswith("---\n") or "\n---\n" not in body[4:]:
-    errors.append("SKILL.md needs YAML frontmatter")
-else:
-    header = body.split("---", 2)[1]
-    match = re.search(r"(?m)^name:\s*([^\s]+)\s*$", header)
-    if not match or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", match.group(1)) or len(match.group(1)) > 64:
-        errors.append("invalid skill name")
-    desc = re.search(r"(?m)^description:\s*(.*)$", header)
-    if not desc or not desc.group(1).strip() or len(desc.group(1)) > 1024:
-        errors.append("invalid description")
-if len(body.splitlines()) > 500:
-    errors.append("SKILL.md exceeds 500 lines")
-for path in root.rglob("*.md"):
-    text = path.read_text(encoding="utf-8")
-    if not text.strip():
-        errors.append(f"empty file: {path}")
-    for link in re.findall(r"\]\(([^)]+)\)", text):
-        if link.startswith(("https://", "http://", "#", "mailto:")):
-            continue
-        target = (path.parent / link.split("#", 1)[0]).resolve()
+ROOT = Path(__file__).resolve().parents[1]
+CASE_PATTERN = re.compile(r"\| ((?:CH|GL|EX)-\d\d) \|")
+LINK_PATTERN = re.compile(r"\]\(([^)]+)\)")
+
+
+def validate(root=ROOT):
+    errors = []
+    root = Path(root).resolve()
+    sk = root / "SKILL.md"
+    if not sk.is_file():
+        return ["Missing SKILL.md"]
+    text = sk.read_text(encoding="utf-8")
+    if not text.startswith("---\n") or "\n---\n" not in text[4:]:
+        errors.append("SKILL.md requires YAML frontmatter delimiters")
+    else:
+        header = text.split("---", 2)[1]
+        matches = re.findall(r"(?m)^name:\s*([a-z0-9-]+)\s*$", header)
+        desc = re.findall(r"(?m)^description:\s*(.+)$", header)
+        if len(matches) != 1 or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", matches[0]) or len(matches[0]) > 64:
+            errors.append("Invalid or missing skill name")
+        if len(desc) != 1 or not 1 <= len(desc[0].strip()) <= 1024:
+            errors.append("Invalid or missing skill description")
+    if len(text.splitlines()) > 500:
+        errors.append("SKILL.md too long; use progressive references")
+    for path in root.rglob("*.md"):
+        doc = path.read_text(encoding="utf-8")
+        if not doc.strip():
+            errors.append(f"Empty Markdown file {path.relative_to(root)}")
+        for target in LINK_PATTERN.findall(doc):
+            if target.startswith(("http://", "https://", "#", "mailto:")):
+                continue
+            filepart = target.split("#", 1)[0]
+            if not filepart:
+                continue
+            resolved = (path.parent / filepart).resolve()
+            if not resolved.is_relative_to(root) or not resolved.exists():
+                errors.append(f"Broken/outside local link {path.relative_to(root)} -> {target}")
+    casepath = root / "references" / "historical-casebook.md"
+    if not casepath.is_file():
+        errors.append("Missing casebook")
+        ids = []
+    else:
+        casebook = casepath.read_text(encoding="utf-8")
+        ids = CASE_PATTERN.findall(casebook)
+        if len(ids) < 25 or len(ids) != len(set(ids)):
+            errors.append(f"Need >=25 unique source-linked case IDs (found {len(ids)})")
+        for match in re.finditer(r"(?m)^\| ((?:CH|GL|EX)-\d\d) \|([^\n]+)", casebook):
+            if "https://github.com/" not in match.group(2):
+                errors.append(f"Case {match.group(1)} is missing a source link")
+    fixture = root / "assets" / "decision-regressions.json"
+    if not fixture.is_file():
+        errors.append("Missing decision regression corpus")
+        scenarios = []
+    else:
         try:
-            target.relative_to(root.resolve())
-        except ValueError:
-            errors.append(f"external local link: {path}: {link}")
-            continue
-        if not target.exists():
-            errors.append(f"missing local link: {path}: {link}")
-case = (root / "references" / "historical-casebook.md").read_text(encoding="utf-8")
-ids = re.findall(r"\| (?:CH|GL|EX)-\d\d \|", case)
-if len(ids) < 12 or len(set(ids)) != len(ids):
-    errors.append(f"casebook missing/duplicate cases: {len(ids)}")
-if errors:
-    for err in errors:
-        print("FAIL:", err, file=sys.stderr)
-    sys.exit(1)
-print(f"PASS: Android skill structure, {len(ids)} casebook entries, internal links, frontmatter")
+            scenarios = json.loads(fixture.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, UnicodeError) as err:
+            errors.append(f"Invalid decision JSON: {err}")
+            scenarios = []
+    if not isinstance(scenarios, list) or len(scenarios) < 12:
+        errors.append("Need >=12 evaluation cases")
+        scenarios = []
+    seen, unique = set(), set()
+    for row in scenarios:
+        try:
+            sid, cid = row["id"], row["case_id"]
+            if not re.fullmatch(r"T\d{2}", sid) or sid in seen:
+                errors.append(f"Invalid/duplicate scenario ID {sid}")
+            if cid not in ids or cid in unique:
+                errors.append(f"Unknown/reused casebook ID {cid}")
+            seen.add(sid)
+            unique.add(cid)
+            opts = row["choices"]
+            if (len(opts) != 3 or {c["id"] for c in opts} != {"A", "B", "C"}
+                    or row["answer"] not in {"A", "B", "C"} or not row["scenario"] or not row["reason"]):
+                errors.append(f"Invalid options/answer for {sid}")
+        except (KeyError, TypeError, ValueError) as err:
+            errors.append(f"Malformed scenario: {err}")
+    return errors
+
+
+def main():
+    errors = validate()
+    if errors:
+        for error in errors:
+            print("FAIL:", error, file=sys.stderr)
+        return 1
+    print("PASS: skill frontmatter, progressive links, source-linked casebook, evaluation corpus")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
