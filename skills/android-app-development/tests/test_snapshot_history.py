@@ -18,6 +18,11 @@ class Tests(unittest.TestCase):
         self.assertEqual(LIST, mod.next_url('<' + LIST + '>; rel="next"'))
         self.assertIsNone(mod.next_url('<https://example.com>; rel="last"'))
 
+    def test_live_collection_url_is_accepted_before_network(self):
+        self.assertEqual("/repos/gamesbyian/Chunks/pulls", mod.check_url(LIST).path)
+        with self.assertRaises(ValueError):
+            mod.check_url(BASE + "pulls?page=1")
+
     def test_url_rejects_host_confusion_port_redirect_and_cross_repo(self):
         for url in ("https://api.github.com.evil.org/repos/x/y/pulls",
                     "https://api.github.com:443/repos/a/b/pulls",

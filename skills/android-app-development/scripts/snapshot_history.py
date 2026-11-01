@@ -35,8 +35,15 @@ def check_url(url, collection_path=None, expected_page=None):
         q = parse_qs(p.query, strict_parsing=True)
         if set(q) != {"state", "per_page", "page"} or q["state"] != ["all"] or q["per_page"] != ["100"] or q["page"] != [str(expected_page)]:
             raise ValueError("Unexpected pagination parameters or page")
-    elif p.query:
-        raise ValueError("Unexpected branch query")
+    elif p.path.endswith("/branches/main"):
+        if p.query:
+            raise ValueError("Unexpected branch query")
+    else:
+        q = parse_qs(p.query, strict_parsing=True)
+        if set(q) != {"state", "per_page", "page"} or q["state"] != ["all"] or q["per_page"] != ["100"]:
+            raise ValueError("Unexpected GitHub collection query")
+        if len(q["page"]) != 1 or not q["page"][0].isdigit() or int(q["page"][0]) < 1:
+            raise ValueError("Invalid GitHub page")
     return p
 
 
