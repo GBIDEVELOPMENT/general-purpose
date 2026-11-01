@@ -34,3 +34,7 @@ Total: **1,400 PR metadata records, 57 distinct issues** in this snapshot. These
 ## Maintenance rules
 
 Keep source links, no confidential data, explicit provenance labels and brief decision rules. Revise the main SKILL.md only when case evidence demonstrates a generalizable intervention. Do not turn the skill into an enormous work queue or a substitute for the three projects' current specs. Changes need a structural/link check, adversarial counterexample review and tagged version. No external skill code is executed automatically.
+
+## Reproduction utility added after initial survey
+
+The read-only [snapshot_history.py](../scripts/snapshot_history.py) script enumerates PR/issue metadata through paginated GitHub API calls and records whether main changed during enumeration. Its offline [unit tests](../tests/test_snapshot_history.py) exercise pagination, duplicate refusal, PR-versus-issue filtering, the body-omission boundary and atomic local output. This enables a repeatable future inventory; it does not analyze full diffs, reviews or CI.
