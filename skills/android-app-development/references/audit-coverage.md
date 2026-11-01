@@ -38,3 +38,7 @@ Keep source links, no confidential data, explicit provenance labels and brief de
 ## Reproduction utility added after initial survey
 
 The read-only [snapshot_history.py](../scripts/snapshot_history.py) script enumerates PR/issue metadata through paginated GitHub API calls and records whether main changed during enumeration. Its offline [unit tests](../tests/test_snapshot_history.py) exercise pagination, duplicate refusal, PR-versus-issue filtering, the body-omission boundary and atomic local output. This enables a repeatable future inventory; it does not analyze full diffs, reviews or CI.
+
+## Operational evaluation added in v0.3
+
+The skill now includes an offline 16-scenario [decision regression corpus](../assets/decision-regressions.json), an [emitter/scorer](../scripts/evaluate_decisions.py) and [evaluation protocol](skill-evaluation.md). This is a smoke test for **decision fidelity**, not an independent blind study or an assessment of actual code correctness. Historical source pointers remain essential and exact-head real Android behavior must still be independently tested.
