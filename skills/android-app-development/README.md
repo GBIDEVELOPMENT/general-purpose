@@ -1,0 +1,20 @@
+# Android App Development agent skill
+
+Portable, progressively disclosed Agent Skill built from the **actual** engineering histories of [Chunks](https://github.com/gamesbyian/Chunks), [Glimpse](https://github.com/gamesbyian/Glimpse) and [Expository Transfer](https://github.com/gamesbyian/Expository/tree/main/android-transfer). It complements, rather than replaces, the smaller android-evidence-first skill already installed in those repositories.
+
+**Canonical location (for now):** this directory in the private GBIDEVELOPMENT/general-purpose repository. This is an original synthesis with links to upstream work, not a vendored copy or an assertion that third-party scripts are trusted. No standalone redistribution license has been selected.
+
+## How to use it
+
+- A coding agent with access to this private repository can be instructed to read this directory's SKILL.md and only the relevant references before native Android work.
+- For automatic agent activation, install a *reviewed, version-pinned copy* at a path supported by the specific runtime, and add a short AGENTS.md discovery rule in the Android project. Common paths differ by runtime: .agents/skills/android-app-development, .github/skills/android-app-development, or .agent/skills/android-app-development. Confirm with that runtime's current documentation rather than assuming online publication means automatic discovery.
+- Preserve local product/architecture/CI rules above this portable advisory skill. Never make installation imply permission for network writes, credential access, releases or merges.
+- Run: python3 scripts/check_skill.py from this directory. It checks frontmatter, local references and case-link consistency. Use skills-ref validate on the same directory when installed. No network, Android SDK, dependencies or secrets are needed for the included check.
+
+## Purpose and evidence discipline
+
+This skill is optimized for choices that generative coding agents repeatedly get wrong: speculative universal requirements, incomplete app-to-provider integration, unsafe mutations, confused evidence tiers, excessive architecture, fragmented state ownership, noisy CI and stale PR/issue tracking.
+
+Its history contains a **metadata-level** review of 1,400 PR records (881 Chunks, 156 Glimpse, 363 Expository) observed in a 2026-10-31/11-01 snapshot, plus issue inventory. It does **not** claim all 1,400 diffs/reviews/CI logs have been independently examined. The casebook identifies individually inspected, linked evidence and places limitations beside each claim. Further analysis and a counterfactual evaluation plan live in references/audit-coverage.md.
+
+No actions on the three Android repositories are implied by creation of this central skill. A later rollout should use independent review PRs, version pinning and actual task-based activation checks.
