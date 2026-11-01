@@ -26,3 +26,7 @@ Severity: P0 reachable unintended data loss/account-crossing/credential exposure
 **RIGHT:** distinguish exact user authorization, ownership, platform provider and actual effect; require accepted positive path, source retention, readback, durable uncertainty and independent tests. Retire outdated requirements explicitly but keep true safety protections.
 
 If no actionable defect is found, say so. A correct review may legitimately conclude “no issue found; these platform tiers remain untested.”
+
+## Local PR-description safety check
+
+Before posting a partial PR, run `python3 scripts/lint_pr_body.py /path/to/pr-body.md` from the skill root. GitHub's parser can interpret negated closing keywords as real issue-closing directives (Glimpse PR #166/#168). For unfinished work use **"Issue #143 remains open"**, without a closing verb adjacent to the issue number. The CLI identifies a subset of dangerous patterns; after merge, inspect the actual issue state. Genuine intentional `Closes #143` remains appropriate only for independently completed acceptance.
