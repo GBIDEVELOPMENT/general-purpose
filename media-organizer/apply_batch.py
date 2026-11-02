@@ -157,6 +157,13 @@ def main():
     ap.add_argument("--validate-only",action="store_true")
     args=ap.parse_args()
     plan=json.loads(Path(args.plan).read_text(encoding="utf-8"))
+    if "trek_folder_moves" in plan:
+        from trek_folder_moves import validate as verify_trek, execute as move_trek
+        ops=verify_trek(plan)
+        print(f"Validated {len(ops)} exact Star Trek directory relocations in {plan['batch_id']}")
+        if args.validate_only:return
+        with connect() as ftp:move_trek(ftp,plan,Path(args.audit))
+        return
     ops=plan_validate(plan)
     print(f"Validated {len(ops)} reviewed moves in batch {plan['batch_id']}")
     if args.validate_only:return
