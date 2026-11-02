@@ -28,8 +28,10 @@ jobs:
         run: python3 skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/examples/remote-reconnect.json
       - name: Execute offline schema and evidence validator tests
         run: python3 -m unittest discover -s skills/mechanised-expertise/tests -p 'test_*.py' -v
+      - name: Audit bounded inquiry operators, source roles and negative controls
+        run: python3 skills/mechanised-expertise/scripts/audit_inquiry_operators.py
       - name: Compile skill validator
-        run: python3 -m py_compile skills/mechanised-expertise/scripts/check_inquiry.py
+        run: python3 -m py_compile skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/scripts/audit_inquiry_operators.py
       - name: Verify pinned source synthesis routes
         run: |
           python3 - <<'PY'
