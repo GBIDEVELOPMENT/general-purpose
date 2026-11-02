@@ -1,6 +1,6 @@
 # Source-derived strengths and deliberate combinations
 
-These 22 **pinned original passages** were inspected, but the claims are **paraphrases of what their authors recommend**, not proven effectiveness. The final column contains **our original proposed mechanised-intuition extensions**, not published advice from those authors. This is a curated sample from a larger heterogeneous corpus, not a global best-skill ranking.
+These 22 **pinned original passages** were inspected, but the claims are **paraphrases of what their authors recommend**, not proven effectiveness. The final column contains **our editorial, original proposed mechanised-intuition extensions**, not published advice from those authors. This is a curated sample from a larger heterogeneous corpus, not a global best-skill ranking.
 
 | Expertise family | Pinned original | Source recommendation, paraphrased | Proposed conditional mechanism |
 |---|---|---|---|
