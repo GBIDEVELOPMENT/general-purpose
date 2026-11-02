@@ -1,0 +1,48 @@
+---
+name: mechanised-expertise
+description: Turn development advice into conditional expert inquiry, grounded research, concept-map gap audits, defensible implementation/UX decisions, and independent verification. Use for ambiguous or consequential mobile/software feature design and when synthesizing agent-skill corpora. Scale effort to risk; avoid bureaucratic analysis for routine fixes.
+metadata:
+  version: "0.1.0"
+  origin: "Mobile development skills research corpus, with complementary general-purpose engineering judgment and concept-model skills"
+---
+
+# Mechanised Expertise: reusable questions and decisions, not universal checklists
+
+**Purpose.** Recover the observable consequences of expert experience by making cues, inquiries, investigations, models, choice criteria, exceptions and verification explicit. Do not claim actual human intuition. This advisory skill supplies a *method*, not project requirements, permission to act, or proof that a recommendation works. Current user instructions, host `AGENTS.md`, code and platform-specific primary sources prevail.
+
+## 0. Right-size the inquiry
+
+- **Small, reversible, conventional change:** inspect the closest existing implementation, change only the necessary code and test it. Stop. Do not create a separate concept model.
+- **Ambiguous/user-facing feature or coupled state:** make a compact inquiry and compare likely options. Ask only for facts that code, documentation, standards or safe tests cannot establish.
+- **Irreversible, safety-critical, destructive, cross-account, asynchronous, migration or unfamiliar architecture:** complete the risk-bearing questions, expose an explicit model, independently verify assumptions and record reversibility conditions before the change.
+- **Frontier research/knowledge integration:** model the domain with the sibling [Concept Model Engineering](../concept-model-engineering/SKILL.md) skill. Establish coverage before declaring a blank a novel discovery.
+
+## 1. Recognize what the request leaves unsaid
+
+Translate the request into **actors, goals, environment, objects, identities, transitions, outcomes and constraints**. Identify the expert cues that make hidden requirements probable: interruption, identity drift, device settings, latency, multiple input paths, missing fallback, platform version, ambiguous user feedback, migration, remote side effects, and irreversible loss. Choose *only triggered* question families from [Inquiry and recognition patterns](references/inquiry-patterns.md).
+
+For each consequential unknown record **(question; why it matters; best answer source; what answer changes; confidence)**. Answer from real project data first. Distinguish product-owner preferences from observable facts; escalate only unresolved product authority. Don't ask users to restate an answer already present in project requirements.
+
+## 2. Research and assemble a bounded model
+
+Seek the most discriminating source for each question: existing code and tests; user feedback and complaints; official platform and accessibility standards; mature competitors and libraries; practical case reports including original-language phrasing. Record version, independence/derivation, and what was actually inspected. A popular community rule is not a verified platform requirement.
+
+Invoke [Concept Model Engineering](../concept-model-engineering/SKILL.md) if the decision depends on relationships across features, many entities/states, incomplete source classes, suspected missing interactions, or apparently novel gaps. State competency questions, build directed propositions, probe a held-out source or alternate representation, then classify blanks as acquisition, alias, schema, missing edge, disagreement, boundary, deliberate omission or candidate frontier. Do not infer absence from an open-world map.
+
+## 3. Make and challenge a decision
+
+Freeze hard constraints and non-goals. Prefer a conventional plausible solution that matches the observed environment; compare alternatives when an exception matters. For each candidate simulate the **normal user journey**, then only the material failure variants (denied permission, stale identity, offline/timeout, process death, retry, input scale, accessibility or migration). Identify the cue that would reverse the preferred option and the cheapest observation that separates competing hypotheses. Use [Engineering Judgment](../engineering-judgment/SKILL.md) for higher-stakes trade-offs; never use a numerical weighted score to override a hard constraint.
+
+Define each UX outcome as an observable user-perceived state and feasible interaction, not just a developer-facing implementation. Confirm what feedback, visibility, cancellation, accessibility, and recovery the user receives. Mark any source guidance that is framework-specific, opinionated or version-gated.
+
+## 4. Prove the thing claimed
+
+Create an *independent oracle* aligned to the user goal. A build proves compilation; a test double proves the stubbed contract; an RPC ACK proves only that the server responded; a device trace can prove a specific real flow on a specific device. Test positive and discriminating negative cases. Record platform/API/device/provider, exact code revision, what actually ran, and the unresolved limits. Never replace failed tests with a success story or repeat an uncertain side effect blindly.
+
+Use the [Evidence and corpus protocol](references/evidence-and-corpus.md). The machine-checkable [inquiry card schema](schema/inquiry-card-v1.schema.json) and [validator](scripts/check_inquiry.py) are optional for complicated cases; use prose in an existing issue/PR for small work. An [illustrative reconnection case](examples/remote-reconnect.json) shows unresolved questions without pretending tests were run.
+
+## 5. Retain the generalizable distinction
+
+After observing the outcome, record whether the original cue predicted the risk, whether an exception appeared, what evidence changed the decision, what question was wasteful, and which conditional practice should be refined. Keep source statements and *our proposed heuristics* separately identified. Do not upgrade an inferred rule to established advice without testing and applicable evidence.
+
+**Short receipt:** `Outcome | triggered cues | consequential questions and answer sources | coverage/blanks | options and exception | choice/reversal trigger | observed oracle | uncertainty/next action`.
