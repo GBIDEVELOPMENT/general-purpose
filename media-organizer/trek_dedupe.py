@@ -5,19 +5,26 @@ import argparse,ftplib,json,os,re
 from pathlib import Path,PurePosixPath
 from organize import ROOT,connect,safe
 VIDEO={".mkv",".mp4",".avi",".m4v"}
-SERIES={"discovery":"discovery","lower_decks":"lower decks","strange_new_worlds":"strange new worlds"}
+SERIES={"discovery":"discovery","lower_decks":"lower decks","strange_new_worlds":"strange new worlds","green_lantern_animated":"green lantern the animated series"}
 EP=re.compile(r"(?i)S(\d{2})E(\d{2})")
 def info(path):
     p=PurePosixPath(safe(path))
     if p.suffix.lower() not in VIDEO:raise ValueError("Expected video file")
     s=str(p).lower().replace("."," ").replace("_"," ").replace("-"," ")
+    if "lantern" in s and not (str(p).startswith("/downloads/Green Lantern The Animated Series/") or str(p).startswith("/downloads/Green Lantern The Animated Series S01/")):
+        raise ValueError("Wrong Green Lantern show; HBO Lanterns and other titles excluded")
     if re.search(r"star\s+trek\s+enterprise",s):raise ValueError("Enterprise excluded")
-    if re.search(r"star\s+trek\s+lower\s+decks",s):show="lower_decks"
+    if (str(p).startswith("/downloads/Green Lantern The Animated Series/Season 01/") or
+        str(p).startswith("/downloads/Green Lantern The Animated Series S01/")):
+        show="green_lantern_animated"
+    elif re.search(r"star\s+trek\s+lower\s+decks",s):show="lower_decks"
     elif re.search(r"star\s+trek\s+strange\s+new\s+worlds?",s):show="strange_new_worlds"
     elif re.search(r"star\s+trek\s+discovery",s):show="discovery"
     else:raise ValueError("Unrecognized Trek subseries")
     token=EP.search(str(p.name))
     if not token:raise ValueError("No filename SxxEyy identity")
+    if show=="green_lantern_animated" and not re.search(r"(?i)green[. _-]+lantern[. _-]+the[. _-]+animated[. _-]+series",p.name):
+        raise ValueError("Required exact animated-series filename identity")
     return show,token.group(1),token.group(2)
 def validate(m):
     if set(m)!={"root","batch_id","description","groups"} or m["root"]!=ROOT:raise ValueError("Invalid envelope")

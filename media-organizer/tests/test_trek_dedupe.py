@@ -47,4 +47,26 @@ class Tests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,"changed"):
                 execute(ftp,plan(),Path(tmp)/"result.json")
         self.assertIn(B,ftp.files);self.assertFalse(ftp.removed)
+
+    def test_animated_series_distinct_from_hbo_lanterns(self):
+        from trek_dedupe import validate
+        from pathlib import Path
+        approved=json.loads(Path("media-organizer/approved-trek-dedupe.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(validate(approved)),2)
+        self.assertEqual({g["show"] for g in approved["groups"]},{"green_lantern_animated"})
+        self.assertTrue(all("Green Lantern The Animated Series" in f["from"] for g in approved["groups"] for f in [g["retain"]]+g["delete"]))
+    def test_reject_hbo_lanterns_masquerading_as_animated(self):
+        with self.assertRaises(ValueError):
+            info("/downloads/Lanterns (2026)/Season 01/Lanterns - S01E03.mkv")
+    def test_reject_general_green_lantern_live_action(self):
+        with self.assertRaises(ValueError):
+            info("/downloads/Green Lantern 2011/Green Lantern S01E03.mkv")
+    def test_keeper_protected_in_two_probed_animated_groups(self):
+        approved=json.loads(Path("media-organizer/approved-trek-dedupe.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(validate(approved)),2)
+        import copy
+        corrupt=copy.deepcopy(approved)
+        corrupt["groups"][0]["delete"][0]["from"]=corrupt["groups"][0]["retain"]["from"]
+        with self.assertRaises(ValueError):validate(corrupt)
+
 if __name__=="__main__":unittest.main()
