@@ -112,3 +112,4 @@ def main():
     print(json.dumps({"series":len(report["series"]),"move_suggestions":len(report["suggested_folder_moves"]),
                       "needs_review":len(report["review"]),"partial":report["incomplete_scan"]}))
 if __name__=="__main__":main()
+# Inventory refresh marker 2026-11-01: owner-requested read-only Downloads title catalog.
