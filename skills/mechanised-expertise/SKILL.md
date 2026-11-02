@@ -23,6 +23,10 @@ These references supplement the lightweight routine path below. They do not crea
 
 For consequential issues spanning multiple specialties, consult [conditional composition operators](references/composition-operators.md) and the [10 structured multi-source recipes](assets/compositions-v1.json). Each recipe combines relevant source IDs from the existing pinned [source-to-expertise table](assets/source-to-expertise-v09.csv), and records a **trigger, skip condition, decision-changing question, cheapest evidence path, map/no-map boundary, reversal condition and independent oracle**. These *editorial hypotheses* do not establish effectiveness or independent intellectual origins. Select only decision-relevant recipes; do not require the full recipe for routine fixes.
 
+## Generate missing expert questions before choosing recipes
+
+For ambiguous or unexplored work, read the [nine bounded inquiry-generation operators](references/inquiry-generation-operators.md) and their [structured catalog](assets/inquiry-operators-v1.json). They turn goals into *plausible obstacles*, contrast users' mental models, inspect state/identity boundary crossings, represent consequential design alternatives as Questions–Options–Criteria, reverse-audit conceptual maps, disqualify transferred rules, seek opposing evidence, invert test oracles and look for useful cross-system user journeys. Use only operators whose causal trigger is present **and whose plausible opposing answers would change a decision or acceptance test**. Each has an explicit reject condition and stopping rule. The [three teaching cases](examples/operator-applications-v1.json) include one deliberately trivial negative control; none demonstrates production effectiveness. Offline structural checks: `python3 scripts/audit_inquiry_operators.py`.
+
 ## 0. Right-size the inquiry
 
 - **Small, reversible, conventional change:** inspect the closest existing implementation, change only the necessary code and test it. Stop. Do not create a separate concept model.
