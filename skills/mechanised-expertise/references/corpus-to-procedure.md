@@ -19,7 +19,7 @@ For each individual source recommendation:
 
 ## Machine-readable examples
 
-The hand-curated [10 source-linked procedures](../assets/source-mechanisms-v1.json) are a first implementation across requirements, existing architecture, async UI state, causal debugging, uncertain remote writes, accessibility, profiling, conceptual gaps, end-to-end acceptance and design alternatives.
+The hand-curated [22 source-linked procedures](../assets/source-mechanisms-v1.json) cover the entire pinned sample and are a first implementation across requirements, existing architecture, async UI state, causal debugging, uncertain remote writes, accessibility, profiling, conceptual gaps, end-to-end acceptance and design alternatives.
 
 Each record has: original source ID, activation, rejection, named input facts, ordered typed operations, output dependencies, two-sided decision gate, discriminator, independent oracle and stopping rule. The [source-pinned table](../assets/source-to-expertise-v09.csv) retains original publication provenance.
 
@@ -29,7 +29,7 @@ Run:
 
 The validator rejects unknown source IDs, forward references, missing inputs, duplicate outputs, unknown operations, generic intuitive commands and missing alternative decisions. It does **not** establish source accuracy, equivalence to experienced practitioners or empirically better outcomes.
 
-**Coverage is explicit:** these 10 curated examples are a subset of the 22 pinned practice records, which are themselves a subset of the 1,073 recommendation records in the research corpus. Conversion is a separate workstream; do not automatically mark all source records as reviewed or mechanistically complete.
+**Coverage is explicit:** these 22 curated procedure examples cover all 22 pinned practice records, which are themselves a subset of the 1,073 recommendation records in the research corpus. Conversion is a separate workstream; do not automatically mark all source records as reviewed or mechanistically complete.
 
 ## When to stop compiling
 

@@ -37,7 +37,7 @@ The optional [question compiler](scripts/compile_inquiry.py) accepts a normalize
 
 ## Convert corpus advice into stepwise procedures
 
-When developing or revising agent skills from the research corpus, use the [source-to-procedure compilation contract](references/corpus-to-procedure.md) and inspect the [10 curated operational examples](assets/source-mechanisms-v1.json). Each example has an original source ID, trigger, explicit disqualifier, named source facts, **ordered operations with declared input/output dependencies**, opposing decision actions, a discriminator, an independent oracle and a stop rule. Check the authored procedures using `python3 scripts/audit_source_mechanisms.py`.
+When developing or revising agent skills from the research corpus, use the [source-to-procedure compilation contract](references/corpus-to-procedure.md) and inspect the [22 curated operational examples](assets/source-mechanisms-v1.json). Each example has an original source ID, trigger, explicit disqualifier, named source facts, **ordered operations with declared input/output dependencies**, opposing decision actions, a discriminator, an independent oracle and a stop rule. Check the authored procedures using `python3 scripts/audit_source_mechanisms.py`.
 
 These examples are proposed transformations, not ten new independent upstream recommendations or proof of improved agent performance. The unconverted source corpus remains a research queue rather than implicitly carrying a mechanised implementation.
 

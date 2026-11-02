@@ -24,10 +24,10 @@ class MechanismExtractionTests(unittest.TestCase):
         obj['procedures'][0][field]=value
         return obj
 
-    def test_ten_linked_procedures(self):
+    def test_all_22_pinned_patterns_are_converted(self):
         result=self.check(self.payload)
-        self.assertEqual(result['curated_procedures'],10)
-        self.assertEqual(len({p['source_pattern_id'] for p in self.payload['procedures']}),10)
+        self.assertEqual(result['curated_procedures'],22)
+        self.assertEqual({p['source_pattern_id'] for p in self.payload['procedures']},self.source_ids)
 
     def test_source_without_original_rejected(self):
         with self.assertRaisesRegex(ValueError,'pinned source'):
