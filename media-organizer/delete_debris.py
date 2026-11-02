@@ -5,11 +5,12 @@ No wildcard remote deletion. Archive suggestions are never automatically approve
 """
 import argparse, ftplib, json, os, re
 
+from pathlib import Path, PurePosixPath
+
 OWNER_MEDIA_BATCH = 'owner_media_20261101_289'
 OWNER_MEDIA_REVIEW = Path('media-organizer/review/ftp-selected-title-delete-2026-11-01.json')
 OWNER_MEDIA_BYTES = 463387620682
 
-from pathlib import Path, PurePosixPath
 from organize import ROOT, VIDEO, connect, safe
 
 IMAGE={".jpg",".jpeg",".png",".webp",".bmp",".gif"}
