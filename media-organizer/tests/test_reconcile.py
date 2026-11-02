@@ -22,4 +22,16 @@ class IndependentMoveReconciliationTests(unittest.TestCase):
     def test_truncated_scan_not_authoritative(self):
         d=inv();d["truncated"]=["/downloads/Original"]
         self.assertFalse(compare(d,plan())["authoritative"])
+    def test_folder_move_expands_to_exact_child_paths(self):
+        document={"root":"/downloads","batch_id":"trek_folders_test",
+                  "trek_folder_moves":[{"from":"/downloads/Star Trek Test",
+                                        "to":"/downloads/Star Trek/Star Trek Test",
+                                        "files":[{"name":"S01E01.mkv","size":100},
+                                                 {"name":"S01E02.mkv","size":200}]}]}
+        catalog=inv(("/downloads/Star Trek/Star Trek Test/S01E01.mkv",100),
+                    ("/downloads/Star Trek/Star Trek Test/S01E02.mkv",200))
+        report=compare(catalog,document)
+        self.assertEqual(report["counts"],{"moved":2})
+        self.assertTrue(report["authoritative"])
+        self.assertEqual(report["total_moves"],2)
 if __name__=="__main__":unittest.main()
