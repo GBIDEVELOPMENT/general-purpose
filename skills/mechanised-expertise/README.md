@@ -7,3 +7,9 @@ Unlike a universal checklist, question families are activated only by observed r
 Run `python -m unittest discover -s skills/mechanised-expertise/tests -v` from repository root, or `python skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/examples/remote-reconnect.json`. The teaching example is intentionally *unverified*: its scenarios are investigation hypotheses, not claims about a particular shipped app.
 
 The companion v0.7 mobile research corpus contains an automatic (unreviewed) first-pass linkage between earlier recommendation IDs and proposed expertise questions. Its mapping is not published evidence of effectiveness.
+
+## Source-backed strength combinations
+
+The [synthesis table](references/source-synthesis.md) links 22 inspected pinned original recommendations to proposed conditional procedures; it does not establish their effectiveness. [Mechanised intuition](references/mechanised-intuition-method.md) defines expert cues, minimal high-value questions, coverage-qualified model gaps, decisions and independent proof. [User needs/prior art](references/user-needs-and-prior-art.md) extends this to UX, including nonusers, native-language feedback, accessibility and error recovery. The [worked list example](examples/transfer-list-discovery.md) is explicitly unverified.
+
+The corpus still contains editorial, overlapping and incompletely mined source records; avoid counting generated mappings as corroboration. These references only load when the current task warrants them.

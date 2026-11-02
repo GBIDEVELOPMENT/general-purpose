@@ -30,3 +30,35 @@ jobs:
         run: python3 -m unittest discover -s skills/mechanised-expertise/tests -p 'test_*.py' -v
       - name: Compile skill validator
         run: python3 -m py_compile skills/mechanised-expertise/scripts/check_inquiry.py
+      - name: Verify pinned source synthesis routes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path('skills/mechanised-expertise')
+          core = (root/'SKILL.md').read_text()
+          required = ['references/source-synthesis.md','references/mechanised-intuition-method.md','references/user-needs-and-prior-art.md','examples/transfer-list-discovery.md']
+          assert all((root/x).is_file() and x in core for x in required)
+          research = (root/'references/source-synthesis.md').read_text()
+          assert research.count('https://github.com/') >= 22
+          assert 'pinned' in research.lower() and 'editorial' in research.lower()
+          print('PASS: research link count and on-demand references')
+          PY
+      - name: Check structured source-to-mechanism provenance
+        run: |
+          python3 - <<'PY'
+          import csv,re
+          from pathlib import Path
+          p=Path('skills/mechanised-expertise/assets/source-to-expertise-v09.csv')
+          with p.open(encoding='utf-8-sig',newline='') as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==22
+          assert len({r['id'] for r in rows})==22
+          assert len({r['source_repository'] for r in rows})>=12
+          for r in rows:
+              assert re.fullmatch('[0-9a-f]{40}',r['source_commit'])
+              assert r['source_url']==f"https://github.com/{r['source_repository']}/blob/{r['source_commit']}/{r['source_path']}#L{r['source_line']}"
+              assert 'not effectiveness-tested' in r['editorial_status']
+              assert '?' in r['decision_question']
+              assert all(r[k].strip() for k in ('source_paraphrase','recognition_cue','research_strategy','model_trigger','decision_proposal','applicability_exception','independent_oracle'))
+          print('PASS: 22 scoped publisher-original claims and separate editorial transformations')
+          PY

@@ -2,7 +2,7 @@
 name: concept-model-engineering
 description: Construct, populate, audit, extend and explore evidence-backed conceptual models, ontologies, knowledge graphs, user journeys and feature maps. Use when synthesizing messy sources, designing workflows, discovering unmet needs, assessing completeness or evaluating supposedly novel gaps. Separates failures of knowledge acquisition from genuine research frontiers before proposing requirements.
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
   origin: "Chunks human graph, AYA understanding framework, Glimpse UX coverage, Expository operation states, UR-Recomp research frontier"
 ---
 
@@ -28,6 +28,7 @@ For a consequential choice about whether to investigate, model, build, reuse or 
 
 ## Load task-specific guidance
 
+- [Question selection and user-needs investigation](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/mechanised-expertise/references/mechanised-intuition-method.md) when a concept map feeds a substantive product/engineering decision: first ask which unanswered relationship can actually change the decision, not how to maximize map size.
 - [Frontier qualification and anti-false-novelty tests](references/frontier-qualification.md)
 - [Evidence construction, conceptual modeling and integration](references/model-and-evidence.md)
 - [Academic resources and existing agent skills](references/research-and-skills.md)

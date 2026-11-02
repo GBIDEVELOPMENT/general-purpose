@@ -2,7 +2,7 @@
 name: android-app-development
 description: Plan, implement, debug, review and ship real native Android apps using Kotlin, Compose, JNI, Room, SAF, Photo Picker, WorkManager and remote protocols. Activate for architecture, unsafe file/data operations, authentication, lifecycle, accessibility, CI, signing, release and agent-development failures. Prioritize production user journeys, evidence fidelity and smallest conventional fixes over speculative rewrites.
 metadata:
-  version: "0.3.1"
+  version: "0.3.2"
   origin: "Source-linked Chunks, Glimpse and Expository Transfer retrospectives"
 ---
 
@@ -25,6 +25,7 @@ metadata:
 | Symptom / responsibility | Load |
 |---|---|
 | Recognize hidden complexity or choose a level of investigation | [Engineering Judgment](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/engineering-judgment/SKILL.md) |
+| UX jobs, original-language prior art, discoverability, concise user research and expert question selection | [Mechanised Expertise: user-needs investigation](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/mechanised-expertise/references/user-needs-and-prior-art.md) (only for consequential UX choices) |
 | Requirements, priorities, architecture bloat, branches and gates | [Engineering decisions](references/engineering-decisions.md) |
 | SAF, app-private files, Room, remote auth, identity, retry or interruption | [Operation integrity](references/operation-integrity.md) |
 | Concrete Android implementation patterns for pickers, lifecycle, UI, storage and releases | [Platform playbooks](references/platform-playbooks.md) |

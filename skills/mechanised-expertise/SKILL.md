@@ -2,13 +2,21 @@
 name: mechanised-expertise
 description: Turn development advice into conditional expert inquiry, grounded research, concept-map gap audits, defensible implementation/UX decisions, and independent verification. Use for ambiguous or consequential mobile/software feature design and when synthesizing agent-skill corpora. Scale effort to risk; avoid bureaucratic analysis for routine fixes.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   origin: "Mobile development skills research corpus, with complementary general-purpose engineering judgment and concept-model skills"
 ---
 
 # Mechanised Expertise: reusable questions and decisions, not universal checklists
 
 **Purpose.** Recover the observable consequences of expert experience by making cues, inquiries, investigations, models, choice criteria, exceptions and verification explicit. Do not claim actual human intuition. This advisory skill supplies a *method*, not project requirements, permission to act, or proof that a recommendation works. Current user instructions, host `AGENTS.md`, code and platform-specific primary sources prevail.
+
+## Source-backed synthesis and mechanised-intuition routing
+
+Use [22 pinned original skill passages and their scoped strengths](references/source-synthesis.md) plus the [structured source-to-inquiry transformations](assets/source-to-expertise-v09.csv) when composing advice from the mobile-skills corpus. Those authors' recommendations, **our proposed mechanisms**, and any observed benefit are three different evidence classes. Never treat popularity or repetitive copies as proof of general effectiveness.
+
+For consequential decisions apply the [conditional mechanised-intuition method](references/mechanised-intuition-method.md): **recognize boundary cue → generate choice-changing question → seek cheapest trustworthy answer → audit a concept map only if missing relations could matter → decide with a reversal condition → prove user outcome → retain conditional lessons**. For mobile design, use [user-needs and original-language prior-art research](references/user-needs-and-prior-art.md), including context, workarounds, nonusers, state feedback, small-screen accessibility and diverse interaction styles. The [transfer-list case](examples/transfer-list-discovery.md) is a teaching exercise, **not real product evidence**.
+
+These references supplement the lightweight routine path below. They do not create new product requirements, authorize other projects, or require an exhaustive questionnaire before ordinary fixes.
 
 ## 0. Right-size the inquiry
 

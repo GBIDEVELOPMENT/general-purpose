@@ -2,7 +2,7 @@
 name: engineering-judgment
 description: Make experienced, defensible software and product engineering decisions when an apparently simple request hides architectural, lifecycle, identity, UX, security, data, performance or testing complexity. Recognize problem signatures; recover expert cues and conventional solutions; simulate consequences; find discriminating evidence; avoid overengineering. Use before consequential design/implementation choices and in failure postmortems, not as a mandatory gate for routine fixes.
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
   origin: "Chunks, Glimpse, Expository, AYA and UR-Recomp engineering cases"
 ---
 
@@ -38,6 +38,7 @@ If a clear standard approach satisfies the case, act. If a premise is disproven,
 
 ## Related mechanisms
 
+- [Mechanised expertise synthesis](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/mechanised-expertise/references/mechanised-intuition-method.md) for conditionally generating decisive questions, selecting original-source/prior-art evidence, and combining specialist advice only when the chosen task warrants it. Do not impose a separate methodology on routine changes.
 - [Complexity signatures](references/signatures.md) for what to investigate.
 - [Expertise extraction and research](references/expertise-extraction.md) for turning incidents, source, practitioner experience and user feedback into reusable decision rules.
 - [Decision protocol and anti-patterns](references/decision-protocol.md) for using conventional patterns, simulation, reversals, escalation and evidence.
