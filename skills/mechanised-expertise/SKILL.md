@@ -2,7 +2,7 @@
 name: mechanised-expertise
 description: Turn development advice into conditional expert inquiry, grounded research, concept-map gap audits, defensible implementation/UX decisions, and independent verification. Use for ambiguous or consequential mobile/software feature design and when synthesizing agent-skill corpora. Scale effort to risk; avoid bureaucratic analysis for routine fixes.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   origin: "Mobile development skills research corpus, with complementary general-purpose engineering judgment and concept-model skills"
 ---
 
@@ -17,6 +17,11 @@ Use [22 pinned original skill passages and their scoped strengths](references/so
 For consequential decisions apply the [conditional mechanised-intuition method](references/mechanised-intuition-method.md): **recognize boundary cue → generate choice-changing question → seek cheapest trustworthy answer → audit a concept map only if missing relations could matter → decide with a reversal condition → prove user outcome → retain conditional lessons**. For mobile design, use [user-needs and original-language prior-art research](references/user-needs-and-prior-art.md), including context, workarounds, nonusers, state feedback, small-screen accessibility and diverse interaction styles. The [transfer-list case](examples/transfer-list-discovery.md) is a teaching exercise, **not real product evidence**.
 
 These references supplement the lightweight routine path below. They do not create new product requirements, authorize other projects, or require an exhaustive questionnaire before ordinary fixes.
+
+
+## Use source-derived compositions when different specialties interact
+
+For consequential issues spanning multiple specialties, consult [conditional composition operators](references/composition-operators.md) and the [10 structured multi-source recipes](assets/compositions-v1.json). Each recipe combines relevant source IDs from the existing pinned [source-to-expertise table](assets/source-to-expertise-v09.csv), and records a **trigger, skip condition, decision-changing question, cheapest evidence path, map/no-map boundary, reversal condition and independent oracle**. These *editorial hypotheses* do not establish effectiveness or independent intellectual origins. Select only decision-relevant recipes; do not require the full recipe for routine fixes.
 
 ## 0. Right-size the inquiry
 
