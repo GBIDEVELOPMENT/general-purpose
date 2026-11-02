@@ -2,7 +2,7 @@
 name: mechanised-expertise
 description: Turn development advice into conditional expert inquiry, grounded research, concept-map gap audits, defensible implementation/UX decisions, and independent verification. Use for ambiguous or consequential mobile/software feature design and when synthesizing agent-skill corpora. Scale effort to risk; avoid bureaucratic analysis for routine fixes.
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
   origin: "Mobile development skills research corpus, with complementary general-purpose engineering judgment and concept-model skills"
 ---
 
@@ -27,6 +27,14 @@ For consequential issues spanning multiple specialties, consult [conditional com
 
 For ambiguous or unexplored work, read the [nine bounded inquiry-generation operators](references/inquiry-generation-operators.md) and their [structured catalog](assets/inquiry-operators-v1.json). They turn goals into *plausible obstacles*, contrast users' mental models, inspect state/identity boundary crossings, represent consequential design alternatives as Questions–Options–Criteria, reverse-audit conceptual maps, disqualify transferred rules, seek opposing evidence, invert test oracles and look for useful cross-system user journeys. Use only operators whose causal trigger is present **and whose plausible opposing answers would change a decision or acceptance test**. Each has an explicit reject condition and stopping rule. The [three teaching cases](examples/operator-applications-v1.json) include one deliberately trivial negative control; none demonstrates production effectiveness. Offline structural checks: `python3 scripts/audit_inquiry_operators.py`.
 
+## Execution rule: inputs and operations, not appeals to intuition
+
+For a consequential unfamiliar feature, use the [mechanical execution contract](references/mechanical-execution-contract.md) before generating a large requirements list. The contract specifies how to extract facts from the real project, match one of nine inquiry operators by an observable cue, check its rejection condition, instantiate a choice-changing question, choose the next evidence source, decide whether a concept map is worth building, and define a falsifying result and user-outcome oracle.
+
+The optional [question compiler](scripts/compile_inquiry.py) accepts a normalized evidence-linked case and emits **unanswered questions or explicit skip records**. See its [remote-operation fixture](examples/mechanical-remote-mutation.json) and [routine typo negative control](examples/mechanical-routine-typo.json). It checks structure but cannot establish that supplied observations are true; original source inspection and runtime verification remain mandatory. A routine risk label must never overrule a consequential cue in source evidence.
+
+**Directive standard:** avoid operational commands such as “think like an expert”, “use your intuition”, “choose what feels right” or “consider everything”. Instead specify the input, source-backed trigger, transformation, opposing decision consequences, evidence request, output and stop condition. Never automatically elevate a generated question to a user requirement.
+
 ## 0. Right-size the inquiry
 
 - **Small, reversible, conventional change:** inspect the closest existing implementation, change only the necessary code and test it. Stop. Do not create a separate concept model.
@@ -48,7 +56,7 @@ Invoke [Concept Model Engineering](../concept-model-engineering/SKILL.md) if the
 
 ## 3. Make and challenge a decision
 
-Freeze hard constraints and non-goals. Prefer a conventional plausible solution that matches the observed environment; compare alternatives when an exception matters. For each candidate simulate the **normal user journey**, then only the material failure variants (denied permission, stale identity, offline/timeout, process death, retry, input scale, accessibility or migration). Identify the cue that would reverse the preferred option and the cheapest observation that separates competing hypotheses. Use [Engineering Judgment](../engineering-judgment/SKILL.md) for higher-stakes trade-offs; never use a numerical weighted score to override a hard constraint.
+Freeze hard constraints and non-goals. Prefer a conventional plausible solution that matches the observed environment; compare alternatives when an exception matters. For each candidate **trace** the user input → actual call path → state transition → visible result, then trace only the material failure variants (denied permission, stale identity, offline/timeout, process death, retry, input scale, accessibility or migration). Identify the cue that would reverse the preferred option and the cheapest observation that separates competing hypotheses. Use [Engineering Judgment](../engineering-judgment/SKILL.md) for higher-stakes trade-offs; never use a numerical weighted score to override a hard constraint.
 
 Define each UX outcome as an observable user-perceived state and feasible interaction, not just a developer-facing implementation. Confirm what feedback, visibility, cancellation, accessibility, and recovery the user receives. Mark any source guidance that is framework-specific, opinionated or version-gated.
 
