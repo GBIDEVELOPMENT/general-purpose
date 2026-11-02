@@ -30,3 +30,16 @@ jobs:
         run: python3 -m unittest discover -s skills/mechanised-expertise/tests -p 'test_*.py' -v
       - name: Compile skill validator
         run: python3 -m py_compile skills/mechanised-expertise/scripts/check_inquiry.py
+      - name: Verify pinned source synthesis routes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path('skills/mechanised-expertise')
+          core = (root/'SKILL.md').read_text()
+          required = ['references/source-synthesis.md','references/mechanised-intuition-method.md','references/user-needs-and-prior-art.md','examples/transfer-list-discovery.md']
+          assert all((root/x).is_file() and x in core for x in required)
+          research = (root/'references/source-synthesis.md').read_text()
+          assert research.count('https://github.com/') >= 22
+          assert 'pinned' in research.lower() and 'editorial' in research.lower()
+          print('PASS: research link count and on-demand references')
+          PY
