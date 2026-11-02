@@ -13,11 +13,11 @@ def info(path):
     s=str(p).lower().replace("."," ").replace("_"," ").replace("-"," ")
     if "lantern" in s and not (str(p).startswith("/downloads/Green Lantern The Animated Series/") or str(p).startswith("/downloads/Green Lantern The Animated Series S01/")):
         raise ValueError("Wrong Green Lantern show; HBO Lanterns and other titles excluded")
-    if re.search(r"star\\s+trek\\s+enterprise",s):raise ValueError("Enterprise excluded")
+    if re.search(r"star\s+trek\s+enterprise",s):raise ValueError("Enterprise excluded")
     if (str(p).startswith("/downloads/Green Lantern The Animated Series/Season 01/") or
         str(p).startswith("/downloads/Green Lantern The Animated Series S01/")):
         show="green_lantern_animated"
-    elif re.search(r"star\\s+trek\\s+lower\\s+decks",s):show="lower_decks"
+    elif re.search(r"star\s+trek\s+lower\s+decks",s):show="lower_decks"
     elif re.search(r"star\s+trek\s+strange\s+new\s+worlds?",s):show="strange_new_worlds"
     elif re.search(r"star\s+trek\s+discovery",s):show="discovery"
     else:raise ValueError("Unrecognized Trek subseries")
