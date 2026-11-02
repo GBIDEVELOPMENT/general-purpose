@@ -10,6 +10,13 @@ def compare(inventory,plan):
         raise ValueError("Only matching /downloads inventories and plans are allowed")
     rows=inventory.get("files")
     moves=plan.get("moves")
+    if moves is None and isinstance(plan.get("trek_folder_moves"),list):
+        # A complete directory rename is still independently reconcilable at
+        # exact individual child-file granularity, without changing FTP state.
+        moves=[{"from":directory["from"]+"/"+child["name"],
+                "to":directory["to"]+"/"+child["name"],
+                "size":child["size"]}
+               for directory in plan["trek_folder_moves"] for child in directory["files"]]
     if not isinstance(rows,list) or not isinstance(moves,list):
         raise ValueError("Missing inventory files or approved moves")
     indexed={x["path"].casefold():x for x in rows}
