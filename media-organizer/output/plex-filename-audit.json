@@ -1,7 +1,7 @@
 {
   "root": "/downloads",
-  "inventory_files": 2598,
-  "video_files": 1660,
+  "inventory_files": 2517,
+  "video_files": 1578,
   "inventory_complete": true,
   "truncated": [],
   "scan_failures": [],
@@ -1371,7 +1371,7 @@
     {
       "severity": "medium",
       "category": "episode_unrecognized_in_season",
-      "path": "/downloads/star-trek-ds9-laserdisc-720p-24/Star Trek DS9 - Behind The Scenes - Laserdisc 720p30 hevc aac20.mkv",
+      "path": "/downloads/Star Trek/Star Trek Deep Space Nine/Alternate Editions/star-trek-ds9-laserdisc-720p-24/Star Trek DS9 - Behind The Scenes - Laserdisc 720p30 hevc aac20.mkv",
       "note": "TV season container but media name lacks standard SxxEyy identification"
     },
     {
@@ -1398,7 +1398,21 @@
     {
       "severity": "review",
       "category": "multiple_episodes",
-      "path": "/downloads/Star Trek Voyager 1995.S01.1080p.NTSC DVD Upscale.H265.10bit.DDP5.1-Zero00/Star Trek Voyager S01E01-E02 Caretaker 1080p Ai Zero00.mkv",
+      "path": "/downloads/Star Trek/Star Trek Deep Space Nine/Alternate Editions/star-trek-ds9-laserdisc-720p-24/Star Trek DS9 S01E01E02 - Emissary - Laserdisc 720p24 hevc aac51.mkv",
+      "note": "File contains more than one episode",
+      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
+    },
+    {
+      "severity": "review",
+      "category": "multiple_episodes",
+      "path": "/downloads/Star Trek/Star Trek Deep Space Nine/Alternate Editions/star-trek-ds9-laserdisc-720p-24/Star Trek DS9 S04E01E02 - The Way Of The Warrior - DVD 720p24 hevc aac51.mkv",
+      "note": "File contains more than one episode",
+      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
+    },
+    {
+      "severity": "review",
+      "category": "multiple_episodes",
+      "path": "/downloads/Star Trek/Star Trek Deep Space Nine/Alternate Editions/star-trek-ds9-laserdisc-720p-24/Star Trek DS9 S07E25E26 - What You Leave Behind - DVD 720p24 hevc aac51.mkv",
       "note": "File contains more than one episode",
       "suggestion": "Preserve every episode number, e.g. S01E01-E02"
     },
@@ -1419,21 +1433,7 @@
     {
       "severity": "review",
       "category": "multiple_episodes",
-      "path": "/downloads/star-trek-ds9-laserdisc-720p-24/Star Trek DS9 S01E01E02 - Emissary - Laserdisc 720p24 hevc aac51.mkv",
-      "note": "File contains more than one episode",
-      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
-    },
-    {
-      "severity": "review",
-      "category": "multiple_episodes",
-      "path": "/downloads/star-trek-ds9-laserdisc-720p-24/Star Trek DS9 S04E01E02 - The Way Of The Warrior - DVD 720p24 hevc aac51.mkv",
-      "note": "File contains more than one episode",
-      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
-    },
-    {
-      "severity": "review",
-      "category": "multiple_episodes",
-      "path": "/downloads/star-trek-ds9-laserdisc-720p-24/Star Trek DS9 S07E25E26 - What You Leave Behind - DVD 720p24 hevc aac51.mkv",
+      "path": "/downloads/Star Trek/Star Trek Voyager/Alternate Editions/Star Trek Voyager 1995.S01.1080p.NTSC DVD Upscale.H265.10bit.DDP5.1-Zero00/Star Trek Voyager S01E01-E02 Caretaker 1080p Ai Zero00.mkv",
       "note": "File contains more than one episode",
       "suggestion": "Preserve every episode number, e.g. S01E01-E02"
     }

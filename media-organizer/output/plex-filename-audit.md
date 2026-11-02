@@ -5,7 +5,7 @@ verify title, episode identity and codec with authoritative media data before mo
 No files were moved or deleted by this audit.
 
 Inventory fully covered: **yes**.
-Videos examined: **1660**.
+Videos examined: **1578**.
 
 ## Counts by category
 
