@@ -13,6 +13,9 @@ OWNER_MEDIA_BYTES = 463387620682
 TV_DEDUPE_BATCH = "owner_tv_dedupe_20261102_080"
 TV_DEDUPE_REVIEW = Path("media-organizer/review/ftp-tv-dedupe-2026-11-02.json")
 TV_DEDUPE_BYTES = 119912139016
+GL_BATCH = 'owner_green_lantern_20261102_002'
+GL_REVIEW = Path('media-organizer/review/ftp-green-lantern-duplicate-2026-11-02.json')
+GL_BYTES = 367457686
 
 from organize import ROOT, VIDEO, connect, safe
 
@@ -119,6 +122,50 @@ def tv_keepers(manifest):
         raise ValueError("Approved deletion differs from the exact 80 reviewed files")
     return keep_by_loser
 
+def gl_keepers(manifest):
+    """Two exact Green Lantern S01 episodes, with measured video dimensions."""
+    if manifest["batch_id"] != GL_BATCH:return {}
+    document=json.loads(GL_REVIEW.read_text(encoding="utf-8"))
+    source=document.get("source",{})
+    if (document.get("schema")!="owner-green-lantern-verified-2026-11-02-v1"
+            or source.get("inventory_blob_sha")!="93695dc4ad24d8dbf57c6637679609a8ea85b445"
+            or source.get("inventory_run")!=41379794306 or source.get("probe_run")!=41381393287
+            or source.get("probe_artifact_id")!=13113212678 or source.get("probed_all_four") is not True
+            or document.get("totals",{}).get("episodes")!=2
+            or document.get("totals",{}).get("delete_files")!=2
+            or document.get("totals",{}).get("bytes")!=GL_BYTES):
+        raise ValueError("Unrecognized read-only stream metadata source or review")
+    entries=[];keep_map={};seen=set()
+    groups=document["groups"]
+    if len(groups)!=2:raise ValueError("Expected exactly two observed duplicate episodes")
+    expected_dimensions={3:((1920,1080),(624,352)),5:((1920,1080),(720,400))}
+    for group in groups:
+        ep=group["episode"]
+        if group["show"]!="Green Lantern The Animated Series" or group["season"]!=1 or ep not in expected_dimensions or ep in seen:
+            raise ValueError("Unapproved series/season/episode identity")
+        seen.add(ep)
+        if len(group["delete"])!=1:raise ValueError("Unexpected duplicate count")
+        keeper=group["retain"];loser=group["delete"][0]
+        for obj,expected_dims,extension in ((keeper,expected_dimensions[ep][0],".mkv"),(loser,expected_dimensions[ep][1],".avi")):
+            if set(obj)!={"from","size","modify","width","height"}:raise ValueError("Unreviewed metadata fields")
+            p=PurePosixPath(safe(obj["from"]))
+            if p.suffix.lower()!=extension or (obj["width"],obj["height"])!=expected_dims:
+                raise ValueError("Probe resolution or media class mismatch")
+            matches=list(re.finditer(r"(?i)s(\d{2})e(\d{2})",p.name))
+            if len(matches)!=1 or matches[0].group(1)!="01" or int(matches[0].group(2))!=ep:
+                raise ValueError("Filename episode mismatch")
+            if not isinstance(obj["size"],int) or obj["size"]<=0 or not isinstance(obj["modify"],str) or not re.fullmatch(r"\d{14}",obj["modify"]):
+                raise ValueError("Invalid pinned FTP file facts")
+        if not keeper["from"].startswith("/downloads/Green Lantern The Animated Series/Season 01/"):
+            raise ValueError("Unapproved keeper directory")
+        if not loser["from"].startswith("/downloads/Green Lantern The Animated Series S01/"):
+            raise ValueError("Unapproved loser directory")
+        keep_map[loser["from"]]=keeper
+        entries.append({"from":loser["from"],"size":loser["size"],"modify":loser["modify"],"category":"owner_green_lantern"})
+    if len(keep_map)!=2 or entries!=manifest["entries"] or sum(x["size"] for x in entries)!=GL_BYTES:
+        raise ValueError("Cannot expand observed duplicate deletion set")
+    return keep_map
+
 def validate(manifest):
     if set(manifest)!={"root","batch_id","entries","description"} or manifest["root"]!=ROOT:
         raise ValueError("Invalid manifest envelope")
@@ -127,7 +174,9 @@ def validate(manifest):
     if not isinstance(manifest["description"],str) or len(manifest["description"])<15:raise ValueError("Missing rationale")
     entries=manifest["entries"]
     if not isinstance(entries,list) or not 1<=len(entries)<=300:raise ValueError("Batch must have 1..300 entries")
-    if manifest["batch_id"] == TV_DEDUPE_BATCH:
+    if manifest["batch_id"] == GL_BATCH:
+        gl_keepers(manifest)
+    elif manifest["batch_id"] == TV_DEDUPE_BATCH:
         tv_keepers(manifest)
     elif manifest["batch_id"] == OWNER_MEDIA_BATCH:
         # The exception for full-sized media is restricted to the owner's one
@@ -149,13 +198,13 @@ def validate(manifest):
             raise ValueError("Selected path outside approved release roots")
         if any("/rtorrent/" in f["from"] or "/watch/rtorrent/" in f["from"] or "/Night Court/" in f["from"] for f in expected):
             raise ValueError("Protected path in selected files")
-    elif any(entry.get("category") in ("owner_media","owner_tv_dedupe") for entry in entries if isinstance(entry,dict)):
+    elif any(entry.get("category") in ("owner_media","owner_tv_dedupe","owner_green_lantern") for entry in entries if isinstance(entry,dict)):
         raise ValueError("Media exception requires exact owner-approved batch id")
     seen=set()
     for entry in entries:
         if not isinstance(entry,dict) or set(entry)!={"from","size","modify","category"}:raise ValueError("Unexpected entry keys")
         p=safe(entry["from"])
-        if (manifest["batch_id"] == OWNER_MEDIA_BATCH and entry["category"] == "owner_media") or (manifest["batch_id"] == TV_DEDUPE_BATCH and entry["category"] == "owner_tv_dedupe"):
+        if (manifest["batch_id"] == OWNER_MEDIA_BATCH and entry["category"] == "owner_media") or (manifest["batch_id"] == TV_DEDUPE_BATCH and entry["category"] == "owner_tv_dedupe") or (manifest["batch_id"] == GL_BATCH and entry["category"] == "owner_green_lantern"):
             pass  # Already matched the complete exact reviewed set above.
         elif category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot","sample","trailer","txt","detritus"):
             raise ValueError("Not an exact approved debris class")
@@ -182,7 +231,7 @@ def execute(ftp,manifest,audit_path):
         with audit_path.open("w") as f:
             json.dump({"batch_id":manifest["batch_id"],"status":status,"completed":completed,"skipped":skipped},f,indent=2)
             f.flush();os.fsync(f.fileno())
-    keepers=tv_keepers(manifest) if manifest["batch_id"]==TV_DEDUPE_BATCH else {}
+    keepers=tv_keepers(manifest) if manifest["batch_id"]==TV_DEDUPE_BATCH else gl_keepers(manifest) if manifest["batch_id"]==GL_BATCH else {}
     for keeper in keepers.values():
         facts=lookup(ftp,keeper["from"])
         if (facts is None or facts.get("type")!="file" or
