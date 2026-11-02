@@ -1,7 +1,7 @@
 {
   "root": "/downloads",
-  "inventory_files": 2887,
-  "video_files": 1912,
+  "inventory_files": 2598,
+  "video_files": 1660,
   "inventory_complete": true,
   "truncated": [],
   "scan_failures": [],
@@ -9,12 +9,12 @@
     "legacy_1x_episode": 193,
     "episode_unrecognized_in_season": 1,
     "airdate_after_episode": 1,
-    "multiple_episodes": 10
+    "multiple_episodes": 8
   },
   "priorities": {
     "high": 193,
     "medium": 1,
-    "review": 11
+    "review": 9
   },
   "issues": [
     {
@@ -1413,20 +1413,6 @@
       "severity": "review",
       "category": "multiple_episodes",
       "path": "/downloads/Star Trek/Star Trek Enterprise/Season 01/Star Trek Enterprise - S01E01-E02.mkv",
-      "note": "File contains more than one episode",
-      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
-    },
-    {
-      "severity": "review",
-      "category": "multiple_episodes",
-      "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E01-E02.mkv",
-      "note": "File contains more than one episode",
-      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
-    },
-    {
-      "severity": "review",
-      "category": "multiple_episodes",
-      "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E25-E26.mkv",
       "note": "File contains more than one episode",
       "suggestion": "Preserve every episode number, e.g. S01E01-E02"
     },
