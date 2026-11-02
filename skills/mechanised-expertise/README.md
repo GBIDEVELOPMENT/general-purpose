@@ -13,3 +13,9 @@ The companion v0.7 mobile research corpus contains an automatic (unreviewed) fir
 The [synthesis table](references/source-synthesis.md) links 22 inspected pinned original recommendations to proposed conditional procedures; it does not establish their effectiveness. [Mechanised intuition](references/mechanised-intuition-method.md) defines expert cues, minimal high-value questions, coverage-qualified model gaps, decisions and independent proof. [User needs/prior art](references/user-needs-and-prior-art.md) extends this to UX, including nonusers, native-language feedback, accessibility and error recovery. The [worked list example](examples/transfer-list-discovery.md) is explicitly unverified.
 
 The corpus still contains editorial, overlapping and incompletely mined source records; avoid counting generated mappings as corroboration. These references only load when the current task warrants them.
+
+## Composition operators (v0.3)
+
+The optional [10 conditional multi-source recipes](assets/compositions-v1.json) refer to the 22 pinned author prescriptions in [source-to-expertise-v09.csv](assets/source-to-expertise-v09.csv). Read [the application method](references/composition-operators.md) for activation, counterexamples, research routing, concept-map boundaries, decision reversals and independent proof. These are **new editorial compositions**, not independent source prescriptions or evidence that agents perform better.
+
+Run `python3 skills/mechanised-expertise/scripts/audit_compositions.py` and `python3 -m unittest discover -s skills/mechanised-expertise/tests -v`. Structural checks reject unknown sources, absent exceptions, non-questions, missing oracles and effectiveness overclaims. They cannot substitute for real task trials.

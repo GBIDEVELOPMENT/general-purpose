@@ -62,3 +62,6 @@ jobs:
               assert all(r[k].strip() for k in ('source_paraphrase','recognition_cue','research_strategy','model_trigger','decision_proposal','applicability_exception','independent_oracle'))
           print('PASS: 22 scoped publisher-original claims and separate editorial transformations')
           PY
+
+      - name: Check conditional multi-source compositions and source links
+        run: python3 skills/mechanised-expertise/scripts/audit_compositions.py
