@@ -103,7 +103,6 @@ def tv_keepers(manifest):
                     or not isinstance(obj["modify"],str) or not re.fullmatch(r"\d{14}",obj["modify"])
                     or obj["resolution"] not in (2160,1080,720,576,480)):
                 raise ValueError("Invalid pinned source or resolution")
-            names=[int(x) for x in re.findall(r"(?i)(?<!\d)(?:2160|1080|720|576|480)p(?!\d)",obj["from"])]
             # Retained resolution is reported by the reviewed title parser; confirm
             # its single nominal release tier before trusting the ordering.
             tiers={int(x) for x in re.findall(r"(?i)(2160|1080|720|576|480)p",obj["from"])}
