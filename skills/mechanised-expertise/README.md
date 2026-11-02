@@ -19,3 +19,7 @@ The corpus still contains editorial, overlapping and incompletely mined source r
 The optional [10 conditional multi-source recipes](assets/compositions-v1.json) refer to the 22 pinned author prescriptions in [source-to-expertise-v09.csv](assets/source-to-expertise-v09.csv). Read [the application method](references/composition-operators.md) for activation, counterexamples, research routing, concept-map boundaries, decision reversals and independent proof. These are **new editorial compositions**, not independent source prescriptions or evidence that agents perform better.
 
 Run `python3 skills/mechanised-expertise/scripts/audit_compositions.py` and `python3 -m unittest discover -s skills/mechanised-expertise/tests -v`. Structural checks reject unknown sources, absent exceptions, non-questions, missing oracles and effectiveness overclaims. They cannot substitute for real task trials.
+
+## Procedure chain planning (nonexecuted)
+
+The [procedure chain guide](references/procedure-chains.md) and [compiler](scripts/compile_procedure_chain.py) connect the 22 pinned source-derived mechanisms with explicit input bindings, exclusion gates, and never-promoted pending evidence. The [synthetic remote example](examples/procedure-chain-remote.json) has two dependent stages; the [routine typo example](examples/procedure-chain-typo.json) intentionally has none. These are plans, not proof of app or agent effectiveness.
