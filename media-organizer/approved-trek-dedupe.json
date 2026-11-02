@@ -1,43 +1,30 @@
 {
   "root": "/downloads",
-  "batch_id": "gl_animated_only_20261102",
-  "description": "Owner confirmed Green Lantern: The Animated Series (2011 CGI animated show), NEVER HBO Lanterns. Remove only two verified SD duplicates with 1080p keepers after exact metadata check.",
+  "batch_id": "gl_animated_premiere_20261102",
+  "description": "Remove only the explicitly verified 624x352 combined 2011 Green Lantern The Animated Series S01E01-E02 AVI when both separate 1080p premiere-part MKVs exist; HBO Lanterns never touched.",
   "groups": [
     {
       "show": "green_lantern_animated",
       "season": "01",
-      "episode": "03",
+      "episode": "01",
       "retain": {
-        "from": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E03 - Razers Edge.mkv",
-        "size": 3497799491,
-        "modify": "20260810074823"
+        "from": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E01 - Beware My Power Part 1.mkv",
+        "size": 3955119355,
+        "modify": "20260810074806"
+      },
+      "retain_second": {
+        "from": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E02 - Beware My Power Part 2.mkv",
+        "size": 3607770157,
+        "modify": "20260810074821"
       },
       "delete": [
         {
-          "from": "/downloads/Green Lantern The Animated Series S01/Green.Lantern.The.Animated.Series.S01E03.HDTV.XviD-2HD/green.lantern.the.animated.series.s01e03.hdtv.xvid-2hd.avi",
-          "size": 183524238,
-          "modify": "20120318062305"
+          "from": "/downloads/Green Lantern The Animated Series S01/Green.Lantern.The.Animated.Series.S01E01-E02.HDTV.XviD-ASAP/Green.Lantern.The.Animated.Series.S01E01-E02.HDTV.XviD-ASAP.avi",
+          "size": 367014226,
+          "modify": "20111111191134"
         }
       ],
-      "reason": "ffprobe verified HBO-unrelated Green Lantern: The Animated Series 1920x1080 keeper versus low-resolution XviD AVI; retain 1080p."
-    },
-    {
-      "show": "green_lantern_animated",
-      "season": "01",
-      "episode": "05",
-      "retain": {
-        "from": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E05 - Heir Apparent.mkv",
-        "size": 3334683936,
-        "modify": "20260810074808"
-      },
-      "delete": [
-        {
-          "from": "/downloads/Green Lantern The Animated Series S01/Green.Lantern.The.Animated.Series.S01E05.Heir.Apparent.REAL.HDRiP.XviD-T00NG0D/Green.Lantern.The.Animated.Series.S01E05.Heir.Apparent.REAL.HDRiP.XviD-T00NG0D.avi",
-          "size": 183933448,
-          "modify": "20120401093313"
-        }
-      ],
-      "reason": "ffprobe verified HBO-unrelated Green Lantern: The Animated Series 1920x1080 keeper versus low-resolution XviD AVI; retain 1080p."
+      "reason": "Exact two-part S01E01-E02 animated-series episode span; 624x352 SD XviD duplicate loses to both separate 1920x1080 MKVs proven by ffprobe."
     }
   ]
 }
