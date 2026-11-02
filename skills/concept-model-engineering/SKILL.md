@@ -2,7 +2,7 @@
 name: concept-model-engineering
 description: Construct, populate, audit, extend and explore evidence-backed conceptual models, ontologies, knowledge graphs, user journeys and feature maps. Use when synthesizing messy sources, designing workflows, discovering unmet needs, assessing completeness or evaluating supposedly novel gaps. Separates failures of knowledge acquisition from genuine research frontiers before proposing requirements.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   origin: "Chunks human graph, AYA understanding framework, Glimpse UX coverage, Expository operation states, UR-Recomp research frontier"
 ---
 
@@ -23,6 +23,8 @@ Invoke for meaningful product discovery, research synthesis, ontology or require
 5. **Classify each blank.** Label it **acquisition omission**, **alias/identity mismatch**, **schema blind spot**, **underlinked known facts**, **contradictory evidence**, **unknown fact**, **version/provider boundary**, **deliberate exclusion**, or **candidate frontier**. In an open-world map, unrecorded is never automatically false. Load [Frontier qualification](references/frontier-qualification.md).
 6. **Challenge apparent novelty.** Search explicitly for implementations, synonyms, predecessors, non-obvious integrations and counterexamples in original-language terms; query relevant primary manuals/code, alternative software and dates. State novelty precisely: new to *this inventory*, new to *this version*, new composition of known primitives, or externally unconfirmed. An unexpected result can be valuable even if somebody else already implements it. A frontier designation is conditional and revisable.
 7. **Return a bounded handoff.** Deliver the *smallest useful map delta*, qualified blanks, source and unanswered-question links, next investigation with expected information gain, and exact effects on the parent workflow. Never convert analytical hypotheses into normative product requirements, test claims or authorized work without applicable project authority.
+
+For a consequential choice about whether to investigate, model, build, reuse or stop, first apply [Engineering Judgment](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/engineering-judgment/SKILL.md) to pick a proportional method. Ordinary ontology maintenance can proceed directly.
 
 ## Load task-specific guidance
 

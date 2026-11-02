@@ -1,0 +1,37 @@
+name: Engineering judgment skill integrity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/engineering-judgment/**'
+      - '.github/workflows/engineering-judgment-skill-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: engineering-judgment-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact PR or main source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Validate skills and decision data
+        run: python3 skills/engineering-judgment/scripts/check_skill.py
+      - name: Execute offline scenario/structure tests
+        run: python3 -m unittest discover -s skills/engineering-judgment/tests -v
+      - name: Compile Python scripts
+        run: python3 -m py_compile skills/engineering-judgment/scripts/*.py
+      - name: Reject answer-key leakage from public prompt emitter
+        run: |
+          python3 skills/engineering-judgment/scripts/evaluate_transfer.py --emit-prompts > "$RUNNER_TEMP/judgment-prompts.json"
+          ! grep -E '"(answer|reason|pattern|source)"' "$RUNNER_TEMP/judgment-prompts.json"
