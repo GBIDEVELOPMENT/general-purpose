@@ -2,6 +2,26 @@
 
 **Status:** Initial owner-directed cleanup accepted and closed on 2026-10-24. This document is the operational starting point for future sessions, not authorization to run periodic background tasks.
 
+## Standing owner overrides, 2026-11-02
+
+These newer explicit preferences override conflicting October 2026 general advice:
+
+- **Distinct shows:** `Green Lantern: The Animated Series` (CGI animated show) is a separate title from HBO's `Lanterns`. Never treat substring "lantern" as sufficient series identity. On 2026-11-02, exact animated series S01E03 and S01E05 low-resolution AVIs were removed only after ffprobe measured their higher-resolution MKV counterparts; no `Lanterns` material was touched.
+- **Legacy Trek:** duplicate episode editions are allowed, including TOS, TAS, TNG, DS9, Voyager and Enterprise. Retain legacy alternatives such as the DS9 LaserDisc releases and Voyager AI upscales under separate `Alternate Editions` directories.
+- **NuTrek:** include Discovery, Strange New Worlds, Lower Decks, Picard, Prodigy and other contemporary series. Prefer one copy per exact episode identity. Keep the smallest *actual* video file at the highest *actual* video resolution; if height/identity cannot be proven, investigate rather than delete.
+- **Other TV:** except **Studio 60 on the Sunset Strip**, keep one version per episode following the same highest-resolution/smallest-file ranking. Studio 60 multiple editions are intentionally preserved.
+- The owner explicitly permits media deletion and directory relocation even if active torrents are interrupted. This is not permission to delete unrelated work directories, torrents, Night Court production sources, hidden files or ambiguous multipart releases.
+- Match by full show identity, season, and episode; beware multi-episode spans, cross-season episodes, extras, DVD discs, and incomplete or inaccurate release labels. Use exact MLSD sizes/mtimes and positively verify a retained copy before deleting its duplicate.
+
+## November 2 completed cleanup evidence
+
+- [Selected-title removal run 41378660219](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/41378660219): 289 explicit files deleted, with the audit confirming completion.
+- [80-episode non-Trek duplicate cleanup run 41380975950](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/41380975950): 80 actual file removals, 119,912,139,016 reported bytes, 80 keepers pinned/checked.
+- [Green Lantern animated-series stream probe 41381393287](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/41381393287): AVI streams 624×352 and 720×400 versus 1920×1080 MKV retainers.
+- [Exact Green Lantern animated-only removal run 41382340679](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/41382340679): two AVI files deleted; HBO `Lanterns` excluded.
+- [Star Trek folder relocation run 41382718608](https://github.com/GBIDEVELOPMENT/general-purpose/actions/runs/41382718608): 12 directories, 200 files, 158,506,008,493 reported bytes, every destination verified, no deletes.
+- Each main-branch write has its own stored audit artifact. Do not replay an already executed approval or confuse moving bytes with freed storage.
+
 ## Prompt for next time
 
 > Please do another complete FTP Downloads cleanup in `gamesbyian/general-purpose`, following `media-organizer/ONE-PROMPT-MAINTENANCE.md`. Work autonomously through inventory, planning, guarded GitHub PRs and trusted FTP workflows, verify every transaction journal, update the status ledger, and finish with a concise before/after report. Preserve the existing mixed movies/TV layout, rTorrent working paths, alternate media editions and active Night Court dependencies. Escalate only genuinely ambiguous or potentially destructive media decisions.
