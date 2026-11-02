@@ -19,3 +19,7 @@ python3 scripts/check_skill.py
 python3 -m unittest discover -s tests -v
 python3 scripts/evaluate_transfer.py --emit-prompts
 ```
+
+## Executable pilot, v0.2
+
+The [judgment lab](lab/README.md) adds five self-contained behavioral tasks, including a low-risk label-change negative control. Run `python3 scripts/run_lab.py --selfcheck` to verify that every baseline fails an executed behavioral test and its reference passes the same tests. Export a candidate package with `--export`; it contains no oracle or reference solution. The scorer executes Python, so trial candidates must run in a separate disposable, unprivileged sandbox without secrets or network. Benchmark correctness is not the same as actual Android shipping acceptance.
