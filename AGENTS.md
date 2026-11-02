@@ -72,3 +72,7 @@ When an explicitly requested task concerns native Android app development or a s
 ## Concept models and research frontiers
 
 For explicitly requested concept modeling, user-journey/feature-map research, map audits or disconfirmation of supposedly missing features, read [Concept Model Engineering](skills/concept-model-engineering/SKILL.md). This is advisory and does not authorize project writes, new requirements or protected access. Existing project models and user decisions take precedence. Do not touch unrelated audit, mail, Night Court or FTP lanes.
+
+## Engineering judgment and hidden complexity
+
+For an explicitly requested consequential software/product decision, or when a requested feature hides unknown architecture, identity, data, lifecycle, human-interaction or evidence constraints, start with [Engineering Judgment](skills/engineering-judgment/SKILL.md). Apply its lightweight triage before deeper specialist skill routing; do not impose a long investigation on routine reversible fixes. The skill is advisory and **does not authorize** unrelated project work, privileged operations, secret access or new requirements. Current user direction and host-project source authority remain primary.
