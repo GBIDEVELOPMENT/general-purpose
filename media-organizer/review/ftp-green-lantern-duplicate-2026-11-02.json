@@ -1,0 +1,61 @@
+{
+  "schema": "owner-green-lantern-verified-2026-11-02-v1",
+  "source": {
+    "inventory_blob_sha": "93695dc4ad24d8dbf57c6637679609a8ea85b445",
+    "inventory_run": 41379794306,
+    "probe_run": 41381393287,
+    "probe_artifact_id": 13113212678,
+    "probed_all_four": true
+  },
+  "totals": {
+    "episodes": 2,
+    "delete_files": 2,
+    "bytes": 367457686
+  },
+  "groups": [
+    {
+      "show": "Green Lantern The Animated Series",
+      "season": 1,
+      "episode": 3,
+      "retain": {
+        "from": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E03 - Razers Edge.mkv",
+        "size": 3497799491,
+        "modify": "20260810074823",
+        "width": 1920,
+        "height": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Green Lantern The Animated Series S01/Green.Lantern.The.Animated.Series.S01E03.HDTV.XviD-2HD/green.lantern.the.animated.series.s01e03.hdtv.xvid-2hd.avi",
+          "size": 183524238,
+          "modify": "20120318062305",
+          "width": 624,
+          "height": 352
+        }
+      ],
+      "reason": "GHA ffprobe 8MiB observed actual stream width/height; retain the 1920x1080 H.264 MKV rather than lower-resolution XviD AVI."
+    },
+    {
+      "show": "Green Lantern The Animated Series",
+      "season": 1,
+      "episode": 5,
+      "retain": {
+        "from": "/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E05 - Heir Apparent.mkv",
+        "size": 3334683936,
+        "modify": "20260810074808",
+        "width": 1920,
+        "height": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Green Lantern The Animated Series S01/Green.Lantern.The.Animated.Series.S01E05.Heir.Apparent.REAL.HDRiP.XviD-T00NG0D/Green.Lantern.The.Animated.Series.S01E05.Heir.Apparent.REAL.HDRiP.XviD-T00NG0D.avi",
+          "size": 183933448,
+          "modify": "20120401093313",
+          "width": 720,
+          "height": 400
+        }
+      ],
+      "reason": "GHA ffprobe 8MiB observed actual stream width/height; retain the 1920x1080 H.264 MKV rather than lower-resolution XviD AVI."
+    }
+  ]
+}
