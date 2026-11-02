@@ -5,7 +5,7 @@
 Applied Cognitive Task Analysis (Militello and Hutton, 1998) provides three complementary elicitation modes: **task diagram**, **knowledge audit**, and **task simulation**. Adapt them to permitted developer work without pretending the agent interviewed real experts:
 
 1. **Task diagram:** outline the ordinary user/system journey and its boundaries. Identify where permission, identity, platform or asynchronous state changes.
-2. **Knowledge audit:** for each pivotal decision, ask what cues distinguish novice and skilled interpretations, what anomalies experts notice, what shortcuts or rules of thumb have valid exceptions, what can fail, and what equipment/API behavior matters.
+2. **Knowledge audit:** for each pivotal decision, inspect the original request, accepted/failed implementation, platform contract and executed evidence. Extract five explicit records: triggering cue, attempted mechanism, causal reason it worked or failed, prerequisites/exceptions, and a discriminator that would distinguish the competing explanations. Mark missing records unknown instead of inventing practitioner intuition.
 3. **Task simulation:** replay a *specific* evidence-backed incident (a merged correction, reproducible red test or current source trace), stop before the resolution, and ask how the candidate responds to altered circumstances. Compare to actual implementation and postcondition afterward.
 
 Do not invent interviews or personal experience. User comments and source history are evidence of the described experience, with context and possible bias, not a representative survey.
@@ -29,7 +29,7 @@ Keep historical examples separate from normative project requirements; update le
 Gary Klein's Recognition-Primed Decision model describes *sizing up a situation*, recognizing a plausible option and mentally simulating it. Adapt this as:
 
 - Retrieve a likely standard solution from the matched **signature**.
-- Mentally trace outcomes, constraints and likely anomalies.
+- Write an explicit **input → call path → state transition → side effect → observed result** trace, with the source for each known transition and an explicit unresolved marker for every unknown one.
 - Reject it quickly when actual cues contradict the precedent, then compare alternatives deliberately.
 - Never claim an agent's plausible first option is authoritative merely because it resembles an expert's first option.
 
