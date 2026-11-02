@@ -76,3 +76,8 @@ For explicitly requested concept modeling, user-journey/feature-map research, ma
 ## Engineering judgment and hidden complexity
 
 For an explicitly requested consequential software/product decision, or when a requested feature hides unknown architecture, identity, data, lifecycle, human-interaction or evidence constraints, start with [Engineering Judgment](skills/engineering-judgment/SKILL.md). Apply its lightweight triage before deeper specialist skill routing; do not impose a long investigation on routine reversible fixes. The skill is advisory and **does not authorize** unrelated project work, privileged operations, secret access or new requirements. Current user direction and host-project source authority remain primary.
+
+
+## Mechanised expertise and skill-corpus transformations
+
+For explicitly requested expert-like inquiry generation, skill-corpus conversion, requirements/UX question discovery, or complex decisions requiring research plus a conceptual-map completeness audit, start with [Mechanised Expertise](skills/mechanised-expertise/SKILL.md). It complements the narrower Engineering Judgment, Concept Model Engineering and Android Development skills; use only the triggered question families and do not impose an ontology or lengthy checklist on reversible routine fixes. Separate published source claims from locally generated inquiry/decision hypotheses, verify consequential claims through independent oracles, and never treat an agent skill as authorization to alter other project repositories, user data, privileged workflows or credentials.
