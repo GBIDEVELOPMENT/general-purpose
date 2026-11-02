@@ -1299,6 +1299,478 @@
       },
       "oracle": "Installed cross-app invocation proves exact authorized effect, rejection and truthful returned status.",
       "stop": "Stop once additional source inspection cannot alter the choice or the relevant user-facing acceptance condition; record unresolved limits without asserting success."
+    },
+    {
+      "id": "PROC-023",
+      "source_pattern_id": "PRX-023",
+      "title": "Verify installed Room schema upgrades with retained data",
+      "provenance_status": "editorial_procedure_derived_from_pinned_source_not_effectiveness_tested",
+      "trigger": "An app update changes a shipped Room schema or database migration path.",
+      "exclude": "No schema change or no preexisting persisted database can be affected.",
+      "inputs": [
+        "old_schema",
+        "new_schema",
+        "installed_upgrade_fixture"
+      ],
+      "steps": [
+        {
+          "op": "inspect",
+          "uses": [
+            "old_schema",
+            "new_schema"
+          ],
+          "produces": "schema_delta",
+          "instruction": "Compare old and new committed Room schema snapshots and identify stored fields that must persist."
+        },
+        {
+          "op": "trace",
+          "uses": [
+            "schema_delta",
+            "installed_upgrade_fixture"
+          ],
+          "produces": "migration_route",
+          "instruction": "Trace migrations registered for an already-installed version; do not substitute fresh-install schema creation."
+        },
+        {
+          "op": "reproduce",
+          "uses": [
+            "migration_route",
+            "installed_upgrade_fixture"
+          ],
+          "produces": "upgrade_observation",
+          "instruction": "Install an older populated build and perform a compatible-signature app update; capture actual migration behavior."
+        },
+        {
+          "op": "verify",
+          "uses": [
+            "upgrade_observation",
+            "old_schema"
+          ],
+          "produces": "retained_data_receipt",
+          "instruction": "Independently read identifiers and retained data after the upgrade and document unresolved device coverage."
+        }
+      ],
+      "decision_gate": {
+        "question": "Does the upgrade preserve existing user records and critical preferences?",
+        "if_yes": "Accept the migration only after retained data is independently observed on an installed upgrade.",
+        "if_no": "Correct the migration path and repeat the installed-data upgrade test.",
+        "discriminator": "A preupgrade populated database and postupgrade independent record readback."
+      },
+      "oracle": "Exact old-to-new installed upgrade retains records without destructive fallback.",
+      "stop": "Stop when no further supported schema path changes the acceptance decision."
+    },
+    {
+      "id": "PROC-024",
+      "source_pattern_id": "PRX-024",
+      "title": "Select Android work lifetime and scheduling primitive",
+      "provenance_status": "editorial_procedure_derived_from_pinned_source_not_effectiveness_tested",
+      "trigger": "A task is requested to continue when its UI screen is absent or device state changes.",
+      "exclude": "The task can intentionally stop when its visible UI owner ends.",
+      "inputs": [
+        "task_lifetime",
+        "android_api_constraints",
+        "existing_scheduler"
+      ],
+      "steps": [
+        {
+          "op": "inspect",
+          "uses": [
+            "task_lifetime",
+            "android_api_constraints"
+          ],
+          "produces": "lifetime_needs",
+          "instruction": "Record whether work is deferrable, periodic, ongoing user-visible or exact-time; map platform restrictions."
+        },
+        {
+          "op": "compare",
+          "uses": [
+            "lifetime_needs",
+            "existing_scheduler"
+          ],
+          "produces": "primitive_candidates",
+          "instruction": "Compare supported WorkManager, foreground service, alarm and lifecycle scope behavior for this precise task."
+        },
+        {
+          "op": "trace",
+          "uses": [
+            "primitive_candidates",
+            "android_api_constraints"
+          ],
+          "produces": "platform_failure_paths",
+          "instruction": "Trace interruption, battery idle and execution quotas for the chosen target Android API versions."
+        },
+        {
+          "op": "verify",
+          "uses": [
+            "platform_failure_paths",
+            "task_lifetime"
+          ],
+          "produces": "lifetime_test_plan",
+          "instruction": "Prepare stopped-UI and process-recovery observations that distinguish supported scheduling from ungrounded guarantees."
+        }
+      ],
+      "decision_gate": {
+        "question": "Does the chosen scheduling primitive actually satisfy the required lifetime?",
+        "if_yes": "Retain the existing primitive and test its supported interruption semantics.",
+        "if_no": "Change to a supported primitive and document its platform limits.",
+        "discriminator": "A device test with the required lifetime under a realistic interruption."
+      },
+      "oracle": "Target device exercise confirms supported lifetime and truthful user-visible status.",
+      "stop": "Stop when the relevant lifetime and recovery contract is verified at the required tier."
+    },
+    {
+      "id": "PROC-025",
+      "source_pattern_id": "PRX-025",
+      "title": "Audit asynchronous event migration before removing event bus",
+      "provenance_status": "editorial_procedure_derived_from_pinned_source_not_effectiveness_tested",
+      "trigger": "UI progress is delivered through transient global events from a background worker.",
+      "exclude": "The events are already durable and correctly scoped to exact worker identity.",
+      "inputs": [
+        "publisher_inventory",
+        "subscriber_inventory",
+        "unique_work_identity"
+      ],
+      "steps": [
+        {
+          "op": "enumerate",
+          "uses": [
+            "publisher_inventory",
+            "subscriber_inventory"
+          ],
+          "produces": "event_graph",
+          "instruction": "List all event publishers, subscribers, field meanings and parallel observation mechanisms."
+        },
+        {
+          "op": "trace",
+          "uses": [
+            "event_graph",
+            "unique_work_identity"
+          ],
+          "produces": "scoped_worker_links",
+          "instruction": "Resolve the exact unique work name or request identity from both producer and observer paths."
+        },
+        {
+          "op": "compare",
+          "uses": [
+            "scoped_worker_links",
+            "event_graph"
+          ],
+          "produces": "progress_terminal_contract",
+          "instruction": "Separate running progress from final output and identify stale subscribers and duplicated event plumbing."
+        },
+        {
+          "op": "verify",
+          "uses": [
+            "progress_terminal_contract",
+            "subscriber_inventory"
+          ],
+          "produces": "observer_recovery_probes",
+          "instruction": "Plan tests for subscriber recreation, progress throttling and terminal result matching exact worker identity."
+        }
+      ],
+      "decision_gate": {
+        "question": "Can the screen observe the intended worker and recover after losing its subscriber?",
+        "if_yes": "Remove only redundant global events after demonstrating equivalent scoped observation.",
+        "if_no": "Preserve the current path until identity and terminal-state equivalence can be proved.",
+        "discriminator": "Recreate the subscribing screen during running and terminal worker states."
+      },
+      "oracle": "Worker progress and result remain correctly identified after observer recreation.",
+      "stop": "Stop once exact observer parity is established and no unreviewed publisher remains."
+    },
+    {
+      "id": "PROC-026",
+      "source_pattern_id": "PRX-026",
+      "title": "Choose minimal Compose UI test boundary by behavior claim",
+      "provenance_status": "editorial_procedure_derived_from_pinned_source_not_effectiveness_tested",
+      "trigger": "A Compose feature requires an assertion of semantic, visual or callback behavior.",
+      "exclude": "The current executed test already proves the same behavior at the required boundary.",
+      "inputs": [
+        "behavior_claim",
+        "existing_test_setup",
+        "rendered_ui_contract"
+      ],
+      "steps": [
+        {
+          "op": "inspect",
+          "uses": [
+            "behavior_claim",
+            "existing_test_setup"
+          ],
+          "produces": "test_boundary",
+          "instruction": "Write the exact behavior claim and inventory test seams already present in the project."
+        },
+        {
+          "op": "compare",
+          "uses": [
+            "test_boundary",
+            "rendered_ui_contract"
+          ],
+          "produces": "seam_selection",
+          "instruction": "Choose the smallest existing test seam that observes meaningfully user-facing semantic or visual behavior."
+        },
+        {
+          "op": "reproduce",
+          "uses": [
+            "seam_selection",
+            "existing_test_setup"
+          ],
+          "produces": "controlled_interaction",
+          "instruction": "Drive controlled input and synchronize Compose state without arbitrary sleeps or changed production contracts."
+        },
+        {
+          "op": "verify",
+          "uses": [
+            "controlled_interaction",
+            "behavior_claim"
+          ],
+          "produces": "assertion_receipt",
+          "instruction": "Assert the visible result and preserve the executed assertions, test environment and any real-device omissions."
+        }
+      ],
+      "decision_gate": {
+        "question": "Does the selected test seam observe the requested behavior rather than a stub?",
+        "if_yes": "Keep the narrow executed test and avoid unnecessary production test-only hooks.",
+        "if_no": "Escalate only to the required UI or installed-device boundary.",
+        "discriminator": "A controlled input produces an externally observable semantic or visual assertion."
+      },
+      "oracle": "Executed UI test demonstrates the exact user-visible contract within its stated tier.",
+      "stop": "Stop when the claim is covered by the smallest sufficient executed test."
+    },
+    {
+      "id": "PROC-027",
+      "source_pattern_id": "PRX-027",
+      "title": "Preserve external state ownership in reusable Compose controls",
+      "provenance_status": "editorial_procedure_derived_from_pinned_source_not_effectiveness_tested",
+      "trigger": "A reusable control internally stores state that another feature may need to manage.",
+      "exclude": "Local transient state is intentionally private and no caller requires synchronization.",
+      "inputs": [
+        "component_api",
+        "external_state_owners",
+        "supported_interactions"
+      ],
+      "steps": [
+        {
+          "op": "inspect",
+          "uses": [
+            "component_api",
+            "external_state_owners"
+          ],
+          "produces": "state_ownership",
+          "instruction": "Identify each state writer, consumer and whether the public component accepts controlled value and callbacks."
+        },
+        {
+          "op": "trace",
+          "uses": [
+            "state_ownership",
+            "supported_interactions"
+          ],
+          "produces": "state_flow",
+          "instruction": "Trace user action through callback, external owner update and eventual rendered value under recomposition."
+        },
+        {
+          "op": "compare",
+          "uses": [
+            "state_flow",
+            "component_api"
+          ],
+          "produces": "api_compatibility",
+          "instruction": "Check whether a stateless core and optional convenience wrapper preserve existing public APIs and ergonomics."
+        },
+        {
+          "op": "verify",
+          "uses": [
+            "api_compatibility",
+            "supported_interactions"
+          ],
+          "produces": "controlled_component_probe",
+          "instruction": "Drive controlled state from outside and verify accessible interaction and the absence of divergent private state."
+        }
+      ],
+      "decision_gate": {
+        "question": "Can the host fully control and observe the component state without duplication?",
+        "if_yes": "Preserve the current controlled component contract and its lightweight convenience variants.",
+        "if_no": "Hoist the required state with a backward-compatible interface where feasible.",
+        "discriminator": "An external state update changes the component and a user action reaches the owning callback."
+      },
+      "oracle": "Real host screen controls component value and receives user changes without state divergence.",
+      "stop": "Stop once the necessary callers can synchronize without introducing duplicate ownership."
+    },
+    {
+      "id": "PROC-028",
+      "source_pattern_id": "PRX-028",
+      "title": "Keep failure diagnosis observable without leaking user data",
+      "provenance_status": "editorial_procedure_derived_from_pinned_source_not_effectiveness_tested",
+      "trigger": "An exception is swallowed, hidden, or ambiguously reported as successful behavior.",
+      "exclude": "The branch is a deliberately expected normal outcome with no consequential failure.",
+      "inputs": [
+        "exception_control_flow",
+        "logging_and_privacy_contract",
+        "user_visible_error_path"
+      ],
+      "steps": [
+        {
+          "op": "trace",
+          "uses": [
+            "exception_control_flow",
+            "user_visible_error_path"
+          ],
+          "produces": "failure_routes",
+          "instruction": "Trace exception, cancellation and returned status across the actual failing entrypoint."
+        },
+        {
+          "op": "inspect",
+          "uses": [
+            "logging_and_privacy_contract",
+            "failure_routes"
+          ],
+          "produces": "diagnostic_requirements",
+          "instruction": "Identify the minimum diagnostic identifiers permitted in release logs and the error shown to the user."
+        },
+        {
+          "op": "compare",
+          "uses": [
+            "diagnostic_requirements",
+            "exception_control_flow"
+          ],
+          "produces": "handler_correction",
+          "instruction": "Separate expected errors from failure, preserve coroutine cancellation and remove only demonstrably silent catches."
+        },
+        {
+          "op": "verify",
+          "uses": [
+            "handler_correction",
+            "user_visible_error_path"
+          ],
+          "produces": "failure_probe",
+          "instruction": "Inject real failure and cancellation paths and check truthful UI feedback without sensitive data in release logs."
+        }
+      ],
+      "decision_gate": {
+        "question": "Can the failure be diagnosed and recovered without false success or data exposure?",
+        "if_yes": "Retain the current bounded error path with its documented privacy constraints.",
+        "if_no": "Correct handler visibility, cancellation propagation or redaction before claiming recovery.",
+        "discriminator": "A reproducible exception and cancellation produces observable bounded diagnostics."
+      },
+      "oracle": "Relevant failures remain visible and release logs exclude identifying user data.",
+      "stop": "Stop after the reachable failure and cancellation paths are verified and accounted for."
+    },
+    {
+      "id": "PROC-029",
+      "source_pattern_id": "PRX-029",
+      "title": "Revalidate Android permission and URI-grant authority at use time",
+      "provenance_status": "editorial_procedure_derived_from_pinned_source_not_effectiveness_tested",
+      "trigger": "Protected actions depend on runtime permissions or content URI grants that can expire.",
+      "exclude": "The action needs no runtime or provider grant and has no authority transition.",
+      "inputs": [
+        "protected_entrypoint",
+        "permission_and_grant_contract",
+        "supported_platform_versions"
+      ],
+      "steps": [
+        {
+          "op": "inspect",
+          "uses": [
+            "protected_entrypoint",
+            "permission_and_grant_contract"
+          ],
+          "produces": "authority_requirements",
+          "instruction": "List the exact required permission, URI grant and user-intent scope for the protected action."
+        },
+        {
+          "op": "trace",
+          "uses": [
+            "authority_requirements",
+            "supported_platform_versions"
+          ],
+          "produces": "revocation_window",
+          "instruction": "Trace grant acquisition, lifetime and revocation at the actual protected call rather than relying on cached booleans."
+        },
+        {
+          "op": "compare",
+          "uses": [
+            "revocation_window",
+            "protected_entrypoint"
+          ],
+          "produces": "denial_recovery",
+          "instruction": "Choose authorized denial, rationale and recovery behavior only for the supported Android contract."
+        },
+        {
+          "op": "verify",
+          "uses": [
+            "denial_recovery",
+            "permission_and_grant_contract"
+          ],
+          "produces": "revocation_probe",
+          "instruction": "Revoke permission or URI grant before the call and verify no unauthorized mutation and truthful feedback."
+        }
+      ],
+      "decision_gate": {
+        "question": "Is authority still valid at the moment the protected operation executes?",
+        "if_yes": "Proceed only within the actual current grant and approved resource identity.",
+        "if_no": "Block or request permitted reauthorization without making the protected mutation.",
+        "discriminator": "Real permission revocation between initial grant and protected invocation."
+      },
+      "oracle": "Invocation-time checks prevent unauthorized effects and preserve recoverable denial UX.",
+      "stop": "Stop once approval scope, grant lifetime and denial result are observed for supported paths."
+    },
+    {
+      "id": "PROC-030",
+      "source_pattern_id": "PRX-030",
+      "title": "Reject untrusted Android intent redirection across exported boundaries",
+      "provenance_status": "editorial_procedure_derived_from_pinned_source_not_effectiveness_tested",
+      "trigger": "An exported component accepts external or nested intents that can influence destination or grants.",
+      "exclude": "All callers and input fields are app-internal, explicitly trusted and non-exported.",
+      "inputs": [
+        "exported_components",
+        "incoming_intent_fields",
+        "caller_trust_contract"
+      ],
+      "steps": [
+        {
+          "op": "inspect",
+          "uses": [
+            "exported_components",
+            "caller_trust_contract"
+          ],
+          "produces": "exported_authority",
+          "instruction": "Record exported entries, caller authority, permissions and actual user-initiated accepted operations."
+        },
+        {
+          "op": "trace",
+          "uses": [
+            "exported_authority",
+            "incoming_intent_fields"
+          ],
+          "produces": "routing_surface",
+          "instruction": "Trace untrusted nested intent data, component destinations and forwarded URI grants."
+        },
+        {
+          "op": "compare",
+          "uses": [
+            "routing_surface",
+            "caller_trust_contract"
+          ],
+          "produces": "validated_targets",
+          "instruction": "Compare an allowlisted, sanitized or rejected intent to the approved destination and supported AndroidX APIs."
+        },
+        {
+          "op": "verify",
+          "uses": [
+            "validated_targets",
+            "incoming_intent_fields"
+          ],
+          "produces": "hostile_intent_probe",
+          "instruction": "Inject an unauthorized destination and grant flags, verify rejection without breaking accepted Share routes."
+        }
+      ],
+      "decision_gate": {
+        "question": "Can untrusted input invoke a private destination or escalate a forwarded grant?",
+        "if_yes": "Constrain or reject the input before any launch or grant-changing side effect.",
+        "if_no": "Preserve only tested authorized routes without unnecessary new restrictions.",
+        "discriminator": "An externally supplied nested intent attempts a destination outside the approved allowlist."
+      },
+      "oracle": "Unauthorized intent redirection fails while approved legitimate routes continue to function.",
+      "stop": "Stop when the cross-app boundary and accepted/hostile paths have independent runtime proof."
     }
   ]
 }

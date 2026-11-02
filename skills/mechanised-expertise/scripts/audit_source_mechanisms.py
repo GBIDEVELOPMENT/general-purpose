@@ -79,8 +79,13 @@ def main():
     path=ROOT/'assets/source-mechanisms-v1.json'
     original=ROOT/'assets/source-to-expertise-v09.csv'
     try:
-        with original.open(encoding='utf-8-sig',newline='') as f:
-            source_ids={row['id'] for row in csv.DictReader(f)}
+        source_ids=set()
+        for csv_path in (original, ROOT/'assets/source-to-expertise-v11-additions.csv'):
+            with csv_path.open(encoding='utf-8-sig',newline='') as f:
+                for row in csv.DictReader(f):
+                    if row['id'] in source_ids:
+                        raise ValueError('Duplicate source ID across source tables')
+                    source_ids.add(row['id'])
         result=audit(json.loads(path.read_text(encoding='utf-8')),source_ids)
         print(json.dumps(result,sort_keys=True))
         return 0
