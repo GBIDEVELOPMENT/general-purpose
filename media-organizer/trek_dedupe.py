@@ -26,7 +26,41 @@ def info(path):
     if show=="green_lantern_animated" and not re.search(r"(?i)green[. _-]+lantern[. _-]+the[. _-]+animated[. _-]+series",p.name):
         raise ValueError("Required exact animated-series filename identity")
     return show,token.group(1),token.group(2)
+
+COMBINED_GL_BATCH="gl_animated_premiere_20261102"
+GL_PREMIERE_PART_1="/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E01 - Beware My Power Part 1.mkv"
+GL_PREMIERE_PART_2="/downloads/Green Lantern The Animated Series/Season 01/Green Lantern The Animated Series - S01E02 - Beware My Power Part 2.mkv"
+GL_PREMIERE_SD="/downloads/Green Lantern The Animated Series S01/Green.Lantern.The.Animated.Series.S01E01-E02.HDTV.XviD-ASAP/Green.Lantern.The.Animated.Series.S01E01-E02.HDTV.XviD-ASAP.avi"
+def validate_green_lantern_multipart(m):
+    if set(m)!={"root","batch_id","description","groups"} or m["root"]!=ROOT or m["batch_id"]!=COMBINED_GL_BATCH:
+        raise ValueError("Invalid exact animated-series premiere batch")
+    if not isinstance(m["description"],str) or len(m["description"])<30 or len(m["groups"])!=1:
+        raise ValueError("Expected exactly one reviewed animated premiere release")
+    g=m["groups"][0]
+    if set(g)!={"show","season","episode","retain","retain_second","delete","reason"}:
+        raise ValueError("Unexpected multipart group attributes")
+    if (g["show"],g["season"],g["episode"])!=("green_lantern_animated","01","01") or len(g["delete"])!=1:
+        raise ValueError("Only animated-series premiere parts 1 and 2")
+    if not isinstance(g["reason"],str) or len(g["reason"])<30:
+        raise ValueError("Explain the resolution evidence for deleting combined premiere")
+    expected=[
+        (g["retain"],GL_PREMIERE_PART_1,3955119355,"20260810074806"),
+        (g["retain_second"],GL_PREMIERE_PART_2,3607770157,"20260810074821"),
+        (g["delete"][0],GL_PREMIERE_SD,367014226,"20111111191134")
+    ]
+    for item,path,size,modify in expected:
+        if set(item)!={"from","size","modify"} or item!={"from":path,"size":size,"modify":modify}:
+            raise ValueError("Exact observed animated-series title/size/mtime mismatch")
+        safe(item["from"])
+    if (info(g["retain"]["from"])!=("green_lantern_animated","01","01") or
+            info(g["retain_second"]["from"])!=("green_lantern_animated","01","02") or
+            info(g["delete"][0]["from"])!=("green_lantern_animated","01","01") or
+            not re.search(r"(?i)S01E01[-._ ]E02",PurePosixPath(g["delete"][0]["from"]).name)):
+        raise ValueError("Composite episode identity mismatch")
+    return [g["delete"][0]]
+
 def validate(m):
+    if m.get("batch_id")==COMBINED_GL_BATCH:return validate_green_lantern_multipart(m)
     if set(m)!={"root","batch_id","description","groups"} or m["root"]!=ROOT:raise ValueError("Invalid envelope")
     if not re.fullmatch(r"[A-Za-z0-9_-]{5,48}",m["batch_id"]):raise ValueError("Invalid batch id")
     if len(m["description"])<20:raise ValueError("Explain user-approved selection rationale")
@@ -65,12 +99,13 @@ def execute(ftp,m,audit):
             out.flush();os.fsync(out.fileno())
     # Preflight EVERY loser AND intended keeper before touching any file.
     for group in m["groups"]:
-        for item in [group["retain"]]+group["delete"]:match_exact(ftp,item)
+        for item in [group["retain"]]+([group["retain_second"]] if "retain_second" in group else [])+group["delete"]:match_exact(ftp,item)
     save("preflight_passed")
     try:
         for group in m["groups"]:
             for loser in group["delete"]:
                 match_exact(ftp,group["retain"])
+                if "retain_second" in group:match_exact(ftp,group["retain_second"])
                 match_exact(ftp,loser)
                 ftp.delete(loser["from"])
                 done.append(loser["from"]);save("in_progress")
