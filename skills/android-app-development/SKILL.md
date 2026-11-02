@@ -29,6 +29,7 @@ metadata:
 | Concrete Android implementation patterns for pickers, lifecycle, UI, storage and releases | [Platform playbooks](references/platform-playbooks.md) |
 | UI reachability, testing tiers, CI cost, signing and integration | [Verification and CI](references/verification-and-ci.md) |
 | Security/data-risk independent PR review | [Adversarial PR review](references/adversarial-review.md) |
+| Product-discovery graphs, incomplete user-workflow models, or suspected feature frontiers | [Concept Model Engineering](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/concept-model-engineering/SKILL.md) |
 | A documented historical success, failure or reversed premise | [Historical casebook](references/historical-casebook.md) |
 | Which published expert skill to use and how to trust it | [Upstream catalog](references/upstream-catalog.md) |
 | Offline checks, case evaluations and limits of the historical audit | [Skill evaluation](references/skill-evaluation.md), [audit scope](references/audit-coverage.md) |
