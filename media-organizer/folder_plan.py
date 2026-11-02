@@ -113,3 +113,4 @@ def main():
                       "needs_review":len(report["review"]),"partial":report["incomplete_scan"]}))
 if __name__=="__main__":main()
 # Inventory refresh marker 2026-11-01: owner-requested read-only Downloads title catalog.
+# Inventory refresh marker 2026-11-02: post-owner-deletion Star Trek and folder cleanup audit; read-only.
