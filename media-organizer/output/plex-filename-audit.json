@@ -1,30 +1,22 @@
 {
   "root": "/downloads",
-  "inventory_files": 3062,
-  "video_files": 2058,
+  "inventory_files": 2887,
+  "video_files": 1912,
   "inventory_complete": true,
   "truncated": [],
   "scan_failures": [],
   "summary": {
-    "cross_season_episode": 1,
     "legacy_1x_episode": 193,
     "episode_unrecognized_in_season": 1,
     "airdate_after_episode": 1,
     "multiple_episodes": 10
   },
   "priorities": {
-    "high": 194,
+    "high": 193,
     "medium": 1,
     "review": 11
   },
   "issues": [
-    {
-      "severity": "high",
-      "category": "cross_season_episode",
-      "path": "/downloads/Star Trek TNG Complete HEVC D3FiL3R/Star Trek TNG S03 HEVC D3FiL3R w-s/Star.Trek.The.Next.Generation.S03E26S04E01.BluRay.1080p.HEVC.DD5.1-D3FiL3R.mkv",
-      "note": "File spans two seasons; do not lose second episode code",
-      "suggestion": "Preserve unchanged pending manual Plex mapping or lossless split"
-    },
     {
       "severity": "high",
       "category": "legacy_1x_episode",
