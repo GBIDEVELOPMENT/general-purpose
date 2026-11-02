@@ -41,8 +41,20 @@ jobs:
           assert not routine['questions']
           print('PASS: grounded questions and negative control')
           PY
+      - name: Compile nonexecuted procedure-chain examples
+        run: |
+          python3 skills/mechanised-expertise/scripts/compile_procedure_chain.py skills/mechanised-expertise/examples/procedure-chain-remote.json > "$RUNNER_TEMP/remote-procedure-plan.json"
+          python3 skills/mechanised-expertise/scripts/compile_procedure_chain.py skills/mechanised-expertise/examples/procedure-chain-typo.json > "$RUNNER_TEMP/typo-procedure-plan.json"
+          python3 - "$RUNNER_TEMP/remote-procedure-plan.json" "$RUNNER_TEMP/typo-procedure-plan.json" <<'PY'
+          import json, sys
+          remote, typo = (json.load(open(p,encoding='utf-8')) for p in sys.argv[1:])
+          assert remote['execution_status'] == typo['execution_status'] == 'not_executed'
+          assert len(remote['stages']) == 2 and not typo['stages']
+          assert all(s['oracle']['status']=='not_run' and all(x['status']=='planned_not_observed' for x in s['outputs']) for s in remote['stages'])
+          print('PASS: planning never claims execution')
+          PY
       - name: Compile skill validator
-        run: python3 -m py_compile skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/scripts/audit_inquiry_operators.py skills/mechanised-expertise/scripts/compile_inquiry.py
+        run: python3 -m py_compile skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/scripts/audit_inquiry_operators.py skills/mechanised-expertise/scripts/compile_procedure_chain.py skills/mechanised-expertise/scripts/compile_inquiry.py
       - name: Verify pinned source synthesis routes
         run: |
           python3 - <<'PY'

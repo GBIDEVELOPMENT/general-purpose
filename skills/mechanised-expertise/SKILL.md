@@ -2,7 +2,7 @@
 name: mechanised-expertise
 description: Turn development advice into conditional expert inquiry, grounded research, concept-map gap audits, defensible implementation/UX decisions, and independent verification. Use for ambiguous or consequential mobile/software feature design and when synthesizing agent-skill corpora. Scale effort to risk; avoid bureaucratic analysis for routine fixes.
 metadata:
-  version: "0.5.0"
+  version: "0.6.0"
   origin: "Mobile development skills research corpus, with complementary general-purpose engineering judgment and concept-model skills"
 ---
 
@@ -40,6 +40,10 @@ The optional [question compiler](scripts/compile_inquiry.py) accepts a normalize
 When developing or revising agent skills from the research corpus, use the [source-to-procedure compilation contract](references/corpus-to-procedure.md) and inspect the [22 curated operational examples](assets/source-mechanisms-v1.json). Each example has an original source ID, trigger, explicit disqualifier, named source facts, **ordered operations with declared input/output dependencies**, opposing decision actions, a discriminator, an independent oracle and a stop rule. Check the authored procedures using `python3 scripts/audit_source_mechanisms.py`.
 
 These examples are proposed transformations, not ten new independent upstream recommendations or proof of improved agent performance. The unconverted source corpus remains a research queue rather than implicitly carrying a mechanised implementation.
+
+## Compose operational procedures without fabricating results
+
+When a feature crosses multiple consequential boundaries, consult the [mechanical procedure-chain contract](references/procedure-chains.md) and the [symbolic chain compiler](scripts/compile_procedure_chain.py). Select only source-supported, non-excluded procedures from the existing 22 [source-derived mechanisms](assets/source-mechanisms-v1.json). Bind every input to a source fact or a previous named output and check downstream dependencies. A planned source reading, implementation step or oracle is **not executed evidence**. The compiler emits only a nonexecuted plan, preserving unknowns and pending upstream outputs; any source truth, semantic correctness, real behavior or authorized mutation still requires separate inspection and execution. A routine one-line correction should produce no chain.
 
 ## 0. Right-size the inquiry
 
