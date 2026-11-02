@@ -46,3 +46,13 @@ Use the [Evidence and corpus protocol](references/evidence-and-corpus.md). The m
 After observing the outcome, record whether the original cue predicted the risk, whether an exception appeared, what evidence changed the decision, what question was wasteful, and which conditional practice should be refined. Keep source statements and *our proposed heuristics* separately identified. Do not upgrade an inferred rule to established advice without testing and applicable evidence.
 
 **Short receipt:** `Outcome | triggered cues | consequential questions and answer sources | coverage/blanks | options and exception | choice/reversal trigger | observed oracle | uncertainty/next action`.
+
+## Evaluation and proportionality
+
+An agent's ability to recite a checklist, select plausible option labels or cite an existing source file does not establish expert judgment. Evaluate the whole consequential chain: recognition cue -> question that can change a decision -> trustworthy answer source -> qualified conceptual gap where needed -> competing option and reversal condition -> observed independent user-facing oracle.
+
+Read [Expertise Evaluation](references/expertise-evaluation.md) when transforming a corpus recommendation, designing a skill experiment or auditing whether a proposed inquiry is worth its cost. Preserve original source claims and their exact provenance separately from editorial reasoning hypotheses. A frequent recommendation can still be unhelpful, derived or inapplicable.
+
+Keep routine reversible tasks short. Penalize unnecessary owner questions, irrelevant concept mapping, excessive research, unsupported verification claims and new architecture introduced without a discriminating failure. Correctness, proportionality, source quality and actual postconditions should be assessed separately.
+
+Eight synthetic mobile scenarios and fifteen offline evaluator tests are packaged in the separate v0.8 research archive; this documentation-only update **does not install the lab** into the repository or claim a measured skill benefit.
