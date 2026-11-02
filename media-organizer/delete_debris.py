@@ -4,6 +4,11 @@
 No wildcard remote deletion. Archive suggestions are never automatically approved.
 """
 import argparse, ftplib, json, os, re
+
+OWNER_MEDIA_BATCH = 'owner_media_20261101_289'
+OWNER_MEDIA_REVIEW = Path('media-organizer/review/ftp-selected-title-delete-2026-11-01.json')
+OWNER_MEDIA_BYTES = 463387620682
+
 from pathlib import Path, PurePosixPath
 from organize import ROOT, VIDEO, connect, safe
 
@@ -65,11 +70,35 @@ def validate(manifest):
     if not isinstance(manifest["description"],str) or len(manifest["description"])<15:raise ValueError("Missing rationale")
     entries=manifest["entries"]
     if not isinstance(entries,list) or not 1<=len(entries)<=300:raise ValueError("Batch must have 1..300 entries")
+    if manifest["batch_id"] == OWNER_MEDIA_BATCH:
+        # The exception for full-sized media is restricted to the owner's one
+        # signed-off review set. It does not relax ordinary debris validation.
+        reviewed=json.loads(OWNER_MEDIA_REVIEW.read_text(encoding="utf-8"))
+        if (reviewed.get("schema_version")!="review-only-2026-11-01-v1"
+                or reviewed.get("snapshot",{}).get("inventory_blob_sha")!="079f857e4c717c2801b76c2132e5b8a996b62fe0"
+                or reviewed.get("snapshot",{}).get("scan_failures")!=0
+                or reviewed.get("snapshot",{}).get("scan_truncated")!=0
+                or reviewed.get("totals",{}).get("files")!=289
+                or reviewed.get("totals",{}).get("bytes")!=OWNER_MEDIA_BYTES):
+            raise ValueError("Original owner-reviewed inventory/provenance mismatch")
+        expected=[{"from":f["path"],"size":f["size_bytes"],"modify":f["modify_ftp"],"category":"owner_media"}
+                  for group in reviewed["groups"] for f in group["files"]]
+        if len(expected)!=289 or sum(f["size"] for f in expected)!=OWNER_MEDIA_BYTES or entries!=expected:
+            raise ValueError("Approved media manifest differs from the exact 289 owner-reviewed paths")
+        roots=[root for group in reviewed["groups"] for root in group["matched_roots"]]
+        if any(not any(f["from"].startswith(root+"/") for root in roots) for f in expected):
+            raise ValueError("Selected path outside approved release roots")
+        if any("/rtorrent/" in f["from"] or "/watch/rtorrent/" in f["from"] or "/Night Court/" in f["from"] for f in expected):
+            raise ValueError("Protected path in selected files")
+    elif any(entry.get("category")=="owner_media" for entry in entries if isinstance(entry,dict)):
+        raise ValueError("Media exception requires exact owner-approved batch id")
     seen=set()
     for entry in entries:
         if not isinstance(entry,dict) or set(entry)!={"from","size","modify","category"}:raise ValueError("Unexpected entry keys")
         p=safe(entry["from"])
-        if category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot","sample","trailer","txt","detritus"):
+        if manifest["batch_id"] == OWNER_MEDIA_BATCH and entry["category"] == "owner_media":
+            pass  # Already matched full immutable reviewed set above.
+        elif category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot","sample","trailer","txt","detritus"):
             raise ValueError("Not an exact approved debris class")
         if p.casefold() in seen:raise ValueError("Duplicate delete")
         seen.add(p.casefold())
