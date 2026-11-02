@@ -78,3 +78,7 @@ jobs:
 
       - name: Check conditional multi-source compositions and source links
         run: python3 skills/mechanised-expertise/scripts/audit_compositions.py
+      - name: Validate source-derived step contracts and dependency ordering
+        run: python3 skills/mechanised-expertise/scripts/audit_source_mechanisms.py
+      - name: Compile source mechanism audit script
+        run: python3 -m py_compile skills/mechanised-expertise/scripts/audit_source_mechanisms.py
