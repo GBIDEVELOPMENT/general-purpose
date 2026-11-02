@@ -30,8 +30,19 @@ jobs:
         run: python3 -m unittest discover -s skills/mechanised-expertise/tests -p 'test_*.py' -v
       - name: Audit bounded inquiry operators, source roles and negative controls
         run: python3 skills/mechanised-expertise/scripts/audit_inquiry_operators.py
+      - name: Compile source-linked inquiries without inventing answers
+        run: |
+          python3 skills/mechanised-expertise/scripts/compile_inquiry.py skills/mechanised-expertise/examples/mechanical-remote-mutation.json > "$RUNNER_TEMP/inquiry-remote.json"
+          python3 skills/mechanised-expertise/scripts/compile_inquiry.py skills/mechanised-expertise/examples/mechanical-routine-typo.json > "$RUNNER_TEMP/inquiry-routine.json"
+          python3 - "$RUNNER_TEMP/inquiry-remote.json" "$RUNNER_TEMP/inquiry-routine.json" <<'PY'
+          import json,sys
+          remote=json.load(open(sys.argv[1]));routine=json.load(open(sys.argv[2]))
+          assert len(remote['questions']) == 2 and all(q['status']=='unanswered' for q in remote['questions'])
+          assert not routine['questions']
+          print('PASS: grounded questions and negative control')
+          PY
       - name: Compile skill validator
-        run: python3 -m py_compile skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/scripts/audit_inquiry_operators.py
+        run: python3 -m py_compile skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/scripts/audit_inquiry_operators.py skills/mechanised-expertise/scripts/compile_inquiry.py
       - name: Verify pinned source synthesis routes
         run: |
           python3 - <<'PY'
