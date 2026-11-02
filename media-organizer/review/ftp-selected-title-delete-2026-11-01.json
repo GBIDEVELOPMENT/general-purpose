@@ -1,0 +1,1811 @@
+{
+  "schema_version": "review-only-2026-11-01-v1",
+  "execution_authorized": false,
+  "purpose": "Owner-selected movie and TV series candidates. This is a PRIVATE NON-EXECUTABLE review list, never the input of existing delete workflows. No FTP writes authorized.",
+  "snapshot": {
+    "ftp_root": "/downloads",
+    "source_repo": "GBIDEVELOPMENT/general-purpose",
+    "inventory_branch": "reports/ftp-media-inventory",
+    "inventory_blob_sha": "079f857e4c717c2801b76c2132e5b8a996b62fe0",
+    "actions_run": 41375014383,
+    "scan_status": "completed: success",
+    "scan_files": 2887,
+    "scan_directories": 442,
+    "scan_failures": 0,
+    "scan_truncated": 0
+  },
+  "totals": {
+    "titles": 19,
+    "movies": 10,
+    "tv_series": 9,
+    "files": 289,
+    "bytes": 463387620682,
+    "decimal_GB": 463.387621,
+    "binary_GiB": 431.563352
+  },
+  "blocking_requirements": [
+    "User must explicitly approve exact list and totals in the chat. Do not infer authorization from the original selection.",
+    "Before any deletion, verify every actual FTP file still matches exact path, MLSD size, and modify timestamp; changed or missing files must be separately reported; no generic wildcard or recursive deletion.",
+    "Check actual active rTorrent infohashes, paths and download/seeding states using an authenticated read-only remote session and report blocked/unknown transfers. Termalin currently has no connected hosts.",
+    "Check active production or transcription dependencies; never alter protected /downloads/rtorrent, /downloads/watch/rtorrent, Night Court pipeline assets, or unselected content.",
+    "Special TNG cross-season S03E26S04E01 is recorded as protected in repository docs; not seen in selected current inventory, but recheck any newly arrived copy.",
+    "No automatic changes to parent /downloads/Star Trek or other unselected series under it; directory cleanup must be empty-only, exact, nonrecursive and separately verified.",
+    "Recheck the zero-byte numbered RAR parts in Dune: Part Two; byte totals reflect only sizes reported by FTP, not guaranteed freed disk blocks.",
+    "If authorized, use a specially reviewed, purpose-built, trusted main-only execution workflow and durable per-file journal; existing debris-delete executor rejects video and must not be broadened blindly.",
+    "Re-inventory after execution and reconcile every expected path and actual disk space."
+  ],
+  "notes": [
+    "Matched all files recursively inside the title-exclusive roots, including subtitle/SFV/archive companions; shared family root /downloads/Dune is not a deletion candidate.",
+    "Unselected Friends S09E04 release tagged JoeyTribbiani is explicitly excluded.",
+    "Unselected Star Trek series and The Celebrity Traitors are explicitly excluded.",
+    "Some FTP file sizes may represent hard-linked/storage-shared payloads, so disk free-space increase is only an estimate.",
+    "No files deleted or moved, and no server commands executed."
+  ],
+  "groups": [
+    {
+      "category": "movie",
+      "title": "Black Bag (2025)",
+      "matched_roots": [
+        "/downloads/Black Bag 2025 2160p AMZN WEB-DL DDP5 1 HDR H 265-APEX"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 10591045611,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Black Bag 2025 2160p AMZN WEB-DL DDP5 1 HDR H 265-APEX"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Black Bag 2025 2160p AMZN WEB-DL DDP5 1 HDR H 265-APEX/Black Bag 2025 2160p AMZN WEB-DL DDP5 1 HDR H 265-APEX.mkv",
+          "size_bytes": 10591045611,
+          "modify_ftp": "20250401075142"
+        }
+      ]
+    },
+    {
+      "category": "movie",
+      "title": "Bob Trevino Likes It (2025)",
+      "matched_roots": [
+        "/downloads/Bob Trevino Likes It 2025"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 1577504397,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Bob Trevino Likes It 2025"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Bob Trevino Likes It 2025/Bob Trevino Likes It 2025 1080p.mkv",
+          "size_bytes": 1577504397,
+          "modify_ftp": "20250915232643"
+        }
+      ]
+    },
+    {
+      "category": "movie",
+      "title": "Cleaner (2025)",
+      "matched_roots": [
+        "/downloads/Cleaner (2025) 1080p WEBRip 5.1-LAMA"
+      ],
+      "file_count": 5,
+      "estimated_bytes": 1925508134,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Cleaner (2025) 1080p WEBRip 5.1-LAMA/Subs",
+        "/downloads/Cleaner (2025) 1080p WEBRip 5.1-LAMA"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Cleaner (2025) 1080p WEBRip 5.1-LAMA/Cleaner.2025.1080p.WEBRip.x264.AAC5.1-LAMA.mp4",
+          "size_bytes": 1925109554,
+          "modify_ftp": "20250322072933"
+        },
+        {
+          "path": "/downloads/Cleaner (2025) 1080p WEBRip 5.1-LAMA/Cleaner.2025.1080p.WEBRip.x264.AAC5.1-LAMA.srt",
+          "size_bytes": 98170,
+          "modify_ftp": "20250322072930"
+        },
+        {
+          "path": "/downloads/Cleaner (2025) 1080p WEBRip 5.1-LAMA/Subs/Canadian.fre.srt",
+          "size_bytes": 88988,
+          "modify_ftp": "20250322072930"
+        },
+        {
+          "path": "/downloads/Cleaner (2025) 1080p WEBRip 5.1-LAMA/Subs/English.srt",
+          "size_bytes": 98170,
+          "modify_ftp": "20250322072930"
+        },
+        {
+          "path": "/downloads/Cleaner (2025) 1080p WEBRip 5.1-LAMA/Subs/SDH.eng.HI.srt",
+          "size_bytes": 113252,
+          "modify_ftp": "20250322072930"
+        }
+      ]
+    },
+    {
+      "category": "movie",
+      "title": "Dune (2021)",
+      "matched_roots": [
+        "/downloads/Dune/Dune (2021)"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 10242256021,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Dune/Dune (2021)"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Dune/Dune (2021)/Dune (2021).mkv",
+          "size_bytes": 10242256021,
+          "modify_ftp": "20260709055031"
+        }
+      ]
+    },
+    {
+      "category": "movie",
+      "title": "Dune: Part Two (2024)",
+      "matched_roots": [
+        "/downloads/Dune/Dune Part Two (2024)",
+        "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL"
+      ],
+      "file_count": 34,
+      "estimated_bytes": 9446127244,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL",
+        "/downloads/Dune/Dune Part Two (2024)"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r00",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r01",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r02",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r03",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r04",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r05",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r06",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r07",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r08",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r09",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r10",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r11",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r12",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r13",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r14",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r15",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r16",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r17",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r18",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r19",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r20",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r21",
+          "size_bytes": 500000000,
+          "modify_ftp": "20260709075744"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r22",
+          "size_bytes": 500000000,
+          "modify_ftp": "20260709075747"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r23",
+          "size_bytes": 500000000,
+          "modify_ftp": "20260709075747"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r24",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r25",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r26",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r27",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r28",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r29",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.r30",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.rar",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune.Part.Two.2024.2160p.WEB.h265-ETHEL/dune.part.two.2024.2160p.web.h265-ethel.sfv",
+          "size_bytes": 0,
+          "modify_ftp": "20260709075741"
+        },
+        {
+          "path": "/downloads/Dune/Dune Part Two (2024)/Dune Part Two (2024).mkv",
+          "size_bytes": 7946127244,
+          "modify_ftp": "20260709075852"
+        }
+      ]
+    },
+    {
+      "category": "movie",
+      "title": "Edge of Tomorrow (2014)",
+      "matched_roots": [
+        "/downloads/Edge Of Tomorrow 2014 4K BluRay HLG H 265 10bit DTS-HD MA-Robo29"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 9555795632,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Edge Of Tomorrow 2014 4K BluRay HLG H 265 10bit DTS-HD MA-Robo29"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Edge Of Tomorrow 2014 4K BluRay HLG H 265 10bit DTS-HD MA-Robo29/Edge Of Tomorrow 2014 4K BluRay HLG H 265 10bit DTS-HD MA-Robo29.mkv",
+          "size_bytes": 9555795632,
+          "modify_ftp": "20250325062315"
+        }
+      ]
+    },
+    {
+      "category": "movie",
+      "title": "Southland Tales (2006)",
+      "matched_roots": [
+        "/downloads/Southland Tales (2006)"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 9390565517,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Southland Tales (2006)"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Southland Tales (2006)/Southland Tales (2006).mkv",
+          "size_bytes": 9390565517,
+          "modify_ftp": "20081118125153"
+        }
+      ]
+    },
+    {
+      "category": "movie",
+      "title": "Superman (2025)",
+      "matched_roots": [
+        "/downloads/Superman.2025.2160p.WEB.h265-ETHEL"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 20711994560,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Superman.2025.2160p.WEB.h265-ETHEL"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Superman.2025.2160p.WEB.h265-ETHEL/Superman.2025.2160p.WEB.h265-ETHEL.mkv",
+          "size_bytes": 20711994560,
+          "modify_ftp": "20040118074617"
+        }
+      ]
+    },
+    {
+      "category": "movie",
+      "title": "The Life of Chuck (2024)",
+      "matched_roots": [
+        "/downloads/The Life of Chuck 2024 1080p 10bit WEBRip 6CH x265 HEVC-PSA"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 1575119360,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/The Life of Chuck 2024 1080p 10bit WEBRip 6CH x265 HEVC-PSA"
+      ],
+      "files": [
+        {
+          "path": "/downloads/The Life of Chuck 2024 1080p 10bit WEBRip 6CH x265 HEVC-PSA/The Life of Chuck 2024 1080p 10bit WEBRip 6CH x265 HEVC-PSA.mkv",
+          "size_bytes": 1575119360,
+          "modify_ftp": "20250730003718"
+        }
+      ]
+    },
+    {
+      "category": "movie",
+      "title": "Wolfs (2024)",
+      "matched_roots": [
+        "/downloads/Wolfs (2024) 2160p 4K WEB 5.1-LAMA"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 5135503229,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Wolfs (2024) 2160p 4K WEB 5.1-LAMA"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Wolfs (2024) 2160p 4K WEB 5.1-LAMA/Wolfs.2024.2160p.4K.WEB.x265.10bit.AAC5.1-LAMA.mkv",
+          "size_bytes": 5135503229,
+          "modify_ftp": "20250325062004"
+        }
+      ]
+    },
+    {
+      "category": "tv",
+      "title": "Ice Pilots NWT",
+      "matched_roots": [
+        "/downloads/Ice.Pilots.NWT.S04E05.1080p.WEB.H264-SUBSCRiBE"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 3270684423,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Ice.Pilots.NWT.S04E05.1080p.WEB.H264-SUBSCRiBE"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Ice.Pilots.NWT.S04E05.1080p.WEB.H264-SUBSCRiBE/ice.pilots.nwt.s04e05.1080p.web.h264-subscribe.mkv",
+          "size_bytes": 3270684423,
+          "modify_ftp": "20250630231549"
+        }
+      ]
+    },
+    {
+      "category": "tv",
+      "title": "Invincible",
+      "matched_roots": [
+        "/downloads/Invincible-2021-S01 1080p WEBRip 10bit EAC3 5 1 x265-iVy",
+        "/downloads/Invincible-2021-S02 1080p WEBRip 10bit EAC3 5 1 x265-iVy"
+      ],
+      "file_count": 2,
+      "estimated_bytes": 1453269707,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Invincible-2021-S01 1080p WEBRip 10bit EAC3 5 1 x265-iVy",
+        "/downloads/Invincible-2021-S02 1080p WEBRip 10bit EAC3 5 1 x265-iVy"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Invincible-2021-S01 1080p WEBRip 10bit EAC3 5 1 x265-iVy/Invincible-S01e01 1080p WEBRip 10bit EAC3 5 1 x265-iVy.mkv",
+          "size_bytes": 717156497,
+          "modify_ftp": "20260504041609"
+        },
+        {
+          "path": "/downloads/Invincible-2021-S02 1080p WEBRip 10bit EAC3 5 1 x265-iVy/Invincible-S02e01 1080p WEBRip 10bit EAC3 5 1 x265-iVy.mkv",
+          "size_bytes": 736113210,
+          "modify_ftp": "20260505212037"
+        }
+      ]
+    },
+    {
+      "category": "tv",
+      "title": "Joey",
+      "matched_roots": [
+        "/downloads/Joey"
+      ],
+      "file_count": 46,
+      "estimated_bytes": 58574851428,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Joey/Season 01",
+        "/downloads/Joey/Season 02",
+        "/downloads/Joey"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E01 - Pilot.mkv",
+          "size_bytes": 1611989225,
+          "modify_ftp": "20260818002512"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E02 - Joey and the Student.mkv",
+          "size_bytes": 1535962309,
+          "modify_ftp": "20260818002520"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E03 - Joey and the Party.mkv",
+          "size_bytes": 1529075268,
+          "modify_ftp": "20260818002533"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E04 - Joey and the Book Club.mkv",
+          "size_bytes": 1659429195,
+          "modify_ftp": "20260818002543"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E05 - Joey and the Perfect Storm.mkv",
+          "size_bytes": 1597576910,
+          "modify_ftp": "20260818002543"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E06 - Joey and the Nemesis.mkv",
+          "size_bytes": 1726437137,
+          "modify_ftp": "20260818002449"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E07 - Joey and the Husband.mkv",
+          "size_bytes": 1763433985,
+          "modify_ftp": "20260818002459"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E08 - Joey and the Dream Girl 1.mkv",
+          "size_bytes": 1558116953,
+          "modify_ftp": "20260818002210"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E09 - Joey and the Dream Girl 2.mkv",
+          "size_bytes": 1566089450,
+          "modify_ftp": "20260818002223"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E10 - Joey and the Big Audition.mkv",
+          "size_bytes": 1399863973,
+          "modify_ftp": "20260818002233"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E11 - Joey and the Road Trip.mkv",
+          "size_bytes": 1130306626,
+          "modify_ftp": "20260818002501"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E12 - Joey and the Plot Twist.mkv",
+          "size_bytes": 1750525287,
+          "modify_ftp": "20260818002342"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E13 - Joey and the Taste Test.mkv",
+          "size_bytes": 1663108376,
+          "modify_ftp": "20260818002349"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E14 - Joey and the Premiere.mkv",
+          "size_bytes": 1389991189,
+          "modify_ftp": "20260818002030"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E15 - Joey and the Assistant.mkv",
+          "size_bytes": 1640731297,
+          "modify_ftp": "20260818002351"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E16 - Joey and the Tonight Show.mkv",
+          "size_bytes": 1308778354,
+          "modify_ftp": "20260818002401"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E17 - Joey and the Valentines Date.mkv",
+          "size_bytes": 1793869864,
+          "modify_ftp": "20260818002415"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E18 - Joey and the Wrong Name.mkv",
+          "size_bytes": 1599565214,
+          "modify_ftp": "20260818002100"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E19 - Joey and the Fancy Sister.mkv",
+          "size_bytes": 1755767722,
+          "modify_ftp": "20260818002428"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E20 - Joey and the Neighbor.mkv",
+          "size_bytes": 1676401629,
+          "modify_ftp": "20260818002445"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E21 - Joey and the Spying.mkv",
+          "size_bytes": 1768305450,
+          "modify_ftp": "20260818002259"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E22 - Joey and the Temptation.mkv",
+          "size_bytes": 1693260274,
+          "modify_ftp": "20260818002312"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E23 - Joey and the Breakup.mkv",
+          "size_bytes": 1746921684,
+          "modify_ftp": "20260818002327"
+        },
+        {
+          "path": "/downloads/Joey/Season 01/Joey - S01E24 - Joey and the Moving In.mkv",
+          "size_bytes": 1753886593,
+          "modify_ftp": "20260818002441"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E01 - Joey and the Big Break 1.mkv",
+          "size_bytes": 799818178,
+          "modify_ftp": "20260817223306"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E02 - Joey and the Big Break 2.mkv",
+          "size_bytes": 851031327,
+          "modify_ftp": "20260817223341"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E03 - Joey and the Spanking.mkv",
+          "size_bytes": 963774896,
+          "modify_ftp": "20260817223420"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E04 - Joey and the Stuntman.mkv",
+          "size_bytes": 909717833,
+          "modify_ftp": "20260817223446"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E05 - Joey and the House.mkv",
+          "size_bytes": 886738835,
+          "modify_ftp": "20260817223429"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E06 - Joey and the ESL.mkv",
+          "size_bytes": 845148627,
+          "modify_ftp": "20260817223427"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E07 - Joey and the Poker.mkv",
+          "size_bytes": 889790638,
+          "modify_ftp": "20260817223431"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E08 - Joey and the Sex Tape.mkv",
+          "size_bytes": 874816667,
+          "modify_ftp": "20260817223453"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E09 - Joey and the Musical.mkv",
+          "size_bytes": 824611266,
+          "modify_ftp": "20260817223005"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E10 - Joey and the Bachelor Thanksgiving.mkv",
+          "size_bytes": 913518366,
+          "modify_ftp": "20260817223455"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E11 - Joey and the High School Friend.mkv",
+          "size_bytes": 875450049,
+          "modify_ftp": "20260817223500"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E12 - Joey and the Tijuana Trip.mkv",
+          "size_bytes": 983589017,
+          "modify_ftp": "20260817223504"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E13 - Joey and the Christmas Party.mkv",
+          "size_bytes": 988793873,
+          "modify_ftp": "20260817223504"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E14 - Joey and the Snowball Fight.mkv",
+          "size_bytes": 955504141,
+          "modify_ftp": "20260817223507"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E15 - Joey and the Dad.mkv",
+          "size_bytes": 881246794,
+          "modify_ftp": "20260817223507"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E16 - Joey and the Party for Alex.mkv",
+          "size_bytes": 945585401,
+          "modify_ftp": "20260817223328"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E17 - Joey and the Big Move.mkv",
+          "size_bytes": 946358847,
+          "modify_ftp": "20260817223332"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E18 - Joey and the Beard.mkv",
+          "size_bytes": 1008792169,
+          "modify_ftp": "20260817222933"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E19 - Joey and the Critic.mkv",
+          "size_bytes": 808382364,
+          "modify_ftp": "20260817223016"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E20 - Joey and the Actors Studio.mkv",
+          "size_bytes": 991748394,
+          "modify_ftp": "20260817223453"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E21 - Joey and the Holding Hands.mkv",
+          "size_bytes": 885703737,
+          "modify_ftp": "20260817223336"
+        },
+        {
+          "path": "/downloads/Joey/Season 02/Joey - S02E22 - Joey and the Wedding.mkv",
+          "size_bytes": 925336045,
+          "modify_ftp": "20260817223453"
+        }
+      ]
+    },
+    {
+      "category": "tv",
+      "title": "Legion",
+      "matched_roots": [
+        "/downloads/Legion (2017)"
+      ],
+      "file_count": 8,
+      "estimated_bytes": 47137900136,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Legion (2017)/Season 01",
+        "/downloads/Legion (2017)"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E01 - Chapter 1.mkv",
+          "size_bytes": 7868158773,
+          "modify_ftp": "20260512055431"
+        },
+        {
+          "path": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E02 - Chapter 2.mkv",
+          "size_bytes": 5403168411,
+          "modify_ftp": "20260512055424"
+        },
+        {
+          "path": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E03 - Chapter 3.mkv",
+          "size_bytes": 5012124147,
+          "modify_ftp": "20260512055425"
+        },
+        {
+          "path": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E04 - Chapter 4.mkv",
+          "size_bytes": 6280839971,
+          "modify_ftp": "20260512055423"
+        },
+        {
+          "path": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E05 - Chapter 5.mkv",
+          "size_bytes": 5972613164,
+          "modify_ftp": "20260512055425"
+        },
+        {
+          "path": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E06 - Chapter 6.mkv",
+          "size_bytes": 5804968226,
+          "modify_ftp": "20260512055425"
+        },
+        {
+          "path": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E07 - Chapter 7.mkv",
+          "size_bytes": 5203053795,
+          "modify_ftp": "20260512055302"
+        },
+        {
+          "path": "/downloads/Legion (2017)/Season 01/Legion (2017) - S01E08 - Chapter 8.mkv",
+          "size_bytes": 5592973649,
+          "modify_ftp": "20260512055302"
+        }
+      ]
+    },
+    {
+      "category": "tv",
+      "title": "Masters of the Air",
+      "matched_roots": [
+        "/downloads/Masters of the Air (2024)"
+      ],
+      "file_count": 9,
+      "estimated_bytes": 91369948175,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Masters of the Air (2024)/Season 01",
+        "/downloads/Masters of the Air (2024)"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E01.mkv",
+          "size_bytes": 11243966837,
+          "modify_ftp": "20250630003153"
+        },
+        {
+          "path": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E02.mkv",
+          "size_bytes": 9915841967,
+          "modify_ftp": "20250630003114"
+        },
+        {
+          "path": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E03.mkv",
+          "size_bytes": 8591898595,
+          "modify_ftp": "20250630003150"
+        },
+        {
+          "path": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E04.mkv",
+          "size_bytes": 9169988612,
+          "modify_ftp": "20250630003151"
+        },
+        {
+          "path": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E05.mkv",
+          "size_bytes": 9571208073,
+          "modify_ftp": "20250630003028"
+        },
+        {
+          "path": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E06.mkv",
+          "size_bytes": 11035101340,
+          "modify_ftp": "20250630003056"
+        },
+        {
+          "path": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E07.mkv",
+          "size_bytes": 8659256457,
+          "modify_ftp": "20250630003153"
+        },
+        {
+          "path": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E08.mkv",
+          "size_bytes": 9128624404,
+          "modify_ftp": "20250630003027"
+        },
+        {
+          "path": "/downloads/Masters of the Air (2024)/Season 01/Masters of the Air (2024) - S01E09.mkv",
+          "size_bytes": 14054061890,
+          "modify_ftp": "20250630003151"
+        }
+      ]
+    },
+    {
+      "category": "tv",
+      "title": "Spider-Noir",
+      "matched_roots": [
+        "/downloads/Spider-Noir S01 Authentic BW 2160p AMZN WEB-DL DDP5 1 Atmos DV HDR H 265-FLUX"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 4981509749,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Spider-Noir S01 Authentic BW 2160p AMZN WEB-DL DDP5 1 Atmos DV HDR H 265-FLUX"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Spider-Noir S01 Authentic BW 2160p AMZN WEB-DL DDP5 1 Atmos DV HDR H 265-FLUX/Spider-Noir S01e01 Authentic BW 2160p AMZN WEB-DL DDP5 1 Atmos DV HDR H 265-FLUX.mkv",
+          "size_bytes": 4981509749,
+          "modify_ftp": "20260528040038"
+        }
+      ]
+    },
+    {
+      "category": "tv",
+      "title": "Star Trek: The Next Generation",
+      "matched_roots": [
+        "/downloads/Star Trek/Star Trek The Next Generation"
+      ],
+      "file_count": 172,
+      "estimated_bytes": 174182582563,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/Star Trek/Star Trek The Next Generation/Season 01",
+        "/downloads/Star Trek/Star Trek The Next Generation/Season 02",
+        "/downloads/Star Trek/Star Trek The Next Generation/Season 03",
+        "/downloads/Star Trek/Star Trek The Next Generation/Season 04",
+        "/downloads/Star Trek/Star Trek The Next Generation/Season 05",
+        "/downloads/Star Trek/Star Trek The Next Generation/Season 06",
+        "/downloads/Star Trek/Star Trek The Next Generation/Season 07",
+        "/downloads/Star Trek/Star Trek The Next Generation"
+      ],
+      "files": [
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E01-E02.mkv",
+          "size_bytes": 2066967066,
+          "modify_ftp": "20260120051138"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E03.mkv",
+          "size_bytes": 1022613771,
+          "modify_ftp": "20260120050541"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E04.mkv",
+          "size_bytes": 1022880381,
+          "modify_ftp": "20260120050638"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E05.mkv",
+          "size_bytes": 1024333451,
+          "modify_ftp": "20260120050615"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E06.mkv",
+          "size_bytes": 1024545679,
+          "modify_ftp": "20260120050443"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E07.mkv",
+          "size_bytes": 1024039751,
+          "modify_ftp": "20260120050437"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E08.mkv",
+          "size_bytes": 1023826533,
+          "modify_ftp": "20260120050220"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E09.mkv",
+          "size_bytes": 1022928273,
+          "modify_ftp": "20260120050220"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E10.mkv",
+          "size_bytes": 1022956412,
+          "modify_ftp": "20260120050221"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E11.mkv",
+          "size_bytes": 1023898641,
+          "modify_ftp": "20260120050437"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E12.mkv",
+          "size_bytes": 1023278612,
+          "modify_ftp": "20260120050257"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E13.mkv",
+          "size_bytes": 1024355844,
+          "modify_ftp": "20260120050657"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E14.mkv",
+          "size_bytes": 1023684919,
+          "modify_ftp": "20260120050736"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E15.mkv",
+          "size_bytes": 1023831157,
+          "modify_ftp": "20260120051045"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E16.mkv",
+          "size_bytes": 1023376129,
+          "modify_ftp": "20260120050305"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E17.mkv",
+          "size_bytes": 1025189945,
+          "modify_ftp": "20260120050233"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E18.mkv",
+          "size_bytes": 1023342166,
+          "modify_ftp": "20260120051140"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E19.mkv",
+          "size_bytes": 1023588784,
+          "modify_ftp": "20260120050706"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E20.mkv",
+          "size_bytes": 1023880282,
+          "modify_ftp": "20260120050851"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E21.mkv",
+          "size_bytes": 1022077751,
+          "modify_ftp": "20260120050822"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E22.mkv",
+          "size_bytes": 1022875214,
+          "modify_ftp": "20260120050927"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E23.mkv",
+          "size_bytes": 1024057933,
+          "modify_ftp": "20260120050125"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E24.mkv",
+          "size_bytes": 1023483534,
+          "modify_ftp": "20260120050121"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E25.mkv",
+          "size_bytes": 1024639470,
+          "modify_ftp": "20260120050437"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 01/Star Trek The Next Generation - S01E26.mkv",
+          "size_bytes": 1024093114,
+          "modify_ftp": "20260120050221"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E01.mkv",
+          "size_bytes": 981792144,
+          "modify_ftp": "20260120050204"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E02.mkv",
+          "size_bytes": 983919624,
+          "modify_ftp": "20260120050437"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E03.mkv",
+          "size_bytes": 983782913,
+          "modify_ftp": "20260120050437"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E04.mkv",
+          "size_bytes": 979782626,
+          "modify_ftp": "20260120045921"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E05.mkv",
+          "size_bytes": 977722210,
+          "modify_ftp": "20260120045624"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E06.mkv",
+          "size_bytes": 982222749,
+          "modify_ftp": "20260120045636"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E07.mkv",
+          "size_bytes": 975259288,
+          "modify_ftp": "20260120045926"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E08.mkv",
+          "size_bytes": 980272762,
+          "modify_ftp": "20260120045550"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E09.mkv",
+          "size_bytes": 981837959,
+          "modify_ftp": "20260120045813"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E11.mkv",
+          "size_bytes": 981490435,
+          "modify_ftp": "20260120045803"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E12.mkv",
+          "size_bytes": 980369028,
+          "modify_ftp": "20260120045839"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E13.mkv",
+          "size_bytes": 980608338,
+          "modify_ftp": "20260120050054"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E14.mkv",
+          "size_bytes": 978819732,
+          "modify_ftp": "20260120045835"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E15.mkv",
+          "size_bytes": 977349161,
+          "modify_ftp": "20260120045835"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E16.mkv",
+          "size_bytes": 977860251,
+          "modify_ftp": "20260120045814"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E17.mkv",
+          "size_bytes": 978516159,
+          "modify_ftp": "20260120045819"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E18.mkv",
+          "size_bytes": 978796963,
+          "modify_ftp": "20260120045823"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E19.mkv",
+          "size_bytes": 978888463,
+          "modify_ftp": "20260120045828"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E20.mkv",
+          "size_bytes": 981409749,
+          "modify_ftp": "20260120050322"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E21.mkv",
+          "size_bytes": 980470016,
+          "modify_ftp": "20260120051052"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 02/Star Trek The Next Generation - S02E22.mkv",
+          "size_bytes": 979950469,
+          "modify_ftp": "20260120050338"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E01.mkv",
+          "size_bytes": 982587792,
+          "modify_ftp": "20260120050543"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E02.mkv",
+          "size_bytes": 982950090,
+          "modify_ftp": "20260120050543"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E03.mkv",
+          "size_bytes": 982932208,
+          "modify_ftp": "20260120050333"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E04.mkv",
+          "size_bytes": 980787967,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E05.mkv",
+          "size_bytes": 982031106,
+          "modify_ftp": "20260120051110"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E06.mkv",
+          "size_bytes": 982678500,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E07.mkv",
+          "size_bytes": 981949877,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E08.mkv",
+          "size_bytes": 983094920,
+          "modify_ftp": "20260120050056"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E09.mkv",
+          "size_bytes": 982806234,
+          "modify_ftp": "20260120051120"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E10.mkv",
+          "size_bytes": 983449289,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E11.mkv",
+          "size_bytes": 981933442,
+          "modify_ftp": "20260120050102"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E12.mkv",
+          "size_bytes": 984688238,
+          "modify_ftp": "20260120050109"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E13.mkv",
+          "size_bytes": 982790808,
+          "modify_ftp": "20260120051136"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E14.mkv",
+          "size_bytes": 981602394,
+          "modify_ftp": "20260120050100"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E15.mkv",
+          "size_bytes": 985936744,
+          "modify_ftp": "20260120050052"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E16.mkv",
+          "size_bytes": 984417579,
+          "modify_ftp": "20260120051126"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E17.mkv",
+          "size_bytes": 985659217,
+          "modify_ftp": "20260120051128"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E18.mkv",
+          "size_bytes": 982311037,
+          "modify_ftp": "20260120045845"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E19.mkv",
+          "size_bytes": 984136582,
+          "modify_ftp": "20260120050610"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E20.mkv",
+          "size_bytes": 984489358,
+          "modify_ftp": "20260120050601"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E21.mkv",
+          "size_bytes": 984019123,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E22.mkv",
+          "size_bytes": 982049416,
+          "modify_ftp": "20260120050257"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E23.mkv",
+          "size_bytes": 982498147,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E24.mkv",
+          "size_bytes": 982303972,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 03/Star Trek The Next Generation - S03E25.mkv",
+          "size_bytes": 981733678,
+          "modify_ftp": "20260120051056"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E02.mkv",
+          "size_bytes": 1003190547,
+          "modify_ftp": "20260120050851"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E03.mkv",
+          "size_bytes": 1005437850,
+          "modify_ftp": "20260120050733"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E04.mkv",
+          "size_bytes": 1005048081,
+          "modify_ftp": "20260120050736"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E05.mkv",
+          "size_bytes": 1006533141,
+          "modify_ftp": "20260120045942"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E06.mkv",
+          "size_bytes": 1005830969,
+          "modify_ftp": "20260120050638"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E07.mkv",
+          "size_bytes": 1005736279,
+          "modify_ftp": "20260120050638"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E08.mkv",
+          "size_bytes": 1006899551,
+          "modify_ftp": "20260120050053"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E09.mkv",
+          "size_bytes": 1011340919,
+          "modify_ftp": "20260120050436"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E10.mkv",
+          "size_bytes": 1005223520,
+          "modify_ftp": "20260120050354"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E11.mkv",
+          "size_bytes": 1004024493,
+          "modify_ftp": "20260120050441"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E12.mkv",
+          "size_bytes": 1009869295,
+          "modify_ftp": "20260120050638"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E13.mkv",
+          "size_bytes": 1005983022,
+          "modify_ftp": "20260120050638"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E14.mkv",
+          "size_bytes": 1005517035,
+          "modify_ftp": "20260120045528"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E15.mkv",
+          "size_bytes": 1004814447,
+          "modify_ftp": "20260120051140"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E16.mkv",
+          "size_bytes": 1005193108,
+          "modify_ftp": "20260120050257"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E17.mkv",
+          "size_bytes": 1007533307,
+          "modify_ftp": "20260120045730"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E18.mkv",
+          "size_bytes": 1009488430,
+          "modify_ftp": "20260120045936"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E19.mkv",
+          "size_bytes": 1005078210,
+          "modify_ftp": "20260120045726"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E20.mkv",
+          "size_bytes": 1006446277,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E21.mkv",
+          "size_bytes": 1010869525,
+          "modify_ftp": "20260120051142"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E22.mkv",
+          "size_bytes": 1006496457,
+          "modify_ftp": "20260120051133"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E23.mkv",
+          "size_bytes": 1009751780,
+          "modify_ftp": "20260120045932"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E24.mkv",
+          "size_bytes": 1006536722,
+          "modify_ftp": "20260120051130"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E25.mkv",
+          "size_bytes": 1007797909,
+          "modify_ftp": "20260120051133"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 04/Star Trek The Next Generation - S04E26.mkv",
+          "size_bytes": 1005351776,
+          "modify_ftp": "20260120050725"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E01.mkv",
+          "size_bytes": 1006816501,
+          "modify_ftp": "20260120050111"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E02.mkv",
+          "size_bytes": 1007877006,
+          "modify_ftp": "20260120050324"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E03.mkv",
+          "size_bytes": 1007215253,
+          "modify_ftp": "20260120050329"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E04.mkv",
+          "size_bytes": 1007556346,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E05.mkv",
+          "size_bytes": 1007320984,
+          "modify_ftp": "20260120045803"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E06.mkv",
+          "size_bytes": 1006741369,
+          "modify_ftp": "20260120050053"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E07.mkv",
+          "size_bytes": 1010439369,
+          "modify_ftp": "20260120050057"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E08.mkv",
+          "size_bytes": 1011274894,
+          "modify_ftp": "20260120050555"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E09.mkv",
+          "size_bytes": 1007547253,
+          "modify_ftp": "20260120045403"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E10.mkv",
+          "size_bytes": 1006346047,
+          "modify_ftp": "20260120051107"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E11.mkv",
+          "size_bytes": 1004866002,
+          "modify_ftp": "20260120045804"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E12.mkv",
+          "size_bytes": 1006477299,
+          "modify_ftp": "20260120045745"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E13.mkv",
+          "size_bytes": 1006683721,
+          "modify_ftp": "20260120045748"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E14.mkv",
+          "size_bytes": 1007501374,
+          "modify_ftp": "20260120051141"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E15.mkv",
+          "size_bytes": 1006598673,
+          "modify_ftp": "20260120045916"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E16.mkv",
+          "size_bytes": 1010432579,
+          "modify_ftp": "20260120050050"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E17.mkv",
+          "size_bytes": 1008349405,
+          "modify_ftp": "20260120050846"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E19.mkv",
+          "size_bytes": 1005758315,
+          "modify_ftp": "20260120050638"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E20.mkv",
+          "size_bytes": 1006248298,
+          "modify_ftp": "20260120050631"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E21.mkv",
+          "size_bytes": 1011580859,
+          "modify_ftp": "20260120050550"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E22.mkv",
+          "size_bytes": 1008473649,
+          "modify_ftp": "20260120050540"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E23.mkv",
+          "size_bytes": 1009726455,
+          "modify_ftp": "20260120050743"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E24.mkv",
+          "size_bytes": 1005611270,
+          "modify_ftp": "20260120045229"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E25.mkv",
+          "size_bytes": 1008532003,
+          "modify_ftp": "20260120050025"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 05/Star Trek The Next Generation - S05E26.mkv",
+          "size_bytes": 1005065737,
+          "modify_ftp": "20260120050259"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E01.mkv",
+          "size_bytes": 1008447015,
+          "modify_ftp": "20260120050044"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E02.mkv",
+          "size_bytes": 1009435086,
+          "modify_ftp": "20260120050041"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E03.mkv",
+          "size_bytes": 1008499985,
+          "modify_ftp": "20260120050029"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E04.mkv",
+          "size_bytes": 1008367397,
+          "modify_ftp": "20260120050035"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E05.mkv",
+          "size_bytes": 1008164834,
+          "modify_ftp": "20260120050312"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E06.mkv",
+          "size_bytes": 1008975067,
+          "modify_ftp": "20260120050329"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E07.mkv",
+          "size_bytes": 1009048163,
+          "modify_ftp": "20260120045416"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E08.mkv",
+          "size_bytes": 1007954309,
+          "modify_ftp": "20260120045412"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E09.mkv",
+          "size_bytes": 1008259201,
+          "modify_ftp": "20260120045606"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E10.mkv",
+          "size_bytes": 995196397,
+          "modify_ftp": "20260120045602"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E11.mkv",
+          "size_bytes": 998236101,
+          "modify_ftp": "20260120050023"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E12.mkv",
+          "size_bytes": 998678569,
+          "modify_ftp": "20260120045302"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E13.mkv",
+          "size_bytes": 998482476,
+          "modify_ftp": "20260120045529"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E14.mkv",
+          "size_bytes": 995977415,
+          "modify_ftp": "20260120050542"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E15.mkv",
+          "size_bytes": 998505848,
+          "modify_ftp": "20260120050331"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E16.mkv",
+          "size_bytes": 998372470,
+          "modify_ftp": "20260120050541"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E17.mkv",
+          "size_bytes": 997277650,
+          "modify_ftp": "20260120050057"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E18.mkv",
+          "size_bytes": 998413768,
+          "modify_ftp": "20260120050057"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E19.mkv",
+          "size_bytes": 999571231,
+          "modify_ftp": "20260120045615"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E20.mkv",
+          "size_bytes": 997051098,
+          "modify_ftp": "20260120045608"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E21.mkv",
+          "size_bytes": 998255406,
+          "modify_ftp": "20260120050846"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E22.mkv",
+          "size_bytes": 996748720,
+          "modify_ftp": "20260120045913"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E23.mkv",
+          "size_bytes": 998704567,
+          "modify_ftp": "20260120045530"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E24.mkv",
+          "size_bytes": 998722416,
+          "modify_ftp": "20260120045505"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E25.mkv",
+          "size_bytes": 997942001,
+          "modify_ftp": "20260120045231"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 06/Star Trek The Next Generation - S06E26.mkv",
+          "size_bytes": 993756763,
+          "modify_ftp": "20260120045230"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E01.mkv",
+          "size_bytes": 998814780,
+          "modify_ftp": "20260120050655"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E02.mkv",
+          "size_bytes": 1000223797,
+          "modify_ftp": "20260120045805"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E03.mkv",
+          "size_bytes": 999322264,
+          "modify_ftp": "20260120045510"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E04.mkv",
+          "size_bytes": 998415623,
+          "modify_ftp": "20260120050056"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E05.mkv",
+          "size_bytes": 998482306,
+          "modify_ftp": "20260120045906"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E06.mkv",
+          "size_bytes": 998536501,
+          "modify_ftp": "20260120050254"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E07.mkv",
+          "size_bytes": 998100249,
+          "modify_ftp": "20260120050256"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E08.mkv",
+          "size_bytes": 996482729,
+          "modify_ftp": "20260120050057"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E09.mkv",
+          "size_bytes": 995583317,
+          "modify_ftp": "20260120045804"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E10.mkv",
+          "size_bytes": 998528402,
+          "modify_ftp": "20260120050654"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E11.mkv",
+          "size_bytes": 998859389,
+          "modify_ftp": "20260120050643"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E12.mkv",
+          "size_bytes": 997712995,
+          "modify_ftp": "20260120050632"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E13.mkv",
+          "size_bytes": 997119369,
+          "modify_ftp": "20260120050640"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E14.mkv",
+          "size_bytes": 997994051,
+          "modify_ftp": "20260120050638"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E15.mkv",
+          "size_bytes": 999213299,
+          "modify_ftp": "20260120050541"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E16.mkv",
+          "size_bytes": 998134865,
+          "modify_ftp": "20260120045808"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E17.mkv",
+          "size_bytes": 998625415,
+          "modify_ftp": "20260120045805"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E18.mkv",
+          "size_bytes": 998298192,
+          "modify_ftp": "20260120050642"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E19.mkv",
+          "size_bytes": 998659996,
+          "modify_ftp": "20260120050644"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E20.mkv",
+          "size_bytes": 997635351,
+          "modify_ftp": "20260120050257"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E21.mkv",
+          "size_bytes": 998965819,
+          "modify_ftp": "20260120050621"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E22.mkv",
+          "size_bytes": 998307304,
+          "modify_ftp": "20260120050146"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E23.mkv",
+          "size_bytes": 995808981,
+          "modify_ftp": "20260120050129"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E24.mkv",
+          "size_bytes": 997237118,
+          "modify_ftp": "20260120045529"
+        },
+        {
+          "path": "/downloads/Star Trek/Star Trek The Next Generation/Season 07/Star Trek The Next Generation - S07E25-E26.mkv",
+          "size_bytes": 2041739618,
+          "modify_ftp": "20260120050124"
+        }
+      ]
+    },
+    {
+      "category": "tv",
+      "title": "The Celebrity Traitors: Uncloaked",
+      "matched_roots": [
+        "/downloads/The.Celebrity.Traitors.Uncloaked.S02E02.1080p.HEVC.x265-MeGusta"
+      ],
+      "file_count": 1,
+      "estimated_bytes": 244087853,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/The.Celebrity.Traitors.Uncloaked.S02E02.1080p.HEVC.x265-MeGusta"
+      ],
+      "files": [
+        {
+          "path": "/downloads/The.Celebrity.Traitors.Uncloaked.S02E02.1080p.HEVC.x265-MeGusta/The.Celebrity.Traitors.Uncloaked.S02E02.1080p.HEVC.x265-MeGusta.mkv",
+          "size_bytes": 244087853,
+          "modify_ftp": "20261004002118"
+        }
+      ]
+    },
+    {
+      "category": "tv",
+      "title": "World War II with Tom Hanks",
+      "matched_roots": [
+        "/downloads/World War II with Tom Hanks S01E10 1080p x265-ELiTE",
+        "/downloads/World War II with Tom Hanks S01E12 1080p x265-ELiTE"
+      ],
+      "file_count": 2,
+      "estimated_bytes": 2021366943,
+      "empty_directories_after_files_candidate_only": [
+        "/downloads/World War II with Tom Hanks S01E10 1080p x265-ELiTE",
+        "/downloads/World War II with Tom Hanks S01E12 1080p x265-ELiTE"
+      ],
+      "files": [
+        {
+          "path": "/downloads/World War II with Tom Hanks S01E10 1080p x265-ELiTE/World War II with Tom Hanks S01E10 1080p x265-ELiTE.mkv",
+          "size_bytes": 968675497,
+          "modify_ftp": "20260630230631"
+        },
+        {
+          "path": "/downloads/World War II with Tom Hanks S01E12 1080p x265-ELiTE/World War II with Tom Hanks S01E12 1080p x265-ELiTE.mkv",
+          "size_bytes": 1052691446,
+          "modify_ftp": "20260705220955"
+        }
+      ]
+    }
+  ],
+  "read_only_checks": {
+    "selected_paths_unique": true,
+    "title_groups_with_matches": 19,
+    "zero_inventory_failures": true,
+    "selected_subtree_hidden_entries": 0,
+    "selected_files_in_rtorrent_workdirs": 0,
+    "root_workdir_inventory": {
+      "/downloads/rtorrent": {
+        "files": 0,
+        "subdirectories": 0,
+        "hidden_entries": 0
+      },
+      "/downloads/watch/rtorrent": {
+        "files": 0,
+        "subdirectories": 0,
+        "hidden_entries": 0
+      }
+    },
+    "unselected_shared_parent": {
+      "path": "/downloads/Star Trek",
+      "total_files_in_inventory": 399,
+      "files_selected_under": "/downloads/Star Trek/Star Trek The Next Generation",
+      "selected_count": 172,
+      "delete_parent": false
+    },
+    "protected_night_court_files_in_inventory": 193,
+    "protected_tng_cross_season_in_current_inventory": 0,
+    "zero_byte_dune_archive_parts": 30,
+    "dune_archive_nonzero_parts": {
+      "r21": 500000000,
+      "r22": 500000000,
+      "r23": 500000000
+    },
+    "live_torrent_status": "UNVERIFIED: Termalin hosts_list reports no enrolled connectors; file-level FTP inventory cannot determine current seeding/open handles",
+    "production_pipeline_status": "PARTIAL: known Night Court production paths excluded and cross-season TNG currently absent; no live process-side dependency scan"
+  }
+}
