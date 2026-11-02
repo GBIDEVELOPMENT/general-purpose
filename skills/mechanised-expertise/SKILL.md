@@ -12,7 +12,7 @@ metadata:
 
 ## Source-backed synthesis and mechanised-intuition routing
 
-Use [22 pinned original skill passages and their scoped strengths](references/source-synthesis.md) when composing advice from the mobile-skills corpus. Those authors' recommendations, **our proposed mechanisms**, and any observed benefit are three different evidence classes. Never treat popularity or repetitive copies as proof of general effectiveness.
+Use [22 pinned original skill passages and their scoped strengths](references/source-synthesis.md) plus the [structured source-to-inquiry transformations](assets/source-to-expertise-v09.csv) when composing advice from the mobile-skills corpus. Those authors' recommendations, **our proposed mechanisms**, and any observed benefit are three different evidence classes. Never treat popularity or repetitive copies as proof of general effectiveness.
 
 For consequential decisions apply the [conditional mechanised-intuition method](references/mechanised-intuition-method.md): **recognize boundary cue → generate choice-changing question → seek cheapest trustworthy answer → audit a concept map only if missing relations could matter → decide with a reversal condition → prove user outcome → retain conditional lessons**. For mobile design, use [user-needs and original-language prior-art research](references/user-needs-and-prior-art.md), including context, workarounds, nonusers, state feedback, small-screen accessibility and diverse interaction styles. The [transfer-list case](examples/transfer-list-discovery.md) is a teaching exercise, **not real product evidence**.
 
