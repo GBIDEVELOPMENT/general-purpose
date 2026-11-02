@@ -29,3 +29,7 @@ A skeptical review should attempt to produce cases where the skill makes a decis
 The separate [executable lab](../lab/README.md) moves beyond option selection: its five synthetic Python tasks ask an agent to modify source code and produce a real postcondition. A strict internal two-sided test gate requires the untouched starting code to **fail** and the reference correction to **pass** with executed tests. This establishes harness discrimination for those miniature tasks, not general engineering skill.
 
 The long-term evaluation must include new tasks and prospective real PRs, with review independent of skill authors and actual production-acceptance evidence. A candidate that passes an insufficient test still needs review for unintended side effects and unnecessary architecture. Record CI and model/runtime budgets. Keep training/explanation cases separate from held-out evaluation.
+
+## Pairwise pilot recording
+
+Use [the paired-trial protocol](../lab/trials.md) to preserve control and treatment conditions, actual executed tests, independent patch review, contamination, time and unnecessary engineering work. Run `python3 scripts/compare_trials.py receipts.json` only on externally collected records. The output is deliberately descriptive and does not assign statistical significance or imply measured performance improvements before real matched trials occur.

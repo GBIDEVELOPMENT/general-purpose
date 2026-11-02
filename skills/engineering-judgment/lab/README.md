@@ -50,3 +50,7 @@ A successful run of five tiny tasks would be *preliminary* evidence about toy en
 - Have claims been restricted to the task's actual system and execution tier?
 
 Benchmark design warnings: [OpenAI's 2026 coding-evaluation audit](https://openai.com/index/separating-signal-from-noise-coding-evaluations/) and [SWE-bench Pro V2 corrections](https://labs.scale.com/leaderboard/swe_bench_pro_public_v2). Neither validates our toy cases. One earlier benchmark revision needed substantial audits for misleading prompts and false-positive/negative tests; independent scenario review remains necessary.
+
+## Pairwise measurement
+
+Use the separate [matched-trial protocol and receipt format](trials.md) and [comparison script](../scripts/compare_trials.py) after running **two isolated agents under matched conditions**. It refuses to grant success based on skipped tests, answer leakage or pending independent review. The built-in task fixtures and reference code are in the same private repository, so simply pointing a GitHub-connected agent at the source is **not** a blind test.
