@@ -1,0 +1,32 @@
+name: Mechanised expertise skill integrity
+
+on:
+  pull_request:
+    paths:
+      - 'skills/mechanised-expertise/**'
+      - '.github/workflows/mechanised-expertise-integrity.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'skills/mechanised-expertise/**'
+      - '.github/workflows/mechanised-expertise-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Validate evidence-backed inquiry example
+        run: python3 skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/examples/remote-reconnect.json
+      - name: Execute offline schema and evidence validator tests
+        run: python3 -m unittest discover -s skills/mechanised-expertise/tests -p 'test_*.py' -v
+      - name: Compile skill validator
+        run: python3 -m py_compile skills/mechanised-expertise/scripts/check_inquiry.py
