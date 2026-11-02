@@ -1,0 +1,1624 @@
+{
+  "schema": "owner-tv-dedupe-2026-11-02-v1",
+  "source": {
+    "inventory_git_blob_sha": "93695dc4ad24d8dbf57c6637679609a8ea85b445",
+    "run_id": 41379794306,
+    "ftp_root": "/downloads",
+    "files": 2598,
+    "errors": 0,
+    "truncated": 0
+  },
+  "policy": {
+    "nuteck": "One copy per episode for Discovery, Picard, Prodigy, Lower Decks, Strange New Worlds, Starfleet Academy; historic Trek multiple copies permitted.",
+    "non_trek": "One copy per episode except Studio 60 on the Sunset Strip; select smallest among maximum-resolution copies.",
+    "resolution": "Conservative single unambiguous nominal resolution extracted from release filenames/folders. Stream metadata must be verified where possible; unresolved identities excluded.",
+    "extras": "Only exact redundant video file paths; no subtitles, archives, working folders or other unselected files"
+  },
+  "totals": {
+    "duplicate_episode_groups": 80,
+    "video_deletions": 80,
+    "bytes": 119912139016
+  },
+  "groups": [
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 1,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E01.Pilot.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 442450382,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1291001321,
+          "modify": "20250917192748",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E01; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 2,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E02.The.Tagger.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 419115649,
+        "modify": "20250801055352",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1163614990,
+          "modify": "20250917192851",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E02; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 3,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E03.The.Slump.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 431012942,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1195469583,
+          "modify": "20250917192902",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E03; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 4,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E04.M.E.Time.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 370489686,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E04 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1036104396,
+          "modify": "20250917193020",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E04; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 5,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E05.The.Vulture.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 419792650,
+        "modify": "20250801055359",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E05 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1265422311,
+          "modify": "20250917193142",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E05; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 6,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E06.Halloween.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 431239998,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E06 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1219866353,
+          "modify": "20250917193152",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E06; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 7,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E07.48.Hours.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 421976197,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E07 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1176787794,
+          "modify": "20250917193203",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E07; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 8,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E08.Old.School.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 414842519,
+        "modify": "20250801055355",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E08 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1178186460,
+          "modify": "20250917193243",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E08; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 9,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E09.Sal's.Pizza.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 443394088,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E09 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1167986911,
+          "modify": "20250917193557",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E09; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 10,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E10.Thanksgiving.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 453432348,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E10 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1492778087,
+          "modify": "20250917193539",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E10; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 11,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E11.Christmas.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 411112533,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E11 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1170584602,
+          "modify": "20250917193635",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E11; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 12,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E12.Pontiac.Bandit.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 428866699,
+        "modify": "20250801055407",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E12 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1225603046,
+          "modify": "20250917192939",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E12; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 13,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E13.The.Bet.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 386820508,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E13 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1096010946,
+          "modify": "20250917193705",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E13; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 14,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E14.The.Ebony.Falcon.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 388383115,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E14 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1137926081,
+          "modify": "20250917193726",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E14; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 15,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E15.Operation.Broken.Feather.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 402696029,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E15 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1060528744,
+          "modify": "20250917193243",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E15; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 16,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E16.The.Party.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 374917059,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E16 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1230781647,
+          "modify": "20250917193508",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E16; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 17,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E17.Full.Boyle.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 388633908,
+        "modify": "20250801055400",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E17 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1094555742,
+          "modify": "20250917193508",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E17; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 18,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E18.The.Apartment.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 356545472,
+        "modify": "20250801055355",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E18 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1075855779,
+          "modify": "20250917192344",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E18; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 19,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E19.Tactical.Village.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 397201703,
+        "modify": "20250801055338",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E19 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1123805105,
+          "modify": "20250917192509",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E19; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 20,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E20.Fancy.Brudgom.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 395249389,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E20 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1084742520,
+          "modify": "20250917192544",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E20; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 21,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E21.Unsolvable.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 388614935,
+        "modify": "20250801055357",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E21 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1231882089,
+          "modify": "20250917192150",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E21; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 1,
+      "episode": 22,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S01 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S01E22.Charges.and.Specs.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 366548580,
+        "modify": "20250801055406",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S01E22 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1081472250,
+          "modify": "20250917192515",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E22; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 1,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E01.Undercover.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 409986264,
+        "modify": "20250803234215",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1125632785,
+          "modify": "20250917193515",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E01; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 2,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E02.Chocolate.Milk.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 376090294,
+        "modify": "20250803234246",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1075095395,
+          "modify": "20250917193454",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E02; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 3,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E03.The.Jimmy.Jab.Games.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 419680095,
+        "modify": "20250803234227",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1135253985,
+          "modify": "20250917193212",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E03; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 4,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E04.Halloween.Ii.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 424400370,
+        "modify": "20250803234229",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E04 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1242714859,
+          "modify": "20250917193626",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E04; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 5,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E05.The.Mole.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 390349481,
+        "modify": "20250803234229",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E05 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1197426493,
+          "modify": "20250917192643",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E05; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 6,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E06.Jake.and.Sophia.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 389761167,
+        "modify": "20250803234236",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E06 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1184933285,
+          "modify": "20250917192303",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E06; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 7,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E07.Lockdown.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 427562262,
+        "modify": "20250803234223",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E07 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1223776268,
+          "modify": "20250917192402",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E07; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 8,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E08.Uspis.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 404191019,
+        "modify": "20250803234234",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E08 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1150045711,
+          "modify": "20250917192700",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E08; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 9,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E09.The.Road.Trip.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 423026400,
+        "modify": "20250803234240",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E09 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1236008700,
+          "modify": "20250917193626",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E09; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 10,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E10.The.Pontiac.Bandit.Returns.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 419089576,
+        "modify": "20250803234248",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E10 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1218916706,
+          "modify": "20250917193744",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E10; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 11,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E11.Stakeout.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 372583157,
+        "modify": "20250803234236",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E11 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1015047163,
+          "modify": "20250917193928",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E11; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 12,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E12.Beach.House.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 442277812,
+        "modify": "20250803234240",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E12 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1336002287,
+          "modify": "20250917191303",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E12; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 13,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E13.Payback.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 402757123,
+        "modify": "20250803234237",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E13 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1166399451,
+          "modify": "20250917191537",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E13; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 14,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E14.Defense.Rests.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 377230522,
+        "modify": "20250803234248",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E14 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1207708625,
+          "modify": "20250917194049",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E14; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 15,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E15.Windbreaker.City.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 371050359,
+        "modify": "20250803234245",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E15 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1114722032,
+          "modify": "20250917194138",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E15; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 16,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E16.The.Wednesday.Incident.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 360362123,
+        "modify": "20250803234248",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E16 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 962174254,
+          "modify": "20250917193934",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E16; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 17,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E17.Boyle-Linetti.Wedding.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 342149635,
+        "modify": "20250803234248",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E17 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 911782975,
+          "modify": "20250917194240",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E17; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 18,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E18.Captain.Peralta.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 407592666,
+        "modify": "20250803234248",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E18 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1186033707,
+          "modify": "20250917194314",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E18; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 19,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E19.Sabotage.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 368059117,
+        "modify": "20250803234249",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E19 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 993960318,
+          "modify": "20250917194314",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E19; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 20,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E20.Ac.Dc.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 442489310,
+        "modify": "20250803234250",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E20 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1414255123,
+          "modify": "20250917194317",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E20; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 21,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E21.Det.Dave.Majors.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 394709635,
+        "modify": "20250803234232",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E21 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1083995565,
+          "modify": "20250917193954",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E21; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 22,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E22.The.Chopper.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 411235606,
+        "modify": "20250803234248",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E22 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1078328127,
+          "modify": "20250917194042",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E22; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 2,
+      "episode": 23,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S02 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S02E23.Johnny.and.Dora.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 342469501,
+        "modify": "20250803234250",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S02E23 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1049575462,
+          "modify": "20250917191930",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S02E23; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 1,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E01.New.Captain.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 372310185,
+        "modify": "20250806090445",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E01 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1086722175,
+          "modify": "20250917193457",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E01; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 2,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E02.The.Funeral.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 389357369,
+        "modify": "20250806090445",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E02 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1171428294,
+          "modify": "20250917192649",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E02; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 3,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E03.Boyle's.Hunch.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 407777558,
+        "modify": "20250806090439",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1253914899,
+          "modify": "20250917192308",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E03; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 4,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E04.The.Oolong.Slayer.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 424366914,
+        "modify": "20250806090445",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E04 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1167937966,
+          "modify": "20250917193143",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E04; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 5,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E05.Halloween.Iii.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 400526528,
+        "modify": "20250806090445",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E05 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1139079253,
+          "modify": "20250917192906",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E05; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 6,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E06.Into.the.Woods.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 414314446,
+        "modify": "20250806090445",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E06 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1164979888,
+          "modify": "20250917193053",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E06; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 7,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E07.The.Mattress.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 388243820,
+        "modify": "20250806090445",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E07 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1056252259,
+          "modify": "20250917193239",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E07; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 8,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E08.Ava.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 447240131,
+        "modify": "20250806090432",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E08 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1238293124,
+          "modify": "20250917193537",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E08; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 9,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E09.The.Swedes.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 407797678,
+        "modify": "20250806090444",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E09 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1140307986,
+          "modify": "20250917193700",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E09; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 10,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E10.Yippie.Kayak.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 414392559,
+        "modify": "20250806090424",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E10 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1153930589,
+          "modify": "20250917193724",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E10; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 11,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E11.Hostage.Situation.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 367777669,
+        "modify": "20250806090432",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E11 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 936744956,
+          "modify": "20250917193959",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E11; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 12,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E12.9.Days.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 386748347,
+        "modify": "20250806090433",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E12 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1158501295,
+          "modify": "20250917191943",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E12; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 13,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E13.The.Cruise.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 430540584,
+        "modify": "20250806090424",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E13 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1183164653,
+          "modify": "20250917193835",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E13; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 14,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E14.Karen.Peralta.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 377426287,
+        "modify": "20250806090445",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E14 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1139965234,
+          "modify": "20250917193949",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E14; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 15,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E15.The.9-8.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 400611890,
+        "modify": "20250806090433",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E15 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1020624427,
+          "modify": "20250917194032",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E15; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 16,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E16.House.Mouses.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 381984991,
+        "modify": "20250806090440",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E16 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1042296775,
+          "modify": "20250917194104",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E16; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 17,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E17.Adrian.Pimento.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 387132409,
+        "modify": "20250806090443",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E17 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1113918195,
+          "modify": "20250917194107",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E17; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 18,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E18.Cheddar.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 382623113,
+        "modify": "20250806090445",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E18 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1080765273,
+          "modify": "20250917191441",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E18; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 19,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E19.Terry.Kitties.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 395429062,
+        "modify": "20250806090432",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E19 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1040469490,
+          "modify": "20250917194142",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E19; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 20,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E20.Paranoia.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 356418761,
+        "modify": "20250806090438",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E20 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1056882342,
+          "modify": "20250917194302",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E20; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 21,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E21.Maximum.Security.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 404694356,
+        "modify": "20250806090428",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E21 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1151122945,
+          "modify": "20250917194304",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E21; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 22,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E22.Bureau.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 404671137,
+        "modify": "20250806090428",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E22 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1129974057,
+          "modify": "20250917194303",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E22; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 3,
+      "episode": 23,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine S03 WEBRip 1080p AAC5 1 x265-SiQ/Brooklyn.Nine-Nine.S03E23.Greg.and.Larry.AAC5.1.1080p.Bluray.x265-SiQ.mkv",
+        "size": 358275645,
+        "modify": "20250806090438",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S03 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S03E23 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+          "size": 1075870419,
+          "modify": "20250917194302",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S03E23; no claim of stream-level verification."
+    },
+    {
+      "show": "Brooklyn Nine-Nine",
+      "season": 4,
+      "episode": 7,
+      "retain": {
+        "from": "/downloads/Brooklyn Nine-Nine/Brooklyn Nine-Nine (2013) S04 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE)/Brooklyn Nine-Nine (2013) S04E07 (1080p BluRay x265 SDR DDP 5.1 English - DarQ HONE).mkv",
+        "size": 1148605213,
+        "modify": "20250917192927",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Brooklyn Nine-Nine S04E07 Mr Santiago 1080p DTS-HD MA 5 1 AVC REMUX-FraMeSToR/Brooklyn Nine-Nine S04E07 Mr Santiago 1080p DTS-HD MA 5 1 AVC REMUX-FraMeSToR.mkv",
+          "size": 4272371823,
+          "modify": "20260818231753",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S04E07; no claim of stream-level verification."
+    },
+    {
+      "show": "Friends",
+      "season": 9,
+      "episode": 4,
+      "retain": {
+        "from": "/downloads/Friends.S09E04.2160p.WEB.H265-JoeyTribbiani/friends.s09e04.2160p.web.h265-joeytribbiani.mkv",
+        "size": 3087112676,
+        "modify": "20240922190642",
+        "resolution": 2160
+      },
+      "delete": [
+        {
+          "from": "/downloads/Friends.S09E04.2160p.UHD.BluRay.H265-PRiSTiNE/friends.s09e04.2160p.uhd.bluray.h265-pristine.mkv",
+          "size": 9198807334,
+          "modify": "20241002184403",
+          "resolution": 2160
+        }
+      ],
+      "reason": "Highest nominal filename resolution 2160p, then smallest size among ties; canonical episode S09E04; no claim of stream-level verification."
+    },
+    {
+      "show": "History of the Sitcom",
+      "season": 1,
+      "episode": 1,
+      "retain": {
+        "from": "/downloads/History.of.the.Sitcom.S01E01.1080p.HEVC.x265-MeGusta/History.of.the.Sitcom.S01E01.1080p.HEVC.x265-MeGusta.mkv",
+        "size": 396873594,
+        "modify": "20260625002212",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/History.of.the.Sitcom.S01E01.720p.HEVC.x265-MeGusta/History.of.the.Sitcom.S01E01.720p.HEVC.x265-MeGusta.mkv",
+          "size": 247017289,
+          "modify": "20260625000206",
+          "resolution": 720
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E01; no claim of stream-level verification."
+    },
+    {
+      "show": "Mitchell and Webb Are Not Helping",
+      "season": 1,
+      "episode": 1,
+      "retain": {
+        "from": "/downloads/Mitchell.And.Webb.Are.Not.Helping.S01E01.1080p.WEB.H264-SKYFiRE/mitchell.and.webb.are.not.helping.s01e01.1080p.web.h264-skyfire.mkv",
+        "size": 919204766,
+        "modify": "20250907212231",
+        "resolution": 1080
+      },
+      "delete": [
+        {
+          "from": "/downloads/Mitchell and Webb Are Not Helping S01 1080p AMZN WEB-DL DDP5 1 H 264-RAWR/Mitchell.and.Webb.Are.Not.Helping.S01E01.1080p.AMZN.WEB-DL.DDP5.1.H.264-RAWR.mkv",
+          "size": 1644614931,
+          "modify": "20261015010029",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 1080p, then smallest size among ties; canonical episode S01E01; no claim of stream-level verification."
+    },
+    {
+      "show": "Ted Lasso",
+      "season": 4,
+      "episode": 1,
+      "retain": {
+        "from": "/downloads/Ted Lasso S04E01 Home 2160p ATVP WEB-DL DDP5 1 Atmos H 265-Kitsune/Ted Lasso S04E01 Home 2160p ATVP WEB-DL DDP5 1 Atmos H 265-Kitsune.mkv",
+        "size": 6649607736,
+        "modify": "20260805043519",
+        "resolution": 2160
+      },
+      "delete": [
+        {
+          "from": "/downloads/Ted Lasso 2020 S04 ATVP 1080p WEB-DL DUAL DDP5 1 Atmos H 264 TSRG/S04/Ted Lasso_S04E01_Home.mkv",
+          "size": 1674592797,
+          "modify": "20261015005822",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 2160p, then smallest size among ties; canonical episode S04E01; no claim of stream-level verification."
+    },
+    {
+      "show": "The Other Bennet Sister",
+      "season": 1,
+      "episode": 1,
+      "retain": {
+        "from": "/downloads/The Other Bennet Sister S01 2160p HMAX WEB-DL DDP5 1 H 265-CHORTLE/The.Other.Bennet.Sister.S01E01.Chapter.One.2160p.HMAX.WEB-DL.DDP5.1.H.265-CHORTLE.mkv",
+        "size": 2551389808,
+        "modify": "20260718012335",
+        "resolution": 2160
+      },
+      "delete": [
+        {
+          "from": "/downloads/The Other Bennet Sister S01E01 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune/The Other Bennet Sister S01E01 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune.mkv",
+          "size": 4016381214,
+          "modify": "20260604223909",
+          "resolution": 2160
+        }
+      ],
+      "reason": "Highest nominal filename resolution 2160p, then smallest size among ties; canonical episode S01E01; no claim of stream-level verification."
+    },
+    {
+      "show": "The Other Bennet Sister",
+      "season": 1,
+      "episode": 2,
+      "retain": {
+        "from": "/downloads/The Other Bennet Sister S01 2160p HMAX WEB-DL DDP5 1 H 265-CHORTLE/The.Other.Bennet.Sister.S01E02.Chapter.Two.2160p.HMAX.WEB-DL.DDP5.1.H.265-CHORTLE.mkv",
+        "size": 2553361727,
+        "modify": "20260718012242",
+        "resolution": 2160
+      },
+      "delete": [
+        {
+          "from": "/downloads/The.Other.Bennet.Sister.S01E02.1080p.WEBRip.x264-CBFM/The.Other.Bennet.Sister.S01E02.1080p.WEBRip.x264-CBFM.mkv",
+          "size": 965446974,
+          "modify": "20260714044746",
+          "resolution": 1080
+        }
+      ],
+      "reason": "Highest nominal filename resolution 2160p, then smallest size among ties; canonical episode S01E02; no claim of stream-level verification."
+    },
+    {
+      "show": "The Other Bennet Sister",
+      "season": 1,
+      "episode": 3,
+      "retain": {
+        "from": "/downloads/The Other Bennet Sister S01 2160p HMAX WEB-DL DDP5 1 H 265-CHORTLE/The.Other.Bennet.Sister.S01E03.Chapter.Three.2160p.HMAX.WEB-DL.DDP5.1.H.265-CHORTLE.mkv",
+        "size": 1900329731,
+        "modify": "20260718012217",
+        "resolution": 2160
+      },
+      "delete": [
+        {
+          "from": "/downloads/The Other Bennet Sister S01E03 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune/The Other Bennet Sister S01E03 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune.mkv",
+          "size": 3976767645,
+          "modify": "20260604223952",
+          "resolution": 2160
+        }
+      ],
+      "reason": "Highest nominal filename resolution 2160p, then smallest size among ties; canonical episode S01E03; no claim of stream-level verification."
+    },
+    {
+      "show": "The Other Bennet Sister",
+      "season": 1,
+      "episode": 4,
+      "retain": {
+        "from": "/downloads/The Other Bennet Sister S01 2160p HMAX WEB-DL DDP5 1 H 265-CHORTLE/The.Other.Bennet.Sister.S01E04.Chapter.Four.2160p.HMAX.WEB-DL.DDP5.1.H.265-CHORTLE.mkv",
+        "size": 2174007317,
+        "modify": "20260718012335",
+        "resolution": 2160
+      },
+      "delete": [
+        {
+          "from": "/downloads/The Other Bennet Sister S01E04 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune/The Other Bennet Sister S01E04 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune.mkv",
+          "size": 3943562811,
+          "modify": "20260604224009",
+          "resolution": 2160
+        }
+      ],
+      "reason": "Highest nominal filename resolution 2160p, then smallest size among ties; canonical episode S01E04; no claim of stream-level verification."
+    },
+    {
+      "show": "The Other Bennet Sister",
+      "season": 1,
+      "episode": 5,
+      "retain": {
+        "from": "/downloads/The Other Bennet Sister S01 2160p HMAX WEB-DL DDP5 1 H 265-CHORTLE/The.Other.Bennet.Sister.S01E05.Chapter.Five.2160p.HMAX.WEB-DL.DDP5.1.H.265-CHORTLE.mkv",
+        "size": 2241911040,
+        "modify": "20260718012335",
+        "resolution": 2160
+      },
+      "delete": [
+        {
+          "from": "/downloads/The Other Bennet Sister S01E05 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune/The Other Bennet Sister S01E05 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune.mkv",
+          "size": 3972670608,
+          "modify": "20260629212802",
+          "resolution": 2160
+        }
+      ],
+      "reason": "Highest nominal filename resolution 2160p, then smallest size among ties; canonical episode S01E05; no claim of stream-level verification."
+    },
+    {
+      "show": "The Other Bennet Sister",
+      "season": 1,
+      "episode": 7,
+      "retain": {
+        "from": "/downloads/The Other Bennet Sister S01 2160p HMAX WEB-DL DDP5 1 H 265-CHORTLE/The.Other.Bennet.Sister.S01E07.Chapter.Seven.2160p.HMAX.WEB-DL.DDP5.1.H.265-CHORTLE.mkv",
+        "size": 3386782508,
+        "modify": "20260718012155",
+        "resolution": 2160
+      },
+      "delete": [
+        {
+          "from": "/downloads/The Other Bennet Sister S01E07 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune/The Other Bennet Sister S01E07 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune.mkv",
+          "size": 4002746139,
+          "modify": "20260604223948",
+          "resolution": 2160
+        }
+      ],
+      "reason": "Highest nominal filename resolution 2160p, then smallest size among ties; canonical episode S01E07; no claim of stream-level verification."
+    },
+    {
+      "show": "The Other Bennet Sister",
+      "season": 1,
+      "episode": 10,
+      "retain": {
+        "from": "/downloads/The Other Bennet Sister S01 2160p HMAX WEB-DL DDP5 1 H 265-CHORTLE/The.Other.Bennet.Sister.S01E10.Chapter.Ten.2160p.HMAX.WEB-DL.DDP5.1.H.265-CHORTLE.mkv",
+        "size": 2670015804,
+        "modify": "20260718012114",
+        "resolution": 2160
+      },
+      "delete": [
+        {
+          "from": "/downloads/The Other Bennet Sister S01E10 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune/The Other Bennet Sister S01E10 2160p iP WEB-DL AAC2 0 HLG H 265-Kitsune.mkv",
+          "size": 4183256924,
+          "modify": "20260604223844",
+          "resolution": 2160
+        }
+      ],
+      "reason": "Highest nominal filename resolution 2160p, then smallest size among ties; canonical episode S01E10; no claim of stream-level verification."
+    }
+  ]
+}
