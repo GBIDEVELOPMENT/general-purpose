@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only bounded ffprobe against exact FTP Trek media files, no media downloads saved."""
+"""Read-only bounded ffprobe against exact FTP TV media files, no media downloads saved."""
 from __future__ import annotations
 import argparse,ftplib,json,os,re,subprocess,tempfile
 from pathlib import Path,PurePosixPath
@@ -15,7 +15,10 @@ def validate(m):
         if set(x)!={"from","size","modify"}:raise ValueError("Incorrect target fields")
         p=PurePosixPath(safe(x["from"]))
         if p.suffix.lower() not in (".mkv",".mp4",".avi"):raise ValueError("Video only")
-        if not re.search(r"(?i)star[ ._\\-]+trek",str(p)):raise ValueError("Trek only")
+        if not (re.search(r"(?i)star[ ._\\-]+trek",str(p)) or
+                str(p).startswith("/downloads/Green Lantern The Animated Series/Season 01/") or
+                str(p).startswith("/downloads/Green Lantern The Animated Series S01/")):
+            raise ValueError("Only Trek or exact Green Lantern episode media")
         if not isinstance(x["size"],int) or x["size"]<100000:raise ValueError("Invalid size")
         if not isinstance(x["modify"],str) or not re.fullmatch(r"\d{14}",x["modify"]):raise ValueError("Missing precise mtime")
         if str(p).casefold() in seen:raise ValueError("Duplicate probe target")
