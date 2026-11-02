@@ -5,12 +5,12 @@ verify title, episode identity and codec with authoritative media data before mo
 No files were moved or deleted by this audit.
 
 Inventory fully covered: **yes**.
-Videos examined: **1578**.
+Videos examined: **1577**.
 
 ## Counts by category
 
 - **legacy_1x_episode**: 193
-- **multiple_episodes**: 8
+- **multiple_episodes**: 7
 - **airdate_after_episode**: 1
 - **episode_unrecognized_in_season**: 1
 

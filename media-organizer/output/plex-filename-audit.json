@@ -1,7 +1,7 @@
 {
   "root": "/downloads",
-  "inventory_files": 2517,
-  "video_files": 1578,
+  "inventory_files": 2516,
+  "video_files": 1577,
   "inventory_complete": true,
   "truncated": [],
   "scan_failures": [],
@@ -9,12 +9,12 @@
     "legacy_1x_episode": 193,
     "episode_unrecognized_in_season": 1,
     "airdate_after_episode": 1,
-    "multiple_episodes": 8
+    "multiple_episodes": 7
   },
   "priorities": {
     "high": 193,
     "medium": 1,
-    "review": 9
+    "review": 8
   },
   "issues": [
     {
@@ -1385,13 +1385,6 @@
       "severity": "review",
       "category": "multiple_episodes",
       "path": "/downloads/30 Rock (2006)/Season 07/30 Rock (2006) - S07E12-E13.mkv",
-      "note": "File contains more than one episode",
-      "suggestion": "Preserve every episode number, e.g. S01E01-E02"
-    },
-    {
-      "severity": "review",
-      "category": "multiple_episodes",
-      "path": "/downloads/Green Lantern The Animated Series S01/Green.Lantern.The.Animated.Series.S01E01-E02.HDTV.XviD-ASAP/Green.Lantern.The.Animated.Series.S01E01-E02.HDTV.XviD-ASAP.avi",
       "note": "File contains more than one episode",
       "suggestion": "Preserve every episode number, e.g. S01E01-E02"
     },
