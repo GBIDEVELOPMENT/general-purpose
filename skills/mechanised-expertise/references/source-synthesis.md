@@ -1,5 +1,7 @@
 # Source-derived strengths and deliberate combinations
 
+A companion [machine-readable table](../assets/source-to-expertise-v09.csv) stores each reviewed passage's proposed cue, question, research source, model, decision, exception and oracle. Its entries remain editorial hypotheses, not observed outcome claims.
+
 These 22 **pinned original passages** were inspected, but the claims are **paraphrases of what their authors recommend**, not proven effectiveness. The final column contains **our editorial, original proposed mechanised-intuition extensions**, not published advice from those authors. This is a curated sample from a larger heterogeneous corpus, not a global best-skill ranking.
 
 | Expertise family | Pinned original | Source recommendation, paraphrased | Proposed conditional mechanism |
