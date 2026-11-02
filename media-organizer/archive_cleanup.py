@@ -21,8 +21,8 @@ def check(manifest):
         # DVD disc ISO is an extracted media image, not a game-install ISO.
         # Demand exact same-stem RAR volumes and TV SxxDxx disc identity.
         directory=str(PurePosixPath(vid["path"]).parent)
-        if (not re.search(r"(?i)S\\d{2}D\\d{2}",directory)
-                or not re.search(r"(?i)S\\d{2}D\\d{2}",PurePosixPath(vid["path"]).name)):
+        if (not re.search(r"(?i)S\d{2}D\d{2}",directory)
+                or not re.search(r"(?i)S\d{2}D\d{2}",PurePosixPath(vid["path"]).name)):
             raise ValueError("Only TV DVD disc ISO images supported")
     if not isinstance(vid["size"],int) or vid["size"]<50000000:raise ValueError("Video too small")
     vols=manifest["volumes"]
@@ -39,11 +39,11 @@ def check(manifest):
         if not isinstance(item["size"],int) or item["size"]<100:raise ValueError("Invalid volume size")
     if len({re.sub(r"(?i)\.(?:rar|r\d{2,3})$","",PurePosixPath(x["path"]).name).casefold() for x in vols})!=1:
         raise ValueError("Multiple unrelated archive stems")
-    stem=re.sub(r"(?i)\\.(?:rar|r\\d{2,3})$","",PurePosixPath(vols[0]["path"]).name).casefold()
+    stem=re.sub(r"(?i)\.(?:rar|r\d{2,3})$","",PurePosixPath(vols[0]["path"]).name).casefold()
     if PurePosixPath(vid["path"]).stem.casefold()!=stem:
         raise ValueError("Extracted video name and RAR volume stem differ")
     for item in [vid]+vols:
-        if not isinstance(item["modify"],str) or not re.fullmatch(r"\\d{14}",item["modify"]):
+        if not isinstance(item["modify"],str) or not re.fullmatch(r"\d{14}",item["modify"]):
             raise ValueError("Precise FTP MLSD modified date required for deletion")
     names=[PurePosixPath(x["path"]).suffix.lower() for x in vols]
     if ".rar" not in names:raise ValueError("First .rar volume missing")
