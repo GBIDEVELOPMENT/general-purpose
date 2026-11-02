@@ -1771,5 +1771,41 @@
         }
       ]
     }
-  ]
+  ],
+  "read_only_checks": {
+    "selected_paths_unique": true,
+    "title_groups_with_matches": 19,
+    "zero_inventory_failures": true,
+    "selected_subtree_hidden_entries": 0,
+    "selected_files_in_rtorrent_workdirs": 0,
+    "root_workdir_inventory": {
+      "/downloads/rtorrent": {
+        "files": 0,
+        "subdirectories": 0,
+        "hidden_entries": 0
+      },
+      "/downloads/watch/rtorrent": {
+        "files": 0,
+        "subdirectories": 0,
+        "hidden_entries": 0
+      }
+    },
+    "unselected_shared_parent": {
+      "path": "/downloads/Star Trek",
+      "total_files_in_inventory": 399,
+      "files_selected_under": "/downloads/Star Trek/Star Trek The Next Generation",
+      "selected_count": 172,
+      "delete_parent": false
+    },
+    "protected_night_court_files_in_inventory": 193,
+    "protected_tng_cross_season_in_current_inventory": 0,
+    "zero_byte_dune_archive_parts": 30,
+    "dune_archive_nonzero_parts": {
+      "r21": 500000000,
+      "r22": 500000000,
+      "r23": 500000000
+    },
+    "live_torrent_status": "UNVERIFIED: Termalin hosts_list reports no enrolled connectors; file-level FTP inventory cannot determine current seeding/open handles",
+    "production_pipeline_status": "PARTIAL: known Night Court production paths excluded and cross-season TNG currently absent; no live process-side dependency scan"
+  }
 }
