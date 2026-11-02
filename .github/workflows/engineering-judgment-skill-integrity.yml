@@ -2,6 +2,9 @@ name: Engineering judgment skill integrity
 
 on:
   pull_request:
+    paths:
+      - 'skills/engineering-judgment/**'
+      - '.github/workflows/engineering-judgment-skill-integrity.yml'
   push:
     branches: [main]
     paths:
@@ -29,6 +32,8 @@ jobs:
         run: python3 skills/engineering-judgment/scripts/check_skill.py
       - name: Execute offline scenario/structure tests
         run: python3 -m unittest discover -s skills/engineering-judgment/tests -v
+      - name: Ensure built-in code lab has failing baselines and passing references
+        run: python3 skills/engineering-judgment/scripts/run_lab.py --selfcheck
       - name: Compile Python scripts
         run: python3 -m py_compile skills/engineering-judgment/scripts/*.py
       - name: Reject answer-key leakage from public prompt emitter

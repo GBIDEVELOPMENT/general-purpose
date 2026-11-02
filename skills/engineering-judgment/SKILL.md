@@ -2,7 +2,7 @@
 name: engineering-judgment
 description: Make experienced, defensible software and product engineering decisions when an apparently simple request hides architectural, lifecycle, identity, UX, security, data, performance or testing complexity. Recognize problem signatures; recover expert cues and conventional solutions; simulate consequences; find discriminating evidence; avoid overengineering. Use before consequential design/implementation choices and in failure postmortems, not as a mandatory gate for routine fixes.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   origin: "Chunks, Glimpse, Expository, AYA and UR-Recomp engineering cases"
 ---
 
@@ -43,6 +43,6 @@ If a clear standard approach satisfies the case, act. If a premise is disproven,
 - [Decision protocol and anti-patterns](references/decision-protocol.md) for using conventional patterns, simulation, reversals, escalation and evidence.
 - [Cross-project historical cases](references/project-cases.md) for Chunks, Glimpse, Expository, AYA and UR-Recomp.
 - [Testing and transfer evaluation](references/evaluation.md) for unseen analogues and anti-memorization.
-- [Structured decision patterns](assets/patterns.json) and an [offline probe set](assets/transfer-probes.json) support reproducible checking, not claims that agents already perform better.
+- [Structured decision patterns](assets/patterns.json) and an [offline probe set](assets/transfer-probes.json) support reproducible decision checks. The [executable judgment lab](lab/README.md) goes further: five runnable code tasks whose original behavior fails while a valid reference passes the same source-level tests. These checks **still cannot establish** a general productivity improvement without matched agents and independent product-level review.
 
 **Success criterion:** an agent reaches a better observed decision *with less unnecessary work*, recognizes important exceptions and knows when familiar rules stop applying. Fluent rationale, a long checklist, or passing multiple-choice questions alone cannot establish expertise.
