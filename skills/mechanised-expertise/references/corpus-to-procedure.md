@@ -19,9 +19,9 @@ For each individual source recommendation:
 
 ## Machine-readable examples
 
-The hand-curated [22 source-linked procedures](../assets/source-mechanisms-v1.json) cover the entire pinned sample and are a first implementation across requirements, existing architecture, async UI state, causal debugging, uncertain remote writes, accessibility, profiling, conceptual gaps, end-to-end acceptance and design alternatives.
+The hand-curated [30 source-linked procedures](../assets/source-mechanisms-v1.json) cover the entire pinned sample and are a first implementation across requirements, existing architecture, async UI state, causal debugging, uncertain remote writes, accessibility, profiling, conceptual gaps, end-to-end acceptance and design alternatives.
 
-Each record has: original source ID, activation, rejection, named input facts, ordered typed operations, output dependencies, two-sided decision gate, discriminator, independent oracle and stopping rule. The [source-pinned table](../assets/source-to-expertise-v09.csv) retains original publication provenance.
+Each record has: original source ID, activation, rejection, named input facts, ordered typed operations, output dependencies, two-sided decision gate, discriminator, independent oracle and stopping rule. The [source-pinned table](../assets/source-to-expertise-v09.csv) and the [eight-source addendum](../assets/source-to-expertise-v11-additions.csv) retain original publication provenance without rewriting original records.
 
 Run:
 
@@ -29,8 +29,12 @@ Run:
 
 The validator rejects unknown source IDs, forward references, missing inputs, duplicate outputs, unknown operations, generic intuitive commands and missing alternative decisions. It does **not** establish source accuracy, equivalence to experienced practitioners or empirically better outcomes.
 
-**Coverage is explicit:** these 22 curated procedure examples cover all 22 pinned practice records, which are themselves a subset of the 1,073 recommendation records in the research corpus. Conversion is a separate workstream; do not automatically mark all source records as reviewed or mechanistically complete.
+**Coverage is explicit:** these 22 curated procedure examples cover the original 22 pinned practice records plus eight separately pinned Android specialist additions, all of which remain a small subset of the 1,073 recommendation records in the research corpus. Conversion is a separate workstream; do not automatically mark all source records as reviewed or mechanistically complete.
 
 ## When to stop compiling
 
 If a source sentence is merely a preference with no identifiable trigger, independent oracle, or scope, preserve it as advice rather than fabricating a procedural rule. If the source merely describes a library API, classify it as a reference to consult, not a command to install it. If the project already satisfies the recommendation and the remaining decision is routine, record non-applicability and proceed without additional research.
+
+## Specialist source extension
+
+The [additional eight source cases](source-synthesis-extension.md) cover installed Room migration, scheduling choice, worker progress observation, Compose test seams, reusable-state ownership, error observability, runtime grant revocation and untrusted intents. Their source lines, author prescriptions, platform scope and **editorial** proposed operations remain separate. The historical v0.9 source table is unchanged. CI validates both tables and exactly 30 corresponding procedural recipes.

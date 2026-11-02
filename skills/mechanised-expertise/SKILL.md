@@ -2,7 +2,7 @@
 name: mechanised-expertise
 description: Turn development advice into conditional expert inquiry, grounded research, concept-map gap audits, defensible implementation/UX decisions, and independent verification. Use for ambiguous or consequential mobile/software feature design and when synthesizing agent-skill corpora. Scale effort to risk; avoid bureaucratic analysis for routine fixes.
 metadata:
-  version: "0.6.0"
+  version: "0.7.0"
   origin: "Mobile development skills research corpus, with complementary general-purpose engineering judgment and concept-model skills"
 ---
 
@@ -44,6 +44,10 @@ These examples are proposed transformations, not ten new independent upstream re
 ## Compose operational procedures without fabricating results
 
 When a feature crosses multiple consequential boundaries, consult the [mechanical procedure-chain contract](references/procedure-chains.md) and the [symbolic chain compiler](scripts/compile_procedure_chain.py). Select only source-supported, non-excluded procedures from the existing 22 [source-derived mechanisms](assets/source-mechanisms-v1.json). Bind every input to a source fact or a previous named output and check downstream dependencies. A planned source reading, implementation step or oracle is **not executed evidence**. The compiler emits only a nonexecuted plan, preserving unknowns and pending upstream outputs; any source truth, semantic correctness, real behavior or authorized mutation still requires separate inspection and execution. A routine one-line correction should produce no chain.
+
+## Additional specialist source-to-procedure coverage
+
+Use [eight more source-pinned Android expert practice transformations](references/source-synthesis-extension.md) when the task actually concerns installed database upgrades, background scheduling, worker progress, UI test seams, controlled UI components, error observability, changing permission grants, or untrusted Android intents. The added [source table](assets/source-to-expertise-v11-additions.csv) and the expanded [30 operational recipes](assets/source-mechanisms-v1.json) keep published advice separate from editorial execution methods. No new rule automatically applies just because the task mentions its topic: check the procedure's concrete trigger and exclusion, bind its inputs to inspected evidence, and require its independent oracle before claiming a real result.
 
 ## 0. Right-size the inquiry
 

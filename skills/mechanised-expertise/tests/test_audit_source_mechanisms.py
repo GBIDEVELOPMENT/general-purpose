@@ -13,8 +13,12 @@ class MechanismExtractionTests(unittest.TestCase):
     def setUpClass(cls):
         cls.payload=json.loads((ROOT/'assets/source-mechanisms-v1.json').read_text())
         import csv
-        with (ROOT/'assets/source-to-expertise-v09.csv').open(encoding='utf-8-sig',newline='') as f:
-            cls.source_ids={r['id'] for r in csv.DictReader(f)}
+        cls.source_ids=set()
+        for path in ('source-to-expertise-v09.csv','source-to-expertise-v11-additions.csv'):
+            with (ROOT/'assets'/path).open(encoding='utf-8-sig',newline='') as f:
+                for row in csv.DictReader(f):
+                    assert row['id'] not in cls.source_ids
+                    cls.source_ids.add(row['id'])
 
     def check(self,x):
         return audit(x,self.source_ids)
@@ -24,9 +28,9 @@ class MechanismExtractionTests(unittest.TestCase):
         obj['procedures'][0][field]=value
         return obj
 
-    def test_all_22_pinned_patterns_are_converted(self):
+    def test_all_30_pinned_patterns_are_converted(self):
         result=self.check(self.payload)
-        self.assertEqual(result['curated_procedures'],22)
+        self.assertEqual(result['curated_procedures'],30)
         self.assertEqual({p['source_pattern_id'] for p in self.payload['procedures']},self.source_ids)
 
     def test_source_without_original_rejected(self):

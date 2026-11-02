@@ -23,3 +23,7 @@ Run `python3 skills/mechanised-expertise/scripts/audit_compositions.py` and `pyt
 ## Procedure chain planning (nonexecuted)
 
 The [procedure chain guide](references/procedure-chains.md) and [compiler](scripts/compile_procedure_chain.py) connect the 22 pinned source-derived mechanisms with explicit input bindings, exclusion gates, and never-promoted pending evidence. The [synthetic remote example](examples/procedure-chain-remote.json) has two dependent stages; the [routine typo example](examples/procedure-chain-typo.json) intentionally has none. These are plans, not proof of app or agent effectiveness.
+
+## Specialist Android procedure expansion
+
+The original 22 pinned source transformations are now supplemented by [eight new primary-source cases](references/source-synthesis-extension.md) in an **append-only** [separate source table](assets/source-to-expertise-v11-additions.csv). The expanded catalog has 30 source-derived procedural mechanisms. Each has a trigger, exclusion, named inputs, ordered executable steps, decision branches, independent oracle and stop rule. A well-formed mechanism remains an untested editorial transformation, and does not overwrite any original corpus record.
