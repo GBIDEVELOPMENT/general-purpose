@@ -10,6 +10,9 @@ from pathlib import Path, PurePosixPath
 OWNER_MEDIA_BATCH = 'owner_media_20261101_289'
 OWNER_MEDIA_REVIEW = Path('media-organizer/review/ftp-selected-title-delete-2026-11-01.json')
 OWNER_MEDIA_BYTES = 463387620682
+TV_DEDUPE_BATCH = "owner_tv_dedupe_20261102_080"
+TV_DEDUPE_REVIEW = Path("media-organizer/review/ftp-tv-dedupe-2026-11-02.json")
+TV_DEDUPE_BYTES = 119912139016
 
 from organize import ROOT, VIDEO, connect, safe
 
@@ -63,6 +66,60 @@ def assess(inv):
             "screenshots":sum(x["category"]=="screenshot" for x in clean),
             "debris_candidates":clean,"archive_review":archives,"archive_without_local_video":reserved,
             "important":"Archive candidates are NEVER auto-delete candidates; verify extracted content and archive relationship separately."}
+
+def tv_keepers(manifest):
+    """Entire 80-file exact authorized review plus protected retained counterparts."""
+    if manifest["batch_id"]!=TV_DEDUPE_BATCH:return {}
+    review=json.loads(TV_DEDUPE_REVIEW.read_text(encoding="utf-8"))
+    source=review.get("source",{})
+    totals=review.get("totals",{})
+    if (review.get("schema")!="owner-tv-dedupe-2026-11-02-v1"
+            or source.get("inventory_git_blob_sha")!="93695dc4ad24d8dbf57c6637679609a8ea85b445"
+            or source.get("run_id")!=41379794306 or source.get("errors")!=0
+            or source.get("truncated")!=0 or source.get("files")!=2598
+            or totals.get("duplicate_episode_groups")!=80
+            or totals.get("video_deletions")!=80 or totals.get("bytes")!=TV_DEDUPE_BYTES):
+        raise ValueError("Unrecognized owner-selected TV duplicate review or source")
+    groups=review.get("groups",[])
+    if len(groups)!=80:raise ValueError("Expected exactly 80 approved episode groups")
+    allow_shows={"Brooklyn Nine-Nine","Friends","History of the Sitcom",
+                 "Mitchell and Webb Are Not Helping","Ted Lasso","The Other Bennet Sister"}
+    expected=[];keep_by_loser={};seen=set();keepers=set()
+    for group in groups:
+        if group.get("show") not in allow_shows:raise ValueError("Unapproved series")
+        episode=(group["show"],group["season"],group["episode"])
+        if episode in seen:raise ValueError("Repeated episode")
+        seen.add(episode)
+        keeper=group["retain"]
+        if len(group["delete"])!=1:raise ValueError("One loser per approved episode")
+        for obj in [keeper]+group["delete"]:
+            if set(obj)!={"from","size","modify","resolution"}:raise ValueError("Unexpected episode metadata fields")
+            path=PurePosixPath(safe(obj["from"]))
+            if path.suffix.lower() not in (".mkv",".mp4",".avi",".m4v"):raise ValueError("Unexpected media extension")
+            matches=list(re.finditer(r"(?i)s(\d{1,2})[._ -]*e(\d{1,3})(?!\d)",path.name))
+            if len(matches)!=1 or int(matches[0].group(1))!=group["season"] or int(matches[0].group(2))!=group["episode"]:
+                raise ValueError("Cross-episode or multipart release")
+            if (not isinstance(obj["size"],int) or isinstance(obj["size"],bool) or obj["size"]<=0
+                    or not isinstance(obj["modify"],str) or not re.fullmatch(r"\d{14}",obj["modify"])
+                    or obj["resolution"] not in (2160,1080,720,576,480)):
+                raise ValueError("Invalid pinned source or resolution")
+            names=[int(x) for x in re.findall(r"(?i)(?<!\d)(?:2160|1080|720|576|480)p(?!\d)",obj["from"])]
+            # Retained resolution is reported by the reviewed title parser; confirm
+            # its single nominal release tier before trusting the ordering.
+            tiers={int(x) for x in re.findall(r"(?i)(2160|1080|720|576|480)p",obj["from"])}
+            if tiers!={obj["resolution"]}:raise ValueError("Ambiguous filename resolution")
+        loser=group["delete"][0]
+        if loser["resolution"]>keeper["resolution"] or (loser["resolution"]==keeper["resolution"] and loser["size"]<keeper["size"]):
+            raise ValueError("Loser would outrank keeper")
+        if keeper["from"]==loser["from"] or loser["from"] in keep_by_loser or keeper["from"] in keepers:
+            raise ValueError("Reused or identical TV episode path")
+        keepers.add(keeper["from"]);keep_by_loser[loser["from"]]=keeper
+        expected.append({"from":loser["from"],"size":loser["size"],"modify":loser["modify"],"category":"owner_tv_dedupe"})
+    if keepers.intersection(keep_by_loser):raise ValueError("Cannot delete a keeper")
+    if expected!=manifest["entries"] or sum(e["size"] for e in expected)!=TV_DEDUPE_BYTES:
+        raise ValueError("Approved deletion differs from the exact 80 reviewed files")
+    return keep_by_loser
+
 def validate(manifest):
     if set(manifest)!={"root","batch_id","entries","description"} or manifest["root"]!=ROOT:
         raise ValueError("Invalid manifest envelope")
@@ -71,7 +128,9 @@ def validate(manifest):
     if not isinstance(manifest["description"],str) or len(manifest["description"])<15:raise ValueError("Missing rationale")
     entries=manifest["entries"]
     if not isinstance(entries,list) or not 1<=len(entries)<=300:raise ValueError("Batch must have 1..300 entries")
-    if manifest["batch_id"] == OWNER_MEDIA_BATCH:
+    if manifest["batch_id"] == TV_DEDUPE_BATCH:
+        tv_keepers(manifest)
+    elif manifest["batch_id"] == OWNER_MEDIA_BATCH:
         # The exception for full-sized media is restricted to the owner's one
         # signed-off review set. It does not relax ordinary debris validation.
         reviewed=json.loads(OWNER_MEDIA_REVIEW.read_text(encoding="utf-8"))
@@ -91,14 +150,14 @@ def validate(manifest):
             raise ValueError("Selected path outside approved release roots")
         if any("/rtorrent/" in f["from"] or "/watch/rtorrent/" in f["from"] or "/Night Court/" in f["from"] for f in expected):
             raise ValueError("Protected path in selected files")
-    elif any(entry.get("category")=="owner_media" for entry in entries if isinstance(entry,dict)):
+    elif any(entry.get("category") in ("owner_media","owner_tv_dedupe") for entry in entries if isinstance(entry,dict)):
         raise ValueError("Media exception requires exact owner-approved batch id")
     seen=set()
     for entry in entries:
         if not isinstance(entry,dict) or set(entry)!={"from","size","modify","category"}:raise ValueError("Unexpected entry keys")
         p=safe(entry["from"])
-        if manifest["batch_id"] == OWNER_MEDIA_BATCH and entry["category"] == "owner_media":
-            pass  # Already matched full immutable reviewed set above.
+        if (manifest["batch_id"] == OWNER_MEDIA_BATCH and entry["category"] == "owner_media") or (manifest["batch_id"] == TV_DEDUPE_BATCH and entry["category"] == "owner_tv_dedupe"):
+            pass  # Already matched the complete exact reviewed set above.
         elif category(p)!=entry["category"] or entry["category"] not in ("nfo","screenshot","sample","trailer","txt","detritus"):
             raise ValueError("Not an exact approved debris class")
         if p.casefold() in seen:raise ValueError("Duplicate delete")
@@ -124,6 +183,12 @@ def execute(ftp,manifest,audit_path):
         with audit_path.open("w") as f:
             json.dump({"batch_id":manifest["batch_id"],"status":status,"completed":completed,"skipped":skipped},f,indent=2)
             f.flush();os.fsync(f.fileno())
+    keepers=tv_keepers(manifest) if manifest["batch_id"]==TV_DEDUPE_BATCH else {}
+    for keeper in keepers.values():
+        facts=lookup(ftp,keeper["from"])
+        if (facts is None or facts.get("type")!="file" or
+                str(facts.get("size"))!=str(keeper["size"]) or facts.get("modify")!=keeper["modify"]):
+            raise ValueError("Retained episode missing or changed, refusing all removals")
     active=[]
     for item in batch:
         facts=lookup(ftp,item["from"])
@@ -136,6 +201,12 @@ def execute(ftp,manifest,audit_path):
     save("preflight_passed")
     try:
         for item in active:
+            if keepers:
+                keeper=keepers[item["from"]]
+                kfacts=lookup(ftp,keeper["from"])
+                if (kfacts is None or kfacts.get("type")!="file" or
+                        str(kfacts.get("size"))!=str(keeper["size"]) or kfacts.get("modify")!=keeper["modify"]):
+                    raise ValueError("Retained episode no longer exact; stop deletions")
             facts=lookup(ftp,item["from"])
             if facts.get("type")!="file" or str(facts.get("size"))!=str(item["size"]) or (item["modify"] and facts.get("modify")!=item["modify"]):
                 raise ValueError("Changed between preflight and deletion")
