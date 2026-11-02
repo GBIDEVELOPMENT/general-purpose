@@ -117,3 +117,4 @@ if __name__=="__main__":main()
 # Post-Star Trek relocation and GL duplicate deletion full read-only inventory, 2026-11-02.
 # Post-relocation inventory retry after folder reconciliation compatibility fix, 2026-11-02.
 # Final read-only inventory after 53 verified empty-folder removals and 3 animated-series AVI removals, 2026-11-02.
+# Read-only post-RAR-prune FTP verification of retained extracted media, 2026-11-02.\n
