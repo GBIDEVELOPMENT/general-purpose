@@ -14,6 +14,10 @@ This directory is a library of **complementary capabilities**, not a pyramid wit
 
 The same project can need several capabilities, but **none is a universal prerequisite**. A tiny visual correction may need only operational execution and a focused check. An ontology review may start directly with Concept Model Engineering. A complex UX problem may need user research, modelling, choice generation, implementation and runtime testing. The observed task determines the sequence.
 
+## Cross-project validation economics
+
+When the task is specifically to reduce test/CI cycles or the director's repeated manual acceptance, use the optional [Validation Economics procedure](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/android-app-development/references/validation-economics.md) and its [observed Chunks, Expository, UR-Recomp and Glimpse audit](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/android-app-development/references/validation-case-audit.md). Despite its Android-skill location, the procedure's dispatch-relevance, shared-setup and diagnostic-information rules apply across repositories. Do not activate it for every routine commit, downgrade project-specific release gates, or treat a full green run as evidence of a path it cannot exercise.
+
 ## Two-way application without hierarchy
 
 - **Mechanised inquiry → conceptual modelling:** generate a bounded question; invoke modelling only when an uncertain *relation* could alter a real decision, research question, or output.
