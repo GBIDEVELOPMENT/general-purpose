@@ -11,6 +11,22 @@ A standalone Windows rTorrent controller and private ChatGPT MCP server. Lives i
 
 Configuration currently supplies exact (not auto-guessed) Seedhost HTTPS HTTP-RPC endpoints for `/rutorrent/`, `/rutorrent2/` and `/rutorrent3/` separately. Secondary instances require their own passwords. No automatic credential cross-use or fallback.
 
+## Credential decoding failure in the first Windows build
+
+The first Windows artifact incorrectly attempted to protect an already DPAPI-protected
+password again during connection setup, causing a `UnicodeDecodeError` before the
+first network call. Fixed on this branch: stored credentials are now explicitly
+**decrypted** before UTF-8 decoding. The existing `profiles.json` should remain
+valid. Extract a newer successful Windows artifact into a fresh folder and
+double-click `Run-RTorrent-Bridge.cmd` again. Do **not** delete or share
+`%LOCALAPPDATA%\\RTorrentBridge\\profiles.json`.
+
+If Windows reports that the saved password cannot be read (for example,
+after switching Windows accounts or moving the configuration between PCs),
+double-click `Configure-RTorrent-Bridge.cmd` to enter the passwords again.
+This overwrites the local profile set after prompting. It never reads GitHub
+Actions secrets automatically.
+
 ## Connect to ChatGPT (private, no inbound router port)
 
 The MCP server binds **only** to loopback. Install OpenAI's `tunnel-client` via the official [Secure MCP Tunnel instructions](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels), create a tunnel in the OpenAI Platform, and configure its local HTTP server target as `http://127.0.0.1:8765/mcp`. Launch `tunnel-client run` in a separate process, then in ChatGPT Plugins add a custom MCP server, choose **Tunnel**, select the tunnel ID, review tool descriptions/permissions and save. This requires available tunnel and custom-MCP permissions in the relevant account/workspace. The Windows bridge itself does not create OpenAI resources or obtain Platform API keys. The `tunnel-client` is not bundled: download only from the official OpenAI release.
