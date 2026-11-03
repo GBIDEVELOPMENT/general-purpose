@@ -40,6 +40,26 @@ class IngestionAuditTests(unittest.TestCase):
         self.assertIn("source_class_gap_review", self.kinds(fixture))
         self.assertNotIn("feature_absence", str(self.scan(fixture)))
 
+    def test_unsearched_and_inaccessible_source_classes_are_distinct(self):
+        report = self.scan(fixture)
+        q = next(x for x in report["coverage"] if x["question_id"] == "Q2")
+        self.assertEqual(["not_searched"], q["uninspected_required_statuses"]["test"])
+        inaccessible = copy.deepcopy(fixture)
+        inaccessible["sources"][4]["status"] = "inaccessible"
+        q2 = next(x for x in self.scan(inaccessible)["coverage"] if x["question_id"] == "Q2")
+        self.assertEqual(["inaccessible"], q2["uninspected_required_statuses"]["test"])
+        missing = copy.deepcopy(fixture)
+        missing["sources"] = [s for s in missing["sources"] if s["id"] != "S5"]
+        q3 = next(x for x in self.scan(missing)["coverage"] if x["question_id"] == "Q2")
+        self.assertEqual(["not_in_inventory"], q3["uninspected_required_statuses"]["test"])
+
+    def test_cross_source_join_is_reviewed_even_when_both_endpoints_cited(self):
+        self.assertIn("cross_source_bridge_review", self.kinds(fixture))
+        finding = next(f for f in self.scan(fixture)["findings"]
+                       if f["kind"] == "cross_source_bridge_review")
+        self.assertEqual(["R2"], finding["subject_ids"])
+        self.assertIn("insufficient", finding["operation"])
+
     def test_unicode_nfkc_detects_review_match(self):
         self.assertEqual(mod.normalize_label("Ｔｒａｎｓｆｅｒ"), mod.normalize_label("Transfer"))
         self.assertIn("possible_identity_match_review", self.kinds(fixture))
