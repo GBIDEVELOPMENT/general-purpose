@@ -44,7 +44,7 @@ For **each** activated uncertainty, record in the existing issue or work artifac
 
 ## Optional executable tools, not mandatory rituals
 
-- To inspect a single corpus-derived mechanism without loading the entire catalog: [procedure index](references/procedure-index.md), then `python3 scripts/procedure_lookup.py --id PROC-005`. Do not choose a procedure solely from its name.
+- To inspect a single corpus-derived mechanism without loading the entire catalog: [procedure index](references/procedure-index.md), then `python3 skills/mechanised-expertise/scripts/procedure_lookup.py --id PROC-005` (from repository root; from this skill directory, use `python3 scripts/procedure_lookup.py --id PROC-005`). Do not choose a procedure solely from its name.
 - To generate *unanswered* questions from inspected facts: [question compiler](scripts/compile_inquiry.py) and [synthetic remote example](examples/mechanical-remote-mutation.json). The [routine typo example](examples/mechanical-routine-typo.json) should produce no questions.
 - To plan multiple procedures with explicit dependencies: [procedure-chain compiler](scripts/compile_procedure_chain.py) and [chain reference](references/procedure-chains.md). **All planned outputs remain unobserved** until independently executed.
 - To validate a structured inquiry: [schema](schema/inquiry-card-v1.schema.json) and [inquiry checker](scripts/check_inquiry.py). No card required for minor changes.
