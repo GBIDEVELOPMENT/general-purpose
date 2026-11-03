@@ -1,0 +1,63 @@
+name: rTorrent Bridge Windows
+on:
+  push:
+    paths:
+      - 'tools/rtorrent-bridge/**'
+      - '.github/workflows/rtorrent-bridge-windows.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-and-bundle:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: tools/rtorrent-bridge/requirements.txt
+      - name: Install dependencies
+        shell: pwsh
+        run: |
+          python -m pip install -r tools/rtorrent-bridge/requirements.txt 'pyinstaller>=6.11,<7'
+      - name: Compile and offline safety tests
+        shell: pwsh
+        run: |
+          python -m compileall -q tools/rtorrent-bridge
+          python -m unittest discover -s tools/rtorrent-bridge/tests -v
+      - name: Validate ChatGPT tunnel PowerShell launcher
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          $path = (Resolve-Path 'tools/rtorrent-bridge/Start-ChatGPT-RTorrent.ps1').Path
+          [System.Management.Automation.Language.Parser]::ParseFile($path, [ref]$tokens, [ref]$errors) | Out-Null
+          if ($errors.Count -gt 0) {
+            $errors | ForEach-Object { Write-Error $_.ToString() }
+            exit 1
+          }
+          if (-not (Test-Path 'tools/rtorrent-bridge/Connect-ChatGPT-RTorrent.cmd')) { exit 1 }
+          if (-not (Test-Path 'tools/rtorrent-bridge/Configure-ChatGPT-Tunnel.cmd')) { exit 1 }
+      - name: Build Windows exe
+        shell: pwsh
+        run: |
+          python -m PyInstaller --onefile --clean --console --name RTorrentBridge --collect-submodules mcp.server.fastmcp tools/rtorrent-bridge/rtorrent_bridge.py
+          New-Item -ItemType Directory -Path bundle -Force | Out-Null
+          Copy-Item dist/RTorrentBridge.exe bundle/
+          Copy-Item tools/rtorrent-bridge/*.cmd bundle/
+          Copy-Item tools/rtorrent-bridge/*.ps1 bundle/
+          Copy-Item tools/rtorrent-bridge/README.md bundle/
+          Compress-Archive -Path bundle/* -DestinationPath rtorrent-bridge-windows.zip -Force
+      - name: Executable smoke test (no real connections)
+        shell: pwsh
+        run: |
+          & ./bundle/RTorrentBridge.exe --help
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rtorrent-bridge-windows
+          path: rtorrent-bridge-windows.zip
+          retention-days: 14
+          if-no-files-found: error
