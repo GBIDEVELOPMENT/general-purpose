@@ -442,6 +442,25 @@ def create_mcp():
             raise BridgeError("rTorrent returned an invalid torrent health record") from None
 
     @mcp.tool()
+    def torrent_tracker_health(server: str, infohash: str, limit: int = 30) -> dict:
+        """Read sanitized per-tracker success, failure and peer counters without URLs.
+
+        Never sends an announce or exposes tracker passkeys or peer addresses.
+        """
+        from tracker_analysis import FIELDS, sanitize_tracker_rows
+        if not 1 <= limit <= 100:
+            raise BridgeError("limit must be from 1 to 100")
+        h = clean_hash(infohash)
+        rpc = _call(server, "tracker_health")
+        current = read_exact(rpc, h)
+        rows = rpc.call("t.multicall", h, "", *FIELDS)
+        try:
+            return sanitize_tracker_rows(rows, server=server, infohash=h,
+                                         name=current["name"], limit=limit)
+        except (TypeError, ValueError):
+            raise BridgeError("Malformed tracker health response") from None
+
+    @mcp.tool()
     def torrent_details(server: str, infohash: str) -> dict:
         """Read a torrent's exact hash, name, completion and running state."""
         return read_exact(_call(server, "details"), infohash)

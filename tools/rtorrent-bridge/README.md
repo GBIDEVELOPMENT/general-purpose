@@ -94,6 +94,7 @@ python rtorrent_cli.py compare_servers --limit 10
 python rtorrent_cli.py query_torrents --server primary --sort-by size --descending --limit 10
 python rtorrent_cli.py query_torrents --server primary --no-complete --limit 20
 python rtorrent_cli.py torrent_health --server primary --infohash 0123456789ABCDEF0123456789ABCDEF01234567
+python rtorrent_cli.py torrent_tracker_health --server primary --infohash 0123456789ABCDEF0123456789ABCDEF01234567
 python rtorrent_cli.py list_torrents --server primary --limit 100
 python rtorrent_cli.py list_torrents --server primary --query "Slow Horses"
 ```
@@ -144,6 +145,18 @@ peer metrics, never returns tracker URLs or peer IPs, and distinguishes
 instantaneous observations from a diagnosis. Three tracker entries, for example,
 do not establish tracker reachability; zero connected peers at one instant does
 not establish that a swarm is permanently dead. No repair action is performed.
+
+## Tracker health without credential exposure
+
+`torrent_tracker_health` reads per-tracker enabled state, type, successful and
+failed request counters, peer counts from the latest announce, and last
+success/failure timestamps. This is a bounded, read-only `t.multicall` call;
+it never fetches or returns tracker endpoint URLs (which can embed passkeys),
+peer addresses, or credentials. Counts can reset when rTorrent restarts,
+announced peers may be stale, and zero scrape counts can mean unknown rather
+than an empty swarm. No announce, scrape or retry is triggered. Use it with
+`torrent_health` to distinguish a no-peer snapshot from repeated failures
+without asserting that a transfer is permanently dead.
 
 ## Anticipated natural-language requests
 
