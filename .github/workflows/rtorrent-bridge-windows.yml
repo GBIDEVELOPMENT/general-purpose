@@ -30,7 +30,7 @@ jobs:
       - name: Build Windows exe
         shell: pwsh
         run: |
-          python -m PyInstaller --onefile --clean --console --name RTorrentBridge --collect-all mcp tools/rtorrent-bridge/rtorrent_bridge.py
+          python -m PyInstaller --onefile --clean --console --name RTorrentBridge --collect-submodules mcp.server.fastmcp tools/rtorrent-bridge/rtorrent_bridge.py
           New-Item -ItemType Directory -Path bundle -Force | Out-Null
           Copy-Item dist/RTorrentBridge.exe bundle/
           Copy-Item tools/rtorrent-bridge/*.cmd bundle/
