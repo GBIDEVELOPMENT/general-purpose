@@ -19,6 +19,11 @@ SCHEMA = "concept-model/reviewed-delta-v1"
 OUTPUT = "concept-model/delta-proposal-v1"
 ID = re.compile(r"[A-Za-z][A-Za-z0-9_:-]*\Z")
 DATE = re.compile(r"\d{4}-\d{2}-\d{2}\Z")
+# A role equivalence must be explicit; unknown ontology kinds need reviewer justification.
+ROLE_KINDS = {"action": {"action", "operation"}, "goal": {"goal", "user_goal"},
+              "state": {"state"}, "object": {"object"}, "actor": {"actor"},
+              "outcome": {"outcome"}, "system": {"system"},
+              "permission": {"permission"}, "other": {"other"}}
 
 
 def required(value, field):
@@ -138,6 +143,11 @@ def propose(model, staged, reviews):
             required(item["boundary_basis"], mid + ".boundary_basis")
         if cid in new_concepts and mid not in new_concepts[cid]["evidence_mention_ids"]:
             raise ValueError("New concept not evidenced by bound mention: " + mid)
+        target_kind = (existing_concepts[cid]["kind"] if cid in existing_concepts
+                       else new_concepts[cid]["kind"])
+        if (target_kind not in ROLE_KINDS.get(mentions[mid]["kind"], {mentions[mid]["kind"]})
+                and not item["boundary_basis"]):
+            raise ValueError("Incompatible concept role requires boundary review: " + mid)
         mapped_mentions[mid] = cid
         used_by_concept.setdefault(cid, []).append(mid)
     for cid, mids in used_by_concept.items():
@@ -146,6 +156,9 @@ def propose(model, staged, reviews):
             raise ValueError("Cross-role/scope identity requires explicit boundary review: " + cid)
 
     for cid, item in new_concepts.items():
+        if any(mentions[mid]["source_id"] not in mapped_sources
+               for mid in item["evidence_mention_ids"]):
+            raise ValueError("New concept evidence requires a reviewed source: " + cid)
         if not any(mapped_mentions.get(mid) == cid for mid in item["evidence_mention_ids"]):
             raise ValueError("Orphan new concept without an explicit identity review: " + cid)
 
@@ -214,6 +227,10 @@ def propose(model, staged, reviews):
         "review_decisions_digest": digest(reviews),
         "additions": additions,
         "challenges_preserved": challenges,
+        "review_trace": {"source_links": reviews["source_links"],
+                         "new_concepts": reviews["new_concepts"],
+                         "identity_links": reviews["identity_links"],
+                         "relation_reviews": reviews["relation_reviews"]},
         "pending": {"mentions": sorted(set(mentions) - set(identity_links)),
                     "relations": sorted(set(relations) - {rid for rid, r in relation_reviews.items()
                                                         if r["decision"] == "accept"}),
@@ -239,6 +256,8 @@ def main():
         for dest in (args.output, args.preview):
             if dest is not None and dest.resolve() in paths:
                 raise ValueError("Refusing to replace original model, staged source or review file")
+            if dest is not None and dest.exists():
+                raise ValueError("Refusing to overwrite existing output: " + str(dest))
         if args.output and args.preview and args.output.resolve() == args.preview.resolve():
             raise ValueError("Proposal and preview must have distinct paths")
         data = [json.loads(pth.read_text(encoding="utf-8")) for pth in
@@ -246,11 +265,13 @@ def main():
         result, preview = propose(*data)
         report_text = json.dumps(result, indent=2, ensure_ascii=False) + "\n"
         if args.output:
-            args.output.write_text(report_text, encoding="utf-8")
+            with args.output.open("x", encoding="utf-8") as handle:
+                handle.write(report_text)
         else:
             print(report_text, end="")
         if args.preview:
-            args.preview.write_text(json.dumps(preview, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            with args.preview.open("x", encoding="utf-8") as handle:
+                handle.write(json.dumps(preview, indent=2, ensure_ascii=False) + "\n")
     except (OSError, UnicodeError, ValueError, TypeError, json.JSONDecodeError) as exc:
         print("FAIL:", exc, file=sys.stderr)
         return 2

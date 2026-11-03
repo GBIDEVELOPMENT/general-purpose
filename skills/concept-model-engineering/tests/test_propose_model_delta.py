@@ -177,6 +177,7 @@ class ReviewedDeltaTests(unittest.TestCase):
         review["new_concepts"].append(dict(id="C5", kind="action", label="Download",
             evidence_mention_ids=["M6"], checked_locator="synthetic://forum#L22",
             basis="Reviewed synthetic user-action mention"))
+        self.add_user_source(review)
         with self.assertRaisesRegex(ValueError, "Orphan new concept"):
             self.run_delta(review=review)
 
@@ -188,6 +189,7 @@ class ReviewedDeltaTests(unittest.TestCase):
         review["identity_links"].append(dict(mention_id="M6", concept_id="C5",
             checked_locator="synthetic://forum#L22", basis="Keep distinct download action",
             boundary_basis=None))
+        self.add_user_source(review)
         out, projected = self.run_delta(review=review)
         self.assertEqual("C5", out["additions"]["concepts"][0]["id"])
         self.assertEqual([], mod.check(projected))
@@ -197,7 +199,7 @@ class ReviewedDeltaTests(unittest.TestCase):
         review["identity_links"].append(dict(mention_id="M3", concept_id="C2",
             checked_locator="synthetic://forum#L19", basis="Tempting same-label merge",
             boundary_basis=None))
-        with self.assertRaisesRegex(ValueError, "Cross-role/scope identity"):
+        with self.assertRaisesRegex(ValueError, "Incompatible concept role"):
             self.run_delta(review=review)
 
     def test_unverified_stage_reference_rejected_by_ingestion_auditor(self):
@@ -236,6 +238,57 @@ class ReviewedDeltaTests(unittest.TestCase):
             self.assertEqual("proposal_only_no_original_mutated", report["status"])
             self.assertEqual([], mod.check(preview))
             self.assertEqual(BASE, json.loads((p / "model.json").read_text()))
+
+
+    def test_single_incompatible_existing_concept_requires_review(self):
+        review = copy.deepcopy(REVIEW)
+        review["identity_links"].pop(0)  # no second mention to expose a collision
+        review["identity_links"][0]["concept_id"] = "C2"  # state mapped to operation
+        with self.assertRaisesRegex(ValueError, "Incompatible concept role"):
+            self.run_delta(review=review)
+
+    def test_unlinked_source_cannot_create_new_concept(self):
+        review = copy.deepcopy(REVIEW)
+        review["new_concepts"].append(dict(id="C5", kind="action", label="Download",
+            evidence_mention_ids=["M6"], checked_locator="synthetic://forum#L22",
+            basis="A reviewed mention does not establish a model source"))
+        review["identity_links"].append(dict(mention_id="M6", concept_id="C5",
+            checked_locator="synthetic://forum#L22", basis="Explicit tentative concept",
+            boundary_basis=None))
+        with self.assertRaisesRegex(ValueError, "requires a reviewed source"):
+            self.run_delta(review=review)
+
+    def test_proposal_contains_original_review_trace(self):
+        out, _ = self.run_delta()
+        self.assertEqual(REVIEW["identity_links"], out["review_trace"]["identity_links"])
+        self.assertEqual(REVIEW["relation_reviews"], out["review_trace"]["relation_reviews"])
+        self.assertIn("base_model_digest", out)
+        self.assertIn("review_decisions_digest", out)
+
+    def test_cli_never_replaces_existing_unrelated_preview(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d)
+            for name, data in (("model.json", BASE), ("stage.json", STAGED),
+                               ("review.json", REVIEW)):
+                (p / name).write_text(json.dumps(data), encoding="utf-8")
+            target = p / "other-project.json"
+            target.write_text("Do not replace", encoding="utf-8")
+            command = [sys.executable, str(ROOT / "scripts" / "propose_model_delta.py"),
+                       str(p / "model.json"), str(p / "stage.json"), str(p / "review.json"),
+                       "--output", str(p / "delta.json"), "--preview", str(target)]
+            completed = subprocess.run(command, capture_output=True, text=True)
+            self.assertEqual(2, completed.returncode)
+            self.assertIn("Refusing to overwrite existing output", completed.stderr)
+            self.assertEqual("Do not replace", target.read_text())
+            self.assertFalse((p / "delta.json").exists())
+
+    @staticmethod
+    def add_user_source(review):
+        review["source_links"].append(dict(stage_id="S3", model_id="SRC_USER",
+            decision="add", as_of="2026-01-01",
+            checked_locator="synthetic://forum#L22",
+            basis="Synthetic reviewed user source"))
+        return review
 
     @staticmethod
     def cross_source_review():
