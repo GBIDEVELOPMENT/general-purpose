@@ -8,7 +8,7 @@ import urllib.request
 import urllib.error
 
 URL = "http://127.0.0.1:8765/mcp"
-READ_ONLY = {"servers", "server_status", "list_torrents", "inventory_extremes", "inventory_report", "compare_servers", "query_torrents", "torrent_health", "torrent_details", "torrent_files"}
+READ_ONLY = {"servers", "server_status", "list_torrents", "inventory_extremes", "inventory_report", "compare_servers", "query_torrents", "torrent_health", "torrent_tracker_health", "torrent_details", "torrent_files"}
 WRITES = {"start_torrent", "stop_torrent", "remove_torrent", "add_stopped_magnet"}
 TOOLS = READ_ONLY | WRITES
 
