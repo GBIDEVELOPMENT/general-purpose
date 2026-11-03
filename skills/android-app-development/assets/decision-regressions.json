@@ -350,5 +350,93 @@
     "answer": "C",
     "reason": "batch review does not imply atomicity",
     "source": "https://github.com/gamesbyian/Expository"
+  },
+  {
+    "id": "T17",
+    "case_id": "CH-13",
+    "scenario": "A chained installed API35 lifecycle job confirms real dataSync timeout and cold restore, then stops logging just after reboot is armed and the run times out. What validation decision is justified?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Declare all four chained lifecycle scenarios passed because the first phase did"
+      },
+      {
+        "id": "B",
+        "text": "Keep the real reboot gate red; retain independent FGS-positive evidence and add bounded ADB stages and step receipts before rerunning only the unresolved phase"
+      },
+      {
+        "id": "C",
+        "text": "Replace the reboot test with mocked ADB and declare E2 accepted"
+      }
+    ],
+    "answer": "B",
+    "reason": "shared sessions need independently observable bounded phases; probable hanging command is not yet proven",
+    "source": "https://github.com/gamesbyian/Chunks/pull/1123"
+  },
+  {
+    "id": "T18",
+    "case_id": "EX-11",
+    "scenario": "A repeated genuine Android picker-and-Copy test has independently verified target bytes, untouched source and visible success, but consistently fails during Material3 Compose teardown. Which check should be prioritized during diagnosis?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Run the full two-picker copy repeatedly without changing the failure hypothesis"
+      },
+      {
+        "id": "B",
+        "text": "Waive the teardown exception and merge because the bytes are correct"
+      },
+      {
+        "id": "C",
+        "text": "Keep end-to-end lifecycle qualification open, isolate minimal Activity/semantics/picker conditions first, then rerun one complete exact-head E2 after the proposed fix"
+      }
+    ],
+    "answer": "C",
+    "reason": "diagnostic information gain is distinct from final end-to-end acceptance",
+    "source": "https://github.com/gamesbyian/Expository/pull/401"
+  },
+  {
+    "id": "T19",
+    "case_id": "CH-14",
+    "scenario": "A real installed magnet test sees expected verified destination bytes but zero received new bytes; the destination had already completed that exact public torrent. What should happen?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Report fresh peer ingress because the destination SHA matched"
+      },
+      {
+        "id": "B",
+        "text": "Mark fresh-ingress evidence inconclusive, preserve the pre-existing torrent, and use strictly owned alternative fixtures with initial-state and delta assertions"
+      },
+      {
+        "id": "C",
+        "text": "Delete the pre-existing external payload without consent, then retry the same magnet"
+      }
+    ],
+    "answer": "B",
+    "reason": "a complete existing fixture is not proof of newly received peer bytes",
+    "source": "https://github.com/gamesbyian/Chunks/pull/1051"
+  },
+  {
+    "id": "T20",
+    "case_id": "CH-15",
+    "scenario": "An Android JVM suite runs 1,178 tests, but one Compose assertion times out while waiting simultaneously for background list loading and UI statuses. How best increase the evidence value?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Separate exact callback completion from rendered status waits and assert both, preserving existing negative assertions"
+      },
+      {
+        "id": "B",
+        "text": "Treat the whole app as confirmed broken because the full foundation job is red"
+      },
+      {
+        "id": "C",
+        "text": "Delete the UI assertion because 1,178 passing tests are more than enough"
+      }
+    ],
+    "answer": "A",
+    "reason": "a discriminating test separates asynchronous scheduling from UI behavior",
+    "source": "https://github.com/gamesbyian/Chunks/pull/860"
   }
 ]
