@@ -73,7 +73,8 @@ The capability map in [Skills Architecture](skills/CAPABILITY-ARCHITECTURE.md) s
 
 Choose the **single primary skill** from the actual task; open a second one only when the first reveals a specific consequential dependency:
 
-- **Native Android feature implementation, platform debugging, or code review:** [Android App Development](skills/android-app-development/SKILL.md). Inspect current project authority, shipping entrypoint and tests.
+- **Native Android feature implementation, platform debugging, or code review:** [Android App Development](skills/android-app-development/SKILL.md). Inspect current project authority, shipping entrypoint and tests. For costly test/CI batching, open only its [Validation Economics](skills/android-app-development/references/validation-economics.md) reference.
+- **Cross-project CI/test-cost planning:** choose [Engineering Judgment](skills/engineering-judgment/SKILL.md) and its optional validation-economics reference; distinguish tests that reach changed behavior from expensive non-exercising suites. Do not replace the host project's required acceptance and merge gates.
 - **Architecture or software/product trade-off requiring a consequential choice:** [Engineering Judgment](skills/engineering-judgment/SKILL.md). Skip deep analysis for routine reversible fixes.
 - **Explicit concept mapping, ontology/model completeness, feature frontiers or gap qualification:** [Concept Model Engineering](skills/concept-model-engineering/SKILL.md). Never treat an unrepresented edge as proof of absence.
 - **Generating unresolved questions from observed cues, synthesizing corpus recommendations into procedures, or coordinating several decision methods:** [Mechanised Expertise](skills/mechanised-expertise/SKILL.md). Start with its short routing entrypoint, not its entire research archive.

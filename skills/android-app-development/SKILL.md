@@ -2,7 +2,7 @@
 name: android-app-development
 description: Plan, implement, debug, review and ship real native Android apps using Kotlin, Compose, JNI, Room, SAF, Photo Picker, WorkManager and remote protocols. Activate for architecture, unsafe file/data operations, authentication, lifecycle, accessibility, CI, signing, release and agent-development failures. Prioritize production user journeys, evidence fidelity and smallest conventional fixes over speculative rewrites.
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
   origin: "Source-linked Chunks, Glimpse and Expository Transfer retrospectives"
 ---
 
@@ -16,9 +16,10 @@ metadata:
 2. Name the **shipping user journey**, actual production call path, source and destination identities, permissions, Android API/provider and observable result. Separate observed bug, plausible risk and speculative concern.
 3. Record the **six-line execution card** in the existing issue/PR: **Outcome / Evidence / Authority and scope / Smallest intervention / Positive and negative proof / Exit and remaining gaps**. See [decision diagnostics](references/engineering-decisions.md).
 4. Choose the existing platform/library primitive before a custom backend; check current Android platform documentation and relevant narrowly selected upstream skill. Do not fetch/install unknown code merely because it is recommended.
-5. Implement one connected vertical slice. Verify ordinary positive behavior through real UI/platform/adapter, then its specific hostile, cancellation, crash, stale identity and recovery variants. Bound tests by actual risk, not ceremonial checklist length.
-6. Verify focused and integration checks on the **exact PR head**; classify red results by phase and count executed tests. Independent review for destructive/credential/native/schema/signing changes; update current issue/ledger only when evidence moves.
-7. On integration, state precisely **merged vs merely proposed**, exercised tier and exact SHA/run, persisted postcondition, unsupported device/provider/owner gates and next runnable work. When waiting on external CI, choose an independent safe task, never duplicate speculative branches.
+5. **Plan validation boundaries before implementation.** When several changes share expensive build, device, CI or provider setup, partition compatible work into an implementation batch and a shared validation session. Retain cheap edit-local feedback and early focused gates for risky foundations or destructive effects; do not mandate a full project test for each change. See [Validation economics](references/validation-economics.md).
+6. Implement the bounded batch as independently identifiable changes, with explicit per-item oracles. At the shared boundary verify ordinary positive behavior through real UI/platform/adapter and relevant hostile, cancellation, crash, stale identity and recovery variants. Share setup rather than diluting proof; bound the matrix by actual risk.
+7. Verify focused and integration checks on the **exact PR head**; classify red results by phase and count executed tests. Independent review for destructive/credential/native/schema/signing changes; update current issue/ledger only when evidence moves.
+8. On integration, state precisely **merged vs merely proposed**, exercised tier and exact SHA/run, persisted postcondition, unsupported device/provider/owner gates and next runnable work. When waiting on external CI, choose an independent safe task, never duplicate speculative branches.
 
 ## Load only the necessary specialist reference
 
@@ -30,6 +31,7 @@ metadata:
 | SAF, app-private files, Room, remote auth, identity, retry or interruption | [Operation integrity](references/operation-integrity.md) |
 | Concrete Android implementation patterns for pickers, lifecycle, UI, storage and releases | [Platform playbooks](references/platform-playbooks.md) |
 | UI reachability, testing tiers, CI cost, signing and integration | [Verification and CI](references/verification-and-ci.md) |
+| Multiple queued changes, repeated full runs, expensive device/provider setup, or human-review bottlenecks | [Validation economics](references/validation-economics.md) |
 | Security/data-risk independent PR review | [Adversarial PR review](references/adversarial-review.md) |
 | Product-discovery graphs, incomplete user-workflow models, or suspected feature frontiers | [Concept Model Engineering](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/concept-model-engineering/SKILL.md) |
 | A documented historical success, failure or reversed premise | [Historical casebook](references/historical-casebook.md) |
