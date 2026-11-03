@@ -20,3 +20,14 @@ python3 skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-e
 ```
 
 All compiler outputs remain hypothetical until the actual program, device, user or provider observation is verified. Local structural checks do not measure agent effectiveness. Verify that a target agent runtime can discover this SKILL.md under its configured skills root. A source repository containing it is not automatically an installed skill in unrelated projects.
+
+
+## Avoid loading the whole procedure catalogue
+
+Read the [compact procedure index](references/procedure-index.md), inspect the trigger and exclusion of the potentially relevant procedures, then read exactly one using:
+
+```bash
+python3 skills/mechanised-expertise/scripts/procedure_lookup.py --id PROC-005
+```
+
+Without CLI access, use the Markdown index and inspect a specific ID in the source JSON. This lookup never diagnoses applicability or executes operations. Do not promote planned outputs into observations.
