@@ -65,19 +65,15 @@ ownership.
 - Use docs/shaw-mail-bridge.md as the current technical authority. Keep only
   encrypted payloads in GitHub comments, not plaintext messages.
 
-## Android engineering skill lane
+## Advisory skill selection: choose one starting point
 
-When an explicitly requested task concerns native Android app development or a substantive Android code review, start with [Android App Development](skills/android-app-development/SKILL.md) and load only its task-matched references. This is a **portable advisory skill**. It must never override project-specific instructions, safety requirements, user authority, protected credentials or current test evidence. Changes to Chunks, Glimpse, Expository or another repository require their own explicit task and independent qualification; merely improving the central skill does not install it elsewhere. Do not touch unrelated audit, Night Court, Shaw email, FTP or privileged workflows while maintaining this skill.
+These portable skills do not override user authority, a host project's AGENTS.md, security requirements, current source, or observed test evidence. Installing or editing this central repository does not install skills into Chunks, Glimpse, Expository or any other repository. Do not touch unrelated audit, Shaw mail, FTP, Night Court or privileged workflows while maintaining skills.
 
-## Concept models and research frontiers
+Choose the **single primary skill** from the actual task; open a second one only when the first reveals a specific consequential dependency:
 
-For explicitly requested concept modeling, user-journey/feature-map research, map audits or disconfirmation of supposedly missing features, read [Concept Model Engineering](skills/concept-model-engineering/SKILL.md). This is advisory and does not authorize project writes, new requirements or protected access. Existing project models and user decisions take precedence. Do not touch unrelated audit, mail, Night Court or FTP lanes.
+- **Native Android feature implementation, platform debugging, or code review:** [Android App Development](skills/android-app-development/SKILL.md). Inspect current project authority, shipping entrypoint and tests.
+- **Architecture or software/product trade-off requiring a consequential choice:** [Engineering Judgment](skills/engineering-judgment/SKILL.md). Skip deep analysis for routine reversible fixes.
+- **Explicit concept mapping, ontology/model completeness, feature frontiers or gap qualification:** [Concept Model Engineering](skills/concept-model-engineering/SKILL.md). Never treat an unrepresented edge as proof of absence.
+- **Generating unresolved questions from observed cues, synthesizing corpus recommendations into procedures, or coordinating several decision methods:** [Mechanised Expertise](skills/mechanised-expertise/SKILL.md). Start with its short routing entrypoint, not its entire research archive.
 
-## Engineering judgment and hidden complexity
-
-For an explicitly requested consequential software/product decision, or when a requested feature hides unknown architecture, identity, data, lifecycle, human-interaction or evidence constraints, start with [Engineering Judgment](skills/engineering-judgment/SKILL.md). Apply its lightweight triage before deeper specialist skill routing; do not impose a long investigation on routine reversible fixes. The skill is advisory and **does not authorize** unrelated project work, privileged operations, secret access or new requirements. Current user direction and host-project source authority remain primary.
-
-
-## Mechanised expertise and skill-corpus transformations
-
-For explicitly requested expert-like inquiry generation, skill-corpus conversion, requirements/UX question discovery, or complex decisions requiring research plus a conceptual-map completeness audit, start with [Mechanised Expertise](skills/mechanised-expertise/SKILL.md). It complements the narrower Engineering Judgment, Concept Model Engineering and Android Development skills; use only the triggered question families and do not impose an ontology or lengthy checklist on reversible routine fixes. Separate published source claims from locally generated inquiry/decision hypotheses, verify consequential claims through independent oracles, and never treat an agent skill as authorization to alter other project repositories, user data, privileged workflows or credentials.
+Research, procedures and proposed decisions are not authorization for unrelated writes. Prefer a single task-matched reference over loading whole catalogs or all four skills. Preserve the difference between plans, executed evidence and confirmed user outcomes.

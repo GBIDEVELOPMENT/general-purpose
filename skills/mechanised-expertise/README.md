@@ -1,29 +1,22 @@
-# Mechanised Expertise Skill v0.1
+# Mechanised Expertise skill
 
-This advisory skill connects existing general-purpose [Engineering Judgment](../engineering-judgment/SKILL.md), [Concept Model Engineering](../concept-model-engineering/SKILL.md) and [Android App Development](../android-app-development/SKILL.md) procedures. It adds dynamic inquiry generation, source-targeted research, knowledge-map audits, conditional choice, independent verification and a structured record format.
+The activated [`SKILL.md`](SKILL.md) is a short decision router. It states when to decline analysis, selects one problem-specific reference, and retains a compact executable inquiry contract. Read **only that entrypoint first**; open a reference, script or source record when a verified cue and consequential unknown require it.
 
-Unlike a universal checklist, question families are activated only by observed risk cues; routine, low-stakes changes should remain lightweight. Original third-party claims and novel heuristic proposals must remain distinguishable. The inquiry-card format is a **tool for complicated cases**, not a required artifact for every feature.
+The deeper research is preserved in `references/`, `assets/`, `examples/`, `scripts/` and `tests/`. Historical entrypoint text before the usability refactor is archived under `references/legacy-entrypoint-v0.7.md` for traceability, not as an alternative authority. The 30 source-derived procedure descriptions are editorial transformations of pinned recommendations, not 30 independently tested improvements.
 
-Run `python -m unittest discover -s skills/mechanised-expertise/tests -v` from repository root, or `python skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/examples/remote-reconnect.json`. The teaching example is intentionally *unverified*: its scenarios are investigation hypotheses, not claims about a particular shipped app.
+## Start-up examples
 
-The companion v0.7 mobile research corpus contains an automatic (unreviewed) first-pass linkage between earlier recommendation IDs and proposed expertise questions. Its mapping is not published evidence of effectiveness.
+[`examples/first-run.md`](examples/first-run.md) shows routine, UX, concept-map and Android-native entry routes. The walkthrough is illustrative, not a completed agent trial.
 
-## Source-backed strength combinations
+## Validation
 
-The [synthesis table](references/source-synthesis.md) links 22 inspected pinned original recommendations to proposed conditional procedures; it does not establish their effectiveness. [Mechanised intuition](references/mechanised-intuition-method.md) defines expert cues, minimal high-value questions, coverage-qualified model gaps, decisions and independent proof. [User needs/prior art](references/user-needs-and-prior-art.md) extends this to UX, including nonusers, native-language feedback, accessibility and error recovery. The [worked list example](examples/transfer-list-discovery.md) is explicitly unverified.
+From the repository root:
 
-The corpus still contains editorial, overlapping and incompletely mined source records; avoid counting generated mappings as corroboration. These references only load when the current task warrants them.
+```bash
+python3 -m unittest discover -s skills/mechanised-expertise/tests -p 'test_*.py' -v
+python3 skills/mechanised-expertise/scripts/audit_compositions.py
+python3 skills/mechanised-expertise/scripts/audit_source_mechanisms.py
+python3 skills/mechanised-expertise/scripts/check_inquiry.py skills/mechanised-expertise/examples/remote-reconnect.json
+```
 
-## Composition operators (v0.3)
-
-The optional [10 conditional multi-source recipes](assets/compositions-v1.json) refer to the 22 pinned author prescriptions in [source-to-expertise-v09.csv](assets/source-to-expertise-v09.csv). Read [the application method](references/composition-operators.md) for activation, counterexamples, research routing, concept-map boundaries, decision reversals and independent proof. These are **new editorial compositions**, not independent source prescriptions or evidence that agents perform better.
-
-Run `python3 skills/mechanised-expertise/scripts/audit_compositions.py` and `python3 -m unittest discover -s skills/mechanised-expertise/tests -v`. Structural checks reject unknown sources, absent exceptions, non-questions, missing oracles and effectiveness overclaims. They cannot substitute for real task trials.
-
-## Procedure chain planning (nonexecuted)
-
-The [procedure chain guide](references/procedure-chains.md) and [compiler](scripts/compile_procedure_chain.py) connect the 22 pinned source-derived mechanisms with explicit input bindings, exclusion gates, and never-promoted pending evidence. The [synthetic remote example](examples/procedure-chain-remote.json) has two dependent stages; the [routine typo example](examples/procedure-chain-typo.json) intentionally has none. These are plans, not proof of app or agent effectiveness.
-
-## Specialist Android procedure expansion
-
-The original 22 pinned source transformations are now supplemented by [eight new primary-source cases](references/source-synthesis-extension.md) in an **append-only** [separate source table](assets/source-to-expertise-v11-additions.csv). The expanded catalog has 30 source-derived procedural mechanisms. Each has a trigger, exclusion, named inputs, ordered executable steps, decision branches, independent oracle and stop rule. A well-formed mechanism remains an untested editorial transformation, and does not overwrite any original corpus record.
+All compiler outputs remain hypothetical until the actual program, device, user or provider observation is verified. Local structural checks do not measure agent effectiveness. Verify that a target agent runtime can discover this SKILL.md under its configured skills root. A source repository containing it is not automatically an installed skill in unrelated projects.
