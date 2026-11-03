@@ -27,11 +27,42 @@ double-click `Configure-RTorrent-Bridge.cmd` to enter the passwords again.
 This overwrites the local profile set after prompting. It never reads GitHub
 Actions secrets automatically.
 
-## Connect to ChatGPT (private, no inbound router port)
+## Connect to ChatGPT (one-click HP launcher, no inbound router port)
 
-The MCP server binds **only** to loopback. Install OpenAI's `tunnel-client` via the official [Secure MCP Tunnel instructions](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels), create a tunnel in the OpenAI Platform, and configure its local HTTP server target as `http://127.0.0.1:8765/mcp`. Launch `tunnel-client run` in a separate process, then in ChatGPT Plugins add a custom MCP server, choose **Tunnel**, select the tunnel ID, review tool descriptions/permissions and save. This requires available tunnel and custom-MCP permissions in the relevant account/workspace. The Windows bridge itself does not create OpenAI resources or obtain Platform API keys. The `tunnel-client` is not bundled: download only from the official OpenAI release.
+**Observed acceptance:** The owner has started the Windows MCP server and verified
+the primary authenticated `system.client_version` response from rTorrent 0.9.8.
+That proves the PC and Seedhost path, but **a ChatGPT tunnel has not yet been
+enrolled, tested or installed as a plugin**.
 
-A stdio transport is also provided via `RTorrentBridge.exe stdio` for compatible local MCP clients. The TCP server and stdio mode share identical server-side tools.
+1. In your browser, open the official [OpenAI Platform Tunnels page](https://platform.openai.com/settings/organization/tunnels). Create a tunnel associated with the **ChatGPT workspace** where you will install the plugin. Save the full `tunnel_id`. The creator needs Tunnels Read + Manage; the runtime account and plugin operator need Tunnels Read + Use.
+2. Create a **runtime API key**, not an admin key, at [Platform API keys](https://platform.openai.com/settings/organization/api-keys) with permission to use that tunnel. Do not enter this key in ChatGPT, GitHub, URLs or command-line arguments.
+3. Download the newest successful `rtorrent-bridge-windows` artifact from [rTorrent Bridge Windows Actions](https://github.com/GBIDEVELOPMENT/general-purpose/actions/workflows/rtorrent-bridge-windows.yml). Extract `rtorrent-bridge-windows.zip` inside it to one directory. Double-click **`Connect-ChatGPT-RTorrent.cmd`** from the extracted directory. The script preserves existing rTorrent credentials, starts the local bridge if needed, asks once for your tunnel ID and hidden runtime key, and stores the key via current-user Windows DPAPI under `%LOCALAPPDATA%\RTorrentBridge\tunnel-key.dpapi.txt`.
+4. The launcher downloads **only the official OpenAI** `tunnel-client` Windows x64 release from `github.com/openai/tunnel-client`, checks the GitHub release's SHA-256 digest, and keeps its executable under `%LOCALAPPDATA%\RTorrentBridge\bin`. It then checks `doctor --explain` and starts outbound tunnel polling. No inbound router port, Cloudflare account, or Python installation is needed. Keep this console open; diagnostic UI: `http://127.0.0.1:8877/ui`.
+5. On **ChatGPT web → Plugins → + → Add custom MCP server**, name it **HP rTorrent**, choose **Tunnel**, select or paste the same `tunnel_id`, configure the server authentication according to the UI (the bridge itself has no separate MCP OAuth login), acknowledge the risk warning, and create the plugin. Review its nine discovered tools before enabling writes. The connection only counts as accepted when a live `servers` tool invocation from ChatGPT succeeds.
+6. For later launches, double-click **`Connect-ChatGPT-RTorrent.cmd`** again. Existing tunnel enrollment and current-user encrypted runtime key are reused. To change the tunnel ID or runtime key, use **`Configure-ChatGPT-Tunnel.cmd`**. It only clears local tunnel pairing and never deletes your rTorrent passwords or remote Platform tunnel.
+
+**Security boundary:** The local MCP listener uses `127.0.0.1:8765` and has
+no built-in per-request authentication. Other software running under the same
+Windows host can reach it, so use a trusted PC account. Remote access depends on
+the scoped OpenAI tunnel and the ChatGPT plugin's own permissions. The runtime
+API key is never committed, put in a GitHub Actions secret, embedded in the EXE,
+or passed through command-line arguments. The PowerShell launcher decrypts the
+key only for its child process environment; stop the tunnel to revoke the local
+active session. For full revocation, revoke the runtime key in Platform and remove
+the ChatGPT plugin.
+
+**Troubleshooting:** If the secure tunnel has no access to the ChatGPT workspace,
+the plugin creation UI may not list the tunnel. Verify its workspace association
+and Tunnels Read + Use permissions. If `doctor` fails, correct the tunnel/permissions
+or runtime key and use `Configure-ChatGPT-Tunnel.cmd` to enter them again. A
+successful offline GitHub Actions run proves packaging and syntax, **not** your
+Platform permissions or ChatGPT installation. Official documentation:
+[Secure MCP Tunnel](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels),
+[OpenAI tunnel-client](https://github.com/openai/tunnel-client),
+[Adding a custom MCP server](https://developers.openai.com/api/docs/guides/custom-mcp-server).
+
+A stdio transport is also provided via `RTorrentBridge.exe stdio` for local
+MCP clients. The TCP server and stdio mode share identical tools.
 
 ## Tools
 
