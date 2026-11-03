@@ -2,7 +2,7 @@
 name: concept-model-engineering
 description: Construct, populate, audit, extend and explore evidence-backed conceptual models, ontologies, knowledge graphs, user journeys and feature maps. Use when synthesizing messy sources, designing workflows, discovering unmet needs, assessing completeness or evaluating supposedly novel gaps. Separates failures of knowledge acquisition from genuine research frontiers before proposing requirements.
 metadata:
-  version: "0.1.2"
+  version: "0.2.0"
   origin: "Chunks human graph, AYA understanding framework, Glimpse UX coverage, Expository operation states, UR-Recomp research frontier"
 ---
 
@@ -16,6 +16,8 @@ Invoke for meaningful product discovery, research synthesis, ontology or require
 
 ### Seven-pass procedure
 
+These passes belong to **this independent skill**. Apply the [bounded mechanical operations M1–M7](references/mechanical-model-operations.md) when source acquisition, relation extraction, gap auditing, or model use needs executable steps; do not activate Mechanised Expertise as a prerequisite.
+
 1. **Frame the decision.** Name the *focus question* and the decisions the model must support. Define the domain, product/version, users, temporal scope, excluded regions and three to six *competency questions* the model must answer. Reuse established project concepts; don't invent a parallel ledger.
 2. **Recover primary evidence.** Enumerate versioned source classes: original user comments/praise/complaints in their actual languages and contexts, counterexamples/nonusers, competing products, source code, standards, tests, owner decisions and already-existing project models. Keep evidence types independent; count duplicated reports only once. Record what was actually searched and what was inaccessible.
 3. **Build the model.** Normalize synonyms and equivalent IDs before inferring absence. Separate concept/classes from instances, roles, attributes, actions and outcomes. Each consequential directed edge forms a meaningful proposition with a specific verb. Encode source, scope, time, uncertainty and truth kind. Cross-link disparate branches and record disagreements instead of averaging them away.
@@ -24,9 +26,11 @@ Invoke for meaningful product discovery, research synthesis, ontology or require
 6. **Challenge apparent novelty.** Search explicitly for implementations, synonyms, predecessors, non-obvious integrations and counterexamples in original-language terms; query relevant primary manuals/code, alternative software and dates. State novelty precisely: new to *this inventory*, new to *this version*, new composition of known primitives, or externally unconfirmed. An unexpected result can be valuable even if somebody else already implements it. A frontier designation is conditional and revisable.
 7. **Return a bounded handoff.** Deliver the *smallest useful map delta*, qualified blanks, source and unanswered-question links, next investigation with expected information gain, and exact effects on the parent workflow. Never convert analytical hypotheses into normative product requirements, test claims or authorized work without applicable project authority.
 
-For a consequential choice about whether to investigate, model, build, reuse or stop, first apply [Engineering Judgment](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/engineering-judgment/SKILL.md) to pick a proportional method. Ordinary ontology maintenance can proceed directly.
+Concept modelling is independently valuable for ontology maintenance, synthesis, inventory, and research even without a downstream engineering decision. If a distinct consequential architecture/product trade-off emerges, optionally load [Engineering Judgment](../engineering-judgment/SKILL.md) for that specific choice; do not require a second skill merely to map and audit concepts.
 
 ## Load task-specific guidance
+
+- [Mechanical model operations M1–M7](references/mechanical-model-operations.md) and [optional coverage audit](scripts/audit_coverage.py) for explicit construction, extraction, reverse-traversal, gap qualification and source-challenge steps. Output is a list of review candidates, not verified novelty.
 
 - [Question selection and user-needs investigation](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/mechanised-expertise/references/mechanised-intuition-method.md) when a concept map feeds a substantive product/engineering decision: first ask which unanswered relationship can actually change the decision, not how to maximize map size.
 - [Frontier qualification and anti-false-novelty tests](references/frontier-qualification.md)

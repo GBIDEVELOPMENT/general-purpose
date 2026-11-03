@@ -69,6 +69,8 @@ ownership.
 
 These portable skills do not override user authority, a host project's AGENTS.md, security requirements, current source, or observed test evidence. Installing or editing this central repository does not install skills into Chunks, Glimpse, Expository or any other repository. Do not touch unrelated audit, Shaw mail, FTP, Night Court or privileged workflows while maintaining skills.
 
+The capability map in [Skills Architecture](skills/CAPABILITY-ARCHITECTURE.md) separates domain reference, operational execution, mechanised inquiry, conceptual representation and verification. None is a universal prerequisite.
+
 Choose the **single primary skill** from the actual task; open a second one only when the first reveals a specific consequential dependency:
 
 - **Native Android feature implementation, platform debugging, or code review:** [Android App Development](skills/android-app-development/SKILL.md). Inspect current project authority, shipping entrypoint and tests.
