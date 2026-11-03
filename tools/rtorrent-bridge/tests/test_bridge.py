@@ -75,6 +75,39 @@ class TestBridge(unittest.TestCase):
         with self.assertRaises(b.BridgeError): b.magnet_hash('https://example.com')
         with self.assertRaises(b.BridgeError): b.magnet_hash('magnet:?xt=urn:btmh:somehash')
 
+    def test_dpapi_roundtrip_on_windows(self):
+        import os
+        if os.name != "nt":
+            self.skipTest("Windows DPAPI requires a Windows runner")
+        for password in ("plain-ascii", "accent-é-漢字-🔐"):
+            encoded = password.encode("utf-8")
+            protected = b._win_dpapi(encoded)
+            self.assertNotEqual(encoded, protected)
+            self.assertEqual(b._win_dpapi(protected, decrypt=True), encoded)
+
+    def test_corrupt_saved_password_is_recoverable(self):
+        import base64
+        profile = {
+            "id": "primary", "url": b.DEFAULTS[0][1],
+            "username": "ianseeds",
+            "password_dpapi": base64.b64encode(b"fake-encrypted-data").decode("ascii")
+        }
+        with patch.object(b, "_win_dpapi", return_value=b"\\x9dinvalid-utf8"):
+            with self.assertRaisesRegex(b.BridgeError, "Configure-RTorrent-Bridge.cmd"):
+                b.RPC(profile)
+
+    def test_rpc_unprotects_saved_password_not_reencrypts(self):
+        import base64
+        profile = {
+            "id": "primary", "url": b.DEFAULTS[0][1],
+            "username": "ianseeds",
+            "password_dpapi": base64.b64encode(b"encrypted").decode("ascii")
+        }
+        with patch.object(b, "_win_dpapi", return_value=b"test-password") as dpapi:
+            rpc = b.RPC(profile)
+        self.assertEqual(rpc.password, "test-password")
+        dpapi.assert_called_once_with(b"encrypted", decrypt=True)
+
     def test_no_redirect(self):
         with self.assertRaises(b.BridgeError):
             b.NoRedirect().redirect_request(None, None, 302, 'redirect', {}, 'https://evil.example/')
