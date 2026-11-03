@@ -27,6 +27,19 @@ jobs:
         run: |
           python -m compileall -q tools/rtorrent-bridge
           python -m unittest discover -s tools/rtorrent-bridge/tests -v
+      - name: Validate ChatGPT tunnel PowerShell launcher
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          $path = (Resolve-Path 'tools/rtorrent-bridge/Start-ChatGPT-RTorrent.ps1').Path
+          [System.Management.Automation.Language.Parser]::ParseFile($path, [ref]$tokens, [ref]$errors) | Out-Null
+          if ($errors.Count -gt 0) {
+            $errors | ForEach-Object { Write-Error $_.ToString() }
+            exit 1
+          }
+          if (-not (Test-Path 'tools/rtorrent-bridge/Connect-ChatGPT-RTorrent.cmd')) { exit 1 }
+          if (-not (Test-Path 'tools/rtorrent-bridge/Configure-ChatGPT-Tunnel.cmd')) { exit 1 }
       - name: Build Windows exe
         shell: pwsh
         run: |
@@ -34,6 +47,7 @@ jobs:
           New-Item -ItemType Directory -Path bundle -Force | Out-Null
           Copy-Item dist/RTorrentBridge.exe bundle/
           Copy-Item tools/rtorrent-bridge/*.cmd bundle/
+          Copy-Item tools/rtorrent-bridge/*.ps1 bundle/
           Copy-Item tools/rtorrent-bridge/README.md bundle/
           Compress-Archive -Path bundle/* -DestinationPath rtorrent-bridge-windows.zip -Force
       - name: Executable smoke test (no real connections)
