@@ -30,4 +30,5 @@ jobs:
       - run: python3 skills/concept-model-engineering/scripts/check_model.py skills/concept-model-engineering/examples/cross-system-journey.json
       - run: python3 -m unittest discover -s skills/concept-model-engineering/tests -v
       - run: python3 skills/concept-model-engineering/scripts/audit_coverage.py skills/concept-model-engineering/examples/cross-system-journey.json
+      - run: python3 skills/concept-model-engineering/scripts/audit_ingestion.py skills/concept-model-engineering/examples/multilingual-ingestion.json
       - run: python3 -m py_compile skills/concept-model-engineering/scripts/*.py
