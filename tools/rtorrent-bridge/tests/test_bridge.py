@@ -92,7 +92,7 @@ class TestBridge(unittest.TestCase):
             "username": "ianseeds",
             "password_dpapi": base64.b64encode(b"fake-encrypted-data").decode("ascii")
         }
-        with patch.object(b, "_win_dpapi", return_value=b"\\x9dinvalid-utf8"):
+        with patch.object(b, "_win_dpapi", return_value=bytes([0x9d]) + b"invalid-utf8"):
             with self.assertRaisesRegex(b.BridgeError, "Configure-RTorrent-Bridge.cmd"):
                 b.RPC(profile)
 
