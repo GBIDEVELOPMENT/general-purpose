@@ -123,7 +123,17 @@ class RPC:
     def __init__(self, profile: dict):
         self.url = validate_url(profile["url"])
         self.user = profile["username"]
-        self.password = _win_dpapi(base64.b64decode(profile["password_dpapi"])).decode()
+        try:
+            encrypted = base64.b64decode(profile["password_dpapi"], validate=True)
+            if not encrypted:
+                raise ValueError("empty credential")
+            password_bytes = _win_dpapi(encrypted, decrypt=True)
+            self.password = password_bytes.decode("utf-8")
+        except (UnicodeDecodeError, ValueError, KeyError, TypeError, base64.binascii.Error):
+            raise BridgeError(
+                "The saved password for this rTorrent instance cannot be read. "
+                "Double-click Configure-RTorrent-Bridge.cmd to save credentials again."
+            ) from None
         mgr = HTTPPasswordMgrWithDefaultRealm()
         mgr.add_password(None, self.url, self.user, self.password)
         self.opener = build_opener(HTTPSHandler(), HTTPDigestAuthHandler(mgr),
