@@ -74,6 +74,9 @@ python rtorrent_cli.py servers
 python rtorrent_cli.py inventory_extremes --server primary
 python rtorrent_cli.py inventory_report --server primary --target-ratio 1 --limit 10
 python rtorrent_cli.py compare_servers --limit 10
+python rtorrent_cli.py query_torrents --server primary --sort-by size --descending --limit 10
+python rtorrent_cli.py query_torrents --server primary --no-complete --limit 20
+python rtorrent_cli.py torrent_health --server primary --infohash 0123456789ABCDEF0123456789ABCDEF01234567
 python rtorrent_cli.py list_torrents --server primary --limit 100
 python rtorrent_cli.py list_torrents --server primary --query "Slow Horses"
 ```
@@ -106,6 +109,24 @@ infohashes among the **configured** servers, reports unavailable instances, and
 never silently represents partial inventory as complete. Both tools are bounded
 by `limit` (1–100); counts remain totals even when sample lists are truncated.
 All features are read-only and use the same authenticated HTTPS XML-RPC paths.
+
+## Filtering, pagination, and transfer diagnostics
+
+`query_torrents` provides stable, server-side paging and sorting by name, size,
+ratio, total downloaded/uploaded, recorded start, finish, or current speeds.
+Optional name, completion, activity and minimum-ratio filters are applied
+before paging. Unknown date fields sort last in both directions. Matching counts,
+next offset and the page size are returned so callers do not silently miss results.
+All queries take a fresh live snapshot, so results can shift between requests;
+this is not a frozen transactional inventory.
+
+`torrent_health` looks up an exact infohash and returns read-only progress, peers
+connected, unresolved peer count, remaining bytes, hashing state, number of
+tracker entries and connection mode. It uses a bounded, single batched read for
+peer metrics, never returns tracker URLs or peer IPs, and distinguishes
+instantaneous observations from a diagnosis. Three tracker entries, for example,
+do not establish tracker reachability; zero connected peers at one instant does
+not establish that a swarm is permanently dead. No repair action is performed.
 
 ## Anticipated natural-language requests
 
