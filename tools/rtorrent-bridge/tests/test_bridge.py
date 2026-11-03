@@ -14,7 +14,7 @@ class DummyRPC:
     def call(self, method, *args):
         self.commands.append((method, args))
         if method == 'd.multicall2':
-            return [["A" * 40, "Show S01E01", 100, 75, 125, 10, 20, 1250, 0, 0, 0]]
+            return [["A" * 40, "Show S01E01", 100, 75, 125, 10, 20, 1250, 0, 0, 0, 1749062159, 1749062300, 0]]
         if method == 'd.hash':
             if not self.present: raise b.BridgeError('Missing')
             return "A" * 40
@@ -43,7 +43,9 @@ class TestBridge(unittest.TestCase):
         with self.assertRaises(b.BridgeError): b.clean_hash('../../etc')
         rpc = DummyRPC()
         self.assertEqual(b.snapshot(rpc)[0]['ratio'], 1.25)
-        rpc.call = lambda name, *args: [["A" * 40] + [0] * 10] * 2
+        self.assertEqual(b.snapshot(rpc)[0]['first_started_at'], 1749062159)
+        self.assertIsNone(b.snapshot(rpc)[0]['torrent_created_at'])
+        rpc.call = lambda name, *args: [["A" * 40] + [0] * 13] * 2
         with self.assertRaises(b.BridgeError): b.snapshot(rpc)
 
     def test_remove_checks_exact_name_before_rpc(self):

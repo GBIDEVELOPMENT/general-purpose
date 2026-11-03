@@ -188,7 +188,8 @@ def read_exact(rpc: RPC, h: str) -> dict:
 
 FIELDS = ("d.hash=", "d.name=", "d.size_bytes=", "d.completed_bytes=",
           "d.up.total=", "d.down.rate=", "d.up.rate=", "d.ratio=",
-          "d.state=", "d.is_active=", "d.complete=")
+          "d.state=", "d.is_active=", "d.complete=",
+          "d.timestamp.started=", "d.timestamp.finished=", "d.creation_date=")
 
 
 def snapshot(rpc: RPC) -> list[dict]:
@@ -208,7 +209,10 @@ def snapshot(rpc: RPC) -> list[dict]:
                        "downloaded_bytes": int(row[3]), "uploaded_bytes": int(row[4]),
                        "down_bytes_per_sec": int(row[5]), "up_bytes_per_sec": int(row[6]),
                        "ratio": int(row[7]) / 1000, "started": bool(row[8]),
-                       "active": bool(row[9]), "complete": bool(row[10])})
+                       "active": bool(row[9]), "complete": bool(row[10]),
+                       "first_started_at": int(row[11]) or None,
+                       "finished_at": int(row[12]) or None,
+                       "torrent_created_at": int(row[13]) or None})
     return result
 
 
@@ -327,6 +331,23 @@ def create_mcp():
         matches = [row for row in rows if query.casefold() in row["name"].casefold()]
         return {"server": server, "matching": len(matches), "total": len(rows),
                 "torrents": matches[:limit], "truncated": len(matches) > limit}
+
+    @mcp.tool()
+    def inventory_extremes(server: str) -> dict:
+        """Find smallest/largest and oldest recorded start across the full inventory.
+
+        Start timestamps are NOT addition dates; unknown (zero) timestamps are excluded.
+        """
+        rows = snapshot(_call(server, "extremes"))
+        if not rows:
+            return {"server": server, "total": 0}
+        started = [r for r in rows if r["first_started_at"] is not None]
+        return {"server": server, "total": len(rows),
+                "smallest": min(rows, key=lambda r: r["size_bytes"]),
+                "largest": max(rows, key=lambda r: r["size_bytes"]),
+                "oldest_recorded_start": min(started, key=lambda r: r["first_started_at"]) if started else None,
+                "unknown_start_count": len(rows) - len(started),
+                "note": "first_started_at is a Unix UTC timestamp, not the date added to rTorrent"}
 
     @mcp.tool()
     def torrent_details(server: str, infohash: str) -> dict:

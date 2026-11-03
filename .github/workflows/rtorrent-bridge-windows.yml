@@ -48,6 +48,7 @@ jobs:
           Copy-Item dist/RTorrentBridge.exe bundle/
           Copy-Item tools/rtorrent-bridge/*.cmd bundle/
           Copy-Item tools/rtorrent-bridge/*.ps1 bundle/
+          Copy-Item tools/rtorrent-bridge/rtorrent_cli.py bundle/
           Copy-Item tools/rtorrent-bridge/README.md bundle/
           Compress-Archive -Path bundle/* -DestinationPath rtorrent-bridge-windows.zip -Force
       - name: Executable smoke test (no real connections)

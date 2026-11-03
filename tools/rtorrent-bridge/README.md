@@ -64,6 +64,50 @@ Platform permissions or ChatGPT installation. Official documentation:
 A stdio transport is also provided via `RTorrentBridge.exe stdio` for local
 MCP clients. The TCP server and stdio mode share identical tools.
 
+## Desktop Commander, no Platform API billing
+
+The local-only `rtorrent_cli.py` uses Python's standard library to talk to the already-running
+`http://127.0.0.1:8765/mcp`. From an authorized Desktop Commander session, run:
+
+```powershell
+python rtorrent_cli.py servers
+python rtorrent_cli.py inventory_extremes --server primary
+python rtorrent_cli.py list_torrents --server primary --limit 100
+python rtorrent_cli.py list_torrents --server primary --query "Slow Horses"
+```
+
+Mutations require explicit user approval plus the CLI `--confirm` flag. The CLI does not
+open a public port, persist new credentials or require an OpenAI Platform API key.
+The local bridge process must be running. This is an alternate transport, not a
+separately installed ChatGPT MCP plugin.
+
+## Historical fields and their meaning
+
+Inventory rows include `first_started_at`, `finished_at`, and `torrent_created_at` as
+Unix UTC seconds (null for unknown/zero). `first_started_at` is rTorrent's recorded
+start timestamp, **not** proof of when a transfer was added. `torrent_created_at`
+refers to torrent metadata, not the date it entered this seedbox. `inventory_extremes`
+returns the smallest, largest and earliest recorded start, and counts unknown starts.
+These methods were verified against the owner's rTorrent 0.9.8 instance; future
+compatibility with other versions must be qualified before deployment.
+
+## Anticipated natural-language requests
+
+- Find transfers by title, exact hash, size, ratio, completion, start time and activity.
+- Explain stalled downloads, missing magnet metadata, zero-byte placeholders and
+  unexpectedly high upload ratios without treating guesses as diagnoses.
+- Compare inventories across configured environments, detect duplicate infohashes,
+  and report capacity or storage pressure without assuming identical mount paths.
+- Suggest candidates for stopping or removal using age, ratio and retention policy;
+  present a preview and exact identities before any mutation.
+- Batch start/stop, per-file priorities, per-torrent speed limits, destination choice,
+  file deletion, and transfer migration are **not yet implemented**. Each needs
+  explicit scope, preflight, readback, audit and ambiguity-safe retry semantics.
+- True date-added, per-tracker rules, free-space metrics, historical rate trends and
+  seed-time statistics need separately validated data sources; do not fabricate them.
+- Keep credentials DPAPI-local, redact URLs/tokens, restrict RPC to allowlisted
+  operations, and never expose an arbitrary RPC or shell tool through the bridge.
+
 ## Tools
 
 `servers`, `server_status`, `list_torrents`, `torrent_details`, `torrent_files`, `start_torrent`, `stop_torrent`, `remove_torrent` and `add_stopped_magnet`.
