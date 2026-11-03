@@ -1,7 +1,7 @@
 # Evaluation plan: do mechanised expertise and conceptual mapping improve engineering decisions?
 
 **Status:** DORMANT / DESIGN ONLY — 2026-11-03.  
-**Authority:** This document is a proposal for a future controlled study. It authorizes **no agent runs, scheduled tasks, CI/workflow changes, skill edits, costs, external service operations, source mutations, or experiments**. The director has explicitly said there is **no current capacity for scheduling additional agents**. Do not infer approval from the existence of this plan, its appearance in the \`skills/\` directory, or references to prospective run counts. A new explicit instruction and resource authorization are required before any implementation or execution.
+**Authority:** This document is a proposal for a future controlled study. It authorizes **no agent runs, scheduled tasks, CI/workflow changes, skill edits, costs, external service operations, source mutations, or experiments**. The director has explicitly said there is **no current capacity for scheduling additional agents**. Do not infer approval from the existence of this plan, its appearance in the `skills/` directory, or references to prospective run counts. A new explicit instruction and resource authorization are required before any implementation or execution.
 
 **Purpose:** determine whether the *existing* Mechanised Expertise and Concept Model Engineering skills improve decisions on consequential engineering and validation tasks, including whether agents correctly choose to test more, less, differently, batch, reuse evidence, challenge an implementation premise, or do nothing. Measure the cost and failure modes of using those skills, not merely their rhetorical plausibility.
 
@@ -93,7 +93,7 @@ For each trial, record whether the skill was actually discovered, loaded, and ap
 
 A case record is a reproducible package, not an unstructured anecdote. Each must contain:
 
-\`\`\`yaml
+```yaml
 case_id: "..."
 source_repository: "owner/repo"
 decision_cutoff_utc: "..."
@@ -125,7 +125,7 @@ grading:
   uncertainty: "..."
 holdout_group: "familiar | historical unseen | transformed analogue | newly authored"
 related_case_cluster: "same root incident; avoid pseudo-replication"
-\`\`\`
+```
 
 **Temporal discipline:** Reference only branches/docs/logs that actually existed at the cutoff. Git history, commit messages, filenames, task wrappers, and tool-result URLs can leak later corrections. When a public service cannot serve an old-time snapshot consistently, use a sealed local data snapshot or remove the case from causal claims. Host-created test wrappers and synthetic errors must be flagged, not misrepresented as historical artifacts.
 
@@ -255,7 +255,7 @@ A single **deterministic coordinator** should eventually own run orchestration, 
 
 ### Future deliverables if explicitly commissioned
 
-\`\`\`
+```
 evaluation/
   README.md                  # invocation and scope
   protocol.md                # preregistered design/constraints
@@ -264,7 +264,7 @@ evaluation/
   harness/                   # deterministic launcher/observer/evaluator
   results/                   # machine-readable receipts, provenance
   reports/                   # independent outcomes, limitations, comparisons
-\`\`\`
+```
 
 This is illustrative future organization; **do not create these paths now**. The real location should be selected based on the repository's structure and isolation/security requirements at implementation time.
 
