@@ -13,4 +13,6 @@ This is a **research/procedure skill**, not a new feature request in Chunks or a
 Run `python3 scripts/check_model.py examples/cross-system-journey.json` and `python3 -m unittest discover -s tests -v` from the skill directory.
 
 
-Mechanical construction and audit: [M1–M7 operations](references/mechanical-model-operations.md). From repository root use `python3 skills/concept-model-engineering/scripts/audit_coverage.py skills/concept-model-engineering/examples/cross-system-journey.json`; this emits structural review candidates, not claims of novelty or missing features.
+Mechanical construction and audit: [M1–M7 operations](references/mechanical-model-operations.md). For M2–M3 across multilingual or repeated sources, use the [source ingestion and identity protocol](references/source-ingestion-reconciliation.md). From repository root use `python3 skills/concept-model-engineering/scripts/audit_coverage.py skills/concept-model-engineering/examples/cross-system-journey.json`; this emits structural review candidates, not claims of novelty or missing features.
+
+Optional source staging review (also from repository root): `python3 skills/concept-model-engineering/scripts/audit_ingestion.py skills/concept-model-engineering/examples/multilingual-ingestion.json`. It flags declared lineage duplication, potentially identical labels, homonyms, contradictory statements and missing source classes, without merging identities or proving source accuracy.
