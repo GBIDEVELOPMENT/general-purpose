@@ -8,7 +8,7 @@ import urllib.request
 import urllib.error
 
 URL = "http://127.0.0.1:8765/mcp"
-READ_ONLY = {"servers", "server_status", "list_torrents", "inventory_extremes", "torrent_details", "torrent_files"}
+READ_ONLY = {"servers", "server_status", "list_torrents", "inventory_extremes", "inventory_report", "compare_servers", "torrent_details", "torrent_files"}
 WRITES = {"start_torrent", "stop_torrent", "remove_torrent", "add_stopped_magnet"}
 TOOLS = READ_ONLY | WRITES
 
@@ -71,6 +71,7 @@ def main():
     p.add_argument("--server", default="primary", help="Exact configured server ID")
     p.add_argument("--limit", type=int, default=None)
     p.add_argument("--query", default=None)
+    p.add_argument("--target-ratio", type=float, default=None)
     p.add_argument("--infohash", default=None)
     p.add_argument("--expected-name", default=None)
     p.add_argument("--magnet", default=None)
@@ -90,6 +91,7 @@ def main():
     schema = available[args.tool].get("inputSchema", {})
     properties = schema.get("properties", {})
     supplied = {"server": args.server, "limit": args.limit, "query": args.query,
+                "target_ratio": args.target_ratio,
                 "infohash": args.infohash, "confirm_name": args.expected_name,
                 "magnet_uri": args.magnet}
     params = {k: v for k, v in supplied.items() if k in properties and v is not None}

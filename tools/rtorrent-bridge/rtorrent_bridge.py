@@ -350,6 +350,38 @@ def create_mcp():
                 "note": "first_started_at is a Unix UTC timestamp, not the date added to rTorrent"}
 
     @mcp.tool()
+    def inventory_report(server: str, target_ratio: float = 1.0, limit: int = 20) -> dict:
+        """Analyze storage, incomplete/zero-rate transfers and ratio-based retention candidates.
+
+        Read-only. No free-space estimate or claim of verified tracker compliance.
+        """
+        from inventory_analysis import analyze
+        if not 0 <= target_ratio <= 100000 or not 1 <= limit <= 100:
+            raise BridgeError("Invalid ratio or limit")
+        return analyze(snapshot(_call(server, "report")), server,
+                       target_ratio=target_ratio, limit=limit)
+
+    @mcp.tool()
+    def compare_servers(limit: int = 20) -> dict:
+        """Read-only exact-infohash duplicate comparison across configured seedboxes.
+
+        Reports inaccessible servers separately; never conflates partial data with complete coverage.
+        """
+        from inventory_analysis import compare
+        if not 1 <= limit <= 100:
+            raise BridgeError("limit must be from 1 to 100")
+        config = load_config()
+        inventories = {}
+        errors = {}
+        for profile in config["profiles"]:
+            server_id = profile["id"]
+            try:
+                inventories[server_id] = snapshot(rpc_for(config, server_id))
+            except BridgeError as exc:
+                errors[server_id] = str(exc)
+        return compare(inventories, errors, limit=limit)
+
+    @mcp.tool()
     def torrent_details(server: str, infohash: str) -> dict:
         """Read a torrent's exact hash, name, completion and running state."""
         return read_exact(_call(server, "details"), infohash)

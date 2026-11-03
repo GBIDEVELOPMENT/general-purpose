@@ -72,6 +72,8 @@ The local-only `rtorrent_cli.py` uses Python's standard library to talk to the a
 ```powershell
 python rtorrent_cli.py servers
 python rtorrent_cli.py inventory_extremes --server primary
+python rtorrent_cli.py inventory_report --server primary --target-ratio 1 --limit 10
+python rtorrent_cli.py compare_servers --limit 10
 python rtorrent_cli.py list_torrents --server primary --limit 100
 python rtorrent_cli.py list_torrents --server primary --query "Slow Horses"
 ```
@@ -90,6 +92,20 @@ refers to torrent metadata, not the date it entered this seedbox. `inventory_ext
 returns the smallest, largest and earliest recorded start, and counts unknown starts.
 These methods were verified against the owner's rTorrent 0.9.8 instance; future
 compatibility with other versions must be qualified before deployment.
+
+## Read-only inventory diagnostics
+
+`inventory_report` summarizes completed and incomplete torrents, logical payload size,
+instantaneous transfer rates, inactive entries, incomplete entries with zero current
+speed, missing-metadata placeholders, and ratios below a caller-supplied target.
+It ranks complete transfers at or above that target for **human retention review**
+without taking action. These are not automatically safe deletion candidates: the
+report does not know tracker-specific obligations, free disk space, file overlap,
+or whether the payload still exists on disk. `compare_servers` checks exact matching
+infohashes among the **configured** servers, reports unavailable instances, and
+never silently represents partial inventory as complete. Both tools are bounded
+by `limit` (1–100); counts remain totals even when sample lists are truncated.
+All features are read-only and use the same authenticated HTTPS XML-RPC paths.
 
 ## Anticipated natural-language requests
 
