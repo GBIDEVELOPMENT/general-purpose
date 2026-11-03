@@ -55,6 +55,16 @@ class ProcedureLookupTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'schema'):
                 mod.read_catalog(path)
 
+    def test_entrypoint_uses_repository_root_command(self):
+        skill = SCRIPT.parents[1] / 'SKILL.md'
+        if not skill.is_file():
+            self.skipTest('Requires complete skill checkout')
+        instructions = skill.read_text(encoding='utf-8')
+        documented = 'python3 skills/mechanised-expertise/scripts/procedure_lookup.py --id PROC-005'
+        self.assertIn(documented, instructions)
+        root = SCRIPT.parents[3]
+        self.assertTrue((root / 'skills/mechanised-expertise/scripts/procedure_lookup.py').is_file())
+
     def test_full_checkout_catalog_and_compactness(self):
         catalog=SCRIPT.parents[1]/'assets/source-mechanisms-v1.json'
         if not catalog.is_file():
