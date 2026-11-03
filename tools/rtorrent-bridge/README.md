@@ -64,6 +64,23 @@ Platform permissions or ChatGPT installation. Official documentation:
 A stdio transport is also provided via `RTorrentBridge.exe stdio` for local
 MCP clients. The TCP server and stdio mode share identical tools.
 
+## Adding your other rTorrent servers without resetting primary
+
+When only the primary seedbox is configured, **double-click**
+`Add-RTorrent-Servers.cmd` locally on the Windows PC. The interactive `setup --extend`
+command skips existing server IDs without asking for their credentials, prompts
+only for missing servers, and accepts blank passwords to skip any you are not
+ready to add. Passwords are entered directly in the Windows console (never in
+ChatGPT or GitHub), encrypted with user-bound DPAPI, then saved by atomic
+replacement. Before replacement, it backs up the previous config as
+`%LOCALAPPDATA%\RTorrentBridge\profiles.bak`. It preserves the existing
+write policy, existing encrypted credential blobs and other configuration keys.
+If no new passwords are provided, no files change. Do not use `setup --reset`
+merely to enroll a second or third instance, because reset replaces the entire
+configuration. The running bridge re-reads the config per request, so it does
+not need restarting after successful enrollment. Use `Check-RTorrent-Bridge.cmd`
+to verify all configured instances locally.
+
 ## Desktop Commander, no Platform API billing
 
 The local-only `rtorrent_cli.py` uses Python's standard library to talk to the already-running

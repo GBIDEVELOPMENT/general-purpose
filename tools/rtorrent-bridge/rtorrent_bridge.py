@@ -10,6 +10,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 import sys
 from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qs, urlsplit
@@ -66,16 +67,28 @@ def validate_url(url: str) -> str:
     return url
 
 
-def setup(force: bool = False) -> None:
-    if CONFIG_FILE.exists() and not force:
-        print("Saved configuration exists. Use 'setup --reset' to replace it.")
-        return
+def setup(force: bool = False, extend: bool = False) -> None:
+    if force and extend:
+        raise BridgeError("Choose either --reset or --extend, not both")
+    existing = None
+    if CONFIG_FILE.exists():
+        if extend:
+            existing = load_config()
+        elif not force:
+            print("Saved configuration exists. Use 'setup --extend' to add missing servers, or --reset to replace it.")
+            return
+    elif extend:
+        raise BridgeError("No saved configuration to extend. Use setup first")
     if os.name != "nt":
         raise BridgeError("Interactive setup is intended for the Windows PC")
     print("rTorrent Bridge setup. Passwords remain encrypted for this Windows account.")
-    print("Enter a blank password to skip any instance. The primary can be configured alone.")
-    profiles = []
+    print("Enter a blank password to skip any instance.")
+    profiles = list(existing["profiles"]) if existing else []
+    original_ids = {p["id"] for p in profiles}
     for ident, endpoint in DEFAULTS:
+        if ident in original_ids:
+            print(f"{ident}: already configured; preserving existing credentials")
+            continue
         print(f"\n{ident}: {endpoint}")
         username = input("Username [ianseeds]: ").strip() or "ianseeds"
         password = getpass.getpass("Password (blank to skip): ")
@@ -85,15 +98,20 @@ def setup(force: bool = False) -> None:
                          "username": username,
                          "password_dpapi": base64.b64encode(_win_dpapi(password.encode())).decode()})
         del password
+    if len(profiles) == len(original_ids) and existing:
+        print("No new profiles entered; existing configuration unchanged.")
+        return
     if not profiles:
         raise BridgeError("Nothing saved: configure at least one profile")
-    yes = input("Enable start/stop/add/remove tools? [y/N]: ").strip().lower() == "y"
+    allow_writes = existing.get("allow_writes", False) if existing else (input("Enable start/stop/add/remove tools? [y/N]: ").strip().lower() == "y")
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
     temp = CONFIG_FILE.with_suffix(".tmp")
-    temp.write_text(json.dumps({"version": 1, "allow_writes": yes, "profiles": profiles},
-                               indent=2) + "\n", encoding="utf-8")
+    payload = {**(existing or {}), "version": 1, "allow_writes": allow_writes, "profiles": profiles}
+    temp.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    if existing:
+        shutil.copy2(CONFIG_FILE, CONFIG_FILE.with_suffix(".bak"))
     os.replace(temp, CONFIG_FILE)
-    print(f"Configured {len(profiles)} profile(s). Writes {'enabled' if yes else 'disabled'}.")
+    print(f"Configured {len(profiles)} profile(s). Writes {'enabled' if allow_writes else 'disabled'}.")
 
 
 def load_config() -> dict:
@@ -469,10 +487,11 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Private Windows rTorrent / ChatGPT MCP bridge")
     parser.add_argument("command", choices=("setup", "serve", "stdio", "check"))
     parser.add_argument("--reset", action="store_true", help="Replace saved credentials/config")
+    parser.add_argument("--extend", action="store_true", help="Add missing servers while preserving existing saved credentials and settings")
     args = parser.parse_args(argv)
     try:
         if args.command == "setup":
-            setup(args.reset)
+            setup(args.reset, args.extend)
         elif args.command == "check":
             config = load_config()
             for p in config["profiles"]:
