@@ -31,6 +31,7 @@ Concept modelling is independently valuable for ontology maintenance, synthesis,
 ## Load task-specific guidance
 
 - [Mechanical model operations M1–M7](references/mechanical-model-operations.md) and [optional coverage audit](scripts/audit_coverage.py) for explicit construction, extraction, reverse-traversal, gap qualification and source-challenge steps. Output is a list of review candidates, not verified novelty.
+- [Source ingestion and identity reconciliation](references/source-ingestion-reconciliation.md) for M2–M3 when combining disparate or multilingual evidence. [The optional audit](scripts/audit_ingestion.py) checks declared source lineage, question coverage, possible aliases, homonyms and opposed claims without merging them.
 
 - [Question selection and user-needs investigation](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/mechanised-expertise/references/mechanised-intuition-method.md) when a concept map feeds a substantive product/engineering decision: first ask which unanswered relationship can actually change the decision, not how to maximize map size.
 - [Frontier qualification and anti-false-novelty tests](references/frontier-qualification.md)
