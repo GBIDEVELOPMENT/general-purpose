@@ -20,8 +20,9 @@ This is a **direct Concept Model Engineering procedure**, not a mandatory Mechan
 1. For each relevant source span, record its exact locator, original-language label, source ID, applicable product/version/role, and whether the material is a stated claim, a code observation, an inference or disputed evidence.
 2. Extract candidate mentions in one of the bounded roles: actor, goal, action, object, state, outcome, permission, system or other.
 3. Build each proposed directed statement from **subject mention → specific predicate → object mention**, with scope, evidence status and source references. If the relationship spans two sources, record both and mark the bridge for checking.
-4. Record unresolved labels and interpretations as candidates. Never assign missing content, an identity equivalence, a source quotation or a relationship solely because the concept map would look better with it.
-5. Keep conflicting claims separately, including version/time. Source agreement, author independence, semantic entailment and runtime truth require additional evidence.
+4. A relationship combining **different source records** requires a checked bridge between subject and object; citing both extracted mentions does not prove their relationship. Keep the relation inferred/unresolved until inspected evidence supports it.
+5. Record unresolved labels and interpretations as candidates. Never assign missing content, an identity equivalence, a source quotation or a relationship solely because the concept map would look better with it.
+6. Keep conflicting claims separately, including version/time. Source agreement, author independence, semantic entailment and runtime truth require additional evidence.
 
 **Output:** staged mentions/relations with source-backed provenance. **Stop:** extracted propositions are linked to original material and each consequential ambiguity is labeled for review.
 
@@ -47,6 +48,6 @@ python3 skills/concept-model-engineering/scripts/audit_ingestion.py skills/conce
 
 Input is a `concept-model/source-ingestion-v1` JSON ledger: `focus_question`, `scope`, `questions[]` (required source kinds), `sources[]` (inspection status, declared lineage, source-to-question links), `mentions[]` (scoped labels and tentative IDs), and `relations[]` (typed, sourced links). The synthetic fixture has duplicate publisher lineage, full-width Unicode variants, a possible homonym, multilingual alias, unsearched test class and opposed statements.
 
-The tool rejects unknown IDs, duplicate records, uninspected sources cited as inspected evidence, malformed relation endpoints and invalid source/question references. It emits a question coverage table and bounded review candidates. It never writes to `concept-model/v1`, automatically merges similar labels, or grants `qualified_frontier` status.
+The coverage report distinguishes missing source classes that were never inventoried, explicitly not searched, or inaccessible, and flags cross-source relation bridges even when both endpoints are cited. The tool rejects unknown IDs, duplicate records, uninspected sources cited as inspected evidence, malformed relation endpoints and invalid source/question references. It emits a question coverage table and bounded review candidates. It never writes to `concept-model/v1`, automatically merges similar labels, or grants `qualified_frontier` status.
 
 **Falsifier:** inspect a reported candidate in the original source and demonstrate why its apparent similarity or missing coverage is irrelevant; record the false positive. Treat a structurally clean audit as *absence of flagged patterns*, never as proof of complete or true modelling.
