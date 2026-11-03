@@ -131,10 +131,17 @@ def audit(data):
         declared = sorted({s["lineage_id"] for s in inspected
                            if s["lineage_id"] != "unknown"})
         unknown = sorted(s["id"] for s in inspected if s["lineage_id"] == "unknown")
+        uninspected = {
+            kind: sorted({s["status"] for s in sources.values()
+                          if s["kind"] == kind and qid in s["covers"]})
+                  or ["not_in_inventory"]
+            for kind in missing
+        }
         coverage.append({"question_id": qid,
                          "inspected_source_ids": sorted(s["id"] for s in inspected),
                          "inspected_source_kinds": covered,
                          "uninspected_required_kinds": missing,
+                         "uninspected_required_statuses": uninspected,
                          "distinct_declared_lineages": len(declared),
                          "unknown_lineage_source_ids": unknown})
         if missing:
@@ -192,6 +199,10 @@ def audit(data):
             add("cross_source_relation_review", [rel["id"]],
                 "Verify the join between independently extracted mentions and cite the relevant original spans.",
                 "Relation cites neither all endpoint source records nor a checked bridge")
+        if len(endpoint_sources) > 1:
+            add("cross_source_bridge_review", [rel["id"]],
+                "Inspect an original statement supporting this directed link, or record it as an unresolved inference; citing both endpoint mentions is insufficient.",
+                "Subject and object mentions originate in separate source records")
         def entity(mention_id):
             m = mentions[mention_id]
             return m["candidate_concept_id"] or "mention:" + mention_id
