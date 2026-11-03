@@ -22,14 +22,14 @@ These are **operations within Concept Model Engineering**, usable directly witho
 ## M2. Build source coverage inventory
 **Input:** competency questions and access to current source corpus.
 **Transform:** (a) enumerate available source classes: user testimony including nonusers, owner requirements, running implementation, primary manuals/standards, competitor behavior, tests and counterexamples; (b) record source ID, revision/time, language, observed domain and collection method; (c) mark classes absent/inaccessible; (d) retrieve an independent class for every consequential uncorroborated proposition when feasible.
-**Output:** source ledger with covered, missing, derived/possibly duplicated, inaccessible statuses.
+**Output:** source ledger with covered, missing, derived/possibly duplicated, inaccessible statuses. For mixed or multilingual sources, apply the [staged ingestion and lineage procedure](source-ingestion-reconciliation.md); the audit never establishes independence.
 **Reject:** demanding every imaginable source class; enumerate only those capable of changing the focus question.
 **Stop:** further attainable source classes have no credible way to change a competency answer or evidence boundary; disclose exclusions.
 
 ## M3. Extract entities and typed propositions
 **Input:** recorded sources, existing ontology, focus question.
 **Transform:** (a) extract explicit actor, goal, action, object, state and outcome spans; (b) create stable IDs and aliases; (c) for each relationship write subject ID, specific verb predicate, object ID, scope, truth kind and source IDs; (d) keep observed, documented, inferred and contested statements distinct; (e) record conflicting claims separately instead of overwriting them.
-**Output:** nodes, alias ledger and cited directed edges.
+**Output:** nodes, alias ledger and cited directed edges. For disputed names, homonyms or conflicting source claims, use the [identity reconciliation procedure](source-ingestion-reconciliation.md) and retain unresolved candidates rather than merging automatically.
 **Reject:** adding a proposition with no source or clearly labeled hypothesis, or merging names with unproven identity.
 **Stop:** each consequential proposition is grounded and expressible without creating needless relation types.
 
