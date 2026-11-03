@@ -382,6 +382,48 @@ def create_mcp():
         return compare(inventories, errors, limit=limit)
 
     @mcp.tool()
+    def query_torrents(server: str, query: str = "", sort_by: str = "name",
+                       descending: bool = False, offset: int = 0, limit: int = 50,
+                       complete: bool | None = None, active: bool | None = None,
+                       min_ratio: float | None = None) -> dict:
+        """Read-only, stable sorted and paged torrent search with optional filters."""
+        from torrent_queries import select_page
+        try:
+            from torrent_queries import SORT_KEYS
+            if sort_by not in SORT_KEYS or not 0 <= offset <= 1000000 or not 1 <= limit <= 100:
+                raise ValueError("invalid sort or page")
+            if len(query) > 256 or (min_ratio is not None and not 0 <= min_ratio <= 100000):
+                raise ValueError("invalid search filter")
+            rows = snapshot(_call(server, "query"))
+            result = select_page(rows, query=query, sort_by=sort_by, descending=descending,
+                                 offset=offset, limit=limit, complete=complete,
+                                 active=active, min_ratio=min_ratio)
+            return {"server": server, **result}
+        except ValueError:
+            raise BridgeError("Invalid query, sort, filter or pagination boundary") from None
+
+    @mcp.tool()
+    def torrent_health(server: str, infohash: str) -> dict:
+        """Read-only peer and progress diagnostics for one validated infohash.
+
+        Avoid tracker URLs, peer IP addresses, secrets and speculative stall diagnoses.
+        """
+        from torrent_queries import HEALTH_FIELDS, explain_health
+        h = clean_hash(infohash)
+        rpc = _call(server, "health")
+        base = next((r for r in snapshot(rpc) if r["hash"] == h), None)
+        if base is None:
+            raise BridgeError("The requested torrent is absent from this inventory")
+        rows = rpc.call("d.multicall2", "", "main", *HEALTH_FIELDS)
+        candidates = [r for r in rows if str(r[0]).upper() == h]
+        if len(candidates) != 1:
+            raise BridgeError("Expected one exact torrent health record")
+        try:
+            return {"server": server, **explain_health(base, candidates[0])}
+        except (TypeError, ValueError, IndexError):
+            raise BridgeError("rTorrent returned an invalid torrent health record") from None
+
+    @mcp.tool()
     def torrent_details(server: str, infohash: str) -> dict:
         """Read a torrent's exact hash, name, completion and running state."""
         return read_exact(_call(server, "details"), infohash)
