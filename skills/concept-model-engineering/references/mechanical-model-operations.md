@@ -29,7 +29,7 @@ These are **operations within Concept Model Engineering**, usable directly witho
 ## M3. Extract entities and typed propositions
 **Input:** recorded sources, existing ontology, focus question.
 **Transform:** (a) extract explicit actor, goal, action, object, state and outcome spans; (b) create stable IDs and aliases; (c) for each relationship write subject ID, specific verb predicate, object ID, scope, truth kind and source IDs; (d) keep observed, documented, inferred and contested statements distinct; (e) record conflicting claims separately instead of overwriting them.
-**Output:** nodes, alias ledger and cited directed edges. For disputed names, homonyms or conflicting source claims, use the [identity reconciliation procedure](source-ingestion-reconciliation.md) and retain unresolved candidates rather than merging automatically.
+**Output:** nodes, alias ledger and cited directed edges. For disputed names, homonyms or conflicting source claims, use the [identity reconciliation procedure](source-ingestion-reconciliation.md) and retain unresolved candidates rather than merging automatically. To incorporate checked evidence into an **existing** graph, use the [optional reviewed delta procedure](reviewed-model-deltas.md); it proposes additions without silently rewriting earlier claims or status.
 **Reject:** adding a proposition with no source or clearly labeled hypothesis, or merging names with unproven identity.
 **Stop:** each consequential proposition is grounded and expressible without creating needless relation types.
 
