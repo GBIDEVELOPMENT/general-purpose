@@ -159,15 +159,18 @@ def audit(data):
     for norm, members in sorted(labels.items()):
         if len(members) < 2:
             continue
-        signatures = {(m["kind"], m["scope"]) for m in members}
-        if len(signatures) > 1:
+        by_signature = defaultdict(list)
+        for member in members:
+            by_signature[(member["kind"], member["scope"])].append(member)
+        if len(by_signature) > 1:
             add("homonym_or_scope_collision_review", [m["id"] for m in members],
                 "Compare roles, scope and original spans; identical labels may name distinct things.",
                 "Same normalized label across different kinds or scopes")
-        elif len({m["candidate_concept_id"] for m in members}) > 1:
-            add("possible_identity_match_review", [m["id"] for m in members],
-                "Check stable IDs, entity type and direct alias evidence before proposing an identity link.",
-                "Same conservatively normalized label, differing or unassigned identities")
+        for group in by_signature.values():
+            if len(group) > 1 and len({m["candidate_concept_id"] for m in group}) > 1:
+                add("possible_identity_match_review", [m["id"] for m in group],
+                    "Check stable IDs, entity type and direct alias evidence before proposing an identity link.",
+                    "Same conservatively normalized label and role/scope, differing or unassigned identities")
     for cid, members in sorted(claimed_ids.items()):
         if len(members) < 2:
             continue
