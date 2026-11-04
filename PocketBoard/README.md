@@ -82,3 +82,7 @@ capped, all three shortcut rows are reserved before it expands, and
 real-device keyboard-open acceptance remains required. Visual smoke tests
 should inspect short labels, small portrait widths, Gboard appearance,
 and alternative IME heights.
+
+## PocketBoard 0.8 media and app-switcher controls
+
+The first shortcut row now groups **volume down, volume up, mute, previous track, play/pause, and next track**, using Windows virtual media keys that target the active system media session. The second row groups **Apps, Next app, and Choose** for the existing Alt+Tab workflow. Copy/Paste and navigation remain in their own compact rows. The fourth row is budgeted above the Android IME, and the rainbow touchpad yields space first. The Windows tray receiver must be updated with this release for media keys to work.
