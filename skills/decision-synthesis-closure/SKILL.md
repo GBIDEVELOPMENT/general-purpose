@@ -39,4 +39,6 @@ Verify against authoritative source records rather than the elegance or length o
 
 **Limits:** No specific UI framework is required. A chat text box and submit button are a presentation choice, not the skill itself. An owner response can revise requirements but cannot retroactively establish observed behavior. Do not infer release readiness from resolved paperwork. Planned historical evaluations remain dormant until separately authorized; see [the existing evaluation plan](../AGENT-DECISION-SKILLS-EVALUATION-PLAN.md).
 
+**Adjacent interaction capability:** A release-blocker audit may use a batched form, but [Human-Agent Interaction Engineering](../human-agent-interaction-engineering/SKILL.md) covers the broader situation where a human requests choices at any time, an agent offers an optional evidence-backed feature survey after research, or the exchange is an observation, critique or review. Use that skill as primary when there is no comprehensive blocker/closure task. A preference or unchecked box never implies authorization.
+
 **Worked example:** [Release-readiness decision synthesis](examples/release-readiness.md).
