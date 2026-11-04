@@ -1,15 +1,15 @@
-name: PocketKeyboard build
+name: PocketBoard build
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - 'PocketKeyboard/**'
-      - '.github/workflows/pocketkeyboard-build.yml'
+      - 'PocketBoard/**'
+      - '.github/workflows/pocketboard-build.yml'
   pull_request:
     paths:
-      - 'PocketKeyboard/**'
-      - '.github/workflows/pocketkeyboard-build.yml'
+      - 'PocketBoard/**'
+      - '.github/workflows/pocketboard-build.yml'
 
 permissions:
   contents: read
@@ -24,13 +24,13 @@ jobs:
         with:
           dotnet-version: '8.0.x'
       - name: Publish tray receiver
-        run: dotnet publish PocketKeyboard/windows/PocketKeyboard.Windows.csproj -c Release -r win-x64 -o dist/windows
+        run: dotnet publish PocketBoard/windows/PocketBoard.Windows.csproj -c Release -r win-x64 -o dist/windows
       - uses: actions/upload-artifact@v4
         with:
-          name: PocketKeyboard-Windows-x64
+          name: PocketBoard-Windows-x64
           path: |
-            dist/windows/PocketKeyboard.Windows.exe
-            PocketKeyboard/windows/install.ps1
+            dist/windows/PocketBoard.Windows.exe
+            PocketBoard/windows/install.ps1
           if-no-files-found: error
   android:
     runs-on: ubuntu-latest
@@ -48,12 +48,12 @@ jobs:
         with:
           gradle-version: '8.11.1'
       - name: Build APK
-        working-directory: PocketKeyboard/android
-        run: gradle :app:assembleDebug --no-daemon
+        working-directory: PocketBoard/android
+        run: gradle :app:packagePocketBoardDebugApk --no-daemon
       - uses: actions/upload-artifact@v4
         with:
-          name: PocketKeyboard-Android-debug
-          path: PocketKeyboard/android/app/build/outputs/apk/debug/*.apk
+          name: PocketBoard-Android-debug
+          path: PocketBoard/android/app/build/dist/PocketBoard-*.apk
           if-no-files-found: error
 
 

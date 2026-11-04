@@ -51,7 +51,7 @@ internal sealed class TrayServer : ApplicationContext
         else
         {
             using var key = RSA.Create(2048);
-            var request = new CertificateRequest("CN=PocketKeyboard", key, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+            var request = new CertificateRequest("CN=PocketBoard", key, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
             request.CertificateExtensions.Add(new X509BasicConstraintsExtension(false, false, 0, false));
             request.CertificateExtensions.Add(new X509KeyUsageExtension(X509KeyUsageFlags.DigitalSignature | X509KeyUsageFlags.KeyEncipherment, false));
             using var generated = request.CreateSelfSigned(DateTimeOffset.UtcNow.AddDays(-1), DateTimeOffset.UtcNow.AddYears(10));
@@ -65,7 +65,7 @@ internal sealed class TrayServer : ApplicationContext
 
         toggle = new ToolStripMenuItem("Pause receiving", null, (_, _) => Toggle());
         var menu = new ContextMenuStrip();
-        menu.Items.Add(new ToolStripMenuItem("PocketKeyboard: running", null) { Enabled = false, Name = "state" });
+        menu.Items.Add(new ToolStripMenuItem("PocketBoard: running", null) { Enabled = false, Name = "state" });
         menu.Items.Add(toggle);
         menu.Items.Add(new ToolStripMenuItem("Show network details", null, (_, _) => ShowNetwork()));
         menu.Items.Add(new ToolStripMenuItem("Forget all paired phones", null, (_, _) => Revoke()));
@@ -74,7 +74,7 @@ internal sealed class TrayServer : ApplicationContext
         tray = new NotifyIcon
         {
             Icon = SystemIcons.Information,
-            Text = "PocketKeyboard: running",
+            Text = "PocketBoard: running",
             Visible = true,
             ContextMenuStrip = menu
         };
@@ -89,8 +89,8 @@ internal sealed class TrayServer : ApplicationContext
         }
         catch (Exception e)
         {
-            MessageBox.Show("Cannot listen on TCP " + Port + ": " + e.Message, "PocketKeyboard");
-            tray.Text = "PocketKeyboard: not listening";
+            MessageBox.Show("Cannot listen on TCP " + Port + ": " + e.Message, "PocketBoard");
+            tray.Text = "PocketBoard: not listening";
         }
     }
 
@@ -99,9 +99,9 @@ internal sealed class TrayServer : ApplicationContext
         enabled = !enabled;
         if (!enabled) InputInjector.ReleaseAltTab();
         toggle.Text = enabled ? "Pause receiving" : "Resume receiving";
-        tray.Text = enabled ? "PocketKeyboard: running" : "PocketKeyboard: paused";
+        tray.Text = enabled ? "PocketBoard: running" : "PocketBoard: paused";
         tray.Icon = enabled ? SystemIcons.Information : SystemIcons.Warning;
-        tray.ContextMenuStrip!.Items["state"]!.Text = enabled ? "PocketKeyboard: running" : "PocketKeyboard: paused";
+        tray.ContextMenuStrip!.Items["state"]!.Text = enabled ? "PocketBoard: running" : "PocketBoard: paused";
     }
 
     void ShowNetwork()
@@ -111,7 +111,7 @@ internal sealed class TrayServer : ApplicationContext
         MessageBox.Show("On your phone, choose Discover and select this PC.\n\n" +
             Environment.MachineName + "\nAddresses: " + string.Join(", ", addresses) +
             "\nTCP: " + Port + "   Discovery UDP: " + DiscoveryPort +
-            "\n\nAny device on the local subnet can connect while the receiver is enabled. Pause receiving when unused.", "PocketKeyboard");
+            "\n\nAny device on the local subnet can connect while the receiver is enabled. Pause receiving when unused.", "PocketBoard");
     }
 
     // Discovery never exposes tokens. Only clients on an actual local interface's
@@ -161,7 +161,7 @@ internal sealed class TrayServer : ApplicationContext
 
     void Revoke()
     {
-        if (MessageBox.Show("Disconnect and revoke all previously paired phones?", "PocketKeyboard", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
+        if (MessageBox.Show("Disconnect and revoke all previously paired phones?", "PocketBoard", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
         lock (sync)
         {
             revocationEpoch++;
@@ -169,7 +169,7 @@ internal sealed class TrayServer : ApplicationContext
             tokens.Clear();
             File.WriteAllText(Path.Combine(dataDir, "tokens.txt"), "");
         }
-        MessageBox.Show("Paired-phone tokens revoked. Existing connections must reconnect to take effect.", "PocketKeyboard");
+        MessageBox.Show("Paired-phone tokens revoked. Existing connections must reconnect to take effect.", "PocketBoard");
     }
 
     async Task AcceptLoop()

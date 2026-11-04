@@ -87,7 +87,7 @@ class MainActivity : Activity() {
             root.addView(this)
         }
         TextView(this).apply {
-            text = "PocketKeyboard"
+            text = "PocketBoard"
             textSize = 16f
             setTextColor(white)
             setTypeface(null, android.graphics.Typeface.BOLD)
@@ -240,7 +240,7 @@ class MainActivity : Activity() {
 
     private fun discover() {
         discoveryButton.isEnabled = false
-        status.text = "Searching your Wi-Fi for PocketKeyboard..."
+        status.text = "Searching your Wi-Fi for PocketBoard..."
         Thread {
             val found = linkedMapOf<String, String>()
             val lock = (getSystemService(Context.WIFI_SERVICE) as WifiManager)
