@@ -17,6 +17,8 @@ internal static class Program
     [STAThread]
     static void Main()
     {
+        using var singleton = new Mutex(true, "Local\\PocketKeyboard.TrayReceiver", out var firstInstance);
+        if (!firstInstance) return;
         ApplicationConfiguration.Initialize();
         using var instance = new TrayServer();
         Application.Run(instance);
@@ -37,6 +39,7 @@ internal sealed class TrayServer : ApplicationContext
     string? pairingCode;
     DateTime pairingExpires;
     int pairingFailures;
+    int revocationEpoch;
     volatile bool enabled = true;
 
     public TrayServer()
@@ -118,6 +121,7 @@ internal sealed class TrayServer : ApplicationContext
         if (MessageBox.Show("Disconnect and revoke all previously paired phones?", "PocketKeyboard", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
         lock (sync)
         {
+            revocationEpoch++;
             tokens.Clear();
             File.WriteAllText(Path.Combine(dataDir, "tokens.txt"), "");
         }
@@ -191,6 +195,8 @@ internal sealed class TrayServer : ApplicationContext
                     await writer.WriteLineAsync(authenticated ? "{\"type\":\"ready\"}" : "{\"type\":\"denied\"}");
                 }
                 if (!authenticated) return;
+                int epoch;
+                lock (sync) epoch = revocationEpoch;
                 while (!shutdown.IsCancellationRequested)
                 {
                     var line = await reader.ReadLineAsync(shutdown.Token);
@@ -198,7 +204,7 @@ internal sealed class TrayServer : ApplicationContext
                     if (line.Length > 8192) break;
                     lock (sync)
                     {
-                        if (!enabled) break;
+                        if (!enabled || epoch != revocationEpoch) break;
                     }
                     using var msg = JsonDocument.Parse(line);
                     var root = msg.RootElement;
