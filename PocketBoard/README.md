@@ -100,3 +100,14 @@ The first shortcut row now groups **volume down, volume up, mute, previous track
   black/charcoal triangles appear at the left or right.
 - This remains an Android-only change. The Windows receiver does not need
   updating. Confirm the status-bar clearance and Gboard-fit on hardware.
+
+## PocketBoard 0.10 touchpad calibration
+
+On the Pixel 6 Pro, the user reports a complete horizontal thumb swipe only
+moved the Windows cursor one-third of the display width. The touchpad's
+relative-motion gain is now **4.5** instead of **1.5** (3×), so the same
+physical swipe should cover approximately the full Windows display.
+Fractional movement is carried across gesture events to preserve delicate
+slow movements. The existing ±300 pixel per-event safety clamp remains.
+This is a calibration prediction; real-device testing should verify whether
+Windows mouse acceleration changes the observed response.
