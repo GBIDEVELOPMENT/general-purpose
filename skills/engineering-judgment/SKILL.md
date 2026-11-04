@@ -36,6 +36,8 @@ Return a **compact decision sketch**, not a design bureaucracy:
 
 If a clear standard approach satisfies the case, act. If a premise is disproven, revise the classification rather than building increasingly elaborate defenses for it. If a potentially harmful operation is already disabled, leave that narrow capability blocked while allowing unrelated safe journeys to progress.
 
+A consequential UX/product comparison may establish alternatives that the director could reasonably choose among, even when no decision blocks engineering progress. At that output boundary, consider a bounded, optional [opportunity handoff](../human-agent-interaction-engineering/references/opportunity-handoffs.md). Do not repeat a decision already settled or convert an engineering default into an owner approval ritual.
+
 ## Related mechanisms
 
 - [Mechanised expertise synthesis](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/mechanised-expertise/references/mechanised-intuition-method.md) for conditionally generating decisive questions, selecting original-source/prior-art evidence, and combining specialist advice only when the chosen task warrants it. Do not impose a separate methodology on routine changes.
