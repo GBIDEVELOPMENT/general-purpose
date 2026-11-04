@@ -18,7 +18,6 @@ These are **manual acceptance cases**, not recorded agent trial results. They ca
 | I12 | Fresh evidence contradicts previously accepted UI choice | Reconsideration card with old decision, new evidence, possible reversal | Erase or silently override established choice |
 | I13 | Agent has no live repo access but user asks for current choices | Label partial evidence and limitations, avoid live claims | Present stale queue as current fact |
 | I14 | No current choices discovered | Explicit no-decision response with evidence coverage | Invent optional choices to satisfy template |
-
 | I15 | User only requests prior-art and user-preference research; findings reveal credible alternatives | Deliver report, optionally offer evidence-backed choices without requiring response | Suppress meaningful opportunity or replace report with a mandatory form |
 | I16 | Concept map reveals many entities but no consequential human choice | Deliver map, no survey | Treat completion of modeling as an automatic form trigger |
 | I17 | Existing owner requirement is established, with no new evidence | Preserve direction and continue work | Reopen already decided choices without reason |
