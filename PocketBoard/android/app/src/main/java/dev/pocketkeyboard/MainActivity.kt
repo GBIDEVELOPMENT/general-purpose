@@ -280,10 +280,10 @@ class MainActivity : Activity() {
         fun controlRow(actions: List<Triple<String, String, String>>) {
             val row = LinearLayout(this).apply {
                 orientation = LinearLayout.HORIZONTAL
-                root.addView(this, LinearLayout.LayoutParams(-1, dp(47)).apply { topMargin = dp(3) })
+                root.addView(this, LinearLayout.LayoutParams(-1, dp(43)).apply { topMargin = dp(3) })
             }
             actions.forEach { (title, type, value) ->
-                val colors = palettes[buttonIndex++]
+                val colors = palettes[(buttonIndex++) % palettes.size]
                 val tile = LinearLayout(this).apply {
                     orientation = LinearLayout.VERTICAL
                     gravity = Gravity.CENTER
@@ -297,6 +297,9 @@ class MainActivity : Activity() {
                 val glyph = when (value) {
                     "VOLUME_DOWN" -> "◀−"
                     "VOLUME_UP" -> "◀+"
+                    "MEDIA_PREV" -> "⏮"
+                    "MEDIA_NEXT" -> "⏭"
+                    "MEDIA_PLAY_PAUSE" -> "⏯"
                     "VOLUME_MUTE" -> "◀×"
                     "ALT_TAB_OPEN" -> "▣"
                     "COPY" -> "▤"
@@ -317,7 +320,7 @@ class MainActivity : Activity() {
                     setTextColor(white)
                     includeFontPadding = false
                     gravity = Gravity.CENTER
-                    tile.addView(this, LinearLayout.LayoutParams(-1, dp(23)))
+                    tile.addView(this, LinearLayout.LayoutParams(-1, dp(21)))
                 }
                 TextView(this).apply {
                     text = title
@@ -328,26 +331,32 @@ class MainActivity : Activity() {
                     gravity = Gravity.CENTER
                     includeFontPadding = false
                     setAutoSizeTextTypeUniformWithConfiguration(8, 11, 1, TypedValue.COMPLEX_UNIT_SP)
-                    tile.addView(this, LinearLayout.LayoutParams(-1, dp(19)))
+                    tile.addView(this, LinearLayout.LayoutParams(-1, dp(18)))
                 }
-                row.addView(tile, LinearLayout.LayoutParams(0, dp(46), 1f).apply {
+                row.addView(tile, LinearLayout.LayoutParams(0, dp(42), 1f).apply {
                     leftMargin = dp(2); rightMargin = dp(2)
                 })
             }
         }
+        // Media controls together, including the standard Windows media scan keys.
         controlRow(listOf(
             Triple("Vol −", "key", "VOLUME_DOWN"),
             Triple("Vol +", "key", "VOLUME_UP"),
             Triple("Mute", "key", "VOLUME_MUTE"),
-            Triple("Apps", "shortcut", "ALT_TAB_OPEN")))
+            Triple("Prev", "key", "MEDIA_PREV"),
+            Triple("Play", "key", "MEDIA_PLAY_PAUSE"),
+            Triple("Next", "key", "MEDIA_NEXT")))
+        // Keep Alt+Tab open, advance and selection in one clearly related group.
+        controlRow(listOf(
+            Triple("Apps", "shortcut", "ALT_TAB_OPEN"),
+            Triple("Next app", "shortcut", "ALT_TAB_NEXT"),
+            Triple("Choose", "shortcut", "ALT_TAB_CLOSE")))
         controlRow(listOf(
             Triple("Copy", "shortcut", "COPY"),
             Triple("All + Copy", "shortcut", "SELECT_ALL_COPY"),
             Triple("Paste", "shortcut", "PASTE"),
-            Triple("Next", "shortcut", "ALT_TAB_NEXT")))
+            Triple("Clear", "local", "CLEAR")))
         controlRow(listOf(
-            Triple("Choose", "shortcut", "ALT_TAB_CLOSE"),
-            Triple("Clear", "local", "CLEAR"),
             Triple("Esc", "key", "ESCAPE"),
             Triple("Tab", "key", "TAB"),
             Triple("Enter", "key", "ENTER"),

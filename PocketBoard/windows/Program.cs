@@ -423,6 +423,7 @@ internal static class InputInjector
             "ESCAPE" => 0x1B, "LEFT" => 0x25, "UP" => 0x26,
             "RIGHT" => 0x27, "DOWN" => 0x28, "DELETE" => 0x2E,
             "VOLUME_UP" => 0xAF, "VOLUME_DOWN" => 0xAE, "VOLUME_MUTE" => 0xAD,
+            "MEDIA_NEXT" => 0xB0, "MEDIA_PREV" => 0xB1, "MEDIA_PLAY_PAUSE" => 0xB3,
             _ => 0
         };
         if (vk == 0) return;
