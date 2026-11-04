@@ -2,7 +2,7 @@
 
 This directory is a library of **complementary capabilities**, not a pyramid with one master methodology. Select the *single primary skill* whose deliverable matches the task; add another only for a concrete, unresolved dependency. No skill can grant permission to modify a project.
 
-## Five orthogonal capabilities
+## Six complementary capabilities
 
 | Capability | Primary output | Example | Avoid |
 |---|---|---|---|
@@ -10,9 +10,12 @@ This directory is a library of **complementary capabilities**, not a pyramid wit
 | Operational execution | Changed implementation, research extract, user interaction, or test artifact | Fix a file grant bug and run the installed acceptance journey | Replacing work with a plan |
 | Mechanised inquiry and decisions | Source-linked choice-changing questions, alternatives, discriminators, stop rules | Identify which unanswered retry condition changes a design | Asking an agent to imitate intuition or investigate everything |
 | Conceptual modelling | Typed concepts and relationships, coverage results, qualified unknowns | Build a map of users, intents, states, media identities and recovery | Equating missing edges with real-world absence |
+| Human-agent interaction engineering | Appropriately scoped survey, decision briefing, observational checklist, review or approval interface and interpretable responses | Owner asks “any choices?”, or prior-art research reveals optional, evidence-backed feature alternatives | Mandatory forms, invented consensus, silently treating preferences as permission |
 | Verification and evidence management | Independent observation tied to exact claim, environment, and revision | Show a persisted file survived restart, or mark untested | Promoting simulated, planned or verbal claims into observed success |
 
 The same project can need several capabilities, but **none is a universal prerequisite**. A tiny visual correction may need only operational execution and a focused check. An ontology review may start directly with Concept Model Engineering. A complex UX problem may need user research, modelling, choice generation, implementation and runtime testing. The observed task determines the sequence.
+
+Human-agent interaction is a capability in its own right: a form or decision landscape can be the requested deliverable even when no engineering decision is blocked. Use [Human-Agent Interaction Engineering](human-agent-interaction-engineering/SKILL.md) as the entry point for surveys, on-demand choice discovery and structured reviews. Use [Decision Synthesis and Closure](decision-synthesis-closure/SKILL.md) for comprehensive blocker audits and downstream reconciliation. Their boundaries overlap, but neither is a compulsory prerequisite of the other.
 
 ## Cross-project validation economics
 
@@ -24,6 +27,8 @@ When the task is specifically to reduce test/CI cycles or the director's repeate
 - **Conceptual modelling → mechanised inquiry:** use deterministic extraction, alias checks, reverse traversals, counterexample probes and explicit stop conditions *inside the modelling workflow itself*. Do not require a full second skill just to run these operations.
 - **Both → other work:** user research, implementation, testing, design, debugging and delivery can each consume findings. A model is a possible product deliverable, not an obligatory intermediary.
 - **Other work → both:** observations and test outcomes may update source claims, conditional question templates and model relations. Preserve direct evidence and editorial inference separately.
+- **Research or model → human interface:** offer an optional choice survey when grounded prior art and user criticism expose consequential alternatives; preserve provenance, and permit partial answers without commitment.
+- **Human interface → research or model:** a response may provide a new requirement, a provisional preference, a counterexample or a challenge to the entire premise; trace its effects without converting silence into agreement.
 
 ## Routing examples
 
@@ -32,6 +37,8 @@ When the task is specifically to reduce test/CI cycles or the director's repeate
 3. Building an ontology from multilingual source material: Concept Model Engineering directly; apply its own mechanical source inventory, extraction, identity, relation, and gap-audit operations.
 4. Compiling third-party recommendations into agent procedures: Mechanised Expertise; preserve pinned source scope, convert only inspectable conditions into operations, and separately record unsupported editorial extensions.
 5. Reviewing a shipped result: task-specific verification; a passing mocked result never establishes remote/provider effects.
+6. After comparative user-preference and implementation research: deliver the report, then optionally offer a grounded feature-choice survey rather than blocking on answers.
+7. Owner unexpectedly asks “What decisions can I make?”: inspect current sources and provide needed, upcoming, optional and reconsideration opportunities; do not force a release audit.
 
 ## Acceptance for changes to this library
 

@@ -26,6 +26,8 @@ metadata:
 | Converting corpus claims into executable skills | Pin the source and scope; specify trigger, exclusion, named inputs, ordered transforms, opposing decisions, independent oracle, stop rule | [Corpus-to-procedure](references/corpus-to-procedure.md), [source synthesis](references/source-synthesis.md), [compact procedure index](references/procedure-index.md) |
 | Need to establish a shipped behavior or separate plan from execution | Select test tier that reaches the claimed real boundary; log exact revision/environment, assertions executed, observed outcome, and remaining unknowns | [Evidence and corpus](references/evidence-and-corpus.md), [expertise evaluation](references/expertise-evaluation.md) |
 
+When a research or question-generation result exposes several legitimate *human-facing* options, the output may include an optional, evidence-backed [human-agent interaction](../human-agent-interaction-engineering/SKILL.md) rather than a compulsory interrogatory. An unasked owner preference is not automatically a blocker, and this reference is not required merely to finish research.
+
 For native Android implementation with sufficiently understood goals, start directly with [Android App Development](../android-app-development/SKILL.md). Do not load all four skills. An advisory decision procedure may supplement that primary implementation skill only when it changes a concrete decision.
 
 ## Execute one inquiry transaction
