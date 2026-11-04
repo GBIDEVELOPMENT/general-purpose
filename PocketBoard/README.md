@@ -147,3 +147,18 @@ right-hand X, + or minus marks from the supplied reference. Three new
 SVGs and matching Android vector drawables implement them. Colored button
 backgrounds, sizing, positions, connection behavior and the Windows
 companion remain unchanged.
+
+## PocketBoard 0.14 clipboard icon fidelity and grouped controls
+
+All clipboard controls now share an identical two-sheet composition:
+one rounded rear-sheet outline and one rounded foreground sheet.
+- Copy: the two sheets only.
+- Select All & Copy: the same sheets, with a dark checkmark on the front.
+- Paste: the same sheets, with a dark plus sign on the front.
+
+Matching SVGs and Android vector resources are updated in place.
+The three app-switcher controls and three clipboard controls occupy a
+single six-button row, in that order. The media and keyboard rows retain
+their controls and colors. Removing the extra row frees 56dp vertically,
+which remains available to the touchpad/keyboard-first layout.
+This is Android-only; the Windows receiver is unchanged.
