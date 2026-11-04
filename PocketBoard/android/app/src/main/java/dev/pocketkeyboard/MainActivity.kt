@@ -262,7 +262,7 @@ class MainActivity : Activity() {
         // Keep a landscape trackpad, never let it expand into portrait.
         // Use only residual vertical space after the header, editor, and ALL
         // action rows are laid out; extra room remains dark and empty.
-        root.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
+        root.viewTreeObserver.addOnGlobalLayoutListener {
             val maxLandscape = ((root.width - root.paddingLeft - root.paddingRight) / 1.85f).toInt()
             val fixed = root.childrenHeightExcept(trackpad) + root.paddingTop + root.paddingBottom
             val available = (root.height - fixed - dp(5)).coerceAtLeast(dp(48))
