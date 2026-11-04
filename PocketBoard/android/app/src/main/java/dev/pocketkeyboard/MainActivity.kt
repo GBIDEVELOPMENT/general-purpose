@@ -388,11 +388,12 @@ class MainActivity : Activity() {
             Triple("Previous track", "key", "MEDIA_PREV"),
             Triple("Play or pause media", "key", "MEDIA_PLAY_PAUSE"),
             Triple("Next track", "key", "MEDIA_NEXT")))
+        // App switching and clipboard form one compact six-button row.
+        // Keep the related Apps -> Next -> Choose sequence adjacent.
         controlRow(listOf(
             Triple("Apps", "shortcut", "ALT_TAB_OPEN"),
             Triple("Next app", "shortcut", "ALT_TAB_NEXT"),
-            Triple("Choose", "shortcut", "ALT_TAB_CLOSE")))
-        controlRow(listOf(
+            Triple("Choose", "shortcut", "ALT_TAB_CLOSE"),
             Triple("Copy", "shortcut", "COPY"),
             Triple("Select all and copy", "shortcut", "SELECT_ALL_COPY"),
             Triple("Paste", "shortcut", "PASTE")))
