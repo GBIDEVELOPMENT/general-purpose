@@ -4,6 +4,19 @@ import android.app.Activity
 import android.os.Bundle
 import android.content.Context
 import android.graphics.Color
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.RectF
+import android.os.Handler
+import android.os.Looper
+import android.net.wifi.WifiManager
+import android.content.DialogInterface
+import android.view.WindowManager
+import java.net.DatagramPacket
+import java.net.DatagramSocket
+import java.net.InetAddress
+import java.net.SocketTimeoutException
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.Gravity
@@ -30,10 +43,9 @@ import javax.net.ssl.X509TrustManager
 class MainActivity : Activity() {
     private val prefs by lazy { getSharedPreferences("peer", MODE_PRIVATE) }
     private lateinit var status: TextView
-    private lateinit var connectionControls: LinearLayout
+    private lateinit var discoveryButton: Button
     private lateinit var touchpadFeedback: TextView
     private lateinit var host: EditText
-    private lateinit var code: EditText
     private lateinit var editor: EditText
     private val outgoing = LinkedBlockingQueue<String>(512)
     @Volatile private var running = true
@@ -42,130 +54,125 @@ class MainActivity : Activity() {
     private var previous = ""
     private var ignoreEdit = false
     private var connectedSocket: SSLSocket? = null
+    private var lastConnectedHost = ""
+    private var firstReady = false
+
+    private fun dp(value: Int) = (value * resources.displayMetrics.density).toInt()
+    private fun bg(color: Int, radius: Int = 12) = GradientDrawable().apply {
+        setColor(color)
+        cornerRadius = dp(radius).toFloat()
+    }
+    private fun sendAction(type: String, value: String) =
+        send(JSONObject().put("type", type).put("value", value))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val scale = resources.displayMetrics.density
-        val pad = (16 * scale).toInt()
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+        window.statusBarColor = Color.rgb(18, 19, 22)
+        window.navigationBarColor = Color.rgb(18, 19, 22)
+        val charcoal = Color.rgb(24, 26, 30)
+        val panel = Color.rgb(49, 52, 59)
+        val white = Color.rgb(243, 245, 249)
+        val accent = Color.rgb(144, 181, 236)
         val root = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            setPadding(pad, pad, pad, pad)
+            setPadding(dp(10), dp(5), dp(10), dp(5))
+            setBackgroundColor(charcoal)
+            isFocusableInTouchMode = true
         }
-        val scroll = ScrollView(this)
-        scroll.addView(root)
-        setContentView(scroll)
-
-        fun heading(s: String) = TextView(this).apply {
-            text = s
-            textSize = 22f
-            setTextColor(Color.BLACK)
-            setPadding(0, 0, 0, pad / 2)
+        setContentView(root)
+        val top = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER_VERTICAL
             root.addView(this)
         }
-        heading("PocketKeyboard 0.2")
-        status = TextView(this).apply { text = "Not connected"; textSize = 16f; root.addView(this) }
-        connectionControls = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            root.addView(this)
+        TextView(this).apply {
+            text = "PocketKeyboard"
+            textSize = 16f
+            setTextColor(white)
+            setTypeface(null, android.graphics.Typeface.BOLD)
+            top.addView(this, LinearLayout.LayoutParams(0, dp(34), 1f))
+            gravity = Gravity.CENTER_VERTICAL
+        }
+        discoveryButton = Button(this).apply {
+            text = "Discover"
+            setAllCaps(false)
+            textSize = 12f
+            setTextColor(white)
+            background = bg(panel)
+            setOnClickListener { discover() }
+            top.addView(this, LinearLayout.LayoutParams(dp(104), dp(36)))
+        }
+        status = TextView(this).apply {
+            text = "Tap Discover to find your PC"
+            setTextColor(accent)
+            textSize = 12f
+            maxLines = 1
+            ellipsize = android.text.TextUtils.TruncateAt.END
+            gravity = Gravity.CENTER_VERTICAL
+            root.addView(this, LinearLayout.LayoutParams(-1, dp(24)))
         }
         host = EditText(this).apply {
-            hint = "PC address (e.g. 10.0.0.172)"
-            setSingleLine(true)
             setText(prefs.getString("host", ""))
-            inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_URI
-            connectionControls.addView(this)
+            visibility = View.GONE
+            root.addView(this, LinearLayout.LayoutParams(1, 1))
         }
-        code = EditText(this).apply {
-            hint = "Pairing code (first connection only)"
-            setSingleLine(true)
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER
-            connectionControls.addView(this)
-        }
-        val buttons = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; connectionControls.addView(this) }
-        fun button(label: String, parent: LinearLayout = root, callback: () -> Unit) =
-            Button(this).apply { text = label; setOnClickListener { callback() }; parent.addView(this) }
-        button("Connect", buttons) { startConnection() }
-        button("Forget pairing", buttons) {
-            prefs.edit().remove("token").remove("pin").apply()
-            ready = false
-            connectedSocket?.close()
-            showStatus("Pairing forgotten. Get a new code from the PC tray icon.")
-        }
-        val touchpadTitle = TextView(this).apply {
-            text = "Touchpad · drag to move · tap to click · hold for right-click"
-            textSize = 14f
-            setPadding(0, pad / 2, 0, pad / 2)
-            root.addView(this)
-        }
-        touchpadFeedback = TextView(this).apply {
-            text = "Touchpad ready"
-            textSize = 12f
-            setTextColor(Color.DKGRAY)
-        }
+        // Dedicated trackpad consumes its own gesture stream, with no scrolling parent.
         val detector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
             override fun onDown(e: MotionEvent): Boolean = true
             override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
-                touchpadFeedback.text = "Tap sent"
-                send(JSONObject().put("type", "mouse_click").put("value", "left"))
+                sendAction("mouse_click", "left")
+                touchpadFeedback.text = "Click"
                 return true
             }
             override fun onDoubleTap(e: MotionEvent): Boolean {
-                touchpadFeedback.text = "Double-click sent"
-                send(JSONObject().put("type", "mouse_click").put("value", "double"))
+                sendAction("mouse_click", "double")
+                touchpadFeedback.text = "Double-click"
                 return true
             }
             override fun onLongPress(e: MotionEvent) {
-                touchpadFeedback.text = "Right-click sent"
-                send(JSONObject().put("type", "mouse_click").put("value", "right"))
+                sendAction("mouse_click", "right")
+                touchpadFeedback.text = "Right-click"
             }
             override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
-                // GestureDetector distances describe finger movement in inverse directions.
-                // Scale from Android dp to a comfortable mouse movement in Windows pixels.
-                val dx = (-distanceX / scale * 1.5f).toInt().coerceIn(-300, 300)
-                val dy = (-distanceY / scale * 1.5f).toInt().coerceIn(-300, 300)
+                val dx = (-distanceX / resources.displayMetrics.density * 1.5f).toInt().coerceIn(-300, 300)
+                val dy = (-distanceY / resources.displayMetrics.density * 1.5f).toInt().coerceIn(-300, 300)
                 if (dx != 0 || dy != 0) {
-                    touchpadFeedback.text = "Pointer movement sent"
                     send(JSONObject().put("type", "mouse_move").put("dx", dx).put("dy", dy))
+                    touchpadFeedback.text = "Pointer"
                 }
                 return true
             }
         })
-        val touchpad = View(this).apply {
-            contentDescription = "PC touchpad. Tap to click, double tap to double click, hold to right click."
-            background = GradientDrawable().apply {
-                setColor(Color.rgb(226, 233, 241))
-                cornerRadius = 14 * scale
-                setStroke((1 * scale).toInt().coerceAtLeast(1), Color.rgb(120, 135, 150))
-            }
-            setOnTouchListener { _, event ->
-                if (event.actionMasked == MotionEvent.ACTION_DOWN) {
-                    parent?.requestDisallowInterceptTouchEvent(true)
-                    // The pad must not cause the outer ScrollView to grab swipes.
-                    (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-                        .hideSoftInputFromWindow(windowToken, 0)
-                    editor.clearFocus()
-                }
-                detector.onTouchEvent(event)
-                if (event.actionMasked == MotionEvent.ACTION_UP ||
-                    event.actionMasked == MotionEvent.ACTION_CANCEL) {
-                    parent?.requestDisallowInterceptTouchEvent(false)
-                }
-                true
-            }
-            root.addView(this, LinearLayout.LayoutParams(-1, (205 * scale).toInt()))
+        val trackpad = RainbowPad(this).apply {
+            contentDescription = "Rainbow touchpad. Slide to move pointer, tap to click, hold to right-click"
+            setOnTouchListener { _, event -> detector.onTouchEvent(event); true }
         }
-        root.addView(touchpadFeedback)
-        // Keep the pad above the editor: when the IME is visible the pad stays reachable.
+        root.addView(trackpad, LinearLayout.LayoutParams(-1, 0, 1f).apply {
+            topMargin = dp(3)
+            bottomMargin = dp(2)
+        })
+        touchpadFeedback = TextView(this).apply {
+            text = "Slide · tap · double-tap · hold"
+            setTextColor(white)
+            textSize = 10f
+            root.addView(this, LinearLayout.LayoutParams(-1, dp(19)))
+        }
         editor = EditText(this).apply {
-            hint = "Tap to type or dictate on the PC…"
-            minLines = 4
-            gravity = Gravity.TOP
+            hint = "Type or dictate on the PC"
+            setHintTextColor(Color.rgb(164, 168, 177))
+            setTextColor(white)
+            textSize = 16f
+            setSingleLine(false)
+            maxLines = 2
             inputType = android.text.InputType.TYPE_CLASS_TEXT or
                 android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE or
                 android.text.InputType.TYPE_TEXT_FLAG_AUTO_CORRECT or
                 android.text.InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
+            background = bg(panel, 8)
+            setPadding(dp(12), dp(2), dp(12), dp(2))
             isEnabled = false
-            root.addView(this)
+            root.addView(this, LinearLayout.LayoutParams(-1, dp(44)))
         }
         editor.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -182,78 +189,194 @@ class MainActivity : Activity() {
                     old[old.length - suffix - 1] == updated[updated.length - suffix - 1]) suffix++
                 val removed = old.length - prefix - suffix
                 val inserted = updated.substring(prefix, updated.length - suffix)
-                // Keep the remote caret at the end of the mirrored buffer.
-                repeat(suffix) { send(JSONObject().put("type", "key").put("value", "LEFT")) }
-                repeat(removed) { send(JSONObject().put("type", "key").put("value", "BACKSPACE")) }
-                if (inserted.isNotEmpty()) send(JSONObject().put("type", "text").put("value", inserted))
-                repeat(suffix) { send(JSONObject().put("type", "key").put("value", "RIGHT")) }
+                repeat(suffix) { sendAction("key", "LEFT") }
+                repeat(removed) { sendAction("key", "BACKSPACE") }
+                if (inserted.isNotEmpty()) sendAction("text", inserted)
+                repeat(suffix) { sendAction("key", "RIGHT") }
                 previous = updated
             }
         })
-        val tools = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; root.addView(this) }
-        button("Clear buffer", tools) {
-            ignoreEdit = true
-            editor.setText("")
-            previous = ""
-            ignoreEdit = false
-            editor.requestFocus()
-        }
-        val quick = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; root.addView(this) }
-        fun quickButton(label: String, kind: String, value: String, parent: LinearLayout) {
-            Button(this).apply {
-                text = label
-                setAllCaps(false)
-                setOnClickListener { send(JSONObject().put("type", kind).put("value", value)) }
-                parent.addView(this, LinearLayout.LayoutParams(0, (52 * scale).toInt(), 1f))
+        fun controlRow(actions: List<Triple<String,String,String>>) {
+            val row = LinearLayout(this).apply {
+                orientation = LinearLayout.HORIZONTAL
+                root.addView(this, LinearLayout.LayoutParams(-1, dp(42)).apply { topMargin = dp(3) })
             }
-        }
-        quickButton("Vol −", "key", "VOLUME_DOWN", quick)
-        quickButton("Vol +", "key", "VOLUME_UP", quick)
-        quickButton("Mute", "key", "VOLUME_MUTE", quick)
-        val editing = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; root.addView(this) }
-        quickButton("Copy", "shortcut", "COPY", editing)
-        quickButton("All + Copy", "shortcut", "SELECT_ALL_COPY", editing)
-        quickButton("Paste", "shortcut", "PASTE", editing)
-        val keys = listOf(listOf("Esc" to "ESCAPE", "Tab" to "TAB", "Enter" to "ENTER", "⌫" to "BACKSPACE"),
-            listOf("←" to "LEFT", "↑" to "UP", "↓" to "DOWN", "→" to "RIGHT"))
-        keys.forEach { row ->
-            val bar = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; root.addView(this) }
-            row.forEach { (label, key) ->
+            actions.forEach { (title, type, value) ->
                 Button(this).apply {
-                    text = label
-                    setOnClickListener { send(JSONObject().put("type", "key").put("value", key)) }
-                    bar.addView(this, LinearLayout.LayoutParams(0, (52 * scale).toInt(), 1f))
+                    text = title
+                    setAllCaps(false)
+                    textSize = 11f
+                    setTextColor(white)
+                    background = bg(panel, 7)
+                    setOnClickListener { sendAction(type, value) }
+                    row.addView(this, LinearLayout.LayoutParams(0, dp(40), 1f).apply {
+                        leftMargin = dp(2)
+                        rightMargin = dp(2)
+                    })
                 }
             }
         }
-        if (prefs.getString("token", null) != null && prefs.getString("host", null) != null) startConnection()
+        controlRow(listOf(
+            Triple("Vol −", "key", "VOLUME_DOWN"),
+            Triple("Vol +", "key", "VOLUME_UP"),
+            Triple("Mute", "key", "VOLUME_MUTE"),
+            Triple("Alt+Tab", "shortcut", "ALT_TAB")))
+        controlRow(listOf(
+            Triple("Copy", "shortcut", "COPY"),
+            Triple("All + Copy", "shortcut", "SELECT_ALL_COPY"),
+            Triple("Paste", "shortcut", "PASTE"),
+            Triple("Clear", "local", "CLEAR")))
+        controlRow(listOf(
+            Triple("Esc", "key", "ESCAPE"),
+            Triple("Tab", "key", "TAB"),
+            Triple("Enter", "key", "ENTER"),
+            Triple("⌫", "key", "BACKSPACE"),
+            Triple("←", "key", "LEFT"),
+            Triple("→", "key", "RIGHT")))
+        root.requestFocus()
+        if (prefs.getString("host", null) != null) startConnection()
+        else discover()
+    }
+
+    private fun discover() {
+        discoveryButton.isEnabled = false
+        status.text = "Searching your Wi-Fi for PocketKeyboard..."
+        Thread {
+            val found = linkedMapOf<String, String>()
+            val lock = (getSystemService(Context.WIFI_SERVICE) as WifiManager)
+                .createMulticastLock("pocketkeyboard-discover")
+            try {
+                lock.setReferenceCounted(false)
+                lock.acquire()
+                DatagramSocket().use { socket ->
+                    socket.broadcast = true
+                    socket.soTimeout = 350
+                    val payload = "POCKETKEYBOARD_DISCOVER_V1".toByteArray(Charsets.US_ASCII)
+                    val destinations = mutableSetOf("255.255.255.255")
+                    try {
+                        for (iface in java.net.NetworkInterface.getNetworkInterfaces().toList()) {
+                            for (address in iface.interfaceAddresses) {
+                                address.broadcast?.hostAddress?.let { destinations.add(it) }
+                            }
+                        }
+                    } catch (_: Exception) {}
+                    destinations.forEach {
+                        try {
+                            socket.send(DatagramPacket(payload, payload.size, InetAddress.getByName(it), 38477))
+                        } catch (_: Exception) {}
+                    }
+                    val deadline = System.currentTimeMillis() + 2200
+                    while (System.currentTimeMillis() < deadline) {
+                        val buffer = ByteArray(1200)
+                        val packet = DatagramPacket(buffer, buffer.size)
+                        try {
+                            socket.receive(packet)
+                            val response = JSONObject(String(packet.data, 0, packet.length, Charsets.UTF_8))
+                            if (response.optString("type") == "pocketkeyboard_pc") {
+                                val address = packet.address.hostAddress ?: continue
+                                val name = response.optString("name", address)
+                                found[address] = "$name ($address)"
+                            }
+                        } catch (_: SocketTimeoutException) {}
+                          catch (_: Exception) {}
+                    }
+                }
+            } catch (e: Exception) {
+                runOnUiThread { status.text = "Discovery error: ${e.message}" }
+            } finally {
+                if (lock.isHeld) lock.release()
+            }
+            runOnUiThread {
+                discoveryButton.isEnabled = true
+                if (isFinishing || isDestroyed) return@runOnUiThread
+                if (found.isEmpty()) {
+                    status.text = "No PC found. Check same Wi-Fi and firewall."
+                    return@runOnUiThread
+                }
+                val hosts = found.keys.toList()
+                android.app.AlertDialog.Builder(this)
+                    .setTitle("Connect to a PC")
+                    .setItems(hosts.map { found[it] }.toTypedArray()) { _, index ->
+                        host.setText(hosts[index])
+                        startConnection()
+                    }
+                    .setNegativeButton("Cancel", null)
+                    .show()
+            }
+        }.start()
+    }
+
+    private class RainbowPad(context: Context) : View(context) {
+        private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val colors = intArrayOf(
+            0xFFE53935.toInt(), 0xFFFF8C23.toInt(), 0xFFFFDD33.toInt(),
+            0xFF42B85A.toInt(), 0xFF2787E5.toInt(), 0xFF4849C4.toInt(),
+            0xFF9C4BCB.toInt())
+        override fun onDraw(canvas: Canvas) {
+            super.onDraw(canvas)
+            val w = width.toFloat()
+            val h = height.toFloat()
+            val r = resources.displayMetrics.density * 12
+            val shape = Path().apply { addRoundRect(RectF(0f, 0f, w, h), r, r, Path.Direction.CW) }
+            canvas.save()
+            canvas.clipPath(shape)
+            val span = w / 7f
+            val lean = kotlin.math.min(h * 0.12f, span * 0.33f)
+            for (i in colors.indices) {
+                paint.color = colors[i]
+                val x = i * span
+                val stripe = Path().apply {
+                    moveTo(x - lean, 0f)
+                    lineTo(x + span - lean + 1f, 0f)
+                    lineTo(x + span + lean + 1f, h)
+                    lineTo(x + lean, h)
+                    close()
+                }
+                canvas.drawPath(stripe, paint)
+            }
+            canvas.restore()
+        }
     }
 
     private fun showStatus(message: String) = runOnUiThread {
         status.text = message
         editor.isEnabled = ready
-        if (ready) {
-            connectionControls.visibility = android.view.View.GONE
-            // Keyboard appears when the user explicitly taps the input field.
-        } else connectionControls.visibility = android.view.View.VISIBLE
+        if (ready && !firstReady) {
+            firstReady = true
+            editor.requestFocus()
+            editor.postDelayed({
+                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
+                    .showSoftInput(editor, InputMethodManager.SHOW_IMPLICIT)
+            }, 220)
+        }
     }
 
     private fun send(json: JSONObject) {
         if (!ready) return
-        if (!outgoing.offer(json.toString())) showStatus("Input buffer full; reconnect before continuing.")
+        if (json.optString("type") == "local") {
+            ignoreEdit = true
+            editor.setText("")
+            previous = ""
+            ignoreEdit = false
+            return
+        }
+        if (!outgoing.offer(json.toString())) showStatus("Input buffer full; reconnect.")
     }
 
     private fun startConnection() {
         val address = host.text.toString().trim()
-        if (address.isEmpty()) { showStatus("Enter the PC's Wi-Fi address"); return }
+        if (address.isEmpty()) { showStatus("Discover your PC first"); return }
+        val previousHost = prefs.getString("host", null)
+        if (previousHost != address) prefs.edit().remove("token").remove("pin").apply()
         prefs.edit().putString("host", address).apply()
         connectedSocket?.close()
         worker?.interrupt()
         outgoing.clear()
-        worker = Thread { connectLoop(address, code.text.toString().trim()) }.also { it.start() }
+        firstReady = false
+        worker = Thread { connectLoop(address) }.also { it.start() }
     }
 
-    private fun connectLoop(address: String, initialCode: String) {
+    private fun connectLoop(address: String) {
         var tries = 0
         while (running && !Thread.currentThread().isInterrupted) {
             ready = false
@@ -281,8 +404,7 @@ class MainActivity : Activity() {
                 val input = BufferedReader(InputStreamReader(socket.inputStream, Charsets.UTF_8))
                 val token = prefs.getString("token", null)
                 if (token == null) {
-                    if (initialCode.length != 6) throw SecurityException("Open Pair a phone on the PC and enter its six-digit code")
-                    output.write(JSONObject().put("type", "pair").put("code", initialCode).toString() + "\n")
+                    output.write(JSONObject().put("type", "enroll").toString() + "\n")
                 } else output.write(JSONObject().put("type", "hello").put("token", token).toString() + "\n")
                 output.flush()
                 val response = JSONObject(input.readLine() ?: throw Exception("PC closed connection"))

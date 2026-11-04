@@ -1,6 +1,7 @@
 using System.Net;
 using System.Net.Security;
 using System.Net.Sockets;
+using System.Net.NetworkInformation;
 using System.Security.Authentication;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -28,6 +29,7 @@ internal static class Program
 internal sealed class TrayServer : ApplicationContext
 {
     const int Port = 38476;
+    const int DiscoveryPort = 38477;
     readonly string dataDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PocketKeyboard");
     readonly NotifyIcon tray;
     readonly ToolStripMenuItem toggle;
@@ -35,10 +37,9 @@ internal sealed class TrayServer : ApplicationContext
     readonly HashSet<string> tokens = new(StringComparer.Ordinal);
     readonly object sync = new();
     TcpListener? listener;
+    UdpClient? discovery;
     X509Certificate2 certificate;
-    string? pairingCode;
-    DateTime pairingExpires;
-    int pairingFailures;
+
     int revocationEpoch;
     volatile bool enabled = true;
 
@@ -66,7 +67,7 @@ internal sealed class TrayServer : ApplicationContext
         var menu = new ContextMenuStrip();
         menu.Items.Add(new ToolStripMenuItem("PocketKeyboard: running", null) { Enabled = false, Name = "state" });
         menu.Items.Add(toggle);
-        menu.Items.Add(new ToolStripMenuItem("Pair a phone...", null, (_, _) => ShowPairing()));
+        menu.Items.Add(new ToolStripMenuItem("Show network details", null, (_, _) => ShowNetwork()));
         menu.Items.Add(new ToolStripMenuItem("Forget all paired phones", null, (_, _) => Revoke()));
         menu.Items.Add(new ToolStripSeparator());
         menu.Items.Add(new ToolStripMenuItem("Exit", null, (_, _) => ExitThread()));
@@ -77,12 +78,14 @@ internal sealed class TrayServer : ApplicationContext
             Visible = true,
             ContextMenuStrip = menu
         };
-        tray.DoubleClick += (_, _) => ShowPairing();
+        tray.DoubleClick += (_, _) => ShowNetwork();
         listener = new TcpListener(IPAddress.Any, Port);
         try
         {
             listener.Start();
             _ = AcceptLoop();
+            discovery = new UdpClient(new IPEndPoint(IPAddress.Any, DiscoveryPort));
+            _ = DiscoveryLoop();
         }
         catch (Exception e)
         {
@@ -100,20 +103,59 @@ internal sealed class TrayServer : ApplicationContext
         tray.ContextMenuStrip!.Items["state"]!.Text = enabled ? "PocketKeyboard: running" : "PocketKeyboard: paused";
     }
 
-    void ShowPairing()
+    void ShowNetwork()
     {
-        if (!enabled) { MessageBox.Show("Resume receiving before pairing.", "PocketKeyboard"); return; }
-        lock (sync)
-        {
-            pairingCode = RandomNumberGenerator.GetInt32(0, 1_000_000).ToString("D6");
-            pairingExpires = DateTime.UtcNow.AddMinutes(3);
-            pairingFailures = 0;
-        }
         var addresses = Dns.GetHostAddresses(Dns.GetHostName())
             .Where(a => a.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(a)).Select(a => a.ToString());
-        MessageBox.Show("On your phone, enter the PC's local address and pairing code.\n\nAddresses: " +
-            string.Join(", ", addresses) + "\nPort: " + Port + "\nPairing code: " + pairingCode +
-            "\n\nValid for 3 minutes. Only pair on a trusted network.", "Pair PocketKeyboard");
+        MessageBox.Show("On your phone, choose Discover and select this PC.\n\n" +
+            Environment.MachineName + "\nAddresses: " + string.Join(", ", addresses) +
+            "\nTCP: " + Port + "   Discovery UDP: " + DiscoveryPort +
+            "\n\nAny device on the local subnet can connect while the receiver is enabled. Pause receiving when unused.", "PocketKeyboard");
+    }
+
+    // Discovery never exposes tokens. Only clients on an actual local interface's
+    // IPv4 subnet receive a response, and auto-enrollment uses the same restriction.
+    static bool OnLocalSubnet(IPAddress address)
+    {
+        if (address.AddressFamily != AddressFamily.InterNetwork) return false;
+        var bytes = address.GetAddressBytes();
+        foreach (var adapter in NetworkInterface.GetAllNetworkInterfaces())
+        {
+            if (adapter.OperationalStatus != OperationalStatus.Up ||
+                adapter.NetworkInterfaceType == NetworkInterfaceType.Loopback) continue;
+            foreach (var unicast in adapter.GetIPProperties().UnicastAddresses)
+            {
+                if (unicast.Address.AddressFamily != AddressFamily.InterNetwork ||
+                    unicast.IPv4Mask is null) continue;
+                var own = unicast.Address.GetAddressBytes();
+                var mask = unicast.IPv4Mask.GetAddressBytes();
+                if (mask.All(b => b == 255)) continue; // excludes /32 overlay tunnel endpoints
+                if (Enumerable.Range(0, 4).All(i => (bytes[i] & mask[i]) == (own[i] & mask[i]))) return true;
+            }
+        }
+        return false;
+    }
+
+    async Task DiscoveryLoop()
+    {
+        while (!shutdown.IsCancellationRequested)
+        {
+            try
+            {
+                var packet = await discovery!.ReceiveAsync(shutdown.Token);
+                if (!enabled || !OnLocalSubnet(packet.RemoteEndPoint.Address) ||
+                    Encoding.ASCII.GetString(packet.Buffer) != "POCKETKEYBOARD_DISCOVER_V1") continue;
+                var data = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(new {
+                    type = "pocketkeyboard_pc", name = Environment.MachineName,
+                    address = packet.RemoteEndPoint.Address.ToString(), port = Port
+                }));
+                // The client uses the UDP source address, not the echoed address.
+                await discovery.SendAsync(data, packet.RemoteEndPoint, shutdown.Token);
+            }
+            catch (OperationCanceledException) { break; }
+            catch (ObjectDisposedException) { break; }
+            catch (Exception) { await Task.Delay(150); }
+        }
     }
 
     void Revoke()
@@ -164,22 +206,16 @@ internal sealed class TrayServer : ApplicationContext
                 using var intro = JsonDocument.Parse(first);
                 var kind = Get(intro.RootElement, "type");
                 bool authenticated = false;
-                if (kind == "pair")
+                if (kind == "enroll" || kind == "pair")
                 {
-                    var code = Get(intro.RootElement, "code");
                     string? token = null;
                     lock (sync)
                     {
-                        if (enabled && pairingCode != null && DateTime.UtcNow < pairingExpires && pairingFailures < 5)
+                        if (enabled && OnLocalSubnet(((IPEndPoint)client.Client.RemoteEndPoint!).Address))
                         {
-                            if (code == pairingCode)
-                            {
-                                token = Convert.ToHexString(RandomNumberGenerator.GetBytes(32));
-                                tokens.Add(token);
-                                File.WriteAllLines(Path.Combine(dataDir, "tokens.txt"), tokens);
-                                pairingCode = null;
-                            }
-                            else pairingFailures++;
+                            token = Convert.ToHexString(RandomNumberGenerator.GetBytes(32));
+                            tokens.Add(token);
+                            File.WriteAllLines(Path.Combine(dataDir, "tokens.txt"), tokens);
                         }
                     }
                     if (token != null)
@@ -239,6 +275,7 @@ internal sealed class TrayServer : ApplicationContext
     {
         shutdown.Cancel();
         listener?.Stop();
+        discovery?.Dispose();
         tray.Visible = false;
         tray.Dispose();
         certificate.Dispose();
@@ -284,6 +321,13 @@ internal static class InputInjector
             "SELECT_ALL_COPY" => 0x43,
             _ => 0
         };
+        if (action == "ALT_TAB")
+        {
+            Send(0x12, 0, 0); // Alt down
+            try { Send(0x09, 0, 0); Send(0x09, 0, KEYEVENTF_KEYUP); }
+            finally { Send(0x12, 0, KEYEVENTF_KEYUP); }
+            return;
+        }
         if (key == 0) return;
         Send(0x11, 0, 0); // Ctrl down
         try
