@@ -18,6 +18,8 @@ metadata:
 | **Requested:** human asks for a form, review, comparison or “are there some choices to make?” at any time | Inspect the current project/research state and return a prioritized, optional **decision landscape**, including choices not yet recorded as issues | Assuming “choices” means only current blockers or reproducing stale queues |
 | **Offered:** agent's prior-art, user-feedback or design research reveals a meaningful landscape of alternatives | Deliver the research first; if the opportunity is substantial, offer an **optional** grounded survey with recommendations, affected constituencies and partial responses | Interrupting with 25 compulsory questions or imagining consensus from anecdotes |
 
+**Recognize opportunistic composition at completion boundaries.** When substantive prior-art/user-feedback research, a concept map or a design comparison yields a meaningful evidence-backed set of alternatives, check once whether those alternatives give the human useful authority or preference leverage. This can justify a short optional invitation even if the original task did not mention forms. Keep the original requested deliverable intact; avoid offering a survey when the material adds no real choices or merely restates settled decisions. Use the [Opportunity Handoff procedure](references/opportunity-handoffs.md) for the bounded trigger and rejection test.
+
 A user-requested choice briefing does **not** imply a release audit, nor require that anything be blocked. It can show approaching, optional and reconsiderable directions. An agent-offered choice survey does **not** convert research into settled product requirements. When no useful choices exist, say so and identify the coverage limit.
 
 ## Execution in seven bounded steps
@@ -32,6 +34,7 @@ A user-requested choice briefing does **not** imply a release audit, nor require
 
 ## Choose one targeted reference, not the whole library
 
+- **When a different skill's output may create a useful director choice:** [Evidence-triggered opportunity handoffs](references/opportunity-handoffs.md), including cases where no interaction should be offered.
 - **What UI and evidence fields to provide:** [Interaction design contract and patterns](references/interaction-design-contract.md).
 - **After feature prior-art/user-criticism research:** [Optional feature-choice survey example](examples/research-to-optional-survey.md).
 - **When a human unexpectedly asks “Any choices I could make?”:** [On-demand decision discovery example](examples/on-demand-choices.md).
