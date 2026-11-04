@@ -30,6 +30,12 @@ When the task is specifically to reduce test/CI cycles or the director's repeate
 - **Research or model → human interface:** offer an optional choice survey when grounded prior art and user criticism expose consequential alternatives; preserve provenance, and permit partial answers without commitment.
 - **Human interface → research or model:** a response may provide a new requirement, a provisional preference, a counterexample or a challenge to the entire premise; trace its effects without converting silence into agreement.
 
+## Evidence-triggered opportunity handoffs
+
+The handoff between capabilities is driven by a **newly established consequential choice**, not by completion of a mandatory pipeline. At the boundary of substantive research, modelling or design synthesis, the primary agent can check whether it has discovered evidence-backed alternatives whose consequences depend on owner values or established authority. If so, expose the choice space as an optional interaction; if not, simply deliver the original artifact. This check should be proportionate and should **not** load every skill, create a standing form obligation, or reopen settled decisions without new evidence.
+
+See the [Opportunity Handoff procedure](human-agent-interaction-engineering/references/opportunity-handoffs.md) for triggers, rejection conditions, a minimal transport record, evidence distinctions and negative controls. The same evidence may flow back from human responses into a concept map, requirements or further targeted investigation. Existing project rules determine what may be written.
+
 ## Routing examples
 
 1. Known Compose layout bug with a reproducer: Android Development first; fix and test. No map or research committee.
