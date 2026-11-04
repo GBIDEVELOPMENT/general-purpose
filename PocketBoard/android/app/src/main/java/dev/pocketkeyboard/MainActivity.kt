@@ -52,7 +52,7 @@ import javax.net.ssl.X509TrustManager
 class MainActivity : Activity() {
     private val prefs by lazy { getSharedPreferences("peer", MODE_PRIVATE) }
     private lateinit var status: TextView
-    private lateinit var discoveryButton: Button
+    private lateinit var discoveryButton: ImageView
     private lateinit var touchpadFeedback: TextView
     private lateinit var host: EditText
     private lateinit var editor: EditText
@@ -136,44 +136,27 @@ class MainActivity : Activity() {
             contentDescription = "PocketBoard rainbow keyboard logo"
             top.addView(this, LinearLayout.LayoutParams(dp(32), dp(32)).apply { rightMargin = dp(7) })
         }
-        TextView(this).apply {
-            val name = SpannableString("PocketBoard ✦")
-            val shades = intArrayOf(0xFFFF618D.toInt(), 0xFFFFBA35.toInt(), 0xFF5DCE93.toInt(),
-                0xFF50AFFF.toInt(), 0xFFB47BFF.toInt())
-            for (i in 6 until 11) name.setSpan(ForegroundColorSpan(shades[i - 6]), i, i + 1, 0)
-            name.setSpan(ForegroundColorSpan(0xFFFFCD57.toInt()), 12, 13, 0)
-            text = name
-            textSize = 18f
-            setTypeface(null, Typeface.BOLD)
-            setTextColor(white)
-            gravity = Gravity.CENTER_VERTICAL
-            setSingleLine(true)
-            top.addView(this, LinearLayout.LayoutParams(0, dp(36), 1f))
-        }
-        discoveryButton = Button(this).apply {
-            text = "⌁ Discover"
-            setAllCaps(false)
-            textSize = 12f
-            setTextColor(white)
-            background = flatButton(0xFF7944D7.toInt(), 20)
-            elevation = 0f
-            stateListAnimator = null
-            setPadding(0, 0, 0, 0)
-            setOnClickListener { discover() }
-            top.addView(this, LinearLayout.LayoutParams(dp(105), dp(37)))
-        }
+        // Connection and discovery share the icon's header row.
         status = TextView(this).apply {
-            text = "●  Tap Discover to find your PC"
-            textSize = 11.5f
+            text = "Disconnected"
+            textSize = 13f
+            setTypeface(null, Typeface.BOLD)
             setTextColor(0xFFDDE8FF.toInt())
-            gravity = Gravity.CENTER_VERTICAL
+            gravity = Gravity.CENTER
             maxLines = 1
             ellipsize = android.text.TextUtils.TruncateAt.END
-            setPadding(dp(10), 0, dp(8), 0)
-            background = bg(0xFF283040.toInt(), 14)
-            root.addView(this, LinearLayout.LayoutParams(-1, dp(26)).apply {
-                topMargin = dp(2); bottomMargin = dp(4)
-            })
+            background = bg(0xFF283040.toInt(), 17)
+            top.addView(this, LinearLayout.LayoutParams(0, dp(35), 1f).apply { rightMargin = dp(7) })
+        }
+        discoveryButton = ImageView(this).apply {
+            setImageResource(R.drawable.pb_discover)
+            setPadding(dp(11), dp(11), dp(11), dp(11))
+            contentDescription = "Discover nearby PCs"
+            background = flatButton(0xFF7944D7.toInt(), 20)
+            isClickable = true
+            isFocusable = true
+            setOnClickListener { discover() }
+            top.addView(this, LinearLayout.LayoutParams(dp(42), dp(40)))
         }
         host = EditText(this).apply {
             setText(prefs.getString("host", ""))
@@ -192,17 +175,17 @@ class MainActivity : Activity() {
             override fun onDown(e: MotionEvent): Boolean = true
             override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
                 sendAction("mouse_click", "left")
-                touchpadFeedback.text = "Click"
+                touchpadFeedback.text = ""
                 return true
             }
             override fun onDoubleTap(e: MotionEvent): Boolean {
                 sendAction("mouse_click", "double")
-                touchpadFeedback.text = "Double-click"
+                touchpadFeedback.text = ""
                 return true
             }
             override fun onLongPress(e: MotionEvent) {
                 sendAction("mouse_click", "right")
-                touchpadFeedback.text = "Right-click"
+                touchpadFeedback.text = ""
             }
             override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
                 val density = resources.displayMetrics.density
@@ -214,7 +197,7 @@ class MainActivity : Activity() {
                 remainderY = if (rawY > 300f || rawY < -300f) 0f else rawY - dy
                 if (dx != 0 || dy != 0) {
                     send(JSONObject().put("type", "mouse_move").put("dx", dx).put("dy", dy))
-                    touchpadFeedback.text = "Pointer"
+                    touchpadFeedback.text = ""
                 }
                 return true
             }
@@ -229,7 +212,7 @@ class MainActivity : Activity() {
         }
         root.addView(trackpad, trackpadParams)
         touchpadFeedback = TextView(this).apply {
-            text = "▧  Pointer · tap / double-tap / hold"
+            text = ""
             setTextColor(0xFFDDE1F4.toInt())
             textSize = 11f
             root.addView(this, LinearLayout.LayoutParams(-1, dp(16)))
@@ -258,15 +241,19 @@ class MainActivity : Activity() {
         }
         // The input field owns Clear and Dictation.
         fun inputAction(name: String, iconRes: Int, color: Int, action: () -> Unit) {
-            ImageView(this).apply {
-                setImageResource(iconRes)
-                setPadding(dp(8), dp(8), dp(8), dp(8))
-                background = circularButton(color)
-                contentDescription = name
+            val holder = FrameLayout(this).apply {
                 isClickable = true
                 isFocusable = true
+                contentDescription = name
                 setOnClickListener { action() }
-                inputBar.addView(this, LinearLayout.LayoutParams(dp(38), dp(38)).apply { rightMargin = dp(4) })
+                inputBar.addView(this, LinearLayout.LayoutParams(dp(40), dp(41)))
+            }
+            ImageView(this).apply {
+                setImageResource(iconRes)
+                setPadding(dp(6), dp(6), dp(6), dp(6))
+                background = circularButton(color)
+                isClickable = false
+                holder.addView(this, FrameLayout.LayoutParams(dp(34), dp(34), Gravity.CENTER))
             }
         }
         inputAction("Clear text input", R.drawable.pb_clear, 0xFFEF4A85.toInt()) {
@@ -320,6 +307,7 @@ class MainActivity : Activity() {
             "COPY" -> R.drawable.pb_copy
             "SELECT_ALL_COPY" -> R.drawable.pb_all_copy
             "PASTE" -> R.drawable.pb_paste
+            "ALT_TAB_CLOSE" -> R.drawable.pb_choose
             "TAB" -> R.drawable.pb_tab
             "ENTER" -> R.drawable.pb_enter
             "BACKSPACE" -> R.drawable.pb_backspace
@@ -332,10 +320,11 @@ class MainActivity : Activity() {
                 root.addView(this, LinearLayout.LayoutParams(-1, dp(53)).apply { topMargin = dp(3) })
             }
             actions.forEach { (title, type, value) ->
-                val colors = palettes[(buttonIndex++) % palettes.size]
                 val slot = FrameLayout(this).apply {
                     row.addView(this, LinearLayout.LayoutParams(0, dp(53), 1f))
                 }
+                if (value == "EMPTY") return@forEach
+                val colors = palettes[(buttonIndex++) % palettes.size]
                 val circle = FrameLayout(this).apply {
                     background = circularButton(colors.second.toInt())
                     contentDescription = title
@@ -392,16 +381,16 @@ class MainActivity : Activity() {
         // Keep the related Apps -> Next -> Choose sequence adjacent.
         controlRow(listOf(
             Triple("Apps", "shortcut", "ALT_TAB_OPEN"),
-            Triple("Next app", "shortcut", "ALT_TAB_NEXT"),
             Triple("Choose", "shortcut", "ALT_TAB_CLOSE"),
+            Triple("", "", "EMPTY"),
             Triple("Copy", "shortcut", "COPY"),
             Triple("Select all and copy", "shortcut", "SELECT_ALL_COPY"),
             Triple("Paste", "shortcut", "PASTE")))
         controlRow(listOf(
+            Triple("", "", "EMPTY"),
             Triple("Esc", "key", "ESCAPE"),
             Triple("Tab", "key", "TAB"),
-            Triple("Enter", "key", "ENTER"),
-            Triple("Backspace", "key", "BACKSPACE")))
+            Triple("Enter", "key", "ENTER")))
         // Keep a landscape trackpad, never let it expand into portrait.
         // Use only residual vertical space after the header, editor, and ALL
         // action rows are laid out; extra room remains dark and empty.
@@ -432,7 +421,7 @@ class MainActivity : Activity() {
 
     private fun discover() {
         discoveryButton.isEnabled = false
-        status.text = "Searching your Wi-Fi for PocketBoard..."
+        status.text = "Searching..."
         Thread {
             val found = linkedMapOf<String, String>()
             val lock = (getSystemService(Context.WIFI_SERVICE) as WifiManager)
@@ -474,7 +463,7 @@ class MainActivity : Activity() {
                     }
                 }
             } catch (e: Exception) {
-                runOnUiThread { status.text = "Discovery error: ${e.message}" }
+                runOnUiThread { status.text = "Discovery error" }
             } finally {
                 if (lock.isHeld) lock.release()
             }
@@ -482,7 +471,7 @@ class MainActivity : Activity() {
                 discoveryButton.isEnabled = true
                 if (isFinishing || isDestroyed) return@runOnUiThread
                 if (found.isEmpty()) {
-                    status.text = "No PC found. Check same Wi-Fi and firewall."
+                    status.text = "No PC found"
                     return@runOnUiThread
                 }
                 val hosts = found.keys.toList()
@@ -563,7 +552,11 @@ class MainActivity : Activity() {
     }
 
     private fun showStatus(message: String) = runOnUiThread {
-        status.text = if (ready) "●  Connected securely to " + prefs.getString("host", "PC") else message
+        status.text = if (ready) "Connected ✓" else when {
+            message.startsWith("Disconnected") -> "Disconnected"
+            message.startsWith("Connecting") -> "Connecting..."
+            else -> message
+        }
         status.setTextColor(if (ready) 0xFFE5FFEE.toInt() else 0xFFDDE8FF.toInt())
         status.background = bg(if (ready) 0xFF135D35.toInt() else 0xFF283040.toInt(), 14)
         editor.isEnabled = ready

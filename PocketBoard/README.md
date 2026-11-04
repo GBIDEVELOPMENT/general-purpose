@@ -162,3 +162,7 @@ single six-button row, in that order. The media and keyboard rows retain
 their controls and colors. Removing the extra row frees 56dp vertically,
 which remains available to the touchpad/keyboard-first layout.
 This is Android-only; the Windows receiver is unchanged.
+
+## PocketBoard 0.15 compact controls
+
+One-row icon, Connected checkmark and magnifying-glass discovery. Blank 16dp spacer below trackpad retained. Clear and microphone backgrounds 34dp with unchanged 22dp glyphs inside 40dp slots. Apps, Choose, blank, Copy, All+Copy, Paste. Bottom row blank, Esc, Tab, Enter; Backspace removed. Native vector icons added. Windows protocol unchanged.
