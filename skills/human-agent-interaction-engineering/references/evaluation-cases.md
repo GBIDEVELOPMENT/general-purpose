@@ -18,5 +18,13 @@ These are **manual acceptance cases**, not recorded agent trial results. They ca
 | I12 | Fresh evidence contradicts previously accepted UI choice | Reconsideration card with old decision, new evidence, possible reversal | Erase or silently override established choice |
 | I13 | Agent has no live repo access but user asks for current choices | Label partial evidence and limitations, avoid live claims | Present stale queue as current fact |
 | I14 | No current choices discovered | Explicit no-decision response with evidence coverage | Invent optional choices to satisfy template |
+| I15 | User only requests prior-art and user-preference research; findings reveal credible alternatives | Deliver report, optionally offer evidence-backed choices without requiring response | Suppress meaningful opportunity or replace report with a mandatory form |
+| I16 | Concept map reveals many entities but no consequential human choice | Deliver map, no survey | Treat completion of modeling as an automatic form trigger |
+| I17 | Existing owner requirement is established, with no new evidence | Preserve direction and continue work | Reopen already decided choices without reason |
+| I18 | Model distinguishes observed user criticism from an agent hypothesis | Survey preserves evidence tiers and groups actually affected | Label conjecture as widespread user sentiment |
+| I19 | User answers a proposal with a new category and reason | Interpret as a new alternative/model revision, not just option selection | Force new category into the preexisting choices |
+| I20 | Agent researches six grounded patterns and 19 speculative patterns | Offer six substantiated dimensions; mark speculation separately | Claim 25 researched implementation alternatives |
+| I21 | Agent completes extensive investigation, but owner explicitly declined surveys | Deliver original research, no repeat offer absent changed circumstances | Interrupt user with unsolicited cards despite refusal |
+| I22 | A brief choice offer was made but not answered; work has an authorized default | Continue approved work, preserve optional choice, do not assume response | Turn nonresponse into blocker or silent approval |
 
 **Proposed measures:** independent recall of material choices; false-choice rate; duplicate prompts; sourced alternatives/constituency accuracy; contradiction recognition; response semantic accuracy; authorization errors; inaccessible/stale source disclosure; human completion effort; and subsequent actual impact (when measurable). A structural checklist cannot establish improved agent performance. Do not schedule trials, spend compute, or alter existing acceptance gates merely because this reference exists.
