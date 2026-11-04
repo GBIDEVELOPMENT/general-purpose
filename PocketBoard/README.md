@@ -134,3 +134,16 @@ Colored circular button backgrounds are now **1:1.08 width-to-height vertical ov
 SVG symbols and text glyphs remain rendered within centered square viewports
 and are never stretched. Existing row heights stay unchanged, preserving the
 keyboard-open layout budget.
+
+## PocketBoard 0.13 shape and volume symbols
+
+The 1:1.08 oval experiment is superseded by a **1:1 superellipse**
+(exponent 2.55), a subtle circle-to-squircle transformation with flatter
+sides, without stretching the symbols. Editable button silhouette SVG is
+in assets/symbols/button_squircle.svg with a matching native vector drawable.
+
+The three volume actions now use the same white speaker silhouette and
+right-hand X, + or minus marks from the supplied reference. Three new
+SVGs and matching Android vector drawables implement them. Colored button
+backgrounds, sizing, positions, connection behavior and the Windows
+companion remain unchanged.

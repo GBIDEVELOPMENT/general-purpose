@@ -79,12 +79,13 @@ class MainActivity : Activity() {
     private fun flatButton(color: Int, radius: Int = 14): android.graphics.drawable.Drawable =
         RippleDrawable(ColorStateList.valueOf(0x33FFFFFF), bg(color, radius), null)
 
+    // The button silhouette is a subtle superellipse (exponent 2.55).
+    // Width and height are equal; flatter side curvature is part of the path,
+    // not an oval scaling transform. The symbols stay in square viewports.
     private fun circularButton(color: Int): android.graphics.drawable.Drawable {
-        val disk = GradientDrawable().apply {
-            shape = GradientDrawable.OVAL
-            setColor(color)
-        }
-        return RippleDrawable(ColorStateList.valueOf(0x33FFFFFF), disk, null)
+        val surface = getDrawable(R.drawable.pb_button_squircle)!!.mutate().apply { setTint(color) }
+        val mask = getDrawable(R.drawable.pb_button_squircle)!!.mutate()
+        return RippleDrawable(ColorStateList.valueOf(0x33FFFFFF), surface, mask)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -265,7 +266,7 @@ class MainActivity : Activity() {
                 isClickable = true
                 isFocusable = true
                 setOnClickListener { action() }
-                inputBar.addView(this, LinearLayout.LayoutParams(dp(38), dp(41)).apply { rightMargin = dp(4) })
+                inputBar.addView(this, LinearLayout.LayoutParams(dp(38), dp(38)).apply { rightMargin = dp(4) })
             }
         }
         inputAction("Clear text input", R.drawable.pb_clear, 0xFFEF4A85.toInt()) {
@@ -310,6 +311,9 @@ class MainActivity : Activity() {
         var buttonIndex = 0
         var showingPause = false // presentation-only: no media state queries
         fun resourceFor(value: String): Int? = when (value) {
+            "VOLUME_DOWN" -> R.drawable.pb_volume_down
+            "VOLUME_UP" -> R.drawable.pb_volume_up
+            "VOLUME_MUTE" -> R.drawable.pb_volume_mute
             "MEDIA_PREV" -> R.drawable.pb_media_prev
             "MEDIA_NEXT" -> R.drawable.pb_media_next
             "MEDIA_PLAY_PAUSE" -> R.drawable.pb_media_play
@@ -337,7 +341,7 @@ class MainActivity : Activity() {
                     contentDescription = title
                     isFocusable = true
                     isClickable = true
-                    slot.addView(this, FrameLayout.LayoutParams(dp(49), dp(53), Gravity.CENTER))
+                    slot.addView(this, FrameLayout.LayoutParams(dp(49), dp(49), Gravity.CENTER))
                 }
                 val symbol = resourceFor(value)
                 val icon: ImageView? = if (symbol != null) ImageView(this).apply {
