@@ -212,6 +212,13 @@ internal sealed class TrayServer : ApplicationContext
                     {
                         case "text": InputInjector.Text(Get(root, "value", 4096)); break;
                         case "key": InputInjector.Key(Get(root, "value", 30)); break;
+                        case "shortcut": InputInjector.Shortcut(Get(root, "value", 30)); break;
+                        case "mouse_click": InputInjector.MouseClick(Get(root, "value", 20)); break;
+                        case "mouse_move":
+                            int dx = root.TryGetProperty("dx", out var mx) && mx.TryGetInt32(out var x) ? Math.Clamp(x, -300, 300) : 0;
+                            int dy = root.TryGetProperty("dy", out var my) && my.TryGetInt32(out var y) ? Math.Clamp(y, -300, 300) : 0;
+                            InputInjector.MouseMove(dx, dy);
+                            break;
                         case "replace":
                             int count = root.TryGetProperty("delete", out var num) && num.TryGetInt32(out var n) ? Math.Clamp(n, 0, 4096) : 0;
                             for (int i = 0; i < count; i++) InputInjector.Key("BACKSPACE");
@@ -266,6 +273,66 @@ internal static class InputInjector
             Send(0, ch, KEYEVENTF_UNICODE | KEYEVENTF_KEYUP);
         }
     }
+    // Keyboard shortcuts are transmitted as *intent*, not arbitrary modifier state.
+    // Release Ctrl even when a send fails, avoiding a stuck modifier on the PC.
+    public static void Shortcut(string action)
+    {
+        ushort key = action switch
+        {
+            "COPY" => 0x43,
+            "PASTE" => 0x56,
+            "SELECT_ALL_COPY" => 0x43,
+            _ => 0
+        };
+        if (key == 0) return;
+        Send(0x11, 0, 0); // Ctrl down
+        try
+        {
+            if (action == "SELECT_ALL_COPY")
+            {
+                Send(0x41, 0, 0); // A
+                Send(0x41, 0, KEYEVENTF_KEYUP);
+            }
+            Send(key, 0, 0);
+            Send(key, 0, KEYEVENTF_KEYUP);
+        }
+        finally { Send(0x11, 0, KEYEVENTF_KEYUP); }
+    }
+    const uint MOUSEEVENTF_MOVE = 0x0001;
+    const uint MOUSEEVENTF_LEFTDOWN = 0x0002;
+    const uint MOUSEEVENTF_LEFTUP = 0x0004;
+    const uint MOUSEEVENTF_RIGHTDOWN = 0x0008;
+    const uint MOUSEEVENTF_RIGHTUP = 0x0010;
+    static void Mouse(uint flags, int dx = 0, int dy = 0)
+    {
+        var inputs = new[] { new INPUT { type = 0, u = new INPUTUNION
+        {
+            mi = new MOUSEINPUT { dx = dx, dy = dy, dwFlags = flags }
+        } } };
+        SendInput(1, inputs, Marshal.SizeOf<INPUT>());
+    }
+    public static void MouseMove(int dx, int dy)
+    {
+        if (dx != 0 || dy != 0) Mouse(MOUSEEVENTF_MOVE, dx, dy);
+    }
+    public static void MouseClick(string action)
+    {
+        if (action == "right")
+        {
+            Mouse(MOUSEEVENTF_RIGHTDOWN);
+            Mouse(MOUSEEVENTF_RIGHTUP);
+        }
+        else if (action is "left" or "double")
+        {
+            int count = action == "double" ? 2 : 1;
+            for (int i = 0; i < count; i++)
+            {
+                Mouse(MOUSEEVENTF_LEFTDOWN);
+                Mouse(MOUSEEVENTF_LEFTUP);
+            }
+        }
+    }
+
     public static void Key(string key)
     {
         ushort vk = key switch
@@ -273,6 +340,7 @@ internal static class InputInjector
             "BACKSPACE" => 0x08, "ENTER" => 0x0D, "TAB" => 0x09,
             "ESCAPE" => 0x1B, "LEFT" => 0x25, "UP" => 0x26,
             "RIGHT" => 0x27, "DOWN" => 0x28, "DELETE" => 0x2E,
+            "VOLUME_UP" => 0xAF, "VOLUME_DOWN" => 0xAE, "VOLUME_MUTE" => 0xAD,
             _ => 0
         };
         if (vk == 0) return;
