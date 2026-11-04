@@ -86,3 +86,17 @@ and alternative IME heights.
 ## PocketBoard 0.8 media and app-switcher controls
 
 The first shortcut row now groups **volume down, volume up, mute, previous track, play/pause, and next track**, using Windows virtual media keys that target the active system media session. The second row groups **Apps, Next app, and Choose** for the existing Alt+Tab workflow. Copy/Paste and navigation remain in their own compact rows. The fourth row is budgeted above the Android IME, and the rainbow touchpad yields space first. The Windows tray receiver must be updated with this release for media keys to work.
+
+## PocketBoard 0.9 system-bar and flat-UI fixes
+
+- Android 15+ edge-to-edge insets now reserve the real **top status/cutout
+  inset**, so the header no longer overlaps the Android clock and indicators.
+  The IME/navigation inset is still reserved at the bottom.
+- All interactive colored buttons are **solid flat fills**, with no gradient
+  or elevation. Press feedback remains a lightweight ripple.
+- The six media keys and four bottom navigation keys show **icons only**;
+  their full action names remain available to TalkBack.
+- The seven touchpad stripes extend beyond the clipped rounded edges so no
+  black/charcoal triangles appear at the left or right.
+- This remains an Android-only change. The Windows receiver does not need
+  updating. Confirm the status-bar clearance and Gboard-fit on hardware.

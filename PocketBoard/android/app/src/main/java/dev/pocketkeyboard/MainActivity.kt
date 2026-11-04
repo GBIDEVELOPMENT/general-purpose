@@ -74,13 +74,10 @@ class MainActivity : Activity() {
     private fun sendAction(type: String, value: String) =
         send(JSONObject().put("type", type).put("value", value))
 
-    private fun glossy(top: Int, bottom: Int, radius: Int = 14): android.graphics.drawable.Drawable {
-        val fill = GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, intArrayOf(top, bottom)).apply {
-            cornerRadius = dp(radius).toFloat()
-            setStroke(dp(1), Color.argb(35, 255, 255, 255))
-        }
-        return RippleDrawable(ColorStateList.valueOf(0x44FFFFFF), fill, null)
-    }
+    // Flat color, rounded geometry and a restrained press ripple: no gradients,
+    // borders, state-list elevation or faux directional lighting.
+    private fun flatButton(color: Int, radius: Int = 14): android.graphics.drawable.Drawable =
+        RippleDrawable(ColorStateList.valueOf(0x33FFFFFF), bg(color, radius), null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,21 +95,27 @@ class MainActivity : Activity() {
             isFocusableInTouchMode = true
         }
         setContentView(root)
-        // On Android 15+ edge-to-edge, adjustResize alone need not reserve the
-        // keyboard area. Consume the IME bottom inset as content padding.
-        // The available space is then truly the area ABOVE Gboard.
-        var imeInset = 0
+        // Android 15+ enforces edge-to-edge for target SDK 35. The system clock
+        // and notification icons occupy the transparent status-bar inset, so
+        // reserve that space above every interactive control. Keep the existing
+        // IME handling as well, with no magic fixed status-bar height.
+        var lastTopInset = -1
+        var lastBottomInset = -1
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             root.setOnApplyWindowInsetsListener { view, insets ->
-                val current = insets.getInsets(WindowInsets.Type.ime()).bottom
-                val system = insets.getInsets(WindowInsets.Type.navigationBars()).bottom
-                val bottom = if (insets.isVisible(WindowInsets.Type.ime())) current else system
-                if (imeInset != bottom) {
-                    imeInset = bottom
-                    view.setPadding(dp(10), dp(4), dp(10), dp(3) + bottom)
+                val systemBars = insets.getInsets(WindowInsets.Type.systemBars() or WindowInsets.Type.displayCutout())
+                val top = if (Build.VERSION.SDK_INT >= 35) systemBars.top else 0
+                val bottom = if (insets.isVisible(WindowInsets.Type.ime()))
+                    insets.getInsets(WindowInsets.Type.ime()).bottom
+                else systemBars.bottom
+                if (lastTopInset != top || lastBottomInset != bottom) {
+                    lastTopInset = top
+                    lastBottomInset = bottom
+                    view.setPadding(dp(10), dp(4) + top, dp(10), dp(3) + bottom)
                 }
                 insets
             }
+            root.requestApplyInsets()
         }
         val top = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
@@ -143,8 +146,9 @@ class MainActivity : Activity() {
             setAllCaps(false)
             textSize = 12f
             setTextColor(white)
-            background = glossy(0xFFAE7AFF.toInt(), 0xFF7039DA.toInt(), 20)
-            elevation = dp(2).toFloat()
+            background = flatButton(0xFF7944D7.toInt(), 20)
+            elevation = 0f
+            stateListAnimator = null
             setPadding(0, 0, 0, 0)
             setOnClickListener { discover() }
             top.addView(this, LinearLayout.LayoutParams(dp(105), dp(37)))
@@ -212,7 +216,7 @@ class MainActivity : Activity() {
         val inputBar = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
-            background = glossy(0xFF343C58.toInt(), 0xFF292F48.toInt(), 13)
+            background = bg(0xFF2E3551.toInt(), 13)
             root.addView(this, LinearLayout.LayoutParams(-1, dp(41)).apply { bottomMargin = dp(3) })
         }
         editor = EditText(this).apply {
@@ -237,7 +241,7 @@ class MainActivity : Activity() {
             gravity = Gravity.CENTER
             contentDescription = "Open keyboard for voice dictation"
             setTextColor(white)
-            background = glossy(0xFF9F65FF.toInt(), 0xFF6638CC.toInt(), 12)
+            background = flatButton(0xFF8049D6.toInt(), 12)
             setOnClickListener {
                 editor.requestFocus()
                 (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
@@ -287,8 +291,8 @@ class MainActivity : Activity() {
                 val tile = LinearLayout(this).apply {
                     orientation = LinearLayout.VERTICAL
                     gravity = Gravity.CENTER
-                    background = glossy(colors.first.toInt(), colors.second.toInt(), 12)
-                    elevation = dp(2).toFloat()
+                    background = flatButton(colors.second.toInt(), 12)
+                    elevation = 0f
                     isClickable = true
                     isFocusable = true
                     contentDescription = title
@@ -314,15 +318,18 @@ class MainActivity : Activity() {
                     "BACKSPACE" -> "⌫"
                     else -> "•"
                 }
+                // All six media keys and the four navigation keys use pictograms
+                // only. Keep the full accessible name on each clickable tile.
+                val iconOnly = type == "key"
                 TextView(this).apply {
                     text = glyph
-                    textSize = 19f
+                    textSize = if (iconOnly) 26f else 19f
                     setTextColor(white)
                     includeFontPadding = false
                     gravity = Gravity.CENTER
-                    tile.addView(this, LinearLayout.LayoutParams(-1, dp(21)))
+                    tile.addView(this, LinearLayout.LayoutParams(-1, if (iconOnly) dp(41) else dp(21)))
                 }
-                TextView(this).apply {
+                if (!iconOnly) TextView(this).apply {
                     text = title
                     textSize = 11f
                     setTextColor(white)
@@ -473,14 +480,20 @@ class MainActivity : Activity() {
             canvas.clipPath(shape)
             val span = w / 7f
             val lean = kotlin.math.min(h * 0.14f, span * 0.35f)
+            // Antialiased seam safety: even subpixel rounding cannot show
+            // the charcoal view background through the stripes.
+            canvas.drawColor(colors[0])
             for (i in colors.indices) {
                 paint.color = colors[i]
-                val x = i * span
+                val leftTop = if (i == 0) -w else i * span - lean
+                val leftBottom = if (i == 0) -w else i * span + lean
+                val rightTop = if (i == colors.lastIndex) 2f*w else (i+1) * span - lean + 1f
+                val rightBottom = if (i == colors.lastIndex) 2f*w else (i+1) * span + lean + 1f
                 val stripe = Path().apply {
-                    moveTo(x - lean, 0f)
-                    lineTo(x + span - lean + 1f, 0f)
-                    lineTo(x + span + lean + 1f, h)
-                    lineTo(x + lean, h)
+                    moveTo(leftTop, 0f)
+                    lineTo(rightTop, 0f)
+                    lineTo(rightBottom, h)
+                    lineTo(leftBottom, h)
                     close()
                 }
                 canvas.drawPath(stripe, paint)
