@@ -132,9 +132,9 @@ class MainActivity : Activity() {
             root.addView(this, LinearLayout.LayoutParams(-1, dp(41)))
         }
         ImageView(this).apply {
-            setImageResource(R.drawable.ic_launcher_art)
+            setImageResource(R.drawable.pb_header_icon)
             contentDescription = "PocketBoard rainbow keyboard logo"
-            top.addView(this, LinearLayout.LayoutParams(dp(32), dp(32)).apply { rightMargin = dp(7) })
+            top.addView(this, LinearLayout.LayoutParams(dp(40), dp(40)).apply { rightMargin = dp(7) })
         }
         // Connection and discovery share the icon's header row.
         status = TextView(this).apply {
@@ -145,18 +145,18 @@ class MainActivity : Activity() {
             gravity = Gravity.CENTER
             maxLines = 1
             ellipsize = android.text.TextUtils.TruncateAt.END
-            background = bg(0xFF283040.toInt(), 17)
-            top.addView(this, LinearLayout.LayoutParams(0, dp(35), 1f).apply { rightMargin = dp(7) })
+            background = bg(0xFF283040.toInt(), 13)
+            top.addView(this, LinearLayout.LayoutParams(0, dp(40), 1f).apply { rightMargin = dp(7) })
         }
         discoveryButton = ImageView(this).apply {
             setImageResource(R.drawable.pb_discover)
             setPadding(dp(11), dp(11), dp(11), dp(11))
             contentDescription = "Discover nearby PCs"
-            background = flatButton(0xFF7944D7.toInt(), 20)
+            background = circularButton(0xFF7944D7.toInt())
             isClickable = true
             isFocusable = true
             setOnClickListener { discover() }
-            top.addView(this, LinearLayout.LayoutParams(dp(42), dp(40)))
+            top.addView(this, LinearLayout.LayoutParams(dp(40), dp(40)))
         }
         host = EditText(this).apply {
             setText(prefs.getString("host", ""))
@@ -207,7 +207,8 @@ class MainActivity : Activity() {
             setOnTouchListener { _, event -> detector.onTouchEvent(event); true }
         }
         val trackpadParams = LinearLayout.LayoutParams(-1, dp(146)).apply {
-            topMargin = dp(3)
+            // Match the 2dp pad margin + 16dp feedback area below it.
+            topMargin = dp(18)
             bottomMargin = dp(2)
         }
         root.addView(trackpad, trackpadParams)
@@ -400,7 +401,9 @@ class MainActivity : Activity() {
         root.viewTreeObserver.addOnGlobalLayoutListener {
             val maxLandscape = ((root.width - root.paddingLeft - root.paddingRight) / 1.85f).toInt()
             val fixed = root.childrenHeightExcept(trackpad) + root.paddingTop + root.paddingBottom
-            val available = (root.height - fixed - dp(5)).coerceAtLeast(dp(48))
+            // Reserve both pad margins when the IME leaves very little vertical space.
+            val padMargins = trackpadParams.topMargin + trackpadParams.bottomMargin
+            val available = (root.height - fixed - padMargins).coerceAtLeast(dp(48))
             val target = minOf(maxLandscape, available, dp(158))
             if (trackpad.layoutParams.height != target) {
                 trackpad.layoutParams = trackpad.layoutParams.apply { height = target }
