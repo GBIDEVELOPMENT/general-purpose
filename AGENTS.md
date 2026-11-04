@@ -69,7 +69,7 @@ ownership.
 
 These portable skills do not override user authority, a host project's AGENTS.md, security requirements, current source, or observed test evidence. Installing or editing this central repository does not install skills into Chunks, Glimpse, Expository or any other repository. Do not touch unrelated audit, Shaw mail, FTP, Night Court or privileged workflows while maintaining skills.
 
-The capability map in [Skills Architecture](skills/CAPABILITY-ARCHITECTURE.md) separates domain reference, operational execution, mechanised inquiry, conceptual representation and verification. None is a universal prerequisite.
+The capability map in [Skills Architecture](skills/CAPABILITY-ARCHITECTURE.md) separates domain reference, operational execution, mechanised inquiry, conceptual representation, human-agent interaction and verification. None is a universal prerequisite.
 
 Choose the **single primary skill** from the actual task; open a second one only when the first reveals a specific consequential dependency:
 
@@ -77,6 +77,7 @@ Choose the **single primary skill** from the actual task; open a second one only
 - **Cross-project CI/test-cost planning:** choose [Engineering Judgment](skills/engineering-judgment/SKILL.md) and its optional validation-economics reference; distinguish tests that reach changed behavior from expensive non-exercising suites. Do not replace the host project's required acceptance and merge gates.
 - **Architecture or software/product trade-off requiring a consequential choice:** [Engineering Judgment](skills/engineering-judgment/SKILL.md). Skip deep analysis for routine reversible fixes.
 - **Explicit concept mapping, ontology/model completeness, feature frontiers or gap qualification:** [Concept Model Engineering](skills/concept-model-engineering/SKILL.md). Never treat an unrepresented edge as proof of absence.
+- **Human-requested “any choices?” briefings, optional feature surveys after research, review/annotation forms, or other structured exchanges:** [Human-Agent Interaction Engineering](skills/human-agent-interaction-engineering/SKILL.md). Ground options and recommendations, preserve existing choices, allow partial participation, and treat feedback as nonbinding unless the user explicitly gives it force.
 - **Release-blocker audits, owner decision batches, contradictory requirements, or reconciliation of feedback across plans and work queues:** [Decision Synthesis and Closure](skills/decision-synthesis-closure/SKILL.md). Consolidate findings without losing obligations; ask only decisions requiring owner authority; preserve stable response IDs and trace decisions through authorized changes.
 - **Generating unresolved questions from observed cues, synthesizing corpus recommendations into procedures, or coordinating several decision methods:** [Mechanised Expertise](skills/mechanised-expertise/SKILL.md). Start with its short routing entrypoint, not its entire research archive.
 
