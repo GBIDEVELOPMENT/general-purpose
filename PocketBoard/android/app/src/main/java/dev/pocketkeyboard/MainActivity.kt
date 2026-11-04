@@ -13,6 +13,9 @@ import android.os.Looper
 import android.net.wifi.WifiManager
 import android.content.DialogInterface
 import android.view.WindowManager
+import android.view.WindowInsets
+import android.os.Build
+import android.util.TypedValue
 import java.net.DatagramPacket
 import java.net.DatagramSocket
 import java.net.InetAddress
@@ -76,11 +79,27 @@ class MainActivity : Activity() {
         val accent = Color.rgb(144, 181, 236)
         val root = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            setPadding(dp(10), dp(5), dp(10), dp(5))
+            setPadding(dp(10), dp(5), dp(10), dp(4))
             setBackgroundColor(charcoal)
             isFocusableInTouchMode = true
         }
         setContentView(root)
+        // On Android 15+ edge-to-edge, adjustResize alone need not reserve the
+        // keyboard area. Consume the IME bottom inset as content padding.
+        // The available space is then truly the area ABOVE Gboard.
+        var imeInset = 0
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            root.setOnApplyWindowInsetsListener { view, insets ->
+                val current = insets.getInsets(WindowInsets.Type.ime()).bottom
+                val system = insets.getInsets(WindowInsets.Type.navigationBars()).bottom
+                val bottom = if (insets.isVisible(WindowInsets.Type.ime())) current else system
+                if (imeInset != bottom) {
+                    imeInset = bottom
+                    view.setPadding(dp(10), dp(5), dp(10), dp(4) + bottom)
+                }
+                insets
+            }
+        }
         val top = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
@@ -148,15 +167,16 @@ class MainActivity : Activity() {
             contentDescription = "Rainbow touchpad. Slide to move pointer, tap to click, hold to right-click"
             setOnTouchListener { _, event -> detector.onTouchEvent(event); true }
         }
-        root.addView(trackpad, LinearLayout.LayoutParams(-1, 0, 1f).apply {
+        val trackpadParams = LinearLayout.LayoutParams(-1, dp(160)).apply {
             topMargin = dp(3)
             bottomMargin = dp(2)
-        })
+        }
+        root.addView(trackpad, trackpadParams)
         touchpadFeedback = TextView(this).apply {
             text = "Slide · tap · double-tap · hold"
             setTextColor(white)
             textSize = 10f
-            root.addView(this, LinearLayout.LayoutParams(-1, dp(19)))
+            root.addView(this, LinearLayout.LayoutParams(-1, dp(16)))
         }
         editor = EditText(this).apply {
             hint = "Type or dictate on the PC"
@@ -172,7 +192,7 @@ class MainActivity : Activity() {
             background = bg(panel, 8)
             setPadding(dp(12), dp(2), dp(12), dp(2))
             isEnabled = false
-            root.addView(this, LinearLayout.LayoutParams(-1, dp(44)))
+            root.addView(this, LinearLayout.LayoutParams(-1, dp(40)))
         }
         editor.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -199,17 +219,23 @@ class MainActivity : Activity() {
         fun controlRow(actions: List<Triple<String,String,String>>) {
             val row = LinearLayout(this).apply {
                 orientation = LinearLayout.HORIZONTAL
-                root.addView(this, LinearLayout.LayoutParams(-1, dp(42)).apply { topMargin = dp(3) })
+                root.addView(this, LinearLayout.LayoutParams(-1, dp(39)).apply { topMargin = dp(3) })
             }
             actions.forEach { (title, type, value) ->
-                Button(this).apply {
+                // TextView avoids Button's intrinsic min-width and large default
+                // insets; every label can shrink rather than being cut in half.
+                TextView(this).apply {
                     text = title
-                    setAllCaps(false)
-                    textSize = 11f
                     setTextColor(white)
+                    textSize = 12f
+                    maxLines = 1
+                    gravity = Gravity.CENTER
+                    includeFontPadding = false
+                    setAutoSizeTextTypeUniformWithConfiguration(9, 12, 1, TypedValue.COMPLEX_UNIT_SP)
                     background = bg(panel, 7)
                     setOnClickListener { sendAction(type, value) }
-                    row.addView(this, LinearLayout.LayoutParams(0, dp(40), 1f).apply {
+                    isFocusable = true
+                    row.addView(this, LinearLayout.LayoutParams(0, dp(39), 1f).apply {
                         leftMargin = dp(2)
                         rightMargin = dp(2)
                     })
@@ -233,9 +259,32 @@ class MainActivity : Activity() {
             Triple("Tab", "key", "TAB"),
             Triple("Enter", "key", "ENTER"),
             Triple("⌫", "key", "BACKSPACE")))
+        // Keep a landscape trackpad, never let it expand into portrait.
+        // Use only residual vertical space after the header, editor, and ALL
+        // action rows are laid out; extra room remains dark and empty.
+        root.viewTreeObserver.addOnGlobalLayoutListener {
+            val maxLandscape = ((root.width - root.paddingLeft - root.paddingRight) / 1.85f).toInt()
+            val fixed = root.childrenHeightExcept(trackpad) + root.paddingTop + root.paddingBottom
+            val available = (root.height - fixed - dp(5)).coerceAtLeast(dp(48))
+            val target = minOf(maxLandscape, available, dp(185))
+            if (trackpad.layoutParams.height != target) {
+                trackpad.layoutParams = trackpad.layoutParams.apply { height = target }
+            }
+        }
         root.requestFocus()
         if (prefs.getString("host", null) != null) startConnection()
         else discover()
+    }
+
+    private fun LinearLayout.childrenHeightExcept(excluded: View): Int {
+        var total = 0
+        for (i in 0 until childCount) {
+            val child = getChildAt(i)
+            if (child === excluded || child.visibility == View.GONE) continue
+            val params = child.layoutParams as? LinearLayout.LayoutParams
+            total += child.measuredHeight + (params?.topMargin ?: 0) + (params?.bottomMargin ?: 0)
+        }
+        return total
     }
 
     private fun discover() {
@@ -321,7 +370,7 @@ class MainActivity : Activity() {
             canvas.save()
             canvas.clipPath(shape)
             val span = w / 7f
-            val lean = kotlin.math.min(h * 0.12f, span * 0.33f)
+            val lean = kotlin.math.min(h * 0.14f, span * 0.35f)
             for (i in colors.indices) {
                 paint.color = colors[i]
                 val x = i * span

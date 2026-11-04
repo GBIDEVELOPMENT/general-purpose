@@ -48,3 +48,19 @@ shortcut with `PocketBoard.lnk`.
 GitHub Actions publishes `PocketBoard-0.5-debug.apk` inside the
 `PocketBoard-Android-debug` artifact. The Gradle packaging task names
 distributable APK files using `versionName`; update versionName for future builds.
+
+
+## Layout qualification, version 0.6
+
+The previous weighted trackpad consumed all height on keyboard-hidden screens,
+creating an excessively tall portrait touchpad and obscuring controls behind
+the IME. PocketBoard now limits the touchpad to a **landscape aspect ratio**
+(about 1.85:1), computes its height from the actual remaining visible region,
+and explicitly accounts for Android's keyboard insets on edge-to-edge Android.
+Unused space is deliberately left charcoal-colored. Every shortcut is a
+single-line, width-flexible control with adaptive text sizing. The action bar
+remains above the IME rather than relying on scrolling.
+
+**Acceptance requirement:** With Gboard open on Pixel 6 Pro, every row must be
+visible and tappable, the touchpad must remain landscape, and no control label
+may be clipped. CI compilation alone does not prove the real-device layout.
