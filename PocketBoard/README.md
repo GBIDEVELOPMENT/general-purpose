@@ -181,3 +181,19 @@ remains in force so Gboard can still occupy the bottom of the screen.
 The input field stays 41 dp high; its bottom-to-first-row gap is now
 18 dp, matching the 18 dp reserved gap from touchpad to input field.
 No Windows receiver changes are necessary.
+
+## PocketBoard 0.17: matched header geometry and balanced vertical rhythm
+
+The rainbow header artwork now uses the same 2.55-exponent superellipse
+outline as the main action buttons, with no square black backing. The
+40dp-tall app icon, Connected status and Discover button share the same
+height; Discover uses the actual action-button squircle, and Connected
+uses a less pill-like 13dp corner radius appropriate to its wider shape.
+
+The trackpad is visually centered between the 41dp header and the
+41dp text field with 18dp on each side: 18dp above the pad, then 2dp
+pad margin plus 16dp empty feedback area below. The text field retains
+an 18dp gap to the first controls row (15dp plus the row's 3dp margin).
+Available-height calculations reserve the updated trackpad margins to
+prevent clipping when the software keyboard is present. Touch actions
+and Windows receiver behavior are unchanged.
