@@ -79,6 +79,14 @@ class MainActivity : Activity() {
     private fun flatButton(color: Int, radius: Int = 14): android.graphics.drawable.Drawable =
         RippleDrawable(ColorStateList.valueOf(0x33FFFFFF), bg(color, radius), null)
 
+    private fun circularButton(color: Int): android.graphics.drawable.Drawable {
+        val disk = GradientDrawable().apply {
+            shape = GradientDrawable.OVAL
+            setColor(color)
+        }
+        return RippleDrawable(ColorStateList.valueOf(0x33FFFFFF), disk, null)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
@@ -247,19 +255,26 @@ class MainActivity : Activity() {
             isEnabled = false
             inputBar.addView(this, LinearLayout.LayoutParams(0, dp(41), 1f))
         }
-        TextView(this).apply {
-            text = "🎙"
-            textSize = 19f
-            gravity = Gravity.CENTER
-            contentDescription = "Open keyboard for voice dictation"
-            setTextColor(white)
-            background = flatButton(0xFF8049D6.toInt(), 12)
-            setOnClickListener {
-                editor.requestFocus()
-                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-                    .showSoftInput(editor, InputMethodManager.SHOW_IMPLICIT)
+        // The input field owns Clear and Dictation.
+        fun inputAction(name: String, iconRes: Int, color: Int, action: () -> Unit) {
+            ImageView(this).apply {
+                setImageResource(iconRes)
+                setPadding(dp(8), dp(8), dp(8), dp(8))
+                background = circularButton(color)
+                contentDescription = name
+                isClickable = true
+                isFocusable = true
+                setOnClickListener { action() }
+                inputBar.addView(this, LinearLayout.LayoutParams(dp(38), dp(38)).apply { rightMargin = dp(4) })
             }
-            inputBar.addView(this, LinearLayout.LayoutParams(dp(37), dp(35)).apply { rightMargin = dp(3) })
+        }
+        inputAction("Clear text input", R.drawable.pb_clear, 0xFFEF4A85.toInt()) {
+            sendAction("local", "CLEAR")
+        }
+        inputAction("Open keyboard for voice dictation", R.drawable.pb_mic, 0xFF8149D6.toInt()) {
+            editor.requestFocus()
+            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
+                .showSoftInput(editor, InputMethodManager.SHOW_IMPLICIT)
         }
         editor.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -293,93 +308,95 @@ class MainActivity : Activity() {
             0xFF5AE56E to 0xFF15AE45, 0xFFFF7287 to 0xFFD73561
         )
         var buttonIndex = 0
+        var showingPause = false // presentation-only: no media state queries
+        fun resourceFor(value: String): Int? = when (value) {
+            "MEDIA_PREV" -> R.drawable.pb_media_prev
+            "MEDIA_NEXT" -> R.drawable.pb_media_next
+            "MEDIA_PLAY_PAUSE" -> R.drawable.pb_media_play
+            "COPY" -> R.drawable.pb_copy
+            "SELECT_ALL_COPY" -> R.drawable.pb_all_copy
+            "PASTE" -> R.drawable.pb_paste
+            "TAB" -> R.drawable.pb_tab
+            "ENTER" -> R.drawable.pb_enter
+            "BACKSPACE" -> R.drawable.pb_backspace
+            else -> null
+        }
         fun controlRow(actions: List<Triple<String, String, String>>) {
             val row = LinearLayout(this).apply {
                 orientation = LinearLayout.HORIZONTAL
-                root.addView(this, LinearLayout.LayoutParams(-1, dp(43)).apply { topMargin = dp(3) })
+                gravity = Gravity.CENTER_VERTICAL
+                root.addView(this, LinearLayout.LayoutParams(-1, dp(53)).apply { topMargin = dp(3) })
             }
             actions.forEach { (title, type, value) ->
                 val colors = palettes[(buttonIndex++) % palettes.size]
-                val tile = LinearLayout(this).apply {
-                    orientation = LinearLayout.VERTICAL
-                    gravity = Gravity.CENTER
-                    background = flatButton(colors.second.toInt(), 12)
-                    elevation = 0f
-                    isClickable = true
-                    isFocusable = true
+                val slot = FrameLayout(this).apply {
+                    row.addView(this, LinearLayout.LayoutParams(0, dp(52), 1f))
+                }
+                val circle = FrameLayout(this).apply {
+                    background = circularButton(colors.second.toInt())
                     contentDescription = title
-                    setOnClickListener { sendAction(type, value) }
+                    isFocusable = true
+                    isClickable = true
+                    slot.addView(this, FrameLayout.LayoutParams(dp(49), dp(49), Gravity.CENTER))
                 }
-                val glyph = when (value) {
-                    "VOLUME_DOWN" -> "◀−"
-                    "VOLUME_UP" -> "◀+"
-                    "MEDIA_PREV" -> "⏮"
-                    "MEDIA_NEXT" -> "⏭"
-                    "MEDIA_PLAY_PAUSE" -> "⏯"
-                    "VOLUME_MUTE" -> "◀×"
-                    "ALT_TAB_OPEN" -> "▣"
-                    "COPY" -> "▤"
-                    "SELECT_ALL_COPY" -> "▥"
-                    "PASTE" -> "▣"
-                    "ALT_TAB_NEXT" -> "≫"
-                    "ALT_TAB_CLOSE" -> "▦"
-                    "CLEAR" -> "✦"
-                    "ESCAPE" -> "⎋"
-                    "TAB" -> "⇥"
-                    "ENTER" -> "↵"
-                    "BACKSPACE" -> "⌫"
-                    else -> "•"
+                val symbol = resourceFor(value)
+                val icon: ImageView? = if (symbol != null) ImageView(this).apply {
+                    setImageResource(symbol)
+                    setPadding(dp(9), dp(9), dp(9), dp(9))
+                    circle.addView(this, FrameLayout.LayoutParams(-1, -1))
+                } else null
+                if (icon == null) {
+                    val label = when (value) {
+                        "ESCAPE" -> "Esc"
+                        "VOLUME_DOWN" -> "−"
+                        "VOLUME_UP" -> "+"
+                        "VOLUME_MUTE" -> "×"
+                        "ALT_TAB_OPEN" -> "Apps"
+                        "ALT_TAB_NEXT" -> "Next"
+                        "ALT_TAB_CLOSE" -> "Choose"
+                        else -> title
+                    }
+                    TextView(this).apply {
+                        text = label
+                        textSize = if (label.length > 4) 10f else if (label.length > 2) 13f else 25f
+                        setTypeface(null, Typeface.BOLD)
+                        setTextColor(white)
+                        gravity = Gravity.CENTER
+                        maxLines = 1
+                        includeFontPadding = false
+                        circle.addView(this, FrameLayout.LayoutParams(-1, -1))
+                    }
                 }
-                // All six media keys and the four navigation keys use pictograms
-                // only. Keep the full accessible name on each clickable tile.
-                val iconOnly = type == "key"
-                TextView(this).apply {
-                    text = glyph
-                    textSize = if (iconOnly) 26f else 19f
-                    setTextColor(white)
-                    includeFontPadding = false
-                    gravity = Gravity.CENTER
-                    tile.addView(this, LinearLayout.LayoutParams(-1, if (iconOnly) dp(41) else dp(21)))
+                circle.setOnClickListener {
+                    sendAction(type, value)
+                    if (value == "MEDIA_PLAY_PAUSE" && icon != null) {
+                        showingPause = !showingPause
+                        icon.setImageResource(if (showingPause) R.drawable.pb_media_pause else R.drawable.pb_media_play)
+                        circle.contentDescription = if (showingPause) "Pause media" else "Play media"
+                    }
                 }
-                if (!iconOnly) TextView(this).apply {
-                    text = title
-                    textSize = 11f
-                    setTextColor(white)
-                    setTypeface(null, Typeface.BOLD)
-                    maxLines = 1
-                    gravity = Gravity.CENTER
-                    includeFontPadding = false
-                    setAutoSizeTextTypeUniformWithConfiguration(8, 11, 1, TypedValue.COMPLEX_UNIT_SP)
-                    tile.addView(this, LinearLayout.LayoutParams(-1, dp(18)))
-                }
-                row.addView(tile, LinearLayout.LayoutParams(0, dp(42), 1f).apply {
-                    leftMargin = dp(2); rightMargin = dp(2)
-                })
             }
         }
-        // Media controls together, including the standard Windows media scan keys.
         controlRow(listOf(
-            Triple("Vol −", "key", "VOLUME_DOWN"),
-            Triple("Vol +", "key", "VOLUME_UP"),
+            Triple("Volume down", "key", "VOLUME_DOWN"),
+            Triple("Volume up", "key", "VOLUME_UP"),
             Triple("Mute", "key", "VOLUME_MUTE"),
-            Triple("Prev", "key", "MEDIA_PREV"),
-            Triple("Play", "key", "MEDIA_PLAY_PAUSE"),
-            Triple("Next", "key", "MEDIA_NEXT")))
-        // Keep Alt+Tab open, advance and selection in one clearly related group.
+            Triple("Previous track", "key", "MEDIA_PREV"),
+            Triple("Play or pause media", "key", "MEDIA_PLAY_PAUSE"),
+            Triple("Next track", "key", "MEDIA_NEXT")))
         controlRow(listOf(
             Triple("Apps", "shortcut", "ALT_TAB_OPEN"),
             Triple("Next app", "shortcut", "ALT_TAB_NEXT"),
             Triple("Choose", "shortcut", "ALT_TAB_CLOSE")))
         controlRow(listOf(
             Triple("Copy", "shortcut", "COPY"),
-            Triple("All + Copy", "shortcut", "SELECT_ALL_COPY"),
-            Triple("Paste", "shortcut", "PASTE"),
-            Triple("Clear", "local", "CLEAR")))
+            Triple("Select all and copy", "shortcut", "SELECT_ALL_COPY"),
+            Triple("Paste", "shortcut", "PASTE")))
         controlRow(listOf(
             Triple("Esc", "key", "ESCAPE"),
             Triple("Tab", "key", "TAB"),
             Triple("Enter", "key", "ENTER"),
-            Triple("⌫", "key", "BACKSPACE")))
+            Triple("Backspace", "key", "BACKSPACE")))
         // Keep a landscape trackpad, never let it expand into portrait.
         // Use only residual vertical space after the header, editor, and ALL
         // action rows are laid out; extra room remains dark and empty.
