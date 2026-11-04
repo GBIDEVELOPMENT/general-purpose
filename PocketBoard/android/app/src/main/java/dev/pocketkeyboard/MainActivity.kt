@@ -265,7 +265,7 @@ class MainActivity : Activity() {
                 isClickable = true
                 isFocusable = true
                 setOnClickListener { action() }
-                inputBar.addView(this, LinearLayout.LayoutParams(dp(38), dp(38)).apply { rightMargin = dp(4) })
+                inputBar.addView(this, LinearLayout.LayoutParams(dp(38), dp(41)).apply { rightMargin = dp(4) })
             }
         }
         inputAction("Clear text input", R.drawable.pb_clear, 0xFFEF4A85.toInt()) {
@@ -330,20 +330,20 @@ class MainActivity : Activity() {
             actions.forEach { (title, type, value) ->
                 val colors = palettes[(buttonIndex++) % palettes.size]
                 val slot = FrameLayout(this).apply {
-                    row.addView(this, LinearLayout.LayoutParams(0, dp(52), 1f))
+                    row.addView(this, LinearLayout.LayoutParams(0, dp(53), 1f))
                 }
                 val circle = FrameLayout(this).apply {
                     background = circularButton(colors.second.toInt())
                     contentDescription = title
                     isFocusable = true
                     isClickable = true
-                    slot.addView(this, FrameLayout.LayoutParams(dp(49), dp(49), Gravity.CENTER))
+                    slot.addView(this, FrameLayout.LayoutParams(dp(49), dp(53), Gravity.CENTER))
                 }
                 val symbol = resourceFor(value)
                 val icon: ImageView? = if (symbol != null) ImageView(this).apply {
                     setImageResource(symbol)
                     setPadding(dp(9), dp(9), dp(9), dp(9))
-                    circle.addView(this, FrameLayout.LayoutParams(-1, -1))
+                    circle.addView(this, FrameLayout.LayoutParams(dp(49), dp(49), Gravity.CENTER))
                 } else null
                 if (icon == null) {
                     val label = when (value) {
@@ -364,7 +364,7 @@ class MainActivity : Activity() {
                         gravity = Gravity.CENTER
                         maxLines = 1
                         includeFontPadding = false
-                        circle.addView(this, FrameLayout.LayoutParams(-1, -1))
+                        circle.addView(this, FrameLayout.LayoutParams(dp(49), dp(49), Gravity.CENTER))
                     }
                 }
                 circle.setOnClickListener {
