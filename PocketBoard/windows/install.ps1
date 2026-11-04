@@ -1,16 +1,18 @@
 param(
-  [string]$Executable = (Join-Path $PSScriptRoot 'PocketKeyboard.Windows.exe')
+  [string]$Executable = (Join-Path $PSScriptRoot 'PocketBoard.Windows.exe')
 )
 $ErrorActionPreference = 'Stop'
 $exe = (Resolve-Path $Executable).Path
 $startup = [Environment]::GetFolderPath('Startup')
-$shortcut = Join-Path $startup 'PocketKeyboard.lnk'
+$shortcut = Join-Path $startup 'PocketBoard.lnk'
 $shell = New-Object -ComObject WScript.Shell
 $link = $shell.CreateShortcut($shortcut)
 $link.TargetPath = $exe
 $link.WorkingDirectory = Split-Path $exe
-$link.Description = 'PocketKeyboard tray receiver'
+$link.Description = 'PocketBoard tray receiver'
 $link.Save()
+$legacyShortcut = Join-Path $startup 'PocketKeyboard.lnk'
+if (Test-Path $legacyShortcut) { Remove-Item $legacyShortcut -Force }
 Write-Host "Installed per-user sign-in shortcut: $shortcut"
 $admin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if ($admin) {
