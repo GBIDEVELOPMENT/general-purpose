@@ -7,6 +7,10 @@ import android.graphics.Color
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.Gravity
+import android.view.GestureDetector
+import android.view.MotionEvent
+import android.view.View
+import android.graphics.drawable.GradientDrawable
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import org.json.JSONObject
@@ -128,6 +132,64 @@ class MainActivity : Activity() {
             ignoreEdit = false
             editor.requestFocus()
         }
+        // Trackpad uses relative movement; it never steals focus from the PC.
+        val title = TextView(this).apply {
+            text = "Touchpad  •  tap: click  •  double-tap: double-click  •  hold: right-click"
+            textSize = 14f
+            setPadding(0, pad, 0, pad / 2)
+            root.addView(this)
+        }
+        val detector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
+            override fun onDown(e: MotionEvent): Boolean = true
+            override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
+                send(JSONObject().put("type", "mouse_click").put("value", "left"))
+                return true
+            }
+            override fun onDoubleTap(e: MotionEvent): Boolean {
+                send(JSONObject().put("type", "mouse_click").put("value", "double"))
+                return true
+            }
+            override fun onLongPress(e: MotionEvent) {
+                send(JSONObject().put("type", "mouse_click").put("value", "right"))
+            }
+            override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
+                // GestureDetector distances describe finger movement in inverse directions.
+                // Scale from Android dp to a comfortable mouse movement in Windows pixels.
+                val dx = (-distanceX / scale * 1.5f).toInt().coerceIn(-300, 300)
+                val dy = (-distanceY / scale * 1.5f).toInt().coerceIn(-300, 300)
+                if (dx != 0 || dy != 0) send(JSONObject().put("type", "mouse_move").put("dx", dx).put("dy", dy))
+                return true
+            }
+        })
+        val touchpad = View(this).apply {
+            contentDescription = "PC touchpad. Tap to click, double tap to double click, hold to right click."
+            background = GradientDrawable().apply {
+                setColor(Color.rgb(226, 233, 241))
+                cornerRadius = 14 * scale
+                setStroke((1 * scale).toInt().coerceAtLeast(1), Color.rgb(120, 135, 150))
+            }
+            setOnTouchListener { _, event ->
+                detector.onTouchEvent(event)
+                true
+            }
+            root.addView(this, LinearLayout.LayoutParams(-1, (220 * scale).toInt()))
+        }
+        val quick = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; root.addView(this) }
+        fun quickButton(label: String, kind: String, value: String, parent: LinearLayout) {
+            Button(this).apply {
+                text = label
+                setAllCaps(false)
+                setOnClickListener { send(JSONObject().put("type", kind).put("value", value)) }
+                parent.addView(this, LinearLayout.LayoutParams(0, (52 * scale).toInt(), 1f))
+            }
+        }
+        quickButton("Vol −", "key", "VOLUME_DOWN", quick)
+        quickButton("Vol +", "key", "VOLUME_UP", quick)
+        quickButton("Mute", "key", "VOLUME_MUTE", quick)
+        val editing = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; root.addView(this) }
+        quickButton("Copy", "shortcut", "COPY", editing)
+        quickButton("All + Copy", "shortcut", "SELECT_ALL_COPY", editing)
+        quickButton("Paste", "shortcut", "PASTE", editing)
         val keys = listOf(listOf("Esc" to "ESCAPE", "Tab" to "TAB", "Enter" to "ENTER", "⌫" to "BACKSPACE"),
             listOf("←" to "LEFT", "↑" to "UP", "↓" to "DOWN", "→" to "RIGHT"))
         keys.forEach { row ->
