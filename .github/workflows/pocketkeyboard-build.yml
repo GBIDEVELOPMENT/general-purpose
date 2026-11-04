@@ -1,0 +1,59 @@
+name: PocketKeyboard build
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'PocketKeyboard/**'
+      - '.github/workflows/pocketkeyboard-build.yml'
+  pull_request:
+    paths:
+      - 'PocketKeyboard/**'
+      - '.github/workflows/pocketkeyboard-build.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Publish tray receiver
+        run: dotnet publish PocketKeyboard/windows/PocketKeyboard.Windows.csproj -c Release -r win-x64 -o dist/windows
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PocketKeyboard-Windows-x64
+          path: |
+            dist/windows/PocketKeyboard.Windows.exe
+            PocketKeyboard/windows/install.ps1
+          if-no-files-found: error
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v4
+      - name: Install Android SDK components
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Build APK
+        working-directory: PocketKeyboard/android
+        run: gradle :app:assembleDebug --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PocketKeyboard-Android-debug
+          path: PocketKeyboard/android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+
+
