@@ -166,3 +166,18 @@ This is Android-only; the Windows receiver is unchanged.
 ## PocketBoard 0.15 compact controls
 
 One-row icon, Connected checkmark and magnifying-glass discovery. Blank 16dp spacer below trackpad retained. Clear and microphone backgrounds 34dp with unchanged 22dp glyphs inside 40dp slots. Apps, Choose, blank, Copy, All+Copy, Paste. Bottom row blank, Esc, Tab, Enter; Backspace removed. Native vector icons added. Windows protocol unchanged.
+
+## PocketBoard 0.16: icon and alignment refinements
+
+The final controls row now uses six equal slots, with three blanks followed by
+Esc, Tab, and Enter in slots 4-6. The Apps action uses the white four-panel
+reference shape, stored in assets/symbols/apps.svg and pb_apps.xml.
+The Choose and Connected indicator share the same heavier checkmark vector,
+with less rounded corners and unchanged overall glyph footprint.
+
+The trackpad maximum height increases by 17% from 135 dp to 158 dp and its
+initial height from 125 dp to 146 dp. The responsive available-space limit
+remains in force so Gboard can still occupy the bottom of the screen.
+The input field stays 41 dp high; its bottom-to-first-row gap is now
+18 dp, matching the 18 dp reserved gap from touchpad to input field.
+No Windows receiver changes are necessary.

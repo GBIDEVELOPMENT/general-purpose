@@ -206,7 +206,7 @@ class MainActivity : Activity() {
             contentDescription = "Rainbow touchpad. Slide to move pointer, tap to click, hold to right-click"
             setOnTouchListener { _, event -> detector.onTouchEvent(event); true }
         }
-        val trackpadParams = LinearLayout.LayoutParams(-1, dp(125)).apply {
+        val trackpadParams = LinearLayout.LayoutParams(-1, dp(146)).apply {
             topMargin = dp(3)
             bottomMargin = dp(2)
         }
@@ -221,7 +221,7 @@ class MainActivity : Activity() {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
             background = bg(0xFF2E3551.toInt(), 13)
-            root.addView(this, LinearLayout.LayoutParams(-1, dp(41)).apply { bottomMargin = dp(3) })
+            root.addView(this, LinearLayout.LayoutParams(-1, dp(41)).apply { bottomMargin = dp(15) })
         }
         editor = EditText(this).apply {
             hint = "Type or dictate on the PC"
@@ -308,6 +308,7 @@ class MainActivity : Activity() {
             "SELECT_ALL_COPY" -> R.drawable.pb_all_copy
             "PASTE" -> R.drawable.pb_paste
             "ALT_TAB_CLOSE" -> R.drawable.pb_choose
+            "ALT_TAB_OPEN" -> R.drawable.pb_apps
             "TAB" -> R.drawable.pb_tab
             "ENTER" -> R.drawable.pb_enter
             "BACKSPACE" -> R.drawable.pb_backspace
@@ -388,6 +389,8 @@ class MainActivity : Activity() {
             Triple("Paste", "shortcut", "PASTE")))
         controlRow(listOf(
             Triple("", "", "EMPTY"),
+            Triple("", "", "EMPTY"),
+            Triple("", "", "EMPTY"),
             Triple("Esc", "key", "ESCAPE"),
             Triple("Tab", "key", "TAB"),
             Triple("Enter", "key", "ENTER")))
@@ -398,7 +401,7 @@ class MainActivity : Activity() {
             val maxLandscape = ((root.width - root.paddingLeft - root.paddingRight) / 1.85f).toInt()
             val fixed = root.childrenHeightExcept(trackpad) + root.paddingTop + root.paddingBottom
             val available = (root.height - fixed - dp(5)).coerceAtLeast(dp(48))
-            val target = minOf(maxLandscape, available, dp(135))
+            val target = minOf(maxLandscape, available, dp(158))
             if (trackpad.layoutParams.height != target) {
                 trackpad.layoutParams = trackpad.layoutParams.apply { height = target }
             }
@@ -552,11 +555,15 @@ class MainActivity : Activity() {
     }
 
     private fun showStatus(message: String) = runOnUiThread {
-        status.text = if (ready) "Connected ✓" else when {
+        status.text = if (ready) "Connected" else when {
             message.startsWith("Disconnected") -> "Disconnected"
             message.startsWith("Connecting") -> "Connecting..."
             else -> message
         }
+        val statusCheck = if (ready) getDrawable(R.drawable.pb_choose)?.mutate() else null
+        statusCheck?.setBounds(0, 0, dp(19), dp(19))
+        status.setCompoundDrawables(null, null, statusCheck, null)
+        status.compoundDrawablePadding = if (ready) dp(3) else 0
         status.setTextColor(if (ready) 0xFFE5FFEE.toInt() else 0xFFDDE8FF.toInt())
         status.background = bg(if (ready) 0xFF135D35.toInt() else 0xFF283040.toInt(), 14)
         editor.isEnabled = ready
