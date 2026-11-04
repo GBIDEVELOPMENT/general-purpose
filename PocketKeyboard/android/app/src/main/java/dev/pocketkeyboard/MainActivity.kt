@@ -30,6 +30,8 @@ import javax.net.ssl.X509TrustManager
 class MainActivity : Activity() {
     private val prefs by lazy { getSharedPreferences("peer", MODE_PRIVATE) }
     private lateinit var status: TextView
+    private lateinit var connectionControls: LinearLayout
+    private lateinit var touchpadFeedback: TextView
     private lateinit var host: EditText
     private lateinit var code: EditText
     private lateinit var editor: EditText
@@ -60,22 +62,26 @@ class MainActivity : Activity() {
             setPadding(0, 0, 0, pad / 2)
             root.addView(this)
         }
-        heading("PocketKeyboard")
+        heading("PocketKeyboard 0.2")
         status = TextView(this).apply { text = "Not connected"; textSize = 16f; root.addView(this) }
+        connectionControls = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            root.addView(this)
+        }
         host = EditText(this).apply {
             hint = "PC address (e.g. 10.0.0.172)"
             setSingleLine(true)
             setText(prefs.getString("host", ""))
             inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_URI
-            root.addView(this)
+            connectionControls.addView(this)
         }
         code = EditText(this).apply {
             hint = "Pairing code (first connection only)"
             setSingleLine(true)
             inputType = android.text.InputType.TYPE_CLASS_NUMBER
-            root.addView(this)
+            connectionControls.addView(this)
         }
-        val buttons = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; root.addView(this) }
+        val buttons = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; connectionControls.addView(this) }
         fun button(label: String, parent: LinearLayout = root, callback: () -> Unit) =
             Button(this).apply { text = label; setOnClickListener { callback() }; parent.addView(this) }
         button("Connect", buttons) { startConnection() }
@@ -85,13 +91,73 @@ class MainActivity : Activity() {
             connectedSocket?.close()
             showStatus("Pairing forgotten. Get a new code from the PC tray icon.")
         }
-        val help = TextView(this).apply {
-            text = "Type or use your keyboard's microphone. The PC's focused window receives the text. Tap Clear to begin a fresh phone input buffer without deleting PC text."
-            setPadding(0, pad, 0, pad / 2)
+        val touchpadTitle = TextView(this).apply {
+            text = "Touchpad · drag to move · tap to click · hold for right-click"
+            textSize = 14f
+            setPadding(0, pad / 2, 0, pad / 2)
             root.addView(this)
         }
+        touchpadFeedback = TextView(this).apply {
+            text = "Touchpad ready"
+            textSize = 12f
+            setTextColor(Color.DKGRAY)
+        }
+        val detector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
+            override fun onDown(e: MotionEvent): Boolean = true
+            override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
+                touchpadFeedback.text = "Tap sent"
+                send(JSONObject().put("type", "mouse_click").put("value", "left"))
+                return true
+            }
+            override fun onDoubleTap(e: MotionEvent): Boolean {
+                touchpadFeedback.text = "Double-click sent"
+                send(JSONObject().put("type", "mouse_click").put("value", "double"))
+                return true
+            }
+            override fun onLongPress(e: MotionEvent) {
+                touchpadFeedback.text = "Right-click sent"
+                send(JSONObject().put("type", "mouse_click").put("value", "right"))
+            }
+            override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
+                // GestureDetector distances describe finger movement in inverse directions.
+                // Scale from Android dp to a comfortable mouse movement in Windows pixels.
+                val dx = (-distanceX / scale * 1.5f).toInt().coerceIn(-300, 300)
+                val dy = (-distanceY / scale * 1.5f).toInt().coerceIn(-300, 300)
+                if (dx != 0 || dy != 0) {
+                    touchpadFeedback.text = "Pointer movement sent"
+                    send(JSONObject().put("type", "mouse_move").put("dx", dx).put("dy", dy))
+                }
+                return true
+            }
+        })
+        val touchpad = View(this).apply {
+            contentDescription = "PC touchpad. Tap to click, double tap to double click, hold to right click."
+            background = GradientDrawable().apply {
+                setColor(Color.rgb(226, 233, 241))
+                cornerRadius = 14 * scale
+                setStroke((1 * scale).toInt().coerceAtLeast(1), Color.rgb(120, 135, 150))
+            }
+            setOnTouchListener { _, event ->
+                if (event.actionMasked == MotionEvent.ACTION_DOWN) {
+                    parent?.requestDisallowInterceptTouchEvent(true)
+                    // The pad must not cause the outer ScrollView to grab swipes.
+                    (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
+                        .hideSoftInputFromWindow(windowToken, 0)
+                    editor.clearFocus()
+                }
+                detector.onTouchEvent(event)
+                if (event.actionMasked == MotionEvent.ACTION_UP ||
+                    event.actionMasked == MotionEvent.ACTION_CANCEL) {
+                    parent?.requestDisallowInterceptTouchEvent(false)
+                }
+                true
+            }
+            root.addView(this, LinearLayout.LayoutParams(-1, (205 * scale).toInt()))
+        }
+        root.addView(touchpadFeedback)
+        // Keep the pad above the editor: when the IME is visible the pad stays reachable.
         editor = EditText(this).apply {
-            hint = "Tap here to type on your PC…"
+            hint = "Tap to type or dictate on the PC…"
             minLines = 4
             gravity = Gravity.TOP
             inputType = android.text.InputType.TYPE_CLASS_TEXT or
@@ -132,48 +198,6 @@ class MainActivity : Activity() {
             ignoreEdit = false
             editor.requestFocus()
         }
-        // Trackpad uses relative movement; it never steals focus from the PC.
-        val title = TextView(this).apply {
-            text = "Touchpad  •  tap: click  •  double-tap: double-click  •  hold: right-click"
-            textSize = 14f
-            setPadding(0, pad, 0, pad / 2)
-            root.addView(this)
-        }
-        val detector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
-            override fun onDown(e: MotionEvent): Boolean = true
-            override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
-                send(JSONObject().put("type", "mouse_click").put("value", "left"))
-                return true
-            }
-            override fun onDoubleTap(e: MotionEvent): Boolean {
-                send(JSONObject().put("type", "mouse_click").put("value", "double"))
-                return true
-            }
-            override fun onLongPress(e: MotionEvent) {
-                send(JSONObject().put("type", "mouse_click").put("value", "right"))
-            }
-            override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
-                // GestureDetector distances describe finger movement in inverse directions.
-                // Scale from Android dp to a comfortable mouse movement in Windows pixels.
-                val dx = (-distanceX / scale * 1.5f).toInt().coerceIn(-300, 300)
-                val dy = (-distanceY / scale * 1.5f).toInt().coerceIn(-300, 300)
-                if (dx != 0 || dy != 0) send(JSONObject().put("type", "mouse_move").put("dx", dx).put("dy", dy))
-                return true
-            }
-        })
-        val touchpad = View(this).apply {
-            contentDescription = "PC touchpad. Tap to click, double tap to double click, hold to right click."
-            background = GradientDrawable().apply {
-                setColor(Color.rgb(226, 233, 241))
-                cornerRadius = 14 * scale
-                setStroke((1 * scale).toInt().coerceAtLeast(1), Color.rgb(120, 135, 150))
-            }
-            setOnTouchListener { _, event ->
-                detector.onTouchEvent(event)
-                true
-            }
-            root.addView(this, LinearLayout.LayoutParams(-1, (220 * scale).toInt()))
-        }
         val quick = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL; root.addView(this) }
         fun quickButton(label: String, kind: String, value: String, parent: LinearLayout) {
             Button(this).apply {
@@ -209,11 +233,9 @@ class MainActivity : Activity() {
         status.text = message
         editor.isEnabled = ready
         if (ready) {
-            code.visibility = android.view.View.GONE
-            editor.requestFocus()
-            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-                .showSoftInput(editor, InputMethodManager.SHOW_IMPLICIT)
-        } else code.visibility = android.view.View.VISIBLE
+            connectionControls.visibility = android.view.View.GONE
+            // Keyboard appears when the user explicitly taps the input field.
+        } else connectionControls.visibility = android.view.View.VISIBLE
     }
 
     private fun send(json: JSONObject) {
