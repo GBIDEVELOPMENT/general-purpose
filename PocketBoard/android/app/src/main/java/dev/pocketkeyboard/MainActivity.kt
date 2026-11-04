@@ -172,6 +172,13 @@ class MainActivity : Activity() {
             root.addView(this, LinearLayout.LayoutParams(1, 1))
         }
         // Dedicated trackpad consumes its own gesture stream, with no scrolling parent.
+        // Calibration from Pixel usage: a full-width swipe previously moved the
+        // Windows cursor approximately one-third of the screen. Triple the
+        // previous 1.5 dp-scaled gain, while carrying fractional subpixel motion
+        // so slow/short gestures are not lost to integer truncation.
+        val pointerGain = 4.5f
+        var remainderX = 0f
+        var remainderY = 0f
         val detector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
             override fun onDown(e: MotionEvent): Boolean = true
             override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
@@ -189,8 +196,13 @@ class MainActivity : Activity() {
                 touchpadFeedback.text = "Right-click"
             }
             override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
-                val dx = (-distanceX / resources.displayMetrics.density * 1.5f).toInt().coerceIn(-300, 300)
-                val dy = (-distanceY / resources.displayMetrics.density * 1.5f).toInt().coerceIn(-300, 300)
+                val density = resources.displayMetrics.density
+                val rawX = -distanceX / density * pointerGain + remainderX
+                val rawY = -distanceY / density * pointerGain + remainderY
+                val dx = rawX.toInt().coerceIn(-300, 300)
+                val dy = rawY.toInt().coerceIn(-300, 300)
+                remainderX = if (rawX > 300f || rawX < -300f) 0f else rawX - dx
+                remainderY = if (rawY > 300f || rawY < -300f) 0f else rawY - dy
                 if (dx != 0 || dy != 0) {
                     send(JSONObject().put("type", "mouse_move").put("dx", dx).put("dy", dy))
                     touchpadFeedback.text = "Pointer"
