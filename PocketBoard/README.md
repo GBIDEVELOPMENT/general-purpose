@@ -64,3 +64,21 @@ remains above the IME rather than relying on scrolling.
 **Acceptance requirement:** With Gboard open on Pixel 6 Pro, every row must be
 visible and tappable, the touchpad must remain landscape, and no control label
 may be clipped. CI compilation alone does not prove the real-device layout.
+
+
+## PocketBoard 0.7 colorful UI
+
+Implements the approved dark, playful mockup as native Android UI:
+the rainbow keyboard logo and multicolored wordmark, violet Discover pill,
+green connected-status pill, wide rainbow trackpad with cursor ornament,
+indigo input surface with a keyboard/voice shortcut, and 14 gradient-colored
+action tiles with large icon glyphs and compact labels. Every tile still
+dispatches the original remote command; the microphone affordance opens the
+system keyboard where the existing IME can provide dictation.
+
+The keyboard is the lower half of the intended layout and is supplied by
+the user's Android IME, not drawn by PocketBoard. The touchpad height is
+capped, all three shortcut rows are reserved before it expands, and
+real-device keyboard-open acceptance remains required. Visual smoke tests
+should inspect short labels, small portrait widths, Gboard appearance,
+and alternative IME heights.
