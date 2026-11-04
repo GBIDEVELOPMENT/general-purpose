@@ -126,3 +126,11 @@ Microphone controls. Clearing resets the Android edit buffer only.
 Play/Pause flips its icon after each local press, initially displaying Play,
 without querying remote playback state. System media control continues to
 send the same Windows play/pause command. TalkBack descriptions remain.
+
+## PocketBoard 0.12 button silhouette
+
+Colored circular button backgrounds are now **1:1.08 width-to-height vertical ovals**:
+49 × 53 dp on shortcut rows and 38 × 41 dp inside the input field.
+SVG symbols and text glyphs remain rendered within centered square viewports
+and are never stretched. Existing row heights stay unchanged, preserving the
+keyboard-open layout budget.
