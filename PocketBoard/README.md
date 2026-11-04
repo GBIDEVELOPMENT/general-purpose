@@ -197,3 +197,17 @@ an 18dp gap to the first controls row (15dp plus the row's 3dp margin).
 Available-height calculations reserve the updated trackpad margins to
 prevent clipping when the software keyboard is present. Touch actions
 and Windows receiver behavior are unchanged.
+
+## PocketBoard 0.18: keyboard-first operation
+
+The Android IME opens by default when PocketBoard's window takes focus,
+including after returning to the app or dismissing a discovery dialog.
+The text field is automatically focused on launch, without tapping it,
+and stays editable throughout connection attempts and reconnects.
+Typing, voice input and text corrections use the existing text-change
+protocol; only connected sessions can transmit input, so disconnected
+keystrokes are local and are not queued or replayed after reconnection.
+Touchpad and shortcut-button touches do not request keyboard focus.
+Android still controls whether the IME is actually displayed (for example,
+when a hardware keyboard is active or the user explicitly dismisses it).
+No change to Windows input protocol or pairing security is required.

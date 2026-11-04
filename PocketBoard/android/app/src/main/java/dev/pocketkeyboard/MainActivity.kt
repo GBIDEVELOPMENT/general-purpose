@@ -64,7 +64,6 @@ class MainActivity : Activity() {
     private var ignoreEdit = false
     private var connectedSocket: SSLSocket? = null
     private var lastConnectedHost = ""
-    private var firstReady = false
 
     private fun dp(value: Int) = (value * resources.displayMetrics.density).toInt()
     private fun bg(color: Int, radius: Int = 12) = GradientDrawable().apply {
@@ -90,7 +89,10 @@ class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+        window.setSoftInputMode(
+            WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE or
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE
+        )
         window.statusBarColor = Color.rgb(18, 19, 22)
         window.navigationBarColor = Color.rgb(18, 19, 22)
         val charcoal = 0xFF171923.toInt()
@@ -237,7 +239,10 @@ class MainActivity : Activity() {
                 android.text.InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
             background = null
             setPadding(dp(12), dp(2), 0, dp(2))
-            isEnabled = false
+            // The IME owns keyboard focus even while discovering/reconnecting.
+            // Sending stays gated by ready in send(); local editing remains available.
+            isEnabled = true
+            isFocusableInTouchMode = true
             inputBar.addView(this, LinearLayout.LayoutParams(0, dp(41), 1f))
         }
         // The input field owns Clear and Dictation.
@@ -409,9 +414,24 @@ class MainActivity : Activity() {
                 trackpad.layoutParams = trackpad.layoutParams.apply { height = target }
             }
         }
-        root.requestFocus()
+        // Focus the text sink before any pairing/network activity. All keyboard
+        // input goes here without requiring the user to tap the field first.
+        editor.requestFocus()
         if (prefs.getString("host", null) != null) startConnection()
         else discover()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (!hasFocus || !::editor.isInitialized || isFinishing || isDestroyed) return
+        editor.post {
+            // Do not steal focus from a dialog, another app, or TalkBack while
+            // PocketBoard isn't foregrounded. Android controls the actual IME.
+            if (!window.decorView.hasWindowFocus() || isFinishing || isDestroyed) return@post
+            editor.requestFocus()
+            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
+                .showSoftInput(editor, InputMethodManager.SHOW_IMPLICIT)
+        }
     }
 
     private fun LinearLayout.childrenHeightExcept(excluded: View): Int {
@@ -569,15 +589,6 @@ class MainActivity : Activity() {
         status.compoundDrawablePadding = if (ready) dp(3) else 0
         status.setTextColor(if (ready) 0xFFE5FFEE.toInt() else 0xFFDDE8FF.toInt())
         status.background = bg(if (ready) 0xFF135D35.toInt() else 0xFF283040.toInt(), 14)
-        editor.isEnabled = ready
-        if (ready && !firstReady) {
-            firstReady = true
-            editor.requestFocus()
-            editor.postDelayed({
-                (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-                    .showSoftInput(editor, InputMethodManager.SHOW_IMPLICIT)
-            }, 220)
-        }
     }
 
     private fun send(json: JSONObject) {
@@ -601,7 +612,6 @@ class MainActivity : Activity() {
         connectedSocket?.close()
         worker?.interrupt()
         outgoing.clear()
-        firstReady = false
         worker = Thread { connectLoop(address) }.also { it.start() }
     }
 
