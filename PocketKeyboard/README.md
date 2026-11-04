@@ -1,41 +1,35 @@
 # PocketKeyboard
 
-A local, account-free Android keyboard for your Windows desktop. The Windows host is a single, tray-only .NET 8 application; Android uses the **existing** system IME, including voice dictation.
+Direct Android keyboard and touchpad remote for a Windows PC, with no account, cloud or intermediary.
 
-## How it works
+## Version 0.3
 
-1. Build or download the Windows x64 release and start `PocketKeyboard.Windows.exe` in your signed-in Windows session.
-2. In the Windows **notification area** (sometimes behind the ^ overflow arrow), right-click the blue information icon and choose **Pair a phone…**. The pairing window shows local IP addresses, TCP port **38476**, and a six-digit code valid for three minutes.
-3. Install the Android APK. Enter the HP's **Wi-Fi** IP (currently `10.0.0.172`, potentially different later), and the code. Tap **Connect**.
-4. Focus a normal desktop app on Windows. Type or dictate on your phone. The touchpad moves the PC pointer; tap for left click, double-tap for double click, or hold for right click. Dedicated controls adjust system volume and send Copy, Select All + Copy, and Paste keyboard shortcuts. A status banner indicates successful connection. Use **Clear buffer** when starting another text passage; it clears only the Android composition history.
-5. The Windows tray menu offers **Pause receiving**, **Resume receiving**, **Forget all paired phones** and **Exit**. Pausing preserves pairing but blocks input.
+- Dark charcoal, keyboard-first screen: compact status, **seven slightly angled red, orange, yellow, green, blue, indigo, violet touchpad stripes**, type/dictate field and three control rows. Android's installed IME opens automatically after connecting, and the layout resizes to keep all controls visible above it.
+- Touchpad supports pointer movement, tap, double-tap and long-press right-click.
+- Volume down/up/mute, copy, select-all-and-copy, paste, Esc, Tab, Enter and Backspace.
+- **Apps** opens Windows Alt+Tab and keeps Alt held; **Next** advances; **Choose** releases Alt to switch. To prevent a stuck Alt key, the receiver releases Alt automatically after 12 seconds without another Apps/Next action.
+- **Discover** scans the current Wi-Fi using UDP port 38477 and lists PocketKeyboard Windows receivers. Choose one, and the app enrolls with no code or PC approval. The stored token and pinned TLS certificate are reused on future reconnections. Saved connections still auto-reconnect.
+- Tray icon continues to offer Pause/Resume and revoke all known phone tokens. Windows executable starts at sign-in via its startup shortcut.
 
-No intermediary servers, accounts, telemetry, Android accessibility service or keyboard replacement. Traffic uses TLS with a per-host self-signed certificate; pairing issues a random 256-bit secret. Android pins the server certificate after the first successful six-digit pairing. Pair on a trusted LAN; the one-time code is an authentication mechanism, but it does not independently prevent an active on-path relay during initial pairing.
+## Windows installation
+
+Publish with `dotnet publish windows/PocketKeyboard.Windows.csproj -c Release -r win-x64 -o out/windows`. On the HP, stop the prior PocketKeyboard tray process before replacing the EXE, then restart it. The `windows/install.ps1` helper installs user startup and, when elevated, a private-network/local-subnet-only inbound TCP rule on port **38476** and UDP discovery on **38477**.
+
+For an existing install, run these two commands in elevated PowerShell on trusted home Wi-Fi:
+
+```powershell
+New-NetFirewallRule -DisplayName 'PocketKeyboard discovery' -Direction Inbound -Action Allow -Protocol UDP -LocalPort 38477 -Profile Private -RemoteAddress LocalSubnet
+```
+
+## Security implications
+
+**Automatic enrollment intentionally trades first-connection authentication for convenience.** Any device that can reach the receiver from its local IPv4 subnet may enroll and inject keyboard/mouse input while receiving is enabled, with no Windows confirmation. This can include untrusted guests on the same Wi-Fi. Do not use this mode on shared/untrusted networks. Pause receiving from the tray when not in use, use a private trusted Wi-Fi and never forward these ports on the router. Network restrictions are a practical boundary, not a replacement for device authentication.
+
+Messages use TLS; the Android client pins the server certificate after first enrollment (trust on first use). Discovery responses are unencrypted, so malicious LAN devices can spoof discovery or intercept an initial enrollment. A previously pinned host certificate change is rejected. Unpairing/revocation clears tokens, but because code-free enrollment remains enabled, another device on the subnet could immediately enroll again.
+
+The receiver requires an awake, signed-in interactive desktop. Secure Windows login and UAC screens are unsupported. Android voice dictation uses the existing keyboard's speech features. On-device APK and visual acceptance are still pending; CI compilation alone cannot establish layout behavior across every keyboard.
 
 ## Build
 
-Windows: `dotnet publish windows/PocketKeyboard.Windows.csproj -c Release -r win-x64 -o out/windows` (requires .NET 8 SDK to build; Windows Desktop Runtime 8 to run). Android: from `android/`, `gradle :app:assembleDebug` with Android SDK 35 and JDK 17. GitHub Actions also builds both.
-
-## Windows startup
-
-After publishing, run `windows/install.ps1` from the folder containing the EXE, or pass `-Executable C:\path\to\PocketKeyboard.Windows.exe`. This adds a **current-user startup shortcut** and, with Administrator approval, a **private/local-subnet-only** Windows Firewall inbound rule for TCP 38476. A startup entry launches the tray app at sign-in, not as a Windows Service (Windows services cannot inject input into the signed-in user's desktop).
-
-## Limitations / safety
-
-- Windows must be awake, signed in and running the tray process. UAC secure desktop and lock screens are intentionally excluded. Elevated targets may refuse input.
-- Input is sent to **whatever window has focus**. Avoid passwords and other sensitive fields until verifying the intended target. Pause from the tray to prevent accidental input.
-- Android edits are mirrored using Unicode characters and left/right/backspace operations, including most autocorrect and dictation revisions. The remote cursor is assumed to be at the end of the most recently transmitted Android buffer; clicking another Windows location or editing the remote buffer independently can desynchronize the editor.
-- Commands queued during disconnection are discarded, never replayed. The connection automatically retries only after previously successful pairing.
-- Unicode injection handles printable text. The first touchpad supports relative pointer movement and basic clicks; shortcut buttons use Ctrl+C, Ctrl+A then Ctrl+C, and Ctrl+V in the *focused Windows application*. They do not read Android's clipboard or transfer clipboard contents between devices. Function keys, configurable shortcuts, drag and scroll remain future work. Some apps and games do not accept injected Unicode.
-- Initial version is source-level prototype; APK and Windows runtime acceptance on real devices are pending. Do not treat CI compilation as real-device acceptance.
-- The Windows receiver currently listens on all IPv4 interfaces. Configure the inbound firewall rule to **LocalSubnet** only, and do not forward TCP 38476 through your router. On hostile networks, disconnect or pause.
-- The Android trust manager accepts a self-signed certificate only long enough to compare its SHA-256 fingerprint with the saved pin, or to establish the initial authenticated pairing. A stolen pairing code during initial connection or compromised paired device requires revoking tokens from Windows tray.
-
-## Roadmap
-
-1. Build and test Windows receiver and Android APK in CI.
-2. Install on HP, test typing/voice corrections and reconnection under Gboard on Pixel; verify firewall rule and notifications.
-3. Add explicit modifier shortcuts, keyboard layouts, accessibility adjustments, robust selection handling, and input-permission controls only after real-world use establishes need.
-
-Project is isolated from the general-purpose repo's audit and integration machinery.
-
+- Windows: .NET 8 Windows Desktop Runtime on host, .NET 8 SDK to compile.
+- Android: JDK 17, Android SDK 35, Gradle 8.11.1; CI produces a debug APK via GitHub Actions.

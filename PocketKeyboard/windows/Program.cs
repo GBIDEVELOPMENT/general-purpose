@@ -97,6 +97,7 @@ internal sealed class TrayServer : ApplicationContext
     void Toggle()
     {
         enabled = !enabled;
+        if (!enabled) InputInjector.ReleaseAltTab();
         toggle.Text = enabled ? "Pause receiving" : "Resume receiving";
         tray.Text = enabled ? "PocketKeyboard: running" : "PocketKeyboard: paused";
         tray.Icon = enabled ? SystemIcons.Information : SystemIcons.Warning;
@@ -164,6 +165,7 @@ internal sealed class TrayServer : ApplicationContext
         lock (sync)
         {
             revocationEpoch++;
+            InputInjector.ReleaseAltTab();
             tokens.Clear();
             File.WriteAllText(Path.Combine(dataDir, "tokens.txt"), "");
         }
@@ -274,6 +276,7 @@ internal sealed class TrayServer : ApplicationContext
     protected override void ExitThreadCore()
     {
         shutdown.Cancel();
+        InputInjector.ReleaseAltTab();
         listener?.Stop();
         discovery?.Dispose();
         tray.Visible = false;
@@ -310,6 +313,43 @@ internal static class InputInjector
             Send(0, ch, KEYEVENTF_UNICODE | KEYEVENTF_KEYUP);
         }
     }
+    static readonly object altSync = new();
+    static bool altHeld;
+    static long altSession;
+    public static void AltTab(string action)
+    {
+        lock (altSync)
+        {
+            if (action == "ALT_TAB_CLOSE")
+            {
+                ReleaseAltTab();
+                return;
+            }
+            if (!altHeld)
+            {
+                Send(0x12, 0, 0); // Alt held while the app switcher is visible
+                altHeld = true;
+            }
+            Send(0x09, 0, 0);
+            Send(0x09, 0, KEYEVENTF_KEYUP);
+            var session = ++altSession;
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(12000);
+                lock (altSync) if (session == altSession) ReleaseAltTab();
+            });
+        }
+    }
+    public static void ReleaseAltTab()
+    {
+        lock (altSync)
+        {
+            ++altSession;
+            if (!altHeld) return;
+            altHeld = false;
+            Send(0x12, 0, KEYEVENTF_KEYUP);
+        }
+    }
     // Keyboard shortcuts are transmitted as *intent*, not arbitrary modifier state.
     // Release Ctrl even when a send fails, avoiding a stuck modifier on the PC.
     public static void Shortcut(string action)
@@ -321,11 +361,9 @@ internal static class InputInjector
             "SELECT_ALL_COPY" => 0x43,
             _ => 0
         };
-        if (action == "ALT_TAB")
+        if (action is "ALT_TAB" or "ALT_TAB_OPEN" or "ALT_TAB_NEXT" or "ALT_TAB_CLOSE")
         {
-            Send(0x12, 0, 0); // Alt down
-            try { Send(0x09, 0, 0); Send(0x09, 0, KEYEVENTF_KEYUP); }
-            finally { Send(0x12, 0, KEYEVENTF_KEYUP); }
+            AltTab(action == "ALT_TAB" ? "ALT_TAB_OPEN" : action);
             return;
         }
         if (key == 0) return;

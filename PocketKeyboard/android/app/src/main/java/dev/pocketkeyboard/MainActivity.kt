@@ -220,19 +220,19 @@ class MainActivity : Activity() {
             Triple("Vol −", "key", "VOLUME_DOWN"),
             Triple("Vol +", "key", "VOLUME_UP"),
             Triple("Mute", "key", "VOLUME_MUTE"),
-            Triple("Alt+Tab", "shortcut", "ALT_TAB")))
+            Triple("Apps", "shortcut", "ALT_TAB_OPEN")))
         controlRow(listOf(
             Triple("Copy", "shortcut", "COPY"),
             Triple("All + Copy", "shortcut", "SELECT_ALL_COPY"),
             Triple("Paste", "shortcut", "PASTE"),
-            Triple("Clear", "local", "CLEAR")))
+            Triple("Next", "shortcut", "ALT_TAB_NEXT")))
         controlRow(listOf(
+            Triple("Choose", "shortcut", "ALT_TAB_CLOSE"),
+            Triple("Clear", "local", "CLEAR"),
             Triple("Esc", "key", "ESCAPE"),
             Triple("Tab", "key", "TAB"),
             Triple("Enter", "key", "ENTER"),
-            Triple("⌫", "key", "BACKSPACE"),
-            Triple("←", "key", "LEFT"),
-            Triple("→", "key", "RIGHT")))
+            Triple("⌫", "key", "BACKSPACE")))
         root.requestFocus()
         if (prefs.getString("host", null) != null) startConnection()
         else discover()

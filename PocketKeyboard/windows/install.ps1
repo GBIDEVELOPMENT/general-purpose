@@ -16,7 +16,9 @@ $admin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 if ($admin) {
   Get-NetFirewallRule -DisplayName 'PocketKeyboard local receiver' -ErrorAction SilentlyContinue | Remove-NetFirewallRule
   New-NetFirewallRule -DisplayName 'PocketKeyboard local receiver' -Direction Inbound -Action Allow -Protocol TCP -LocalPort 38476 -Profile Private -RemoteAddress LocalSubnet | Out-Null
-  Write-Host 'Created private-profile firewall rule restricted to local subnet.'
+  Get-NetFirewallRule -DisplayName 'PocketKeyboard discovery' -ErrorAction SilentlyContinue | Remove-NetFirewallRule
+  New-NetFirewallRule -DisplayName 'PocketKeyboard discovery' -Direction Inbound -Action Allow -Protocol UDP -LocalPort 38477 -Profile Private -RemoteAddress LocalSubnet | Out-Null
+  Write-Host 'Created TCP receiver and UDP discovery firewall rules, private local subnet only.'
 } else {
   Write-Warning 'Run this script as Administrator once to add the restricted local-network firewall rule. Startup shortcut is installed.'
 }
