@@ -35,6 +35,7 @@ Concept modelling is independently valuable for ontology maintenance, synthesis,
 - [Reviewed model-delta repair](references/reviewed-model-deltas.md) for M3–M4 when checked source claims and explicit identity decisions need to become precise additions to an existing graph. [The optional proposal tool](scripts/propose_model_delta.py) preserves old claims/statuses and never edits the canonical model.
 
 - [Question selection and user-needs investigation](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/mechanised-expertise/references/mechanised-intuition-method.md) when a concept map feeds a substantive product/engineering decision: first ask which unanswered relationship can actually change the decision, not how to maximize map size.
+- [Human-Agent Interaction Engineering](../human-agent-interaction-engineering/SKILL.md) when a mapped feature/alternative landscape should be presented as an optional human choice survey or on-demand decision briefing. Mark which paths are observed, inferred, already decided, or unresolved; a map edge cannot independently confer product authority.
 - [Frontier qualification and anti-false-novelty tests](references/frontier-qualification.md)
 - [Evidence construction, conceptual modeling and integration](references/model-and-evidence.md)
 - [Academic resources and existing agent skills](references/research-and-skills.md)
