@@ -111,3 +111,18 @@ Fractional movement is carried across gesture events to preserve delicate
 slow movements. The existing ±300 pixel per-event safety clamp remains.
 This is a calibration prediction; real-device testing should verify whether
 Windows mouse acceleration changes the observed response.
+
+## PocketBoard 0.11 vector symbol system
+
+Editable standalone SVGs are in assets/symbols/ with matching Android
+VectorDrawables in android/app/src/main/res/drawable/pb_*.xml.
+All shortcut buttons use flat circular colors. Media navigation uses
+bar-and-triangle symbols, Copy uses two overlapping sheets, Select All & Copy
+adds the checkmark, Paste adds a plus, and Tab uses the distinctive
+shaft-and-arrow symbol. Esc is the literal label Esc.
+
+The entry field includes independent Clear (white disc/black X) and
+Microphone controls. Clearing resets the Android edit buffer only.
+Play/Pause flips its icon after each local press, initially displaying Play,
+without querying remote playback state. System media control continues to
+send the same Windows play/pause command. TalkBack descriptions remain.
