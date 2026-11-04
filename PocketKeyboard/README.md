@@ -14,7 +14,7 @@ No intermediary servers, accounts, telemetry, Android accessibility service or k
 
 ## Build
 
-Windows: `dotnet publish windows/PocketKeyboard.Windows.csproj -c Release -r win-x64 -o out/windows` (requires .NET 8 SDK). Android: from `android/`, `gradle :app:assembleDebug` with Android SDK 35 and JDK 17. GitHub Actions also builds both.
+Windows: `dotnet publish windows/PocketKeyboard.Windows.csproj -c Release -r win-x64 -o out/windows` (requires .NET 8 SDK to build; Windows Desktop Runtime 8 to run). Android: from `android/`, `gradle :app:assembleDebug` with Android SDK 35 and JDK 17. GitHub Actions also builds both.
 
 ## Windows startup
 
@@ -38,3 +38,4 @@ After publishing, run `windows/install.ps1` from the folder containing the EXE, 
 3. Add explicit modifier shortcuts, keyboard layouts, accessibility adjustments, robust selection handling, and input-permission controls only after real-world use establishes need.
 
 Project is isolated from the general-purpose repo's audit and integration machinery.
+
