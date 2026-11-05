@@ -151,6 +151,24 @@ def codepoint(value) -> int:
     return cp
 
 
+def resolve_glyph(font, cmap: dict[int, str], cp: int | None, operation: dict) -> str | None:
+    """Resolve an encoded character or explicitly selected unencoded glyph."""
+    order = font.getGlyphOrder()
+    if "glyph_index" in operation and "glyph_name" in operation:
+        raise RecipeError("Specify glyph_index or glyph_name, not both.")
+    if "glyph_index" in operation:
+        i = operation["glyph_index"]
+        if not isinstance(i, int) or i < 0 or i >= len(order):
+            raise RecipeError("Source glyph_index is out of range.")
+        return order[i]
+    if "glyph_name" in operation:
+        name = operation["glyph_name"]
+        if not isinstance(name, str) or name not in order:
+            raise RecipeError("Source glyph_name is missing: " + str(name))
+        return name
+    return cmap.get(cp)
+
+
 def safe_name(name: str) -> str:
     return re.sub(r"[^A-Za-z0-9_.-]", "_", name)[:110]
 
@@ -201,8 +219,8 @@ def build(recipe: dict, output: Path | None = None) -> dict:
             seq = tuple(ord(c) for c in op.get("sequence", ""))
             if not 2 <= len(seq) <= 8:
                 raise RecipeError("Ligature sequence must be 2-8 characters.")
-            source_cp = codepoint(op.get("glyph", op.get("sequence", "")[0]))
-            name = cmaps[donor].get(source_cp)
+            source_cp = codepoint(op.get("glyph", op.get("sequence", "")[0])) if not any(k in op for k in ("glyph_index", "glyph_name")) else None
+            name = resolve_glyph(sources[donor], cmaps[donor], source_cp, op)
             if name is None:
                 raise RecipeError("Ligature source glyph is missing.")
             ligatures.append((seq, (donor, name), op.get("feature", "liga")))
@@ -211,17 +229,21 @@ def build(recipe: dict, output: Path | None = None) -> dict:
             raise RecipeError("Unknown operation " + str(action))
         if action == "reassign":
             cps = [codepoint(op["destination"])]
-            donor_cps = [codepoint(op["glyph"])]
+            donor_cps = [codepoint(op["glyph"])] if "glyph" in op else [None]
+            if donor_cps[0] is None and not any(k in op for k in ("glyph_index", "glyph_name")):
+                raise RecipeError("reassign requires glyph, glyph_index or glyph_name.")
         else:
             cps = codepoints(op.get("target"), cmaps[base_id])
             donor_cps = cps
+        if any(k in op for k in ("glyph_index","glyph_name")) and len(cps) != 1:
+            raise RecipeError("Explicit source glyph selection requires a single target.")
         features = op.get("features", ["aalt", "salt"])
         if action == "alternate" and (not isinstance(features, list) or
             any(f not in ("aalt", "salt", "rand", "ss01", "ss02", "calt") for f in features)):
             raise RecipeError("Unsupported alternate feature. Use aalt, salt, rand, ss01, ss02, calt.")
         copied, missed = 0, []
         for cp, donor_cp in zip(cps, donor_cps):
-            source_name = cmaps[donor].get(donor_cp)
+            source_name = resolve_glyph(sources[donor], cmaps[donor], donor_cp, op)
             if source_name is None:
                 missed.append("U+" + format(cp, "04X"))
                 continue
