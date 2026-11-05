@@ -20,7 +20,7 @@ internal object PocketBoardPalette {
     val PURPLE = 0xFF7D3CEE.toInt()
     val ORANGE = 0xFFFD791E.toInt()
     val YELLOW = 0xFFFFD42A.toInt()
-    val GREEN = 0xFF00875F.toInt()
+    val GREEN = 0xFF00805B.toInt()
     val RED_PINK = 0xFFE92F61.toInt()
     val SKY_BLUE = 0xFF22A3FF.toInt()
     val VIOLET = 0xFFA857FF.toInt()
