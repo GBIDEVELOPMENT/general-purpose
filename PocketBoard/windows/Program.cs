@@ -257,6 +257,13 @@ internal sealed class TrayServer : ApplicationContext
                             int dy = root.TryGetProperty("dy", out var my) && my.TryGetInt32(out var y) ? Math.Clamp(y, -300, 300) : 0;
                             InputInjector.MouseMove(dx, dy);
                             break;
+                        case "mouse_scroll":
+                            // Wheel intent, not raw Win32 flags. Ignore malformed
+                            // values and bound each packet before injection.
+                            int vertical = root.TryGetProperty("vertical", out var sy) && sy.TryGetInt32(out var v) ? Math.Clamp(v, -4, 4) : 0;
+                            int horizontal = root.TryGetProperty("horizontal", out var sx) && sx.TryGetInt32(out var h) ? Math.Clamp(h, -4, 4) : 0;
+                            InputInjector.MouseScroll(vertical, horizontal);
+                            break;
                         case "replace":
                             int count = root.TryGetProperty("delete", out var num) && num.TryGetInt32(out var n) ? Math.Clamp(n, 0, 4096) : 0;
                             for (int i = 0; i < count; i++) InputInjector.Key("BACKSPACE");
@@ -385,17 +392,27 @@ internal static class InputInjector
     const uint MOUSEEVENTF_LEFTUP = 0x0004;
     const uint MOUSEEVENTF_RIGHTDOWN = 0x0008;
     const uint MOUSEEVENTF_RIGHTUP = 0x0010;
-    static void Mouse(uint flags, int dx = 0, int dy = 0)
+    const uint MOUSEEVENTF_WHEEL = 0x0800;
+    const uint MOUSEEVENTF_HWHEEL = 0x1000;
+    const int WHEEL_DELTA = 120;
+    static void Mouse(uint flags, int dx = 0, int dy = 0, uint mouseData = 0)
     {
         var inputs = new[] { new INPUT { type = 0, u = new INPUTUNION
         {
-            mi = new MOUSEINPUT { dx = dx, dy = dy, dwFlags = flags }
+            mi = new MOUSEINPUT { dx = dx, dy = dy, mouseData = mouseData, dwFlags = flags }
         } } };
         SendInput(1, inputs, Marshal.SizeOf<INPUT>());
     }
     public static void MouseMove(int dx, int dy)
     {
         if (dx != 0 || dy != 0) Mouse(MOUSEEVENTF_MOVE, dx, dy);
+    }
+    public static void MouseScroll(int vertical, int horizontal)
+    {
+        if (vertical != 0)
+            Mouse(MOUSEEVENTF_WHEEL, mouseData: unchecked((uint)(Math.Clamp(vertical, -4, 4) * WHEEL_DELTA)));
+        if (horizontal != 0)
+            Mouse(MOUSEEVENTF_HWHEEL, mouseData: unchecked((uint)(Math.Clamp(horizontal, -4, 4) * WHEEL_DELTA)));
     }
     public static void MouseClick(string action)
     {

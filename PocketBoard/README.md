@@ -281,3 +281,40 @@ Source-contract checks validate these values. Physical-device inspection,
 colour discrimination acceptance and Gboard-open measurements still
 remain required. versionCode 22 / versionName 1.0.3; Windows protocol,
 companion and pairing unchanged.
+
+## PocketBoard 1.0.4: equal-column control grid and two-finger trackpad scroll
+
+The three control rows are now an invisible equal-width A/B grid. Both columns
+have the same width and all three rows share 53dp height + 3dp top spacing,
+preserving the Gboard-open available-height calculation. Groups are
+**edge-justified**: A left, B right; all visible neighbors use 6dp separation,
+including the narrower media/volume buttons, rather than oversized equal
+slots. Tiles preserve their native, imperfect silhouette proportions and their
+previous action colours. At narrow widths button faces shrink only as needed
+to fit the half-column without clipping.
+
+| Row | Column A (left edge) | Column B (right edge) |
+| --- | --- | --- |
+| 1 | Copy, Paste, Select All & Copy | Previous track, Play/Pause, Next track |
+| 2 | Alt-Tab (Apps), Select (Choose) | Volume Down, Volume Up, Mute |
+| 3 | Empty | Tab, Enter, Esc |
+
+A two-finger gesture now cancels single-finger recognition and converts
+centroid movement into bounded natural vertical/horizontal wheel steps
+(28dp travel per notch; max four notches per event). Sub-notch movement is
+carried forward. Finger identity is tracked across index reorderings, and
+lifting one finger doesn't resume cursor motion or synthesize a tap until
+all fingers are up. One-finger pointer, tap/double-tap and long-press
+right-click behavior stays intact.
+
+**The Windows companion must also be upgraded.** Its authenticated protocol
+now accepts `mouse_scroll` with signed integer `vertical` and `horizontal`
+steps in [-4, 4], injects Win32 WHEEL/HWHEEL as 120-unit detents, and ignores
+missing/invalid inputs. An older receiver will simply ignore scroll packets;
+pointer and other commands continue working. Existing pairing/security and
+the command queue are unchanged.
+
+Version code 23 / version 1.0.4. CI Windows and Android builds plus the
+canonical-art contract are required. Device acceptance still needs the
+320dp and 412dp / Gboard-open layouts, 2-finger vertical and horizontal
+scroll, accidental-click suppression and gesture reversal checked on hardware.

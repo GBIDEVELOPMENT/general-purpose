@@ -77,6 +77,43 @@ assert "R.drawable.pb_shape_pause" in main
 assert "R.drawable.pb_media_play" in main and "R.drawable.pb_media_pause" in main
 assert "showingPause = !showingPause" in main, "Play/pause must remain one toggle"
 assert len(re.findall(r'Triple\(".*?", ".*?", "(?!EMPTY)[A-Z_]+?"\)', main)) == 14
+# Layout contract: exactly two equal-width columns in each of three equal-height
+# rows; each group retains its requested order and edge justification.
+groups = re.findall(
+    r'controlGroup\(row, (.*?), buttonSize = (\d+), alignRight = (true|false)\)',
+    main, re.S
+)
+expected_groups = (
+    (("COPY", "PASTE", "SELECT_ALL_COPY"), 49, "false"),
+    (("MEDIA_PREV", "MEDIA_PLAY_PAUSE", "MEDIA_NEXT"), 45, "true"),
+    (("ALT_TAB_OPEN", "ALT_TAB_CLOSE"), 49, "false"),
+    (("VOLUME_DOWN", "VOLUME_UP", "VOLUME_MUTE"), 45, "true"),
+    ((), 49, "false"),
+    (("TAB", "ENTER", "ESCAPE"), 51, "true"),
+)
+assert len(groups) == 6, f"Expected six grid cells, found {len(groups)}"
+for (source, size, align), (expected_actions, expected_size, expected_align) in zip(groups, expected_groups):
+    actions = tuple(re.findall(r'Triple\("[^"]*", "[^"]*", "([A-Z_]+)"\)', source))
+    assert (actions, int(size), align) == (expected_actions, expected_size, expected_align), (actions, size, align)
+assert main.count("controlGridRow().also { row ->") == 3
+assert "row.addView(this, LinearLayout.LayoutParams(0, dp(53), 1f))" in main
+assert "val gap = dp(6)" in main
+assert "minOf(dp(buttonSize), ((available - gap * (tiles.size - 1)) / tiles.size)" in main
+assert "if (alignRight) (available - occupied).coerceAtLeast(0) else 0" in main
+assert "colourByAction.getValue(value)" in main
+# Two-finger gesture must exclude one-finger click/pointer injection, track
+# pointer IDs through move, and issue bounded wheel steps.
+for gesture_contract in (
+    "MotionEvent.ACTION_POINTER_DOWN",
+    "MotionEvent.ACTION_POINTER_UP",
+    "cancel.action = MotionEvent.ACTION_CANCEL",
+    "suppressSingleFingerUntilUp",
+    "event.findPointerIndex(scrollPointerA)",
+    "event.findPointerIndex(scrollPointerB)",
+    'put("type", "mouse_scroll")',
+    ".coerceIn(-4, 4)",
+):
+    assert gesture_contract in main, gesture_contract
 for old in ("pb_button_squircle", "pb_choose", "pb_backspace"):
     assert old not in main, f"Legacy resource still referenced: {old}"
 # Owner-approved UI contract: text sizes, baseline, button slots, and palette.
