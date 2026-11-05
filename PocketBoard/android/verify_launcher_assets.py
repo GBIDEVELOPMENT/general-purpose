@@ -34,7 +34,10 @@ assert fg.find(".//clip-path") is None
 assert bg.find(".//clip-path") is None
 stripes = bg.findall("path")
 assert len(stripes) == 7
-assert len({attr(p, "fillColor") for p in stripes}) == 7
+assert [attr(p, "fillColor").upper() for p in stripes] == [
+    "#FFE92F61", "#FFFD791E", "#FFFDC405", "#FF03CE43",
+    "#FF02B8B6", "#FF0E70F7", "#FF7D3CEE"
+]  # The seven launcher bands are a subset of the canonical UI palette.
 assert all(attr(p, "fillColor") != "#FF000000" for p in stripes)
 for name in ("ic_launcher.xml", "ic_launcher_round.xml"):
     icon = parse(MIPMAP / name)
