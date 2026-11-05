@@ -15,7 +15,7 @@ fill out fourteen distinct action-button colours.
 | 4 | purple | `#7D3CEE` | Reference |
 | 5 | orange | `#FD791E` | Reference |
 | 6 | yellow | `#FFD42A` | Accessibility-adjusted reference |
-| 7 | green | `#00875F` | Accessibility-adjusted reference |
+| 7 | green | `#00805B` | Accessibility-adjusted reference |
 | 8 | red pink | `#E92F61` | Reference |
 | 9 | sky blue | `#22A3FF` | Companion |
 | 10 | violet | `#A857FF` | Companion |
@@ -53,7 +53,7 @@ symbols are now deployed, not merely archived.
 The owner cannot distinguish the old yellow and green rainbow bands reliably.
 Both canonical colours change throughout the touchpad, header, adaptive
 launcher, preview SVGs and button set: yellow `#FFD42A` (bright sunflower),
-green `#00875F` (slightly lighter emerald). The visual distinction from yellow and text contrast require renewed on-device checks. These are computational checks,
+green `#00805B` (slightly lighter emerald). Cream on emerald retains over 4.5:1 text contrast; yellow/emerald retain approximately 3.47:1 luminance contrast. On-device colour discrimination is still required. These are computational checks,
 not a substitute for owner on-device discrimination testing.
 
 Placeholder cream `#D0C9BE` is now 50% opaque (`#80D0C9BE`);
@@ -62,4 +62,4 @@ rasters are not recoloured, preserving their provenance.
 
 ## 1.0.6 owner-requested adjustment
 
-Blue is now `#008CFF`, a clearer bright blue distinct from indigo; emerald green is now the slightly lighter `#00875F`. These tokens apply to the rainbow pad, adaptive launcher, header icon, source SVGs and action backgrounds. The Tab and Esc silhouettes exchange assignments, while their symbols, colours, positions and commands stay unchanged. The cursor uses a two-contour reference trace in button-symbols/cursor-pointer.svg and the matching native vector.
+Blue is now `#008CFF`, a clearer bright blue distinct from indigo; emerald green is now the slightly lighter `#00805B`. These tokens apply to the rainbow pad, adaptive launcher, header icon, source SVGs and action backgrounds. The Tab and Esc silhouettes exchange assignments, while their symbols, colours, positions and commands stay unchanged. The cursor uses a two-contour reference trace in button-symbols/cursor-pointer.svg and the matching native vector.
