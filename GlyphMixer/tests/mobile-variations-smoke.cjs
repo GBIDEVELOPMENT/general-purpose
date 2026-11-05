@@ -66,12 +66,16 @@ async function main(){
    assert.match(compiled.font,/GlyphMixerAdvanced/);
    // Verify real browser shaping: GSUB must alter the second n in nn.
    await page.locator('#varProofText').fill('nn');
-   const without=await page.locator('#varPlain').screenshot();
+   // Sample the SAME element before and after toggling. Comparing different
+   // elements confounds glyph differences with subpixel raster alignment.
+   await page.locator('#varCaltEnabled').uncheck();
+   const without=await page.locator('#varShaped').screenshot();
+   await page.locator('#varCaltEnabled').check();
    const withContext=await page.locator('#varShaped').screenshot();
-   assert.ok(!without.equals(withContext),'Browser must visibly substitute contextual glyph');
+   assert.ok(!without.equals(withContext),'Native browser shaping must visibly substitute contextual glyph');
    await page.locator('#varCaltEnabled').uncheck();
    const offAgain=await page.locator('#varShaped').screenshot();
-   assert.ok(without.equals(offAgain),'Disabling calt should restore the exact original glyph rendering');
+   assert.ok(without.equals(offAgain),'Disabling calt must restore the initial pixels on the same element');
    await page.locator('#varCaltEnabled').check();
    fs.mkdirSync('GlyphMixer/build',{recursive:true});
    await page.screenshot({path:'GlyphMixer/build/mobile-variations-compiled.png',fullPage:true});
