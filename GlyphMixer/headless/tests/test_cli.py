@@ -7,6 +7,7 @@ from pathlib import Path
 from fontTools.fontBuilder import FontBuilder
 from fontTools.pens.ttGlyphPen import TTGlyphPen
 from fontTools.ttLib import TTFont
+import uharfbuzz as hb
 
 from GlyphMixer.headless.cli import RecipeError, build, codepoint, codepoints, root_path
 
@@ -56,9 +57,9 @@ class HeadlessTest(unittest.TestCase):
         with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[2]) as tmp:
             folder = Path(tmp)
             a, b, c = (folder / f"{name}.ttf" for name in ("a", "b", "c"))
-            make_font(a, "Base", 1000, {65: "A", 66: "B", 97: "a", 110: "n"})
+            make_font(a, "Base", 1000, {65: "A", 66: "B", 97: "a", 110: "n", 101: "e", 111: "o"})
             make_font(b, "Lower Donor", 2000, {97: "a", 110: "n"})
-            make_font(c, "Upper Donor", 800, {65: "A", 66: "B"})
+            make_font(c, "Upper Donor", 800, {65: "A", 66: "B", 110: "n"})
             relative = lambda p: str(p.relative_to(root_path(".")))
             recipe = {
                 "version": 1,
@@ -72,15 +73,21 @@ class HeadlessTest(unittest.TestCase):
                     {"action": "alternate", "source": "C", "target": "uppercase",
                      "features": ["aalt", "salt", "ss01", "calt"],
                      "context": "adjacent-repeat"},
+                    {"action": "alternate", "source": "C", "target": "chars:n",
+                     "features": ["aalt", "rand", "ss01"],
+                     "context": {"preceded_by": "o"}},
+                    {"action": "alternate", "source": "C", "target": "chars:n",
+                     "features": ["aalt", "salt"],
+                     "context": {"followed_by": "e"}},
                     {"action": "reassign", "source": "B", "glyph": "n",
                      "destination": "U+2605"}
                 ],
             }
             destination = folder / "hybrid.ttf"
             report = build(recipe, destination)
-            self.assertEqual(report["mapped_characters"], 5)
-            self.assertEqual(report["alternate_characters"], 2)
-            self.assertEqual(report["features"], ["aalt", "salt", "ss01", "calt"])
+            self.assertEqual(report["mapped_characters"], 7)
+            self.assertEqual(report["alternate_characters"], 3)
+            self.assertEqual(report["features"], ["aalt", "salt", "rand", "ss01", "calt"])
             self.assertIn("missing", report["steps"][0])
             self.assertTrue(destination.with_suffix(".report.json").exists())
             with TTFont(destination) as font:
@@ -92,10 +99,26 @@ class HeadlessTest(unittest.TestCase):
                 self.assertEqual(font["head"].unitsPerEm, 1000)
                 self.assertEqual(set(record.FeatureTag for record in
                                      font["GSUB"].table.FeatureList.FeatureRecord),
-                                 {"aalt", "salt", "ss01", "calt"})
+                                 {"aalt", "salt", "rand", "ss01", "calt"})
                 # Source B's 2000 UPM advance scales to the base 1000 UPM.
                 self.assertEqual(font["hmtx"]["u0061"][0], 500)
                 self.assertNotIn(0x2605, recipe["sources"]["A"])
+                raw=destination.read_bytes()
+                tt=TTFont(destination)
+                def shape(text, features):
+                    face=hb.Face(raw)
+                    font=hb.Font(face)
+                    buf=hb.Buffer()
+                    buf.add_str(text)
+                    buf.guess_segment_properties()
+                    hb.shape(font,buf,features)
+                    return [tt.getGlyphOrder()[v.codepoint] for v in buf.glyph_infos]
+                baseline={"calt":False,"salt":False,"ss01":False,"rand":False}
+                self.assertEqual(shape("on", baseline),["u006F","u006E"])
+                self.assertEqual(shape("on", {**baseline,"calt":True}),["u006F","u006E.alt01"])
+                self.assertEqual(shape("ne", baseline),["u006E","u0065"])
+                self.assertEqual(shape("ne", {**baseline,"calt":True}),["u006E.alt01","u0065"])
+
 
     def test_missing_strict_glyph_aborts(self):
         with self.assertRaises(RecipeError):
