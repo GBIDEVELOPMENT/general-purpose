@@ -20,7 +20,7 @@ main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;
 <header>
  <div class="headline"><h1>Font Shelf</h1><button id="theme" aria-label="Switch to light theme">☀ Light</button></div>
  <label class="label" for="preview">PREVIEW TEXT · APPLIES TO EVERY FONT</label>
- <textarea id="preview" rows="2" spellcheck="false">The quick brown fox jumps over the lazy dog. 0123456789</textarea>
+ <textarea id="preview" rows="2" spellcheck="false">Thus Spake Zarathustra</textarea>
  <div class="actions"><button class="primary" id="add">＋ Add fonts / ZIPs</button><button id="clear" class="danger" disabled>Clear all</button></div>
  <div class="status" id="status" role="status" aria-live="polite"></div>
 </header>
@@ -129,9 +129,9 @@ function render(){
   head.append(left,remove);
   const sample=make('div','sample',$('preview').value||' ');sample.style.fontFamily='"'+rec.family+'"';
   const meta=make('div','meta');meta.append(make('span','',rec.cps.length.toLocaleString()+' mapped characters'),make('span','',rec.source===rec.file?'Direct import':'ZIP: '+rec.source));
-  const details=make('details'),summary=make('summary','', 'Character map');
+  const details=make('details'),summary=make('summary','', 'Character map');details.open=true;
   const glyphs=make('div','glyphs');details.append(summary,glyphs);
-  details.addEventListener('toggle',()=>{if(details.open&&!glyphs.childElementCount)renderGlyphs(glyphs,rec)});
+  details.addEventListener('toggle',()=>{if(details.open&&!glyphs.childElementCount)renderGlyphs(glyphs,rec)});renderGlyphs(glyphs,rec);
   card.append(head,sample,meta,details);root.append(card);
  }
 }
