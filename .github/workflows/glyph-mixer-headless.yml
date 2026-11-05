@@ -59,6 +59,11 @@ jobs:
           print('Output:',path,'glyphs:',report['glyphs'],'features:',report['features'])
           print('Warnings:',report['warnings'][:10])
           PY
+      - name: Independently shape repeated letters and stylistic alternates with HarfBuzz
+        run: |
+          REPORT=$(find GlyphMixer/build -maxdepth 1 -name '*.report.json' -print -quit)
+          test -n "$REPORT"
+          python GlyphMixer/headless/verify_shaping.py --report "$REPORT"
       - name: Save fonts, reports and fixture inventory as build artifacts
         uses: actions/upload-artifact@v4
         if: always()
