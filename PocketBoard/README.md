@@ -221,3 +221,20 @@ separating the checkmark to the far right edge. Accessibility announces the
 status as "Connected". All other screen controls, spacing, networking and
 keyboard behaviour remain unchanged. Version 1.0 uses Android versionCode 19
 to upgrade cleanly over previous 0.x builds.
+
+## PocketBoard 1.0.1: source-traced adaptive launcher art
+
+The launcher icon now consists of independently reusable SVG artwork in
+`assets/launcher/`: the closely cropped white keyboard, the source-reference
+squircle mask, a circular mask and a square seven-band rainbow background.
+Circle/squircle composite previews are supplied. The in-app header now uses
+that same traced keyboard with the reference squircle outline.
+
+Android 8+ launchers apply the user's chosen icon mask directly to separate
+rainbow background and white keyboard foreground VectorDrawable layers. Both
+standard and round launcher icon references use the adaptive composition,
+which avoids the earlier black square and double-cropping. Launcher-specific
+mask shapes are controlled by Android, not selected in application code.
+See `assets/launcher/README.md` for provenance and visual acceptance checks.
+Android versionCode 20/versionName 1.0.1 makes this install an upgrade over 1.0.
+No Windows receiver or network protocol changes.
