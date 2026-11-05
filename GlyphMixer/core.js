@@ -6,7 +6,7 @@
   'use strict';
   const MAX_CODEPOINT = 0x10ffff;
   function validCodepoint(cp) {
-    return Number.isInteger(cp) && cp >= 0 && cp <= MAX_CODEPOINT && !(cp >= 0xd800 && cp <= 0xdfff);
+    return Number.isInteger(cp) && cp > 0 && cp <= MAX_CODEPOINT && !(cp >= 0xd800 && cp <= 0xdfff);
   }
   function parseCodepoint(text) {
     const s = String(text || '').trim();
@@ -73,13 +73,29 @@
     return String(name || 'Hybrid Font').trim().replace(/[^a-z0-9_-]+/gi, '-').replace(/^-|-$/g, '').slice(0, 64) || 'Hybrid-Font';
   }
   function transformCommands(commands, factor, outputPath) {
+    // OTF/CFF outlines are cubic. TrueType quadratic curves must be converted
+    // instead of feeding Q commands to the CFF charstring writer.
+    let current = [0, 0], start = [0, 0];
+    const x = n => Number(n || 0) * factor;
     for (const c of commands || []) {
-      const x = n => Number(n || 0) * factor;
-      if (c.type === 'M') outputPath.moveTo(x(c.x), x(c.y));
-      else if (c.type === 'L') outputPath.lineTo(x(c.x), x(c.y));
-      else if (c.type === 'Q') outputPath.quadTo(x(c.x1), x(c.y1), x(c.x), x(c.y));
-      else if (c.type === 'C') outputPath.curveTo(x(c.x1), x(c.y1), x(c.x2), x(c.y2), x(c.x), x(c.y));
-      else if (c.type === 'Z') outputPath.close();
+      if (c.type === 'M') {
+        current = [x(c.x), x(c.y)]; start = current;
+        outputPath.moveTo(...current);
+      } else if (c.type === 'L') {
+        current = [x(c.x), x(c.y)];
+        outputPath.lineTo(...current);
+      } else if (c.type === 'Q') {
+        const control = [x(c.x1), x(c.y1)], end = [x(c.x), x(c.y)];
+        const c1 = current.map((n, i) => n + (control[i] - n) * 2 / 3);
+        const c2 = end.map((n, i) => n + (control[i] - n) * 2 / 3);
+        outputPath.curveTo(...c1, ...c2, ...end);
+        current = end;
+      } else if (c.type === 'C') {
+        current = [x(c.x), x(c.y)];
+        outputPath.curveTo(x(c.x1), x(c.y1), x(c.x2), x(c.y2), ...current);
+      } else if (c.type === 'Z') {
+        outputPath.close(); current = start;
+      }
     }
   }
   function buildFont(opentype, fonts, assignments, baseId, familyName) {
@@ -96,6 +112,7 @@
       const src = sourceGlyph(ref);
       const scale = upm / (src.font.unitsPerEm || 1000);
       const path = new opentype.Path();
+      path.unitsPerEm = upm;
       transformCommands(src.glyph.path && src.glyph.path.commands, scale, path);
       const rawWidth = Number(src.glyph.advanceWidth);
       const width = Number.isFinite(rawWidth) ? Math.max(0, Math.round(rawWidth * scale)) : Math.round(upm * .6);
