@@ -16,10 +16,10 @@ NS = "{http://schemas.android.com/apk/res/android}"
 APPROVED = {
     "CHARCOAL": "FF171923", "DISCONNECTED": "FF283040",
     "CREAM": "FFFCF4E9", "MUTED_CREAM": "FFE6DDD0",
-    "HINT_CREAM": "FFD0C9BE", "PRESS_RIPPLE": "33FCF4E9",
+    "HINT_CREAM": "80D0C9BE", "PRESS_RIPPLE": "33FCF4E9",
     "BLUE": "FF0E70F7", "TEAL": "FF02B8B6", "PINK": "FFFA398F",
-    "PURPLE": "FF7D3CEE", "ORANGE": "FFFD791E", "YELLOW": "FFFDC405",
-    "GREEN": "FF03CE43", "RED_PINK": "FFE92F61", "SKY_BLUE": "FF22A3FF",
+    "PURPLE": "FF7D3CEE", "ORANGE": "FFFD791E", "YELLOW": "FFFFD42A",
+    "GREEN": "FF007E59", "RED_PINK": "FFE92F61", "SKY_BLUE": "FF22A3FF",
     "VIOLET": "FFA857FF", "CORAL": "FFFF5A3C",
     "MAGENTA": "FFD94BDE", "LIME": "FF76DE1A", "INDIGO": "FF4D62FF",
 }
@@ -79,6 +79,25 @@ assert "showingPause = !showingPause" in main, "Play/pause must remain one toggl
 assert len(re.findall(r'Triple\(".*?", ".*?", "(?!EMPTY)[A-Z_]+?"\)', main)) == 14
 for old in ("pb_button_squircle", "pb_choose", "pb_backspace"):
     assert old not in main, f"Legacy resource still referenced: {old}"
+# Owner-approved UI contract: text sizes, baseline, button slots, and palette.
+assert 'text = "DISCONNECTED"\n            textSize = 16f' in main
+assert 'typeface = resources.getFont(R.font.morning_rainbow)\n            textSize = 13f' in main
+assert "gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL" in main
+assert "setPadding(0, 0, 0, dp(10))" in main
+assert 'val buttonSizePx = (dp(34) * 0.90f).roundToInt()' in main
+assert 'LinearLayout.LayoutParams(dp(40), dp(41))' in main
+assert 'scaleX = 1.09f' in main and 'scaleY = 1.11f' in main
+assert "label.uppercase(java.util.Locale.ROOT)" in main
+assert APPROVED["HINT_CREAM"].startswith("80"), "50% opaque hint required"
+def relative_luminance(argb):
+    channels = [int(argb[i:i + 2], 16) / 255 for i in (2, 4, 6)]
+    linear = [c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4 for c in channels]
+    return .2126 * linear[0] + .7152 * linear[1] + .0722 * linear[2]
+def contrast(one, two):
+    a, b = sorted((relative_luminance(one), relative_luminance(two)), reverse=True)
+    return (a + .05) / (b + .05)
+assert contrast(APPROVED["YELLOW"], APPROVED["GREEN"]) >= 3.5
+assert contrast(APPROVED["CREAM"], APPROVED["GREEN"]) >= 4.5
 assert "typeface = resources.getFont(R.font.morning_rainbow)" in main
 for hue in RAINBOW:
     assert f"PocketBoardPalette.{hue}" in main

@@ -29,3 +29,12 @@ Android 8+ uses adaptive launcher icons. `ic_launcher_background.xml` extends th
 The original white keyboard paths and adaptive masks are unchanged. Only the seven
 rainbow-band fills have been unified with PocketBoard's canonical palette.
 The original raster references are inventoried in `../references/`.
+
+## 1.0.3 contrast and header optical normalization
+
+Canonical yellow/green fills are now `#FFD42A` / `#007E59`
+throughout the launcher, header and preview SVGs. Keyboard geometry and
+adaptive icon masks are unchanged. The in-app header ImageView applies
+1.09× horizontal / 1.11× vertical scale to compensate for source artwork
+padding and visually match its 40×40dp Discover neighbor. Launcher shape
+and real-device optical alignment still require device acceptance.

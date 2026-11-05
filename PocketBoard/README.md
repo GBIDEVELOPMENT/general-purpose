@@ -257,3 +257,27 @@ The detailed Connected shape, foreground symbols, canonical palette, fonts,
 launcher and remote-control behavior are unchanged. The CI verification now
 checks both source-to-Android exact path identity and cubic outline presence.
 Physical-device visual acceptance with Gboard remains necessary.
+
+## PocketBoard 1.0.3: header typography, controls and rainbow accessibility
+
+All Connected-pill status labels are uppercase at **16sp** (previously 13sp).
+The lettering is bottom-anchored with a 10dp inset in the unchanged 40dp
+pill, so enlargement grows upward, keeping the lower edge in place.
+The input field is **13sp** (previously 16sp), with a 50%-opaque placeholder.
+Clear and Microphone tiles and glyphs shrink by **10%**, retaining their
+original 40×41dp action slots and the 41dp text-bar height.
+
+The reference-traced header icon has transparent inset; optical scale
+1.09× horizontally / 1.11× vertically equalizes its visible dimensions
+with Discover without altering either 40×40dp layout box or the row's
+vertical alignment. The button contours and keyboard artwork remain intact.
+
+Yellow `#FFD42A` and deeper emerald green `#007E59` replace the
+ambiguous old adjacent rainbow bands across Android, SVG previews,
+the launcher and all canonical UI uses. Their computed luminance
+contrast improves from 1.32:1 to 3.56:1; cream on status-green is 4.66:1.
+The original raster references are preserved unchanged.
+Source-contract checks validate these values. Physical-device inspection,
+colour discrimination acceptance and Gboard-open measurements still
+remain required. versionCode 22 / versionName 1.0.3; Windows protocol,
+companion and pairing unchanged.

@@ -23,6 +23,7 @@ import android.view.WindowManager
 import android.view.WindowInsets
 import android.os.Build
 import android.util.TypedValue
+import kotlin.math.roundToInt
 import java.net.DatagramPacket
 import java.net.DatagramSocket
 import java.net.InetAddress
@@ -130,16 +131,22 @@ class MainActivity : Activity() {
         }
         ImageView(this).apply {
             setImageResource(R.drawable.pb_header_icon)
+            // Normalize the source icon's transparent inset against Discover.
+            // Its visible artwork now fills the same 40dp square as its neighbor.
+            scaleX = 1.09f
+            scaleY = 1.11f
             contentDescription = "PocketBoard rainbow keyboard logo"
             top.addView(this, LinearLayout.LayoutParams(dp(40), dp(40)).apply { rightMargin = dp(7) })
         }
         // Connection and discovery share the icon's header row.
         status = TextView(this).apply {
-            text = "Disconnected"
-            textSize = 13f
+            text = "DISCONNECTED"
+            textSize = 16f
             typeface = resources.getFont(R.font.morning_rainbow)
             setTextColor(PocketBoardPalette.CREAM)
-            gravity = Gravity.CENTER
+            // Anchor the text's lower edge inside the 40dp pill as caps grow up.
+            gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+            setPadding(0, 0, 0, dp(10))
             maxLines = 1
             ellipsize = android.text.TextUtils.TruncateAt.END
             background = statusShape(PocketBoardPalette.DISCONNECTED)
@@ -224,10 +231,11 @@ class MainActivity : Activity() {
         }
         editor = EditText(this).apply {
             hint = "Type or dictate on the PC"
+            // This canonical placeholder token is 50% opaque.
             setHintTextColor(PocketBoardPalette.HINT_CREAM)
             setTextColor(cream)
             typeface = resources.getFont(R.font.morning_rainbow)
-            textSize = 16f
+            textSize = 13f
             setSingleLine(false)
             maxLines = 2
             inputType = android.text.InputType.TYPE_CLASS_TEXT or
@@ -243,7 +251,10 @@ class MainActivity : Activity() {
             inputBar.addView(this, LinearLayout.LayoutParams(0, dp(41), 1f))
         }
         // The input field owns Clear and Dictation.
+        // Visible controls shrink by 10% but keep their full 40x41dp slots.
         fun inputAction(name: String, iconRes: Int, color: Int, shapeRes: Int, action: () -> Unit) {
+            val buttonSizePx = (dp(34) * 0.90f).roundToInt()
+            val insetPx = (dp(6) * 0.90f).roundToInt()
             val holder = FrameLayout(this).apply {
                 isClickable = true
                 isFocusable = true
@@ -254,10 +265,10 @@ class MainActivity : Activity() {
             ImageView(this).apply {
                 setImageResource(iconRes)
                 imageTintList = ColorStateList.valueOf(cream)
-                setPadding(dp(6), dp(6), dp(6), dp(6))
+                setPadding(insetPx, insetPx, insetPx, insetPx)
                 background = circularButton(color, shapeRes)
                 isClickable = false
-                holder.addView(this, FrameLayout.LayoutParams(dp(34), dp(34), Gravity.CENTER))
+                holder.addView(this, FrameLayout.LayoutParams(buttonSizePx, buttonSizePx, Gravity.CENTER))
             }
         }
         inputAction("Clear text input", R.drawable.pb_clear, PocketBoardPalette.RED_PINK, R.drawable.pb_shape_clear) {
@@ -463,7 +474,7 @@ class MainActivity : Activity() {
 
     private fun discover() {
         discoveryButton.isEnabled = false
-        status.text = "Searching..."
+        status.text = "SEARCHING..."
         Thread {
             val found = linkedMapOf<String, String>()
             val lock = (getSystemService(Context.WIFI_SERVICE) as WifiManager)
@@ -505,7 +516,7 @@ class MainActivity : Activity() {
                     }
                 }
             } catch (e: Exception) {
-                runOnUiThread { status.text = "Discovery error" }
+                runOnUiThread { status.text = "DISCOVERY ERROR" }
             } finally {
                 if (lock.isHeld) lock.release()
             }
@@ -513,7 +524,7 @@ class MainActivity : Activity() {
                 discoveryButton.isEnabled = true
                 if (isFinishing || isDestroyed) return@runOnUiThread
                 if (found.isEmpty()) {
-                    status.text = "No PC found"
+                    status.text = "NO PC FOUND"
                     return@runOnUiThread
                 }
                 val hosts = found.keys.toList()
@@ -603,7 +614,7 @@ class MainActivity : Activity() {
         if (ready) {
             // Inline image span means TextView centers the whole label + checkmark,
             // rather than placing the checkmark against the status panel's right edge.
-            val combined = SpannableString("$label  \uFFFC")
+            val combined = SpannableString("${label.uppercase(java.util.Locale.ROOT)}  \uFFFC")
             getDrawable(R.drawable.pb_connected_check)?.mutate()?.let { check ->
                 check.setTint(PocketBoardPalette.CREAM)
                 check.setBounds(0, 0, dp(19), dp(19))
@@ -615,7 +626,7 @@ class MainActivity : Activity() {
             }
             status.text = combined
         } else {
-            status.text = label
+            status.text = label.uppercase(java.util.Locale.ROOT)
         }
         status.contentDescription = label
         status.setTextColor(PocketBoardPalette.CREAM)

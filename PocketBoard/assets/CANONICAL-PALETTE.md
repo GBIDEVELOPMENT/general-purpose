@@ -14,8 +14,8 @@ fill out fourteen distinct action-button colours.
 | 3 | pink | `#FA398F` | Reference |
 | 4 | purple | `#7D3CEE` | Reference |
 | 5 | orange | `#FD791E` | Reference |
-| 6 | yellow | `#FDC405` | Reference |
-| 7 | green | `#03CE43` | Reference |
+| 6 | yellow | `#FFD42A` | Accessibility-adjusted reference |
+| 7 | green | `#007E59` | Accessibility-adjusted reference |
 | 8 | red pink | `#E92F61` | Reference |
 | 9 | sky blue | `#22A3FF` | Companion |
 | 10 | violet | `#A857FF` | Companion |
@@ -33,8 +33,7 @@ Secondary semantic colours: charcoal `#171923`, disconnected status
 Controls use the fourteen button colours in display order, skipping empty
 positions. Connected uses green and cream; disconnected and searching stay
 neutral. Discover and Microphone use purple; Clear uses red-pink. The green
-pill's cream text follows the reference art but has limited contrast, which
-should be assessed for accessibility before release.
+pill now uses a deeper emerald to improve contrast with cream lettering.
 
 The seven-band touchpad, launcher icon and in-app header icon now reuse
 canonical colours in order: red-pink, orange, yellow, green, teal, blue,
@@ -49,3 +48,17 @@ the 14 vivid, 5 semantic and 1 translucent press-feedback values must be
 explicitly reviewed and approved with a manifest update. This applies to
 launcher/header VectorDrawables as well as Kotlin-drawn UI. Button shapes and
 symbols are now deployed, not merely archived.
+
+## 1.0.3 colour-vision accessibility revision (2026-11-05)
+
+The owner cannot distinguish the old yellow and green rainbow bands reliably.
+Both canonical colours change throughout the touchpad, header, adaptive
+launcher, preview SVGs and button set: yellow `#FFD42A` (bright sunflower),
+green `#007E59` (deep emerald). Computed luminance contrast between
+them rises from ~1.32:1 to ~3.56:1. Cream on connected-green reaches
+~4.66:1, exceeding 4.5:1 for regular text. These are computational checks,
+not a substitute for owner on-device discrimination testing.
+
+Placeholder cream `#D0C9BE` is now 50% opaque (`#80D0C9BE`);
+it remains the single approved translucent hint token. Original reference
+rasters are not recoloured, preserving their provenance.
