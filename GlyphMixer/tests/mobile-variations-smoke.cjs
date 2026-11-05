@@ -20,12 +20,13 @@ async function main(){
    await page.goto('http://127.0.0.1:8765/GlyphMixer/',{waitUntil:'domcontentloaded',timeout:30000});
    await page.locator('#baseFiles').setInputFiles('GlyphMixer/test-fonts/Unkempt.zip');
    await page.locator('#workspace').waitFor({state:'visible',timeout:45000});
+   const baseCount=await page.evaluate(()=>window.GlyphMixerBridge.getState().fonts.size);
    await page.locator('#sourceFiles').setInputFiles('GlyphMixer/test-fonts/besty.zip');
-   await page.waitForFunction(()=>window.GlyphMixerBridge?.getState().fonts.size>=2,null,{timeout:45000});
+   await page.waitForFunction(count=>window.GlyphMixerBridge?.getState().fonts.size>count && !window.GlyphMixerBridge.getState().busy,baseCount,{timeout:45000});
    await page.locator('[data-tab="variations"]').click();
    await page.locator('#varNewAlternate').click();
    await page.locator('#varTarget').fill('n');
-   await page.locator('#varSource').selectOption({index:1});
+   await page.locator('#varSource').selectOption({index:(await page.locator('#varSource option').count())-1});
    await page.locator('#varGlyph').fill('n');
    await page.locator('#varFeature').selectOption('calt');
    await page.locator('#varContext').selectOption('repeat');
@@ -37,7 +38,7 @@ async function main(){
      width:document.documentElement.scrollWidth,viewport:innerWidth
    }));
    assert.equal(state.rules[0].target,110);
-   assert.equal(state.sources,2);
+   assert.ok(state.sources>baseCount);
    assert.ok(state.width<=state.viewport+2,"Mobile screen has unexpected horizontal overflow.");
    const [download]=await Promise.all([
      page.waitForEvent('download',{timeout:15000}),
@@ -66,8 +67,8 @@ async function main(){
    // Reload to prove project save/open restores original bytes and rules from disk.
    await page.reload({waitUntil:'domcontentloaded'});
    await page.locator('#projectFile').setInputFiles(bundle);
-   await page.waitForFunction(()=>window.GlyphMixerBridge.getState().variations.length===1 &&
-     window.GlyphMixerBridge.getState().fonts.size===2,null,{timeout:45000});
+   await page.waitForFunction(count=>window.GlyphMixerBridge.getState().variations.length===1 &&
+     window.GlyphMixerBridge.getState().fonts.size===count,state.sources,{timeout:45000});
    const restored=await page.evaluate(()=>window.GlyphMixerBridge.getState().variations[0]);
    assert.equal(restored.target,110);
    assert.equal(restored.context,'repeat');
