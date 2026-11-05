@@ -9,6 +9,7 @@ import android.graphics.drawable.RippleDrawable
 import android.content.res.ColorStateList
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
+import android.text.style.ImageSpan
 import android.widget.ImageView
 import android.graphics.Canvas
 import android.graphics.Paint
@@ -578,15 +579,28 @@ class MainActivity : Activity() {
     }
 
     private fun showStatus(message: String) = runOnUiThread {
-        status.text = if (ready) "Connected" else when {
+        val label = if (ready) "Connected" else when {
             message.startsWith("Disconnected") -> "Disconnected"
             message.startsWith("Connecting") -> "Connecting..."
             else -> message
         }
-        val statusCheck = if (ready) getDrawable(R.drawable.pb_choose)?.mutate() else null
-        statusCheck?.setBounds(0, 0, dp(19), dp(19))
-        status.setCompoundDrawables(null, null, statusCheck, null)
-        status.compoundDrawablePadding = if (ready) dp(3) else 0
+        if (ready) {
+            // Inline image span means TextView centers the whole label + checkmark,
+            // rather than placing the checkmark against the status panel's right edge.
+            val combined = SpannableString("$label  \uFFFC")
+            getDrawable(R.drawable.pb_choose)?.mutate()?.let { check ->
+                check.setBounds(0, 0, dp(19), dp(19))
+                combined.setSpan(
+                    ImageSpan(check, ImageSpan.ALIGN_CENTER),
+                    combined.length - 1, combined.length,
+                    android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+            }
+            status.text = combined
+        } else {
+            status.text = label
+        }
+        status.contentDescription = label
         status.setTextColor(if (ready) 0xFFE5FFEE.toInt() else 0xFFDDE8FF.toInt())
         status.background = bg(if (ready) 0xFF135D35.toInt() else 0xFF283040.toInt(), 14)
     }

@@ -211,3 +211,13 @@ Touchpad and shortcut-button touches do not request keyboard focus.
 Android still controls whether the IME is actually displayed (for example,
 when a hardware keyboard is active or the user explicitly dismisses it).
 No change to Windows input protocol or pairing security is required.
+
+## PocketBoard 1.0: centered connected indicator
+
+The connected status displays its existing bold vector checkmark immediately
+after the word "Connected" as an inline text span. The label and symbol are
+centered together within the unchanged 40dp green squircle bar rather than
+separating the checkmark to the far right edge. Accessibility announces the
+status as "Connected". All other screen controls, spacing, networking and
+keyboard behaviour remain unchanged. Version 1.0 uses Android versionCode 19
+to upgrade cleanly over previous 0.x builds.
