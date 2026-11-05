@@ -111,6 +111,7 @@ function submitRule(event){
    rule.target=cp;
    rule.feature=$("varFeature").value;
    rule.context=$("varContext").value;
+   if(rule.feature==="calt" && rule.context==="none")throw Error("Choose repeated, before, after, or between for contextual substitutions.");
    if(rule.context==="before"||rule.context==="both"){
     rule.before=V.point($("varBefore").value);
     if(rule.before===null)throw Error("Enter a valid previous letter.");
@@ -176,11 +177,14 @@ function drawProof(){
  if(compiledFace){
   for(const id of ["varPlain","varShaped"])$(id).style.fontFamily='"GlyphMixerAdvanced",sans-serif';
  }
- $("varPlain").style.fontFeatureSettings='"calt" 0, "salt" 0, "rand" 0, "ss01" 0, "ss02" 0, "dlig" 0, "liga" 0';
+ $("varPlain").style.fontFeatureSettings='"calt" 0, "salt" 0, "aalt" 0, "rand" 0, "ss01" 0, "ss02" 0, "dlig" 0, "liga" 0';
  $("varShaped").style.fontFeatureSettings=[
   '"calt" '+Number($("varCaltEnabled").checked),
   '"ss01" '+Number($("varSs01Enabled").checked),
   '"ss02" '+Number($("varSs02Enabled").checked),
+  '"salt" '+Number($("varSaltEnabled").checked),
+  '"aalt" '+Number($("varAaltEnabled").checked),
+  '"rand" '+Number($("varRandEnabled").checked),
   '"dlig" '+Number($("varDligEnabled").checked),
   '"liga" 1'
  ].join(", ");
@@ -266,7 +270,7 @@ $("varContext").onchange=adjustForm;
 $("varBuild").onclick=build;
 $("varExport").onclick=exportCompiled;
 $("varProofText").addEventListener("input",drawProof);
-for(const id of ["varCaltEnabled","varSs01Enabled","varSs02Enabled","varDligEnabled"])$(id).addEventListener("change",drawProof);
+for(const id of ["varCaltEnabled","varSs01Enabled","varSs02Enabled","varSaltEnabled","varAaltEnabled","varRandEnabled","varDligEnabled"])$(id).addEventListener("change",drawProof);
 bridge.setVariationHooks({render,onProjectChanged});
 render();drawProof();
 })();
