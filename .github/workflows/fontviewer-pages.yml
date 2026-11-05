@@ -33,7 +33,8 @@ jobs:
         run: |
           node --check GlyphMixer/core.js
           node --check GlyphMixer/app.js
-          node --test GlyphMixer/tests/*.test.cjs
+          npm install --prefix GlyphMixer --ignore-scripts --no-audit --no-fund --package-lock=false
+          npm test --prefix GlyphMixer
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
