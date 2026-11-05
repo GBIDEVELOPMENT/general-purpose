@@ -183,6 +183,7 @@ def build(recipe: dict, output: Path | None = None) -> dict:
     alternates: dict[int, list[tuple[str, str]]] = {}
     feature_sets: dict[int, set[str]] = {}
     context_repeat: set[int] = set()
+    contextual_rules: list[tuple[int, tuple[str,str], int|None, int|None]] = []
     ligatures: list[tuple[tuple[int, ...], tuple[str, str], str]] = []
     warnings = []
     stats = []
@@ -216,8 +217,8 @@ def build(recipe: dict, output: Path | None = None) -> dict:
             donor_cps = cps
         features = op.get("features", ["aalt", "salt"])
         if action == "alternate" and (not isinstance(features, list) or
-            any(f not in ("aalt", "salt", "ss01", "ss02", "calt") for f in features)):
-            raise RecipeError("Unsupported alternate feature. Use aalt, salt, ss01, ss02, calt.")
+            any(f not in ("aalt", "salt", "rand", "ss01", "ss02", "calt") for f in features)):
+            raise RecipeError("Unsupported alternate feature. Use aalt, salt, rand, ss01, ss02, calt.")
         copied, missed = 0, []
         for cp, donor_cp in zip(cps, donor_cps):
             source_name = cmaps[donor].get(donor_cp)
@@ -234,8 +235,17 @@ def build(recipe: dict, output: Path | None = None) -> dict:
                 if reference != requested[cp] and reference not in alternates.setdefault(cp, []):
                     alternates[cp].append(reference)
                     feature_sets.setdefault(cp, set()).update(features)
-                    if op.get("context") == "adjacent-repeat" or "calt" in features:
+                    context = op.get("context")
+                    if isinstance(context, dict):
+                        before = codepoint(context["preceded_by"]) if "preceded_by" in context else None
+                        after = codepoint(context["followed_by"]) if "followed_by" in context else None
+                        if before is None and after is None:
+                            raise RecipeError("Context object requires preceded_by and/or followed_by.")
+                        contextual_rules.append((cp, reference, before, after))
+                    elif context == "adjacent-repeat" or ("calt" in features and context is None):
                         context_repeat.add(cp)
+                    elif context is not None:
+                        raise RecipeError("Unknown context rule: " + str(context))
             copied += 1
         if missed and op.get("strict"):
             raise RecipeError("Missing glyphs in step " + str(index+1) + ": " + ", ".join(missed[:20]))
@@ -327,12 +337,12 @@ def build(recipe: dict, output: Path | None = None) -> dict:
     output_font = builder.font
 
     # Real GSUB features: alternate glyphs have no Unicode; text stays unchanged.
-    features: dict[str, list[str]] = {k: [] for k in ("aalt", "salt", "ss01", "ss02", "calt", "liga", "dlig")}
+    features: dict[str, list[str]] = {k: [] for k in ("aalt", "salt", "rand", "ss01", "ss02", "calt", "liga", "dlig")}
     for cp, names in sorted(alternate_names.items()):
         original = glyph_map[cp]
         class_names = "[" + " ".join(names) + "]"
         flags = feature_sets.get(cp, set())
-        for feature in ("aalt", "salt"):
+        for feature in ("aalt", "salt", "rand"):
             if feature in flags:
                 features[feature].append(f"sub {original} from {class_names};")
         for feature, offset in (("ss01",0), ("ss02",1)):
@@ -344,6 +354,15 @@ def build(recipe: dict, output: Path | None = None) -> dict:
             cycle = [original] + names
             for left, right in zip(cycle, cycle[1:] + cycle[:1]):
                 features["calt"].append(f"sub {left} {original}' by {right};")
+    for cp, reference, before, after in contextual_rules:
+        if (before is not None and before not in glyph_map) or (after is not None and after not in glyph_map):
+            warnings.append("Context skipped: surrounding glyph is not mapped for U+%04X" % cp)
+            continue
+        if reference not in alternates.get(cp, []):
+            continue
+        name = alternate_names[cp][alternates[cp].index(reference)]
+        parts = ([glyph_map[before]] if before is not None else []) + [glyph_map[cp] + "'"] + ([glyph_map[after]] if after is not None else [])
+        features["calt"].append("sub " + " ".join(parts) + " by " + name + ";")
     for seq, lig_name, feature in ligature_subs:
         features[feature].append("sub " + " ".join(glyph_map[cp] for cp in seq) + " by " + lig_name + ";")
     fea_parts = [f"feature {name} {{\n  " + "\n  ".join(rules) + f"\n}} {name};"
