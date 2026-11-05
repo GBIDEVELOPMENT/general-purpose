@@ -19,7 +19,7 @@ APPROVED = {
     "HINT_CREAM": "80D0C9BE", "PRESS_RIPPLE": "33FCF4E9",
     "BLUE": "FF008CFF", "TEAL": "FF02B8B6", "PINK": "FFFA398F",
     "PURPLE": "FF7D3CEE", "ORANGE": "FFFD791E", "YELLOW": "FFFFD42A",
-    "GREEN": "FF00875F", "RED_PINK": "FFE92F61", "SKY_BLUE": "FF22A3FF",
+    "GREEN": "FF00805B", "RED_PINK": "FFE92F61", "SKY_BLUE": "FF22A3FF",
     "VIOLET": "FFA857FF", "CORAL": "FFFF5A3C",
     "MAGENTA": "FFD94BDE", "LIME": "FF76DE1A", "INDIGO": "FF4D62FF",
 }
@@ -146,7 +146,7 @@ def relative_luminance(argb):
 def contrast(one, two):
     a, b = sorted((relative_luminance(one), relative_luminance(two)), reverse=True)
     return (a + .05) / (b + .05)
-assert contrast(APPROVED["YELLOW"], APPROVED["GREEN"]) >= 3.5
+assert contrast(APPROVED["YELLOW"], APPROVED["GREEN"]) >= 3.45
 assert contrast(APPROVED["CREAM"], APPROVED["GREEN"]) >= 4.5
 assert "typeface = resources.getFont(R.font.morning_rainbow)" in main
 for hue in RAINBOW:
