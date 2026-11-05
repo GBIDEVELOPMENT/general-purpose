@@ -13,6 +13,10 @@ on:
         type: string
         default: 'GlyphMixer/recipes/example-uppercase-alternates.json'
         required: true
+      bundle_path:
+        description: 'Optional repository-relative .glyphmix project; overrides recipe_path'
+        type: string
+        required: false
 permissions:
   contents: read
 jobs:
@@ -41,8 +45,15 @@ jobs:
           python -c 'import json; x=json.load(open("GlyphMixer/build/fixture-inventory.json")); print("Archives scanned:",x["archives"]); print("Font members:",sum(len(i["members"]) for i in x["items"])); print("Parse errors:",sum("error" in m for i in x["items"] for m in i["members"]))'
       - name: Assemble and roundtrip a donor from all 22 fixture archives
         run: python -m GlyphMixer.headless.smoke_fixtures
-      - name: Build the requested or example headless recipe
-        run: python GlyphMixer/headless/cli.py build --recipe "$RECIPE_PATH"
+      - name: Build the requested recipe or saved mobile project
+        env:
+          BUNDLE_PATH: ${{ inputs.bundle_path || '' }}
+        run: |
+          if [ -n "$BUNDLE_PATH" ]; then
+            python GlyphMixer/headless/cli.py build --bundle "$BUNDLE_PATH"
+          else
+            python GlyphMixer/headless/cli.py build --recipe "$RECIPE_PATH"
+          fi
       - name: Confirm generated OpenType table and report
         run: |
           python - <<'PY'
