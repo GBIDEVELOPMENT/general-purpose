@@ -35,3 +35,7 @@ The independently versioned [Android App Development skill](skills/android-app-d
 ## Engineering judgment skill
 
 [Engineering Judgment](skills/engineering-judgment/SKILL.md) is the portable shared decision method underlying the domain-specific [Android App Development](skills/android-app-development/SKILL.md) and [Concept Model Engineering](skills/concept-model-engineering/SKILL.md) skills. It translates practical incidents and published cognitive task analysis into conditional recognition cues, conventional solutions, counterexamples, evidence requirements and an appropriately sized path to a decision. Its 17 source-linked [decision patterns](skills/engineering-judgment/assets/patterns.json), 18 [unfamiliar transfer scenarios](skills/engineering-judgment/assets/transfer-probes.json), tests and offline grader provide initial regression checks; actual gains in agent engineering outcomes remain to be measured.
+
+## Glyph Mixer (standalone font assembly tool)
+
+[Glyph Mixer](GlyphMixer/README.md) is a separate, mobile-first local font editor with an additional [headless OpenType recipe engine](GlyphMixer/headless/README.md) for automated hybrid-font construction and contextual glyph substitutions. The font-testing ZIP archive collection lives under `GlyphMixer/test-fonts/`, not at repository root. The headless build workflow uploads font files and verification reports as GitHub Actions artifacts. Font Shelf remains independently deployed.

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "Unkempt Alternating N",
+  "base": "A",
+  "sources": {
+    "A": {
+      "path": "GlyphMixer/test-fonts/Unkempt.zip"
+    },
+    "B": {
+      "path": "GlyphMixer/test-fonts/besty.zip"
+    }
+  },
+  "operations": [
+    {
+      "action": "alternate",
+      "source": "B",
+      "target": "chars:n",
+      "features": [
+        "aalt",
+        "salt",
+        "ss01",
+        "calt"
+      ],
+      "context": "adjacent-repeat"
+    }
+  ],
+  "output": "GlyphMixer/build/Unkempt-Alternating-N.ttf"
+}

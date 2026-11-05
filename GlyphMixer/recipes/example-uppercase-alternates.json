@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "name": "Unkempt Besty Ahoy Hybrid",
+  "base": "A",
+  "sources": {
+    "A": {
+      "path": "GlyphMixer/test-fonts/Unkempt.zip"
+    },
+    "B": {
+      "path": "GlyphMixer/test-fonts/besty.zip"
+    },
+    "C": {
+      "path": "GlyphMixer/test-fonts/ahoy-font.zip"
+    }
+  },
+  "operations": [
+    {
+      "action": "replace",
+      "source": "B",
+      "target": "lowercase"
+    },
+    {
+      "action": "alternate",
+      "source": "C",
+      "target": "uppercase",
+      "features": [
+        "aalt",
+        "salt",
+        "ss01"
+      ],
+      "context": "adjacent-repeat"
+    }
+  ],
+  "output": "GlyphMixer/build/Unkempt-Besty-Ahoy-Hybrid.ttf"
+}
