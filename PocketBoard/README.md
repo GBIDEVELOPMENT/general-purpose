@@ -318,3 +318,13 @@ Version code 23 / version 1.0.4. CI Windows and Android builds plus the
 canonical-art contract are required. Device acceptance still needs the
 320dp and 412dp / Gboard-open layouts, 2-finger vertical and horizontal
 scroll, accidental-click suppression and gesture reversal checked on hardware.
+
+## PocketBoard 1.0.5: two button-colour swaps
+
+Swap only the button colours of Esc and Select (Choose), and of Alt-Tab
+(Apps) and Next Track. Esc is now red-pink `#E92F61`; Select is magenta
+`#D94BDE`. Alt-Tab is now sunflower yellow `#FFD42A`; Next Track is
+emerald green `#007E59`. All shapes, positions, symbols, commands, and
+other colours remain unchanged. The canonical palette is unchanged; its
+per-action mapping is explicitly verified. Android versionCode 24,
+versionName 1.0.5. No PC companion update required.

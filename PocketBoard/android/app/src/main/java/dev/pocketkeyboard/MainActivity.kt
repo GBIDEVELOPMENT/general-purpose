@@ -385,11 +385,13 @@ class MainActivity : Activity() {
             }
         })
         // Preserve the per-command canonical colours while rearranging tiles.
+        // Only the colour assignments change: Next Track <-> Alt-Tab,
+        // and Esc <-> Select. The source palette and grid stay untouched.
         val colourByAction = listOf(
             "VOLUME_DOWN", "VOLUME_UP", "VOLUME_MUTE",
-            "MEDIA_PREV", "MEDIA_PLAY_PAUSE", "MEDIA_NEXT",
-            "ALT_TAB_OPEN", "ALT_TAB_CLOSE", "COPY", "SELECT_ALL_COPY",
-            "PASTE", "ESCAPE", "TAB", "ENTER"
+            "MEDIA_PREV", "MEDIA_PLAY_PAUSE", "ALT_TAB_OPEN",
+            "MEDIA_NEXT", "ESCAPE", "COPY", "SELECT_ALL_COPY",
+            "PASTE", "ALT_TAB_CLOSE", "TAB", "ENTER"
         ).zip(PocketBoardPalette.BUTTON_COLORS).toMap()
         var showingPause = false // presentation-only: no media state queries
         fun resourceFor(value: String): Int? = when (value) {
