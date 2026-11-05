@@ -1,6 +1,9 @@
 package dev.pocketkeyboard
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.speech.RecognizerIntent
 import android.os.Bundle
 import android.content.Context
 import android.graphics.Color
@@ -66,6 +69,7 @@ class MainActivity : Activity() {
     private var ignoreEdit = false
     private var connectedSocket: SSLSocket? = null
     private var lastConnectedHost = ""
+    private val speechRequestCode = 9021
 
     private fun dp(value: Int) = (value * resources.displayMetrics.density).toInt()
     private fun bg(color: Int, radius: Int = 12) = GradientDrawable().apply {
@@ -357,10 +361,8 @@ class MainActivity : Activity() {
         inputAction("Clear text input", R.drawable.pb_clear, PocketBoardPalette.RED_PINK, R.drawable.pb_shape_clear) {
             sendAction("local", "CLEAR")
         }
-        inputAction("Open keyboard for voice dictation", R.drawable.pb_mic, PocketBoardPalette.PURPLE, R.drawable.pb_shape_microphone) {
-            editor.requestFocus()
-            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-                .showSoftInput(editor, InputMethodManager.SHOW_IMPLICIT)
+        inputAction("Dictate text", R.drawable.pb_mic, PocketBoardPalette.PURPLE, R.drawable.pb_shape_microphone) {
+            startDictation()
         }
         editor.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -564,6 +566,42 @@ class MainActivity : Activity() {
         editor.requestFocus()
         if (prefs.getString("host", null) != null) startConnection()
         else discover()
+    }
+
+    private fun startDictation() {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+            putExtra(RecognizerIntent.EXTRA_PROMPT, "Dictate to PocketBoard")
+            putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1)
+        }
+        try {
+            startActivityForResult(intent, speechRequestCode)
+        } catch (_: ActivityNotFoundException) {
+            Toast.makeText(this, "No speech recognizer is installed", Toast.LENGTH_LONG).show()
+        } catch (_: SecurityException) {
+            Toast.makeText(this, "Speech recognition is unavailable", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    @Deprecated("Uses the platform speech recognition activity result.")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode != speechRequestCode || resultCode != RESULT_OK) return
+        val spoken = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+            ?.firstOrNull()?.trim().orEmpty()
+        if (spoken.isEmpty() || !::editor.isInitialized) return
+        val editable = editor.text
+        val start = editor.selectionStart.coerceIn(0, editable.length)
+        val end = editor.selectionEnd.coerceIn(0, editable.length)
+        val from = minOf(start, end)
+        val to = maxOf(start, end)
+        val prefix = if (from > 0 && !editable[from - 1].isWhitespace()) " " else ""
+        val suffix = if (to < editable.length && !editable[to].isWhitespace()) " " else ""
+        val insertion = prefix + spoken + suffix
+        // Edit the normal text sink so its existing TextWatcher forwards text
+        // to the paired Windows receiver and preserves surrounding input.
+        editable.replace(from, to, insertion)
+        editor.setSelection(from + insertion.length)
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
