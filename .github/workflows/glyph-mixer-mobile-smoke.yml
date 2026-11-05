@@ -37,6 +37,13 @@ jobs:
           python -m http.server 8765 --bind 127.0.0.1 > /tmp/glyphmixer-http.log 2>&1 &
           SERVER_PID=$!
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/GlyphMixer/ > /dev/null; then
+              break
+            fi
+            sleep 0.2
+          done
+          curl -fsS http://127.0.0.1:8765/GlyphMixer/ >/dev/null
           node GlyphMixer/tests/mobile-variations-smoke.cjs
       - name: Upload mobile screenshot and diagnostic assets
         if: always()
