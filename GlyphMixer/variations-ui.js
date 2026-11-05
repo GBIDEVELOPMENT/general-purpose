@@ -5,7 +5,7 @@ const bridge=window.GlyphMixerBridge, V=window.GlyphMixerVariations;
 if(!bridge||!V){console.error("Variations integration unavailable");return}
 const state=()=>bridge.getState();
 let editId=null,mode="alternate",worker=null,compiled=null,compiledFace=null,compiledUrl=null,compiledRevision=-1;
-let busy=false,nextBuildId=0,activeId=null;
+let busy=false,nextBuildId=0,activeId=null,activeRevision=-1;
 function notice(text,bad=false){bridge.notice(text,bad)}
 function el(tag,cls,text){
  const node=document.createElement(tag);
@@ -200,7 +200,7 @@ async function build(){
   });
  }catch(error){notice(error.message,true);setStatus(error.message,true);return}
  setBusy(true);freeCompiled();
- const revision=state().version;
+ activeRevision=state().version;
  setStatus("Preparing local compilation…");
  const id=++nextBuildId;activeId=id;
  try{
@@ -214,7 +214,7 @@ async function build(){
     }
     if(msg.type==="built"){
       try{
-       if(state().version!==revision)throw Error("Project changed while building. Build the newer version.");
+       if(state().version!==activeRevision)throw Error("Project changed while building. Build the newer version.");
        const bytes=new Uint8Array(msg.bytes);
        const url=URL.createObjectURL(new Blob([bytes],{type:"font/ttf"}));
        let fontFace;
@@ -223,7 +223,7 @@ async function build(){
         await fontFace.load();
         document.fonts.add(fontFace);
        }catch(error){URL.revokeObjectURL(url);throw error}
-       freeCompiled();compiled=bytes;compiledUrl=url;compiledFace=fontFace;compiledRevision=revision;
+       freeCompiled();compiled=bytes;compiledUrl=url;compiledFace=fontFace;compiledRevision=activeRevision;
        setStatus("Built "+msg.report.glyphs+" glyphs · "+msg.report.alternate_characters+" alternate characters · features: "+
          (msg.report.features.join(", ")||"none")+(msg.report.warnings.length?" · "+msg.report.warnings.length+" warnings":""));
        $("varExport").disabled=false;drawProof();
@@ -235,6 +235,7 @@ async function build(){
    worker.addEventListener("error",event=>{
     setStatus("Local compiler worker crashed: "+event.message,true);
     setBusy(false);
+    worker?.terminate();worker=null;
    });
   }
   const payload=data.fontBytes.map(font=>({path:font.path,bytes:new Uint8Array(font.bytes).slice().buffer}));
