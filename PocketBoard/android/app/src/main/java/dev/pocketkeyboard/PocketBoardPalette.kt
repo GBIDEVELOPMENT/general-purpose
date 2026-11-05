@@ -12,6 +12,7 @@ internal object PocketBoardPalette {
     val CREAM = 0xFFFCF4E9.toInt()
     val MUTED_CREAM = 0xFFE6DDD0.toInt()
     val HINT_CREAM = 0xFFD0C9BE.toInt()
+    val PRESS_RIPPLE = 0x33FCF4E9.toInt()
 
     val BLUE = 0xFF0E70F7.toInt()
     val TEAL = 0xFF02B8B6.toInt()

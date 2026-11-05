@@ -8,7 +8,7 @@ All SVGs have a tight, native-pixel `viewBox`, one closed fill-only path, and `f
 
 | Section | Filenames |
 | --- | --- |
-| Connection/search | `connected.svg`, `search.svg` |
+| Connection/search | `connected-pill.svg`, `search.svg` |
 | Text entry | `clear.svg`, `microphone.svg` |
 | Media | `volume-down.svg`, `volume-up.svg`, `mute.svg`, `previous-track.svg`, `pause.svg`, `next-track.svg` |
 | Utility | `apps-grid.svg`, `overlapping-windows.svg`, `windows-check.svg`, `windows-plus.svg` |
@@ -20,4 +20,14 @@ Shapes are contour traces of the colored backgrounds in the reference raster, is
 
 The partially painted-over icon areas in the source image were intentionally excluded because their boundaries cannot be determined faithfully. The reference palette swatches, sectional header pills, and dividers are also excluded since they are not the app's button shapes.
 
-These are **reference assets** only. No runtime Android layout, artwork, or shipped icon has been changed. Compare silhouettes at a common rendered size before choosing any canonical shape.
+The shapes are **canonical live assets as of PocketBoard 1.0.2**: exact
+source contour paths are present as `pb_shape_*.xml` native Android vectors.
+The connected status uses the more detailed, independently traced
+`connected-pill.svg` rather than the earlier coarse `connected.svg` (now in
+`../retired-art/coarse-connected.svg`). The media play/pause toggle uses the
+single Pause silhouette; the symbol alone changes. Some obscured reference
+buttons have no recoverable contour and are not fabricated; Choose reuses the
+Apps family silhouette.
+
+Source aspect ratios and subpixel irregularities remain in the SVG paths.
+Android tinting changes fill colours without redrawing their geometry.

@@ -47,6 +47,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.11.1'
+      - name: Enforce PocketBoard approved palette and traced asset fidelity
+        run: python3 PocketBoard/android/verify_canonical_art.py
       - name: Validate adaptive launcher vectors
         run: python3 PocketBoard/android/verify_launcher_assets.py
       - name: Build APK

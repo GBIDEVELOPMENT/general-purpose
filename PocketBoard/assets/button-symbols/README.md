@@ -17,6 +17,14 @@ These are source-image **tracings**, not replacements assembled from a stock ico
 
 The only fidelity limit is the raster source itself: screenshot antialiasing and JPEG artifacts do not expose the original pre-raster Bézier control points. The paths follow the visible pixel boundaries without attempting to substitute idealized geometry.
 
-Every asset has a tight `viewBox`, is filled white (`#ffffff`), and contains no button background, shadow, gradient, or label outside the symbol. These are **reference assets**, not a change to PocketBoard's current application UI. Existing button silhouettes in `../button-silhouettes/` are separate and untouched.
+Every asset has a tight `viewBox`, is filled white (`#ffffff`), and contains no button background, shadow, gradient, or label outside the symbol. These are the **canonical source assets deployed in PocketBoard 1.0.2**.
+The matching native Android VectorDrawables are in
+`../../android/app/src/main/res/drawable/pb_*.xml`. The conversion preserves
+pathData and even-odd cutouts, while applying canonical cream at runtime.
+Their original white SVG fills remain unchanged for provenance. Button
+silhouettes are independently traced under `../button-silhouettes/`.
+Copy/Select All & Copy/Paste use the overlapping-windows/check/plus glyphs;
+Choose and Connected use the same traced check. Play and Pause are swapped
+within one background on every press.
 
 To recolour, change `fill="#ffffff"` to the desired solid colour or `currentColor`.

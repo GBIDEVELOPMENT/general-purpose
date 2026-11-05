@@ -74,19 +74,15 @@ class MainActivity : Activity() {
     private fun sendAction(type: String, value: String) =
         send(JSONObject().put("type", type).put("value", value))
 
-    // Flat color, rounded geometry and a restrained press ripple: no gradients,
-    // borders, state-list elevation or faux directional lighting.
-    private fun flatButton(color: Int, radius: Int = 14): android.graphics.drawable.Drawable =
-        RippleDrawable(ColorStateList.valueOf(0x33FFFFFF), bg(color, radius), null)
-
-    // The button silhouette is a subtle superellipse (exponent 2.55).
-    // Width and height are equal; flatter side curvature is part of the path,
-    // not an oval scaling transform. The symbols stay in square viewports.
-    private fun circularButton(color: Int): android.graphics.drawable.Drawable {
-        val surface = getDrawable(R.drawable.pb_button_squircle)!!.mutate().apply { setTint(color) }
-        val mask = getDrawable(R.drawable.pb_button_squircle)!!.mutate()
-        return RippleDrawable(ColorStateList.valueOf(0x33FFFFFF), surface, mask)
+    // Tint the exact traced vector silhouette. Its matching mask clips ripples
+    // to the same irregular contour without affecting the independent glyph.
+    private fun circularButton(color: Int, shapeRes: Int): android.graphics.drawable.Drawable {
+        val surface = getDrawable(shapeRes)!!.mutate().apply { setTint(color) }
+        val mask = getDrawable(shapeRes)!!.mutate()
+        return RippleDrawable(ColorStateList.valueOf(PocketBoardPalette.PRESS_RIPPLE), surface, mask)
     }
+    private fun statusShape(color: Int): android.graphics.drawable.Drawable =
+        getDrawable(R.drawable.pb_shape_connected)!!.mutate().apply { setTint(color) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,8 +90,8 @@ class MainActivity : Activity() {
             WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE or
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE
         )
-        window.statusBarColor = Color.rgb(18, 19, 22)
-        window.navigationBarColor = Color.rgb(18, 19, 22)
+        window.statusBarColor = PocketBoardPalette.CHARCOAL
+        window.navigationBarColor = PocketBoardPalette.CHARCOAL
         val charcoal = PocketBoardPalette.CHARCOAL
         val cream = PocketBoardPalette.CREAM
         val root = LinearLayout(this).apply {
@@ -146,14 +142,15 @@ class MainActivity : Activity() {
             gravity = Gravity.CENTER
             maxLines = 1
             ellipsize = android.text.TextUtils.TruncateAt.END
-            background = bg(PocketBoardPalette.DISCONNECTED, 13)
+            background = statusShape(PocketBoardPalette.DISCONNECTED)
             top.addView(this, LinearLayout.LayoutParams(0, dp(40), 1f).apply { rightMargin = dp(7) })
         }
         discoveryButton = ImageView(this).apply {
             setImageResource(R.drawable.pb_discover)
+            imageTintList = ColorStateList.valueOf(cream)
             setPadding(dp(11), dp(11), dp(11), dp(11))
             contentDescription = "Discover nearby PCs"
-            background = circularButton(PocketBoardPalette.PURPLE)
+            background = circularButton(PocketBoardPalette.PURPLE, R.drawable.pb_shape_search)
             isClickable = true
             isFocusable = true
             setOnClickListener { discover() }
@@ -222,13 +219,14 @@ class MainActivity : Activity() {
         val inputBar = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
-            background = bg(0xFF2E3551.toInt(), 13)
+            background = bg(PocketBoardPalette.DISCONNECTED, 13)
             root.addView(this, LinearLayout.LayoutParams(-1, dp(41)).apply { bottomMargin = dp(15) })
         }
         editor = EditText(this).apply {
             hint = "Type or dictate on the PC"
             setHintTextColor(PocketBoardPalette.HINT_CREAM)
             setTextColor(cream)
+            typeface = resources.getFont(R.font.morning_rainbow)
             textSize = 16f
             setSingleLine(false)
             maxLines = 2
@@ -245,7 +243,7 @@ class MainActivity : Activity() {
             inputBar.addView(this, LinearLayout.LayoutParams(0, dp(41), 1f))
         }
         // The input field owns Clear and Dictation.
-        fun inputAction(name: String, iconRes: Int, color: Int, action: () -> Unit) {
+        fun inputAction(name: String, iconRes: Int, color: Int, shapeRes: Int, action: () -> Unit) {
             val holder = FrameLayout(this).apply {
                 isClickable = true
                 isFocusable = true
@@ -255,16 +253,17 @@ class MainActivity : Activity() {
             }
             ImageView(this).apply {
                 setImageResource(iconRes)
+                imageTintList = ColorStateList.valueOf(cream)
                 setPadding(dp(6), dp(6), dp(6), dp(6))
-                background = circularButton(color)
+                background = circularButton(color, shapeRes)
                 isClickable = false
                 holder.addView(this, FrameLayout.LayoutParams(dp(34), dp(34), Gravity.CENTER))
             }
         }
-        inputAction("Clear text input", R.drawable.pb_clear, PocketBoardPalette.RED_PINK) {
+        inputAction("Clear text input", R.drawable.pb_clear, PocketBoardPalette.RED_PINK, R.drawable.pb_shape_clear) {
             sendAction("local", "CLEAR")
         }
-        inputAction("Open keyboard for voice dictation", R.drawable.pb_mic, PocketBoardPalette.PURPLE) {
+        inputAction("Open keyboard for voice dictation", R.drawable.pb_mic, PocketBoardPalette.PURPLE, R.drawable.pb_shape_microphone) {
             editor.requestFocus()
             (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
                 .showSoftInput(editor, InputMethodManager.SHOW_IMPLICIT)
@@ -304,14 +303,32 @@ class MainActivity : Activity() {
             "COPY" -> R.drawable.pb_copy
             "SELECT_ALL_COPY" -> R.drawable.pb_all_copy
             "PASTE" -> R.drawable.pb_paste
-            "ALT_TAB_CLOSE" -> R.drawable.pb_choose
+            "ALT_TAB_CLOSE" -> R.drawable.pb_connected_check
             "ALT_TAB_OPEN" -> R.drawable.pb_apps
             "TAB" -> R.drawable.pb_tab
             "ENTER" -> R.drawable.pb_enter
-            "BACKSPACE" -> R.drawable.pb_backspace
+            "ESCAPE" -> R.drawable.pb_escape
             else -> null
         }
-        fun controlRow(actions: List<Triple<String, String, String>>) {
+        // Shape and symbol identities are independent; play/pause shares one
+        // traced silhouette and changes only its foreground symbol.
+        fun shapeFor(value: String): Int = when (value) {
+            "VOLUME_DOWN" -> R.drawable.pb_shape_volume_down
+            "VOLUME_UP" -> R.drawable.pb_shape_volume_up
+            "VOLUME_MUTE" -> R.drawable.pb_shape_mute
+            "MEDIA_PREV" -> R.drawable.pb_shape_previous_track
+            "MEDIA_NEXT" -> R.drawable.pb_shape_next_track
+            "MEDIA_PLAY_PAUSE" -> R.drawable.pb_shape_pause
+            "ALT_TAB_OPEN", "ALT_TAB_CLOSE" -> R.drawable.pb_shape_apps_grid
+            "COPY" -> R.drawable.pb_shape_overlapping_windows
+            "SELECT_ALL_COPY" -> R.drawable.pb_shape_windows_check
+            "PASTE" -> R.drawable.pb_shape_windows_plus
+            "ESCAPE" -> R.drawable.pb_shape_escape
+            "TAB" -> R.drawable.pb_shape_tab
+            "ENTER" -> R.drawable.pb_shape_enter
+            else -> error("Unmapped silhouette: $value")
+        }
+        fun controlRow(actions: List<Triple<String, String, String>>, buttonSize: Int = 49) {
             val row = LinearLayout(this).apply {
                 orientation = LinearLayout.HORIZONTAL
                 gravity = Gravity.CENTER_VERTICAL
@@ -323,18 +340,26 @@ class MainActivity : Activity() {
                 }
                 if (value == "EMPTY") return@forEach
                 val color = palettes[(buttonIndex++) % palettes.size]
+                // A source image can be slightly wider or taller than a square.
+                // Scale uniformly to fit the slot instead of distorting its edges.
+                val shape = getDrawable(shapeFor(value))!!
+                val nativeMax = maxOf(shape.intrinsicWidth, shape.intrinsicHeight).coerceAtLeast(1)
+                val fit = dp(buttonSize).toFloat() / nativeMax
+                val shapeW = (shape.intrinsicWidth * fit).toInt().coerceAtLeast(1)
+                val shapeH = (shape.intrinsicHeight * fit).toInt().coerceAtLeast(1)
                 val circle = FrameLayout(this).apply {
-                    background = circularButton(color)
+                    background = circularButton(color, shapeFor(value))
                     contentDescription = title
                     isFocusable = true
                     isClickable = true
-                    slot.addView(this, FrameLayout.LayoutParams(dp(49), dp(49), Gravity.CENTER))
+                    slot.addView(this, FrameLayout.LayoutParams(shapeW, shapeH, Gravity.CENTER))
                 }
                 val symbol = resourceFor(value)
                 val icon: ImageView? = if (symbol != null) ImageView(this).apply {
                     setImageResource(symbol)
-                    setPadding(dp(9), dp(9), dp(9), dp(9))
-                    circle.addView(this, FrameLayout.LayoutParams(dp(49), dp(49), Gravity.CENTER))
+                    imageTintList = ColorStateList.valueOf(cream)
+                    setPadding(dp(8), dp(8), dp(8), dp(8))
+                    circle.addView(this, FrameLayout.LayoutParams(shapeW, shapeH, Gravity.CENTER))
                 } else null
                 if (icon == null) {
                     val label = when (value) {
@@ -355,7 +380,7 @@ class MainActivity : Activity() {
                         gravity = Gravity.CENTER
                         maxLines = 1
                         includeFontPadding = false
-                        circle.addView(this, FrameLayout.LayoutParams(dp(49), dp(49), Gravity.CENTER))
+                        circle.addView(this, FrameLayout.LayoutParams(shapeW, shapeH, Gravity.CENTER))
                     }
                 }
                 circle.setOnClickListener {
@@ -374,7 +399,7 @@ class MainActivity : Activity() {
             Triple("Mute", "key", "VOLUME_MUTE"),
             Triple("Previous track", "key", "MEDIA_PREV"),
             Triple("Play or pause media", "key", "MEDIA_PLAY_PAUSE"),
-            Triple("Next track", "key", "MEDIA_NEXT")))
+            Triple("Next track", "key", "MEDIA_NEXT")), buttonSize = 45)
         // App switching and clipboard form one compact six-button row.
         // Keep the related Apps -> Next -> Choose sequence adjacent.
         controlRow(listOf(
@@ -390,7 +415,7 @@ class MainActivity : Activity() {
             Triple("", "", "EMPTY"),
             Triple("Esc", "key", "ESCAPE"),
             Triple("Tab", "key", "TAB"),
-            Triple("Enter", "key", "ENTER")))
+            Triple("Enter", "key", "ENTER")), buttonSize = 51)
         // Keep a landscape trackpad, never let it expand into portrait.
         // Use only residual vertical space after the header, editor, and ALL
         // action rows are laid out; extra room remains dark and empty.
@@ -507,9 +532,10 @@ class MainActivity : Activity() {
     private class RainbowPad(context: Context) : View(context) {
         private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
         private val colors = intArrayOf(
-            0xFFE53935.toInt(), 0xFFFF8C23.toInt(), 0xFFFFDD33.toInt(),
-            0xFF42B85A.toInt(), 0xFF2787E5.toInt(), 0xFF4849C4.toInt(),
-            0xFF9C4BCB.toInt())
+            PocketBoardPalette.RED_PINK, PocketBoardPalette.ORANGE,
+            PocketBoardPalette.YELLOW, PocketBoardPalette.GREEN,
+            PocketBoardPalette.TEAL, PocketBoardPalette.BLUE,
+            PocketBoardPalette.PURPLE)
         override fun onDraw(canvas: Canvas) {
             super.onDraw(canvas)
             val w = width.toFloat()
@@ -552,16 +578,16 @@ class MainActivity : Activity() {
                 lineTo(cx + 12*d, cy + 1*d)
                 close()
             }
-            paint.color = Color.WHITE
+            paint.color = PocketBoardPalette.CREAM
             paint.style = Paint.Style.STROKE
             paint.strokeWidth = 2.5f * d
             paint.strokeJoin = Paint.Join.ROUND
             canvas.drawPath(pointer, paint)
             paint.style = Paint.Style.FILL
-            paint.color = 0xAA222A48.toInt()
+            paint.color = PocketBoardPalette.DISCONNECTED
             canvas.drawPath(pointer, paint)
             paint.style = Paint.Style.STROKE
-            paint.color = Color.WHITE
+            paint.color = PocketBoardPalette.CREAM
             paint.strokeWidth = 1.2f * d
             canvas.drawRoundRect(RectF(d, d, w-d, h-d), 12*d, 12*d, paint)
             paint.style = Paint.Style.FILL
@@ -578,7 +604,8 @@ class MainActivity : Activity() {
             // Inline image span means TextView centers the whole label + checkmark,
             // rather than placing the checkmark against the status panel's right edge.
             val combined = SpannableString("$label  \uFFFC")
-            getDrawable(R.drawable.pb_choose)?.mutate()?.let { check ->
+            getDrawable(R.drawable.pb_connected_check)?.mutate()?.let { check ->
+                check.setTint(PocketBoardPalette.CREAM)
                 check.setBounds(0, 0, dp(19), dp(19))
                 combined.setSpan(
                     ImageSpan(check, ImageSpan.ALIGN_CENTER),
@@ -592,7 +619,7 @@ class MainActivity : Activity() {
         }
         status.contentDescription = label
         status.setTextColor(PocketBoardPalette.CREAM)
-        status.background = bg(if (ready) PocketBoardPalette.GREEN else PocketBoardPalette.DISCONNECTED, 14)
+        status.background = statusShape(if (ready) PocketBoardPalette.GREEN else PocketBoardPalette.DISCONNECTED)
     }
 
     private fun send(json: JSONObject) {

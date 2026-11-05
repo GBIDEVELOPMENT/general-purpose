@@ -36,6 +36,16 @@ neutral. Discover and Microphone use purple; Clear uses red-pink. The green
 pill's cream text follows the reference art but has limited contrast, which
 should be assessed for accessibility before release.
 
-The existing seven-stripe rainbow touchpad is artwork, not the UI palette,
-so its colours are intentionally unchanged. The application layout, button
-shapes, icons, fonts and remote-control semantics are unchanged.
+The seven-band touchpad, launcher icon and in-app header icon now reuse
+canonical colours in order: red-pink, orange, yellow, green, teal, blue,
+purple. The input panel uses the approved disconnected neutral. Ripple feedback
+uses the canonical cream with a fixed translucent alpha (`#33FCF4E9`).
+Exact source traces preserve their original white glyphs for provenance;
+shipping action symbols are canonical cream and the keyboard launcher symbol
+may remain true white as explicitly approved by the reference art.
+
+`android/verify_canonical_art.py` is the CI lock: any runtime colour outside
+the 14 vivid, 5 semantic and 1 translucent press-feedback values must be
+explicitly reviewed and approved with a manifest update. This applies to
+launcher/header VectorDrawables as well as Kotlin-drawn UI. Button shapes and
+symbols are now deployed, not merely archived.
