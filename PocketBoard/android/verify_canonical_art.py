@@ -94,7 +94,7 @@ expected_groups = (
 )
 assert len(groups) == 6, f"Expected six grid cells, found {len(groups)}"
 for (source, size, align), (expected_actions, expected_size, expected_align) in zip(groups, expected_groups):
-    actions = tuple(re.findall(r'Triple\("[^"]*", "[^"]*", "([A-Z_]+)"\)', source))
+    actions = tuple(re.findall(r'Triple\("[^"]*", "[^"]*", "([A-Z_0-9]+)"\)', source))
     assert (actions, int(size), align) == (expected_actions, expected_size, expected_align), (actions, size, align)
 assert main.count("controlGridRow().also { row ->") == 3
 assert "row.addView(this, LinearLayout.LayoutParams(0, dp(53), 1f))" in main
