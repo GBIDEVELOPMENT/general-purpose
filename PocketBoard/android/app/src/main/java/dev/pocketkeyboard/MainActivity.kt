@@ -96,10 +96,8 @@ class MainActivity : Activity() {
         )
         window.statusBarColor = Color.rgb(18, 19, 22)
         window.navigationBarColor = Color.rgb(18, 19, 22)
-        val charcoal = 0xFF171923.toInt()
-        val panel = 0xFF343C58.toInt()
-        val white = 0xFFF7F7FF.toInt()
-        val accent = 0xFF8CF6B3.toInt()
+        val charcoal = PocketBoardPalette.CHARCOAL
+        val cream = PocketBoardPalette.CREAM
         val root = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(dp(10), dp(4), dp(10), dp(3))
@@ -144,18 +142,18 @@ class MainActivity : Activity() {
             text = "Disconnected"
             textSize = 13f
             typeface = resources.getFont(R.font.morning_rainbow)
-            setTextColor(0xFFDDE8FF.toInt())
+            setTextColor(PocketBoardPalette.CREAM)
             gravity = Gravity.CENTER
             maxLines = 1
             ellipsize = android.text.TextUtils.TruncateAt.END
-            background = bg(0xFF283040.toInt(), 13)
+            background = bg(PocketBoardPalette.DISCONNECTED, 13)
             top.addView(this, LinearLayout.LayoutParams(0, dp(40), 1f).apply { rightMargin = dp(7) })
         }
         discoveryButton = ImageView(this).apply {
             setImageResource(R.drawable.pb_discover)
             setPadding(dp(11), dp(11), dp(11), dp(11))
             contentDescription = "Discover nearby PCs"
-            background = circularButton(0xFF7944D7.toInt())
+            background = circularButton(PocketBoardPalette.PURPLE)
             isClickable = true
             isFocusable = true
             setOnClickListener { discover() }
@@ -217,7 +215,7 @@ class MainActivity : Activity() {
         root.addView(trackpad, trackpadParams)
         touchpadFeedback = TextView(this).apply {
             text = ""
-            setTextColor(0xFFDDE1F4.toInt())
+            setTextColor(PocketBoardPalette.MUTED_CREAM)
             textSize = 11f
             root.addView(this, LinearLayout.LayoutParams(-1, dp(16)))
         }
@@ -229,8 +227,8 @@ class MainActivity : Activity() {
         }
         editor = EditText(this).apply {
             hint = "Type or dictate on the PC"
-            setHintTextColor(0xFFABB5CD.toInt())
-            setTextColor(white)
+            setHintTextColor(PocketBoardPalette.HINT_CREAM)
+            setTextColor(cream)
             textSize = 16f
             setSingleLine(false)
             maxLines = 2
@@ -263,10 +261,10 @@ class MainActivity : Activity() {
                 holder.addView(this, FrameLayout.LayoutParams(dp(34), dp(34), Gravity.CENTER))
             }
         }
-        inputAction("Clear text input", R.drawable.pb_clear, 0xFFEF4A85.toInt()) {
+        inputAction("Clear text input", R.drawable.pb_clear, PocketBoardPalette.RED_PINK) {
             sendAction("local", "CLEAR")
         }
-        inputAction("Open keyboard for voice dictation", R.drawable.pb_mic, 0xFF8149D6.toInt()) {
+        inputAction("Open keyboard for voice dictation", R.drawable.pb_mic, PocketBoardPalette.PURPLE) {
             editor.requestFocus()
             (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
                 .showSoftInput(editor, InputMethodManager.SHOW_IMPLICIT)
@@ -293,15 +291,7 @@ class MainActivity : Activity() {
                 previous = updated
             }
         })
-        val palettes = listOf(
-            0xFF46B9FF to 0xFF2666E8, 0xFF00D1D5 to 0xFF069AA4,
-            0xFFFB66A3 to 0xFFD82678, 0xFFB481FF to 0xFF7339DF,
-            0xFFFFB64A to 0xFFED7027, 0xFFFFE35B to 0xFFE8AF10,
-            0xFF44E573 to 0xFF0DB74E, 0xFF4FC6FF to 0xFF2877DC,
-            0xFF847CFF to 0xFF5145D6, 0xFFFF76B3 to 0xFFE0397F,
-            0xFFB782FF to 0xFF7646D1, 0xFF38DBD7 to 0xFF079BAC,
-            0xFF5AE56E to 0xFF15AE45, 0xFFFF7287 to 0xFFD73561
-        )
+        val palettes = PocketBoardPalette.BUTTON_COLORS
         var buttonIndex = 0
         var showingPause = false // presentation-only: no media state queries
         fun resourceFor(value: String): Int? = when (value) {
@@ -332,9 +322,9 @@ class MainActivity : Activity() {
                     row.addView(this, LinearLayout.LayoutParams(0, dp(53), 1f))
                 }
                 if (value == "EMPTY") return@forEach
-                val colors = palettes[(buttonIndex++) % palettes.size]
+                val color = palettes[(buttonIndex++) % palettes.size]
                 val circle = FrameLayout(this).apply {
-                    background = circularButton(colors.second.toInt())
+                    background = circularButton(color)
                     contentDescription = title
                     isFocusable = true
                     isClickable = true
@@ -361,7 +351,7 @@ class MainActivity : Activity() {
                         text = label
                         textSize = if (label.length > 4) 10f else if (label.length > 2) 13f else 25f
                         typeface = resources.getFont(R.font.morning_rainbow)
-                        setTextColor(white)
+                        setTextColor(cream)
                         gravity = Gravity.CENTER
                         maxLines = 1
                         includeFontPadding = false
@@ -601,8 +591,8 @@ class MainActivity : Activity() {
             status.text = label
         }
         status.contentDescription = label
-        status.setTextColor(if (ready) 0xFFE5FFEE.toInt() else 0xFFDDE8FF.toInt())
-        status.background = bg(if (ready) 0xFF135D35.toInt() else 0xFF283040.toInt(), 14)
+        status.setTextColor(PocketBoardPalette.CREAM)
+        status.background = bg(if (ready) PocketBoardPalette.GREEN else PocketBoardPalette.DISCONNECTED, 14)
     }
 
     private fun send(json: JSONObject) {

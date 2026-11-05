@@ -1,0 +1,35 @@
+package dev.pocketkeyboard
+
+/**
+ * PocketBoard's canonical palette, based on the nine reference swatches.
+ * Eight vivid reference hues plus six companion hues serve 14 action buttons.
+ * Cream is the foreground, not a fifteenth button colour.
+ * The rainbow touchpad artwork keeps its independently defined stripe palette.
+ */
+internal object PocketBoardPalette {
+    val CHARCOAL = 0xFF171923.toInt()
+    val DISCONNECTED = 0xFF283040.toInt()
+    val CREAM = 0xFFFCF4E9.toInt()
+    val MUTED_CREAM = 0xFFE6DDD0.toInt()
+    val HINT_CREAM = 0xFFD0C9BE.toInt()
+
+    val BLUE = 0xFF0E70F7.toInt()
+    val TEAL = 0xFF02B8B6.toInt()
+    val PINK = 0xFFFA398F.toInt()
+    val PURPLE = 0xFF7D3CEE.toInt()
+    val ORANGE = 0xFFFD791E.toInt()
+    val YELLOW = 0xFFFDC405.toInt()
+    val GREEN = 0xFF03CE43.toInt()
+    val RED_PINK = 0xFFE92F61.toInt()
+    val SKY_BLUE = 0xFF22A3FF.toInt()
+    val VIOLET = 0xFFA857FF.toInt()
+    val CORAL = 0xFFFF5A3C.toInt()
+    val MAGENTA = 0xFFD94BDE.toInt()
+    val LIME = 0xFF76DE1A.toInt()
+    val INDIGO = 0xFF4D62FF.toInt()
+
+    val BUTTON_COLORS: List<Int> = listOf(
+        BLUE, TEAL, PINK, PURPLE, ORANGE, YELLOW, GREEN,
+        RED_PINK, SKY_BLUE, VIOLET, CORAL, MAGENTA, LIME, INDIGO
+    )
+}
