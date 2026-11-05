@@ -31,7 +31,8 @@ function setBusy(busy) {
 function family(font, fallback) {
   const names=font.names || {};
   const name=key=>names[key]?.en || Object.values(names[key]||{})[0] || '';
-  return String(name('fullName') || [name('fontFamily'),name('fontSubfamily')].filter(Boolean).join(' ') || fallback.replace(/\.[^.]+$/,'')).slice(0,150);
+  const filename=String(fallback).split(' / ').pop().replace(/\.[^.]+$/,'').replace(/[-_]+/g,' ');
+  return String(name('fullName') || [name('fontFamily'),name('fontSubfamily')].filter(Boolean).join(' ') || filename).slice(0,150);
 }
 function mimeName(file) { return file.replace(/[^a-z0-9_.-]/gi,'_').slice(-90); }
 function bytesFingerprint(bytes) {
