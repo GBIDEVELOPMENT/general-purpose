@@ -20,6 +20,9 @@ jobs:
         run: |
           node --check GlyphMixer/core.js
           node --check GlyphMixer/app.js
+          node --check GlyphMixer/variations-core.js
+          node --check GlyphMixer/variations-ui.js
+          node --check GlyphMixer/compiler-worker.js
       - name: Install pinned test font engine
         run: npm install --prefix GlyphMixer --ignore-scripts --no-audit --no-fund --package-lock=false
       - name: Mapping and real OTF round-trip tests
