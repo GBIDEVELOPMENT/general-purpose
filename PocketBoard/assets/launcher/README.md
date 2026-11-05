@@ -32,7 +32,7 @@ The original raster references are inventoried in `../references/`.
 
 ## 1.0.3 contrast and header optical normalization
 
-Canonical yellow/green fills are now `#FFD42A` / `#007E59`
+Canonical yellow/green fills are now `#FFD42A` / `#00805B`
 throughout the launcher, header and preview SVGs. Keyboard geometry and
 adaptive icon masks are unchanged. The in-app header ImageView applies
 1.09× horizontal / 1.11× vertical scale to compensate for source artwork

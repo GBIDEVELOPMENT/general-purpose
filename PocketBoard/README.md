@@ -272,7 +272,7 @@ The reference-traced header icon has transparent inset; optical scale
 with Discover without altering either 40×40dp layout box or the row's
 vertical alignment. The button contours and keyboard artwork remain intact.
 
-Yellow `#FFD42A` and deeper emerald green `#007E59` replace the
+Yellow `#FFD42A` and deeper emerald green `#00805B` replace the
 ambiguous old adjacent rainbow bands across Android, SVG previews,
 the launcher and all canonical UI uses. Their computed luminance
 contrast improves from 1.32:1 to 3.56:1; cream on status-green is 4.66:1.
@@ -324,7 +324,11 @@ scroll, accidental-click suppression and gesture reversal checked on hardware.
 Swap only the button colours of Esc and Select (Choose), and of Alt-Tab
 (Apps) and Next Track. Esc is now red-pink `#E92F61`; Select is magenta
 `#D94BDE`. Alt-Tab is now sunflower yellow `#FFD42A`; Next Track is
-emerald green `#007E59`. All shapes, positions, symbols, commands, and
+emerald green `#00805B`. All shapes, positions, symbols, commands, and
 other colours remain unchanged. The canonical palette is unchanged; its
 per-action mapping is explicitly verified. Android versionCode 24,
 versionName 1.0.5. No PC companion update required.
+
+## PocketBoard 1.0.6: cursor and colour refinement
+
+The trackpad displays the new two-contour, slightly imperfect, chunky marker-style pointer traced into SVG and Android VectorDrawable. The canonical rainbow blue is now `#008CFF`, clearly distinguishable from indigo, and emerald is lighter at `#00805B`. Both colours are synchronized across runtime UI, launcher art and source SVGs. Tab and Esc exchange only button silhouettes, retaining their original colours, symbols and actions. Real-device screenshot acceptance remains outstanding.

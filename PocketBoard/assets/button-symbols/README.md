@@ -28,3 +28,7 @@ Choose and Connected use the same traced check. Play and Pause are swapped
 within one background on every press.
 
 To recolour, change `fill="#ffffff"` to the desired solid colour or `currentColor`.
+
+## Trackpad cursor
+
+`cursor-pointer.svg` preserves two independently traced cream and dark-slate contours from the owner's generated marker pointer image. The deployed vector is `android/app/src/main/res/drawable/pb_cursor_pointer.xml`. The prior hand-coded cursor Path is retired.

@@ -9,13 +9,13 @@ fill out fourteen distinct action-button colours.
 
 | Order | Name | Hex | Origin |
 | --- | --- | --- | --- |
-| 1 | blue | `#0E70F7` | Reference |
+| 1 | blue | `#008CFF` | Reference |
 | 2 | teal | `#02B8B6` | Reference |
 | 3 | pink | `#FA398F` | Reference |
 | 4 | purple | `#7D3CEE` | Reference |
 | 5 | orange | `#FD791E` | Reference |
 | 6 | yellow | `#FFD42A` | Accessibility-adjusted reference |
-| 7 | green | `#007E59` | Accessibility-adjusted reference |
+| 7 | green | `#00805B` | Accessibility-adjusted reference |
 | 8 | red pink | `#E92F61` | Reference |
 | 9 | sky blue | `#22A3FF` | Companion |
 | 10 | violet | `#A857FF` | Companion |
@@ -32,8 +32,7 @@ Secondary semantic colours: charcoal `#171923`, disconnected status
 
 Controls use the fourteen button colours in display order, skipping empty
 positions. Connected uses green and cream; disconnected and searching stay
-neutral. Discover and Microphone use purple; Clear uses red-pink. The green
-pill now uses a deeper emerald to improve contrast with cream lettering.
+neutral. Discover and Microphone use purple; Clear uses red-pink. The connected pill uses the canonical emerald; after the 1.0.6 lightening, its cream-text contrast should be verified on-device.
 
 The seven-band touchpad, launcher icon and in-app header icon now reuse
 canonical colours in order: red-pink, orange, yellow, green, teal, blue,
@@ -54,11 +53,13 @@ symbols are now deployed, not merely archived.
 The owner cannot distinguish the old yellow and green rainbow bands reliably.
 Both canonical colours change throughout the touchpad, header, adaptive
 launcher, preview SVGs and button set: yellow `#FFD42A` (bright sunflower),
-green `#007E59` (deep emerald). Computed luminance contrast between
-them rises from ~1.32:1 to ~3.56:1. Cream on connected-green reaches
-~4.66:1, exceeding 4.5:1 for regular text. These are computational checks,
+green `#00805B` (slightly lighter emerald). Cream on emerald retains over 4.5:1 text contrast; yellow/emerald retain approximately 3.47:1 luminance contrast. On-device colour discrimination is still required. These are computational checks,
 not a substitute for owner on-device discrimination testing.
 
 Placeholder cream `#D0C9BE` is now 50% opaque (`#80D0C9BE`);
 it remains the single approved translucent hint token. Original reference
 rasters are not recoloured, preserving their provenance.
+
+## 1.0.6 owner-requested adjustment
+
+Blue is now `#008CFF`, a clearer bright blue distinct from indigo; emerald green is now the slightly lighter `#00805B`. These tokens apply to the rainbow pad, adaptive launcher, header icon, source SVGs and action backgrounds. The Tab and Esc silhouettes exchange assignments, while their symbols, colours, positions and commands stay unchanged. The cursor uses a two-contour reference trace in button-symbols/cursor-pointer.svg and the matching native vector.

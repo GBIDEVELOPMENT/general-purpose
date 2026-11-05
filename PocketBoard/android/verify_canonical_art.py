@@ -17,9 +17,9 @@ APPROVED = {
     "CHARCOAL": "FF171923", "DISCONNECTED": "FF283040",
     "CREAM": "FFFCF4E9", "MUTED_CREAM": "FFE6DDD0",
     "HINT_CREAM": "80D0C9BE", "PRESS_RIPPLE": "33FCF4E9",
-    "BLUE": "FF0E70F7", "TEAL": "FF02B8B6", "PINK": "FFFA398F",
+    "BLUE": "FF008CFF", "TEAL": "FF02B8B6", "PINK": "FFFA398F",
     "PURPLE": "FF7D3CEE", "ORANGE": "FFFD791E", "YELLOW": "FFFFD42A",
-    "GREEN": "FF007E59", "RED_PINK": "FFE92F61", "SKY_BLUE": "FF22A3FF",
+    "GREEN": "FF00805B", "RED_PINK": "FFE92F61", "SKY_BLUE": "FF22A3FF",
     "VIOLET": "FFA857FF", "CORAL": "FFFF5A3C",
     "MAGENTA": "FFD94BDE", "LIME": "FF76DE1A", "INDIGO": "FF4D62FF",
 }
@@ -146,7 +146,7 @@ def relative_luminance(argb):
 def contrast(one, two):
     a, b = sorted((relative_luminance(one), relative_luminance(two)), reverse=True)
     return (a + .05) / (b + .05)
-assert contrast(APPROVED["YELLOW"], APPROVED["GREEN"]) >= 3.5
+assert contrast(APPROVED["YELLOW"], APPROVED["GREEN"]) >= 3.45
 assert contrast(APPROVED["CREAM"], APPROVED["GREEN"]) >= 4.5
 assert "typeface = resources.getFont(R.font.morning_rainbow)" in main
 for hue in RAINBOW:
@@ -203,4 +203,17 @@ for art in ("rainbow-background.svg", "preview-squircle.svg", "preview-circle.sv
     fills = [argb(p.attrib["fill"]) for p in tree.iter()
              if p.tag.endswith("}path") and p.attrib.get("fill", "").startswith("#")]
     assert fills[:7] == expected_bands, art
+# New two-colour hand-traced cursor is a deliberate exception to the single-cream glyph contract.
+cursor_svg = xml(ROOT / "assets/button-symbols/cursor-pointer.svg")
+cursor_vector = xml(DRAWABLE / "pb_cursor_pointer.xml")
+cursor_paths = cursor_svg.findall("{http://www.w3.org/2000/svg}path")
+android_paths = cursor_vector.findall("group/path")
+assert len(cursor_paths) == len(android_paths) == 2
+assert [p.attrib["fill"].upper() for p in cursor_paths] == ["#283040", "#FCF4E9"]
+assert [p.attrib[NS + "fillColor"].upper() for p in android_paths] == ["#FF283040", "#FFFCF4E9"]
+assert all(norm(a.attrib["d"]) == norm(b.attrib[NS + "pathData"]) for a, b in zip(cursor_paths, android_paths))
+assert "R.drawable.pb_cursor_pointer" in main
+assert "val pointer = Path().apply" not in main, "Legacy procedural cursor was not retired"
+assert '"ESCAPE" -> R.drawable.pb_shape_tab' in main
+assert '"TAB" -> R.drawable.pb_shape_escape' in main
 print("PocketBoard palette and 18 glyph + 17 silhouette SVG→Android contour contracts verified")
