@@ -1,0 +1,12 @@
+{
+  "name": "glyph-mixer",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Mobile-first browser glyph assembler",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs"
+  },
+  "devDependencies": {
+    "opentype.js": "2.0.0"
+  }
+}

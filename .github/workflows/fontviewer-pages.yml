@@ -1,10 +1,11 @@
-name: Publish Font Shelf to GitHub Pages
+name: Publish Font Shelf and Glyph Mixer to GitHub Pages
 
 on:
   push:
     branches: [main]
     paths:
       - 'FontViewer/**'
+      - 'GlyphMixer/**'
       - '.github/workflows/fontviewer-pages.yml'
   workflow_dispatch:
 
@@ -19,7 +20,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: Deploy Font Shelf
+    name: Publish separate Font Shelf and Glyph Mixer sites
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -28,14 +29,22 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Verify Glyph Mixer scripts and core tests
+        run: |
+          node --check GlyphMixer/core.js
+          node --check GlyphMixer/app.js
+          npm install --prefix GlyphMixer --ignore-scripts --no-audit --no-fund --package-lock=false
+          npm test --prefix GlyphMixer
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Stage only the FontViewer site
+      - name: Stage independent applications
         shell: bash
         run: |
-          mkdir -p _site/FontViewer
+          mkdir -p _site/FontViewer _site/GlyphMixer
           cp FontViewer/index.html _site/FontViewer/index.html
+          cp GlyphMixer/index.html GlyphMixer/app.js GlyphMixer/core.js GlyphMixer/style.css _site/GlyphMixer/
           printf '%s\n' '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Font Shelf</title><meta http-equiv="refresh" content="0;url=FontViewer/"><a href="FontViewer/">Open Font Shelf</a>' > _site/index.html
           touch _site/.nojekyll
 
