@@ -87,7 +87,7 @@ async function setupFace(rec) {
   }
 }
 async function recordsFromFiles(files) {
-  let entries=[],total=0;
+  let entries=[],total=0,skipped=0;
   for (const file of files) {
     total+=file.size;
     if(total>MAX_TOTAL) throw new Error('Selected files exceed 160 MB.');
@@ -98,7 +98,7 @@ async function recordsFromFiles(files) {
         const raw=new Uint8Array(await file.arrayBuffer());
         let zipTotal=0,count=0;
         unpacked=zip.unzipSync(raw,{filter:info=>{
-          if(!SUPPORTED.test(info.name)) return false;
+          if(!SUPPORTED.test(info.name)) {if(/\.(woff2|ttc|otc)$/i.test(info.name))skipped++;return false;}
           count++;zipTotal+=info.originalSize;
           if(count>MAX_ZIP_ENTRIES || zipTotal>MAX_TOTAL || info.originalSize>MAX_FILE)
             throw new Error('ZIP exceeds safe import limits.');
@@ -115,6 +115,7 @@ async function recordsFromFiles(files) {
   }
   if(!entries.length) throw new Error('No supported fonts found. OTF, TTF and WOFF are supported.');
   if(entries.length>MAX_FONTS) throw new Error('A selection can contain at most 80 fonts.');
+  entries.skipped=skipped;
   return entries;
 }
 async function importSources(files, asBase) {
@@ -151,10 +152,10 @@ async function importSources(files, asBase) {
       state.page=0;state.tab='map';state.version++;
       $('welcome').hidden=true;$('workspace').hidden=false;$('bottomNav').hidden=false;
       tab('map');
-      notice('Base loaded with '+cmap.size.toLocaleString()+' mapped characters. Add sources whenever you like.');
+      notice('Base loaded with '+cmap.size.toLocaleString()+' mapped characters.'+(entries.skipped?' Skipped '+entries.skipped+' unsupported archive font(s).':'')+' Add sources whenever you like.');
     } else {
       state.seq+=prepared.length; prepared.forEach(rec=>state.fonts.set(rec.id,rec));
-      notice('Added '+prepared.length+' new source font'+(prepared.length===1?'':'s')+'.');
+      notice('Added '+prepared.length+' new source font'+(prepared.length===1?'':'s')+'.'+(entries.skipped?' Skipped '+entries.skipped+' unsupported archive font(s).':''));
     }
     renderAll();
   } catch(e) { prepared.forEach(rec=>{if(!state.fonts.has(rec.id)) releaseRecord(rec)});notice(e.message,true) }
@@ -327,6 +328,7 @@ function renderPicker() {
   $('pickerCount').textContent=points.length.toLocaleString()+' matching glyphs · '+shown.length+' shown';
   for(const [cp,index] of shown) {
     const node=tile(cp,{fontId:rec.id,glyphIndex:index},false);
+    if(cp===0) {node.querySelector('.code').textContent='#'+index;node.setAttribute('aria-label','Choose unencoded glyph #'+index)}
     if(state.assignments.get(state.selected)?.fontId===rec.id &&
        state.assignments.get(state.selected)?.glyphIndex===index) node.classList.add('active');
     node.addEventListener('click',()=>{
