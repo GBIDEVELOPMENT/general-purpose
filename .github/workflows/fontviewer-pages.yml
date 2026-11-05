@@ -42,9 +42,13 @@ jobs:
       - name: Stage independent applications
         shell: bash
         run: |
-          mkdir -p _site/FontViewer _site/GlyphMixer
+          mkdir -p _site/FontViewer _site/GlyphMixer/headless
           cp FontViewer/index.html _site/FontViewer/index.html
           cp GlyphMixer/index.html GlyphMixer/app.js GlyphMixer/core.js GlyphMixer/style.css _site/GlyphMixer/
+          cp GlyphMixer/variations-core.js GlyphMixer/variations-ui.js GlyphMixer/compiler-worker.js _site/GlyphMixer/
+          cp GlyphMixer/headless/cli.py _site/GlyphMixer/headless/cli.py
+          test -s _site/GlyphMixer/headless/cli.py
+          test -s _site/GlyphMixer/compiler-worker.js
           printf '%s\n' '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Font Shelf</title><meta http-equiv="refresh" content="0;url=FontViewer/"><a href="FontViewer/">Open Font Shelf</a>' > _site/index.html
           touch _site/.nojekyll
 
