@@ -193,11 +193,12 @@ function renderGlyph(canvas, fontId, index) {
     const context=canvas.getContext('2d');
     if(!context) return;
     context.scale(scale,scale);
-    context.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--text').trim()||'#fff';
+    const ink=getComputedStyle(document.documentElement).getPropertyValue('--text').trim()||'#fff';
+    context.fillStyle=ink;
     const advance=glyph.advanceWidth || rec.font.unitsPerEm;
     const fontSize=36;
     const width=advance/(rec.font.unitsPerEm||1000)*fontSize;
-    glyph.draw(context,Math.max(2,(cssWidth-width)/2),36,fontSize,{},rec.font);
+    glyph.draw(context,Math.max(2,(cssWidth-width)/2),36,fontSize,{fill:ink},rec.font);
   }catch(e){canvas.replaceWith(make('span','letter','□'))}
 }
 function tile(cp, ref, target) {
@@ -378,29 +379,34 @@ function drawPreview() {
   view.style.fontFamily=state.compiledFace?'"GlyphMixerPreview",sans-serif':'sans-serif';
   view.style.fontSize=$('previewSize').value+'px';
 }
-function binarySave(blob, filename, extension, mime) {
-  return (async()=>{
-    if(typeof window.showSaveFilePicker==='function') {
-      try {
-        const handle=await window.showSaveFilePicker({
-          suggestedName:filename,
-          types:[{description:extension.toUpperCase()+' file',accept:{[mime]:['.'+extension]}}]
-        });
-        const writer=await handle.createWritable();
-        await writer.write(blob);await writer.close();
-        notice('Saved '+filename+' to your device.');
-        return true;
-      }catch(e) {
-        if(e.name==='AbortError')return false;
-        // Unsupported picker configuration or browser behaviour: download instead.
-      }
+async function binarySave(build, filename, extension, mime) {
+  // Request the Android file destination directly in the button gesture.
+  // Heavy OTF generation/ZIP packaging happens only after the picker returns.
+  let handle=null;
+  if(typeof window.showSaveFilePicker==='function') {
+    try {
+      handle=await window.showSaveFilePicker({
+        suggestedName:filename,
+        types:[{description:extension.toUpperCase()+' file',accept:{[mime]:['.'+extension]}}]
+      });
+    }catch(e) {
+      if(e.name==='AbortError')return false;
+      // Fall back when the browser rejects this file type or picker.
     }
-    const url=URL.createObjectURL(blob),a=document.createElement('a');
-    a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();
-    setTimeout(()=>URL.revokeObjectURL(url),60000);
-    notice('Download started for '+filename+'.');
+  }
+  const blob=await build();
+  if(handle) {
+    const writer=await handle.createWritable();
+    try { await writer.write(blob);await writer.close() }
+    catch(e) {try {await writer.abort()}catch{} throw e}
+    notice('Saved '+filename+' to your device.');
     return true;
-  })();
+  }
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),60000);
+  notice('Download started for '+filename+'.');
+  return true;
 }
 function saveProjectArchive() {
   const manifest={
@@ -423,8 +429,7 @@ async function saveProject() {
   if(state.busy||!state.baseId)return;
   setBusy(true);
   try {
-    const blob=saveProjectArchive();
-    await binarySave(blob,core.slug($('familyName').value)+'.glyphmix','glyphmix','application/zip');
+    await binarySave(()=>saveProjectArchive(),core.slug($('familyName').value)+'.glyphmix','glyphmix','application/zip');
   }catch(e){notice('Project save failed: '+e.message,true)}
   finally{setBusy(false)}
 }
@@ -476,8 +481,7 @@ async function exportFont() {
   if(state.busy||!state.baseId)return;
   setBusy(true);
   try {
-    const blob=await getCompiled();
-    await binarySave(blob,core.slug($('familyName').value)+'.otf','otf','font/otf');
+    await binarySave(()=>getCompiled(),core.slug($('familyName').value)+'.otf','otf','font/otf');
     notice('OTF prepared with '+state.assignments.size.toLocaleString()+' Unicode positions. Complex shaping and kerning are not preserved.');
   }catch(e){notice('Font export failed: '+e.message,true)}
   finally{setBusy(false)}
