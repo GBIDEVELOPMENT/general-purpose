@@ -14,7 +14,7 @@ A small, phone-first browser application for inspecting local TrueType and OpenT
 
 ## Run
 
-Open `index.html` in Chrome on Android, or serve the directory as a static site. No build step or backend is necessary. For convenient phone access, publish the directory using an appropriate static-site host. **This implementation uses three pinned CDN dependencies**, so a network connection is required to load those libraries: `fflate@0.8.2` for ZIP extraction and `opentype.js@1.3.4` (legacy script, no longer used by imports) and dynamically imported `fontkit@2.0.4` via esm.sh for font-name, Unicode-cmap, collection, and variation inspection. Font files are *not* transmitted to those services.
+Open `index.html` in Chrome on Android, or serve the directory as a static site. No build step or backend is necessary. For convenient phone access, publish the directory using an appropriate static-site host. **This implementation uses two pinned CDN dependencies**, so a network connection is required to load those libraries: `fflate@0.8.2` for ZIP extraction and dynamically imported `fontkit@2.0.4` via esm.sh for font-name, Unicode-cmap, collection, and variation inspection. Font files are *not* transmitted to those services.
 
 No imported font files are persisted between page reloads. Only the theme preference is saved to local storage. The character map intentionally displays up to 420 glyphs from common Unicode blocks per font; it reports the full number of mapped characters.
 
@@ -30,7 +30,7 @@ This is an initial implementation. JavaScript syntax has been checked, but autom
 
 ## Suggested next steps
 
-1. Remove the obsolete opentype.js script, vendor pinned JavaScript dependencies, validate the browser Fontkit bundle, and add an offline service worker.
+1. Vendor pinned JavaScript dependencies, validate the browser Fontkit bundle, and add an offline service worker.
 2. Add unit and browser tests covering multiple imports, ZIPs, duplicate handling, missing Unicode cmaps, and font-face cleanup.
 3. Optionally persist font collections with IndexedDB (opt-in only).
 4. Improve huge character-map navigation with range filters and progressive rendering.
