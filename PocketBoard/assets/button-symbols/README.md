@@ -32,3 +32,7 @@ To recolour, change `fill="#ffffff"` to the desired solid colour or `currentColo
 ## Trackpad cursor
 
 `cursor-pointer.svg` preserves two independently traced cream and dark-slate contours from the owner's generated marker pointer image. The deployed vector is `android/app/src/main/res/drawable/pb_cursor_pointer.xml`. The prior hand-coded cursor Path is retired.
+
+## Refresh glyph (PocketBoard 1.0.7)
+
+`refresh.svg` is a two-contour source-image trace from the owner-supplied transparent PNG. Each arrow was isolated using its actual alpha mask, spurious disconnected raster speckles were excluded, and each outline was traced to approximately 1.25 source pixels before a tightly cropped, transparent viewBox was applied. The original unequal arrow curves, rounded arrowheads and slightly hand-drawn irregularities are retained. The source paths are white; `pb_refresh.xml` in Android drawable resources uses the canonical cream foreground. The new action reuses `pb_shape_apps_grid` for its coloured background.
