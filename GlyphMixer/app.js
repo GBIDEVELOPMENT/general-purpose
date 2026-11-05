@@ -221,8 +221,8 @@ function filteredTargets() {
     if(filter==='other' && cp<=0x024f) return false;
     if(filter==='changes' && !changed(cp))return false;
     if(!term)return true;
-    const chr=codeDisplay(cp).toLowerCase();
-    return cp===cpSearch || chr===term || core.displayCodepoint(cp).toLowerCase().includes(term) ||
+    if(cpSearch!==null)return cp===cpSearch;
+    return core.displayCodepoint(cp).toLowerCase().includes(term) ||
       cp.toString(16).includes(term.replace(/^(u\+|0x)/,''));
   }).sort((a,b)=>a-b);
 }
@@ -315,8 +315,8 @@ function searchPickerPoints(rec) {
     return [];
   }
   const parsed=core.parseCodepoint(query);
-  return points.filter(([cp])=>parsed===cp||codeDisplay(cp).toLowerCase()===query||
-    core.displayCodepoint(cp).toLowerCase().includes(query)||
+  if(parsed!==null)return points.filter(([cp])=>parsed===cp);
+  return points.filter(([cp])=>core.displayCodepoint(cp).toLowerCase().includes(query)||
     cp.toString(16).includes(query.replace(/^(u\+|0x)/,'')));
 }
 function renderPicker() {
