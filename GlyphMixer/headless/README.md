@@ -1,6 +1,6 @@
 # Glyph Mixer headless automation
 
-This directory is the **actual automation interface**. The browser editor and Python headless compiler are independent tools; the browser UI does not yet expose GSUB feature authoring.
+This directory defines the headless automation interface used by the browser's **Variations** tab and by agents. Both produce the same source-agnostic JSON recipe operations and the same GSUB-capable TTF using fontTools.
 
 ## Human/agent workflow
 
@@ -37,13 +37,19 @@ Example:
 python -m pip install -r GlyphMixer/headless/requirements.txt
 python GlyphMixer/headless/cli.py inventory --output GlyphMixer/build/fixture-inventory.json
 python GlyphMixer/headless/cli.py build --recipe GlyphMixer/recipes/example-uppercase-alternates.json
+# Or compile a saved self-contained mobile project, including its variations:
+python GlyphMixer/headless/cli.py build --bundle GlyphMixer/imports/my-project.glyphmix
 ```
 
 ### Run through GitHub Actions
 
-Go to **Actions → Glyph Mixer headless build → Run workflow** and enter the repository-relative path to a committed recipe. The workflow checks the JSON, builds the font in GitHub Actions, and uploads a downloadable artifact containing the TTF and report. It runs separately from GitHub Pages, requiring no Android or desktop machine. An agent with repo access can create a recipe/PR and let the CI build it. Automation uses no external font service.
+Go to **Actions → Glyph Mixer headless build → Run workflow** and enter the repository-relative path to a committed recipe, or set the optional **bundle_path** to compile a committed `.glyphmix` project. The workflow checks the JSON, builds the font in GitHub Actions, and uploads a downloadable artifact containing the TTF and report. It runs separately from GitHub Pages, requiring no Android or desktop machine. An agent with repo access can create a recipe/PR and let the CI build it. Automation uses no external font service.
 
 The agent contract is also expressed as a machine-readable [recipe JSON Schema](recipe.schema.json). The CLI performs its own semantic validations, including source existence and glyph availability.
+
+### Direct compilation of mobile projects
+
+The editor's **Save project** action creates `.glyphmix`, a self-contained ZIP with `project.json`, full source font bytes, Unicode assignments and an optional `variations` array. Use `build --bundle <path>` to reconstruct sparse Unicode replacements, source glyphs by index, and alternate/ligature rules without needing the original ZIP files. The importer checks ZIP names, entry sizes, IDs and glyph references; its output is a validated GSUB-equipped TTF with report. The agent may commit/import such a bundle for GitHub Actions, or run it locally. Saved projects from before the Variations feature still work; omitted `variations` means no advanced rules.
 
 ### JSON schema (version 1)
 
@@ -62,7 +68,7 @@ The agent contract is also expressed as a machine-readable [recipe JSON Schema](
 - This first compiler implements **adjacent-repeat** and **immediate previous/next character** contextual rules. It does not implement guaranteed random distribution in the font itself, document-wide memory of previously seen letters, long-range context predicates, complete automatic spacing/kerning reconciliation, GPOS, Arabic/Indic shaping, inherited GSUB/GPOS from the base, or rich color/bitmap/variable output tables. Do not claim these features.
 - Input outline types are normalized to TrueType quadratic contours through fontTools. Base font units-per-em determine output em size, with advances and sidebearings scaled proportionally.
 - Source fonts are local repo fixtures and may carry restricted licences. Keep output artifacts and redistribution compliant with those licences.
-- The CLI validates output by reopening it and comparing Unicode maps and GSUB presence. CI independently shapes characters with HarfBuzz for stylistic-set and adjacent-repeat rules; physical Android and multiple-application acceptance remain separate tasks. All 22 ZIP archives are also exercised as donor sources through an actual export/reimport smoke test.
+- The CLI validates output by reopening it and comparing Unicode maps and GSUB presence. A saved-mobile-project round-trip is also exercised by CI. CI independently shapes characters with HarfBuzz for stylistic-set and adjacent-repeat rules; physical Android and multiple-application acceptance remain separate tasks. All 22 ZIP archives are also exercised as donor sources through an actual export/reimport smoke test.
 
 ### Agent validation discipline
 

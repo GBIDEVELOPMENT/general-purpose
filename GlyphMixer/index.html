@@ -36,7 +36,7 @@
    <div class="projecttools">
     <button id="saveProject" class="button secondary" type="button" title="Save editable project">Save project</button>
     <button id="openProject" class="button secondary" type="button" title="Open project">Open</button>
-    <button id="exportFont" class="button primary" type="button">Export OTF</button>
+    <button id="exportFont" class="button primary" type="button">Export font</button>
    </div>
   </div>
   <section id="mapPanel" class="panel">
@@ -52,6 +52,85 @@
    <button id="addSources" class="button primary wide" type="button">＋ Add fonts or ZIP archives</button>
    <div id="sourceList" class="source-list"></div>
   </section>
+  <section id="variationsPanel" class="panel" hidden>
+   <div class="sectionheading"><div><p class="eyebrow">OPENTYPE BEHAVIOUR</p><h2>Glyph Variations</h2></div></div>
+   <p class="footnote">Add alternate drawings of a letter, define where they appear, or make a ligature. These rules become real OpenType GSUB features in the exported font.</p>
+   <div class="variation-actions">
+    <button id="varNewAlternate" class="button primary" type="button">＋ Alternate</button>
+    <button id="varNewLigature" class="button secondary" type="button">＋ Ligature</button>
+   </div>
+   <form id="varForm" class="variation-editor" hidden>
+    <h3 id="varFormTitle">New alternate</h3>
+    <div id="varTargetWrap">
+     <label for="varTarget" class="fieldlabel">Destination letter</label>
+     <input id="varTarget" class="fullinput" placeholder="n or U+006E" autocomplete="off" maxlength="12">
+    </div>
+    <div id="varSequenceWrap" hidden>
+     <label for="varSequence" class="fieldlabel">Text sequence to join (2–8 characters)</label>
+     <input id="varSequence" class="fullinput" placeholder="th, fi, ..." autocomplete="off" maxlength="16">
+    </div>
+    <label for="varSource" class="fieldlabel">Alternate glyph comes from</label>
+    <select id="varSource" class="fullinput"></select>
+    <label for="varGlyph" class="fieldlabel">Source glyph (type a letter, Unicode, or #glyph index)</label>
+    <input id="varGlyph" class="fullinput" placeholder="n, U+2605 or #123" autocomplete="off" maxlength="40">
+    <div id="varAltOptions">
+     <label for="varFeature" class="fieldlabel">OpenType feature</label>
+     <select id="varFeature" class="fullinput">
+      <option value="aalt">aalt · selectable alternatives</option>
+      <option value="salt">salt · stylistic alternate</option>
+      <option value="ss01">ss01 · stylistic set 1</option>
+      <option value="ss02">ss02 · stylistic set 2 (requires second alternate)</option>
+      <option value="rand">rand · randomized candidates (app-dependent)</option>
+      <option value="calt">calt · contextual alternatives</option>
+     </select>
+     <label for="varContext" class="fieldlabel">When should this version appear?</label>
+     <select id="varContext" class="fullinput">
+      <option value="none">As a selectable alternate</option>
+      <option value="repeat">When the letter is repeated (e.g. nn)</option>
+      <option value="before">After a particular letter</option>
+      <option value="after">Before a particular letter</option>
+      <option value="both">Between two particular letters</option>
+     </select>
+     <div class="variation-neighbors">
+      <div id="varBeforeWrap" hidden><label for="varBefore" class="fieldlabel">Previous letter</label><input id="varBefore" class="fullinput" maxlength="12" placeholder="o"></div>
+      <div id="varAfterWrap" hidden><label for="varAfter" class="fieldlabel">Next letter</label><input id="varAfter" class="fullinput" maxlength="12" placeholder="e"></div>
+     </div>
+    </div>
+    <div id="varLigatureOptions" hidden>
+     <label for="varLigatureFeature" class="fieldlabel">Ligature feature</label>
+     <select id="varLigatureFeature" class="fullinput"><option value="liga">liga · standard</option><option value="dlig">dlig · discretionary</option></select>
+    </div>
+    <p id="varHint" class="footnote">An alternate remains a separate, unencoded glyph; the original letter remains searchable Unicode.</p>
+    <div class="variation-actions">
+     <button id="varSaveRule" class="button primary" type="submit">Save rule</button>
+     <button id="varCancel" class="button secondary" type="button">Cancel</button>
+    </div>
+   </form>
+   <div class="sectionheading variation-list-title"><div><p class="eyebrow">YOUR RULES</p><h2 id="varCount">No variations yet</h2></div></div>
+   <div id="varRuleList" class="variation-list" aria-live="polite"></div>
+   <div class="variation-proof">
+    <p class="eyebrow">LIVE OPENTYPE PROOF</p><h2>See the rules at work</h2>
+    <label for="varProofText" class="fieldlabel">Test phrase</label>
+    <textarea id="varProofText" rows="2" spellcheck="false">Connect Annabelle Minnow</textarea>
+    <div class="variation-switches">
+     <label><input id="varCaltEnabled" type="checkbox" checked> Contextual alternates</label>
+     <label><input id="varSs01Enabled" type="checkbox"> Stylistic set 1</label>
+     <label><input id="varSs02Enabled" type="checkbox"> Stylistic set 2</label>
+     <label><input id="varSaltEnabled" type="checkbox"> Stylistic alternate</label>
+     <label><input id="varAaltEnabled" type="checkbox"> All alternates</label>
+     <label><input id="varRandEnabled" type="checkbox"> Randomized alternates</label>
+     <label><input id="varDligEnabled" type="checkbox"> Discretionary ligatures</label>
+    </div>
+    <button id="varBuild" class="button primary wide" type="button">⚙ Build font &amp; preview on device</button>
+    <button id="varExport" class="button secondary wide" type="button" disabled>↓ Save compiled OpenType TTF</button>
+    <div class="tiny muted" id="varBuildStatus" role="status" aria-live="polite">Your preview is built locally on this device using the same headless OpenType compiler.</div>
+    <div class="variation-compare">
+     <div><p class="eyebrow">FEATURES OFF</p><div id="varPlain" class="variation-sample">Connect Annabelle Minnow</div></div>
+     <div><p class="eyebrow">FEATURES SELECTED</p><div id="varShaped" class="variation-sample">Connect Annabelle Minnow</div></div>
+    </div>
+    <p class="footnote">The compiler loads only when requested and may need an internet connection for its first Python/WebAssembly download. No fonts are transmitted to a server. OpenType feature support varies by application.</p>
+   </div>
+  </section>
   <section id="previewPanel" class="panel" hidden>
    <div class="sectionheading"><div><p class="eyebrow">LIVE PROOF</p><h2>See the hybrid in context</h2></div></div>
    <label for="previewText" class="fieldlabel">Sample text</label>
@@ -65,6 +144,7 @@
 </main>
 <nav id="bottomNav" class="bottomnav" aria-label="Workspace tabs" hidden>
  <button type="button" class="active" data-tab="map" aria-current="page"><span>▦</span> Map</button>
+ <button type="button" data-tab="variations"><span>✣</span> Variations</button>
  <button type="button" data-tab="sources"><span>◫</span> Sources</button>
  <button type="button" data-tab="preview"><span>Ag</span> Preview</button>
 </nav>
@@ -94,6 +174,8 @@
 <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/opentype.js@2.0.0/dist/opentype.js" crossorigin="anonymous"></script>
 <script src="core.js"></script>
+<script src="variations-core.js"></script>
 <script src="app.js"></script>
+<script src="variations-ui.js"></script>
 </body>
 </html>

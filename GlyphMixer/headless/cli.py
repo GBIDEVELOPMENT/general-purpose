@@ -457,7 +457,9 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     run = sub.add_parser("build", help="Build a hybrid font from a JSON recipe.")
-    run.add_argument("--recipe", required=True, help="Repository-relative JSON recipe path")
+    inputs = run.add_mutually_exclusive_group(required=True)
+    inputs.add_argument("--recipe", help="Repository-relative JSON recipe path")
+    inputs.add_argument("--bundle", help="Repository-relative self-contained .glyphmix project")
     run.add_argument("--output", help="Override output with repository-relative .ttf filename")
     inv = sub.add_parser("inventory", help="List fonts inside the checked-in ZIP fixtures.")
     inv.add_argument("--directory", default="GlyphMixer/test-fonts")
@@ -467,8 +469,13 @@ def main(argv=None):
         if args.command == "inventory":
             report = inventory(args.directory)
         else:
-            recipe = json.loads(root_path(args.recipe, must_exist=True).read_text())
-            report = build(recipe, root_path(args.output) if args.output else None)
+            output = root_path(args.output) if args.output else None
+            if args.bundle:
+                from bundle import compile_bundle
+                report = compile_bundle(sys.modules[__name__], root_path(args.bundle, must_exist=True), output)
+            else:
+                recipe = json.loads(root_path(args.recipe, must_exist=True).read_text())
+                report = build(recipe, output)
         payload = json.dumps(report, indent=2, ensure_ascii=False) + "\n"
         if args.command == "inventory" and args.output:
             destination = root_path(args.output)

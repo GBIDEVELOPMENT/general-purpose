@@ -7,8 +7,9 @@ const $ = id => document.getElementById(id);
 const MAX_FONTS = 80, MAX_FILE = 30*1024*1024, MAX_TOTAL = 160*1024*1024, MAX_ZIP_ENTRIES = 300;
 const SUPPORTED = /\.(ttf|otf|woff)$/i;
 const ARCHIVE = /\.zip$/i;
+let variationHooks={};
 const state = {
-  fonts:new Map(), original:new Map(), assignments:new Map(),
+  fonts:new Map(), original:new Map(), assignments:new Map(), variations:[],
   baseId:null, seq:0, tab:'map', selected:null,
   page:0, pickerPage:0, pickerCandidates:[], history:[],
   compiledUrl:null, compiledFace:null, compiledVersion:-1,
@@ -30,7 +31,8 @@ function setBusy(busy) {
 function family(font, fallback) {
   const names=font.names || {};
   const name=key=>names[key]?.en || Object.values(names[key]||{})[0] || '';
-  return String(name('fullName') || [name('fontFamily'),name('fontSubfamily')].filter(Boolean).join(' ') || fallback.replace(/\.[^.]+$/,'')).slice(0,150);
+  const filename=String(fallback).split(' / ').pop().replace(/\.[^.]+$/,'').replace(/[-_]+/g,' ');
+  return String(name('fullName') || [name('fontFamily'),name('fontSubfamily')].filter(Boolean).join(' ') || filename).slice(0,150);
 }
 function mimeName(file) { return file.replace(/[^a-z0-9_.-]/gi,'_').slice(-90); }
 function bytesFingerprint(bytes) {
@@ -139,7 +141,7 @@ async function importSources(files, asBase) {
     if(asBase) {
       for(const rec of state.fonts.values()) releaseRecord(rec);
       releasePreview();
-      state.fonts.clear();state.original.clear();state.assignments.clear();state.history=[];
+      state.fonts.clear();state.original.clear();state.assignments.clear();state.history=[];state.variations=[];
       state.baseId=prepared[0].id;
       const cmap=core.glyphMappings(prepared[0].font);
       for(const [cp,index] of cmap) {
@@ -155,9 +157,10 @@ async function importSources(files, asBase) {
       notice('Base loaded with '+cmap.size.toLocaleString()+' mapped characters.'+(entries.skipped?' Skipped '+entries.skipped+' unsupported archive font(s).':'')+' Add sources whenever you like.');
     } else {
       state.seq+=prepared.length; prepared.forEach(rec=>state.fonts.set(rec.id,rec));
+      state.version++;
       notice('Added '+prepared.length+' new source font'+(prepared.length===1?'':'s')+'.'+(entries.skipped?' Skipped '+entries.skipped+' unsupported archive font(s).':''));
     }
-    renderAll();
+    renderAll();variationHooks.onProjectChanged?.();
   } catch(e) { prepared.forEach(rec=>{if(!state.fonts.has(rec.id)) releaseRecord(rec)});notice(e.message,true) }
   finally {setBusy(false)}
 }
@@ -171,17 +174,17 @@ function checkpoint() {
 }
 function mutate() {
   state.version++;state.page=0;
-  renderAll();
+  renderAll();variationHooks.onProjectChanged?.();
 }
 function undo() {
   if(!state.history.length)return;
   state.assignments=state.history.pop(); state.version++;
-  renderAll(); if(state.selected!==null) renderCurrent();
+  renderAll(); variationHooks.onProjectChanged?.();if(state.selected!==null) renderCurrent();
   notice('Last mapping change undone.');
 }
 function renderSummary() {
   const changes=[...state.assignments.keys()].filter(changed).length;
-  $('projectSummary').textContent=state.assignments.size.toLocaleString()+' positions · '+changes+' replacement'+(changes===1?'':'s')+' · '+state.fonts.size+' source font'+(state.fonts.size===1?'':'s');
+  $('projectSummary').textContent=state.assignments.size.toLocaleString()+' positions · '+changes+' replacement'+(changes===1?'':'s')+' · '+state.fonts.size+' source font'+(state.fonts.size===1?'':'s')+' · '+state.variations.length+' OpenType rule'+(state.variations.length===1?'':'s');
 }
 function renderGlyph(canvas, fontId, index) {
   const rec=state.fonts.get(fontId);
@@ -252,10 +255,10 @@ function renderSources() {
     else {
       const remove=make('button','button secondary','Remove');
       remove.onclick=()=>{
-        if([...state.assignments.values()].some(v=>v.fontId===rec.id)) {
+        if([...state.assignments.values()].some(v=>v.fontId===rec.id)||state.variations.some(v=>v.sourceId===rec.id)) {
           notice('This source is in use. Revert its replacements before removing.',true);return;
         }
-        releaseRecord(rec);state.fonts.delete(rec.id);state.version++;renderAll();
+        releaseRecord(rec);state.fonts.delete(rec.id);state.version++;renderAll();variationHooks.onProjectChanged?.();
       };
       row.append(remove);
     }
@@ -265,13 +268,14 @@ function renderSources() {
 function renderAll(){renderSummary();renderMap();renderSources()}
 function tab(name) {
   state.tab=name;
-  for(const key of ['map','sources','preview']) $(key+'Panel').hidden=(name!==key);
+  for(const key of ['map','variations','sources','preview']) $(key+'Panel').hidden=(name!==key);
   for(const btn of document.querySelectorAll('[data-tab]')) {
     const active=btn.dataset.tab===name;
     btn.classList.toggle('active',active);
     if(active) btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current');
   }
   if(name==='preview') refreshPreview();
+  if(name==='variations')variationHooks.render?.();
 }
 function renderCurrent() {
   const cp=state.selected;
@@ -414,7 +418,7 @@ function saveProjectArchive() {
   const manifest={
     format:'glyph-mixer-project',version:1,
     name:$('familyName').value,baseId:state.baseId,preview:$('previewText').value,
-    fonts:[],assignments:[...state.assignments.entries()]
+    fonts:[],assignments:[...state.assignments.entries()],variations:state.variations
   };
   const archive={};
   let i=0;
@@ -450,6 +454,7 @@ async function openProjectFile(file) {
     }});
     if(!entries['project.json'])throw new Error('Project manifest is missing.');
     const project=core.validateProject(JSON.parse(zip.strFromU8(entries['project.json'])));
+    const restoredRules=window.GlyphMixerVariations?.validateRules(project.variations||[],project.fonts.map(f=>f.id),{mapped:new Set(project.assignments.map(([cp])=>cp))})||[];
     for(const item of project.fonts) {
       const raw=entries[item.file];
       if(!raw)throw new Error('Missing embedded font: '+item.file);
@@ -469,18 +474,19 @@ async function openProjectFile(file) {
     }
     for(const rec of state.fonts.values())releaseRecord(rec);
     releasePreview();
-    state.fonts=fontMap;state.original=original;state.assignments=assignments;
+    state.fonts=fontMap;state.original=original;state.assignments=assignments;state.variations=restoredRules;
     state.baseId=project.baseId;state.seq=Math.max(...prepared.map(r=>Number(r.id.replace(/\D/g,''))||0));
     state.history=[];state.version++;state.page=0;
     $('familyName').value=project.name.slice(0,100);
     $('previewText').value=project.preview||'Thus Spake Zarathustra';
     $('welcome').hidden=true;$('workspace').hidden=false;$('bottomNav').hidden=false;
-    tab('map');renderAll();notice('Project restored with '+prepared.length+' embedded source fonts.');
+    tab('map');renderAll();variationHooks.onProjectChanged?.();notice('Project restored with '+prepared.length+' embedded source fonts.');
   }catch(e){prepared.forEach(releaseRecord);notice('Cannot open project: '+e.message,true)}
   finally{setBusy(false)}
 }
 async function exportFont() {
   if(state.busy||!state.baseId)return;
+  if(state.variations.length){tab('variations');notice('Build and save the GSUB-enabled TTF from Variations to retain your OpenType rules.');return;}
   setBusy(true);
   try {
     await binarySave(()=>getCompiled(),core.slug($('familyName').value)+'.otf','otf','font/otf');
@@ -526,10 +532,19 @@ $('removePosition').onclick=()=>{
 $('previewText').oninput=drawPreview;
 $('previewSize').oninput=()=>{$('previewSizeValue').textContent=$('previewSize').value;drawPreview()};
 $('refreshPreview').onclick=()=>{state.compiledVersion=-1;refreshPreview()};
-$('familyName').oninput=()=>{state.version++;renderSummary()};
+$('familyName').oninput=()=>{state.version++;renderSummary();variationHooks.onProjectChanged?.()};
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('pickerOverlay').hidden)closePicker()});
 const undoButton=make('button','button secondary','↶ Undo');
 undoButton.type='button';undoButton.style.marginLeft='6px';undoButton.onclick=undo;
 $('addPosition').insertAdjacentElement('beforebegin',undoButton);
+window.GlyphMixerBridge={
+ getState:()=>state,
+ notice,
+ saveFile:binarySave,
+ drawGlyph:renderGlyph,
+ showTab:tab,
+ renderSummary,
+ setVariationHooks(hooks){variationHooks=hooks||{}}
+};
 renderSummary();
 })();

@@ -1,0 +1,55 @@
+name: Glyph Mixer mobile-browser smoke
+on:
+  pull_request:
+    paths:
+      - 'GlyphMixer/tests/mobile-variations-smoke.cjs'
+      - 'GlyphMixer/compiler-worker.js'
+      - 'GlyphMixer/app.js'
+      - 'GlyphMixer/variations-ui.js'
+      - 'GlyphMixer/variations-core.js'
+      - 'GlyphMixer/index.html'
+      - '.github/workflows/glyph-mixer-mobile-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: glyph-mixer-mobile-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  mobile-chrome:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install targeted browser runner
+        run: npm install --prefix GlyphMixer --no-save --ignore-scripts --no-audit --no-fund playwright@1.56.1
+      - name: Provision Chromium
+        run: GlyphMixer/node_modules/.bin/playwright install --with-deps chromium
+      - name: Start local Pages-compatible server and run mobile end-to-end
+        shell: bash
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 > /tmp/glyphmixer-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/GlyphMixer/ > /dev/null; then
+              break
+            fi
+            sleep 0.2
+          done
+          curl -fsS http://127.0.0.1:8765/GlyphMixer/ >/dev/null
+          node GlyphMixer/tests/mobile-variations-smoke.cjs
+      - name: Upload mobile screenshot and diagnostic assets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: glyph-mixer-mobile-${{ github.run_id }}
+          path: GlyphMixer/build/mobile-variations-*.png
+          if-no-files-found: ignore
+          retention-days: 7
