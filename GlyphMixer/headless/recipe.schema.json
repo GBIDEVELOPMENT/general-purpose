@@ -183,6 +183,14 @@
           },
           "strict": {
             "type": "boolean"
+          },
+          "glyph_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "glyph_name": {
+            "type": "string",
+            "minLength": 1
           }
         },
         "additionalProperties": false,
@@ -220,8 +228,24 @@
             },
             "then": {
               "required": [
-                "glyph",
                 "destination"
+              ],
+              "anyOf": [
+                {
+                  "required": [
+                    "glyph"
+                  ]
+                },
+                {
+                  "required": [
+                    "glyph_index"
+                  ]
+                },
+                {
+                  "required": [
+                    "glyph_name"
+                  ]
+                }
               ]
             }
           },
@@ -238,8 +262,24 @@
             },
             "then": {
               "required": [
-                "sequence",
-                "glyph"
+                "sequence"
+              ],
+              "anyOf": [
+                {
+                  "required": [
+                    "glyph"
+                  ]
+                },
+                {
+                  "required": [
+                    "glyph_index"
+                  ]
+                },
+                {
+                  "required": [
+                    "glyph_name"
+                  ]
+                }
               ]
             }
           }
