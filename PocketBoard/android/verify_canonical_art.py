@@ -116,6 +116,14 @@ for symbol, res in SYMBOLS.items():
 for shape in SHAPES:
     name = "connected" if shape == "connected-pill" else shape.replace("-", "_")
     validate_svg(ROOT / f"assets/button-silhouettes/{shape}.svg", f"pb_shape_{name}")
+    # The first straight-segment traces caused angular-button regression.
+    if shape != "connected-pill":
+        import re as _re
+        src = (ROOT / f"assets/button-silhouettes/{shape}.svg").read_text()
+        path = src.split(' d="', 1)[1].split('"', 1)[0]
+        assert path.count("C ") >= 40, f"Angular/undersampled silhouette: {shape}"
+        assert " L " not in path, f"Straight-segment silhouette: {shape}"
+
 expected_bands = [APPROVED[k] for k in RAINBOW]
 background = xml(DRAWABLE / "ic_launcher_background.xml")
 header = xml(DRAWABLE / "pb_header_icon.xml")

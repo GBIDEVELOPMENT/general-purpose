@@ -246,3 +246,14 @@ No Windows receiver or network protocol changes.
 All runtime UI colours are drawn from `PocketBoardPalette.kt`. The launcher/header and touchpad's seven stripes now use canonical hues; original launcher keyboard geometry and adaptive masking remain intact. White reference SVG source traces are preserved exactly, while foreground control glyphs render in canonical cream. An offline CI test, `android/verify_canonical_art.py`, locks palette values, validates SVG/vector contour identity, and blocks accidental unapproved runtime colours. Original raster inputs are in `assets/references/`, the supplied font is in `assets/fonts/` (with the runtime copy under `res/font/`), and outgoing artwork is quarantined in `assets/retired-art/`. The prior generic squircle, coarse Connected outline, unused Backspace icon and obsolete launcher resource are not part of the shipped drawable set.
 
 Android versionCode 21/versionName 1.0.2. Windows protocol, receiver and pairing unchanged. **Physical-device acceptance remains outstanding**: inspect Gboard-open 320/412dp layouts, finger targets, reference-contour fidelity, the connected checkmark baseline and color contrast. The original Connected artwork is green with cream lettering, which may have limited accessibility contrast. CI compilation and source-contract validation cannot substitute for on-device visual checks.
+
+
+## Button silhouette correction (1.0.2 artwork hotfix)
+
+The first 1.0.2 button traces were internally consistent but visually faceted
+because excessive contour simplification generated polygons. All sixteen
+visible buttons have now been independently retraced as smooth Bézier contours.
+The detailed Connected shape, foreground symbols, canonical palette, fonts,
+launcher and remote-control behavior are unchanged. The CI verification now
+checks both source-to-Android exact path identity and cubic outline presence.
+Physical-device visual acceptance with Gboard remains necessary.
