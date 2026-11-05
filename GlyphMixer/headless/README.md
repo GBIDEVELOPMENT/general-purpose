@@ -43,6 +43,8 @@ python GlyphMixer/headless/cli.py build --recipe GlyphMixer/recipes/example-uppe
 
 Go to **Actions → Glyph Mixer headless build → Run workflow** and enter the repository-relative path to a committed recipe. The workflow checks the JSON, builds the font in GitHub Actions, and uploads a downloadable artifact containing the TTF and report. It runs separately from GitHub Pages, requiring no Android or desktop machine. An agent with repo access can create a recipe/PR and let the CI build it. Automation uses no external font service.
 
+The agent contract is also expressed as a machine-readable [recipe JSON Schema](recipe.schema.json). The CLI performs its own semantic validations, including source existence and glyph availability.
+
 ### JSON schema (version 1)
 
 - `base`: a key in `sources`.
