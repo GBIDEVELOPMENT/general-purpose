@@ -232,8 +232,9 @@ def build(recipe: dict, output: Path | None = None) -> dict:
                     missed.append("U+" + format(cp, "04X"))
                     continue
                 reference = (donor, source_name)
-                if reference != requested[cp] and reference not in alternates.setdefault(cp, []):
-                    alternates[cp].append(reference)
+                if reference != requested[cp]:
+                    if reference not in alternates.setdefault(cp, []):
+                        alternates[cp].append(reference)
                     feature_sets.setdefault(cp, set()).update(features)
                     context = op.get("context")
                     if isinstance(context, dict):
