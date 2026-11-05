@@ -541,8 +541,7 @@ class MainActivity : Activity() {
             ), buttonSize = 45, alignRight = true) // B2
         }
         controlGridRow().also { row ->
-            controlGroup(row, listOf(Triple("Refresh browser (F5)", "key", "F5")),
-                buttonSize = 49, alignRight = false) // A3, beneath Apps
+            controlGroup(row, listOf(Triple("Refresh browser (F5)", "key", "F5")), buttonSize = 49, alignRight = false) // A3, beneath Apps
             controlGroup(row, listOf(
                 Triple("Tab", "key", "TAB"),
                 Triple("Enter", "key", "ENTER"),
