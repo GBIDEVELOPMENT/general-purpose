@@ -394,7 +394,7 @@ class MainActivity : Activity() {
             "MEDIA_PREV", "MEDIA_PLAY_PAUSE", "ALT_TAB_OPEN",
             "MEDIA_NEXT", "ESCAPE", "COPY", "SELECT_ALL_COPY",
             "PASTE", "ALT_TAB_CLOSE", "TAB", "ENTER"
-        ).zip(PocketBoardPalette.BUTTON_COLORS).toMap()
+        ).zip(PocketBoardPalette.BUTTON_COLORS).toMap() + ("F5" to PocketBoardPalette.CORAL)
         var showingPause = false // presentation-only: no media state queries
         fun resourceFor(value: String): Int? = when (value) {
             "VOLUME_DOWN" -> R.drawable.pb_volume_down
@@ -411,6 +411,7 @@ class MainActivity : Activity() {
             "TAB" -> R.drawable.pb_tab
             "ENTER" -> R.drawable.pb_enter
             "ESCAPE" -> R.drawable.pb_escape
+            "F5" -> R.drawable.pb_refresh
             else -> null
         }
         // Shape and symbol identities are independent; play/pause shares one
@@ -422,7 +423,7 @@ class MainActivity : Activity() {
             "MEDIA_PREV" -> R.drawable.pb_shape_previous_track
             "MEDIA_NEXT" -> R.drawable.pb_shape_next_track
             "MEDIA_PLAY_PAUSE" -> R.drawable.pb_shape_pause
-            "ALT_TAB_OPEN", "ALT_TAB_CLOSE" -> R.drawable.pb_shape_apps_grid
+            "ALT_TAB_OPEN", "ALT_TAB_CLOSE", "F5" -> R.drawable.pb_shape_apps_grid
             "COPY" -> R.drawable.pb_shape_overlapping_windows
             "SELECT_ALL_COPY" -> R.drawable.pb_shape_windows_check
             "PASTE" -> R.drawable.pb_shape_windows_plus
@@ -540,7 +541,8 @@ class MainActivity : Activity() {
             ), buttonSize = 45, alignRight = true) // B2
         }
         controlGridRow().also { row ->
-            controlGroup(row, emptyList(), buttonSize = 49, alignRight = false) // A3
+            controlGroup(row, listOf(Triple("Refresh browser (F5)", "key", "F5")),
+                buttonSize = 49, alignRight = false) // A3, beneath Apps
             controlGroup(row, listOf(
                 Triple("Tab", "key", "TAB"),
                 Triple("Enter", "key", "ENTER"),
