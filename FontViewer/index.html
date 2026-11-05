@@ -15,7 +15,7 @@
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(env(safe-area-inset-top) + 12px) 14px 12px}
 .headline,.actions,.meta,.cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px}.headline{margin-bottom:12px}.headline h1{font-size:19px;margin:0;letter-spacing:-.04em}.pill,button{border:1px solid var(--line);border-radius:13px;background:var(--panel);color:var(--text);min-height:44px;padding:8px 12px;font-weight:600}.pill{display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}.danger{color:var(--danger)}.label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin:0 0 6px}textarea{resize:vertical;width:100%;min-height:62px;max-height:160px;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:11px 12px;color:var(--text)}.actions{margin-top:10px}.actions button{flex:1}.actions button:last-child{flex:0 0 auto}
 main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;margin:auto}.toolbar{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:14px}.toolbar p{margin:0;color:var(--muted);font-size:14px}.toolbar button{min-height:40px;font-size:13px}.empty{border:1px dashed var(--line);padding:40px 18px;border-radius:17px;text-align:center;color:var(--muted);line-height:1.6}.empty strong{display:block;color:var(--text);font-size:18px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px;margin:0 0 14px;overflow:hidden}.cardhead{align-items:flex-start}.fontname{font-size:19px;margin:0;overflow-wrap:anywhere}.filename{font-size:12px;color:var(--muted);overflow-wrap:anywhere;margin:5px 0 0}.remove{padding:4px 11px;min-width:44px;flex-shrink:0;color:var(--danger)}.sample{font-size:29px;line-height:1.3;overflow-wrap:anywhere;white-space:pre-wrap;background:var(--inset);border-radius:12px;padding:15px 12px;margin:16px 0}.meta{justify-content:flex-start;flex-wrap:wrap;font-size:12px;color:var(--muted)}details{border-top:1px solid var(--line);margin-top:14px;padding-top:13px}summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-size:14px;font-weight:700;color:var(--accent)}.glyphs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.glyph{border:1px solid var(--line);border-radius:7px;min-width:0;min-height:47px;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:var(--inset)}.glyph b{font-size:22px;font-weight:400}.glyph small{font:9px system-ui;color:var(--muted)}.note{color:var(--muted);font-size:12px;line-height:1.45}.status{min-height:20px;font-size:12px;color:var(--muted);margin:10px 1px 0}.sr{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}#file{display:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px;margin:0 0 14px;overflow:hidden}.cardhead{align-items:flex-start}.fontname{font-size:19px;margin:0;overflow-wrap:anywhere}.filename{font-size:12px;color:var(--muted);overflow-wrap:anywhere;margin:5px 0 0}.remove{padding:4px 11px;min-width:44px;flex-shrink:0;color:var(--danger)}.sample{font-size:29px;line-height:1.3;overflow-wrap:anywhere;white-space:pre-wrap;background:var(--inset);border-radius:12px;padding:15px 12px;margin:16px 0}.meta{justify-content:flex-start;flex-wrap:wrap;font-size:12px;color:var(--muted)}details{border-top:1px solid var(--line);margin-top:14px;padding-top:13px}summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-size:14px;font-weight:700;color:var(--accent)}.glyphs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.glyph{border:1px solid var(--line);border-radius:7px;min-width:0;min-height:47px;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:var(--inset)}.glyph b{font-size:22px;font-weight:400}.glyph small{font:9px system-ui;color:var(--muted)}.note{color:var(--muted);font-size:12px;line-height:1.45}.axes{display:grid;gap:9px;margin-top:13px}.axis{display:grid;grid-template-columns:1fr auto;gap:5px 10px;font-size:12px;color:var(--muted)}.axis input{grid-column:1/-1;width:100%;height:32px;accent-color:var(--accent)}.status{min-height:20px;font-size:12px;color:var(--muted);margin:10px 1px 0}.sr{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}#file{display:none}
 @media(min-width:500px){.glyphs{grid-template-columns:repeat(10,minmax(0,1fr))}}
 </style>
 </head>
@@ -31,7 +31,7 @@ main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;
  <div class="toolbar"><p id="count">0 fonts loaded</p><button id="sort">Sort: name ↑</button></div>
  <div id="fonts"></div>
  <div class="empty" id="empty"><strong>Your font shelf is empty</strong>Import TTF, OTF, or ZIP archives. Add more whenever you like. Everything is processed on this device.</div>
- <input type="file" id="file" multiple accept=".ttf,.otf,.zip,font/ttf,font/otf,application/zip">
+ <input type="file" id="file" multiple accept=".ttf,.otf,.woff,.woff2,.ttc,.otc,.zip,font/ttf,font/otf,font/woff,font/woff2,application/zip">
 </main>
 <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js"></script>
@@ -40,7 +40,9 @@ main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;
 const $=id=>document.getElementById(id);
 const records=new Map();
 let counter=0,ascending=true,loading=false;
-const supported=/\.(ttf|otf)$/i;
+const supported=/\.(ttf|otf|woff2?|ttc|otc)$/i;
+let fontkitPromise;
+function getFontkit(){return fontkitPromise??=import('https://esm.sh/fontkit@2.0.4?bundle').then(m=>m.default?.create?m.default:m).catch(e=>{fontkitPromise=null;throw new Error('Font parser unavailable: '+e.message)})}
 const MAX_ENTRY=30*1024*1024,MAX_TOTAL=180*1024*1024,MAX_COUNT=250;
 const allRange=[
 [0x20,0x7e],[0xa0,0x024f],[0x0370,0x052f],[0x0590,0x06ff],[0x0900,0x097f],[0x2000,0x206f],[0x20a0,0x20cf],[0x2100,0x214f],[0x2190,0x21ff],[0x2200,0x22ff],[0x2500,0x257f],[0x2600,0x26ff],[0x2700,0x27bf],[0x3000,0x30ff],[0x4e00,0x4eff]];
@@ -59,27 +61,68 @@ function glyphMap(font){
  return [...cps].filter(cp=>cp>=32&&cp<=0x10ffff&&!(cp>=0xd800&&cp<=0xdfff)).sort((a,b)=>a-b);
 }
 function fingerprint(bytes){let h=2166136261;for(let i=0;i<bytes.length;i++){h^=bytes[i];h=Math.imul(h,16777619)}return bytes.length+':'+(h>>>0).toString(16)}
+
 function variantKey(font,file){
- const names=font.names||{};
- const local=name=>names[name]?.en||Object.values(names[name]||{})[0]||'';
- const identity=local('postScriptName')||local('fullName')||[local('fontFamily'),local('fontSubfamily')].filter(Boolean).join(' ')||file.split('/').pop().replace(/\.(otf|ttf)$/i,'');
- return String(identity).normalize('NFKC').toLocaleLowerCase().replace(/[\s_\-]+/g,'');
+ const identity=font.postscriptName||[font.familyName,font.subfamilyName].filter(Boolean).join(' ')||font.fullName||file.split('/').pop().replace(/\.(ttf|otf|woff2?|ttc|otc)$/i,'');
+ return String(identity).normalize('NFKC').toLocaleLowerCase().replace(/[\s_-]+/g,'');
 }
-async function addFont(bytes,file,source,seenVariants=null){
+function formatPriority(file){return ({otf:0,ttf:1,woff2:2,woff:3,otc:4,ttc:5})[file.split('.').pop().toLowerCase()]??9}
+function cleanupFont(rec){document.fonts.delete(rec.face);URL.revokeObjectURL(rec.url)}
+function extractCollectionFace(bytes,index){
+ const view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);
+ const invalid=()=>{throw Error('Invalid font collection directory')};
+ if(bytes.length<16||view.getUint32(0)!==0x74746366)invalid();
+ const count=view.getUint32(8);
+ if(count>128||index>=count||12+count*4>bytes.length)invalid();
+ const at=view.getUint32(12+index*4);
+ if(at+12>bytes.length)invalid();
+ const n=view.getUint16(at+4);
+ if(n<1||n>256||at+12+16*n>bytes.length)invalid();
+ const tables=[];
+ for(let i=0;i<n;i++){
+  const p=at+12+i*16,off=view.getUint32(p+8),len=view.getUint32(p+12);
+  if(off>bytes.length||len>bytes.length-off)invalid();
+  tables.push({tag:view.getUint32(p),sum:view.getUint32(p+4),off,len});
+ }
+ let total=12+n*16;
+ for(const t of tables)total+=(t.len+3)&~3;
+ if(total>MAX_ENTRY)throw Error('Extracted face exceeds 30 MB');
+ const out=new Uint8Array(total),dst=new DataView(out.buffer);
+ out.set(bytes.subarray(at,at+4),0);dst.setUint16(4,n);
+ const pow=2**Math.floor(Math.log2(n));dst.setUint16(6,pow*16);dst.setUint16(8,Math.log2(pow));dst.setUint16(10,n*16-pow*16);
+ let cursor=12+n*16;
+ for(let i=0;i<n;i++){
+  const t=tables[i],p=12+i*16;
+  dst.setUint32(p,t.tag);dst.setUint32(p+4,t.sum);dst.setUint32(p+8,cursor);dst.setUint32(p+12,t.len);
+  out.set(bytes.subarray(t.off,t.off+t.len),cursor);cursor+=(t.len+3)&~3;
+ }
+ return out;
+}
+function axesOf(font){
+ return Object.entries(font.variationAxes||{}).filter(([tag,a])=>/^[A-Za-z0-9]{4}$/.test(tag)&&Number.isFinite(a.min)&&Number.isFinite(a.max)&&a.max>a.min).map(([tag,a])=>({tag,name:a.name||tag,min:a.min,max:a.max,value:a.default??a.min}));
+}
+async function addFont(bytes,file,source){
  if(bytes.length>MAX_ENTRY)throw Error('Font exceeds 30 MB');
- if(records.size>=MAX_COUNT)throw Error('250-font limit reached');
- const key=fingerprint(bytes);
- if([...records.values()].some(x=>x.key===key))return false;
- const parsed=opentype.parse(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
- const variant=variantKey(parsed,file);
- if(seenVariants?.has(variant))return false;
- const id='fs'+(++counter),family='font-'+id;
- const url=URL.createObjectURL(new Blob([bytes],{type:'font/otf'}));
- const face=new FontFace(family,'url("'+url+'")');
- try{await face.load();document.fonts.add(face)}catch(e){URL.revokeObjectURL(url);throw Error('Browser cannot load this font')}
- records.set(id,{id,key,name:labelName(parsed,file),file:safeName(file),source:safeName(source),family,url,face,cps:glyphMap(parsed)});
- seenVariants?.add(variant);
- return true;
+ const kit=await getFontkit(),collection=kit.create(bytes);
+ const faces=Array.isArray(collection.fonts)?collection.fonts:[collection];
+ let added=0;
+ for(let i=0;i<faces.length;i++){
+  const font=faces[i],key=fingerprint(bytes)+':'+(faces.length>1?i:0);
+  if([...records.values()].some(r=>r.key===key))continue;
+  const variant=variantKey(font,file);
+  const existing=[...records.values()].find(r=>r.variant===variant);
+  if(existing&&formatPriority(existing.file)<=formatPriority(file))continue;
+  if(!existing&&records.size>=MAX_COUNT)throw Error('250-font limit reached');
+  const raw=faces.length>1?extractCollectionFace(bytes,i):bytes;
+  const id='fs'+(++counter),family='font-'+id,url=URL.createObjectURL(new Blob([raw]));
+  const face=new FontFace(family,'url("'+url+'")');
+  try{await face.load();document.fonts.add(face)}catch(e){URL.revokeObjectURL(url);throw Error('Browser cannot load '+(font.fullName||file))}
+  const cps=[...new Set(font.characterSet||[])].filter(cp=>cp>=32&&cp<=0x10ffff&&!(cp>=0xd800&&cp<=0xdfff)).sort((a,b)=>a-b);
+  const rec={id,key,variant,name:safeName(font.fullName||[font.familyName,font.subfamilyName].filter(Boolean).join(' ')||file),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font)};
+  if(existing){cleanupFont(existing);records.delete(existing.id)}
+  records.set(id,rec);added++;
+ }
+ return added;
 }
 async function processFile(file,stats){
  if(/\.zip$/i.test(file.name)){
@@ -87,17 +130,15 @@ async function processFile(file,stats){
   if(file.size>MAX_TOTAL)throw Error('ZIP exceeds 180 MB');
   const archive=new Uint8Array(await file.arrayBuffer());
   const contents=fflate.unzipSync(archive,{filter:info=>supported.test(info.name)&&info.originalSize<=MAX_ENTRY});
-  const seenVariants=new Set();
-  // Prefer OpenType outlines when an archive includes both .otf and .ttf of the same face.
-  const candidates=Object.entries(contents).sort(([a],[b])=>Number(/\.otf$/i.test(b))-Number(/\.otf$/i.test(a)));
+  const candidates=Object.entries(contents).sort(([a],[b])=>formatPriority(a)-formatPriority(b));
   for(const [name,bytes] of candidates){
    if(stats.processed>=MAX_COUNT)throw Error('Import limit reached');
    stats.processed++;
-   try{stats.added+=Number(await addFont(bytes,name,file.name,seenVariants))}catch(e){stats.errors.push(name+': '+e.message)}
+   try{stats.added+=await addFont(bytes,name,file.name)}catch(e){stats.errors.push(name+': '+e.message)}
   }
  }else if(supported.test(file.name)){
   stats.processed++;
-  stats.added+=Number(await addFont(new Uint8Array(await file.arrayBuffer()),file.name,file.name));
+  stats.added+=await addFont(new Uint8Array(await file.arrayBuffer()),file.name,file.name);
  }else throw Error('Unsupported file type');
 }
 async function importFiles(files){
@@ -127,6 +168,7 @@ function renderGlyphs(box,record){
   const cell=make('div','glyph');
   const symbol=make('b','',String.fromCodePoint(cp));symbol.style.fontFamily='"'+record.family+'"';
   const code=make('small','',cp.toString(16).toUpperCase().padStart(4,'0'));
+  if(record.axes?.length)symbol.style.fontVariationSettings=record.axes.map(a=>'"'+a.tag+'" '+a.value).join(', ');
   cell.append(symbol,code);box.append(cell);
  }
  box.after(make('p','note','Showing '+chosen.length+' of '+arr.length+' mapped characters in selected common ranges.'));
@@ -144,15 +186,27 @@ function render(){
   head.append(left,remove);
   const sample=make('div','sample',$('preview').value||' ');sample.style.fontFamily='"'+rec.family+'"';
   const meta=make('div','meta');meta.append(make('span','',rec.cps.length.toLocaleString()+' mapped characters'),make('span','',rec.source===rec.file?'Direct import':'ZIP: '+rec.source));
+  const axes=make('div','axes');
+  if(rec.axes.length){
+   axes.append(make('p','label','VARIABLE FONT AXES'));
+   const apply=()=>{const settings=rec.axes.map(a=>'"'+a.tag+'" '+a.value).join(', ');sample.style.fontVariationSettings=settings;card.querySelectorAll('.glyph b').forEach(g=>g.style.fontVariationSettings=settings)};
+   for(const axis of rec.axes){
+    const wrapper=make('label','axis'),title=make('span','',axis.name+' ('+axis.tag+')'),value=make('output','',String(axis.value));
+    const slider=make('input');slider.type='range';slider.min=axis.min;slider.max=axis.max;slider.step=Math.max((axis.max-axis.min)/200,0.01);slider.value=axis.value;slider.setAttribute('aria-label',axis.name);
+    slider.oninput=()=>{axis.value=Number(slider.value);value.textContent=Number(axis.value.toFixed(2)).toString();apply()};
+    wrapper.append(title,value,slider);axes.append(wrapper);
+   }
+   apply();
+  }
   const details=make('details'),summary=make('summary','', 'Character map');details.open=true;
   const glyphs=make('div','glyphs');details.append(summary,glyphs);
   details.addEventListener('toggle',()=>{if(details.open&&!glyphs.childElementCount)renderGlyphs(glyphs,rec)});renderGlyphs(glyphs,rec);
-  card.append(head,sample,meta,details);root.append(card);
+  card.append(head,sample,meta,axes,details);root.append(card);
  }
 }
 function removeFont(id){
  const rec=records.get(id);if(!rec)return;
- document.fonts.delete(rec.face);URL.revokeObjectURL(rec.url);records.delete(id);render();
+ cleanupFont(rec);records.delete(id);render();
  status(rec.name+' removed.');
 }
 $('add').onclick=()=>$('file').click();
