@@ -424,8 +424,8 @@ class MainActivity : Activity() {
             "COPY" -> R.drawable.pb_shape_overlapping_windows
             "SELECT_ALL_COPY" -> R.drawable.pb_shape_windows_check
             "PASTE" -> R.drawable.pb_shape_windows_plus
-            "ESCAPE" -> R.drawable.pb_shape_escape
-            "TAB" -> R.drawable.pb_shape_tab
+            "ESCAPE" -> R.drawable.pb_shape_tab
+            "TAB" -> R.drawable.pb_shape_escape
             "ENTER" -> R.drawable.pb_shape_enter
             else -> error("Unmapped silhouette: $value")
         }
@@ -697,24 +697,13 @@ class MainActivity : Activity() {
             val d = resources.displayMetrics.density
             val cx = w * 0.5f
             val cy = h * 0.5f
-            val pointer = Path().apply {
-                moveTo(cx - 7*d, cy - 12*d)
-                lineTo(cx - 7*d, cy + 10*d)
-                lineTo(cx - 1*d, cy + 5*d)
-                lineTo(cx + 5*d, cy + 15*d)
-                lineTo(cx + 10*d, cy + 12*d)
-                lineTo(cx + 4*d, cy + 2*d)
-                lineTo(cx + 12*d, cy + 1*d)
-                close()
-            }
-            paint.color = PocketBoardPalette.CREAM
-            paint.style = Paint.Style.STROKE
-            paint.strokeWidth = 2.5f * d
-            paint.strokeJoin = Paint.Join.ROUND
-            canvas.drawPath(pointer, paint)
-            paint.style = Paint.Style.FILL
-            paint.color = PocketBoardPalette.DISCONNECTED
-            canvas.drawPath(pointer, paint)
+            // Source-traced marker cursor; the old hand-built Path is retired.
+            val pointer = context.getDrawable(R.drawable.pb_cursor_pointer)
+            val cw = 27f * d
+            val ch = 35f * d
+            pointer?.setBounds((cx-cw/2).roundToInt(), (cy-ch/2).roundToInt(),
+                (cx+cw/2).roundToInt(), (cy+ch/2).roundToInt())
+            pointer?.draw(canvas)
             paint.style = Paint.Style.STROKE
             paint.color = PocketBoardPalette.CREAM
             paint.strokeWidth = 1.2f * d
