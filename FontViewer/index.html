@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#15171d">
+<title>Font Shelf</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color-scheme:dark;--bg:#111319;--panel:#1c2029;--inset:#12151c;--text:#f4f5f9;--muted:#aeb6c6;--line:#394153;--accent:#9bbaff;--danger:#ffadae}
+:root[data-theme=light]{color-scheme:light;--bg:#f5f5f7;--panel:#fff;--inset:#f0f1f5;--text:#1c2230;--muted:#596476;--line:#d6dbe3;--accent:#285ed4;--danger:#a72532}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-size:16px}button,input,textarea{font:inherit}button{cursor:pointer;touch-action:manipulation}button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(env(safe-area-inset-top) + 12px) 14px 12px}
+.headline,.actions,.meta,.cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px}.headline{margin-bottom:12px}.headline h1{font-size:19px;margin:0;letter-spacing:-.04em}.pill,button{border:1px solid var(--line);border-radius:13px;background:var(--panel);color:var(--text);min-height:44px;padding:8px 12px;font-weight:600}.pill{display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}.danger{color:var(--danger)}.label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin:0 0 6px}textarea{resize:vertical;width:100%;min-height:62px;max-height:160px;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:11px 12px;color:var(--text)}.actions{margin-top:10px}.actions button{flex:1}.actions button:last-child{flex:0 0 auto}
+main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;margin:auto}.toolbar{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:14px}.toolbar p{margin:0;color:var(--muted);font-size:14px}.toolbar button{min-height:40px;font-size:13px}.empty{border:1px dashed var(--line);padding:40px 18px;border-radius:17px;text-align:center;color:var(--muted);line-height:1.6}.empty strong{display:block;color:var(--text);font-size:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px;margin:0 0 14px;overflow:hidden}.cardhead{align-items:flex-start}.fontname{font-size:19px;margin:0;overflow-wrap:anywhere}.filename{font-size:12px;color:var(--muted);overflow-wrap:anywhere;margin:5px 0 0}.remove{padding:4px 11px;min-width:44px;flex-shrink:0;color:var(--danger)}.sample{font-size:29px;line-height:1.3;overflow-wrap:anywhere;white-space:pre-wrap;background:var(--inset);border-radius:12px;padding:15px 12px;margin:16px 0}.meta{justify-content:flex-start;flex-wrap:wrap;font-size:12px;color:var(--muted)}details{border-top:1px solid var(--line);margin-top:14px;padding-top:13px}summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-size:14px;font-weight:700;color:var(--accent)}.glyphs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.glyph{border:1px solid var(--line);border-radius:7px;min-width:0;min-height:47px;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:var(--inset)}.glyph b{font-size:22px;font-weight:400}.glyph small{font:9px system-ui;color:var(--muted)}.note{color:var(--muted);font-size:12px;line-height:1.45}.status{min-height:20px;font-size:12px;color:var(--muted);margin:10px 1px 0}.sr{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}#file{display:none}
+@media(min-width:500px){.glyphs{grid-template-columns:repeat(10,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header>
+ <div class="headline"><h1>Font Shelf</h1><button id="theme" aria-label="Switch to light theme">☀ Light</button></div>
+ <label class="label" for="preview">PREVIEW TEXT · APPLIES TO EVERY FONT</label>
+ <textarea id="preview" rows="2" spellcheck="false">The quick brown fox jumps over the lazy dog. 0123456789</textarea>
+ <div class="actions"><button class="primary" id="add">＋ Add fonts / ZIPs</button><button id="clear" class="danger" disabled>Clear all</button></div>
+ <div class="status" id="status" role="status" aria-live="polite"></div>
+</header>
+<main>
+ <div class="toolbar"><p id="count">0 fonts loaded</p><button id="sort">Sort: name ↑</button></div>
+ <div id="fonts"></div>
+ <div class="empty" id="empty"><strong>Your font shelf is empty</strong>Import TTF, OTF, or ZIP archives. Add more whenever you like. Everything is processed on this device.</div>
+ <input type="file" id="file" multiple accept=".ttf,.otf,.zip,font/ttf,font/otf,application/zip">
+</main>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js"></script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const records=new Map();
+let counter=0,ascending=true,loading=false;
+const supported=/\.(ttf|otf)$/i;
+const MAX_ENTRY=30*1024*1024,MAX_TOTAL=180*1024*1024,MAX_COUNT=250;
+const allRange=[
+[0x20,0x7e],[0xa0,0x024f],[0x0370,0x052f],[0x0590,0x06ff],[0x0900,0x097f],[0x2000,0x206f],[0x20a0,0x20cf],[0x2100,0x214f],[0x2190,0x21ff],[0x2200,0x22ff],[0x2500,0x257f],[0x2600,0x26ff],[0x2700,0x27bf],[0x3000,0x30ff],[0x4e00,0x4eff]];
+const safeName=s=>String(s||'').replace(/[\u0000-\u001f]/g,'').slice(0,250);
+function status(s){$('status').textContent=s}
+function labelName(font,file){const names=font.names||{};const localized=key=>names[key]?.en||Object.values(names[key]||{})[0]||'';return safeName(localized('fullName')||[localized('fontFamily'),localized('fontSubfamily')].filter(Boolean).join(' ')||file.replace(/\.[^.]+$/,''))}
+function glyphMap(font){
+ const cps=new Set();
+ for(const glyph of font.glyphs.glyphs ? Object.values(font.glyphs.glyphs):[]){
+  if(!glyph)continue;
+  if(Number.isInteger(glyph.unicode))cps.add(glyph.unicode);
+  for(const cp of glyph.unicodes||[])cps.add(cp);
+ }
+ // cmap is more comprehensive than iterating lazily-loaded glyph records
+ for(const key of Object.keys(font.tables?.cmap?.glyphIndexMap||{}))cps.add(Number(key));
+ return [...cps].filter(cp=>cp>=32&&cp<=0x10ffff&&!(cp>=0xd800&&cp<=0xdfff)).sort((a,b)=>a-b);
+}
+function fingerprint(bytes){let h=2166136261;for(let i=0;i<bytes.length;i++){h^=bytes[i];h=Math.imul(h,16777619)}return bytes.length+':'+(h>>>0).toString(16)}
+async function addFont(bytes,file,source){
+ if(bytes.length>MAX_ENTRY)throw Error('Font exceeds 30 MB');
+ if(records.size>=MAX_COUNT)throw Error('250-font limit reached');
+ const key=fingerprint(bytes);
+ if([...records.values()].some(x=>x.key===key))return false;
+ const parsed=opentype.parse(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
+ const id='fs'+(++counter),family='font-'+id;
+ const url=URL.createObjectURL(new Blob([bytes],{type:'font/otf'}));
+ const face=new FontFace(family,'url("'+url+'")');
+ try{await face.load();document.fonts.add(face)}catch(e){URL.revokeObjectURL(url);throw Error('Browser cannot load this font')}
+ records.set(id,{id,key,name:labelName(parsed,file),file:safeName(file),source:safeName(source),family,url,face,cps:glyphMap(parsed)});
+ return true;
+}
+async function processFile(file,stats){
+ if(/\.zip$/i.test(file.name)){
+  if(!window.fflate)throw Error('ZIP reader unavailable; check internet connection');
+  if(file.size>MAX_TOTAL)throw Error('ZIP exceeds 180 MB');
+  const archive=new Uint8Array(await file.arrayBuffer());
+  const contents=fflate.unzipSync(archive,{filter:info=>supported.test(info.name)&&info.originalSize<=MAX_ENTRY});
+  for(const [name,bytes] of Object.entries(contents)){
+   if(stats.processed>=MAX_COUNT)throw Error('Import limit reached');
+   stats.processed++;
+   try{stats.added+=Number(await addFont(bytes,name,file.name))}catch(e){stats.errors.push(name+': '+e.message)}
+  }
+ }else if(supported.test(file.name)){
+  stats.processed++;
+  stats.added+=Number(await addFont(new Uint8Array(await file.arrayBuffer()),file.name,file.name));
+ }else throw Error('Unsupported file type');
+}
+async function importFiles(files){
+ if(loading)return;loading=true;$('add').disabled=true;
+ const stats={processed:0,added:0,errors:[]};let size=0;
+ status('Importing fonts…');
+ try{
+  for(const file of files){
+   size+=file.size;
+   if(size>MAX_TOTAL){stats.errors.push('Selection exceeds 180 MB limit');break}
+   try{await processFile(file,stats)}catch(e){stats.errors.push(file.name+': '+e.message)}
+   render();
+  }
+ }finally{
+  loading=false;$('add').disabled=false;$('file').value='';
+  status(stats.added+' added'+(stats.errors.length?', '+stats.errors.length+' errors: '+stats.errors.slice(0,2).join('; '):'')+'.');
+  render();
+ }
+}
+function make(tag,cls,text){const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el}
+function renderGlyphs(box,record){
+ const arr=record.cps;
+ if(!arr.length){box.append(make('p','note','No Unicode character map found.'));return}
+ // Render a manageable slice while still showing meaningful ranges and counts.
+ const chosen=arr.filter(cp=>allRange.some(([a,b])=>cp>=a&&cp<=b)).slice(0,420);
+ for(const cp of chosen){
+  const cell=make('div','glyph');
+  const symbol=make('b','',String.fromCodePoint(cp));symbol.style.fontFamily='"'+record.family+'"';
+  const code=make('small','',cp.toString(16).toUpperCase().padStart(4,'0'));
+  cell.append(symbol,code);box.append(cell);
+ }
+ box.after(make('p','note','Showing '+chosen.length+' of '+arr.length+' mapped characters in selected common ranges.'));
+}
+function render(){
+ const root=$('fonts');root.replaceChildren();
+ const list=[...records.values()].sort((a,b)=>ascending?a.name.localeCompare(b.name):b.name.localeCompare(a.name));
+ $('count').textContent=list.length+' font'+(list.length===1?'':'s')+' loaded';
+ $('empty').hidden=!!list.length;$('clear').disabled=!list.length;
+ for(const rec of list){
+  const card=make('article','card'),head=make('div','cardhead'),left=make('div');
+  left.append(make('h2','fontname',rec.name),make('p','filename',rec.file));
+  const remove=make('button','remove','✕');remove.setAttribute('aria-label','Remove '+rec.name);
+  remove.onclick=()=>removeFont(rec.id);
+  head.append(left,remove);
+  const sample=make('div','sample',$('preview').value||' ');sample.style.fontFamily='"'+rec.family+'"';
+  const meta=make('div','meta');meta.append(make('span','',rec.cps.length.toLocaleString()+' mapped characters'),make('span','',rec.source===rec.file?'Direct import':'ZIP: '+rec.source));
+  const details=make('details'),summary=make('summary','', 'Character map');
+  const glyphs=make('div','glyphs');details.append(summary,glyphs);
+  details.addEventListener('toggle',()=>{if(details.open&&!glyphs.childElementCount)renderGlyphs(glyphs,rec)});
+  card.append(head,sample,meta,details);root.append(card);
+ }
+}
+function removeFont(id){
+ const rec=records.get(id);if(!rec)return;
+ document.fonts.delete(rec.face);URL.revokeObjectURL(rec.url);records.delete(id);render();
+ status(rec.name+' removed.');
+}
+$('add').onclick=()=>$('file').click();
+$('file').onchange=e=>importFiles([...e.target.files]);
+$('clear').onclick=()=>{
+ for(const id of [...records.keys()])removeFont(id);
+ status('All fonts cleared.');
+};
+$('sort').onclick=()=>{ascending=!ascending;$('sort').textContent='Sort: name '+(ascending?'↑':'↓');render()};
+$('preview').addEventListener('input',()=>{document.querySelectorAll('.sample').forEach(el=>el.textContent=$('preview').value||' ')});
+function applyTheme(mode){document.documentElement.dataset.theme=mode;$('theme').textContent=mode==='dark'?'☀ Light':'☾ Dark';$('theme').setAttribute('aria-label','Switch to '+(mode==='dark'?'light':'dark')+' theme');localStorage.setItem('font-shelf-theme',mode)}
+applyTheme(localStorage.getItem('font-shelf-theme')==='light'?'light':'dark');
+$('theme').onclick=()=>applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+render();
+</script>
+</body></html>
