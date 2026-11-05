@@ -35,7 +35,7 @@ def make_font(path: Path, family: str, scale: int, cmap: dict[int, str]):
     fb.setupOS2(sTypoAscender=int(scale*.8), sTypoDescender=-int(scale*.2))
     fb.setupPost()
     fb.setupMaxp()
-    fb.setupHead()
+    fb.setupHead(unitsPerEm=scale)
     fb.save(path)
 
 
