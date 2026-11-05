@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- All current and future Android text widgets inherit Morning Rainbow by default. -->
+    <style name="PocketBoardTheme" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">@font/morning_rainbow</item>
+    </style>
+</resources>

@@ -143,7 +143,7 @@ class MainActivity : Activity() {
         status = TextView(this).apply {
             text = "Disconnected"
             textSize = 13f
-            setTypeface(null, Typeface.BOLD)
+            typeface = resources.getFont(R.font.morning_rainbow)
             setTextColor(0xFFDDE8FF.toInt())
             gravity = Gravity.CENTER
             maxLines = 1
@@ -360,7 +360,7 @@ class MainActivity : Activity() {
                     TextView(this).apply {
                         text = label
                         textSize = if (label.length > 4) 10f else if (label.length > 2) 13f else 25f
-                        setTypeface(null, Typeface.BOLD)
+                        typeface = resources.getFont(R.font.morning_rainbow)
                         setTextColor(white)
                         gravity = Gravity.CENTER
                         maxLines = 1
