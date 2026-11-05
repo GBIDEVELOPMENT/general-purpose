@@ -12,8 +12,8 @@ import uharfbuzz as hb
 from GlyphMixer.headless.cli import RecipeError, build, codepoint, codepoints, root_path
 
 
-def make_font(path: Path, family: str, scale: int, cmap: dict[int, str]):
-    glyph_order = [".notdef"] + sorted(set(cmap.values()))
+def make_font(path: Path, family: str, scale: int, cmap: dict[int, str], extra_glyphs=()):
+    glyph_order = [".notdef"] + sorted(set(cmap.values())) + list(extra_glyphs)
     glyphs = {}
     metrics = {}
     for num, glyph in enumerate(glyph_order):
@@ -59,7 +59,7 @@ class HeadlessTest(unittest.TestCase):
             a, b, c = (folder / f"{name}.ttf" for name in ("a", "b", "c"))
             make_font(a, "Base", 1000, {65: "A", 66: "B", 97: "a", 110: "n", 101: "e", 111: "o"})
             make_font(b, "Lower Donor", 2000, {97: "a", 110: "n"})
-            make_font(c, "Upper Donor", 800, {65: "A", 66: "B", 110: "n"})
+            make_font(c, "Upper Donor", 800, {65: "A", 66: "B", 110: "n"}, extra_glyphs=("ornament",))
             relative = lambda p: str(p.relative_to(root_path(".")))
             recipe = {
                 "version": 1,
@@ -80,12 +80,16 @@ class HeadlessTest(unittest.TestCase):
                      "features": ["aalt", "salt"],
                      "context": {"followed_by": "e"}},
                     {"action": "reassign", "source": "B", "glyph": "n",
-                     "destination": "U+2605"}
+                     "destination": "U+2605"},
+                    {"action": "reassign", "source": "C", "glyph_name": "ornament",
+                     "destination": "U+E222"},
+                    {"action": "reassign", "source": "C", "glyph_index": 4,
+                     "destination": "U+E223"}
                 ],
             }
             destination = folder / "hybrid.ttf"
             report = build(recipe, destination)
-            self.assertEqual(report["mapped_characters"], 7)
+            self.assertEqual(report["mapped_characters"], 9)
             self.assertEqual(report["alternate_characters"], 3)
             self.assertEqual(report["features"], ["aalt", "salt", "rand", "ss01", "calt"])
             self.assertIn("missing", report["steps"][0])
@@ -95,6 +99,8 @@ class HeadlessTest(unittest.TestCase):
                 self.assertEqual(cmap[65], "u0041")
                 self.assertEqual(cmap[97], "u0061")
                 self.assertEqual(cmap[9733], "u2605")
+                self.assertEqual(cmap[0xE222], "uE222")
+                self.assertEqual(cmap[0xE223], "uE223")
                 self.assertIn("u0041.alt01", font.getGlyphOrder())
                 self.assertEqual(font["head"].unitsPerEm, 1000)
                 self.assertEqual(set(record.FeatureTag for record in
