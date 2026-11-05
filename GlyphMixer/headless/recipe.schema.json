@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gbidevelopment.github.io/general-purpose/GlyphMixer/headless/recipe.schema.json",
+  "title": "Glyph Mixer headless recipe v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "name",
+    "base",
+    "sources",
+    "operations"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "base": {
+      "type": "string",
+      "pattern": "^[A-Za-z_][A-Za-z0-9_-]{0,35}$"
+    },
+    "sources": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 80,
+      "propertyNames": {
+        "pattern": "^[A-Za-z_][A-Za-z0-9_-]{0,35}$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "member": {
+            "type": "string",
+            "minLength": 1
+          },
+          "face": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "axes": {
+            "type": "object",
+            "patternProperties": {
+              "^[A-Za-z0-9]{4}$": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "maxItems": 300,
+      "items": {
+        "type": "object",
+        "required": [
+          "action",
+          "source"
+        ],
+        "properties": {
+          "action": {
+            "enum": [
+              "replace",
+              "alternate",
+              "reassign",
+              "ligature"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_-]{0,35}$"
+          },
+          "target": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 1114111
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "glyph": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1114111
+              }
+            ]
+          },
+          "destination": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1114111
+              }
+            ]
+          },
+          "sequence": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 8
+          },
+          "features": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "aalt",
+                "salt",
+                "rand",
+                "ss01",
+                "ss02",
+                "calt"
+              ]
+            }
+          },
+          "feature": {
+            "enum": [
+              "liga",
+              "dlig"
+            ]
+          },
+          "context": {
+            "oneOf": [
+              {
+                "const": "adjacent-repeat"
+              },
+              {
+                "type": "object",
+                "minProperties": 1,
+                "additionalProperties": false,
+                "properties": {
+                  "preceded_by": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "followed_by": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            ]
+          },
+          "strict": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "enum": [
+                    "replace",
+                    "alternate"
+                  ]
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "target"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "const": "reassign"
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "glyph",
+                "destination"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "const": "ligature"
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "then": {
+              "required": [
+                "sequence",
+                "glyph"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "output": {
+      "type": "string",
+      "pattern": "\\.ttf$"
+    }
+  }
+}
