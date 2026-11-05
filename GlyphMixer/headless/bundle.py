@@ -102,7 +102,7 @@ def compile_bundle(core, bundle_path, output=None):
                         features.append("calt")
                     if feature=="rand":
                         features.append("aalt")
-                    op.update(action="alternate",target=cp,features=list(dict.fromkeys(features)))
+                    op.update(action="alternate",target="U+%04X" % cp,features=list(dict.fromkeys(features)))
                     if context=="repeat":
                         op["context"]="adjacent-repeat"
                     elif context in ("before","after","both"):
