@@ -39,6 +39,8 @@ jobs:
         run: |
           python GlyphMixer/headless/cli.py inventory --output GlyphMixer/build/fixture-inventory.json > /dev/null
           python -c 'import json; x=json.load(open("GlyphMixer/build/fixture-inventory.json")); print("Archives scanned:",x["archives"]); print("Font members:",sum(len(i["members"]) for i in x["items"])); print("Parse errors:",sum("error" in m for i in x["items"] for m in i["members"]))'
+      - name: Assemble and roundtrip a donor from all 22 fixture archives
+        run: python -m GlyphMixer.headless.smoke_fixtures
       - name: Build the requested or example headless recipe
         run: python GlyphMixer/headless/cli.py build --recipe "$RECIPE_PATH"
       - name: Confirm generated OpenType table and report
