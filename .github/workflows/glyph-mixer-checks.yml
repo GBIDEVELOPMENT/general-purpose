@@ -20,8 +20,10 @@ jobs:
         run: |
           node --check GlyphMixer/core.js
           node --check GlyphMixer/app.js
-      - name: Mapping and font assembly unit tests
-        run: node --test GlyphMixer/tests/*.test.cjs
+      - name: Install pinned test font engine
+        run: npm install --prefix GlyphMixer --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Mapping and real OTF round-trip tests
+        run: npm test --prefix GlyphMixer
       - name: Verify required static files
         run: |
           test -s GlyphMixer/index.html
