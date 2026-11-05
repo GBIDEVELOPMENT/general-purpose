@@ -340,19 +340,26 @@ class MainActivity : Activity() {
                 }
                 if (value == "EMPTY") return@forEach
                 val color = palettes[(buttonIndex++) % palettes.size]
+                // A source image can be slightly wider or taller than a square.
+                // Scale uniformly to fit the slot instead of distorting its edges.
+                val shape = getDrawable(shapeFor(value))!!
+                val nativeMax = maxOf(shape.intrinsicWidth, shape.intrinsicHeight).coerceAtLeast(1)
+                val fit = dp(buttonSize).toFloat() / nativeMax
+                val shapeW = (shape.intrinsicWidth * fit).toInt().coerceAtLeast(1)
+                val shapeH = (shape.intrinsicHeight * fit).toInt().coerceAtLeast(1)
                 val circle = FrameLayout(this).apply {
                     background = circularButton(color, shapeFor(value))
                     contentDescription = title
                     isFocusable = true
                     isClickable = true
-                    slot.addView(this, FrameLayout.LayoutParams(dp(buttonSize), dp(buttonSize), Gravity.CENTER))
+                    slot.addView(this, FrameLayout.LayoutParams(shapeW, shapeH, Gravity.CENTER))
                 }
                 val symbol = resourceFor(value)
                 val icon: ImageView? = if (symbol != null) ImageView(this).apply {
                     setImageResource(symbol)
                     imageTintList = ColorStateList.valueOf(cream)
                     setPadding(dp(8), dp(8), dp(8), dp(8))
-                    circle.addView(this, FrameLayout.LayoutParams(dp(buttonSize), dp(buttonSize), Gravity.CENTER))
+                    circle.addView(this, FrameLayout.LayoutParams(shapeW, shapeH, Gravity.CENTER))
                 } else null
                 if (icon == null) {
                     val label = when (value) {
@@ -373,7 +380,7 @@ class MainActivity : Activity() {
                         gravity = Gravity.CENTER
                         maxLines = 1
                         includeFontPadding = false
-                        circle.addView(this, FrameLayout.LayoutParams(dp(buttonSize), dp(buttonSize), Gravity.CENTER))
+                        circle.addView(this, FrameLayout.LayoutParams(shapeW, shapeH, Gravity.CENTER))
                     }
                 }
                 circle.setOnClickListener {

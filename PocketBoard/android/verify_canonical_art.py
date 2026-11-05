@@ -53,6 +53,8 @@ def xml(path):
     return ET.parse(path).getroot()
 
 def argb(s):
+    if s.startswith("#") and len(s) == 4:
+        return "FF" + "".join(ch * 2 for ch in s[1:]).upper()
     if s.startswith("#") and len(s) == 7:
         return "FF" + s[1:].upper()
     if s.startswith("#") and len(s) == 9:
@@ -74,7 +76,6 @@ assert "R.drawable.pb_connected_check" in main
 assert "R.drawable.pb_shape_pause" in main
 assert "R.drawable.pb_media_play" in main and "R.drawable.pb_media_pause" in main
 assert "showingPause = !showingPause" in main, "Play/pause must remain one toggle"
-assert main.count('Triple("') - main.count('""EMPTY"') >= 14  # sanity; exact check below
 assert len(re.findall(r'Triple\(".*?", ".*?", "(?!EMPTY)[A-Z_]+?"\)', main)) == 14
 for old in ("pb_button_squircle", "pb_choose", "pb_backspace"):
     assert old not in main, f"Legacy resource still referenced: {old}"
