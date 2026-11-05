@@ -42,7 +42,14 @@ test('keeps cubic and quadratic Bezier geometry when scaling',()=>{
  close(){calls.push(['Z'])}
  };
  core.transformCommands(commands,2,path);
- assert.deepEqual(calls,[['M',2,4],['L',6,8],['Q',10,12,14,16],['C',18,20,22,24,26,28],['Z']]);
+ assert.equal(calls.length,5);
+ assert.deepEqual(calls[0],['M',2,4]);
+ assert.deepEqual(calls[1],['L',6,8]);
+ assert.equal(calls[2][0],'C');
+ for(const [i,n] of [[1,26/3],[2,32/3],[3,34/3],[4,40/3],[5,14],[6,16]])
+   assert.ok(Math.abs(calls[2][i]-n)<1e-8);
+ assert.deepEqual(calls[3],['C',18,20,22,24,26,28]);
+ assert.deepEqual(calls[4],['Z']);
 });
 test('assembles a glyph assigned to another Unicode position and scales its em',()=>{
  class Path { constructor(){this.commands=[]} moveTo(x,y){this.commands.push(['M',x,y])}lineTo(x,y){this.commands.push(['L',x,y])}quadTo(){}curveTo(){}close(){} }
