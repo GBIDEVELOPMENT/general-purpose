@@ -56,17 +56,26 @@ function glyphMap(font){
  return [...cps].filter(cp=>cp>=32&&cp<=0x10ffff&&!(cp>=0xd800&&cp<=0xdfff)).sort((a,b)=>a-b);
 }
 function fingerprint(bytes){let h=2166136261;for(let i=0;i<bytes.length;i++){h^=bytes[i];h=Math.imul(h,16777619)}return bytes.length+':'+(h>>>0).toString(16)}
-async function addFont(bytes,file,source){
+function variantKey(font,file){
+ const names=font.names||{};
+ const local=name=>names[name]?.en||Object.values(names[name]||{})[0]||'';
+ const identity=local('postScriptName')||local('fullName')||[local('fontFamily'),local('fontSubfamily')].filter(Boolean).join(' ')||file.split('/').pop().replace(/\.(otf|ttf)$/i,'');
+ return String(identity).normalize('NFKC').toLocaleLowerCase().replace(/[\s_\-]+/g,'');
+}
+async function addFont(bytes,file,source,seenVariants=null){
  if(bytes.length>MAX_ENTRY)throw Error('Font exceeds 30 MB');
  if(records.size>=MAX_COUNT)throw Error('250-font limit reached');
  const key=fingerprint(bytes);
  if([...records.values()].some(x=>x.key===key))return false;
  const parsed=opentype.parse(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
+ const variant=variantKey(parsed,file);
+ if(seenVariants?.has(variant))return false;
  const id='fs'+(++counter),family='font-'+id;
  const url=URL.createObjectURL(new Blob([bytes],{type:'font/otf'}));
  const face=new FontFace(family,'url("'+url+'")');
  try{await face.load();document.fonts.add(face)}catch(e){URL.revokeObjectURL(url);throw Error('Browser cannot load this font')}
  records.set(id,{id,key,name:labelName(parsed,file),file:safeName(file),source:safeName(source),family,url,face,cps:glyphMap(parsed)});
+ seenVariants?.add(variant);
  return true;
 }
 async function processFile(file,stats){
@@ -75,10 +84,13 @@ async function processFile(file,stats){
   if(file.size>MAX_TOTAL)throw Error('ZIP exceeds 180 MB');
   const archive=new Uint8Array(await file.arrayBuffer());
   const contents=fflate.unzipSync(archive,{filter:info=>supported.test(info.name)&&info.originalSize<=MAX_ENTRY});
-  for(const [name,bytes] of Object.entries(contents)){
+  const seenVariants=new Set();
+  // Prefer OpenType outlines when an archive includes both .otf and .ttf of the same face.
+  const candidates=Object.entries(contents).sort(([a],[b])=>Number(/\.otf$/i.test(b))-Number(/\.otf$/i.test(a)));
+  for(const [name,bytes] of candidates){
    if(stats.processed>=MAX_COUNT)throw Error('Import limit reached');
    stats.processed++;
-   try{stats.added+=Number(await addFont(bytes,name,file.name))}catch(e){stats.errors.push(name+': '+e.message)}
+   try{stats.added+=Number(await addFont(bytes,name,file.name,seenVariants))}catch(e){stats.errors.push(name+': '+e.message)}
   }
  }else if(supported.test(file.name)){
   stats.processed++;
