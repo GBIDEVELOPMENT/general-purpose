@@ -31,3 +31,26 @@ Apps family silhouette.
 
 Source aspect ratios and subpixel irregularities remain in the SVG paths.
 Android tinting changes fill colours without redrawing their geometry.
+
+
+## Bézier retrace, November 5, 2026
+
+The first 16 visible button SVGs accidentally approximated source contours with
+angular polygons, producing visibly faceted buttons at Android sizes. The 16
+controls are now independently retraced from the original reference JPEG with
+periodic smoothing and cubic Bézier interpolation (48–71 segments per contour).
+Each button's aspect ratio, asymmetry, shoulders and corner character is kept.
+Colors, symbols, typography and behavior are unchanged.
+
+Measured silhouette-mask-vs-curve overlap: 0.985–0.992 intersection over union
+for the sixteen controls at source image resolution. This checks geometric
+fidelity; it is not a substitute for visual acceptance on the user's device.
+
+The existing detailed connected-pill.svg was already smooth and remains intact.
+The 16 earlier faceted SVGs are archived under the retired-art/polygon-button-
+silhouettes directory. The matching Android pb_shape_*.xml vector paths are
+regenerated, and verify_canonical_art.py now rejects straight-line regressions.
+
+For reproducibility, android/retrace_button_silhouettes.py reads the versioned
+reference JPG without network access. It requires pillow, numpy, scipy and
+opencv-python-headless and preserves existing retired-art snapshots.
