@@ -437,13 +437,15 @@ internal static class InputInjector
         ushort vk = key switch
         {
             "BACKSPACE" => 0x08, "ENTER" => 0x0D, "TAB" => 0x09,
-            "ESCAPE" => 0x1B, "LEFT" => 0x25, "UP" => 0x26,
+            "ESCAPE" => 0x1B, "F5" => 0x74, "LEFT" => 0x25, "UP" => 0x26,
             "RIGHT" => 0x27, "DOWN" => 0x28, "DELETE" => 0x2E,
             "VOLUME_UP" => 0xAF, "VOLUME_DOWN" => 0xAE, "VOLUME_MUTE" => 0xAD,
             "MEDIA_NEXT" => 0xB0, "MEDIA_PREV" => 0xB1, "MEDIA_PLAY_PAUSE" => 0xB3,
             _ => 0
         };
         if (vk == 0) return;
+        // Release an open Alt+Tab session before refreshing the chosen app.
+        if (key == "F5") ReleaseAltTab();
         Send(vk, 0, 0);
         Send(vk, 0, KEYEVENTF_KEYUP);
     }

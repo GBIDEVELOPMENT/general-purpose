@@ -37,6 +37,7 @@ SYMBOLS = {
     "overlapping-windows": "pb_copy", "windows-check": "pb_all_copy",
     "windows-plus": "pb_paste", "escape": "pb_escape",
     "tab": "pb_tab", "enter": "pb_enter",
+    "refresh": "pb_refresh",
 }
 SHAPES = (
     "search", "clear", "microphone", "volume-down", "volume-up", "mute",
@@ -76,7 +77,7 @@ assert "R.drawable.pb_connected_check" in main
 assert "R.drawable.pb_shape_pause" in main
 assert "R.drawable.pb_media_play" in main and "R.drawable.pb_media_pause" in main
 assert "showingPause = !showingPause" in main, "Play/pause must remain one toggle"
-assert len(re.findall(r'Triple\(".*?", ".*?", "(?!EMPTY)[A-Z_]+?"\)', main)) == 14
+assert len(re.findall(r'Triple\(".*?", ".*?", "(?!EMPTY)[A-Z_0-9]+?"\)', main)) == 15
 # Layout contract: exactly two equal-width columns in each of three equal-height
 # rows; each group retains its requested order and edge justification.
 groups = re.findall(
@@ -88,12 +89,12 @@ expected_groups = (
     (("MEDIA_PREV", "MEDIA_PLAY_PAUSE", "MEDIA_NEXT"), 45, "true"),
     (("ALT_TAB_OPEN", "ALT_TAB_CLOSE"), 49, "false"),
     (("VOLUME_DOWN", "VOLUME_UP", "VOLUME_MUTE"), 45, "true"),
-    ((), 49, "false"),
+    (("F5",), 49, "false"),
     (("TAB", "ENTER", "ESCAPE"), 51, "true"),
 )
 assert len(groups) == 6, f"Expected six grid cells, found {len(groups)}"
 for (source, size, align), (expected_actions, expected_size, expected_align) in zip(groups, expected_groups):
-    actions = tuple(re.findall(r'Triple\("[^"]*", "[^"]*", "([A-Z_]+)"\)', source))
+    actions = tuple(re.findall(r'Triple\("[^"]*", "[^"]*", "([A-Z_0-9]+)"\)', source))
     assert (actions, int(size), align) == (expected_actions, expected_size, expected_align), (actions, size, align)
 assert main.count("controlGridRow().also { row ->") == 3
 assert "row.addView(this, LinearLayout.LayoutParams(0, dp(53), 1f))" in main
@@ -113,6 +114,13 @@ expected_actions = (
 )
 assert action_order == expected_actions, action_order
 assert len(set(action_order)) == len(BUTTON_ORDER)
+assert '.toMap() + ("F5" to PocketBoardPalette.CORAL)' in main
+assert 'Triple("Refresh browser (F5)", "key", "F5")' in main
+assert '"F5" -> R.drawable.pb_refresh' in main
+assert '"ALT_TAB_OPEN", "ALT_TAB_CLOSE", "F5" -> R.drawable.pb_shape_apps_grid' in main
+windows_source = (ROOT / "windows/Program.cs").read_text()
+assert '"F5" => 0x74' in windows_source, "Windows receiver must send VK_F5"
+assert 'if (key == "F5") ReleaseAltTab();' in windows_source
 
 # Two-finger gesture must exclude one-finger click/pointer injection, track
 # pointer IDs through move, and issue bounded wheel steps.
@@ -216,4 +224,4 @@ assert "R.drawable.pb_cursor_pointer" in main
 assert "val pointer = Path().apply" not in main, "Legacy procedural cursor was not retired"
 assert '"ESCAPE" -> R.drawable.pb_shape_tab' in main
 assert '"TAB" -> R.drawable.pb_shape_escape' in main
-print("PocketBoard palette and 18 glyph + 17 silhouette SVG→Android contour contracts verified")
+print("PocketBoard palette and 19 glyph + 17 silhouette SVG→Android contour contracts verified")
