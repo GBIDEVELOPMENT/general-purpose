@@ -323,7 +323,7 @@ def build(recipe: dict, output: Path | None = None) -> dict:
     )
     builder.setupPost()
     builder.setupMaxp()
-    builder.setupHead()
+    builder.setupHead(unitsPerEm=upm)
     output_font = builder.font
 
     # Real GSUB features: alternate glyphs have no Unicode; text stays unchanged.
