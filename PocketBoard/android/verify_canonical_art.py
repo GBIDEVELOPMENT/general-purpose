@@ -101,6 +101,19 @@ assert "val gap = dp(6)" in main
 assert "minOf(dp(buttonSize), ((available - gap * (tiles.size - 1)) / tiles.size)" in main
 assert "if (alignRight) (available - occupied).coerceAtLeast(0) else 0" in main
 assert "colourByAction.getValue(value)" in main
+# Owner-approved 1.0.5 colour assignment permutation.
+mapping = re.search(r'val colourByAction = listOf\((.*?)\)\.zip\(PocketBoardPalette.BUTTON_COLORS\)', main, re.S)
+assert mapping is not None
+action_order = tuple(re.findall(r'"([A-Z_]+)"', mapping.group(1)))
+expected_actions = (
+    "VOLUME_DOWN", "VOLUME_UP", "VOLUME_MUTE",
+    "MEDIA_PREV", "MEDIA_PLAY_PAUSE", "ALT_TAB_OPEN",
+    "MEDIA_NEXT", "ESCAPE", "COPY", "SELECT_ALL_COPY",
+    "PASTE", "ALT_TAB_CLOSE", "TAB", "ENTER",
+)
+assert action_order == expected_actions, action_order
+assert len(set(action_order)) == len(BUTTON_ORDER)
+
 # Two-finger gesture must exclude one-finger click/pointer injection, track
 # pointer IDs through move, and issue bounded wheel steps.
 for gesture_contract in (
