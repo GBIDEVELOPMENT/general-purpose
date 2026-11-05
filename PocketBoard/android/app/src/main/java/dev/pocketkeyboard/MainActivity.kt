@@ -168,14 +168,21 @@ class MainActivity : Activity() {
             visibility = View.GONE
             root.addView(this, LinearLayout.LayoutParams(1, 1))
         }
-        // Dedicated trackpad consumes its own gesture stream, with no scrolling parent.
-        // Calibration from Pixel usage: a full-width swipe previously moved the
-        // Windows cursor approximately one-third of the screen. Triple the
-        // previous 1.5 dp-scaled gain, while carrying fractional subpixel motion
-        // so slow/short gestures are not lost to integer truncation.
+        // One finger drives the pointer and taps. A second finger cancels the
+        // pending tap/long press and switches to wheel scrolling for the entire
+        // gesture; lifting one finger never resumes cursor movement mid-gesture.
         val pointerGain = 4.5f
+        val scrollStepDp = 28f
         var remainderX = 0f
         var remainderY = 0f
+        var scrollCarryX = 0f
+        var scrollCarryY = 0f
+        var lastScrollCenterX = 0f
+        var lastScrollCenterY = 0f
+        var scrollPointerA = MotionEvent.INVALID_POINTER_ID
+        var scrollPointerB = MotionEvent.INVALID_POINTER_ID
+        var twoFingerScrolling = false
+        var suppressSingleFingerUntilUp = false
         val detector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
             override fun onDown(e: MotionEvent): Boolean = true
             override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
@@ -208,8 +215,84 @@ class MainActivity : Activity() {
             }
         })
         val trackpad = RainbowPad(this).apply {
-            contentDescription = "Rainbow touchpad. Slide to move pointer, tap to click, hold to right-click"
-            setOnTouchListener { _, event -> detector.onTouchEvent(event); true }
+            contentDescription = "Rainbow touchpad. One finger moves the pointer; tap to click; hold for right-click. Two fingers scroll vertically or horizontally."
+            setOnTouchListener { _, event ->
+                when (event.actionMasked) {
+                    MotionEvent.ACTION_DOWN -> {
+                        twoFingerScrolling = false
+                        suppressSingleFingerUntilUp = false
+                        detector.onTouchEvent(event)
+                    }
+                    MotionEvent.ACTION_POINTER_DOWN -> {
+                        if (event.pointerCount == 2 && !suppressSingleFingerUntilUp) {
+                            // A synthetic cancel prevents a one-finger tap or long-press
+                            // from firing after this gesture becomes a two-finger scroll.
+                            val cancel = MotionEvent.obtain(event)
+                            cancel.action = MotionEvent.ACTION_CANCEL
+                            detector.onTouchEvent(cancel)
+                            cancel.recycle()
+                            twoFingerScrolling = true
+                            suppressSingleFingerUntilUp = true
+                            scrollPointerA = event.getPointerId(0)
+                            scrollPointerB = event.getPointerId(1)
+                            lastScrollCenterX = (event.getX(0) + event.getX(1)) * 0.5f
+                            lastScrollCenterY = (event.getY(0) + event.getY(1)) * 0.5f
+                            scrollCarryX = 0f
+                            scrollCarryY = 0f
+                        } else {
+                            twoFingerScrolling = false
+                            suppressSingleFingerUntilUp = true
+                        }
+                    }
+                    MotionEvent.ACTION_MOVE -> {
+                        if (twoFingerScrolling && event.pointerCount == 2) {
+                            // Pointer IDs survive finger reorderings in MotionEvent.
+                            val indexA = event.findPointerIndex(scrollPointerA)
+                            val indexB = event.findPointerIndex(scrollPointerB)
+                            if (indexA >= 0 && indexB >= 0) {
+                                val centerX = (event.getX(indexA) + event.getX(indexB)) * 0.5f
+                                val centerY = (event.getY(indexA) + event.getY(indexB)) * 0.5f
+                                val pixelsPerDp = resources.displayMetrics.density
+                                // Natural scrolling: fingers down -> content down;
+                                // fingers left -> content left. Win32 horizontal
+                                // wheel sign is opposite the finger's X delta.
+                                scrollCarryX += (lastScrollCenterX - centerX) / pixelsPerDp
+                                scrollCarryY += (centerY - lastScrollCenterY) / pixelsPerDp
+                                lastScrollCenterX = centerX
+                                lastScrollCenterY = centerY
+                                val horizontal = (scrollCarryX / scrollStepDp).toInt().coerceIn(-4, 4)
+                                val vertical = (scrollCarryY / scrollStepDp).toInt().coerceIn(-4, 4)
+                                scrollCarryX -= horizontal * scrollStepDp
+                                scrollCarryY -= vertical * scrollStepDp
+                                if (horizontal != 0 || vertical != 0) {
+                                    send(JSONObject().put("type", "mouse_scroll")
+                                        .put("vertical", vertical).put("horizontal", horizontal))
+                                    touchpadFeedback.text = ""
+                                }
+                            } else {
+                                twoFingerScrolling = false
+                            }
+                        } else if (!suppressSingleFingerUntilUp) {
+                            detector.onTouchEvent(event)
+                        }
+                    }
+                    MotionEvent.ACTION_POINTER_UP -> {
+                        twoFingerScrolling = false
+                        suppressSingleFingerUntilUp = true
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        if (!suppressSingleFingerUntilUp) detector.onTouchEvent(event)
+                        twoFingerScrolling = false
+                        suppressSingleFingerUntilUp = false
+                    }
+                    MotionEvent.ACTION_CANCEL -> {
+                        detector.onTouchEvent(event)
+                        twoFingerScrolling = false
+                        suppressSingleFingerUntilUp = false
+                    }
+                }
+                true
+            }
         }
         val trackpadParams = LinearLayout.LayoutParams(-1, dp(146)).apply {
             // Match the 2dp pad margin + 16dp feedback area below it.
@@ -301,8 +384,13 @@ class MainActivity : Activity() {
                 previous = updated
             }
         })
-        val palettes = PocketBoardPalette.BUTTON_COLORS
-        var buttonIndex = 0
+        // Preserve the per-command canonical colours while rearranging tiles.
+        val colourByAction = listOf(
+            "VOLUME_DOWN", "VOLUME_UP", "VOLUME_MUTE",
+            "MEDIA_PREV", "MEDIA_PLAY_PAUSE", "MEDIA_NEXT",
+            "ALT_TAB_OPEN", "ALT_TAB_CLOSE", "COPY", "SELECT_ALL_COPY",
+            "PASTE", "ESCAPE", "TAB", "ENTER"
+        ).zip(PocketBoardPalette.BUTTON_COLORS).toMap()
         var showingPause = false // presentation-only: no media state queries
         fun resourceFor(value: String): Int? = when (value) {
             "VOLUME_DOWN" -> R.drawable.pb_volume_down
@@ -339,94 +427,122 @@ class MainActivity : Activity() {
             "ENTER" -> R.drawable.pb_shape_enter
             else -> error("Unmapped silhouette: $value")
         }
-        fun controlRow(actions: List<Triple<String, String, String>>, buttonSize: Int = 49) {
-            val row = LinearLayout(this).apply {
-                orientation = LinearLayout.HORIZONTAL
-                gravity = Gravity.CENTER_VERTICAL
-                root.addView(this, LinearLayout.LayoutParams(-1, dp(53)).apply { topMargin = dp(3) })
+        // Invisible 2-column x 3-row grid. Both columns use equal weight and
+        // every row retains 53dp + 3dp spacing, preserving the IME height budget.
+        // The 6dp edge-to-edge gaps are shared by all groups; thin media and
+        // volume silhouettes therefore sit closer than equally spaced slots.
+        fun controlGridRow() = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER_VERTICAL
+            root.addView(this, LinearLayout.LayoutParams(-1, dp(53)).apply { topMargin = dp(3) })
+        }
+        fun controlGroup(
+            row: LinearLayout, actions: List<Triple<String, String, String>>,
+            buttonSize: Int, alignRight: Boolean
+        ) {
+            val column = FrameLayout(this).apply {
+                row.addView(this, LinearLayout.LayoutParams(0, dp(53), 1f))
             }
+            if (actions.isEmpty()) return
+            val tiles = mutableListOf<Pair<FrameLayout, FrameLayout>>()
             actions.forEach { (title, type, value) ->
-                val slot = FrameLayout(this).apply {
-                    row.addView(this, LinearLayout.LayoutParams(0, dp(53), 1f))
-                }
-                if (value == "EMPTY") return@forEach
-                val color = palettes[(buttonIndex++) % palettes.size]
-                // A source image can be slightly wider or taller than a square.
-                // Scale uniformly to fit the slot instead of distorting its edges.
-                val shape = getDrawable(shapeFor(value))!!
-                val nativeMax = maxOf(shape.intrinsicWidth, shape.intrinsicHeight).coerceAtLeast(1)
-                val fit = dp(buttonSize).toFloat() / nativeMax
-                val shapeW = (shape.intrinsicWidth * fit).toInt().coerceAtLeast(1)
-                val shapeH = (shape.intrinsicHeight * fit).toInt().coerceAtLeast(1)
-                val circle = FrameLayout(this).apply {
-                    background = circularButton(color, shapeFor(value))
+                val tapTarget = FrameLayout(this).apply {
                     contentDescription = title
                     isFocusable = true
                     isClickable = true
-                    slot.addView(this, FrameLayout.LayoutParams(shapeW, shapeH, Gravity.CENTER))
+                    column.addView(this, FrameLayout.LayoutParams(dp(buttonSize), dp(53)))
+                }
+                val surface = FrameLayout(this).apply {
+                    background = circularButton(colourByAction.getValue(value), shapeFor(value))
+                    tapTarget.addView(this, FrameLayout.LayoutParams(dp(buttonSize), dp(buttonSize), Gravity.CENTER))
                 }
                 val symbol = resourceFor(value)
                 val icon: ImageView? = if (symbol != null) ImageView(this).apply {
                     setImageResource(symbol)
                     imageTintList = ColorStateList.valueOf(cream)
                     setPadding(dp(8), dp(8), dp(8), dp(8))
-                    circle.addView(this, FrameLayout.LayoutParams(shapeW, shapeH, Gravity.CENTER))
+                    surface.addView(this, FrameLayout.LayoutParams(-1, -1))
                 } else null
                 if (icon == null) {
-                    val label = when (value) {
-                        "ESCAPE" -> "Esc"
-                        "VOLUME_DOWN" -> "−"
-                        "VOLUME_UP" -> "+"
-                        "VOLUME_MUTE" -> "×"
-                        "ALT_TAB_OPEN" -> "Apps"
-                        "ALT_TAB_NEXT" -> "Next"
-                        "ALT_TAB_CLOSE" -> "Choose"
-                        else -> title
-                    }
                     TextView(this).apply {
-                        text = label
-                        textSize = if (label.length > 4) 10f else if (label.length > 2) 13f else 25f
+                        text = title
                         typeface = resources.getFont(R.font.morning_rainbow)
+                        textSize = 13f
                         setTextColor(cream)
                         gravity = Gravity.CENTER
-                        maxLines = 1
                         includeFontPadding = false
-                        circle.addView(this, FrameLayout.LayoutParams(shapeW, shapeH, Gravity.CENTER))
+                        surface.addView(this, FrameLayout.LayoutParams(-1, -1))
                     }
                 }
-                circle.setOnClickListener {
+                tapTarget.setOnClickListener {
                     sendAction(type, value)
                     if (value == "MEDIA_PLAY_PAUSE" && icon != null) {
                         showingPause = !showingPause
                         icon.setImageResource(if (showingPause) R.drawable.pb_media_pause else R.drawable.pb_media_play)
-                        circle.contentDescription = if (showingPause) "Pause media" else "Play media"
+                        tapTarget.contentDescription = if (showingPause) "Pause media" else "Play media"
+                    }
+                }
+                tiles.add(tapTarget to surface)
+            }
+            column.addOnLayoutChangeListener { _, left, _, right, _, _, _, _, _ ->
+                val available = right - left
+                if (available <= 0) return@addOnLayoutChangeListener
+                val gap = dp(6)
+                val size = minOf(dp(buttonSize), ((available - gap * (tiles.size - 1)) / tiles.size).coerceAtLeast(1))
+                val occupied = size * tiles.size + gap * (tiles.size - 1)
+                val start = if (alignRight) (available - occupied).coerceAtLeast(0) else 0
+                tiles.forEachIndexed { index, (tapTarget, surface) ->
+                    val tileParams = tapTarget.layoutParams as FrameLayout.LayoutParams
+                    if (tileParams.width != size) {
+                        tileParams.width = size
+                        tapTarget.layoutParams = tileParams
+                    }
+                    tapTarget.translationX = (start + index * (size + gap)).toFloat()
+                    // Preserve source-contour aspect ratio, even on narrow screens.
+                    val shape = getDrawable(shapeFor(actions[index].third))!!
+                    val scale = size.toFloat() / maxOf(shape.intrinsicWidth, shape.intrinsicHeight).coerceAtLeast(1)
+                    val shapeWidth = (shape.intrinsicWidth * scale).roundToInt().coerceAtLeast(1)
+                    val shapeHeight = (shape.intrinsicHeight * scale).roundToInt().coerceAtLeast(1)
+                    val shapeParams = surface.layoutParams as FrameLayout.LayoutParams
+                    if (shapeParams.width != shapeWidth || shapeParams.height != shapeHeight) {
+                        shapeParams.width = shapeWidth
+                        shapeParams.height = shapeHeight
+                        surface.layoutParams = shapeParams
                     }
                 }
             }
         }
-        controlRow(listOf(
-            Triple("Volume down", "key", "VOLUME_DOWN"),
-            Triple("Volume up", "key", "VOLUME_UP"),
-            Triple("Mute", "key", "VOLUME_MUTE"),
-            Triple("Previous track", "key", "MEDIA_PREV"),
-            Triple("Play or pause media", "key", "MEDIA_PLAY_PAUSE"),
-            Triple("Next track", "key", "MEDIA_NEXT")), buttonSize = 45)
-        // App switching and clipboard form one compact six-button row.
-        // Keep the related Apps -> Next -> Choose sequence adjacent.
-        controlRow(listOf(
-            Triple("Apps", "shortcut", "ALT_TAB_OPEN"),
-            Triple("Choose", "shortcut", "ALT_TAB_CLOSE"),
-            Triple("", "", "EMPTY"),
-            Triple("Copy", "shortcut", "COPY"),
-            Triple("Select all and copy", "shortcut", "SELECT_ALL_COPY"),
-            Triple("Paste", "shortcut", "PASTE")))
-        controlRow(listOf(
-            Triple("", "", "EMPTY"),
-            Triple("", "", "EMPTY"),
-            Triple("", "", "EMPTY"),
-            Triple("Esc", "key", "ESCAPE"),
-            Triple("Tab", "key", "TAB"),
-            Triple("Enter", "key", "ENTER")), buttonSize = 51)
+        controlGridRow().also { row ->
+            controlGroup(row, listOf(
+                Triple("Copy", "shortcut", "COPY"),
+                Triple("Paste", "shortcut", "PASTE"),
+                Triple("Select all and copy", "shortcut", "SELECT_ALL_COPY")
+            ), buttonSize = 49, alignRight = false) // A1
+            controlGroup(row, listOf(
+                Triple("Previous track", "key", "MEDIA_PREV"),
+                Triple("Play or pause media", "key", "MEDIA_PLAY_PAUSE"),
+                Triple("Next track", "key", "MEDIA_NEXT")
+            ), buttonSize = 45, alignRight = true) // B1
+        }
+        controlGridRow().also { row ->
+            controlGroup(row, listOf(
+                Triple("Alt-tab apps", "shortcut", "ALT_TAB_OPEN"),
+                Triple("Select app", "shortcut", "ALT_TAB_CLOSE")
+            ), buttonSize = 49, alignRight = false) // A2
+            controlGroup(row, listOf(
+                Triple("Volume down", "key", "VOLUME_DOWN"),
+                Triple("Volume up", "key", "VOLUME_UP"),
+                Triple("Mute", "key", "VOLUME_MUTE")
+            ), buttonSize = 45, alignRight = true) // B2
+        }
+        controlGridRow().also { row ->
+            controlGroup(row, emptyList(), buttonSize = 49, alignRight = false) // A3
+            controlGroup(row, listOf(
+                Triple("Tab", "key", "TAB"),
+                Triple("Enter", "key", "ENTER"),
+                Triple("Esc", "key", "ESCAPE")
+            ), buttonSize = 51, alignRight = true) // B3
+        }
         // Keep a landscape trackpad, never let it expand into portrait.
         // Use only residual vertical space after the header, editor, and ALL
         // action rows are laid out; extra room remains dark and empty.
