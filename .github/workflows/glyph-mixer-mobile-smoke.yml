@@ -4,6 +4,7 @@ on:
     paths:
       - 'GlyphMixer/tests/mobile-variations-smoke.cjs'
       - 'GlyphMixer/compiler-worker.js'
+      - 'GlyphMixer/app.js'
       - 'GlyphMixer/variations-ui.js'
       - 'GlyphMixer/variations-core.js'
       - 'GlyphMixer/index.html'
@@ -42,6 +43,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: glyph-mixer-mobile-${{ github.run_id }}
-          path: GlyphMixer/build/mobile-variations-smoke.png
+          path: GlyphMixer/build/mobile-variations-*.png
           if-no-files-found: ignore
           retention-days: 7
