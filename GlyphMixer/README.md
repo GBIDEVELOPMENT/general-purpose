@@ -16,6 +16,12 @@ An independent, mobile-first, local-only web app for constructing a hybrid font 
 6. **Save project** writes a self-contained .glyphmix ZIP via Chrome on Android's native Save As file picker. If unavailable, it uses a browser download. **Open** restores the embedded fonts and mapping decisions; no external font links are required.
 7. **Export OTF** assembles mapped glyph outlines and emits a font file via the same native file-saving mechanism.
 
+## Headless and agent-driven OpenType assembly
+
+A separate Python/fontTools engine in [headless/](headless/README.md) accepts versioned, declarative JSON recipes and generates downloadable OpenType TTF fonts containing **real GSUB alternate glyph rules**. Agents can take requests such as "Use A as the base, replace lowercase letters with B, add uppercase letters from C as contextual or selectable alternates, and name the result Z," translate them into [recipes](recipes/), then run the compiler through [GitHub Actions](../.github/workflows/glyph-mixer-headless.yml) or locally. The compiler supports Unicode reassignment, alternate feature tags (aalt, salt, rand, ss01, ss02), adjacent-repeat/neighbor-context calt, and optional liga/dlig. **The browser UI does not yet expose these GSUB controls.** The two modes remain deliberately distinct for now.
+
+The 22 sample ZIPs are kept in [test-fonts/](test-fonts/) as fixtures; CI inventories all embedded fonts, round-trips actual donor glyphs from each archive, and verifies shaping with HarfBuzz. Generated fonts and reports are artifacts and are not committed to the repository.
+
 ## Scope and limitations, first release
 
 - Imports .ttf, .otf, .woff, and ZIP archives of those formats. WOFF2, TTC, OTC, variable-font instancing, and color-glyph flattening are **not yet supported** for assembly. Unsupported formats must not be silently accepted or discarded.
