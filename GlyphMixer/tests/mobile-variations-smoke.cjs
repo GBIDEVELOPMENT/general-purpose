@@ -63,10 +63,11 @@ async function main(){
    assert.match(compiled.status,/Built [0-9]+ glyphs/);
    assert.match(compiled.css,/calt/);
    assert.match(compiled.font,/GlyphMixerAdvanced/);
-   // Validate project save/open is self-contained and carries OpenType rules.
+   // Reload to prove project save/open restores original bytes and rules from disk.
+   await page.reload({waitUntil:'domcontentloaded'});
    await page.locator('#projectFile').setInputFiles(bundle);
-   await page.waitForFunction(()=>window.GlyphMixerBridge.getState().variations.length===1,
-     null,{timeout:45000});
+   await page.waitForFunction(()=>window.GlyphMixerBridge.getState().variations.length===1 &&
+     window.GlyphMixerBridge.getState().fonts.size===2,null,{timeout:45000});
    const restored=await page.evaluate(()=>window.GlyphMixerBridge.getState().variations[0]);
    assert.equal(restored.target,110);
    assert.equal(restored.context,'repeat');
