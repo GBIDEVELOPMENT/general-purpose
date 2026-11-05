@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#131923">
+<meta name="description" content="Build a hybrid typeface from the glyphs of your own fonts. Everything stays on your device.">
+<title>Glyph Mixer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ribeye&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+ <div class="brand"><span class="brandmark" aria-hidden="true">Ag</span><div><h1>Glyph Mixer</h1><small>Typeface workshop</small></div></div>
+ <button type="button" id="themeToggle" class="iconbutton" aria-label="Switch theme">☀</button>
+</header>
+<main>
+ <section id="welcome" class="welcome">
+  <div class="intro-art" aria-hidden="true"><span>A</span><span>g</span><span>&amp;</span></div>
+  <p class="eyebrow">YOUR OWN HYBRID TYPEFACE</p>
+  <h2>Start with a font. Make it yours.</h2>
+  <p>Choose a relatively complete font as your foundation, then borrow individual letters, symbols and ornaments from as many other fonts as you like.</p>
+  <button id="chooseBase" class="button primary big" type="button">＋ Start with an existing font</button>
+  <button id="openInitialProject" class="button secondary big" type="button">↥ Open a saved project</button>
+  <p class="footnote">Private by design. Fonts and projects are processed locally, without uploading them.</p>
+ </section>
+ <section id="workspace" hidden>
+  <div class="projectbar">
+   <div class="projecttitle">
+    <label for="familyName" class="eyebrow">NEW FONT FAMILY</label>
+    <input id="familyName" type="text" maxlength="100" value="My Hybrid Font" autocomplete="off" spellcheck="false">
+    <div id="projectSummary" class="muted tiny"></div>
+   </div>
+   <div class="projecttools">
+    <button id="saveProject" class="button secondary" type="button" title="Save editable project">Save project</button>
+    <button id="openProject" class="button secondary" type="button" title="Open project">Open</button>
+    <button id="exportFont" class="button primary" type="button">Export OTF</button>
+   </div>
+  </div>
+  <section id="mapPanel" class="panel">
+   <div class="sectionheading"><div><p class="eyebrow">DESTINATION MAP</p><h2>Choose a character to replace</h2></div><button id="addPosition" class="button secondary" type="button">＋ Position</button></div>
+   <div class="searchbar"><input id="targetSearch" type="search" autocomplete="off" aria-label="Search destination characters" placeholder="Search character, U+0041, or hex…" /><select id="rangeFilter" aria-label="Character range"><option value="common">Common Latin</option><option value="all">All mapped</option><option value="changes">Replacements only</option><option value="other">Outside Latin</option></select></div>
+   <div id="mapCount" class="tiny muted"></div>
+   <div id="targetGrid" class="glyphgrid" role="group" aria-label="Destination character map"></div>
+   <button id="showMore" class="button secondary wide" type="button" hidden>Show more characters</button>
+   <p class="footnote">Select a tile to browse replacement glyphs. Your starting font remains the fallback for every unchanged character.</p>
+  </section>
+  <section id="sourcesPanel" class="panel" hidden>
+   <div class="sectionheading"><div><p class="eyebrow">SOURCE LIBRARY</p><h2>Fonts in this project</h2></div></div>
+   <button id="addSources" class="button primary wide" type="button">＋ Add fonts or ZIP archives</button>
+   <div id="sourceList" class="source-list"></div>
+  </section>
+  <section id="previewPanel" class="panel" hidden>
+   <div class="sectionheading"><div><p class="eyebrow">LIVE PROOF</p><h2>See the hybrid in context</h2></div></div>
+   <label for="previewText" class="fieldlabel">Sample text</label>
+   <textarea id="previewText" rows="3" spellcheck="false">Thus Spake Zarathustra</textarea>
+   <div class="previewtools"><label for="previewSize">Size <output id="previewSizeValue">36</output> px</label><input type="range" id="previewSize" min="16" max="84" value="36"></div>
+   <div id="previewOutput" class="preview-output" aria-live="polite">Choose a base font to begin.</div>
+   <button id="refreshPreview" class="button secondary wide" type="button">↻ Refresh built-font preview</button>
+   <p class="footnote">This preview uses the generated OpenType font. It may take a moment to rebuild for large character sets.</p>
+  </section>
+ </section>
+</main>
+<nav id="bottomNav" class="bottomnav" aria-label="Workspace tabs" hidden>
+ <button type="button" class="active" data-tab="map" aria-current="page"><span>▦</span> Map</button>
+ <button type="button" data-tab="sources"><span>◫</span> Sources</button>
+ <button type="button" data-tab="preview"><span>Ag</span> Preview</button>
+</nav>
+<div id="pickerOverlay" class="overlay" hidden>
+ <div class="sheet-backdrop" id="pickerBackdrop"></div>
+ <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="pickerTitle">
+  <div class="sheet-handle" aria-hidden="true"></div>
+  <div class="sheet-header">
+   <div><p class="eyebrow">GLYPH REPLACEMENT</p><h2 id="pickerTitle">Replace character</h2><p id="pickerSubtitle" class="tiny muted"></p></div>
+   <button type="button" id="closePicker" class="iconbutton" aria-label="Close glyph picker">✕</button>
+  </div>
+  <div class="picker-current" id="pickerCurrent"></div>
+  <label for="pickerFont" class="fieldlabel">Choose source font</label>
+  <select id="pickerFont" class="fullinput"></select>
+  <label for="pickerSearch" class="fieldlabel">Find a glyph (character, U+code, or #glyph index)</label>
+  <input type="search" id="pickerSearch" class="fullinput" placeholder="A, ★, U+2605, #123…" autocomplete="off">
+  <div class="tiny muted" id="pickerCount"></div>
+  <div id="pickerGrid" class="glyphgrid chooser" role="group" aria-label="Source glyph choices"></div>
+  <button id="pickerMore" class="button secondary wide" type="button" hidden>Show more glyphs</button>
+  <div class="sheet-footer"><button type="button" class="button secondary" id="revertGlyph">Use original</button><button type="button" class="button secondary" id="removePosition">Remove position</button><button type="button" class="button primary" id="closePickerDone">Done</button></div>
+ </section>
+</div>
+<input class="sr-only" id="baseFiles" type="file" accept=".ttf,.otf,.woff,.zip" multiple>
+<input class="sr-only" id="sourceFiles" type="file" accept=".ttf,.otf,.woff,.zip" multiple>
+<input class="sr-only" id="projectFile" type="file" accept=".glyphmix,.zip,application/zip">
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/opentype.js@2.0.0/dist/opentype.js" crossorigin="anonymous"></script>
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
