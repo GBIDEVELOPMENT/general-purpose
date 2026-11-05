@@ -64,6 +64,17 @@ async function main(){
    assert.match(compiled.status,/Built [0-9]+ glyphs/);
    assert.match(compiled.css,/calt/);
    assert.match(compiled.font,/GlyphMixerAdvanced/);
+   // Verify real browser shaping: GSUB must alter the second n in nn.
+   await page.locator('#varProofText').fill('nn');
+   const without=await page.locator('#varPlain').screenshot();
+   const withContext=await page.locator('#varShaped').screenshot();
+   assert.ok(!without.equals(withContext),'Browser must visibly substitute contextual glyph');
+   await page.locator('#varCaltEnabled').uncheck();
+   const offAgain=await page.locator('#varShaped').screenshot();
+   assert.ok(without.equals(offAgain),'Disabling calt should restore the exact original glyph rendering');
+   await page.locator('#varCaltEnabled').check();
+   fs.mkdirSync('GlyphMixer/build',{recursive:true});
+   await page.screenshot({path:'GlyphMixer/build/mobile-variations-compiled.png',fullPage:true});
    // Reload to prove project save/open restores original bytes and rules from disk.
    await page.reload({waitUntil:'domcontentloaded'});
    await page.locator('#projectFile').setInputFiles(bundle);
