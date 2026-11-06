@@ -96,7 +96,7 @@ function canonical(v){
  return [...ordered.slice(first),...ordered.slice(0,first)];
 }
 let cubes=[],timeline=[],nextIndex=0,current=null,elapsed=0,previous=null,visible=true,
- cyclePhase='solve',cycleMoves=[],cycleMoveIndex=0,cycleElapsed=0,cycleDuration=840,cycleScrambleLength=18,cycleRandomSeed=1,cycleCount=0,
+ cyclePhase='solve',cycleMoves=[],cycleMoveIndex=0,cycleElapsed=0,cycleDuration=840,cycleScrambleLength=18,cycleRandomSeed=1,cycleCount=0,cycleLastMove=null,cycleReversals=0,cycleTurns=0,
  pageVisible=!document.hidden,paused=false,raf=0,lastDraw=-Infinity,completed=false,completing=false,completionSpeed=1,runMode='solve',duration=15000;
 function resetCubes(){
  cubes=[];for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++){
@@ -149,16 +149,27 @@ function paint(angle=0,move=null){
 }
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const inverse=move=>[move[0],move[1],-move[2]];
+const isUndo=(a,b)=>!!a&&!!b&&a[0]===b[0]&&a[1]===b[1]&&a[2]===-b[2];
+// A solve needn't retrace the last scramble move immediately. Two turns
+// of another layer on the same axis commute with the original turn:
+// B, A^-1, B^-1 performs precisely A^-1, but never immediately undoes A.
+function planSolve(scramble){
+ const reverse=scramble.slice().reverse().map(inverse);
+ const first=reverse[0];
+ const bridge=[first[0],first[1]===1?-1:1,randomMove()<.5?-1:1];
+ return [bridge,first,inverse(bridge),...reverse.slice(1)];
+}
+
 // Repeatable pseudo-random scrambles: a seed reconstructs the same sequence.
 function randomMove(){
  cycleRandomSeed=(Math.imul(1664525,cycleRandomSeed)+1013904223)>>>0;
  return cycleRandomSeed/4294967296;
 }
-function makeScramble(length){
+function makeScramble(length,previousMove=null){
  const moves=[];
  while(moves.length<length){
   const axis=Math.floor(randomMove()*3),layer=Math.floor(randomMove()*3)-1;
-  const dir=randomMove()<.5?-1:1,previous=moves[moves.length-1];
+  const dir=randomMove()<.5?-1:1,previous=moves[moves.length-1]||previousMove;
   // Adjacent parallel turns can cancel visually or collapse into one move.
   if(previous&&previous[0]===axis)continue;
   moves.push([axis,layer,dir]);
@@ -169,10 +180,10 @@ function advanceCycle(){
  // State is never reset here: every cube motion is a legal quarter-turn.
  if(cyclePhase==='solve'){
   cyclePhase='scramble';cycleCount++;
-  cycleMoves=makeScramble(cycleScrambleLength);
+  cycleMoves=makeScramble(cycleScrambleLength,cycleLastMove);
   status.textContent='Scrambling…';
  }else{
-  cyclePhase='solve';cycleMoves=cycleMoves.slice().reverse().map(inverse);
+  cyclePhase='solve';cycleMoves=planSolve(cycleMoves);
   status.textContent='Solving…';
  }
  cycleMoveIndex=0;
@@ -181,7 +192,10 @@ function cycleFrame(dt){
  cycleElapsed+=dt;
  while(cycleElapsed>=cycleDuration){
   cycleElapsed-=cycleDuration;
-  turn(cycleMoves[cycleMoveIndex++]);
+  const move=cycleMoves[cycleMoveIndex++];
+  if(isUndo(cycleLastMove,move))cycleReversals++;
+  cycleLastMove=move;cycleTurns++;
+  turn(move);
   if(cycleMoveIndex===cycleMoves.length)advanceCycle();
  }
  const move=cycleMoves[cycleMoveIndex];
@@ -214,6 +228,7 @@ function start(options={}){
   if(!Number.isFinite(cycleDuration)||cycleDuration<100)throw new RangeError('turnMs must be >=100');
   if(!Number.isInteger(cycleScrambleLength)||cycleScrambleLength<2||cycleScrambleLength>100)throw new RangeError('scrambleLength must be 2..100');
   cyclePhase='solve';cycleElapsed=0;cycleCount=0;cycleMoveIndex=0;
+  cycleLastMove=null;cycleReversals=0;cycleTurns=0;
  }
  resetCubes();
  if(m==='solve'){
@@ -223,7 +238,7 @@ function start(options={}){
   // Start visibly scrambled, then solve, then perform the next scramble onscreen.
   const first=options.moves||makeScramble(cycleScrambleLength);
   first.forEach(turn);
-  cycleMoves=first.slice().reverse().map(inverse);
+  cycleMoves=planSolve(first);
  }else{timeline=scramble.slice();}
  paused=reduced.matches;pauseButton.textContent=paused?'Resume':'Pause';
  status.textContent=m==='solve'||m==='cycle'?'Solving…':'Loading…';
@@ -298,6 +313,7 @@ document.getElementById('complete').addEventListener('click',complete);
 function inspect(){
  return Object.freeze({mode:runMode,phase:runMode==='cycle'?cyclePhase:runMode,
  cycles:cycleCount,moveIndex:cycleMoveIndex,
+ turns:cycleTurns,immediateReversals:cycleReversals,
  solved:cubes.every(c=>Object.entries(c.stickers).every(([normal,sticker])=>normal===sticker))});
 }
 window.rubiksLoader={start,complete,pause,resume,destroy,setPalette,inspect,palettes:PALETTES};
