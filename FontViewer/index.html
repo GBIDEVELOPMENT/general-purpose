@@ -41,18 +41,81 @@ const records=new Map();
 let counter=0,ascending=true,loading=false;
 const selectedByFamily=new Map(),collapsedByFamily=new Map(),cardsByFamily=new Map();
 let glyphObserver;
-function familyKey(name){
- const words=String(name||'').normalize('NFKC').toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu)||[];
- // Treat a shared opening pair of words as a family, even when individual
- // files declare different internal family names. A one-word name stays whole.
- return words.slice(0,Math.min(2,words.length)).join(' ');
+// Group face names using both naming conventions and archive provenance.
+// Avoid generic first-word/first-two-word grouping: e.g. "Super Comic"
+// and "Super Hockey" must remain separate families.
+const VARIANT_WORDS=new Set([
+ 'regular','roman','normal','book','thin','hairline','extralight','ultralight',
+ 'light','medium','semibold','demibold','bold','extrabold','ultrabold','black',
+ 'heavy','italic','oblique','leftalic','rotalic','semiitalic','superitalic',
+ 'condensed','semicondensed','extracondensed','compressed','narrow','expanded',
+ 'extended','wide','3d','sc','smallcaps','caps','outline','outlined','inline',
+ 'engraved','bevel','chrome','gradient','halftone','punch','rotated','title',
+ 'shadow','shaded','filled','solid','rough','distressed','textured','display',
+ 'personaluse','personal','use','demo','trial'
+]);
+function compactName(name){
+ return String(name||'').normalize('NFKC').toLocaleLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
+}
+function familyTokens(name){
+ const spaced=String(name||'')
+  .replace(/([a-z])([A-Z])/g,'$1 $2')
+  .replace(/([A-Za-z])([0-9])/g,'$1 $2')
+  .replace(/([0-9])([A-Za-z])/g,'$1 $2');
+ return spaced.normalize('NFKC').toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu)||[];
 }
 function normalizedFamilyName(font,file){
- const raw=safeName(font.familyName||font.fullName||file.split('/').pop().replace(/\.[^.]+$/,'')).trim();
- // Older font packages sometimes encode each weight as a separate family (e.g. "Example Bold").
- // Collapse conventional weight/style suffixes, but leave width families such as "Example Condensed" distinct.
- const stripped=raw.replace(/(?:[\s_-]+)(?:thin|extralight|ultralight|light|medium|semibold|demibold|extrabold|ultrabold|bold|black|heavy|italic|oblique|regular|roman|book)(?:[\s_-]+(?:italic|oblique))?$/i,'').trim();
- return stripped||raw;
+ return safeName(font.familyName||font.fullName||file.split('/').pop().replace(/\.[^.]+$/,'')).trim();
+}
+function familyStem(name){
+ const tokens=familyTokens(name);
+ // Strip trailing style descriptors without discarding the actual root.
+ while(tokens.length>1&&VARIANT_WORDS.has(tokens[tokens.length-1]))tokens.pop();
+ let stem=compactName(tokens.join(''));
+ // Fonts sometimes attach descriptors directly to their family identifier.
+ const suffixes=['personaluse','smallcaps','semicondensed','extracondensed',
+  'semibold','extrabold','extralight','ultrabold','ultralight','semiitalic',
+  'superitalic','condensed','expanded','extended','engraved','gradient',
+  'halftone','outlined','outline','leftalic','rotalic','rotated','shadow',
+  'italic','oblique','regular','medium','light','black','heavy','bold',
+  'bevel','chrome','punch','thin','demo','trial','title','sc','3d'];
+ let changed=true;
+ while(changed){
+  changed=false;
+  for(const suffix of suffixes){
+   if(stem.endsWith(suffix)&&stem.length-suffix.length>=5){
+    stem=stem.slice(0,-suffix.length);changed=true;break;
+   }
+  }
+ }
+ return stem;
+}
+function sourceStem(rec){
+ const src=String(rec.source||'');
+ if(!/\.zip$/i.test(src))return '';
+ const base=src.split('/').pop().replace(/\.zip$/i,'');
+ return familyStem(base.replace(/(?:[-_ ](?:font|fonts|typeface|family|pack|bundle))+(?:[-_ ](?:font|fonts))?$/i,''));
+}
+function relatedFaces(a,b){
+ const stemA=familyStem(a.familyName),stemB=familyStem(b.familyName);
+ if(stemA&&stemA===stemB)return true;
+ // A package with a genuine shared face-name prefix is strong evidence;
+ // merely sharing a ZIP is not (Patrick Hand and Unkempt share a ZIP).
+ const sameZip=/\.zip$/i.test(a.source||'')&&a.source===b.source;
+ const nameA=compactName(a.familyName),nameB=compactName(b.familyName);
+ const shorter=nameA.length<=nameB.length?nameA:nameB;
+ if(shorter.length>=5&&(nameA.startsWith(nameB)||nameB.startsWith(nameA))){
+  const tail=(nameA.length>nameB.length?nameA:nameB).slice(shorter.length);
+  if(!tail||VARIANT_WORDS.has(tail)||familyStem(tail)==='')return true;
+ }
+ if(sameZip){
+  let common=0;
+  while(common<Math.min(nameA.length,nameB.length)&&nameA[common]===nameB[common])common++;
+  const archive=sourceStem(a);
+  if(common>=6&&(archive.length>=5&&nameA.startsWith(archive)&&nameB.startsWith(archive)))return true;
+  if(common>=7&&common>=Math.min(nameA.length,nameB.length)*.6)return true;
+ }
+ return false;
 }
 const supported=/\.(ttf|otf|woff2?|ttc|otc)$/i;
 let fontkitPromise;
@@ -134,8 +197,8 @@ async function addFont(bytes,file,source){
   const cps=[...new Set(font.characterSet||[])].filter(cp=>cp>=32&&cp<=0x10ffff&&!(cp>=0xd800&&cp<=0xdfff)).sort((a,b)=>a-b);
   const name=safeName(font.fullName||[font.familyName,font.subfamilyName].filter(Boolean).join(' ')||file);
   const familyName=normalizedFamilyName(font,file);
-  const rec={id,key,variant,name,familyName,familyKey:familyKey(familyName),styleName:safeName(font.subfamilyName||''),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font)};
-  if(existing){if(selectedByFamily.get(existing.familyKey)===existing.id)selectedByFamily.set(familyKey(familyName),id);cleanupFont(existing);records.delete(existing.id)}
+  const rec={id,key,variant,name,familyName,familyKey:familyStem(familyName),styleName:safeName(font.subfamilyName||''),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font)};
+  if(existing){if(selectedByFamily.get(existing.familyKey)===existing.id)selectedByFamily.set('family:'+familyStem(familyName),id);cleanupFont(existing);records.delete(existing.id)}
   records.set(id,rec);added++;
  }
  return added;
@@ -209,13 +272,24 @@ function cancelGlyphs(card){
  glyphObserver?.unobserve(card);
 }
 function groupsNow(){
- const groups=new Map();
- for(const rec of records.values()){
-  const key=rec.familyKey||familyKey(rec.name);
-  if(!groups.has(key))groups.set(key,[]);
-  groups.get(key).push(rec);
+ const list=[...records.values()],parent=list.map((_,i)=>i);
+ const root=i=>{while(parent[i]!==i){parent[i]=parent[parent[i]];i=parent[i]}return i};
+ for(let i=0;i<list.length;i++)for(let j=0;j<i;j++){
+  if(relatedFaces(list[i],list[j]))parent[root(i)]=root(j);
  }
- for(const variants of groups.values())variants.sort((a,b)=>a.name.localeCompare(b.name)||a.file.localeCompare(b.file));
+ const clusters=new Map();
+ for(let i=0;i<list.length;i++){
+  const k=root(i);
+  if(!clusters.has(k))clusters.set(k,[]);
+  clusters.get(k).push(list[i]);
+ }
+ const groups=new Map();
+ for(const variants of clusters.values()){
+  variants.sort((a,b)=>a.name.localeCompare(b.name)||a.file.localeCompare(b.file));
+  const stems=variants.map(v=>familyStem(v.familyName)).filter(Boolean);
+  const key='family:'+stems.sort((a,b)=>a.length-b.length||a.localeCompare(b))[0]||'family:'+variants[0].id;
+  groups.set(key,variants);
+ }
  return groups;
 }
 function updateCount(){
@@ -312,7 +386,7 @@ function render(){
  for(const card of cardsByFamily.values())observeCard(card);
 }
 function removeFamily(key){
- const family=[...records.values()].filter(rec=>rec.familyKey===key);
+ const family=groupsNow().get(key)||[];
  if(!family.length)return;
  const card=cardsByFamily.get(key);
  cancelGlyphs(card);card?.remove();cardsByFamily.delete(key);
