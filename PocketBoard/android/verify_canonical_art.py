@@ -137,6 +137,22 @@ for gesture_contract in (
     "canvas.drawLine(rainbowWidth, d, rainbowWidth, h - d, paint)",
 ):
     assert gesture_contract in main, gesture_contract
+# The 2026-11 trackpad reference uses one uniquely drawn shared perimeter
+# and separator; these must never regress to a generic round rect / line.
+border_svg = xml(ROOT / "assets/trackpad/outline-and-divider.svg")
+border_vector = xml(DRAWABLE / "pb_trackpad_outline_divider.xml")
+svg_paths = border_svg.findall("{http://www.w3.org/2000/svg}path")
+android_border_paths = border_vector.findall("path")
+assert len(svg_paths) == len(android_border_paths) == 2
+for source, runtime in zip(svg_paths, android_border_paths):
+    assert norm(source.attrib["d"]) == norm(runtime.attrib[NS + "pathData"])
+    assert source.attrib["stroke"].upper() == "#FCF4E9"
+    assert runtime.attrib[NS + "strokeColor"].upper() == "#FFFCF4E9"
+    assert source.attrib["stroke-width"] == runtime.attrib[NS + "strokeWidth"] == "12"
+assert "R.drawable.pb_trackpad_outline_divider" in main
+assert "canvas.drawRoundRect(RectF(d, d, w-d, h-d)" not in main
+assert "canvas.drawLine(rainbowWidth, d, rainbowWidth, h - d, paint)" not in main
+
 # Source-traced scrollpad glyph contract: distinct strokes, fixed spacing,
 # old gray retained on marks; the lighter background and centering are runtime-owned.
 assert "canvas.drawColor(PocketBoardPalette.SCROLL_GRAY_LIGHT)" in main
