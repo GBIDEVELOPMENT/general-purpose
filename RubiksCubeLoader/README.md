@@ -13,7 +13,7 @@ Open `index.html` or `small-cube.html` directly in a browser. **Endless scramble
 ## API
 
 ```js
-rubiksLoader.start({ mode: 'cycle', seed: 12345, turnMs: 840, scrambleLength: 18 });
+rubiksLoader.start({ mode: 'cycle', seed: 12345, turnMs: 840, scrambleLength: 24 });
 // The earlier timed one-shot solve is still supported:
 rubiksLoader.start({ mode: 'solve', durationMs: 15000 });
 // or feed a chosen legal scramble, to be reversed as a known solve:
@@ -66,10 +66,10 @@ The built-in demo's **Complete** button simulates the host completion signal. Wi
 
 ## Continuous scramble-and-solve mode (default)
 
-`mode:'cycle'` starts from a legal scramble and animates a legal, equivalent solution without immediately reversing the last scramble move. As soon as the last quarter-turn completes, it generates a new seeded scramble and **animates that scramble move by move**, then solves it with a rearranged inverse move sequence. It repeats indefinitely. No sticker colours or cubie coordinates are reset at cycle boundaries, and there is no idle gap or raster interpolation.
+`mode:'cycle'` starts from a legal scramble and animates a legal, equivalent solution without immediately reversing the last scramble move. As soon as the last quarter-turn completes, it generates a new seeded scramble and **animates that scramble move by move**, then solves it with a genuine non-backtracking path. It repeats indefinitely. No sticker colours or cubie coordinates are reset at cycle boundaries, and there is no idle gap or raster interpolation.
 
 - `seed`: unsigned 32-bit PRNG seed. Same seed and move count produce a reproducible sequence of scrambles.
-- `scrambleLength`: 2–100 quarter turns (default 18). Adjacent turns are deliberately chosen from different axes to avoid immediately cancelling or collapsing rotations.
+- `scrambleLength`: compatibility parameter; the current algebraic cycle uses 24 quarter-turns for each scramble.
 - `turnMs`: 100 ms or greater (default 840). Duration of each quarter-turn, constant through solve and scramble phases.
 - `palette`: `muted` (default) or `original`.
 
@@ -80,12 +80,21 @@ Current implementation uses a continuous, reproducible **sequence of legal quart
 ### Example
 
 ```js
-rubiksLoader.start({ mode: 'cycle', seed: 20261106, scrambleLength: 18, turnMs: 760 });
+rubiksLoader.start({ mode: 'cycle', seed: 20261106, scrambleLength: 24, turnMs: 760 });
 // Infinite solve → new legal scramble → solve → next scramble…
 ```
 
-## No immediate reversals at phase boundaries
+## No redundant commuting turns (November 2026 correction)
 
-A naïve solution to the last scramble is its literal inverse, so the final scramble move is immediately undone as the first solve move. This was visibly distracting. The cycle planner now inserts a **commuting-layer bridge**: for the previous final move `A`, choose a turn `B` of another layer on the same axis, then execute `B, A⁻¹, B⁻¹`. Because disjoint parallel layers commute, the three turns have exactly the same effect as `A⁻¹`, but the animation never reverses the immediately preceding layer turn. The remainder of the inverse solution follows. New scramble generation also excludes the preceding turn's axis, including across solve→scramble boundaries. Both changes preserve reproducible seeds and genuine cube mechanics.
+The original solve retraced the scramble backwards. A later workaround inserted turns on an unrelated layer to hide the reversal, but those turns were themselves redundant. That workaround has been removed.
 
-The read-only `rubiksLoader.inspect().immediateReversals` counter tracks any adjacent inverse moves committed by the endless cycle. Run `node --test RubiksCubeLoader/cycle.test.cjs` to test both size variants over hundreds of moves and many fully solved transitions. The shared GitHub Pages workflow now runs these tests before publishing.
+The endless-cycle planner now uses an actual closed walk through cube states. For two intersecting outer face turns A and B, the commutator X = A B A⁻¹ B⁻¹ has order six, meaning X⁶ is the identity and X³ is its own inverse. The planner chooses two distinct commutators X and Y:
+
+- Scramble: X³ Y³ (24 legal quarter-turns).
+- Solution: Y³ X³ (24 legal quarter-turns).
+
+The pair always returns to solved with no synthetic commuting-turn detours. Candidates are rejected if inverse turns occur separated only by moves on disjoint layers, including at cycle boundaries. Selection remains seeded and reproducible.
+
+The default 24-move scramble is inherent in this particular algebraic construction. The legacy scrambleLength option is accepted but does not alter this cycle's 24-turn scramble length. Timed one-shot mode still accepts user-supplied moves.
+
+Read-only diagnostics: rubiksLoader.inspect() returns immediateReversals, commutingCancellations, turns and solved. The shared Pages workflow runs node --test RubiksCubeLoader/cycle.test.cjs on both sizes before deployment.
