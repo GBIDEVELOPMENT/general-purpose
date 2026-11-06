@@ -710,7 +710,6 @@ class MainActivity : Activity() {
             canvas.drawLine(rainbowWidth, d, rainbowWidth, h - d, paint)
             paint.style = Paint.Style.FILL
             canvas.restore()
-            val d = resources.displayMetrics.density
             val cx = w * 0.83f * 0.5f
             val cy = h * 0.5f
             // Source-traced marker cursor; the old hand-built Path is retired.
