@@ -96,7 +96,7 @@ function canonical(v){
  return [...ordered.slice(first),...ordered.slice(0,first)];
 }
 let cubes=[],timeline=[],nextIndex=0,current=null,elapsed=0,previous=null,visible=true,
- cyclePhase='solve',cycleMoves=[],cycleMoveIndex=0,cycleElapsed=0,cycleDuration=840,cycleScrambleLength=18,cycleRandomSeed=1,cycleCount=0,cycleLastMove=null,cycleReversals=0,cycleTurns=0,
+ cyclePhase='solve',cycleMoves=[],cycleMoveIndex=0,cycleElapsed=0,cycleDuration=840,cycleScrambleLength=18,cycleRandomSeed=1,cycleCount=0,cycleLastMove=null,cycleReversals=0,cycleTurns=0,cyclePlan=null,cycleBridgeCancellations=0,
  pageVisible=!document.hidden,paused=false,raf=0,lastDraw=-Infinity,completed=false,completing=false,completionSpeed=1,runMode='solve',duration=15000;
 function resetCubes(){
  cubes=[];for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++){
@@ -150,40 +150,61 @@ function paint(angle=0,move=null){
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const inverse=move=>[move[0],move[1],-move[2]];
 const isUndo=(a,b)=>!!a&&!!b&&a[0]===b[0]&&a[1]===b[1]&&a[2]===-b[2];
-// A solve needn't retrace the last scramble move immediately. Two turns
-// of another layer on the same axis commute with the original turn:
-// B, A^-1, B^-1 performs precisely A^-1, but never immediately undoes A.
-function planSolve(scramble){
- const reverse=scramble.slice().reverse().map(inverse);
- const first=reverse[0];
- const bridge=[first[0],first[1]===1?-1:1,randomMove()<.5?-1:1];
- return [bridge,first,inverse(bridge),...reverse.slice(1)];
+// Adjacent or commuting-separated inverse turns are an avoidable visual twitch.
+// Two moves commute here only when they turn different layers of the SAME axis.
+function commutingUndoCount(moves,previous=null){
+ let count=0;
+ const all=previous?[previous,...moves]:moves;
+ for(let i=0;i<all.length;i++){
+  const move=all[i];
+  for(let j=i-1;j>=0;j--){
+   if(all[j][0]!==move[0])break; // Intersecting turn blocks cancellation.
+   if(isUndo(all[j],move)){count++;break;}
+  }
+ }
+ return count;
 }
-
-// Repeatable pseudo-random scrambles: a seed reconstructs the same sequence.
+// Repeatable seeded PRNG. All scramble/solve paths are selected in advance.
 function randomMove(){
  cycleRandomSeed=(Math.imul(1664525,cycleRandomSeed)+1013904223)>>>0;
  return cycleRandomSeed/4294967296;
 }
-function makeScramble(length,previousMove=null){
- const moves=[];
- while(moves.length<length){
-  const axis=Math.floor(randomMove()*3),layer=Math.floor(randomMove()*3)-1;
-  const dir=randomMove()<.5?-1:1,previous=moves[moves.length-1]||previousMove;
-  // Adjacent parallel turns can cancel visually or collapse into one move.
-  if(previous&&previous[0]===axis)continue;
-  moves.push([axis,layer,dir]);
+function commutator(a,b){
+ return [a,b,inverse(a),inverse(b)];
+}
+// For two intersecting face turns A,B the "sexy move" [A,B] has order six:
+// [A,B]^6 = identity. Therefore [A,B]^3 is its OWN inverse.
+// With two distinct commutators X and Y:
+//   scramble = X^3 Y^3
+//   solve    = Y^3 X^3
+// This genuinely returns to solved without retracing the last scramble turn,
+// using no commuting bridge tricks and without any state reset.
+function buildCycle(previous=null){
+ for(let attempt=0;attempt<256;attempt++){
+  const axes=[0,1,2];
+  for(let i=2;i>0;i--){const j=Math.floor(randomMove()*(i+1));[axes[i],axes[j]]=[axes[j],axes[i]];}
+  const signs=axes.map(()=>randomMove()<.5?-1:1);
+  const dirs=[0,1,2,3].map(()=>randomMove()<.5?-1:1);
+  const a=[axes[0],signs[0],dirs[0]],b=[axes[1],signs[1],dirs[1]];
+  const c=[axes[0],-signs[0],dirs[2]],d=[axes[2],signs[2],dirs[3]];
+  const x=Array.from({length:3},()=>commutator(a,b)).flat();
+  const y=Array.from({length:3},()=>commutator(c,d)).flat();
+  const scramble=[...x,...y],solve=[...y,...x];
+  if(commutingUndoCount([...scramble,...solve],previous)===0){
+   return {scramble,solve};
+  }
  }
- return moves;
+ throw new Error('Cannot build cancellation-free cube cycle');
 }
 function advanceCycle(){
- // State is never reset here: every cube motion is a legal quarter-turn.
+ // Never replace or reset the cubie arrangement: all motion is legal turns.
  if(cyclePhase==='solve'){
   cyclePhase='scramble';cycleCount++;
-  cycleMoves=makeScramble(cycleScrambleLength,cycleLastMove);
+  cyclePlan=buildCycle(cycleLastMove);
+  cycleMoves=cyclePlan.scramble;
   status.textContent='Scrambling…';
  }else{
-  cyclePhase='solve';cycleMoves=planSolve(cycleMoves);
+  cyclePhase='solve';cycleMoves=cyclePlan.solve;
   status.textContent='Solving…';
  }
  cycleMoveIndex=0;
@@ -194,6 +215,7 @@ function cycleFrame(dt){
   cycleElapsed-=cycleDuration;
   const move=cycleMoves[cycleMoveIndex++];
   if(isUndo(cycleLastMove,move))cycleReversals++;
+  if(commutingUndoCount([move],cycleLastMove))cycleBridgeCancellations++;
   cycleLastMove=move;cycleTurns++;
   turn(move);
   if(cycleMoveIndex===cycleMoves.length)advanceCycle();
@@ -223,12 +245,14 @@ function start(options={}){
  runMode=m;duration=ms;modeSelect.value=m;completed=false;completing=false;completionSpeed=1;elapsed=0;previous=null;nextIndex=0;current=null;
  if(m==='cycle'){
   cycleDuration=options.turnMs??840;
-  cycleScrambleLength=options.scrambleLength??18;
+  cycleScrambleLength=options.scrambleLength??24;
   cycleRandomSeed=(options.seed??0xC0BE2026)>>>0;
   if(!Number.isFinite(cycleDuration)||cycleDuration<100)throw new RangeError('turnMs must be >=100');
   if(!Number.isInteger(cycleScrambleLength)||cycleScrambleLength<2||cycleScrambleLength>100)throw new RangeError('scrambleLength must be 2..100');
+  // A complete algebraic cycle uses 24 scramble turns and 24 solve turns.
+  // The legacy scrambleLength option remains accepted, but the safe cycle has fixed length.
   cyclePhase='solve';cycleElapsed=0;cycleCount=0;cycleMoveIndex=0;
-  cycleLastMove=null;cycleReversals=0;cycleTurns=0;
+  cycleLastMove=null;cycleReversals=0;cycleTurns=0;cycleBridgeCancellations=0;
  }
  resetCubes();
  if(m==='solve'){
@@ -236,9 +260,11 @@ function start(options={}){
   timeline=scramble.slice().reverse().map(inverse);
  }else if(m==='cycle'){
   // Start visibly scrambled, then solve, then perform the next scramble onscreen.
-  const first=options.moves||makeScramble(cycleScrambleLength);
-  first.forEach(turn);
-  cycleMoves=planSolve(first);
+  // Seed selects a known closed walk. Apply only its scramble half initially.
+  // Unlike the former reverse-and-bridge planner this contains no commuting detours.
+  cyclePlan=buildCycle();
+  cyclePlan.scramble.forEach(turn);
+  cycleMoves=cyclePlan.solve;
  }else{timeline=scramble.slice();}
  paused=reduced.matches;pauseButton.textContent=paused?'Resume':'Pause';
  status.textContent=m==='solve'||m==='cycle'?'Solving…':'Loading…';
@@ -314,6 +340,7 @@ function inspect(){
  return Object.freeze({mode:runMode,phase:runMode==='cycle'?cyclePhase:runMode,
  cycles:cycleCount,moveIndex:cycleMoveIndex,
  turns:cycleTurns,immediateReversals:cycleReversals,
+ commutingCancellations:cycleBridgeCancellations,
  solved:cubes.every(c=>Object.entries(c.stickers).every(([normal,sticker])=>normal===sticker))});
 }
 window.rubiksLoader={start,complete,pause,resume,destroy,setPalette,inspect,palettes:PALETTES};
