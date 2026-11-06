@@ -41,7 +41,12 @@ const records=new Map();
 let counter=0,ascending=true,loading=false;
 const selectedByFamily=new Map(),collapsedByFamily=new Map(),cardsByFamily=new Map();
 let glyphObserver;
-function familyKey(name){return String(name||'').normalize('NFKC').trim().replace(/\s+/g,' ').toLocaleLowerCase()}
+function familyKey(name){
+ const words=String(name||'').normalize('NFKC').toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu)||[];
+ // Treat a shared opening pair of words as a family, even when individual
+ // files declare different internal family names. A one-word name stays whole.
+ return words.slice(0,Math.min(2,words.length)).join(' ');
+}
 function normalizedFamilyName(font,file){
  const raw=safeName(font.familyName||font.fullName||file.split('/').pop().replace(/\.[^.]+$/,'')).trim();
  // Older font packages sometimes encode each weight as a separate family (e.g. "Example Bold").
@@ -262,7 +267,7 @@ function makeFamilyCard(key,variants){
   apply();
  }
  const details=make('details'),summary=make('summary','','Character map');
- details.open=!collapsedByFamily.get(key);
+ details.open=collapsedByFamily.get(key)===false;
  const glyphs=make('div','glyphs');details.append(summary,glyphs);
  let populated=false;
  function maybePopulate(){if(details.open&&!populated){populated=true;renderGlyphs(glyphs,rec)}}
