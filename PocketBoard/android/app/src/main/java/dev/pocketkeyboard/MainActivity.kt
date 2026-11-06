@@ -656,7 +656,7 @@ class MainActivity : Activity() {
                     text = "Connect to a PC"
                     typeface = slabthing
                     setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f)
-                    setTextColor(Color.WHITE)
+                    setTextColor(PocketBoardPalette.CREAM)
                     setPadding(dp(24), dp(20), dp(24), dp(12))
                 }
                 val choices = hosts.map { found[it].orEmpty() }
