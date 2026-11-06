@@ -26,7 +26,7 @@ rubiksLoader.resume();
 rubiksLoader.destroy();
 ```
 
-Each move is `[axis,layer,direction]` where axis is 0=x,1=y,2=z, layer is -1/0/1, and direction is ±1 quarter turn. At startup, the given scramble is applied instantly to the solved mathematical cube, then its exact inverse is animated. The final arrangement is **guaranteed to solve**.
+Each move is `[axis,layer,direction]` where axis is 0=x,1=y,2=z, layer is -1/0/1, and direction is ±1 quarter turn. At startup, the given scramble is applied instantly to the solved mathematical cube, then a mathematically equivalent solve sequence is animated. In endless cycle mode, a commuting-layer bridge avoids immediately reversing the previous turn. The final arrangement is **guaranteed to solve**.
 
 To show an almost-solved cube around 13–14 seconds, the default 18-move routine allocates about **0.83 seconds per turn** over 15 seconds. Only the final couple of moves remain after 13 seconds, subject to time spent paused or hidden. At the end of the planned animation, the cube **holds one legal turn short of solved** until the host calls `complete()`. The remaining moves are animated, never snapped. The component freezes elapsed progress when offscreen, the tab is hidden, or the user pauses; elapsed time is therefore **visible active-animation time**, not wall-clock time.
 
@@ -66,7 +66,7 @@ The built-in demo's **Complete** button simulates the host completion signal. Wi
 
 ## Continuous scramble-and-solve mode (default)
 
-`mode:'cycle'` starts from a legal scramble and animates its exact inverse. As soon as the last quarter-turn completes, it generates a new seeded scramble and **animates that scramble move by move**, then solves it with the inverse move sequence. It repeats indefinitely. No sticker colours or cubie coordinates are reset at cycle boundaries, and there is no idle gap or raster interpolation.
+`mode:'cycle'` starts from a legal scramble and animates a legal, equivalent solution without immediately reversing the last scramble move. As soon as the last quarter-turn completes, it generates a new seeded scramble and **animates that scramble move by move**, then solves it with a rearranged inverse move sequence. It repeats indefinitely. No sticker colours or cubie coordinates are reset at cycle boundaries, and there is no idle gap or raster interpolation.
 
 - `seed`: unsigned 32-bit PRNG seed. Same seed and move count produce a reproducible sequence of scrambles.
 - `scrambleLength`: 2–100 quarter turns (default 18). Adjacent turns are deliberately chosen from different axes to avoid immediately cancelling or collapsing rotations.
@@ -83,3 +83,9 @@ Current implementation uses a continuous, reproducible **sequence of legal quart
 rubiksLoader.start({ mode: 'cycle', seed: 20261106, scrambleLength: 18, turnMs: 760 });
 // Infinite solve → new legal scramble → solve → next scramble…
 ```
+
+## No immediate reversals at phase boundaries
+
+A naïve solution to the last scramble is its literal inverse, so the final scramble move is immediately undone as the first solve move. This was visibly distracting. The cycle planner now inserts a **commuting-layer bridge**: for the previous final move `A`, choose a turn `B` of another layer on the same axis, then execute `B, A⁻¹, B⁻¹`. Because disjoint parallel layers commute, the three turns have exactly the same effect as `A⁻¹`, but the animation never reverses the immediately preceding layer turn. The remainder of the inverse solution follows. New scramble generation also excludes the preceding turn's axis, including across solve→scramble boundaries. Both changes preserve reproducible seeds and genuine cube mechanics.
+
+The read-only `rubiksLoader.inspect().immediateReversals` counter tracks any adjacent inverse moves committed by the endless cycle. Run `node --test RubiksCubeLoader/cycle.test.cjs` to test both size variants over hundreds of moves and many fully solved transitions. The shared GitHub Pages workflow now runs these tests before publishing.
