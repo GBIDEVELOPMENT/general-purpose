@@ -9,8 +9,8 @@ android {
         applicationId = "dev.pocketkeyboard"
         minSdk = 26
         targetSdk = 35
-        versionCode = 27
-        versionName = "1.0.8"
+        versionCode = 28
+        versionName = "1.0.9"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
