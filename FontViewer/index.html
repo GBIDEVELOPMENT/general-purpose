@@ -42,6 +42,13 @@ let counter=0,ascending=true,loading=false;
 const selectedByFamily=new Map(),collapsedByFamily=new Map(),cardsByFamily=new Map();
 let glyphObserver;
 function familyKey(name){return String(name||'').normalize('NFKC').trim().replace(/\s+/g,' ').toLocaleLowerCase()}
+function normalizedFamilyName(font,file){
+ const raw=safeName(font.familyName||font.fullName||file.split('/').pop().replace(/\.[^.]+$/,'')).trim();
+ // Older font packages sometimes encode each weight as a separate family (e.g. "Example Bold").
+ // Collapse conventional weight/style suffixes, but leave width families such as "Example Condensed" distinct.
+ const stripped=raw.replace(/(?:[\s_-]+)(?:thin|extralight|ultralight|light|medium|semibold|demibold|extrabold|ultrabold|bold|black|heavy|italic|oblique|regular|roman|book)(?:[\s_-]+(?:italic|oblique))?$/i,'').trim();
+ return stripped||raw;
+}
 const supported=/\.(ttf|otf|woff2?|ttc|otc)$/i;
 let fontkitPromise;
 function getFontkit(){return fontkitPromise??=import('https://esm.sh/fontkit@2.0.4?bundle').then(m=>m.default?.create?m.default:m).catch(e=>{fontkitPromise=null;throw new Error('Font parser unavailable: '+e.message)})}
@@ -121,7 +128,7 @@ async function addFont(bytes,file,source){
   try{await face.load();document.fonts.add(face)}catch(e){URL.revokeObjectURL(url);throw Error('Browser cannot load '+(font.fullName||file))}
   const cps=[...new Set(font.characterSet||[])].filter(cp=>cp>=32&&cp<=0x10ffff&&!(cp>=0xd800&&cp<=0xdfff)).sort((a,b)=>a-b);
   const name=safeName(font.fullName||[font.familyName,font.subfamilyName].filter(Boolean).join(' ')||file);
-  const familyName=safeName(font.familyName||name);
+  const familyName=normalizedFamilyName(font,file);
   const rec={id,key,variant,name,familyName,familyKey:familyKey(familyName),styleName:safeName(font.subfamilyName||''),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font)};
   if(existing){if(selectedByFamily.get(existing.familyKey)===existing.id)selectedByFamily.set(familyKey(familyName),id);cleanupFont(existing);records.delete(existing.id)}
   records.set(id,rec);added++;
