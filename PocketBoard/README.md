@@ -331,7 +331,7 @@ versionName 1.0.5. No PC companion update required.
 
 ## PocketBoard 1.0.6: cursor and colour refinement
 
-The trackpad displays the new two-contour, slightly imperfect, chunky marker-style pointer traced into SVG and Android VectorDrawable. The canonical rainbow blue is now `#0066FF`, clearly distinguishable from indigo, and emerald is lighter at `#00805B`. Both colours are synchronized across runtime UI, launcher art and source SVGs. Tab and Esc exchange only button silhouettes, retaining their original colours, symbols and actions. Real-device screenshot acceptance remains outstanding.
+The trackpad displays the new two-contour, slightly imperfect, chunky marker-style pointer traced into SVG and Android VectorDrawable. The canonical rainbow blue is now `#003CFF`, clearly distinguishable from indigo, and emerald is lighter at `#00805B`. Both colours are synchronized across runtime UI, launcher art and source SVGs. Tab and Esc exchange only button silhouettes, retaining their original colours, symbols and actions. Real-device screenshot acceptance remains outstanding.
 
 ## PocketBoard 1.0.7: Refresh control (F5)
 
@@ -339,4 +339,8 @@ Adds a coral Refresh control in the previously empty **A3** slot, directly benea
 
 ## PocketBoard 1.0.8: dedicated vertical scrolling
 
-The touchpad is split into an 83% rainbow pointer surface and a 17% gray vertical wheel strip, separated by a thin cream line. One-finger swipes beginning on the gray strip produce vertical scroll wheel events with retained fractional deltas. Pointer clicks, movement and long-presses occur only from the rainbow portion. Gesture ownership is fixed at touch-down, and extra fingers cancel normal pointer gestures to prevent accidental clicks. Two-finger scrolling and horizontal scroll gestures were retired; the receiver still supports its existing wire protocol without modification. The blue rainbow token is now `#0066FF`, and scroll gray is `#667080`. Android version 1.0.8; Windows redeployment unnecessary.
+The touchpad is split into an 83% rainbow pointer surface and a 17% gray vertical wheel strip, separated by a thin cream line. One-finger swipes beginning on the gray strip produce vertical scroll wheel events with retained fractional deltas. Pointer clicks, movement and long-presses occur only from the rainbow portion. Gesture ownership is fixed at touch-down, and extra fingers cancel normal pointer gestures to prevent accidental clicks. Two-finger scrolling and horizontal scroll gestures were retired; the receiver still supports its existing wire protocol without modification. The blue rainbow token is now `#003CFF`, and scroll gray is `#667080`. Android version 1.0.8; Windows redeployment unnecessary.
+
+## PocketBoard 1.0.9: stronger blue and faster wheel strip
+
+The rightmost 17% vertical scrollpad retains its layout and gesture semantics but now produces 2.5× more wheel scrolling for the same finger travel. The wheel-step threshold changes from 28dp to 11.2dp; accumulated sub-step motion is retained, and wheel output remains bounded per event. The saturated royal-blue canonical token changes from `#0066FF` to `#003CFF`, shared by the trackpad, header and launcher icon. The emerald, teal, purple and scroll-gray tokens are unchanged. Android versionCode 28, versionName 1.0.9. No Windows receiver update required.
