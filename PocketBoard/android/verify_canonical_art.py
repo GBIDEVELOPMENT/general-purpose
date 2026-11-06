@@ -134,7 +134,7 @@ for gesture_contract in (
     "val rainbowWidth = w * 0.83f",
     "canvas.clipRect(0f, 0f, rainbowWidth, h)",
     "PocketBoardPalette.SCROLL_GRAY",
-    "canvas.drawLine(rainbowWidth, d, rainbowWidth, h - d, paint)",
+    "R.drawable.pb_trackpad_outline_divider",
 ):
     assert gesture_contract in main, gesture_contract
 # The 2026-11 trackpad reference uses one uniquely drawn shared perimeter
