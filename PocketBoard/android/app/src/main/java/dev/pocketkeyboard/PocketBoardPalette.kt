@@ -14,7 +14,8 @@ internal object PocketBoardPalette {
     val HINT_CREAM = 0x80D0C9BE.toInt() // 50% opacity, placeholder only
     val PRESS_RIPPLE = 0x33FCF4E9.toInt()
 
-    val SCROLL_GRAY = 0xFF667080.toInt() // exclusive vertical scroll surface
+    val SCROLL_GRAY = 0xFF667080.toInt() // source-traced scroll glyphs; former surface gray
+    val SCROLL_GRAY_LIGHT = 0xFF757E8D.toInt() // scroll surface, each RGB channel blended 10% toward white
     val BLUE = 0xFF003CFF.toInt()
     val TEAL = 0xFF02B8B6.toInt()
     val PINK = 0xFFFA398F.toInt()
