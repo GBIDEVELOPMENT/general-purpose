@@ -295,7 +295,12 @@ document.getElementById('palette').addEventListener('change',e=>setPalette(e.tar
 document.getElementById('restart').addEventListener('click',()=>start({mode:modeSelect.value}));
 pauseButton.addEventListener('click',()=>paused?resume():pause());
 document.getElementById('complete').addEventListener('click',complete);
-window.rubiksLoader={start,complete,pause,resume,destroy,setPalette,palettes:PALETTES};
+function inspect(){
+ return Object.freeze({mode:runMode,phase:runMode==='cycle'?cyclePhase:runMode,
+ cycles:cycleCount,moveIndex:cycleMoveIndex,
+ solved:cubes.every(c=>Object.entries(c.stickers).every(([normal,sticker])=>normal===sticker))});
+}
+window.rubiksLoader={start,complete,pause,resume,destroy,setPalette,inspect,palettes:PALETTES};
 start();
 })();
 </script>
