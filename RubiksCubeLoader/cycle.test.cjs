@@ -50,16 +50,17 @@ function harness(filename) {
   return {api:context.window?.rubiksLoader||context.rubiksLoader,advance,elements};
 }
 for(const file of ['index.html','small-cube.html']){
-  test(file+' solves indefinitely without adjacent opposite turns',()=>{
+  test(file+' solves indefinitely without adjacent or commuting-separated opposite turns',()=>{
     const h=harness(file),a=h.api;
     assert.ok(a,'public API available');
-    a.start({mode:'cycle',seed:20261106,turnMs:200,scrambleLength:6});
+    a.start({mode:'cycle',seed:20261106,turnMs:200,scrambleLength:24});
     assert.equal(a.inspect().solved,false);
     let prevPhase=a.inspect().phase,phaseChanges=0,solves=0;
     for(let i=0;i<3000;i++){
       h.advance(50);
       const state=a.inspect();
       assert.equal(state.immediateReversals,0,'no move immediately reverses its predecessor');
+      assert.equal(state.commutingCancellations,0,'no inverse turns separated only by disjoint-layer moves');
       if(state.phase!==prevPhase){
         phaseChanges++;
         if(state.phase==='scramble'){
@@ -76,5 +77,6 @@ for(const file of ['index.html','small-cube.html']){
     assert.ok(a.inspect().turns>=100,'tested over 100 legal quarter-turns');
     a.setPalette('original');
     assert.equal(a.inspect().immediateReversals,0,'palette change leaves move history intact');
+    assert.equal(a.inspect().commutingCancellations,0,'palette change leaves commuting history intact');
   });
 }
