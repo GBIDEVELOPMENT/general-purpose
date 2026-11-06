@@ -146,7 +146,7 @@ class MainActivity : Activity() {
         status = TextView(this).apply {
             text = "DISCONNECTED"
             textSize = 16f
-            typeface = resources.getFont(R.font.morning_rainbow)
+            typeface = resources.getFont(R.font.slabthing)
             setTextColor(PocketBoardPalette.CREAM)
             // Anchor the text's lower edge inside the 40dp pill as caps grow up.
             gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
@@ -287,7 +287,7 @@ class MainActivity : Activity() {
             // This canonical placeholder token is 50% opaque.
             setHintTextColor(PocketBoardPalette.HINT_CREAM)
             setTextColor(cream)
-            typeface = resources.getFont(R.font.morning_rainbow)
+            typeface = resources.getFont(R.font.slabthing)
             textSize = 13f
             setSingleLine(false)
             maxLines = 2
@@ -437,7 +437,7 @@ class MainActivity : Activity() {
                 if (icon == null) {
                     TextView(this).apply {
                         text = title
-                        typeface = resources.getFont(R.font.morning_rainbow)
+                        typeface = resources.getFont(R.font.slabthing)
                         textSize = 13f
                         setTextColor(cream)
                         gravity = Gravity.CENTER
@@ -651,14 +651,33 @@ class MainActivity : Activity() {
                     return@runOnUiThread
                 }
                 val hosts = found.keys.toList()
-                android.app.AlertDialog.Builder(this)
-                    .setTitle("Connect to a PC")
-                    .setItems(hosts.map { found[it] }.toTypedArray()) { _, index ->
+                val slabthing = resources.getFont(R.font.slabthing)
+                val dialogTitle = TextView(this).apply {
+                    text = "Connect to a PC"
+                    typeface = slabthing
+                    setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f)
+                    setTextColor(PocketBoardPalette.CREAM)
+                    setPadding(dp(24), dp(20), dp(24), dp(12))
+                }
+                val choices = hosts.map { found[it].orEmpty() }
+                val hostAdapter = object : ArrayAdapter<String>(
+                    this, android.R.layout.simple_list_item_1, choices
+                ) {
+                    override fun getView(position: Int, convertView: View?, parent: android.view.ViewGroup): View {
+                        return super.getView(position, convertView, parent).also {
+                            (it as TextView).typeface = slabthing
+                        }
+                    }
+                }
+                val dialog = android.app.AlertDialog.Builder(this)
+                    .setCustomTitle(dialogTitle)
+                    .setAdapter(hostAdapter) { _, index ->
                         host.setText(hosts[index])
                         startConnection()
                     }
                     .setNegativeButton("Cancel", null)
                     .show()
+                dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE)?.typeface = slabthing
             }
         }.start()
     }

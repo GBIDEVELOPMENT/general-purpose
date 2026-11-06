@@ -156,7 +156,7 @@ for old in ("pb_button_squircle", "pb_choose", "pb_backspace"):
     assert old not in main, f"Legacy resource still referenced: {old}"
 # Owner-approved UI contract: text sizes, baseline, button slots, and palette.
 assert 'text = "DISCONNECTED"\n            textSize = 16f' in main
-assert 'typeface = resources.getFont(R.font.morning_rainbow)\n            textSize = 13f' in main
+assert 'typeface = resources.getFont(R.font.slabthing)\n            textSize = 13f' in main
 assert "gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL" in main
 assert "setPadding(0, 0, 0, dp(10))" in main
 assert 'val buttonSizePx = (dp(34) * 0.90f).roundToInt()' in main
@@ -173,7 +173,7 @@ def contrast(one, two):
     return (a + .05) / (b + .05)
 assert contrast(APPROVED["YELLOW"], APPROVED["GREEN"]) >= 3.45
 assert contrast(APPROVED["CREAM"], APPROVED["GREEN"]) >= 4.5
-assert "typeface = resources.getFont(R.font.morning_rainbow)" in main
+assert "typeface = resources.getFont(R.font.slabthing)" in main
 # Verify the exact band order, not merely the seven tokens' presence.
 rainbow_source = re.search(r'private val colors = intArrayOf\((.*?)\)', main, re.S)
 assert rainbow_source is not None
