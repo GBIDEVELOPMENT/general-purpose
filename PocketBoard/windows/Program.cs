@@ -10,6 +10,7 @@ using System.Text.Json;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace PocketKeyboard;
 
@@ -41,6 +42,7 @@ internal sealed class TrayServer : ApplicationContext
     X509Certificate2 certificate;
 
     int revocationEpoch;
+    long receivedCommands;
     volatile bool enabled = true;
 
     public TrayServer()
@@ -68,6 +70,7 @@ internal sealed class TrayServer : ApplicationContext
         menu.Items.Add(new ToolStripMenuItem("PocketBoard: running", null) { Enabled = false, Name = "state" });
         menu.Items.Add(toggle);
         menu.Items.Add(new ToolStripMenuItem("Show network details", null, (_, _) => ShowNetwork()));
+        menu.Items.Add(new ToolStripMenuItem("Input diagnostics", null, (_, _) => ShowInputDiagnostics()));
         menu.Items.Add(new ToolStripMenuItem("Forget all paired phones", null, (_, _) => Revoke()));
         menu.Items.Add(new ToolStripSeparator());
         menu.Items.Add(new ToolStripMenuItem("Exit", null, (_, _) => ExitThread()));
@@ -112,6 +115,20 @@ internal sealed class TrayServer : ApplicationContext
             Environment.MachineName + "\nAddresses: " + string.Join(", ", addresses) +
             "\nTCP: " + Port + "   Discovery UDP: " + DiscoveryPort +
             "\n\nAny device on the local subnet can connect while the receiver is enabled. Pause receiving when unused.", "PocketBoard");
+    }
+
+    void ShowInputDiagnostics()
+    {
+        // A snapshot, not a packet log: no text, keys, tokens, or remote addresses stored.
+        MessageBox.Show(
+            "Commands received: " + Interlocked.Read(ref receivedCommands) +
+            "\n" + InputInjector.Diagnostics() +
+            "\n\nWith Windows On-Screen Keyboard visible, try moving the phone trackpad, " +
+            "then open this view. Compare the numbers after minimizing OSK. " +
+            "If commands increase but injected events do not, the receiver is blocked before SendInput. " +
+            "If injected events increase and failures increase, Windows is refusing input. " +
+            "Windows UIPI restrictions may reject injection without a useful last-error code.",
+            "PocketBoard input diagnostics");
     }
 
     // Discovery never exposes tokens. Only clients on an actual local interface's
@@ -246,6 +263,7 @@ internal sealed class TrayServer : ApplicationContext
                     }
                     using var msg = JsonDocument.Parse(line);
                     var root = msg.RootElement;
+                    Interlocked.Increment(ref receivedCommands);
                     switch (Get(root, "type"))
                     {
                         case "text": InputInjector.Text(Get(root, "value", 4096)); break;
@@ -307,10 +325,51 @@ internal static class InputInjector
     [StructLayout(LayoutKind.Sequential)]
     struct KEYBDINPUT { public ushort wVk, wScan; public uint dwFlags, time; public IntPtr dwExtraInfo; }
     [DllImport("user32.dll", SetLastError = true)] static extern uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
+    [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
+    [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint processId);
+    static long injectionAttempts;
+    static long injectionFailures;
+    static readonly object failureSync = new();
+    static string lastFailure = "None observed";
+
+    static void Inject(INPUT input, string kind)
+    {
+        Interlocked.Increment(ref injectionAttempts);
+        var accepted = SendInput(1, new[] { input }, Marshal.SizeOf<INPUT>());
+        if (accepted == 1) return;
+
+        // UIPI can block SendInput without returning a meaningful last-error value.
+        int error = Marshal.GetLastWin32Error();
+        Interlocked.Increment(ref injectionFailures);
+        string target = "unknown";
+        try
+        {
+            var hwnd = GetForegroundWindow();
+            if (hwnd != IntPtr.Zero)
+            {
+                GetWindowThreadProcessId(hwnd, out uint pid);
+                if (pid != 0) using (var process = Process.GetProcessById((int)pid))
+                    target = process.ProcessName;
+            }
+        }
+        catch (Exception) { /* Diagnostic only; never disrupt input processing. */ }
+        lock (failureSync)
+            lastFailure = DateTimeOffset.Now.ToString("u") + " " + kind +
+                ", accepted=" + accepted + ", Win32 error=" + error +
+                ", foreground process=" + target;
+    }
+
+    public static string Diagnostics()
+    {
+        string failure;
+        lock (failureSync) failure = lastFailure;
+        return "SendInput calls: " + Interlocked.Read(ref injectionAttempts) +
+            "\nFailed calls: " + Interlocked.Read(ref injectionFailures) +
+            "\nLast failure: " + failure;
+    }
     static void Send(ushort vk, ushort scan, uint flags)
     {
-        var inputs = new[] { new INPUT { type = INPUT_KEYBOARD, u = new INPUTUNION { ki = new KEYBDINPUT { wVk = vk, wScan = scan, dwFlags = flags } } } };
-        SendInput(1, inputs, Marshal.SizeOf<INPUT>());
+        Inject(new INPUT { type = INPUT_KEYBOARD, u = new INPUTUNION { ki = new KEYBDINPUT { wVk = vk, wScan = scan, dwFlags = flags } } }, "keyboard");
     }
     public static void Text(string text)
     {
@@ -397,11 +456,10 @@ internal static class InputInjector
     const int WHEEL_DELTA = 120;
     static void Mouse(uint flags, int dx = 0, int dy = 0, uint mouseData = 0)
     {
-        var inputs = new[] { new INPUT { type = 0, u = new INPUTUNION
+        Inject(new INPUT { type = 0, u = new INPUTUNION
         {
             mi = new MOUSEINPUT { dx = dx, dy = dy, mouseData = mouseData, dwFlags = flags }
-        } } };
-        SendInput(1, inputs, Marshal.SizeOf<INPUT>());
+        } }, "mouse");
     }
     public static void MouseMove(int dx, int dy)
     {
