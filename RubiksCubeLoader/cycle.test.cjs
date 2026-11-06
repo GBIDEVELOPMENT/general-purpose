@@ -50,24 +50,31 @@ function harness(filename) {
   return {api:context.window?.rubiksLoader||context.rubiksLoader,advance,elements};
 }
 for(const file of ['index.html','small-cube.html']){
-  test(file+' continuous cycle is genuinely solved at each transition',()=>{
-    const h=harness(file);
-    const a=h.api;
-    assert.ok(a, 'public API available');
+  test(file+' solves indefinitely without adjacent opposite turns',()=>{
+    const h=harness(file),a=h.api;
+    assert.ok(a,'public API available');
     a.start({mode:'cycle',seed:20261106,turnMs:200,scrambleLength:6});
     assert.equal(a.inspect().solved,false);
-    // Start begins solving an already-scrambled cube.
-    h.advance(6*200+50);
-    assert.equal(a.inspect().phase,'scramble');
-    assert.equal(a.inspect().solved,true);
-    h.advance(6*200);
-    assert.equal(a.inspect().phase,'solve');
-    assert.equal(a.inspect().solved,false);
-    h.advance(6*200);
-    assert.equal(a.inspect().phase,'scramble');
-    assert.equal(a.inspect().solved,true);
-    assert.ok(a.inspect().cycles>=2);
+    let prevPhase=a.inspect().phase,phaseChanges=0,solves=0;
+    for(let i=0;i<3000;i++){
+      h.advance(50);
+      const state=a.inspect();
+      assert.equal(state.immediateReversals,0,'no move immediately reverses its predecessor');
+      if(state.phase!==prevPhase){
+        phaseChanges++;
+        if(state.phase==='scramble'){
+          assert.equal(state.solved,true,'each solve really reaches solved state');
+          solves++;
+        }else{
+          assert.equal(state.solved,false,'new scramble really changes the cube');
+        }
+        prevPhase=state.phase;
+      }
+    }
+    assert.ok(phaseChanges>=20,'crossed at least 20 alternating solve/scramble boundaries');
+    assert.ok(solves>=10,'fully solved repeatedly');
+    assert.ok(a.inspect().turns>=100,'tested over 100 legal quarter-turns');
     a.setPalette('original');
-    assert.equal(a.inspect().solved,true,'palette changes do not alter state');
+    assert.equal(a.inspect().immediateReversals,0,'palette change leaves move history intact');
   });
 }
