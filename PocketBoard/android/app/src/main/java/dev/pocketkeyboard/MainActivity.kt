@@ -651,14 +651,33 @@ class MainActivity : Activity() {
                     return@runOnUiThread
                 }
                 val hosts = found.keys.toList()
-                android.app.AlertDialog.Builder(this)
-                    .setTitle("Connect to a PC")
-                    .setItems(hosts.map { found[it] }.toTypedArray()) { _, index ->
+                val slabthing = resources.getFont(R.font.slabthing)
+                val dialogTitle = TextView(this).apply {
+                    text = "Connect to a PC"
+                    typeface = slabthing
+                    setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f)
+                    setTextColor(Color.WHITE)
+                    setPadding(dp(24), dp(20), dp(24), dp(12))
+                }
+                val choices = hosts.map { found[it].orEmpty() }
+                val hostAdapter = object : ArrayAdapter<String>(
+                    this, android.R.layout.simple_list_item_1, choices
+                ) {
+                    override fun getView(position: Int, convertView: View?, parent: android.view.ViewGroup): View {
+                        return super.getView(position, convertView, parent).also {
+                            (it as TextView).typeface = slabthing
+                        }
+                    }
+                }
+                val dialog = android.app.AlertDialog.Builder(this)
+                    .setCustomTitle(dialogTitle)
+                    .setAdapter(hostAdapter) { _, index ->
                         host.setText(hosts[index])
                         startConnection()
                     }
                     .setNegativeButton("Cancel", null)
                     .show()
+                dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE)?.typeface = slabthing
             }
         }.start()
     }
