@@ -24,6 +24,7 @@ button:focus-visible,select:focus-visible{outline:2px solid #ffd63c}
  <span id="status" class="status" role="status">Loading…</span>
  <div class="controls">
   <select id="mode" aria-label="Animation mode"><option value="solve">15-second timed solve</option><option value="loop">Perpetual shuffle</option></select>
+  <select id="palette" aria-label="Cube palette"><option value="muted">Muted colours</option><option value="original">Original vivid colours</option></select>
   <button id="restart">Restart</button><button id="pause">Pause</button><button id="complete">Complete</button>
  </div>
 </main>
@@ -45,7 +46,12 @@ const root=document.getElementById('cube'), surface=document.getElementById('geo
 const modeSelect=document.getElementById('mode'), pauseButton=document.getElementById('pause');
 const status=document.getElementById('status');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-const COLORS={'1,0,0':'#2985f6','-1,0,0':'#38cf60','0,-1,0':'#f33a41','0,1,0':'#f19531','0,0,1':'#ffcf35','0,0,-1':'#eeeeef'};
+// The 2026 original vivid palette is preserved verbatim.
+const PALETTES=Object.freeze({
+ original:Object.freeze({'1,0,0':'#2985f6','-1,0,0':'#38cf60','0,-1,0':'#f33a41','0,1,0':'#f19531','0,0,1':'#ffcf35','0,0,-1':'#eeeeef'}),
+ muted:Object.freeze({'1,0,0':'#438bb6','-1,0,0':'#539a76','0,-1,0':'#ae4044','0,1,0':'#c78861','0,0,1':'#c9c260','0,0,-1':'#dfddd6'})
+});
+let selectedPalette='muted';
 const NORMALS=[[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]];
 const EYE=[.62,-.79,.78], X=[.787,.617,0], Y=[.399,-.508,-.763];
 const SCRAMBLE_SEQUENCE=[
@@ -91,7 +97,7 @@ let cubes=[],timeline=[],nextIndex=0,current=null,elapsed=0,previous=null,visibl
 function resetCubes(){
  cubes=[];for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++){
  const p=[x,y,z],stickers={};
- for(const n of NORMALS)if(dot(p,n)===1)stickers[key(n)]=COLORS[key(n)];
+ for(const n of NORMALS)if(dot(p,n)===1)stickers[key(n)]=key(n);
  cubes.push({p,stickers});
  }
 }
@@ -126,7 +132,7 @@ function paint(angle=0,move=null){
   if(!f.sticker)continue;
   const center=[f.plane.reduce((a,p)=>a+p[0],0)/4,f.plane.reduce((a,p)=>a+p[1],0)/4];
   const inner=f.plane.map(p=>mix(p,center,.115));
-  frag.append(make('polygon',{points:pts(inner),fill:brighten(f.sticker,f.shade)}));
+  frag.append(make('polygon',{points:pts(inner),fill:brighten(PALETTES[selectedPalette][f.sticker],f.shade)}));
   // Lighting stays in SCREEN SPACE, regardless of original face axes.
   // Its endpoints are derived from the normalized projected quad.
   const p0=mix(inner[0],center,.12),p1=mix(inner[1],center,.17),left=mix(p0,inner[3],.12);
@@ -144,8 +150,15 @@ function validateMoves(moves){
  !Number.isInteger(m[0])||m[0]<0||m[0]>2||!Number.isInteger(m[1])||m[1]<-1||m[1]>1||
  (m[2]!==1&&m[2]!==-1)))throw new TypeError('moves must be [axis 0..2, layer -1..1, direction +1/-1]');
 }
+function setPalette(name){
+ if(!Object.hasOwn(PALETTES,name))throw new TypeError('Unknown palette: '+name);
+ selectedPalette=name;
+ const select=document.getElementById('palette');if(select)select.value=name;
+ if(cubes.length)paint();
+}
 function start(options={}){
  const m=options.mode||'solve';
+ if(options.palette!==undefined)setPalette(options.palette);
  if(!['solve','loop'].includes(m))throw new TypeError('mode must be solve or loop');
  const scramble=options.moves||SCRAMBLE_SEQUENCE;
  validateMoves(scramble);
@@ -214,10 +227,11 @@ observer.observe(root);
 document.addEventListener('visibilitychange',onVisibility);
 reduced.addEventListener('change',onMotion);
 modeSelect.addEventListener('change',()=>start({mode:modeSelect.value}));
+document.getElementById('palette').addEventListener('change',e=>setPalette(e.target.value));
 document.getElementById('restart').addEventListener('click',()=>start({mode:modeSelect.value}));
 pauseButton.addEventListener('click',()=>paused?resume():pause());
 document.getElementById('complete').addEventListener('click',complete);
-window.rubiksLoader={start,complete,pause,resume,destroy};
+window.rubiksLoader={start,complete,pause,resume,destroy,setPalette,palettes:PALETTES};
 start();
 })();
 </script>
