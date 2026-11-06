@@ -9,7 +9,7 @@ fill out fourteen distinct action-button colours.
 
 | Order | Name | Hex | Origin |
 | --- | --- | --- | --- |
-| 1 | blue | `#008CFF` | Reference |
+| 1 | blue | `#0066FF` | Reference |
 | 2 | teal | `#02B8B6` | Reference |
 | 3 | pink | `#FA398F` | Reference |
 | 4 | purple | `#7D3CEE` | Reference |
@@ -62,4 +62,8 @@ rasters are not recoloured, preserving their provenance.
 
 ## 1.0.6 owner-requested adjustment
 
-Blue is now `#008CFF`, a clearer bright blue distinct from indigo; emerald green is now the slightly lighter `#00805B`. These tokens apply to the rainbow pad, adaptive launcher, header icon, source SVGs and action backgrounds. The Tab and Esc silhouettes exchange assignments, while their symbols, colours, positions and commands stay unchanged. The cursor uses a two-contour reference trace in button-symbols/cursor-pointer.svg and the matching native vector.
+Blue is now `#0066FF`, a clearer bright blue distinct from indigo; emerald green is now the slightly lighter `#00805B`. These tokens apply to the rainbow pad, adaptive launcher, header icon, source SVGs and action backgrounds. The Tab and Esc silhouettes exchange assignments, while their symbols, colours, positions and commands stay unchanged. The cursor uses a two-contour reference trace in button-symbols/cursor-pointer.svg and the matching native vector.
+
+## 1.0.8: dedicated scroll strip
+
+Canonical blue changes from `#008CFF` to `#0066FF` for a more vividly blue stripe, synchronized across the touchpad, launcher/header artwork and source SVGs. A single new **semantic surface** colour, scroll gray `#667080`, is allowed only for the rightmost 17% vertical scroll strip. The remaining 83% retains all seven rainbow stripes at their original proportions relative to one another. A thin cream separator matches the border. This gray is not a new action-button hue.
