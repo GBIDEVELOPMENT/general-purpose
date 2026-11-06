@@ -344,3 +344,7 @@ The touchpad is split into an 83% rainbow pointer surface and a 17% gray vertica
 ## PocketBoard 1.0.9: stronger blue and faster wheel strip
 
 The rightmost 17% vertical scrollpad retains its layout and gesture semantics but now produces 2.5× more wheel scrolling for the same finger travel. The wheel-step threshold changes from 28dp to 11.2dp; accumulated sub-step motion is retained, and wheel output remains bounded per event. The saturated royal-blue canonical token changes from `#0066FF` to `#003CFF`, shared by the trackpad, header and launcher icon. The emerald, teal, purple and scroll-gray tokens are unchanged. Android versionCode 28, versionName 1.0.9. No Windows receiver update required.
+
+## PocketBoard 1.0.10: correct rainbow band order
+
+The spectrum previously used turquoise as stripe five and placed blue in stripe six. All seven rainbow surfaces now use the actual ROYGBIV order **red → orange → yellow → green → blue → indigo → violet**, with exact canonical colours `#E92F61`, `#FD791E`, `#FFD42A`, `#00805B`, `#003CFF`, `#4B2FC4`, `#A857FF`. This applies to the touchpad, launcher SVGs, Android adaptive background and header icon. The canonical indigo token is deeper and more blue-violet; unrelated teal and purple buttons remain available. Scroll-strip geometry, 2.5× sensitivity, controls and Windows receiver protocol do not change. Android version 1.0.10, versionCode 29. CI checks all source/runtime rainbow orders, rather than merely checking that individual colours are present. Real-device visual confirmation is still needed.
