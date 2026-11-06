@@ -1,4 +1,4 @@
-name: Publish Font Shelf and Glyph Mixer to GitHub Pages
+name: Publish Font Shelf, Glyph Mixer and Rubik's Cube to GitHub Pages
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
     paths:
       - 'FontViewer/**'
       - 'GlyphMixer/**'
+      - 'RubiksCubeLoader/**'
       - '.github/workflows/fontviewer-pages.yml'
   workflow_dispatch:
 
@@ -20,7 +21,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: Publish separate Font Shelf and Glyph Mixer sites
+    name: Publish Font Shelf, Glyph Mixer and Cube comparison
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -42,8 +43,14 @@ jobs:
       - name: Stage independent applications
         shell: bash
         run: |
-          mkdir -p _site/FontViewer _site/GlyphMixer/headless
+          mkdir -p _site/FontViewer _site/GlyphMixer/headless _site/RubiksCubeLoader
           cp FontViewer/index.html _site/FontViewer/index.html
+          cp RubiksCubeLoader/compare.html _site/RubiksCubeLoader/index.html
+          cp RubiksCubeLoader/index.html _site/RubiksCubeLoader/standard.html
+          cp RubiksCubeLoader/small-cube.html _site/RubiksCubeLoader/small-cube.html
+          test -s _site/RubiksCubeLoader/index.html
+          test -s _site/RubiksCubeLoader/standard.html
+          test -s _site/RubiksCubeLoader/small-cube.html
           cp GlyphMixer/index.html GlyphMixer/app.js GlyphMixer/core.js GlyphMixer/style.css _site/GlyphMixer/
           cp GlyphMixer/variations-core.js GlyphMixer/variations-ui.js GlyphMixer/compiler-worker.js _site/GlyphMixer/
           cp GlyphMixer/headless/cli.py _site/GlyphMixer/headless/cli.py
