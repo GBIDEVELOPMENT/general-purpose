@@ -682,7 +682,23 @@ class MainActivity : Activity() {
             val span = rainbowWidth / 7f
             val lean = kotlin.math.min(h * 0.14f, span * 0.35f)
             // Keep all seven angled rainbow stripes inside the 83% pointer area.
-            canvas.drawColor(PocketBoardPalette.SCROLL_GRAY)
+            // Lighter scroll surface; the seven source-traced marker lines retain
+            // the previous scroll gray. Both stay inside the existing pad shape.
+            canvas.drawColor(PocketBoardPalette.SCROLL_GRAY_LIGHT)
+            val scrollStripWidth = w - rainbowWidth
+            val markerHeight = minOf(h * 0.76f, scrollStripWidth * 0.66f * (900f / 220f))
+            val markerWidth = markerHeight * (220f / 900f)
+            val markerCx = rainbowWidth + scrollStripWidth * 0.5f
+            val markerCy = h * 0.5f
+            context.getDrawable(R.drawable.pb_scrollpad_seven_lines)?.apply {
+                setBounds(
+                    (markerCx - markerWidth * 0.5f).roundToInt(),
+                    (markerCy - markerHeight * 0.5f).roundToInt(),
+                    (markerCx + markerWidth * 0.5f).roundToInt(),
+                    (markerCy + markerHeight * 0.5f).roundToInt()
+                )
+                draw(canvas)
+            }
             canvas.save()
             canvas.clipRect(0f, 0f, rainbowWidth, h)
             canvas.drawColor(colors[0])
