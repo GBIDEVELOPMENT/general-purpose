@@ -348,3 +348,7 @@ The rightmost 17% vertical scrollpad retains its layout and gesture semantics bu
 ## PocketBoard 1.0.10: correct rainbow band order
 
 The spectrum previously used turquoise as stripe five and placed blue in stripe six. All seven rainbow surfaces now use the actual ROYGBIV order **red → orange → yellow → green → blue → indigo → violet**, with exact canonical colours `#E92F61`, `#FD791E`, `#FFD42A`, `#00805B`, `#003CFF`, `#4B2FC4`, `#A857FF`. This applies to the touchpad, launcher SVGs, Android adaptive background and header icon. The canonical indigo token is deeper and more blue-violet; unrelated teal and purple buttons remain available. Scroll-strip geometry, 2.5× sensitivity, controls and Windows receiver protocol do not change. Android version 1.0.10, versionCode 29. CI checks all source/runtime rainbow orders, rather than merely checking that individual colours are present. Real-device visual confirmation is still needed.
+
+## PocketBoard 1.0.11: Refresh glyph refinement
+
+The Refresh button keeps its coral background, layout, F5 command and existing traced button silhouette, but both curved arrow tails are slightly shorter to produce a more open gap. The canonical `assets/button-symbols/refresh.svg` and matching `pb_refresh.xml` Android vector have identical revised contours. All other symbols and features are unchanged. Android versionCode 30 / versionName 1.0.11. Windows receiver update is unnecessary.

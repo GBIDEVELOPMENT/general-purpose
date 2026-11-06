@@ -197,6 +197,13 @@ def validate_svg(source, dest):
 
 for symbol, res in SYMBOLS.items():
     validate_svg(ROOT / f"assets/button-symbols/{symbol}.svg", res)
+# Refresh arrows remain independent and the upper/lower tails are shortened.
+refresh_svg = xml(ROOT / "assets/button-symbols/refresh.svg")
+refresh_paths = refresh_svg.findall("{http://www.w3.org/2000/svg}path")
+assert len(refresh_paths) == 2
+assert "L 34 350" not in refresh_paths[0].attrib["d"], "Old upper arrow tail returned"
+assert refresh_paths[1].attrib["d"].startswith("M 806 496 "), "Shortened lower arrow tail missing"
+
 for shape in SHAPES:
     name = "connected" if shape == "connected-pill" else shape.replace("-", "_")
     validate_svg(ROOT / f"assets/button-silhouettes/{shape}.svg", f"pb_shape_{name}")

@@ -36,3 +36,7 @@ To recolour, change `fill="#ffffff"` to the desired solid colour or `currentColo
 ## Refresh glyph (PocketBoard 1.0.7)
 
 `refresh.svg` is a two-contour source-image trace from the owner-supplied transparent PNG. Each arrow was isolated using its actual alpha mask, spurious disconnected raster speckles were excluded, and each outline was traced to approximately 1.25 source pixels before a tightly cropped, transparent viewBox was applied. The original unequal arrow curves, rounded arrowheads and slightly hand-drawn irregularities are retained. The source paths are white; `pb_refresh.xml` in Android drawable resources uses the canonical cream foreground. The new action reuses `pb_shape_apps_grid` for its coloured background.
+
+## Refresh contour spacing (1.0.11)
+
+The two independent Refresh arrow contours are subtly shortened at their *trailing tips*: the upper clockwise arrow's left/downward tail is pulled inward and slightly upward, while the lower arrow's right/upward tail is pulled inward and slightly downward. Each adjustment tapers smoothly along the existing straight-segment tracing, leaving the arrowheads, main sweeping arcs, original white SVG foreground, and canvas bounds intact. The opening between the two shapes is wider without substituting stock geometry. The Android VectorDrawable follows the SVG path data exactly.
