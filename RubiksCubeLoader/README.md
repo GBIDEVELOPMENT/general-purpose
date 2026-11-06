@@ -4,6 +4,8 @@ Dependency-free **SVG + vanilla JavaScript** isometric Rubik's Cube loading indi
 
 ## Files
 - `index.html`: interactive demo with **15-second deterministic solve** and **perpetual shuffle** modes.
+- `small-cube.html`: separate one-third-world-size rendition with matching solve and shuffle modes.
+- `PALETTES.md`: preserved original vivid palette and adopted muted palette based on the 6 November reference.
 - `README.md`: integration and design notes.
 
 Open `index.html` directly in a browser.
