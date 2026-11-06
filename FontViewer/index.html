@@ -195,7 +195,7 @@ function render(){
   selectedByFamily.set(key,rec.id);
   const card=make('article','card'),head=make('div','cardhead'),left=make('div'),controls=make('div','variant-controls');
   const title=make('h2','fontname',rec.name),filename=make('p','filename',rec.file);
-  const remove=make('button','remove','✕');remove.setAttribute('aria-label','Remove '+rec.name);remove.title='Remove this font variant';
+  const remove=make('button','remove','✕');remove.setAttribute('aria-label','Remove entire '+rec.familyName+' family');remove.title='Remove entire font family';
   for(const element of [title,filename,remove])element.style.fontFamily='"'+rec.family+'"';
   left.append(title,filename);
   if(variants.length>1){
@@ -208,7 +208,7 @@ function render(){
    const position=make('span','variant-position',(index+1)+' / '+variants.length);
    left.append(position);
   }
-  remove.onclick=()=>removeFont(rec.id);
+  remove.onclick=()=>removeFamily(key);
   controls.append(remove);head.append(left,controls);
   const sample=make('div','sample',$('preview').value||' ');sample.style.fontFamily='"'+rec.family+'"';
   const meta=make('div','meta');meta.append(make('span','',rec.cps.length.toLocaleString()+' mapped characters'),make('span','',rec.source===rec.file?'Direct import':'ZIP: '+rec.source));
@@ -240,13 +240,13 @@ function render(){
   card.append(head,sample,meta,axes,details);root.append(card);
  }
 }
-function removeFont(id){
- const rec=records.get(id);if(!rec)return;
- cleanupFont(rec);records.delete(id);
- if(selectedByFamily.get(rec.familyKey)===id)selectedByFamily.delete(rec.familyKey);
- if(![...records.values()].some(r=>r.familyKey===rec.familyKey))collapsedByFamily.delete(rec.familyKey);
+function removeFamily(key){
+ const family=[...records.values()].filter(rec=>rec.familyKey===key);
+ if(!family.length)return;
+ for(const rec of family){cleanupFont(rec);records.delete(rec.id)}
+ selectedByFamily.delete(key);collapsedByFamily.delete(key);
  render();
- status(rec.name+' removed.');
+ status(family[0].familyName+' family removed ('+family.length+' variant'+(family.length===1?'':'s')+').');
 }
 $('add').onclick=()=>$('file').click();
 $('file').onchange=e=>importFiles([...e.target.files]);
