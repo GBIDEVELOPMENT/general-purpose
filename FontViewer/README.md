@@ -8,8 +8,8 @@ A small, phone-first browser application for inspecting local TrueType and OpenT
 - ZIP import discovers TTF/OTF/WOFF/WOFF2/TTC/OTC files in nested archive directories. Collections unpack individual faces for display. Duplicate faces across formats are consolidated by embedded PostScript/family/style metadata, preferring OTF, TTF, WOFF2, WOFF, OTC, TTC in that order.
 - Read the names embedded in font metadata, preview arbitrary text across every font, and inspect mapped Unicode characters.
 - Variable-font previews and glyphs expose sliders for each declared variation axis.
-- Group fonts by embedded family name: one card per family, with previous/next arrows alongside the remove button when multiple faces are available. The dismiss button removes only the currently selected face; removing the last face removes its card. Character-map collapse state is preserved while switching variants.
-- Remove individual imports or clear the complete shelf.
+- Group fonts by embedded family name: one card per family, with previous/next arrows alongside the remove button when multiple faces are available. The dismiss button removes the entire family and all of its variants. The displayed count counts family cards, not individual face files. Character-map collapse state is preserved while switching variants.
+- Dismiss an entire font family or clear all families at once.
 - Ascending/descending name sorting and a sticky mobile header with preview field and light/dark toggle.
 - Processing occurs entirely in the browser, without a font upload API.
 
