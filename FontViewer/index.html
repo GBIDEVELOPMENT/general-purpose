@@ -179,8 +179,10 @@ function render(){
  $('empty').hidden=!!list.length;$('clear').disabled=!list.length;
  for(const rec of list){
   const card=make('article','card'),head=make('div','cardhead'),left=make('div');
-  left.append(make('h2','fontname',rec.name),make('p','filename',rec.file));
+  const title=make('h2','fontname',rec.name),filename=make('p','filename',rec.file);
   const remove=make('button','remove','✕');remove.setAttribute('aria-label','Remove '+rec.name);
+  for(const element of [title,filename,remove])element.style.fontFamily='"'+rec.family+'"';
+  left.append(title,filename);
   remove.onclick=()=>removeFont(rec.id);
   head.append(left,remove);
   const sample=make('div','sample',$('preview').value||' ');sample.style.fontFamily='"'+rec.family+'"';
@@ -188,7 +190,7 @@ function render(){
   const axes=make('div','axes');
   if(rec.axes.length){
    axes.append(make('p','label','VARIABLE FONT AXES'));
-   const apply=()=>{const settings=rec.axes.map(a=>'"'+a.tag+'" '+a.value).join(', ');sample.style.fontVariationSettings=settings;card.querySelectorAll('.glyph b').forEach(g=>g.style.fontVariationSettings=settings)};
+   const apply=()=>{const settings=rec.axes.map(a=>'"'+a.tag+'" '+a.value).join(', ');sample.style.fontVariationSettings=settings;for(const el of [title,filename,remove])el.style.fontVariationSettings=settings;card.querySelectorAll('.glyph b').forEach(g=>g.style.fontVariationSettings=settings)};
    for(const axis of rec.axes){
     const wrapper=make('label','axis'),title=make('span','',axis.name+' ('+axis.tag+')'),value=make('output','',String(axis.value));
     const slider=make('input');slider.type='range';slider.min=axis.min;slider.max=axis.max;slider.step=Math.max((axis.max-axis.min)/200,0.01);slider.value=axis.value;slider.setAttribute('aria-label',axis.name);
