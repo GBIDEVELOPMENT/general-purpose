@@ -737,13 +737,8 @@ class MainActivity : Activity() {
                 canvas.drawPath(stripe, paint)
             }
             canvas.restore()
-            // The seam matches the existing thin cream perimeter stroke.
+            // Source-traced border and divider are drawn together below the cursor.
             val d = resources.displayMetrics.density
-            paint.color = PocketBoardPalette.CREAM
-            paint.style = Paint.Style.STROKE
-            paint.strokeWidth = 1.2f * d
-            canvas.drawLine(rainbowWidth, d, rainbowWidth, h - d, paint)
-            paint.style = Paint.Style.FILL
             canvas.restore()
             val cx = w * 0.83f * 0.5f
             val cy = h * 0.5f
@@ -754,11 +749,12 @@ class MainActivity : Activity() {
             pointer?.setBounds((cx-cw/2).roundToInt(), (cy-ch/2).roundToInt(),
                 (cx+cw/2).roundToInt(), (cy+ch/2).roundToInt())
             pointer?.draw(canvas)
-            paint.style = Paint.Style.STROKE
-            paint.color = PocketBoardPalette.CREAM
-            paint.strokeWidth = 1.2f * d
-            canvas.drawRoundRect(RectF(d, d, w-d, h-d), 12*d, 12*d, paint)
-            paint.style = Paint.Style.FILL
+            // Preserve the reference's subtly asymmetric perimeter and divider.
+            // Both strokes use exactly the button-symbol cream, as authored.
+            context.getDrawable(R.drawable.pb_trackpad_outline_divider)?.apply {
+                setBounds(0, 0, width, height)
+                draw(canvas)
+            }
         }
     }
 
