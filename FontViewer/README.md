@@ -8,7 +8,7 @@ A small, phone-first browser application for inspecting local TrueType and OpenT
 - ZIP import discovers TTF/OTF/WOFF/WOFF2/TTC/OTC files in nested archive directories. Collections unpack individual faces for display. Duplicate faces across formats are consolidated by embedded PostScript/family/style metadata, preferring OTF, TTF, WOFF2, WOFF, OTC, TTC in that order.
 - Read the names embedded in font metadata, preview arbitrary text across every font, and inspect mapped Unicode characters.
 - Variable-font previews and glyphs expose sliders for each declared variation axis.
-- Group fonts using normalized family names and a shared first-two-word heuristic, even if files disagree on their internal family metadata. This deliberately favors grouping similarly named packages and may merge distinct families with the same opening words. One card per family, with previous/next arrows alongside the remove button when multiple faces are available. Navigation buttons display the imported face's literal `<` and `>` glyphs; dismissal displays its literal `x` glyph. The dismiss button removes the entire family and all of its variants. The displayed count counts rendered family cards, not individual face files.
+- Group fonts using normalized style-free name stems and supporting ZIP-package evidence. This combines families such as Zounderkite (3D, Bevel, Chrome, etc.), Gargle's style variations, Stoutface / Stoutface SC Small Caps, and KBYoureJustMyType / Thin, while avoiding naive first-two-word collisions (for example, Super Comic vs Super Hockey) and unrelated faces that happen to share one ZIP (Patrick Hand / Unkempt). One card per family, with previous/next arrows alongside the remove button when multiple faces are available. Navigation buttons display the imported face's literal `<` and `>` glyphs; dismissal displays its literal `x` glyph. The dismiss button removes the entire family and all of its variants. The displayed count counts rendered family cards, not individual face files.
 - Variant changes update only the selected card, and expanded character maps populate on scroll in small animation-frame batches to reduce UI lag. Character maps start collapsed, can be expanded independently per family, and retain their expand/collapse state while switching variants.
 - Dismiss an entire font family or clear all families at once.
 - Ascending/descending name sorting and a sticky mobile header with preview field and light/dark toggle.
@@ -36,3 +36,7 @@ This is an initial implementation. JavaScript syntax has been checked, but autom
 2. Add unit and browser tests covering multiple imports, ZIPs, duplicate handling, missing Unicode cmaps, and font-face cleanup.
 3. Optionally persist font collections with IndexedDB (opt-in only).
 4. Improve huge character-map navigation with range filters and progressive rendering.
+
+## Family grouping examples
+
+Regression scenarios verified against the family-matching helper: Zounderkite's 3D, Semi-Italic and Super-Italic faces; Stoutface and SC Small Caps; KBYoureJustMyType and Thin; Gargle's differently encoded styles. Negative cases: Super Comic vs Super Hockey; Patrick Hand vs Unkempt, despite a shared ZIP; DKJalebi vs DKNewBeginnings. These are source-level checks, not full Android Chrome acceptance tests.
