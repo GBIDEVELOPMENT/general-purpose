@@ -96,7 +96,7 @@ function canonical(v){
  return [...ordered.slice(first),...ordered.slice(0,first)];
 }
 let cubes=[],timeline=[],nextIndex=0,current=null,elapsed=0,previous=null,visible=true,
- cyclePhase='solve',cycleMoves=[],cycleMoveIndex=0,cycleElapsed=0,cycleDuration=840,cycleScrambleLength=18,cycleRandomSeed=1,cycleCount=0,cycleLastMove=null,cycleReversals=0,cycleTurns=0,cyclePlan=null,cycleBridgeCancellations=0,
+ cyclePhase='solve',cycleMoves=[],cycleMoveIndex=0,cycleElapsed=0,cycleDuration=840,cycleScrambleLength=18,cycleRandomSeed=1,cycleCount=0,cycleLastMove=null,cycleReversals=0,cycleTurns=0,cyclePlan=null,cycleBridgeCancellations=0,cycleHistory=[],
  pageVisible=!document.hidden,paused=false,raf=0,lastDraw=-Infinity,completed=false,completing=false,completionSpeed=1,runMode='solve',duration=15000;
 function resetCubes(){
  cubes=[];for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++){
@@ -215,7 +215,11 @@ function cycleFrame(dt){
   cycleElapsed-=cycleDuration;
   const move=cycleMoves[cycleMoveIndex++];
   if(isUndo(cycleLastMove,move))cycleReversals++;
-  if(commutingUndoCount([move],cycleLastMove))cycleBridgeCancellations++;
+  for(let i=cycleHistory.length-1;i>=0;i--){
+   if(cycleHistory[i][0]!==move[0])break;
+   if(isUndo(cycleHistory[i],move)){cycleBridgeCancellations++;break;}
+  }
+  cycleHistory.push(move);if(cycleHistory.length>64)cycleHistory.shift();
   cycleLastMove=move;cycleTurns++;
   turn(move);
   if(cycleMoveIndex===cycleMoves.length)advanceCycle();
@@ -252,7 +256,7 @@ function start(options={}){
   // A complete algebraic cycle uses 24 scramble turns and 24 solve turns.
   // The legacy scrambleLength option remains accepted, but the safe cycle has fixed length.
   cyclePhase='solve';cycleElapsed=0;cycleCount=0;cycleMoveIndex=0;
-  cycleLastMove=null;cycleReversals=0;cycleTurns=0;cycleBridgeCancellations=0;
+  cycleLastMove=null;cycleReversals=0;cycleTurns=0;cycleBridgeCancellations=0;cycleHistory=[];
  }
  resetCubes();
  if(m==='solve'){
