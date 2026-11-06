@@ -37,6 +37,9 @@ jobs:
           npm install --prefix GlyphMixer --ignore-scripts --no-audit --no-fund --package-lock=false
           npm test --prefix GlyphMixer
 
+      - name: Verify both Rubik's Cube animation loops
+        run: node --test RubiksCubeLoader/cycle.test.cjs
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
