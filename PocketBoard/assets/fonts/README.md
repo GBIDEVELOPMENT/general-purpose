@@ -1,3 +1,5 @@
 # PocketBoard fonts
 
-`MorningRainbow-WyL8n.ttf` is the owner-supplied source font formerly in the PocketBoard root. Android deploys the byte-identical copy under `android/app/src/main/res/font/morning_rainbow.ttf`. The font is an app asset; its separate license should be checked before redistribution outside the project. Use the same font for any future UI text.
+Slabthing is the canonical default font for all PocketBoard UI text. The owner-provided source archive is `PocketBoard/slabthing-font.zip`; the selected Android-compatible font is stored under `android/app/src/main/res/font/slabthing.ttf` and an identical archival copy under `assets/fonts/Slabthing.ttf`.
+
+Morning Rainbow is retained as a historical font asset, but is no longer the UI default. Verify licensing before redistribution outside the project.

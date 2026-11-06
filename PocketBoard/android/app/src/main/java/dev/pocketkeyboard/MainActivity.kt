@@ -146,7 +146,7 @@ class MainActivity : Activity() {
         status = TextView(this).apply {
             text = "DISCONNECTED"
             textSize = 16f
-            typeface = resources.getFont(R.font.morning_rainbow)
+            typeface = resources.getFont(R.font.slabthing)
             setTextColor(PocketBoardPalette.CREAM)
             // Anchor the text's lower edge inside the 40dp pill as caps grow up.
             gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
@@ -287,7 +287,7 @@ class MainActivity : Activity() {
             // This canonical placeholder token is 50% opaque.
             setHintTextColor(PocketBoardPalette.HINT_CREAM)
             setTextColor(cream)
-            typeface = resources.getFont(R.font.morning_rainbow)
+            typeface = resources.getFont(R.font.slabthing)
             textSize = 13f
             setSingleLine(false)
             maxLines = 2
@@ -437,7 +437,7 @@ class MainActivity : Activity() {
                 if (icon == null) {
                     TextView(this).apply {
                         text = title
-                        typeface = resources.getFont(R.font.morning_rainbow)
+                        typeface = resources.getFont(R.font.slabthing)
                         textSize = 13f
                         setTextColor(cream)
                         gravity = Gravity.CENTER
