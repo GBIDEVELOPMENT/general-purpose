@@ -15,9 +15,9 @@ DRAWABLE = ROOT / "android/app/src/main/res/drawable"
 NS = "{http://schemas.android.com/apk/res/android}"
 APPROVED = {
     "CHARCOAL": "FF171923", "DISCONNECTED": "FF283040",
-    "CREAM": "FFFCF4E9", "MUTED_CREAM": "FFE6DDD0",
+    "CREAM": "FFFCF4E9", "SCROLL_GRAY": "FF667080", "MUTED_CREAM": "FFE6DDD0",
     "HINT_CREAM": "80D0C9BE", "PRESS_RIPPLE": "33FCF4E9",
-    "BLUE": "FF008CFF", "TEAL": "FF02B8B6", "PINK": "FFFA398F",
+    "BLUE": "FF0066FF", "TEAL": "FF02B8B6", "PINK": "FFFA398F",
     "PURPLE": "FF7D3CEE", "ORANGE": "FFFD791E", "YELLOW": "FFFFD42A",
     "GREEN": "FF00805B", "RED_PINK": "FFE92F61", "SKY_BLUE": "FF22A3FF",
     "VIOLET": "FFA857FF", "CORAL": "FFFF5A3C",
@@ -122,19 +122,21 @@ windows_source = (ROOT / "windows/Program.cs").read_text()
 assert '"F5" => 0x74' in windows_source, "Windows receiver must send VK_F5"
 assert 'if (key == "F5") ReleaseAltTab();' in windows_source
 
-# Two-finger gesture must exclude one-finger click/pointer injection, track
-# pointer IDs through move, and issue bounded wheel steps.
+# Vertical scroll owns the rightmost 17%, with no two-finger gesture.
 for gesture_contract in (
-    "MotionEvent.ACTION_POINTER_DOWN",
-    "MotionEvent.ACTION_POINTER_UP",
-    "cancel.action = MotionEvent.ACTION_CANCEL",
-    "suppressSingleFingerUntilUp",
-    "event.findPointerIndex(scrollPointerA)",
-    "event.findPointerIndex(scrollPointerB)",
-    'put("type", "mouse_scroll")',
-    ".coerceIn(-4, 4)",
+    "event.x >= width * 0.83f",
+    "scrollingStrip = event.x >= width * 0.83f",
+    "scrollCarryY += deltaDp",
+    'put("type", "mouse_scroll").put("vertical", vertical)',
+    "suppressGestureUntilUp = true",
+    "val rainbowWidth = w * 0.83f",
+    "canvas.clipRect(0f, 0f, rainbowWidth, h)",
+    "PocketBoardPalette.SCROLL_GRAY",
+    "canvas.drawLine(rainbowWidth, d, rainbowWidth, h - d, paint)",
 ):
     assert gesture_contract in main, gesture_contract
+assert "twoFingerScrolling" not in main
+assert '"horizontal"' not in main
 for old in ("pb_button_squircle", "pb_choose", "pb_backspace"):
     assert old not in main, f"Legacy resource still referenced: {old}"
 # Owner-approved UI contract: text sizes, baseline, button slots, and palette.
