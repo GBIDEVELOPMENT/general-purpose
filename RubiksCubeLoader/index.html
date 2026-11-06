@@ -87,7 +87,7 @@ function canonical(v){
  return [...ordered.slice(first),...ordered.slice(0,first)];
 }
 let cubes=[],timeline=[],nextIndex=0,current=null,elapsed=0,previous=null,visible=true,
- pageVisible=!document.hidden,paused=false,raf=0,lastDraw=-Infinity,completed=false,runMode='solve',duration=15000;
+ pageVisible=!document.hidden,paused=false,raf=0,lastDraw=-Infinity,completed=false,completing=false,completionSpeed=1,runMode='solve',duration=15000;
 function resetCubes(){
  cubes=[];for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++){
  const p=[x,y,z],stickers={};
@@ -151,7 +151,7 @@ function start(options={}){
  validateMoves(scramble);
  const ms=options.durationMs??15000;
  if(!Number.isFinite(ms)||ms<1000)throw new RangeError('durationMs must be at least 1000');
- runMode=m;duration=ms;modeSelect.value=m;completed=false;elapsed=0;previous=null;nextIndex=0;current=null;
+ runMode=m;duration=ms;modeSelect.value=m;completed=false;completing=false;completionSpeed=1;elapsed=0;previous=null;nextIndex=0;current=null;
  resetCubes();
  if(m==='solve'){
   scramble.forEach(turn);
@@ -165,12 +165,15 @@ function request(){if(!raf&&!paused&&visible&&pageVisible&&!completed)raf=reques
 function frame(now){
  raf=0;if(paused||!visible||!pageVisible||completed)return;
  if(previous===null)previous=now;
- const dt=Math.max(0,Math.min(now-previous,100));previous=now;elapsed+=dt;
+ const dt=Math.max(0,Math.min(now-previous,100));previous=now;elapsed+=dt*(completing?completionSpeed:1);
  if(now-lastDraw<1000/30){request();return}
  lastDraw=now;
  if(runMode==='solve'){
   // Predictable move budget. At 13s of 15s, only ~2 moves remain.
-  const moveTime=duration/timeline.length,idx=Math.min(timeline.length-1,Math.floor(elapsed/moveTime));
+  // Hold one real turn short of solved until the host signals completion.
+  const moveTime=duration/timeline.length;
+  if(!completing)elapsed=Math.min(elapsed,duration-moveTime);
+  const idx=Math.min(timeline.length-1,Math.floor(elapsed/moveTime));
   while(nextIndex<idx){turn(timeline[nextIndex++]);}
   if(elapsed>=duration){
    while(nextIndex<timeline.length)turn(timeline[nextIndex++]);
@@ -193,9 +196,14 @@ function frame(now){
 function pause(){paused=true;previous=null;pauseButton.textContent='Resume';if(raf){cancelAnimationFrame(raf);raf=0}}
 function resume(){if(reduced.matches)return;paused=false;previous=null;pauseButton.textContent='Pause';request()}
 function complete(){
+ if(completed)return;
  if(runMode==='solve'){
-  while(nextIndex<timeline.length)turn(timeline[nextIndex++]);
-  completed=true;paint();status.textContent='Complete';
+  // Finish remaining legal turns rather than teleporting to solved.
+  completing=true;
+  completionSpeed=Math.max(1,(duration-elapsed)/900);
+  if(paused && !reduced.matches)resume();
+  if(reduced.matches){while(nextIndex<timeline.length)turn(timeline[nextIndex++]);completed=true;paint();status.textContent='Complete'}
+  else request();
  }else{pause();status.textContent='Complete'}
 }
 function destroy(){pause();observer.disconnect();document.removeEventListener('visibilitychange',onVisibility);reduced.removeEventListener('change',onMotion)}
