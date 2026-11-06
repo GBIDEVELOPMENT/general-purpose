@@ -371,8 +371,35 @@ internal static class InputInjector
     {
         Inject(new INPUT { type = INPUT_KEYBOARD, u = new INPUTUNION { ki = new KEYBDINPUT { wVk = vk, wScan = scan, dwFlags = flags } } }, "keyboard");
     }
+    // Browser hotkeys such as YouTube F/C require a real virtual-key event.
+    // Unicode SendInput emits VK_PACKET, which can produce text without a
+    // recognisable KeyF/KeyC keydown. Keep multi-character text (including
+    // dictation and IME replacement) on the Unicode path.
+    [DllImport("user32.dll")] static extern short GetKeyState(int virtualKey);
+
     public static void Text(string text)
     {
+        if (text.Length == 1 && ((text[0] >= 'a' && text[0] <= 'z') ||
+                                 (text[0] >= 'A' && text[0] <= 'Z')))
+        {
+            var letter = text[0];
+            ushort vk = (ushort)char.ToUpperInvariant(letter);
+            bool uppercase = char.IsUpper(letter);
+            bool capsLock = (GetKeyState(0x14) & 1) != 0;
+            bool shiftRequired = uppercase != capsLock;
+            if (shiftRequired) Send(0x10, 0, 0);
+            try
+            {
+                Send(vk, 0, 0);
+                Send(vk, 0, KEYEVENTF_KEYUP);
+            }
+            finally
+            {
+                if (shiftRequired) Send(0x10, 0, KEYEVENTF_KEYUP);
+            }
+            return;
+        }
+
         foreach (char ch in text)
         {
             Send(0, ch, KEYEVENTF_UNICODE);
