@@ -36,6 +36,7 @@ function harness(filename) {
     IntersectionObserver:class{observe(){} disconnect(){}},
     console
   };
+  context.window=context;
   vm.runInNewContext(script,context,{filename,timeout:5000});
   let now=0;
   function advance(milliseconds){
@@ -56,13 +57,13 @@ for(const file of ['index.html','small-cube.html']){
     a.start({mode:'cycle',seed:20261106,turnMs:200,scrambleLength:6});
     assert.equal(a.inspect().solved,false);
     // Start begins solving an already-scrambled cube.
-    h.advance(6*200+250);
+    h.advance(6*200+50);
     assert.equal(a.inspect().phase,'scramble');
     assert.equal(a.inspect().solved,true);
-    h.advance(6*200+250);
+    h.advance(6*200);
     assert.equal(a.inspect().phase,'solve');
     assert.equal(a.inspect().solved,false);
-    h.advance(6*200+250);
+    h.advance(6*200);
     assert.equal(a.inspect().phase,'scramble');
     assert.equal(a.inspect().solved,true);
     assert.ok(a.inspect().cycles>=2);
