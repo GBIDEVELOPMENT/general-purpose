@@ -15,7 +15,7 @@
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(env(safe-area-inset-top) + 12px) 14px 12px}
 .headline,.actions,.meta,.cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px}.headline{margin-bottom:12px}.headline h1{font-size:19px;margin:0;letter-spacing:-.04em}.pill,button{border:1px solid var(--line);border-radius:13px;background:var(--panel);color:var(--text);min-height:44px;padding:8px 12px;font-weight:600}.pill{display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}.danger{color:var(--danger)}.label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin:0 0 6px}textarea{resize:vertical;width:100%;min-height:62px;max-height:160px;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:11px 12px;color:var(--text)}.actions{margin-top:10px}.actions button{flex:1}.actions button:last-child{flex:0 0 auto}
 main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;margin:auto}.toolbar{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:14px}.toolbar p{margin:0;color:var(--muted);font-size:14px}.toolbar button{min-height:40px;font-size:13px}.empty{border:1px dashed var(--line);padding:40px 18px;border-radius:17px;text-align:center;color:var(--muted);line-height:1.6}.empty strong{display:block;color:var(--text);font-size:18px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px;margin:0 0 14px;overflow:hidden}.cardhead{align-items:flex-start}.fontname{font-size:19px;margin:0;overflow-wrap:anywhere}.filename{font-size:12px;color:var(--muted);overflow-wrap:anywhere;margin:5px 0 0}.remove{padding:4px 10px;min-width:44px;flex-shrink:0;color:var(--danger)}.variant-controls{display:flex;gap:4px;align-items:center;flex-shrink:0}.variant-arrow{min-width:44px;padding:4px 7px;font:30px/1 system-ui,sans-serif;color:var(--accent)}.variant-position{display:block;color:var(--muted);font:12px system-ui,sans-serif;margin-top:6px}.cardhead>div:first-child{min-width:0;flex:1}.sample{font-size:29px;line-height:1.3;overflow-wrap:anywhere;white-space:pre-wrap;background:var(--inset);border-radius:12px;padding:15px 12px;margin:16px 0}.meta{justify-content:flex-start;flex-wrap:wrap;font-size:12px;color:var(--muted)}details{border-top:1px solid var(--line);margin-top:14px;padding-top:13px}summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-size:14px;font-weight:700;color:var(--accent)}.glyphs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.glyph{border:1px solid var(--line);border-radius:7px;min-width:0;min-height:47px;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:var(--inset)}.glyph b{font-size:22px;font-weight:400}.glyph small{font:9px system-ui;color:var(--muted)}.note{color:var(--muted);font-size:12px;line-height:1.45}.axes{display:grid;gap:9px;margin-top:13px}.axis{display:grid;grid-template-columns:1fr auto;gap:5px 10px;font-size:12px;color:var(--muted)}.axis input{grid-column:1/-1;width:100%;height:32px;accent-color:var(--accent)}.status{min-height:20px;font-size:12px;color:var(--muted);margin:10px 1px 0}.sr{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}#file{display:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px;margin:0 0 14px;overflow:hidden}.cardhead{align-items:flex-start}.fontname{font-size:19px;margin:0;overflow-wrap:anywhere}.filename{font-size:12px;color:var(--muted);overflow-wrap:anywhere;margin:5px 0 0}.remove{padding:4px 10px;min-width:44px;flex-shrink:0;color:var(--danger)}.variant-controls{display:flex;gap:4px;align-items:center;flex-shrink:0}.variant-arrow{min-width:44px;padding:4px 7px;font-size:26px;line-height:1;color:var(--accent)}.variant-position{display:block;color:var(--muted);font:12px system-ui,sans-serif;margin-top:6px}.cardhead>div:first-child{min-width:0;flex:1}.sample{font-size:29px;line-height:1.3;overflow-wrap:anywhere;white-space:pre-wrap;background:var(--inset);border-radius:12px;padding:15px 12px;margin:16px 0}.meta{justify-content:flex-start;flex-wrap:wrap;font-size:12px;color:var(--muted)}details{border-top:1px solid var(--line);margin-top:14px;padding-top:13px}summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-size:14px;font-weight:700;color:var(--accent)}.glyphs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.glyph{border:1px solid var(--line);border-radius:7px;min-width:0;min-height:47px;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:var(--inset)}.glyph b{font-size:22px;font-weight:400}.glyph small{font:9px system-ui;color:var(--muted)}.note{color:var(--muted);font-size:12px;line-height:1.45}.axes{display:grid;gap:9px;margin-top:13px}.axis{display:grid;grid-template-columns:1fr auto;gap:5px 10px;font-size:12px;color:var(--muted)}.axis input{grid-column:1/-1;width:100%;height:32px;accent-color:var(--accent)}.status{min-height:20px;font-size:12px;color:var(--muted);margin:10px 1px 0}.sr{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}#file{display:none}
 @media(min-width:500px){.glyphs{grid-template-columns:repeat(10,minmax(0,1fr))}}
 </style>
 </head>
@@ -39,7 +39,8 @@ main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;
 const $=id=>document.getElementById(id);
 const records=new Map();
 let counter=0,ascending=true,loading=false;
-const selectedByFamily=new Map(),collapsedByFamily=new Map();
+const selectedByFamily=new Map(),collapsedByFamily=new Map(),cardsByFamily=new Map();
+let glyphObserver;
 function familyKey(name){return String(name||'').normalize('NFKC').trim().replace(/\s+/g,' ').toLocaleLowerCase()}
 const supported=/\.(ttf|otf|woff2?|ttc|otc)$/i;
 let fontkitPromise;
@@ -162,97 +163,158 @@ async function importFiles(files){
  }
 }
 function make(tag,cls,text){const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el}
+
+function glyphStyle(record){
+ return record.axes?.length?record.axes.map(a=>'"'+a.tag+'" '+a.value).join(', '):'normal';
+}
 function renderGlyphs(box,record){
  const arr=record.cps;
- if(!arr.length){box.append(make('p','note','No Unicode character map found.'));return}
- // Render a manageable slice while still showing meaningful ranges and counts.
  const chosen=arr.filter(cp=>allRange.some(([a,b])=>cp>=a&&cp<=b)).slice(0,420);
- for(const cp of chosen){
-  const cell=make('div','glyph');
-  const symbol=make('b','',String.fromCodePoint(cp));symbol.style.fontFamily='"'+record.family+'"';
-  const code=make('small','',cp.toString(16).toUpperCase().padStart(4,'0'));
-  if(record.axes?.length)symbol.style.fontVariationSettings=record.axes.map(a=>'"'+a.tag+'" '+a.value).join(', ');
-  cell.append(symbol,code);box.append(cell);
+ const note=make('p','note',arr.length?'Showing '+chosen.length+' of '+arr.length+' mapped characters in selected common ranges.':'No Unicode character map found.');
+ box.after(note);
+ const token={cancelled:false};box._renderToken=token;
+ let index=0;
+ function frame(){
+  if(token.cancelled||!box.isConnected)return;
+  const fragment=document.createDocumentFragment();
+  const end=Math.min(index+48,chosen.length);
+  while(index<end){
+   const cp=chosen[index++],cell=make('div','glyph'),symbol=make('b','',String.fromCodePoint(cp));
+   symbol.style.fontFamily='"'+record.family+'"';
+   if(record.axes?.length)symbol.style.fontVariationSettings=glyphStyle(record);
+   cell.append(symbol,make('small','',cp.toString(16).toUpperCase().padStart(4,'0')));
+   fragment.append(cell);
+  }
+  box.append(fragment);
+  if(index<chosen.length)requestAnimationFrame(frame);
  }
- box.after(make('p','note','Showing '+chosen.length+' of '+arr.length+' mapped characters in selected common ranges.'));
+ requestAnimationFrame(frame);
 }
-function render(){
- const root=$('fonts');root.replaceChildren();
+function cancelGlyphs(card){
+ if(!card)return;
+ const glyphs=card.querySelector('.glyphs');
+ if(glyphs?._renderToken)glyphs._renderToken.cancelled=true;
+ glyphObserver?.unobserve(card);
+}
+function groupsNow(){
  const groups=new Map();
  for(const rec of records.values()){
   const key=rec.familyKey||familyKey(rec.name);
   if(!groups.has(key))groups.set(key,[]);
   groups.get(key).push(rec);
  }
- const grouped=[...groups.entries()].sort((a,b)=>ascending?a[1][0].familyName.localeCompare(b[1][0].familyName):b[1][0].familyName.localeCompare(a[1][0].familyName));
- $('count').textContent=grouped.length+' font famil'+(grouped.length===1?'y':'ies')+' displayed';
- $('empty').hidden=!!records.size;$('clear').disabled=!records.size;
- for(const [key,variants] of grouped){
-  variants.sort((a,b)=>a.name.localeCompare(b.name)||a.file.localeCompare(b.file));
-  const selected=selectedByFamily.get(key);
-  const index=Math.max(0,variants.findIndex(r=>r.id===selected));
-  const rec=variants[index];
-  selectedByFamily.set(key,rec.id);
-  const card=make('article','card'),head=make('div','cardhead'),left=make('div'),controls=make('div','variant-controls');
-  const title=make('h2','fontname',rec.name),filename=make('p','filename',rec.file);
-  const remove=make('button','remove','✕');remove.setAttribute('aria-label','Remove entire '+rec.familyName+' family');remove.title='Remove entire font family';
-  for(const element of [title,filename,remove])element.style.fontFamily='"'+rec.family+'"';
-  left.append(title,filename);
-  if(variants.length>1){
-   const previous=make('button','variant-arrow','‹'),next=make('button','variant-arrow','›');
-   previous.setAttribute('aria-label','Previous variant of '+rec.familyName);
-   next.setAttribute('aria-label','Next variant of '+rec.familyName);
-   previous.onclick=()=>{selectedByFamily.set(key,variants[(index+variants.length-1)%variants.length].id);render()};
-   next.onclick=()=>{selectedByFamily.set(key,variants[(index+1)%variants.length].id);render()};
-   controls.append(previous,next);
-   const position=make('span','variant-position',(index+1)+' / '+variants.length);
-   left.append(position);
-  }
-  remove.onclick=()=>removeFamily(key);
-  controls.append(remove);head.append(left,controls);
-  const sample=make('div','sample',$('preview').value||' ');sample.style.fontFamily='"'+rec.family+'"';
-  const meta=make('div','meta');meta.append(make('span','',rec.cps.length.toLocaleString()+' mapped characters'),make('span','',rec.source===rec.file?'Direct import':'ZIP: '+rec.source));
-  const axes=make('div','axes');
-  if(rec.axes.length){
-   axes.append(make('p','label','VARIABLE FONT AXES'));
-   const apply=()=>{
-    const settings=rec.axes.map(a=>'"'+a.tag+'" '+a.value).join(', ');
-    sample.style.fontVariationSettings=settings;
-    for(const el of [title,filename,remove])el.style.fontVariationSettings=settings;
-    card.querySelectorAll('.glyph b').forEach(g=>g.style.fontVariationSettings=settings);
-   };
-   for(const axis of rec.axes){
-    const wrapper=make('label','axis'),axisTitle=make('span','',axis.name+' ('+axis.tag+')'),value=make('output','',String(axis.value));
-    const slider=make('input');slider.type='range';slider.min=axis.min;slider.max=axis.max;slider.step=Math.max((axis.max-axis.min)/200,0.01);slider.value=axis.value;slider.setAttribute('aria-label',axis.name);
-    slider.oninput=()=>{axis.value=Number(slider.value);value.textContent=Number(axis.value.toFixed(2)).toString();apply()};
-    wrapper.append(axisTitle,value,slider);axes.append(wrapper);
-   }
-   apply();
-  }
-  const details=make('details'),summary=make('summary','','Character map');
-  details.open=!collapsedByFamily.get(key);
-  const glyphs=make('div','glyphs');details.append(summary,glyphs);
-  details.addEventListener('toggle',()=>{
-   collapsedByFamily.set(key,!details.open);
-   if(details.open&&!glyphs.childElementCount)renderGlyphs(glyphs,rec);
-  });
-  if(details.open)renderGlyphs(glyphs,rec);
-  card.append(head,sample,meta,axes,details);root.append(card);
+ for(const variants of groups.values())variants.sort((a,b)=>a.name.localeCompare(b.name)||a.file.localeCompare(b.file));
+ return groups;
+}
+function updateCount(){
+ const count=cardsByFamily.size;
+ $('count').textContent=count+' font '+(count===1?'family':'families')+' displayed';
+ $('empty').hidden=count>0;$('clear').disabled=count===0;
+}
+function makeFamilyCard(key,variants){
+ const selected=selectedByFamily.get(key);
+ const index=Math.max(0,variants.findIndex(r=>r.id===selected));
+ const rec=variants[index];selectedByFamily.set(key,rec.id);
+ const card=make('article','card'),head=make('div','cardhead'),left=make('div'),controls=make('div','variant-controls');
+ const title=make('h2','fontname',rec.name),filename=make('p','filename',rec.file);
+ const remove=make('button','remove','x');
+ remove.setAttribute('aria-label','Remove entire '+rec.familyName+' family');remove.title='Remove entire font family';
+ const styled=[title,filename,remove];
+ for(const el of styled)el.style.fontFamily='"'+rec.family+'"';
+ left.append(title,filename);
+ if(variants.length>1){
+  const previous=make('button','variant-arrow','<'),next=make('button','variant-arrow','>');
+  previous.setAttribute('aria-label','Previous variant of '+rec.familyName);
+  next.setAttribute('aria-label','Next variant of '+rec.familyName);
+  for(const el of [previous,next]){el.style.fontFamily='"'+rec.family+'"';styled.push(el)}
+  previous.onclick=()=>showVariant(key,variants[(index+variants.length-1)%variants.length].id);
+  next.onclick=()=>showVariant(key,variants[(index+1)%variants.length].id);
+  controls.append(previous,next);
+  left.append(make('span','variant-position',(index+1)+' / '+variants.length));
  }
+ remove.onclick=()=>removeFamily(key);
+ controls.append(remove);head.append(left,controls);
+ const sample=make('div','sample',$('preview').value||' ');sample.style.fontFamily='"'+rec.family+'"';
+ const meta=make('div','meta');
+ meta.append(make('span','',rec.cps.length.toLocaleString()+' mapped characters'),make('span','',rec.source===rec.file?'Direct import':'ZIP: '+rec.source));
+ const axes=make('div','axes');
+ if(rec.axes.length){
+  axes.append(make('p','label','VARIABLE FONT AXES'));
+  const apply=()=>{
+   const settings=glyphStyle(rec);
+   sample.style.fontVariationSettings=settings;
+   for(const el of styled)el.style.fontVariationSettings=settings;
+   card.querySelectorAll('.glyph b').forEach(g=>g.style.fontVariationSettings=settings);
+  };
+  for(const axis of rec.axes){
+   const wrapper=make('label','axis'),axisTitle=make('span','',axis.name+' ('+axis.tag+')'),value=make('output','',String(axis.value));
+   const slider=make('input');slider.type='range';slider.min=axis.min;slider.max=axis.max;slider.step=Math.max((axis.max-axis.min)/200,0.01);slider.value=axis.value;slider.setAttribute('aria-label',axis.name);
+   slider.oninput=()=>{axis.value=Number(slider.value);value.textContent=Number(axis.value.toFixed(2)).toString();apply()};
+   wrapper.append(axisTitle,value,slider);axes.append(wrapper);
+  }
+  apply();
+ }
+ const details=make('details'),summary=make('summary','','Character map');
+ details.open=!collapsedByFamily.get(key);
+ const glyphs=make('div','glyphs');details.append(summary,glyphs);
+ let populated=false;
+ function maybePopulate(){if(details.open&&!populated){populated=true;renderGlyphs(glyphs,rec)}}
+ details.addEventListener('toggle',()=>{
+  collapsedByFamily.set(key,!details.open);
+  if(details.open)maybePopulate();
+ });
+ card.append(head,sample,meta,axes,details);
+ card._maybePopulate=maybePopulate;
+ return card;
+}
+function observeCard(card){
+ if(!glyphObserver&&'IntersectionObserver' in window){
+  glyphObserver=new IntersectionObserver(entries=>{
+   for(const entry of entries)if(entry.isIntersecting){
+    entry.target._maybePopulate?.();
+    glyphObserver.unobserve(entry.target);
+   }
+  },{rootMargin:'180px 0px'});
+ }
+ if(glyphObserver)glyphObserver.observe(card);
+ else card._maybePopulate?.();
+}
+function showVariant(key,id){
+ const old=cardsByFamily.get(key),variants=groupsNow().get(key);
+ if(!old||!variants||!variants.some(v=>v.id===id))return;
+ selectedByFamily.set(key,id);
+ const replacement=makeFamilyCard(key,variants);
+ cancelGlyphs(old);old.replaceWith(replacement);
+ cardsByFamily.set(key,replacement);observeCard(replacement);
+}
+function render(){
+ const root=$('fonts'),groups=groupsNow();
+ const grouped=[...groups.entries()].sort((a,b)=>ascending?a[1][0].familyName.localeCompare(b[1][0].familyName):b[1][0].familyName.localeCompare(a[1][0].familyName));
+ for(const card of cardsByFamily.values())cancelGlyphs(card);
+ cardsByFamily.clear();
+ const fragment=document.createDocumentFragment();
+ for(const [key,variants] of grouped){
+  const card=makeFamilyCard(key,variants);cardsByFamily.set(key,card);fragment.append(card);
+ }
+ root.replaceChildren(fragment);updateCount();
+ for(const card of cardsByFamily.values())observeCard(card);
 }
 function removeFamily(key){
  const family=[...records.values()].filter(rec=>rec.familyKey===key);
  if(!family.length)return;
+ const card=cardsByFamily.get(key);
+ cancelGlyphs(card);card?.remove();cardsByFamily.delete(key);
  for(const rec of family){cleanupFont(rec);records.delete(rec.id)}
  selectedByFamily.delete(key);collapsedByFamily.delete(key);
- render();
+ updateCount();
  status(family[0].familyName+' family removed ('+family.length+' variant'+(family.length===1?'':'s')+').');
 }
 $('add').onclick=()=>$('file').click();
 $('file').onchange=e=>importFiles([...e.target.files]);
 $('clear').onclick=()=>{
+ for(const card of cardsByFamily.values())cancelGlyphs(card);
  for(const rec of records.values())cleanupFont(rec);
- records.clear();selectedByFamily.clear();collapsedByFamily.clear();
+ records.clear();selectedByFamily.clear();collapsedByFamily.clear();cardsByFamily.clear();
  render();status('All font families cleared.');
 };
 $('sort').onclick=()=>{ascending=!ascending;$('sort').textContent='Sort: name '+(ascending?'↑':'↓');render()};
