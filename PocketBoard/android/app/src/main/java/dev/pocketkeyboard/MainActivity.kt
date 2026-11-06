@@ -176,7 +176,7 @@ class MainActivity : Activity() {
         // an exclusive, one-finger vertical scroll strip. Gesture ownership
         // is fixed at ACTION_DOWN so crossing the divider cannot click.
         val pointerGain = 4.5f
-        val scrollStepDp = 28f
+        val scrollStepDp = 11.2f // 2.5x scroll sensitivity (28dp / 2.5)
         var remainderX = 0f
         var remainderY = 0f
         var scrollCarryY = 0f
