@@ -15,7 +15,8 @@ DRAWABLE = ROOT / "android/app/src/main/res/drawable"
 NS = "{http://schemas.android.com/apk/res/android}"
 APPROVED = {
     "CHARCOAL": "FF171923", "DISCONNECTED": "FF283040",
-    "CREAM": "FFFCF4E9", "SCROLL_GRAY": "FF667080", "MUTED_CREAM": "FFE6DDD0",
+    "CREAM": "FFFCF4E9", "SCROLL_GRAY": "FF667080",
+    "SCROLL_GRAY_LIGHT": "FF757E8D", "MUTED_CREAM": "FFE6DDD0",
     "HINT_CREAM": "80D0C9BE", "PRESS_RIPPLE": "33FCF4E9",
     "BLUE": "FF003CFF", "TEAL": "FF02B8B6", "PINK": "FFFA398F",
     "PURPLE": "FF7D3CEE", "ORANGE": "FFFD791E", "YELLOW": "FFFFD42A",
@@ -136,6 +137,19 @@ for gesture_contract in (
     "canvas.drawLine(rainbowWidth, d, rainbowWidth, h - d, paint)",
 ):
     assert gesture_contract in main, gesture_contract
+# Source-traced scrollpad glyph contract: distinct strokes, fixed spacing,
+# old gray retained on marks; the lighter background and centering are runtime-owned.
+assert "canvas.drawColor(PocketBoardPalette.SCROLL_GRAY_LIGHT)" in main
+assert "R.drawable.pb_scrollpad_seven_lines" in main
+assert "val markerHeight = minOf(h * 0.76f, scrollStripWidth * 0.66f * (900f / 220f))" in main
+scroll_svg = ROOT / "assets/scrollpad/seven-marker-lines.svg"
+assert scroll_svg.is_file(), "Missing archival seven-line source SVG"
+source_glyph = ET.parse(scroll_svg).getroot()
+assert len(source_glyph.findall("{http://www.w3.org/2000/svg}path")) == 7
+runtime_glyph = xml(DRAWABLE / "pb_scrollpad_seven_lines.xml")
+assert len(runtime_glyph.findall("path")) == 7, "All seven uniquely traced paths must ship"
+assert all(p.get(NS + "fillColor") == "#FF667080" for p in runtime_glyph.findall("path"))
+assert len({p.get(NS + "pathData") for p in runtime_glyph.findall("path")}) == 7
 assert "twoFingerScrolling" not in main
 assert '"horizontal"' not in main
 for old in ("pb_button_squircle", "pb_choose", "pb_backspace"):
