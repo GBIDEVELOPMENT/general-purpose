@@ -172,21 +172,17 @@ class MainActivity : Activity() {
             visibility = View.GONE
             root.addView(this, LinearLayout.LayoutParams(1, 1))
         }
-        // One finger drives the pointer and taps. A second finger cancels the
-        // pending tap/long press and switches to wheel scrolling for the entire
-        // gesture; lifting one finger never resumes cursor movement mid-gesture.
+        // The 83% rainbow moves/clicks the pointer; the rightmost 17% is
+        // an exclusive, one-finger vertical scroll strip. Gesture ownership
+        // is fixed at ACTION_DOWN so crossing the divider cannot click.
         val pointerGain = 4.5f
         val scrollStepDp = 28f
         var remainderX = 0f
         var remainderY = 0f
-        var scrollCarryX = 0f
         var scrollCarryY = 0f
-        var lastScrollCenterX = 0f
-        var lastScrollCenterY = 0f
-        var scrollPointerA = MotionEvent.INVALID_POINTER_ID
-        var scrollPointerB = MotionEvent.INVALID_POINTER_ID
-        var twoFingerScrolling = false
-        var suppressSingleFingerUntilUp = false
+        var lastScrollY = 0f
+        var scrollingStrip = false
+        var suppressGestureUntilUp = false
         val detector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
             override fun onDown(e: MotionEvent): Boolean = true
             override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
@@ -219,80 +215,50 @@ class MainActivity : Activity() {
             }
         })
         val trackpad = RainbowPad(this).apply {
-            contentDescription = "Rainbow touchpad. One finger moves the pointer; tap to click; hold for right-click. Two fingers scroll vertically or horizontally."
+            contentDescription = "Rainbow touchpad on the left for pointer movement and clicks. Gray strip on the right for one-finger vertical scrolling."
             setOnTouchListener { _, event ->
                 when (event.actionMasked) {
                     MotionEvent.ACTION_DOWN -> {
-                        twoFingerScrolling = false
-                        suppressSingleFingerUntilUp = false
-                        detector.onTouchEvent(event)
+                        scrollingStrip = event.x >= width * 0.83f
+                        suppressGestureUntilUp = false
+                        scrollCarryY = 0f
+                        lastScrollY = event.y
+                        if (!scrollingStrip) detector.onTouchEvent(event)
                     }
                     MotionEvent.ACTION_POINTER_DOWN -> {
-                        if (event.pointerCount == 2 && !suppressSingleFingerUntilUp) {
-                            // A synthetic cancel prevents a one-finger tap or long-press
-                            // from firing after this gesture becomes a two-finger scroll.
+                        // Multitouch does not scroll. Cancel pending clicks/long-presses.
+                        if (!scrollingStrip) {
                             val cancel = MotionEvent.obtain(event)
                             cancel.action = MotionEvent.ACTION_CANCEL
                             detector.onTouchEvent(cancel)
                             cancel.recycle()
-                            twoFingerScrolling = true
-                            suppressSingleFingerUntilUp = true
-                            scrollPointerA = event.getPointerId(0)
-                            scrollPointerB = event.getPointerId(1)
-                            lastScrollCenterX = (event.getX(0) + event.getX(1)) * 0.5f
-                            lastScrollCenterY = (event.getY(0) + event.getY(1)) * 0.5f
-                            scrollCarryX = 0f
-                            scrollCarryY = 0f
-                        } else {
-                            twoFingerScrolling = false
-                            suppressSingleFingerUntilUp = true
                         }
+                        suppressGestureUntilUp = true
                     }
                     MotionEvent.ACTION_MOVE -> {
-                        if (twoFingerScrolling && event.pointerCount == 2) {
-                            // Pointer IDs survive finger reorderings in MotionEvent.
-                            val indexA = event.findPointerIndex(scrollPointerA)
-                            val indexB = event.findPointerIndex(scrollPointerB)
-                            if (indexA >= 0 && indexB >= 0) {
-                                val centerX = (event.getX(indexA) + event.getX(indexB)) * 0.5f
-                                val centerY = (event.getY(indexA) + event.getY(indexB)) * 0.5f
-                                val pixelsPerDp = resources.displayMetrics.density
-                                // Natural scrolling: fingers down -> content down;
-                                // fingers left -> content left. Win32 horizontal
-                                // wheel sign is opposite the finger's X delta.
-                                scrollCarryX += (lastScrollCenterX - centerX) / pixelsPerDp
-                                scrollCarryY += (centerY - lastScrollCenterY) / pixelsPerDp
-                                lastScrollCenterX = centerX
-                                lastScrollCenterY = centerY
-                                val horizontal = (scrollCarryX / scrollStepDp).toInt().coerceIn(-4, 4)
+                        if (!suppressGestureUntilUp) {
+                            if (scrollingStrip) {
+                                val deltaDp = (event.y - lastScrollY) / resources.displayMetrics.density
+                                lastScrollY = event.y
+                                scrollCarryY += deltaDp
                                 val vertical = (scrollCarryY / scrollStepDp).toInt().coerceIn(-4, 4)
-                                scrollCarryX -= horizontal * scrollStepDp
                                 scrollCarryY -= vertical * scrollStepDp
-                                if (horizontal != 0 || vertical != 0) {
-                                    send(JSONObject().put("type", "mouse_scroll")
-                                        .put("vertical", vertical).put("horizontal", horizontal))
+                                if (vertical != 0) {
+                                    send(JSONObject().put("type", "mouse_scroll").put("vertical", vertical))
                                     touchpadFeedback.text = ""
                                 }
-                            } else {
-                                twoFingerScrolling = false
-                            }
-                        } else if (!suppressSingleFingerUntilUp) {
-                            detector.onTouchEvent(event)
+                            } else detector.onTouchEvent(event)
                         }
                     }
-                    MotionEvent.ACTION_POINTER_UP -> {
-                        twoFingerScrolling = false
-                        suppressSingleFingerUntilUp = true
-                    }
                     MotionEvent.ACTION_UP -> {
-                        if (!suppressSingleFingerUntilUp) detector.onTouchEvent(event)
-                        twoFingerScrolling = false
-                        suppressSingleFingerUntilUp = false
+                        if (!scrollingStrip && !suppressGestureUntilUp) detector.onTouchEvent(event)
+                        scrollingStrip = false
+                        suppressGestureUntilUp = false
                     }
                     MotionEvent.ACTION_CANCEL -> {
-                        detector.onTouchEvent(event)
-                        twoFingerScrolling = false
-                        suppressSingleFingerUntilUp = false
+                        if (!scrollingStrip) detector.onTouchEvent(event)
+                        scrollingStrip = false
+                        suppressGestureUntilUp = false
                     }
                 }
                 true
@@ -712,17 +678,20 @@ class MainActivity : Activity() {
             val shape = Path().apply { addRoundRect(RectF(0f, 0f, w, h), r, r, Path.Direction.CW) }
             canvas.save()
             canvas.clipPath(shape)
-            val span = w / 7f
+            val rainbowWidth = w * 0.83f
+            val span = rainbowWidth / 7f
             val lean = kotlin.math.min(h * 0.14f, span * 0.35f)
-            // Antialiased seam safety: even subpixel rounding cannot show
-            // the charcoal view background through the stripes.
+            // Keep all seven angled rainbow stripes inside the 83% pointer area.
+            canvas.drawColor(PocketBoardPalette.SCROLL_GRAY)
+            canvas.save()
+            canvas.clipRect(0f, 0f, rainbowWidth, h)
             canvas.drawColor(colors[0])
             for (i in colors.indices) {
                 paint.color = colors[i]
-                val leftTop = if (i == 0) -w else i * span - lean
-                val leftBottom = if (i == 0) -w else i * span + lean
-                val rightTop = if (i == colors.lastIndex) 2f*w else (i+1) * span - lean + 1f
-                val rightBottom = if (i == colors.lastIndex) 2f*w else (i+1) * span + lean + 1f
+                val leftTop = if (i == 0) -rainbowWidth else i * span - lean
+                val leftBottom = if (i == 0) -rainbowWidth else i * span + lean
+                val rightTop = if (i == colors.lastIndex) 2f * rainbowWidth else (i+1) * span - lean + 1f
+                val rightBottom = if (i == colors.lastIndex) 2f * rainbowWidth else (i+1) * span + lean + 1f
                 val stripe = Path().apply {
                     moveTo(leftTop, 0f)
                     lineTo(rightTop, 0f)
@@ -733,8 +702,16 @@ class MainActivity : Activity() {
                 canvas.drawPath(stripe, paint)
             }
             canvas.restore()
+            // The seam matches the existing thin cream perimeter stroke.
             val d = resources.displayMetrics.density
-            val cx = w * 0.5f
+            paint.color = PocketBoardPalette.CREAM
+            paint.style = Paint.Style.STROKE
+            paint.strokeWidth = 1.2f * d
+            canvas.drawLine(rainbowWidth, d, rainbowWidth, h - d, paint)
+            paint.style = Paint.Style.FILL
+            canvas.restore()
+            val d = resources.displayMetrics.density
+            val cx = w * 0.83f * 0.5f
             val cy = h * 0.5f
             // Source-traced marker cursor; the old hand-built Path is retired.
             val pointer = context.getDrawable(R.drawable.pb_cursor_pointer)
