@@ -21,12 +21,12 @@ APPROVED = {
     "PURPLE": "FF7D3CEE", "ORANGE": "FFFD791E", "YELLOW": "FFFFD42A",
     "GREEN": "FF00805B", "RED_PINK": "FFE92F61", "SKY_BLUE": "FF22A3FF",
     "VIOLET": "FFA857FF", "CORAL": "FFFF5A3C",
-    "MAGENTA": "FFD94BDE", "LIME": "FF76DE1A", "INDIGO": "FF4D62FF",
+    "MAGENTA": "FFD94BDE", "LIME": "FF76DE1A", "INDIGO": "FF4B2FC4",
 }
 BUTTON_ORDER = ("BLUE", "TEAL", "PINK", "PURPLE", "ORANGE", "YELLOW",
                 "GREEN", "RED_PINK", "SKY_BLUE", "VIOLET", "CORAL",
                 "MAGENTA", "LIME", "INDIGO")
-RAINBOW = ("RED_PINK", "ORANGE", "YELLOW", "GREEN", "TEAL", "BLUE", "PURPLE")
+RAINBOW = ("RED_PINK", "ORANGE", "YELLOW", "GREEN", "BLUE", "INDIGO", "VIOLET")
 SYMBOLS = {
     "connected-check": "pb_connected_check", "search": "pb_discover",
     "clear": "pb_clear", "microphone": "pb_mic",
@@ -160,8 +160,12 @@ def contrast(one, two):
 assert contrast(APPROVED["YELLOW"], APPROVED["GREEN"]) >= 3.45
 assert contrast(APPROVED["CREAM"], APPROVED["GREEN"]) >= 4.5
 assert "typeface = resources.getFont(R.font.morning_rainbow)" in main
-for hue in RAINBOW:
-    assert f"PocketBoardPalette.{hue}" in main
+# Verify the exact band order, not merely the seven tokens' presence.
+rainbow_source = re.search(r'private val colors = intArrayOf\((.*?)\)', main, re.S)
+assert rainbow_source is not None
+runtime_rainbow = tuple(re.findall(r'PocketBoardPalette\.([A-Z_]+)', rainbow_source.group(1)))
+assert runtime_rainbow == RAINBOW, runtime_rainbow
+assert "TEAL" not in RAINBOW and "PURPLE" not in RAINBOW
 allowed_colors = set(APPROVED.values()) | {"FFFFFFFF", "00000000"}
 for res in DRAWABLE.glob("*.xml"):
     for node in xml(res).iter():
@@ -214,6 +218,8 @@ for art in ("rainbow-background.svg", "preview-squircle.svg", "preview-circle.sv
     fills = [argb(p.attrib["fill"]) for p in tree.iter()
              if p.tag.endswith("}path") and p.attrib.get("fill", "").startswith("#")]
     assert fills[:7] == expected_bands, art
+# The root legacy icon alias must remain identical to the squircle source preview.
+assert (ROOT / "assets/pocketboard-icon.svg").read_text() == (ROOT / "assets/launcher/preview-squircle.svg").read_text()
 # New two-colour hand-traced cursor is a deliberate exception to the single-cream glyph contract.
 cursor_svg = xml(ROOT / "assets/button-symbols/cursor-pointer.svg")
 cursor_vector = xml(DRAWABLE / "pb_cursor_pointer.xml")

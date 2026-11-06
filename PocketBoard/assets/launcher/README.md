@@ -5,9 +5,9 @@ This folder contains four **separate, reusable SVG assets**, traced from the sup
 - `keyboard-symbol.svg`: transparent, closely cropped, filled white keyboard silhouette. Raster-color thresholding (RGB channel minimum > 235, alpha > 200) isolated 12 connected white components from the 1254 × 1254 squircle PNG. Their contours were simplified by only 1.6 source pixels, preserving slightly uneven edges and key shapes. The main frame's inner cutout uses the even-odd fill rule.
 - `squircle-mask.svg`: the reference PNG's alpha silhouette, cleaned of tiny peripheral artefacts and simplified by 4.2 source pixels. The resulting outline is normalized to a 1024 × 1024 viewBox.
 - `circle-mask.svg`: a centered, full-size mathematically circular icon mask consistent with the circular reference.
-- `rainbow-background.svg`: square seven-band red/orange/yellow/green/cyan/blue/purple background. The original straight band divisions remain, but their representative fills
-  have been normalized to the seven approved canonical PocketBoard hues
-  (red-pink, orange, yellow, green, teal, blue, purple). Gradients/pixel-level
+- `rainbow-background.svg`: square seven-band red/orange/yellow/green/blue/indigo/violet background. The original straight band divisions remain, but their representative fills
+  have been normalized to the canonical ROYGBIV sequence
+  (red-pink, orange, yellow, green, royal blue, indigo, violet). Gradients/pixel-level
   raster texture are not retained in this vector interpretation.
 - `preview-circle.svg` and `preview-squircle.svg`: preclipped composites for checking the artwork or use outside Android. The legacy `assets/pocketboard-icon.svg` is now the squircle composite, not the outdated three-row keyboard.
 
@@ -38,3 +38,7 @@ adaptive icon masks are unchanged. The in-app header ImageView applies
 1.09× horizontal / 1.11× vertical scale to compensate for source artwork
 padding and visually match its 40×40dp Discover neighbor. Launcher shape
 and real-device optical alignment still require device acceptance.
+
+## 1.0.10 strict spectrum order
+
+The seventh-band rainbow in every runtime and source launcher asset uses `#E92F61`, `#FD791E`, `#FFD42A`, `#00805B`, `#003CFF`, `#4B2FC4`, `#A857FF` in that exact order. The old turquoise fifth band is retired from rainbow artwork but stays in the broader app colour palette. The clip masks and white keyboard artwork are unchanged.

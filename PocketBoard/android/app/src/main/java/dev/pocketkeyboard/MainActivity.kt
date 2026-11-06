@@ -668,8 +668,8 @@ class MainActivity : Activity() {
         private val colors = intArrayOf(
             PocketBoardPalette.RED_PINK, PocketBoardPalette.ORANGE,
             PocketBoardPalette.YELLOW, PocketBoardPalette.GREEN,
-            PocketBoardPalette.TEAL, PocketBoardPalette.BLUE,
-            PocketBoardPalette.PURPLE)
+            PocketBoardPalette.BLUE, PocketBoardPalette.INDIGO,
+            PocketBoardPalette.VIOLET)
         override fun onDraw(canvas: Canvas) {
             super.onDraw(canvas)
             val w = width.toFloat()

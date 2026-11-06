@@ -28,7 +28,7 @@ internal object PocketBoardPalette {
     val CORAL = 0xFFFF5A3C.toInt()
     val MAGENTA = 0xFFD94BDE.toInt()
     val LIME = 0xFF76DE1A.toInt()
-    val INDIGO = 0xFF4D62FF.toInt()
+    val INDIGO = 0xFF4B2FC4.toInt()
 
     val BUTTON_COLORS: List<Int> = listOf(
         BLUE, TEAL, PINK, PURPLE, ORANGE, YELLOW, GREEN,

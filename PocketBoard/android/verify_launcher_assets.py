@@ -36,8 +36,8 @@ stripes = bg.findall("path")
 assert len(stripes) == 7
 assert [attr(p, "fillColor").upper() for p in stripes] == [
     "#E92F61", "#FD791E", "#FFD42A", "#00805B",
-    "#02B8B6", "#003CFF", "#7D3CEE"
-]  # The seven launcher bands are a subset of the canonical UI palette.
+    "#003CFF", "#4B2FC4", "#A857FF"
+]  # The seven launcher bands are canonical ROYGBIV, with turquoise omitted.
 assert all(attr(p, "fillColor") != "#FF000000" for p in stripes)
 for name in ("ic_launcher.xml", "ic_launcher_round.xml"):
     icon = parse(MIPMAP / name)

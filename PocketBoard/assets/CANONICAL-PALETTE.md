@@ -22,7 +22,7 @@ fill out fourteen distinct action-button colours.
 | 11 | coral | `#FF5A3C` | Companion |
 | 12 | magenta | `#D94BDE` | Companion |
 | 13 | lime | `#76DE1A` | Companion |
-| 14 | indigo | `#4D62FF` | Companion |
+| 14 | indigo | `#4B2FC4` | Companion, corrected blue-violet |
 | Foreground | Cream | `#FCF4E9` | Reference |
 
 The reference samples are approximate because the source is a raster screenshot.
@@ -35,8 +35,8 @@ positions. Connected uses green and cream; disconnected and searching stay
 neutral. Discover and Microphone use purple; Clear uses red-pink. The connected pill uses the canonical emerald; after the 1.0.6 lightening, its cream-text contrast should be verified on-device.
 
 The seven-band touchpad, launcher icon and in-app header icon now reuse
-canonical colours in order: red-pink, orange, yellow, green, teal, blue,
-purple. The input panel uses the approved disconnected neutral. Ripple feedback
+canonical colours in ROYGBIV order: red-pink (red), orange, yellow, green,
+blue, indigo, violet. **Teal remains an approved button colour but is absent from the rainbow.** The input panel uses the approved disconnected neutral. Ripple feedback
 uses the canonical cream with a fixed translucent alpha (`#33FCF4E9`).
 Exact source traces preserve their original white glyphs for provenance;
 shipping action symbols are canonical cream and the keyboard launcher symbol
@@ -71,3 +71,7 @@ Canonical blue changes from `#008CFF` to `#003CFF` for a more vividly blue strip
 ## 1.0.9: vivid royal blue
 
 Owner-selected saturated royal blue `#003CFF` supersedes `#0066FF`. With red 0, green 60, and blue 255, it is deliberately less cyan and more distinctly blue, against both teal `#02B8B6` and purple `#7D3CEE`. The token is propagated through runtime touchpad, source art, launcher vectors and header art; historical raster references are left unchanged. The vertical scroll strip remains `#667080`, but its wheel threshold is reduced from 28dp to 11.2dp (2.5 times the vertical scroll output for a given gesture distance), with fractional carry retained.
+
+## 1.0.10: correct ROYGBIV band order (2026-11-05)
+
+The seven-band trackpad, Android launcher background, in-app header icon and editable SVG previews must all render exactly **red, orange, yellow, green, blue, indigo, violet**, in that order. The fifth stripe is canonical royal blue `#003CFF` (formerly teal `#02B8B6`), the sixth is a distinguishable deeper indigo `#4B2FC4` (formerly royal blue), and the seventh is canonical violet `#A857FF` (formerly purple `#7D3CEE`). The canonical indigo token changes from its old periwinkle `#4D62FF` because it was visually too blue; this also updates the action button that uses INDIGO. No palette colours are added; teal and purple remain available to unrelated UI controls. Source reference rasters are unchanged. The 83% trackpad/17% gray scroll strip, cream separator and 2.5× scroll sensitivity remain unchanged. CI locks the *exact ordered tokens* in Kotlin, Android vectors and icon SVGs.
