@@ -8,11 +8,13 @@ Dependency-free **SVG + vanilla JavaScript** isometric Rubik's Cube loading indi
 - `PALETTES.md`: preserved original vivid palette and adopted muted palette based on the 6 November reference.
 - `README.md`: integration and design notes.
 
-Open `index.html` directly in a browser.
+Open `index.html` or `small-cube.html` directly in a browser. **Endless scramble-and-solve** is now the default mode; the original timed solve and legacy shuffle remain selectable.
 
 ## API
 
 ```js
+rubiksLoader.start({ mode: 'cycle', seed: 12345, turnMs: 840, scrambleLength: 18 });
+// The earlier timed one-shot solve is still supported:
 rubiksLoader.start({ mode: 'solve', durationMs: 15000 });
 // or feed a chosen legal scramble, to be reversed as a known solve:
 rubiksLoader.start({ mode: 'solve', durationMs: 15000, moves: [
@@ -61,3 +63,23 @@ try {
 ```
 
 The built-in demo's **Complete** button simulates the host completion signal. Without it, the timed demonstration intentionally stops near solved.
+
+## Continuous scramble-and-solve mode (default)
+
+`mode:'cycle'` starts from a legal scramble and animates its exact inverse. As soon as the last quarter-turn completes, it generates a new seeded scramble and **animates that scramble move by move**, then solves it with the inverse move sequence. It repeats indefinitely. No sticker colours or cubie coordinates are reset at cycle boundaries, and there is no idle gap or raster interpolation.
+
+- `seed`: unsigned 32-bit PRNG seed. Same seed and move count produce a reproducible sequence of scrambles.
+- `scrambleLength`: 2–100 quarter turns (default 18). Adjacent turns are deliberately chosen from different axes to avoid immediately cancelling or collapsing rotations.
+- `turnMs`: 100 ms or greater (default 840). Duration of each quarter-turn, constant through solve and scramble phases.
+- `palette`: `muted` (default) or `original`.
+
+In cycle mode, `complete()` pauses the endless animation, rather than claiming a background job is completed. For task-driven progress, use the existing `mode:'solve'` and call `complete()` when your task actually succeeds. When motion reduction is enabled, all modes begin paused.
+
+Current implementation uses a continuous, reproducible **sequence of legal quarter-turns**, not smooth deformation of cubies into non-cubic shapes. That is intentional to preserve Rubik's Cube mechanics and avoid a visible teleport at the transition.
+
+### Example
+
+```js
+rubiksLoader.start({ mode: 'cycle', seed: 20261106, scrambleLength: 18, turnMs: 760 });
+// Infinite solve → new legal scramble → solve → next scramble…
+```
