@@ -149,7 +149,7 @@ assert border_svg.attrib["viewBox"] == "0 0 1472 714"
 assert border_vector.attrib[NS + "viewportWidth"] == "1472"
 assert border_vector.attrib[NS + "viewportHeight"] == "714"
 # The separator must align to the actual 83% scrollpad boundary.
-seam_x = int(re.search(r"M (\\d+),", svg_paths[1].attrib["d"]).group(1))
+seam_x = int(re.search(r"M ([0-9]+),", svg_paths[1].attrib["d"]).group(1))
 assert abs(seam_x / 1472 - .83) < .002
 for source, runtime in zip(svg_paths, android_border_paths):
     assert norm(source.attrib["d"]) == norm(runtime.attrib[NS + "pathData"])
