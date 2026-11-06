@@ -30,6 +30,17 @@ The reference samples are approximate because the source is a raster screenshot.
 Secondary semantic colours: charcoal `#171923`, disconnected status
 `#283040`, muted cream `#E6DDD0`, hint cream `#D0C9BE`.
 
+Scrollpad surface: `#757E8D`, a 10% linear channel blend of the previous
+`#667080` toward white (rounded to integer RGB). The former surface gray
+`#667080` is retained for the seven marker-style horizontal strokes. Each
+stroke has its own individually traced irregular outline in
+`assets/scrollpad/seven-marker-lines.svg`, adapted to Android in
+`android/app/src/main/res/drawable/pb_scrollpad_seven_lines.xml`. The lines
+are equally spaced and their whole group is centered inside the rightmost 17%
+scroll strip, with a surrounding buffer. Vertical scrolling behavior, separator,
+and the rainbow's 83% area are unchanged.
+
+
 Controls use the fourteen button colours in display order, skipping empty
 positions. Connected uses green and cream; disconnected and searching stay
 neutral. Discover and Microphone use purple; Clear uses red-pink. The connected pill uses the canonical emerald; after the 1.0.6 lightening, its cream-text contrast should be verified on-device.
@@ -43,7 +54,7 @@ shipping action symbols are canonical cream and the keyboard launcher symbol
 may remain true white as explicitly approved by the reference art.
 
 `android/verify_canonical_art.py` is the CI lock: any runtime colour outside
-the 14 vivid, 5 semantic and 1 translucent press-feedback values must be
+the 14 vivid, approved semantic (including both scroll grays) and translucent press-feedback values must be
 explicitly reviewed and approved with a manifest update. This applies to
 launcher/header VectorDrawables as well as Kotlin-drawn UI. Button shapes and
 symbols are now deployed, not merely archived.
