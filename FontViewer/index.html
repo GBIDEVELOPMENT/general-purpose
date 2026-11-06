@@ -185,7 +185,7 @@ function render(){
   groups.get(key).push(rec);
  }
  const grouped=[...groups.entries()].sort((a,b)=>ascending?a[1][0].familyName.localeCompare(b[1][0].familyName):b[1][0].familyName.localeCompare(a[1][0].familyName));
- $('count').textContent=records.size+' font'+(records.size===1?'':'s')+' · '+grouped.length+' famil'+(grouped.length===1?'y':'ies');
+ $('count').textContent=grouped.length+' font famil'+(grouped.length===1?'y':'ies')+' displayed';
  $('empty').hidden=!!records.size;$('clear').disabled=!records.size;
  for(const [key,variants] of grouped){
   variants.sort((a,b)=>a.name.localeCompare(b.name)||a.file.localeCompare(b.file));
@@ -251,8 +251,9 @@ function removeFamily(key){
 $('add').onclick=()=>$('file').click();
 $('file').onchange=e=>importFiles([...e.target.files]);
 $('clear').onclick=()=>{
- for(const id of [...records.keys()])removeFont(id);
- status('All fonts cleared.');
+ for(const rec of records.values())cleanupFont(rec);
+ records.clear();selectedByFamily.clear();collapsedByFamily.clear();
+ render();status('All font families cleared.');
 };
 $('sort').onclick=()=>{ascending=!ascending;$('sort').textContent='Sort: name '+(ascending?'↑':'↓');render()};
 $('preview').addEventListener('input',()=>{document.querySelectorAll('.sample').forEach(el=>el.textContent=$('preview').value||' ')});
