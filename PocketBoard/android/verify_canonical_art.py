@@ -144,6 +144,13 @@ border_vector = xml(DRAWABLE / "pb_trackpad_outline_divider.xml")
 svg_paths = border_svg.findall("{http://www.w3.org/2000/svg}path")
 android_border_paths = border_vector.findall("path")
 assert len(svg_paths) == len(android_border_paths) == 2
+# The source-image margins must not return; the contour fills the viewport.
+assert border_svg.attrib["viewBox"] == "0 0 1472 714"
+assert border_vector.attrib[NS + "viewportWidth"] == "1472"
+assert border_vector.attrib[NS + "viewportHeight"] == "714"
+# The separator must align to the actual 83% scrollpad boundary.
+seam_x = int(re.search(r"M (\\d+),", svg_paths[1].attrib["d"]).group(1))
+assert abs(seam_x / 1472 - .83) < .002
 for source, runtime in zip(svg_paths, android_border_paths):
     assert norm(source.attrib["d"]) == norm(runtime.attrib[NS + "pathData"])
     assert source.attrib["stroke"].upper() == "#FCF4E9"
