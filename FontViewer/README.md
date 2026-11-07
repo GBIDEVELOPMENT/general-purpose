@@ -20,11 +20,19 @@ The general UI uses the bundled `P22 Stanyan Regular Regular.ttf`. The uppercase
 
 The GitHub Pages workflow publishes both TTF assets along with the HTML. **Pages assets are publicly retrievable even when their source repository is private.** Ensure the font license allows this use and public distribution.
 
+## Android app
+
+`android/` contains the dedicated Java WebView shell. It serves the existing browser UI from a secure app-assets HTTPS origin, preserving app-private IndexedDB without requesting Android-wide file access. The system document picker imports multiple TTF/OTF/WOFF/TTC/OTC/ZIP files. The debug APK build workflow is `.github/workflows/font-shelf-android.yml`; its `FontShelf-debug-apk` artifact is kept for seven days. Check the workflow run before calling a build qualified.
+
+The app restores saved fonts on startup in small batches. Tags apply to whole families, lists have user-set titles, and the shelf can be filtered by list or tag. Hidden fonts remain in Library; permanent deletion removes font bytes and updates saved list references. Only the user-authorized system picker reads external documents. This initial wrapper still needs internet connectivity for the existing pinned ZIP/parser dependencies during **new imports**, while restoration of previously imported fonts uses app-private local storage.
+
+This is a first Android implementation, not yet a device-qualified release. Tests needed: clean installation, 100+ font import, kill/restart persistence, hidden-family recovery, list editing and deletion, storage-quota failure, upgrade survival, Android picker across providers, browser dependency outage and performance traces.
+
 ## Run
 
 Open `index.html` in Chrome on Android, or serve the directory as a static site. No build step or backend is necessary. For convenient phone access, publish the directory using an appropriate static-site host. **This implementation uses two pinned CDN dependencies**, so a network connection is required to load those libraries: `fflate@0.8.2` for ZIP extraction and dynamically imported `fontkit@2.0.4` via esm.sh for font-name, Unicode-cmap, collection, and variation inspection. Font files are *not* transmitted to those services.
 
-No imported font files are persisted between page reloads. Only the theme preference is saved to local storage. The character map intentionally displays up to 420 glyphs from common Unicode blocks per font; it reports the full number of mapped characters.
+Imported font files, Unicode metadata, family tags and named lists are persisted in local IndexedDB. Hiding a family removes it from the visible shelf but retains its locally stored font bytes; Library can restore it without accessing the original document again. The separate **Delete** command permanently removes saved font files. The character map intentionally displays up to 420 glyphs from common Unicode blocks per font; it reports the full number of mapped characters.
 
 ## Safety limits and known constraints
 
@@ -34,13 +42,16 @@ This is an initial implementation. JavaScript syntax has been checked, but autom
 
 ## Source layout
 
-- `index.html`: self-contained UI, CSS, and application code.
+- `index.html`: browser UI, styles and font rendering.
+- `library.js`: IndexedDB metadata, saved font bytes and named-list storage.
+- `android/`: small Android WebView shell and Gradle project.
+- `tests/smoke.cjs`: source-level syntax and grouping/persistence checks.
 
 ## Suggested next steps
 
-1. Vendor pinned JavaScript dependencies, validate the browser Fontkit bundle, and add an offline service worker.
+1. Vendor pinned JavaScript dependencies, validate the browser Fontkit bundle and eliminate import-time CDN reliance for truly offline Android use.
 2. Add unit and browser tests covering multiple imports, ZIPs, duplicate handling, missing Unicode cmaps, and font-face cleanup.
-3. Optionally persist font collections with IndexedDB (opt-in only).
+3. Qualify Android IndexedDB persistence, font restoration and list/tag upgrades on a real device.
 4. Improve huge character-map navigation with range filters and progressive rendering.
 
 ## Family grouping examples
