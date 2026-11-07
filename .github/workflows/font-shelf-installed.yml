@@ -56,6 +56,5 @@ jobs:
           profile: pixel_5
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
           disable-animations: true
-          script: |
-            cd FontViewer/android
-            gradle --no-daemon :app:connectedDebugAndroidTest
+          working-directory: FontViewer/android
+          script: gradle --no-daemon :app:connectedDebugAndroidTest
