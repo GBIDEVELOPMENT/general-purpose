@@ -28,6 +28,18 @@ android {
     }
 }
 
+/* Explicitly bind CI's stable certificate; do not rely on AGP's implicit debug keystore lookup. */
+def stableSigningFile = System.getenv('FONTSHELF_SIGNING_KEYSTORE')
+if (stableSigningFile) {
+    if (!file(stableSigningFile).isFile()) {
+        throw new GradleException("Missing configured Font Shelf signing keystore")
+    }
+    android.signingConfigs.debug.storeFile = file(stableSigningFile)
+    android.signingConfigs.debug.storePassword = 'android'
+    android.signingConfigs.debug.keyAlias = 'androiddebugkey'
+    android.signingConfigs.debug.keyPassword = 'android'
+}
+
 dependencies {
     implementation 'androidx.webkit:webkit:1.16.0'
     implementation 'androidx.activity:activity:1.10.1'
