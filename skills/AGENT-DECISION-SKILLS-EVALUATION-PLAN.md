@@ -11,7 +11,7 @@
 
 Research inputs (not ground truth by themselves):
 
-- [Cross-project historical validation audit](../docs/CROSS-PROJECT-VALIDATION-HISTORY-AUDIT-2026-11-03.md): internal source-linked chronology and quantitative ledger across Chunks, Expository, Glimpse, UR-Recomp, ROYGBIV, AYA, Pathfinder, Ring Road, Night Court, S60 and other projects. Treat historical PR assertions, exact logs, merged fixes, proposals and unmerged experiments as distinct.
+- [Cross-project historical validation audit](references/CROSS-PROJECT-VALIDATION-HISTORY-AUDIT-2026-11-03.md): internal source-linked chronology and quantitative ledger across Chunks, Expository, Glimpse, UR-Recomp, ROYGBIV, AYA, Pathfinder, Ring Road, Night Court, S60 and other projects. Treat historical PR assertions, exact logs, merged fixes, proposals and unmerged experiments as distinct.
 - [Cross-project validation-case audit](android-app-development/references/validation-case-audit.md): narrower exact-run cases and proof limitations.
 - [Validation economics](android-app-development/references/validation-economics.md): existing proportionate test-tier and batching procedure, not an evaluation outcome.
 - [External multilingual agent-validation research](https://github.com/GBIDEVELOPMENT/general-purpose/blob/research/agent-validation-efficiency-2026-11-02/skills/engineering-judgment/references/agent-validation-efficiency-research-2026-11-02.md): external mechanisms and counterexamples, preserved on a separate research branch at this plan's creation; **link may change if PR #608 is merged**. Never silently count that research as a resolved or independently reproduced finding.
