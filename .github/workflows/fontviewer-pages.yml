@@ -38,7 +38,7 @@ jobs:
         run: |
           npm install --prefix FontViewer --ignore-scripts --no-audit --no-fund --package-lock=false
           npm run --prefix FontViewer build:vendor
-          node FontViewer/tests/smoke.cjs
+          npm test --prefix FontViewer
 
       - name: Verify Glyph Mixer scripts and core tests
         run: |
