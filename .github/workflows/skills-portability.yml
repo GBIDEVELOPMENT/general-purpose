@@ -1,0 +1,23 @@
+name: Portable development skills
+on:
+  pull_request:
+    paths:
+      - 'skills/**'
+      - '.github/workflows/skills-portability.yml'
+  push:
+    paths:
+      - 'skills/**'
+      - '.github/workflows/skills-portability.yml'
+  workflow_dispatch:
+jobs:
+  portability:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 skills/scripts/check_portability.py --skills-dir skills
+      - run: python3 -m unittest discover -s skills/tests -p test_portability.py
