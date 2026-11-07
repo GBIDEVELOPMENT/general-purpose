@@ -57,14 +57,17 @@ jobs:
           FONTSHELF_DEBUG_KEYSTORE_BASE64: ${{ secrets.FONTSHELF_DEBUG_KEYSTORE_BASE64 }}
         run: |
           if [ -z "$FONTSHELF_DEBUG_KEYSTORE_BASE64" ]; then
-            echo "::warning::No stable debug signing key configured. This preview APK cannot safely upgrade a debug build produced on another runner."
-          else
-            mkdir -p "$HOME/.android"
-            printf '%s' "$FONTSHELF_DEBUG_KEYSTORE_BASE64" | base64 --decode > "$HOME/.android/debug.keystore"
-            chmod 600 "$HOME/.android/debug.keystore"
-            keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey >/dev/null
-            echo "Using the repository's stable debug signing certificate."
+            echo "::error::Stable debug signing key is required for main builds."
+            exit 1
           fi
+          mkdir -p "$HOME/.android"
+          printf '%s' "$FONTSHELF_DEBUG_KEYSTORE_BASE64" | base64 --decode > "$HOME/.android/debug.keystore"
+          chmod 600 "$HOME/.android/debug.keystore"
+          keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey >/dev/null
+          expected="$(keytool -exportcert -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey | sha256sum | cut -d' ' -f1)"
+          echo "FONTSHELF_SIGNING_KEYSTORE=$HOME/.android/debug.keystore" >> "$GITHUB_ENV"
+          echo "FONTSHELF_EXPECTED_CERT_SHA256=$expected" >> "$GITHUB_ENV"
+          echo "Stable Font Shelf debug signing key loaded; certificate SHA-256: $expected"
       - name: Build debug APK
         working-directory: FontViewer/android
         run: gradle --no-daemon -PfontshelfVersionCode="$GITHUB_RUN_NUMBER" :app:assembleDebug
@@ -83,6 +86,14 @@ jobs:
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs "$APK" > signing-report.txt
           grep -F 'Verified using v2 scheme (APK Signature Scheme v2): true' signing-report.txt
           grep -F 'Signer #1 certificate SHA-256 digest:' signing-report.txt
+          if [ -n "${FONTSHELF_EXPECTED_CERT_SHA256:-}" ]; then
+            actual="$(awk '/Signer #1 certificate SHA-256 digest:/ {print $NF}' signing-report.txt | tr '[:upper:]' '[:lower:]')"
+            if [ "$actual" != "$FONTSHELF_EXPECTED_CERT_SHA256" ]; then
+              echo "::error::APK signing certificate differs from the configured stable signing key!"
+              exit 1
+            fi
+            echo "Verified exact APK certificate matches the stable signing key."
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: FontShelf-debug-apk
