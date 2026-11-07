@@ -8,16 +8,21 @@ This directory is a library of **complementary capabilities**, not a pyramid wit
 |---|---|---|---|
 | Domain reference | Applicable platform/API contract, version, prerequisite and exception | Identify Room migration contract or Android background restriction | Treating borrowed guidance as executable proof |
 | Operational execution | Changed implementation, research extract, user interaction, or test artifact | Fix a file grant bug and run the installed acceptance journey | Replacing work with a plan |
+| Evidence acquisition and ecosystem investigation | Inspected source/claim ledger, independent search routes, competitor and user observations, bounded search coverage | Research how competing inspection apps handle annotation and undo | Treating snippets/reposts as verified behavior or population preference |
+| Engineering resource discovery | Qualified SDK/library/API/code/dataset candidates and build-versus-reuse disposition | Evaluate annotation library, AYA adapter or segmentation SDK before building | Automatically installing a top search result or inventing license compatibility |
+| Product specification engineering | Traceable user outcomes, journey/state matrix, architecture/data contracts and workstream readiness | Compile a multi-feature retrofit-photo journey into states and acceptance | Pretending a feature list is a coherent implementable product |
 | Mechanised inquiry and decisions | Source-linked choice-changing questions, alternatives, discriminators, stop rules | Identify which unanswered retry condition changes a design | Asking an agent to imitate intuition or investigate everything |
 | Conceptual modelling | Typed concepts and relationships, coverage results, qualified unknowns | Build a map of users, intents, states, media identities and recovery | Equating missing edges with real-world absence |
 | Human-agent interaction engineering | Appropriately scoped survey, decision briefing, observational checklist, review or approval interface and interpretable responses | Owner asks “any choices?”, or prior-art research reveals optional, evidence-backed feature alternatives | Mandatory forms, invented consensus, silently treating preferences as permission |
 | Verification and evidence management | Independent observation tied to exact claim, environment, and revision | Show a persisted file survived restart, or mark untested | Promoting simulated, planned or verbal claims into observed success |
 
-For a substantial greenfield product or costly architectural reset, start with [Project Inception](project-inception/SKILL.md) to coordinate reconstruction, ecosystem/user research, reuse discovery, conceptual coverage, specifications and per-workstream readiness. It is an orchestration trigger, not a universal prerequisite. See the [readiness standard](project-inception/references/readiness-standard.md) and [Retrofit example](project-inception/examples/retrofit-kickoff.md).
+For a substantial greenfield product or costly architectural reset, start with [Project Inception](project-inception/SKILL.md) to coordinate reconstruction, [evidence acquisition](evidence-acquisition/SKILL.md), [resource discovery](engineering-resource-discovery/SKILL.md), conceptual coverage, [specification engineering](product-specification-engineering/SKILL.md) and per-workstream readiness. It is an orchestration trigger, not a universal prerequisite. See the [readiness standard](project-inception/references/readiness-standard.md) and [Retrofit example](project-inception/examples/retrofit-kickoff.md).
 
 The same project can need several capabilities, but **none is a universal prerequisite**. A tiny visual correction may need only operational execution and a focused check. An ontology review may start directly with Concept Model Engineering. A complex UX problem may need user research, modelling, choice generation, implementation and runtime testing. The observed task determines the sequence.
 
 Human-agent interaction is a capability in its own right: a form or decision landscape can be the requested deliverable even when no engineering decision is blocked. Use [Human-Agent Interaction Engineering](human-agent-interaction-engineering/SKILL.md) as the entry point for surveys, on-demand choice discovery and structured reviews. Use [Decision Synthesis and Closure](decision-synthesis-closure/SKILL.md) for comprehensive blocker audits and downstream reconciliation. Their boundaries overlap, but neither is a compulsory prerequisite of the other.
+
+When a requested deliverable is research itself, select [Evidence Acquisition](evidence-acquisition/SKILL.md) directly. For a specific unfamiliar component selection, select [Engineering Resource Discovery](engineering-resource-discovery/SKILL.md). When an evidence-backed specification must be constructed from already recovered goals, use [Product Specification Engineering](product-specification-engineering/SKILL.md). These are optional independent capabilities, not a mandatory three-skill preflight.
 
 ## Cross-project validation economics
 
@@ -42,6 +47,10 @@ See the [Opportunity Handoff procedure](human-agent-interaction-engineering/refe
 
 0. New complex application with unresearched users, ecosystem and architecture: Project Inception first. Permit bounded proof spikes and isolated ready slices.
 
+0a. Focused competitor and native-language user-criticism research: Evidence Acquisition, without pretending uninstalled marketing features were observed.
+0b. Need to find an appropriate image processing library or integrate existing code: Engineering Resource Discovery, including license/compatibility gates and bounded proof spikes.
+0c. Multi-feature product plan requiring explicit UI, ownership and acceptance contracts: Product Specification Engineering, with independent workstream readiness.
+
 1. Known Compose layout bug with a reproducer: Android Development first; fix and test. No map or research committee.
 2. Integrating two independent user workflows whose identities differ: primary engineering/product skill; invoke a bounded map only for relationships that could change implementation or UX.
 3. Building an ontology from multilingual source material: Concept Model Engineering directly; apply its own mechanical source inventory, extraction, identity, relation, and gap-audit operations.
@@ -51,5 +60,7 @@ See the [Opportunity Handoff procedure](human-agent-interaction-engineering/refe
 7. Owner unexpectedly asks “What decisions can I make?”: inspect current sources and provide needed, upcoming, optional and reconsideration opportunities; do not force a release audit.
 
 ## Acceptance for changes to this library
+
+For operational-quality review follow [the recursive competence-assumption audit](references/operational-completeness-audit.md), including negative controls and fallbacks when inputs cannot be obtained. Its [structural reviewer](scripts/audit_instruction_completeness.py) produces candidates, not certification of agent competence.
 
 For every new procedure specify **activation evidence, rejection condition, required inputs, ordered actions, named outputs, decision branch (when applicable), independent oracle, and stop rule**. A standalone reference may describe facts without becoming a mandatory workflow. Check both positive and negative control tasks. Do not require all skills in a single agent's initial context. No method gains authority merely because its name appears in a parent skill.

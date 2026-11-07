@@ -29,7 +29,7 @@ Run:
 
 The validator rejects unknown source IDs, forward references, missing inputs, duplicate outputs, unknown operations, generic intuitive commands and missing alternative decisions. It does **not** establish source accuracy, equivalence to experienced practitioners or empirically better outcomes.
 
-**Coverage is explicit:** these 22 curated procedure examples cover the original 22 pinned practice records plus eight separately pinned Android specialist additions, all of which remain a small subset of the 1,073 recommendation records in the research corpus. Conversion is a separate workstream; do not automatically mark all source records as reviewed or mechanistically complete.
+**Coverage is explicit:** these 30 curated procedure examples cover the original 22 pinned practice records plus eight separately pinned Android specialist additions, all of which remain a small subset of the 1,073 recommendation records in the research corpus. Conversion is a separate workstream; do not automatically mark all source records as reviewed or mechanistically complete.
 
 ## When to stop compiling
 

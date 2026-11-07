@@ -19,9 +19,9 @@ For a substantial new application, architecture reset or inadequately specified 
 1. Inspect current `main`, active PRs/issues, CI and `AGENTS.md`/queue. Identify other agents and shared files before changing anything. Previous summaries, docs or green tests can be stale.
 2. Name the **shipping user journey**, actual production call path, source and destination identities, permissions, Android API/provider and observable result. Separate observed bug, plausible risk and speculative concern.
 3. Record the **six-line execution card** in the existing issue/PR: **Outcome / Evidence / Authority and scope / Smallest intervention / Positive and negative proof / Exit and remaining gaps**. See [decision diagnostics](references/engineering-decisions.md).
-4. Choose the existing platform/library primitive before a custom backend; check current Android platform documentation and relevant narrowly selected upstream skill. Do not fetch/install unknown code merely because it is recommended.
+4. Choose the existing platform/library primitive before a custom backend; for unfamiliar implementations use [Resource Discovery R1–R8](../engineering-resource-discovery/SKILL.md), then check current Android platform documentation and relevant narrowly selected upstream skill. Do not fetch/install unknown code merely because it is recommended.
 5. **Plan validation boundaries before implementation.** When several changes share expensive build, device, CI or provider setup, partition compatible work into an implementation batch and a shared validation session. Retain cheap edit-local feedback and early focused gates for risky foundations or destructive effects; do not mandate a full project test for each change. See [Validation economics](references/validation-economics.md).
-6. Implement the bounded batch as independently identifiable changes, with explicit per-item oracles. At the shared boundary verify ordinary positive behavior through real UI/platform/adapter and relevant hostile, cancellation, crash, stale identity and recovery variants. Share setup rather than diluting proof; bound the matrix by actual risk.
+6. Implement the bounded batch as independently identifiable changes, with explicit per-item oracles. At the shared boundary [derive independent acceptance oracles](references/acceptance-oracle-construction.md) for unfamiliar or consequential claims and verify ordinary positive behavior through real UI/platform/adapter and relevant hostile, cancellation, crash, stale identity and recovery variants. Share setup rather than diluting proof; bound the matrix by actual risk.
 7. Verify focused and integration checks on the **exact PR head**; classify red results by phase and count executed tests. Independent review for destructive/credential/native/schema/signing changes; update current issue/ledger only when evidence moves.
 8. On integration, state precisely **merged vs merely proposed**, exercised tier and exact SHA/run, persisted postcondition, unsupported device/provider/owner gates and next runnable work. When waiting on external CI, choose an independent safe task, never duplicate speculative branches.
 
@@ -30,10 +30,14 @@ For a substantial new application, architecture reset or inadequately specified 
 | Symptom / responsibility | Load |
 |---|---|
 | Recognize hidden complexity or choose a level of investigation | [Engineering Judgment](../engineering-judgment/SKILL.md) |
+| Deep competitor/source search, original user testimony, coverage and counterexamples | [Evidence Acquisition](../evidence-acquisition/SKILL.md) (only when external evidence could alter a consequential UX/product choice) |
+| Unfamiliar libraries, APIs, datasets, other-project code, build vs adapt | [Engineering Resource Discovery](../engineering-resource-discovery/SKILL.md) |
+| Interacting feature journeys, explicit product/data/adapter specification | [Product Specification Engineering](../product-specification-engineering/SKILL.md) |
 | UX jobs, original-language prior art, discoverability, concise user research and expert question selection | [Mechanised Expertise: user-needs investigation](../mechanised-expertise/references/user-needs-and-prior-art.md) (only for consequential UX choices) |
 | Requirements, priorities, architecture bloat, branches and gates | [Engineering decisions](references/engineering-decisions.md) |
 | SAF, app-private files, Room, remote auth, identity, retry or interruption | [Operation integrity](references/operation-integrity.md) |
 | Concrete Android implementation patterns for pickers, lifecycle, UI, storage and releases | [Platform playbooks](references/platform-playbooks.md) |
+| Deriving actual test fixtures, positive/negative observations and evidence tiers from product requirements | [Acceptance oracle construction](references/acceptance-oracle-construction.md) |
 | UI reachability, testing tiers, CI cost, signing and integration | [Verification and CI](references/verification-and-ci.md) |
 | Multiple queued changes, repeated full runs, expensive device/provider setup, or human-review bottlenecks | [Validation economics](references/validation-economics.md) |
 | Security/data-risk independent PR review | [Adversarial PR review](references/adversarial-review.md) |

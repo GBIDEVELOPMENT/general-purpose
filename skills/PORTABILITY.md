@@ -17,10 +17,11 @@ Validate either tree locally without network access:
 
     python3 skills/scripts/check_portability.py --skills-dir skills
     python3 -m unittest discover -s skills/tests
+    python3 skills/scripts/audit_instruction_completeness.py --skills-dir skills --check-contracts
 
 **Host routing snippet**, to adapt into the host's own AGENTS.md:
 
-> For substantial new projects, first consult skills/project-inception/SKILL.md. For already specified Android work, use skills/android-app-development/SKILL.md. For other tasks choose one primary skill using skills/CAPABILITY-ARCHITECTURE.md, and load supporting references only for consequential dependencies. Local project instructions, owner decisions and security boundaries remain authoritative.
+> For substantial new projects, first consult skills/project-inception/SKILL.md. For already specified Android work, use skills/android-app-development/SKILL.md. For standalone source and ecosystem investigations use skills/evidence-acquisition/SKILL.md; for library/API/code reuse use skills/engineering-resource-discovery/SKILL.md; for multi-feature product contracts use skills/product-specification-engineering/SKILL.md. For other tasks choose one primary skill using skills/CAPABILITY-ARCHITECTURE.md, and load supporting references only for consequential dependencies. Local project instructions, owner decisions and security boundaries remain authoritative.
 
 Do not use absolute GitHub URLs as internal navigation. Link among skills using local relative paths. External references should be clearly identified as sources to consult, not runtime requirements. Shared examples must label project-specific facts as examples, never universal constraints.
 
