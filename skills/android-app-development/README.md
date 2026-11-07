@@ -2,7 +2,7 @@
 
 Portable, progressively disclosed Agent Skill built from the **actual** engineering histories of [Chunks](https://github.com/gamesbyian/Chunks), [Glimpse](https://github.com/gamesbyian/Glimpse) and [Expository Transfer](https://github.com/gamesbyian/Expository/tree/main/android-transfer). It complements, rather than replaces, the smaller android-evidence-first skill already installed in those repositories.
 
-**Canonical location (for now):** this directory in the private GBIDEVELOPMENT/general-purpose repository. This is an original synthesis with links to upstream work, not a vendored copy or an assertion that third-party scripts are trusted. No standalone redistribution license has been selected.
+**Location:** this folder is portable and may be used as a project-local copy. See [portability and installation](../PORTABILITY.md).
 
 ## How to use it
 

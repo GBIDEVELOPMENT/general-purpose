@@ -21,7 +21,7 @@ Human-agent interaction is a capability in its own right: a form or decision lan
 
 ## Cross-project validation economics
 
-When the task is specifically to reduce test/CI cycles or the director's repeated manual acceptance, use the optional [Validation Economics procedure](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/android-app-development/references/validation-economics.md) and its [observed Chunks, Expository, UR-Recomp and Glimpse audit](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/android-app-development/references/validation-case-audit.md). Despite its Android-skill location, the procedure's dispatch-relevance, shared-setup and diagnostic-information rules apply across repositories. Do not activate it for every routine commit, downgrade project-specific release gates, or treat a full green run as evidence of a path it cannot exercise.
+When the task is specifically to reduce test/CI cycles or the director's repeated manual acceptance, use the optional [Validation Economics procedure](android-app-development/references/validation-economics.md) and its [observed Chunks, Expository, UR-Recomp and Glimpse audit](android-app-development/references/validation-case-audit.md). Despite its Android-skill location, the procedure's dispatch-relevance, shared-setup and diagnostic-information rules apply across repositories. Do not activate it for every routine commit, downgrade project-specific release gates, or treat a full green run as evidence of a path it cannot exercise.
 
 ## Two-way application without hierarchy
 
