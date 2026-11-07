@@ -40,7 +40,7 @@ jobs:
           node --check FontViewer/library.js
           node --check FontViewer/.generated/vendor/fontkit.js
           node --check FontViewer/.generated/vendor/fflate.js
-          node FontViewer/tests/smoke.cjs
+          npm test --prefix FontViewer
       - name: Build debug APK
         working-directory: FontViewer/android
         run: gradle --no-daemon :app:assembleDebug
