@@ -6,10 +6,18 @@ on:
     paths:
       - 'FontViewer/**'
       - '.github/workflows/font-shelf-android.yml'
+  pull_request:
+    paths:
+      - 'FontViewer/**'
+      - '.github/workflows/font-shelf-android.yml'
   workflow_dispatch:
 
 permissions:
   contents: read
+
+concurrency:
+  group: fontshelf-android-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
