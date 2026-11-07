@@ -53,11 +53,12 @@ const cases=[
  ['Zounderkite','Zounderkite Super-Italic',true],
  ['Stoutface','Stoutface SC Small Caps',true],
  ['KBYoureJustMyType','KBYoureJustMyTypeThin',true],
- ['GargleCdRg-Bold','GargleExRg-Bold',true],
+ ['GargleCdRg-Bold','GargleExRg-Bold',false],
  ['Super Comic','Super Hockey',false],
  ['Patrick Hand','Unkempt Bold',false],
  ['DKJalebi','DKNewBeginnings',false]
 ];
 for(const [a,b,expected] of cases)assert.equal(related(a,b,'one.zip','two.zip'),expected,a+' / '+b);
+assert.equal(related('GargleCdRg-Bold','GargleExRg-Bold','gargle.zip','gargle.zip'),true);
 assert.equal(related('Patrick Hand','Unkempt Bold','combined.zip','combined.zip'),false);
 console.log('Font Shelf: HTML, persistence contracts, and '+(cases.length+1)+' family grouping smoke checks passed.');
