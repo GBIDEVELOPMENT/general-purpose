@@ -28,9 +28,18 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.11.1
-      - name: Check JavaScript
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Bundle pinned offline browser dependencies
+        run: |
+          npm install --prefix FontViewer --ignore-scripts --no-audit --no-fund --package-lock=false
+          npm run --prefix FontViewer build:vendor
+      - name: Check JavaScript and source contracts
         run: |
           node --check FontViewer/library.js
+          node --check FontViewer/.generated/vendor/fontkit.js
+          node --check FontViewer/.generated/vendor/fflate.js
           node FontViewer/tests/smoke.cjs
       - name: Build debug APK
         working-directory: FontViewer/android
@@ -41,6 +50,8 @@ jobs:
           test -s "$APK"
           unzip -l "$APK" | grep -F 'assets/index.html'
           unzip -l "$APK" | grep -F 'assets/library.js'
+          unzip -l "$APK" | grep -F 'assets/vendor/fontkit.js'
+          unzip -l "$APK" | grep -F 'assets/vendor/fflate.js'
           unzip -l "$APK" | grep -F 'assets/P22 Stanyan Regular Regular.ttf'
           unzip -l "$APK" | grep -F 'assets/ScribbleBoxDemo-gyWq.ttf'
           sha256sum "$APK"
