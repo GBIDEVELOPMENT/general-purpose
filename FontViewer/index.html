@@ -14,7 +14,7 @@
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(env(safe-area-inset-top) + 12px) 14px 12px}
 .headline,.actions,.meta,.cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px}.headline{margin-bottom:12px}.headline h1{font-family:'Scribblebox','P22 Stanyan',serif;font-size:22px;margin:0;letter-spacing:-.015em;font-weight:400}.headline h1 span{font-weight:400;opacity:.55}.headline h1 strong{font-weight:400;opacity:.95;-webkit-text-stroke:0}.pill,button{border:1px solid var(--line);border-radius:13px;background:var(--panel);color:var(--text);min-height:44px;padding:8px 12px;font-weight:600}.pill{display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}.danger{color:var(--danger)}.label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin:0 0 6px}textarea{resize:vertical;width:100%;min-height:62px;max-height:160px;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:11px 12px;color:var(--text)}.actions{margin-top:10px}.actions button{flex:1}.actions button:last-child{flex:0 0 auto}
 main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;margin:auto}.toolbar{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:14px}.toolbar p{margin:0;color:var(--muted);font-size:14px}.toolbar button{min-height:40px;font-size:13px}.empty{border:1px dashed var(--line);padding:40px 18px;border-radius:17px;text-align:center;color:var(--muted);line-height:1.6}.empty strong{display:block;color:var(--text);font-size:18px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px;margin:0 0 14px;overflow:hidden}.cardhead{align-items:flex-start}.fontname{font-size:19px;margin:0;overflow-wrap:anywhere}.filename{font-size:12px;color:var(--muted);overflow-wrap:anywhere;margin:5px 0 0}.remove{padding:4px 10px;min-width:44px;flex-shrink:0;color:var(--danger)}.variant-controls{display:flex;gap:4px;align-items:center;flex-shrink:0}.variant-arrow{min-width:44px;padding:4px 7px;font-size:26px;line-height:1;color:var(--accent)}.variant-position{display:block;color:var(--muted);font:12px system-ui,sans-serif;margin-top:6px}.cardhead>div:first-child{min-width:0;flex:1}.sample{font-size:29px;line-height:1.3;overflow-wrap:anywhere;white-space:pre-wrap;background:var(--inset);border-radius:12px;padding:15px 12px;margin:16px 0}.meta{justify-content:flex-start;flex-wrap:wrap;font-size:12px;color:var(--muted)}details{border-top:1px solid var(--line);margin-top:14px;padding-top:13px}summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-family:'Scribblebox','P22 Stanyan',serif;font-size:16px;font-weight:400;color:var(--accent)}.glyphs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.glyph{border:1px solid var(--line);border-radius:7px;min-width:0;min-height:47px;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:var(--inset)}.glyph b{font-size:22px;font-weight:400}.glyph small{font:9px system-ui;color:var(--muted)}.note{color:var(--muted);font-size:12px;line-height:1.45}.axes{display:grid;gap:9px;margin-top:13px}.axis{display:grid;grid-template-columns:1fr auto;gap:5px 10px;font-size:12px;color:var(--muted)}.axis input{grid-column:1/-1;width:100%;height:32px;accent-color:var(--accent)}.status{min-height:20px;font-size:12px;color:var(--muted);margin:10px 1px 0}.sr{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}#file{display:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:15px;margin:0 0 14px;overflow:hidden}.cardhead{align-items:flex-start}.fontname{font-size:19px;margin:0;overflow-wrap:anywhere}.filename{font-size:12px;color:var(--muted);overflow-wrap:anywhere;margin:5px 0 0}.remove{padding:4px 10px;min-width:44px;flex-shrink:0;color:var(--danger)}.variant-controls{display:flex;gap:4px;align-items:center;flex-shrink:0}.variant-arrow{min-width:44px;padding:4px 7px;font-size:26px;line-height:1;color:var(--accent)}.variant-position{display:block;color:var(--muted);font:12px system-ui,sans-serif;margin-top:6px}.cardhead>div:first-child{min-width:0;flex:1}.sample{font-size:29px;line-height:1.3;overflow-wrap:anywhere;white-space:pre-wrap;background:var(--inset);border-radius:12px;padding:15px 12px;margin:16px 0}.meta{justify-content:flex-start;flex-wrap:wrap;font-size:12px;color:var(--muted)}details{border-top:1px solid var(--line);margin-top:14px;padding-top:13px}summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-family:'Scribblebox','P22 Stanyan',serif;font-size:16px;font-weight:400;color:var(--accent)}.glyphs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.glyph{border:1px solid var(--line);border-radius:7px;min-width:0;min-height:47px;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:var(--inset)}.glyph b{font-size:22px;font-weight:400}.glyph small{font:9px system-ui;color:var(--muted)}.note{color:var(--muted);font-size:12px;line-height:1.45}.axes{display:grid;gap:9px;margin-top:13px}.axis{display:grid;grid-template-columns:1fr auto;gap:5px 10px;font-size:12px;color:var(--muted)}.axis input{grid-column:1/-1;width:100%;height:32px;accent-color:var(--accent)}.status{min-height:20px;font-size:12px;color:var(--muted);margin:10px 1px 0}.library-tools{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:0 0 12px}.library-tools button,.library-tools select{min-height:44px;font-size:13px}.library-tools select{flex:1;min-width:120px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px}.library-panel{background:var(--panel);border:1px solid var(--line);padding:13px;border-radius:14px;margin:0 0 15px}.library-panel[hidden]{display:none}.library-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:9px 0;border-bottom:1px solid var(--line)}.library-row:last-child{border-bottom:0}.library-row .family-label{flex:1;min-width:100px}.library-row button,.card-tools button{min-height:44px;padding:6px 10px;font-size:13px}.card-tools{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:12px}.tag-chip{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:4px 7px;font:12px system-ui,sans-serif;color:var(--muted)}.library-help{font-size:12px;color:var(--muted);line-height:1.5}.sr{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden}#file{display:none}
 @media(min-width:500px){.glyphs{grid-template-columns:repeat(10,minmax(0,1fr))}}
 </style>
 </head>
@@ -23,22 +23,27 @@ main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;
  <div class="headline"><h1><span>FONT</span> <strong>SHELF</strong></h1><button id="theme" aria-label="Switch to light theme">☀ Light</button></div>
  <label class="label" for="preview">PREVIEW TEXT · APPLIES TO EVERY FONT</label>
  <textarea id="preview" rows="2" spellcheck="false">Thus Spake Zarathustra: "Pack my box with five dozen liquor jugs, &amp; make it quick! Why wait?"</textarea>
- <div class="actions"><button class="primary" id="add">＋ Add fonts / ZIPs</button><button id="clear" class="danger" disabled>Clear all</button></div>
+ <div class="actions"><button class="primary" id="add">＋ Add fonts / ZIPs</button><button id="clear" class="danger" disabled>Hide all</button></div>
  <div class="status" id="status" role="status" aria-live="polite"></div>
 </header>
 <main>
- <div class="toolbar"><p id="count">0 fonts loaded</p><button id="sort">Sort: name ↑</button></div>
+ <div class="library-tools"><button id="libraryToggle" aria-expanded="false">Library</button><select id="viewList" aria-label="Choose saved list"><option value="">All visible fonts</option></select><button id="newList">＋ List</button><button id="listMenu" aria-label="Rename or delete selected list">Manage list</button></div>
+ <section id="libraryPanel" class="library-panel" hidden><p class="library-help">Dismissed families stay in your saved library. Show them again here or delete them permanently.</p><div id="libraryRows"></div></section>
+ <div class="toolbar"><p id="count">0 families displayed</p><button id="sort">Sort: name ↑</button></div>
  <div id="fonts"></div>
  <div class="empty" id="empty"><strong>Your font shelf is empty</strong>Import TTF, OTF, or ZIP archives. Add more whenever you like. Everything is processed on this device.</div>
  <input type="file" id="file" multiple accept=".ttf,.otf,.woff,.woff2,.ttc,.otc,.zip,font/ttf,font/otf,font/woff,font/woff2,application/zip">
 </main>
 <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous"></script>
+<script src="./library.js"></script>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
 const records=new Map();
 let counter=0,ascending=true,loading=false;
 const selectedByFamily=new Map(),collapsedByFamily=new Map(),cardsByFamily=new Map();
+const catalog=new Map(),savedLists=new Map();
+let activeList='',libraryReady=false;
 let glyphObserver;
 // Group face names using both naming conventions and archive provenance.
 // Avoid generic first-word/first-two-word grouping: e.g. "Super Comic"
@@ -196,8 +201,11 @@ async function addFont(bytes,file,source){
   const cps=[...new Set(font.characterSet||[])].filter(cp=>cp>=32&&cp<=0x10ffff&&!(cp>=0xd800&&cp<=0xdfff)).sort((a,b)=>a-b);
   const name=safeName(font.fullName||[font.familyName,font.subfamilyName].filter(Boolean).join(' ')||file);
   const familyName=normalizedFamilyName(font,file);
-  const rec={id,key,variant,name,familyName,familyKey:familyStem(familyName),styleName:safeName(font.subfamilyName||''),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font)};
-  if(existing){if(selectedByFamily.get(existing.familyKey)===existing.id)selectedByFamily.set('family:'+familyStem(familyName),id);cleanupFont(existing);records.delete(existing.id)}
+  const rec={id,key,variant,name,familyName,familyKey:familyStem(familyName),styleName:safeName(font.subfamilyName||''),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font),hidden:false,tags:[]};
+  if(existing){if(selectedByFamily.get(existing.familyKey)===existing.id)selectedByFamily.set('family:'+familyStem(familyName),id);cleanupFont(existing);records.delete(existing.id);catalog.delete(existing.id);await FontLibrary.remove([existing.id])}
+  const meta=fontMeta(rec);
+  try{await FontLibrary.save(meta,raw);catalog.set(id,meta)}
+  catch(e){status('Storage warning: '+e.message);throw Error('Cannot save font persistently: '+e.message)}
   records.set(id,rec);added++;
  }
  return added;
@@ -270,8 +278,8 @@ function cancelGlyphs(card){
  if(glyphs?._renderToken)glyphs._renderToken.cancelled=true;
  glyphObserver?.unobserve(card);
 }
-function groupsNow(){
- const list=[...records.values()],parent=list.map((_,i)=>i);
+function groupedRecords(list){
+ const parent=list.map((_,i)=>i);
  const root=i=>{while(parent[i]!==i){parent[i]=parent[parent[i]];i=parent[i]}return i};
  for(let i=0;i<list.length;i++)for(let j=0;j<i;j++){
   if(relatedFaces(list[i],list[j]))parent[root(i)]=root(j);
@@ -291,10 +299,19 @@ function groupsNow(){
  }
  return groups;
 }
+function groupsNow(){return groupedRecords([...records.values()])}
+function visibleGroups(){
+ const groups=groupsNow();
+ const allowed=activeList?savedLists.get(activeList)?.ids||[]:null;
+ const filter=$('tagFilter')?.value||'';
+ return [...groups.entries()].filter(([key,variants])=>
+  (!allowed||variants.some(r=>allowed.includes(r.id)))&&
+  (!filter||variants.some(r=>catalog.get(r.id)?.tags?.includes(filter))));
+}
 function updateCount(){
  const count=cardsByFamily.size;
  $('count').textContent=count+' font '+(count===1?'family':'families')+' displayed';
- $('empty').hidden=count>0;$('clear').disabled=count===0;
+ $('empty').hidden=count>0;$('clear').disabled=records.size===0;
 }
 function makeFamilyCard(key,variants){
  const selected=selectedByFamily.get(key);
@@ -348,7 +365,12 @@ function makeFamilyCard(key,variants){
   collapsedByFamily.set(key,!details.open);
   if(details.open)maybePopulate();
  });
- card.append(head,sample,meta,axes,details);
+ const tools=make('div','card-tools');
+ const tagButton=make('button','','Tags');tagButton.onclick=()=>editTags(key);
+ const listButton=make('button','','＋ List');listButton.onclick=()=>addFamilyToList(key);
+ tools.append(tagButton,listButton);
+ for(const tag of (catalog.get(rec.id)?.tags||[]))tools.append(make('span','tag-chip',tag));
+ card.append(head,sample,meta,axes,tools,details);
  card._maybePopulate=maybePopulate;
  return card;
 }
@@ -373,8 +395,8 @@ function showVariant(key,id){
  cardsByFamily.set(key,replacement);observeCard(replacement);
 }
 function render(){
- const root=$('fonts'),groups=groupsNow();
- const grouped=[...groups.entries()].sort((a,b)=>ascending?a[1][0].familyName.localeCompare(b[1][0].familyName):b[1][0].familyName.localeCompare(a[1][0].familyName));
+ const root=$('fonts');
+ const grouped=visibleGroups().sort((a,b)=>ascending?a[1][0].familyName.localeCompare(b[1][0].familyName):b[1][0].familyName.localeCompare(a[1][0].familyName));
  for(const card of cardsByFamily.values())cancelGlyphs(card);
  cardsByFamily.clear();
  const fragment=document.createDocumentFragment();
@@ -384,29 +406,182 @@ function render(){
  root.replaceChildren(fragment);updateCount();
  for(const card of cardsByFamily.values())observeCard(card);
 }
-function removeFamily(key){
+async function removeFamily(key){
  const family=groupsNow().get(key)||[];
  if(!family.length)return;
  const card=cardsByFamily.get(key);
  cancelGlyphs(card);card?.remove();cardsByFamily.delete(key);
- for(const rec of family){cleanupFont(rec);records.delete(rec.id)}
- selectedByFamily.delete(key);collapsedByFamily.delete(key);
- updateCount();
- status(family[0].familyName+' family removed ('+family.length+' variant'+(family.length===1?'':'s')+').');
+ for(const rec of family){
+  const meta=catalog.get(rec.id);if(meta){meta.hidden=true;catalog.set(rec.id,meta)}
+  cleanupFont(rec);records.delete(rec.id);
+ }
+ selectedByFamily.delete(key);collapsedByFamily.delete(key);updateCount();
+ renderLibrary();
+ status('Hidden '+family[0].familyName+' ('+family.length+' variants). Restore from Library.');
+ try{for(const rec of family){const meta=catalog.get(rec.id);if(meta)await FontLibrary.update(meta)}}
+ catch(e){status('Could not save hide state: '+e.message)}
 }
 $('add').onclick=()=>$('file').click();
 $('file').onchange=e=>importFiles([...e.target.files]);
-$('clear').onclick=()=>{
+$('clear').onclick=async()=>{
+ if(!records.size)return;
+ const all=[...records.values()];
  for(const card of cardsByFamily.values())cancelGlyphs(card);
- for(const rec of records.values())cleanupFont(rec);
+ for(const rec of all){cleanupFont(rec);const meta=catalog.get(rec.id);if(meta){meta.hidden=true;catalog.set(rec.id,meta)}}
  records.clear();selectedByFamily.clear();collapsedByFamily.clear();cardsByFamily.clear();
- render();status('All font families cleared.');
+ render();renderLibrary();
+ try{for(const rec of all){const meta=catalog.get(rec.id);if(meta)await FontLibrary.update(meta)};status('Shelf hidden. All fonts remain in Library.')}
+ catch(e){status('Hide was not fully saved: '+e.message)}
 };
 $('sort').onclick=()=>{ascending=!ascending;$('sort').textContent='Sort: name '+(ascending?'↑':'↓');render()};
 $('preview').addEventListener('input',()=>{document.querySelectorAll('.sample').forEach(el=>el.textContent=$('preview').value||' ')});
+
+function fontMeta(rec){
+ return {id:rec.id,key:rec.key,variant:rec.variant,name:rec.name,familyName:rec.familyName,
+  familyKey:rec.familyKey,styleName:rec.styleName,file:rec.file,source:rec.source,
+  cps:rec.cps,axes:rec.axes,hidden:!!rec.hidden,tags:rec.tags||[]};
+}
+async function revive(meta){
+ const stored=await FontLibrary.get('data',meta.id);
+ if(!stored?.bytes)throw Error('Missing saved bytes for '+meta.name);
+ const url=URL.createObjectURL(new Blob([stored.bytes]));
+ const family='font-'+meta.id,face=new FontFace(family,'url("'+url+'")');
+ try{await face.load();document.fonts.add(face)}
+ catch(e){URL.revokeObjectURL(url);throw Error('Cannot restore '+meta.name)}
+ records.set(meta.id,{...meta,family,url,face,axes:meta.axes||[],cps:meta.cps||[]});
+}
+async function initLibrary(){
+ status('Opening saved font library…');
+ try{
+  await FontLibrary.open();
+  const [fonts,lists]=await Promise.all([FontLibrary.all('fonts'),FontLibrary.all('lists')]);
+  for(const meta of fonts){catalog.set(meta.id,meta);counter=Math.max(counter,Number(String(meta.id).replace(/^fs/,''))||0)}
+  for(const list of lists)savedLists.set(list.id,list);
+  libraryReady=true;updateListPicker();renderLibrary();
+  const visible=fonts.filter(f=>!f.hidden);let loaded=0,failed=0;
+  for(const meta of visible){
+   try{await revive(meta);loaded++}catch(e){failed++}
+   if((loaded+failed)%12===0){render();status('Restoring '+(loaded+failed)+' / '+visible.length+' saved fonts…');await new Promise(resolve=>requestAnimationFrame(resolve))}
+  }
+  render();status(loaded+' saved font'+(loaded===1?'':'s')+' restored'+(failed?', '+failed+' could not be loaded':'')+'.');
+ }catch(e){status('Persistent library unavailable: '+e.message)}
+}
+function updateListPicker(){
+ const picker=$('viewList'),old=activeList;
+ picker.replaceChildren(new Option('All visible fonts',''));
+ for(const list of savedLists.values())picker.add(new Option(list.title,list.id));
+ if(savedLists.has(old))picker.value=old;else{activeList='';picker.value=''}
+ $('listMenu').disabled=!activeList;
+}
+function renderLibrary(){
+ const panel=$('libraryPanel');if(panel.hidden)return;
+ const root=$('libraryRows');root.replaceChildren();
+ const groups=groupedRecords([...catalog.values()]);
+ const sorted=[...groups.entries()].sort((a,b)=>a[1][0].familyName.localeCompare(b[1][0].familyName));
+ for(const [key,group] of sorted){
+  const shown=group.some(r=>!r.hidden),row=make('div','library-row');
+  const label=make('span','family-label',group[0].familyName+' ('+group.length+')');
+  const toggle=make('button','',shown?'Hide':'Show');
+  toggle.onclick=()=>toggleLibraryGroup(group,!shown);
+  const tags=make('button','','Tags');tags.onclick=()=>editTags(key,true);
+  const del=make('button','danger','Delete');del.setAttribute('aria-label','Permanently delete '+group[0].familyName);
+  del.onclick=()=>deleteLibraryGroup(group);
+  row.append(label,toggle,tags,del);root.append(row);
+ }
+ if(!sorted.length)root.append(make('p','library-help','No saved fonts yet. Import some using Add fonts / ZIPs.'));
+}
+async function toggleLibraryGroup(group,show){
+ if(show){
+  let count=0;
+  for(const item of group){
+   const meta=catalog.get(item.id);if(!meta||!meta.hidden)continue;
+   try{await revive(meta);meta.hidden=false;await FontLibrary.update(meta);count++}
+   catch(e){status('Restore failed: '+e.message)}
+  }
+  status('Restored '+count+' font variants.');
+ }else{
+  const activeGroups=groupsNow();
+  const ids=new Set(group.map(x=>x.id));
+  const targets=[...activeGroups.values()].filter(g=>g.some(x=>ids.has(x.id)));
+  for(const g of targets)await removeFamily(groupKeyFor(g));
+ }
+ render();renderLibrary();
+}
+function groupKeyFor(group){
+ for(const [key,variants] of groupsNow())if(variants.some(v=>group.some(x=>x.id===v.id)))return key;
+ return '';
+}
+async function deleteLibraryGroup(group){
+ if(!confirm('Permanently delete '+group[0].familyName+' and its '+group.length+' saved font file(s)?'))return;
+ const ids=group.map(f=>f.id),set=new Set(ids);
+ try{
+  await FontLibrary.remove(ids);
+  for(const id of ids){const rec=records.get(id);if(rec){cleanupFont(rec);records.delete(id)}catalog.delete(id)}
+  for(const list of savedLists.values()){
+   const next=list.ids.filter(id=>!set.has(id));
+   if(next.length!==list.ids.length){list.ids=next;await FontLibrary.saveList(list)}
+  }
+  render();renderLibrary();status('Deleted '+group[0].familyName+' permanently.');
+ }catch(e){status('Deletion failed: '+e.message)}
+}
+async function editTags(key,libraryOnly=false){
+ const group=(libraryOnly?groupedRecords([...catalog.values()]):groupsNow()).get(key)||[];
+ if(!group.length)return;
+ const existing=[...new Set(group.flatMap(r=>catalog.get(r.id)?.tags||[]))];
+ const input=prompt('Tags for '+group[0].familyName+' (comma-separated):',existing.join(', '));
+ if(input===null)return;
+ const tags=[...new Map(input.split(',').map(x=>x.trim()).filter(Boolean).slice(0,32).map(x=>[x.toLocaleLowerCase(),x])).values()];
+ try{
+  for(const item of group){const meta=catalog.get(item.id);if(!meta)continue;meta.tags=tags;await FontLibrary.update(meta);const rec=records.get(item.id);if(rec)rec.tags=tags}
+  render();renderLibrary();status('Tags saved for '+group[0].familyName);
+ }catch(e){status('Could not save tags: '+e.message)}
+}
+async function createList(){
+ const title=prompt('Title for the new saved font list:');if(!title?.trim())return null;
+ const id='list-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
+ const list={id,title:title.trim().slice(0,80),ids:[]};
+ try{await FontLibrary.saveList(list);savedLists.set(id,list);activeList=id;updateListPicker();render();return list}
+ catch(e){status('List creation failed: '+e.message);return null}
+}
+async function addFamilyToList(key){
+ const group=groupsNow().get(key)||[];if(!group.length)return;
+ let list=savedLists.get(activeList);
+ if(!list){
+  if(savedLists.size===1)list=[...savedLists.values()][0];
+  else if(savedLists.size>1){
+   const choice=prompt('Add to which list? '+[...savedLists.values()].map(x=>x.title).join(' / '));
+   if(choice===null)return;
+   list=[...savedLists.values()].find(x=>x.title.toLowerCase()===choice.trim().toLowerCase());
+   if(!list){status('No list matched that title.');return}
+  }else list=await createList();
+ }
+ if(!list)return;
+ const ids=new Set(list.ids);
+ for(const rec of group)ids.add(rec.id);
+ list.ids=[...ids];
+ try{await FontLibrary.saveList(list);status(group[0].familyName+' saved to '+list.title);updateListPicker();render()}
+ catch(e){status('Could not save list: '+e.message)}
+}
+$('libraryToggle').onclick=()=>{
+ const p=$('libraryPanel');p.hidden=!p.hidden;
+ $('libraryToggle').setAttribute('aria-expanded',String(!p.hidden));renderLibrary();
+};
+$('viewList').onchange=()=>{activeList=$('viewList').value;updateListPicker();render()};
+$('newList').onclick=()=>createList();
+$('listMenu').onclick=async()=>{
+ const list=savedLists.get(activeList);if(!list)return;
+ const response=prompt('Rename this list, or type DELETE to remove it:',list.title);
+ if(response===null)return;
+ try{
+  if(response==='DELETE'){await FontLibrary.removeList(list.id);savedLists.delete(list.id);activeList=''}
+  else if(response.trim()){list.title=response.trim().slice(0,80);await FontLibrary.saveList(list)}
+  updateListPicker();render();status('Saved lists updated.');
+ }catch(e){status('List update failed: '+e.message)}
+};
 function applyTheme(mode){document.documentElement.dataset.theme=mode;$('theme').textContent=mode==='dark'?'☀ Light':'☾ Dark';$('theme').setAttribute('aria-label','Switch to '+(mode==='dark'?'light':'dark')+' theme');localStorage.setItem('font-shelf-theme',mode)}
 applyTheme(localStorage.getItem('font-shelf-theme')==='light'?'light':'dark');
 $('theme').onclick=()=>applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
 render();
+initLibrary();
 </script>
 </body></html>
