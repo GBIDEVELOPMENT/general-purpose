@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Inventory exact skill payload
+        run: find skills -type f -not -path '*/__pycache__/*' | sort
       - run: python3 skills/scripts/check_portability.py --skills-dir skills
       - run: python3 -m unittest discover -s skills/tests -p test_portability.py
       - name: Prove migration under an unrelated project directory

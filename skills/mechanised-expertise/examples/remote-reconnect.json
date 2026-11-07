@@ -22,6 +22,6 @@
   "verification": {"oracle":"Installed app reconnects each configured environment after an allowed lifecycle transition and reports unreachable profiles truthfully without replaying uncertain commands", "tier":"not-run", "result":"not-run", "evidence_refs":[]},
   "sources": [
     {"id":"EV4-0069", "role":"recommendation", "url":"https://github.com/GuillemRoca/agent-skills-android/blob/68fd141eec5ad2029ae8393e510dbe46dea48c36/skills/android-background-work/SKILL.md", "scope":"background-work retry idempotency, not proof of remote-reconnect UX"},
-    {"id":"editorial-1", "role":"editorial", "url":"https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/engineering-judgment/SKILL.md", "scope":"proposed conditional inquiry, not source-proven user requirement"}
+    {"id":"editorial-1", "role":"editorial", "url":"../../engineering-judgment/SKILL.md", "scope":"proposed conditional inquiry, not source-proven user requirement"}
   ]
 }

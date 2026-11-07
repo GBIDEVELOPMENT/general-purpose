@@ -62,6 +62,12 @@ def check_skills(skills: Path) -> list[str]:
                 errors.append(f"{rel}:{line}: link escapes skills package: {raw}")
             elif not target.exists():
                 errors.append(f"{rel}:{line}: missing local target: {raw}")
+    for source in sorted(skills.rglob("*.json")):
+        content = source.read_text(encoding="utf-8")
+        rel = source.relative_to(skills)
+        for match in STALE_SOURCE_RE.finditer(content):
+            line = content.count("\n", 0, match.start()) + 1
+            errors.append(f"{rel}:{line}: stale source-repository JSON pointer; use portable local identity")
     return errors
 
 
