@@ -561,7 +561,7 @@ async function createList(){
  const title=prompt('Title for the new saved font list:');if(!title?.trim())return null;
  const id='list-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
  const list={id,title:title.trim().slice(0,80),ids:[]};
- try{await FontLibrary.saveList(list);savedLists.set(id,list);activeList=id;updateListPicker();render();return list}
+ try{await FontLibrary.saveList(list);savedLists.set(id,list);updateListPicker();status('Created list '+list.title+'. Use ＋ List on family cards to add fonts.');return list}
  catch(e){status('List creation failed: '+e.message);return null}
 }
 async function addFamilyToList(key){
