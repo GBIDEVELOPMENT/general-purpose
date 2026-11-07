@@ -1,0 +1,32 @@
+name: Portable development skills
+on:
+  pull_request:
+    paths:
+      - 'skills/**'
+      - '.github/workflows/skills-portability.yml'
+  push:
+    paths:
+      - 'skills/**'
+      - '.github/workflows/skills-portability.yml'
+  workflow_dispatch:
+jobs:
+  portability:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inventory exact skill payload
+        run: find skills -type f -not -path '*/__pycache__/*' | sort
+      - run: python3 skills/scripts/check_portability.py --skills-dir skills
+      - run: python3 -m unittest discover -s skills/tests -p test_portability.py
+      - name: Prove migration under an unrelated project directory
+        run: |
+          mkdir -p /tmp/unrelated-project
+          python3 skills/scripts/install_into_project.py --source-root "$PWD" --project-root /tmp/unrelated-project --source-revision "$GITHUB_SHA"
+          python3 /tmp/unrelated-project/skills/scripts/check_portability.py --skills-dir /tmp/unrelated-project/skills
+          test -f /tmp/unrelated-project/skills/project-inception/SKILL.md
+          test -f /tmp/unrelated-project/skills/android-app-development/references/platform-playbooks.md

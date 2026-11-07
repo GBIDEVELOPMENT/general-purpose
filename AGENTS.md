@@ -73,6 +73,7 @@ The capability map in [Skills Architecture](skills/CAPABILITY-ARCHITECTURE.md) s
 
 Choose the **single primary skill** from the actual task; open a second one only when the first reveals a specific consequential dependency:
 
+- **Substantial new app, major rewrite or research-first project setup:** [Project Inception](skills/project-inception/SKILL.md). Reconstruct existing decisions; investigate users, competing solutions and reusable resources; specify product and engineering contracts before widespread implementation.
 - **Native Android feature implementation, platform debugging, or code review:** [Android App Development](skills/android-app-development/SKILL.md). Inspect current project authority, shipping entrypoint and tests. For costly test/CI batching, open only its [Validation Economics](skills/android-app-development/references/validation-economics.md) reference.
 - **Cross-project CI/test-cost planning:** choose [Engineering Judgment](skills/engineering-judgment/SKILL.md) and its optional validation-economics reference; distinguish tests that reach changed behavior from expensive non-exercising suites. Do not replace the host project's required acceptance and merge gates.
 - **Architecture or software/product trade-off requiring a consequential choice:** [Engineering Judgment](skills/engineering-judgment/SKILL.md). Skip deep analysis for routine reversible fixes.

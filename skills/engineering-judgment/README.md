@@ -8,7 +8,7 @@ This is the **general mechanized-expertise layer** in the private general-purpos
 - Use [project cases](references/project-cases.md) as evidence, not permanent universal requirements.
 - Test whether the skill transfers with [held-out probes](references/evaluation.md).
 
-It complements [Android App Development](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/android-app-development/SKILL.md) and [Concept Model Engineering](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/concept-model-engineering/SKILL.md). In the owning project, AGENTS.md and product contract retain authority. No app repository is modified by this skill.
+It complements [Android App Development](../android-app-development/SKILL.md) and [Concept Model Engineering](../concept-model-engineering/SKILL.md). In the owning project, AGENTS.md and product contract retain authority. No app repository is modified by this skill.
 
 This package links to research and sources; it does not vendor outside agent skills. No separate publication license has been selected. It includes a dependency-free offline validator and transfer-probe tool, not an automatic cloud agent or developer workflow.
 

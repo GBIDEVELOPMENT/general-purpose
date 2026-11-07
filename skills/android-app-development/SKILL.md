@@ -10,6 +10,10 @@ metadata:
 
 **Goal:** maximize safely working Android user journeys per unit of engineering, CI expense and agent attention. This is a portable agent *procedure*, never a substitute for the host project's AGENTS.md, verified product contracts or user authorization. The three source projects are examples, not requirements imposed on another app.
 
+## New-product routing
+
+For a substantial new application, architecture reset or inadequately specified multi-capability expansion, start with [Project Inception](../project-inception/SKILL.md). Establish product, ecosystem, reuse and design readiness before broad production implementation. Bounded experiments and settled routine fixes skip this route.
+
 ## First 90 seconds
 
 1. Inspect current `main`, active PRs/issues, CI and `AGENTS.md`/queue. Identify other agents and shared files before changing anything. Previous summaries, docs or green tests can be stale.
@@ -25,15 +29,15 @@ metadata:
 
 | Symptom / responsibility | Load |
 |---|---|
-| Recognize hidden complexity or choose a level of investigation | [Engineering Judgment](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/engineering-judgment/SKILL.md) |
-| UX jobs, original-language prior art, discoverability, concise user research and expert question selection | [Mechanised Expertise: user-needs investigation](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/mechanised-expertise/references/user-needs-and-prior-art.md) (only for consequential UX choices) |
+| Recognize hidden complexity or choose a level of investigation | [Engineering Judgment](../engineering-judgment/SKILL.md) |
+| UX jobs, original-language prior art, discoverability, concise user research and expert question selection | [Mechanised Expertise: user-needs investigation](../mechanised-expertise/references/user-needs-and-prior-art.md) (only for consequential UX choices) |
 | Requirements, priorities, architecture bloat, branches and gates | [Engineering decisions](references/engineering-decisions.md) |
 | SAF, app-private files, Room, remote auth, identity, retry or interruption | [Operation integrity](references/operation-integrity.md) |
 | Concrete Android implementation patterns for pickers, lifecycle, UI, storage and releases | [Platform playbooks](references/platform-playbooks.md) |
 | UI reachability, testing tiers, CI cost, signing and integration | [Verification and CI](references/verification-and-ci.md) |
 | Multiple queued changes, repeated full runs, expensive device/provider setup, or human-review bottlenecks | [Validation economics](references/validation-economics.md) |
 | Security/data-risk independent PR review | [Adversarial PR review](references/adversarial-review.md) |
-| Product-discovery graphs, incomplete user-workflow models, or suspected feature frontiers | [Concept Model Engineering](https://github.com/GBIDEVELOPMENT/general-purpose/blob/main/skills/concept-model-engineering/SKILL.md) |
+| Product-discovery graphs, incomplete user-workflow models, or suspected feature frontiers | [Concept Model Engineering](../concept-model-engineering/SKILL.md) |
 | A documented historical success, failure or reversed premise | [Historical casebook](references/historical-casebook.md) |
 | Which published expert skill to use and how to trust it | [Upstream catalog](references/upstream-catalog.md) |
 | Offline checks, case evaluations and limits of the historical audit | [Skill evaluation](references/skill-evaluation.md), [audit scope](references/audit-coverage.md) |
