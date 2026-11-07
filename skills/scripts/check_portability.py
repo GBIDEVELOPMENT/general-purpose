@@ -66,8 +66,12 @@ def check_skills(skills: Path) -> list[str]:
         content = source.read_text(encoding="utf-8")
         rel = source.relative_to(skills)
         for match in STALE_SOURCE_RE.finditer(content):
+            # A pinned source URL in an evidence record is legitimate provenance.
+            # Branch-relative JSON pointers and schema identities are not portable.
+            if "/blob/main/" not in match.group() and "/blob/master/" not in match.group() and "/tree/main/" not in match.group() and "/tree/master/" not in match.group():
+                continue
             line = content.count("\n", 0, match.start()) + 1
-            errors.append(f"{rel}:{line}: stale source-repository JSON pointer; use portable local identity")
+            errors.append(f"{rel}:{line}: mutable source-repository JSON pointer; use portable identity")
     return errors
 
 
