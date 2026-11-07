@@ -30,10 +30,11 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools'
       - name: Ensure Android 35 SDK and build tools
-        run: |
-          test -x "$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager" || command -v sdkmanager
-          sdkmanager --install 'platforms;android-35' 'build-tools;35.0.0'
+        run: sdkmanager --install 'platforms;android-35' 'build-tools;35.0.0'
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.11.1
