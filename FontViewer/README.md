@@ -16,9 +16,9 @@ A small, phone-first browser application for inspecting local TrueType and OpenT
 
 ## Default interface typeface
 
-The UI uses the locally bundled `P22 Stanyan Regular Regular.ttf` through CSS `@font-face`, without a Google Fonts request. The title uses a lighter visual treatment for “Font” and a synthesized heavier treatment for “Shelf” because only the regular P22 Stanyan face is supplied. Imported font previews still display their respective font faces.
+The general UI uses the bundled `P22 Stanyan Regular Regular.ttf`. The uppercase **FONT SHELF** title and uppercase **CHARACTER MAP** headings use the bundled `ScribbleBoxDemo-gyWq.ttf`. The title keeps a lighter “FONT” and heavier “SHELF” visual treatment, synthesized because Scribblebox provides one face. Imported font previews still display their respective font faces.
 
-The GitHub Pages workflow publishes the TTF asset along with the HTML. **Pages assets are publicly retrievable even when their source repository is private.** Ensure the font license allows this use and public distribution.
+The GitHub Pages workflow publishes both TTF assets along with the HTML. **Pages assets are publicly retrievable even when their source repository is private.** Ensure the font license allows this use and public distribution.
 
 ## Run
 
