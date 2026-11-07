@@ -5,13 +5,14 @@
   "description": "Reproducible browser assets for Font Shelf and its Android shell",
   "scripts": {
     "build:vendor": "node tools/build-vendor.mjs",
-    "test": "node tests/smoke.cjs"
+    "test": "node tests/smoke.cjs && node --test tests/library.test.mjs"
   },
   "dependencies": {
     "fflate": "0.8.2",
     "fontkit": "2.0.4"
   },
   "devDependencies": {
-    "esbuild": "0.24.2"
+    "esbuild": "0.24.2",
+    "fake-indexeddb": "6.2.7"
   }
 }
