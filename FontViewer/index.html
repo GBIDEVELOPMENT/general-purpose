@@ -306,7 +306,14 @@ function groupedRecords(list){
  }
  return groups;
 }
-function groupsNow(){return groupedRecords([...records.values()])}
+let groupedCacheKey='',groupedCache=null;
+function groupsNow(){
+ const current=[...records.values()];
+ const signature=current.map(rec=>rec.id+':'+rec.variant+':'+rec.familyName).join('|');
+ if(groupedCache&&signature===groupedCacheKey)return groupedCache;
+ groupedCacheKey=signature;
+ return groupedCache=groupedRecords(current);
+}
 function visibleGroups(){
  const groups=groupsNow();
  const allowed=activeList?savedLists.get(activeList)?.ids||[]:null;
@@ -445,7 +452,12 @@ $('clear').onclick=async()=>{
  catch(e){status('Hide was not fully saved: '+e.message)}
 };
 $('sort').onclick=()=>{ascending=!ascending;$('sort').textContent='Sort: name '+(ascending?'↑':'↓');render()};
-$('preview').addEventListener('input',()=>{document.querySelectorAll('.sample').forEach(el=>el.textContent=$('preview').value||' ')});
+const savedPreview=localStorage.getItem('font-shelf-preview');
+if(savedPreview!==null)$('preview').value=savedPreview;
+$('preview').addEventListener('input',()=>{
+ localStorage.setItem('font-shelf-preview',$('preview').value);
+ document.querySelectorAll('.sample').forEach(el=>el.textContent=$('preview').value||' ');
+});
 
 function fontMeta(rec){
  return {id:rec.id,key:rec.key,variant:rec.variant,name:rec.name,familyName:rec.familyName,
