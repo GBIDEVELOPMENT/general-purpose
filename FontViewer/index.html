@@ -198,9 +198,14 @@ async function addFont(bytes,file,source){
   }
   if([...records.values()].some(r=>r.key===key))continue;
   const variant=variantKey(font,file);
-  const existing=[...records.values()].find(r=>r.variant===variant);
-  if(existing&&formatPriority(existing.file)<=formatPriority(file))continue;
-  if(!existing&&records.size>=MAX_COUNT)throw Error('250-font limit reached');
+  const existing=[...catalog.values()].find(r=>r.variant===variant);
+  if(existing&&formatPriority(existing.file)<=formatPriority(file)){
+   if(existing.hidden){
+    await revive(existing);existing.hidden=false;await FontLibrary.update(existing);added++;
+   }
+   continue;
+  }
+  if(!existing&&catalog.size>=MAX_COUNT)throw Error('250 saved-font limit reached');
   const raw=faces.length>1?extractCollectionFace(bytes,i):bytes;
   const id=existing?existing.id:'fs'+(++counter),family='font-'+id,url=URL.createObjectURL(new Blob([raw]));
   const face=new FontFace(family,'url("'+url+'")');
@@ -212,7 +217,7 @@ async function addFont(bytes,file,source){
   const meta=fontMeta(rec);
   try{await FontLibrary.save(meta,raw)}
   catch(e){cleanupFont(rec);throw Error('Cannot save font persistently: '+e.message)}
-  if(existing){cleanupFont(existing);records.delete(existing.id)}
+  if(existing){const old=records.get(existing.id);if(old)cleanupFont(old);records.delete(existing.id)}
   catalog.set(id,meta);records.set(id,rec);added++;
  }
  return added;
