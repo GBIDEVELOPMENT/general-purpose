@@ -38,9 +38,9 @@ tasks.register('stageFontShelfAssets', Copy) {
     from('../../.generated/vendor') { into 'vendor' }
     into "$buildDir/generated/fontShelfAssets"
     doFirst {
-        for (name in ['fontkit.js','fflate.js']) {
-            if (!file("../../.generated/vendor/$name").isFile()) {
-                throw new GradleException("Missing local browser asset: $name. Run npm install and npm run build:vendor in FontViewer first.")
+        for (String assetName : ['fontkit.js', 'fflate.js']) {
+            if (!file("../../.generated/vendor/${assetName}").isFile()) {
+                throw new GradleException("Missing local browser asset: ${assetName}. Run npm install and npm run build:vendor in FontViewer first.")
             }
         }
     }
