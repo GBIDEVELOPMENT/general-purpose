@@ -2,7 +2,7 @@
 
 This directory is a library of **complementary capabilities**, not a pyramid with one master methodology. Select the *single primary skill* whose deliverable matches the task; add another only for a concrete, unresolved dependency. No skill can grant permission to modify a project.
 
-## Six complementary capabilities
+## Complementary capabilities and task-specific orchestration
 
 | Capability | Primary output | Example | Avoid |
 |---|---|---|---|
@@ -12,6 +12,8 @@ This directory is a library of **complementary capabilities**, not a pyramid wit
 | Conceptual modelling | Typed concepts and relationships, coverage results, qualified unknowns | Build a map of users, intents, states, media identities and recovery | Equating missing edges with real-world absence |
 | Human-agent interaction engineering | Appropriately scoped survey, decision briefing, observational checklist, review or approval interface and interpretable responses | Owner asks “any choices?”, or prior-art research reveals optional, evidence-backed feature alternatives | Mandatory forms, invented consensus, silently treating preferences as permission |
 | Verification and evidence management | Independent observation tied to exact claim, environment, and revision | Show a persisted file survived restart, or mark untested | Promoting simulated, planned or verbal claims into observed success |
+
+For a substantial greenfield product or costly architectural reset, start with [Project Inception](project-inception/SKILL.md) to coordinate reconstruction, ecosystem/user research, reuse discovery, conceptual coverage, specifications and per-workstream readiness. It is an orchestration trigger, not a universal prerequisite. See the [readiness standard](project-inception/references/readiness-standard.md) and [Retrofit example](project-inception/examples/retrofit-kickoff.md).
 
 The same project can need several capabilities, but **none is a universal prerequisite**. A tiny visual correction may need only operational execution and a focused check. An ontology review may start directly with Concept Model Engineering. A complex UX problem may need user research, modelling, choice generation, implementation and runtime testing. The observed task determines the sequence.
 
@@ -37,6 +39,8 @@ The handoff between capabilities is driven by a **newly established consequentia
 See the [Opportunity Handoff procedure](human-agent-interaction-engineering/references/opportunity-handoffs.md) for triggers, rejection conditions, a minimal transport record, evidence distinctions and negative controls. The same evidence may flow back from human responses into a concept map, requirements or further targeted investigation. Existing project rules determine what may be written.
 
 ## Routing examples
+
+0. New complex application with unresearched users, ecosystem and architecture: Project Inception first. Permit bounded proof spikes and isolated ready slices.
 
 1. Known Compose layout bug with a reproducer: Android Development first; fix and test. No map or research committee.
 2. Integrating two independent user workflows whose identities differ: primary engineering/product skill; invoke a bounded map only for relationships that could change implementation or UX.

@@ -10,6 +10,10 @@ metadata:
 
 **Goal:** maximize safely working Android user journeys per unit of engineering, CI expense and agent attention. This is a portable agent *procedure*, never a substitute for the host project's AGENTS.md, verified product contracts or user authorization. The three source projects are examples, not requirements imposed on another app.
 
+## New-product routing
+
+For a substantial new application, architecture reset or inadequately specified multi-capability expansion, start with [Project Inception](../project-inception/SKILL.md). Establish product, ecosystem, reuse and design readiness before broad production implementation. Bounded experiments and settled routine fixes skip this route.
+
 ## First 90 seconds
 
 1. Inspect current `main`, active PRs/issues, CI and `AGENTS.md`/queue. Identify other agents and shared files before changing anything. Previous summaries, docs or green tests can be stale.
