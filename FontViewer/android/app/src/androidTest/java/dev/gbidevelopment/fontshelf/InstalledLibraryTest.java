@@ -75,6 +75,12 @@ public final class InstalledLibraryTest {
                   if(!response.ok)throw Error('bundled TTF request failed');
                   const bytes=new Uint8Array(await response.arrayBuffer());
                   if(bytes.length<1000)throw Error('empty bundled TTF');
+                  const kit=await getFontkit();
+                  const parsed=kit.create(bytes);
+                  if(!parsed?.characterSet?.length)throw Error('offline font parser failed');
+                  const zipped=window.fflate.zipSync({'specimen.ttf':bytes});
+                  const unzipped=window.fflate.unzipSync(zipped)['specimen.ttf'];
+                  if(unzipped.length!==bytes.length)throw Error('offline ZIP roundtrip failed');
                   const meta={
                     id:'fs9000',key:'android-installed-smoke-v1',
                     variant:'android-installed-smoke-v1',
