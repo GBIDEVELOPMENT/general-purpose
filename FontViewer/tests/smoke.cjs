@@ -14,6 +14,18 @@ new vm.Script(library,{filename:'library.js'});
 assert.match(page,/ScribbleBoxDemo-gyWq\.ttf/);
 assert.match(page,/P22%20Stanyan%20Regular%20Regular\.ttf/);
 assert.match(page,/library\.js/);
+assert.match(page,/src="\.\/vendor\/fflate\.js"/);
+assert.match(page,/import\('\.\/vendor\/fontkit\.js'\)/);
+assert.doesNotMatch(page,/https:\/\/(?:cdn\.jsdelivr\.net|esm\.sh)/);
+for(const file of ['fontkit.js','fflate.js']){
+ const bundle=path.join(root,'.generated','vendor',file);
+ assert.ok(fs.statSync(bundle).size>1000,'Missing local vendor asset '+file);
+}
+const android=fs.readFileSync(path.join(root,'android','app','src','main','java','dev','gbidevelopment','fontshelf','MainActivity.java'),'utf8');
+const gradle=fs.readFileSync(path.join(root,'android','app','build.gradle'),'utf8');
+assert.match(android,/WebViewAssetLoader/);
+assert.match(android,/ACTION_OPEN_DOCUMENT/);
+assert.match(gradle,/\.generated\/vendor/);
 assert.match(page,/id="libraryPanel"/);
 assert.match(page,/id="newList"/);
 assert.match(page,/id="viewList"/);
@@ -25,6 +37,9 @@ assert.match(script,/FontLibrary\.remove\(ids\)/);
 assert.match(script,/FontLibrary\.saveList\(list\)/);
 assert.match(script,/meta\.hidden=true/);
 assert.match(script,/meta\.tags=tags/);
+assert.match(script,/meta\.familyTags=tags/);
+assert.match(script,/groupedCacheKey/);
+assert.match(script,/font-shelf-preview/);
 assert.match(script,/requestAnimationFrame/);
 
 const start=page.indexOf('const VARIANT_WORDS='),end=page.indexOf('const supported=',start);
