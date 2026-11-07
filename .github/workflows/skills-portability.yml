@@ -23,10 +23,16 @@ jobs:
         run: find skills -type f -not -path '*/__pycache__/*' | sort
       - run: python3 skills/scripts/check_portability.py --skills-dir skills
       - run: python3 -m unittest discover -s skills/tests -p test_portability.py
+      - run: python3 -m unittest discover -s skills/tests -p test_instruction_completeness.py
+      - run: python3 skills/scripts/audit_instruction_completeness.py --skills-dir skills --check-contracts
       - name: Prove migration under an unrelated project directory
         run: |
           mkdir -p /tmp/unrelated-project
           python3 skills/scripts/install_into_project.py --source-root "$PWD" --project-root /tmp/unrelated-project --source-revision "$GITHUB_SHA"
           python3 /tmp/unrelated-project/skills/scripts/check_portability.py --skills-dir /tmp/unrelated-project/skills
           test -f /tmp/unrelated-project/skills/project-inception/SKILL.md
+          test -f /tmp/unrelated-project/skills/evidence-acquisition/SKILL.md
+          test -f /tmp/unrelated-project/skills/engineering-resource-discovery/SKILL.md
+          test -f /tmp/unrelated-project/skills/product-specification-engineering/SKILL.md
+          python3 /tmp/unrelated-project/skills/scripts/audit_instruction_completeness.py --skills-dir /tmp/unrelated-project/skills --check-contracts
           test -f /tmp/unrelated-project/skills/android-app-development/references/platform-playbooks.md
