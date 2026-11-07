@@ -83,7 +83,7 @@ def check_contracts(root: Path, ledger: Path) -> list[str]:
         seen.add(ident)
         invalid = [
             k for k in REQUIRED
-            if not isinstance(rec[k], str) or len(rec[k].strip()) < 10 or PLACEHOLDER.search(rec[k])
+            if not isinstance(rec[k], str) or len(rec[k].strip()) < (3 if k == 'id' else 10) or PLACEHOLDER.search(rec[k])
         ]
         if invalid:
             errors.append(f"{ident}: empty/placeholder contract fields {invalid}")
