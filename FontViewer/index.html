@@ -208,7 +208,7 @@ async function addFont(bytes,file,source){
   const cps=[...new Set(font.characterSet||[])].filter(cp=>cp>=32&&cp<=0x10ffff&&!(cp>=0xd800&&cp<=0xdfff)).sort((a,b)=>a-b);
   const name=safeName(font.fullName||[font.familyName,font.subfamilyName].filter(Boolean).join(' ')||file);
   const familyName=normalizedFamilyName(font,file);
-  const rec={id,key,variant,name,familyName,familyKey:familyStem(familyName),styleName:safeName(font.subfamilyName||''),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font),hidden:false,tags:existing?.tags||[]};
+  const rec={id,key,variant,name,familyName,familyKey:familyStem(familyName),styleName:safeName(font.subfamilyName||''),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font),hidden:false,tags:existing?.tags||[],familyTags:existing?.familyTags||[]};
   const meta=fontMeta(rec);
   try{await FontLibrary.save(meta,raw)}
   catch(e){cleanupFont(rec);throw Error('Cannot save font persistently: '+e.message)}
@@ -313,7 +313,7 @@ function visibleGroups(){
  const filter=$('tagFilter')?.value||'';
  return [...groups.entries()].filter(([key,variants])=>
   (!allowed||variants.some(r=>allowed.includes(r.id)))&&
-  (!filter||variants.some(r=>catalog.get(r.id)?.tags?.includes(filter))));
+  (!filter||variants.some(r=>[...(catalog.get(r.id)?.tags||[]),...(catalog.get(r.id)?.familyTags||[])].includes(filter))));
 }
 function updateCount(){
  const count=cardsByFamily.size;
@@ -373,13 +373,14 @@ function makeFamilyCard(key,variants){
   if(details.open)maybePopulate();
  });
  const tools=make('div','card-tools');
- const tagButton=make('button','','Tags');tagButton.onclick=()=>editTags(key);
+ const tagButton=make('button','','Family tags');tagButton.onclick=()=>editTags(key);
+ const faceTagButton=make('button','','Face tags');faceTagButton.onclick=()=>editFaceTags(rec.id);
  const selectedList=savedLists.get(activeList);
  const isInList=selectedList&&variants.some(v=>selectedList.ids.includes(v.id));
  const listButton=make('button','',isInList?'− List':'＋ List');
  listButton.onclick=()=>isInList?removeFamilyFromList(key):addFamilyToList(key);
- tools.append(tagButton,listButton);
- for(const tag of (catalog.get(rec.id)?.tags||[]))tools.append(make('span','tag-chip',tag));
+ tools.append(tagButton,faceTagButton,listButton);
+ for(const tag of [...new Set([...(catalog.get(rec.id)?.familyTags||[]),...(catalog.get(rec.id)?.tags||[])])])tools.append(make('span','tag-chip',tag));
  card.append(head,sample,meta,axes,tools,details);
  card._maybePopulate=maybePopulate;
  return card;
@@ -449,7 +450,7 @@ $('preview').addEventListener('input',()=>{document.querySelectorAll('.sample').
 function fontMeta(rec){
  return {id:rec.id,key:rec.key,variant:rec.variant,name:rec.name,familyName:rec.familyName,
   familyKey:rec.familyKey,styleName:rec.styleName,file:rec.file,source:rec.source,
-  cps:rec.cps,axes:rec.axes,hidden:!!rec.hidden,tags:rec.tags||[]};
+  cps:rec.cps,axes:rec.axes,hidden:!!rec.hidden,tags:rec.tags||[],familyTags:rec.familyTags||[]};
 }
 async function revive(meta){
  const stored=await FontLibrary.get('data',meta.id);
@@ -538,19 +539,19 @@ async function deleteLibraryGroup(group){
 async function editTags(key,libraryOnly=false){
  const group=(libraryOnly?groupedRecords([...catalog.values()]):groupsNow()).get(key)||[];
  if(!group.length)return;
- const existing=[...new Set(group.flatMap(r=>catalog.get(r.id)?.tags||[]))];
+ const existing=[...new Set(group.flatMap(r=>catalog.get(r.id)?.familyTags||[]))];
  const input=prompt('Tags for '+group[0].familyName+' (comma-separated):',existing.join(', '));
  if(input===null)return;
  const tags=[...new Map(input.split(',').map(x=>x.trim()).filter(Boolean).slice(0,32).map(x=>[x.toLocaleLowerCase(),x])).values()];
  try{
-  for(const item of group){const meta=catalog.get(item.id);if(!meta)continue;meta.tags=tags;await FontLibrary.update(meta);const rec=records.get(item.id);if(rec)rec.tags=tags}
+  for(const item of group){const meta=catalog.get(item.id);if(!meta)continue;meta.familyTags=tags;await FontLibrary.update(meta);const rec=records.get(item.id);if(rec)rec.familyTags=tags}
   updateTagPicker();render();renderLibrary();status('Tags saved for '+group[0].familyName);
  }catch(e){status('Could not save tags: '+e.message)}
 }
 
 function updateTagPicker(){
  const picker=$('tagFilter'),previous=picker.value;
- const tags=[...new Set([...catalog.values()].flatMap(x=>x.tags||[]))].sort((a,b)=>a.localeCompare(b));
+ const tags=[...new Set([...catalog.values()].flatMap(x=>[...(x.tags||[]),...(x.familyTags||[])]))].sort((a,b)=>a.localeCompare(b));
  picker.replaceChildren(new Option('All tags',''));
  for(const tag of tags)picker.add(new Option(tag,tag));
  picker.value=tags.includes(previous)?previous:'';
@@ -562,6 +563,17 @@ async function removeFamilyFromList(key){
  const old=[...list.ids];list.ids=list.ids.filter(id=>!ids.has(id));
  try{await FontLibrary.saveList(list);render();status('Removed '+group[0].familyName+' from '+list.title)}
  catch(e){list.ids=old;status('Could not edit list: '+e.message)}
+}
+async function editFaceTags(id){
+ const meta=catalog.get(id);if(!meta)return;
+ const input=prompt('Tags for '+meta.name+' (this variant only, comma-separated):',(meta.tags||[]).join(', '));
+ if(input===null)return;
+ const tags=[...new Map(input.split(',').map(x=>x.trim()).filter(Boolean).slice(0,32).map(x=>[x.toLocaleLowerCase(),x])).values()];
+ try{
+  meta.tags=tags;await FontLibrary.update(meta);
+  const rec=records.get(id);if(rec)rec.tags=tags;
+  updateTagPicker();render();renderLibrary();status('Saved face tags for '+meta.name);
+ }catch(e){status('Could not save face tags: '+e.message)}
 }
 async function createList(){
  const title=prompt('Title for the new saved font list:');if(!title?.trim())return null;
