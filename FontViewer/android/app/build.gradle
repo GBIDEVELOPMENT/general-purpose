@@ -10,7 +10,8 @@ android {
         applicationId 'dev.gbidevelopment.fontshelf'
         minSdk 26
         targetSdk 35
-        versionCode 1
+        // CI assigns a monotonic package version without changing the source for each build.
+        versionCode = (project.findProperty('fontshelfVersionCode') ?: '1').toString().toInteger()
         versionName '0.1.0'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
