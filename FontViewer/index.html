@@ -189,24 +189,25 @@ async function addFont(bytes,file,source){
  let added=0;
  for(let i=0;i<faces.length;i++){
   const font=faces[i],key=fingerprint(bytes)+':'+(faces.length>1?i:0);
+  if([...catalog.values()].some(r=>r.key===key))continue;
   if([...records.values()].some(r=>r.key===key))continue;
   const variant=variantKey(font,file);
   const existing=[...records.values()].find(r=>r.variant===variant);
   if(existing&&formatPriority(existing.file)<=formatPriority(file))continue;
   if(!existing&&records.size>=MAX_COUNT)throw Error('250-font limit reached');
   const raw=faces.length>1?extractCollectionFace(bytes,i):bytes;
-  const id='fs'+(++counter),family='font-'+id,url=URL.createObjectURL(new Blob([raw]));
+  const id=existing?existing.id:'fs'+(++counter),family='font-'+id,url=URL.createObjectURL(new Blob([raw]));
   const face=new FontFace(family,'url("'+url+'")');
   try{await face.load();document.fonts.add(face)}catch(e){URL.revokeObjectURL(url);throw Error('Browser cannot load '+(font.fullName||file))}
   const cps=[...new Set(font.characterSet||[])].filter(cp=>cp>=32&&cp<=0x10ffff&&!(cp>=0xd800&&cp<=0xdfff)).sort((a,b)=>a-b);
   const name=safeName(font.fullName||[font.familyName,font.subfamilyName].filter(Boolean).join(' ')||file);
   const familyName=normalizedFamilyName(font,file);
-  const rec={id,key,variant,name,familyName,familyKey:familyStem(familyName),styleName:safeName(font.subfamilyName||''),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font),hidden:false,tags:[]};
-  if(existing){if(selectedByFamily.get(existing.familyKey)===existing.id)selectedByFamily.set('family:'+familyStem(familyName),id);cleanupFont(existing);records.delete(existing.id);catalog.delete(existing.id);await FontLibrary.remove([existing.id])}
+  const rec={id,key,variant,name,familyName,familyKey:familyStem(familyName),styleName:safeName(font.subfamilyName||''),file:safeName(file),source:safeName(source),family,url,face,cps,axes:axesOf(font),hidden:false,tags:existing?.tags||[]};
   const meta=fontMeta(rec);
-  try{await FontLibrary.save(meta,raw);catalog.set(id,meta)}
-  catch(e){status('Storage warning: '+e.message);throw Error('Cannot save font persistently: '+e.message)}
-  records.set(id,rec);added++;
+  try{await FontLibrary.save(meta,raw)}
+  catch(e){cleanupFont(rec);throw Error('Cannot save font persistently: '+e.message)}
+  if(existing){cleanupFont(existing);records.delete(existing.id)}
+  catalog.set(id,meta);records.set(id,rec);added++;
  }
  return added;
 }
