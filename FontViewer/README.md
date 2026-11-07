@@ -14,6 +14,12 @@ A small, phone-first browser application for inspecting local TrueType and OpenT
 - Ascending/descending name sorting and a sticky mobile header with preview field and light/dark toggle.
 - Processing occurs entirely in the browser, without a font upload API.
 
+## Default interface typeface
+
+The UI uses the locally bundled `P22 Stanyan Regular Regular.ttf` through CSS `@font-face`, without a Google Fonts request. The title uses a lighter visual treatment for “Font” and a synthesized heavier treatment for “Shelf” because only the regular P22 Stanyan face is supplied. Imported font previews still display their respective font faces.
+
+The GitHub Pages workflow publishes the TTF asset along with the HTML. **Pages assets are publicly retrievable even when their source repository is private.** Ensure the font license allows this use and public distribution.
+
 ## Run
 
 Open `index.html` in Chrome on Android, or serve the directory as a static site. No build step or backend is necessary. For convenient phone access, publish the directory using an appropriate static-site host. **This implementation uses two pinned CDN dependencies**, so a network connection is required to load those libraries: `fflate@0.8.2` for ZIP extraction and dynamically imported `fontkit@2.0.4` via esm.sh for font-name, Unicode-cmap, collection, and variation inspection. Font files are *not* transmitted to those services.
