@@ -189,7 +189,13 @@ async function addFont(bytes,file,source){
  let added=0;
  for(let i=0;i<faces.length;i++){
   const font=faces[i],key=fingerprint(bytes)+':'+(faces.length>1?i:0);
-  if([...catalog.values()].some(r=>r.key===key))continue;
+  const saved=[...catalog.values()].find(r=>r.key===key);
+  if(saved){
+   if(saved.hidden){
+    await revive(saved);saved.hidden=false;await FontLibrary.update(saved);added++;
+   }
+   continue;
+  }
   if([...records.values()].some(r=>r.key===key))continue;
   const variant=variantKey(font,file);
   const existing=[...records.values()].find(r=>r.variant===variant);
@@ -559,6 +565,7 @@ async function removeFamilyFromList(key){
 }
 async function createList(){
  const title=prompt('Title for the new saved font list:');if(!title?.trim())return null;
+ if([...savedLists.values()].some(x=>x.title.toLocaleLowerCase()===title.trim().toLocaleLowerCase())){status('A list with that title already exists.');return null}
  const id='list-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
  const list={id,title:title.trim().slice(0,80),ids:[]};
  try{await FontLibrary.saveList(list);savedLists.set(id,list);updateListPicker();status('Created list '+list.title+'. Use ＋ List on family cards to add fonts.');return list}
