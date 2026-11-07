@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'dev.gbidevelopment.fontshelf'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'dev.gbidevelopment.fontshelf'
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName '0.1.0'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    sourceSets.main.assets.srcDirs("$buildDir/generated/fontShelfAssets")
+
+    buildTypes {
+        release { minifyEnabled false }
+    }
+}
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.16.0'
+}
+
+tasks.register('stageFontShelfAssets', Copy) {
+    from('../../index.html', '../../library.js',
+         '../../P22 Stanyan Regular Regular.ttf',
+         '../../ScribbleBoxDemo-gyWq.ttf')
+    into "$buildDir/generated/fontShelfAssets"
+}
+
+tasks.configureEach {
+    if (name == 'mergeDebugAssets' || name == 'mergeReleaseAssets') {
+        dependsOn tasks.named('stageFontShelfAssets')
+    }
+}
