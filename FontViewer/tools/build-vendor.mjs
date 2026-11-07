@@ -20,7 +20,7 @@ await Promise.all([
     ...common,
     entryPoints: ['fontkit'],
     format: 'esm',
-    outfile: resolve(outdir, 'fontkit.mjs')
+    outfile: resolve(outdir, 'fontkit.js')
   }),
   build({
     ...common,
@@ -29,7 +29,7 @@ await Promise.all([
     outfile: resolve(outdir, 'fflate.js')
   })
 ]);
-for (const filename of ['fontkit.mjs', 'fflate.js']) {
+for (const filename of ['fontkit.js', 'fflate.js']) {
   const file = resolve(outdir, filename);
   const info = await stat(file);
   if (info.size < 1000) throw new Error('Incomplete vendor bundle: ' + filename);
