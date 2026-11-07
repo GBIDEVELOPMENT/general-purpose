@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "font-shelf-assets",
+  "version": "0.1.0",
+  "description": "Reproducible browser assets for Font Shelf and its Android shell",
+  "scripts": {
+    "build:vendor": "node tools/build-vendor.mjs",
+    "test": "node tests/smoke.cjs"
+  },
+  "dependencies": {
+    "fflate": "0.8.2",
+    "fontkit": "2.0.4"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.2"
+  }
+}
