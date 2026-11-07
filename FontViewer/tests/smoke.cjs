@@ -26,6 +26,13 @@ const gradle=fs.readFileSync(path.join(root,'android','app','build.gradle'),'utf
 assert.match(android,/WebViewAssetLoader/);
 assert.match(android,/ACTION_OPEN_DOCUMENT/);
 assert.match(gradle,/\.generated\/vendor/);
+assert.match(gradle,/fontshelfVersionCode/);
+const workflow=fs.readFileSync(path.join(root,'..','.github','workflows','font-shelf-android.yml'),'utf8');
+assert.match(workflow,/fontshelfVersionCode="\$GITHUB_RUN_NUMBER"/);
+assert.match(workflow,/FONTSHELF_DEBUG_KEYSTORE_BASE64/);
+assert.match(workflow,/apksigner[^\n]*verify --verbose --print-certs/);
+assert.match(workflow,/aapt[^\n]*dump badging/);
+
 assert.match(page,/id="libraryPanel"/);
 assert.match(page,/id="newList"/);
 assert.match(page,/id="viewList"/);
