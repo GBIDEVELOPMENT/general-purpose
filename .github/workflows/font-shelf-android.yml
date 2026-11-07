@@ -67,7 +67,7 @@ jobs:
           fi
       - name: Build debug APK
         working-directory: FontViewer/android
-        run: gradle --no-daemon :app:assembleDebug
+        run: gradle --no-daemon -PfontshelfVersionCode="$GITHUB_RUN_NUMBER" :app:assembleDebug
       - name: Verify packaged local content
         run: |
           APK=FontViewer/android/app/build/outputs/apk/debug/app-debug.apk
@@ -79,7 +79,10 @@ jobs:
           unzip -l "$APK" | grep -F 'assets/P22 Stanyan Regular Regular.ttf'
           unzip -l "$APK" | grep -F 'assets/ScribbleBoxDemo-gyWq.ttf'
           sha256sum "$APK"
-          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --print-certs "$APK" | grep -E 'Signer #1 certificate SHA-256 digest|Verified using v2 scheme' || true
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | grep -F "versionCode='$GITHUB_RUN_NUMBER'"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs "$APK" > signing-report.txt
+          grep -F 'Verified using v2 scheme (APK Signature Scheme v2): true' signing-report.txt
+          grep -F 'Signer #1 certificate SHA-256 digest:' signing-report.txt
       - uses: actions/upload-artifact@v4
         with:
           name: FontShelf-debug-apk
