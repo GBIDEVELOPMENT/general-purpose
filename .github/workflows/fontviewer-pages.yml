@@ -48,6 +48,8 @@ jobs:
         run: |
           mkdir -p _site/FontViewer _site/GlyphMixer/headless _site/RubiksCubeLoader
           cp FontViewer/index.html _site/FontViewer/index.html
+          cp 'FontViewer/P22 Stanyan Regular Regular.ttf' _site/FontViewer/
+          test -s '_site/FontViewer/P22 Stanyan Regular Regular.ttf'
           cp RubiksCubeLoader/compare.html _site/RubiksCubeLoader/index.html
           cp RubiksCubeLoader/index.html _site/RubiksCubeLoader/standard.html
           cp RubiksCubeLoader/small-cube.html _site/RubiksCubeLoader/small-cube.html
