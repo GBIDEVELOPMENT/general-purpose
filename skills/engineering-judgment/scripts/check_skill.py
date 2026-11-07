@@ -30,6 +30,8 @@ def check(root=ROOT):
             errors.append("Bad description")
     if len(s.splitlines())>500:
         errors.append("Main skill body exceeds progressive disclosure limit")
+    # Allow verified sibling links only when the full skills package is present.
+    package_root = root.parent if (root.parent / "CAPABILITY-ARCHITECTURE.md").is_file() else root
     for p in root.rglob("*.md"):
         doc=p.read_text(encoding="utf-8")
         if not doc.strip():
@@ -41,7 +43,7 @@ def check(root=ROOT):
             if not filename:
                 continue
             resolved=(p.parent/filename).resolve()
-            if not resolved.is_relative_to(root) or not resolved.is_file():
+            if not resolved.is_relative_to(package_root) or not resolved.is_file():
                 errors.append(f"Broken/out-of-root local reference {p.relative_to(root)} -> {target}")
     def load(path):
         try:

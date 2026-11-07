@@ -29,6 +29,9 @@ def validate(root=ROOT):
             errors.append("Invalid or missing skill description")
     if len(text.splitlines()) > 500:
         errors.append("SKILL.md too long; use progressive references")
+    # A complete vendored skills suite permits sibling links; an isolated
+    # single-skill copy remains confined to its own root.
+    package_root = root.parent if (root.parent / "CAPABILITY-ARCHITECTURE.md").is_file() else root
     for path in root.rglob("*.md"):
         doc = path.read_text(encoding="utf-8")
         if not doc.strip():
@@ -40,7 +43,7 @@ def validate(root=ROOT):
             if not filepart:
                 continue
             resolved = (path.parent / filepart).resolve()
-            if not resolved.is_relative_to(root) or not resolved.exists():
+            if not resolved.is_relative_to(package_root) or not resolved.exists():
                 errors.append(f"Broken/outside local link {path.relative_to(root)} -> {target}")
     casepath = root / "references" / "historical-casebook.md"
     if not casepath.is_file():
