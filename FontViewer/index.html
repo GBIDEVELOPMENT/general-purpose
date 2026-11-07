@@ -34,7 +34,7 @@ main{padding:18px 14px calc(32px + env(safe-area-inset-bottom));max-width:680px;
  <div class="empty" id="empty"><strong>Your font shelf is empty</strong>Import TTF, OTF, or ZIP archives. Add more whenever you like. Everything is processed on this device.</div>
  <input type="file" id="file" multiple accept=".ttf,.otf,.woff,.woff2,.ttc,.otc,.zip,font/ttf,font/otf,font/woff,font/woff2,application/zip">
 </main>
-<script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous"></script>
+<script src="./vendor/fflate.js"></script>
 <script src="./library.js"></script>
 <script>
 'use strict';
@@ -123,7 +123,7 @@ function relatedFaces(a,b){
 }
 const supported=/\.(ttf|otf|woff2?|ttc|otc)$/i;
 let fontkitPromise;
-function getFontkit(){return fontkitPromise??=import('https://esm.sh/fontkit@2.0.4?bundle').then(m=>m.default?.create?m.default:m).catch(e=>{fontkitPromise=null;throw new Error('Font parser unavailable: '+e.message)})}
+function getFontkit(){return fontkitPromise??=import('./vendor/fontkit.js').then(m=>m.default?.create?m.default:m).catch(e=>{fontkitPromise=null;throw new Error('Bundled font parser unavailable: '+e.message)})}
 const MAX_ENTRY=30*1024*1024,MAX_TOTAL=180*1024*1024,MAX_COUNT=250;
 const allRange=[
 [0x20,0x7e],[0xa0,0x024f],[0x0370,0x052f],[0x0590,0x06ff],[0x0900,0x097f],[0x2000,0x206f],[0x20a0,0x20cf],[0x2100,0x214f],[0x2190,0x21ff],[0x2200,0x22ff],[0x2500,0x257f],[0x2600,0x26ff],[0x2700,0x27bf],[0x3000,0x30ff],[0x4e00,0x4eff]];
@@ -219,7 +219,7 @@ async function addFont(bytes,file,source){
 }
 async function processFile(file,stats){
  if(/\.zip$/i.test(file.name)){
-  if(!window.fflate)throw Error('ZIP reader unavailable; check internet connection');
+  if(!window.fflate)throw Error('Bundled ZIP reader unavailable');
   if(file.size>MAX_TOTAL)throw Error('ZIP exceeds 180 MB');
   const archive=new Uint8Array(await file.arrayBuffer());
   const contents=fflate.unzipSync(archive,{filter:info=>supported.test(info.name)&&info.originalSize<=MAX_ENTRY});
