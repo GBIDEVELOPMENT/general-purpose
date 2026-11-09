@@ -13,6 +13,10 @@
 7. **Classify:** COMPLETE only after an appropriate independent behavioral test; PARTIAL when a method exists but depends on unexpressed knowledge; UNRESOLVED when no usable method is supplied; REVIEW REQUIRED when source or behavior is inaccessible; NOT APPLICABLE for explanatory history. Static lint cannot decide semantic completeness.
 8. **Repair at narrowest authoritative location:** add or improve one reusable specialist method, then link callers; avoid copying a giant subskill into every SKILL.md. Add task-level positive/negative controls and a reversal observation.
 
+## Documentation-maintenance instructions are also executable claims
+
+When reviewing advice such as “keep docs current”, “archive history”, “update handoffs” or “maintain the work queue”, trace it through the bounded [Operational Documentation Integrity D1–D4 procedure](operational-documentation-integrity.md). Confirm that an unfamiliar agent can discover document roles, establish current authority, compute a justified delta, preserve unique evidence, detect conflicts, and choose **NO CHANGE** when appropriate. Use the [decision probes](operational-documentation-cases.md) to test specific cases. Links and structural checks are only candidates for review, not proof of sound maintenance or improved agent decisions.
+
 ## Mechanical helper and exact limits
 
 From project root:
