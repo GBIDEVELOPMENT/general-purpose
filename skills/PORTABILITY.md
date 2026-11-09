@@ -23,6 +23,8 @@ Validate either tree locally without network access:
 
 > For substantial new projects, first consult skills/project-inception/SKILL.md. For already specified Android work, use skills/android-app-development/SKILL.md. For standalone source and ecosystem investigations use skills/evidence-acquisition/SKILL.md; for library/API/code reuse use skills/engineering-resource-discovery/SKILL.md; for multi-feature product contracts use skills/product-specification-engineering/SKILL.md. For other tasks choose one primary skill using skills/CAPABILITY-ARCHITECTURE.md, and load supporting references only for consequential dependencies. Local project instructions, owner decisions and security boundaries remain authoritative.
 
+For a migrating project's **documentation maintenance**, map the destination's existing AGENTS/onboarding, specs, plans, live issues/queue, handoffs and evidence records by role using [Operational Documentation Integrity](references/operational-documentation-integrity.md). Do not prescribe source-project filenames, directories or private history; preserve host authority and avoid adding duplicate records just to match a template. The copy procedure does not synchronize any project documents automatically.
+
 Do not use absolute GitHub URLs as internal navigation. Link among skills using local relative paths. External references should be clearly identified as sources to consult, not runtime requirements. Shared examples must label project-specific facts as examples, never universal constraints.
 
 ## Portability contract

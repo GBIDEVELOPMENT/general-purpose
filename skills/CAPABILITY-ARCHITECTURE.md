@@ -24,6 +24,10 @@ Human-agent interaction is a capability in its own right: a form or decision lan
 
 When a requested deliverable is research itself, select [Evidence Acquisition](evidence-acquisition/SKILL.md) directly. For a specific unfamiliar component selection, select [Engineering Resource Discovery](engineering-resource-discovery/SKILL.md). When an evidence-backed specification must be constructed from already recovered goals, use [Product Specification Engineering](product-specification-engineering/SKILL.md). These are optional independent capabilities, not a mandatory three-skill preflight.
 
+## Operational documentation integrity
+
+When a material project decision, implementation result or milestone changes what an agent must do next, maintain operational plans, specs, onboarding, work queues and handoffs using the bounded [Operational Documentation Integrity D1–D4 procedure](references/operational-documentation-integrity.md). Discover host-project document roles and authoritative sources rather than assuming particular filenames. Replace stale directions instead of appending progress chronicles; preserve consequential historical evidence in existing records. A routine change may correctly require **NO CHANGE**. This maintenance subroutine is not a universal preliminary skill or a reason to audit the entire repository.
+
 ## Cross-project validation economics
 
 When the task is specifically to reduce test/CI cycles or the director's repeated manual acceptance, use the optional [Validation Economics procedure](android-app-development/references/validation-economics.md) and its [observed Chunks, Expository, UR-Recomp and Glimpse audit](android-app-development/references/validation-case-audit.md). Despite its Android-skill location, the procedure's dispatch-relevance, shared-setup and diagnostic-information rules apply across repositories. Do not activate it for every routine commit, downgrade project-specific release gates, or treat a full green run as evidence of a path it cannot exercise.
@@ -58,6 +62,7 @@ See the [Opportunity Handoff procedure](human-agent-interaction-engineering/refe
 5. Reviewing a shipped result: task-specific verification; a passing mocked result never establishes remote/provider effects.
 6. After comparative user-preference and implementation research: deliver the report, then optionally offer a grounded feature-choice survey rather than blocking on answers.
 7. Owner unexpectedly asks “What decisions can I make?”: inspect current sources and provide needed, upcoming, optional and reconsideration opportunities; do not force a release audit.
+8. Owner asks to make plans, specs, onboarding and queues primarily instructional: inspect role/authority, execute the bounded documentation integrity procedure, preserve consequential evidence elsewhere and stop when current next actions are unambiguous.
 
 ## Acceptance for changes to this library
 

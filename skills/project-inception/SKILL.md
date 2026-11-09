@@ -38,7 +38,7 @@ For each material unresolved choice, identify alternatives, whose values are imp
 
 ## Inspectable output
 
-Prefer updating the existing project authority rather than creating competing documents. Ensure the following can be recovered:
+Prefer updating the existing project authority rather than creating competing documents. At project inception, discover where **current** plans, product specifications, agent onboarding, active work, decisions and evidence will live, using existing repository mechanisms before creating new ones. Apply [Operational Documentation Integrity D1–D4](../references/operational-documentation-integrity.md) to establish concise role ownership and maintenance triggers; do not copy the host AGENTS.md, mandate an ADR hierarchy or require every workstream to use all document types. Ensure the following can be recovered:
 - **Baseline and evidence inventory:** current revision, decided/proposed/inaccessible sources, limits and affected users.
 - **Ecosystem and reuse comparison:** existing products, user feedback, candidate components, constraints and dispositions.
 - **Concept/journey coverage:** normal and abnormal journeys, relationships, evidence-backed omissions and disagreements.

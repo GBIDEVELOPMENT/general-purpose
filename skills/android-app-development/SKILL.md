@@ -25,6 +25,8 @@ For a substantial new application, architecture reset or inadequately specified 
 7. Verify focused and integration checks on the **exact PR head**; classify red results by phase and count executed tests. Independent review for destructive/credential/native/schema/signing changes; update current issue/ledger only when evidence moves.
 8. On integration, state precisely **merged vs merely proposed**, exercised tier and exact SHA/run, persisted postcondition, unsupported device/provider/owner gates and next runnable work. When waiting on external CI, choose an independent safe task, never duplicate speculative branches.
 
+On consequential integration or accepted product-contract changes, check whether affected plan, spec, AGENTS/onboarding, work queue or handoff instructions have become stale. Use the bounded [Operational Documentation Integrity D1–D4 procedure](../references/operational-documentation-integrity.md) to update **only** affected current instructions and preserve material evidence. Routine code edits with no changed operational obligations require no documentation sweep; merged code and green CI do not imply owner/device acceptance.
+
 ## Load only the necessary specialist reference
 
 | Symptom / responsibility | Load |
