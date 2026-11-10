@@ -26,6 +26,22 @@ const gradle=fs.readFileSync(path.join(root,'android','app','build.gradle'),'utf
 assert.match(android,/WebViewAssetLoader/);
 assert.match(android,/ACTION_OPEN_DOCUMENT/);
 assert.match(gradle,/\.generated\/vendor/);
+const iconDir=path.join(root,'android','app','src','main','res');
+const iconBytes=fs.readFileSync(path.join(iconDir,'drawable-nodpi','fontshelf_icon.webp'));
+assert.ok(iconBytes.length>2000,'Font Shelf launcher image is missing or too small');
+assert.equal(iconBytes.toString('ascii',0,4),'RIFF');
+assert.equal(iconBytes.toString('ascii',8,12),'WEBP');
+assert.equal(require('node:crypto').createHash('sha256').update(iconBytes).digest('hex'),
+ '5f0d7ccfe909c95ba108a57c812d6aeea52457059e40918a26ff097e7b1dc355');
+const iconXml=fs.readFileSync(path.join(iconDir,'mipmap-anydpi-v26','ic_launcher.xml'),'utf8');
+const foregroundXml=fs.readFileSync(path.join(iconDir,'drawable','fontshelf_launcher_foreground.xml'),'utf8');
+const manifest=fs.readFileSync(path.join(root,'android','app','src','main','AndroidManifest.xml'),'utf8');
+assert.match(iconXml,/fontshelf_launcher_background/);
+assert.match(iconXml,/fontshelf_launcher_foreground/);
+assert.match(foregroundXml,/fontshelf_icon/);
+assert.match(manifest,/android:icon="@mipmap\/ic_launcher"/);
+assert.match(manifest,/android:roundIcon="@mipmap\/ic_launcher"/);
+
 assert.match(gradle,/fontshelfVersionCode/);
 const workflow=fs.readFileSync(path.join(root,'..','.github','workflows','font-shelf-android.yml'),'utf8');
 assert.match(workflow,/fontshelfVersionCode="\$GITHUB_RUN_NUMBER"/);

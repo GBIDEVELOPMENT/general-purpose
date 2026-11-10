@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Keep the complete seven-font composition within the adaptive-icon safe area. -->
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+       android:inset="9dp">
+    <bitmap android:src="@drawable/fontshelf_icon"
+            android:gravity="fill" />
+</inset>
