@@ -100,3 +100,37 @@ jobs:
           path: FontViewer/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 7
           if-no-files-found: error
+
+  publish:
+    name: Publish current signed Font Shelf APK
+    needs: build
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: FontShelf-debug-apk
+          path: release
+      - name: Publish rolling Font Shelf preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test -s release/app-debug.apk
+          mv release/app-debug.apk release/FontShelf.apk
+          (cd release && sha256sum FontShelf.apk > FontShelf.apk.sha256)
+          tag=fontshelf-android-latest
+          if ! gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" \
+              --title "Font Shelf Android (latest signed preview)" \
+              --notes "Rolling Android debug APK, stable-signed from main. See build workflow for the exact version code and certificate verification. Installing an earlier APK signed with another certificate requires migration before uninstalling it." \
+              --prerelease
+          fi
+          gh release upload "$tag" release/FontShelf.apk release/FontShelf.apk.sha256 \
+            --repo "$GITHUB_REPOSITORY" --clobber
+          gh release edit "$tag" --repo "$GITHUB_REPOSITORY" \
+            --title "Font Shelf Android (version code ${GITHUB_RUN_NUMBER})" \
+            --notes "Stable-signed debug APK from commit ${GITHUB_SHA}, version code ${GITHUB_RUN_NUMBER}. SHA-256 supplied as an attached file. Future main builds replace this asset; upgrades preserve app data when the installed APK has the same signing certificate."
+          echo "Published https://github.com/$GITHUB_REPOSITORY/releases/download/$tag/FontShelf.apk"
