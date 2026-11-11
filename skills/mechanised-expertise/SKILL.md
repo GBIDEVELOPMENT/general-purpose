@@ -26,7 +26,7 @@ metadata:
 | Converting corpus claims into executable skills | Pin the source and scope; specify trigger, exclusion, named inputs, ordered transforms, opposing decisions, independent oracle, stop rule | [Corpus-to-procedure](references/corpus-to-procedure.md), [source synthesis](references/source-synthesis.md), [compact procedure index](references/procedure-index.md) |
 | Need to establish a shipped behavior or separate plan from execution | Select test tier that reaches the claimed real boundary; log exact revision/environment, assertions executed, observed outcome, and remaining unknowns | [Evidence and corpus](references/evidence-and-corpus.md), [expertise evaluation](references/expertise-evaluation.md) |
 
-After an accepted redesign, a failing screenshot/selector may signal contract drift or a real regression. Trace its assertion to current authority; use [change-aware test reconciliation](../references/change-aware-test-contracts.md) only when that distinction changes the response.
+A failed test after redesign may signal drift or regression. Trace it to current authority; use [change-aware reconciliation](../references/change-aware-test-contracts.md) when the distinction changes the response.
 
 After substantive prior-art/user-needs research, consider [an optional human-choice handoff](../human-agent-interaction-engineering/references/opportunity-handoffs.md) only when evidence establishes meaningful alternatives; deliver the research first. No survey is mandatory, and unanswered preferences are not blockers.
 
