@@ -32,6 +32,8 @@ When a material project decision, implementation result or milestone changes wha
 
 When the task is specifically to reduce test/CI cycles or the director's repeated manual acceptance, use the optional [Validation Economics procedure](android-app-development/references/validation-economics.md) and its [observed Chunks, Expository, UR-Recomp and Glimpse audit](android-app-development/references/validation-case-audit.md). Despite its Android-skill location, the procedure's dispatch-relevance, shared-setup and diagnostic-information rules apply across repositories. Do not activate it for every routine commit, downgrade project-specific release gates, or treat a full green run as evidence of a path it cannot exercise.
 
+When accepted requirements or deliberately redesigned journeys change the meaning of assertions, see [Change-aware test contracts](references/change-aware-test-contracts.md). It is a bounded cross-project connection among product specification, test evidence, CI and documentation integrity, with reverse diagnosis on failures. Treat test names/screenshots and previously passing checks as *evidence consumers*, not immutable product requirements; preserve any enduring behavior, accessibility, compatibility and owner-approved visual constraints. No dedicated testing agent or permanent graph is assumed.
+
 ## Two-way application without hierarchy
 
 - **Mechanised inquiry → conceptual modelling:** generate a bounded question; invoke modelling only when an uncertain *relation* could alter a real decision, research question, or output.
