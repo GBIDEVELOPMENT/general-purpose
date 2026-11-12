@@ -41,12 +41,13 @@ Do not use a rigid number of features or a mandatory time box. Apply these quali
 
 | Candidate | Default | Why |
 |---|---|---|
-| Independent layout, labels, sorting affordances with stable interfaces | Batch, then one screenshot/accessibility/user-journey pass | Reuses app build, install and device setup |
+| Independent layout, labels, sorting affordances with stable interfaces | Batch, then one actual-render conformity, accessibility and user-journey pass against current approved design | Reuses app build, install and device setup |
 | Local parser/algorithm modifications with cheap deterministic tests | Batch expensive integration; run narrow tests as needed | Millisecond feedback reduces later debugging cost |
 | Android local and rTorrent remote operations with identical user-facing intent | Implement both behind separate adapters, then test in the same coordinated session **if** independent failures and exact per-environment identity can be observed | Shared acceptance planning; distinct side effects still verified |
 | New underlying persistence model that several features depend on | Validate the contract before building all dependents | Otherwise one defect can spoil the entire batch |
 | Deletes, overwrites, migration, authentication, uncertain remote mutation, signing, JNI memory boundary | Early focused positive **and negative** proof before high-risk expansion; still share later integrated testing | Delayed discovery can multiply damage or rework |
 | Flaky UI automation with expensive emulator setup | Gather diagnostics and fix harness where justified; group compatible journeys into a common installed session | Avoid repeated boots without hiding product failures |
+| Internal engine/backend change with no user-visible delta | Functional and risk-specific integration proof; presentation N/A | Avoids redundant screenshots and human review |
 | Docs-only or CI-selector-only change | Relevant static/selector proof, no automatic device matrix | Expensive coverage adds no new evidence unless the selector change reveals a previously unexecuted required gate |
 
 **Counterexample:** A six-feature batch that all rely on an unverified storage migration is a poor batch. A six-feature batch of independent Compose affordances with a single installed screenshot atlas is often excellent.
