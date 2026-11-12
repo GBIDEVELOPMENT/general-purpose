@@ -39,6 +39,10 @@ When the task is specifically to reduce test/CI cycles or the director's repeate
 
 When accepted requirements or deliberately redesigned journeys change the meaning of assertions, see [Change-aware test contracts](references/change-aware-test-contracts.md). It is a bounded cross-project connection among product specification, test evidence, CI and documentation integrity, with reverse diagnosis on failures. Treat test names/screenshots and previously passing checks as *evidence consumers*, not immutable product requirements; preserve any enduring behavior, accessibility, compatibility and owner-approved visual constraints. No dedicated testing agent or permanent graph is assumed.
 
+## Experience conformity across product and execution
+
+For changed user-facing behavior, follow [Experience Conformity](product-specification-engineering/references/experience-conformity.md) through the relevant primary product or implementation skill. Trace owner job → canonical screen and visible state → interaction → approved presentation → independently observed functional, interaction and rendered-presentation evidence. Keep the contract inside existing host work items. An internal-only change has no mandatory visual review. Batch compatible installed/rendered tests under [Validation Economics](android-app-development/references/validation-economics.md) and use [annotated owner review](human-agent-interaction-engineering/references/annotated-screen-review.md) when screenshots arrive. Existing accessibility and safety obligations survive redesign.
+
 ## Two-way application without hierarchy
 
 - **Mechanised inquiry → conceptual modelling:** generate a bounded question; invoke modelling only when an uncertain *relation* could alter a real decision, research question, or output.
@@ -61,6 +65,8 @@ See the [Opportunity Handoff procedure](human-agent-interaction-engineering/refe
 0a. Focused competitor and native-language user-criticism research: Evidence Acquisition, without pretending uninstalled marketing features were observed.
 0b. Need to find an appropriate image processing library or integrate existing code: Engineering Resource Discovery, including license/compatibility gates and bounded proof spikes.
 0c. Multi-feature product plan requiring explicit UI, ownership and acceptance contracts: Product Specification Engineering, with independent workstream readiness.
+
+0d. Adding a user-facing control or moving a screen action: apply [experience conformity](product-specification-engineering/references/experience-conformity.md), reuse canonical UI and verify relevant functional, interaction and actual-render claims. Internal-only work skips presentation checks.
 
 1. Known Compose layout bug with a reproducer: Android Development first; fix and test. No map or research committee.
 2. Integrating two independent user workflows whose identities differ: primary engineering/product skill; invoke a bounded map only for relationships that could change implementation or UX.
