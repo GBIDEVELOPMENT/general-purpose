@@ -1,6 +1,6 @@
 ---
 name: settings-systems-engineering
-description: Design, audit, implement and migrate application settings and options menus, including typed setting registries, scoped effective values, reactive persistence, declarative page composition, contextual controls, dependency rules, search, accessibility and acceptance. Activate for nontrivial settings systems, menu reorganization, duplicated preferences or a settings-schema migration. Skip trivial controls with a settled owner.
+description: Design or migrate multi-screen application settings systems, including scoped preference ownership, typed definitions, reusable Options controls, persistence, search and tests. Use when settings span screens/scopes, storage owners diverge or Options navigation is being reorganized. Skip isolated controls.
 metadata:
   version: "0.1.0"
   status: "procedural guidance; effectiveness not yet measured"
