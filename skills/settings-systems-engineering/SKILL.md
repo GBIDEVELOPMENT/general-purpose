@@ -35,4 +35,6 @@ Record, in an existing work artifact, rows of: **ID | state/owner/scope | effect
 
 **Negative controls:** One simple theme switch does not require a generic framework. Moving a global original-file policy out of Add must not leave a second Add-only setting. A per-client folder default must not change a one-off Add destination. Delete Files is a command, not a passive preference.
 
+For a Kotlin/Compose illustration, consult [the typed registry and UI projection example](examples/kotlin-compose-projection.md). It is an illustrative boundary, not code to paste into another project.
+
 For source audit and alternatives, read the [prior-art audit](research/prior-art-audit-2026-11-15.md) only when making a consequential architecture decision. All examples are illustrative; external libraries are not mandated.
